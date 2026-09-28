@@ -199,7 +199,7 @@
     }
 
     // Chave que não muda se a planilha mudar a ordem das linhas.
-    for (const k of cartoes) k.chave = norm(k.nome + '|' + (k.acelerador || ''));
+    for (const k of cartoes) { k.chave = norm(k.nome + '|' + (k.acelerador || '')); k.vip = lerSalasVip(k.obs); }
 
     // Área de parâmetros abaixo dos cartões: gasto mensal, dólar e milheiros.
     const numADireita = (linha, c0) => {
@@ -234,6 +234,82 @@
 
     const historico = lerHistorico(lv.abas.find(a => /hist/i.test(a.nome)));
     return { aba, col, cartoes, refGasto, refDolar, milheiros, historico };
+  }
+
+  // Salas VIP: não há coluna própria na planilha, então o resumo sai do texto
+  // de benefícios. Linhas com ⚠️ (regras e mudanças) aparecem como avisos.
+  const REDES_VIP = [
+    ['Priority Pass', /PRIORITY\s*PASS|PRIOTIY\s*PASS/],
+    ['LoungeKey', /LOUNGE\s*KEY/],
+    ['Dragon Pass (Visa Airport Companion)', /DRAGON\s*PASS|AIRPORT COMPANION/],
+    ['Sala Mastercard Black (Guarulhos)', /MASTERCARD.{0,15}BLACK.{0,40}(LOUNGE|GUARULHOS|GRU|SALA)|SALAS? (VIP )?MASTERCARD.{0,4}BLACK/],
+    ['Centurion Lounge (Amex)', /CENTURION LOUNGE|LOUNGES AMERICAN EXPRESS/],
+    ['Delta Sky Club', /DELTA SKY CLUB/],
+    ['The Club by Mastercard', /THE CLUB BY MASTERCARD/],
+    ['Salas Bradesco', /BRADESCO CARTOES LOUNGE|SALAS (VIP )?(PROPRIAS )?DO BRADESCO|SALAS VIP BRADESCO/],
+    ['Nomad Lounge (Guarulhos)', /NOMAD LOUNGE/],
+    ['VIP Lounge Inter', /VIP LOUNGE (INTER|EXCLUSIVA)/],
+    ['Lounge Ultravioleta (Guarulhos)', /LOUNGE ULTRAVIOLETA/],
+    ['Sala VIP LATAM (voando LATAM)', /SALA VIP LATAM/],
+    ['Visa Infinite Privilege Lounge (Guarulhos)', /VISA INFINITE PRIVILEGE LOUNGE/],
+    ['Taste of Priceless (Guarulhos)', /TASTE OF PRICELESS/],
+    ['Airspace Lounge', /AIRSPACE LOUNGE/]
+  ];
+  function mesclarVip(a, b) {
+    if (!a) return { ...b };
+    return {
+      ilimitado: a.ilimitado || b.ilimitado,
+      qtd: a.qtd && b.qtd ? Math.max(a.qtd, b.qtd) : a.qtd || b.qtd,
+      conv: a.conv && b.conv ? Math.max(a.conv, b.conv) : a.conv || b.conv,
+      acomp: a.acomp || b.acomp
+    };
+  }
+  function lerSalasVip(obs) {
+    const redes = new Map(), avisos = [];
+    let ultima = null, geral = null, linhaAnteriorVip = false;
+    for (const bruta of String(obs || '').split(/\n+/)) {
+      const linha = bruta.trim();
+      const n = norm(linha);
+      const falaDeSala = /SALA|LOUNGE|VIP|PRIORITY|DRAGON|AIRPORT COMPANION|SKY CLUB/.test(n) || /\d+\s*ACESSOS?( GRATUITOS)? (POR|AO) ANO/.test(n);
+      // linha seguinte a uma de sala VIP que só diz a quantidade (ex.: "4 acessos por ano")
+      const continuacao = !falaDeSala && linhaAnteriorVip && /ACESSOS?/.test(n);
+      linhaAnteriorVip = falaDeSala || continuacao;
+      if (!falaDeSala && !continuacao) continue;
+      const texto = linha.replace(/^(✔️|✔|✅|⚠️|⚠|•|·|-|–|\*)\s*/u, '').replace(/^\uFE0F/, '').trim();
+      if (/^⚠/.test(linha)) { avisos.push(texto); continue; }
+      if (/OBRIGATORI|EXIGE|GASTO MINIMO|CAUCAO/.test(n)) avisos.push(texto);
+      // cada frase da linha é lida à parte, para "ilimitada" não valer para a rede vizinha
+      const frases = texto.split(/(?<=\.)\s+(?=[A-ZÀ-Ú0-9])/);
+      frases.forEach((frase, idx) => {
+        const f = norm(frase);
+        if (/ENCERROU|PERDEU|ACABOU|NUNCA FOI|INVESTID/.test(f)) return;
+        const qtd = (/(\d+)\s*(ACESSOS?|VEZES)/.exec(f) || [])[1];
+        const conv = /(\d+)\s*CONVIDADOS?/.exec(f);
+        const info = { ilimitado: /ILIMITAD/.test(f), qtd: qtd ? +qtd : null, conv: conv ? +conv[1] : null, acomp: /ACOMPANHANTE/.test(f) };
+        const achadas = REDES_VIP.filter(([, re]) => re.test(f)).map(([nome]) => nome);
+        if (!achadas.length) {
+          if (!(info.ilimitado || info.qtd || info.conv)) return;
+          // só herda a rede da linha anterior quando a frase abre a linha
+          if (ultima && idx === 0) achadas.push(ultima);
+          else { if (!redes.size) geral = mesclarVip(geral, info); return; }
+        }
+        for (const r of achadas) { redes.set(r, mesclarVip(redes.get(r), info)); ultima = r; }
+      });
+    }
+    if (geral && !redes.size) redes.set('Salas VIP', geral);
+    const lista = [...redes].map(([rede, i]) => ({ rede, ...i }));
+    return { lista, avisos, tem: lista.length > 0 };
+  }
+  const vipResumo = r => (r.ilimitado ? 'ilimitado' : r.qtd ? `${r.qtd} ${r.qtd === 1 ? 'acesso' : 'acessos'} por ano` : 'incluído')
+    + (r.conv ? ` + ${r.conv} convidados` : r.acomp ? ' + acompanhante' : '');
+  function salasHtml(k) {
+    const v = k.vip;
+    if (!v.tem && !v.avisos.length) return '<div class="salas"><h4>Salas VIP</h4><p class="sem-vip">A planilha não informa acesso a salas VIP para este cartão.</p></div>';
+    return `<div class="salas">
+        <h4>Salas VIP</h4>
+        ${v.tem ? `<ul>${v.lista.map(x => `<li><b>${esc(x.rede)}</b><span>${esc(vipResumo(x))}</span></li>`).join('')}</ul>` : ''}
+        ${v.avisos.map(a => `<p class="aviso-vip">${esc(a)}</p>`).join('')}
+      </div>`;
   }
 
   function classificarRenda(bruto) {
@@ -493,6 +569,7 @@
           <div class="valor-grande num">${esc(brl.format(r.liquido))}<small>por ano</small></div>
           <p class="valor-extra">Equivale a <b>${esc(decimal.format(pct))}% de volta</b> em tudo que você passa no cartão, ou ${esc(brl.format(r.liquido / 12))} por mês.</p>
           ${contaHtml(r)}
+          ${salasHtml(k)}
           <div class="cta-row">
             <button type="button" class="cta cta-a" data-abrir="${k.id}">Ver benefícios</button>
             ${k.links[0] ? `<a class="cta cta-b" href="${esc(k.links[0])}" target="_blank" rel="noopener">Site oficial ↗</a>` : ''}
@@ -568,6 +645,7 @@
       const aviso = /^⚠/.test(l);
       const sub = /^[•·\-–]/.test(l);
       const t = l.replace(/^(✔️|✔|✅|⚠️|⚠|•|·|-|–|\*)\s*/u, '').replace(/^️/, '').trim();
+      if (aviso && k.vip.avisos.includes(t)) return ''; // já aparece no quadro de salas VIP
       return t ? `<li class="${aviso ? 'aviso' : sub ? 'sub' : ''}">${esc(t)}</li>` : '';
     }).join('');
 
@@ -591,6 +669,7 @@
     const nomeLink = url => { try { return new URL(url).hostname.replace(/^www\./, ''); } catch (e) { return 'site'; } };
 
     return `<div>
+        ${salasHtml(k)}
         <h4>Benefícios</h4>
         ${beneficios ? `<ul class="beneficios">${beneficios}</ul>` : '<p class="sec-note">Sem observações na planilha.</p>'}
       </div>
