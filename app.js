@@ -27,7 +27,7 @@
     return v;
   })();
 
-  const estado = { gasto: 5000, recompensa: 'todos', renda: null, esconderRestritos: false, semAnuidade: false, abertos: new Set() };
+  const estado = { gasto: 5000, recompensa: 'todos', renda: null, esconderRestritos: false, semAnuidade: false, isentos: new Set(), abertos: new Set() };
   let livro = null, modelo = null, resultados = [];
 
   /* ---------- preferências e endereço ---------- */
@@ -39,6 +39,7 @@
     if (ehNum(p.renda)) estado.renda = p.renda;
     estado.esconderRestritos = !!p.esconderRestritos;
     estado.semAnuidade = !!p.semAnuidade;
+    if (Array.isArray(p.isentos)) estado.isentos = new Set(p.isentos.filter(x => typeof x === 'string'));
   } catch (e) { /* sem armazenamento: segue com o padrão */ }
   const daUrl = +new URLSearchParams(location.search).get('gasto');
   if (daUrl > 0) estado.gasto = Math.min(daUrl, 1e7);
@@ -46,7 +47,7 @@
   function guardarPrefs() {
     try {
       const { gasto, recompensa, renda, esconderRestritos, semAnuidade } = estado;
-      localStorage.setItem(CHAVE_PREFS, JSON.stringify({ gasto, recompensa, renda, esconderRestritos, semAnuidade }));
+      localStorage.setItem(CHAVE_PREFS, JSON.stringify({ gasto, recompensa, renda, esconderRestritos, semAnuidade, isentos: [...estado.isentos] }));
     } catch (e) { /* ok */ }
     try {
       const u = new URL(location.href);
@@ -197,6 +198,9 @@
       k.nome += ' ' + k.tipo;
     }
 
+    // Chave que não muda se a planilha mudar a ordem das linhas.
+    for (const k of cartoes) k.chave = norm(k.nome + '|' + (k.acelerador || ''));
+
     // Área de parâmetros abaixo dos cartões: gasto mensal, dólar e milheiros.
     const numADireita = (linha, c0) => {
       for (let c = c0 + 1; c <= c0 + 8; c++) {
@@ -279,6 +283,11 @@
   function calculadora(gasto) {
     const trocas = { [modelo.aba.nome + '!' + modelo.refGasto]: gasto };
     if (dolarAoVivo && modelo.refDolar) trocas[modelo.aba.nome + '!' + modelo.refDolar] = dolarAoVivo.valor;
+    // Isenção vitalícia marcada pelo visitante: anuidade e mensalidade zeradas.
+    for (const k of modelo.cartoes) {
+      if (!estado.isentos.has(k.chave)) continue;
+      for (const c of ['anuidade', 'mensal']) if (modelo.col[c]) trocas[modelo.aba.nome + '!' + modelo.col[c] + k.linha] = 0;
+    }
     return new Planilha.Calculo(livro, trocas);
   }
   function ler(calc, cartao, chave) {
@@ -309,10 +318,12 @@
     resultados.sort((a, b) => b.liquido - a.liquido);
   }
 
+  const ehIsento = k => estado.isentos.has(k.chave);
   function visivel(r) {
     const k = r.cartao;
     const f = estado.recompensa, tipo = tipoRetorno(k);
     if (f !== 'todos' && !tipo.includes(f)) return 'filtro';
+    if (ehIsento(k)) return true; // o cartão já é do visitante
     if (estado.semAnuidade && ehNum(r.anuidade) && r.anuidade > 0) return 'filtro';
     if (estado.esconderRestritos && (k.requisito.tipo === 'convite' || k.requisito.tipo === 'investimento')) return 'restrito';
     if (estado.renda && k.requisito.tipo === 'renda' && k.requisito.valor > estado.renda) return 'renda';
@@ -452,7 +463,7 @@
       if (ehNum(r.valorMilhas)) linhas.push([`Valor em reais${mil && ehNum(mil.valor) ? ` (milheiro ${esc(mil.nome)} a ${brl2.format(mil.valor)})` : ''}`, brl.format(r.valorMilhas)]);
     }
     const anu = ehNum(r.anuidade) ? r.anuidade : 0;
-    linhas.push(['Anuidade no seu gasto', anu > 0 ? '− ' + brl.format(anu) : 'Grátis', anu > 0 ? 'menos' : '']);
+    linhas.push([ehIsento(r.cartao) ? 'Anuidade (sua isenção vitalícia)' : 'Anuidade no seu gasto', anu > 0 ? '− ' + brl.format(anu) : 'Grátis', anu > 0 ? 'menos' : '']);
     if (ehNum(r.tarifas) && r.tarifas > 0) linhas.push(['Tarifas extras', '− ' + brl.format(r.tarifas), 'menos']);
     linhas.push(['Sobra por ano', brl.format(r.liquido), 'total']);
     return `<ul class="conta">${linhas.map(([a, b, c]) => `<li class="${c || ''}"><span>${a}</span><span>${b}</span></li>`).join('')}</ul>`;
@@ -476,7 +487,7 @@
       venc.innerHTML = `<article class="vencedor">
         ${cartaoVisual(k)}
         <div>
-          <span class="vencedor-tag">★ Melhor para ${esc(moedaGasto())}/mês</span>
+          <span class="vencedor-tag">★ Melhor para ${esc(moedaGasto())}/mês${ehIsento(k) ? ' · é o seu' : ''}</span>
           <h2>${esc(k.nome)}</h2>
           <p class="sub">${esc([k.programa, k.bandeira].filter(x => x && x !== '-').join(' · '))}</p>
           <div class="valor-grande num">${esc(brl.format(r.liquido))}<small>por ano</small></div>
@@ -487,6 +498,7 @@
             ${k.links[0] ? `<a class="cta cta-b" href="${esc(k.links[0])}" target="_blank" rel="noopener">Site oficial ↗</a>` : ''}
           </div>
           ${vice ? `<p class="vice">Em 2º lugar: <b>${esc(vice.cartao.nome)}</b>, ${esc(brl.format(vice.liquido))}/ano (${esc(brl.format(r.liquido - vice.liquido))} a menos).</p>` : ''}
+          ${comparacaoHtml(r, lista)}
         </div>
       </article>`;
     }
@@ -497,7 +509,8 @@
       const k = r.cartao, aberto = estado.abertos.has(k.id);
       const anu = ehNum(r.anuidade) ? r.anuidade : null;
       const tags = [
-        anu === 0 ? '<span class="tag verde">Anuidade grátis</span>' : anu ? `<span class="tag cinza">Anuidade ${esc(brl.format(anu))}</span>` : '',
+        ehIsento(k) ? '<span class="tag verde">Sua isenção vitalícia</span>' : '',
+        ehIsento(k) ? '' : anu === 0 ? '<span class="tag verde">Anuidade grátis</span>' : anu ? `<span class="tag cinza">Anuidade ${esc(brl.format(anu))}</span>` : '',
         k.recompensa === 'cashback' ? '<span class="tag">Cashback</span>' : k.recompensa === 'ambos' ? `${destinoTag(r)}<span class="tag">ou cashback</span>` : destinoTag(r),
         k.acelerador && k.acelerador !== '-' ? `<span class="tag">${esc(k.acelerador.length < 20 ? k.acelerador : 'Promoção')}</span>` : '',
         requisitoTag(k)
@@ -532,6 +545,23 @@
     $('#carregando').hidden = true;
   }
 
+  // Os cartões com isenção vitalícia do visitante contra o melhor da lista.
+  function comparacaoHtml(melhor, lista) {
+    const meus = resultados.filter(x => ehIsento(x.cartao));
+    if (!meus.length) return '';
+    return `<div class="meus">
+      <h3>Seus cartões com isenção vitalícia</h3>
+      <ul>${meus.map(m => {
+        const pos = lista.indexOf(m) + 1;
+        const onde = pos ? `${pos}º lugar` : 'fora deste filtro';
+        const fim = m === melhor
+          ? '<em class="ok">É o melhor para você com esse gasto. Continue usando.</em>'
+          : `<em>O 1º colocado rende <b>${esc(brl.format(melhor.liquido - m.liquido))} a mais</b> por ano.</em>`;
+        return `<li><span><b>${esc(m.cartao.nome)}</b> · ${onde} · ${esc(brl.format(m.liquido))}/ano</span>${fim}</li>`;
+      }).join('')}</ul>
+    </div>`;
+  }
+
   function detalheHtml(r) {
     const k = r.cartao;
     const beneficios = k.obs.split(/\n+/).map(s => s.trim()).filter(Boolean).map(l => {
@@ -541,7 +571,7 @@
       return t ? `<li class="${aviso ? 'aviso' : sub ? 'sub' : ''}">${esc(t)}</li>` : '';
     }).join('');
 
-    const fAnu = faixas(k, 'anuidade').filter(f => ehNum(f.v));
+    const fAnu = ehIsento(k) ? [] : faixas(k, 'anuidade').filter(f => ehNum(f.v));
     const fPts = faixas(k, 'pontuacao');
     const regraAnu = fAnu.length > 1
       ? `<p><b>Anuidade muda com o gasto:</b> ${fAnu.map(f => `${f.desde === 0 ? 'abaixo de ' + brl.format(fAnu[1].desde) : 'a partir de ' + brl.format(f.desde)}/mês: ${f.v > 0 ? brl.format(f.v) + '/ano' : 'grátis'}`).join(' · ')}</p>` : '';
@@ -570,6 +600,7 @@
         ${regraAnu || regraPts ? `<div class="faixas">${regraAnu}${regraPts}</div>` : ''}
         <h4 style="margin-top:18px">Como chegamos no valor</h4>
         ${contaHtml(r)}
+        <label class="chave chave-detalhe"><input type="checkbox" data-isento="${esc(k.chave)}" ${ehIsento(k) ? 'checked' : ''}><span></span>Tenho isenção vitalícia de anuidade deste cartão</label>
         ${k.links.length ? `<div class="fontes">${k.links.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(nomeLink(u))}</a>`).join('')}</div>` : ''}
       </div>`;
   }
@@ -658,6 +689,46 @@
   $('#restritos').addEventListener('change', e => { estado.esconderRestritos = e.target.checked; mudou(); });
   $('#sem-anuidade').addEventListener('change', e => { estado.semAnuidade = e.target.checked; mudou(); });
 
+  /* ---------- cartões com isenção vitalícia ---------- */
+
+  function desenharIsencao() {
+    if (!modelo) return;
+    const marcados = modelo.cartoes.filter(ehIsento);
+    $('#isencao-resumo').textContent = marcados.length
+      ? `${marcados.length} ${marcados.length === 1 ? 'cartão marcado' : 'cartões marcados'} · anuidade conta como zero`
+      : 'Marque e veja se ainda vale usar ele';
+    $('#isencao-chips').innerHTML = marcados.map(k =>
+      `<button type="button" class="chip-isento" data-tirar="${esc(k.chave)}" aria-label="Tirar ${esc(k.nome)}">${esc(k.nome)} <span aria-hidden="true">×</span></button>`).join('');
+    if ($('#isencao-painel').hidden) return;
+    const busca = norm($('#isencao-busca').value);
+    const lista = [...modelo.cartoes]
+      .filter((k, i, a) => a.findIndex(o => o.chave === k.chave) === i)
+      .filter(k => !busca || norm(k.nome + ' ' + k.programa + ' ' + k.bandeira).includes(busca))
+      .sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+    $('#isencao-lista').innerHTML = lista.length ? lista.map(k => `<li><label>
+        <input type="checkbox" data-isento="${esc(k.chave)}" ${ehIsento(k) ? 'checked' : ''}>
+        ${cartaoVisual(k, 'mini')}
+        <span><b>${esc(k.nome)}</b><small>${esc([k.tipo, k.acelerador && k.acelerador !== '-' ? k.acelerador : ''].filter(Boolean).join(' · '))}</small></span>
+      </label></li>`).join('') : '<li class="nada">Nenhum cartão com esse nome.</li>';
+  }
+  function marcarIsento(chave, sim) {
+    if (sim) estado.isentos.add(chave); else estado.isentos.delete(chave);
+    desenharIsencao();
+    mudou();
+  }
+  $('#isencao-abrir').addEventListener('click', () => {
+    const painel = $('#isencao-painel');
+    painel.hidden = !painel.hidden;
+    $('#isencao-abrir').setAttribute('aria-expanded', String(!painel.hidden));
+    desenharIsencao();
+    if (!painel.hidden) $('#isencao-busca').focus();
+  });
+  $('#isencao-busca').addEventListener('input', desenharIsencao);
+  document.addEventListener('change', e => {
+    const c = e.target.closest('[data-isento]');
+    if (c) marcarIsento(c.dataset.isento, c.checked);
+  });
+
   function abrirCartao(id, rolar) {
     const li = document.getElementById(id);
     if (!li) return;
@@ -677,6 +748,8 @@
     if (linha) { abrirCartao(linha.closest('.item').id); return; }
     const ab = e.target.closest('[data-abrir]');
     if (ab) { abrirCartao(ab.dataset.abrir, true); return; }
+    const tirar = e.target.closest('[data-tirar]');
+    if (tirar) { marcarIsento(tirar.dataset.tirar, false); return; }
     if (e.target.closest('[data-mostrar-restritos]')) { estado.esconderRestritos = false; mudou(); return; }
     if (e.target.id === 'mais-novidades') {
       const btn = e.target;
@@ -701,7 +774,7 @@
       $('#carregando').innerHTML = 'Não foi possível ler a planilha de cartões agora. Tente de novo em alguns minutos.';
       return;
     }
-    desenhar(); desenharNovidades(); desenharParametros();
+    desenhar(); desenharNovidades(); desenharParametros(); desenharIsencao();
     setInterval(async () => {
       if (document.hidden) return;
       const [ok2] = await Promise.all([carregar(), buscarDolar()]);

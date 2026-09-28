@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=2">
+<link rel="stylesheet" href="estilo.css?v=3">
 </head>
 <body>
 <header class="bar">
@@ -72,6 +72,17 @@
             </label>
             <label class="chave"><input type="checkbox" id="restritos"><span></span>Esconder cartões só por convite ou com investimento alto</label>
             <label class="chave"><input type="checkbox" id="sem-anuidade"><span></span>Só cartões sem anuidade no meu gasto</label>
+          </div>
+          <div class="isencao">
+            <button type="button" class="isencao-botao" id="isencao-abrir" aria-expanded="false" aria-controls="isencao-painel">
+              <span><b>Tenho cartão com anuidade grátis para sempre</b><small id="isencao-resumo">Marque e veja se ainda vale usar ele</small></span>
+              <span class="seta" aria-hidden="true"></span>
+            </button>
+            <div class="isencao-chips" id="isencao-chips"></div>
+            <div class="isencao-painel" id="isencao-painel" hidden>
+              <input type="search" id="isencao-busca" placeholder="Buscar cartão, ex.: AAdvantage" autocomplete="off" aria-label="Buscar cartão">
+              <ul class="isencao-lista" id="isencao-lista"></ul>
+            </div>
           </div>
         </div>
       </div>
@@ -135,6 +146,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=3"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>
