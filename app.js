@@ -35,7 +35,7 @@
   try {
     const p = JSON.parse(localStorage.getItem(CHAVE_PREFS) || '{}');
     if (ehNum(p.gasto)) estado.gasto = p.gasto;
-    if (['todos', 'milhas', 'cashback'].includes(p.recompensa)) estado.recompensa = p.recompensa;
+    if (['todos', 'pontos', 'milhas', 'cashback'].includes(p.recompensa)) estado.recompensa = p.recompensa;
     if (ehNum(p.renda)) estado.renda = p.renda;
     estado.esconderRestritos = !!p.esconderRestritos;
     estado.semAnuidade = !!p.semAnuidade;
@@ -311,8 +311,8 @@
 
   function visivel(r) {
     const k = r.cartao;
-    if (estado.recompensa === 'milhas' && k.recompensa === 'cashback') return 'filtro';
-    if (estado.recompensa === 'cashback' && k.recompensa === 'milhas') return 'filtro';
+    const f = estado.recompensa, tipo = tipoRetorno(k);
+    if (f !== 'todos' && !tipo.includes(f)) return 'filtro';
     if (estado.semAnuidade && ehNum(r.anuidade) && r.anuidade > 0) return 'filtro';
     if (estado.esconderRestritos && (k.requisito.tipo === 'convite' || k.requisito.tipo === 'investimento')) return 'restrito';
     if (estado.renda && k.requisito.tipo === 'renda' && k.requisito.valor > estado.renda) return 'renda';
@@ -371,11 +371,19 @@
     try { return { nome: ok.nome, valor: calc.valor(modelo.aba, ok.ref) }; } catch (e) { return null; }
   }
 
+  // Tipo de retorno do cartão: pontos (Livelo, Esfera...), milhas (programa
+  // da companhia aérea) e/ou cashback, conforme a coluna "Pontua por".
+  function tipoRetorno(k) {
+    if (k.recompensa === 'cashback') return ['cashback'];
+    const base = ehAereo(k) ? 'milhas' : 'pontos';
+    return k.recompensa === 'ambos' ? [base, 'cashback'] : [base];
+  }
+
   function destinoTag(r) {
-    const prog = programaDe(r.cartao), d = r.transferencia;
-    if (ehAereo(r.cartao)) return prog ? `<span class="tag">${esc(prog)}</span>` : '';
-    if (!d) return prog ? `<span class="tag">${esc(prog)}</span>` : '';
-    return `<span class="tag">${prog && prog.length <= 18 ? esc(prog) + ' → ' : ''}${esc(d)}</span>`;
+    const k = r.cartao, prog = programaDe(k), d = r.transferencia;
+    if (ehAereo(k)) return `<span class="tag">Milhas${prog ? ' ' + esc(prog) : ''}</span>`;
+    const nome = prog && prog.length <= 18 ? ' ' + esc(prog) : '';
+    return `<span class="tag">Pontos${nome}${d ? ' → ' + esc(d) : ''}</span>`;
   }
 
   function requisitoTag(k) {
@@ -490,7 +498,7 @@
       const anu = ehNum(r.anuidade) ? r.anuidade : null;
       const tags = [
         anu === 0 ? '<span class="tag verde">Anuidade grátis</span>' : anu ? `<span class="tag cinza">Anuidade ${esc(brl.format(anu))}</span>` : '',
-        k.recompensa === 'cashback' ? '<span class="tag">Cashback</span>' : k.recompensa === 'ambos' ? '<span class="tag">Pontos ou cashback</span>' : destinoTag(r),
+        k.recompensa === 'cashback' ? '<span class="tag">Cashback</span>' : k.recompensa === 'ambos' ? `${destinoTag(r)}<span class="tag">ou cashback</span>` : destinoTag(r),
         k.acelerador && k.acelerador !== '-' ? `<span class="tag">${esc(k.acelerador.length < 20 ? k.acelerador : 'Promoção')}</span>` : '',
         requisitoTag(k)
       ].join('');
