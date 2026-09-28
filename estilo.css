@@ -14,7 +14,6 @@
 
   --display:"Cinzel",Georgia,serif;
   --body:"Manrope","Segoe UI",system-ui,sans-serif;
-  --script:"Great Vibes",cursive;
 
   --wrap:1040px;
   color-scheme:dark;
@@ -49,8 +48,7 @@ button{font:inherit;color:inherit}
 .bar-in{display:flex;align-items:center;gap:14px;padding-block:10px}
 .bar-mark{display:flex;align-items:center;gap:10px;flex:0 0 auto;text-decoration:none}
 .bar-mark img{width:34px;height:34px;border-radius:50%;box-shadow:0 0 0 1px rgba(226,180,88,.35)}
-.bar-mark b{font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro-lt);white-space:nowrap}
-.bar-mark i{font-family:var(--script);font-style:normal;text-transform:none;letter-spacing:0;font-size:20px;font-weight:400;color:var(--rice);margin-left:2px}
+.bar-mark b{font-family:var(--display);font-weight:700;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;background:linear-gradient(180deg,var(--ouro-lt),var(--ouro) 60%,var(--ouro-dk));-webkit-background-clip:text;background-clip:text;color:transparent}
 .tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-left:auto;padding-block:2px}
 .tabs::-webkit-scrollbar{display:none}
 .tabs a{
@@ -350,8 +348,7 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 /* ---------- rodapé ---------- */
 footer{margin-top:60px;padding:46px 0 40px;border-top:1px solid var(--line);text-align:center;background:linear-gradient(180deg,transparent,rgba(12,20,38,.7))}
 footer .badge{width:84px;height:84px;margin-bottom:14px}
-.foot-name{font-family:var(--display);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro-lt);margin:0;font-size:16px}
-.foot-name i{font-family:var(--script);font-style:normal;text-transform:none;letter-spacing:0;font-size:26px;color:var(--rice);font-weight:400}
+.foot-name{font-family:var(--display);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:0;font-size:16px;background:linear-gradient(180deg,var(--ouro-lt),var(--ouro) 60%,var(--ouro-dk));-webkit-background-clip:text;background-clip:text;color:transparent}
 .foot-status{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0;font-size:13px;color:var(--ash);background:var(--ink-2);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
 .ponto{width:8px;height:8px;border-radius:50%;background:var(--ash-dim);flex:0 0 auto}
 .foot-status.vivo .ponto{background:var(--verde);box-shadow:0 0 0 4px rgba(111,214,166,.16)}

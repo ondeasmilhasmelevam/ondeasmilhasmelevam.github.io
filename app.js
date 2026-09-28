@@ -336,13 +336,28 @@
   /* ---------- textos ---------- */
 
   const moedaGasto = () => brl.format(estado.gasto);
+
+  // Programa onde os pontos caem, como está na coluna "Programa fidelidade".
+  const programaDe = k => {
+    const p = String(k.programa || '').replace(/[®™]/g, '').replace(/\s+/g, ' ').trim();
+    return p === '-' || norm(p) === 'PONTOS' ? '' : p;
+  };
+  // Cartão de companhia aérea: já acumula milhas, sem transferência.
+  const ehAereo = k => {
+    const p = norm(programaDe(k));
+    return /LATAM|AADVANTAGE|AZUL|SMILES|TUDOAZUL|TAP MILES/.test(p) && !/LIVELO|ESFERA|ATOMOS|DOTZ/.test(p);
+  };
+  const unidadeDe = k => ehAereo(k) ? 'milhas' : 'pontos';
+  const unidadeDestino = destino => /IBERIA|BRITISH|QATAR|AVIOS/.test(norm(destino)) ? 'Avios' : 'milhas';
+
   const pontuacaoTxt = r => {
     const p = r.pontuacao, k = r.cartao;
     if (!ehNum(p)) return p ? String(p) : '—';
     if (k.pontuacaoPct || k.recompensa === 'cashback') return decimal.format(p * (p < 1 ? 100 : 1)) + '% de volta';
     const np = norm(k.pontuaPor);
     const moeda = np.includes('DOLAR') ? 'US$ 1' : np.includes('REAL') ? 'R$ 1' : '';
-    return `${decimal.format(p)} ${p === 1 ? 'ponto' : 'pontos'}${moeda ? ' por ' + moeda : ''}`;
+    const u = unidadeDe(k);
+    return `${decimal.format(p)} ${p === 1 ? u.slice(0, -1) : u}${moeda ? ' por ' + moeda : ''}`;
   };
   const milhasNoDestino = r => ehNum(r.bonus) ? r.bonus * 1000 : null;
   const ehCashback = r => !ehNum(r.valorMilhas) && ehNum(r.pontosAno) && r.cartao.recompensa !== 'milhas';
@@ -354,6 +369,13 @@
       || (/IBERIA|BRITISH|QATAR|AVIOS/.test(d) ? modelo.milheiros.find(m => m.nome === 'Avios') : null);
     if (!ok) return null;
     try { return { nome: ok.nome, valor: calc.valor(modelo.aba, ok.ref) }; } catch (e) { return null; }
+  }
+
+  function destinoTag(r) {
+    const prog = programaDe(r.cartao), d = r.transferencia;
+    if (ehAereo(r.cartao)) return prog ? `<span class="tag">${esc(prog)}</span>` : '';
+    if (!d) return prog ? `<span class="tag">${esc(prog)}</span>` : '';
+    return `<span class="tag">${prog && prog.length <= 18 ? esc(prog) + ' → ' : ''}${esc(d)}</span>`;
   }
 
   function requisitoTag(k) {
@@ -408,11 +430,18 @@
     if (ehCashback(r)) {
       linhas.push(['Cashback no ano', brl.format(r.pontosAno)]);
     } else {
-      if (ehNum(r.pontosAno)) linhas.push([`Pontos no ano (${pontuacaoTxt(r)})`, inteiro.format(r.pontosAno)]);
-      const md = milhasNoDestino(r);
-      if (md && r.transferencia) linhas.push([`Milhas ${esc(r.transferencia)}${ehNum(r.pontosAno) && md > r.pontosAno / 1000 * 1001 ? ' com bônus' : ''}`, inteiro.format(md)]);
-      const mil = milheiroDe(r.transferencia);
-      if (ehNum(r.valorMilhas)) linhas.push([`Valor das milhas${mil && ehNum(mil.valor) ? ` (milheiro a ${brl2.format(mil.valor)})` : ''}`, brl.format(r.valorMilhas)]);
+      const k = r.cartao, prog = programaDe(k), u = unidadeDe(k);
+      const U = u.charAt(0).toUpperCase() + u.slice(1);
+      if (ehNum(r.pontosAno)) linhas.push([`${U}${prog ? ' ' + esc(prog) : ''} no ano (${esc(pontuacaoTxt(r))})`, `${inteiro.format(r.pontosAno)} ${u}`]);
+      const md = milhasNoDestino(r), destino = r.transferencia;
+      if (md && destino && !ehAereo(k)) {
+        const taxa = ehNum(r.pontosAno) && r.pontosAno > 0 ? md / r.pontosAno : 1;
+        const bonus = taxa > 1.01 ? ` com ${inteiro.format((taxa - 1) * 100)}% de bônus`
+          : taxa < 0.99 ? ` (1 ${u.slice(0, -1)} vale ${decimal.format(taxa)} ${unidadeDestino(destino) === 'Avios' ? 'Avios' : 'milha'})` : '';
+        linhas.push([`Transferidos para ${esc(destino)}${bonus}`, `${inteiro.format(md)} ${unidadeDestino(destino)}`]);
+      }
+      const mil = milheiroDe(destino);
+      if (ehNum(r.valorMilhas)) linhas.push([`Valor em reais${mil && ehNum(mil.valor) ? ` (milheiro ${esc(mil.nome)} a ${brl2.format(mil.valor)})` : ''}`, brl.format(r.valorMilhas)]);
     }
     const anu = ehNum(r.anuidade) ? r.anuidade : 0;
     linhas.push(['Anuidade no seu gasto', anu > 0 ? '− ' + brl.format(anu) : 'Grátis', anu > 0 ? 'menos' : '']);
@@ -461,7 +490,7 @@
       const anu = ehNum(r.anuidade) ? r.anuidade : null;
       const tags = [
         anu === 0 ? '<span class="tag verde">Anuidade grátis</span>' : anu ? `<span class="tag cinza">Anuidade ${esc(brl.format(anu))}</span>` : '',
-        k.recompensa === 'cashback' ? '<span class="tag">Cashback</span>' : k.recompensa === 'ambos' ? '<span class="tag">Milhas ou cashback</span>' : r.transferencia ? `<span class="tag">${esc(r.transferencia)}</span>` : '',
+        k.recompensa === 'cashback' ? '<span class="tag">Cashback</span>' : k.recompensa === 'ambos' ? '<span class="tag">Pontos ou cashback</span>' : destinoTag(r),
         k.acelerador && k.acelerador !== '-' ? `<span class="tag">${esc(k.acelerador.length < 20 ? k.acelerador : 'Promoção')}</span>` : '',
         requisitoTag(k)
       ].join('');
