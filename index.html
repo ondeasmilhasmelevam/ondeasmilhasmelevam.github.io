@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Melhor cartão para o seu gasto · Onde as Milhas Me Levam</title>
+<meta name="description" content="Digite quanto você gasta no cartão por mês e veja na hora qual cartão rende mais em milhas ou cashback.">
+<meta name="theme-color" content="#070C17">
+<meta property="og:title" content="Qual cartão rende mais para o seu gasto?">
+<meta property="og:description" content="Comparador de cartões de crédito para milhas e cashback · Onde as Milhas Me Levam">
+<meta property="og:image" content="https://ondeasmilhasmelevam.github.io/img/icone-192.png">
+<meta property="og:url" content="https://ondeasmilhasmelevam.github.io/">
+<link rel="icon" href="img/icone-192.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Great+Vibes&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css?v=1">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="bar-mark" href="#topo" aria-label="Onde as Milhas Me Levam, início">
+      <img src="img/logo.webp" alt="" width="34" height="34">
+      <b>Onde as Milhas <i>me levam</i></b>
+    </a>
+    <nav class="tabs" aria-label="Seções">
+      <a href="#simulador">Simulador</a>
+      <a href="#ranking-sec">Ranking</a>
+      <a href="#novidades">Novidades</a>
+      <a href="#como">Como calculamos</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+  <div class="hero" id="simulador">
+    <div class="wrap">
+      <div class="badge"><img src="img/logo.webp" alt="Logotipo Onde as Milhas Me Levam: globo, avião e cartão VIP em dourado" width="112" height="112"></div>
+      <p class="kana">Comparador de cartões</p>
+      <h1>Qual cartão leva você <span>mais longe?</span></h1>
+      <div class="rule"></div>
+      <p class="lede">Diga quanto você gasta no cartão por mês. A gente calcula, na hora, quanto cada cartão devolve em milhas ou cashback, já tirando a anuidade.</p>
+
+      <div class="simula">
+        <label for="gasto" class="simula-rot">Meu gasto no cartão por mês</label>
+        <div class="campo-gasto">
+          <span>R$</span>
+          <input id="gasto" inputmode="numeric" autocomplete="off" enterkeyhint="done" value="5.000" aria-describedby="gasto-dica">
+        </div>
+        <input type="range" id="gasto-faixa" min="0" max="100" step="1" aria-label="Ajustar gasto mensal">
+        <div class="atalhos" id="atalhos" role="group" aria-label="Valores prontos">
+          <button type="button" data-v="2000">2 mil</button>
+          <button type="button" data-v="5000">5 mil</button>
+          <button type="button" data-v="10000">10 mil</button>
+          <button type="button" data-v="20000">20 mil</button>
+          <button type="button" data-v="50000">50 mil</button>
+        </div>
+        <p class="dica" id="gasto-dica">Some tudo o que passa no cartão: mercado, contas, viagens.</p>
+
+        <div class="filtros">
+          <div class="seg" role="radiogroup" aria-label="Tipo de retorno" id="recompensa">
+            <button type="button" role="radio" data-v="todos" aria-checked="true">Milhas e cashback</button>
+            <button type="button" role="radio" data-v="milhas" aria-checked="false">Só milhas</button>
+            <button type="button" role="radio" data-v="cashback" aria-checked="false">Só cashback</button>
+          </div>
+          <div class="linha-filtros">
+            <label class="campo-renda">
+              <span>Minha renda mensal <small>(opcional)</small></span>
+              <span class="campo-mini"><em>R$</em><input id="renda" inputmode="numeric" autocomplete="off" placeholder="não informar"></span>
+            </label>
+            <label class="chave"><input type="checkbox" id="restritos"><span></span>Esconder cartões só por convite ou com investimento alto</label>
+            <label class="chave"><input type="checkbox" id="sem-anuidade"><span></span>Só cartões sem anuidade no meu gasto</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section id="vencedor-sec" aria-live="polite">
+      <div class="carregando" id="carregando"><span class="giro"></span>Lendo a planilha de cartões…</div>
+      <div id="vencedor"></div>
+    </section>
+
+    <section id="ranking-sec">
+      <div class="sec-head">
+        <p class="eyebrow">Ranking</p>
+        <h2>Todos os cartões, do que mais rende ao que menos rende</h2>
+        <p class="sec-note" id="ranking-nota"></p>
+      </div>
+      <ol class="ranking" id="ranking"></ol>
+    </section>
+
+    <section id="novidades">
+      <div class="sec-head">
+        <p class="eyebrow">Novidades</p>
+        <h2>O que mudou nos cartões</h2>
+        <p class="sec-note">Mudanças de regra que já entraram na conta acima.</p>
+      </div>
+      <ul class="novidades" id="lista-novidades"></ul>
+      <button type="button" class="cta cta-b" id="mais-novidades" hidden></button>
+    </section>
+
+    <section id="como">
+      <div class="sec-head">
+        <p class="eyebrow">Transparência</p>
+        <h2>Como calculamos</h2>
+      </div>
+      <div class="como">
+        <ol class="passos">
+          <li><b>Pontos do ano.</b> Pegamos o seu gasto mensal, levamos para 12 meses e aplicamos a pontuação do cartão naquele nível de gasto (em dólar ou em real, conforme o cartão).</li>
+          <li><b>Milhas no destino.</b> Transferimos os pontos para o programa indicado, somando o bônus de transferência quando existe.</li>
+          <li><b>Valor em reais.</b> Multiplicamos as milhas pelo valor de mercado do milheiro. Cashback entra direto em reais.</li>
+          <li><b>Menos o custo.</b> Tiramos a anuidade que você pagaria com esse gasto (muitas zeram a partir de certo valor) e tarifas extras.</li>
+        </ol>
+        <div class="referencias">
+          <h3>Valores usados agora</h3>
+          <dl id="parametros"></dl>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="badge"><img src="img/logo.webp" alt="" width="112" height="112" loading="lazy"></div>
+    <p class="foot-name">Onde as Milhas <i>me levam</i></p>
+    <p class="foot-status" id="status"><span class="ponto"></span>Carregando dados…</p>
+    <p class="fine">Estimativa feita com as regras públicas de cada emissor. Benefícios, anuidades e pontuação mudam: confira no site oficial antes de pedir o cartão. Conteúdo educativo, não é recomendação financeira.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="planilha.js?v=1"></script>
+<script src="app.js?v=1"></script>
+</body>
+</html>

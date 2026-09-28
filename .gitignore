@@ -1,0 +1,8 @@
+# Arquivos de trabalho que não fazem parte do site
+V12 - *.xlsx
+logo.jpeg
+
+# Lixo do sistema / OneDrive
+Thumbs.db
+desktop.ini
+.DS_Store
