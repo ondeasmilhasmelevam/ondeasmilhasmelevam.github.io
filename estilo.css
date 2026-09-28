@@ -59,7 +59,7 @@ button{font:inherit;color:inherit}
 }
 .tabs a:hover{color:var(--rice)}
 .tabs a[aria-current="true"]{color:var(--ink);background:var(--ouro);border-color:var(--ouro)}
-@media (max-width:720px){ .bar-mark b{display:none} .tabs{margin-left:0} }
+@media (max-width:720px){ .bar-mark b{display:none} .tabs{margin-left:0;flex:1;min-width:0;-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent);mask-image:linear-gradient(90deg,#000 80%,transparent)} }
 
 /* ---------- abertura ---------- */
 .hero{position:relative;overflow:hidden;text-align:center;padding-block:52px 50px;border-bottom:1px solid var(--line)}
@@ -379,6 +379,23 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .referencias div:last-child{border-bottom:0}
 .referencias dt{color:var(--ash)}
 .referencias dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+
+/* ---------- Instagram ---------- */
+.bar-insta{flex:0 0 auto;display:grid;place-items:center;width:36px;height:36px;border-radius:10px;transition:transform .18s ease}
+.bar-insta:hover{transform:translateY(-2px)}
+.bar-insta .ig{width:28px;height:28px}
+.insta{
+  display:inline-flex;align-items:center;gap:14px;margin-top:20px;text-decoration:none;text-align:left;
+  padding:12px 22px 12px 12px;border-radius:999px;background:var(--ink-2);
+  border:1px solid transparent;
+  background:linear-gradient(var(--ink-2),var(--ink-2)) padding-box,linear-gradient(90deg,#fd5949,#d6249f,#285AEB) border-box;
+  box-shadow:0 10px 30px rgba(214,36,159,.18);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.insta:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(214,36,159,.3)}
+.insta .ig{width:44px;height:44px;flex:0 0 auto}
+.insta b{display:block;font-size:15.5px;color:var(--rice);line-height:1.2}
+.insta small{display:block;font-size:14px;color:var(--ouro-lt);font-weight:600;margin-top:2px}
 
 /* ---------- rodapé ---------- */
 footer{margin-top:60px;padding:46px 0 40px;border-top:1px solid var(--line);text-align:center;background:linear-gradient(180deg,transparent,rgba(12,20,38,.7))}
