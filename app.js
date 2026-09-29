@@ -851,15 +851,28 @@
   function desenharParametros() {
     const calc = calculadora(estado.gasto);
     const val = ref => { try { return calc.valor(modelo.aba, ref); } catch (e) { return null; } };
-    const linhas = [];
+    const linha = (a, b, sub) => `<div><dt>${esc(a)}${sub ? `<small>${esc(sub)}</small>` : ''}</dt><dd>${esc(b)}</dd></div>`;
+    const titulo = (t, nota) => `<div class="grupo"><dt>${esc(t)}${nota ? `<small>${esc(nota)}</small>` : ''}</dt></div>`;
+    let html = '';
     const dolar = modelo.refDolar && val(modelo.refDolar);
-    if (ehNum(dolar)) linhas.push([dolarAoVivo ? 'Dólar comercial (agora)' : 'Dólar', brl2.format(dolar)]);
-    for (const m of modelo.milheiros) {
-      const v = val(m.ref), b = m.bonusRef && val(m.bonusRef);
-      if (ehNum(v)) linhas.push([`Milheiro ${m.nome}`, brl2.format(v) + (ehNum(b) && b > 0 ? ` · bônus ${inteiro.format(b * 100)}%` : '')]);
+    if (ehNum(dolar)) html += linha(dolarAoVivo ? 'Dólar comercial (agora)' : 'Dólar', brl2.format(dolar));
+    html += linha('Cartões comparados', inteiro.format(modelo.cartoes.length));
+
+    const progs = modelo.milheiros.map(m => ({ nome: m.nome, v: val(m.ref), b: m.bonusRef ? val(m.bonusRef) : null })).filter(p => ehNum(p.v));
+    html += titulo('Quanto vale o milheiro', 'Valor de 1.000 milhas usado para passar as milhas para reais.');
+    for (const p of progs) html += linha(p.nome, brl2.format(p.v));
+
+    html += titulo('Bônus de transferência na conta', 'Quando o cartão dá pontos (Livelo, Esfera…), a conta considera a transferência com este bônus.');
+    for (const p of progs) {
+      const bonus = ehNum(p.b) && p.b > 0 ? p.b : 0;
+      const avios = /AVIOS/.test(norm(p.nome));
+      const recebe = Math.round(10000 * (avios ? 0.5 : 1) * (1 + bonus));
+      const exemplo = avios
+        ? `Santander: 2 pontos = 1 Avios · 10 mil pontos = ${inteiro.format(recebe)} Avios`
+        : `10 mil pontos = ${inteiro.format(recebe)} milhas`;
+      html += linha(p.nome, bonus ? `${inteiro.format(bonus * 100)}%` : 'sem bônus', exemplo);
     }
-    linhas.push(['Cartões comparados', inteiro.format(modelo.cartoes.length)]);
-    $('#parametros').innerHTML = linhas.map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('');
+    $('#parametros').innerHTML = html;
   }
 
   /* ---------- controles ---------- */
