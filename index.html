@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=5">
+<link rel="stylesheet" href="estilo.css?v=6">
 </head>
 <body>
 <header class="bar">
@@ -27,6 +27,7 @@
     <nav class="tabs" aria-label="Seções">
       <a href="#simulador">Simulador</a>
       <a href="#ranking-sec">Ranking</a>
+      <a href="#restaurantes">Restaurantes VIP</a>
       <a href="#novidades">Novidades</a>
       <a href="#como">Como calculamos</a>
     </nav>
@@ -105,6 +106,26 @@
       <ol class="ranking" id="ranking"></ol>
     </section>
 
+    <section id="restaurantes">
+      <div class="sec-head">
+        <p class="eyebrow">Guia exclusivo</p>
+        <h2>Restaurantes VIP nos aeroportos do Brasil</h2>
+        <p class="sec-note">Acesse e consuma usando o benefício do seu cartão: um crédito fixo por acesso ou um menu fixo com opções.</p>
+      </div>
+      <div class="rest-valores" id="rest-valores"></div>
+      <div class="rest-dicas" id="rest-dicas"></div>
+      <div class="rest-busca">
+        <input type="search" id="rest-busca" placeholder="Buscar cidade, aeroporto ou restaurante" autocomplete="off" aria-label="Buscar restaurante VIP">
+        <div class="seg" role="radiogroup" aria-label="Programa" id="rest-rede">
+          <button type="button" role="radio" data-v="todos" aria-checked="true">Todos</button>
+          <button type="button" role="radio" data-v="dp" aria-checked="false">Dragon Pass</button>
+          <button type="button" role="radio" data-v="lkpp" aria-checked="false">LoungeKey / Priority Pass</button>
+        </div>
+      </div>
+      <div class="rest-grade" id="rest-grade"></div>
+      <p class="fine rest-fine">Parceiros e regras mudam com frequência. Confirme no app do seu programa antes de ir.</p>
+    </section>
+
     <section id="novidades">
       <div class="sec-head">
         <p class="eyebrow">Novidades</p>
@@ -150,7 +171,8 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="restaurantes.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=5"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>

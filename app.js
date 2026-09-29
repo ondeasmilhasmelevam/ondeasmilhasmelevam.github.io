@@ -309,6 +309,7 @@
         <h4>Salas VIP</h4>
         ${v.tem ? `<ul>${v.lista.map(x => `<li><b>${esc(x.rede)}</b><span>${esc(vipResumo(x))}</span></li>`).join('')}</ul>` : ''}
         ${v.avisos.map(a => `<p class="aviso-vip">${esc(a)}</p>`).join('')}
+        ${v.lista.some(x => /Dragon|LoungeKey|Priority/.test(x.rede)) ? '<a class="link-rest" href="#restaurantes">Seu cartão também vale em restaurantes VIP nos aeroportos · ver lista</a>' : ''}
       </div>`;
   }
 
@@ -703,6 +704,45 @@
     btn.textContent = todas ? 'Mostrar menos' : `Ver todas as ${lista.length} mudanças`;
   }
 
+  /* ---------- restaurantes VIP ---------- */
+
+  const REDE_ROTULO = { dp: 'DP', lkpp: 'LK/PP' };
+  const REDE_NOME = { dp: 'Dragon Pass', lkpp: 'LoungeKey / Priority Pass' };
+  const selo = r => `<span class="selo ${r}" title="${REDE_NOME[r]}">${REDE_ROTULO[r]}</span>`;
+  const ICONES = {
+    sino: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0-6 6v3.5L4.5 16h15L18 12.5V9a6 6 0 0 0-6-6zm-2 15a2 2 0 0 0 4 0" fill="currentColor"/></svg>',
+    relogio: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="currentColor"/><path d="M12 7v5l3.5 2" stroke="#0C1426" stroke-width="2" fill="none" stroke-linecap="round"/></svg>'
+  };
+  let redeRest = 'todos';
+
+  function desenharRestaurantes() {
+    const R = window.RESTAURANTES_VIP;
+    if (!R) { $('#restaurantes').hidden = true; return; }
+    $('#rest-valores').innerHTML = R.valores.map(v => `<div class="rest-valor ${v.rede}">
+        <p>${REDE_ROTULO[v.rede]} · ${esc(v.titulo)}</p><b>${esc(v.valor)}</b><span>${esc(v.texto)}</span></div>`).join('');
+    $('#rest-dicas').innerHTML = R.dicas.map(d => `<div class="rest-dica">${ICONES[d.icone] || ''}<div><b>${esc(d.titulo)}</b><p>${esc(d.texto)}</p></div></div>`).join('');
+    const busca = norm($('#rest-busca').value);
+    const serve = item => redeRest === 'todos' || item.slice(1).includes(redeRest);
+    const linha = item => `<li><span>${esc(item[0])}</span><span class="selos">${item.slice(1).map(selo).join('')}</span></li>`;
+    const cards = R.aeroportos.map(a => {
+      const doLugar = norm(a.cidade + ' ' + (a.sub || ''));
+      const bate = item => !busca || doLugar.includes(busca) || norm(item[0]).includes(busca);
+      const grupos = (a.terminais || [{ nome: '', lista: a.lista }])
+        .map(t => ({ nome: t.nome, lista: t.lista.filter(i => serve(i) && bate(i)) }))
+        .filter(t => t.lista.length);
+      if (!grupos.length) return '';
+      return `<article class="aero">
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>${esc(a.cidade)}</h3>
+          ${a.sub ? `<p class="aero-sub">${esc(a.sub)}</p>` : ''}
+          ${grupos.map(g => `${g.nome ? `<p class="terminal">${esc(g.nome)}</p>` : ''}<ul>${g.lista.map(linha).join('')}</ul>`).join('')}
+        </article>`;
+    }).filter(Boolean);
+    $('#rest-grade').innerHTML = cards.length ? cards.join('') : '<p class="vazio">Nenhum restaurante encontrado com essa busca.</p>';
+    document.querySelectorAll('#rest-rede button').forEach(b => b.setAttribute('aria-checked', String(b.dataset.v === redeRest)));
+  }
+  $('#rest-busca').addEventListener('input', desenharRestaurantes);
+  $('#rest-rede').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { redeRest = b.dataset.v; desenharRestaurantes(); } });
+
   function desenharParametros() {
     const calc = calculadora(estado.gasto);
     const val = ref => { try { return calc.valor(modelo.aba, ref); } catch (e) { return null; } };
@@ -842,12 +882,13 @@
   const obs = new IntersectionObserver(ents => {
     for (const en of ents) if (en.isIntersecting) abas.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + en.target.id)));
   }, { rootMargin: '-40% 0px -55% 0px' });
-  ['simulador', 'ranking-sec', 'novidades', 'como'].forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
+  ['simulador', 'ranking-sec', 'restaurantes', 'novidades', 'como'].forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
 
   /* ---------- início ---------- */
 
   async function iniciar() {
     sincronizarControles();
+    desenharRestaurantes();
     const [ok] = await Promise.all([carregar(), buscarDolar()]);
     if (!ok) {
       $('#carregando').innerHTML = 'Não foi possível ler a planilha de cartões agora. Tente de novo em alguns minutos.';

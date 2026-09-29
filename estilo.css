@@ -368,6 +368,41 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .sem-vip{margin:0;color:var(--ash);font-size:14px}
 .detalhe .salas{margin-top:0}
 
+/* ---------- restaurantes VIP ---------- */
+#restaurantes{--dp:#3CC9B4;--lk:#E2B458}
+.rest-valores{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.rest-valor{text-align:center;padding:20px 18px;border-radius:18px;background:linear-gradient(180deg,var(--ink-3),var(--ink-2));border:1px solid rgba(226,180,88,.25)}
+.rest-valor p{margin:0;font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.rest-valor.lkpp p{color:var(--lk)}
+.rest-valor.dp p{color:var(--dp)}
+.rest-valor b{display:block;font-family:var(--display);font-weight:700;font-size:clamp(28px,5vw,38px);color:var(--ouro-lt);margin:6px 0 4px}
+.rest-valor span{display:block;color:var(--ash);font-size:13.5px}
+.rest-dicas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
+.rest-dica{display:flex;gap:12px;padding:16px 18px;border-radius:18px;background:linear-gradient(180deg,rgba(226,180,88,.08),rgba(226,180,88,.02));border:1px solid rgba(226,180,88,.25)}
+.rest-dica svg{flex:0 0 auto;width:26px;height:26px;color:var(--ouro)}
+.rest-dica b{display:block;color:var(--ouro-lt);font-size:15px}
+.rest-dica p{margin:4px 0 0;color:var(--ash);font-size:13.5px;line-height:1.5}
+.rest-busca{display:grid;gap:12px;margin:26px 0 18px}
+.rest-busca input{width:100%;background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--rice);font:inherit;font-size:15px}
+.rest-busca input:focus{outline:none;border-color:var(--ouro)}
+.rest-busca .seg{justify-content:flex-start}
+.rest-grade{columns:3 260px;column-gap:14px}
+.aero{break-inside:avoid;margin:0 0 14px;padding:14px 16px 10px;border-radius:16px;background:var(--ink-2);border:1px solid var(--line);border-top:2px solid var(--ouro)}
+.aero h3{display:flex;align-items:center;gap:8px;margin:0;font-size:15.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ouro-lt)}
+.aero h3 svg{width:16px;height:16px;color:var(--ouro);flex:0 0 auto}
+.aero-sub{margin:1px 0 0 24px;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ash-dim)}
+.terminal{margin:10px 0 0;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dp)}
+.aero ul{list-style:none;margin:6px 0 0;padding:0}
+.aero li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-top:1px dashed var(--line);font-size:14.5px}
+.aero li:first-child{border-top:0}
+.selos{display:flex;gap:5px;flex:0 0 auto}
+.selo{font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:2px 7px;border-radius:6px;color:var(--ink)}
+.selo.dp{background:var(--dp)}
+.selo.lkpp{background:var(--lk)}
+.rest-fine{text-align:center;margin-top:6px}
+.link-rest{display:inline-block;margin-top:12px;font-size:13.5px;font-weight:700;color:#9CC8FF;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:560px){.rest-valores,.rest-dicas{grid-template-columns:1fr}}
+
 /* ---------- novidades ---------- */
 .novidades{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 @media (max-width:760px){.novidades{grid-template-columns:1fr}}
