@@ -11,6 +11,14 @@ window.MILHEIROS = {
   'Avios': 56
 };
 
+/* Bônus de transferência mostrado no quadro "Valores usados agora" quando
+   a planilha não tem (ou para trocar o dela). null = não mostrar o programa. */
+window.BONUS_CONTA = {
+  'Azul Fidelidade': 1.0,   // 100%, o mínimo aceitável
+  'TAP': null,
+  'AA': null
+};
+
 /* Bônus mínimo para valer a pena transferir pontos do cartão para a
    companhia. "so" limita a dica a cartões desses programas de pontos. */
 window.BONUS_MINIMO = {

@@ -863,8 +863,12 @@
     for (const p of progs) html += linha(p.nome, brl2.format(p.v));
 
     html += titulo('Bônus de transferência na conta', 'Quando o cartão dá pontos (Livelo, Esfera…), a conta considera a transferência com este bônus.');
+    const BC = window.BONUS_CONTA || {};
     for (const p of progs) {
-      const bonus = ehNum(p.b) && p.b > 0 ? p.b : 0;
+      const chave = Object.keys(BC).find(k => norm(k) === norm(p.nome));
+      if (chave && BC[chave] === null) continue; // programa que não precisa aparecer
+      const b = chave ? BC[chave] : p.b;
+      const bonus = ehNum(b) && b > 0 ? b : 0;
       const avios = /AVIOS/.test(norm(p.nome));
       const recebe = Math.round(10000 * (avios ? 0.5 : 1) * (1 + bonus));
       const exemplo = avios
@@ -997,8 +1001,24 @@
 
   // Aba ativa na barra conforme a rolagem
   const abas = [...document.querySelectorAll('.tabs a')];
+  let abaAtual = '';
+  function marcarAba(id) {
+    if (id === abaAtual) return;
+    abaAtual = id;
+    abas.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + id)));
+    // Leva a aba ativa para a parte visível da barra (só na horizontal).
+    const ativa = abas.find(a => a.getAttribute('href') === '#' + id);
+    const barra = ativa && ativa.parentElement;
+    if (barra && barra.scrollWidth > barra.clientWidth) {
+      barra.scrollLeft = ativa.offsetLeft - barra.offsetLeft - (barra.clientWidth - ativa.offsetWidth) / 2;
+    }
+  }
+  // A última seção nunca chega ao meio da tela: no fim da página, marca ela.
+  addEventListener('scroll', () => {
+    if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) marcarAba('como');
+  }, { passive: true });
   const obs = new IntersectionObserver(ents => {
-    for (const en of ents) if (en.isIntersecting) abas.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + en.target.id)));
+    for (const en of ents) if (en.isIntersecting) marcarAba(en.target.id);
   }, { rootMargin: '-40% 0px -55% 0px' });
   ['simulador', 'ranking-sec', 'restaurantes', 'comprar', 'novidades', 'como'].forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
 

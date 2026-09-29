@@ -6,7 +6,7 @@ window.EXTRAS = {
     fonte: 'site oficial do C6',
     link: 'https://www.c6bank.com.br/cartao-c6-carbon-mastercard-black/',
     beneficios: [
-      'Até 3,5 pontos por US$ gasto',
+      'Até 3,5 pontos por US$ para quem tem mais de R$ 1 milhão investido no C6 (demais clientes: 2,5)',
       'Acesso a salas VIP no mundo todo',
       'Até 12 meses de anuidade zero',
       'Pontos que não expiram',
