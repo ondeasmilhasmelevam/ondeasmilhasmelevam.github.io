@@ -197,6 +197,14 @@
       if (!k.produto) k.produto = k.tipo;
       k.nome += ' ' + k.tipo;
     }
+    // Se ainda repetir (ex.: três "C6 Bank C6 normal"), o plano da coluna
+    // Acelerador diferencia: "(C6 + Bônus)", "(sem assinatura)"...
+    const aindaRepetidos = cartoes.filter(k => cartoes.filter(o => o.nome === k.nome).length > 1);
+    for (const k of aindaRepetidos) {
+      const a = (k.acelerador || '').trim();
+      if (!a || a === '-') continue;
+      k.nome += /^SEM$/i.test(a) ? ' (sem assinatura)' : /^[\d.,]+$/.test(a) ? ' (com acelerador)' : ` (${a})`;
+    }
 
     // Chave que não muda se a planilha mudar a ordem das linhas.
     for (const k of cartoes) { k.chave = norm(k.nome + '|' + (k.acelerador || '')); k.vip = lerSalasVip(k.obs); }
@@ -722,7 +730,7 @@
       return t ? `<li class="${aviso ? 'aviso' : sub ? 'sub' : ''}">${esc(t)}</li>` : '';
     }).join('');
     // Informações do site oficial que a planilha não tem (extras.js)
-    const extra = (window.EXTRAS || {})[norm(k.nome)];
+    const extra = (window.EXTRAS || {})[norm(k.nome.replace(/\s*\([^)]*\)$/, ''))];
     const extrasHtml = extra && extra.beneficios && extra.beneficios.length
       ? extra.beneficios.map(b => `<li class="extra">${esc(b)} <a href="${esc(extra.link || '#')}" target="_blank" rel="noopener">${esc(extra.fonte || 'site oficial')}</a></li>`).join('') : '';
     const todosBeneficios = beneficios + extrasHtml;
