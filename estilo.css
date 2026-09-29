@@ -409,12 +409,12 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .vice.acima{margin-top:6px;color:var(--ash-dim)}
 
 /* ---------- preço para comprar milhas ---------- */
-.precos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:18px 12px}
-.precos li{display:grid;justify-items:center;gap:8px;text-align:center}
-.preco-logo{position:relative;display:grid;place-items:center;width:100%;max-width:120px;aspect-ratio:1;border-radius:22px;padding:10px;font-weight:800;font-size:15px;line-height:1.15;letter-spacing:.01em;box-shadow:0 10px 24px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08) inset;overflow:hidden}
+.precos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,112px);justify-content:start;gap:18px 12px}
+.precos li{display:grid;justify-items:center;align-content:start;gap:8px;text-align:center;min-width:0}
+.preco-logo{position:relative;display:grid;place-items:center;width:104px;height:104px;border-radius:22px;padding:8px 6px;font-weight:800;font-size:14px;line-height:1.15;letter-spacing:0;overflow-wrap:anywhere;box-shadow:0 10px 24px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08) inset;overflow:hidden}
 .preco-logo i{position:absolute;left:30%;right:30%;bottom:16%;height:4px;border-radius:2px}
-.precos b{font-weight:800;font-size:15px;color:var(--ouro-lt);font-variant-numeric:tabular-nums;white-space:nowrap}
-@media (max-width:560px){.preco-logo{border-radius:18px;font-size:13px}.precos b{font-size:13.5px}}
+.precos b{font-weight:800;font-size:14px;line-height:1.3;color:var(--ouro-lt);font-variant-numeric:tabular-nums}
+@media (max-width:560px){.precos{grid-template-columns:repeat(3,minmax(0,1fr));justify-content:stretch}.preco-logo{width:100%;height:auto;aspect-ratio:1;border-radius:18px;font-size:13px}.precos b{font-size:13px}}
 
 /* ---------- novidades ---------- */
 .novidades{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}

@@ -12,7 +12,7 @@ window.PRECO_MILHAS = [
   { nome: 'Miles & More', preco: 'R$ 65 a 76', fundo: '#0B1F5C', tinta: '#FFFFFF' },
   { nome: 'Livelo', preco: 'R$ 31 ou menos', fundo: '#E6199A', tinta: '#FFFFFF' },
   { nome: 'Esfera', preco: 'R$ 35 ou menos', fundo: '#111111', tinta: '#FFFFFF', detalhe: '#EC0000' },
-  { nome: 'ConnectMiles', preco: 'R$ 55 a 65', fundo: '#B07A4E', tinta: '#FFFFFF' },
+  { nome: 'Connect Miles', preco: 'R$ 55 a 65', fundo: '#B07A4E', tinta: '#FFFFFF' },
   { nome: 'AAdvantage', preco: 'R$ 80 a 90', fundo: '#FFFFFF', tinta: '#0078D2', detalhe: '#C30019' },
   { nome: 'Aegean', preco: 'R$ 68', fundo: '#FFFFFF', tinta: '#1B2A6B' }
 ];
