@@ -403,6 +403,19 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .link-rest{display:inline-block;margin-top:12px;font-size:13.5px;font-weight:700;color:#9CC8FF;text-decoration:underline;text-underline-offset:3px}
 @media (max-width:560px){.rest-valores,.rest-dicas{grid-template-columns:1fr}}
 
+/* ---------- requisito no destaque ---------- */
+.requisito{margin:-6px 0 16px;padding:9px 12px;border-radius:10px;background:rgba(226,180,88,.08);border:1px solid rgba(226,180,88,.22);color:var(--ash);font-size:13.5px;line-height:1.5}
+.requisito b{color:var(--ouro-lt)}
+.vice.acima{margin-top:6px;color:var(--ash-dim)}
+
+/* ---------- preço para comprar milhas ---------- */
+.precos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:18px 12px}
+.precos li{display:grid;justify-items:center;gap:8px;text-align:center}
+.preco-logo{position:relative;display:grid;place-items:center;width:100%;max-width:120px;aspect-ratio:1;border-radius:22px;padding:10px;font-weight:800;font-size:15px;line-height:1.15;letter-spacing:.01em;box-shadow:0 10px 24px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08) inset;overflow:hidden}
+.preco-logo i{position:absolute;left:30%;right:30%;bottom:16%;height:4px;border-radius:2px}
+.precos b{font-weight:800;font-size:15px;color:var(--ouro-lt);font-variant-numeric:tabular-nums;white-space:nowrap}
+@media (max-width:560px){.preco-logo{border-radius:18px;font-size:13px}.precos b{font-size:13.5px}}
+
 /* ---------- novidades ---------- */
 .novidades{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 @media (max-width:760px){.novidades{grid-template-columns:1fr}}

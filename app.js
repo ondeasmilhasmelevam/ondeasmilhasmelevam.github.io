@@ -474,6 +474,29 @@
     return `<span class="tag">Pontos${nome}${d ? ' → ' + esc(d) : ''}</span>`;
   }
 
+  const podePedir = r => {
+    const k = r.cartao, q = k.requisito;
+    if (ehIsento(k)) return true;
+    if (q.tipo === 'convite' || q.tipo === 'investimento') return false;
+    if (estado.renda && q.tipo === 'renda' && q.valor > estado.renda) return false;
+    return true;
+  };
+  function requisitoTexto(k) {
+    const q = k.requisito;
+    if (q.tipo === 'convite') return 'só por convite do banco';
+    if (q.tipo === 'investimento') return `exige ${k.renda.toLowerCase()}`;
+    if (q.tipo === 'renda') return `renda mínima de ${brl.format(q.valor)}${/OU|CLIENTE|LIMITE/.test(norm(k.renda)) ? ` (${k.renda})` : ''}`;
+    if (q.tipo === 'livre') return 'sem renda mínima exigida';
+    return 'a planilha não informa a renda mínima';
+  }
+  function porQueNao(k) {
+    const q = k.requisito;
+    if (q.tipo === 'convite') return 'ele é só por convite';
+    if (q.tipo === 'investimento') return `ele exige ${k.renda.toLowerCase()}`;
+    if (q.tipo === 'renda') return `ele pede renda mínima de ${brl.format(q.valor)}`;
+    return 'ele tem exigências maiores';
+  }
+
   function requisitoTag(k) {
     const q = k.requisito;
     if (q.tipo === 'convite') return '<span class="tag alerta">Só por convite</span>';
@@ -559,7 +582,11 @@
     if (!lista.length) {
       venc.innerHTML = '<p class="vazio">Nenhum cartão atende a esses filtros. Tente liberar algum deles acima.</p>';
     } else {
-      const r = lista[0], k = r.cartao, vice = lista[1];
+      // O destaque é o melhor cartão que a pessoa pode pedir: fora os só por
+      // convite, os de investimento alto e os de renda acima da informada.
+      const r = lista.find(podePedir) || lista[0], k = r.cartao;
+      const vice = lista.find(x => x !== r && podePedir(x));
+      const acima = lista[0] !== r ? lista[0] : null;
       const pct = r.liquido / (estado.gasto * 12) * 100;
       venc.innerHTML = `<article class="vencedor">
         ${cartaoVisual(k)}
@@ -567,6 +594,7 @@
           <span class="vencedor-tag">★ Melhor para ${esc(moedaGasto())}/mês${ehIsento(k) ? ' · é o seu' : ''}</span>
           <h2>${esc(k.nome)}</h2>
           <p class="sub">${esc([k.programa, k.bandeira].filter(x => x && x !== '-').join(' · '))}</p>
+          <p class="requisito">${ehIsento(k) ? 'Você já tem este cartão.' : `<b>Para pedir:</b> ${esc(requisitoTexto(k))}. A aprovação depende da análise de crédito do banco.`}</p>
           <div class="valor-grande num">${esc(brl.format(r.liquido))}<small>por ano</small></div>
           <p class="valor-extra">Equivale a <b>${esc(decimal.format(pct))}% de volta</b> em tudo que você passa no cartão, ou ${esc(brl.format(r.liquido / 12))} por mês.</p>
           ${contaHtml(r)}
@@ -575,7 +603,8 @@
             <button type="button" class="cta cta-a" data-abrir="${k.id}">Ver benefícios</button>
             ${k.links[0] ? `<a class="cta cta-b" href="${esc(k.links[0])}" target="_blank" rel="noopener">Site oficial ↗</a>` : ''}
           </div>
-          ${vice ? `<p class="vice">Em 2º lugar: <b>${esc(vice.cartao.nome)}</b>, ${esc(brl.format(vice.liquido))}/ano (${esc(brl.format(r.liquido - vice.liquido))} a menos).</p>` : ''}
+          ${vice ? `<p class="vice">Em seguida: <b>${esc(vice.cartao.nome)}</b>, ${esc(brl.format(vice.liquido))}/ano (${esc(brl.format(r.liquido - vice.liquido))} a menos).</p>` : ''}
+          ${acima ? `<p class="vice acima">Rende mais o <b>${esc(acima.cartao.nome)}</b> (${esc(brl.format(acima.liquido))}/ano), mas ${esc(porQueNao(acima.cartao))}.</p>` : ''}
           ${comparacaoHtml(r, lista)}
         </div>
       </article>`;
@@ -743,6 +772,15 @@
   $('#rest-busca').addEventListener('input', desenharRestaurantes);
   $('#rest-rede').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { redeRest = b.dataset.v; desenharRestaurantes(); } });
 
+  function desenharPrecos() {
+    const P = window.PRECO_MILHAS;
+    if (!P || !P.length) { $('#comprar').hidden = true; return; }
+    $('#precos').innerHTML = P.map(p => `<li>
+        <span class="preco-logo" style="background:${esc(p.fundo)};color:${esc(p.tinta)}">${esc(p.nome)}${p.detalhe ? `<i style="background:${esc(p.detalhe)}"></i>` : ''}</span>
+        <b>${esc(p.preco)}</b>
+      </li>`).join('');
+  }
+
   function desenharParametros() {
     const calc = calculadora(estado.gasto);
     const val = ref => { try { return calc.valor(modelo.aba, ref); } catch (e) { return null; } };
@@ -889,6 +927,7 @@
   async function iniciar() {
     sincronizarControles();
     desenharRestaurantes();
+    desenharPrecos();
     const [ok] = await Promise.all([carregar(), buscarDolar()]);
     if (!ok) {
       $('#carregando').innerHTML = 'Não foi possível ler a planilha de cartões agora. Tente de novo em alguns minutos.';
