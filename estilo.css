@@ -356,6 +356,21 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .ocultos{margin:18px 0 0;color:var(--ash);font-size:14px;text-align:center}
 .ocultos button{background:none;border:0;color:var(--ouro);font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:0}
 
+/* ---------- quando transferir ---------- */
+.transferir{margin:18px 0 0;padding:14px 16px;border-radius:14px;background:var(--ink-2);border:1px solid rgba(226,180,88,.28)}
+.transferir h4{margin:0 0 4px;font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro)}
+.transferir-nota{margin:0 0 8px;color:var(--ash);font-size:13px;line-height:1.5}
+.transferir ul{list-style:none;margin:0;padding:0}
+.transferir li{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
+.transferir li:last-child{border-bottom:0}
+.transferir li b{display:block}
+.transferir li em{display:inline-block;margin-top:2px;font-style:normal;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--verde)}
+.transferir li small{display:block;color:var(--ash);font-size:12.5px;margin-top:2px}
+.transferir li strong{flex:0 0 auto;font-size:18px;font-weight:800;color:var(--ouro-lt);font-variant-numeric:tabular-nums}
+.transferir li.seu strong{color:var(--verde)}
+.transferir-dica{margin:10px 0 0;padding-left:22px;position:relative;color:var(--rice);font-size:13.5px;line-height:1.5}
+.transferir-dica::before{content:"✓";position:absolute;left:0;top:0;width:16px;height:16px;border-radius:50%;background:rgba(111,214,166,.18);color:var(--verde);font-size:11px;font-weight:800;text-align:center;line-height:16px}
+
 /* ---------- salas VIP ---------- */
 .salas{margin:18px 0 22px;padding:14px 16px;border-radius:14px;background:var(--ink-2);border:1px solid rgba(156,200,255,.25)}
 .salas h4{margin:0 0 8px;font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#9CC8FF}

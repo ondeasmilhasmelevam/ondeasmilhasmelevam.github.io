@@ -10,3 +10,15 @@ window.MILHEIROS = {
   'AA': 90,
   'Avios': 56
 };
+
+/* Bônus mínimo para valer a pena transferir pontos do cartão para a
+   companhia. "so" limita a dica a cartões desses programas de pontos. */
+window.BONUS_MINIMO = {
+  programas: [
+    { nome: 'TudoAzul', minimo: '100%', destino: /AZUL/ },
+    { nome: 'Smiles', minimo: '80%', destino: /SMILES|GOL/ },
+    { nome: 'LATAM Pass', minimo: '25%', obs: 'Com Clube Turbo LATAM, costuma chegar a 30% ou 35%.', destino: /LATAM/ },
+    { nome: 'Iberia Plus', minimo: '20%', destino: /IBERIA|AVIOS/, so: /ESFERA|REVPOINTS|REVOLUT/ }
+  ],
+  dica: 'A estratégia pontos + dinheiro pode valer a pena mesmo com bônus menores.'
+};

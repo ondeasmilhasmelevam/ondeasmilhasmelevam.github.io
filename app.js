@@ -302,6 +302,25 @@
   }
   const vipResumo = r => (r.ilimitado ? 'ilimitado' : r.qtd ? `${r.qtd} ${r.qtd === 1 ? 'acesso' : 'acessos'} por ano` : 'incluído')
     + (r.conv ? ` + ${r.conv} convidados` : r.acomp ? ' + acompanhante' : '');
+  // Quando transferir: só para cartões que acumulam pontos (não milhas
+  // direto nem cashback puro). A Iberia só aparece para Esfera e Revolut.
+  function transferirHtml(k, destino) {
+    const B = window.BONUS_MINIMO;
+    if (!B || ehAereo(k) || k.recompensa === 'cashback') return '';
+    const origem = norm(programaDe(k) + ' ' + k.banco);
+    const lista = B.programas.filter(p => !p.so || p.so.test(origem));
+    if (!lista.length) return '';
+    const d = norm(destino || '');
+    return `<div class="transferir">
+        <h4>Quando transferir seus pontos</h4>
+        <p class="transferir-nota">Espere uma promoção com pelo menos este bônus antes de mandar os pontos para a companhia:</p>
+        <ul>${lista.map(p => `<li class="${d && p.destino.test(d) ? 'seu' : ''}">
+          <span><b>${esc(p.nome)}</b>${d && p.destino.test(d) ? '<em>destino usado na conta</em>' : ''}${p.obs ? `<small>${esc(p.obs)}</small>` : ''}</span>
+          <strong>${esc(p.minimo)}</strong></li>`).join('')}</ul>
+        ${B.dica ? `<p class="transferir-dica">${esc(B.dica)}</p>` : ''}
+      </div>`;
+  }
+
   function salasHtml(k) {
     const v = k.vip;
     if (!v.tem && !v.avisos.length) return '<div class="salas"><h4>Salas VIP</h4><p class="sem-vip">A planilha não informa acesso a salas VIP para este cartão.</p></div>';
@@ -610,6 +629,7 @@
           <div class="valor-grande num">${esc(brl.format(r.liquido))}<small>por ano</small></div>
           <p class="valor-extra">Equivale a <b>${esc(decimal.format(pct))}% de volta</b> em tudo que você passa no cartão, ou ${esc(brl.format(r.liquido / 12))} por mês.</p>
           ${contaHtml(r)}
+          ${transferirHtml(k, r.transferencia)}
           ${salasHtml(k)}
           <div class="cta-row">
             <button type="button" class="cta cta-a" data-abrir="${k.id}">Ver benefícios</button>
@@ -721,6 +741,7 @@
         ${regraAnu || regraPts ? `<div class="faixas">${regraAnu}${regraPts}</div>` : ''}
         <h4 style="margin-top:18px">Como chegamos no valor</h4>
         ${contaHtml(r)}
+        ${transferirHtml(k, r.transferencia)}
         <label class="chave chave-detalhe"><input type="checkbox" data-isento="${esc(k.chave)}" ${ehIsento(k) ? 'checked' : ''}><span></span>Tenho isenção vitalícia de anuidade deste cartão</label>
         ${k.links.length ? `<div class="fontes">${k.links.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(nomeLink(u))}</a>`).join('')}</div>` : ''}
       </div>`;
