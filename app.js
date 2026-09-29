@@ -552,14 +552,15 @@
       const k = r.cartao, prog = programaDe(k), u = unidadeDe(k);
       const U = u.charAt(0).toUpperCase() + u.slice(1);
       if (ehNum(r.pontosAno)) linhas.push([`${U}${prog ? ' ' + esc(prog) : ''} no ano (${esc(pontuacaoTxt(r))})`, `${inteiro.format(r.pontosAno)} ${u}`]);
-      const md = milhasNoDestino(r), destino = r.transferencia;
+      const destino = r.transferencia, mil = milheiroDe(destino);
+      // Sem a coluna de bônus (ex.: Revolut), deduz as milhas pelo valor em reais.
+      const md = milhasNoDestino(r) || (ehNum(r.valorMilhas) && mil && ehNum(mil.valor) && mil.valor > 0 ? Math.round(r.valorMilhas / mil.valor * 1000) : null);
       if (md && destino && !ehAereo(k)) {
         const taxa = ehNum(r.pontosAno) && r.pontosAno > 0 ? md / r.pontosAno : 1;
         const bonus = taxa > 1.01 ? ` com ${inteiro.format((taxa - 1) * 100)}% de bônus`
           : taxa < 0.99 ? ` (1 ${u.slice(0, -1)} vale ${decimal.format(taxa)} ${unidadeDestino(destino) === 'Avios' ? 'Avios' : 'milha'})` : '';
         linhas.push([`Transferidos para ${esc(destino)}${bonus}`, `${inteiro.format(md)} ${unidadeDestino(destino)}`]);
       }
-      const mil = milheiroDe(destino);
       if (ehNum(r.valorMilhas)) linhas.push([`Valor em reais${mil && ehNum(mil.valor) ? ` (milheiro ${esc(mil.nome)} a ${brl2.format(mil.valor)})` : ''}`, brl.format(r.valorMilhas)]);
     }
     const anu = ehNum(r.anuidade) ? r.anuidade : 0;
