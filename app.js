@@ -357,9 +357,20 @@
 
   /* ---------- contas ---------- */
 
+  function milheiroProprio(nome) {
+    const M = window.MILHEIROS || {};
+    const chave = Object.keys(M).find(k => norm(k) === norm(nome));
+    return chave && ehNum(M[chave]) ? M[chave] : null;
+  }
+
   function calculadora(gasto) {
     const trocas = { [modelo.aba.nome + '!' + modelo.refGasto]: gasto };
     if (dolarAoVivo && modelo.refDolar) trocas[modelo.aba.nome + '!' + modelo.refDolar] = dolarAoVivo.valor;
+    // Valor do milheiro definido pelo site (milheiros.js) no lugar do da planilha.
+    for (const m of modelo.milheiros) {
+      const v = milheiroProprio(m.nome);
+      if (v !== null) trocas[modelo.aba.nome + '!' + m.ref] = v;
+    }
     // Isenção vitalícia marcada pelo visitante: anuidade e mensalidade zeradas.
     for (const k of modelo.cartoes) {
       if (!estado.isentos.has(k.chave)) continue;
