@@ -1,0 +1,32 @@
+# Atualiza as notícias de cartões do site algumas vezes por dia.
+name: Notícias de cartões
+
+on:
+  schedule:
+    - cron: '17 9,13,17,21 * * *'   # 6h, 10h, 14h e 18h (Brasília)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Buscar notícias
+        run: python ferramentas/noticias.py
+      - name: Salvar se mudou
+        run: |
+          if git diff --quiet -- dados/noticias.json; then
+            echo "Sem notícias novas."
+            exit 0
+          fi
+          git config user.name "Onde as Milhas Me Levam"
+          git config user.email "ondeasmilhasmelevam@users.noreply.github.com"
+          git add dados/noticias.json
+          git commit -m "Notícias de cartões atualizadas"
+          git push

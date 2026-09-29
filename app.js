@@ -303,27 +303,38 @@
   const vipResumo = r => (r.ilimitado ? 'ilimitado' : r.qtd ? `${r.qtd} ${r.qtd === 1 ? 'acesso' : 'acessos'} por ano` : 'incluído')
     + (r.conv ? ` + ${r.conv} convidados` : r.acomp ? ' + acompanhante' : '');
   // Quando transferir: só para cartões que acumulam pontos (não milhas
-  // direto nem cashback puro). A Iberia só aparece para Esfera e Revolut.
-  function transferirHtml(k, destino) {
-    const B = window.BONUS_MINIMO;
+  // direto nem cashback puro). A Iberia só aparece para Santander e Revolut.
+  // Ao lado do bônus, as milhas que os pontos do ano viram com esse bônus.
+  function transferirHtml(r) {
+    const B = window.BONUS_MINIMO, k = r.cartao, destino = r.transferencia;
     if (!B || ehAereo(k) || k.recompensa === 'cashback') return '';
     const origem = norm(programaDe(k) + ' ' + k.banco);
     const lista = B.programas.filter(p => !p.so || p.so.test(origem));
     if (!lista.length) return '';
     const d = norm(destino || '');
+    const pontos = ehNum(r.pontosAno) && r.pontosAno > 0 ? r.pontosAno : null;
+    const milhas = p => {
+      if (!pontos) return null;
+      const chave = Object.keys(p.proporcao || {}).find(c => origem.includes(c));
+      const prop = chave ? p.proporcao[chave] : 1;
+      return Math.round(pontos * prop * (1 + parseFloat(p.minimo) / 100));
+    };
     return `<div class="transferir">
         <h4>Quando transferir seus pontos</h4>
-        <p class="transferir-nota">Espere uma promoção com pelo menos este bônus antes de mandar os pontos para a companhia:</p>
-        <ul>${lista.map(p => `<li class="${d && p.destino.test(d) ? 'seu' : ''}">
-          <span><b>${esc(p.nome)}</b>${d && p.destino.test(d) ? '<em>destino usado na conta</em>' : ''}${p.obs ? `<small>${esc(p.obs)}</small>` : ''}</span>
-          <strong>${esc(p.minimo)}</strong></li>`).join('')}</ul>
+        <p class="transferir-nota">Espere uma promoção com pelo menos este bônus antes de mandar os pontos para a companhia${pontos ? `. Com os seus ${inteiro.format(pontos)} pontos do ano, você teria:` : ':'}</p>
+        <ul>${lista.map(p => {
+          const m = milhas(p), seu = d && p.destino.test(d);
+          return `<li class="${seu ? 'seu' : ''}">
+          <span><b>${esc(p.nome)}</b>${seu ? '<em>destino usado na conta</em>' : ''}${p.obs ? `<small>${esc(p.obs)}</small>` : ''}</span>
+          <span class="transferir-num"><strong>${esc(p.minimo)}</strong>${m ? `<span>≈ ${inteiro.format(m)} ${esc(p.unidade || 'milhas')}</span>` : ''}</span></li>`;
+        }).join('')}</ul>
         ${B.dica ? `<p class="transferir-dica">${esc(B.dica)}</p>` : ''}
       </div>`;
   }
 
   function salasHtml(k) {
     const v = k.vip;
-    if (!v.tem && !v.avisos.length) return '<div class="salas"><h4>Salas VIP</h4><p class="sem-vip">A planilha não informa acesso a salas VIP para este cartão.</p></div>';
+    if (!v.tem && !v.avisos.length) return '';
     return `<div class="salas">
         <h4>Salas VIP</h4>
         ${v.tem ? `<ul>${v.lista.map(x => `<li><b>${esc(x.rede)}</b><span>${esc(vipResumo(x))}</span></li>`).join('')}</ul>` : ''}
@@ -625,11 +636,11 @@
           <span class="vencedor-tag">★ Melhor para ${esc(moedaGasto())}/mês${ehIsento(k) ? ' · é o seu' : ''}</span>
           <h2>${esc(k.nome)}</h2>
           <p class="sub">${esc([k.programa, k.bandeira].filter(x => x && x !== '-').join(' · '))}</p>
-          <p class="requisito">${ehIsento(k) ? 'Você já tem este cartão.' : `<b>Para pedir:</b> ${esc(requisitoTexto(k))}. A aprovação depende da análise de crédito do banco.`}</p>
+          <p class="requisito">${ehIsento(k) ? 'Você já tem este cartão.' : `${k.requisito.tipo === 'desconhecida' ? '' : `<b>Para pedir:</b> ${esc(requisitoTexto(k))}. `}A aprovação depende da análise de crédito do banco.`}</p>
           <div class="valor-grande num">${esc(brl.format(r.liquido))}<small>por ano</small></div>
           <p class="valor-extra">Equivale a <b>${esc(decimal.format(pct))}% de volta</b> em tudo que você passa no cartão, ou ${esc(brl.format(r.liquido / 12))} por mês.</p>
           ${contaHtml(r)}
-          ${transferirHtml(k, r.transferencia)}
+          ${transferirHtml(r)}
           ${salasHtml(k)}
           <div class="cta-row">
             <button type="button" class="cta cta-a" data-abrir="${k.id}">Ver benefícios</button>
@@ -660,7 +671,7 @@
           ${cartaoVisual(k, 'mini')}
           <span class="item-corpo">
             <span class="item-nome">${esc(k.nome)}</span>
-            <span class="item-desc">${esc(pontuacaoTxt(r))}${k.programa && k.programa !== '-' ? ' · ' + esc(k.programa) : ''}</span>
+            <span class="item-desc">${esc([pontuacaoTxt(r), programaDe(k)].filter(x => x && x !== '—').join(' · '))}</span>
             <span class="tags">${tags}</span>
           </span>
           <span class="item-valor">
@@ -710,6 +721,11 @@
       if (aviso && k.vip.avisos.includes(t)) return ''; // já aparece no quadro de salas VIP
       return t ? `<li class="${aviso ? 'aviso' : sub ? 'sub' : ''}">${esc(t)}</li>` : '';
     }).join('');
+    // Informações do site oficial que a planilha não tem (extras.js)
+    const extra = (window.EXTRAS || {})[norm(k.nome)];
+    const extrasHtml = extra && extra.beneficios && extra.beneficios.length
+      ? extra.beneficios.map(b => `<li class="extra">${esc(b)} <a href="${esc(extra.link || '#')}" target="_blank" rel="noopener">${esc(extra.fonte || 'site oficial')}</a></li>`).join('') : '';
+    const todosBeneficios = beneficios + extrasHtml;
 
     const fAnu = ehIsento(k) ? [] : faixas(k, 'anuidade').filter(f => ehNum(f.v));
     const fPts = faixas(k, 'pontuacao');
@@ -726,14 +742,13 @@
       ['Pontuação', pontuacaoTxt(r)],
       ['Transfere para', r.transferencia],
       ['Anuidade no seu gasto', ehNum(r.anuidade) ? (r.anuidade > 0 ? brl.format(r.anuidade) : 'Grátis') : '']
-    ].filter(([, v]) => v && v !== '-');
+    ].filter(([, v]) => v && !/^[-?—\s]+$/.test(String(v)));
 
     const nomeLink = url => { try { return new URL(url).hostname.replace(/^www\./, ''); } catch (e) { return 'site'; } };
 
     return `<div>
         ${salasHtml(k)}
-        <h4>Benefícios</h4>
-        ${beneficios ? `<ul class="beneficios">${beneficios}</ul>` : '<p class="sec-note">Sem observações na planilha.</p>'}
+        ${todosBeneficios ? `<h4>Benefícios</h4><ul class="beneficios">${todosBeneficios}</ul>` : ''}
       </div>
       <div>
         <h4>Ficha</h4>
@@ -741,7 +756,7 @@
         ${regraAnu || regraPts ? `<div class="faixas">${regraAnu}${regraPts}</div>` : ''}
         <h4 style="margin-top:18px">Como chegamos no valor</h4>
         ${contaHtml(r)}
-        ${transferirHtml(k, r.transferencia)}
+        ${transferirHtml(r)}
         <label class="chave chave-detalhe"><input type="checkbox" data-isento="${esc(k.chave)}" ${ehIsento(k) ? 'checked' : ''}><span></span>Tenho isenção vitalícia de anuidade deste cartão</label>
         ${k.links.length ? `<div class="fontes">${k.links.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(nomeLink(u))}</a>`).join('')}</div>` : ''}
       </div>`;
@@ -804,6 +819,25 @@
   }
   $('#rest-busca').addEventListener('input', desenharRestaurantes);
   $('#rest-rede').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { redeRest = b.dataset.v; desenharRestaurantes(); } });
+
+  // Notícias de cartões de outros sites: só título, data e link para a fonte.
+  // O arquivo é atualizado pelo GitHub (ferramentas/noticias.py).
+  async function desenharNoticias() {
+    try {
+      const r = await fetch('dados/noticias.json', { cache: 'no-store' });
+      const lista = r.ok ? await r.json() : [];
+      if (!Array.isArray(lista) || !lista.length) return;
+      $('#lista-noticias').innerHTML = lista.slice(0, 12).map(n => {
+        const d = /^\d{4}-\d{2}-\d{2}$/.test(n.data || '') ? new Date(n.data + 'T12:00:00').toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
+        return `<li><a href="${esc(n.link)}" target="_blank" rel="noopener">
+            <span class="noticia-meta">${esc([d, n.fonte].filter(Boolean).join(' · '))}</span>
+            <b>${esc(n.titulo)}</b>
+            <span class="noticia-ler">Ler no ${esc(n.fonte || 'site de origem')} ↗</span>
+          </a></li>`;
+      }).join('');
+      $('#noticias').hidden = false;
+    } catch (e) { /* sem notícias: a seção fica escondida */ }
+  }
 
   function desenharPrecos() {
     const P = window.PRECO_MILHAS;
@@ -953,7 +987,7 @@
   const obs = new IntersectionObserver(ents => {
     for (const en of ents) if (en.isIntersecting) abas.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + en.target.id)));
   }, { rootMargin: '-40% 0px -55% 0px' });
-  ['simulador', 'ranking-sec', 'restaurantes', 'novidades', 'como'].forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
+  ['simulador', 'ranking-sec', 'restaurantes', 'comprar', 'novidades', 'como'].forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
 
   /* ---------- início ---------- */
 
@@ -961,6 +995,7 @@
     sincronizarControles();
     desenharRestaurantes();
     desenharPrecos();
+    desenharNoticias();
     const [ok] = await Promise.all([carregar(), buscarDolar()]);
     if (!ok) {
       $('#carregando').innerHTML = 'Não foi possível ler a planilha de cartões agora. Tente de novo em alguns minutos.';
