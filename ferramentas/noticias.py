@@ -24,8 +24,20 @@ ASSUNTO = re.compile(
 )
 FORA = re.compile(
     r'desconto|cupo|post oculto|resumo|so hoje|ultimos dias|ultima chance|ganhe|cashback|'
-    r'% de bonus|bonus na transferencia|promoca|oferece ate|a partir de r\$'
+    r'% de bonus|bonus na transferencia|promoca|oferece|oferta|a partir de r\$|'
+    r'anuidade gratis|primeira anuidade|1 ano de anuidade|peca o seu|confira|muito bom|bom demais|pesquisa'
 )
+
+
+# Título com cara de notícia (mudança, lançamento) entra mesmo que cite oferta.
+NOTICIA = re.compile(r'parceria|\blanca|lancamento|novas regras|vai mudar|\bmuda|reduz|aumenta|encerra|acaba|deixa de|passa a')
+
+
+def e_novidade(titulo, cats=''):
+    t = sem_acento(titulo)
+    if not ASSUNTO.search(t) or re.search(r'pesquisa|cupo|post oculto|resumo', sem_acento(cats) + ' ' + t):
+        return False
+    return bool(NOTICIA.search(t)) or not FORA.search(t)
 MAXIMO = 30
 SAIDA = Path(__file__).resolve().parent.parent / 'dados' / 'noticias.json'
 
@@ -44,7 +56,7 @@ def ler_feed(feed):
         cats = ' '.join(c.text or '' for c in item.findall('category'))
         if not titulo or not link.startswith('http'):
             continue
-        if FORA.search(sem_acento(cats + ' ' + titulo)) or not ASSUNTO.search(sem_acento(titulo)):
+        if not e_novidade(titulo, cats):
             continue
         try:
             data = parsedate_to_datetime(item.findtext('pubDate')).date().isoformat()
@@ -66,8 +78,9 @@ def main():
         print('Nenhum feed respondeu; mantendo o arquivo anterior.', file=sys.stderr)
         return
     # Junta com as já guardadas: o feed só traz os posts mais recentes.
+    # As já guardadas passam pelo mesmo filtro (o filtro pode ter ficado mais rígido).
     try:
-        todas += json.loads(SAIDA.read_text(encoding='utf-8'))
+        todas += [n for n in json.loads(SAIDA.read_text(encoding='utf-8')) if e_novidade(n.get('titulo', ''))]
     except Exception:
         pass
     vistos, lista = set(), []
