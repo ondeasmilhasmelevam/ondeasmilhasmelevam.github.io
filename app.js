@@ -313,6 +313,22 @@
   // Quando transferir: só para cartões que acumulam pontos (não milhas
   // direto nem cashback puro). A Iberia só aparece para Santander e Revolut.
   // Ao lado do bônus, as milhas que os pontos do ano viram com esse bônus.
+  // Link de indicação (extras.js → indicacao), identificado como tal.
+  function indicacaoHtml(k) {
+    const extra = (window.EXTRAS || {})[norm(k.nome.replace(/\s*\([^)]*\)$/, ''))];
+    const i = extra && extra.indicacao;
+    if (!i || !i.link) return '';
+    return `<div class="indicacao">
+        <p class="indicacao-tag">Link de indicação</p>
+        <b>${esc(i.titulo || 'Use o meu código')}</b>
+        ${i.beneficio ? `<p>${esc(i.beneficio)}</p>` : ''}
+        <div class="indicacao-acoes">
+          <a class="cta cta-a" href="${esc(i.link)}" target="_blank" rel="noopener sponsored">${esc(i.botao || 'Abrir conta')} ↗</a>
+          ${i.codigo ? `<button type="button" class="codigo" data-copiar="${esc(i.codigo)}" aria-label="Copiar o código ${esc(i.codigo)}"><span>Código</span><strong>${esc(i.codigo)}</strong><em>copiar</em></button>` : ''}
+        </div>
+      </div>`;
+  }
+
   function transferirHtml(r) {
     const B = window.BONUS_MINIMO, k = r.cartao, destino = r.transferencia;
     if (!B || ehAereo(k) || k.recompensa === 'cashback') return '';
@@ -648,6 +664,7 @@
           <div class="valor-grande num">${esc(brl.format(r.liquido))}<small>por ano</small></div>
           <p class="valor-extra">Equivale a <b>${esc(decimal.format(pct))}% de volta</b> em tudo que você passa no cartão, ou ${esc(brl.format(r.liquido / 12))} por mês.</p>
           ${contaHtml(r)}
+          ${indicacaoHtml(k)}
           ${transferirHtml(r)}
           ${salasHtml(k)}
           <div class="cta-row">
@@ -765,6 +782,7 @@
         <h4 style="margin-top:18px">Como chegamos no valor</h4>
         ${contaHtml(r)}
         ${transferirHtml(r)}
+        ${indicacaoHtml(k)}
         <label class="chave chave-detalhe"><input type="checkbox" data-isento="${esc(k.chave)}" ${ehIsento(k) ? 'checked' : ''}><span></span>Tenho isenção vitalícia de anuidade deste cartão</label>
         ${k.links.length ? `<div class="fontes">${k.links.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(nomeLink(u))}</a>`).join('')}</div>` : ''}
       </div>`;
@@ -1013,6 +1031,14 @@
     if (linha) { abrirCartao(linha.closest('.item').id); return; }
     const ab = e.target.closest('[data-abrir]');
     if (ab) { abrirCartao(ab.dataset.abrir, true); return; }
+    const copiar = e.target.closest('[data-copiar]');
+    if (copiar) {
+      const ok = () => { const em = copiar.querySelector('em'); if (em) { em.textContent = 'copiado!'; setTimeout(() => { em.textContent = 'copiar'; }, 2000); } };
+      navigator.clipboard?.writeText(copiar.dataset.copiar).then(ok, () => {
+        const r = document.createRange(); r.selectNodeContents(copiar.querySelector('strong')); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      });
+      return;
+    }
     const tirar = e.target.closest('[data-tirar]');
     if (tirar) { marcarIsento(tirar.dataset.tirar, false); return; }
     if (e.target.closest('[data-mostrar-restritos]')) { estado.esconderRestritos = false; mudou(); return; }

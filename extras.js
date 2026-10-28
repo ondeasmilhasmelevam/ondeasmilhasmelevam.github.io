@@ -2,6 +2,16 @@
    A chave é o nome do cartão como aparece no site (sem acentos, maiúsculas).
    Entram na lista de benefícios, com a fonte ao lado; não mudam a conta. */
 window.EXTRAS = {
+  'NOMAD EXPLORER': {
+    // Link de indicação do Felipe: aparece no destaque e no cartão aberto.
+    indicacao: {
+      titulo: 'Abra sua conta Nomad com o meu código',
+      beneficio: 'Taxa de conversão zerada na 1ª conversão de até US$ 1.000 ou € 1.000, mais 1 GB de internet no Nomad Chip, o eSIM da Nomad.',
+      codigo: 'VNRIXMU67Q',
+      link: 'https://nomad.onelink.me/wIQT/Account?code=VNRIXMU67Q%26n=Felipe%20Marcal',
+      botao: 'Abrir conta Nomad'
+    }
+  },
   'C6 BANK CARBON': {
     fonte: 'site oficial do C6',
     link: 'https://www.c6bank.com.br/cartao-c6-carbon-mastercard-black/',
