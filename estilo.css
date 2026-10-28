@@ -454,6 +454,16 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .referencias .grupo dt{font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro)}
 .referencias .grupo dt small{text-transform:none;letter-spacing:0;font-weight:500}
 
+/* ---------- aviso para viajantes (topo de Novidades) ---------- */
+#avisos:empty{display:none}
+#avisos{display:grid;gap:14px;margin-bottom:18px}
+.aviso-viagem{padding:20px 22px;border-radius:18px;background:linear-gradient(180deg,rgba(156,200,255,.09),rgba(156,200,255,.02));border:1px solid rgba(156,200,255,.35)}
+.aviso-tag{margin:0;font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#9CC8FF}
+.aviso-viagem h3{font-family:var(--display);font-size:clamp(19px,3.4vw,24px);margin:8px 0 8px;letter-spacing:.02em;line-height:1.25;text-wrap:balance}
+.aviso-viagem p{margin:0;color:var(--rice);font-size:15px;line-height:1.6;max-width:70ch}
+.aviso-viagem ul{margin:12px 0 0;padding-left:20px;display:grid;gap:6px;color:var(--ash);font-size:14.5px;line-height:1.5;max-width:70ch}
+.aviso-viagem a{display:inline-block;margin-top:14px;font-size:13.5px;font-weight:700;color:#9CC8FF;text-decoration:underline;text-underline-offset:3px}
+
 /* ---------- notícias de cartões (dentro de Novidades) ---------- */
 .noticias-bloco{margin-top:34px}
 .noticias-bloco h3{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(20px,3.6vw,26px);letter-spacing:.03em}

@@ -828,6 +828,22 @@
   $('#rest-busca').addEventListener('input', desenharRestaurantes);
   $('#rest-rede').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { redeRest = b.dataset.v; desenharRestaurantes(); } });
 
+  // Avisos para viajantes (avisos.js): em destaque no topo de Novidades.
+  function desenharAvisos() {
+    const hoje = new Date().toISOString().slice(0, 10);
+    const lista = (window.AVISOS || []).filter(a => !a.ate || a.ate >= hoje);
+    $('#avisos').innerHTML = lista.map(a => {
+      const desde = /^\d{4}-\d{2}-\d{2}$/.test(a.desde || '') ? new Date(a.desde + 'T12:00:00').toLocaleDateString('pt-BR') : '';
+      return `<article class="aviso-viagem">
+          <p class="aviso-tag">Aviso para viajantes${desde ? ` · vale a partir de ${esc(desde)}` : ''}</p>
+          <h3>${esc(a.titulo)}</h3>
+          <p>${esc(a.resumo)}</p>
+          ${a.itens && a.itens.length ? `<ul>${a.itens.map(i => `<li>${esc(i)}</li>`).join('')}</ul>` : ''}
+          ${a.link ? `<a href="${esc(a.link)}" target="_blank" rel="noopener">Ver no site oficial${a.fonte ? ` · ${esc(a.fonte)}` : ''} ↗</a>` : ''}
+        </article>`;
+    }).join('');
+  }
+
   // Notícias de cartões de outros sites: só título, data e link para a fonte.
   // O arquivo é atualizado pelo GitHub (ferramentas/noticias.py).
   async function desenharNoticias() {
@@ -1037,6 +1053,7 @@
     desenharRestaurantes();
     desenharPrecos();
     desenharNoticias();
+    desenharAvisos();
     const [ok] = await Promise.all([carregar(), buscarDolar()]);
     if (!ok) {
       $('#carregando').innerHTML = 'Não foi possível ler a planilha de cartões agora. Tente de novo em alguns minutos.';
