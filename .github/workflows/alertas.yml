@@ -1,10 +1,13 @@
 # Traz as passagens dos grupos de alertas do Telegram para o site.
-# Enquanto os segredos TELEGRAM_* não forem cadastrados, roda e não faz nada.
+# O agendamento do GitHub atrasa muito (às vezes horas), então cada execução
+# fica de plantão por quase 6 horas, olhando os grupos a cada 6 minutos, e no
+# fim chama a próxima. O agendamento de hora em hora fica só de reserva, caso
+# a corrente pare. Enquanto os segredos TELEGRAM_* não existirem, não faz nada.
 name: Alertas do Telegram
 
 on:
   schedule:
-    - cron: '*/15 * * * *'   # a cada 15 min (o GitHub pode atrasar um pouco)
+    - cron: '7 * * * *'   # reserva: religa o plantão se ele tiver parado
   workflow_dispatch:
   push:   # roda também quando o programa de leitura muda
     branches: [main]
@@ -12,6 +15,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # para chamar o próximo plantão
 
 concurrency:
   group: alertas
@@ -20,28 +24,41 @@ concurrency:
 jobs:
   atualizar:
     runs-on: ubuntu-latest
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: pip install telethon==1.44.0
-      - name: Buscar alertas
+      - name: Plantão nos grupos
         env:
           TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
           TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
           TELEGRAM_SESSAO: ${{ secrets.TELEGRAM_SESSAO }}
           TELEGRAM_GRUPO: ${{ secrets.TELEGRAM_GRUPO }}
-        run: python ferramentas/alertas.py
-      - name: Salvar se mudou
         run: |
-          if git diff --quiet -- dados/alertas.json; then
-            echo "Sem alertas novos."
-            exit 0
-          fi
           git config user.name "Onde as Milhas Me Levam"
           git config user.email "ondeasmilhasmelevam@users.noreply.github.com"
-          git add dados/alertas.json
-          git commit -m "Passagens dos grupos atualizadas"
-          git pull --rebase
-          git push
+          fim=$(( $(date +%s) + 340*60 ))   # 5h40, deixando folga para chamar o próximo
+          falhas=0
+          while [ "$(date +%s)" -lt "$fim" ]; do
+            if python ferramentas/alertas.py; then
+              falhas=0
+              if ! git diff --quiet -- dados/alertas.json; then
+                git add dados/alertas.json
+                git commit -q -m "Passagens dos grupos atualizadas"
+                git pull -q --rebase && git push -q || echo "::warning::Não deu para enviar agora; tenta na próxima volta."
+              fi
+            else
+              falhas=$((falhas + 1))
+              # Sessão encerrada ou chave errada não se resolvem sozinhas: para e avisa.
+              [ "$falhas" -ge 3 ] && exit 1
+            fi
+            sleep 360
+          done
+      - name: Chamar o próximo plantão
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run alertas.yml --ref main
