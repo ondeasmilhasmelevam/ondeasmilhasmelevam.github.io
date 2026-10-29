@@ -337,7 +337,7 @@
     const B = window.BONUS_MINIMO, k = r.cartao, destino = r.transferencia;
     if (!B || ehAereo(k) || k.recompensa === 'cashback') return '';
     const origem = norm(programaDe(k) + ' ' + k.banco);
-    const lista = B.programas.filter(p => !p.so || p.so.test(origem));
+    const lista = B.programas.filter(p => (!p.so || p.so.test(origem)) && !(p.nao && p.nao.test(origem)));
     if (!lista.length) return '';
     const d = norm(destino || '');
     const pontos = ehNum(r.pontosAno) && r.pontosAno > 0 ? r.pontosAno : null;
@@ -345,7 +345,7 @@
       if (!pontos) return null;
       const chave = Object.keys(p.proporcao || {}).find(c => origem.includes(c));
       const prop = chave ? p.proporcao[chave] : 1;
-      return Math.round(pontos * prop * (1 + parseFloat(p.minimo) / 100));
+      return Math.round(pontos * prop * (1 + (parseFloat(p.minimo) || 0) / 100));
     };
     return `<div class="transferir">
         <h4>Quando transferir seus pontos</h4>
@@ -1311,12 +1311,12 @@
     const busca = norm($('#isencao-busca').value);
     const lista = [...modelo.cartoes]
       .filter((k, i, a) => a.findIndex(o => o.chave === k.chave) === i)
-      .filter(k => !busca || norm(k.nome + ' ' + k.programa + ' ' + k.bandeira).includes(busca))
+      .filter(k => !busca || norm([k.nome, k.banco, k.programa, k.bandeira, k.tipo].join(' ')).includes(busca))
       .sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
     $('#isencao-lista').innerHTML = lista.length ? lista.map(k => `<li><label>
         <input type="checkbox" data-isento="${esc(k.chave)}" ${ehIsento(k) ? 'checked' : ''}>
         ${cartaoVisual(k, 'mini')}
-        <span><b>${esc(k.nome)}</b><small>${esc([k.tipo, k.acelerador && k.acelerador !== '-' ? k.acelerador : ''].filter(Boolean).join(' · '))}</small></span>
+        <span><b>${esc(k.nome)}</b><small>${esc([[k.bandeira, k.tipo].filter(x => x && x !== '-').join(' '), k.acelerador && k.acelerador !== '-' ? k.acelerador : ''].filter(Boolean).join(' · '))}</small></span>
       </label></li>`).join('') : '<li class="nada">Nenhum cartão com esse nome.</li>';
   }
   function marcarIsento(chave, sim) {
