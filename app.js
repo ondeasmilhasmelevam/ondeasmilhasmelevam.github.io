@@ -805,12 +805,17 @@
   }
 
   function desenharNovidades() {
+    // A planilha repete a mesma mudança do cartão em várias datas: de início, só a mais recente de cada cartão;
+    // "Ver todas" mostra o histórico inteiro.
     const lista = modelo.historico;
+    const nomeDe = n => { const i = n.texto.indexOf(':'); return norm(i > 0 && i < 50 ? n.texto.slice(0, i) : n.texto); };
+    const vistas = new Set();
+    const recentes = lista.filter(n => !vistas.has(nomeDe(n)) && vistas.add(nomeDe(n)));
     const ul = $('#lista-novidades'), btn = $('#mais-novidades');
     if (!lista.length) { $('#novidades').hidden = true; return; }
     $('#novidades').hidden = false;
     const todas = btn.dataset.todas === '1';
-    const mostrar = todas ? lista : lista.slice(0, 6);
+    const mostrar = todas ? lista : recentes;
     ul.innerHTML = mostrar.map(n => {
       const i = n.texto.indexOf(':');
       const titulo = i > 0 && i < 50 ? n.texto.slice(0, i) : 'Mudança de regra';
@@ -819,8 +824,8 @@
       const quando = n.mudanca && !/^n[aã]o especificad/i.test(n.mudanca) ? `<span class="quando">Vale desde: ${esc(n.mudanca)}</span>` : '';
       return `<li class="novidade"><time>${esc(data)}</time><h3>${esc(titulo)}</h3><p>${esc(corpo.charAt(0).toUpperCase() + corpo.slice(1))}</p>${quando}</li>`;
     }).join('');
-    btn.hidden = lista.length <= 6;
-    btn.textContent = todas ? 'Mostrar menos' : `Ver todas as ${lista.length} mudanças`;
+    btn.hidden = lista.length <= recentes.length;
+    btn.textContent = todas ? 'Mostrar só a mais recente de cada cartão' : `Ver o histórico completo (${lista.length} registros)`;
   }
 
   /* ---------- restaurantes VIP ---------- */
@@ -880,12 +885,26 @@
 
   // Notícias de cartões de outros sites: só título, data e link para a fonte.
   // O arquivo é atualizado pelo GitHub (ferramentas/noticias.py).
+  let noticias = [];
+  const filtroNoticia = { tema: '', todas: false };
   async function desenharNoticias() {
     try {
       const r = await fetch('dados/noticias.json', { cache: 'no-store' });
       const lista = r.ok ? await r.json() : [];
       if (!Array.isArray(lista) || !lista.length) return;
-      $('#lista-noticias').innerHTML = lista.slice(0, 12).map(n => {
+      noticias = lista;
+      mostrarNoticias();
+      $('#noticias').hidden = false;
+    } catch (e) { /* sem notícias: a seção fica escondida */ }
+  }
+  function mostrarNoticias() {
+    const lista = noticias.filter(n => !filtroNoticia.tema || (n.tema || 'cartoes') === filtroNoticia.tema);
+    $('#noticias-tema').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.tema === filtroNoticia.tema)));
+    const btn = $('#mais-noticias');
+    btn.hidden = lista.length <= 12;
+    btn.textContent = filtroNoticia.todas ? 'Mostrar menos' : `Ver todas as ${lista.length} notícias`;
+    {
+      $('#lista-noticias').innerHTML = (filtroNoticia.todas ? lista : lista.slice(0, 12)).map(n => {
         const d = /^\d{4}-\d{2}-\d{2}$/.test(n.data || '') ? new Date(n.data + 'T12:00:00').toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
         return `<li><a href="${esc(n.link)}" target="_blank" rel="noopener">
             <span class="noticia-meta">${esc([d, n.fonte].filter(Boolean).join(' · '))}</span>
@@ -893,9 +912,10 @@
             <span class="noticia-ler">Ler no ${esc(n.fonte || 'site de origem')} ↗</span>
           </a></li>`;
       }).join('');
-      $('#noticias').hidden = false;
-    } catch (e) { /* sem notícias: a seção fica escondida */ }
+    }
   }
+  $('#noticias-tema').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { Object.assign(filtroNoticia, { tema: b.dataset.tema, todas: false }); mostrarNoticias(); } });
+  $('#mais-noticias').addEventListener('click', () => { filtroNoticia.todas = !filtroNoticia.todas; mostrarNoticias(); });
 
   // Termômetro de milhas (dados/termometro.json): faixas por região, cabine e
   // programa, calculadora do milheiro e o selo que aparece nas passagens.

@@ -289,9 +289,15 @@
       <button type="button" class="cta cta-b" id="mais-novidades" hidden></button>
 
       <div class="noticias-bloco" id="noticias" hidden>
-        <h3>Notícias de cartões</h3>
-        <p class="sec-note">Lançamentos, parcerias e mudanças de regra publicados na imprensa especializada. Atualizado sozinho algumas vezes por dia.</p>
+        <h3>Notícias de cartões e milhas</h3>
+        <p class="sec-note">Lançamentos, parcerias, novas rotas e mudanças de regra publicados na imprensa especializada. Atualizado sozinho algumas vezes por dia; a matéria completa abre no site de origem.</p>
+        <div class="seg-tipo" id="noticias-tema" role="group" aria-label="Assunto das notícias">
+          <button type="button" data-tema="" aria-pressed="true">Todas</button>
+          <button type="button" data-tema="cartoes" aria-pressed="false">Cartões e salas VIP</button>
+          <button type="button" data-tema="milhas" aria-pressed="false">Milhas e viagens</button>
+        </div>
         <ul class="noticias" id="lista-noticias"></ul>
+        <button type="button" class="cta cta-b" id="mais-noticias" hidden></button>
       </div>
     </section>
 
@@ -350,6 +356,6 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=39"></script>
+<script src="app.js?v=40"></script>
 </body>
 </html>

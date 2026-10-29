@@ -15,7 +15,17 @@ from pathlib import Path
 FEEDS = [
     {'fonte': 'Melhores Cartões', 'url': f'https://www.melhorescartoes.com.br/feed?paged={p}'}
     for p in (1, 2, 3)
+] + [
+    {'fonte': 'Passageiro de Primeira', 'url': f'https://passageirodeprimeira.com/categorias/noticias/feed/?paged={p}'}
+    for p in (1, 2)
 ]
+# Notícias de milhas e viagens (companhias, programas, rotas, salas). Guias que
+# não são notícia ("como acumular", "o que é") ficam de fora, assim como ofertas.
+MILHAS = re.compile(
+    r'milhas|pontos|avios|award|resgate|programa|smiles|latam|azul|gol\b|tap\b|iberia|british|qatar|emirates|united|'
+    r'american|air france|klm|flying blue|livelo|esfera|sala vip|lounge|rota|voo|voos|codeshare|alianca|companhia'
+)
+GUIA = re.compile(r'^(como|o que|quais|qual|quanto|vale a pena|guia|dicas?|entenda|saiba|veja|conheca)\b|\?$')
 # Só novidades de cartões (pelo título): lançamentos, mudanças de regra,
 # parcerias. Ofertas e promoções ficam de fora (pedido do Felipe).
 ASSUNTO = re.compile(
@@ -38,7 +48,22 @@ def e_novidade(titulo, cats=''):
     if not ASSUNTO.search(t) or re.search(r'pesquisa|cupo|post oculto|resumo', sem_acento(cats) + ' ' + t):
         return False
     return bool(NOTICIA.search(t)) or not FORA.search(t)
-MAXIMO = 30
+
+
+def tema(titulo, cats=''):
+    """'cartoes', 'milhas' ou '' (fica de fora)."""
+    t = sem_acento(titulo)
+    # Guias, avisos do próprio site, ofertas de resgate e assuntos que não são de viagem ficam de fora.
+    if GUIA.search(t) or re.search(r'cupo|post oculto|resumo|canal|whatsapp|roupa|emita|a partir de \d|nomad|ganhe', t):
+        return ''
+    if e_novidade(titulo, cats):
+        return 'cartoes'
+    if MILHAS.search(t) and (NOTICIA.search(t) or re.search(r'anuncia|estreia|libera|nova|novo|novas|novos|inaugura|fecha|retoma|suspende|tera', t) or not FORA.search(t)):
+        return 'milhas'
+    return ''
+
+
+MAXIMO = 40
 SAIDA = Path(__file__).resolve().parent.parent / 'dados' / 'noticias.json'
 
 
@@ -56,13 +81,14 @@ def ler_feed(feed):
         cats = ' '.join(c.text or '' for c in item.findall('category'))
         if not titulo or not link.startswith('http'):
             continue
-        if not e_novidade(titulo, cats):
+        assunto = tema(titulo, cats)
+        if not assunto:
             continue
         try:
             data = parsedate_to_datetime(item.findtext('pubDate')).date().isoformat()
         except Exception:
             data = ''
-        itens.append({'titulo': titulo, 'data': data, 'link': link, 'fonte': feed['fonte']})
+        itens.append({'titulo': titulo, 'data': data, 'link': link, 'fonte': feed['fonte'], 'tema': assunto})
     return itens
 
 
@@ -80,7 +106,10 @@ def main():
     # Junta com as já guardadas: o feed só traz os posts mais recentes.
     # As já guardadas passam pelo mesmo filtro (o filtro pode ter ficado mais rígido).
     try:
-        todas += [n for n in json.loads(SAIDA.read_text(encoding='utf-8')) if e_novidade(n.get('titulo', ''))]
+        for n in json.loads(SAIDA.read_text(encoding='utf-8')):
+            n['tema'] = tema(n.get('titulo', ''))
+            if n['tema']:
+                todas.append(n)
     except Exception:
         pass
     vistos, lista = set(), []
