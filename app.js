@@ -1648,7 +1648,6 @@
       if (ok) ativa = a;
     });
     document.title = pagina === 'simulador' || !ativa ? TITULO : `${ativa.textContent} · Onde as Milhas Me Levam`;
-    $('#menu-atual').textContent = ativa ? ativa.textContent : 'Menu';
     abrirMenu(false);
     if (!rolar) return;
     if (el && !el.hasAttribute('data-pagina') && el.id !== 'topo') el.scrollIntoView({ block: 'start' });
@@ -1660,6 +1659,7 @@
     $('#menu-btn').setAttribute('aria-expanded', String(abrir));
   }
   $('#menu-btn').addEventListener('click', () => abrirMenu(!$('#menu').classList.contains('aberto')));
+  $('#menu-fechar').addEventListener('click', () => abrirMenu(false));
   document.addEventListener('click', e => { if (!e.target.closest('#menu, #menu-btn')) abrirMenu(false); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') abrirMenu(false); });
   addEventListener('hashchange', () => mostrarPagina(location.hash.slice(1)));

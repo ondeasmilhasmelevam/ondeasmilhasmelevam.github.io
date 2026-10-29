@@ -49,23 +49,47 @@ button{font:inherit;color:inherit}
 .bar-mark{display:flex;align-items:center;gap:10px;flex:0 0 auto;text-decoration:none}
 .bar-mark img{width:34px;height:34px;border-radius:50%;box-shadow:0 0 0 1px rgba(226,180,88,.35)}
 .bar-mark b{font-family:var(--display);font-weight:700;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;background:linear-gradient(180deg,var(--ouro-lt),var(--ouro) 60%,var(--ouro-dk));-webkit-background-clip:text;background-clip:text;color:transparent}
-/* Menu: botão com a página atual; ao abrir, as páginas aparecem em lista vertical. */
-.menu-btn{margin-left:auto;display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--ink-2);color:var(--rice);font:inherit;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;max-width:60vw}
-.menu-btn:hover,.menu-btn[aria-expanded="true"]{border-color:var(--ouro)}
-.menu-btn span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ouro)}
-.menu-ico{position:relative;width:18px;height:12px;flex:0 0 auto}
+/* Menu: no computador, segunda linha do topo com todas as páginas em texto pequeno;
+   no celular, ícone ☰ que abre uma gaveta lateral organizada por grupos. */
+.bar-in{flex-wrap:wrap;row-gap:0}
+.bar-insta{margin-left:auto}
+.tabs{order:4;flex:1 0 100%;display:flex;flex-wrap:wrap;justify-content:center;margin:8px calc(50% - 50vw + 8px) -4px;padding-top:4px;border-top:1px solid var(--line)}
+.menu-grupo,.menu-sub{display:contents}
+.menu-grupo-btn{display:none}
+.tabs a{position:relative;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ash);padding:9px 10px;white-space:nowrap;transition:color .18s ease}
+.tabs a+a,.menu-grupo+a,.menu-grupo+.menu-grupo .menu-sub a:first-child{border-left:1px solid var(--line)}
+.tabs a{border-left:1px solid var(--line)}
+.menu-grupo:first-of-type .menu-sub a:first-child{border-left:0}
+.tabs a:hover{color:var(--rice)}
+.tabs a[aria-current="true"]{color:var(--ouro)}
+.tabs a[aria-current="true"]::after{content:'';position:absolute;left:10px;right:10px;bottom:3px;height:2px;border-radius:2px;background:var(--ouro)}
+.menu-topo,.menu-btn{display:none}
+.menu-ico{position:relative;display:block;width:20px;height:14px}
 .menu-ico,.menu-ico::before,.menu-ico::after{border-top:2px solid var(--rice)}
 .menu-ico::before,.menu-ico::after{content:'';position:absolute;left:0;right:0}
-.menu-ico::before{top:3px}.menu-ico::after{top:8px}
-.menu-btn[aria-expanded="true"] .menu-ico{border-color:transparent}
-.menu-btn[aria-expanded="true"] .menu-ico::before{top:3px;transform:rotate(45deg)}
-.menu-btn[aria-expanded="true"] .menu-ico::after{top:3px;transform:rotate(-45deg)}
-.tabs{display:none;position:absolute;left:0;right:0;top:100%;max-height:calc(100vh - 70px);overflow-y:auto;padding:12px max(16px,calc((100% - 1120px)/2)) 18px;background:rgba(7,12,23,.97);border-bottom:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.45);grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px}
-.tabs.aberto{display:grid}
-.tabs a{text-decoration:none;font-size:14px;font-weight:700;color:var(--ash);padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--ink-2);transition:color .18s ease,border-color .18s ease}
-.tabs a:hover{color:var(--rice);border-color:var(--ouro-dk)}
-.tabs a[aria-current="true"]{color:var(--ink);background:var(--ouro);border-color:var(--ouro)}
-@media (max-width:560px){ .bar-mark b{display:none} .tabs{grid-template-columns:1fr} }
+.menu-ico::before{top:4px}.menu-ico::after{top:10px}
+@media (max-width:1100px){
+  .bar-mark b{font-size:12px;letter-spacing:.08em}
+  .bar-insta{margin-left:auto}
+  .menu-btn{display:grid;place-items:center;width:42px;height:42px;padding:0;border-radius:12px;border:1px solid var(--line);background:var(--ink-2);cursor:pointer;order:3}
+  .menu-btn:hover{border-color:var(--ouro)}
+  .tabs{position:fixed;top:0;right:0;bottom:0;z-index:60;width:min(320px,86vw);margin:0;padding:14px 14px 24px;flex-direction:column;align-items:stretch;overflow-y:auto;background:var(--ink-2);border-left:1px solid var(--line);transform:translateX(105%);transition:transform .25s ease,box-shadow .25s ease}
+  .tabs.aberto{transform:none;visibility:visible;box-shadow:0 0 0 100vmax rgba(0,0,0,.55)}
+  .tabs:not(.aberto){visibility:hidden}
+  /* O desfoque da barra prenderia a gaveta (position:fixed) dentro dela. */
+  .bar{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(7,12,23,.97)}
+  .menu-topo{display:flex;align-items:center;justify-content:space-between;margin:0 0 6px;padding:2px 4px 10px;border-bottom:1px solid var(--line)}
+  .menu-topo b{font-family:var(--display);font-size:18px;letter-spacing:.06em;color:var(--ouro)}
+  .menu-fechar{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:none;color:var(--rice);font-size:16px;cursor:pointer}
+  .bar-in{flex-wrap:nowrap}
+  .tabs{flex:none;flex-wrap:nowrap;justify-content:flex-start;border-top:0}
+  .menu-grupo,.menu-sub{display:grid}
+  .menu-grupo-btn{display:block;width:100%;text-align:left;padding:14px 8px 6px;background:none;border:0;font:inherit;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ash-dim)}
+  .tabs a,.tabs a+a,.menu-grupo+a{border-left:0;font-size:15px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--rice);padding:11px 12px;border-radius:10px}
+  .tabs>a:first-of-type{margin-top:14px;border-top:1px solid var(--line);border-radius:0 0 10px 10px;padding-top:16px}
+  .tabs a[aria-current="true"]::after{display:none}
+  .tabs a[aria-current="true"]{color:var(--ink);background:var(--ouro)}
+}
 
 /* ---------- abertura ---------- */
 .hero{position:relative;overflow:hidden;text-align:center;padding-block:52px 50px;border-bottom:1px solid var(--line)}

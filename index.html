@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=32">
+<link rel="stylesheet" href="estilo.css?v=34">
 </head>
 <body>
 <header class="bar">
@@ -24,20 +24,31 @@
       <img src="img/logo.webp" alt="" width="34" height="34">
       <b>Onde as Milhas Me Levam</b>
     </a>
-    <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu"><i class="menu-ico" aria-hidden="true"></i><span id="menu-atual">Menu</span></button>
     <nav class="tabs" id="menu" aria-label="Páginas do site">
-      <a href="#simulador">Simulador</a>
-      <a href="#ranking-sec">Ranking</a>
-      <a href="#passagens">Passagens</a>
-      <a href="#quanto">Tabela de preços</a>
-      <a href="#termometro">Termômetro</a>
-      <a href="#guia">Como emitir</a>
+      <p class="menu-topo"><b>Menu</b><button type="button" class="menu-fechar" id="menu-fechar" aria-label="Fechar menu">✕</button></p>
+      <div class="menu-grupo">
+        <button type="button" class="menu-grupo-btn" aria-expanded="false">Cartões</button>
+        <div class="menu-sub">
+          <a href="#simulador">Simulador</a>
+          <a href="#ranking-sec">Ranking</a>
+          <a href="#novidades">Novidades</a>
+          <a href="#como">Como calculamos</a>
+        </div>
+      </div>
+      <div class="menu-grupo">
+        <button type="button" class="menu-grupo-btn" aria-expanded="false">Viagens</button>
+        <div class="menu-sub">
+          <a href="#passagens">Passagens</a>
+          <a href="#quanto">Tabela de preços</a>
+          <a href="#termometro">Termômetro</a>
+          <a href="#guia">Como emitir</a>
+        </div>
+      </div>
       <a href="#restaurantes">Restaurantes VIP</a>
       <a href="#comprar">Comprar milhas</a>
-      <a href="#novidades">Novidades</a>
       <a href="#contatos">Contatos</a>
-      <a href="#como">Como calculamos</a>
     </nav>
+    <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><i class="menu-ico" aria-hidden="true"></i></button>
     <a class="bar-insta" href="https://www.instagram.com/ondeasmilhasmelevam/" target="_blank" rel="noopener" aria-label="Seguir @ondeasmilhasmelevam no Instagram"><svg class="ig" viewBox="0 0 48 48" aria-hidden="true"><defs><radialGradient id="igtopo" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#fdf497"/><stop offset=".05" stop-color="#fdf497"/><stop offset=".45" stop-color="#fd5949"/><stop offset=".6" stop-color="#d6249f"/><stop offset=".9" stop-color="#285AEB"/></radialGradient></defs><rect width="48" height="48" rx="12" fill="url(#igtopo)"/><rect x="11" y="11" width="26" height="26" rx="8" fill="none" stroke="#fff" stroke-width="3"/><circle cx="24" cy="24" r="6.2" fill="none" stroke="#fff" stroke-width="3"/><circle cx="31.6" cy="16.4" r="1.9" fill="#fff"/></svg></a>
   </div>
 </header>
@@ -356,6 +367,6 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=40"></script>
+<script src="app.js?v=41"></script>
 </body>
 </html>
