@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=22">
+<link rel="stylesheet" href="estilo.css?v=23">
 </head>
 <body>
 <header class="bar">
@@ -31,6 +31,7 @@
       <a href="#restaurantes">Restaurantes VIP</a>
       <a href="#comprar">Comprar milhas</a>
       <a href="#novidades">Novidades</a>
+      <a href="#contatos">Contatos</a>
       <a href="#como">Como calculamos</a>
     </nav>
     <a class="bar-insta" href="https://www.instagram.com/ondeasmilhasmelevam/" target="_blank" rel="noopener" aria-label="Seguir @ondeasmilhasmelevam no Instagram"><svg class="ig" viewBox="0 0 48 48" aria-hidden="true"><defs><radialGradient id="igtopo" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#fdf497"/><stop offset=".05" stop-color="#fdf497"/><stop offset=".45" stop-color="#fd5949"/><stop offset=".6" stop-color="#d6249f"/><stop offset=".9" stop-color="#285AEB"/></radialGradient></defs><rect width="48" height="48" rx="12" fill="url(#igtopo)"/><rect x="11" y="11" width="26" height="26" rx="8" fill="none" stroke="#fff" stroke-width="3"/><circle cx="24" cy="24" r="6.2" fill="none" stroke="#fff" stroke-width="3"/><circle cx="31.6" cy="16.4" r="1.9" fill="#fff"/></svg></a>
@@ -129,6 +130,7 @@
         </div>
       </div>
       <ul class="passagens" id="lista-passagens"></ul>
+      <p class="voltar-sim">Problema com o voo ou com as milhas? <a href="#contatos">Telefones das companhias e programas →</a></p>
       <p class="passagens-vazio" id="passagens-vazio" hidden></p>
       <button type="button" class="cta cta-b" id="mais-passagens" hidden></button>
     </section>
@@ -179,6 +181,20 @@
       </div>
     </section>
 
+    <section id="contatos" data-pagina="contatos">
+      <div class="sec-head">
+        <p class="eyebrow">Contatos úteis</p>
+        <h2>Telefones das companhias aéreas e programas de pontos</h2>
+        <p class="sec-note">Voo cancelado, milhas que não caíram, problema na emissão? Toque no número para ligar direto do celular.</p>
+      </div>
+      <div class="rest-busca">
+        <input type="search" id="contatos-busca" placeholder="Buscar companhia ou programa, ex.: LATAM" autocomplete="off" aria-label="Buscar companhia ou programa">
+      </div>
+      <ul class="contatos" id="lista-contatos"></ul>
+      <p class="passagens-vazio" id="contatos-vazio" hidden>Nenhum contato com esse nome.</p>
+      <p class="fine">Atendimento das próprias empresas; números podem mudar. Para dúvidas de passagens com milhas, tenha em mãos o localizador da reserva e o número do seu cadastro no programa.</p>
+    </section>
+
     <section id="como" data-pagina="como">
       <div class="sec-head">
         <p class="eyebrow">Transparência</p>
@@ -220,6 +236,6 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=28"></script>
+<script src="app.js?v=29"></script>
 </body>
 </html>

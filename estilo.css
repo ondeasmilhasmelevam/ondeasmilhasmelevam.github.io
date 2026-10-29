@@ -545,6 +545,16 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .passagens-vazio{margin:6px 0 0;padding:18px;border:1px dashed var(--line);border-radius:14px;color:var(--ash);text-align:center}
 #mais-passagens{margin-top:16px}
 
+/* ---------- contatos ---------- */
+.contatos{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr))}
+.contatos>li{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);min-width:0}
+.contatos h3{margin:0 0 8px;font-size:16px;font-weight:800;color:var(--rice)}
+.contatos ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.contatos a{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;text-decoration:none;color:var(--ouro);font-weight:700;font-size:15.5px;font-variant-numeric:tabular-nums}
+.contatos a:hover{color:var(--ouro-lt)}
+.contatos a small{font-size:12px;font-weight:700;color:var(--ash)}
+.contatos a.zap{color:#3ccf91}
+
 /* ---------- como calculamos ---------- */
 .como{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:30px}
 @media (max-width:760px){.como{grid-template-columns:1fr}}

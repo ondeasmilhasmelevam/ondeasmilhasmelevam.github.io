@@ -987,6 +987,69 @@
   });
   $('#mais-passagens').addEventListener('click', () => { filtroPassagem.todas = !filtroPassagem.todas; mostrarPassagens(); });
 
+  // Telefones das companhias e programas: planilha do Felipe (Nome, Telefone),
+  // lida ao vivo; se o Google não responder, vale a cópia em dados/contatos.csv.
+  const URL_CONTATOS = 'https://docs.google.com/spreadsheets/d/1i6xbxNXBqKnGIJCXnQpQpRY0n2BQdjZDnP82fECtirs/export?format=csv&gid=0';
+  let contatos = [];
+  function lerCsv(txt) {
+    const linhas = [];
+    let campo = '', linha = [], aspas = false;
+    for (let i = 0; i < txt.length; i++) {
+      const c = txt[i];
+      if (aspas) {
+        if (c === '"' && txt[i + 1] === '"') { campo += '"'; i++; } else if (c === '"') aspas = false; else campo += c;
+      } else if (c === '"') aspas = true;
+      else if (c === ',') { linha.push(campo); campo = ''; }
+      else if (c === '\n' || c === '\r') { if (c === '\r' && txt[i + 1] === '\n') i++; linha.push(campo); linhas.push(linha); linha = []; campo = ''; }
+      else campo += c;
+    }
+    if (campo || linha.length) { linha.push(campo); linhas.push(linha); }
+    return linhas;
+  }
+  // Link de ligar (ou de WhatsApp) a partir do número como está na planilha.
+  function linkTelefone(nome, tel) {
+    const d = tel.replace(/\D/g, '');
+    if (/whats/i.test(nome)) return { href: `https://wa.me/${d}`, zap: true };
+    // DDD + número (10 ou 11 dígitos, sem 0800/0300/4003...) ganha o +55.
+    const ddd = /^[1-9][1-9]\d{8,9}$/.test(d) && !/^(300|400|800)/.test(d);
+    return { href: `tel:${ddd ? '+55' + d : d}`, zap: false };
+  }
+  function montarContatos(txt) {
+    const linhas = lerCsv(txt).slice(1).filter(l => (l[0] || '').trim() && (l[1] || '').trim());
+    const grupos = new Map();
+    for (const [nomeBruto, tel] of linhas) {
+      // "TAP - SAC para..." e "Iberia (WhatsApp)" ficam junto da TAP e da Iberia.
+      const nomeLimpo = nomeBruto.trim();
+      const [base, ...resto] = nomeLimpo.split(/\s+-\s+|\s*\(/);
+      const chave = norm(base.replace(/\s+Brasil$/i, ''));
+      if (!grupos.has(chave)) grupos.set(chave, { nome: base.replace(/\s+Brasil$/i, '').trim(), numeros: [] });
+      grupos.get(chave).numeros.push({ tel: tel.trim(), rotulo: resto.join(' ').replace(/\)$/, '').trim(), ...linkTelefone(nomeLimpo, tel) });
+    }
+    return [...grupos.values()].sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+  }
+  function mostrarContatos() {
+    const busca = norm($('#contatos-busca').value);
+    const lista = contatos.filter(c => !busca || norm(c.nome + ' ' + c.numeros.map(n => n.rotulo).join(' ')).includes(busca));
+    $('#lista-contatos').innerHTML = lista.map(c => `<li>
+        <h3>${esc(c.nome)}</h3>
+        <ul>${c.numeros.map(n => `<li><a class="${n.zap ? 'zap' : ''}" href="${esc(n.href)}"${n.zap ? ' target="_blank" rel="noopener"' : ''}>${esc(n.tel)}${n.rotulo ? ` <small>${esc(n.rotulo)}</small>` : ''}</a></li>`).join('')}</ul>
+      </li>`).join('');
+    $('#contatos-vazio').hidden = !!lista.length || !contatos.length;
+  }
+  async function desenharContatos() {
+    for (const url of [URL_CONTATOS, 'dados/contatos.csv']) {
+      try {
+        const r = await fetch(url, { cache: 'no-store' });
+        if (!r.ok) continue;
+        const lista = montarContatos(await r.text());
+        if (lista.length) { contatos = lista; break; }
+      } catch (e) { /* tenta a cópia */ }
+    }
+    $('#contatos').hidden = !contatos.length;
+    mostrarContatos();
+  }
+  $('#contatos-busca').addEventListener('input', mostrarContatos);
+
   function desenharPrecos() {
     const P = window.PRECO_MILHAS;
     if (!P || !P.length) { $('#comprar').hidden = true; return; }
@@ -1200,6 +1263,7 @@
     desenharPrecos();
     desenharNoticias();
     desenharPassagens();
+    desenharContatos();
     setInterval(() => { if (!document.hidden) desenharPassagens(); else mostrarPassagens(); }, 3 * 60e3);
     desenharAvisos();
     const [ok] = await Promise.all([carregar(), buscarDolar()]);
