@@ -1101,6 +1101,88 @@
     $('#calendario').hidden = false;
   }
 
+  // Quanto pagar numa passagem: planilha do Felipe, aba em reais (gid=0) e aba MILHAS.
+  const ID_QUANTO = '1UVCaLldcH1CfOJNFmZPlXzCmijKxePTPArduYoKscW8';
+  const FONTES_QUANTO = {
+    reais: [`https://docs.google.com/spreadsheets/d/${ID_QUANTO}/export?format=csv&gid=0`, 'dados/precos-reais.csv'],
+    milhas: [`https://docs.google.com/spreadsheets/d/${ID_QUANTO}/gviz/tq?tqx=out:csv&headers=0&sheet=MILHAS`, 'dados/precos-milhas.csv'],
+  };
+  const NIVEIS = { TOP: 'top', OTIMO: 'otimo', NORMAL: 'normal', CARO: 'caro' };
+  const quanto = { tipo: 'reais', reais: [], eco: [], exe: [] };
+  const limpa = t => String(t || '').replace(/\s+/g, ' ').trim();
+  async function lerFonte(urls) {
+    for (const url of urls) {
+      try {
+        const r = await fetch(url, { cache: 'no-store' });
+        if (r.ok) { const g = lerCsv(await r.text()); if (g.length > 2) return g; }
+      } catch (e) { /* tenta a cópia */ }
+    }
+    return [];
+  }
+  // Acha a linha "CONTINENTE ..." e lê as colunas de nível (TOP, ÓTIMO, NORMAL, CARO) de cada bloco.
+  function lerTabela(g, inicioCol, padrao) {
+    const h = g.findIndex(l => norm(l[0]) === 'CONTINENTE');
+    if (h < 0) return [];
+    const cab = g[h].map(c => NIVEIS[norm(c)]);
+    const cols = padrao.map((nivel, i) => ({ col: inicioCol + i, nivel: cab[inicioCol + i] || nivel }));
+    const vistos = new Set();
+    return g.slice(h + 1).filter(l => limpa(l[0]) && limpa(l[1])).map(l => ({
+      continente: limpa(l[0]), linha: l,
+    })).filter(x => { const k = x.linha.join('|'); if (vistos.has(k)) return false; vistos.add(k); return true; })
+      .map(x => ({ continente: x.continente, linha: x.linha, cols }));
+  }
+  function montarQuanto(reais, milhas) {
+    quanto.reais = lerTabela(reais, 3, ['top', 'otimo', 'normal', 'caro']).map(({ continente, linha, cols }) => {
+      const pais = limpa(linha[1]), cidade = limpa(linha[2]);
+      const temCidade = cidade && cidade !== '-';
+      return { continente, destino: temCidade ? cidade : pais, sub: temCidade && pais !== cidade ? pais : '',
+        valores: cols.map(c => ({ nivel: c.nivel, itens: [limpa(linha[c.col])] })) };
+    });
+    const programas = t => String(t || '').split('\n').map(limpa).filter(x => x && x !== '-').map(x => {
+      const m = x.match(/^([^:]+):\s*(.+)$/);
+      return m ? { prog: m[1].trim(), valor: m[2].trim() } : { prog: '', valor: x };
+    });
+    const linhasMilhas = lerTabela(milhas, 2, ['top', 'otimo', 'normal', 'caro', 'top', 'normal', 'caro']);
+    const destinoMilhas = linha => { const partes = String(linha[1]).split('\n').map(limpa).filter(Boolean); return partes.length > 1 ? { destino: partes.slice(1).join(' '), sub: partes[0] } : { destino: partes[0], sub: '' }; };
+    quanto.eco = linhasMilhas.map(({ continente, linha, cols }) => ({ continente, ...destinoMilhas(linha),
+      valores: cols.slice(0, 4).map(c => ({ nivel: c.nivel, itens: programas(linha[c.col]) })) }));
+    quanto.exe = linhasMilhas.map(({ continente, linha, cols }) => ({ continente, ...destinoMilhas(linha),
+      valores: cols.slice(4).map(c => ({ nivel: c.nivel, itens: programas(linha[c.col]) })) }))
+      .filter(x => x.valores.some(v => v.itens.length));
+  }
+  const NOME_NIVEL = { top: 'Top', otimo: 'Ótimo', normal: 'Normal', caro: 'Caro' };
+  function mostrarQuanto() {
+    const lista = quanto[quanto.tipo] || [];
+    const busca = norm($('#quanto-busca').value);
+    const vis = lista.filter(x => !busca || norm([x.destino, x.sub, x.continente].join(' ')).includes(busca));
+    const grupos = [];
+    vis.forEach(x => { let g = grupos.find(y => y.nome === x.continente); if (!g) grupos.push(g = { nome: x.continente, itens: [] }); g.itens.push(x); });
+    const niveis = lista[0] ? lista[0].valores.map(v => v.nivel) : [];
+    const celula = v => {
+      if (!v.itens.length) return `<td class="c-${v.nivel}">–</td>`;
+      if (quanto.tipo === 'reais') return `<td class="c-${v.nivel}">${esc(v.itens[0].replace(/,00$/, ''))}</td>`;
+      return `<td class="c-${v.nivel}"><ul>${v.itens.map(i => `<li>${i.prog ? `<b>${esc(i.prog)}</b>` : ''}${esc(i.valor)}</li>`).join('')}</ul></td>`;
+    };
+    $('#quanto-tabelas').innerHTML = grupos.map(g => `<div class="quanto-grupo">
+        <h3>${esc(g.nome)}</h3>
+        <div class="quanto-rolar"><table class="quanto-tab">
+          <thead><tr><th>Destino</th>${niveis.map(n => `<th><span class="n-${n}">${NOME_NIVEL[n]}</span></th>`).join('')}</tr></thead>
+          <tbody>${g.itens.map(x => `<tr><th>${esc(x.destino)}${x.sub ? `<small>${esc(x.sub)}</small>` : ''}</th>${x.valores.map(celula).join('')}</tr>`).join('')}</tbody>
+        </table></div>
+      </div>`).join('');
+    $('#quanto-vazio').hidden = !!vis.length || !lista.length;
+    $('#quanto-tipo').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.tipo === quanto.tipo)));
+  }
+  async function desenharQuanto() {
+    const [reais, milhas] = await Promise.all([lerFonte(FONTES_QUANTO.reais), lerFonte(FONTES_QUANTO.milhas)]);
+    montarQuanto(reais, milhas);
+    if (!quanto.reais.length && !quanto.eco.length) { $('#quanto').hidden = true; return; }
+    if (!quanto.reais.length) quanto.tipo = 'eco';
+    mostrarQuanto();
+  }
+  $('#quanto-tipo').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { quanto.tipo = b.dataset.tipo; mostrarQuanto(); } });
+  $('#quanto-busca').addEventListener('input', mostrarQuanto);
+
   function desenharPrecos() {
     const P = window.PRECO_MILHAS;
     if (!P || !P.length) { $('#comprar').hidden = true; return; }
@@ -1316,6 +1398,7 @@
     desenharPassagens();
     desenharContatos();
     desenharCalendario();
+    desenharQuanto();
     setInterval(() => { if (!document.hidden) desenharPassagens(); else mostrarPassagens(); }, 3 * 60e3);
     desenharAvisos();
     const [ok] = await Promise.all([carregar(), buscarDolar()]);

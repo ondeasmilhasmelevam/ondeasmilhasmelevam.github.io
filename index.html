@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=24">
+<link rel="stylesheet" href="estilo.css?v=25">
 </head>
 <body>
 <header class="bar">
@@ -28,6 +28,7 @@
       <a href="#simulador">Simulador</a>
       <a href="#ranking-sec">Ranking</a>
       <a href="#passagens">Passagens</a>
+      <a href="#quanto">Quanto pagar</a>
       <a href="#restaurantes">Restaurantes VIP</a>
       <a href="#comprar">Comprar milhas</a>
       <a href="#novidades">Novidades</a>
@@ -133,6 +134,25 @@
       <p class="voltar-sim">Problema com o voo ou com as milhas? <a href="#contatos">Telefones das companhias e programas →</a></p>
       <p class="passagens-vazio" id="passagens-vazio" hidden></p>
       <button type="button" class="cta cta-b" id="mais-passagens" hidden></button>
+    </section>
+
+    <section id="quanto" data-pagina="quanto">
+      <div class="sec-head">
+        <p class="eyebrow">Quanto pagar</p>
+        <h2>Quanto vale pagar numa passagem</h2>
+        <p class="sec-note">Valores de referência de ida e volta, saindo de São Paulo (GRU) ou do Rio (GIG). São os padrões: em promoção dá para achar ainda mais barato.</p>
+      </div>
+      <div class="seg-tipo" id="quanto-tipo" role="group" aria-label="Mostrar valores">
+        <button type="button" data-tipo="reais" aria-pressed="true">Em reais</button>
+        <button type="button" data-tipo="eco" aria-pressed="false">Milhas · econômica</button>
+        <button type="button" data-tipo="exe" aria-pressed="false">Milhas · executiva</button>
+      </div>
+      <div class="rest-busca">
+        <input type="search" id="quanto-busca" placeholder="Buscar destino, ex.: Lisboa" autocomplete="off" aria-label="Buscar destino">
+      </div>
+      <p class="quanto-legenda"><span class="n-top">Top</span> preço excelente, compre <span class="n-otimo">Ótimo</span> muito bom <span class="n-normal">Normal</span> o de sempre <span class="n-caro">Caro</span> vale esperar</p>
+      <div id="quanto-tabelas"></div>
+      <p class="passagens-vazio" id="quanto-vazio" hidden>Nenhum destino com esse nome.</p>
     </section>
 
     <section id="restaurantes" data-pagina="restaurantes">
@@ -242,6 +262,6 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=30"></script>
+<script src="app.js?v=31"></script>
 </body>
 </html>
