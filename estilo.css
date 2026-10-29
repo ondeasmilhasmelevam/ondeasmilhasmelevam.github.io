@@ -53,7 +53,10 @@ button{font:inherit;color:inherit}
    no celular, ícone ☰ que abre uma gaveta lateral organizada por grupos. */
 .bar-in{flex-wrap:wrap;row-gap:0}
 .bar-insta{margin-left:auto}
-.tabs{order:4;flex:1 0 100%;display:flex;flex-wrap:wrap;justify-content:center;margin:8px calc(50% - 50vw + 8px) -4px;padding-top:4px;border-top:1px solid var(--line)}
+.tabs{order:4;flex:1 0 100%;display:flex;flex-wrap:wrap;justify-content:center;margin:8px 0 -4px;padding-top:4px;border-top:1px solid var(--line)}
+/* Em tela larga, a linha do menu passa um pouco das bordas do conteúdo para caber inteira.
+   A largura (base) cresce junto com as margens negativas, então ela continua sozinha na segunda linha. */
+@media (min-width:1260px){ .tabs{flex-basis:calc(100% + 180px);margin-inline:-90px} }
 .menu-grupo,.menu-sub{display:contents}
 .menu-grupo-btn{display:none}
 .tabs a{position:relative;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ash);padding:9px 10px;white-space:nowrap;transition:color .18s ease}
@@ -68,10 +71,10 @@ button{font:inherit;color:inherit}
 .menu-ico,.menu-ico::before,.menu-ico::after{border-top:2px solid var(--rice)}
 .menu-ico::before,.menu-ico::after{content:'';position:absolute;left:0;right:0}
 .menu-ico::before{top:4px}.menu-ico::after{top:10px}
-@media (max-width:1100px){
+@media (max-width:1259px){
   .bar-mark b{font-size:12px;letter-spacing:.08em}
   .bar-insta{margin-left:auto}
-  .menu-btn{display:grid;place-items:center;width:42px;height:42px;padding:0;border-radius:12px;border:1px solid var(--line);background:var(--ink-2);cursor:pointer;order:3}
+  .menu-btn{flex:0 0 auto;display:grid;place-items:center;width:42px;height:42px;padding:0;border-radius:12px;border:1px solid var(--line);background:var(--ink-2);cursor:pointer;order:3}
   .menu-btn:hover{border-color:var(--ouro)}
   .tabs{position:fixed;top:0;right:0;bottom:0;z-index:60;width:min(320px,86vw);margin:0;padding:14px 14px 24px;flex-direction:column;align-items:stretch;overflow-y:auto;background:var(--ink-2);border-left:1px solid var(--line);transform:translateX(105%);transition:transform .25s ease,box-shadow .25s ease}
   .tabs.aberto{transform:none;visibility:visible;box-shadow:0 0 0 100vmax rgba(0,0,0,.55)}
