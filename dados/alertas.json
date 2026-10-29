@@ -11105,33 +11105,6 @@
   "link_nome": "Aeroplan"
  },
  {
-  "id": "3761373661-8458",
-  "data": "2026-10-27T14:10:31Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Alenquer",
-  "destino_iata": "ALT",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "10.000 milhas + Taxas",
-  "volta": "10.000 milhas + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Ago/26",
-    "dias": "17, 18"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Ago/26",
-    "dias": "24, 25, 26"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/tI6Gvt9",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7458",
   "data": "2026-10-27T12:17:21Z",
   "tipo": "promocao",
