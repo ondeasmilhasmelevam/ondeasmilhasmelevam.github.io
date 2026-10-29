@@ -11181,33 +11181,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-8484",
-  "data": "2026-10-27T17:22:13Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "17.000 milhas + Taxas",
-  "volta": "13.000 milhas + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Jan/27",
-    "dias": "25, 26, 27"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Fev/27",
-    "dias": "01, 02, 03, 04"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/KRS8oZv",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7458",
   "data": "2026-10-27T12:17:21Z",
   "tipo": "promocao",
