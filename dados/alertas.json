@@ -1,5 +1,360 @@
 [
  {
+  "id": "2361370250-5798",
+  "data": "2026-10-29T18:12:58Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "American Airlines",
+  "cabine": "Executiva",
+  "programa": "Finnair Plus",
+  "ida": "55.000 AVIOS + Taxas",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "02 a 04"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://link.dia23.com.br/r/CXFBS2P",
+  "link_nome": "Finnair Plus"
+ },
+ {
+  "id": "2361370250-5797",
+  "data": "2026-10-29T18:12:53Z",
+  "origem": "Doha",
+  "origem_iata": "DOH",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "Qatar Airways",
+  "cabine": "Executiva",
+  "programa": "Privilege Club",
+  "ida": "70.000 AVIOS + Taxas",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Out/27",
+    "dias": "11, 18, 25"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://link.dia23.com.br/r/ZwAq73f",
+  "link_nome": "Privilege Club"
+ },
+ {
+  "id": "2361370250-5796",
+  "data": "2026-10-29T18:12:48Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Cairo",
+  "destino_iata": "CAI",
+  "companhia": "Royal Air Maroc",
+  "cabine": "Executiva",
+  "programa": "Finnair Plus",
+  "ida": "50.500 AVIOS + Taxas",
+  "volta": "50.500 AVIOS + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "04, 20, 22, 24, 29"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "06"
+   },
+   {
+    "mes": "Jan/27",
+    "dias": "09"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "08"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "25, 26, 29, 31"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "07, 14, 21"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "15, 16, 22, 23"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "01, 02, 06"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "10, 11"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "05"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "20, 21"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/hqQI36I",
+  "link_nome": "Finnair Plus"
+ },
+ {
+  "id": "2361370250-5795",
+  "data": "2026-10-29T18:12:43Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Milão",
+  "destino_iata": "MXP",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Executiva",
+  "programa": "TAP Miles&Go",
+  "ida": "135.000 milhas + Taxas",
+  "volta": "135.000 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Out/26",
+    "dias": "29"
+   },
+   {
+    "mes": "Nov/26",
+    "dias": "02, 03, 05 a 12, 14, 16 a 18, 25 a 28, 30"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "01 a 03, 05"
+   },
+   {
+    "mes": "Jan/27",
+    "dias": "20, 25, 26, 31"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "01, 02, 08, 09, 12 a 20, 24, 26, 28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "01, 02, 04, 07, 09, 21 a 24, 28 a 30"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "04, 11, 12, 25"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "17, 31"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "01, 08, 09, 29"
+   },
+   {
+    "mes": "Jul/27",
+    "dias": "04, 06, 12 a 14"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Nov/26",
+    "dias": "03, 05, 06, 09 a 11, 16 a 20, 25 a 30"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "01 a 03, 06 a 08, 10, 11"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "02 a 04, 16 a 18, 22, 24 a 28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "01 a 07, 09 a 12, 14 a 22, 24 a 26, 29, 30"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "04 a 08, 10 a 13, 15, 19, 20, 22, 26 a 29"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "01 a 04, 10 a 13, 16 a 19, 26, 27"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "02, 03, 08 a 10"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "10 a 12, 14 a 19, 21 a 31"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "05 a 07, 09, 13 a 16, 20, 21, 23"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/cBQRhKi",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2361370250-5794",
+  "data": "2026-10-29T18:12:38Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Toronto",
+  "destino_iata": "YYZ",
+  "companhia": "Air Canada",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "60.000 milhas + Taxas",
+  "volta": "60.000 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "03, 04, 06, 07"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Nov/26",
+    "dias": "26"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/iCxE5mZ",
+  "link_nome": "Aeroplan"
+ },
+ {
+  "id": "2361370250-5793",
+  "data": "2026-10-29T18:12:35Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Lima",
+  "destino_iata": "LIM",
+  "companhia": "LATAM",
+  "cabine": "Executiva",
+  "programa": "Privilege Club",
+  "ida": "38.750 AVIOS + Taxas",
+  "volta": "38.750 AVIOS + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Out/26",
+    "dias": "31"
+   },
+   {
+    "mes": "Nov/26",
+    "dias": "05, 07, 12, 14, 21, 23, 26, 28"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "03, 05, 07, 10, 12, 14, 19, 24, 31"
+   },
+   {
+    "mes": "Jan/27",
+    "dias": "02, 04, 09, 11, 14, 16, 18, 21, 23, 28, 30"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "01, 04, 11, 13, 15, 18, 25, 27"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "01, 04, 11, 13, 15, 18, 20, 22, 25, 27, 28, 31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "02, 04, 07, 09, 11, 14, 16, 18, 23, 25, 28"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "02, 05, 07, 09, 12, 14, 16, 23, 28, 30"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "02, 04, 06, 09, 11, 13, 16, 18, 20, 23, 25, 27, 30"
+   },
+   {
+    "mes": "Jul/27",
+    "dias": "02, 04, 07, 09, 11, 14, 16, 18, 21, 23, 28, 30"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "01, 06, 08, 11, 13, 15, 18, 20, 22, 25, 27, 29"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "01, 03, 05, 08, 10, 12, 15, 17, 19"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Out/26",
+    "dias": "31"
+   },
+   {
+    "mes": "Nov/26",
+    "dias": "16, 19, 21, 23, 26, 28, 30"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "03, 05, 07, 10, 19, 21, 24, 26, 31"
+   },
+   {
+    "mes": "Jan/27",
+    "dias": "02, 07, 14, 16, 18, 21, 30"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "01, 04, 06, 08, 11, 15, 18, 20, 22, 25, 27"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "01, 04, 06, 08, 11, 15, 18, 20, 22, 25, 27, 28, 31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "02, 04, 07, 09, 11, 14, 16, 18, 23, 28"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "02, 12, 16, 21, 23, 28"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "04, 06"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/Xp3XO2v",
+  "link_nome": "Privilege Club"
+ },
+ {
+  "id": "1290836068-7497",
+  "data": "2026-10-29T18:08:17Z",
+  "tipo": "promocao",
+  "titulo": "MADRI POR 38 MIL MILHAS TAP MILES&GO POR TRECHO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Disponibilidade de bilhetes de ida e volta entre Belo Horizonte e Madri por 38.000 milhas TAP Miles&Go por trecho + taxas. Voos operados pela TAP Air Portugal com itinerário via Lisboa. Emissão disponível para classe econômica com taxas adicionais.",
+  "detalhes": [
+   "38.000 milhas por trecho",
+   "taxas adicionais",
+   "classe econômica",
+   "ida e volta disponível apenas para assinantes",
+   "itinerário via Lisboa",
+   "Belo Horizonte (CNF) x Madri (MAD) economica a partir de 38.000 milhas o trecho"
+  ],
+  "parceiros": "TAP Miles&Go, TAP Air Portugal",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/P3paYqj"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2361370250-5792",
   "data": "2026-10-29T17:53:28Z",
   "origem": "São Paulo",
