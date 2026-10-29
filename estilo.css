@@ -181,6 +181,13 @@ input[type=range]{width:100%;accent-color:var(--ouro);margin:8px 0 4px;height:28
 .meus li em.ok{color:var(--verde)}
 
 /* ---------- seções ---------- */
+/* Cada aba do topo é uma página: as seções das outras abas ficam escondidas. */
+[data-pagina].fora{display:none!important}
+main{min-height:calc(100vh - 260px)}
+.ir-ranking{text-align:center;margin:26px 0 0}
+.voltar-sim{margin:10px 0 0;font-size:14px}
+.voltar-sim a{color:var(--ouro);font-weight:700;text-decoration:none}
+.voltar-sim a:hover{text-decoration:underline}
 section{padding-block:56px 12px;scroll-margin-top:70px}
 .sec-head{margin-bottom:26px}
 .eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--ouro);margin:0 0 8px}

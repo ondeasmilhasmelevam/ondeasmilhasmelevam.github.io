@@ -1125,6 +1125,10 @@
     const d = li.querySelector('.detalhe');
     d.hidden = !abrir;
     if (abrir && r) d.innerHTML = detalheHtml(r);
+    if (rolar && paginaDe(li) !== paginaAtual) {
+      history.pushState(null, '', '#ranking-sec');
+      mostrarPagina('ranking-sec', false);
+    }
     if (rolar) li.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
@@ -1151,28 +1155,38 @@
     }
   });
 
-  // Aba ativa na barra conforme a rolagem
+  // Cada aba do topo é uma página: mostra só as seções dela (data-pagina).
+  // O endereço continua o mesmo; o #da-aba diz qual página abrir (dá para mandar o link).
   const abas = [...document.querySelectorAll('.tabs a')];
-  let abaAtual = '';
-  function marcarAba(id) {
-    if (id === abaAtual) return;
-    abaAtual = id;
-    abas.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + id)));
+  const paginas = [...document.querySelectorAll('[data-pagina]')];
+  const TITULO = document.title;
+  let paginaAtual = '';
+  const paginaDe = el => (el && el.closest('[data-pagina]') || {}).dataset?.pagina;
+  function mostrarPagina(alvo, rolar = true) {
+    const el = alvo && document.getElementById(alvo);
+    const pagina = paginaDe(el) || 'simulador';
+    paginaAtual = pagina;
+    paginas.forEach(p => p.classList.toggle('fora', p.dataset.pagina !== pagina));
+    let ativa = null;
+    abas.forEach(a => {
+      const ok = paginaDe(document.getElementById(a.getAttribute('href').slice(1))) === pagina;
+      a.setAttribute('aria-current', String(ok));
+      if (ok) ativa = a;
+    });
+    document.title = pagina === 'simulador' || !ativa ? TITULO : `${ativa.textContent} · Onde as Milhas Me Levam`;
     // Leva a aba ativa para a parte visível da barra (só na horizontal).
-    const ativa = abas.find(a => a.getAttribute('href') === '#' + id);
     const barra = ativa && ativa.parentElement;
     if (barra && barra.scrollWidth > barra.clientWidth) {
       barra.scrollLeft = ativa.offsetLeft - barra.offsetLeft - (barra.clientWidth - ativa.offsetWidth) / 2;
     }
+    if (!rolar) return;
+    if (el && !el.hasAttribute('data-pagina') && el.id !== 'topo') el.scrollIntoView({ block: 'start' });
+    else scrollTo(0, 0);
   }
-  // A última seção nunca chega ao meio da tela: no fim da página, marca ela.
-  addEventListener('scroll', () => {
-    if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) marcarAba('como');
-  }, { passive: true });
-  const obs = new IntersectionObserver(ents => {
-    for (const en of ents) if (en.isIntersecting) marcarAba(en.target.id);
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  ['simulador', 'ranking-sec', 'passagens', 'restaurantes', 'comprar', 'novidades', 'como'].forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
+  addEventListener('hashchange', () => mostrarPagina(location.hash.slice(1)));
+  // Clicar na aba da página em que já está volta ao topo dela.
+  abas.forEach(a => a.addEventListener('click', () => { if (a.getAttribute('href') === location.hash) scrollTo({ top: 0, behavior: 'smooth' }); }));
+  mostrarPagina(location.hash.slice(1));
 
   /* ---------- início ---------- */
 

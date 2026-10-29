@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=21">
+<link rel="stylesheet" href="estilo.css?v=22">
 </head>
 <body>
 <header class="bar">
@@ -38,7 +38,7 @@
 </header>
 
 <main id="topo">
-  <div class="hero" id="simulador">
+  <div class="hero" id="simulador" data-pagina="simulador">
     <div class="wrap">
       <div class="badge"><img src="img/logo.webp" alt="Logotipo Onde as Milhas Me Levam: globo, avião e cartão VIP em dourado" width="112" height="112"></div>
       <p class="kana">Comparador de cartões</p>
@@ -94,21 +94,23 @@
   </div>
 
   <div class="wrap">
-    <section id="vencedor-sec" aria-live="polite">
+    <section id="vencedor-sec" aria-live="polite" data-pagina="simulador">
       <div class="carregando" id="carregando"><span class="giro"></span>Lendo a planilha de cartões…</div>
       <div id="vencedor"></div>
+      <p class="ir-ranking"><a class="cta cta-b" href="#ranking-sec">Ver o ranking completo dos cartões →</a></p>
     </section>
 
-    <section id="ranking-sec">
+    <section id="ranking-sec" data-pagina="ranking">
       <div class="sec-head">
         <p class="eyebrow">Ranking</p>
         <h2>Todos os cartões, do que mais rende ao que menos rende</h2>
         <p class="sec-note" id="ranking-nota"></p>
+        <p class="voltar-sim"><a href="#simulador">← Mudar o gasto mensal no simulador</a></p>
       </div>
       <ol class="ranking" id="ranking"></ol>
     </section>
 
-    <section id="passagens">
+    <section id="passagens" data-pagina="passagens">
       <div class="sec-head">
         <p class="eyebrow"><span class="ao-vivo"></span>Passagens e promoções</p>
         <h2>Oportunidades das últimas 24 horas</h2>
@@ -131,7 +133,7 @@
       <button type="button" class="cta cta-b" id="mais-passagens" hidden></button>
     </section>
 
-    <section id="restaurantes">
+    <section id="restaurantes" data-pagina="restaurantes">
       <div class="sec-head">
         <p class="eyebrow">Guia exclusivo</p>
         <h2>Restaurantes VIP nos aeroportos do Brasil</h2>
@@ -151,7 +153,7 @@
       <p class="fine rest-fine">Parceiros e regras mudam com frequência. Confirme no app do seu programa antes de ir.</p>
     </section>
 
-    <section id="comprar">
+    <section id="comprar" data-pagina="comprar">
       <div class="sec-head">
         <p class="eyebrow">Comprar milhas</p>
         <h2>Preço bom para comprar milhas</h2>
@@ -160,7 +162,7 @@
       <ul class="precos" id="precos"></ul>
     </section>
 
-    <section id="novidades">
+    <section id="novidades" data-pagina="novidades">
       <div class="sec-head">
         <p class="eyebrow">Novidades</p>
         <h2>O que mudou nos cartões</h2>
@@ -177,7 +179,7 @@
       </div>
     </section>
 
-    <section id="como">
+    <section id="como" data-pagina="como">
       <div class="sec-head">
         <p class="eyebrow">Transparência</p>
         <h2>Como calculamos</h2>
@@ -218,6 +220,6 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=25"></script>
+<script src="app.js?v=26"></script>
 </body>
 </html>
