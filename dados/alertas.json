@@ -11568,33 +11568,6 @@
   "link_nome": "Flying Blue"
  },
  {
-  "id": "3761373661-8491",
-  "data": "2026-10-27T18:55:04Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "LATAM Airlines",
-  "cabine": "Light",
-  "programa": "LATAM Pass",
-  "ida": "8.350 milhas + Taxas",
-  "volta": "8.350 milhas + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Mar/27",
-    "dias": "7"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Mar/27",
-    "dias": "15"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/GmqqB93",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7458",
   "data": "2026-10-27T12:17:21Z",
   "tipo": "promocao",
