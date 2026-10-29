@@ -3,6 +3,8 @@
 # fica de plantão por quase 6 horas, olhando os grupos a cada 6 minutos, e no
 # fim chama a próxima. O agendamento de hora em hora fica só de reserva, caso
 # a corrente pare. Enquanto os segredos TELEGRAM_* não existirem, não faz nada.
+# A cada volta também tenta um story no Instagram (ferramentas/stories.py),
+# que respeita o limite por dia e o intervalo entre stories.
 name: Alertas do Telegram
 
 on:
@@ -11,7 +13,7 @@ on:
   workflow_dispatch:
   push:   # roda também quando o programa de leitura muda
     branches: [main]
-    paths: ['ferramentas/alertas.py', '.github/workflows/alertas.yml']
+    paths: ['ferramentas/alertas.py', 'ferramentas/stories.py', '.github/workflows/alertas.yml']
 
 permissions:
   contents: write
@@ -30,13 +32,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install telethon==1.44.0
+      - run: pip install telethon==1.44.0 pillow==12.2.0 requests==2.32.5
       - name: Plantão nos grupos
         env:
           TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
           TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
           TELEGRAM_SESSAO: ${{ secrets.TELEGRAM_SESSAO }}
           TELEGRAM_GRUPO: ${{ secrets.TELEGRAM_GRUPO }}
+          INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+          INSTAGRAM_ID: ${{ secrets.INSTAGRAM_ID }}
+          GH_SEGREDOS: ${{ secrets.GH_SEGREDOS }}
         run: |
           git config user.name "Onde as Milhas Me Levam"
           git config user.email "ondeasmilhasmelevam@users.noreply.github.com"
@@ -50,6 +55,7 @@ jobs:
                 git commit -q -m "Passagens dos grupos atualizadas"
                 git pull -q --rebase && git push -q || echo "::warning::Não deu para enviar agora; tenta na próxima volta."
               fi
+              python ferramentas/stories.py || echo "::warning::Story não saiu nesta volta."
             else
               falhas=$((falhas + 1))
               # Sessão encerrada ou chave errada não se resolvem sozinhas: para e avisa.
