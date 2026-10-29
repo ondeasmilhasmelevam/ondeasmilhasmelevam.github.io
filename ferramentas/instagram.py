@@ -268,7 +268,7 @@ def programa_termo(p):
     t = (p or '').upper()
     for chave, padrao in (('LATAM', r'LATAM'), ('Smiles', r'SMILES|GOL'), ('Azul', r'AZUL'),
                           ('Avios', r'IBERIA|AVIOS|BRITISH|QATAR|PRIVILEGE'), ('TAP', r'TAP|MILES&GO'),
-                          ('Virgin', r'VIRGIN'), ('Connectmiles', r'CONNECT|COPA'), ('Suma', r'SUMA|AIR EUROPA')):
+                          ('Virgin', r'VIRGIN'), ('Connectmiles', r'CONNECT|COPA'), ('Suma', r'SUMA|AIR EUROPA'), ('AA', r'AADVANTAGE|AMERICAN')):
         if re.search(padrao, t):
             return chave
     return ''

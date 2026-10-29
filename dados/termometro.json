@@ -5,44 +5,291 @@
   "Valor por trecho: ida ou volta, por pessoa, sem contar as taxas.",
   "Preço espetacular é raro: aparece de vez em quando, às vezes por erro de tarifa. Não deixe de viajar esperando por ele."
  ],
- "niveis": ["espetacular", "muito bom", "bom", "normal", "caro", "péssimo"],
+ "niveis": [
+  "espetacular",
+  "muito bom",
+  "bom",
+  "normal",
+  "caro",
+  "péssimo"
+ ],
  "programas": {
   "LATAM": "LATAM Pass",
   "Smiles": "Smiles",
   "Azul": "Azul Fidelidade",
   "Avios": "Avios (Iberia, British, Qatar)",
   "TAP": "TAP Miles&Go",
-  "Virgin": "Virgin Atlantic",
+  "Virgin": "Virgin Atlantic (Flying Club)",
   "Connectmiles": "Connectmiles (Copa)",
-  "Suma": "Suma (Air Europa)"
+  "Suma": "Suma (Air Europa)",
+  "AA": "AAdvantage (American)"
  },
  "regioes": [
+  {
+   "id": "america-do-norte",
+   "nome": "América do Norte",
+   "cidades": "Miami, Nova York, Boston, Washington, Chicago, Houston, Dallas e Los Angeles",
+   "aeroportos": [
+    "MIA",
+    "JFK",
+    "EWR",
+    "LGA",
+    "BOS",
+    "IAD",
+    "DCA",
+    "ORD",
+    "IAH",
+    "DFW",
+    "LAX"
+   ],
+   "cabines": {
+    "eco": {
+     "espetacular": {
+      "LATAM": 50000,
+      "Azul": 62000
+     },
+     "muito bom": {
+      "LATAM": 60000,
+      "Azul": 80000
+     },
+     "bom": {
+      "LATAM": 75000,
+      "Smiles": 100000,
+      "Azul": 100000
+     },
+     "normal": {
+      "LATAM": 90000,
+      "Smiles": 130000,
+      "Azul": 125000
+     },
+     "caro": {
+      "LATAM": 114000,
+      "Smiles": 170000,
+      "Azul": 160000,
+      "Connectmiles": 50000,
+      "AA": 32000
+     },
+     "péssimo": {
+      "LATAM": 140000,
+      "Smiles": 210000,
+      "Azul": 200000,
+      "AA": 40000
+     }
+    },
+    "exe": {
+     "espetacular": {
+      "Smiles": 250000
+     },
+     "muito bom": {
+      "Smiles": 285000
+     },
+     "bom": {
+      "Smiles": 320000,
+      "Azul": 340000,
+      "Connectmiles": 110000
+     },
+     "normal": {
+      "LATAM": 240000,
+      "TAP": 190000
+     },
+     "caro": {
+      "LATAM": 270000,
+      "Avios": 124000
+     }
+    }
+   }
+  },
   {
    "id": "europa",
    "nome": "Europa",
    "cidades": "Lisboa, Porto, Madri, Barcelona, Paris, Londres, Amsterdã, Frankfurt, Zurique, Milão e Roma",
-   "aeroportos": ["LIS", "OPO", "MAD", "BCN", "CDG", "ORY", "LHR", "LGW", "AMS", "FRA", "ZRH", "MXP", "LIN", "FCO"],
+   "aeroportos": [
+    "LIS",
+    "OPO",
+    "MAD",
+    "BCN",
+    "CDG",
+    "ORY",
+    "LHR",
+    "LGW",
+    "AMS",
+    "FRA",
+    "ZRH",
+    "MXP",
+    "LIN",
+    "FCO"
+   ],
    "cabines": {
     "eco": {
-     "espetacular": {"Avios": 21250},
-     "muito bom": {"LATAM": 75000, "Smiles": 120000, "Azul": 135000},
-     "bom": {"LATAM": 100000, "Smiles": 184000, "Avios": 42500, "Azul": 175000},
-     "normal": {"LATAM": 130000, "Smiles": 200000, "Suma": 50000, "Azul": 210000},
-     "caro": {"LATAM": 150000, "Smiles": 230000, "Azul": 230000, "Virgin": 34000, "TAP": 108000},
-     "péssimo": {"LATAM": 188000, "Connectmiles": 91000, "Azul": 250000, "TAP": 158000, "Virgin": 54000}
+     "espetacular": {
+      "Avios": 21250
+     },
+     "muito bom": {
+      "LATAM": 75000,
+      "Smiles": 120000,
+      "Azul": 135000
+     },
+     "bom": {
+      "LATAM": 100000,
+      "Smiles": 184000,
+      "Avios": 42500,
+      "Azul": 175000
+     },
+     "normal": {
+      "LATAM": 120000,
+      "Smiles": 200000,
+      "Suma": 50000,
+      "Azul": 210000
+     },
+     "caro": {
+      "LATAM": 150000,
+      "Smiles": 230000,
+      "Azul": 230000,
+      "Virgin": 34000,
+      "TAP": 108000
+     },
+     "péssimo": {
+      "LATAM": 180000,
+      "Connectmiles": 95000,
+      "Azul": 250000,
+      "TAP": 150000,
+      "Virgin": 54000
+     }
+    },
+    "exe": {
+     "espetacular": {
+      "Avios": 32350
+     },
+     "muito bom": {
+      "Virgin": 84000,
+      "Avios": 82500,
+      "LATAM": 240000,
+      "Suma": 100000
+     },
+     "bom": {
+      "LATAM": 260000,
+      "Smiles": 420000
+     },
+     "normal": {
+      "LATAM": 320000,
+      "TAP": 240000,
+      "Smiles": 500000,
+      "Azul": 490000,
+      "Connectmiles": 175000
+     },
+     "caro": {
+      "LATAM": 400000,
+      "Smiles": 640000,
+      "Azul": 600000,
+      "Virgin": 170000,
+      "TAP": 362000
+     }
+    }
+   }
+  },
+  {
+   "id": "caribe",
+   "nome": "América Central e Caribe",
+   "cidades": "Cancún, Punta Cana, Panamá, Aruba, Curaçao e San José",
+   "aeroportos": [
+    "CUN",
+    "PUJ",
+    "SDQ",
+    "PTY",
+    "AUA",
+    "CUR",
+    "SJO",
+    "SJU",
+    "MBJ",
+    "HAV",
+    "SXM",
+    "NAS"
+   ],
+   "cabines": {
+    "eco": {
+     "espetacular": {
+      "Smiles": 78500,
+      "LATAM": 43000
+     },
+     "muito bom": {
+      "Smiles": 100000,
+      "LATAM": 60000
+     },
+     "bom": {
+      "Azul": 120000,
+      "Smiles": 120000,
+      "LATAM": 70000
+     },
+     "normal": {
+      "Azul": 140000,
+      "Smiles": 140000,
+      "LATAM": 80000,
+      "Connectmiles": 40000
+     },
+     "caro": {
+      "Azul": 160000,
+      "Smiles": 160000,
+      "LATAM": 100000
+     },
+     "péssimo": {
+      "Azul": 180000,
+      "Smiles": 180000,
+      "LATAM": 130000,
+      "Connectmiles": 80000
+     }
     }
    }
   }
  ],
  "milheiro": [
-  {"programa": "LATAM Pass", "teto": 25, "moeda": "BRL"},
-  {"programa": "Smiles", "teto": 16, "moeda": "BRL", "dica": "Os melhores preços costumam aparecer na Pagol, na compra pelo carrinho da Livelo ou direto na Smiles com cupom."},
-  {"programa": "Azul Fidelidade", "teto": 14, "moeda": "BRL"},
-  {"programa": "Livelo", "teto": 31, "moeda": "BRL"},
-  {"programa": "Esfera", "teto": 35, "moeda": "BRL", "dica": "Perto de R$ 31,50 já dá para juntar pensando numa promoção futura de Avios, sabendo que é uma aposta."},
-  {"programa": "Iberia (Avios)", "teto": 55, "moeda": "BRL"},
-  {"programa": "Aeroplan", "teto": 75, "moeda": "BRL"},
-  {"programa": "Suma (Air Europa)", "teto": 10, "moeda": "EUR", "dica": "Compra direto no site, quando estiver com desconto."},
-  {"programa": "Virgin Atlantic", "teto": 9, "moeda": "GBP", "dica": "Compra direto no site, quando estiver com desconto."}
+  {
+   "programa": "LATAM Pass",
+   "teto": 25,
+   "moeda": "BRL"
+  },
+  {
+   "programa": "Smiles",
+   "teto": 16,
+   "moeda": "BRL",
+   "dica": "Os melhores preços costumam aparecer na Pagol, na compra pelo carrinho da Livelo ou direto na Smiles com cupom."
+  },
+  {
+   "programa": "Azul Fidelidade",
+   "teto": 14,
+   "moeda": "BRL"
+  },
+  {
+   "programa": "Livelo",
+   "teto": 31,
+   "moeda": "BRL"
+  },
+  {
+   "programa": "Esfera",
+   "teto": 35,
+   "moeda": "BRL",
+   "dica": "Perto de R$ 31,50 já dá para juntar pensando numa promoção futura de Avios, sabendo que é uma aposta."
+  },
+  {
+   "programa": "Iberia (Avios)",
+   "teto": 55,
+   "moeda": "BRL"
+  },
+  {
+   "programa": "Aeroplan",
+   "teto": 75,
+   "moeda": "BRL"
+  },
+  {
+   "programa": "Suma (Air Europa)",
+   "teto": 10,
+   "moeda": "EUR",
+   "dica": "Compra direto no site, quando estiver com desconto."
+  },
+  {
+   "programa": "Virgin Atlantic",
+   "teto": 9,
+   "moeda": "GBP",
+   "dica": "Compra direto no site, quando estiver com desconto."
+  }
  ]
 }

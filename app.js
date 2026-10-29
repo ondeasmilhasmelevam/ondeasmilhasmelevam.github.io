@@ -908,7 +908,7 @@
     const t = norm(p);
     return /LATAM/.test(t) ? 'LATAM' : /SMILES|GOL/.test(t) ? 'Smiles' : /AZUL/.test(t) ? 'Azul'
       : /IBERIA|AVIOS|BRITISH|QATAR|PRIVILEGE/.test(t) ? 'Avios' : /TAP|MILES&GO/.test(t) ? 'TAP'
-      : /VIRGIN/.test(t) ? 'Virgin' : /CONNECT|COPA/.test(t) ? 'Connectmiles' : /SUMA|AIR EUROPA/.test(t) ? 'Suma' : '';
+      : /VIRGIN/.test(t) ? 'Virgin' : /CONNECT|COPA/.test(t) ? 'Connectmiles' : /SUMA|AIR EUROPA/.test(t) ? 'Suma' : /AADVANTAGE|AMERICAN/.test(t) ? 'AA' : '';
   };
   const numeroMilhas = t => { const m = String(t || '').match(/([\d.]+)\s*(?:milhas|pontos|avios)/i); return m ? +m[1].replace(/\./g, '') : 0; };
   // Faixa da passagem: a melhor faixa cujo limite do programa cobre as milhas do trecho.
