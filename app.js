@@ -976,6 +976,66 @@
   $('#milheiro-programa').addEventListener('change', mostrarMilheiro);
   $('#milheiro-preco').addEventListener('input', mostrarMilheiro);
 
+  // Combos de economia (dados/combos.json): passos numerados e uma calculadora por combo.
+  let combos = [], euro = { valor: 6.3, aoVivo: false };
+  const MILHEIRO_DE = { Avios: 'Avios', 'milhas Smiles': 'Smiles' };
+  const reais = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+  function contaCombo(c, gasto) {
+    let cashMin = 0, cashMax = 0, valorMilhas = 0;
+    const linhas = [];
+    for (const p of c.passos) {
+      const g = p.ganho;
+      if (!g) continue;
+      if (g.tipo === 'cashback') {
+        cashMin += gasto * g.min / 100; cashMax += gasto * g.max / 100;
+        linhas.push(`<li><b>${reais(gasto * g.min / 100)} a ${reais(gasto * g.max / 100)}</b> de cashback</li>`);
+      } else {
+        const qtd = Math.round(g.moeda === 'EUR' ? gasto / euro.valor * g.por : gasto * g.por);
+        const milheiro = (window.MILHEIROS || {})[MILHEIRO_DE[g.programa]];
+        const valor = milheiro ? qtd / 1000 * milheiro : 0;
+        valorMilhas += valor;
+        linhas.push(`<li><b>${qtd.toLocaleString('pt-BR')} ${esc(g.programa)}</b>${g.rotulo ? ` ${esc(g.rotulo)}` : ''}${valor ? `, que valem cerca de ${reais(valor)}` : ''}</li>`);
+      }
+    }
+    const total = cashMin === cashMax ? reais(cashMin + valorMilhas) : `${reais(cashMin + valorMilhas)} a ${reais(cashMax + valorMilhas)}`;
+    return `<ul>${linhas.join('')}</ul><p class="combo-total">No fim, volta <b>${total}</b> em dinheiro e milhas.</p>`;
+  }
+  function comboHtml(c) {
+    const quando = new Date(c.conferido + 'T12:00:00').toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+    const temConta = c.passos.some(p => p.ganho);
+    return `<article class="combo" data-combo="${esc(c.id)}">
+        <header><h3>${esc(c.titulo)}</h3><span class="combo-data">Conferido em ${esc(quando)}</span></header>
+        <p class="combo-chamada">${esc(c.chamada)}</p>
+        <ol class="combo-passos">${c.passos.map(p => `<li><b>${esc(p.titulo)}</b><span>${esc(p.texto)}</span></li>`).join('')}</ol>
+        ${temConta ? `<div class="combo-calc">
+          <label>Quanto você vai gastar? <span class="combo-campo">R$ <input type="number" min="0" step="50" value="2000" inputmode="numeric" aria-label="Valor do gasto em reais"></span></label>
+          <div class="combo-resultado" aria-live="polite"></div>
+          ${c.passos.some(p => p.ganho && p.ganho.moeda === 'EUR') ? `<p class="combo-nota">Com o euro a ${euro.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}${euro.aoVivo ? ' (agora)' : ' (aproximado)'}. As milhas valem pelo milheiro da tabela do site.</p>` : ''}
+        </div>` : ''}
+        <details class="combo-atencao"><summary>Antes de fazer, atenção</summary><ul>${c.atencao.map(a => `<li>${esc(a)}</li>`).join('')}</ul>
+          <p class="combo-fontes">Fontes: ${c.fontes.map(f => `<a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.nome)}</a>`).join(' · ')}</p></details>
+      </article>`;
+  }
+  function atualizarCombo(el) {
+    const c = combos.find(x => x.id === el.dataset.combo), campo = el.querySelector('input');
+    if (!c || !campo) return;
+    const gasto = parseFloat(campo.value);
+    el.querySelector('.combo-resultado').innerHTML = gasto > 0 ? contaCombo(c, gasto) : '<p class="combo-total">Digite um valor maior que zero.</p>';
+  }
+  async function desenharCombos() {
+    try {
+      const [r, e] = await Promise.all([fetch('dados/combos.json', { cache: 'no-store' }),
+        fetch('https://economia.awesomeapi.com.br/json/last/EUR-BRL', { cache: 'no-store' }).catch(() => null)]);
+      combos = r.ok ? await r.json() : [];
+      const bid = e && e.ok ? parseFloat((await e.json()).EURBRL.bid) : NaN;
+      if (bid > 1 && bid < 50) euro = { valor: bid, aoVivo: true };
+    } catch (err) { combos = combos || []; }
+    if (!combos.length) { $('#combos').hidden = true; return; }
+    $('#lista-combos').innerHTML = combos.map(comboHtml).join('');
+    document.querySelectorAll('.combo').forEach(atualizarCombo);
+  }
+  $('#lista-combos').addEventListener('input', e => { const el = e.target.closest('.combo'); if (el) atualizarCombo(el); });
+
   // Guia de emissão (dados/guia.json): por companhia, onde procurar a tarifa award,
   // por qual programa emitir, quando costuma aparecer e quantos assentos libera.
   let guia = null;
@@ -1568,18 +1628,23 @@
       if (ok) ativa = a;
     });
     document.title = pagina === 'simulador' || !ativa ? TITULO : `${ativa.textContent} · Onde as Milhas Me Levam`;
-    // Leva a aba ativa para a parte visível da barra (só na horizontal).
-    const barra = ativa && ativa.parentElement;
-    if (barra && barra.scrollWidth > barra.clientWidth) {
-      barra.scrollLeft = ativa.offsetLeft - barra.offsetLeft - (barra.clientWidth - ativa.offsetWidth) / 2;
-    }
+    $('#menu-atual').textContent = ativa ? ativa.textContent : 'Menu';
+    abrirMenu(false);
     if (!rolar) return;
     if (el && !el.hasAttribute('data-pagina') && el.id !== 'topo') el.scrollIntoView({ block: 'start' });
     else scrollTo(0, 0);
   }
+  // Menu: o botão abre e fecha a lista; clicar fora, apertar Esc ou escolher a página fecha.
+  function abrirMenu(abrir) {
+    $('#menu').classList.toggle('aberto', abrir);
+    $('#menu-btn').setAttribute('aria-expanded', String(abrir));
+  }
+  $('#menu-btn').addEventListener('click', () => abrirMenu(!$('#menu').classList.contains('aberto')));
+  document.addEventListener('click', e => { if (!e.target.closest('#menu, #menu-btn')) abrirMenu(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') abrirMenu(false); });
   addEventListener('hashchange', () => mostrarPagina(location.hash.slice(1)));
   // Clicar na aba da página em que já está volta ao topo dela.
-  abas.forEach(a => a.addEventListener('click', () => { if (a.getAttribute('href') === location.hash) scrollTo({ top: 0, behavior: 'smooth' }); }));
+  abas.forEach(a => a.addEventListener('click', () => { abrirMenu(false); if (a.getAttribute('href') === location.hash) scrollTo({ top: 0, behavior: 'smooth' }); }));
   mostrarPagina(location.hash.slice(1));
 
   /* ---------- início ---------- */
@@ -1595,6 +1660,7 @@
     desenharQuanto();
     desenharTermometro();
     desenharGuia();
+    desenharCombos();
     setInterval(() => { if (!document.hidden) desenharPassagens(); else mostrarPassagens(); }, 3 * 60e3);
     desenharAvisos();
     const [ok] = await Promise.all([carregar(), buscarDolar()]);

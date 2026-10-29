@@ -49,19 +49,23 @@ button{font:inherit;color:inherit}
 .bar-mark{display:flex;align-items:center;gap:10px;flex:0 0 auto;text-decoration:none}
 .bar-mark img{width:34px;height:34px;border-radius:50%;box-shadow:0 0 0 1px rgba(226,180,88,.35)}
 .bar-mark b{font-family:var(--display);font-weight:700;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;background:linear-gradient(180deg,var(--ouro-lt),var(--ouro) 60%,var(--ouro-dk));-webkit-background-clip:text;background-clip:text;color:transparent}
-.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto;padding-block:2px;flex:0 1 auto;min-width:0}
-.tabs::-webkit-scrollbar{display:none}
-.tabs a{
-  flex:0 0 auto;text-decoration:none;
-  font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--ash);padding:7px 12px;border-radius:999px;border:1px solid transparent;white-space:nowrap;
-  transition:color .18s ease,background .18s ease;
-}
-.tabs a:hover{color:var(--rice)}
+/* Menu: botão com a página atual; ao abrir, as páginas aparecem em lista vertical. */
+.menu-btn{margin-left:auto;display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--ink-2);color:var(--rice);font:inherit;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;max-width:60vw}
+.menu-btn:hover,.menu-btn[aria-expanded="true"]{border-color:var(--ouro)}
+.menu-btn span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ouro)}
+.menu-ico{position:relative;width:18px;height:12px;flex:0 0 auto}
+.menu-ico,.menu-ico::before,.menu-ico::after{border-top:2px solid var(--rice)}
+.menu-ico::before,.menu-ico::after{content:'';position:absolute;left:0;right:0}
+.menu-ico::before{top:3px}.menu-ico::after{top:8px}
+.menu-btn[aria-expanded="true"] .menu-ico{border-color:transparent}
+.menu-btn[aria-expanded="true"] .menu-ico::before{top:3px;transform:rotate(45deg)}
+.menu-btn[aria-expanded="true"] .menu-ico::after{top:3px;transform:rotate(-45deg)}
+.tabs{display:none;position:absolute;left:0;right:0;top:100%;max-height:calc(100vh - 70px);overflow-y:auto;padding:12px max(16px,calc((100% - 1120px)/2)) 18px;background:rgba(7,12,23,.97);border-bottom:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.45);grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px}
+.tabs.aberto{display:grid}
+.tabs a{text-decoration:none;font-size:14px;font-weight:700;color:var(--ash);padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--ink-2);transition:color .18s ease,border-color .18s ease}
+.tabs a:hover{color:var(--rice);border-color:var(--ouro-dk)}
 .tabs a[aria-current="true"]{color:var(--ink);background:var(--ouro);border-color:var(--ouro)}
-@media (max-width:1240px){ .tabs a{padding:7px 9px;letter-spacing:.06em;font-size:11.5px} }
-@media (max-width:1320px){ .bar-mark b{display:none} }
-@media (max-width:720px){ .bar-mark b{display:none} .tabs{margin-left:0;flex:1;min-width:0;-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent);mask-image:linear-gradient(90deg,#000 80%,transparent)} }
+@media (max-width:560px){ .bar-mark b{display:none} .tabs{grid-template-columns:1fr} }
 
 /* ---------- abertura ---------- */
 .hero{position:relative;overflow:hidden;text-align:center;padding-block:52px 50px;border-bottom:1px solid var(--line)}
@@ -617,6 +621,33 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .bonus-lista b{color:var(--rice);font-size:15px}
 .bonus-lista span{color:var(--ouro);font-weight:800;font-size:18px}
 .bonus-lista small{color:var(--ash);font-size:12.5px;line-height:1.4}
+
+/* ---------- combos de economia ---------- */
+.combos{display:grid;gap:18px;margin-bottom:16px}
+.combo{padding:20px;border:1px solid var(--line);border-top:3px solid var(--ouro);border-radius:0 0 16px 16px;background:var(--ink-2)}
+.combo header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 14px}
+.combo h3{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(20px,3.4vw,25px);letter-spacing:.03em;color:var(--rice)}
+.combo-data{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ash-dim)}
+.combo-chamada{margin:6px 0 16px;color:var(--ash);font-size:14.5px;line-height:1.5}
+.combo-passos{list-style:none;counter-reset:passo;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.combo-passos li{counter-increment:passo;position:relative;padding:14px 14px 14px 54px;border-radius:14px;background:var(--ink-3);display:grid;gap:4px}
+.combo-passos li::before{content:counter(passo);position:absolute;left:14px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--ouro);color:var(--ink);font-weight:800;display:grid;place-items:center}
+.combo-passos b{color:var(--rice);font-size:14.5px}
+.combo-passos span{color:var(--ash);font-size:13.5px;line-height:1.5}
+.combo-calc{margin-top:16px;padding:14px 16px;border-radius:14px;border:1px solid rgba(226,180,88,.35);background:rgba(226,180,88,.06)}
+.combo-calc label{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-weight:700;color:var(--rice)}
+.combo-campo{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--ink)}
+.combo-campo input{width:110px;border:0;background:none;color:var(--rice);font:inherit;font-size:16px}
+.combo-resultado ul{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:4px;color:var(--ash);font-size:14px}
+.combo-resultado b{color:var(--ouro)}
+.combo-total{margin:10px 0 0;font-size:15.5px;color:var(--rice)}
+.combo-total b{color:var(--ouro-lt)}
+.combo-nota{margin:8px 0 0;font-size:12px;color:var(--ash-dim)}
+.combo-atencao{margin-top:14px}
+.combo-atencao summary{cursor:pointer;font-weight:800;font-size:13.5px;color:var(--ouro)}
+.combo-atencao ul{margin:10px 0 0;padding-left:18px;color:var(--ash);font-size:13.5px;display:grid;gap:4px;line-height:1.45}
+.combo-fontes{margin:10px 0 0;font-size:12px;color:var(--ash-dim);line-height:1.6}
+.combo-fontes a{color:#9CC8FF}
 
 /* ---------- guia de emissão ---------- */
 .guia-passos{list-style:none;counter-reset:passo;margin:0 0 18px;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}

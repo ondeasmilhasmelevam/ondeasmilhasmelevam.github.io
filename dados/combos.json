@@ -1,0 +1,92 @@
+[
+ {
+  "id": "airbnb",
+  "titulo": "Airbnb com cashback e Avios",
+  "chamada": "Duas economias na mesma hospedagem: dinheiro de volta na compra do crédito e Avios na reserva.",
+  "conferido": "2026-10-29",
+  "passos": [
+   {
+    "titulo": "Compre crédito do Airbnb com cashback",
+    "texto": "No app do PicPay ou do Banco Inter, procure o crédito do Airbnb (vendido pela Zift). Nas campanhas de 2026, o dinheiro de volta ficou entre 10% e 15%.",
+    "ganho": {"tipo": "cashback", "min": 10, "max": 15}
+   },
+   {
+    "titulo": "Reserve entrando pelo link da British Airways",
+    "texto": "Abra o Airbnb pelo link de parceria do British Airways Club, entre com o seu número de sócio e faça a reserva na mesma visita. Cada euro, libra ou dólar gasto rende 2 Avios.",
+    "ganho": {"tipo": "milhas", "por": 2, "moeda": "EUR", "programa": "Avios"}
+   },
+   {
+    "titulo": "Pague com o crédito do passo 1",
+    "texto": "Na hora de pagar a reserva, use o crédito que você comprou. Assim o cashback e os Avios se somam."
+   }
+  ],
+  "atencao": [
+   "O cashback do PicPay só vale pagando com saldo da conta ou com o cartão PicPay, e fica no app (não dá para sacar).",
+   "Os Avios caem em até 60 dias. Reserva cancelada não pontua.",
+   "Antes de comprar, confira no app se a campanha de cashback ainda está no ar: elas mudam toda semana."
+  ],
+  "fontes": [
+   {"nome": "British Airways: Avios no Airbnb", "url": "https://www.britishairways.com/content/es/us/the-british-airways-club/avios/collecting-avios/hotels/airbnb"},
+   {"nome": "Melhores Cartões: PicPay com 15% em créditos Uber e Airbnb (ago/26)", "url": "https://www.melhorescartoes.com.br/uber-airbnb-cashback-15-ago26.html"},
+   {"nome": "Melhores Cartões: Inter com 10% no crédito Airbnb (set/26)", "url": "https://www.melhorescartoes.com.br/inter-airbnb-10-cashback-set26.html"}
+  ]
+ },
+ {
+  "id": "uber",
+  "titulo": "Uber mais barato o ano todo",
+  "chamada": "Comprar o crédito antes de pedir a corrida devolve parte do valor. Para quem usa Uber toda semana, a conta fecha rápido.",
+  "conferido": "2026-10-29",
+  "passos": [
+   {
+    "titulo": "Compre crédito Uber com cashback",
+    "texto": "No PicPay ou no Banco Inter, compre crédito Uber quando estiver em campanha. Em 2026 o dinheiro de volta variou de 10% a 15%.",
+    "ganho": {"tipo": "cashback", "min": 10, "max": 15}
+   },
+   {
+    "titulo": "Ou troque o cashback por milhas Smiles",
+    "texto": "Prefere milhas? Comprando o crédito Uber pelo site da Smiles, cada real vira de 3 a 4,5 milhas, conforme a campanha. Escolha um dos dois caminhos: o mesmo crédito não ganha os dois."
+   },
+   {
+    "titulo": "Use o crédito nas corridas",
+    "texto": "O crédito entra na sua conta Uber e é usado sozinho nas próximas corridas e pedidos."
+   }
+  ],
+  "atencao": [
+   "Compre só o que você vai usar: o crédito não volta para dinheiro.",
+   "A campanha de cashback muda com frequência. Confira no app antes de comprar."
+  ],
+  "fontes": [
+   {"nome": "Melhores Cartões: PicPay com 15% em créditos Uber e Airbnb (ago/26)", "url": "https://www.melhorescartoes.com.br/uber-airbnb-cashback-15-ago26.html"},
+   {"nome": "Pontos pra Voar: créditos Uber com até 5 milhas Smiles por real", "url": "https://pontospravoar.com/compre-creditos-uber-acumule-ate-5-milhas-smiles-real-gasto/"}
+  ]
+ },
+ {
+  "id": "hoteis",
+  "titulo": "Hotel pelo Booking rendendo milhas",
+  "chamada": "A mesma reserva do Booking pode render milhas ou pontos se você entrar pelo site do programa antes de reservar.",
+  "conferido": "2026-10-29",
+  "passos": [
+   {
+    "titulo": "Entre no Booking pelo site do programa",
+    "texto": "Na Smiles, vá em Viagem e depois em Booking.com. Livelo e Esfera também têm o Booking nas lojas parceiras. Comece por lá, e não direto no site do Booking."
+   },
+   {
+    "titulo": "Reserve em dia de campanha",
+    "texto": "Fora de campanha a pontuação é baixa. Nas campanhas de 2026 chegou a 6 milhas por real na Smiles (julho) e a 10 pontos por real na Livelo (junho). Vale esperar uma dessas se a viagem não for urgente.",
+    "ganho": {"tipo": "milhas", "por": 6, "moeda": "BRL", "programa": "milhas Smiles", "rotulo": "em campanha"}
+   },
+   {
+    "titulo": "Pague com o cartão que pontua",
+    "texto": "Pagando a reserva com um cartão que dá pontos, você ganha duas vezes: no programa da loja e no cartão."
+   }
+  ],
+  "atencao": [
+   "As milhas do Booking pela Smiles caem em até 64 dias depois do check-out.",
+   "Faça a reserva na mesma visita, sem trocar de aba ou de aparelho no meio: senão ela pode não ser registrada pelo programa."
+  ],
+  "fontes": [
+   {"nome": "Passageiro de Primeira: Smiles com 6 milhas por real no Booking.com", "url": "https://passageirodeprimeira.com/?p=553677"},
+   {"nome": "Pontos pra Voar: resumo de promoções de 18 de junho de 2026", "url": "https://pontospravoar.com/radar-ppv-resumo-promocoes-acumulo-transferencia-pontos-dia-18-junho-2026/"}
+  ]
+ }
+]

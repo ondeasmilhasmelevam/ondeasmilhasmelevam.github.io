@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=30">
+<link rel="stylesheet" href="estilo.css?v=32">
 </head>
 <body>
 <header class="bar">
@@ -24,7 +24,8 @@
       <img src="img/logo.webp" alt="" width="34" height="34">
       <b>Onde as Milhas Me Levam</b>
     </a>
-    <nav class="tabs" aria-label="Seções">
+    <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu"><i class="menu-ico" aria-hidden="true"></i><span id="menu-atual">Menu</span></button>
+    <nav class="tabs" id="menu" aria-label="Páginas do site">
       <a href="#simulador">Simulador</a>
       <a href="#ranking-sec">Ranking</a>
       <a href="#passagens">Passagens</a>
@@ -190,6 +191,16 @@
       </div>
     </section>
 
+    <section id="combos" data-pagina="combos" hidden>
+      <div class="sec-head">
+        <p class="eyebrow">Combos de economia</p>
+        <h2>Gaste o mesmo e ganhe duas vezes</h2>
+        <p class="sec-note">Um combo junta duas vantagens no mesmo gasto: dinheiro de volta numa etapa e milhas na outra. Siga os passos na ordem e use a calculadora para ver quanto volta.</p>
+      </div>
+      <div class="combos" id="lista-combos"></div>
+      <p class="fine">Cashback e pontuação mudam toda semana. Cada combo mostra a data em que conferimos; antes de comprar, confirme no app ou no site do programa.</p>
+    </section>
+
     <section id="guia" data-pagina="guia">
       <div class="sec-head">
         <p class="eyebrow">Guia de emissão</p>
@@ -339,6 +350,6 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=37"></script>
+<script src="app.js?v=39"></script>
 </body>
 </html>
