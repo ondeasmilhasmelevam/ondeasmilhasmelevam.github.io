@@ -607,6 +607,8 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .termo-tetos{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
 .termo-tetos li{padding:5px 10px;border-radius:10px;border:1px solid var(--line);font-size:12.5px;color:var(--ash)}
 .termo-tetos b{color:var(--rice)}
+.pass-logo{display:inline-block;width:24px;height:24px;padding:2px;margin-right:8px;border-radius:7px;background:#fff;vertical-align:-7px;object-fit:contain}
+.pass-logo+.pass-logo{margin-left:-4px}
 .pass-selo{margin-left:8px;text-decoration:none;font-size:10.5px;padding:2px 8px;vertical-align:1px}
 .pass-selo.n-top,.pass-selo.n-otimo,.pass-selo.n-esp{display:inline-block;border-radius:999px;font-weight:800;letter-spacing:.08em}
 #termo-regiao,.guia-grupos{flex-wrap:wrap;border-radius:18px}

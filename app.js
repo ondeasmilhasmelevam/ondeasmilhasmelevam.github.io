@@ -990,7 +990,7 @@
     const onde = e.pesquisar || guia.pesquisar[e.grupo] || [];
     const assentos = as && [['Econômica', as.eco], ['Executiva', as.exe], ['Primeira', as.first]].filter(([, v]) => v);
     return `<li><details>
-        <summary><span class="guia-nome">${esc(e.cia)}</span><small>${esc(e.grupo)}</small>${melhor.length ? `<em>Emita por ${esc(melhor.join(' ou '))}</em>` : ''}</summary>
+        <summary><span class="guia-nome">${logosCia(e.cia)}${esc(e.cia)}</span><small>${esc(e.grupo)}</small>${melhor.length ? `<em>Emita por ${esc(melhor.join(' ou '))}</em>` : ''}</summary>
         <div class="guia-corpo">
           ${e.nota ? `<p>${esc(e.nota)}</p>` : ''}
           ${e.propria ? `<h5>Na própria companhia</h5><p>${esc(e.propria)}</p>` : ''}
@@ -1064,6 +1064,24 @@
     if (!lista || !lista.length) return '';
     return `<div class="pass-datas"><span>${rotulo}</span><ul>${lista.map(d => `<li><b>${esc(d.mes)}</b> ${esc(d.dias)}</li>`).join('')}</ul></div>`;
   }
+  // Ícone da companhia ao lado do nome, pelo código IATA (ícones do Google Voos).
+  const IATA_CIA = [[/LATAM|\bLAN\b/, 'LA'], [/AZUL/, 'AD'], [/\bGOL\b/, 'G3'], [/TAP/, 'TP'], [/QATAR/, 'QR'], [/AIR FRANCE/, 'AF'],
+    [/SOUTH AFRICAN/, 'SA'], [/COPA/, 'CM'], [/ETIHAD/, 'EY'], [/AMERICAN/, 'AA'], [/ROYAL AIR MAROC/, 'AT'], [/AIR CANADA/, 'AC'],
+    [/JAPAN AIRLINES/, 'JL'], [/AVIANCA/, 'AV'], [/TURKISH/, 'TK'], [/KOREAN/, 'KE'], [/FINNAIR/, 'AY'], [/SWISS/, 'LX'],
+    [/IBERIA/, 'IB'], [/BRITISH/, 'BA'], [/LUFTHANSA/, 'LH'], [/KLM/, 'KL'], [/DELTA/, 'DL'], [/UNITED/, 'UA'], [/EMIRATES/, 'EK'],
+    [/AIR EUROPA/, 'UX'], [/AEROLINEAS|AEROLÍNEAS/, 'AR'], [/AEROMEXICO|AEROMÉXICO/, 'AM'], [/ETHIOPIAN/, 'ET'], [/VIRGIN/, 'VS'],
+    [/ITA AIRWAYS/, 'AZ'], [/AIR CHINA/, 'CA'], [/SINGAPORE/, 'SQ'], [/QANTAS/, 'QF'], [/CATHAY/, 'CX'], [/\bANA\b|ALL NIPPON/, 'NH'],
+    [/SKY AIRLINE/, 'H2'], [/JETSMART/, 'JA'], [/ARAJET/, 'DM'], [/BOLIVIANA/, 'OB'], [/PARANAIR/, 'ZP'],
+    [/AIR NEW ZEALAND/, 'NZ'], [/ASIANA/, 'OZ'], [/AUSTRIAN/, 'OS'], [/BRUSSELS/, 'SN'], [/EGYPT/, 'MS'], [/\bLOT\b/, 'LO'],
+    [/THAI/, 'TG'], [/\bEVA\b/, 'BR'], [/ROYAL JORDANIAN/, 'RJ'], [/MALAYSIA/, 'MH'], [/SRILANKAN|SRI LANKAN/, 'UL'], [/FIJI/, 'FJ'],
+    [/ALASKA/, 'AS'], [/CHINA EASTERN/, 'MU'], [/CHINA AIRLINES/, 'CI'], [/SAUDIA/, 'SV'], [/KENYA/, 'KQ'], [/MIDDLE EAST/, 'ME'],
+    [/XIAMEN/, 'MF'], [/AIR INDIA/, 'AI'], [/AEGEAN/, 'A3'], [/OMAN/, 'WY'], [/CROATIA/, 'OU'], [/SHENZHEN/, 'ZH'], [/CZECH/, 'OK'],
+    [/AER LINGUS/, 'EI'], [/\bSAS\b|SCANDINAVIAN/, 'SK'], [/ICELANDAIR/, 'FI'], [/AIR TRANSAT/, 'TS'], [/VOLARIS/, 'Y4'], [/WINGO/, 'P5']];
+  function logosCia(nome) {
+    const t = norm(nome);
+    const codigos = [...new Set(t.split('+').map(parte => (IATA_CIA.find(([re]) => re.test(parte)) || [])[1]).filter(Boolean))];
+    return codigos.map(c => `<img class="pass-logo" src="https://www.gstatic.com/flights/airline_logos/70px/${c}.png" alt="" width="22" height="22" loading="lazy" onerror="this.remove()">`).join('');
+  }
   function passagemHtml(p, agora) {
     const nivel = nivelPassagem(p);
     const selo = ['espetacular', 'muito bom', 'bom'].includes(nivel)
@@ -1075,7 +1093,7 @@
           <i aria-label="para">✈</i>
           <span><b>${esc(p.destino_iata)}</b>${esc(p.destino)}</span>
         </h3>
-        <p class="pass-cia">${esc(p.companhia)}${p.programa ? ` · <b>${esc(p.programa)}</b>` : ''}</p>
+        <p class="pass-cia">${logosCia(p.companhia)}${esc(p.companhia)}${p.programa ? ` · <b>${esc(p.programa)}</b>` : ''}</p>
         <dl class="pass-valores">
           <div><dt>Ida</dt><dd>${esc(p.ida)}</dd></div>
           ${p.volta ? `<div><dt>Volta</dt><dd>${esc(p.volta)}</dd></div>` : ''}
