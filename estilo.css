@@ -505,7 +505,7 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .passagens-filtros .atalhos{margin:0;justify-content:flex-start}
 .passagens-filtros input[type=search]{flex:1 1 260px;min-width:0;background:var(--ink-2);border:1px solid var(--line);border-radius:999px;padding:9px 16px;color:var(--rice);font:inherit;font-size:14.5px}
 .passagens-filtros input[type=search]:focus{outline:none;border-color:var(--ouro)}
-.passagens{list-style:none;margin:0;padding:0;display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.passagens{list-style:none;margin:0;padding:0;display:grid;gap:14px;align-items:start;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
 .passagens>li{display:flex;flex-direction:column;gap:10px;padding:16px 18px 18px;border:1px solid var(--line);border-top:3px solid var(--ouro);border-radius:14px;background:var(--ink-2);min-width:0}
 .passagens>li.exe{border-top-color:#b98cff}
 .pass-meta{margin:0;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro)}

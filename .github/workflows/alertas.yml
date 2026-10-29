@@ -32,7 +32,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install telethon==1.44.0 pillow==12.2.0 requests==2.32.5
+      - run: pip install telethon==1.44.0 pillow==12.2.0 requests==2.32.5 'anthropic>=1,<2'
       - name: Plantão nos grupos
         env:
           TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
@@ -42,6 +42,7 @@ jobs:
           INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
           INSTAGRAM_ID: ${{ secrets.INSTAGRAM_ID }}
           GH_SEGREDOS: ${{ secrets.GH_SEGREDOS }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           git config user.name "Onde as Milhas Me Levam"
           git config user.email "ondeasmilhasmelevam@users.noreply.github.com"

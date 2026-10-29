@@ -15,6 +15,10 @@ Carrossel no feed (1080 x 1350), uma vez por dia a partir das 19h de Brasília:
     últimas 24 horas (passagens com destinos diferentes);
   - legenda curta com a lista, "link na bio" e hashtags.
 
+Com o segredo ANTHROPIC_API_KEY, o Claude escreve a chamada de cada imagem e a
+legenda do carrossel (só com os números que estão nos alertas; o que não passar
+na conferência volta para os textos fixos).
+
 O story não tem legenda nem link: o texto vai desenhado na imagem, com o botão
 "LINK NA BIO". As imagens ficam em stories/ no repositório (o Instagram baixa de
 lá) e só as mais recentes são mantidas.
@@ -58,19 +62,38 @@ HASHTAGS = '#milhas #milhasaereas #pontos #passagensaereas #viagem #viajarbarato
 
 # Cores do site (estilo.css).
 INK, INK3, LINHA = '#070C17', '#131D33', '#1E2A42'
-RICE, ASH, OURO, VERDE, VERMELHO = '#F3EEE3', '#A3ACBD', '#E2B458', '#3CCF91', '#FF8A80'
+RICE, ASH, OURO, OURO_LT, VERMELHO = '#F3EEE3', '#A3ACBD', '#E2B458', '#F5D788', '#FF6B5E'
 W = 1080
-# Altura da imagem, onde começa o miolo e onde fica o botão "LINK NA BIO".
-STORY = {'alto': 1920, 'logo': 150, 'miolo': (420, 1500), 'botao': 1550}
-FEED = {'alto': 1350, 'logo': 70, 'miolo': (270, 1050), 'botao': 1090}
+PERFIL = '@ondeasmilhasmelevam'
+# Altura da imagem, onde fica a marca, o espaço do miolo e o botão "LINK NA BIO".
+STORY = {'alto': 1920, 'marca': 120, 'miolo': (490, 1500), 'botao': 1570}
+FEED = {'alto': 1350, 'marca': 50, 'miolo': (330, 1010), 'botao': 1040, 'compacto': True}
+
+FONTES = Path(__file__).resolve().parent / 'fontes'
+_cache = {}
 
 
-def fonte(tam, negrito=True):
-    nome = 'DejaVuSans-Bold.ttf' if negrito else 'DejaVuSans.ttf'
-    for pasta in ('/usr/share/fonts/truetype/dejavu', 'C:/Windows/Fonts'):
-        if Path(pasta, nome).exists():
-            return ImageFont.truetype(str(Path(pasta, nome)), tam)
-    return ImageFont.load_default(tam)
+def fonte(tam, peso=800, familia='Manrope'):
+    """Fontes do site: Cinzel na marca, Manrope no resto (com o peso pedido)."""
+    chave = (tam, peso, familia)
+    if chave not in _cache:
+        arq = FONTES / f'{familia}.ttf'
+        if arq.exists():
+            f = ImageFont.truetype(str(arq), tam)
+            f.set_variation_by_axes([peso])
+        else:
+            f = ImageFont.load_default(tam)
+        _cache[chave] = f
+    return _cache[chave]
+
+
+def simbolo(tam):
+    """Fonte com o desenho do avião (✈); a Manrope não tem."""
+    for p in ('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 'C:/Windows/Fonts/DejaVuSans-Bold.ttf',
+              'C:/Windows/Fonts/seguisym.ttf'):
+        if Path(p).exists():
+            return ImageFont.truetype(p, tam)
+    return None
 
 
 def quebrar(d, texto, f, largura, max_linhas=None):
@@ -94,39 +117,120 @@ def quebrar(d, texto, f, largura, max_linhas=None):
     return linhas
 
 
-def centro(d, y, linhas, f, cor, entre=1.15):
+def espacado(d, xy, texto, f, cor, espaco, ancora='centro'):
+    """Texto com espaço entre as letras (a marca em Cinzel pede isso)."""
+    larg = sum(d.textlength(c, font=f) for c in texto) + espaco * (len(texto) - 1)
+    x, y = xy
+    if ancora == 'centro':
+        x -= larg / 2
+    for c in texto:
+        d.text((x, y), c, font=f, fill=cor)
+        x += d.textlength(c, font=f) + espaco
+    return larg
+
+
+def centro(d, y, linhas, f, cor, entre=1.12):
     for l in linhas:
         d.text(((W - d.textlength(l, font=f)) / 2, y), l, font=f, fill=cor)
         y += int(f.size * entre)
     return y
 
 
-def selo(d, y, texto, fundo):
-    f = fonte(32)
-    w = d.textlength(texto, font=f) + 44
-    x = (W - w) / 2
-    d.rounded_rectangle((x, y, x + w, y + f.size + 30), radius=(f.size + 30) // 2, fill=fundo)
-    d.text((x + 22, y + 13), texto, font=f, fill=INK)
-    return y + f.size + 30
+def pilula(d, y, texto, fundo, cor=INK, tam=30, x=None, contorno=None):
+    """Etiqueta arredondada; centrada se x não for dado. Devolve (y do fim, x do fim)."""
+    f = fonte(tam, 800)
+    w = d.textlength(texto, font=f) + tam * 1.6
+    h = tam * 2
+    x = (W - w) / 2 if x is None else x
+    d.rounded_rectangle((x, y, x + w, y + h), radius=h / 2, fill=fundo, outline=contorno, width=3 if contorno else 0)
+    d.text((x + tam * 0.8, y + (h - tam) / 2 - tam * 0.12), texto, font=f, fill=cor)
+    return y + h, x + w
+
+
+def brilho(img, centro_xy, raio, cor, forca=110):
+    """Halo dourado suave atrás do número principal."""
+    camada = Image.new('RGBA', img.size, (0, 0, 0, 0))
+    x, y = centro_xy
+    ImageDraw.Draw(camada).ellipse((x - raio, y - raio * 0.6, x + raio, y + raio * 0.6), fill=(*cor, forca))
+    camada = camada.filter(ImageFilter.GaussianBlur(raio / 2.2))
+    img.alpha_composite(camada) if img.mode == 'RGBA' else img.paste(camada, (0, 0), camada)
+
+
+def fundo(alto):
+    """Azul-noite do site com luz dourada no alto e pontos de "mapa" bem discretos."""
+    img = Image.new('RGB', (W, alto), INK)
+    d = ImageDraw.Draw(img)
+    for i in range(alto):
+        t = i / alto
+        d.line([(0, i), (W, i)], fill=tuple(int(a + (b - a) * t) for a, b in zip((16, 27, 52), (6, 10, 20))))
+    luz = Image.new('RGBA', (W, alto), (0, 0, 0, 0))
+    ImageDraw.Draw(luz).ellipse((-200, -alto * 0.25, W + 200, alto * 0.3), fill=(226, 180, 88, 38))
+    luz = luz.filter(ImageFilter.GaussianBlur(160))
+    img.paste(luz, (0, 0), luz)
+    pontos = Image.new('RGBA', (W, alto), (0, 0, 0, 0))
+    pd = ImageDraw.Draw(pontos)
+    for yy in range(40, alto, 46):
+        for xx in range(30 + (yy // 46 % 2) * 23, W, 46):
+            pd.ellipse((xx - 2, yy - 2, xx + 2, yy + 2), fill=(243, 238, 227, 14))
+    img.paste(pontos, (0, 0), pontos)
+    return img
+
+
+def marca(img, y, compacto=False):
+    """Logo e o nome da marca centrados, em Cinzel dourado com espaçamento."""
+    d = ImageDraw.Draw(img)
+    lado = 120 if compacto else 160
+    if LOGO.exists():
+        logo = Image.open(LOGO).convert('RGB').resize((lado, lado), Image.LANCZOS)
+        mascara = Image.new('L', (lado, lado), 0)
+        ImageDraw.Draw(mascara).ellipse((0, 0, lado, lado), fill=255)
+        d.ellipse(((W - lado) / 2 - 6, y - 6, (W + lado) / 2 + 6, y + lado + 6), outline=OURO, width=3)
+        img.paste(logo, ((W - lado) // 2, y), mascara)
+    y += lado + (22 if compacto else 34)
+    tam = 40 if compacto else 50
+    espacado(d, (W / 2, y), 'ONDE AS MILHAS', fonte(tam, 800, 'Cinzel'), RICE, tam * 0.16)
+    y += int(tam * 1.18)
+    espacado(d, (W / 2, y), 'ME LEVAM', fonte(tam, 900, 'Cinzel'), OURO, tam * 0.3)
+    y += int(tam * 1.3) + 10
+    # filete dourado com losango no meio
+    d.line((W / 2 - 160, y, W / 2 - 18, y), fill=OURO, width=2)
+    d.line((W / 2 + 18, y, W / 2 + 160, y), fill=OURO, width=2)
+    d.polygon([(W / 2, y - 9), (W / 2 + 9, y), (W / 2, y + 9), (W / 2 - 9, y)], fill=OURO)
+
+
+def botao(img, y):
+    """Botão "LINK NA BIO" em dourado claro com brilho, seta para cima e o @ do perfil."""
+    caixa = (150, y, W - 150, y + 160)
+    halo = Image.new('RGBA', img.size, (0, 0, 0, 0))
+    ImageDraw.Draw(halo).rounded_rectangle(caixa, radius=80, fill=(245, 215, 136, 170))
+    halo = halo.filter(ImageFilter.GaussianBlur(40))
+    img.paste(halo, (0, 0), halo)
+    faixa = Image.new('RGB', (caixa[2] - caixa[0], caixa[3] - caixa[1]))
+    fd = ImageDraw.Draw(faixa)
+    for i in range(faixa.height):
+        t = i / faixa.height
+        fd.line([(0, i), (faixa.width, i)], fill=tuple(int(a + (b - a) * t) for a, b in zip((252, 230, 168), (222, 172, 78))))
+    mascara = Image.new('L', faixa.size, 0)
+    ImageDraw.Draw(mascara).rounded_rectangle((0, 0, faixa.width - 1, faixa.height - 1), radius=80, fill=255)
+    img.paste(faixa, caixa[:2], mascara)
+    d = ImageDraw.Draw(img)
+    f = fonte(66, 800)
+    t = 'LINK NA BIO'
+    larg = d.textlength(t, font=f)
+    x = (W - larg - 64) / 2
+    # seta para cima, desenhada (a bio fica no alto do perfil)
+    sx, sy = x + 18, y + 80
+    d.polygon([(sx, sy - 30), (sx + 22, sy - 4), (sx + 8, sy - 4), (sx + 8, sy + 28), (sx - 8, sy + 28),
+               (sx - 8, sy - 4), (sx - 22, sy - 4)], fill=INK)
+    d.text((x + 64, y + 38), t, font=f, fill=INK)
+    centro(d, y + 190, [PERFIL], fonte(34, 700), OURO_LT)
+    centro(d, y + 240, ['Valores podem mudar a qualquer momento.'], fonte(24, 500), ASH)
 
 
 def montar(miolo, fmt):
-    """Fundo, logo, o miolo centrado no espaço livre e o botão "LINK NA BIO"."""
-    alto = fmt['alto']
-    img = Image.new('RGB', (W, alto), INK)
-    d = ImageDraw.Draw(img)
-    for i in range(alto):  # degradê suave do topo
-        t = i / alto
-        d.line([(0, i), (W, i)], fill=tuple(int(a + (b - a) * t) for a, b in zip((19, 29, 51), (7, 12, 23))))
-    y = fmt['logo']
-    if LOGO.exists():
-        logo = Image.open(LOGO).convert('RGB').resize((150, 150))
-        mascara = Image.new('L', (150, 150), 0)
-        ImageDraw.Draw(mascara).ellipse((0, 0, 150, 150), fill=255)
-        img.paste(logo, (80, y), mascara)
-    d.text((255, y + 22), 'ONDE AS MILHAS', font=fonte(44), fill=RICE)
-    d.text((255, y + 78), 'ME LEVAM', font=fonte(44), fill=OURO)
-    # O miolo é desenhado à parte; aqui ele é aparado, encolhido se precisar e centrado.
+    """Fundo, marca, o miolo centrado no espaço livre e o botão."""
+    img = fundo(fmt['alto'])
+    marca(img, fmt['marca'], fmt.get('compacto'))
     caixa = miolo.getbbox()
     if caixa:
         miolo = miolo.crop((0, caixa[1], W, caixa[3]))
@@ -139,28 +243,8 @@ def montar(miolo, fmt):
     return img
 
 
-def botao(img, y):
-    """Botão "LINK NA BIO" em dourado claro, com brilho em volta."""
-    caixa = (130, y, W - 130, y + 170)
-    brilho = Image.new('RGBA', img.size, (0, 0, 0, 0))
-    ImageDraw.Draw(brilho).rounded_rectangle(caixa, radius=85, fill=(245, 215, 136, 150))
-    brilho = brilho.filter(ImageFilter.GaussianBlur(38))
-    img.paste(brilho, (0, 0), brilho)
-    faixa = Image.new('RGB', (caixa[2] - caixa[0], caixa[3] - caixa[1]))
-    fd = ImageDraw.Draw(faixa)
-    for i in range(faixa.height):  # degradê do dourado claro para o dourado do site
-        t = i / faixa.height
-        fd.line([(0, i), (faixa.width, i)], fill=tuple(int(a + (b - a) * t) for a, b in zip((250, 226, 160), (226, 180, 88))))
-    mascara = Image.new('L', faixa.size, 0)
-    ImageDraw.Draw(mascara).rounded_rectangle((0, 0, faixa.width - 1, faixa.height - 1), radius=85, fill=255)
-    img.paste(faixa, caixa[:2], mascara)
-    d = ImageDraw.Draw(img)
-    centro(d, y + 44, ['LINK NA BIO'], fonte(70), INK)
-    centro(d, y + 220, ['Valores podem mudar a qualquer momento.'], fonte(26, False), ASH)
-
-
 def tela():
-    camada = Image.new('RGBA', (W, 1500), (0, 0, 0, 0))
+    camada = Image.new('RGBA', (W, 1700), (0, 0, 0, 0))
     return camada, ImageDraw.Draw(camada)
 
 
@@ -169,22 +253,65 @@ def milhas(txt):
     return int(n.group(1).replace('.', '')) if n else 10 ** 9
 
 
-def miolo_passagem(a):
-    """Só o essencial: para onde, quantas milhas e por qual programa."""
+def numero(m):
+    return f'{m:,}'.replace(',', '.')
+
+
+def chamada_padrao(a):
+    if a.get('tipo') == 'promocao':
+        return 'ÚLTIMO DIA!' if a.get('ultimo_dia') else 'PROMOÇÃO NO AR'
+    return 'PASSAGEM BARATA'
+
+
+def miolo_passagem(a, chamada=''):
+    """Cartão de embarque: IATA grande, rota tracejada com avião e as milhas em destaque."""
     camada, d = tela()
-    y = selo(d, 0, 'PASSAGEM COM MILHAS', OURO) + 80
-    f = fonte(54, False)
-    y = centro(d, y, quebrar(d, f"{a['origem']} para", f, W - 160, 1), f, ASH)
-    f = fonte(104)
-    y = centro(d, y + 10, quebrar(d, a['destino'], f, W - 140, 2), f, RICE)
+    y, _ = pilula(d, 0, (chamada or chamada_padrao(a)).upper(), OURO)
+    y += 60
+    # cartão
+    topo = y
+    d.rounded_rectangle((70, topo, W - 70, topo + 900), radius=44, fill=(19, 29, 51, 235), outline=OURO, width=3)
+    for cx in (70, W - 70):  # recortes laterais do bilhete
+        d.ellipse((cx - 34, topo + 420 - 34, cx + 34, topo + 420 + 34), fill=(0, 0, 0, 0))
+    for xx in range(130, W - 130, 34):  # picote
+        d.line((xx, topo + 420, xx + 16, topo + 420), fill=(163, 172, 189, 120), width=3)
+    fi = fonte(140, 800)
+    o, de = a.get('origem_iata', ''), a.get('destino_iata', '')
+    d.text((130, topo + 70), o, font=fi, fill=RICE)
+    d.text((W - 130 - d.textlength(de, font=fi), topo + 70), de, font=fi, fill=RICE)
+    # rota tracejada com o avião no meio
+    x1, x2, ym = 130 + d.textlength(o, font=fi) + 30, W - 130 - d.textlength(de, font=fi) - 30, topo + 160
+    for xx in range(int(x1), int(x2), 22):
+        d.line((xx, ym, min(xx + 11, x2), ym), fill=OURO, width=4)
+    fs = simbolo(70)
+    if fs:
+        d.rectangle(((x1 + x2) / 2 - 46, ym - 40, (x1 + x2) / 2 + 46, ym + 40), fill=(19, 29, 51, 255))
+        d.text(((x1 + x2) / 2 - d.textlength('✈', font=fs) / 2, ym - 44), '✈', font=fs, fill=OURO)
+    fc = fonte(36, 600)
+    no = quebrar(d, a['origem'], fc, 380, 2)
+    nd = quebrar(d, a['destino'], fc, 380, 2)
+    for i, l in enumerate(no):
+        d.text((130, topo + 255 + i * 44), l, font=fc, fill=ASH)
+    for i, l in enumerate(nd):
+        d.text((W - 130 - d.textlength(l, font=fc), topo + 255 + i * 44), l, font=fc, fill=ASH)
+    # milhas
     m = milhas(a.get('ida'))
+    yy = topo + 470
     if m < 10 ** 9:
-        y = centro(d, y + 70, ['a partir de'], fonte(40, False), ASH)
-        y = centro(d, y, [f'{m:,}'.replace(',', '.')], fonte(150), OURO, 1.05)
-        y = centro(d, y, ['milhas + taxas'], fonte(46), OURO)
-    info = ' · '.join(x for x in (a.get('programa'), a.get('cabine')) if x)
-    f = fonte(40, False)
-    centro(d, y + 50, quebrar(d, info, f, W - 160, 1), f, RICE)
+        yy = centro(d, yy, ['A PARTIR DE'], fonte(30, 800), ASH) + 4
+        f = fonte(170, 800)
+        brilho(camada, (W / 2, yy + 100), 300, (226, 180, 88), 70)
+        d = ImageDraw.Draw(camada)
+        yy = centro(d, yy, [numero(m)], f, OURO, 1.08)
+        yy = centro(d, yy + 6, ['milhas + taxas · trecho'], fonte(38, 700), OURO_LT)
+    fichas = [x for x in (a.get('programa'), a.get('cabine')) if x]
+    if fichas:
+        fp = fonte(30, 700)
+        larg = sum(d.textlength(x, font=fp) + 56 for x in fichas) + 20 * (len(fichas) - 1)
+        x = (W - larg) / 2
+        for t in fichas:
+            _, x = pilula(d, yy + 40, t, (0, 0, 0, 0), RICE, 30, x, contorno=LINHA)
+            x += 20
     return camada
 
 
@@ -194,42 +321,56 @@ def destaque(titulo):
     return m.group(1).upper() if m else ''
 
 
-def miolo_promocao(a):
-    """Selo, o número em destaque e o título curto. Nada de resumo."""
+def miolo_promocao(a, chamada=''):
+    """Chamada, o número com brilho, o título curto e a validade."""
     camada, d = tela()
     ultimo = a.get('ultimo_dia')
-    y = selo(d, 0, 'ÚLTIMO DIA' if ultimo else 'PROMOÇÃO', VERMELHO if ultimo else OURO) + 90
+    y, _ = pilula(d, 0, (chamada or chamada_padrao(a)).upper(), VERMELHO if ultimo else OURO,
+                  RICE if ultimo else INK)
+    y += 80
     titulo = a['titulo'].upper()
     num = destaque(titulo)
     if num:
         # "COM ATÉ 75% DE DESCONTO" vira "até" + "75%" em destaque + "... COM DESCONTO".
         antes = re.search(r'(ATÉ|A PARTIR DE)\s+' + re.escape(num), titulo)
         if antes:
-            y = centro(d, y, [antes.group(1).lower()], fonte(44, False), ASH)
-        f = fonte(130)
-        y = centro(d, y, quebrar(d, num, f, W - 120, 2), f, OURO, 1.05) + 40
+            y = centro(d, y, [antes.group(1)], fonte(36, 800), ASH)
+        partes = num.split()
+        brilho(camada, (W / 2, y + 120), 360, (226, 180, 88), 80)
+        d = ImageDraw.Draw(camada)
+        f = fonte(210 if len(partes[0]) <= 4 else 170, 800)
+        y = centro(d, y - 10, [partes[0]], f, OURO, 1.1)
+        if len(partes) > 1:
+            y = centro(d, y, [' '.join(partes[1:])], fonte(64, 800), OURO_LT, 1.1)
+        y += 40
         titulo = re.sub(r'(\s+DE)?\s+((ATÉ|A PARTIR DE)\s+)?' + re.escape(num) + r'(\s+DE\b)?', ' ', ' ' + titulo)
         if titulo.count('BÔNUS') > 1:
             titulo = re.sub(r'\s+COM BÔNUS\s*$', '', titulo)
         titulo = re.sub(r'\s+', ' ', titulo).strip(' -–:,')
-    f = fonte(62)
-    y = centro(d, y, quebrar(d, titulo, f, W - 160, 4), f, RICE)
+    f = fonte(58, 800)
+    y = centro(d, y, quebrar(d, titulo, f, W - 180, 4), f, RICE, 1.15)
     if a.get('ate'):
-        centro(d, y + 50, ['Vale até ' + datetime.fromisoformat(a['ate']).strftime('%d/%m')], fonte(44, False), ASH)
+        pilula(d, y + 50, 'VALE ATÉ ' + datetime.fromisoformat(a['ate']).strftime('%d/%m'), (0, 0, 0, 0),
+               OURO_LT, 30, contorno=OURO)
     return camada
 
 
 def miolo_capa(dia, n):
     camada, d = tela()
-    y = selo(d, 0, dia.strftime('%d/%m'), OURO) + 80
-    y = centro(d, y, ['MELHORES', 'OPORTUNIDADES', 'DO DIA'], fonte(96), RICE, 1.1)
-    y = centro(d, y + 50, [f'{n} achados de milhas e pontos'], fonte(42, False), ASH)
-    centro(d, y + 70, ['arraste para o lado  →'], fonte(46), OURO)
+    y, _ = pilula(d, 0, dia.strftime('%d/%m') + ' · HOJE', OURO)
+    y = centro(d, y + 80, ['AS MELHORES'], fonte(70, 800), ASH)
+    brilho(camada, (W / 2, y + 160), 380, (226, 180, 88), 70)
+    d = ImageDraw.Draw(camada)
+    y = centro(d, y, ['OPORTUNIDADES'], fonte(104, 800), RICE, 1.05)
+    y = centro(d, y, ['DO DIA'], fonte(150, 800), OURO, 1.08)
+    y = centro(d, y + 40, [f'{n} achados de milhas e pontos'], fonte(40, 600), RICE)
+    centro(d, y + 60, ['ARRASTE PARA O LADO  →'], fonte(38, 800), OURO_LT)
     return camada
 
 
-def imagem(a, fmt):
-    return montar(miolo_promocao(a) if a.get('tipo') == 'promocao' else miolo_passagem(a), fmt)
+def imagem(a, fmt, chamada=''):
+    feito = miolo_promocao if a.get('tipo') == 'promocao' else miolo_passagem
+    return montar(feito(a, chamada), fmt)
 
 
 def ler_json(p, padrao):
@@ -290,6 +431,74 @@ def legenda(itens, dia):
             linhas.append(f"🛫 {a['origem']} → {a['destino']}:{preco} ({a.get('programa', '')})")
     linhas += ['', 'Detalhes e links: link na bio 👆', 'Valores e disponibilidade podem mudar a qualquer momento.', '', HASHTAGS]
     return '\n'.join(linhas)
+
+
+# Textos com o Claude (opcional): chamada curta de cada imagem e a legenda do carrossel.
+# Sem ANTHROPIC_API_KEY, ou se a resposta não passar na conferência, usa os textos fixos.
+MODELO = 'claude-opus-5-5'
+SISTEMA = """Você escreve para o Instagram @ondeasmilhasmelevam, sobre milhas, pontos e passagens aéreas.
+Recebe ofertas em JSON e devolve:
+- "chamadas": uma por oferta, na mesma ordem. Cada uma com no máximo 24 caracteres, em maiúsculas, sem números
+  e sem emoji, que desperte urgência ou curiosidade (ex.: CORRE QUE ACABA HOJE, PREÇO DE OCASIÃO, ACHADO DO DIA).
+  Se a oferta tiver "ultimo_dia": true, a chamada fala que acaba hoje.
+- "legenda": só se "com_legenda" for true (senão, texto vazio). Legenda curta e envolvente para um carrossel:
+  uma linha de gancho, depois uma linha por oferta na mesma ordem (começando com um emoji), depois um convite para
+  salvar, comentar ou marcar quem viaja junto, e por fim "Link na bio 👆". No máximo 900 caracteres, sem hashtags.
+Use só os números, nomes e datas que estão nos dados: nunca invente valores, bônus, datas ou condições.
+Português do Brasil, tom animado mas confiável."""
+
+
+def dados_ia(a):
+    campos = ('tipo', 'titulo', 'ultimo_dia', 'validade', 'origem', 'destino', 'companhia', 'cabine', 'programa', 'ida', 'volta')
+    return {k: a[k] for k in campos if a.get(k)}
+
+
+def numeros(texto):
+    return {re.sub(r'\D', '', n) for n in re.findall(r'\d[\d.,]*', texto)}
+
+
+def textos_ia(itens, com_legenda=False):
+    """{'chamadas': [...], 'legenda': '...'} vindos do Claude, já conferidos; {} se não der."""
+    chave = os.environ.get('ANTHROPIC_API_KEY', '').strip()
+    if not chave or not itens:
+        return {}
+    try:
+        import anthropic
+    except ImportError:
+        return {}
+    entrada = {'com_legenda': com_legenda, 'ofertas': [dados_ia(a) for a in itens]}
+    esquema = {'type': 'object', 'additionalProperties': False, 'required': ['chamadas', 'legenda'],
+               'properties': {'chamadas': {'type': 'array', 'items': {'type': 'string'}}, 'legenda': {'type': 'string'}}}
+    cliente = anthropic.Anthropic(api_key=chave, timeout=120)
+    try:
+        r = cliente.beta.messages.create(
+            model=MODELO, max_tokens=4000, system=SISTEMA,
+            betas=['server-side-fallback-2026-07-01'], fallbacks='default',
+            output_config={'effort': 'low', 'format': {'type': 'json_schema', 'schema': esquema}},
+            messages=[{'role': 'user', 'content': json.dumps(entrada, ensure_ascii=False)}])
+    except anthropic.APIStatusError as e:
+        print(f'::warning::Claude respondeu {e.status_code}; usando os textos fixos.')
+        return {}
+    except anthropic.APIConnectionError:
+        print('::warning::Sem conexão com o Claude; usando os textos fixos.')
+        return {}
+    if r.stop_reason != 'end_turn':
+        return {}
+    try:
+        saida = json.loads(next(b.text for b in r.content if b.type == 'text'))
+    except (StopIteration, ValueError):
+        return {}
+    # Conferência: nada de número que não esteja nos dados, e chamadas curtas.
+    validos = numeros(json.dumps(entrada, ensure_ascii=False))
+    chamadas = [c.strip().upper() if len(c.strip()) <= 26 and not re.search(r'\d', c) else ''
+                for c in saida.get('chamadas', [])][:len(itens)]
+    legenda = saida.get('legenda', '').strip()
+    if not com_legenda or len(legenda) > 1200 or not numeros(legenda) <= validos:
+        legenda = ''
+    return {'chamadas': chamadas + [''] * (len(itens) - len(chamadas)), 'legenda': legenda}
+
+
+RODAPE_LEGENDA = '\n\nValores e disponibilidade podem mudar a qualquer momento.\n\n' + HASHTAGS
 
 
 def api(metodo, caminho, **kw):
@@ -388,7 +597,8 @@ def story(alertas, estado, agora, conta, token):
     a = escolher(alertas, estado, agora)
     if not a:
         return
-    urls = enviar([(f"{a['id']}.jpg", imagem(a, STORY))], estado, 'Imagem do story')
+    chamada = (textos_ia([a]).get('chamadas') or [''])[0]
+    urls = enviar([(f"{a['id']}.jpg", imagem(a, STORY, chamada))], estado, 'Imagem do story')
     if not urls:
         return
     estado.setdefault('postados', []).append(a['id'])
@@ -411,14 +621,17 @@ def carrossel(alertas, estado, agora, conta, token):
     if len(itens) < 2:
         return
     estado['carrossel_dia'] = estado['dia']  # uma tentativa por dia, mesmo se falhar
+    ia = textos_ia(itens, com_legenda=True)
+    chamadas = ia.get('chamadas') or [''] * len(itens)
+    texto = ia['legenda'] + RODAPE_LEGENDA if ia.get('legenda') else legenda(itens, dia)
     telas = [('feed-0.jpg', montar(miolo_capa(dia, len(itens)), FEED))]
-    telas += [(f'feed-{n}.jpg', imagem(a, FEED)) for n, a in enumerate(itens, 1)]
+    telas += [(f'feed-{n}.jpg', imagem(a, FEED, c)) for n, (a, c) in enumerate(zip(itens, chamadas), 1)]
     urls = enviar(telas, estado, 'Imagens do carrossel do dia')
     if not urls:
         return
     try:
         filhos = [criar(conta, token, image_url=u, is_carousel_item='true') for u in urls]
-        cid = criar(conta, token, media_type='CAROUSEL', children=','.join(filhos), caption=legenda(itens, dia))
+        cid = criar(conta, token, media_type='CAROUSEL', children=','.join(filhos), caption=texto)
         publicar(conta, token, cid)
     except Exception as e:
         return print(f'::warning::Carrossel não publicado: {e}')
@@ -434,10 +647,13 @@ def teste(pasta):
     for n, a in enumerate(promos[:2] + passagens[:2]):
         imagem(a, STORY).save(pasta / f'story-{n}.jpg', quality=90)
     itens = escolher_carrossel(alertas, agora)
+    ia = textos_ia(itens, com_legenda=True)
+    chamadas = ia.get('chamadas') or [''] * len(itens)
     montar(miolo_capa(agora.astimezone(BRASILIA), len(itens)), FEED).save(pasta / 'feed-0.jpg', quality=90)
-    for n, a in enumerate(itens, 1):
-        imagem(a, FEED).save(pasta / f'feed-{n}.jpg', quality=90)
-    (pasta / 'legenda.txt').write_text(legenda(itens, agora.astimezone(BRASILIA)), encoding='utf-8')
+    for n, (a, c) in enumerate(zip(itens, chamadas), 1):
+        imagem(a, FEED, c).save(pasta / f'feed-{n}.jpg', quality=90)
+    texto = ia['legenda'] + RODAPE_LEGENDA if ia.get('legenda') else legenda(itens, agora.astimezone(BRASILIA))
+    (pasta / 'legenda.txt').write_text(texto, encoding='utf-8')
     print(pasta)
 
 
