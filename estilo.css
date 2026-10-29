@@ -545,6 +545,22 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .passagens-vazio{margin:6px 0 0;padding:18px;border:1px dashed var(--line);border-radius:14px;color:var(--ash);text-align:center}
 #mais-passagens{margin-top:16px}
 
+/* ---------- calendário de oportunidades ---------- */
+.calendario-bloco{margin-top:40px}
+.calendario-bloco h3{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(20px,3.6vw,26px);letter-spacing:.03em}
+.calendario-bloco .sec-note{margin:6px 0 16px}
+.calendario{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr))}
+.calendario>li{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);min-width:0}
+.calendario>li.agora{border-color:var(--ouro);box-shadow:0 0 0 1px var(--ouro) inset}
+.calendario h4{margin:0 0 10px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:var(--display);font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--rice)}
+.calendario h4 span{font-family:var(--body,inherit);font-size:11px;font-weight:800;letter-spacing:.1em;padding:3px 8px;border-radius:999px;background:var(--ouro);color:var(--ink)}
+.calendario ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.calendario ul li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:baseline;font-size:14px;line-height:1.4;color:var(--ash)}
+.calendario ul li b{min-width:44px;font-size:12px;font-weight:800;color:var(--ouro);text-align:center;padding:2px 6px;border-radius:8px;background:var(--ink-3)}
+.calendario ul li.passou{opacity:.5}
+.calendario ul li em{font-style:normal;font-size:11.5px;font-weight:800;color:#ff8a80;margin-left:6px}
+.calendario .sem{color:var(--ash-dim);font-size:13.5px}
+
 /* ---------- contatos ---------- */
 .contatos{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr))}
 .contatos>li{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);min-width:0}

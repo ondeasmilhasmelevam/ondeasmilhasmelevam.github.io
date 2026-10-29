@@ -1050,6 +1050,57 @@
   }
   $('#contatos-busca').addEventListener('input', mostrarContatos);
 
+  // Calendário de oportunidades: planilha do Felipe em grade (nome do mês e,
+  // logo abaixo, as datas do mês numa célula, separadas por linha em branco).
+  const URL_DATAS = 'https://docs.google.com/spreadsheets/d/1AYr5xj9Ydud3Y5onEEEb-k6QfwEU7JZyZyLszyn-iOA/export?format=csv&gid=0';
+  const MESES = ['JANEIRO', 'FEVEREIRO', 'MARCO', 'ABRIL', 'MAIO', 'JUNHO', 'JULHO', 'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO'];
+  function montarCalendario(txt) {
+    const g = lerCsv(txt), meses = MESES.map(() => []);
+    g.forEach((linha, i) => linha.forEach((cel, j) => {
+      const m = MESES.indexOf(norm(cel));
+      if (m < 0) return;
+      // As datas ficam na primeira célula preenchida abaixo do nome do mês.
+      for (let k = i + 1; k < Math.min(g.length, i + 6); k++) {
+        const v = (g[k][j] || '').trim();
+        if (MESES.includes(norm(v))) break;
+        if (v) { meses[m] = v.split(/\n\s*\n/).map(t => t.replace(/\s+/g, ' ').trim()).filter(Boolean); break; }
+      }
+    }));
+    return meses.map(itens => itens.map(t => {
+      const d = t.match(/^Dias?\s+(\d{1,2}(?:\s*(?:e|a|,)\s*\d{1,2})*)\s*[-–]\s*(.+)$/i);
+      return d ? { dia: d[1].replace(/\s+/g, ' '), texto: d[2], primeiro: +d[1].match(/\d+/)[0] } : { dia: '', texto: t, primeiro: 0 };
+    }));
+  }
+  async function desenharCalendario() {
+    let meses = null;
+    for (const url of [URL_DATAS, 'dados/datas.csv']) {
+      try {
+        const r = await fetch(url, { cache: 'no-store' });
+        if (!r.ok) continue;
+        const m = montarCalendario(await r.text());
+        if (m.some(x => x.length)) { meses = m; break; }
+      } catch (e) { /* tenta a cópia */ }
+    }
+    if (!meses) return;
+    const hoje = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }));
+    const mesAtual = hoje.getMonth(), diaHoje = hoje.getDate();
+    const nomeMes = m => new Date(2000, m, 1).toLocaleDateString('pt-BR', { month: 'long' });
+    $('#lista-calendario').innerHTML = MESES.map((_, n) => (mesAtual + n) % 12).map(m => {
+      const agora = m === mesAtual;
+      const itens = meses[m].map(x => {
+        const passou = agora && x.primeiro && x.primeiro < diaHoje;
+        const falta = agora && x.primeiro ? x.primeiro - diaHoje : -1;
+        const aviso = falta === 0 ? 'hoje' : falta > 0 && falta <= 7 ? `em ${falta} dia${falta > 1 ? 's' : ''}` : '';
+        return `<li class="${passou ? 'passou' : ''}"><b>${x.dia ? esc(x.dia) : 'mês'}</b><span>${esc(x.texto)}${aviso ? `<em>${aviso}</em>` : ''}</span></li>`;
+      }).join('');
+      return `<li class="${agora ? 'agora' : ''}">
+          <h4>${esc(nomeMes(m))}${agora ? '<span>Este mês</span>' : ''}</h4>
+          ${itens ? `<ul>${itens}</ul>` : '<p class="sem">Sem data marcada.</p>'}
+        </li>`;
+    }).join('');
+    $('#calendario').hidden = false;
+  }
+
   function desenharPrecos() {
     const P = window.PRECO_MILHAS;
     if (!P || !P.length) { $('#comprar').hidden = true; return; }
@@ -1264,6 +1315,7 @@
     desenharNoticias();
     desenharPassagens();
     desenharContatos();
+    desenharCalendario();
     setInterval(() => { if (!document.hidden) desenharPassagens(); else mostrarPassagens(); }, 3 * 60e3);
     desenharAvisos();
     const [ok] = await Promise.all([carregar(), buscarDolar()]);
