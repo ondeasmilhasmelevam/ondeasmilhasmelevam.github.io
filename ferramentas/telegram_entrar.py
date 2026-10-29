@@ -44,16 +44,18 @@ def mostrar_qr(url):
 
 async def entrar(cliente):
     await cliente.connect()
-    login = await cliente.qr_login()
+    login = None
     while True:
-        print('\nNo celular: Telegram > Configurações > Dispositivos > Conectar dispositivo\n')
+        # Cada QR do Telegram vale só uns 30 segundos: só gera com o celular já pronto.
+        input('\nNo celular, abra Telegram > Configurações > Dispositivos > Conectar dispositivo.\n'
+              'Com a câmera aberta, aperte Enter aqui (o QR vale 30 segundos)...')
+        login = await cliente.qr_login() if login is None else (await login.recreate()) or login
         mostrar_qr(login.url)
         try:
-            await login.wait(timeout=60)
+            await login.wait()
             return
         except asyncio.TimeoutError:
-            print('O QR venceu; gerando outro...')
-            await login.recreate()
+            print('O QR venceu antes da leitura. Feche a janela da imagem e tente de novo.')
         except SessionPasswordNeededError:
             senha = getpass.getpass('Sua conta tem verificação em duas etapas. Digite a senha (não aparece na tela): ')
             await cliente.sign_in(password=senha)
