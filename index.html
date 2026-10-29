@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=27">
+<link rel="stylesheet" href="estilo.css?v=28">
 </head>
 <body>
 <header class="bar">
@@ -29,6 +29,7 @@
       <a href="#ranking-sec">Ranking</a>
       <a href="#passagens">Passagens</a>
       <a href="#quanto">Tabela de preços</a>
+      <a href="#termometro">Termômetro</a>
       <a href="#restaurantes">Restaurantes VIP</a>
       <a href="#comprar">Comprar milhas</a>
       <a href="#novidades">Novidades</a>
@@ -156,6 +157,32 @@
       <p class="passagens-vazio" id="quanto-vazio" hidden>Nenhum destino com esse nome.</p>
     </section>
 
+    <section id="termometro" data-pagina="termometro">
+      <div class="sec-head">
+        <p class="eyebrow">Termômetro de milhas</p>
+        <h2>Esse preço em milhas está bom?</h2>
+        <p class="sec-note">Escolha a região e a cabine e veja, em cada programa, a partir de quantas milhas o trecho já é um bom negócio.</p>
+      </div>
+      <div class="termo-filtros">
+        <div class="seg-tipo" id="termo-regiao" role="group" aria-label="Região"></div>
+        <div class="seg-tipo" id="termo-cabine" role="group" aria-label="Cabine"></div>
+      </div>
+      <p class="termo-cidades" id="termo-cidades"></p>
+      <div class="termo-faixas" id="termo-faixas"></div>
+      <ul class="termo-dicas" id="termo-dicas"></ul>
+
+      <div class="termo-bloco">
+        <h3>Vale a pena comprar pontos?</h3>
+        <p class="sec-note">Escolha o programa e digite o preço do milheiro (mil pontos) que você encontrou.</p>
+        <div class="termo-calc">
+          <select id="milheiro-programa" aria-label="Programa"></select>
+          <input type="number" id="milheiro-preco" min="0" step="0.01" inputmode="decimal" placeholder="Preço do milheiro" aria-label="Preço do milheiro">
+        </div>
+        <p class="termo-resposta" id="milheiro-resposta" aria-live="polite"></p>
+        <ul class="termo-tetos" id="milheiro-tetos"></ul>
+      </div>
+    </section>
+
     <section id="restaurantes" data-pagina="restaurantes">
       <div class="sec-head">
         <p class="eyebrow">Guia exclusivo</p>
@@ -263,6 +290,6 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=33"></script>
+<script src="app.js?v=34"></script>
 </body>
 </html>

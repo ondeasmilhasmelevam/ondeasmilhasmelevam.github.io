@@ -257,10 +257,50 @@ def numero(m):
     return f'{m:,}'.replace(',', '.')
 
 
+# Termômetro de milhas (dados/termometro.json), o mesmo da página do site.
+TERMO = None
+BONS = ('espetacular', 'muito bom', 'bom')
+BR = set('GRU GIG CGH SDU BSB CNF PLU VCP POA REC FOR SSA CWB FLN BEL MAO NAT MCZ VIX GYN CGB JPA AJU THE SLZ PMW '
+         'CGR IGU NVT PVH MCP BVB RBR UDI LDB MGF JOI IOS BPS JDO CPV CXJ PNZ STM IMP RAO SJP'.split())
+
+
+def programa_termo(p):
+    t = (p or '').upper()
+    for chave, padrao in (('LATAM', r'LATAM'), ('Smiles', r'SMILES|GOL'), ('Azul', r'AZUL'),
+                          ('Avios', r'IBERIA|AVIOS|BRITISH|QATAR|PRIVILEGE'), ('TAP', r'TAP|MILES&GO'),
+                          ('Virgin', r'VIRGIN'), ('Connectmiles', r'CONNECT|COPA'), ('Suma', r'SUMA|AIR EUROPA')):
+        if re.search(padrao, t):
+            return chave
+    return ''
+
+
+def nivel(a):
+    # Faixa do termômetro da passagem ('muito bom', 'caro'...) ou ''.
+    global TERMO
+    if TERMO is None:
+        TERMO = ler_json(RAIZ / 'dados' / 'termometro.json', {})
+    if a.get('tipo') == 'promocao' or a.get('origem_iata') not in BR:
+        return ''
+    regiao = next((r for r in TERMO.get('regioes', []) if a.get('destino_iata') in r.get('aeroportos', [])), None)
+    exe = re.search(r'execut|primeira|first|business|premium', a.get('cabine') or '', re.I)
+    faixas = regiao and regiao['cabines'].get('exe' if exe else 'eco')
+    prog = programa_termo(a.get('programa'))
+    m = re.search(r'([\d.]+)\s*(?:milhas|pontos|avios)', a.get('ida') or '', re.I)
+    if not faixas or not prog or not m:
+        return ''
+    qtd = int(m.group(1).replace('.', ''))
+    com = [n for n in TERMO['niveis'] if prog in faixas.get(n, {})]
+    achou = next((n for n in com if qtd <= faixas[n][prog]), '')
+    return achou or ('péssimo' if com and com[-1] == 'péssimo' else '')
+
+
 def chamada_padrao(a):
     if a.get('tipo') == 'promocao':
         return 'ÚLTIMO DIA!' if a.get('ultimo_dia') else 'PROMOÇÃO NO AR'
-    return 'PASSAGEM BARATA'
+    n = nivel(a)
+    if n in BONS:
+        return f'{n.upper()} NO TERMÔMETRO'
+    return 'PASSAGEM COM MILHAS' if n else 'PASSAGEM BARATA'
 
 
 def miolo_passagem(a, chamada=''):
@@ -389,13 +429,16 @@ def separar(alertas):
     promos = sorted((a for a in alertas if a.get('tipo') == 'promocao'), key=lambda a: a['data'], reverse=True)
     promos.sort(key=lambda a: not a.get('ultimo_dia'))
     passagens = sorted((a for a in alertas if a.get('tipo') != 'promocao'),
-                       key=lambda a: milhas(a.get('ida')) + milhas(a.get('volta')))
+                       key=lambda a: (BONS.index(nivel(a)) if nivel(a) in BONS else 9,
+                                      milhas(a.get('ida')) + milhas(a.get('volta'))))
     return promos, passagens
 
 
 def escolher(alertas, estado, agora):
     postados = set(estado.get('postados', []))
-    novos = [a for a in alertas if a['id'] not in postados and quando(a) >= agora - timedelta(hours=HORAS_FRESCO)]
+    # Passagem cara ou péssima pelo termômetro não vira story.
+    novos = [a for a in alertas if a['id'] not in postados and quando(a) >= agora - timedelta(hours=HORAS_FRESCO)
+             and nivel(a) not in ('caro', 'péssimo')]
     promos, passagens = separar(novos)
     ordem = [passagens, promos] if estado.get('ultimo_tipo') == 'promocao' else [promos, passagens]
     return next((lista[0] for lista in ordem if lista), None)
@@ -440,7 +483,8 @@ SISTEMA = """Você escreve para o Instagram @ondeasmilhasmelevam, sobre milhas, 
 Recebe ofertas em JSON e devolve:
 - "chamadas": uma por oferta, na mesma ordem. Cada uma com no máximo 24 caracteres, em maiúsculas, sem números
   e sem emoji, que desperte urgência ou curiosidade (ex.: CORRE QUE ACABA HOJE, PREÇO DE OCASIÃO, ACHADO DO DIA).
-  Se a oferta tiver "ultimo_dia": true, a chamada fala que acaba hoje.
+  Se a oferta tiver "ultimo_dia": true, a chamada fala que acaba hoje. Se tiver "termometro"
+  (espetacular, muito bom ou bom), a chamada pode usar essa faixa (ex.: MUITO BOM NO TERMÔMETRO).
 - "legenda": só se "com_legenda" for true (senão, texto vazio). Legenda curta e envolvente para um carrossel:
   uma linha de gancho, depois uma linha por oferta na mesma ordem (começando com um emoji), depois um convite para
   salvar, comentar ou marcar quem viaja junto, e por fim "Link na bio 👆". No máximo 900 caracteres, sem hashtags.
@@ -450,7 +494,10 @@ Português do Brasil, tom animado mas confiável."""
 
 def dados_ia(a):
     campos = ('tipo', 'titulo', 'ultimo_dia', 'validade', 'origem', 'destino', 'companhia', 'cabine', 'programa', 'ida', 'volta')
-    return {k: a[k] for k in campos if a.get(k)}
+    d = {k: a[k] for k in campos if a.get(k)}
+    if nivel(a) in BONS:
+        d['termometro'] = nivel(a)
+    return d
 
 
 def numeros(texto):

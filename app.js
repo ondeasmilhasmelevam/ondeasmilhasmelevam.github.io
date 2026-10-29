@@ -897,6 +897,85 @@
     } catch (e) { /* sem notícias: a seção fica escondida */ }
   }
 
+  // Termômetro de milhas (dados/termometro.json): faixas por região, cabine e
+  // programa, calculadora do milheiro e o selo que aparece nas passagens.
+  let termometro = null;
+  const termo = { regiao: '', cabine: 'eco' };
+  const NOME_CABINE = { eco: 'Econômica', exe: 'Executiva' };
+  const CLASSE_NIVEL = { espetacular: 'n-esp', 'muito bom': 'n-top', bom: 'n-otimo', normal: 'n-normal', caro: 'n-caro', 'péssimo': 'n-pess' };
+  const BR = new Set('GRU GIG CGH SDU BSB CNF PLU VCP POA REC FOR SSA CWB FLN BEL MAO NAT MCZ VIX GYN CGB JPA AJU THE SLZ PMW CGR IGU NVT PVH MCP BVB RBR UDI LDB MGF JOI IOS BPS JDO CPV CXJ PNZ STM IMP RAO SJP'.split(' '));
+  const programaTermo = p => {
+    const t = norm(p);
+    return /LATAM/.test(t) ? 'LATAM' : /SMILES|GOL/.test(t) ? 'Smiles' : /AZUL/.test(t) ? 'Azul'
+      : /IBERIA|AVIOS|BRITISH|QATAR|PRIVILEGE/.test(t) ? 'Avios' : /TAP|MILES&GO/.test(t) ? 'TAP'
+      : /VIRGIN/.test(t) ? 'Virgin' : /CONNECT|COPA/.test(t) ? 'Connectmiles' : /SUMA|AIR EUROPA/.test(t) ? 'Suma' : '';
+  };
+  const numeroMilhas = t => { const m = String(t || '').match(/([\d.]+)\s*(?:milhas|pontos|avios)/i); return m ? +m[1].replace(/\./g, '') : 0; };
+  // Faixa da passagem: a melhor faixa cujo limite do programa cobre as milhas do trecho.
+  function nivelPassagem(p) {
+    if (!termometro || !BR.has(p.origem_iata)) return '';
+    const regiao = termometro.regioes.find(r => r.aeroportos.includes(p.destino_iata));
+    const faixas = regiao && regiao.cabines[ehExecutiva(p.cabine) ? 'exe' : 'eco'];
+    const prog = programaTermo(p.programa), milhas = numeroMilhas(p.ida);
+    if (!faixas || !prog || !milhas) return '';
+    const comPrograma = termometro.niveis.filter(n => faixas[n] && faixas[n][prog]);
+    const nivel = comPrograma.find(n => milhas <= faixas[n][prog]);
+    if (nivel) return nivel;
+    return comPrograma.at(-1) === 'péssimo' ? 'péssimo' : '';
+  }
+  const fmtMil = n => (n >= 1000 && n % 1000 === 0 ? `${n / 1000} mil` : n.toLocaleString('pt-BR'));
+  function mostrarTermometro() {
+    const t = termometro, regiao = t.regioes.find(r => r.id === termo.regiao) || t.regioes[0];
+    termo.regiao = regiao.id;
+    if (!regiao.cabines[termo.cabine]) termo.cabine = Object.keys(regiao.cabines)[0];
+    const botoes = (itens, atual, attr) => itens.map(([id, nome]) => `<button type="button" data-${attr}="${esc(id)}" aria-pressed="${id === atual}">${esc(nome)}</button>`).join('');
+    $('#termo-regiao').innerHTML = botoes(t.regioes.map(r => [r.id, r.nome]), termo.regiao, 'regiao');
+    $('#termo-cabine').innerHTML = botoes(Object.keys(regiao.cabines).map(c => [c, NOME_CABINE[c] || c]), termo.cabine, 'cabine');
+    $('#termo-cidades').textContent = regiao.cidades ? `Chegando por ${regiao.cidades}.` : '';
+    const faixas = regiao.cabines[termo.cabine];
+    $('#termo-faixas').innerHTML = t.niveis.filter(n => faixas[n]).map(n => `<div class="termo-faixa">
+        <span class="${CLASSE_NIVEL[n]}">${esc(n)}</span>
+        <ul>${Object.entries(faixas[n]).map(([prog, v]) => `<li><b>${fmtMil(v)}</b> ${esc(t.programas[prog] || prog)}</li>`).join('')}</ul>
+      </div>`).join('');
+  }
+  const MOEDA = { BRL: 'R$', EUR: '€', GBP: '£' };
+  function mostrarMilheiro() {
+    const lista = termometro.milheiro, item = lista[+$('#milheiro-programa').value] || lista[0];
+    const preco = parseFloat(String($('#milheiro-preco').value).replace(',', '.'));
+    const sim = `${MOEDA[item.moeda] || ''} `;
+    const valor = v => sim + v.toLocaleString('pt-BR', { minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 });
+    const r = $('#milheiro-resposta');
+    if (!(preco > 0)) {
+      r.className = 'termo-resposta';
+      r.textContent = `Para ${item.programa}, o milheiro vale a pena até ${valor(item.teto)}.`;
+    } else if (preco <= item.teto) {
+      r.className = 'termo-resposta ok';
+      r.textContent = `Vale a pena: ${valor(preco)} está dentro do teto de ${valor(item.teto)} para ${item.programa}.`;
+    } else {
+      r.className = 'termo-resposta espera';
+      r.textContent = `Melhor esperar: ${valor(preco)} passa do teto de ${valor(item.teto)}. As boas promoções costumam voltar.`;
+    }
+    if (item.dica) r.textContent += ` ${item.dica}`;
+  }
+  async function desenharTermometro() {
+    try {
+      const r = await fetch('dados/termometro.json', { cache: 'no-store' });
+      termometro = r.ok ? await r.json() : null;
+    } catch (e) { termometro = null; }
+    if (!termometro || !termometro.regioes || !termometro.regioes.length) { $('#termometro').hidden = true; return; }
+    $('#termo-dicas').innerHTML = (termometro.dicas || []).map(d => `<li>${esc(d)}</li>`).join('');
+    const lista = termometro.milheiro || [];
+    $('#milheiro-programa').innerHTML = lista.map((m, i) => `<option value="${i}">${esc(m.programa)}</option>`).join('');
+    $('#milheiro-tetos').innerHTML = lista.map(m => `<li><b>${esc(m.programa)}</b> até ${MOEDA[m.moeda] || ''} ${m.teto.toLocaleString('pt-BR')}</li>`).join('');
+    mostrarTermometro();
+    mostrarMilheiro();
+    mostrarPassagens();
+  }
+  $('#termo-regiao').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { termo.regiao = b.dataset.regiao; mostrarTermometro(); } });
+  $('#termo-cabine').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { termo.cabine = b.dataset.cabine; mostrarTermometro(); } });
+  $('#milheiro-programa').addEventListener('change', mostrarMilheiro);
+  $('#milheiro-preco').addEventListener('input', mostrarMilheiro);
+
   // Passagens e promoções dos grupos de alertas do Telegram (ferramentas/alertas.py).
   // O arquivo já vem só com o que ainda vale; aqui o prazo é conferido de novo,
   // para o item sumir na hora certa mesmo se a atualização atrasar.
@@ -919,8 +998,11 @@
     return `<div class="pass-datas"><span>${rotulo}</span><ul>${lista.map(d => `<li><b>${esc(d.mes)}</b> ${esc(d.dias)}</li>`).join('')}</ul></div>`;
   }
   function passagemHtml(p, agora) {
+    const nivel = nivelPassagem(p);
+    const selo = ['espetacular', 'muito bom', 'bom'].includes(nivel)
+      ? `<a class="pass-selo ${CLASSE_NIVEL[nivel]}" href="#termometro" title="Pelo termômetro de milhas">${nivel === 'espetacular' ? '🔥 ' : ''}${esc(nivel)}</a>` : '';
     return `<li class="${ehExecutiva(p.cabine) ? 'exe' : ''}">
-        <p class="pass-meta"><time datetime="${esc(p.data)}">${haQuanto(agora - new Date(p.data))}</time>${p.cabine ? ` · ${esc(p.cabine)}` : ''}</p>
+        <p class="pass-meta"><time datetime="${esc(p.data)}">${haQuanto(agora - new Date(p.data))}</time>${p.cabine ? ` · ${esc(p.cabine)}` : ''}${selo}</p>
         <h3 class="pass-rota">
           <span><b>${esc(p.origem_iata)}</b>${esc(p.origem)}</span>
           <i aria-label="para">✈</i>
@@ -1426,6 +1508,7 @@
     desenharContatos();
     desenharCalendario();
     desenharQuanto();
+    desenharTermometro();
     setInterval(() => { if (!document.hidden) desenharPassagens(); else mostrarPassagens(); }, 3 * 60e3);
     desenharAvisos();
     const [ok] = await Promise.all([carregar(), buscarDolar()]);

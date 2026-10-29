@@ -1,0 +1,48 @@
+{
+ "atualizado": "2026-01",
+ "dicas": [
+  "As faixas valem para as melhores portas de entrada de cada região, sempre saindo do Brasil.",
+  "Valor por trecho: ida ou volta, por pessoa, sem contar as taxas.",
+  "Preço espetacular é raro: aparece de vez em quando, às vezes por erro de tarifa. Não deixe de viajar esperando por ele."
+ ],
+ "niveis": ["espetacular", "muito bom", "bom", "normal", "caro", "péssimo"],
+ "programas": {
+  "LATAM": "LATAM Pass",
+  "Smiles": "Smiles",
+  "Azul": "Azul Fidelidade",
+  "Avios": "Avios (Iberia, British, Qatar)",
+  "TAP": "TAP Miles&Go",
+  "Virgin": "Virgin Atlantic",
+  "Connectmiles": "Connectmiles (Copa)",
+  "Suma": "Suma (Air Europa)"
+ },
+ "regioes": [
+  {
+   "id": "europa",
+   "nome": "Europa",
+   "cidades": "Lisboa, Porto, Madri, Barcelona, Paris, Londres, Amsterdã, Frankfurt, Zurique, Milão e Roma",
+   "aeroportos": ["LIS", "OPO", "MAD", "BCN", "CDG", "ORY", "LHR", "LGW", "AMS", "FRA", "ZRH", "MXP", "LIN", "FCO"],
+   "cabines": {
+    "eco": {
+     "espetacular": {"Avios": 21250},
+     "muito bom": {"LATAM": 75000, "Smiles": 120000, "Azul": 135000},
+     "bom": {"LATAM": 100000, "Smiles": 184000, "Avios": 42500, "Azul": 175000},
+     "normal": {"LATAM": 130000, "Smiles": 200000, "Suma": 50000, "Azul": 210000},
+     "caro": {"LATAM": 150000, "Smiles": 230000, "Azul": 230000, "Virgin": 34000, "TAP": 108000},
+     "péssimo": {"LATAM": 188000, "Connectmiles": 91000, "Azul": 250000, "TAP": 158000, "Virgin": 54000}
+    }
+   }
+  }
+ ],
+ "milheiro": [
+  {"programa": "LATAM Pass", "teto": 25, "moeda": "BRL"},
+  {"programa": "Smiles", "teto": 16, "moeda": "BRL", "dica": "Os melhores preços costumam aparecer na Pagol, na compra pelo carrinho da Livelo ou direto na Smiles com cupom."},
+  {"programa": "Azul Fidelidade", "teto": 14, "moeda": "BRL"},
+  {"programa": "Livelo", "teto": 31, "moeda": "BRL"},
+  {"programa": "Esfera", "teto": 35, "moeda": "BRL", "dica": "Perto de R$ 31,50 já dá para juntar pensando numa promoção futura de Avios, sabendo que é uma aposta."},
+  {"programa": "Iberia (Avios)", "teto": 55, "moeda": "BRL"},
+  {"programa": "Aeroplan", "teto": 75, "moeda": "BRL"},
+  {"programa": "Suma (Air Europa)", "teto": 10, "moeda": "EUR", "dica": "Compra direto no site, quando estiver com desconto."},
+  {"programa": "Virgin Atlantic", "teto": 9, "moeda": "GBP", "dica": "Compra direto no site, quando estiver com desconto."}
+ ]
+}

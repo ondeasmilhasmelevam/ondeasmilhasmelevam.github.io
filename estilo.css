@@ -583,6 +583,34 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .quanto-tab td ul{list-style:none;margin:0;padding:0;display:grid;gap:3px}
 .quanto-tab td ul b{font-size:11px;letter-spacing:.06em;color:var(--ash);margin-right:4px}
 
+/* ---------- termômetro de milhas ---------- */
+.n-esp{background:#E2B458;color:#070C17}.n-pess{background:#4a1d1b;color:#ffb4ad}
+.n-esp,.n-pess{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px}
+.termo-filtros{display:flex;flex-wrap:wrap;gap:0 10px}
+.termo-cidades{margin:0 0 14px;font-size:13.5px;color:var(--ash)}
+.termo-faixas{display:grid;gap:10px}
+.termo-faixa{display:grid;grid-template-columns:130px minmax(0,1fr);gap:12px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2)}
+.termo-faixa>span{justify-self:start}
+.termo-faixa ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.termo-faixa li{padding:5px 10px;border-radius:10px;background:var(--ink-3);font-size:13.5px;color:var(--ash)}
+.termo-faixa li b{color:var(--rice);margin-right:4px}
+.termo-dicas{margin:16px 0 0;padding-left:18px;color:var(--ash);font-size:13.5px;display:grid;gap:4px}
+.termo-bloco{margin-top:40px}
+.termo-bloco h3{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(20px,3.6vw,26px);letter-spacing:.03em}
+.termo-bloco .sec-note{margin:6px 0 14px}
+.termo-calc{display:flex;flex-wrap:wrap;gap:10px}
+.termo-calc select,.termo-calc input{font:inherit;font-size:15px;padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:var(--ink-2);color:var(--rice);min-width:0}
+.termo-calc input{width:190px}
+.termo-resposta{margin:14px 0 0;padding:14px 16px;border-radius:14px;background:var(--ink-2);border:1px solid var(--line);font-size:14.5px;color:var(--rice)}
+.termo-resposta.ok{background:rgba(31,157,104,.12);border-color:rgba(31,157,104,.45);color:#c8f5df}
+.termo-resposta.espera{background:rgba(122,46,42,.18);border-color:rgba(255,138,128,.4);color:#ffd6d2}
+.termo-tetos{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.termo-tetos li{padding:5px 10px;border-radius:10px;border:1px solid var(--line);font-size:12.5px;color:var(--ash)}
+.termo-tetos b{color:var(--rice)}
+.pass-selo{margin-left:8px;text-decoration:none;font-size:10.5px;padding:2px 8px;vertical-align:1px}
+.pass-selo.n-top,.pass-selo.n-otimo,.pass-selo.n-esp{display:inline-block;border-radius:999px;font-weight:800;letter-spacing:.08em}
+@media (max-width:560px){.termo-faixa{grid-template-columns:1fr;gap:8px}}
+
 /* ---------- contatos ---------- */
 .contatos{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr))}
 .contatos>li{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);min-width:0}
