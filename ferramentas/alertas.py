@@ -4,7 +4,7 @@ Roda sozinho no GitHub (ver .github/workflows/alertas.yml), com a sessão
 criada por ferramentas/telegram_entrar.py. TELEGRAM_GRUPO pode ter vários
 grupos, separados por vírgula.
 
-Só entram, das últimas 24 horas, mensagens no formato de passagem (rota,
+Só entram, das últimas 48 horas, mensagens no formato de passagem (rota,
 companhia, programa, milhas, datas e link) ou de promoção de pontos (título
 entre 💸, resumo, validade e link). Guarda só esses dados e o link original;
 resumos do dia, curiosidades e o resto do texto ficam de fora.
@@ -23,7 +23,7 @@ from telethon.sessions import StringSession
 from telethon.tl.types import (ChannelParticipantAdmin, ChannelParticipantCreator, ChannelParticipantsAdmins,
                                ChatParticipantAdmin, ChatParticipantCreator, MessageEntityTextUrl, PeerChannel)
 
-HORAS = 24
+HORAS = 48
 SAIDA = Path(__file__).resolve().parent.parent / 'dados' / 'alertas.json'
 CONVITE = re.compile(r'(https?://)?(t\.me|telegram\.me)/', re.I)
 
@@ -166,7 +166,7 @@ async def main():
     passagens = []
     for grupo in grupos:
         autores = await quem_publica(cliente, grupo)
-        async for m in cliente.iter_messages(grupo, limit=500):
+        async for m in cliente.iter_messages(grupo, limit=1000):
             if m.date < limite:
                 break
             do_grupo = isinstance(m.from_id, PeerChannel) or m.from_id is None  # canal ou admin anônimo

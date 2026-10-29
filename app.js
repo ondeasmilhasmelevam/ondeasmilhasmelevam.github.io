@@ -882,9 +882,9 @@
   }
 
   // Passagens e promoções dos grupos de alertas do Telegram (ferramentas/alertas.py).
-  // O arquivo já vem só com as últimas 24 h; aqui o prazo é conferido de novo,
+  // O arquivo já vem só com as últimas 48 h; aqui o prazo é conferido de novo,
   // para o item sumir na hora certa mesmo se a atualização atrasar.
-  const PRAZO_PASSAGEM = 24 * 3600e3, POR_VEZ = 12;
+  const PRAZO_PASSAGEM = 48 * 3600e3, POR_VEZ = 12;
   const filtroPassagem = { tipo: 'passagem', busca: '', cabine: '', todas: false };
   let passagens = [];
   function haQuanto(ms) {
@@ -952,7 +952,7 @@
     const nomeTipo = promo ? 'promoção' : 'passagem';
     const vazio = $('#passagens-vazio');
     vazio.hidden = !!lista.length;
-    vazio.textContent = doTipo.length ? `Nenhuma ${nomeTipo} com esse filtro agora.` : `Nenhuma ${nomeTipo} nas últimas 24 horas. As próximas aparecem aqui assim que forem publicadas.`;
+    vazio.textContent = doTipo.length ? `Nenhuma ${nomeTipo} com esse filtro agora.` : `Nenhuma ${nomeTipo} nas últimas 48 horas. As próximas aparecem aqui assim que forem publicadas.`;
     const btn = $('#mais-passagens');
     btn.hidden = lista.length <= POR_VEZ;
     btn.textContent = f.todas ? 'Mostrar menos' : `Ver todas as ${lista.length} ${promo ? 'promoções' : 'passagens'}`;
