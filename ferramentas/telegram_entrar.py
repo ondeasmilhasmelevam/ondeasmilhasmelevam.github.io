@@ -17,11 +17,12 @@ momento: Telegram > Configurações > Dispositivos > encerrar a sessão.
 import asyncio
 import getpass
 import os
+import re
 from pathlib import Path
 
 import qrcode
 from telethon import TelegramClient
-from telethon.errors import SessionPasswordNeededError
+from telethon.errors import ApiIdInvalidError, SessionPasswordNeededError
 from telethon.sessions import StringSession
 
 SEGREDOS = 'https://github.com/ondeasmilhasmelevam/ondeasmilhasmelevam.github.io/settings/secrets/actions'
@@ -70,11 +71,28 @@ async def escolher_grupo(cliente):
             return [opcoes[n - 1] for n in dict.fromkeys(ns)]
 
 
+def pedir_chaves():
+    """Confere o formato antes de tentar: api_id só números, api_hash 32 letras/números."""
+    while True:
+        api_id = re.sub(r'\D', '', input('\napi_id (só números): '))
+        api_hash = re.sub(r'[^0-9a-fA-F]', '', input('api_hash (32 letras e números): ')).lower()
+        if api_id and len(api_hash) == 32:
+            return int(api_id), api_hash
+        print(f'Não parece certo: o api_id veio com {len(api_id)} números e o api_hash com {len(api_hash)} '
+              'caracteres (deveriam ser 32). Copie de novo do my.telegram.org.')
+
+
 async def main():
-    api_id = int(input('api_id (só números): ').strip())
-    api_hash = getpass.getpass('api_hash (não aparece na tela): ').strip()
-    cliente = TelegramClient(StringSession(), api_id, api_hash, device_model='Site Onde as Milhas Me Levam')
-    await entrar(cliente)
+    while True:
+        api_id, api_hash = pedir_chaves()
+        cliente = TelegramClient(StringSession(), api_id, api_hash, device_model='Site Onde as Milhas Me Levam')
+        try:
+            await entrar(cliente)
+            break
+        except ApiIdInvalidError:
+            await cliente.disconnect()
+            print('O Telegram não aceitou esse par de chaves. Confira se o api_id e o api_hash são do mesmo app '
+                  'e se não trocou um pelo outro.')
     (Path.home() / 'telegram-qrcode.png').unlink(missing_ok=True)
     eu = await cliente.get_me()
     print(f'\nConectado como {eu.first_name}.')
