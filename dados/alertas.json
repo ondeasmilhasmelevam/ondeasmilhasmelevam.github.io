@@ -1,5 +1,310 @@
 [
  {
+  "id": "3761373661-8645",
+  "data": "2026-10-29T18:34:51Z",
+  "origem": "Petrolina",
+  "origem_iata": "PNZ",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "Azul Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "15.000 milhas + Taxas",
+  "volta": "15.000 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Jan/27",
+    "dias": "22, 24, 29"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Jan/27",
+    "dias": "25, 27, 30"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "1"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/4WfittP",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-8644",
+  "data": "2026-10-29T18:34:31Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "LATAM Airlines Brasil",
+  "cabine": "Econômica",
+  "programa": "LATAM",
+  "ida": "7.997 milhas + Taxas",
+  "volta": "7.997 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Jan/27",
+    "dias": "2, 21"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Jan/27",
+    "dias": "9, 10, 11, 12, 13, 24"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/4xWNtdi",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-8643",
+  "data": "2026-10-29T18:34:20Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "LATAM Airlines Brasil",
+  "cabine": "Econômica",
+  "programa": "LATAM",
+  "ida": "13.140 milhas + Taxas",
+  "volta": "22.488 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "19"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "23, 24, 25, 26, 28"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/OUaeJRq",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-8642",
+  "data": "2026-10-29T18:34:03Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Macapá",
+  "destino_iata": "MCP",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.100 milhas + Taxas",
+  "volta": "32.700 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "17"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "24, 31"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/j1zZy2b",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8641",
+  "data": "2026-10-29T18:33:59Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "19.100 milhas + Taxas",
+  "volta": "19.100 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "16"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "22, 23, 24, 26, 27"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/orIhaDY",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8640",
+  "data": "2026-10-29T18:33:56Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "22.200 milhas + Taxas",
+  "volta": "22.200 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "23"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "3, 4"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/UYF3oZR",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8639",
+  "data": "2026-10-29T18:33:51Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "15.000 milhas + Taxas",
+  "volta": "15.000 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "1, 2"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "7, 12, 13, 14"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/EIHfv0p",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8638",
+  "data": "2026-10-29T18:33:30Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.600 milhas + Taxas",
+  "volta": "12.600 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Jan/27",
+    "dias": "27, 28, 29, 30"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "2, 3, 4, 5, 8, 9"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/XjEMM04",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8637",
+  "data": "2026-10-29T18:33:27Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "São José do Rio Preto",
+  "destino_iata": "SJP",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "8.000 milhas + Taxas",
+  "volta": "11.200 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Jan/27",
+    "dias": "22, 23"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Jan/27",
+    "dias": "25, 26"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/1JCed79",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8636",
+  "data": "2026-10-29T18:33:21Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Uberlândia",
+  "destino_iata": "UDI",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "7.900 milhas + Taxas",
+  "volta": "12.000 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Dez/26",
+    "dias": "4, 6"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Dez/26",
+    "dias": "5, 6, 7, 8"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/dVc36Wb",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8635",
+  "data": "2026-10-29T18:33:16Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Curitiba",
+  "destino_iata": "CWB",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.600 milhas + Taxas",
+  "volta": "8.800 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Jan/27",
+    "dias": "26"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "2, 3, 4, 5, 6, 7, 8"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/fjwl3b0",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-5799",
   "data": "2026-10-29T18:13:07Z",
   "origem": "Tóquio",
@@ -11399,53 +11704,6 @@
   ],
   "link": "https://link.dia23.com.br/r/4vp7bCQ",
   "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8490",
-  "data": "2026-10-27T18:37:19Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "São Luís",
-  "destino_iata": "SLZ",
-  "companhia": "Latam",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 12.040 milhas",
-  "volta": "A partir de 12.040 milhas",
-  "datas_ida": [
-   {
-    "mes": "Jan/27",
-    "dias": "26"
-   },
-   {
-    "mes": "Fev/27",
-    "dias": "08, 19"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "02, 05, 15"
-   },
-   {
-    "mes": "Mai/27",
-    "dias": "14"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Fev/27",
-    "dias": "22, 28"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "05, 08, 09, 12, 19"
-   },
-   {
-    "mes": "Mai/27",
-    "dias": "21"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/4zDihce",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7458",
