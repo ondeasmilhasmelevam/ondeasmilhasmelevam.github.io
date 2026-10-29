@@ -11448,33 +11448,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2361370250-5684",
-  "data": "2026-10-27T18:20:26Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "Turkish Airlines",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "A partir de 66.500 milhas",
-  "volta": "A partir de 66.500 milhas",
-  "datas_ida": [
-   {
-    "mes": "Nov/26",
-    "dias": "13, 20"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Nov/26",
-    "dias": "13, 14, 15, 16, 17, 18, 19, 20, 24, 25"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/cOidX4g",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7458",
   "data": "2026-10-27T12:17:21Z",
   "tipo": "promocao",
