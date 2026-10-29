@@ -16,6 +16,7 @@ momento: Telegram > Configurações > Dispositivos > encerrar a sessão.
 """
 import asyncio
 import getpass
+import os
 from pathlib import Path
 
 import qrcode
@@ -28,9 +29,16 @@ ARQUIVO = Path.home() / 'telegram-alertas-SEGREDO.txt'
 
 
 def mostrar_qr(url):
-    qr = qrcode.QRCode(border=2)
+    """Abre o QR como imagem (o desenho no terminal nem sempre dá para ler)."""
+    qr = qrcode.QRCode(border=4, box_size=10)
     qr.add_data(url)
-    qr.print_ascii(invert=True)
+    imagem = Path.home() / 'telegram-qrcode.png'
+    try:
+        qr.make_image().save(imagem)
+        os.startfile(imagem)
+        print(f'O QR Code abriu numa janela ({imagem}).')
+    except Exception:
+        qr.print_ascii(invert=True)
 
 
 async def entrar(cliente):
@@ -67,6 +75,7 @@ async def main():
     api_hash = getpass.getpass('api_hash (não aparece na tela): ').strip()
     cliente = TelegramClient(StringSession(), api_id, api_hash, device_model='Site Onde as Milhas Me Levam')
     await entrar(cliente)
+    (Path.home() / 'telegram-qrcode.png').unlink(missing_ok=True)
     eu = await cliente.get_me()
     print(f'\nConectado como {eu.first_name}.')
     grupos = await escolher_grupo(cliente)
