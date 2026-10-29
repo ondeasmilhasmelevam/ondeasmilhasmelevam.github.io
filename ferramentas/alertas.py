@@ -127,20 +127,40 @@ async def quem_publica(cliente, grupo):
     return ids
 
 
+def falhar(msg):
+    """Erro visível nas anotações do GitHub (aparecem sem login; nunca levam as chaves)."""
+    print(f'::error::{msg}')
+    sys.exit(1)
+
+
 async def main():
-    faltam = [v for v in ('TELEGRAM_API_ID', 'TELEGRAM_API_HASH', 'TELEGRAM_SESSAO', 'TELEGRAM_GRUPO') if not os.environ.get(v)]
+    env = {v: re.sub(r'\s+', '', os.environ.get(v, '')) for v in
+           ('TELEGRAM_API_ID', 'TELEGRAM_API_HASH', 'TELEGRAM_SESSAO', 'TELEGRAM_GRUPO')}
+    faltam = [v for v, x in env.items() if not x]
     if faltam:
-        print('Telegram ainda não ligado (faltam ' + ', '.join(faltam) + '); nada a fazer.')
+        print('::warning::Telegram ainda não ligado (faltam ' + ', '.join(faltam) + '); nada a fazer.')
         return
-    cliente = TelegramClient(StringSession(os.environ['TELEGRAM_SESSAO']), int(os.environ['TELEGRAM_API_ID']),
-                             os.environ['TELEGRAM_API_HASH'], device_model='Site Onde as Milhas Me Levam')
-    await cliente.connect()
-    if not await cliente.is_user_authorized():
-        sys.exit('A sessão do Telegram foi encerrada. Rode ferramentas/telegram_entrar.py de novo.')
-    alvos = {int(g) for g in re.findall(r'-?\d+', os.environ['TELEGRAM_GRUPO'])}
+    if not env['TELEGRAM_API_ID'].isdigit():
+        falhar('TELEGRAM_API_ID deveria ter só números.')
+    if len(env['TELEGRAM_API_HASH']) != 32:
+        falhar(f"TELEGRAM_API_HASH veio com {len(env['TELEGRAM_API_HASH'])} caracteres (deveria ter 32).")
+    try:
+        sessao = StringSession(env['TELEGRAM_SESSAO'])
+    except Exception:
+        falhar(f"TELEGRAM_SESSAO não é uma sessão válida ({len(env['TELEGRAM_SESSAO'])} caracteres); copie de novo, inteira.")
+    cliente = TelegramClient(sessao, int(env['TELEGRAM_API_ID']), env['TELEGRAM_API_HASH'],
+                             device_model='Site Onde as Milhas Me Levam')
+    try:
+        await cliente.connect()
+        autorizado = await cliente.is_user_authorized()
+    except Exception as e:
+        falhar(f'Não conectou no Telegram: {type(e).__name__}: {e}')
+    if not autorizado:
+        falhar('A sessão do Telegram foi encerrada. Rode ferramentas/telegram_entrar.py de novo.')
+    alvos = {int(g) for g in re.findall(r'-?\d+', env['TELEGRAM_GRUPO'])}
     grupos = [d.entity async for d in cliente.iter_dialogs() if d.id in alvos]
     if not grupos:
-        sys.exit('Nenhum grupo encontrado na conta. Rode ferramentas/telegram_entrar.py de novo.')
+        falhar(f'Nenhum dos {len(alvos)} grupos de TELEGRAM_GRUPO foi encontrado na conta.')
     limite = datetime.now(timezone.utc) - timedelta(hours=HORAS)
 
     passagens = []
@@ -165,4 +185,9 @@ async def main():
 
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except SystemExit:
+        raise
+    except Exception as e:
+        falhar(f'{type(e).__name__}: {e}')
