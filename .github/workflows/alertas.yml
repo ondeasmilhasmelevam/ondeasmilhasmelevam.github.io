@@ -1,0 +1,44 @@
+# Traz os alertas de passagens do grupo do Telegram para o site.
+# Enquanto os segredos TELEGRAM_* não forem cadastrados, roda e não faz nada.
+name: Alertas do Telegram
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'   # a cada 15 min (o GitHub pode atrasar um pouco)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: alertas
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install telethon==1.44.0
+      - name: Buscar alertas
+        env:
+          TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
+          TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+          TELEGRAM_SESSAO: ${{ secrets.TELEGRAM_SESSAO }}
+          TELEGRAM_GRUPO: ${{ secrets.TELEGRAM_GRUPO }}
+        run: python ferramentas/alertas.py
+      - name: Salvar se mudou
+        run: |
+          if git diff --quiet -- dados/alertas.json; then
+            echo "Sem alertas novos."
+            exit 0
+          fi
+          git config user.name "Onde as Milhas Me Levam"
+          git config user.email "ondeasmilhasmelevam@users.noreply.github.com"
+          git add dados/alertas.json
+          git commit -m "Alertas de passagens atualizados"
+          git pull --rebase
+          git push

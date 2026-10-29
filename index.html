@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=18">
+<link rel="stylesheet" href="estilo.css?v=19">
 </head>
 <body>
 <header class="bar">
@@ -27,6 +27,7 @@
     <nav class="tabs" aria-label="Seções">
       <a href="#simulador">Simulador</a>
       <a href="#ranking-sec">Ranking</a>
+      <a href="#alertas" id="aba-alertas" hidden>Alertas</a>
       <a href="#restaurantes">Restaurantes VIP</a>
       <a href="#comprar">Comprar milhas</a>
       <a href="#novidades">Novidades</a>
@@ -105,6 +106,15 @@
         <p class="sec-note" id="ranking-nota"></p>
       </div>
       <ol class="ranking" id="ranking"></ol>
+    </section>
+
+    <section id="alertas" hidden>
+      <div class="sec-head">
+        <p class="eyebrow"><span class="ao-vivo"></span>Alertas de passagens</p>
+        <h2>Promoções que apareceram nas últimas 24 horas</h2>
+        <p class="sec-note">Direto do nosso grupo de alertas no Telegram. Cada alerta some sozinho depois de 24 horas; preço e disponibilidade mudam rápido, confira no site da companhia.</p>
+      </div>
+      <ul class="alertas" id="lista-alertas"></ul>
     </section>
 
     <section id="restaurantes">
@@ -194,6 +204,6 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=22"></script>
+<script src="app.js?v=23"></script>
 </body>
 </html>

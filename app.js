@@ -881,6 +881,39 @@
     } catch (e) { /* sem notícias: a seção fica escondida */ }
   }
 
+  // Alertas de passagens do grupo do Telegram (ferramentas/alertas.py).
+  // O arquivo já vem só com as últimas 24 h; aqui o prazo é conferido de novo,
+  // para o alerta sumir na hora certa mesmo se a atualização atrasar.
+  const PRAZO_ALERTA = 24 * 3600e3;
+  let alertas = [];
+  const linkar = t => esc(t).replace(/https?:\/\/[^\s<]+[^\s<.,;:!?)\]'"]/g, u => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`);
+  function haQuanto(ms) {
+    const min = Math.max(1, Math.round(ms / 60e3));
+    return min < 60 ? `há ${min} min` : `há ${Math.round(min / 60)} h`;
+  }
+  function mostrarAlertas() {
+    const agora = Date.now();
+    const vivos = alertas.filter(a => agora - Date.parse(a.data) < PRAZO_ALERTA);
+    $('#alertas').hidden = $('#aba-alertas').hidden = !vivos.length;
+    $('#lista-alertas').innerHTML = vivos.map(a => {
+      const quando = new Date(a.data);
+      const extras = (a.links || []).filter(u => /^https?:\/\//.test(u) && !a.texto.includes(u));
+      return `<li>
+          <p class="alerta-meta"><time datetime="${esc(a.data)}">${esc(quando.toLocaleString('pt-BR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }))}</time> · ${haQuanto(agora - quando)}</p>
+          <p class="alerta-texto">${linkar(a.texto)}</p>
+          ${extras.length || a.link ? `<p class="alerta-links">${extras.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">Abrir link ↗</a>`).join('')}${a.link ? `<a href="${esc(a.link)}" target="_blank" rel="noopener">Ver no Telegram ↗</a>` : ''}</p>` : ''}
+        </li>`;
+    }).join('');
+  }
+  async function desenharAlertas() {
+    try {
+      const r = await fetch('dados/alertas.json', { cache: 'no-store' });
+      const lista = r.ok ? await r.json() : [];
+      if (Array.isArray(lista)) alertas = lista.filter(a => a && a.texto && !isNaN(Date.parse(a.data)));
+    } catch (e) { /* mantém os que já estavam na tela */ }
+    mostrarAlertas();
+  }
+
   function desenharPrecos() {
     const P = window.PRECO_MILHAS;
     if (!P || !P.length) { $('#comprar').hidden = true; return; }
@@ -1070,7 +1103,7 @@
   const obs = new IntersectionObserver(ents => {
     for (const en of ents) if (en.isIntersecting) marcarAba(en.target.id);
   }, { rootMargin: '-40% 0px -55% 0px' });
-  ['simulador', 'ranking-sec', 'restaurantes', 'comprar', 'novidades', 'como'].forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
+  ['simulador', 'ranking-sec', 'alertas', 'restaurantes', 'comprar', 'novidades', 'como'].forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
 
   /* ---------- início ---------- */
 
@@ -1079,6 +1112,8 @@
     desenharRestaurantes();
     desenharPrecos();
     desenharNoticias();
+    desenharAlertas();
+    setInterval(() => { if (!document.hidden) desenharAlertas(); else mostrarAlertas(); }, 5 * 60e3);
     desenharAvisos();
     const [ok] = await Promise.all([carregar(), buscarDolar()]);
     if (!ok) {
