@@ -11161,32 +11161,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-5680",
-  "data": "2026-10-27T16:04:39Z",
-  "origem": "Buenos Aires",
-  "origem_iata": "EZE",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "American Airlines",
-  "cabine": "Executiva",
-  "programa": "Finnair Plus",
-  "ida": "55.000 AVIOS + Taxas",
-  "volta": "",
-  "datas_ida": [
-   {
-    "mes": "Dez/26",
-    "dias": "03, 10, 11, 14, 15, 24"
-   },
-   {
-    "mes": "Ago/27",
-    "dias": "11"
-   }
-  ],
-  "datas_volta": [],
-  "link": "https://link.dia23.com.br/r/5VkqQ1U",
-  "link_nome": "Finnair Plus"
- },
- {
   "id": "1290836068-7458",
   "data": "2026-10-27T12:17:21Z",
   "tipo": "promocao",
