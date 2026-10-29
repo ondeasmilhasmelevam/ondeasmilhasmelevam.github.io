@@ -10800,28 +10800,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2361370250-5679",
-  "data": "2026-10-27T15:02:14Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Frankfurt",
-  "destino_iata": "FRA",
-  "companhia": "Lufthansa",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "80.000 milhas + Taxas",
-  "volta": "",
-  "datas_ida": [
-   {
-    "mes": "Nov/26",
-    "dias": "02, 03, 05, 09, 10, 11"
-   }
-  ],
-  "datas_volta": [],
-  "link": "https://link.dia23.com.br/r/bLast7w",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "1290836068-7458",
   "data": "2026-10-27T12:17:21Z",
   "tipo": "promocao",
