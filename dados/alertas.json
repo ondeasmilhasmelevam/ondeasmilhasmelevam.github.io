@@ -1,5 +1,30 @@
 [
  {
+  "id": "1290836068-7491",
+  "data": "2026-10-29T14:48:48Z",
+  "tipo": "promocao",
+  "titulo": "VIAJE PARA MONTEVIDÉU A PARTIR DE 27.500 MILHAS SMILES",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Promoção oferece voos de Rio de Janeiro, Fortaleza, São Paulo, Natal, Belo Horizonte e Florianópolis para Montevidéu com milhas Smiles. Valores por trecho variam de 27.500 a 56.000 milhas. Taxas adicionais aplicam-se.",
+  "detalhes": [
+   "Valores são por trecho e por passageiro",
+   "Taxas adicionais aplicam-se",
+   "Valores são menores disponíveis em cada mês",
+   "Busca realizada no momento da produção, podendo haver alteração no valor ou disponibilidade",
+   "Valores diferem para membros Clube/Diamante e demais clientes",
+   "Rio de Janeiro (GIG) x Montevidéu (MVD) a partir de 27.500 milhas o trecho",
+   "Fortaleza (FOR) x Montevidéu (MVD) a partir de 33.500 milhas o trecho",
+   "São Paulo (GRU) x Montevidéu (MVD) a partir de 38.500 milhas o trecho"
+  ],
+  "parceiros": "Smiles, GOL",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/GZNCpLn"
+  ],
+  "ate": ""
+ },
+ {
   "id": "3761373661-8619",
   "data": "2026-10-29T14:21:28Z",
   "origem": "Goiânia",
