@@ -609,7 +609,61 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .termo-tetos b{color:var(--rice)}
 .pass-selo{margin-left:8px;text-decoration:none;font-size:10.5px;padding:2px 8px;vertical-align:1px}
 .pass-selo.n-top,.pass-selo.n-otimo,.pass-selo.n-esp{display:inline-block;border-radius:999px;font-weight:800;letter-spacing:.08em}
-@media (max-width:560px){.termo-faixa{grid-template-columns:1fr;gap:8px}}
+#termo-regiao,.guia-grupos{flex-wrap:wrap;border-radius:18px}
+.bonus-lista{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr))}
+.bonus-lista li{padding:12px 16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);display:grid;gap:2px}
+.bonus-lista b{color:var(--rice);font-size:15px}
+.bonus-lista span{color:var(--ouro);font-weight:800;font-size:18px}
+.bonus-lista small{color:var(--ash);font-size:12.5px;line-height:1.4}
+
+/* ---------- guia de emissão ---------- */
+.guia-passos{list-style:none;counter-reset:passo;margin:0 0 18px;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.guia-passos li{counter-increment:passo;position:relative;padding:16px 16px 16px 58px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);display:grid;gap:4px}
+.guia-passos li::before{content:counter(passo);position:absolute;left:16px;top:16px;width:30px;height:30px;border-radius:50%;background:var(--ouro);color:var(--ink);font-weight:800;display:grid;place-items:center}
+.guia-passos b{color:var(--rice)}
+.guia-passos span{color:var(--ash);font-size:13.5px;line-height:1.45}
+.guia-glossario{margin:0 0 30px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);padding:12px 16px}
+.guia-glossario summary{cursor:pointer;font-weight:800;color:var(--ouro)}
+.guia-glossario dl{margin:12px 0 0;display:grid;grid-template-columns:150px minmax(0,1fr);gap:8px 14px;font-size:13.5px}
+.guia-glossario dt{color:var(--rice);font-weight:700}
+.guia-glossario dd{margin:0;color:var(--ash);line-height:1.45}
+.guia-filtros{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px}
+.guia-filtros input,.guia-filtros select{flex:1 1 240px;min-width:0;font:inherit;font-size:15px;padding:12px 16px;border-radius:999px;border:1px solid var(--line);background:var(--ink-2);color:var(--rice)}
+.guia-titulo{margin:0 0 12px;font-family:var(--display);font-weight:700;font-size:clamp(20px,3.6vw,26px);letter-spacing:.03em}
+.guia-pesquisa{margin:0 0 12px;font-size:13.5px;color:var(--ash);line-height:1.5}
+.guia-cias{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.guia-cias>li>details{border:1px solid var(--line);border-radius:14px;background:var(--ink-2)}
+.guia-cias summary{cursor:pointer;list-style:none;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:14px 16px}
+.guia-cias summary::-webkit-details-marker{display:none}
+.guia-cias summary::after{content:'+';margin-left:auto;color:var(--ouro);font-weight:800;font-size:18px}
+.guia-cias details[open] summary::after{content:'–'}
+.guia-nome{font-weight:800;color:var(--rice);font-size:16px}
+.guia-cias summary small{color:var(--ash-dim);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.guia-cias summary em{font-style:normal;color:var(--ouro);font-size:13px;font-weight:700}
+.guia-corpo{padding:0 16px 16px;border-top:1px solid var(--line)}
+.guia-corpo h5{margin:14px 0 6px;font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro)}
+.guia-corpo p,.guia-corpo li{font-size:14px;color:var(--ash);line-height:1.5;margin:0}
+.guia-corpo ul{margin:0;padding-left:18px;display:grid;gap:3px}
+.guia-progs{list-style:none;padding:0!important}
+.guia-progs li{padding:8px 12px;border-radius:10px;background:var(--ink-3)}
+.guia-progs li.melhor{box-shadow:inset 0 0 0 1px var(--ouro)}
+.guia-progs b{color:var(--rice)}
+.guia-progs em{font-style:normal;margin-left:8px;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--ouro);color:var(--ink)}
+.guia-progs span{display:block;font-size:13px;margin-top:2px}
+.guia-cab{margin:0;display:grid;grid-template-columns:110px minmax(0,1fr);gap:4px 12px;font-size:14px}
+.guia-cab dt{color:var(--rice);font-weight:700}
+.guia-cab dd{margin:0;color:var(--ash);line-height:1.5}
+.guia-obs{margin-top:6px!important;font-size:13px!important;color:var(--ash-dim)!important}
+.guia-assentos{display:flex;flex-wrap:wrap;gap:8px}
+.guia-assentos span{padding:5px 10px;border-radius:10px;background:var(--ink-3)}
+.guia-assentos b{color:var(--ouro);margin-left:4px}
+.canc-regras ul{list-style:none;margin:14px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);display:grid;gap:6px}
+.canc-regras li{font-size:14px;color:var(--ash);line-height:1.45}
+.canc-regras li.n0{color:var(--rice);font-weight:800;margin-top:6px}
+.canc-regras li.n0:first-child{margin-top:0}
+.canc-regras li.n1{padding-left:14px}
+.canc-regras li.n2{padding-left:28px;font-size:13px}
+@media (max-width:560px){.termo-faixa{grid-template-columns:1fr;gap:8px}.guia-glossario dl,.guia-cab{grid-template-columns:1fr;gap:2px}}
 
 /* ---------- contatos ---------- */
 .contatos{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr))}

@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=28">
+<link rel="stylesheet" href="estilo.css?v=29">
 </head>
 <body>
 <header class="bar">
@@ -30,6 +30,7 @@
       <a href="#passagens">Passagens</a>
       <a href="#quanto">Tabela de preços</a>
       <a href="#termometro">Termômetro</a>
+      <a href="#guia">Como emitir</a>
       <a href="#restaurantes">Restaurantes VIP</a>
       <a href="#comprar">Comprar milhas</a>
       <a href="#novidades">Novidades</a>
@@ -181,6 +182,54 @@
         <p class="termo-resposta" id="milheiro-resposta" aria-live="polite"></p>
         <ul class="termo-tetos" id="milheiro-tetos"></ul>
       </div>
+
+      <div class="termo-bloco" id="bonus-bloco" hidden>
+        <h3>Quando transferir com bônus</h3>
+        <p class="sec-note">Os bancos e os programas de pontos dão bônus para levar seus pontos para as companhias aéreas. Espere pelo menos este bônus antes de transferir.</p>
+        <ul class="bonus-lista" id="bonus-lista"></ul>
+      </div>
+    </section>
+
+    <section id="guia" data-pagina="guia">
+      <div class="sec-head">
+        <p class="eyebrow">Guia de emissão</p>
+        <h2>Como emitir uma passagem com milhas</h2>
+        <p class="sec-note">Quase toda companhia aérea pode ser emitida com milhas de outro programa. Aqui você descobre onde procurar o voo, por qual programa emitir e o que esperar de cada companhia.</p>
+      </div>
+
+      <ol class="guia-passos">
+        <li><b>Escolha a companhia</b><span>Busque abaixo a companhia em que você quer voar.</span></li>
+        <li><b>Procure a tarifa award</b><span>É o assento que a companhia libera para resgate com milhas. Use os sites indicados para achar as datas com vaga.</span></li>
+        <li><b>Emita pelo programa indicado</b><span>Com a data em mãos, emita pelo programa marcado como melhor opção. Os outros também funcionam.</span></li>
+      </ol>
+
+      <details class="guia-glossario">
+        <summary>Palavras que aparecem aqui</summary>
+        <dl>
+          <dt>Tarifa award</dt><dd>Assento liberado pela companhia para emissão com milhas de programas parceiros. Tem quantidade limitada por voo.</dd>
+          <dt>Aliança</dt><dd>Grupo de companhias que aceitam as milhas umas das outras: Star Alliance, Oneworld e SkyTeam.</dd>
+          <dt>Parceria</dt><dd>Acordo entre um programa e uma companhia fora da aliança. Os programas brasileiros só têm parcerias.</dd>
+          <dt>Tabela fixa</dt><dd>O preço em milhas não muda com a data: depende só do trecho e da cabine.</dd>
+          <dt>Taxa de combustível</dt><dd>Cobrança extra que alguns programas somam às taxas de embarque. Emitir pelo programa certo pode evitar essa cobrança.</dd>
+        </dl>
+      </details>
+
+      <h3 class="guia-titulo">Qual companhia você quer voar?</h3>
+      <div class="guia-filtros">
+        <input type="search" id="guia-busca" placeholder="Buscar companhia, ex.: Qatar" autocomplete="off" aria-label="Buscar companhia">
+        <select id="guia-programa" aria-label="Programa em que você tem pontos"><option value="">Tenho pontos em… (qualquer programa)</option></select>
+      </div>
+      <div class="seg-tipo guia-grupos" id="guia-grupos" role="group" aria-label="Grupo de companhias"></div>
+      <p class="guia-pesquisa" id="guia-pesquisa"></p>
+      <ul class="guia-cias" id="guia-cias"></ul>
+      <p class="passagens-vazio" id="guia-vazio" hidden>Nenhuma companhia com esse nome.</p>
+
+      <div class="termo-bloco">
+        <h3>Se precisar cancelar ou alterar</h3>
+        <p class="sec-note">Cada programa tem regra e taxa próprias. Confira antes de emitir, principalmente se a viagem ainda pode mudar.</p>
+        <div class="termo-calc"><select id="canc-programa" aria-label="Programa"></select></div>
+        <div class="canc-regras" id="canc-regras"></div>
+      </div>
     </section>
 
     <section id="restaurantes" data-pagina="restaurantes">
@@ -290,6 +339,6 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=35"></script>
+<script src="app.js?v=36"></script>
 </body>
 </html>

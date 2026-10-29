@@ -1,0 +1,1969 @@
+{
+ "atualizado": "2026-01",
+ "emitir": [
+  {
+   "cia": "LATAM",
+   "grupo": "Companhias brasileiras",
+   "propria": "Procure no Google Flights as datas mais baratas em reais: elas costumam ser as mais baratas em milhas na LATAM.",
+   "pesquisar": [
+    "Seats.aero, filtrando por Qantas ou Qatar"
+   ],
+   "programas": [
+    {
+     "nome": "Avios (Iberia, British ou Qatar)",
+     "melhor": true,
+     "obs": ""
+    },
+    {
+     "nome": "Qatar Privilege Club (Avios)",
+     "melhor": true,
+     "obs": "Costuma sair mais barato que pela Iberia ou pela British."
+    },
+    {
+     "nome": "British Airways Club (Avios)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Alaska Mileage Plan",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Gol",
+   "grupo": "Companhias brasileiras",
+   "propria": "Use o calendário de preços da Smiles.",
+   "pesquisar": [
+    "Seats.aero, filtrando por AAdvantage ou Aeroplan",
+    "Site da American Airlines"
+   ],
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": true,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "LifeMiles (Avianca)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Azul",
+   "grupo": "Companhias brasileiras",
+   "propria": "Procure no site da Azul ou na página de passagens promocionais da Azul.",
+   "pesquisar": [
+    "Seats.aero, filtrando por United ou Air Canada",
+    "Site da United"
+   ],
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": true,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": true,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Aegean",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Air Canada",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Smiles",
+     "melhor": true,
+     "obs": "Boa para executiva de Santiago a Toronto."
+    },
+    {
+     "nome": "Azul Fidelidade",
+     "melhor": true,
+     "obs": "Boa para econômica de São Paulo a Toronto ou Montreal."
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": "Alternativa para executiva de São Paulo ao Canadá."
+    }
+   ]
+  },
+  {
+   "cia": "Air China",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": true,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": true,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Air India",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Air New Zealand",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": true,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "ANA",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": true,
+     "obs": "A melhor para primeira classe."
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": true,
+     "obs": "Sem cobrança de taxa de combustível."
+    }
+   ]
+  },
+  {
+   "cia": "Asiana",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Austrian",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": true,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": true,
+     "obs": "Boa para emitir só a volta: não cobra taxa de combustível."
+    }
+   ]
+  },
+  {
+   "cia": "Avianca",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "LifeMiles (Avianca)",
+     "melhor": true,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Smiles",
+     "melhor": true,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Brussels Airlines",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Copa Airlines",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": "Alternativa para Caribe e Estados Unidos."
+    },
+    {
+     "nome": "Smiles",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Azul Fidelidade",
+     "melhor": true,
+     "obs": "A melhor para o Caribe."
+    }
+   ]
+  },
+  {
+   "cia": "Croatia Airlines",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "EgyptAir",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Ethiopian",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": "Hoje é o único programa emitindo essa companhia."
+    },
+    {
+     "nome": "Smiles",
+     "melhor": false,
+     "obs": "No momento não mostra tarifa award dessa companhia."
+    }
+   ]
+  },
+  {
+   "cia": "EVA Air",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "LOT",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Lufthansa",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": true,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": "Alternativa para emitir só a volta."
+    }
+   ]
+  },
+  {
+   "cia": "SAS",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Shenzhen Airlines",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Singapore Airlines",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": "Costuma mostrar mais assentos disponíveis."
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "South African Airways",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": true,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Smiles",
+     "melhor": true,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Swiss",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": true,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": true,
+     "obs": "Boa para emitir a volta sem taxa de combustível."
+    }
+   ]
+  },
+  {
+   "cia": "TAP",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Smiles",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Azul Fidelidade",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Thai Airways",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": "Só emite pela central de atendimento."
+    }
+   ]
+  },
+  {
+   "cia": "Turkish",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": true,
+     "obs": "Sem cobrança de taxa de combustível."
+    },
+    {
+     "nome": "Smiles",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Azul Fidelidade",
+     "melhor": true,
+     "obs": "A melhor para a Argentina."
+    }
+   ]
+  },
+  {
+   "cia": "United",
+   "grupo": "Star Alliance",
+   "programas": [
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Azul Fidelidade",
+     "melhor": true,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "ITA Airways",
+   "grupo": "Star Alliance",
+   "programas": [],
+   "nota": "Está entrando na Star Alliance; os programas da aliança devem passar a emitir em breve."
+  },
+  {
+   "cia": "Alaska",
+   "grupo": "Oneworld",
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Avios (Iberia, British ou Qatar)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "LATAM Pass (tabela fixa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "American Airlines",
+   "grupo": "Oneworld",
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Avios (Iberia, British ou Qatar)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Smiles",
+     "melhor": true,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "British Airways",
+   "grupo": "Oneworld",
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Avios (Iberia, British ou Qatar)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "LATAM Pass (tabela fixa)",
+     "melhor": true,
+     "obs": "Em voos longos, é a melhor quando a tarifa aparece."
+    }
+   ]
+  },
+  {
+   "cia": "Cathay Pacific",
+   "grupo": "Oneworld",
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Avios (Iberia, British, Qatar ou Finnair)",
+     "melhor": true,
+     "obs": "Pela Finnair costuma ser o melhor caminho."
+    },
+    {
+     "nome": "LATAM Pass (tabela fixa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Fiji Airways",
+   "grupo": "Oneworld",
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Avios (Iberia, British ou Qatar)",
+     "melhor": true,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Finnair",
+   "grupo": "Oneworld",
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Avios (Iberia, British ou Qatar)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "LATAM Pass (tabela fixa)",
+     "melhor": true,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Iberia",
+   "grupo": "Oneworld",
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Avios (Iberia, British ou Qatar)",
+     "melhor": true,
+     "obs": ""
+    },
+    {
+     "nome": "LATAM Pass (tabela fixa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Japan Airlines",
+   "grupo": "Oneworld",
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Avios (Iberia, British ou Qatar)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "LATAM Pass (tabela fixa)",
+     "melhor": true,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Malaysia Airlines",
+   "grupo": "Oneworld",
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Avios (Iberia, British ou Qatar)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "LATAM Pass (tabela fixa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Qantas",
+   "grupo": "Oneworld",
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Avios (Iberia, British ou Qatar)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "LATAM Pass (tabela fixa)",
+     "melhor": true,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Qatar",
+   "grupo": "Oneworld",
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Avios (Iberia, British ou Qatar)",
+     "melhor": true,
+     "obs": "A melhor saindo do Brasil."
+    },
+    {
+     "nome": "LATAM Pass (tabela fixa)",
+     "melhor": false,
+     "obs": "Boa em rotas que não saem do Brasil."
+    }
+   ]
+  },
+  {
+   "cia": "Royal Air Maroc",
+   "grupo": "Oneworld",
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Avios (Iberia, British ou Qatar)",
+     "melhor": true,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "SriLankan Airlines",
+   "grupo": "Oneworld",
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Avios (Iberia, British ou Qatar)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Air Europa",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": "Muitos assentos disponíveis."
+    },
+    {
+     "nome": "Smiles",
+     "melhor": true,
+     "obs": "A melhor quando aparece assento."
+    }
+   ]
+  },
+  {
+   "cia": "Aerolíneas Argentinas",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Smiles",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Aeroméxico",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Smiles",
+     "melhor": true,
+     "obs": ""
+    },
+    {
+     "nome": "LATAM Pass (tabela fixa)",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Air France",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": true,
+     "obs": "Executiva para a Alemanha por 42,5 mil milhas."
+    },
+    {
+     "nome": "Smiles",
+     "melhor": true,
+     "obs": "A melhor para econômica saindo de Fortaleza ou Salvador."
+    }
+   ]
+  },
+  {
+   "cia": "China Airlines",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "China Eastern",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Czech Airlines",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Delta",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "LATAM Pass (tabela fixa)",
+     "melhor": true,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Kenya Airways",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "KLM",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": true,
+     "obs": "A melhor para executiva até a Alemanha."
+    },
+    {
+     "nome": "Smiles",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Korean Air",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Smiles",
+     "melhor": true,
+     "obs": "Executiva costuma ter só um assento."
+    }
+   ]
+  },
+  {
+   "cia": "Middle East Airlines",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Saudia",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Virgin Atlantic",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": true,
+     "obs": "A melhor pelo próprio programa, quando há desconto nos resgates."
+    },
+    {
+     "nome": "LATAM Pass (tabela fixa)",
+     "melhor": false,
+     "obs": "Boa em alguns casos e permite tirar a taxa de combustível."
+    }
+   ]
+  },
+  {
+   "cia": "Xiamen Air",
+   "grupo": "SkyTeam",
+   "programas": [
+    {
+     "nome": "Suma (Air Europa)",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Virgin Atlantic Flying Club",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  },
+  {
+   "cia": "Emirates",
+   "grupo": "Outras companhias",
+   "pesquisar": [
+    "Seats.aero, filtrando por Air Canada, Smiles, Azul ou Qantas",
+    "Sites da Qantas e da Aeroplan"
+   ],
+   "programas": [
+    {
+     "nome": "Azul Fidelidade",
+     "melhor": false,
+     "obs": "Boa em algumas rotas, como Dubai–Japão na executiva."
+    },
+    {
+     "nome": "Smiles",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "TAP Miles&Go",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "ConnectMiles (Copa)",
+     "melhor": true,
+     "obs": "A melhor, mas só pela central de atendimento e com dificuldade."
+    },
+    {
+     "nome": "Aeroplan",
+     "melhor": false,
+     "obs": ""
+    },
+    {
+     "nome": "Qantas Frequent Flyer",
+     "melhor": false,
+     "obs": "Alternativa para primeira classe."
+    }
+   ]
+  },
+  {
+   "cia": "Etihad",
+   "grupo": "Outras companhias",
+   "pesquisar": [
+    "Site da American Airlines"
+   ],
+   "programas": [
+    {
+     "nome": "AAdvantage",
+     "melhor": false,
+     "obs": ""
+    }
+   ]
+  }
+ ],
+ "aparece": [
+  {
+   "cia": "Virgin Atlantic",
+   "cabines": {
+    "Econômica": "Aparece com frequência, em qualquer época do ano.",
+    "Executiva": "Aparece com frequência, em qualquer época do ano."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Avianca",
+   "cabines": {
+    "Econômica": "Aparece o ano todo, inclusive em julho, mas sem padrão de datas. Frequência média.",
+    "Executiva": "Aparece o ano todo, inclusive em julho, mas sem padrão de datas. Frequência média."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "South African",
+   "cabines": {
+    "Econômica": "Frequência média, o ano todo: tanto em datas próximas quanto bem à frente.",
+    "Executiva": "Frequência média, o ano todo: tanto em datas próximas quanto bem à frente."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Gol",
+   "cabines": {
+    "Econômica": "Aparece com muita frequência, o ano inteiro."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "TAP",
+   "cabines": {
+    "Econômica": "Saindo do Brasil é raríssimo: nos últimos dois anos apareceu uma vez. Não conte com isso.",
+    "Executiva": "Saindo do Brasil é raríssimo: nos últimos dois anos apareceu uma vez. Não conte com isso."
+   },
+   "obs": "De outros países para Portugal há vagas o ano todo."
+  },
+  {
+   "cia": "United",
+   "cabines": {
+    "Econômica": "Aparece o ano todo.",
+    "Executiva": "Costuma aparecer só 10 a 15 dias antes do voo. Com mais de 30 dias é raríssimo."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "British Airways",
+   "cabines": {
+    "Econômica": "Aparece o ano todo, sem padrão de datas.",
+    "Executiva": "Aparece em boa parte do ano, e é fácil acompanhar pelo site da American.",
+    "Primeira classe": "Só na rota Santiago–Londres, de 2 a 6 meses antes."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Japan Airlines",
+   "cabines": {
+    "Econômica": "Boa disponibilidade, aparece com frequência.",
+    "Executiva": "Pouca vaga e muita procura saindo dos Estados Unidos, mas aparece.",
+    "Primeira classe": "Raríssima e muito disputada, principalmente dos EUA para o Japão. Acompanhe de perto e emita assim que aparecer."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Qantas",
+   "cabines": {
+    "Econômica": "Aparece pouquíssimo e sem padrão.",
+    "Executiva": "Aparece pouquíssimo e sem padrão.",
+    "Primeira classe": "Aparece pouquíssimo e sem padrão."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Turkish",
+   "cabines": {
+    "Econômica": "Aparece com frequência, em qualquer época do ano.",
+    "Executiva": "Aparece com frequência, em qualquer época do ano."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Air Europa",
+   "cabines": {
+    "Econômica": "Aparece pouco e sem padrão.",
+    "Executiva": "Pela Smiles, faz anos que não aparece."
+   },
+   "obs": "Emitindo pelo próprio Suma, há datas o ano inteiro, na econômica e na executiva."
+  },
+  {
+   "cia": "KLM",
+   "cabines": {
+    "Econômica": "Aparece bastante, o ano todo, inclusive em julho, mas sem padrão de datas.",
+    "Executiva": "Aparece bastante, o ano todo, inclusive em julho, mas sem padrão de datas."
+   },
+   "obs": "Pela Virgin Atlantic, emitindo até uma segunda cidade depois de Amsterdã, a disponibilidade aumenta muito."
+  },
+  {
+   "cia": "Ethiopian",
+   "cabines": {
+    "Econômica": "Frequência média, em qualquer época do ano.",
+    "Executiva": "Frequência média, em qualquer época do ano."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Emirates",
+   "cabines": {
+    "Econômica": "Frequência média, em qualquer época do ano.",
+    "Executiva": "Frequência média, o ano todo. Para Buenos Aires tende a aparecer mais perto da data; de Dubai para outras regiões, sem padrão."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Lufthansa",
+   "cabines": {
+    "Econômica": "Aparece com frequência, em qualquer época do ano.",
+    "Executiva": "Aparece pouco, quase sempre em cima da hora.",
+    "Primeira classe": "No máximo 5 dias antes do voo."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Copa Airlines",
+   "cabines": {
+    "Econômica": "Sem padrão: às vezes há datas o ano inteiro, às vezes some, às vezes aparece muita vaga de uma vez. Vale acompanhar.",
+    "Executiva": "Saindo do Brasil está difícil. Pela Azul, saindo de Montevidéu ou Santiago, há bastante data."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Finnair",
+   "cabines": {
+    "Econômica": "Aparece com frequência, em qualquer época do ano.",
+    "Executiva": "Aparece com frequência, mais em datas distantes. Emita assim que o calendário abrir."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "LATAM",
+   "cabines": {
+    "Econômica": "Aparece com frequência, em qualquer época do ano.",
+    "Executiva": "Aparece com frequência, em qualquer época do ano."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Qatar",
+   "cabines": {
+    "Econômica": "Muita vaga, quase o ano inteiro.",
+    "Executiva": "Na rota Brasil–Doha, as vagas aparecem quando o calendário abre e acabam rápido. Em outras rotas da Qatar há bastante vaga.",
+    "Primeira classe": "Não há saindo do Brasil. Em outros destinos há bastante, mas se sumir de uma data dificilmente volta."
+   },
+   "obs": "O próprio Privilege Club tem tarifas exclusivas que aparecem antes. Não espere a Qatar soltar mais vagas depois: isso só acontece de vez em quando. Em cima da hora podem aparecer mais assentos."
+  },
+  {
+   "cia": "American Airlines",
+   "cabines": {
+    "Econômica": "Aparece praticamente o ano inteiro.",
+    "Executiva": "Aparece muito de 1 a 5 dias antes do voo, e também em algumas datas mais à frente.",
+    "Primeira classe": "Aparece muito de 1 a 5 dias antes do voo, e também em algumas datas mais à frente."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Iberia",
+   "cabines": {
+    "Econômica": "Há vagas o ano inteiro.",
+    "Executiva": "Emita com a maior antecedência possível: em junho é difícil achar para setembro, mas para maio do ano seguinte costuma ter."
+   },
+   "obs": "Procurar um destino depois de Madri (Nápoles, por exemplo) costuma mostrar mais vagas do que só São Paulo–Madri."
+  },
+  {
+   "cia": "Etihad",
+   "cabines": {
+    "Econômica": "Aparece com frequência, o ano inteiro.",
+    "Executiva": "Aparece com frequência, o ano inteiro.",
+    "Primeira classe": "No A380, aparece só de 10 a 14 dias antes."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Air France",
+   "cabines": {
+    "Econômica": "Aparece bastante, o ano todo, inclusive em julho, mas sem padrão de datas.",
+    "Executiva": "Aparece bastante, o ano todo, inclusive em julho, mas sem padrão de datas."
+   },
+   "obs": "Pela Virgin Atlantic, emitindo até uma segunda cidade depois de Paris, a disponibilidade aumenta muito."
+  },
+  {
+   "cia": "Swiss",
+   "cabines": {
+    "Econômica": "Aparece com frequência, em qualquer época do ano.",
+    "Executiva": "Aparece pouco, quase sempre em cima da hora."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Aeroméxico",
+   "cabines": {
+    "Econômica": "Costuma aparecer em datas muito próximas ou muito distantes.",
+    "Executiva": "Aparece pouco e sem padrão."
+   },
+   "obs": "Buscando a disponibilidade escondida, aparecem mais vagas, principalmente na executiva."
+  },
+  {
+   "cia": "Azul",
+   "cabines": {
+    "Econômica": "Nos voos nacionais aparece o ano todo, até em cima da hora.",
+    "Executiva": "Para a Europa costuma aparecer 2 a 3 meses antes. Para os Estados Unidos é bem raro."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Delta",
+   "cabines": {
+    "Econômica": "Aparece com frequência o ano todo entre Brasil e Estados Unidos.",
+    "Executiva": "No máximo 15 a 20 dias antes do voo."
+   },
+   "obs": ""
+  },
+  {
+   "cia": "Air Canada",
+   "cabines": {
+    "Econômica": "Há datas quase o ano inteiro, quase sempre de 2 a 3 meses antes.",
+    "Executiva": "De Santiago para Toronto, costuma aparecer cerca de 1 mês antes. Saindo do Brasil, faz anos que não aparece."
+   },
+   "obs": ""
+  }
+ ],
+ "assentos": [
+  {
+   "cia": "Qatar",
+   "eco": "4",
+   "exe": "2",
+   "first": "2",
+   "obs": "Na executiva, mais de 2 é raro; perto da data já apareceram até 9."
+  },
+  {
+   "cia": "Ethiopian",
+   "eco": "4",
+   "exe": "2",
+   "first": "",
+   "obs": "Pela ConnectMiles, só 1 na executiva."
+  },
+  {
+   "cia": "Air France",
+   "eco": "9+",
+   "exe": "9+",
+   "first": "",
+   "obs": ""
+  },
+  {
+   "cia": "KLM",
+   "eco": "9+",
+   "exe": "9+",
+   "first": "",
+   "obs": ""
+  },
+  {
+   "cia": "Turkish",
+   "eco": "9+",
+   "exe": "4",
+   "first": "",
+   "obs": ""
+  },
+  {
+   "cia": "Korean Air",
+   "eco": "2",
+   "exe": "1 a 2",
+   "first": "",
+   "obs": "Na executiva: 1 pela Smiles e 2 pela Virgin Atlantic."
+  },
+  {
+   "cia": "American Airlines",
+   "eco": "9+",
+   "exe": "7",
+   "first": "7",
+   "obs": ""
+  },
+  {
+   "cia": "United",
+   "eco": "9",
+   "exe": "7",
+   "first": "",
+   "obs": ""
+  },
+  {
+   "cia": "Emirates",
+   "eco": "7",
+   "exe": "7",
+   "first": "",
+   "obs": ""
+  },
+  {
+   "cia": "Avianca",
+   "eco": "9+",
+   "exe": "9+",
+   "first": "",
+   "obs": ""
+  },
+  {
+   "cia": "Lufthansa",
+   "eco": "7",
+   "exe": "7",
+   "first": "",
+   "obs": ""
+  },
+  {
+   "cia": "Swiss",
+   "eco": "7",
+   "exe": "7",
+   "first": "",
+   "obs": ""
+  },
+  {
+   "cia": "South African Airways",
+   "eco": "9",
+   "exe": "5",
+   "first": "",
+   "obs": "Na executiva o comum é de 2 a 4 por voo, mas já apareceram 5."
+  },
+  {
+   "cia": "Delta",
+   "eco": "9+",
+   "exe": "9+",
+   "first": "",
+   "obs": ""
+  },
+  {
+   "cia": "Iberia",
+   "eco": "9+",
+   "exe": "9+",
+   "first": "",
+   "obs": "O normal é de 4 a 6 na econômica e 1 ou 2 na executiva quando o calendário abre. Vale para emissões pela própria Iberia, que não são tarifa award."
+  },
+  {
+   "cia": "Copa Airlines",
+   "eco": "9",
+   "exe": "9",
+   "first": "",
+   "obs": "Saindo de Santiago ou Montevidéu, não é difícil achar 9 na executiva."
+  },
+  {
+   "cia": "LATAM",
+   "eco": "9+",
+   "exe": "9+",
+   "first": "",
+   "obs": "O padrão é de 5 a 6 na econômica e até 4 na executiva."
+  },
+  {
+   "cia": "Air Canada",
+   "eco": "5+",
+   "exe": "3",
+   "first": "",
+   "obs": ""
+  },
+  {
+   "cia": "TAP",
+   "eco": "9+",
+   "exe": "9+",
+   "first": "",
+   "obs": ""
+  }
+ ],
+ "assentos_explicacao": "É o máximo de assentos award que a companhia costuma liberar por voo. Use para planejar: se vão viajar quatro pessoas de executiva numa companhia que libera dois, a conta não fecha. E o máximo não aparece em todas as datas.",
+ "cancelamento": [
+  {
+   "programa": "Aeroplan (Air Canada)",
+   "regras": [
+    {
+     "t": "Grátis nas primeiras 24 horas depois da emissão.",
+     "n": 0
+    },
+    {
+     "t": "Depois disso, dá para cancelar até 2 horas antes do voo, pagando 150 dólares canadenses pelo site.",
+     "n": 0
+    }
+   ]
+  },
+  {
+   "programa": "AAdvantage (American)",
+   "regras": [
+    {
+     "t": "Voos de parceiros",
+     "n": 0
+    },
+    {
+     "t": "Cancelamento grátis, feito pelo próprio site.",
+     "n": 1
+    },
+    {
+     "t": "Voos da American",
+     "n": 0
+    },
+    {
+     "t": "Depende da tarifa emitida.",
+     "n": 1
+    }
+   ]
+  },
+  {
+   "programa": "Azul Fidelidade",
+   "regras": [
+    {
+     "t": "Voos nacionais da Azul",
+     "n": 0
+    },
+    {
+     "t": "Cancelar: R$ 475.",
+     "n": 1
+    },
+    {
+     "t": "Alterar: R$ 475 mais a diferença de tarifa.",
+     "n": 1
+    },
+    {
+     "t": "Voos internacionais da Azul",
+     "n": 0
+    },
+    {
+     "t": "Cancelar: 200 dólares.",
+     "n": 1
+    },
+    {
+     "t": "Alterar: 200 dólares mais a diferença de tarifa.",
+     "n": 1
+    },
+    {
+     "t": "Voos de parceiros (tarifa award)",
+     "n": 0
+    },
+    {
+     "t": "Cancelar: em torno de R$ 800, pode variar.",
+     "n": 1
+    },
+    {
+     "t": "Não aceita alteração.",
+     "n": 1
+    }
+   ]
+  },
+  {
+   "programa": "Smiles (Gol)",
+   "regras": [
+    {
+     "t": "Voos nacionais",
+     "n": 0
+    },
+    {
+     "t": "Cancelar: R$ 400.",
+     "n": 1
+    },
+    {
+     "t": "Alterar: R$ 400 mais a diferença de tarifa.",
+     "n": 1
+    },
+    {
+     "t": "Voos internacionais da Gol",
+     "n": 0
+    },
+    {
+     "t": "Cancelar: 180 dólares.",
+     "n": 1
+    },
+    {
+     "t": "Para os Estados Unidos ou Punta Cana: 310 dólares.",
+     "n": 1
+    },
+    {
+     "t": "Voos de parceiros (tarifa award)",
+     "n": 0
+    },
+    {
+     "t": "Cancelar: 180 dólares.",
+     "n": 1
+    }
+   ]
+  },
+  {
+   "programa": "LATAM Pass",
+   "regras": [
+    {
+     "t": "Voos nacionais da LATAM",
+     "n": 0
+    },
+    {
+     "t": "Tarifas Light e Plus: sem reembolso; alterar custa R$ 400 mais a diferença.",
+     "n": 1
+    },
+    {
+     "t": "Tarifas Full e Premium Economy: reembolso total; alterar custa só a diferença de tarifa.",
+     "n": 1
+    },
+    {
+     "t": "Voos internacionais da LATAM",
+     "n": 0
+    },
+    {
+     "t": "Tarifas Light e Plus: sem reembolso; o custo de alteração varia.",
+     "n": 1
+    },
+    {
+     "t": "Tarifas Full, Premium Economy e Business: reembolso total; alterar custa só a diferença de tarifa.",
+     "n": 1
+    },
+    {
+     "t": "Tabela fixa",
+     "n": 0
+    },
+    {
+     "t": "Cancelamento grátis.",
+     "n": 1
+    }
+   ]
+  },
+  {
+   "programa": "Executive Club (British Airways)",
+   "regras": [
+    {
+     "t": "Dá para alterar ou cancelar até 24 horas antes do voo, por 55 dólares. É mais flexível que a Iberia.",
+     "n": 0
+    }
+   ]
+  },
+  {
+   "programa": "Iberia Plus",
+   "regras": [
+    {
+     "t": "Vale só para voos da Iberia, da Iberia Express e da British, até 24 horas antes do voo.",
+     "n": 0
+    },
+    {
+     "t": "Cancelar: 25 euros ou 40 dólares, pela central de atendimento ou pelo WhatsApp. A tarifa Basic não pode ser cancelada.",
+     "n": 0
+    },
+    {
+     "t": "Alterar: 25 euros ou 40 dólares, pela central ou pelo WhatsApp.",
+     "n": 0
+    }
+   ]
+  },
+  {
+   "programa": "Privilege Club (Qatar)",
+   "regras": [
+    {
+     "t": "Com mais de 24 horas para o voo: 25 dólares para alterar ou cancelar.",
+     "n": 0
+    },
+    {
+     "t": "Entre 24 e 3 horas antes do voo: 100 dólares.",
+     "n": 0
+    }
+   ]
+  },
+  {
+   "programa": "TAP Miles&Go",
+   "regras": [
+    {
+     "t": "Só até 24 horas antes do voo.",
+     "n": 0
+    },
+    {
+     "t": "Cancelar",
+     "n": 0
+    },
+    {
+     "t": "Voos da TAP: 75 euros.",
+     "n": 1
+    },
+    {
+     "t": "Voos de parceiros: 100 euros.",
+     "n": 1
+    },
+    {
+     "t": "Alterar",
+     "n": 0
+    },
+    {
+     "t": "Voos da TAP: 75 euros mais a diferença de tarifa.",
+     "n": 1
+    },
+    {
+     "t": "Voos de parceiros: 150 euros.",
+     "n": 1
+    }
+   ]
+  },
+  {
+   "programa": "Virgin Atlantic Flying Club",
+   "regras": [
+    {
+     "t": "Voos saindo do Reino Unido: 30 libras para alterar ou cancelar.",
+     "n": 0
+    },
+    {
+     "t": "Demais voos: 50 dólares.",
+     "n": 0
+    }
+   ]
+  },
+  {
+   "programa": "Suma (Air Europa)",
+   "regras": [
+    {
+     "t": "Não permite cancelamento.",
+     "n": 0
+    },
+    {
+     "t": "Alterar custa 20 euros, se houver vaga na nova data, pela central de atendimento.",
+     "n": 0
+    }
+   ]
+  }
+ ],
+ "bonus": [
+  {
+   "programa": "LATAM Pass",
+   "minimo": "20% ou mais"
+  },
+  {
+   "programa": "Smiles",
+   "minimo": "80% ou mais"
+  },
+  {
+   "programa": "Azul Fidelidade",
+   "minimo": "80% ou mais"
+  },
+  {
+   "programa": "TAP Miles&Go",
+   "minimo": "Sem bônus",
+   "obs": "Transfere a partir do C6, do Porto Seguro e do Itaú."
+  },
+  {
+   "programa": "Iberia (Avios)",
+   "minimo": "20% a 30%",
+   "obs": "Só pela Esfera, na proporção de 2 pontos para 1 Avios."
+  },
+  {
+   "programa": "ConnectMiles (Copa)",
+   "minimo": "65% ou mais"
+  }
+ ],
+ "pesquisar": {
+  "Star Alliance": [
+   "Seats.aero, filtrando por United, Air Canada ou SAS",
+   "Sites da United e da Air Canada",
+   "Award Tool para achar os voos com tarifa dinâmica da TAP",
+   "A classe tarifária é a mesma em toda a aliança: X na econômica, I na executiva e O na primeira classe"
+  ],
+  "Oneworld": [
+   "Seats.aero, filtrando por American, Qantas, Smiles ou Alaska",
+   "Sites da American Airlines e da British Airways",
+   "Award Tool para achar Iberia"
+  ],
+  "SkyTeam": [
+   "Seats.aero, filtrando por Delta, Virgin Atlantic ou Air France",
+   "Award Tool",
+   "Site da Virgin Atlantic"
+  ]
+ }
+}

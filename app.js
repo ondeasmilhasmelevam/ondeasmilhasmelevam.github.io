@@ -976,6 +976,73 @@
   $('#milheiro-programa').addEventListener('change', mostrarMilheiro);
   $('#milheiro-preco').addEventListener('input', mostrarMilheiro);
 
+  // Guia de emissão (dados/guia.json): por companhia, onde procurar a tarifa award,
+  // por qual programa emitir, quando costuma aparecer e quantos assentos libera.
+  let guia = null;
+  const filtroGuia = { grupo: '', busca: '', programa: '' };
+  // Quem tem Avios emite por Iberia, British ou Qatar: no filtro, tudo isso é um programa só.
+  const familia = n => (/Avios/.test(n) ? 'Avios (Iberia, British ou Qatar)' : n);
+  const chaveCia = n => norm(n).replace(/\b(AIRLINES|AIRWAYS|AIR LINES)\b/g, '').replace(/\s+/g, '');
+  function ciaHtml(e) {
+    const ap = guia.aparece.find(a => chaveCia(a.cia) === chaveCia(e.cia));
+    const as = guia.assentos.find(a => chaveCia(a.cia) === chaveCia(e.cia));
+    const melhor = e.programas.filter(p => p.melhor).map(p => p.nome);
+    const onde = e.pesquisar || guia.pesquisar[e.grupo] || [];
+    const assentos = as && [['Econômica', as.eco], ['Executiva', as.exe], ['Primeira', as.first]].filter(([, v]) => v);
+    return `<li><details>
+        <summary><span class="guia-nome">${esc(e.cia)}</span><small>${esc(e.grupo)}</small>${melhor.length ? `<em>Emita por ${esc(melhor.join(' ou '))}</em>` : ''}</summary>
+        <div class="guia-corpo">
+          ${e.nota ? `<p>${esc(e.nota)}</p>` : ''}
+          ${e.propria ? `<h5>Na própria companhia</h5><p>${esc(e.propria)}</p>` : ''}
+          ${onde.length ? `<h5>Onde procurar a tarifa award</h5><ul>${onde.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+          ${e.programas.length ? `<h5>Por qual programa emitir</h5><ul class="guia-progs">${e.programas.map(p => `<li${p.melhor ? ' class="melhor"' : ''}><b>${esc(p.nome)}</b>${p.melhor ? '<em>melhor opção</em>' : ''}${p.obs ? `<span>${esc(p.obs)}</span>` : ''}</li>`).join('')}</ul>` : ''}
+          ${ap ? `<h5>Quando costuma aparecer</h5><dl class="guia-cab">${Object.entries(ap.cabines).map(([c, t]) => `<dt>${esc(c)}</dt><dd>${esc(t)}</dd>`).join('')}</dl>${ap.obs ? `<p class="guia-obs">${esc(ap.obs)}</p>` : ''}` : ''}
+          ${assentos && assentos.length ? `<h5>Assentos award por voo, no máximo</h5><p class="guia-assentos">${assentos.map(([c, v]) => `<span>${esc(c)} <b>${esc(v)}</b></span>`).join('')}</p>${as.obs ? `<p class="guia-obs">${esc(as.obs)}</p>` : ''}` : ''}
+        </div>
+      </details></li>`;
+  }
+  function mostrarGuia() {
+    const busca = norm(filtroGuia.busca);
+    const grupos = [...new Set(guia.emitir.map(e => e.grupo))];
+    $('#guia-grupos').innerHTML = [['', 'Todas'], ...grupos.map(g => [g, g])].map(([id, nome]) =>
+      `<button type="button" data-grupo="${esc(id)}" aria-pressed="${id === filtroGuia.grupo}">${esc(nome)}</button>`).join('');
+    const prog = filtroGuia.programa;
+    const lista = guia.emitir.filter(e => (!filtroGuia.grupo || e.grupo === filtroGuia.grupo) && (!busca || norm(e.cia).includes(busca))
+      && (!prog || e.programas.some(p => familia(p.nome) === prog)));
+    const dicas = filtroGuia.grupo && guia.pesquisar[filtroGuia.grupo];
+    $('#guia-pesquisa').textContent = [
+      prog ? `Com pontos em ${prog}, dá para emitir ${lista.length} ${lista.length === 1 ? 'companhia' : 'companhias'}${filtroGuia.grupo ? ` da ${filtroGuia.grupo}` : ''}.` : '',
+      dicas ? `Na ${filtroGuia.grupo}, a busca é parecida para todas as companhias: ${dicas.join('; ')}.` : '',
+    ].filter(Boolean).join(' ');
+    $('#guia-cias').innerHTML = lista.map(ciaHtml).join('');
+    $('#guia-vazio').hidden = !!lista.length;
+    if (busca && lista.length === 1) $('#guia-cias details').open = true;
+  }
+  function mostrarCancelamento() {
+    const c = guia.cancelamento[+$('#canc-programa').value] || guia.cancelamento[0];
+    $('#canc-regras').innerHTML = `<ul>${c.regras.map(r => `<li class="n${r.n}">${esc(r.t)}</li>`).join('')}</ul>`;
+  }
+  async function desenharGuia() {
+    try {
+      const r = await fetch('dados/guia.json', { cache: 'no-store' });
+      guia = r.ok ? await r.json() : null;
+    } catch (e) { guia = null; }
+    if (!guia || !guia.emitir) { $('#guia').hidden = true; return; }
+    const progs = [...new Set(guia.emitir.flatMap(e => e.programas.map(p => familia(p.nome))))].sort((a, b) => a.localeCompare(b, 'pt-BR'));
+    $('#guia-programa').insertAdjacentHTML('beforeend', progs.map(p => `<option>${esc(p)}</option>`).join(''));
+    mostrarGuia();
+    $('#canc-programa').innerHTML = guia.cancelamento.map((c, i) => `<option value="${i}">${esc(c.programa)}</option>`).join('');
+    mostrarCancelamento();
+    if (guia.bonus && guia.bonus.length) {
+      $('#bonus-lista').innerHTML = guia.bonus.map(b => `<li><b>${esc(b.programa)}</b><span>${esc(b.minimo)}</span>${b.obs ? `<small>${esc(b.obs)}</small>` : ''}</li>`).join('');
+      $('#bonus-bloco').hidden = false;
+    }
+  }
+  $('#guia-busca').addEventListener('input', e => { filtroGuia.busca = e.target.value; mostrarGuia(); });
+  $('#guia-grupos').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { filtroGuia.grupo = b.dataset.grupo; mostrarGuia(); } });
+  $('#guia-programa').addEventListener('change', e => { filtroGuia.programa = e.target.value; mostrarGuia(); });
+  $('#canc-programa').addEventListener('change', mostrarCancelamento);
+
   // Passagens e promoções dos grupos de alertas do Telegram (ferramentas/alertas.py).
   // O arquivo já vem só com o que ainda vale; aqui o prazo é conferido de novo,
   // para o item sumir na hora certa mesmo se a atualização atrasar.
@@ -1509,6 +1576,7 @@
     desenharCalendario();
     desenharQuanto();
     desenharTermometro();
+    desenharGuia();
     setInterval(() => { if (!document.hidden) desenharPassagens(); else mostrarPassagens(); }, 3 * 60e3);
     desenharAvisos();
     const [ok] = await Promise.all([carregar(), buscarDolar()]);

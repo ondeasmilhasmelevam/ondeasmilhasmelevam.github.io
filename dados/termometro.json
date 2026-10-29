@@ -239,6 +239,94 @@
      }
     }
    }
+  },
+  {
+   "id": "america-do-sul-sul",
+   "nome": "Chile, Argentina, Uruguai, Paraguai e Bolívia",
+   "cidades": "Santiago, Buenos Aires (Ezeiza e Aeroparque), Montevidéu, Punta del Este, Assunção e Santa Cruz",
+   "aeroportos": [
+    "SCL",
+    "EZE",
+    "AEP",
+    "MVD",
+    "PDP",
+    "ASU",
+    "VVI"
+   ],
+   "cabines": {
+    "eco": {
+     "espetacular": {
+      "Azul": 11000
+     },
+     "muito bom": {
+      "LATAM": 18000,
+      "Azul": 23000,
+      "Smiles": 30000
+     },
+     "bom": {
+      "LATAM": 25000,
+      "Azul": 32000,
+      "Smiles": 45000
+     },
+     "normal": {
+      "LATAM": 40000,
+      "Azul": 50000,
+      "Smiles": 60000
+     },
+     "caro": {
+      "LATAM": 50000,
+      "Azul": 65000,
+      "Smiles": 75000
+     },
+     "péssimo": {
+      "LATAM": 60000,
+      "Azul": 75000,
+      "Smiles": 85000
+     }
+    }
+   }
+  },
+  {
+   "id": "america-do-sul-norte",
+   "nome": "Colômbia, Peru e Equador",
+   "cidades": "Bogotá, Medellín, Lima, Quito e Guayaquil",
+   "aeroportos": [
+    "BOG",
+    "MDE",
+    "LIM",
+    "UIO",
+    "GYE"
+   ],
+   "cabines": {
+    "eco": {
+     "espetacular": {
+      "LATAM": 24000
+     },
+     "muito bom": {
+      "LATAM": 30000,
+      "Smiles": 54000
+     },
+     "bom": {
+      "LATAM": 50000,
+      "Smiles": 80000,
+      "Avios": 26000,
+      "Azul": 87200
+     },
+     "normal": {
+      "LATAM": 65000,
+      "Smiles": 120000,
+      "Azul": 109000
+     },
+     "caro": {
+      "LATAM": 75000,
+      "Smiles": 140000,
+      "Azul": 120000
+     },
+     "péssimo": {
+      "LATAM": 100000
+     }
+    }
+   }
   }
  ],
  "milheiro": [
