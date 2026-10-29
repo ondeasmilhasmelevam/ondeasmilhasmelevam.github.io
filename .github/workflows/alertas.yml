@@ -6,6 +6,9 @@ on:
   schedule:
     - cron: '*/15 * * * *'   # a cada 15 min (o GitHub pode atrasar um pouco)
   workflow_dispatch:
+  push:   # roda também quando o programa de leitura muda
+    branches: [main]
+    paths: ['ferramentas/alertas.py', '.github/workflows/alertas.yml']
 
 permissions:
   contents: write
