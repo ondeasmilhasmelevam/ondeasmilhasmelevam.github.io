@@ -518,6 +518,23 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .pass-datas ul{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:2px;font-size:13.5px;color:var(--ash);max-height:9.5em;overflow:auto}
 .pass-datas b{color:var(--rice);margin-right:4px}
 .pass-link{margin-top:auto;justify-content:center}
+.seg-tipo{display:flex;gap:6px;margin:0 0 14px;padding:4px;border:1px solid var(--line);border-radius:999px;background:var(--ink-2);width:max-content;max-width:100%}
+.seg-tipo button{border:0;background:none;color:var(--ash);font:inherit;font-size:14px;font-weight:700;padding:9px 16px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg-tipo button small{margin-left:6px;font-size:12px;font-weight:800;color:var(--ash-dim)}
+.seg-tipo button[aria-pressed="true"]{background:var(--ouro);color:var(--ink)}
+.seg-tipo button[aria-pressed="true"] small{color:var(--ink)}
+@media (max-width:420px){.seg-tipo{width:100%}.seg-tipo button{flex:1;padding:9px 8px;font-size:13px;white-space:normal}}
+.passagens-filtros .atalhos[hidden]{display:none}
+.passagens>li.promo{border-top-color:#3ccf91}
+.passagens>li.promo .pass-meta{color:#5fdba6}
+.promo-selos{margin:0;display:flex;flex-wrap:wrap;gap:6px}
+.promo-selos span{font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--ink-3);color:var(--ash)}
+.promo-selos .urgente{background:#ff5a4e;color:#fff}
+.promo-titulo{margin:0;font-size:17px;line-height:1.3;font-weight:800;color:var(--rice);text-wrap:balance}
+.promo-resumo{margin:0;font-size:14.5px;line-height:1.5;color:var(--ash)}
+.promo-detalhes summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--ouro)}
+.promo-detalhes ul{margin:8px 0 0;padding-left:18px;display:grid;gap:4px;font-size:13.5px;color:var(--ash)}
+.promo-links{margin-top:auto;display:grid;gap:8px}
 .passagens-vazio{margin:6px 0 0;padding:18px;border:1px dashed var(--line);border-radius:14px;color:var(--ash);text-align:center}
 #mais-passagens{margin-top:16px}
 

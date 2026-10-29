@@ -881,63 +881,100 @@
     } catch (e) { /* sem notícias: a seção fica escondida */ }
   }
 
-  // Passagens dos grupos de alertas do Telegram (ferramentas/alertas.py).
+  // Passagens e promoções dos grupos de alertas do Telegram (ferramentas/alertas.py).
   // O arquivo já vem só com as últimas 24 h; aqui o prazo é conferido de novo,
-  // para a passagem sumir na hora certa mesmo se a atualização atrasar.
+  // para o item sumir na hora certa mesmo se a atualização atrasar.
   const PRAZO_PASSAGEM = 24 * 3600e3, POR_VEZ = 12;
-  const filtroPassagem = { busca: '', cabine: '', todas: false };
+  const filtroPassagem = { tipo: 'passagem', busca: '', cabine: '', todas: false };
   let passagens = [];
   function haQuanto(ms) {
     const min = Math.max(1, Math.round(ms / 60e3));
     return min < 60 ? `há ${min} min` : `há ${Math.round(min / 60)} h`;
   }
   const ehExecutiva = c => /execut|primeira|first|business|premium/i.test(c || '');
+  const ehPromocao = p => p.tipo === 'promocao';
+  const httpOk = u => /^https?:\/\//.test(u || '');
   function datasHtml(rotulo, lista) {
     if (!lista || !lista.length) return '';
     return `<div class="pass-datas"><span>${rotulo}</span><ul>${lista.map(d => `<li><b>${esc(d.mes)}</b> ${esc(d.dias)}</li>`).join('')}</ul></div>`;
   }
+  function passagemHtml(p, agora) {
+    return `<li class="${ehExecutiva(p.cabine) ? 'exe' : ''}">
+        <p class="pass-meta"><time datetime="${esc(p.data)}">${haQuanto(agora - new Date(p.data))}</time>${p.cabine ? ` · ${esc(p.cabine)}` : ''}</p>
+        <h3 class="pass-rota">
+          <span><b>${esc(p.origem_iata)}</b>${esc(p.origem)}</span>
+          <i aria-label="para">✈</i>
+          <span><b>${esc(p.destino_iata)}</b>${esc(p.destino)}</span>
+        </h3>
+        <p class="pass-cia">${esc(p.companhia)}${p.programa ? ` · <b>${esc(p.programa)}</b>` : ''}</p>
+        <dl class="pass-valores">
+          <div><dt>Ida</dt><dd>${esc(p.ida)}</dd></div>
+          ${p.volta ? `<div><dt>Volta</dt><dd>${esc(p.volta)}</dd></div>` : ''}
+        </dl>
+        ${datasHtml('Datas de ida', p.datas_ida)}${datasHtml('Datas de volta', p.datas_volta)}
+        <a class="cta cta-a pass-link" href="${esc(p.link)}" target="_blank" rel="noopener">Ver passagem${p.link_nome ? ` na ${esc(p.link_nome)}` : ''} ↗</a>
+      </li>`;
+  }
+  function promocaoHtml(p, agora) {
+    const links = (p.links || []).filter(httpOk);
+    const site = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return 'site'; } };
+    return `<li class="promo">
+        <p class="pass-meta"><time datetime="${esc(p.data)}">${haQuanto(agora - new Date(p.data))}</time>${p.validade ? ` · até ${esc(p.validade)}` : ''}</p>
+        ${p.ultimo_dia || p.selo ? `<p class="promo-selos">${p.ultimo_dia ? '<span class="urgente">Último dia</span>' : ''}${p.selo ? `<span>${esc(p.selo)}</span>` : ''}</p>` : ''}
+        <h3 class="promo-titulo">${esc(p.titulo)}</h3>
+        ${p.resumo ? `<p class="promo-resumo">${esc(p.resumo)}</p>` : ''}
+        ${p.detalhes && p.detalhes.length ? `<details class="promo-detalhes"><summary>Como funciona</summary><ul>${p.detalhes.map(d => `<li>${esc(d)}</li>`).join('')}</ul></details>` : ''}
+        ${p.parceiros ? `<p class="pass-cia">Parceiros: <b>${esc(p.parceiros)}</b></p>` : ''}
+        <div class="promo-links">${links.map((u, i) => `<a class="cta ${i ? 'cta-b' : 'cta-a'} pass-link" href="${esc(u)}" target="_blank" rel="noopener">${links.length > 1 ? `Abrir ${esc(site(u))}` : 'Ver promoção'} ↗</a>`).join('')}</div>
+      </li>`;
+  }
   function mostrarPassagens() {
     const agora = Date.now(), f = filtroPassagem;
+    const promo = f.tipo === 'promocao';
     const busca = norm(f.busca);
     const vivas = passagens.filter(p => agora - Date.parse(p.data) < PRAZO_PASSAGEM);
-    const lista = vivas.filter(p =>
-      (!f.cabine || (f.cabine === 'exe') === ehExecutiva(p.cabine)) &&
-      (!busca || norm([p.origem, p.origem_iata, p.destino, p.destino_iata].join(' ')).includes(busca)));
+    const doTipo = vivas.filter(p => ehPromocao(p) === promo);
+    const lista = doTipo.filter(p => promo
+      ? (!busca || norm([p.titulo, p.parceiros, p.resumo].join(' ')).includes(busca))
+      : (!f.cabine || (f.cabine === 'exe') === ehExecutiva(p.cabine)) &&
+        (!busca || norm([p.origem, p.origem_iata, p.destino, p.destino_iata].join(' ')).includes(busca)));
     const mostrar = f.todas ? lista : lista.slice(0, POR_VEZ);
-    $('#lista-passagens').innerHTML = mostrar.map(p => {
-      const quando = new Date(p.data);
-      return `<li class="${ehExecutiva(p.cabine) ? 'exe' : ''}">
-          <p class="pass-meta"><time datetime="${esc(p.data)}">${haQuanto(agora - quando)}</time>${p.cabine ? ` · ${esc(p.cabine)}` : ''}</p>
-          <h3 class="pass-rota">
-            <span><b>${esc(p.origem_iata)}</b>${esc(p.origem)}</span>
-            <i aria-label="para">✈</i>
-            <span><b>${esc(p.destino_iata)}</b>${esc(p.destino)}</span>
-          </h3>
-          <p class="pass-cia">${esc(p.companhia)}${p.programa ? ` · <b>${esc(p.programa)}</b>` : ''}</p>
-          <dl class="pass-valores">
-            <div><dt>Ida</dt><dd>${esc(p.ida)}</dd></div>
-            ${p.volta ? `<div><dt>Volta</dt><dd>${esc(p.volta)}</dd></div>` : ''}
-          </dl>
-          ${datasHtml('Datas de ida', p.datas_ida)}${datasHtml('Datas de volta', p.datas_volta)}
-          <a class="cta cta-a pass-link" href="${esc(p.link)}" target="_blank" rel="noopener">Ver passagem${p.link_nome ? ` na ${esc(p.link_nome)}` : ''} ↗</a>
-        </li>`;
-    }).join('');
+    $('#lista-passagens').innerHTML = mostrar.map(p => promo ? promocaoHtml(p, agora) : passagemHtml(p, agora)).join('');
+    $('#passagens-cabine').hidden = promo;
+    const campo = $('#passagens-busca');
+    campo.placeholder = promo ? 'Buscar programa ou loja, ex.: Livelo' : 'Buscar cidade ou aeroporto, ex.: GRU';
+    campo.setAttribute('aria-label', campo.placeholder.replace(/, ex\..*/, ''));
+    const qtd = t => vivas.filter(p => ehPromocao(p) === (t === 'promocao')).length;
+    $('#passagens-tipo').querySelectorAll('button').forEach(x => {
+      x.setAttribute('aria-pressed', String(x.dataset.tipo === f.tipo));
+      x.querySelector('small').textContent = qtd(x.dataset.tipo);
+    });
+    const nomeTipo = promo ? 'promoção' : 'passagem';
     const vazio = $('#passagens-vazio');
     vazio.hidden = !!lista.length;
-    vazio.textContent = vivas.length ? 'Nenhuma passagem com esse filtro agora.' : 'Nenhuma passagem nas últimas 24 horas. As próximas aparecem aqui assim que forem publicadas.';
+    vazio.textContent = doTipo.length ? `Nenhuma ${nomeTipo} com esse filtro agora.` : `Nenhuma ${nomeTipo} nas últimas 24 horas. As próximas aparecem aqui assim que forem publicadas.`;
     const btn = $('#mais-passagens');
     btn.hidden = lista.length <= POR_VEZ;
-    btn.textContent = f.todas ? 'Mostrar menos' : `Ver todas as ${lista.length} passagens`;
+    btn.textContent = f.todas ? 'Mostrar menos' : `Ver todas as ${lista.length} ${promo ? 'promoções' : 'passagens'}`;
   }
   async function desenharPassagens() {
     try {
       const r = await fetch('dados/alertas.json', { cache: 'no-store' });
       const lista = r.ok ? await r.json() : [];
-      if (Array.isArray(lista)) passagens = lista.filter(p => p && p.origem_iata && /^https?:\/\//.test(p.link || '') && !isNaN(Date.parse(p.data)));
-    } catch (e) { /* mantém as que já estavam na tela */ }
+      if (Array.isArray(lista)) {
+        passagens = lista.filter(p => p && !isNaN(Date.parse(p.data)) &&
+          (ehPromocao(p) ? p.titulo && (p.links || []).some(httpOk) : p.origem_iata && httpOk(p.link)));
+      }
+    } catch (e) { /* mantém os que já estavam na tela */ }
     mostrarPassagens();
   }
   $('#passagens-busca').addEventListener('input', e => { filtroPassagem.busca = e.target.value; mostrarPassagens(); });
+  $('#passagens-tipo').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    Object.assign(filtroPassagem, { tipo: b.dataset.tipo, busca: '', todas: false });
+    $('#passagens-busca').value = '';
+    mostrarPassagens();
+  });
   $('#passagens-cabine').addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
     filtroPassagem.cabine = b.dataset.cabine;
