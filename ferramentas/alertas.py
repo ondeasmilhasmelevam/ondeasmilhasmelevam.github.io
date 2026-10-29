@@ -1,9 +1,13 @@
-"""Lê os alertas de passagens do grupo do Telegram e grava dados/alertas.json.
+"""Lê as passagens publicadas nos grupos do Telegram e grava dados/alertas.json.
 
 Roda sozinho no GitHub (ver .github/workflows/alertas.yml), com a sessão
-criada por ferramentas/telegram_entrar.py. Guarda só as mensagens das
-últimas 24 horas, e só de quem publica (canal ou administradores do
-grupo): nada de nome, telefone ou mensagem dos outros participantes.
+criada por ferramentas/telegram_entrar.py. TELEGRAM_GRUPO pode ter vários
+grupos, separados por vírgula.
+
+Só entram mensagens no formato de passagem (rota, companhia, programa,
+milhas, datas e link) das últimas 24 horas. Guarda só esses dados e o link
+original da oferta; resumos, curiosidades e o resto do texto ficam de fora.
+Em grupos (não canais), só valem as mensagens dos administradores.
 """
 import asyncio
 import json
@@ -20,15 +24,51 @@ from telethon.tl.types import (ChannelParticipantAdmin, ChannelParticipantCreato
 
 HORAS = 24
 SAIDA = Path(__file__).resolve().parent.parent / 'dados' / 'alertas.json'
-# Telefones e convites do grupo não vão para o site.
-TELEFONE = re.compile(r'(?<!\w)(\+?55[\s.-]?)?\(?\d{2}\)?[\s.-]?9?\d{4}[\s.-]?\d{4}(?!\w)')
-CONVITE = re.compile(r'(https?://)?(t\.me|telegram\.me)/(\+|joinchat/)\S+', re.I)
+CONVITE = re.compile(r'(https?://)?(t\.me|telegram\.me)/', re.I)
+
+LUGAR = r'([^\n()]*?)\s*\(([A-Z]{3})\)'
+ROTA = re.compile(LUGAR + r'[^\n()]*?\s[xX×]\s' + LUGAR)
+CAMPO = re.compile(r'^\W*(Companhia|Cabine|Programa|IDA|VOLTA)\s*:\s*(.+)$', re.I | re.M)
+LINK = re.compile(r'Link para \(([^)]*)\)\s*:\s*(https?://\S+)', re.I)
+MES = re.compile(r'^([A-Z]{3})(\d{2})\s*:\s*(.+)$')
 
 
-def limpar(texto):
-    texto = CONVITE.sub('', texto or '')
-    texto = TELEFONE.sub('', texto)
-    return re.sub(r'\n{3,}', '\n\n', texto).strip()
+def nome(t):
+    """Tira emojis e bandeiras das pontas do nome da cidade."""
+    return re.sub(r'^[^\wÀ-ÿ]+|[^\wÀ-ÿ)]+$', '', t).strip()
+
+
+def datas(texto, rotulo):
+    """'Datas de Ida:' seguido de linhas 'FEV27: 16, 20 a 22' até a linha em branco."""
+    m = re.search(r'Datas de ' + rotulo + r'\s*:\s*\n((?:.+\n?)+)', texto, re.I)
+    saida = []
+    for linha in (m.group(1).splitlines() if m else []):
+        d = MES.match(linha.strip())
+        if not d:
+            break
+        saida.append({'mes': f'{d.group(1).title()}/{d.group(2)}', 'dias': d.group(3).strip()})
+    return saida
+
+
+def ler_passagem(texto, urls_escondidas=()):
+    """Transforma a mensagem do grupo nos campos da passagem; None se não for uma."""
+    rota = ROTA.search(texto or '')
+    campos = {k.lower(): v.strip() for k, v in CAMPO.findall(texto or '')}
+    if not rota or 'companhia' not in campos or 'ida' not in campos:
+        return None
+    link = LINK.search(texto)
+    url = link.group(2) if link else next((u for u in urls_escondidas if not CONVITE.match(u)), '')
+    if not url or CONVITE.match(url):
+        return None
+    return {
+        'origem': nome(rota.group(1)), 'origem_iata': rota.group(2),
+        'destino': nome(rota.group(3)), 'destino_iata': rota.group(4),
+        'companhia': campos['companhia'], 'cabine': campos.get('cabine', ''),
+        'programa': campos.get('programa', link.group(1) if link else ''),
+        'ida': campos['ida'], 'volta': campos.get('volta', ''),
+        'datas_ida': datas(texto, 'Ida'), 'datas_volta': datas(texto, 'Volta'),
+        'link': url, 'link_nome': link.group(1) if link else campos.get('programa', ''),
+    }
 
 
 async def quem_publica(cliente, grupo):
@@ -57,36 +97,31 @@ async def main():
     await cliente.connect()
     if not await cliente.is_user_authorized():
         sys.exit('A sessão do Telegram foi encerrada. Rode ferramentas/telegram_entrar.py de novo.')
-    alvo = int(os.environ['TELEGRAM_GRUPO'])
-    grupo = next((d.entity async for d in cliente.iter_dialogs() if d.id == alvo), None)
-    if grupo is None:
-        sys.exit('Grupo não encontrado na conta. Rode ferramentas/telegram_entrar.py de novo.')
-    autores = await quem_publica(cliente, grupo)
-    usuario = getattr(grupo, 'username', None)
+    alvos = {int(g) for g in re.findall(r'-?\d+', os.environ['TELEGRAM_GRUPO'])}
+    grupos = [d.entity async for d in cliente.iter_dialogs() if d.id in alvos]
+    if not grupos:
+        sys.exit('Nenhum grupo encontrado na conta. Rode ferramentas/telegram_entrar.py de novo.')
     limite = datetime.now(timezone.utc) - timedelta(hours=HORAS)
 
-    alertas = []
-    async for m in cliente.iter_messages(grupo, limit=300):
-        if m.date < limite:
-            break
-        do_grupo = isinstance(m.from_id, PeerChannel) or m.from_id is None  # canal ou admin anônimo
-        if autores is not None and not do_grupo and m.sender_id not in autores:
-            continue
-        texto = limpar(m.message)
-        if not texto:
-            continue
-        links = [e.url for e in (m.entities or []) if isinstance(e, MessageEntityTextUrl) and not CONVITE.search(e.url)]
-        alertas.append({
-            'id': m.id,
-            'data': m.date.astimezone(timezone.utc).isoformat().replace('+00:00', 'Z'),
-            'texto': texto,
-            'links': list(dict.fromkeys(links)),
-            'link': f'https://t.me/{usuario}/{m.id}' if usuario else '',
-        })
+    passagens = []
+    for grupo in grupos:
+        autores = await quem_publica(cliente, grupo)
+        async for m in cliente.iter_messages(grupo, limit=500):
+            if m.date < limite:
+                break
+            do_grupo = isinstance(m.from_id, PeerChannel) or m.from_id is None  # canal ou admin anônimo
+            if autores is not None and not do_grupo and m.sender_id not in autores:
+                continue
+            escondidas = [e.url for e in (m.entities or []) if isinstance(e, MessageEntityTextUrl)]
+            p = ler_passagem(m.message, escondidas)
+            if p:
+                passagens.append({'id': f'{grupo.id}-{m.id}',
+                                  'data': m.date.astimezone(timezone.utc).isoformat().replace('+00:00', 'Z'), **p})
     await cliente.disconnect()
+    passagens.sort(key=lambda p: p['data'], reverse=True)
     SAIDA.parent.mkdir(exist_ok=True)
-    SAIDA.write_text(json.dumps(alertas, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
-    print(f'{len(alertas)} alertas das últimas {HORAS} h gravados.')
+    SAIDA.write_text(json.dumps(passagens, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    print(f'{len(passagens)} passagens das últimas {HORAS} h gravadas ({len(grupos)} grupos).')
 
 
 if __name__ == '__main__':

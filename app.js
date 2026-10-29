@@ -881,38 +881,70 @@
     } catch (e) { /* sem notícias: a seção fica escondida */ }
   }
 
-  // Alertas de passagens do grupo do Telegram (ferramentas/alertas.py).
+  // Passagens dos grupos de alertas do Telegram (ferramentas/alertas.py).
   // O arquivo já vem só com as últimas 24 h; aqui o prazo é conferido de novo,
-  // para o alerta sumir na hora certa mesmo se a atualização atrasar.
-  const PRAZO_ALERTA = 24 * 3600e3;
-  let alertas = [];
-  const linkar = t => esc(t).replace(/https?:\/\/[^\s<]+[^\s<.,;:!?)\]'"]/g, u => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`);
+  // para a passagem sumir na hora certa mesmo se a atualização atrasar.
+  const PRAZO_PASSAGEM = 24 * 3600e3, POR_VEZ = 12;
+  const filtroPassagem = { busca: '', cabine: '', todas: false };
+  let passagens = [];
   function haQuanto(ms) {
     const min = Math.max(1, Math.round(ms / 60e3));
     return min < 60 ? `há ${min} min` : `há ${Math.round(min / 60)} h`;
   }
-  function mostrarAlertas() {
-    const agora = Date.now();
-    const vivos = alertas.filter(a => agora - Date.parse(a.data) < PRAZO_ALERTA);
-    $('#alertas').hidden = $('#aba-alertas').hidden = !vivos.length;
-    $('#lista-alertas').innerHTML = vivos.map(a => {
-      const quando = new Date(a.data);
-      const extras = (a.links || []).filter(u => /^https?:\/\//.test(u) && !a.texto.includes(u));
-      return `<li>
-          <p class="alerta-meta"><time datetime="${esc(a.data)}">${esc(quando.toLocaleString('pt-BR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }))}</time> · ${haQuanto(agora - quando)}</p>
-          <p class="alerta-texto">${linkar(a.texto)}</p>
-          ${extras.length || a.link ? `<p class="alerta-links">${extras.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">Abrir link ↗</a>`).join('')}${a.link ? `<a href="${esc(a.link)}" target="_blank" rel="noopener">Ver no Telegram ↗</a>` : ''}</p>` : ''}
+  const ehExecutiva = c => /execut|primeira|first|business|premium/i.test(c || '');
+  function datasHtml(rotulo, lista) {
+    if (!lista || !lista.length) return '';
+    return `<div class="pass-datas"><span>${rotulo}</span><ul>${lista.map(d => `<li><b>${esc(d.mes)}</b> ${esc(d.dias)}</li>`).join('')}</ul></div>`;
+  }
+  function mostrarPassagens() {
+    const agora = Date.now(), f = filtroPassagem;
+    const busca = norm(f.busca);
+    const vivas = passagens.filter(p => agora - Date.parse(p.data) < PRAZO_PASSAGEM);
+    const lista = vivas.filter(p =>
+      (!f.cabine || (f.cabine === 'exe') === ehExecutiva(p.cabine)) &&
+      (!busca || norm([p.origem, p.origem_iata, p.destino, p.destino_iata].join(' ')).includes(busca)));
+    const mostrar = f.todas ? lista : lista.slice(0, POR_VEZ);
+    $('#lista-passagens').innerHTML = mostrar.map(p => {
+      const quando = new Date(p.data);
+      return `<li class="${ehExecutiva(p.cabine) ? 'exe' : ''}">
+          <p class="pass-meta"><time datetime="${esc(p.data)}">${haQuanto(agora - quando)}</time>${p.cabine ? ` · ${esc(p.cabine)}` : ''}</p>
+          <h3 class="pass-rota">
+            <span><b>${esc(p.origem_iata)}</b>${esc(p.origem)}</span>
+            <i aria-label="para">✈</i>
+            <span><b>${esc(p.destino_iata)}</b>${esc(p.destino)}</span>
+          </h3>
+          <p class="pass-cia">${esc(p.companhia)}${p.programa ? ` · <b>${esc(p.programa)}</b>` : ''}</p>
+          <dl class="pass-valores">
+            <div><dt>Ida</dt><dd>${esc(p.ida)}</dd></div>
+            ${p.volta ? `<div><dt>Volta</dt><dd>${esc(p.volta)}</dd></div>` : ''}
+          </dl>
+          ${datasHtml('Datas de ida', p.datas_ida)}${datasHtml('Datas de volta', p.datas_volta)}
+          <a class="cta cta-a pass-link" href="${esc(p.link)}" target="_blank" rel="noopener">Ver passagem${p.link_nome ? ` na ${esc(p.link_nome)}` : ''} ↗</a>
         </li>`;
     }).join('');
+    const vazio = $('#passagens-vazio');
+    vazio.hidden = !!lista.length;
+    vazio.textContent = vivas.length ? 'Nenhuma passagem com esse filtro agora.' : 'Nenhuma passagem nas últimas 24 horas. As próximas aparecem aqui assim que forem publicadas.';
+    const btn = $('#mais-passagens');
+    btn.hidden = lista.length <= POR_VEZ;
+    btn.textContent = f.todas ? 'Mostrar menos' : `Ver todas as ${lista.length} passagens`;
   }
-  async function desenharAlertas() {
+  async function desenharPassagens() {
     try {
       const r = await fetch('dados/alertas.json', { cache: 'no-store' });
       const lista = r.ok ? await r.json() : [];
-      if (Array.isArray(lista)) alertas = lista.filter(a => a && a.texto && !isNaN(Date.parse(a.data)));
-    } catch (e) { /* mantém os que já estavam na tela */ }
-    mostrarAlertas();
+      if (Array.isArray(lista)) passagens = lista.filter(p => p && p.origem_iata && /^https?:\/\//.test(p.link || '') && !isNaN(Date.parse(p.data)));
+    } catch (e) { /* mantém as que já estavam na tela */ }
+    mostrarPassagens();
   }
+  $('#passagens-busca').addEventListener('input', e => { filtroPassagem.busca = e.target.value; mostrarPassagens(); });
+  $('#passagens-cabine').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    filtroPassagem.cabine = b.dataset.cabine;
+    $('#passagens-cabine').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    mostrarPassagens();
+  });
+  $('#mais-passagens').addEventListener('click', () => { filtroPassagem.todas = !filtroPassagem.todas; mostrarPassagens(); });
 
   function desenharPrecos() {
     const P = window.PRECO_MILHAS;
@@ -1103,7 +1135,7 @@
   const obs = new IntersectionObserver(ents => {
     for (const en of ents) if (en.isIntersecting) marcarAba(en.target.id);
   }, { rootMargin: '-40% 0px -55% 0px' });
-  ['simulador', 'ranking-sec', 'alertas', 'restaurantes', 'comprar', 'novidades', 'como'].forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
+  ['simulador', 'ranking-sec', 'passagens', 'restaurantes', 'comprar', 'novidades', 'como'].forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
 
   /* ---------- início ---------- */
 
@@ -1112,8 +1144,8 @@
     desenharRestaurantes();
     desenharPrecos();
     desenharNoticias();
-    desenharAlertas();
-    setInterval(() => { if (!document.hidden) desenharAlertas(); else mostrarAlertas(); }, 5 * 60e3);
+    desenharPassagens();
+    setInterval(() => { if (!document.hidden) desenharPassagens(); else mostrarPassagens(); }, 3 * 60e3);
     desenharAvisos();
     const [ok] = await Promise.all([carregar(), buscarDolar()]);
     if (!ok) {

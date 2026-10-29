@@ -6,7 +6,8 @@
 1. Pede o api_id e o api_hash (de my.telegram.org > API development tools).
 2. Mostra um QR Code: no celular, Telegram > Configurações > Dispositivos >
    Conectar dispositivo, e aponte para a tela.
-3. Lista seus grupos e canais para você escolher de onde vêm os alertas.
+3. Lista seus grupos e canais para você escolher de onde vêm as passagens
+   (pode escolher vários, separados por vírgula).
 4. Grava os 4 valores num arquivo na sua pasta de usuário, para colar nos
    segredos do GitHub. Depois de colar, apague o arquivo.
 
@@ -56,9 +57,9 @@ async def escolher_grupo(cliente):
     for i, d in enumerate(opcoes, 1):
         print(f'{i:3}. {d.name}  ({"canal" if d.is_channel and not d.is_group else "grupo"})')
     while True:
-        n = input('\nNúmero do grupo dos alertas: ').strip()
-        if n.isdigit() and 1 <= int(n) <= len(opcoes):
-            return opcoes[int(n) - 1]
+        ns = [int(n) for n in input('\nNúmeros dos grupos das passagens (ex.: 3, 7): ').replace(',', ' ').split() if n.isdigit()]
+        if ns and all(1 <= n <= len(opcoes) for n in ns):
+            return [opcoes[n - 1] for n in dict.fromkeys(ns)]
 
 
 async def main():
@@ -68,18 +69,18 @@ async def main():
     await entrar(cliente)
     eu = await cliente.get_me()
     print(f'\nConectado como {eu.first_name}.')
-    grupo = await escolher_grupo(cliente)
+    grupos = await escolher_grupo(cliente)
     ARQUIVO.write_text(
         'Cole cada valor como um segredo em:\n' + SEGREDOS + '\n'
         '(New repository secret > Name = o nome da esquerda, Secret = o valor)\n\n'
         f'TELEGRAM_API_ID\n{api_id}\n\n'
         f'TELEGRAM_API_HASH\n{api_hash}\n\n'
-        f'TELEGRAM_GRUPO\n{grupo.id}\n\n'
+        f'TELEGRAM_GRUPO\n{",".join(str(g.id) for g in grupos)}\n\n'
         f'TELEGRAM_SESSAO\n{cliente.session.save()}\n\n'
         'Depois de colar os 4, APAGUE este arquivo: a sessão dá acesso à sua conta do Telegram.\n',
         encoding='utf-8')
     await cliente.disconnect()
-    print(f'\nPronto: grupo "{grupo.name}".\nOs valores estão em {ARQUIVO}\nCole nos segredos do GitHub e apague o arquivo.')
+    print(f'\nPronto: {", ".join(g.name for g in grupos)}.\nOs valores estão em {ARQUIVO}\nCole nos segredos do GitHub e apague o arquivo.')
 
 
 if __name__ == '__main__':

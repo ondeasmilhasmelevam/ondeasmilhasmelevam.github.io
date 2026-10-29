@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=19">
+<link rel="stylesheet" href="estilo.css?v=20">
 </head>
 <body>
 <header class="bar">
@@ -27,7 +27,7 @@
     <nav class="tabs" aria-label="Seções">
       <a href="#simulador">Simulador</a>
       <a href="#ranking-sec">Ranking</a>
-      <a href="#alertas" id="aba-alertas" hidden>Alertas</a>
+      <a href="#passagens">Passagens</a>
       <a href="#restaurantes">Restaurantes VIP</a>
       <a href="#comprar">Comprar milhas</a>
       <a href="#novidades">Novidades</a>
@@ -108,13 +108,23 @@
       <ol class="ranking" id="ranking"></ol>
     </section>
 
-    <section id="alertas" hidden>
+    <section id="passagens">
       <div class="sec-head">
-        <p class="eyebrow"><span class="ao-vivo"></span>Alertas de passagens</p>
-        <h2>Promoções que apareceram nas últimas 24 horas</h2>
-        <p class="sec-note">Direto do nosso grupo de alertas no Telegram. Cada alerta some sozinho depois de 24 horas; preço e disponibilidade mudam rápido, confira no site da companhia.</p>
+        <p class="eyebrow"><span class="ao-vivo"></span>Passagens com milhas</p>
+        <h2>Oportunidades das últimas 24 horas</h2>
+        <p class="sec-note">Entram aqui assim que aparecem nos grupos de alertas e somem sozinhas depois de 24 horas. Disponibilidade muda rápido: confira no site do programa antes de transferir pontos.</p>
       </div>
-      <ul class="alertas" id="lista-alertas"></ul>
+      <div class="passagens-filtros">
+        <input type="search" id="passagens-busca" placeholder="Buscar cidade ou aeroporto, ex.: GRU" autocomplete="off" aria-label="Buscar cidade ou aeroporto">
+        <div class="atalhos" id="passagens-cabine" role="group" aria-label="Cabine">
+          <button type="button" data-cabine="" aria-pressed="true">Todas</button>
+          <button type="button" data-cabine="eco" aria-pressed="false">Econômica</button>
+          <button type="button" data-cabine="exe" aria-pressed="false">Executiva e Primeira</button>
+        </div>
+      </div>
+      <ul class="passagens" id="lista-passagens"></ul>
+      <p class="passagens-vazio" id="passagens-vazio" hidden></p>
+      <button type="button" class="cta cta-b" id="mais-passagens" hidden></button>
     </section>
 
     <section id="restaurantes">
@@ -204,6 +214,6 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=23"></script>
+<script src="app.js?v=24"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-# Traz os alertas de passagens do grupo do Telegram para o site.
+# Traz as passagens dos grupos de alertas do Telegram para o site.
 # Enquanto os segredos TELEGRAM_* não forem cadastrados, roda e não faz nada.
 name: Alertas do Telegram
 
@@ -39,6 +39,6 @@ jobs:
           git config user.name "Onde as Milhas Me Levam"
           git config user.email "ondeasmilhasmelevam@users.noreply.github.com"
           git add dados/alertas.json
-          git commit -m "Alertas de passagens atualizados"
+          git commit -m "Passagens dos grupos atualizadas"
           git pull --rebase
           git push
