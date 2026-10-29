@@ -1,5 +1,136 @@
 [
  {
+  "id": "3761373661-8607",
+  "data": "2026-10-29T12:56:08Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Recife",
+  "destino_iata": "REC",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "19.000 milhas + Taxas",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "24"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "20"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "06"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "12"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://link.dia23.com.br/r/7yMqaYr",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-8606",
+  "data": "2026-10-29T12:53:42Z",
+  "origem": "Maceió",
+  "origem_iata": "MCZ",
+  "destino": "Belo Horizonte",
+  "destino_iata": "CNF",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "27.700 milhas + Taxas",
+  "volta": "27.700 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Dez/26",
+    "dias": "05, 12"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Dez/26",
+    "dias": "05, 07, 08, 09, 12"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/l0RI0AD",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8605",
+  "data": "2026-10-29T12:53:38Z",
+  "origem": "Maceió",
+  "origem_iata": "MCZ",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "24.000 milhas + Taxas",
+  "volta": "24.000 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Dez/26",
+    "dias": "13"
+   },
+   {
+    "mes": "Jan/27",
+    "dias": "24"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "02, 17, 20, 24"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "09"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "10"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "20, 27"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/6IbuvdA",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-8604",
+  "data": "2026-10-29T12:53:33Z",
+  "origem": "Maceió",
+  "origem_iata": "MCZ",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "13.000 milhas + Taxas",
+  "volta": "13.000 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Dez/26",
+    "dias": "24"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Dez/26",
+    "dias": "31"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/alMjvce",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8603",
   "data": "2026-10-29T12:51:51Z",
   "origem": "São Paulo",
@@ -11833,85 +11964,6 @@
   ],
   "link": "https://link.dia23.com.br/r/HooKjtS",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-8433",
-  "data": "2026-10-27T12:54:54Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Florianópolis",
-  "destino_iata": "FLN",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "13.200 milhas + Taxas",
-  "volta": "13.200 milhas + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Jan/27",
-    "dias": "25"
-   },
-   {
-    "mes": "Fev/27",
-    "dias": "02, 08 a 10, 18, 21, 28"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "29, 31"
-   },
-   {
-    "mes": "Abr/27",
-    "dias": "01, 05 a 09, 11 a 13, 16, 20, 21, 27, 28"
-   },
-   {
-    "mes": "Mai/27",
-    "dias": "01, 04 a 12, 15, 16, 20, 21, 23, 31"
-   },
-   {
-    "mes": "Jun/27",
-    "dias": "01, 08 a 11, 13, 23, 26"
-   },
-   {
-    "mes": "Ago/27",
-    "dias": "08 a 11, 13, 15, 16, 20, 27, 30"
-   },
-   {
-    "mes": "Set/27",
-    "dias": "04, 05, 07, 09, 10, 12, 13, 15, 17, 19, 20"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Fev/27",
-    "dias": "04, 06, 08, 19, 22"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "01"
-   },
-   {
-    "mes": "Abr/27",
-    "dias": "01, 02, 04, 05, 08, 11, 13, 16, 17, 19, 22, 24, 26 a 28, 30"
-   },
-   {
-    "mes": "Mai/27",
-    "dias": "06 a 11, 14 a 16, 19, 21, 26, 27, 31"
-   },
-   {
-    "mes": "Jun/27",
-    "dias": "05, 06, 08, 13, 14, 17, 18, 20, 24 a 26, 29"
-   },
-   {
-    "mes": "Ago/27",
-    "dias": "09, 12, 13, 23, 24, 28, 29"
-   },
-   {
-    "mes": "Set/27",
-    "dias": "02 a 04, 06, 08, 13, 15, 16, 18"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/gB0GIz6",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7458",
