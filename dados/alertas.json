@@ -1,27 +1,5 @@
 [
  {
-  "id": "1290836068-7478",
-  "data": "2026-10-28T23:32:53Z",
-  "tipo": "promocao",
-  "titulo": "CLUBE LIVELO PREMIUM: ATÉ 376.000 PONTOS COM MILHEIRO A PARTIR DE R$ 24,94",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Assine o Clube Livelo Premium e acumule até 376.000 pontos em 12 meses, com milheiro a partir de R$ 24,94 à vista. Cupom obrigatório: CLUBEPPOUT.",
-  "detalhes": [
-   "Bonificação mensal: 370.000 pontos .",
-   "Bonificação anual: 376.000 pontos .",
-   "Modalidades: Mensal (R$ 868,42/mês), Anual parcelado (R$ 825,00/mês), Anual à vista (R$ 9.378,93).",
-   "Cupom obrigatório: CLUBEPPOUT.",
-   "Pontos extras distribuídos em 12 parcelas mensais (8.000 pontos/mês na anual, 7.500 pontos/mês na mensal).",
-   "10.000 pontos bônus a cada 3 meses de permanência."
-  ],
-  "parceiros": "Livelo",
-  "validade": "28/10/2026",
-  "links": [
-   "https://www.livelo.com.br/clube"
-  ]
- },
- {
   "id": "3761373661-8577",
   "data": "2026-10-28T21:14:22Z",
   "origem": "Goiânia",
@@ -650,7 +628,8 @@
   "validade": "02/11/2026",
   "links": [
    "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club/WMB"
-  ]
+  ],
+  "ate": "2026-11-02T23:59:59-03:00"
  },
  {
   "id": "3761373661-8569",
@@ -2521,7 +2500,8 @@
   "validade": "30/10",
   "links": [
    "https://www.esfera.com.vc/clube"
-  ]
+  ],
+  "ate": "2026-10-30T23:59:59-03:00"
  },
  {
   "id": "1290836068-7471",
@@ -2542,7 +2522,8 @@
    "https://aeroplan.points.com/air-canada-kilo/sso/mv-delegate/buy",
    "https://storefront.points.com/IHG-rewards-club/sso/mv-delegate/buy",
    "https://www.hilton.com/en/p/hilton-honors/buy-give-receive-points"
-  ]
+  ],
+  "ate": "2026-11-21T23:59:59-03:00"
  },
  {
   "id": "1290836068-7470",
@@ -2560,7 +2541,8 @@
   "validade": "30/10",
   "links": [
    "https://www.smiles.com.br/portal/campanhas/premmia-26102026"
-  ]
+  ],
+  "ate": "2026-10-30T23:59:59-03:00"
  },
  {
   "id": "1290836068-7469",
@@ -2579,7 +2561,8 @@
   "validade": "29/10",
   "links": [
    "https://www.smiles.com.br/portal/campanhas/bancos-C6-bank-10-2026"
-  ]
+  ],
+  "ate": "2026-10-29T23:59:59-03:00"
  },
  {
   "id": "3761373661-8529",
@@ -3503,7 +3486,8 @@
   "validade": "",
   "links": [
    "https://link.dia23.com.br/r/ptqqGQP"
-  ]
+  ],
+  "ate": ""
  },
  {
   "id": "3761373661-8516",
@@ -8184,62 +8168,6 @@
   "link_nome": "Privilege Club"
  },
  {
-  "id": "1290836068-7461",
-  "data": "2026-10-27T12:17:42Z",
-  "tipo": "promocao",
-  "titulo": "ADESÃO CLUBE LIVELO PREMIUM: ACUMULE ATÉ 370.000 PONTOS EM 12 MESES",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Assine o Clube Livelo Premium 20.000 e receba até 370.000 pontos acumulados ao longo de 12 meses.",
-  "detalhes": [
-   "Modalidade Anual: 240.000 (plano) + 90.000 (extras) + 40.000 (permanência) = 370.000 pontos",
-   "Modalidade Mensal: 240.000 (plano) + 85.000 (extras) + 40.000 (permanência) = 365.000 pontos"
-  ],
-  "parceiros": "Livelo",
-  "validade": "28/10/2026",
-  "links": [
-   "https://www.livelo.com.br/adesao-promo-CDC15381"
-  ]
- },
- {
-  "id": "1290836068-7460",
-  "data": "2026-10-27T12:17:36Z",
-  "tipo": "promocao",
-  "titulo": "NUBANK CROMA & LATAM Pass: 35% DE BÔNUS + 1.000 MILHAS EXTRAS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira seus pontos do programa Nubank Croma para o LATAM Pass e receba 35% de bônus, além de 1.000 milhas extras na primeira transferência.",
-  "detalhes": [
-   "35% de bônus para todos os clientes Nubank Croma",
-   "1.000 milhas extras na 1ª transferência do Nubank Croma para o LATAM Pass"
-  ],
-  "parceiros": "Nubank Croma, LATAM Pass",
-  "validade": "27/10/2026",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/nubank-croma-milhas-extras"
-  ]
- },
- {
-  "id": "1290836068-7459",
-  "data": "2026-10-27T12:17:28Z",
-  "tipo": "promocao",
-  "titulo": "BANCOS PARCEIROS & AZUL FIDELIDADE: ATÉ 100% DE BÔNUS + 2.000 PONTOS EXTRAS",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Transfira seus pontos de bancos parceiros para o Azul Fidelidade e receba até 100% de bônus mais 2.000 pontos extras na primeira transferência.",
-  "detalhes": [
-   "40% de bônus: Demais clientes",
-   "70% de bônus: Assinantes Clube Azul",
-   "+5% a +30% bônus adicional conforme tempo de Clube Azul",
-   "+2.000 pontos extras para a 1ª transferência realizada para o Azul Fidelidade"
-  ],
-  "parceiros": "Azul Fidelidade, Bancos Parceiros (exceto Livelo, Esfera, Porto, Banpará, Alloyal)",
-  "validade": "28/10/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/bancos"
-  ]
- },
- {
   "id": "1290836068-7458",
   "data": "2026-10-27T12:17:21Z",
   "tipo": "promocao",
@@ -8256,25 +8184,8 @@
   "validade": "29/10/2026",
   "links": [
    "https://all.accor.com/a/pt-br/loyalty-program/partners/offers/oferta-transferencia-smiles.html"
-  ]
- },
- {
-  "id": "1290836068-7457",
-  "data": "2026-10-27T12:17:14Z",
-  "tipo": "promocao",
-  "titulo": "UPGRADE CLUBE LIVELO PREMIUM: ACUMULE ATÉ 370.000 PONTOS EM 12 MESES",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Faça o upgrade para o Clube Livelo Premium 20.000 e receba até 370.000 pontos no período de 12 meses.",
-  "detalhes": [
-   "Modalidade Anual: 240.000 (plano) + 90.000 (extras) + 40.000 (permanência) = 370.000 pontos",
-   "Modalidade Mensal: 240.000 (plano) + 85.000 (extras) + 40.000 (permanência) = 365.000 pontos"
   ],
-  "parceiros": "Livelo",
-  "validade": "28/10/2026",
-  "links": [
-   "https://www.livelo.com.br/upgrade-promo-CDC15465"
-  ]
+  "ate": "2026-10-29T23:59:59-03:00"
  },
  {
   "id": "3761373661-8423",
@@ -8409,28 +8320,8 @@
   "validade": "29/10/2026 (viagens até 30/06/2027, exceto datas específicas).",
   "links": [
    "https://www.voeazul.com.br"
-  ]
- },
- {
-  "id": "1290836068-7454",
-  "data": "2026-10-27T12:00:28Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFERÊNCIA DE PONTOS BANPARÁ PARA AZUL FIDELIDADE",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Bônus de até 100% na transferência de pontos Banpará para Azul Fidelidade, dependendo do tempo de assinatura do Clube Azul.",
-  "detalhes": [
-   "Bônus de até 70% para clientes do Clube Azul Fidelidade.",
-   "Bônus adicional por tempo de Clube Azul: +5% (6 meses), +10% (1-2 anos), +20% (3-4 anos), +30% (>5 anos).",
-   "Limite de 100.000 pontos bônus por ano.",
-   "Mínimo de 500 pontos para transferência.",
-   "Limite máximo de 300.000 pontos bônus por CPF."
   ],
-  "parceiros": "Banpará, Azul Fidelidade",
-  "validade": "28/10/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/banpara"
-  ]
+  "ate": "2026-10-29T23:59:59-03:00"
  },
  {
   "id": "3761373661-8421",
@@ -9441,23 +9332,737 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "1290836068-7452",
-  "data": "2026-10-27T10:00:04Z",
+  "id": "1290836068-7449",
+  "data": "2026-10-26T20:23:05Z",
   "tipo": "promocao",
-  "titulo": "IPIRANGA KMV: 8% DE CASHBACK NO IPIMAX TODA TERÇA",
+  "titulo": "ASSINE O CLUBE SMILES E RECEBA ATÉ 270.000 MILHAS EM 12 MESES",
   "ultimo_dia": false,
   "selo": "",
-  "resumo": "Hoje, terça-feira 27/10, quem abastece com a linha Ipimax nos postos Ipiranga e paga pelo app KMV troca 1.000 pontos KMV por 8% de cashback.",
+  "resumo": "Assine o Clube Smiles e receba bônus de até 270.000 milhas em 12 meses, com planos anuais e mensais disponíveis. Validade até 10h do dia 03/11/2026.",
   "detalhes": [
-   "Abasteça com um combustível da linha Ipimax.",
-   "No app KMV, troque 1.000 pontos pela oferta de 8% de cashback.",
-   "Pague o abastecimento pelo app KMV.",
-   "O cashback fica no app para usar no próximo abastecimento."
+   "Clube 1.000: Anual (21.000 milhas) - 9.000 milhas bônus + 12.000 milhas do plano. Mensal (18.000 milhas) - 6.000 milhas bônus + 12.000 milhas do plano.",
+   "Clube 2.000: Anual (37.000 milhas) - 13.000 milhas bônus + 24.000 milhas do plano. Mensal (33.000 milhas) - 9.000 milhas bônus + 24.000 milhas do plano.",
+   "Clube 5.000: 75.000 milhas - 15.000 milhas bônus + 60.000 milhas do plano.",
+   "Clube 10.000: 140.000 milhas - 20.000 milhas bônus + 120.000 milhas do plano.",
+   "Clube 20.000: 270.000 milhas - 30.000 milhas bônus + 240.000 milhas do plano.",
+   "Milheiro Clube 1.000: Mensal (R$ 30,67), Anual parcelado (R$ 24,97), Anual à vista (R$ 23,66).",
+   "Milheiro Clube 2.000: Mensal (R$ 29,82), Anual parcelado (R$ 25,26), Anual à vista (R$ 23,94).",
+   "Milheiro Clube 5.000: Mensal (R$ 29,44), Anual parcelado (R$ 30,25), Anual à vista (R$ 28,66)."
   ],
-  "parceiros": "Ipiranga, KMV",
-  "validade": "Hoje, 27/10 (oferta de todas as terças-feiras de outubro de 2026)",
+  "parceiros": "Smiles",
+  "validade": "10h do dia 03/11/2026",
   "links": [
-   "https://www.ipiranga.com.br/wps/portal/pt-br/ipiranga/km-de-vantagens"
-  ]
+   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja/bau-20261026"
+  ],
+  "ate": "2026-11-03T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7448",
+  "data": "2026-10-26T20:23:00Z",
+  "tipo": "promocao",
+  "titulo": "REVOLUT: TRANSFIRA REVPOINTS E GANHE 20% DE BÔNUS EM MILHAS TAP",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira RevPoints para o TAP Miles&Go e ganhe 20% de bônus em milhas, válido até 31/10/2026. Conversão mínima de 1 RevPoint, com limite de 999.999 RevPoints por transação.",
+  "detalhes": [
+   "20% de bônus sobre os RevPoints transferidos para o TAP Miles&Go.",
+   "Conversão regular: 1 RevPoint = 1 milha TAP Miles&Go.",
+   "Com bônus: 1.000 RevPoints = 1.200 milhas TAP Miles&Go."
+  ],
+  "parceiros": "Revolut, TAP Miles&Go",
+  "validade": "31/10/2026",
+  "links": [
+   "https://www.flytap.com/pt-br/miles-and-go/revolut"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7447",
+  "data": "2026-10-26T20:22:54Z",
+  "tipo": "promocao",
+  "titulo": "PREMMIA: TRANSFIRA PONTOS E GANHE 100% DE BÔNUS PARA SMILES",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Transfira pontos Premmia para o Smiles e receba 100% de bônus em milhas, válido até 31/10/2026. Cada transferência gera 10.000 milhas bônus, com limite de 400.000 milhas por CPF.",
+  "detalhes": [
+   "100% de bônus em milhas Smiles para todos os clientes Smiles, incluindo assinantes do Clube Smiles.",
+   "300 pontos Premmia + R$ 321,90 = 10.000 milhas Smiles + 10.000 milhas bônus (total de 20.000 milhas).",
+   "Milheiro Smiles: R$ 16,09 por 1.000 milhas."
+  ],
+  "parceiros": "Premmia, Smiles",
+  "validade": "31/10/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanhas/premmia-26102026"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7446",
+  "data": "2026-10-26T18:47:13Z",
+  "tipo": "promocao",
+  "titulo": "ASSINATURA CLUBE ESFERA COM ATÉ 40.000 PONTOS BÔNUS EM 1 ANO",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Assine ou atualize o Clube Esfera e ganhe até 40.000 pontos bônus em 1 ano, distribuídos conforme o plano escolhido.",
+  "detalhes": [
+   "Clube Pro: 14.000 pontos bônus (167/mês).",
+   "Clube Master: 35.000 pontos bônus (417/mês).",
+   "Clube VIP: 70.000 pontos bônus (833/mês).",
+   "Clube Exclusive: 280.000 pontos bônus (3.333/mês).",
+   "Milheiro Clube Pro: R$ 33,86 (à vista), R$ 35,74 (parcelado anual), R$ 37,62 (mensal).",
+   "Milheiro Clube Master: R$ 32,98 (à vista), R$ 34,81 (parcelado anual), R$ 36,65 (mensal).",
+   "Milheiro Clube VIP: R$ 32,69 (à vista), R$ 34,50 (parcelado anual), R$ 36,32 (mensal).",
+   "Milheiro Clube Exclusive: R$ 30,85 (à vista), R$ 32,56 (parcelado anual), R$ 34,28 (mensal)."
+  ],
+  "parceiros": "Esfera",
+  "validade": "30/10/2026",
+  "links": [
+   "https://www.esfera.com.vc/clube"
+  ],
+  "ate": "2026-10-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7445",
+  "data": "2026-10-26T18:47:09Z",
+  "tipo": "promocao",
+  "titulo": "EXPERIÊNCIA LIMITLESS: PALMEIRAS X CLUBE DO REMO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Adquira ingressos para o jogo Palmeiras x Clube do Remo com 8.000 pontos no programa Accor Limitless.",
+  "detalhes": [
+   "8.000 pontos para o evento.",
+   "Local: Brasil/SP."
+  ],
+  "parceiros": "Accor Limitless",
+  "validade": "05/11/2026",
+  "links": [
+   "https://limitlessexperiences.accor.com/le-np-pxcr-vp-051126"
+  ],
+  "ate": "2026-11-05T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7444",
+  "data": "2026-10-26T18:47:03Z",
+  "tipo": "promocao",
+  "titulo": "ALL SIGNATURE PRÉ-BLACK FRIDAY COM 20% DE DESCONTO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o ALL Signature com 20% de desconto em todos os planos (mensal, trimestral ou anual) usando o cupom PREBLACK2026.",
+  "detalhes": [
+   "Desconto de 20% na primeira cobrança (mensalidade, trimestre ou ano).",
+   "Cupom: PREBLACK2026.",
+   "Valores de milheiro no plano anual: Essential (R$ 97,28), Discover (R$ 92,80), Explorer (R$ 89,60), Absolute (R$ 97,28)."
+  ],
+  "parceiros": "ALL Signature",
+  "validade": "20/11/2026",
+  "links": [
+   "https://all.accor.com/a/pt-br/loyalty-program/subscription-program/all-signature.html"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7440",
+  "data": "2026-10-26T18:01:26Z",
+  "tipo": "promocao",
+  "titulo": "CLUBE LIVELO ESSENCIAL: 25.000 PONTOS EM 12 MESES",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Livelo Essencial e ganhe 25.000 pontos em 12 meses  com o cupom CLUBEOUT. Modalidades à vista, parcelada ou mensal disponíveis.",
+  "detalhes": [
+   "Bônus anual: 25.000 pontos .",
+   "Bônus mensal: 24.000 pontos .",
+   "Cupom obrigatório: CLUBEOUT.",
+   "Milheiro à vista: R$ 21,56.",
+   "Milheiro parcelado: R$ 22,76.",
+   "Milheiro mensal: R$ 24,95."
+  ],
+  "parceiros": "Livelo",
+  "validade": "02/11/2026",
+  "links": [
+   "https://www.livelo.com.br/clube"
+  ],
+  "ate": "2026-11-02T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7433",
+  "data": "2026-10-26T14:31:58Z",
+  "tipo": "promocao",
+  "titulo": "CLUBE ESFERA: ASSINE OU ATUALIZE SEU PLANO COM BÔNUS DE 200% E GANHE ATÉ 40.000 PONTOS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine ou atualize seu plano do Clube Esfera até 30/10 e ganhe até 40.000 pontos bônus em 12 meses com 200% de bônus. Validade exclusiva para novas adesões ou atualizações imediatas.",
+  "detalhes": [
+   "Bônus de 200% sobre pontos acumulados durante 12 meses.",
+   "Pontos bônus por plano:",
+   "PRO: 2.000 pontos bônus",
+   "",
+   "MASTER: 5.000 pontos bônus",
+   "VIP: 10.000 pontos bônus",
+   "",
+   "EXCLUSIVE: 40.000 pontos bônus"
+  ],
+  "parceiros": "Clube Esfera",
+  "validade": "30/10",
+  "links": [
+   "https://www.esfera.com.vc/clube"
+  ],
+  "ate": "2026-10-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7432",
+  "data": "2026-10-26T14:09:31Z",
+  "tipo": "promocao",
+  "titulo": "ALL SIGNATURE: PRÉ-BLACK FRIDAY COM 20% DE DESCONTO NA ASSINATURA",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Assine qualquer plano do ALL Signature com 20% de desconto utilizando o cupom PREBLACK2026.",
+  "detalhes": [
+   "20% OFF na primeira cobrança da assinatura",
+   "Cupom: PREBLACK2026"
+  ],
+  "parceiros": "ALL Accor",
+  "validade": "Até 20/11/2026",
+  "links": [
+   "https://all.accor.com/a/pt-br/loyalty-program/subscription-program/all-signature.html"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7431",
+  "data": "2026-10-26T14:09:23Z",
+  "tipo": "promocao",
+  "titulo": "SMILES & ALL ACCOR: TRANSFERÊNCIA COM ATÉ 25% DE BÔNUS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira milhas Smiles para o ALL Accor com paridade especial e ganhe até 25% de bônus em Pontos Reward.",
+  "detalhes": [
+   "15% de bônus para demais clientes ALL Accor",
+   "+10% de bônus adicional para assinantes ALL Signature (total de 25%)",
+   "Paridade especial de 6 milhas Smiles = 1 Ponto Reward para assinantes Clube Smiles"
+  ],
+  "parceiros": "Smiles e ALL Accor",
+  "validade": "Até 29/10/2026",
+  "links": [
+   "https://all.accor.com/a/pt-br/loyalty-program/partners/offers/oferta-transferencia-smiles.html"
+  ],
+  "ate": "2026-10-29T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7428",
+  "data": "2026-10-26T12:34:47Z",
+  "tipo": "promocao",
+  "titulo": "ADESÃO AO CLUBE ESFERA COM 200% DE BÔNUS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Esfera e receba 200% de pontos bônus na adesão.",
+  "detalhes": [
+   "200% de pontos bônus na adesão ao Clube Esfera."
+  ],
+  "parceiros": "Esfera",
+  "validade": "30/10/2026",
+  "links": [
+   "https://www.esfera.com.vc/clube"
+  ],
+  "ate": "2026-10-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7426",
+  "data": "2026-10-26T12:34:39Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFERÊNCIA BONIFICADA LIVELO PARA FLYING BLUE",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Transfira pontos Livelo para o Flying Blue com 20% de bônus e paridade 3,5:1.",
+  "detalhes": [
+   "Bônus: 20%",
+   "Paridade: 3,5:1",
+   "Milheiro estimado a R$ 87,50 (pontos Livelo acumulados a R$ 30)"
+  ],
+  "parceiros": "Livelo, Flying Blue",
+  "validade": "31/10/2026",
+  "links": [
+   "https://www.livelo.com.br/livelo-para-parceiros/flying-blue/LIVK0007"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7423",
+  "data": "2026-10-25T16:21:57Z",
+  "tipo": "promocao",
+  "titulo": "MASTERCARD SURPREENDA: GANHE ATÉ 30 PONTOS EXTRAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Resgate pontos extras no Mastercard Surpreenda utilizando os cupons promocionais.",
+  "detalhes": [
+   "Cupons: OUT26 e NOV26"
+  ],
+  "parceiros": "Mastercard Surpreenda",
+  "validade": "Até 31/10/2026",
+  "links": [
+   "https://surpreenda.naotempreco.com.br/codigo-promocional"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7413",
+  "data": "2026-10-24T13:24:21Z",
+  "tipo": "promocao",
+  "titulo": "MASTERCARD SURPREENDA: GANHE PONTOS COM CUPOM",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Resgate pontos extras no Mastercard Surpreenda utilizando códigos promocionais.",
+  "detalhes": [
+   "Ganhe até 30 pontos com os cupons OUT26 e NOV26"
+  ],
+  "parceiros": "Mastercard Surpreenda",
+  "validade": "Até 31/10/2026",
+  "links": [
+   "https://surpreenda.naotempreco.com.br/codigo-promocional"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7403",
+  "data": "2026-10-23T18:43:02Z",
+  "tipo": "promocao",
+  "titulo": "IHG ONE REWARDS: COMPRA DE PONTOS COM BÔNUS DE ATÉ 100%",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Compre pontos IHG One Rewards e ganhe até 100% de bônus, válido até 05/11/2026. Milheiros a partir de R$ 25,07.",
+  "detalhes": [
+   "80% de bônus na compra de 5.000 a 10.000 pontos.",
+   "90% de bônus na compra de 11.000 a 39.000 pontos.",
+   "100% de bônus na compra de 40.000 pontos ou mais.",
+   "Milheiro a partir de R$ 25,07 (100% de bônus)."
+  ],
+  "parceiros": "IHG One Rewards",
+  "validade": "05/11/2026",
+  "links": [
+   "https://storefront.points.com/IHG-rewards-club/sso/mv-delegate/buy"
+  ],
+  "ate": "2026-11-05T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7366",
+  "data": "2026-10-22T13:49:15Z",
+  "tipo": "promocao",
+  "titulo": "BRADESCO: ANUIDADE GRÁTIS NO 1º ANO NOS CARTÕES SIGNATURE, INFINITE, NANQUIM, BLACK E THE PLATINUM",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Na campanha \"Gaste e Não Pague Anuidade\", o Bradesco isenta a anuidade do primeiro ano de cartões selecionados para quem atingir um gasto mínimo nos 90 primeiros dias depois da contratação. Vale para quem contratar até 30/12/2026.",
+  "detalhes": [
+   "Visa Signature, Prime Visa Signature, Amex Gold e Prime Amex Gold: R$ 3.000 em gastos",
+   "Visa Infinite, Prime Visa Infinite, Elo Nanquim, Prime Elo Nanquim e Prime Mastercard Black: R$ 5.000 em gastos",
+   "American Express The Platinum Card: R$ 15.000 em gastos",
+   "Os gastos contam nos 90 dias corridos a partir da contratação do cartão",
+   "Alternativa em alguns cartões: ter pelo menos R$ 50 mil em investimentos elegíveis no Bradesco na data da contratação (não vale para The Platinum)"
+  ],
+  "parceiros": "Bradesco",
+  "validade": "Contratação até 30/12/2026",
+  "links": [
+   "https://link.dia23.com.br/r/NkBcBuG"
+  ],
+  "ate": "2026-12-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7364",
+  "data": "2026-10-22T13:18:37Z",
+  "tipo": "promocao",
+  "titulo": "CARTÃO LATAM Pass ITAÚ: BÔNUS DE ATÉ 10.000 MILHAS EXTRAS POR META DE GASTOS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Clientes selecionados do Cartão LATAM Pass Itaú Mastercard que cumprirem a meta individual de gastos recebem até 10.000 milhas bônus.",
+  "detalhes": [
+   "10.000 milhas bônus: Cartão LATAM Pass Itaú Mastercard Black.",
+   "4.000 milhas bônus: Cartão LATAM Pass Itaú Mastercard Platinum.",
+   "2.500 milhas bônus: Cartão LATAM Pass Itaú Mastercard Gold.",
+   "1.000 milhas bônus: Cartão LATAM Pass Itaú Mastercard Internacional."
+  ],
+  "parceiros": "LATAM Pass e Itaú",
+  "validade": "14/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/promocoes/bonus-cartao-itau⁠",
+   "https://image.info.latam.com/lib/fe2311717d/m/1/ee9cc845-6265-4f09-aaf6-a4f32c81df2c.pdf⁠"
+  ],
+  "ate": "2026-11-14T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7348",
+  "data": "2026-10-21T14:59:50Z",
+  "tipo": "promocao",
+  "titulo": "AIR CANADA: COMPRA DE PONTOS AEROPLAN COM ATÉ 90% DE BÔNUS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Compre pontos Aeroplan através do Points.com com até 90% de bônus em compras a partir de 80.000 pontos.",
+  "detalhes": [
+   "50% de bônus (5.000 a 25.000 pontos): CA$ 25,00 ~ R$ 89,32 por milheiro",
+   "75% de bônus (30.000 a 70.000 pontos): CA$ 21,43 ~ R$ 76,56 por milheiro",
+   "90% de bônus (a partir de 80.000 pontos): CA$ 19,74 ~ R$ 70,52 por milheiro"
+  ],
+  "parceiros": "Air Canada e Points.com",
+  "validade": "29/10/2026",
+  "links": [
+   "https://aeroplan.points.com/air-canada-kilo/sso/mv-delegate/buy"
+  ],
+  "ate": "2026-10-29T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7336",
+  "data": "2026-10-20T16:14:13Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass ITAÚ: METAS DE GASTOS COM CARTÃO DE CRÉDITO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Clientes selecionados do cartão LATAM Pass Itaú podem ganhar até 10.000 milhas bônus ao atingir metas de gastos.",
+  "detalhes": [
+   "Até 10.000 milhas bônus para o cartão Mastercard Black.",
+   "4.000 milhas bônus para Mastercard Platinum.",
+   "2.500 milhas bônus para Mastercard Gold.",
+   "1.000 milhas bônus para Mastercard Internacional."
+  ],
+  "parceiros": "Itaú e LATAM Pass",
+  "validade": "14/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/promocoes/bonus-cartao-itau"
+  ],
+  "ate": "2026-11-14T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7330",
+  "data": "2026-10-19T23:14:08Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass ITAÚ: BÔNUS DE ATÉ 10 MIL MILHAS COM GASTOS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Clientes selecionados podem ganhar até 10 mil milhas bônus ao atingir metas de gastos com cartão LATAM Pass Itaú.",
+  "detalhes": [
+   "10.000 milhas bônus (Cartão Black).",
+   "4.000 milhas bônus (Cartão Platinum).",
+   "2.500 milhas bônus (Cartão Gold).",
+   "1.000 milhas bônus (Cartão Internacional)."
+  ],
+  "parceiros": "LATAM Pass, Itaú",
+  "validade": "14/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/promocoes/bonus-cartao-itau"
+  ],
+  "ate": "2026-11-14T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7298",
+  "data": "2026-10-17T12:38:06Z",
+  "tipo": "promocao",
+  "titulo": "SMILES - TRANSFERÊNCIA ENTRE CONTAS COM ATÉ 250% DE BÔNUS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira milhas entre contas Smiles e receba até 250% de bônus com milheiro a partir de R$ 28,00.",
+  "detalhes": [
+   "Até 250% de bônus na transferência entre contas."
+  ],
+  "parceiros": "Smiles",
+  "validade": "30/10/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanhas/transferirmilhas-250bonus-20260930"
+  ],
+  "ate": "2026-10-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7297",
+  "data": "2026-10-17T12:38:01Z",
+  "tipo": "promocao",
+  "titulo": "SMILES - PRESENTEE MILHAS COM 75% DE DESCONTO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Presenteie milhas Smiles com 75% de desconto e garanta o milheiro por R$ 20,00.",
+  "detalhes": [
+   "75% de desconto na opção Presenteie Milhas."
+  ],
+  "parceiros": "Smiles",
+  "validade": "30/10/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanhas/gift-75-20261007"
+  ],
+  "ate": "2026-10-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7290",
+  "data": "2026-10-16T16:09:08Z",
+  "tipo": "promocao",
+  "titulo": "SMILES: CARTÃO DE CRÉDITO GOL SMILES COM BÔNUS DE ATÉ 55 MIL MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Contrate o Cartão de Crédito GOL Smiles e ganhe até 55 mil milhas .",
+  "detalhes": [
+   "Visa Infinite: 55.000 milhas  para assinantes Clube Smiles/Diamante/Magno; 40.000 milhas  para demais clientes.",
+   "Visa Platinum: 32.000 milhas  para assinantes Clube Smiles/Diamante/Magno; 17.000 milhas  para demais clientes.",
+   "Visa Gold: 10.500 milhas  para assinantes Clube Smiles/Diamante/Magno; 7.000 milhas  para demais clientes.",
+   "Meta de gastos: R$ 60.000 (Infinite), R$ 18.000 (Platinum), R$ 6.000 (Gold) até 15/03/2027."
+  ],
+  "parceiros": "GOL Smiles, Banco do Brasil, Bradesco, Santander",
+  "validade": "30/11/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanhas/cartao-de-credito/ate-55-mil-milhas"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7220",
+  "data": "2026-10-10T18:02:09Z",
+  "tipo": "promocao",
+  "titulo": "COMPRA DE PONTOS HILTON HONORS COM BÔNUS DE 120%",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Compre pontos Hilton Honors e ganhe até 120% de bônus na compra de 5.000 pontos ou mais. Ideal para reservas em hotéis de luxo com vantagens adicionais para membros Silver ou superiores.",
+  "detalhes": [
+   "Bônus de até 120% na compra de 5.000 pontos ou mais.",
+   "Milheiro a US$ 4,55 (~R$ 22,73) com câmbio de US$ 1 = R$ 5,00.",
+   "Câmbio e taxas (IOF, spread) não inclusos no cálculo.",
+   "Pontos creditados em até 48 horas após a transação.",
+   "Associados Silver ou superiores ganham quinta diária grátis em reservas elegíveis."
+  ],
+  "parceiros": "Hilton Honors",
+  "validade": "21/11/2026",
+  "links": [
+   "https://www.hilton.com/en/p/hilton-honors/buy-give-receive-points"
+  ],
+  "ate": "2026-11-21T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7171",
+  "data": "2026-10-08T14:40:56Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE & SAM’S CLUB: ASSINE O SAM’S CLUB E GANHE ATÉ 15.000 PONTOS AZUL",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Sam's Club com valores promocionais a partir de R$ 67/ano e ganhe até 15.000 pontos Azul.",
+  "detalhes": [
+   "15.000 pontos para assinantes do Clube Azul.",
+   "10.500 pontos para demais clientes Azul.",
+   "Plano Club por R$ 67/ano e Plano Plus por R$ 122/ano."
+  ],
+  "parceiros": "Sam's Club, Azul Fidelidade",
+  "validade": "31/10/2026",
+  "links": [
+   "https://sejasocio.samsclub.com.br/index.php/parceria-azul-out"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7161",
+  "data": "2026-10-08T14:05:45Z",
+  "tipo": "promocao",
+  "titulo": "LIVELO E FLYING BLUE: 20% DE BÔNUS NA TRANSFERÊNCIA",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Oportunidade de transferir seus pontos Livelo para o Flying Blue (Air France/KLM) com 20% de bônus.",
+  "detalhes": [
+   "20% de bônus para todos os clientes elegíveis.",
+   "Paridade de transferência: 3,5 pontos Livelo = 1 milha Flying Blue.",
+   "Envio mínimo de 3.500 pontos Livelo."
+  ],
+  "parceiros": "Livelo e Flying Blue",
+  "validade": "31/10/2026",
+  "links": [
+   "https://www.livelo.com.br/livelo-para-parceiros/flying-blue/LIVK0007"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7063",
+  "data": "2026-10-05T14:09:58Z",
+  "tipo": "promocao",
+  "titulo": "LIVELO & FLYING BLUE: 20% DE BÔNUS NA TRANSFERÊNCIA",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira seus pontos Livelo para o programa Flying Blue (Air France/KLM) com 20% de bônus.",
+  "detalhes": [
+   "Paridade: 3,5 pontos Livelo = 1 milha Flying Blue + bônus.",
+   "Bônus de 20% para todos os clientes elegíveis."
+  ],
+  "parceiros": "Livelo, Flying Blue",
+  "validade": "Até 31/10/2026",
+  "links": [
+   "https://www.livelo.com.br/livelo-para-parceiros/flying-blue/LIVK0007"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7062",
+  "data": "2026-10-05T14:09:53Z",
+  "tipo": "promocao",
+  "titulo": "CARTÕES CAIXA: 1ª ANUIDADE GRÁTIS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Contrate um novo cartão de crédito CAIXA elegível e garanta isenção total da primeira anuidade cumprindo as metas de gastos.",
+  "detalhes": [
+   "1ª anuidade grátis para Pessoa Física e Jurídica em cartões elegíveis."
+  ],
+  "parceiros": "CAIXA",
+  "validade": "Até 31/10/2026",
+  "links": [
+   "https://www.caixa.gov.br/voce/promocoes"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7025",
+  "data": "2026-10-03T00:07:11Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFIRA LIVELO PARA FLYING BLUE COM 20% DE BÔNUS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira pontos Livelo para o programa Flying Blue e ganhe 20% de bônus. Campanha válida até 31/10/2026.",
+  "detalhes": [
+   "Bônus de 20% sobre a transferência de pontos Livelo para Flying Blue.",
+   "Transferência mínima de 3.500 pontos Livelo (equivalente a 1.000 milhas Flying Blue).",
+   "Paridade de 3.5:1 (3.500 pontos Livelo = 1.000 milhas Flying Blue).",
+   "Não há limite para quantidade de transferências durante a campanha.",
+   "Limite máximo de 999.999 pontos Livelo por transferência.",
+   "Milhas bônus creditadas em até 7 dias úteis após o término da campanha.",
+   "Validade das milhas bônus: 24 meses a partir do crédito na conta Flying Blue."
+  ],
+  "parceiros": "Livelo, Flying Blue",
+  "validade": "31/10/2026",
+  "links": [
+   "https://www.livelo.com.br/livelo-para-parceiros/flying-blue/LIVK0007"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7023",
+  "data": "2026-10-02T22:39:21Z",
+  "tipo": "promocao",
+  "titulo": "Acúmulo extra de milhas nos cartões Latam Pass",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A promoção oferece 50% de milhas extras em todas as compras para assinantes do Clube Latam Pass. O acúmulo extra vale até 31/10/26 e varia por cartão e tipo de compra. Também há bônus de adesão de até 40.000 milhas para alguns cartões.",
+  "detalhes": [
+   "50% de milhas extras em todas as compras",
+   "válido até 31/10/26",
+   "milhas por dólar: 5,25 para Black e Infinite internacionais",
+   "milhas por dólar: 3,75 para Black e Infinite nacionais",
+   "milhas por dólar: 3,0 para Platinum",
+   "milhas por dólar: 2,4 para Gold",
+   "milhas por dólar: 1,95 para Internacional",
+   "não é necessário fazer nenhuma ativação para receber a pontuação turbinada"
+  ],
+  "parceiros": "LATAM Pass, LATAM",
+  "validade": "até 31/10/26",
+  "links": [
+   "https://link.dia23.com.br/r/Askzqcj"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7013",
+  "data": "2026-10-02T13:05:13Z",
+  "tipo": "promocao",
+  "titulo": "CARTÕES CAIXA: CONTRATE E GANHE 1ª ANUIDADE GRÁTIS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Contrate um novo cartão de crédito CAIXA elegível e garanta isenção total da primeira anuidade ao cumprir as condições estipuladas.",
+  "detalhes": [
+   "Anuidade zero no primeiro ano para contratações entre 08/09 e 31/10/2026.",
+   "Meta de compras até 30/11/2026 para cartões de alta variante (ex: R$ 30.000 para CAIXA Ícone Visa; R$ 15.000 para Elo Diners Club e Empresariais).",
+   "Para demais cartões elegíveis, basta realizar o desbloqueio e a 1ª compra no crédito."
+  ],
+  "parceiros": "CAIXA, Visa, Elo",
+  "validade": "31/10/2026",
+  "links": [
+   "https://www.caixa.gov.br/voce/promocoes",
+   "https://www.caixa.gov.br/Downloads/cartoes-caixa-pessoa-fisica-regulamentos/regulamento-sua-primeira-anuidade-e-por-nossa-conta-cartoes-caixa.pdf"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7000",
+  "data": "2026-10-01T22:01:21Z",
+  "tipo": "promocao",
+  "titulo": "ANUIDADE GRÁTIS EM CARTÕES CAIXA VISA E ELO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Contrate cartões CAIXA Visa ou Elo e ganhe isenção da primeira anuidade. Promoção válida até 31/10/2026.",
+  "detalhes": [
+   "Isenção da primeira anuidade para clientes Pessoa Física e Jurídica que contratarem cartões elegíveis entre 08/09 e 31/10/2026.",
+   "Cartões elegíveis: CAIXA Visa (Ícone, Infinite, Platinum, Platinum Mulher, Gold, Empresarial) e CAIXA Elo (Diners, Nanquim, Grafite, Grafite Mulher, Mais, Empresarial, Empresarial Mais, Empresarial Grafite).",
+   "Metas de gastos mínimos para manutenção da isenção:",
+   "R$ 30.000 (CAIXA Ícone Visa).",
+   "R$ 15.000 (CAIXA Elo Diners Club, Empresarial Elo Grafite, Empresarial Elo Mais, Empresarial Visa, Empresarial Elo).",
+   "Demais cartões: primeira compra na função crédito até 30/11/2026."
+  ],
+  "parceiros": "CAIXA",
+  "validade": "31/10/2026",
+  "links": [
+   "https://www.caixa.gov.br/Downloads/cartoes-caixa-pessoa-fisica-regulamentos/regulamento-sua-primeira-anuidade-e-por-nossa-conta-cartoes-caixa.pdf"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-6991",
+  "data": "2026-10-01T17:37:23Z",
+  "tipo": "promocao",
+  "titulo": "CONTRATE CARTÃO AZUL ITAÚ E GANHE ATÉ 120.000 PONTOS BÔNUS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Contrate um dos cartões Azul Itaú e ganhe até 120.000 pontos bônus ao atingir metas de gastos e aderir ao Clube Azul até 31/10/2026.",
+  "detalhes": [
+   "Azul Itaú Visa Infinite / Mastercard Skyline: 60.000 pontos por atingir R$ 20.000 em gastos elegíveis nas 3 primeiras faturas. +60.000 pontos ao aderir/upgradar Clube Azul até 31/10 (total: 120.000 pontos).",
+   "Azul Itaú Platinum Visa / Mastercard: 40.000 pontos por atingir R$ 4.000 em gastos elegíveis nas 3 primeiras faturas. +40.000 pontos ao aderir/upgradar Clube Azul até 31/10 (total: 80.000 pontos).",
+   "Azul Itaú Gold Visa / Mastercard: 5.000 pontos por atingir R$ 2.000 em gastos elegíveis nas 3 primeiras faturas. +5.000 pontos ao aderir/upgradar Clube Azul até 31/10 (total: 10.000 pontos).",
+   "Bônus adicional de 50% sobre os pontos de gastos para clientes já ativos no Clube Azul 20.000."
+  ],
+  "parceiros": "Azul, Itaú",
+  "validade": "31/10/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/aniversario-cartao-azul-itau"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-6834",
+  "data": "2026-09-25T03:40:37Z",
+  "tipo": "promocao",
+  "titulo": "Pontos em dobro em corridas de Uber",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Livelo e Elo oferecem pontos em dobro nas corridas de Uber até 21/12/26. Para participar, é preciso cadastrar na página da promoção, vincular a conta Uber com Livelo e usar cartão Elo no pagamento. Pontos padrão e promocionais são creditados, com metade ao fim da corrida e extras em até 30 dias, válidos 24 meses.",
+  "detalhes": [
+   "pontos em dobro nas corridas de Uber até 21/12/26",
+   "cadastro na página da promoção",
+   "conta Uber vinculada com Livelo",
+   "usar cartão de crédito Elo no pagamento",
+   "metade dos pontos creditados ao fim da corrida",
+   "pontos extras creditados em até 30 dias",
+   "pontos extras válidos 24 meses",
+   "parceria válida somente para corridas dentro do Brasil"
+  ],
+  "parceiros": "Livelo, Uber",
+  "validade": "até 21/12/26",
+  "links": [
+   "https://link.dia23.com.br/r/IYsc6Xt"
+  ],
+  "ate": "2026-12-21T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-6805",
+  "data": "2026-09-23T15:59:06Z",
+  "tipo": "promocao",
+  "titulo": "SUAS COMPRAS VALEM+ COM BRADESCO E LIVELO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Cadastre-se na campanha 'Suas Compras Valem+' do Bradesco e ganhe até 30.000 pontos Livelo por período promocional. Meta personalizada e válida para clientes pré-selecionados.",
+  "detalhes": [
+   "Meta de gastos e pontos personalizados para cada cliente elegível.",
+   "Até 30.000 pontos Livelo por CPF em cada período promocional (setembro e outubro).",
+   "Até 60.000 pontos Livelo no total para clientes elegíveis que cumprirem os requisitos.",
+   "Período de SET: cadastro até 20/09, compras até 30/09, apuração em 19/10.",
+   "Período de OUT: cadastro até 20/10, compras até 31/10, apuração em 19/11."
+  ],
+  "parceiros": "Bradesco, Livelo",
+  "validade": "31/10/2026 (apuração)",
+  "links": [
+   "https://banco.bradesco/html/classic/promocoes/gaste-ganhe"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
  }
 ]
