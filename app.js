@@ -27,7 +27,11 @@
     return v;
   })();
 
-  const estado = { gasto: 5000, recompensa: 'todos', renda: null, esconderRestritos: false, semAnuidade: false, isentos: new Set(), abertos: new Set() };
+  const estado = { gasto: 5000, recompensa: 'todos', renda: null, esconderRestritos: false, semAnuidade: false, isentos: new Set(), abertos: new Set(),
+    limite: 10, verRestritos: false, verAcimaRenda: false };
+  // O ranking começa com os 10 melhores; cada clique em "ver mais" abre outros 10.
+  const POR_PAGINA = 10;
+  let listaVisivel = [];
   let livro = null, modelo = null, resultados = [];
 
   /* ---------- preferências e endereço ---------- */
@@ -467,8 +471,10 @@
     if (f !== 'todos' && !tipo.includes(f)) return 'filtro';
     if (ehIsento(k)) return true; // o cartão já é do visitante
     if (estado.semAnuidade && ehNum(r.anuidade) && r.anuidade > 0) return 'filtro';
-    if (estado.esconderRestritos && (k.requisito.tipo === 'convite' || k.requisito.tipo === 'investimento')) return 'restrito';
-    if (estado.renda && k.requisito.tipo === 'renda' && k.requisito.valor > estado.renda) return 'renda';
+    // Com a renda informada, ficam de fora os só por convite e os de investimento alto (até pedir para ver).
+    const escondeRestritos = estado.esconderRestritos || (estado.renda && !estado.verRestritos);
+    if (escondeRestritos && (k.requisito.tipo === 'convite' || k.requisito.tipo === 'investimento')) return 'restrito';
+    if (estado.renda && !estado.verAcimaRenda && k.requisito.tipo === 'renda' && k.requisito.valor > estado.renda) return 'renda';
     return true;
   }
 
@@ -679,8 +685,10 @@
     }
 
     // Ranking
+    listaVisivel = lista;
+    const mostrados = lista.slice(0, estado.limite);
     const maior = Math.max(1, ...lista.map(r => r.liquido));
-    $('#ranking').innerHTML = lista.map((r, i) => {
+    $('#ranking').innerHTML = mostrados.map((r, i) => {
       const k = r.cartao, aberto = estado.abertos.has(k.id);
       const anu = ehNum(r.anuidade) ? r.anuidade : null;
       const tags = [
@@ -710,11 +718,19 @@
       </li>`;
     }).join('');
 
-    const partesNota = [`Mostrando ${lista.length} de ${modelo.cartoes.length} cartões, com valores para ${moedaGasto()} por mês, já descontada a anuidade.`];
+    const faltam = lista.length - mostrados.length;
+    const btnMais = $('#ranking-mais');
+    btnMais.hidden = !faltam && lista.length <= POR_PAGINA;
+    btnMais.dataset.acao = faltam ? 'mais' : 'menos';
+    btnMais.textContent = faltam ? `Ver mais ${Math.min(POR_PAGINA, faltam)} cartões (faltam ${faltam})` : `Mostrar só os ${POR_PAGINA} melhores`;
+
+    const paraQuem = estado.renda && !estado.verAcimaRenda ?` para a sua renda de ${brl.format(estado.renda)}` : '';
+    const partesNota = [`Os ${mostrados.length} melhores de ${lista.length} cartões${paraQuem}, com valores para ${moedaGasto()} por mês, já descontada a anuidade.`];
+    if (!estado.renda) partesNota.push('Informe sua renda no simulador para ver só os cartões que você consegue pedir.');
     const nOcultos = ocultos.restrito + ocultos.renda;
     $('#ranking-nota').innerHTML = esc(partesNota.join(' ')) + (nOcultos ? ` <span class="ocultos">${[
       ocultos.restrito ? `${ocultos.restrito} só por convite ou investimento alto (<button type="button" data-mostrar-restritos>mostrar</button>)` : '',
-      ocultos.renda ? `${ocultos.renda} pedem renda acima da sua` : ''
+      ocultos.renda ? `${ocultos.renda} pedem renda acima da sua (<button type="button" data-ver-acima>mostrar</button>)` : ''
     ].filter(Boolean).join(' · ')} fora da lista.</span>` : '');
 
     $('#carregando').hidden = true;
@@ -1242,6 +1258,7 @@
 
   let espera;
   function mudou(origem) {
+    estado.limite = POR_PAGINA;
     sincronizarControles(origem);
     clearTimeout(espera);
     espera = setTimeout(() => { desenhar(); desenharParametros(); guardarPrefs(); }, 60);
@@ -1269,7 +1286,13 @@
   campoRenda.addEventListener('input', () => {
     const v = soDigitos(campoRenda.value);
     campoRenda.value = v ? inteiro.format(v) : '';
-    estado.renda = v || null; mudou();
+    estado.renda = v || null; estado.verRestritos = estado.verAcimaRenda = false; mudou();
+  });
+  $('#ranking-mais').addEventListener('click', e => {
+    if (e.target.dataset.acao === 'menos') {
+      estado.limite = POR_PAGINA; desenhar();
+      $('#ranking-sec').scrollIntoView({ block: 'start' });
+    } else { estado.limite += POR_PAGINA; desenhar(); }
   });
   $('#restritos').addEventListener('change', e => { estado.esconderRestritos = e.target.checked; mudou(); });
   $('#sem-anuidade').addEventListener('change', e => { estado.semAnuidade = e.target.checked; mudou(); });
@@ -1315,6 +1338,9 @@
   });
 
   function abrirCartao(id, rolar) {
+    // Cartão que está depois dos que aparecem: abre a lista até ele.
+    const pos = listaVisivel.findIndex(x => x.cartao.id === id);
+    if (!document.getElementById(id) && pos >= estado.limite) { estado.limite = Math.ceil((pos + 1) / POR_PAGINA) * POR_PAGINA; desenhar(); }
     const li = document.getElementById(id);
     if (!li) return;
     const r = resultados.find(x => x.cartao.id === id);
@@ -1347,7 +1373,8 @@
     }
     const tirar = e.target.closest('[data-tirar]');
     if (tirar) { marcarIsento(tirar.dataset.tirar, false); return; }
-    if (e.target.closest('[data-mostrar-restritos]')) { estado.esconderRestritos = false; mudou(); return; }
+    if (e.target.closest('[data-mostrar-restritos]')) { estado.esconderRestritos = false; estado.verRestritos = true; mudou(); return; }
+    if (e.target.closest('[data-ver-acima]')) { estado.verAcimaRenda = true; mudou(); return; }
     if (e.target.id === 'mais-novidades') {
       const btn = e.target;
       btn.dataset.todas = btn.dataset.todas === '1' ? '0' : '1';

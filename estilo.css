@@ -544,6 +544,7 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .promo-links{margin-top:auto;display:grid;gap:8px}
 .passagens-vazio{margin:6px 0 0;padding:18px;border:1px dashed var(--line);border-radius:14px;color:var(--ash);text-align:center}
 #mais-passagens{margin-top:16px}
+.ranking-mais{text-align:center;margin:20px 0 0}
 
 /* ---------- calendário de oportunidades ---------- */
 .calendario-bloco{margin-top:40px}

@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=25">
+<link rel="stylesheet" href="estilo.css?v=26">
 </head>
 <body>
 <header class="bar">
@@ -99,17 +99,18 @@
     <section id="vencedor-sec" aria-live="polite" data-pagina="simulador">
       <div class="carregando" id="carregando"><span class="giro"></span>Lendo a planilha de cartões…</div>
       <div id="vencedor"></div>
-      <p class="ir-ranking"><a class="cta cta-b" href="#ranking-sec">Ver o ranking completo dos cartões →</a></p>
+      <p class="ir-ranking"><a class="cta cta-b" href="#ranking-sec">Ver os 10 melhores cartões para você →</a></p>
     </section>
 
     <section id="ranking-sec" data-pagina="ranking">
       <div class="sec-head">
         <p class="eyebrow">Ranking</p>
-        <h2>Todos os cartões, do que mais rende ao que menos rende</h2>
+        <h2>Os cartões que mais rendem para você</h2>
         <p class="sec-note" id="ranking-nota"></p>
         <p class="voltar-sim"><a href="#simulador">← Mudar o gasto mensal no simulador</a></p>
       </div>
       <ol class="ranking" id="ranking"></ol>
+      <p class="ranking-mais"><button type="button" class="cta cta-b" id="ranking-mais" hidden></button></p>
     </section>
 
     <section id="passagens" data-pagina="passagens">
@@ -262,6 +263,6 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=31"></script>
+<script src="app.js?v=32"></script>
 </body>
 </html>
