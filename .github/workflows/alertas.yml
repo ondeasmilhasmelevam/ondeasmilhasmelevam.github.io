@@ -3,8 +3,8 @@
 # fica de plantão por quase 6 horas, olhando os grupos a cada 6 minutos, e no
 # fim chama a próxima. O agendamento de hora em hora fica só de reserva, caso
 # a corrente pare. Enquanto os segredos TELEGRAM_* não existirem, não faz nada.
-# A cada volta também tenta um story no Instagram (ferramentas/stories.py),
-# que respeita o limite por dia e o intervalo entre stories.
+# A cada volta também cuida do Instagram (ferramentas/instagram.py): stories
+# com limite por dia e o carrossel diário no feed.
 name: Alertas do Telegram
 
 on:
@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
   push:   # roda também quando o programa de leitura muda
     branches: [main]
-    paths: ['ferramentas/alertas.py', 'ferramentas/stories.py', '.github/workflows/alertas.yml']
+    paths: ['ferramentas/alertas.py', 'ferramentas/instagram.py', '.github/workflows/alertas.yml']
 
 permissions:
   contents: write
@@ -55,7 +55,7 @@ jobs:
                 git commit -q -m "Passagens dos grupos atualizadas"
                 git pull -q --rebase && git push -q || echo "::warning::Não deu para enviar agora; tenta na próxima volta."
               fi
-              python ferramentas/stories.py || echo "::warning::Story não saiu nesta volta."
+              python ferramentas/instagram.py || echo "::warning::Instagram não saiu nesta volta."
             else
               falhas=$((falhas + 1))
               # Sessão encerrada ou chave errada não se resolvem sozinhas: para e avisa.
