@@ -7,7 +7,8 @@ grupos, separados por vírgula.
 Só entram, das últimas 48 horas, mensagens no formato de passagem (rota,
 companhia, programa, milhas, datas e link) ou de promoção de pontos (título
 entre 💸, resumo, validade e link). Guarda só esses dados e o link original;
-resumos do dia, curiosidades e o resto do texto ficam de fora.
+resumos do dia, curiosidades e o resto do texto ficam de fora. A promoção
+com validade fica até o fim do dia da validade, mesmo depois das 48 horas.
 Em grupos (não canais), só valem as mensagens dos administradores.
 """
 import asyncio
@@ -42,6 +43,29 @@ SITE_PROGRAMA = {
 # Promoções de pontos: título entre 💸, com Resumo, Validade e Link.
 TITULO = re.compile(r'^\W*💸\s*(.+?)\s*💸\s*$', re.M)
 BLOCO = lambda nome: re.compile(r'^\W*' + nome + r'[^\n]*\n((?:.+\n?)+)', re.M | re.I)
+
+
+BRASILIA = timezone(timedelta(hours=-3))
+DIAS_PROMO = 60  # até onde volta no canal procurando promoções ainda válidas
+
+
+def fim_da_validade(validade, postada):
+    """'30/10' ou '28/10/2026' → fim desse dia em Brasília (ISO); '' se não der para ler.
+    Sem ano, vale o ano da postagem (ou o seguinte, se a data já tiver passado)."""
+    d = re.search(r'(\d{1,2})/(\d{1,2})(?:/(\d{2,4}))?', validade or '')
+    if not d:
+        return ''
+    dia, mes = int(d.group(1)), int(d.group(2))
+    ano = int(d.group(3)) if d.group(3) else postada.astimezone(BRASILIA).year
+    if ano < 100:
+        ano += 2000
+    try:
+        fim = datetime(ano, mes, dia, 23, 59, 59, tzinfo=BRASILIA)
+    except ValueError:
+        return ''
+    if not d.group(3) and fim < postada - timedelta(days=7):
+        fim = fim.replace(year=ano + 1)
+    return fim.isoformat()
 
 
 def ler_promocao(texto, urls_escondidas=()):
@@ -163,17 +187,30 @@ async def main():
         falhar(f'Nenhum dos {len(alvos)} grupos de TELEGRAM_GRUPO foi encontrado na conta.')
     limite = datetime.now(timezone.utc) - timedelta(hours=HORAS)
 
+    agora = datetime.now(timezone.utc)
+    limite_promo = agora - timedelta(days=DIAS_PROMO)
     passagens = []
     for grupo in grupos:
         autores = await quem_publica(cliente, grupo)
-        async for m in cliente.iter_messages(grupo, limit=1000):
-            if m.date < limite:
+        tem_promo = False
+        async for m in cliente.iter_messages(grupo, limit=3000):
+            antiga = m.date < limite
+            # Depois das 48 h, só segue voltando no canal que tem promoções (elas valem até a validade).
+            if m.date < limite_promo or (antiga and not tem_promo):
                 break
             do_grupo = isinstance(m.from_id, PeerChannel) or m.from_id is None  # canal ou admin anônimo
             if autores is not None and not do_grupo and m.sender_id not in autores:
                 continue
             escondidas = [e.url for e in (m.entities or []) if isinstance(e, MessageEntityTextUrl)]
-            p = ler_passagem(m.message, escondidas) or ler_promocao(m.message, escondidas)
+            p = None if antiga else ler_passagem(m.message, escondidas)
+            if not p:
+                p = ler_promocao(m.message, escondidas)
+                if p:
+                    tem_promo = True
+                    p['ate'] = fim_da_validade(p['validade'], m.date)
+                    vale_ate = datetime.fromisoformat(p['ate']) if p['ate'] else m.date + timedelta(hours=HORAS)
+                    if vale_ate < agora:
+                        continue
             if p:
                 passagens.append({'id': f'{grupo.id}-{m.id}',
                                   'data': m.date.astimezone(timezone.utc).isoformat().replace('+00:00', 'Z'), **p})
@@ -181,7 +218,7 @@ async def main():
     passagens.sort(key=lambda p: p['data'], reverse=True)
     SAIDA.parent.mkdir(exist_ok=True)
     SAIDA.write_text(json.dumps(passagens, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
-    print(f'{len(passagens)} passagens das últimas {HORAS} h gravadas ({len(grupos)} grupos).')
+    print(f'{len(passagens)} itens gravados ({sum(1 for p in passagens if p.get("tipo") == "promocao")} promoções, {len(grupos)} grupos).')
 
 
 if __name__ == '__main__':

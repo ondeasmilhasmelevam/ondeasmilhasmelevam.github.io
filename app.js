@@ -882,17 +882,21 @@
   }
 
   // Passagens e promoções dos grupos de alertas do Telegram (ferramentas/alertas.py).
-  // O arquivo já vem só com as últimas 48 h; aqui o prazo é conferido de novo,
+  // O arquivo já vem só com o que ainda vale; aqui o prazo é conferido de novo,
   // para o item sumir na hora certa mesmo se a atualização atrasar.
   const PRAZO_PASSAGEM = 48 * 3600e3, POR_VEZ = 12;
   const filtroPassagem = { tipo: 'passagem', busca: '', cabine: '', todas: false };
   let passagens = [];
   function haQuanto(ms) {
     const min = Math.max(1, Math.round(ms / 60e3));
-    return min < 60 ? `há ${min} min` : `há ${Math.round(min / 60)} h`;
+    return min < 60 ? `há ${min} min` : min < 48 * 60 ? `há ${Math.round(min / 60)} h` : `há ${Math.round(min / 1440)} dias`;
   }
   const ehExecutiva = c => /execut|primeira|first|business|premium/i.test(c || '');
   const ehPromocao = p => p.tipo === 'promocao';
+  // Promoção com validade vale até o fim desse dia; as outras, 48 h depois de postadas.
+  const venceEm = p => (ehPromocao(p) && !isNaN(Date.parse(p.ate)) ? Date.parse(p.ate) : Date.parse(p.data) + PRAZO_PASSAGEM);
+  const diaBR = t => new Date(t).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+  const ultimoDia = (p, agora) => (!isNaN(Date.parse(p.ate)) ? diaBR(Date.parse(p.ate)) === diaBR(agora) : p.ultimo_dia && agora - Date.parse(p.data) < 86400e3);
   const httpOk = u => /^https?:\/\//.test(u || '');
   function datasHtml(rotulo, lista) {
     if (!lista || !lista.length) return '';
@@ -920,7 +924,7 @@
     const site = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return 'site'; } };
     return `<li class="promo">
         <p class="pass-meta"><time datetime="${esc(p.data)}">${haQuanto(agora - new Date(p.data))}</time>${p.validade ? ` · até ${esc(p.validade)}` : ''}</p>
-        ${p.ultimo_dia || p.selo ? `<p class="promo-selos">${p.ultimo_dia ? '<span class="urgente">Último dia</span>' : ''}${p.selo ? `<span>${esc(p.selo)}</span>` : ''}</p>` : ''}
+        ${ultimoDia(p, agora) || p.selo ? `<p class="promo-selos">${ultimoDia(p, agora) ? '<span class="urgente">Último dia</span>' : ''}${p.selo ? `<span>${esc(p.selo)}</span>` : ''}</p>` : ''}
         <h3 class="promo-titulo">${esc(p.titulo)}</h3>
         ${p.resumo ? `<p class="promo-resumo">${esc(p.resumo)}</p>` : ''}
         ${p.detalhes && p.detalhes.length ? `<details class="promo-detalhes"><summary>Como funciona</summary><ul>${p.detalhes.map(d => `<li>${esc(d)}</li>`).join('')}</ul></details>` : ''}
@@ -932,7 +936,7 @@
     const agora = Date.now(), f = filtroPassagem;
     const promo = f.tipo === 'promocao';
     const busca = norm(f.busca);
-    const vivas = passagens.filter(p => agora - Date.parse(p.data) < PRAZO_PASSAGEM);
+    const vivas = passagens.filter(p => agora < venceEm(p));
     const doTipo = vivas.filter(p => ehPromocao(p) === promo);
     const lista = doTipo.filter(p => promo
       ? (!busca || norm([p.titulo, p.parceiros, p.resumo].join(' ')).includes(busca))
