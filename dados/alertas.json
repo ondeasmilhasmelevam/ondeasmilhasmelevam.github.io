@@ -1,5 +1,39 @@
 [
  {
+  "id": "2361370250-5837",
+  "data": "2026-10-30T20:08:38Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Porto",
+  "destino_iata": "OPO",
+  "companhia": "Azul",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "80.000 milhas + Taxas",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Mar/27",
+    "dias": "22"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "21"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "05, 10, 12"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "09, 11, 18, 21"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://link.dia23.com.br/r/ePhhpiW",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "3761373661-8731",
   "data": "2026-10-30T20:01:46Z",
   "origem": "Aracaju",
@@ -11932,28 +11966,6 @@
   ],
   "link": "https://link.dia23.com.br/r/t5XOX1Y",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8573",
-  "data": "2026-10-28T20:10:12Z",
-  "origem": "São Luís",
-  "origem_iata": "SLZ",
-  "destino": "Goiânia",
-  "destino_iata": "GYN",
-  "companhia": "Azul",
-  "cabine": "Economia",
-  "programa": "Azul Fidelidade",
-  "ida": "19.000 milhas + Taxas",
-  "volta": "",
-  "datas_ida": [
-   {
-    "mes": "Dez/26",
-    "dias": "02, 03, 05, 06"
-   }
-  ],
-  "datas_volta": [],
-  "link": "https://link.dia23.com.br/r/tSpZNcE",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "1290836068-7476",
