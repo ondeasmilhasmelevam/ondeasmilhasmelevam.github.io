@@ -908,8 +908,8 @@ footer .badge{width:84px;height:84px;margin-bottom:14px}
 .ass-plano .cta{margin-top:auto;justify-content:center}
 .ass-campo{display:grid;gap:6px;max-width:460px;margin:0 0 18px;font-size:14px;font-weight:700;color:var(--rice)}
 .ass-campo small{font-weight:500;color:var(--ash-dim);font-size:12.5px}
-.ass-campo input,.ass-form-link input{background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--rice);font:inherit;font-size:15px}
-.ass-campo input:focus,.ass-form-link input:focus{outline:none;border-color:var(--ouro)}
+.ass-campo input,.ass-form-codigo input{background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--rice);font:inherit;font-size:15px}
+.ass-campo input:focus,.ass-form-codigo input:focus{outline:none;border-color:var(--ouro)}
 .ass-inclui{list-style:none;margin:0 0 30px;padding:0;display:grid;gap:8px;color:var(--ash);font-size:14.5px}
 .ass-inclui li::before{content:'✓';margin-right:10px;color:var(--ouro);font-weight:800}
 .ass-entrar{padding:22px;border:1px solid var(--line);border-radius:20px;background:var(--ink-2);max-width:520px}
@@ -917,8 +917,12 @@ footer .badge{width:84px;height:84px;margin-bottom:14px}
 .ass-entrar>p{margin:0 0 14px;color:var(--ash);font-size:14px}
 .ass-google{width:100%;justify-content:center;gap:10px}
 .ass-google svg{width:20px;height:20px}
-.ass-form-link{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-.ass-form-link input{flex:1 1 200px;min-width:0}
+.ass-form-codigo{display:grid;gap:10px;margin-top:12px}
+.ass-form-codigo .cta{justify-content:center}
+.ass-passo-codigo{display:grid;gap:6px}
+.ass-passo-codigo[hidden]{display:none}
+#ass-codigo{font-size:26px;letter-spacing:.35em;text-align:center;font-variant-numeric:tabular-nums}
+.ass-trocar{justify-self:start;background:none;border:0;padding:2px 0;color:var(--ash);font:inherit;font-size:13px;text-decoration:underline;cursor:pointer}
 .cta:disabled{opacity:.6;cursor:wait;transform:none}
 .ass-resumo{flex:1 1 100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
 .ass-resumo:empty{display:none}

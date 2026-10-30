@@ -1,8 +1,11 @@
 // Assinatura do site: cria o link de pagamento da InfinitePay e, quando ela avisa que
 // foi pago, libera o e-mail no Firestore (assinantes/{email}.validoAte).
 //
-// Segredos (wrangler secret put): INFINITEPAY_API_KEY e FIREBASE_SERVICE_ACCOUNT (o JSON inteiro).
-// Variáveis (wrangler.toml): HANDLE, PROJETO, SITE, ORIGENS.
+// Também faz a entrada por código: manda 7 números para o e-mail de quem já assinou (EmailJS)
+// e, com o código certo, devolve um token para o site entrar no Firebase com aquele e-mail.
+//
+// Segredos (wrangler secret put): INFINITEPAY_API_KEY, FIREBASE_SERVICE_ACCOUNT (o JSON inteiro)
+// e EMAILJS_PRIVATE_KEY. Variáveis (wrangler.toml): HANDLE, PROJETO, SITE, ORIGENS, SELF, EMAILJS_*.
 
 const PLANOS = {
   mensal: { dias: 30, preco: 2990, nome: 'Assinatura mensal' },
@@ -19,6 +22,8 @@ export default {
       if (req.method === 'POST' && url.pathname === '/checkout') return json(await checkout(await req.json(), env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/webhook') return await webhook(await req.json(), env);
       if (req.method === 'GET' && url.pathname === '/precos') return json(await precos(url.searchParams.get('email'), env), 200, cors);
+      if (req.method === 'POST' && url.pathname === '/codigo') return json(await pedirCodigo(await req.json(), env), 200, cors);
+      if (req.method === 'POST' && url.pathname === '/entrar') return json(await entrar(await req.json(), env), 200, cors);
       return json({ erro: 'não encontrado' }, 404, cors);
     } catch (e) {
       return json({ erro: e.message || 'erro' }, e.status || 500, cors);
@@ -108,22 +113,88 @@ async function webhook(b, env) {
   return json({ ok: true });
 }
 
-// ---- Firestore pela API REST, com a conta de serviço (passa por cima das regras) ----
+// ---- Entrada por código de 7 números ----
+const CODIGO_VALE_MIN = 10;
+const TENTATIVAS = 5;
+const sha256 = async t => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t)))].map(b => b.toString(16).padStart(2, '0')).join('');
+
+// Só manda código para quem tem (ou já teve) assinatura; a resposta é a mesma nos dois casos.
+async function pedirCodigo(body, env) {
+  const email = String((body && body.email) || '').trim().toLowerCase();
+  if (!emailValido(email)) throw falha('E-mail inválido.');
+  const resposta = { ok: true, minutos: CODIGO_VALE_MIN };
+  if (!(await lerDoc(env, `assinantes/${email}`))) return resposta;
+  const antigo = await lerDoc(env, `codigos/${email}`);
+  if (antigo && Date.now() - antigo.criadoEm.getTime() < 60e3) throw falha('Espere 1 minuto para pedir outro código.', 429);
+  const n = crypto.getRandomValues(new Uint32Array(1))[0] % 1e7;
+  const codigo = String(n).padStart(7, '0');
+  await gravarDoc(env, `codigos/${email}`, { hash: await sha256(`${email}:${codigo}`), criadoEm: new Date(), tentativas: 0 });
+  const r = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({
+      service_id: env.EMAILJS_SERVICE, template_id: env.EMAILJS_TEMPLATE, user_id: env.EMAILJS_PUBLIC, accessToken: env.EMAILJS_PRIVATE_KEY,
+      template_params: { email, codigo, minutos: CODIGO_VALE_MIN }
+    })
+  });
+  if (!r.ok) throw falha('Não deu para mandar o código agora. Tente de novo em instantes.', 502);
+  return resposta;
+}
+
+async function entrar(body, env) {
+  const email = String((body && body.email) || '').trim().toLowerCase();
+  const codigo = String((body && body.codigo) || '').replace(/\D/g, '');
+  const erro = () => falha('Código errado ou vencido. Confira ou peça um novo.', 401);
+  if (!emailValido(email) || codigo.length !== 7) throw erro();
+  const c = await lerDoc(env, `codigos/${email}`);
+  if (!c || c.tentativas >= TENTATIVAS || Date.now() - c.criadoEm.getTime() > CODIGO_VALE_MIN * 60e3) throw erro();
+  if (c.hash !== await sha256(`${email}:${codigo}`)) {
+    await gravarDoc(env, `codigos/${email}`, { ...c, tentativas: c.tentativas + 1 });
+    throw erro();
+  }
+  await apagarDoc(env, `codigos/${email}`);
+  return { token: await tokenDeEntrada(email, env) };
+}
+
+// Acha (ou cria) o usuário do Firebase com este e-mail já verificado e assina um token para ele.
+async function tokenDeEntrada(email, env) {
+  const base = `https://identitytoolkit.googleapis.com/v1/projects/${env.PROJETO}`;
+  const cab = { authorization: `Bearer ${await token(env)}`, 'content-type': 'application/json' };
+  const l = await (await fetch(`${base}/accounts:lookup`, { method: 'POST', headers: cab, body: JSON.stringify({ email: [email] }) })).json();
+  let uid = l.users && l.users[0] && l.users[0].localId;
+  if (!uid) {
+    const n = await (await fetch(`${base}/accounts`, { method: 'POST', headers: cab, body: JSON.stringify({ email, emailVerified: true }) })).json();
+    uid = n.localId;
+  } else if (!l.users[0].emailVerified) {
+    await fetch(`${base}/accounts:update`, { method: 'POST', headers: cab, body: JSON.stringify({ localId: uid, emailVerified: true }) });
+  }
+  if (!uid) throw falha('Não deu para entrar agora.', 500);
+  const sa = JSON.parse(env.FIREBASE_SERVICE_ACCOUNT);
+  const agora = Math.floor(Date.now() / 1000);
+  return assinarJwt(sa, {
+    iss: sa.client_email, sub: sa.client_email, uid, iat: agora, exp: agora + 3600,
+    aud: 'https://identitytoolkit.googleapis.com/google.identity.identitytoolkit.v1.IdentityToolkit'
+  });
+}
+
+// ---- Firestore e Auth pela API REST, com a conta de serviço (passa por cima das regras) ----
+const b64 = o => btoa(typeof o === 'string' ? unescape(encodeURIComponent(o)) : String.fromCharCode(...new Uint8Array(o))).replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_');
+async function assinarJwt(sa, corpo) {
+  const dados = `${b64(JSON.stringify({ alg: 'RS256', typ: 'JWT' }))}.${b64(JSON.stringify(corpo))}`;
+  const der = Uint8Array.from(atob(sa.private_key.replace(/-----[^-]+-----|\s/g, '')), ch => ch.charCodeAt(0));
+  const chave = await crypto.subtle.importKey('pkcs8', der, { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, false, ['sign']);
+  return `${dados}.${b64(await crypto.subtle.sign('RSASSA-PKCS1-v1_5', chave, new TextEncoder().encode(dados)))}`;
+}
 let tokenCache = { valor: '', expira: 0 };
 async function token(env) {
   if (tokenCache.valor && Date.now() < tokenCache.expira) return tokenCache.valor;
   const sa = JSON.parse(env.FIREBASE_SERVICE_ACCOUNT);
   const agora = Math.floor(Date.now() / 1000);
-  const b64 = o => btoa(typeof o === 'string' ? o : String.fromCharCode(...new Uint8Array(o))).replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_');
-  const cab = b64(JSON.stringify({ alg: 'RS256', typ: 'JWT' }));
-  const corpo = b64(JSON.stringify({ iss: sa.client_email, scope: 'https://www.googleapis.com/auth/datastore', aud: 'https://oauth2.googleapis.com/token', iat: agora, exp: agora + 3600 }));
-  const der = Uint8Array.from(atob(sa.private_key.replace(/-----[^-]+-----|\s/g, '')), ch => ch.charCodeAt(0));
-  const chave = await crypto.subtle.importKey('pkcs8', der, { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, false, ['sign']);
-  const assin = await crypto.subtle.sign('RSASSA-PKCS1-v1_5', chave, new TextEncoder().encode(`${cab}.${corpo}`));
+  const jwt = await assinarJwt(sa, { iss: sa.client_email, scope: 'https://www.googleapis.com/auth/cloud-platform', aud: 'https://oauth2.googleapis.com/token', iat: agora, exp: agora + 3600 });
   const r = await fetch('https://oauth2.googleapis.com/token', {
     method: 'POST',
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
-    body: `grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=${cab}.${corpo}.${b64(assin)}`
+    body: `grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=${jwt}`
   });
   const d = await r.json();
   if (!d.access_token) throw falha('Sem acesso ao banco.', 500);
@@ -152,6 +223,9 @@ async function lerDoc(env, caminho) {
   if (!r.ok) throw falha('Erro ao ler o banco.', 500);
   const d = await r.json();
   return Object.fromEntries(Object.entries(d.fields || {}).map(([k, v]) => [k, deFs(v)]));
+}
+async function apagarDoc(env, caminho) {
+  await fetch(docUrl(env, caminho), { method: 'DELETE', headers: { authorization: `Bearer ${await token(env)}` } });
 }
 async function gravarDoc(env, caminho, dados) {
   const fields = Object.fromEntries(Object.entries(dados).map(([k, v]) => [k, paraFs(v)]));

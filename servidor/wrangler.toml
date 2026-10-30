@@ -10,5 +10,10 @@ ORIGENS = "https://ondeasmilhasmelevam.github.io,http://localhost:8124"
 # Endereço deste Worker depois de publicado (para a InfinitePay mandar o aviso de pagamento).
 SELF = "https://oamml-assinatura.ondeasmilhasmelevam.workers.dev"
 
+# EmailJS (manda o código de entrada pelo Gmail da marca). A chave privada fica como segredo.
+EMAILJS_SERVICE = ""
+EMAILJS_TEMPLATE = ""
+EMAILJS_PUBLIC = ""
+
 [observability]
 enabled = true

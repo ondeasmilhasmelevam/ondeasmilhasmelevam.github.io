@@ -1,9 +1,8 @@
 // Página Assinar / Entrar: planos, pagamento pela InfinitePay (via servidor/worker.js)
-// e entrada com Google ou link no e-mail. Avisa o resto do site com o evento "assinatura".
+// e entrada com Google ou código de 7 números no e-mail. Avisa o resto do site com o evento "assinatura".
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
 import {
-  getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut,
-  sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink
+  getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, signInWithCustomToken
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
 import { getFirestore, doc, getDoc, collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
@@ -21,7 +20,6 @@ const db = getFirestore(app);
 
 // Endereço do Worker publicado (servidor/). Vazio = cobrança ainda desligada.
 const SERVIDOR = 'https://oamml-assinatura.ondeasmilhasmelevam.workers.dev';
-const GUARDA_EMAIL = 'oamml-email-login';
 
 const $ = s => document.querySelector(s);
 const reais = c => (c / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -95,20 +93,6 @@ onAuthStateChanged(auth, async user => {
   avisar(estado);
 });
 
-// Volta do link de entrada mandado por e-mail.
-if (isSignInWithEmailLink(auth, location.href)) {
-  let email = '';
-  try { email = localStorage.getItem(GUARDA_EMAIL) || ''; } catch (e) { /* sem armazenamento */ }
-  if (!email) email = prompt('Para confirmar, digite o e-mail em que você recebeu o link:') || '';
-  if (email) {
-    signInWithEmailLink(auth, email.trim(), location.href)
-      .then(() => { try { localStorage.removeItem(GUARDA_EMAIL); } catch (e) { /* sem armazenamento */ } msg('Pronto, você entrou.', 'ok'); })
-      .catch(() => msg('Esse link já foi usado ou venceu. Peça um novo abaixo.', 'erro'))
-      .finally(() => history.replaceState(null, '', `${location.pathname}#assinar`));
-  }
-  location.hash = '#assinar';
-}
-
 // Volta do pagamento da InfinitePay.
 if (new URLSearchParams(location.search).get('pagamento') === 'ok') {
   history.replaceState(null, '', `${location.pathname}#assinar`);
@@ -119,23 +103,51 @@ if (new URLSearchParams(location.search).get('pagamento') === 'ok') {
 $('#ass-google').addEventListener('click', async () => {
   msg('');
   try { await signInWithPopup(auth, new GoogleAuthProvider()); }
-  catch (e) { if (e.code !== 'auth/popup-closed-by-user') msg('Não deu para entrar com o Google. Tente o link por e-mail.', 'erro'); }
+  catch (e) {
+    if (!auth.currentUser && !['auth/popup-closed-by-user', 'auth/cancelled-popup-request'].includes(e.code)) msg('Não deu para entrar com o Google. Tente o código por e-mail.', 'erro');
+  }
 });
 
-$('#ass-form-link').addEventListener('submit', async e => {
+// Entrada por código: 1) pede o código para o e-mail; 2) digita os 7 números.
+async function chamar(rota, dados) {
+  const r = await fetch(`${SERVIDOR}${rota}`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(dados) });
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(d.erro || 'Não deu agora. Tente de novo em instantes.');
+  return d;
+}
+$('#ass-form-codigo').addEventListener('submit', async e => {
   e.preventDefault();
   const email = $('#ass-login-email').value.trim();
-  if (!email) return msg('Digite o seu e-mail.', 'erro');
-  const botao = e.submitter || $('#ass-form-link button');
+  const codigo = $('#ass-codigo').value.replace(/\D/g, '');
+  const botao = $('#ass-form-codigo button[type=submit]');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return msg('Digite o e-mail que você usou no pagamento.', 'erro');
   botao.disabled = true;
   try {
-    await sendSignInLinkToEmail(auth, email, { url: `${location.origin}${location.pathname}#assinar`, handleCodeInApp: true });
-    try { localStorage.setItem(GUARDA_EMAIL, email); } catch (er) { /* sem armazenamento */ }
-    msg(`Mandamos um link para ${email}. Abra o e-mail neste mesmo aparelho e toque no link para entrar. Veja também o spam.`, 'ok');
+    if ($('#ass-passo-codigo').hidden) {
+      const d = await chamar('/codigo', { email });
+      $('#ass-passo-codigo').hidden = false;
+      $('#ass-login-email').readOnly = true;
+      botao.textContent = 'Entrar';
+      $('#ass-codigo').focus();
+      msg(`Se ${email} tiver assinatura, um código de 7 números chega em instantes. Ele vale ${d.minutos} minutos. Veja também o spam.`, 'ok');
+    } else {
+      if (codigo.length !== 7) { msg('O código tem 7 números.', 'erro'); return; }
+      const d = await chamar('/entrar', { email, codigo });
+      await signInWithCustomToken(auth, d.token);
+      msg('Pronto, você entrou.', 'ok');
+      voltarAoEmail();
+    }
   } catch (er) {
-    msg('Não deu para mandar o link. Confira o e-mail e tente de novo.', 'erro');
+    msg(er.message, 'erro');
   } finally { botao.disabled = false; }
 });
+function voltarAoEmail() {
+  $('#ass-passo-codigo').hidden = true;
+  $('#ass-login-email').readOnly = false;
+  $('#ass-codigo').value = '';
+  $('#ass-form-codigo button[type=submit]').textContent = 'Receber código no e-mail';
+}
+$('#ass-trocar-email').addEventListener('click', () => { voltarAoEmail(); msg(''); $('#ass-login-email').focus(); });
 
 $('#ass-sair').addEventListener('click', () => signOut(auth));
 
