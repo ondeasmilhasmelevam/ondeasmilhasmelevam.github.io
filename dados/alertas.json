@@ -1,5 +1,36 @@
 [
  {
+  "id": "3761373661-8729",
+  "data": "2026-10-30T19:06:05Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "22.200 milhas + Taxas",
+  "volta": "22.200 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "23, 24"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "03, 04"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/UYF3oZR",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-5836",
   "data": "2026-10-30T18:52:57Z",
   "origem": "Tóquio",
@@ -11966,111 +11997,6 @@
   ],
   "link": "https://link.dia23.com.br/r/bwLeUyi",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2361370250-5709",
-  "data": "2026-10-28T19:06:33Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Frankfurt",
-  "destino_iata": "FRA",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "Flying Blue",
-  "ida": "85.000 milhas + Taxas",
-  "volta": "85.000 milhas + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Out/26",
-    "dias": "31"
-   },
-   {
-    "mes": "Nov/26",
-    "dias": "02 a 05, 08, 09, 22, 23, 25"
-   },
-   {
-    "mes": "Dez/26",
-    "dias": "02, 06, 09, 23"
-   },
-   {
-    "mes": "Jun/27",
-    "dias": "21, 28, 29"
-   },
-   {
-    "mes": "Jul/27",
-    "dias": "06, 12, 14, 18, 20, 21, 25 a 27"
-   },
-   {
-    "mes": "Ago/27",
-    "dias": "03, 10, 11"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Nov/26",
-    "dias": "03 a 05, 18, 25, 27"
-   },
-   {
-    "mes": "Dez/26",
-    "dias": "02, 05, 07 a 09, 14, 31"
-   },
-   {
-    "mes": "Jan/27",
-    "dias": "11"
-   },
-   {
-    "mes": "Fev/27",
-    "dias": "23, 26"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "02, 03, 05, 09, 10, 23 a 27, 30, 31"
-   },
-   {
-    "mes": "Abr/27",
-    "dias": "01, 06, 08, 09, 12 a 16, 18 a 23, 27, 29, 30"
-   },
-   {
-    "mes": "Mai/27",
-    "dias": "04 a 07, 11 a 14, 16 a 19, 26"
-   },
-   {
-    "mes": "Jun/27",
-    "dias": "09, 10, 15 a 17, 22 a 25, 29"
-   },
-   {
-    "mes": "Jul/27",
-    "dias": "01, 02, 05 a 07"
-   },
-   {
-    "mes": "Ago/27",
-    "dias": "09 a 18, 20 a 24"
-   }
-  ],
-  "link": "https://www.flyingblue.com",
-  "link_nome": "Flying Blue"
- },
- {
-  "id": "2361370250-5708",
-  "data": "2026-10-28T19:06:29Z",
-  "origem": "Singapura",
-  "origem_iata": "SIN",
-  "destino": "Tóquio",
-  "destino_iata": "HND",
-  "companhia": "Japan Airlines",
-  "cabine": "Primeira Classe",
-  "programa": "AAdvantage",
-  "ida": "40.000 milhas + R$ 280,24",
-  "volta": "",
-  "datas_ida": [
-   {
-    "mes": "Nov/26",
-    "dias": "01, 03"
-   }
-  ],
-  "datas_volta": [],
-  "link": "https://www.aa.com",
-  "link_nome": "AAdvantage"
  },
  {
   "id": "1290836068-7476",
