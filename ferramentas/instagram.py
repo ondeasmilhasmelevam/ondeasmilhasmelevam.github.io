@@ -4,15 +4,16 @@ Roda dentro do plantão dos alertas (ver .github/workflows/alertas.yml), logo
 depois de cada leitura do Telegram. Faz duas coisas, sem poluir o perfil:
 
 Stories (1080 x 1920), um alerta por story:
-  - no máximo STORIES_POR_DIA por dia (padrão 6) e um a cada STORIES_INTERVALO_MIN
-    minutos (padrão 90), só entre 8h e 22h de Brasília;
+  - no máximo STORIES_POR_DIA por dia (padrão 10) e um a cada STORIES_INTERVALO_MIN
+    minutos (padrão 80), só entre 8h e 22h de Brasília;
   - só alertas das últimas 6 horas, nunca o mesmo duas vezes;
   - prioridade: promoção no último dia, promoção nova, passagem com menos milhas,
     alternando promoção e passagem quando dá.
 
-Carrossel no feed (1080 x 1350), uma vez por dia a partir das 19h de Brasília:
-  - capa "Melhores oportunidades do dia" e até 3 promoções e 3 passagens das
-    últimas 24 horas (passagens com destinos diferentes);
+Dois carrosséis no feed (1080 x 1350) por dia, de Brasília:
+  - às 12h, "Melhores promoções do dia": até 6 promoções das últimas 24 horas;
+  - às 19h, "Melhores passagens do dia": até 6 passagens das últimas 24 horas,
+    com destinos diferentes;
   - legenda curta com a lista, "link na bio" e hashtags.
 
 Com o segredo ANTHROPIC_API_KEY, o Claude escreve a chamada de cada imagem e a
@@ -51,11 +52,12 @@ LOGO = RAIZ / 'logo.jpeg'
 REPO = os.environ.get('GITHUB_REPOSITORY', 'ondeasmilhasmelevam/ondeasmilhasmelevam.github.io')
 GRAPH = 'https://graph.instagram.com/v21.0'
 
-POR_DIA = int(os.environ.get('STORIES_POR_DIA') or 6)
-INTERVALO_MIN = int(os.environ.get('STORIES_INTERVALO_MIN') or 90)
+POR_DIA = int(os.environ.get('STORIES_POR_DIA') or 10)
+INTERVALO_MIN = int(os.environ.get('STORIES_INTERVALO_MIN') or 80)
 HORAS_FRESCO = 6
 HORARIO = (8, 22)
-HORA_CARROSSEL = 19
+CARROSSEIS = (('promocao', 12), ('passagem', 19))  # tipo e hora de Brasília
+POR_CARROSSEL = 6
 RENOVAR_DIAS = 7
 BRASILIA = timezone(timedelta(hours=-3))
 HASHTAGS = '#milhas #milhasaereas #pontos #passagensaereas #viagem #viajarbarato #ondeasmilhasmelevam'
@@ -227,18 +229,26 @@ def botao(img, y):
     centro(d, y + 240, ['Valores podem mudar a qualquer momento.'], fonte(24, 500), ASH)
 
 
-def montar(miolo, fmt):
+def montar(miolo, fmt, cartao=True):
     """Fundo, marca, o miolo centrado no espaço livre e o botão."""
     img = fundo(fmt['alto'])
     marca(img, fmt['marca'], fmt.get('compacto'))
-    caixa = miolo.getbbox()
+    caixa = miolo.getchannel('A').point(lambda v: 255 if v > 90 else 0).getbbox()  # só o conteúdo, sem o halo
     if caixa:
-        miolo = miolo.crop((0, caixa[1], W, caixa[3]))
         topo, fim = fmt['miolo']
-        if miolo.height > fim - topo:
-            k = (fim - topo) / miolo.height
-            miolo = miolo.resize((int(W * k), fim - topo), Image.LANCZOS)
-        img.paste(miolo, ((W - miolo.width) // 2, topo + (fim - topo - miolo.height) // 2), miolo)
+        # cartão de vidro com fio dourado em volta da oferta; ela cresce para ocupar o espaço livre
+        folga = 64 if cartao else 0
+        larg, alt = caixa[2] - caixa[0], caixa[3] - caixa[1]
+        k = min((fim - topo - 2 * folga) / alt, (W - 140 - 2 * folga) / larg, 1.25)
+        miolo = miolo.resize((int(miolo.width * k), int(miolo.height * k)), Image.LANCZOS)
+        y = topo + (fim - topo - int(alt * k)) // 2
+        if cartao:  # a passagem já vem desenhada como bilhete
+            vidro = Image.new('RGBA', img.size, (0, 0, 0, 0))
+            ImageDraw.Draw(vidro).rounded_rectangle((70, y - folga, W - 70, y + int(alt * k) + folga), radius=48,
+                                                    fill=(255, 255, 255, 12), outline=(226, 180, 88, 90), width=2)
+            img.paste(vidro, (0, 0), vidro)
+        # cola a camada inteira (com o halo), alinhando o conteúdo no centro
+        img.alpha_composite(miolo, (int(W / 2 - (caixa[0] + larg / 2) * k), int(y - caixa[1] * k)))             if img.mode == 'RGBA' else img.paste(miolo, (int(W / 2 - (caixa[0] + larg / 2) * k), int(y - caixa[1] * k)), miolo)
     botao(img, fmt['botao'])
     return img
 
@@ -395,22 +405,24 @@ def miolo_promocao(a, chamada=''):
     return camada
 
 
-def miolo_capa(dia, n):
+def miolo_capa(dia, n, tipo):
     camada, d = tela()
     y, _ = pilula(d, 0, dia.strftime('%d/%m') + ' · HOJE', OURO)
     y = centro(d, y + 80, ['AS MELHORES'], fonte(70, 800), ASH)
     brilho(camada, (W / 2, y + 160), 380, (226, 180, 88), 70)
     d = ImageDraw.Draw(camada)
-    y = centro(d, y, ['OPORTUNIDADES'], fonte(104, 800), RICE, 1.05)
+    promo = tipo == 'promocao'
+    y = centro(d, y, ['PROMOÇÕES' if promo else 'PASSAGENS'], fonte(118, 800), RICE, 1.05)
     y = centro(d, y, ['DO DIA'], fonte(150, 800), OURO, 1.08)
-    y = centro(d, y + 40, [f'{n} achados de milhas e pontos'], fonte(40, 600), RICE)
+    sub = f'{n} promoções de milhas e pontos' if promo else f'{n} passagens com milhas'
+    y = centro(d, y + 40, [sub], fonte(40, 600), RICE)
     centro(d, y + 60, ['ARRASTE PARA O LADO  →'], fonte(38, 800), OURO_LT)
     return camada
 
 
 def imagem(a, fmt, chamada=''):
     feito = miolo_promocao if a.get('tipo') == 'promocao' else miolo_passagem
-    return montar(feito(a, chamada), fmt)
+    return montar(feito(a, chamada), fmt, a.get('tipo') == 'promocao')
 
 
 def ler_json(p, padrao):
@@ -444,14 +456,16 @@ def escolher(alertas, estado, agora):
     return next((lista[0] for lista in ordem if lista), None)
 
 
-def escolher_carrossel(alertas, agora):
+def escolher_carrossel(alertas, agora, tipo):
     promos, passagens = separar([a for a in alertas if quando(a) >= agora - timedelta(hours=24)])
+    if tipo == 'promocao':
+        return promos[:POR_CARROSSEL]
     destinos, viagens = set(), []
     for a in passagens:
-        if a['destino'] not in destinos:
+        if a['destino'] not in destinos and nivel(a) not in ('caro', 'péssimo'):
             destinos.add(a['destino'])
             viagens.append(a)
-    return promos[:3] + viagens[:3]
+    return viagens[:POR_CARROSSEL]
 
 
 PEQUENAS = {'a', 'à', 'ao', 'até', 'com', 'da', 'das', 'de', 'do', 'dos', 'e', 'em', 'na', 'no', 'o', 'ou', 'para', 'por'}
@@ -463,8 +477,9 @@ def titulo_legivel(t):
     return ' '.join(p if i and p in PEQUENAS else p[:1].upper() + p[1:] for i, p in enumerate(palavras))
 
 
-def legenda(itens, dia):
-    linhas = [f"✈️ Melhores oportunidades de hoje ({dia.strftime('%d/%m')})", '']
+def legenda(itens, dia, tipo):
+    nome = '💸 Melhores promoções' if tipo == 'promocao' else '✈️ Melhores passagens com milhas'
+    linhas = [f"{nome} de hoje ({dia.strftime('%d/%m')})", '']
     for a in itens:
         if a.get('tipo') == 'promocao':
             linhas.append(f"💸 {titulo_legivel(a['titulo'])}")
@@ -660,20 +675,21 @@ def story(alertas, estado, agora, conta, token):
     print(f"Story publicado: {a.get('titulo') or a['destino']}")
 
 
-def carrossel(alertas, estado, agora, conta, token):
+def carrossel(alertas, estado, agora, conta, token, tipo, hora):
     dia = agora.astimezone(BRASILIA)
-    if dia.hour < HORA_CARROSSEL or estado.get('carrossel_dia') == estado['dia']:
+    chave = f'carrossel_{tipo}_dia'
+    if dia.hour < hora or estado.get(chave) == estado['dia']:
         return
-    itens = escolher_carrossel(alertas, agora)
+    itens = escolher_carrossel(alertas, agora, tipo)
     if len(itens) < 2:
         return
-    estado['carrossel_dia'] = estado['dia']  # uma tentativa por dia, mesmo se falhar
+    estado[chave] = estado['dia']  # uma tentativa por dia, mesmo se falhar
     ia = textos_ia(itens, com_legenda=True)
     chamadas = ia.get('chamadas') or [''] * len(itens)
-    texto = ia['legenda'] + RODAPE_LEGENDA if ia.get('legenda') else legenda(itens, dia)
-    telas = [('feed-0.jpg', montar(miolo_capa(dia, len(itens)), FEED))]
-    telas += [(f'feed-{n}.jpg', imagem(a, FEED, c)) for n, (a, c) in enumerate(zip(itens, chamadas), 1)]
-    urls = enviar(telas, estado, 'Imagens do carrossel do dia')
+    texto = ia['legenda'] + RODAPE_LEGENDA if ia.get('legenda') else legenda(itens, dia, tipo)
+    telas = [(f'feed-{tipo}-0.jpg', montar(miolo_capa(dia, len(itens), tipo), FEED))]
+    telas += [(f'feed-{tipo}-{n}.jpg', imagem(a, FEED, c)) for n, (a, c) in enumerate(zip(itens, chamadas), 1)]
+    urls = enviar(telas, estado, f'Imagens do carrossel de {tipo} do dia')
     if not urls:
         return
     try:
@@ -682,25 +698,26 @@ def carrossel(alertas, estado, agora, conta, token):
         publicar(conta, token, cid)
     except Exception as e:
         return print(f'::warning::Carrossel não publicado: {e}')
-    print(f'Carrossel do dia publicado com {len(itens)} oportunidades.')
+    print(f'Carrossel de {tipo} publicado com {len(itens)} oportunidades.')
 
 
 def teste(pasta):
-    """Gera stories e o carrossel de exemplo com os alertas atuais, sem publicar."""
+    """Gera stories e os carrosséis de exemplo com os alertas atuais, sem publicar."""
     pasta.mkdir(parents=True, exist_ok=True)
     alertas = ler_json(ALERTAS, [])
     agora = max((quando(a) for a in alertas), default=datetime.now(timezone.utc))
     promos, passagens = separar(alertas)
     for n, a in enumerate(promos[:2] + passagens[:2]):
         imagem(a, STORY).save(pasta / f'story-{n}.jpg', quality=90)
-    itens = escolher_carrossel(alertas, agora)
-    ia = textos_ia(itens, com_legenda=True)
-    chamadas = ia.get('chamadas') or [''] * len(itens)
-    montar(miolo_capa(agora.astimezone(BRASILIA), len(itens)), FEED).save(pasta / 'feed-0.jpg', quality=90)
-    for n, (a, c) in enumerate(zip(itens, chamadas), 1):
-        imagem(a, FEED, c).save(pasta / f'feed-{n}.jpg', quality=90)
-    texto = ia['legenda'] + RODAPE_LEGENDA if ia.get('legenda') else legenda(itens, agora.astimezone(BRASILIA))
-    (pasta / 'legenda.txt').write_text(texto, encoding='utf-8')
+    for tipo, _ in CARROSSEIS:
+        itens = escolher_carrossel(alertas, agora, tipo)
+        ia = textos_ia(itens, com_legenda=True)
+        chamadas = ia.get('chamadas') or [''] * len(itens)
+        montar(miolo_capa(agora.astimezone(BRASILIA), len(itens), tipo), FEED).save(pasta / f'feed-{tipo}-0.jpg', quality=90)
+        for n, (a, c) in enumerate(zip(itens, chamadas), 1):
+            imagem(a, FEED, c).save(pasta / f'feed-{tipo}-{n}.jpg', quality=90)
+        texto = ia['legenda'] + RODAPE_LEGENDA if ia.get('legenda') else legenda(itens, agora.astimezone(BRASILIA), tipo)
+        (pasta / f'legenda-{tipo}.txt').write_text(texto, encoding='utf-8')
     print(pasta)
 
 
@@ -720,7 +737,8 @@ def main():
     token = renovar(token, estado, agora)
     if HORARIO[0] <= agora.astimezone(BRASILIA).hour < HORARIO[1]:
         alertas = ler_json(ALERTAS, [])
-        carrossel(alertas, estado, agora, conta, token)
+        for tipo, hora in CARROSSEIS:
+            carrossel(alertas, estado, agora, conta, token, tipo, hora)
         story(alertas, estado, agora, conta, token)
     guardar(estado, 'Instagram: controle atualizado')
 
