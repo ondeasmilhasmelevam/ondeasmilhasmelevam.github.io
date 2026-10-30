@@ -1,5 +1,50 @@
 [
  {
+  "id": "1290836068-7519",
+  "data": "2026-10-30T18:44:18Z",
+  "tipo": "promocao",
+  "titulo": "CLUBE SMILES: 10.000 MILHAS AO ASSINAR PLANO 1.000",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Receba 10.000 milhas na hora ao assinar o Plano 1.000 do Clube Smiles. Valor do milheiro pode chegar a R$ 16,56 com permanência mínima de 6 meses.",
+  "detalhes": [
+   "10.000 milhas de bônus ao assinar o Plano 1.000.",
+   "21.000 milhas em 12 meses com permanência mínima de 6 meses.",
+   "Valor do milheiro a partir de R$ 16,56 (anual à vista com carência)."
+  ],
+  "parceiros": "Smiles",
+  "validade": "03/11/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja/bau-20261026"
+  ],
+  "ate": "2026-11-03T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7518",
+  "data": "2026-10-30T18:44:13Z",
+  "tipo": "promocao",
+  "titulo": "AIR FRANCE: SORTEIO DE BILHETES PREMIUM PARA PARIS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Air France sorteia um par de bilhetes na Classe Premium para Paris. Para participar, os usuários devem se cadastrar no site e jogar um jogo de memória para acumular números da sorte. A promoção é válida até 19 de novembro de 2026, com sorteio em 22 de novembro.",
+  "detalhes": [
+   "Cadastro no site até 19/11/2026",
+   "Jogo de memória gera números extras: 10 números se terminar em ≤30s, 5 números se entre 31s e 2min, 3 números se >2min",
+   "Até 500 números da sorte por pessoa",
+   "Desconto de 10% na compra de passagens para Paris, limitado a 200 reservas",
+   "Sorteio em 22/11/2026, resultado em 24/11/2026 às 15h",
+   "Notificação por e-mail, telefone ou outro recurso, até 3 tentativas",
+   "Resultado disponível no site por 30 dias",
+   "Proibição de trocar prêmio por outro item ou converter em dinheiro"
+  ],
+  "parceiros": "Air France",
+  "validade": "até 19 de novembro de 2026",
+  "links": [
+   "https://link.dia23.com.br/r/0JvDKVI"
+  ],
+  "ate": ""
+ },
+ {
   "id": "3761373661-8727",
   "data": "2026-10-30T18:40:27Z",
   "origem": "Manaus",
@@ -11981,95 +12026,6 @@
    "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club/WMB"
   ],
   "ate": "2026-11-02T23:59:59-03:00"
- },
- {
-  "id": "3761373661-8569",
-  "data": "2026-10-28T18:45:45Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "18.000 milhas + Taxas",
-  "volta": "18.000 milhas + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Jan/27",
-    "dias": "16, 20, 23, 31"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Jan/27",
-    "dias": "20, 24, 27, 29, 30"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/eVNqUAJ",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8568",
-  "data": "2026-10-28T18:44:09Z",
-  "origem": "São Paulo",
-  "origem_iata": "SAO",
-  "destino": "Curitiba",
-  "destino_iata": "CWB",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "8.000 Milhas TudoAzul + Taxas",
-  "volta": "8.000 Milhas TudoAzul + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Nov/26",
-    "dias": "07, 10, 11, 12, 13, 15, 16, 17, 18, 20, 21, 25, 26, 29, 30"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Nov/26",
-    "dias": "08, 09, 10, 11, 12, 13, 14, 29, 30"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/1hsfSNS",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-8567",
-  "data": "2026-10-28T18:44:02Z",
-  "origem": "São Paulo",
-  "origem_iata": "SAO",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "9.000 Milhas TudoAzul + Taxas",
-  "volta": "9.000 Milhas TudoAzul + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Dez/26",
-    "dias": "12, 15, 17"
-   },
-   {
-    "mes": "Jan/27",
-    "dias": "09, 13, 15, 16, 30, 31"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Dez/26",
-    "dias": "01, 02, 03, 05, 06, 10, 13"
-   },
-   {
-    "mes": "Jan/27",
-    "dias": "09, 18, 28"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/F5kIS3d",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "1290836068-7472",
