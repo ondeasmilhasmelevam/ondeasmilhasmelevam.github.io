@@ -10195,26 +10195,6 @@
   "ate": "2026-10-30T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7469",
-  "data": "2026-10-28T14:49:17Z",
-  "tipo": "promocao",
-  "titulo": "C6 BANK & SMILES: TRANSFERÊNCIA COM ATÉ 70% DE BÔNUS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira seus pontos C6 Átomos para a Smiles e garanta até 70% de bônus na transferência.",
-  "detalhes": [
-   "70% de bônus para assinantes do Clube Smiles e/ou clientes Diamante/Magno",
-   "40% de bônus para demais clientes",
-   "Cadastro prévio obrigatório"
-  ],
-  "parceiros": "Smiles e C6 Bank",
-  "validade": "29/10",
-  "links": [
-   "https://www.smiles.com.br/portal/campanhas/bancos-C6-bank-10-2026"
-  ],
-  "ate": "2026-10-29T23:59:59-03:00"
- },
- {
   "id": "3761373661-8529",
   "data": "2026-10-28T14:29:11Z",
   "origem": "Salvador",
@@ -12077,48 +12057,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "1290836068-7458",
-  "data": "2026-10-27T12:17:21Z",
-  "tipo": "promocao",
-  "titulo": "SMILES & ALL ACCOR: TRANSFERÊNCIA COM ATÉ 25% DE BÔNUS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira milhas Smiles para o programa ALL Accor com paridade reduzida e receba até 25% de bônus em Pontos Reward.",
-  "detalhes": [
-   "Paridade Clube Smiles: 6 milhas Smiles = 1 ponto Reward ALL",
-   "15% de bônus para todos os clientes ALL Accor",
-   "+10% de bônus adicional para assinantes ALL Signature (totalizando 25%)"
-  ],
-  "parceiros": "Smiles, ALL Accor",
-  "validade": "29/10/2026",
-  "links": [
-   "https://all.accor.com/a/pt-br/loyalty-program/partners/offers/oferta-transferencia-smiles.html"
-  ],
-  "ate": "2026-10-29T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7455",
-  "data": "2026-10-27T12:00:34Z",
-  "tipo": "promocao",
-  "titulo": "DESCONTO EM RESGATE DE PASSAGENS AZUL FIDELIDADE",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Descontos de até 20% em passagens aéreas nacionais na modalidade pontos + reais, variando conforme nível do Clube Azul.",
-  "detalhes": [
-   "Diamante Unique: até 20% (classe W), até 10% (demais classes).",
-   "Diamante: até 18% (classe W), até 9% (demais classes).",
-   "Safira: até 15% (classe W), até 8% (demais classes).",
-   "Topázio: até 10% (classe W), até 5% (demais classes).",
-   "Azul Fidelidade: até 5% (classe W), até 2% (demais classes)."
-  ],
-  "parceiros": "Azul",
-  "validade": "29/10/2026 (viagens até 30/06/2027, exceto datas específicas).",
-  "links": [
-   "https://www.voeazul.com.br"
-  ],
-  "ate": "2026-10-29T23:59:59-03:00"
- },
- {
   "id": "1290836068-7449",
   "data": "2026-10-26T20:23:05Z",
   "tipo": "promocao",
@@ -12315,26 +12253,6 @@
   "ate": "2026-11-20T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7431",
-  "data": "2026-10-26T14:09:23Z",
-  "tipo": "promocao",
-  "titulo": "SMILES & ALL ACCOR: TRANSFERÊNCIA COM ATÉ 25% DE BÔNUS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira milhas Smiles para o ALL Accor com paridade especial e ganhe até 25% de bônus em Pontos Reward.",
-  "detalhes": [
-   "15% de bônus para demais clientes ALL Accor",
-   "+10% de bônus adicional para assinantes ALL Signature (total de 25%)",
-   "Paridade especial de 6 milhas Smiles = 1 Ponto Reward para assinantes Clube Smiles"
-  ],
-  "parceiros": "Smiles e ALL Accor",
-  "validade": "Até 29/10/2026",
-  "links": [
-   "https://all.accor.com/a/pt-br/loyalty-program/partners/offers/oferta-transferencia-smiles.html"
-  ],
-  "ate": "2026-10-29T23:59:59-03:00"
- },
- {
   "id": "1290836068-7428",
   "data": "2026-10-26T12:34:47Z",
   "tipo": "promocao",
@@ -12472,26 +12390,6 @@
    "https://image.info.latam.com/lib/fe2311717d/m/1/ee9cc845-6265-4f09-aaf6-a4f32c81df2c.pdf⁠"
   ],
   "ate": "2026-11-14T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7348",
-  "data": "2026-10-21T14:59:50Z",
-  "tipo": "promocao",
-  "titulo": "AIR CANADA: COMPRA DE PONTOS AEROPLAN COM ATÉ 90% DE BÔNUS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Compre pontos Aeroplan através do Points.com com até 90% de bônus em compras a partir de 80.000 pontos.",
-  "detalhes": [
-   "50% de bônus (5.000 a 25.000 pontos): CA$ 25,00 ~ R$ 89,32 por milheiro",
-   "75% de bônus (30.000 a 70.000 pontos): CA$ 21,43 ~ R$ 76,56 por milheiro",
-   "90% de bônus (a partir de 80.000 pontos): CA$ 19,74 ~ R$ 70,52 por milheiro"
-  ],
-  "parceiros": "Air Canada e Points.com",
-  "validade": "29/10/2026",
-  "links": [
-   "https://aeroplan.points.com/air-canada-kilo/sso/mv-delegate/buy"
-  ],
-  "ate": "2026-10-29T23:59:59-03:00"
  },
  {
   "id": "1290836068-7336",
