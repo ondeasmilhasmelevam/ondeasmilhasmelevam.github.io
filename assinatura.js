@@ -20,7 +20,7 @@ auth.languageCode = 'pt';
 const db = getFirestore(app);
 
 // Endereço do Worker publicado (servidor/). Vazio = cobrança ainda desligada.
-const SERVIDOR = '';
+const SERVIDOR = 'https://oamml-assinatura.ondeasmilhasmelevam.workers.dev';
 const GUARDA_EMAIL = 'oamml-email-login';
 
 const $ = s => document.querySelector(s);

@@ -8,4 +8,4 @@ PROJETO = "ondeasmilhasmelevam-b5ed6"
 SITE = "https://ondeasmilhasmelevam.github.io/"
 ORIGENS = "https://ondeasmilhasmelevam.github.io,http://localhost:8124"
 # Endereço deste Worker depois de publicado (para a InfinitePay mandar o aviso de pagamento).
-SELF = "https://oamml-assinatura.SEU-SUBDOMINIO.workers.dev"
+SELF = "https://oamml-assinatura.ondeasmilhasmelevam.workers.dev"
