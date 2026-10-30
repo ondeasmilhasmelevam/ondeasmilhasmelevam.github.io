@@ -1,5 +1,40 @@
 [
  {
+  "id": "2361370250-5822",
+  "data": "2026-10-30T12:03:21Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "GOL",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "80.000 milhas + Taxas",
+  "volta": "80.000 milhas + R$ 101,40",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "02, 23, 25"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "01, 05, 09"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Nov/26",
+    "dias": "08"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "08"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/uFChSe4",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "3761373661-8683",
   "data": "2026-10-30T11:57:26Z",
   "origem": "Curitiba",
