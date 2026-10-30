@@ -1,5 +1,36 @@
 [
  {
+  "id": "3761373661-8725",
+  "data": "2026-10-30T18:06:48Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "16.320 milhas + Taxas",
+  "volta": "16.320 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Abr/27",
+    "dias": "29"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "01"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Mai/27",
+    "dias": "08, 09"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/mu7JUWb",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "1290836068-7516",
   "data": "2026-10-30T17:24:09Z",
   "tipo": "promocao",
