@@ -1713,7 +1713,7 @@
 
   // Cada aba do topo é uma página: mostra só as seções dela (data-pagina).
   // O endereço continua o mesmo; o #da-aba diz qual página abrir (dá para mandar o link).
-  const abas = [...document.querySelectorAll('.tabs a')];
+  const abas = [...document.querySelectorAll('.tabs .menu-sub a')];
   const paginas = [...document.querySelectorAll('[data-pagina]')];
   const TITULO = document.title;
   let paginaAtual = '';
@@ -1729,7 +1729,7 @@
       a.setAttribute('aria-current', String(ok));
       if (ok) ativa = a;
     });
-    document.title = pagina === 'simulador' || !ativa ? TITULO : `${ativa.textContent} · Onde as Milhas Me Levam`;
+    document.title = pagina === 'simulador' || !ativa ? TITULO : `${(ativa.querySelector('span') || ativa).textContent} · Onde as Milhas Me Levam`;
     abrirMenu(false);
     mostrarAtualizado(pagina);
     if (!rolar) return;
@@ -1769,7 +1769,77 @@
     if (pagina !== paginaAtual) return;
     el.hidden = !d || isNaN(d);
     if (!el.hidden) el.textContent = `Atualizado ${quandoTxt(d)}`;
+    const em = $('#menu-atualizado');
+    em.hidden = el.hidden;
+    if (!el.hidden) em.textContent = `Atualizado ${quandoTxt(d)}`;
   }
+
+  // Calculadoras: contas simples com o valor de referência do milheiro (milheiros.js).
+  const NOMES_MILHEIRO = { 'Smiles': 'Smiles', 'LATAM Pass': 'LATAM Pass', 'Azul Fidelidade': 'Azul Fidelidade', 'TAP': 'TAP Miles&Go', 'AA': 'AAdvantage', 'Avios': 'Avios (Iberia, British, Qatar)' };
+  const numCampo = id => { const v = parseFloat(String($(id).value).replace(',', '.')); return isFinite(v) ? v : null; };
+  const emReais = v => brl2.format(v);
+  function calcCompra() {
+    const ref = (window.MILHEIROS || {})[$('#cc-destino').value];
+    const preco = numCampo('#cc-preco'), prop = numCampo('#cc-prop') || 1, bonus = numCampo('#cc-bonus') || 0;
+    const el = $('#cc-resposta');
+    if (!preco) { el.className = 'termo-resposta'; el.textContent = 'Informe quanto você paga por 1.000 pontos.'; return; }
+    const custo = preco * prop / (1 + bonus / 100);
+    const bom = ref && custo <= ref;
+    el.className = 'termo-resposta ' + (ref ? (bom ? 'ok' : 'espera') : '');
+    el.innerHTML = `Cada 1.000 milhas sai por <b>${esc(emReais(custo))}</b>.` + (ref
+      ? (bom ? ` Compensa: está abaixo dos ${esc(emReais(ref))} que usamos como valor do milheiro desse programa.`
+        : ` Não compensa agora: acima dos ${esc(emReais(ref))} que usamos como valor do milheiro. Espere um desconto ou bônus maior.`) : '');
+  }
+  function calcDinheiro() {
+    const ref = (window.MILHEIROS || {})[$('#dm-programa').value];
+    const r = numCampo('#dm-reais'), m = numCampo('#dm-milhas'), t = numCampo('#dm-taxas') || 0;
+    const el = $('#dm-resposta');
+    if (!r || !m) { el.className = 'termo-resposta'; el.textContent = 'Informe o preço em dinheiro e as milhas pedidas.'; return; }
+    const vale = (r - t) / m * 1000;
+    const bom = ref && vale >= ref;
+    el.className = 'termo-resposta ' + (ref ? (bom ? 'ok' : 'espera') : '');
+    el.innerHTML = `Nessa emissão, cada 1.000 milhas valem <b>${esc(emReais(Math.max(0, vale)))}</b>.` + (ref
+      ? (bom ? ` Use as milhas: vale mais que os ${esc(emReais(ref))} de referência.`
+        : ` Melhor pagar em dinheiro e guardar as milhas: vale menos que os ${esc(emReais(ref))} de referência.`) : '');
+  }
+  function calcPontos() {
+    const p = numCampo('#pm-pontos'), prop = numCampo('#pm-prop') || 1, bonus = numCampo('#pm-bonus') || 0;
+    const el = $('#pm-resposta');
+    if (!p) { el.className = 'termo-resposta'; el.textContent = 'Informe quantos pontos você tem.'; return; }
+    const base = Math.floor(p / prop), total = Math.floor(base * (1 + bonus / 100));
+    el.className = 'termo-resposta ok';
+    el.innerHTML = `Viram <b>${esc(inteiro.format(total))} milhas</b>` + (bonus ? ` (${esc(inteiro.format(base))} da transferência + ${esc(inteiro.format(total - base))} de bônus).` : '.');
+  }
+  function montarCalculadoras() {
+    const opcoes = Object.keys(window.MILHEIROS || {}).map(k => `<option value="${esc(k)}">${esc(NOMES_MILHEIRO[k] || k)}</option>`).join('');
+    $('#cc-destino').innerHTML = opcoes;
+    $('#dm-programa').innerHTML = opcoes;
+    ['#cc-destino', '#cc-preco', '#cc-prop', '#cc-bonus'].forEach(id => $(id).addEventListener('input', calcCompra));
+    ['#dm-programa', '#dm-reais', '#dm-milhas', '#dm-taxas'].forEach(id => $(id).addEventListener('input', calcDinheiro));
+    ['#pm-pontos', '#pm-prop', '#pm-bonus'].forEach(id => $(id).addEventListener('input', calcPontos));
+    calcCompra(); calcDinheiro(); calcPontos();
+  }
+  montarCalculadoras();
+
+  // Menu recolhido (só ícones) no computador; a escolha fica guardada neste navegador.
+  const CHAVE_RECOLHIDO = 'oamml-menu-recolhido';
+  function recolherMenu(sim) {
+    document.body.classList.toggle('menu-recolhido', sim);
+    $('#menu-recolher').setAttribute('aria-pressed', String(sim));
+    $('#menu-recolher span').textContent = sim ? 'Abrir menu' : 'Recolher menu';
+    try { localStorage.setItem(CHAVE_RECOLHIDO, sim ? '1' : ''); } catch (e) { /* sem armazenamento */ }
+  }
+  try { if (localStorage.getItem(CHAVE_RECOLHIDO)) recolherMenu(true); } catch (e) { /* sem armazenamento */ }
+  $('#menu-recolher').addEventListener('click', () => recolherMenu(!document.body.classList.contains('menu-recolhido')));
+
+  // Tema claro ou escuro.
+  function aplicarTema(claro) {
+    document.documentElement.dataset.theme = claro ? 'light' : 'dark';
+    $('#menu-tema span').textContent = claro ? 'Tema escuro' : 'Tema claro';
+    try { localStorage.setItem('oamml-tema', claro ? 'light' : 'dark'); } catch (e) { /* sem armazenamento */ }
+  }
+  $('#menu-tema span').textContent = document.documentElement.dataset.theme === 'light' ? 'Tema escuro' : 'Tema claro';
+  $('#menu-tema').addEventListener('click', () => aplicarTema(document.documentElement.dataset.theme !== 'light'));
 
   // Menu: o botão abre e fecha a lista; clicar fora, apertar Esc ou escolher a página fecha.
   function abrirMenu(abrir) {
