@@ -11941,33 +11941,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2361370250-5710",
-  "data": "2026-10-28T20:28:15Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Roma",
-  "destino_iata": "FCO",
-  "companhia": "LATAM",
-  "cabine": "Executiva",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 194.491 milhas",
-  "volta": "A partir de 194.491 milhas",
-  "datas_ida": [
-   {
-    "mes": "Nov/26",
-    "dias": "11, 23, 25"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Dez/26",
-    "dias": "10, 11, 12, 17, 21, 22"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/t5XOX1Y",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
