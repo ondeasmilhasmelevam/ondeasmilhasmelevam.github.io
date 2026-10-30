@@ -657,10 +657,9 @@
       // O destaque é o melhor cartão que a pessoa pode pedir: fora os só por
       // convite, os de investimento alto e os de renda acima da informada.
       const r = lista.find(podePedir) || lista[0], k = r.cartao;
-      const vice = lista.find(x => x !== r && podePedir(x));
       const acima = lista[0] !== r ? lista[0] : null;
       const pct = r.liquido / (estado.gasto * 12) * 100;
-      venc.innerHTML = `<article class="vencedor">
+      venc.innerHTML = top5Html(lista.filter(podePedir).slice(0, 5)) + `<article class="vencedor">
         ${cartaoVisual(k)}
         <div>
           <span class="vencedor-tag">★ Melhor para ${esc(moedaGasto())}/mês${ehIsento(k) ? ' · é o seu' : ''}</span>
@@ -677,19 +676,22 @@
             <button type="button" class="cta cta-a" data-abrir="${k.id}">Ver benefícios</button>
             ${k.links[0] ? `<a class="cta cta-b" href="${esc(k.links[0])}" target="_blank" rel="noopener">Site oficial ↗</a>` : ''}
           </div>
-          ${vice ? `<p class="vice">Em seguida: <b>${esc(vice.cartao.nome)}</b>, ${esc(brl.format(vice.liquido))}/ano (${esc(brl.format(r.liquido - vice.liquido))} a menos).</p>` : ''}
           ${acima ? `<p class="vice acima">Rende mais o <b>${esc(acima.cartao.nome)}</b> (${esc(brl.format(acima.liquido))}/ano), mas ${esc(porQueNao(acima.cartao))}.</p>` : ''}
           ${comparacaoHtml(r, lista)}
         </div>
       </article>`;
     }
 
-    // Ranking
-    listaVisivel = lista;
-    const mostrados = lista.slice(0, estado.limite);
+    // Ranking ("ver outros cartões"): só os que a renda permite pedir; primeiro os
+    // sem anuidade no gasto informado, depois os que mais rendem em pontos.
+    const ordem = lista.map((r, i) => [r, i]).sort(([a, i], [b, j]) => semAnuidade(b) - semAnuidade(a) || i - j).map(([r]) => r);
+    listaVisivel = ordem;
+    const mostrados = ordem.slice(0, estado.limite);
     const maior = Math.max(1, ...lista.map(r => r.liquido));
     $('#ranking').innerHTML = mostrados.map((r, i) => {
       const k = r.cartao, aberto = estado.abertos.has(k.id);
+      const grupo = i === 0 || semAnuidade(mostrados[i - 1]) !== semAnuidade(r)
+        ? `<li class="ranking-grupo">${semAnuidade(r) ? 'Sem anuidade no seu gasto' : 'Com anuidade (já descontada do valor)'}</li>` : '';
       const anu = ehNum(r.anuidade) ? r.anuidade : null;
       const tags = [
         ehIsento(k) ? '<span class="tag verde">Sua isenção vitalícia</span>' : '',
@@ -698,7 +700,7 @@
         k.acelerador && k.acelerador !== '-' ? `<span class="tag">${esc(k.acelerador.length < 20 ? k.acelerador : 'Promoção')}</span>` : '',
         requisitoTag(k)
       ].join('');
-      return `<li class="item${i < 3 ? ' top' : ''}${aberto ? ' aberto' : ''}" id="${k.id}">
+      return `${grupo}<li class="item${i < 3 ? ' top' : ''}${aberto ? ' aberto' : ''}" id="${k.id}">
         <button type="button" class="item-linha" aria-expanded="${aberto}" aria-controls="${k.id}-d">
           <span class="pos">${i + 1}</span>
           ${cartaoVisual(k, 'mini')}
@@ -725,7 +727,7 @@
     btnMais.textContent = faltam ? `Ver mais ${Math.min(POR_PAGINA, faltam)} cartões (faltam ${faltam})` : `Mostrar só os ${POR_PAGINA} melhores`;
 
     const paraQuem = estado.renda && !estado.verAcimaRenda ?` para a sua renda de ${brl.format(estado.renda)}` : '';
-    const partesNota = [`Os ${mostrados.length} melhores de ${lista.length} cartões${paraQuem}, com valores para ${moedaGasto()} por mês, já descontada a anuidade.`];
+    const partesNota = [`${mostrados.length} de ${lista.length} cartões${paraQuem}: primeiro os sem anuidade com ${moedaGasto()} por mês, depois os com anuidade; em cada grupo, do que mais rende em pontos para o que menos rende (valor por ano, já descontada a anuidade).`];
     if (!estado.renda) partesNota.push('Informe sua renda no simulador para ver só os cartões que você consegue pedir.');
     const nOcultos = ocultos.restrito + ocultos.renda;
     $('#ranking-nota').innerHTML = esc(partesNota.join(' ')) + (nOcultos ? ` <span class="ocultos">${[
@@ -734,6 +736,26 @@
     ].filter(Boolean).join(' · ')} fora da lista.</span>` : '');
 
     $('#carregando').hidden = true;
+  }
+
+  const semAnuidade = r => ehIsento(r.cartao) || (ehNum(r.anuidade) && r.anuidade <= 0) ? 1 : 0;
+
+  // Os 5 que mais rendem entre os que a pessoa pode pedir, logo na primeira tela.
+  function top5Html(top) {
+    if (top.length < 2) return '';
+    const renda = estado.renda ? ` com renda de ${brl.format(estado.renda)}` : '';
+    return `<div class="top5">
+      <h2>Os ${top.length} melhores cartões para ${esc(moedaGasto())}/mês${esc(renda)}</h2>
+      <ol>${top.map((r, i) => {
+        const k = r.cartao, anu = ehNum(r.anuidade) ? r.anuidade : null;
+        return `<li><button type="button" data-abrir="${k.id}">
+          <span class="pos">${i + 1}</span>${cartaoVisual(k, 'mini')}
+          <span class="top5-nome"><b>${esc(k.nome)}</b><small>${esc(pontuacaoTxt(r))}${ehIsento(k) ? ' · é o seu' : anu === 0 ? ' · sem anuidade' : anu ? ` · anuidade ${brl.format(anu)}` : ''}</small></span>
+          <span class="top5-valor"><b class="${r.liquido < 0 ? 'neg' : ''}">${esc(brl.format(r.liquido))}</b><small>por ano</small></span>
+        </button></li>`;
+      }).join('')}</ol>
+      ${estado.renda ? '' : '<p class="top5-nota">Informe sua renda acima para ver só os cartões que você consegue pedir.</p>'}
+    </div>`;
   }
 
   // Os cartões com isenção vitalícia do visitante contra o melhor da lista.

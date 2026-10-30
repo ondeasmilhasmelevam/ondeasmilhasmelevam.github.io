@@ -24,9 +24,10 @@ window.BONUS_CONTA = {
    "nao" tira dela os cartões que não transferem para a companhia. */
 window.BONUS_MINIMO = {
   programas: [
+    // A Revolut não tem transferência bonificada para Azul, Smiles nem LATAM.
     { nome: 'TudoAzul', minimo: '100%', destino: /AZUL/, nao: /REVOLUT/ },
-    { nome: 'Smiles', minimo: '80%', destino: /SMILES|GOL/ },
-    { nome: 'LATAM Pass', minimo: '25%', obs: 'Com Clube Turbo LATAM, costuma chegar a 30% ou 35%.', destino: /LATAM/ },
+    { nome: 'Smiles', minimo: '80%', destino: /SMILES|GOL/, nao: /REVOLUT/ },
+    { nome: 'LATAM Pass', minimo: '25%', obs: 'Com Clube Turbo LATAM, costuma chegar a 30% ou 35%.', destino: /LATAM/, nao: /REVOLUT/ },
     // No Santander, 2 pontos Esfera = 1 Avios e vale esperar 20% de bônus.
     { nome: 'Iberia Plus', minimo: '20%', destino: /IBERIA|AVIOS/, so: /SANTANDER/, unidade: 'Avios', proporcao: { SANTANDER: 0.5 } },
     // No Revolut é 1 para 1 e, no Brasil, a transferência para a Iberia não tem bônus.
