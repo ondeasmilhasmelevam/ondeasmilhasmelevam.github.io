@@ -1,5 +1,48 @@
 [
  {
+  "id": "3761373661-8662",
+  "data": "2026-10-30T10:55:03Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "21.000 milhas + Taxas",
+  "volta": "21.000 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "02, 07"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "20"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "05, 19 a 22"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Mar/27",
+    "dias": "31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "23, 24, 27"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "20"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/LjneVsb",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-8661",
   "data": "2026-10-30T10:05:01Z",
   "origem": "Uberlândia",
