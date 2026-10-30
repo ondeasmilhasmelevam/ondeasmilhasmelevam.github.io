@@ -1,5 +1,54 @@
 [
  {
+  "id": "3761373661-8727",
+  "data": "2026-10-30T18:40:27Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "AZUL",
+  "cabine": "Economica",
+  "programa": "Azul Fidelidade",
+  "ida": "33.000 milhas + Taxas",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "16"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://link.dia23.com.br/r/RQj0v6g",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-8726",
+  "data": "2026-10-30T18:40:23Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "São Luís",
+  "destino_iata": "SLZ",
+  "companhia": "GOL",
+  "cabine": "Economica",
+  "programa": "Smiles",
+  "ida": "25.600 milhas + Taxas",
+  "volta": "25.600 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Dez/26",
+    "dias": "10"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Dez/26",
+    "dias": "01, 03, 05, 07, 10, 12"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/SQhOAom",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-7517",
   "data": "2026-10-30T18:27:48Z",
   "tipo": "promocao",
