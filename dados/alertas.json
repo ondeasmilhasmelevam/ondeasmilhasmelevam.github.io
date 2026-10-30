@@ -1,5 +1,44 @@
 [
  {
+  "id": "3761373661-8731",
+  "data": "2026-10-30T20:01:46Z",
+  "origem": "Aracaju",
+  "origem_iata": "AJU",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "A partir de 14.400 milhas",
+  "volta": "A partir de 14.400 milhas",
+  "datas_ida": [
+   {
+    "mes": "Dez/26",
+    "dias": "19, 20, 22, 23, 24, 27, 30"
+   },
+   {
+    "mes": "Jan/27",
+    "dias": "12, 15, 16, 20, 21, 22"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "20"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Jan/27",
+    "dias": "11, 16, 19, 20, 23, 27, 28"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "13, 28"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/AdWeyrh",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8730",
   "data": "2026-10-30T19:32:21Z",
   "origem": "Petrolina",
