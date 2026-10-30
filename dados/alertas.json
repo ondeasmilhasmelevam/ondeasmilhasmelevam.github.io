@@ -1,5 +1,209 @@
 [
  {
+  "id": "2361370250-5827",
+  "data": "2026-10-30T14:45:17Z",
+  "origem": "Tóquio",
+  "origem_iata": "HND",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Japan Airlines",
+  "cabine": "Executiva",
+  "programa": "AAdvantage",
+  "ida": "75.000 milhas + R$ 201,25",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Dez/26",
+    "dias": "13"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://www.aa.com",
+  "link_nome": "AAdvantage"
+ },
+ {
+  "id": "2361370250-5826",
+  "data": "2026-10-30T14:45:13Z",
+  "origem": "Paris",
+  "origem_iata": "CDG",
+  "destino": "Tóquio",
+  "destino_iata": "HND",
+  "companhia": "Japan Airlines",
+  "cabine": "Primeira Classe",
+  "programa": "AAdvantage",
+  "ida": "90.000 milhas + R$ 1049,74",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "02, 04, 08, 10"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://www.aa.com",
+  "link_nome": "AAdvantage"
+ },
+ {
+  "id": "2361370250-5825",
+  "data": "2026-10-30T14:45:06Z",
+  "origem": "Genebra",
+  "origem_iata": "GVA",
+  "destino": "Abu Dhabi",
+  "destino_iata": "AUH",
+  "companhia": "Etihad Airways",
+  "cabine": "Primeira Classe",
+  "programa": "AAdvantage",
+  "ida": "62.500 milhas + R$ 209,34",
+  "volta": "62.500 milhas + R$ 185,18",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "01, 02, 03, 05, 06, 07, 09, 10, 11, 12"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Nov/26",
+    "dias": "06, 07, 10, 12"
+   }
+  ],
+  "link": "https://www.aa.com",
+  "link_nome": "AAdvantage"
+ },
+ {
+  "id": "3761373661-8709",
+  "data": "2026-10-30T14:43:50Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Belém",
+  "destino_iata": "BEL",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "15.200 milhas + Taxas",
+  "volta": "15.100 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "13, 25, 26"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Nov/26",
+    "dias": "19"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "05"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/cmjy02l",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8708",
+  "data": "2026-10-30T14:43:34Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "22.600 milhas + Taxas",
+  "volta": "22.600 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "16, 19, 21, 22, 23, 24, 27"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "02, 06, 07, 08, 09, 13, 14, 15, 16, 19, 20, 21, 23, 27"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "01, 03, 04, 08, 10, 11, 12, 24, 27, 28"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "02, 15, 18, 19, 20, 21, 22"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "01, 03, 04, 06, 09, 17, 18"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "10, 12, 13, 14, 17, 19, 20, 21, 23, 25, 27, 28, 30, 31"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "01, 02, 09, 11, 13, 14, 15, 16, 17, 18, 24"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 15, 17, 18, 20, 21, 25, 30"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "01, 02, 03, 05, 06, 07, 08, 09, 10, 13, 14, 15, 16, 17, 20, 22, 23, 26, 27, 28"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "04, 05, 06, 07, 08, 09, 11, 15, 19, 21, 22"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "15, 18, 21"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "10, 11, 12, 15, 16, 17, 19, 23, 25, 26, 28, 29, 30"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "01, 09, 10, 11, 17, 18, 20, 21, 22, 23, 24"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/QZEMzSS",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8707",
+  "data": "2026-10-30T14:43:29Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "12.200 milhas + Taxas",
+  "volta": "12.200 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "25"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Mar/27",
+    "dias": "03"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/9FJ4zxE",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8706",
   "data": "2026-10-30T14:15:33Z",
   "origem": "Goiânia",
