@@ -1,5 +1,27 @@
 [
  {
+  "id": "3761373661-8659",
+  "data": "2026-10-30T09:46:59Z",
+  "origem": "Sinop",
+  "origem_iata": "OPS",
+  "destino": "Cuiabá",
+  "destino_iata": "CGB",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "24.000 milhas + Taxas",
+  "volta": "24.000 milhas + Taxas",
+  "datas_ida": [],
+  "datas_volta": [
+   {
+    "mes": "Nov/26",
+    "dias": "27"
+   }
+  ],
+  "link": "https://www.voeazul.com.br",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2361370250-5817",
   "data": "2026-10-29T22:29:04Z",
   "origem": "Rio de Janeiro",
