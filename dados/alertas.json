@@ -1,5 +1,89 @@
 [
  {
+  "id": "1290836068-7502",
+  "data": "2026-10-30T13:37:59Z",
+  "tipo": "promocao",
+  "titulo": "GANHE ATÉ 40.000 PONTOS AO SOLICITAR CARTÃO LATAM Pass ITAÚ",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "O cartão LATAM Pass Itaú oferece até 40.000 pontos bônus ao solicitar. Além disso, acumula até 5,25 milhas por dólar gasto. Também traz benefícios exclusivos e descontos em passagens e produtos.",
+  "detalhes": [
+   "até 40.000 pontos bônus ao solicitar agora",
+   "acúmulo turbinado de até 5,25 milhas por dólar gasto"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/arqbcww"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "3761373661-8698",
+  "data": "2026-10-30T13:33:38Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "11.100 milhas + Taxas",
+  "volta": "11.100 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Abr/27",
+    "dias": "03, 04, 05, 10, 15, 29"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "24"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "22, 24, 26, 27"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "06, 23, 24, 27, 30, 31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "02, 04, 17, 18, 27, 29"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "24"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/c1ya3It",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-8697",
+  "data": "2026-10-30T13:33:36Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "Recife",
+  "destino_iata": "REC",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "11.000 milhas + Taxas",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Mai/27",
+    "dias": "22"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://link.dia23.com.br/r/sd7cbYm",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-8696",
   "data": "2026-10-30T13:33:15Z",
   "origem": "Natal",
