@@ -1,5 +1,115 @@
 [
  {
+  "id": "3761373661-8675",
+  "data": "2026-10-30T11:34:25Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Belo Horizonte",
+  "destino_iata": "CNF",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.400 milhas + Taxas",
+  "volta": "10.400 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Dez/26",
+    "dias": "29"
+   },
+   {
+    "mes": "Jan/27",
+    "dias": "20, 24"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "01, 02, 07, 09 a 28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "01 a 10, 12 a 27, 29 a 31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "01 a 14, 21, 22, 24 a 28, 30"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "01 a 04, 06, 07, 09, 10, 13, 15 a 20, 22 a 24, 27, 31"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "01, 03, 05 a 07, 11 a 13, 15, 17, 19, 20"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "08, 09, 12, 13, 15 a 17, 25, 28"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Jan/27",
+    "dias": "21, 27 a 31"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "02 a 04, 07, 08, 12 a 14, 16 a 21, 23 a 28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "02 a 07, 09 a 21, 23 a 28, 30, 31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "01 a 11, 13 a 15, 20 a 24, 26, 27, 29, 30"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "01, 02, 05 a 11, 14, 16, 21, 23 a 28, 31"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "03 a 05, 07 a 12, 14, 18 a 21"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "08, 09, 13, 16, 20, 25, 26"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "01, 10, 17"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/EstY3Tc",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8674",
+  "data": "2026-10-30T11:34:04Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Foz do Iguaçu",
+  "destino_iata": "IGU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "13.900 milhas + Taxas",
+  "volta": "13.900 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Jan/27",
+    "dias": "28"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "03"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/5DNsxHZ",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8673",
   "data": "2026-10-30T11:20:25Z",
   "origem": "Recife",
