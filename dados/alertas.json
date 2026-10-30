@@ -1,5 +1,39 @@
 [
  {
+  "id": "3761373661-8705",
+  "data": "2026-10-30T14:09:31Z",
+  "origem": "Uberlândia",
+  "origem_iata": "UDI",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "21.000 milhas + Taxas",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "17"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "08"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "16"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "02"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://link.dia23.com.br/r/GoR8xyE",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-8704",
   "data": "2026-10-30T14:02:56Z",
   "origem": "Foz do Iguaçu",
@@ -10542,96 +10576,6 @@
   "datas_volta": [],
   "link": "https://www.aa.com",
   "link_nome": "AAdvantage"
- },
- {
-  "id": "2361370250-5706",
-  "data": "2026-10-28T19:04:21Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Montevidéu",
-  "destino_iata": "MVD",
-  "companhia": "GOL",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "42.000 milhas Smiles + Taxas",
-  "volta": "41.500 milhas Smiles + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Dez/26",
-    "dias": "04 a 06"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Dez/26",
-    "dias": "08, 11"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/cJuJIGl",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-5705",
-  "data": "2026-10-28T19:04:16Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "GOL",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "50.500 milhas Smiles + Taxas",
-  "volta": "50.500 milhas Smiles + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Jan/27",
-    "dias": "08, 16"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "02, 07, 08, 22"
-   },
-   {
-    "mes": "Abr/27",
-    "dias": "01, 03, 05, 08, 11, 22, 27"
-   },
-   {
-    "mes": "Mai/27",
-    "dias": "06, 10, 11, 20, 21"
-   },
-   {
-    "mes": "Jun/27",
-    "dias": "05, 09, 18, 19"
-   },
-   {
-    "mes": "Ago/27",
-    "dias": "11, 19, 20, 26, 30"
-   },
-   {
-    "mes": "Set/27",
-    "dias": "11, 16"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Fev/27",
-    "dias": "24, 25"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "12, 23"
-   },
-   {
-    "mes": "Abr/27",
-    "dias": "12, 13"
-   },
-   {
-    "mes": "Ago/27",
-    "dias": "09, 15, 19, 25, 31"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/yfLKrFz",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7476",
