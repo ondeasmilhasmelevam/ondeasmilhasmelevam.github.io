@@ -1,5 +1,296 @@
 [
  {
+  "id": "3761373661-8724",
+  "data": "2026-10-30T17:01:16Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Marabá",
+  "destino_iata": "MAB",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "10.000 pontos + R$ 124,35",
+  "volta": "13.000 pontos + R$ 108,29",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "24"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Dez/26",
+    "dias": "07"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/ZHRLZQH",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-8723",
+  "data": "2026-10-30T17:01:13Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Recife",
+  "destino_iata": "REC",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "20.000 pontos + R$ 54,45",
+  "volta": "20.000 pontos + R$ 60,54",
+  "datas_ida": [
+   {
+    "mes": "Out/26",
+    "dias": "04"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Out/26",
+    "dias": "10"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/b9SLRnv",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-8722",
+  "data": "2026-10-30T16:59:04Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Recife",
+  "destino_iata": "REC",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "25.000 milhas + R$ 55,17 Taxas",
+  "volta": "25.000 milhas + R$ 60,54 Taxas",
+  "datas_ida": [
+   {
+    "mes": "Mar/27",
+    "dias": "17, 31"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "8"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Mar/27",
+    "dias": "20, 22"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "7"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "15"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/46Y8oOR",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-8721",
+  "data": "2026-10-30T16:58:59Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "LATAM Airlines Brasil",
+  "cabine": "Econômica",
+  "programa": "LATAM",
+  "ida": "16.422 milhas + R$ 59,96 Taxas",
+  "volta": "16.651 milhas + R$ 35,75 Taxas",
+  "datas_ida": [
+   {
+    "mes": "Mar/27",
+    "dias": "2, 3, 5, 8"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Mar/27",
+    "dias": "7, 8, 12, 17"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/vRRcv8a",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-8720",
+  "data": "2026-10-30T16:58:56Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Florianópolis",
+  "destino_iata": "FLN",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.300 milhas + R$ 59,84 Taxas",
+  "volta": "10.200 milhas + R$ 59,84 Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "18, 19, 20, 21"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "23, 24, 25, 26"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/6oC1fbn",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8719",
+  "data": "2026-10-30T16:58:54Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "23.600 milhas + R$ 48,63 Taxas",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Jan/27",
+    "dias": "24, 25, 26"
+   },
+   {
+    "mes": "Jul/27",
+    "dias": "3, 4, 5, 6, 7"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://link.dia23.com.br/r/BaYils8",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8718",
+  "data": "2026-10-30T16:58:51Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "20.000 milhas + R$ 50,42 Taxas",
+  "volta": "20.000 milhas + R$ 62,62 Taxas",
+  "datas_ida": [
+   {
+    "mes": "Abr/27",
+    "dias": "17, 27"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "25"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Abr/27",
+    "dias": "21"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "4"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "1"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/XEh9JcL",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-8717",
+  "data": "2026-10-30T16:58:44Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Navegantes",
+  "destino_iata": "NVT",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "12.800 milhas + R$ 62,14 Taxas",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Dez/26",
+    "dias": "10, 13, 14"
+   },
+   {
+    "mes": "Jul/27",
+    "dias": "3, 4, 5, 6, 7"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://link.dia23.com.br/r/W9wsO9k",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8716",
+  "data": "2026-10-30T16:58:34Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Pelotas",
+  "destino_iata": "PET",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "19.900 milhas + R$ 62,14 Taxas",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Jan/27",
+    "dias": "26, 28"
+   },
+   {
+    "mes": "Jul/27",
+    "dias": "3, 6"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://link.dia23.com.br/r/x36K4AD",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8715",
+  "data": "2026-10-30T16:58:26Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Fortaleza",
+  "destino_iata": "FOR",
+  "companhia": "LATAM Airlines Brasil",
+  "cabine": "Econômica",
+  "programa": "LATAM",
+  "ida": "21.434 milhas + R$ 56,99 Taxas",
+  "volta": "23.816 milhas + R$ 59,96 Taxas",
+  "datas_ida": [
+   {
+    "mes": "Dez/26",
+    "dias": "1, 2"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Dez/26",
+    "dias": "4, 5, 6"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/WPI44AV",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2361370250-5831",
   "data": "2026-10-30T16:33:40Z",
   "origem": "Helsinque",
@@ -11877,195 +12168,6 @@
   ],
   "link": "https://link.dia23.com.br/r/vihaaWF",
   "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8557",
-  "data": "2026-10-28T17:01:23Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Ilhéus",
-  "destino_iata": "IOS",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.497 milhas + R$ 35,15 Taxas",
-  "volta": "26.117 milhas + R$ 47,70 Taxas",
-  "datas_ida": [
-   {
-    "mes": "Jan/27",
-    "dias": "24"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Jan/27",
-    "dias": "27, 28, 29, 30"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/BSqOh36",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8556",
-  "data": "2026-10-28T17:01:16Z",
-  "origem": "Campo Grande",
-  "origem_iata": "CGR",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "22.948 milhas + R$ 38,39 Taxas",
-  "volta": "23.778 milhas + R$ 62,62 Taxas",
-  "datas_ida": [
-   {
-    "mes": "Dez/26",
-    "dias": "12, 14, 15"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Dez/26",
-    "dias": "17"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/9XMwhvK",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8555",
-  "data": "2026-10-28T17:01:09Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "7.497 milhas + R$ 48,63 Taxas",
-  "volta": "7.497 milhas + R$ 62,14 Taxas",
-  "datas_ida": [
-   {
-    "mes": "Dez/26",
-    "dias": "31"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Jan/27",
-    "dias": "7"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/Q4TUL0Z",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8554",
-  "data": "2026-10-28T17:01:01Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "12.035 milhas + R$ 48,63 Taxas",
-  "volta": "11.247 milhas + R$ 35,91 Taxas",
-  "datas_ida": [
-   {
-    "mes": "Dez/26",
-    "dias": "17"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Dez/26",
-    "dias": "21, 22, 23, 24"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/Gfak7K5",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8553",
-  "data": "2026-10-28T17:00:54Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "13.997 milhas + R$ 48,63 Taxas",
-  "volta": "13.997 milhas + R$ 34,55 Taxas",
-  "datas_ida": [
-   {
-    "mes": "Dez/26",
-    "dias": "30"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Jan/27",
-    "dias": "4, 5, 7, 8"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/eJOy6xP",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8552",
-  "data": "2026-10-28T17:00:46Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.685 milhas + R$ 55,62 Taxas",
-  "volta": "11.685 milhas + R$ 35,75 Taxas",
-  "datas_ida": [
-   {
-    "mes": "Jun/27",
-    "dias": "3, 4"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Jun/27",
-    "dias": "6, 7"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/ZY0WeRn",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8551",
-  "data": "2026-10-28T17:00:39Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "São Luís",
-  "destino_iata": "SLZ",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "13.604 milhas + R$ 55,62 Taxas",
-  "volta": "20.552 milhas + R$ 49,73 Taxas",
-  "datas_ida": [
-   {
-    "mes": "Jun/27",
-    "dias": "20, 21"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Jun/27",
-    "dias": "23, 24, 25, 26, 27"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/XsRurAJ",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7472",
