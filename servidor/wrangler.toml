@@ -11,9 +11,9 @@ ORIGENS = "https://ondeasmilhasmelevam.github.io,http://localhost:8124"
 SELF = "https://oamml-assinatura.ondeasmilhasmelevam.workers.dev"
 
 # EmailJS (manda o código de entrada pelo Gmail da marca). A chave privada fica como segredo.
-EMAILJS_SERVICE = ""
-EMAILJS_TEMPLATE = ""
-EMAILJS_PUBLIC = ""
+EMAILJS_SERVICE = "ondeasmilhasmelevam"
+EMAILJS_TEMPLATE = "template_j9nq06f"
+EMAILJS_PUBLIC = "Um8E46A356PJUH4-U"
 
 [observability]
 enabled = true
