@@ -1,5 +1,31 @@
 [
  {
+  "id": "3761373661-8714",
+  "data": "2026-10-30T16:15:28Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Foz do Iguaçu",
+  "destino_iata": "IGU",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "14.000 milhas + Taxas",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Mar/27",
+    "dias": "03, 10, 18, 20"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "14"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://link.dia23.com.br/r/aOlGUwF",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2361370250-5830",
   "data": "2026-10-30T16:03:21Z",
   "origem": "Singapura",
