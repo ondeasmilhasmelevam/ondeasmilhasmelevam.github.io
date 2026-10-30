@@ -3,17 +3,17 @@
 Roda dentro do plantão dos alertas (ver .github/workflows/alertas.yml), logo
 depois de cada leitura do Telegram. Faz duas coisas, sem poluir o perfil:
 
-Stories (1080 x 1920), um alerta por story:
-  - no máximo STORIES_POR_DIA por dia (padrão 10) e um a cada STORIES_INTERVALO_MIN
-    minutos (padrão 80), só entre 8h e 22h de Brasília;
-  - só alertas das últimas 6 horas, nunca o mesmo duas vezes;
+Stories (1080 x 1920), um alerta por story, em lotes de até 5:
+  - às 8h, 12h, 16h, 20h e 21h30 de Brasília (a última pega a liberação de
+    Avios das 21h);
+  - só alertas das últimas 12 horas, nunca o mesmo duas vezes;
   - prioridade: promoção no último dia, promoção nova, passagem com menos milhas,
     alternando promoção e passagem quando dá.
 
-Dois carrosséis no feed (1080 x 1350) por dia, de Brasília:
-  - às 12h, "Melhores promoções do dia": até 6 promoções das últimas 24 horas;
-  - às 19h, "Melhores passagens do dia": até 6 passagens das últimas 24 horas,
-    com destinos diferentes;
+Carrosséis no feed (1080 x 1350), dois em cada horário (manhã 9h, tarde 14h e
+noite 19h de Brasília): um de promoções e um de passagens, até 6 cada.
+  - só alertas das últimas 24 horas que ainda não foram para o feed no dia, para
+    a sequência não repetir; passagens com destinos diferentes;
   - legenda curta com a lista, "link na bio" e hashtags.
 
 Com o segredo ANTHROPIC_API_KEY, o Claude escreve a chamada de cada imagem e a
@@ -52,11 +52,12 @@ LOGO = RAIZ / 'logo.jpeg'
 REPO = os.environ.get('GITHUB_REPOSITORY', 'ondeasmilhasmelevam/ondeasmilhasmelevam.github.io')
 GRAPH = 'https://graph.instagram.com/v21.0'
 
-POR_DIA = int(os.environ.get('STORIES_POR_DIA') or 10)
-INTERVALO_MIN = int(os.environ.get('STORIES_INTERVALO_MIN') or 80)
-HORAS_FRESCO = 6
+LOTES_STORIES = ((8, 0), (12, 0), (16, 0), (20, 0), (21, 30))  # hora e minuto de Brasília
+POR_LOTE = int(os.environ.get('STORIES_POR_LOTE') or 5)
+HORAS_FRESCO = 12
 HORARIO = (8, 22)
-CARROSSEIS = (('promocao', 12), ('passagem', 19))  # tipo e hora de Brasília
+FEED = (('manhã', 9, 0), ('tarde', 14, 0), ('noite', 19, 0))
+TIPOS_FEED = ('promocao', 'passagem')
 POR_CARROSSEL = 6
 RENOVAR_DIAS = 7
 BRASILIA = timezone(timedelta(hours=-3))
@@ -69,7 +70,7 @@ W = 1080
 PERFIL = '@ondeasmilhasmelevam'
 # Altura da imagem, onde fica a marca, o espaço do miolo e o botão "LINK NA BIO".
 STORY = {'alto': 1920, 'marca': 120, 'miolo': (490, 1500), 'botao': 1570}
-FEED = {'alto': 1350, 'marca': 50, 'miolo': (330, 1010), 'botao': 1040, 'compacto': True}
+FMT_FEED = {'alto': 1350, 'marca': 50, 'miolo': (330, 1010), 'botao': 1040, 'compacto': True}
 
 FONTES = Path(__file__).resolve().parent / 'fontes'
 _cache = {}
@@ -405,9 +406,9 @@ def miolo_promocao(a, chamada=''):
     return camada
 
 
-def miolo_capa(dia, n, tipo):
+def miolo_capa(dia, n, tipo, periodo='hoje'):
     camada, d = tela()
-    y, _ = pilula(d, 0, dia.strftime('%d/%m') + ' · HOJE', OURO)
+    y, _ = pilula(d, 0, dia.strftime('%d/%m') + ' · ' + periodo.upper(), OURO)
     y = centro(d, y + 80, ['AS MELHORES'], fonte(70, 800), ASH)
     brilho(camada, (W / 2, y + 160), 380, (226, 180, 88), 70)
     d = ImageDraw.Draw(camada)
@@ -446,8 +447,8 @@ def separar(alertas):
     return promos, passagens
 
 
-def escolher(alertas, estado, agora):
-    postados = set(estado.get('postados', []))
+def escolher(alertas, estado, agora, fora=()):
+    postados = set(estado.get('postados', [])) | set(fora)
     # Passagem cara ou péssima pelo termômetro não vira story.
     novos = [a for a in alertas if a['id'] not in postados and quando(a) >= agora - timedelta(hours=HORAS_FRESCO)
              and nivel(a) not in ('caro', 'péssimo')]
@@ -456,8 +457,8 @@ def escolher(alertas, estado, agora):
     return next((lista[0] for lista in ordem if lista), None)
 
 
-def escolher_carrossel(alertas, agora, tipo):
-    promos, passagens = separar([a for a in alertas if quando(a) >= agora - timedelta(hours=24)])
+def escolher_carrossel(alertas, agora, tipo, usados=()):
+    promos, passagens = separar([a for a in alertas if quando(a) >= agora - timedelta(hours=24) and a['id'] not in usados])
     if tipo == 'promocao':
         return promos[:POR_CARROSSEL]
     destinos, viagens = set(), []
@@ -650,46 +651,62 @@ def enviar(imagens, estado, msg):
     return [f'https://raw.githubusercontent.com/{REPO}/{sha}/stories/{nome}' for nome, _ in imagens]
 
 
-def story(alertas, estado, agora, conta, token):
-    if estado['hoje'] >= POR_DIA:
+def horario_pendente(agora, estado, chave, horarios):
+    """O último horário do dia que já chegou e ainda não foi feito; marca os anteriores como feitos."""
+    dia = agora.astimezone(BRASILIA)
+    feitos = estado.setdefault(chave, [])
+    vencidos = [f'{h:02d}:{m:02d}' for h, m in horarios if (dia.hour, dia.minute) >= (h, m)]
+    if not vencidos or vencidos[-1] in feitos:
+        return None
+    feitos.extend(v for v in vencidos if v not in feitos)
+    return vencidos[-1]
+
+
+def stories(alertas, estado, agora, conta, token):
+    lote = horario_pendente(agora, estado, 'lotes_stories', LOTES_STORIES)
+    if not lote:
         return
-    ultimo = estado.get('ultimo_em')
-    if ultimo and agora - datetime.fromisoformat(ultimo) < timedelta(minutes=INTERVALO_MIN):
-        return
-    a = escolher(alertas, estado, agora)
-    if not a:
-        return
-    chamada = (textos_ia([a]).get('chamadas') or [''])[0]
-    urls = enviar([(f"{a['id']}.jpg", imagem(a, STORY, chamada))], estado, 'Imagem do story')
+    itens = []
+    for _ in range(POR_LOTE):
+        a = escolher(alertas, estado, agora, [x['id'] for x in itens])
+        if not a:
+            break
+        itens.append(a)
+        estado['ultimo_tipo'] = a.get('tipo') or 'passagem'
+    if not itens:
+        return print(f'Stories das {lote}: nenhum alerta novo nos grupos.')
+    chamadas = textos_ia(itens).get('chamadas') or [''] * len(itens)
+    urls = enviar([(f"{a['id']}.jpg", imagem(a, STORY, c)) for a, c in zip(itens, chamadas)], estado,
+                  f'Imagens dos stories das {lote}')
     if not urls:
         return
-    estado.setdefault('postados', []).append(a['id'])
+    feitos = 0
+    for a, u in zip(itens, urls):
+        estado.setdefault('postados', []).append(a['id'])
+        try:
+            publicar(conta, token, criar(conta, token, image_url=u, media_type='STORIES'))
+            feitos += 1
+        except Exception as e:
+            print(f'::warning::Story não publicado: {e}')
     estado['postados'] = estado['postados'][-500:]
-    try:
-        publicar(conta, token, criar(conta, token, image_url=urls[0], media_type='STORIES'))
-    except Exception as e:
-        return print(f'::warning::Story não publicado: {e}')
-    estado['hoje'] += 1
+    estado['hoje'] = estado.get('hoje', 0) + feitos
     estado['ultimo_em'] = agora.isoformat()
-    estado['ultimo_tipo'] = a.get('tipo') or 'passagem'
-    print(f"Story publicado: {a.get('titulo') or a['destino']}")
+    print(f'Stories das {lote}: {feitos} publicados.')
 
 
-def carrossel(alertas, estado, agora, conta, token, tipo, hora):
+def carrossel(alertas, estado, agora, conta, token, tipo, periodo):
     dia = agora.astimezone(BRASILIA)
-    chave = f'carrossel_{tipo}_dia'
-    if dia.hour < hora or estado.get(chave) == estado['dia']:
-        return
-    itens = escolher_carrossel(alertas, agora, tipo)
+    usados = estado.setdefault('feed_usados', [])
+    itens = escolher_carrossel(alertas, agora, tipo, set(usados))
     if len(itens) < 2:
-        return
-    estado[chave] = estado['dia']  # uma tentativa por dia, mesmo se falhar
+        return print(f'Carrossel de {tipo} ({periodo}): menos de 2 alertas novos, fica para o próximo horário.')
+    usados.extend(a['id'] for a in itens)
     ia = textos_ia(itens, com_legenda=True)
     chamadas = ia.get('chamadas') or [''] * len(itens)
     texto = ia['legenda'] + RODAPE_LEGENDA if ia.get('legenda') else legenda(itens, dia, tipo)
-    telas = [(f'feed-{tipo}-0.jpg', montar(miolo_capa(dia, len(itens), tipo), FEED))]
-    telas += [(f'feed-{tipo}-{n}.jpg', imagem(a, FEED, c)) for n, (a, c) in enumerate(zip(itens, chamadas), 1)]
-    urls = enviar(telas, estado, f'Imagens do carrossel de {tipo} do dia')
+    telas = [(f'feed-{tipo}-0.jpg', montar(miolo_capa(dia, len(itens), tipo, periodo), FMT_FEED))]
+    telas += [(f'feed-{tipo}-{n}.jpg', imagem(a, FMT_FEED, c)) for n, (a, c) in enumerate(zip(itens, chamadas), 1)]
+    urls = enviar(telas, estado, f'Imagens do carrossel de {tipo} ({periodo})')
     if not urls:
         return
     try:
@@ -698,7 +715,16 @@ def carrossel(alertas, estado, agora, conta, token, tipo, hora):
         publicar(conta, token, cid)
     except Exception as e:
         return print(f'::warning::Carrossel não publicado: {e}')
-    print(f'Carrossel de {tipo} publicado com {len(itens)} oportunidades.')
+    print(f'Carrossel de {tipo} ({periodo}) publicado com {len(itens)} oportunidades.')
+
+
+def feed(alertas, estado, agora, conta, token):
+    hora = horario_pendente(agora, estado, 'horarios_feed', [(h, m) for _, h, m in FEED])
+    if not hora:
+        return
+    periodo = next(nome for nome, h, m in FEED if f'{h:02d}:{m:02d}' == hora)
+    for tipo in TIPOS_FEED:
+        carrossel(alertas, estado, agora, conta, token, tipo, periodo)
 
 
 def teste(pasta):
@@ -709,13 +735,13 @@ def teste(pasta):
     promos, passagens = separar(alertas)
     for n, a in enumerate(promos[:2] + passagens[:2]):
         imagem(a, STORY).save(pasta / f'story-{n}.jpg', quality=90)
-    for tipo, _ in CARROSSEIS:
+    for tipo in TIPOS_FEED:
         itens = escolher_carrossel(alertas, agora, tipo)
         ia = textos_ia(itens, com_legenda=True)
         chamadas = ia.get('chamadas') or [''] * len(itens)
-        montar(miolo_capa(agora.astimezone(BRASILIA), len(itens), tipo), FEED).save(pasta / f'feed-{tipo}-0.jpg', quality=90)
+        montar(miolo_capa(agora.astimezone(BRASILIA), len(itens), tipo), FMT_FEED).save(pasta / f'feed-{tipo}-0.jpg', quality=90)
         for n, (a, c) in enumerate(zip(itens, chamadas), 1):
-            imagem(a, FEED, c).save(pasta / f'feed-{tipo}-{n}.jpg', quality=90)
+            imagem(a, FMT_FEED, c).save(pasta / f'feed-{tipo}-{n}.jpg', quality=90)
         texto = ia['legenda'] + RODAPE_LEGENDA if ia.get('legenda') else legenda(itens, agora.astimezone(BRASILIA), tipo)
         (pasta / f'legenda-{tipo}.txt').write_text(texto, encoding='utf-8')
     print(pasta)
@@ -733,13 +759,14 @@ def main():
     estado = ler_json(ESTADO, {})
     hoje = agora.astimezone(BRASILIA).date().isoformat()
     if estado.get('dia') != hoje:
-        estado.update(dia=hoje, hoje=0)
+        estado.update(dia=hoje, hoje=0, lotes_stories=[], horarios_feed=[], feed_usados=[])
+    for velho in ('carrossel_dia', 'carrossel_promocao_dia', 'carrossel_passagem_dia'):
+        estado.pop(velho, None)
     token = renovar(token, estado, agora)
     if HORARIO[0] <= agora.astimezone(BRASILIA).hour < HORARIO[1]:
         alertas = ler_json(ALERTAS, [])
-        for tipo, hora in CARROSSEIS:
-            carrossel(alertas, estado, agora, conta, token, tipo, hora)
-        story(alertas, estado, agora, conta, token)
+        stories(alertas, estado, agora, conta, token)
+        feed(alertas, estado, agora, conta, token)
     guardar(estado, 'Instagram: controle atualizado')
 
 
