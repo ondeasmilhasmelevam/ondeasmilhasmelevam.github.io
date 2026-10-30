@@ -1,5 +1,27 @@
 [
  {
+  "id": "2361370250-5830",
+  "data": "2026-10-30T16:03:21Z",
+  "origem": "Singapura",
+  "origem_iata": "SIN",
+  "destino": "Abu Dhabi",
+  "destino_iata": "AUH",
+  "companhia": "Etihad Airways",
+  "cabine": "Primeira Classe",
+  "programa": "AAdvantage",
+  "ida": "50.000 milhas + R$ 278,96",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "03, 05, 11"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://www.aa.com",
+  "link_nome": "AAdvantage"
+ },
+ {
   "id": "3761373661-8713",
   "data": "2026-10-30T15:05:54Z",
   "origem": "Cuiabá",
