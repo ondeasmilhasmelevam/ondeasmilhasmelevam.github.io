@@ -12054,59 +12054,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-8563",
-  "data": "2026-10-28T17:56:30Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "16.000 milhas + Taxas",
-  "volta": "",
-  "datas_ida": [
-   {
-    "mes": "Nov/26",
-    "dias": "28"
-   },
-   {
-    "mes": "Mai/27",
-    "dias": "12"
-   }
-  ],
-  "datas_volta": [],
-  "link": "https://link.dia23.com.br/r/MjWXieh",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-8562",
-  "data": "2026-10-28T17:56:22Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "18.000 milhas + Taxas",
-  "volta": "18.000 milhas + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Jan/27",
-    "dias": "16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Jan/27",
-    "dias": "16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/ezQTPRq",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7472",
   "data": "2026-10-28T14:49:38Z",
   "tipo": "promocao",
