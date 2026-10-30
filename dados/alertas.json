@@ -1,5 +1,31 @@
 [
  {
+  "id": "2361370250-5835",
+  "data": "2026-10-30T18:14:43Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American Airlines",
+  "cabine": "Executiva",
+  "programa": "Finnair Plus",
+  "ida": "55.000 AVIOS + R$ 0,00",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "02, 04"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "09"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://link.dia23.com.br/r/PoTEU5M",
+  "link_nome": "Finnair Plus"
+ },
+ {
   "id": "3761373661-8725",
   "data": "2026-10-30T18:06:48Z",
   "origem": "Foz do Iguaçu",
@@ -11973,115 +11999,6 @@
    }
   ],
   "link": "https://link.dia23.com.br/r/F5kIS3d",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-8566",
-  "data": "2026-10-28T18:15:39Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Campina Grande",
-  "destino_iata": "CPV",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "A partir de 4.250 milhas",
-  "volta": "A partir de 4.250 milhas",
-  "datas_ida": [
-   {
-    "mes": "Nov/26",
-    "dias": "11, 12, 16, 18, 26"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Nov/26",
-    "dias": "11, 12, 14, 15, 17, 18, 21, 24, 25, 27, 26, 27, 29, 30"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/oi5sw4N",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-8565",
-  "data": "2026-10-28T18:15:35Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Fernando de Noronha",
-  "destino_iata": "FEN",
-  "companhia": "Gol",
-  "cabine": "Econômica",
-  "programa": "AAdvantage",
-  "ida": "A partir de 7.500 milhas",
-  "volta": "A partir de 7.500 milhas",
-  "datas_ida": [
-   {
-    "mes": "Nov/26",
-    "dias": "13, 22"
-   },
-   {
-    "mes": "Dez/26",
-    "dias": "07"
-   },
-   {
-    "mes": "Jan/27",
-    "dias": "17, 18, 24"
-   },
-   {
-    "mes": "Set/27",
-    "dias": "24"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Nov/26",
-    "dias": "05, 12, 15, 19, 26"
-   },
-   {
-    "mes": "Dez/26",
-    "dias": "10, 15"
-   },
-   {
-    "mes": "Set/26",
-    "dias": "23"
-   }
-  ],
-  "link": "https://www.aa.com",
-  "link_nome": "AAdvantage"
- },
- {
-  "id": "3761373661-8564",
-  "data": "2026-10-28T18:15:26Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "A partir de 9.000 milhas",
-  "volta": "A partir de 9.000 milhas",
-  "datas_ida": [
-   {
-    "mes": "Dez/26",
-    "dias": "12, 15, 17"
-   },
-   {
-    "mes": "Jan/27",
-    "dias": "09, 13, 15, 16, 30, 31"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Dez/26",
-    "dias": "01, 02, 03, 05, 06, 10, 13"
-   },
-   {
-    "mes": "Jan/27",
-    "dias": "09, 18, 28"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/4PvlLNd",
   "link_nome": "Azul Fidelidade"
  },
  {
