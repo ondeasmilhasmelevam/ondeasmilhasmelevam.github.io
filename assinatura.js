@@ -5,7 +5,7 @@ import {
   getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut,
   sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
-import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+import { getFirestore, doc, getDoc, collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
 const app = initializeApp({
   apiKey: 'AIzaSyCDdTn2JotSDdCxp2fSlWcNV0LtZJRf7Sg',
@@ -59,11 +59,39 @@ function desenharConta(estado) {
   $('#ass-conta-txt span').textContent = estado.email;
   $('#ass-email').value = estado.email;
   $('#ass-conta').classList.toggle('ok', estado.ativo);
+  const dias = estado.ativo ? Math.ceil((estado.validoAte - new Date()) / 864e5) : 0;
+  $('#ass-resumo').innerHTML = estado.validoAte ? `
+    <div><small>Situação</small><b>${estado.ativo ? 'Ativa' : 'Vencida'}</b></div>
+    <div><small>Plano</small><b>${estado.plano === 'anual' ? 'Anual' : 'Mensal'}</b></div>
+    <div><small>Válida até</small><b>${data}</b></div>
+    <div><small>Faltam</small><b>${dias} ${dias === 1 ? 'dia' : 'dias'}</b></div>` : '';
+}
+
+// Histórico: pedidos pagos deste e-mail (as regras só deixam ler os próprios).
+const FORMA = { pix: 'Pix', credit_card: 'Cartão' };
+async function desenharHistorico(email) {
+  const el = $('#ass-historico');
+  el.hidden = true;
+  if (!email) return;
+  try {
+    const s = await getDocs(query(collection(db, 'pedidos'), where('email', '==', email), where('status', '==', 'pago')));
+    const pagos = s.docs.map(d => d.data()).sort((a, b) => b.pagoEm.toMillis() - a.pagoEm.toMillis());
+    if (!pagos.length) return;
+    el.querySelector('tbody').innerHTML = pagos.map(p => `<tr>
+      <td>${p.pagoEm.toDate().toLocaleDateString('pt-BR')}</td>
+      <td>${p.plano === 'anual' ? 'Anual' : 'Mensal'}</td>
+      <td>${reais(p.preco)}</td>
+      <td>${FORMA[p.forma] || '—'}${p.parcelas > 1 ? ` em ${p.parcelas}x` : ''}</td>
+      <td>${/^https:\/\//.test(p.recibo || '') ? `<a href="${encodeURI(p.recibo)}" target="_blank" rel="noopener">Ver recibo</a>` : '—'}</td>
+    </tr>`).join('');
+    el.hidden = false;
+  } catch (e) { /* sem histórico disponível */ }
 }
 
 onAuthStateChanged(auth, async user => {
   const estado = await lerAssinatura(user);
   desenharConta(estado);
+  desenharHistorico(estado.email);
   avisar(estado);
 });
 

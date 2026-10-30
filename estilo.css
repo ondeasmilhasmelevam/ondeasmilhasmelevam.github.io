@@ -920,3 +920,15 @@ footer .badge{width:84px;height:84px;margin-bottom:14px}
 .ass-form-link{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 .ass-form-link input{flex:1 1 200px;min-width:0}
 .cta:disabled{opacity:.6;cursor:wait;transform:none}
+.ass-resumo{flex:1 1 100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.ass-resumo:empty{display:none}
+.ass-resumo div{display:grid;gap:2px;padding:12px 14px;border-radius:12px;background:var(--ink-3,var(--ink))}
+.ass-resumo small{font-size:12px;color:var(--ash-dim)}
+.ass-resumo b{font-size:17px;color:var(--rice)}
+.ass-historico{flex:1 1 100%;overflow-x:auto}
+.ass-historico[hidden]{display:none}
+.ass-historico h3{margin:6px 0 8px;font-size:15px;color:var(--rice)}
+.ass-historico table{width:100%;border-collapse:collapse;font-size:13.5px}
+.ass-historico th{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ash-dim);padding:6px 8px}
+.ass-historico td{padding:9px 8px;border-top:1px solid var(--line);color:var(--rice);white-space:nowrap}
+.ass-historico a{color:var(--ouro)}

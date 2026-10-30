@@ -19,6 +19,10 @@ service cloud.firestore {
       allow read: if logado() && meuEmail() == email;
       allow write: if false;
     }
+    match /pedidos/{nsu} {
+      allow read: if logado() && resource.data.email == meuEmail();
+      allow write: if false;
+    }
     match /privado/{doc} {
       allow read: if logado() && assinaturaAtiva();
       allow write: if false;

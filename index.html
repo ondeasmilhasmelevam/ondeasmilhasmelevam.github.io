@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=42">
+<link rel="stylesheet" href="estilo.css?v=43">
 </head>
 <body>
 <header class="bar">
@@ -405,6 +405,14 @@
       <div class="ass-conta" id="ass-conta" hidden>
         <p id="ass-conta-txt"></p>
         <button type="button" class="cta cta-b" id="ass-sair">Sair</button>
+        <div class="ass-resumo" id="ass-resumo"></div>
+        <div class="ass-historico" id="ass-historico" hidden>
+          <h3>Pagamentos</h3>
+          <table>
+            <thead><tr><th>Data</th><th>Plano</th><th>Valor</th><th>Forma</th><th>Recibo</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </div>
       <div class="ass-planos">
         <article class="ass-plano">
@@ -498,6 +506,6 @@
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
 <script src="app.js?v=45"></script>
-<script type="module" src="assinatura.js?v=2"></script>
+<script type="module" src="assinatura.js?v=3"></script>
 </body>
 </html>
