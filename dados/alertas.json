@@ -1,5 +1,292 @@
 [
  {
+  "id": "3761373661-8711",
+  "data": "2026-10-30T14:51:15Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Manaus",
+  "destino_iata": "MAO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "9.510 milhas LATAM Pass + Taxas",
+  "volta": "14.860 milhas LATAM Pass + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "19, 21"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "25, 27"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/m31IoUV",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "1290836068-7510",
+  "data": "2026-10-30T14:51:02Z",
+  "tipo": "promocao",
+  "titulo": "ALL ACCOR & EMIRATES SKYWARDS: 25% DE BÔNUS NA TRANSFERÊNCIA",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira seus pontos Reward do ALL Accor para o Emirates Skywards e ganhe 25% de bônus em milhas.",
+  "detalhes": [
+   "Conversão padrão: 4.000 pontos Reward = 2.000 milhas Skywards.",
+   "Conversão promocional com bônus: 4.000 pontos Reward = 2.500 milhas Skywards."
+  ],
+  "parceiros": "ALL Accor e Emirates Skywards",
+  "validade": "30/11/2026",
+  "links": [
+   "https://all.accor.com/a/en/loyalty-program/partners/airlines/emirates.html"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7509",
+  "data": "2026-10-30T14:50:57Z",
+  "tipo": "promocao",
+  "titulo": "ASSINATURA CLUBE LIVELO PREMIUM: ATÉ 376.000 PONTOS",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Assine o Clube Livelo Premium 20.000 e acumule até 376.000 pontos em 12 meses com condições promocionais.",
+  "detalhes": [
+   "Plano Anual: até 376.000 pontos acumulados.",
+   "Plano Mensal: até 370.000 pontos acumulados."
+  ],
+  "parceiros": "Livelo",
+  "validade": "30/10/2026",
+  "links": [
+   "https://www.livelo.com.br/clube"
+  ],
+  "ate": "2026-10-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7508",
+  "data": "2026-10-30T14:50:52Z",
+  "tipo": "promocao",
+  "titulo": "LIVELO & SAM'S CLUB: ATÉ 84 PONTOS POR REAL NA ASSINATURA",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Sam's Club através da Livelo com desconto na anuidade e pontuação bonificada agressiva.",
+  "detalhes": [
+   "Até 84 pontos por real na anuidade para assinantes do Clube Livelo.",
+   "14 pontos por real para demais clientes.",
+   "50% de desconto na anuidade do primeiro ano."
+  ],
+  "parceiros": "Livelo e Sam's Club",
+  "validade": "02/11/2026",
+  "links": [
+   "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club/WMB"
+  ],
+  "ate": "2026-11-02T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7507",
+  "data": "2026-10-30T14:50:49Z",
+  "tipo": "promocao",
+  "titulo": "C6 BANK & SMILES: ATÉ 70% DE BÔNUS NA TRANSFERÊNCIA",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Transfira pontos C6 Átomos para a Smiles com até 70% de bônus conforme a sua categoria no programa.",
+  "detalhes": [
+   "70% de bônus para assinantes do Clube Smiles ou clientes Diamante/Magno.",
+   "40% de bônus para demais clientes."
+  ],
+  "parceiros": "C6 Bank e Smiles",
+  "validade": "31/10/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanhas/bancos-C6-bank-10-2026"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7506",
+  "data": "2026-10-30T14:50:45Z",
+  "tipo": "promocao",
+  "titulo": "ESFERA: BONIFICAÇÃO DE 200% DE BÔNUS SOBRE OS PLANOS ELEGÍVEIS",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Assine ou atualize seu plano do Clube Esfera e garanta até 40.000 pontos bônus distribuídos em 12 meses.",
+  "detalhes": [
+   "Bonificação de 200% de bônus sobre os planos elegíveis.",
+   "Planos Pro, Master, VIP e Exclusive."
+  ],
+  "parceiros": "Esfera",
+  "validade": "30/10/2026",
+  "links": [
+   "https://www.esfera.com.vc/clube"
+  ],
+  "ate": "2026-10-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7505",
+  "data": "2026-10-30T14:50:41Z",
+  "tipo": "promocao",
+  "titulo": "ASSINATURA CLUBE LIVELO: ATÉ 25.000 PONTOS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Livelo Essencial e acumule até 25.000 pontos em 12 meses utilizando o cupom promocional.",
+  "detalhes": [
+   "Plano anual à vista: 25.000 pontos .",
+   "Plano mensal: 24.000 pontos ."
+  ],
+  "parceiros": "Livelo",
+  "validade": "02/11/2026",
+  "links": [
+   "https://www.livelo.com.br/clube"
+  ],
+  "ate": "2026-11-02T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7504",
+  "data": "2026-10-30T14:50:38Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFERÊNCIA FLYING BLUE: 20% DE BÔNUS",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Transfira pontos Livelo para o programa Flying Blue com paridade diferenciada e ganhe 20% de bônus.",
+  "detalhes": [
+   "Paridade de transferência de 3,5:1.",
+   "20% de bônus nas milhas transferidas."
+  ],
+  "parceiros": "Livelo e Flying Blue",
+  "validade": "31/10/2026",
+  "links": [
+   "https://www.livelo.com.br/livelo-para-parceiros/flying-blue/LIVK0007"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7503",
+  "data": "2026-10-30T14:50:34Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFERÊNCIA SMILES: ATÉ 70% DE BÔNUS + 75% OFF EM COMPRA DE MILHAS",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Transfira pontos dos cartões de crédito parceiros para a Smiles e garanta até 70% de bônus, além de um cupom exclusivo de 75% de desconto para adquirir novas milhas.",
+  "detalhes": [
+   "70% de bônus para assinantes do Clube Smiles e/ou clientes Diamante.",
+   "40% de bônus para demais clientes Smiles.",
+   "Cupom de 75% OFF para compra de milhas Smiles."
+  ],
+  "parceiros": "Bancos parceiros da Smiles e PaGol",
+  "validade": "30/10/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanhas/bancos-28-10-2026"
+  ],
+  "ate": "2026-10-30T23:59:59-03:00"
+ },
+ {
+  "id": "3761373661-8710",
+  "data": "2026-10-30T14:50:17Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "SDU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "A partir de 22.100 milhas",
+  "volta": "A partir de 22.100 milhas",
+  "datas_ida": [
+   {
+    "mes": "Dez/26",
+    "dias": "01, 05, 06, 07, 09"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "20, 21, 22, 23, 27"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "20"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "03, 12, 13, 25"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "02, 10, 22, 23, 24"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "07"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Dez/26",
+    "dias": "02, 03, 05, 06, 07, 08, 09, 10, 12"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "17, 19, 20, 22, 24, 26, 27"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "06, 11, 16, 18, 23"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "01, 08, 09, 23"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "05, 19"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "04, 16"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/yrw9NoO",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-5828",
+  "data": "2026-10-30T14:47:29Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Fort Lauderdale",
+  "destino_iata": "FLL",
+  "companhia": "Azul",
+  "cabine": "Executiva",
+  "programa": "Azul Fidelidade",
+  "ida": "430.000 milhas + Taxas",
+  "volta": "420.000 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Abr/27",
+    "dias": "1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 29, 30"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "1, 2, 3, 4, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 29, 30, 31"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Abr/27",
+    "dias": "8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 29, 30"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/HXsvgkQ",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2361370250-5827",
   "data": "2026-10-30T14:45:17Z",
   "origem": "Tóquio",
