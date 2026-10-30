@@ -12530,57 +12530,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-8498",
-  "data": "2026-10-28T11:26:01Z",
-  "origem": "Uberlândia",
-  "origem_iata": "UDI",
-  "destino": "Florianópolis",
-  "destino_iata": "FLN",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 17.400 milhas",
-  "volta": "A partir de 17.400 milhas",
-  "datas_ida": [
-   {
-    "mes": "Fev/27",
-    "dias": "19, 21, 24, 28"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "02, 03, 05, 09, 10, 16, 19, 23, 31"
-   },
-   {
-    "mes": "Abr/27",
-    "dias": "01, 07"
-   },
-   {
-    "mes": "Mai/27",
-    "dias": "12"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Fev/27",
-    "dias": "19, 23, 26"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "01, 02, 06, 07, 17, 20"
-   },
-   {
-    "mes": "Abr/27",
-    "dias": "07, 14"
-   },
-   {
-    "mes": "Mai/27",
-    "dias": "17, 22, 24"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/aeGttbM",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7449",
   "data": "2026-10-26T20:23:05Z",
   "tipo": "promocao",
