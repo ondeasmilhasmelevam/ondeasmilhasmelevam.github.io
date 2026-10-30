@@ -1,5 +1,32 @@
 [
  {
+  "id": "3761373661-8733",
+  "data": "2026-10-30T21:00:33Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "23.900 milhas + Taxas",
+  "volta": "23.900 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Abr/27",
+    "dias": "06, 08"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Abr/27",
+    "dias": "13, 15"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/Zs3dVxk",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8732",
   "data": "2026-10-30T20:55:39Z",
   "origem": "Campo Grande",
