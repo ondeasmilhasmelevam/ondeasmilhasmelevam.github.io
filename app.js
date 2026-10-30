@@ -112,7 +112,10 @@
     return false;
   }
 
+  let planilhaLidaEm = null;
   function mostrarStatus(origem, quando) {
+    planilhaLidaEm = quando || null;
+    try { mostrarAtualizado(paginaAtual); } catch (e) { /* menu ainda não montado */ }
     const el = $('#status');
     const hora = quando ? quando.toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '';
     el.className = 'foot-status ' + (origem === 'vivo' ? 'vivo' : 'velho');
@@ -1145,6 +1148,63 @@
   $('#guia-programa').addEventListener('change', e => { filtroGuia.programa = e.target.value; mostrarGuia(); });
   $('#canc-programa').addEventListener('change', mostrarCancelamento);
 
+  // Mapa de transferências (dados/transferencias.json): de onde os pontos saem e para onde vão.
+  let transf = null;
+  const filtroTransf = { modo: 'origem', origem: '', destino: '' };
+  const destinoLinha = (d, rotulo) => `<li>
+      <span class="transf-nome"><b>${esc(rotulo)}</b>${d.obs ? `<small>${esc(d.obs)}</small>` : ''}</span>
+      <span class="transf-prop">${esc(d.proporcao)}</span>
+      <span class="transf-bonus">${esc(d.bonus)}</span>
+    </li>`;
+  function mostrarTransferencias() {
+    const { modo } = filtroTransf;
+    document.querySelectorAll("#transf-modo button").forEach(b => b.setAttribute('aria-pressed', String(b.dataset.modo === modo)));
+    const destinos = [...new Set(transf.origens.flatMap(o => o.destinos.map(d => d.programa)))].sort((a, b) => a.localeCompare(b, 'pt-BR'));
+    const nomes = modo === 'origem' ? transf.origens.map(o => o.nome) : destinos;
+    const atual = modo === 'origem' ? (filtroTransf.origem ||= nomes[0]) : (filtroTransf.destino ||= 'Smiles');
+    $('#transf-chips').innerHTML = nomes.map(n => `<button type="button" data-v="${esc(n)}" aria-pressed="${n === atual}">${esc(n)}</button>`).join('');
+    const cab = '<li class="transf-cab"><span>Programa</span><span>Proporção</span><span>Bônus que costuma aparecer</span></li>';
+    if (modo === 'origem') {
+      const o = transf.origens.find(x => x.nome === atual);
+      $('#transf-resultado').innerHTML = `<article class="transf-card">
+        <header><p class="eyebrow">${esc(o.banco)}</p><h3>${esc(o.nome)}</h3><p>${esc(o.resumo)}</p></header>
+        <ul class="transf-lista">${cab}${o.destinos.map(d => destinoLinha(d, d.programa)).join('')}</ul>
+      </article>`;
+    } else {
+      const chegam = transf.origens.map(o => [o, o.destinos.find(d => d.programa === atual)]).filter(([, d]) => d);
+      const sem = transf.sem_banco.find(x => x.programa === atual);
+      $('#transf-resultado').innerHTML = `<article class="transf-card">
+        <header><p class="eyebrow">Como chegar em</p><h3>${esc(atual)}</h3>
+          <p>${chegam.length} ${chegam.length === 1 ? 'programa transfere' : 'programas transferem'} para cá.${sem ? ` ${esc(sem.caminho)}` : ''}</p></header>
+        <ul class="transf-lista">${cab.replace('Programa', 'Seus pontos em')}${chegam.map(([o, d]) => destinoLinha(d, o.nome)).join('')}</ul>
+      </article>`;
+    }
+  }
+  async function desenharTransferencias() {
+    try {
+      const r = await fetch('dados/transferencias.json', { cache: 'no-store' });
+      transf = r.ok ? await r.json() : null;
+    } catch (e) { transf = null; }
+    if (!transf || !transf.origens) { $('#transferencias').hidden = true; return; }
+    $('#transf-data').textContent = `Conferido em ${new Date(transf.conferido + 'T12:00:00').toLocaleDateString('pt-BR')}. ${transf.aviso}`;
+    $('#transf-extras').innerHTML = `<div class="termo-bloco">
+        <h3>Programas que nenhum banco do Brasil alcança direto</h3>
+        <ul class="transf-sem">${transf.sem_banco.map(x => `<li><b>${esc(x.programa)}</b><span>${esc(x.caminho)}</span></li>`).join('')}</ul>
+      </div>
+      <div class="termo-bloco">
+        <h3>Cuidado: estes não viram milha</h3>
+        <ul class="transf-sem">${transf.nao_vira_milha.map(t => { const [a, ...b] = t.split(':'); return `<li><b>${esc(a)}</b><span>${esc(b.join(':').trim())}</span></li>`; }).join('')}</ul>
+      </div>`;
+    mostrarTransferencias();
+  }
+  $('#transf-modo').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { filtroTransf.modo = b.dataset.modo; mostrarTransferencias(); } });
+  $('#transf-chips').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    filtroTransf[filtroTransf.modo] = b.dataset.v;
+    mostrarTransferencias();
+  });
+
   // Passagens e promoções dos grupos de alertas do Telegram (ferramentas/alertas.py).
   // O arquivo já vem só com o que ainda vale; aqui o prazo é conferido de novo,
   // para o item sumir na hora certa mesmo se a atualização atrasar.
@@ -1671,10 +1731,46 @@
     });
     document.title = pagina === 'simulador' || !ativa ? TITULO : `${ativa.textContent} · Onde as Milhas Me Levam`;
     abrirMenu(false);
+    mostrarAtualizado(pagina);
     if (!rolar) return;
     if (el && !el.hasAttribute('data-pagina') && el.id !== 'topo') el.scrollIntoView({ block: 'start' });
     else scrollTo(0, 0);
   }
+  // "Atualizado ..." de cada página: a data do arquivo de dados dela no site.
+  const ARQUIVO_DA_PAGINA = {
+    passagens: 'dados/alertas.json', termometro: 'dados/termometro.json', guia: 'dados/guia.json',
+    transferencias: 'dados/transferencias.json', novidades: 'dados/noticias.json',
+    restaurantes: 'restaurantes.js', quanto: 'dados/precos-milhas.csv', comprar: 'precos.js', contatos: 'dados/contatos.csv'
+  };
+  const datasArquivo = {};
+  function quandoTxt(d) {
+    const dia = x => x.toLocaleDateString('pt-BR');
+    const hora = d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }).replace(':', 'h');
+    const ontem = new Date(Date.now() - 864e5);
+    if (dia(d) === dia(new Date())) return `hoje às ${hora}`;
+    if (dia(d) === dia(ontem)) return `ontem às ${hora}`;
+    return `em ${d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' })} às ${hora}`;
+  }
+  async function mostrarAtualizado(pagina) {
+    const el = $('#atualizado');
+    let d = null;
+    if (pagina === 'simulador' || pagina === 'ranking' || pagina === 'como') d = planilhaLidaEm;
+    else if (ARQUIVO_DA_PAGINA[pagina]) {
+      const arq = ARQUIVO_DA_PAGINA[pagina];
+      if (!(arq in datasArquivo)) {
+        try {
+          const r = await fetch(arq, { method: 'HEAD', cache: 'no-store' });
+          const lm = r.headers.get('last-modified');
+          datasArquivo[arq] = lm ? new Date(lm) : null;
+        } catch (e) { datasArquivo[arq] = null; }
+      }
+      d = datasArquivo[arq];
+    }
+    if (pagina !== paginaAtual) return;
+    el.hidden = !d || isNaN(d);
+    if (!el.hidden) el.textContent = `Atualizado ${quandoTxt(d)}`;
+  }
+
   // Menu: o botão abre e fecha a lista; clicar fora, apertar Esc ou escolher a página fecha.
   function abrirMenu(abrir) {
     $('#menu').classList.toggle('aberto', abrir);
@@ -1702,6 +1798,7 @@
     desenharQuanto();
     desenharTermometro();
     desenharGuia();
+    desenharTransferencias();
     desenharCombos();
     setInterval(() => { if (!document.hidden) desenharPassagens(); else mostrarPassagens(); }, 3 * 60e3);
     desenharAvisos();

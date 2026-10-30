@@ -1,0 +1,232 @@
+{
+ "conferido": "2026-10-30",
+ "aviso": "As regras de transferência mudam com frequência. Antes de transferir, confira a proporção e o bônus na tela do programa.",
+ "origens": [
+  {
+   "nome": "Livelo", "banco": "Banco do Brasil e Bradesco",
+   "resumo": "A maior lista de destinos do Brasil. Nacionais em 1:1; internacionais de 3:1 a 4,5:1. Não chega na AAdvantage, Emirates, Delta, Aeroplan, LifeMiles nem Turkish, e a TAP só para o Centurion.",
+   "destinos": [
+    {"programa": "Azul Fidelidade", "proporcao": "1:1", "bonus": "70% a 130%, quase toda semana", "obs": "mínimo de 1.000 pontos; no Clube Livelo cai na hora"},
+    {"programa": "Smiles", "proporcao": "1:1", "bonus": "80% a 100% nas promoções", "obs": "mínimo de 10.000 (1.000 nos Clubes Especial e Premium)"},
+    {"programa": "LATAM Pass", "proporcao": "1:1", "bonus": "25% a 30%", "obs": "mínimo de 12.000 (1.000 nos Clubes Especial e Premium)"},
+    {"programa": "TAP Miles&Go", "proporcao": "1:1 só Centurion Bradesco", "bonus": "sem campanha aberta", "obs": "fechado para o público geral desde ago/2024"},
+    {"programa": "Iberia Plus", "proporcao": "3,5:1", "bonus": "raro", "obs": "mínimo de 3.500 pontos (1.000 Avios); os Avios passam 1:1 para British e Qatar"},
+    {"programa": "British Airways Club", "proporcao": "3,5:1", "bonus": "raro", "obs": "mínimo de 3.500 pontos"},
+    {"programa": "Qatar Privilege Club", "proporcao": "3:1", "bonus": "sem histórico", "obs": "direto, e melhor que passar pela Iberia ou British"},
+    {"programa": "Flying Blue", "proporcao": "3,5:1", "bonus": "20% a 40%, algumas vezes por ano", "obs": "mínimo de 3.500 pontos"},
+    {"programa": "Etihad Guest", "proporcao": "4,5:1", "bonus": "20% a 40% em out/2026", "obs": "a proporção piorou (era 3,5:1)"},
+    {"programa": "United MileagePlus", "proporcao": "4:1", "bonus": "raro", "obs": "a pior proporção da lista"},
+    {"programa": "Copa ConnectMiles", "proporcao": "3:1", "bonus": "raro", "obs": ""},
+    {"programa": "Aeroméxico Rewards", "proporcao": "3,5:1", "bonus": "raro", "obs": ""},
+    {"programa": "ALL Accor", "proporcao": "3,5:1", "bonus": "cerca de 20%, de vez em quando", "obs": "mínimo de 7.000 pontos Livelo"}
+   ]
+  },
+  {
+   "nome": "Esfera", "banco": "Santander",
+   "resumo": "Mínimo padrão de 30.000 pontos (15.000 para a Iberia; menor no Clube Esfera). Nacionais caem em até 3 dias úteis, internacionais em até 7. O Clube melhora a proporção de TAP, Turkish, Flying Blue e Aeroméxico. Não chega na AAdvantage, Emirates nem Aeroplan; a Etihad saiu em set/2026.",
+   "destinos": [
+    {"programa": "Azul Fidelidade", "proporcao": "1:1", "bonus": "110% a 120%", "obs": "Pontos + Dinheiro a partir de 300 pontos"},
+    {"programa": "Smiles", "proporcao": "1:1", "bonus": "70% a 80%, com frequência", "obs": ""},
+    {"programa": "LATAM Pass", "proporcao": "1:1", "bonus": "campanhas menos frequentes", "obs": ""},
+    {"programa": "Iberia Plus", "proporcao": "2:1", "bonus": "bônus aparecem em levas", "obs": "mínimo de 15.000 pontos"},
+    {"programa": "TAP Miles&Go", "proporcao": "2,7:1 (2,2:1 no Clube)", "bonus": "vem como proporção promocional", "obs": "máximo de 100.000 milhas por vez"},
+    {"programa": "Turkish Miles&Smiles", "proporcao": "4,5:1 (3,8:1 no Clube)", "bonus": "parceria nova, sem histórico", "obs": ""},
+    {"programa": "Copa ConnectMiles", "proporcao": "3:1", "bonus": "45% a 65%", "obs": ""},
+    {"programa": "Flying Blue", "proporcao": "3,5:1 (3:1 no Clube)", "bonus": "vem como proporção menor, não como %", "obs": ""},
+    {"programa": "Aeroméxico Rewards", "proporcao": "3,5:1 (3,3:1 no Clube)", "bonus": "sem campanha em 2026", "obs": ""},
+    {"programa": "ALL Accor", "proporcao": "3,5:1", "bonus": "eventual", "obs": ""}
+   ]
+  },
+  {
+   "nome": "Pontos Itaú", "banco": "Itaú",
+   "resumo": "Poucos destinos, todos aéreos e todos 1:1. Não transfere para hotel. Os cartões Azul Itaú e LATAM Pass Itaú acumulam direto no programa da companhia.",
+   "destinos": [
+    {"programa": "Azul Fidelidade", "proporcao": "1:1", "bonus": "110% a 130%, quase todo mês", "obs": "o bônus cheio costuma pedir Clube Azul"},
+    {"programa": "Smiles", "proporcao": "1:1", "bonus": "70% a 80%", "obs": "cai em até 2 horas"},
+    {"programa": "LATAM Pass", "proporcao": "1:1", "bonus": "25%", "obs": "cai em até 2 horas"},
+    {"programa": "TAP Miles&Go", "proporcao": "1:1", "bonus": "sem campanha recente", "obs": "sem mínimo; um dos poucos 1:1 para a TAP no Brasil"}
+   ]
+  },
+  {
+   "nome": "C6 Átomos", "banco": "C6 Bank",
+   "resumo": "Os Átomos não expiram e também vão para a Livelo, o que libera as campanhas e os parceiros internacionais dela.",
+   "destinos": [
+    {"programa": "Azul Fidelidade", "proporcao": "1:1", "bonus": "até 120% nas campanhas da Azul", "obs": "mínimo de 100 pontos"},
+    {"programa": "Smiles", "proporcao": "1:1", "bonus": "até 80%", "obs": "mínimo de 1.000"},
+    {"programa": "LATAM Pass", "proporcao": "1:1", "bonus": "25%", "obs": ""},
+    {"programa": "TAP Miles&Go", "proporcao": "1:1", "bonus": "sem campanha", "obs": "mínimo alto: 50.000"},
+    {"programa": "Livelo", "proporcao": "1:1", "bonus": "depois valem as campanhas da Livelo", "obs": ""}
+   ]
+  },
+  {
+   "nome": "Inter Loop", "banco": "Banco Inter",
+   "resumo": "Só dois destinos aéreos. Não tem LATAM, TAP, Iberia nem Accor. Às vezes vende pontos avulsos, que viram milha barata na Azul.",
+   "destinos": [
+    {"programa": "Azul Fidelidade", "proporcao": "1:1", "bonus": "110% a 120%", "obs": "mínimo de 5.000"},
+    {"programa": "Smiles", "proporcao": "1:1", "bonus": "70% a 80%", "obs": "só clientes Prime e Win; mínimo de 10.000"}
+   ]
+  },
+  {
+   "nome": "BTG Pactual", "banco": "BTG Pactual",
+   "resumo": "O cliente escolhe no app entre cashback e pontos. Também transfere 1:1 para a Livelo.",
+   "destinos": [
+    {"programa": "Azul Fidelidade", "proporcao": "1:1", "bonus": "até 110% a 120%", "obs": ""},
+    {"programa": "Smiles", "proporcao": "1:1", "bonus": "até 80%", "obs": "mínimo de 10.000"},
+    {"programa": "LATAM Pass", "proporcao": "1:1", "bonus": "25%", "obs": "mínimo de 10.000"},
+    {"programa": "TAP Miles&Go", "proporcao": "1,5:1 a 2:1, conforme o cartão", "bonus": "10% a 20% já vistos", "obs": ""},
+    {"programa": "Livelo", "proporcao": "1:1", "bonus": "depois valem as campanhas da Livelo", "obs": ""}
+   ]
+  },
+  {
+   "nome": "Nubank", "banco": "Nubank Ultravioleta e Croma",
+   "resumo": "Só Ultravioleta e Croma transferem para companhias aéreas. O Nubank Rewards antigo não transfere.",
+   "destinos": [
+    {"programa": "LATAM Pass", "proporcao": "1:1", "bonus": "10% fixo no Modo LATAM Pass", "obs": "Modo LATAM Pass só no Ultravioleta"},
+    {"programa": "Smiles", "proporcao": "1:1", "bonus": "40% a 70% nas campanhas", "obs": "não dá para desfazer a transferência"},
+    {"programa": "Livelo", "proporcao": "1:1", "bonus": "10% já visto", "obs": "de lá segue para LATAM, Smiles, Azul e internacionais"},
+    {"programa": "Azul Fidelidade", "proporcao": "1:1", "bonus": "até 110% a 120%", "obs": "no Croma ainda aparece como \"em breve\""}
+   ]
+  },
+  {
+   "nome": "Nomad", "banco": "Nomad Explorer",
+   "resumo": "Para chegar na LATAM Pass, passe pela Livelo (Nomad → Livelo → LATAM). Os pontos também viram cashback em dólar.",
+   "destinos": [
+    {"programa": "Livelo", "proporcao": "1:1", "bonus": "sem bônus conhecido", "obs": "caminho para a LATAM Pass"},
+    {"programa": "Smiles", "proporcao": "1:1", "bonus": "sem campanha conhecida", "obs": "pedido pelo app"},
+    {"programa": "Azul Fidelidade", "proporcao": "veja no app", "bonus": "sem campanha conhecida", "obs": ""}
+   ]
+  },
+  {
+   "nome": "Sicoob Coopera", "banco": "Sicoob",
+   "resumo": "Mínimo de 30.000 pontos para tudo. Vai para a Livelo, o que libera as campanhas dela. Sem TAP.",
+   "destinos": [
+    {"programa": "Azul Fidelidade", "proporcao": "1:1", "bonus": "até 120%", "obs": ""},
+    {"programa": "Smiles", "proporcao": "1:1", "bonus": "até 80%", "obs": ""},
+    {"programa": "LATAM Pass", "proporcao": "1:1", "bonus": "25%", "obs": ""},
+    {"programa": "Livelo", "proporcao": "1:1", "bonus": "depois valem as campanhas da Livelo", "obs": ""}
+   ]
+  },
+  {
+   "nome": "Sicredi", "banco": "Sicredi",
+   "resumo": "Sem TAP e sem Livelo. A transferência para a Smiles é pedida na central e pode demorar até 10 dias úteis: cuidado com o prazo do bônus.",
+   "destinos": [
+    {"programa": "Azul Fidelidade", "proporcao": "1:1", "bonus": "até 120%", "obs": "múltiplos de 10.000"},
+    {"programa": "Smiles", "proporcao": "1:1", "bonus": "70% a 80%", "obs": "pela central de atendimento"},
+    {"programa": "LATAM Pass", "proporcao": "1:1", "bonus": "25%", "obs": "múltiplos de 10.000"}
+   ]
+  },
+  {
+   "nome": "BRB Curtaí / DUX", "banco": "BRB",
+   "resumo": "Curtaí é o programa dos cartões BRB; DUX é o do BRB DUX Visa Infinite.",
+   "destinos": [
+    {"programa": "Smiles", "proporcao": "1:1", "bonus": "até 80%", "obs": "mínimo de 10.000"},
+    {"programa": "LATAM Pass", "proporcao": "1:1", "bonus": "sem campanha própria", "obs": "mínimo de 10.000"},
+    {"programa": "TAP Miles&Go", "proporcao": "2,7:1 (2:1 a 2,3:1 no Clube)", "bonus": "sem campanha", "obs": "mínimo de 20.000"},
+    {"programa": "Azul Fidelidade", "proporcao": "veja na tela", "bonus": "campanhas gerais até 120%", "obs": "pelo DUX"},
+    {"programa": "ALL Accor", "proporcao": "4:1", "bonus": "sem histórico", "obs": ""},
+    {"programa": "Livelo", "proporcao": "veja na tela", "bonus": "depois valem as campanhas da Livelo", "obs": ""}
+   ]
+  },
+  {
+   "nome": "Genial", "banco": "Genial Investimentos",
+   "resumo": "Os pontos se chamam gCoins e cada um vale R$ 1, por isso a proporção é diferente.",
+   "destinos": [
+    {"programa": "Smiles", "proporcao": "1 gCoin = 25 milhas", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Azul Fidelidade", "proporcao": "1 gCoin = 25 pontos", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Livelo", "proporcao": "veja no app", "bonus": "depois valem as campanhas da Livelo", "obs": ""}
+   ]
+  },
+  {
+   "nome": "Revolut (RevPoints)", "banco": "Revolut",
+   "resumo": "Muitos destinos internacionais, mas sem transferência bonificada: LATAM, Smiles e os demais não costumam ter campanha de bônus.",
+   "destinos": [
+    {"programa": "LATAM Pass", "proporcao": "1:1", "bonus": "sem bônus", "obs": ""},
+    {"programa": "Smiles", "proporcao": "1:1", "bonus": "sem bônus", "obs": "sem mínimo; cai em até 24 horas"},
+    {"programa": "TAP Miles&Go", "proporcao": "1:1", "bonus": "sem bônus", "obs": "quase nenhum banco do Brasil chega na TAP"},
+    {"programa": "Iberia Plus", "proporcao": "1:1", "bonus": "sem bônus", "obs": "entrada para os Avios"},
+    {"programa": "British Airways Club", "proporcao": "1:1", "bonus": "sem bônus", "obs": "conta nova espera 30 dias para mandar adiante"},
+    {"programa": "Qatar Privilege Club", "proporcao": "1:1", "bonus": "sem bônus", "obs": ""},
+    {"programa": "Aegean Miles+Bonus", "proporcao": "1:1", "bonus": "sem bônus", "obs": ""},
+    {"programa": "Flying Blue", "proporcao": "2:1", "bonus": "sem bônus", "obs": ""},
+    {"programa": "Avianca LifeMiles", "proporcao": "3:2", "bonus": "sem bônus", "obs": ""},
+    {"programa": "Turkish Miles&Smiles", "proporcao": "2:1", "bonus": "sem bônus", "obs": "era 1:1 até jul/2026"},
+    {"programa": "Etihad Guest", "proporcao": "2:1", "bonus": "campanha da Etihad até 40% já vista", "obs": "era 1:1 até jul/2026"},
+    {"programa": "SAS EuroBonus", "proporcao": "2:1", "bonus": "sem bônus", "obs": ""},
+    {"programa": "Singapore KrisFlyer", "proporcao": "3:1", "bonus": "sem bônus", "obs": "era 1:1 até jun/2026"},
+    {"programa": "Emirates Skywards", "proporcao": "4:1", "bonus": "sem bônus", "obs": "o único banco que chega na Emirates a partir do Brasil"}
+   ]
+  },
+  {
+   "nome": "ALL Accor", "banco": "Rede Accor (hotéis)",
+   "resumo": "Programa de hotel que funciona como ponte para companhias que nenhum banco brasileiro alcança, como Qantas, Emirates, JAL, KrisFlyer e Aeroplan. Transfere em blocos de 2.000 pontos.",
+   "destinos": [
+    {"programa": "Qantas Frequent Flyer", "proporcao": "0,8:1", "bonus": "sem campanha", "obs": "a melhor da lista: 2.000 ALL viram 2.500 pontos"},
+    {"programa": "Flying Blue", "proporcao": "1:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Iberia Plus", "proporcao": "1:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Air Europa SUMA", "proporcao": "1:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Virgin Velocity", "proporcao": "1:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "PhoenixMiles", "proporcao": "1,25:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Qatar Privilege Club", "proporcao": "1,33:1", "bonus": "sem campanha", "obs": "caminho curto para a Qatar"},
+    {"programa": "Finnair Plus", "proporcao": "1,54:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Aeroplan", "proporcao": "2:1", "bonus": "sem campanha", "obs": "um dos poucos caminhos para o Aeroplan"},
+    {"programa": "Emirates Skywards", "proporcao": "2:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Singapore KrisFlyer", "proporcao": "2:1", "bonus": "50% já visto", "obs": ""},
+    {"programa": "LATAM Pass", "proporcao": "2:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Smiles", "proporcao": "2:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "TAP Miles&Go", "proporcao": "2:1", "bonus": "sem campanha", "obs": "alternativa a quem perdeu a Livelo"},
+    {"programa": "Avianca LifeMiles", "proporcao": "2:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Delta SkyMiles", "proporcao": "2:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "British Airways Club", "proporcao": "2:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Etihad Guest", "proporcao": "2:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Cathay Asia Miles", "proporcao": "2:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "JAL Mileage Bank", "proporcao": "2:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Korean SKYPASS", "proporcao": "2:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Aegean Miles+Bonus", "proporcao": "2:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Aeroméxico Rewards", "proporcao": "2:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "Thai Royal Orchid Plus", "proporcao": "2:1", "bonus": "sem campanha", "obs": ""},
+    {"programa": "United MileagePlus", "proporcao": "2:1", "bonus": "sem campanha", "obs": ""}
+   ]
+  },
+  {
+   "nome": "XP", "banco": "XP Visa Infinite",
+   "resumo": "Não vai direto para nenhuma companhia: o único destino é a Livelo, sem taxa e sem mínimo. Pontos parados por 24 meses viram investimento.",
+   "destinos": [
+    {"programa": "Livelo", "proporcao": "1:1", "bonus": "depois valem as campanhas da Livelo", "obs": ""}
+   ]
+  },
+  {
+   "nome": "Marriott Bonvoy", "banco": "Rede Marriott (hotéis)",
+   "resumo": "Programa de hotel que vira milha em muitas companhias, sem depender de banco brasileiro. Transfira sempre em blocos de 60.000 pontos: ganham-se 5.000 milhas extras e a proporção cai de 3:1 para 2,4:1.",
+   "destinos": [
+    {"programa": "LATAM Pass", "proporcao": "3:1 (2,4:1 em blocos de 60.000)", "bonus": "o extra é fixo", "obs": ""},
+    {"programa": "Smiles", "proporcao": "3:1 (2,4:1 em blocos de 60.000)", "bonus": "o extra é fixo", "obs": ""},
+    {"programa": "Flying Blue", "proporcao": "3:1 (2,4:1 em blocos de 60.000)", "bonus": "o extra é fixo", "obs": ""},
+    {"programa": "Iberia Plus", "proporcao": "3:1 (2,4:1 em blocos de 60.000)", "bonus": "o extra é fixo", "obs": ""},
+    {"programa": "British Airways Club", "proporcao": "3:1 (2,4:1 em blocos de 60.000)", "bonus": "o extra é fixo", "obs": ""},
+    {"programa": "Qatar Privilege Club", "proporcao": "3:1 (2,4:1 em blocos de 60.000)", "bonus": "o extra é fixo", "obs": ""},
+    {"programa": "Turkish Miles&Smiles", "proporcao": "3:1 (2,4:1 em blocos de 60.000)", "bonus": "o extra é fixo", "obs": ""},
+    {"programa": "Singapore KrisFlyer", "proporcao": "3:1 (2,4:1 em blocos de 60.000)", "bonus": "o extra é fixo", "obs": ""},
+    {"programa": "Aeroplan", "proporcao": "3:1 (2,4:1 em blocos de 60.000)", "bonus": "o extra é fixo", "obs": ""},
+    {"programa": "Avianca LifeMiles", "proporcao": "3:1 (2,4:1 em blocos de 60.000)", "bonus": "o extra é fixo", "obs": ""},
+    {"programa": "Emirates Skywards", "proporcao": "3:1 (2,4:1 em blocos de 60.000)", "bonus": "o extra é fixo", "obs": ""},
+    {"programa": "Etihad Guest", "proporcao": "3:1 (2,4:1 em blocos de 60.000)", "bonus": "o extra é fixo", "obs": ""},
+    {"programa": "Cathay Asia Miles", "proporcao": "3:1 (2,4:1 em blocos de 60.000)", "bonus": "o extra é fixo", "obs": ""},
+    {"programa": "Virgin Flying Club", "proporcao": "3:1 (2,4:1 em blocos de 60.000)", "bonus": "o extra é fixo", "obs": ""}
+   ]
+  }
+ ],
+ "nao_vira_milha": [
+  "PicPay: só cashback no saldo, sem parceria com companhia aérea.",
+  "Nubank Rewards (o antigo): só abate fatura; quem transfere são o Ultravioleta e o Croma.",
+  "Mastercard Surpreenda: pontos viram vales e ofertas, não milhas."
+ ],
+ "sem_banco": [
+  {"programa": "AAdvantage", "caminho": "nenhum banco brasileiro transfere; acumula com o cartão Santander AAdvantage."},
+  {"programa": "Aeroplan", "caminho": "pela ALL Accor (2:1), pelo Marriott (3:1) ou comprando pontos em promoção."},
+  {"programa": "Avianca LifeMiles", "caminho": "Revolut (3:2), ALL Accor (2:1) ou compra com bônus alto (140% a 200%)."},
+  {"programa": "Emirates Skywards", "caminho": "Revolut (4:1), ALL Accor (2:1) ou Marriott (3:1)."},
+  {"programa": "Delta SkyMiles", "caminho": "ALL Accor (2:1) ou compra de milhas no próprio programa."},
+  {"programa": "Air Europa SUMA", "caminho": "ALL Accor (1:1) ou voando e comprando pontos do programa."},
+  {"programa": "Virgin Flying Club", "caminho": "comprar pontos em promoção (já teve 70% de bônus) ou Marriott (3:1). A Revolut não transfere."}
+ ]
+}
