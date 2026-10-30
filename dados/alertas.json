@@ -1,5 +1,201 @@
 [
  {
+  "id": "3761373661-8690",
+  "data": "2026-10-30T12:29:22Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Rio Branco",
+  "destino_iata": "RBR",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "21.900 milhas + Taxas",
+  "volta": "21.900 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Jan/27",
+    "dias": "16, 23, 28"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Jan/27",
+    "dias": "23, 28"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/TN51Sr1",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8689",
+  "data": "2026-10-30T12:29:10Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Palmas",
+  "destino_iata": "PMW",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "23.900 milhas + Taxas",
+  "volta": "23.900 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "15"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "21"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/ofwnjUn",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-8688",
+  "data": "2026-10-30T12:28:16Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "A partir de 9.428 milhas",
+  "volta": "A partir de 9.428 milhas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "17, 18, 20, 24"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "01, 04, 06, 09, 11, 13, 15, 18, 22, 30, 31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "01, 02, 03, 05, 06, 07, 08, 09, 11, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 26"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "21, 22, 23, 25, 26, 28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "02, 03, 04, 05, 06, 07, 08, 09, 11, 14, 15, 16, 18, 19, 20, 23, 27"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "01, 03, 04, 05, 06, 07, 08, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/PjCqJKT",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-8687",
+  "data": "2026-10-30T12:26:33Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.600 milhas + Taxas",
+  "volta": "10.600 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "28, 29, 30"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "1, 2, 3, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16"
+   },
+   {
+    "mes": "Jan/27",
+    "dias": "1, 5, 6, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "2, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "2, 9, 12, 16"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Nov/26",
+    "dias": "29"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "1, 4, 5, 6, 9, 13"
+   },
+   {
+    "mes": "Jan/27",
+    "dias": "8, 15, 21, 22, 23, 24, 26, 27, 28, 29, 30"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 30, 31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "11, 14, 16"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/nf5qPsI",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8686",
   "data": "2026-10-30T12:22:15Z",
   "origem": "Vitória",
