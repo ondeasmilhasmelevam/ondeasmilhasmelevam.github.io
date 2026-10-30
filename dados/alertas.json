@@ -1,5 +1,36 @@
 [
  {
+  "id": "3761373661-8691",
+  "data": "2026-10-30T12:32:58Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Florianópolis",
+  "destino_iata": "FLN",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "13.260 milhas + Taxas",
+  "volta": "13.260 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Jan/27",
+    "dias": "28, 29"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "01, 02, 03"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "02, 03, 04, 05"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/yAD9kWa",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8690",
   "data": "2026-10-30T12:29:22Z",
   "origem": "Manaus",
@@ -13053,60 +13084,6 @@
    }
   ],
   "link": "https://link.dia23.com.br/r/c5ztCha",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8509",
-  "data": "2026-10-28T12:36:37Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "SDU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "18.000 milhas + Taxas",
-  "volta": "18.000 milhas + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Jan/27",
-    "dias": "16 a 20, 23 a 31"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Jan/27",
-    "dias": "20 a 24, 27, 29, 30"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/2leZr3n",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8508",
-  "data": "2026-10-28T12:35:59Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Porto Seguro",
-  "destino_iata": "BPS",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "14.700 milhas + Taxas",
-  "volta": "14.700 milhas + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Jan/27",
-    "dias": "28"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Fev/27",
-    "dias": "04"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/Ma7V26s",
   "link_nome": "LATAM Pass"
  },
  {
