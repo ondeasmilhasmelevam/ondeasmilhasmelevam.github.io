@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=41">
+<link rel="stylesheet" href="estilo.css?v=42">
 </head>
 <body>
 <header class="bar">
@@ -395,6 +395,53 @@
       </div>
     </section>
 
+    <section id="assinar" data-pagina="assinar">
+      <div class="sec-head">
+        <p class="eyebrow">Assinatura</p>
+        <h2>Veja os alertas completos antes que esgotem</h2>
+        <p class="sec-note">Quem assina vê todas as datas e o link de emissão de cada passagem na hora em que ela aparece, e usa as calculadoras para saber se vale a pena. O comparador de cartões continua aberto para todo mundo.</p>
+      </div>
+      <p class="ass-msg" id="ass-msg" role="status" hidden></p>
+      <div class="ass-conta" id="ass-conta" hidden>
+        <p id="ass-conta-txt"></p>
+        <button type="button" class="cta cta-b" id="ass-sair">Sair</button>
+      </div>
+      <div class="ass-planos">
+        <article class="ass-plano">
+          <h3>Mensal</h3>
+          <p class="ass-preco"><b id="ass-preco-mensal">R$ 29,90</b><small>por mês</small></p>
+          <p class="ass-parcela">Pix ou cartão · paga de novo quando quiser</p>
+          <button type="button" class="cta cta-b" data-plano="mensal">Assinar mensal</button>
+        </article>
+        <article class="ass-plano destaque">
+          <p class="ass-selo">Mais escolhido · 50% no 1º ano</p>
+          <h3>Anual</h3>
+          <p class="ass-preco"><s id="ass-de-anual">R$ 297,00</s><b id="ass-preco-anual">R$ 148,50</b><small>por 12 meses</small></p>
+          <p class="ass-parcela" id="ass-parcela-anual">ou 12x no cartão · R$ 12,37 por mês</p>
+          <button type="button" class="cta cta-a" data-plano="anual">Assinar anual</button>
+        </article>
+      </div>
+      <label class="ass-campo">E-mail que vai usar para entrar no site
+        <input type="email" id="ass-email" placeholder="voce@gmail.com" autocomplete="email" inputmode="email">
+        <small>Só este e-mail fica liberado. Use o mesmo na hora de pagar.</small>
+      </label>
+      <ul class="ass-inclui">
+        <li>Todas as datas de ida e volta de cada passagem</li>
+        <li>Link direto para emitir no programa</li>
+        <li>Calculadoras: vale a pena comprar ou transferir?</li>
+        <li>7 dias de garantia: não gostou, devolvemos o valor</li>
+      </ul>
+      <div class="ass-entrar" id="ass-entrar">
+        <h3>Já assina? Entre</h3>
+        <p>Use o mesmo e-mail do pagamento.</p>
+        <button type="button" class="cta cta-b ass-google" id="ass-google"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2c-2 1.5-4.5 2.4-7.2 2.4-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Entrar com Google</button>
+        <form class="ass-form-link" id="ass-form-link">
+          <input type="email" id="ass-login-email" placeholder="voce@gmail.com" autocomplete="email" inputmode="email" aria-label="Seu e-mail">
+          <button type="submit" class="cta cta-b">Receber link no e-mail</button>
+        </form>
+      </div>
+    </section>
+
     <section id="contatos" data-pagina="contatos">
       <div class="sec-head">
         <p class="eyebrow">Contatos úteis</p>
@@ -451,5 +498,6 @@
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
 <script src="app.js?v=45"></script>
+<script type="module" src="assinatura.js?v=1"></script>
 </body>
 </html>

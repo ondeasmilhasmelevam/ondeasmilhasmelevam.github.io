@@ -1,0 +1,11 @@
+name = "oamml-assinatura"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+HANDLE = "ondeasmilhasmelevam"
+PROJETO = "ondeasmilhasmelevam-b5ed6"
+SITE = "https://ondeasmilhasmelevam.github.io/"
+ORIGENS = "https://ondeasmilhasmelevam.github.io,http://localhost:8124"
+# Endereço deste Worker depois de publicado (para a InfinitePay mandar o aviso de pagamento).
+SELF = "https://oamml-assinatura.SEU-SUBDOMINIO.workers.dev"
