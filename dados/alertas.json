@@ -1,5 +1,189 @@
 [
  {
+  "id": "3761373661-8678",
+  "data": "2026-10-30T11:38:15Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Belo Horizonte",
+  "destino_iata": "CNF",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "15.700 milhas + Taxas",
+  "volta": "15.700 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "16, 18-21, 23, 24, 27, 28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "03-06, 08-10, 13, 14, 16, 17, 21-23, 27, 31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "01-10, 12-15, 22, 24, 26-29"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "04-08, 10, 11, 14, 15, 17, 19, 21, 23, 24, 27"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "01, 04, 05, 07, 12-15, 18, 21"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "08, 23, 25, 29, 31"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "14, 17, 19-21"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "16-28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "01, 02, 04-23, 26, 31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "01, 02, 04-15, 20, 22, 23, 26-29"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "04-06, 08-10, 12-18, 20-22, 24"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "01, 03, 07, 10, 11, 17"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "19, 26-27, 30, 31"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "10, 11, 13-16"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/xJffum8",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8677",
+  "data": "2026-10-30T11:38:11Z",
+  "origem": "Navegantes",
+  "origem_iata": "NVT",
+  "destino": "Vitória",
+  "destino_iata": "VIX",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "20.000 milhas + Taxas",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Dez/26",
+    "dias": "01"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://link.dia23.com.br/r/aqFFSJk",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-8676",
+  "data": "2026-10-30T11:34:45Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Florianópolis",
+  "destino_iata": "FLN",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "14.900 milhas + Taxas",
+  "volta": "14.900 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Jan/27",
+    "dias": "12 a 16, 18 a 30"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "01 a 03, 06 a 08, 16 a 28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "01 a 17, 19 a 23, 26, 30, 31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "01 a 07, 09 a 18, 23 a 28"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "01, 03 a 07, 11, 13, 14, 18 a 21, 23 a 25, 31"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "01, 05, 07 a 11, 14, 16, 26, 27, 30"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "08, 09, 12 a 16, 18, 20, 23, 25 a 27, 29"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "02 a 04, 06, 07, 10, 12, 16, 17, 22, 23"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Dez/26",
+    "dias": "30, 31"
+   },
+   {
+    "mes": "Jan/27",
+    "dias": "09, 13, 16, 18, 20 a 22, 24 a 31"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "02, 03, 06 a 08, 16, 18 a 28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "01 a 10, 13, 14, 16 a 18, 20, 22, 26, 27, 30, 31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "01 a 16, 23, 24, 26, 27, 29"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "02, 05, 06, 10, 11, 13, 14, 16 a 21, 24 a 28, 31"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "01, 04, 08, 11 a 17, 19, 20, 24 a 26"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "08 a 10, 12, 19, 23, 25, 27, 29"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "04, 06, 07, 09, 12, 13, 16, 19 a 21, 23"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/pDjEmb1",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8675",
   "data": "2026-10-30T11:34:25Z",
   "origem": "Brasília",
@@ -12603,41 +12787,6 @@
   "datas_volta": [],
   "link": "https://link.dia23.com.br/r/vzW7Y6i",
   "link_nome": "Finnair Plus"
- },
- {
-  "id": "3761373661-8499",
-  "data": "2026-10-28T11:38:00Z",
-  "origem": "Campinas",
-  "origem_iata": "VCP",
-  "destino": "Foz do Iguaçu",
-  "destino_iata": "IGU",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "A partir de 15.300 milhas",
-  "volta": "A partir de 15.300 milhas",
-  "datas_ida": [
-   {
-    "mes": "Nov/26",
-    "dias": "26, 27, 28"
-   },
-   {
-    "mes": "Dez/26",
-    "dias": "01, 02, 05, 07, 08, 09, 10"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Nov/26",
-    "dias": "25, 26"
-   },
-   {
-    "mes": "Dez/26",
-    "dias": "02, 03, 05, 14, 15, 16, 17"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/Y3oT22S",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "1290836068-7449",
