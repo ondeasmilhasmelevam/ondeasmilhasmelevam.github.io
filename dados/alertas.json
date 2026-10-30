@@ -1,5 +1,311 @@
 [
  {
+  "id": "3761373661-8704",
+  "data": "2026-10-30T14:02:56Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Palmas",
+  "destino_iata": "PMW",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "28.900 milhas + Taxas",
+  "volta": "28.900 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "27"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "27"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "29"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "11, 14, 18"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "16, 21, 22, 24"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "03, 20, 23"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "30"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/6nOJgVd",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8703",
+  "data": "2026-10-30T14:02:54Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Vitória",
+  "destino_iata": "VIX",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "27.300 milhas + Taxas",
+  "volta": "27.300 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "27, 28"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "08, 10"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Nov/26",
+    "dias": "28"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "01 a 03, 06 a 10, 12"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/449gRu5",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8702",
+  "data": "2026-10-30T14:02:49Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Cabo Frio",
+  "destino_iata": "CFB",
+  "companhia": "LATAM + parceira",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "20.400 milhas + Taxas",
+  "volta": "20.400 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "04"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "14"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/2UMdAO6",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-8701",
+  "data": "2026-10-30T14:02:36Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "12.900 milhas + Taxas",
+  "volta": "12.900 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "27, 28"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "05, 15, 16, 24, 25, 29, 31"
+   },
+   {
+    "mes": "Jan/27",
+    "dias": "31"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "01 a 11, 16 a 28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "01 a 23, 30, 31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "01 a 15, 26 a 29"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "04 a 07, 09 a 11, 13, 16, 17, 19 a 24"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "01, 03, 04, 07, 08, 10, 12 a 18, 20, 24 a 26, 29"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "08, 09, 14, 25, 29 a 31"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "01, 03, 04, 07 a 10, 12, 16, 19, 20, 22, 23"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Nov/26",
+    "dias": "27, 28"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "01, 02, 10, 15 a 17"
+   },
+   {
+    "mes": "Jan/27",
+    "dias": "06 a 08, 10 a 29, 31"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "01 a 03, 08 a 28"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "01 a 23, 30, 31"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "01 a 15, 26 a 28"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "04 a 07, 09, 11 a 14, 16, 18 a 24"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "02, 04 a 06, 08 a 11, 14, 15, 17, 19, 21, 24, 26, 27, 29, 30"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "10, 12, 15, 20, 21, 25 a 28, 31"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "01 a 04, 06, 07, 09, 12, 13, 15 a 18, 20, 22"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/2uE8Swt",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8700",
+  "data": "2026-10-30T14:02:28Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Cuiabá",
+  "destino_iata": "CGB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "24.400 milhas + Taxas",
+  "volta": "24.400 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Mar/27",
+    "dias": "13, 30"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "01"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "06, 15, 21"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "02, 08 a 10, 24"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "15, 17, 20, 24, 29, 30"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "13"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "21"
+   },
+   {
+    "mes": "Mar/27",
+    "dias": "06, 10, 12, 14 a 17, 21"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "02, 14, 29"
+   },
+   {
+    "mes": "Mai/27",
+    "dias": "09, 11, 18"
+   },
+   {
+    "mes": "Jun/27",
+    "dias": "13, 14"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "10 a 12, 17, 20 a 22, 29"
+   },
+   {
+    "mes": "Set/27",
+    "dias": "10"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/F5ONOgR",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8699",
+  "data": "2026-10-30T14:02:23Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "16.100 milhas + Taxas",
+  "volta": "16.100 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "03"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "12"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/QwmWEYR",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "1290836068-7502",
   "data": "2026-10-30T13:37:59Z",
   "tipo": "promocao",
