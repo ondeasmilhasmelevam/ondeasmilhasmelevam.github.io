@@ -1,5 +1,26 @@
 [
  {
+  "id": "1290836068-7517",
+  "data": "2026-10-30T18:27:48Z",
+  "tipo": "promocao",
+  "titulo": "20% DE DESCONTO EM FARMÁCIAS, PETZ E OXXO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Clientes de cartões Elo Crédito têm 20% de desconto em produtos selecionados de farmácias, Petz e OXXO. O benefício é aplicado automaticamente no pagamento e é válido até 31 de dezembro de 2026. Há limite de três compras por categoria, por mês e por portador.",
+  "detalhes": [
+   "20% de desconto em produtos selecionados",
+   "aplicado automaticamente no pagamento, sem necessidade de cupons",
+   "limitado a três compras por categoria, por mês e por portador",
+   "✅ Validade: até 31 de dezembro de 2026"
+  ],
+  "parceiros": "",
+  "validade": "até 31 de dezembro de 2026",
+  "links": [
+   "https://link.dia23.com.br/r/OsHqUIY"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2361370250-5835",
   "data": "2026-10-30T18:14:43Z",
   "origem": "Rio de Janeiro",
@@ -7590,7 +7611,7 @@
   "tipo": "promocao",
   "titulo": "COMPRA DE MILHAS SMILES COM 75% DE DESCONTO",
   "ultimo_dia": true,
-  "selo": "",
+  "selo": "Milheiro Acima da Média",
   "resumo": "Compre milhas Smiles com 75% de desconto, limitado a 100.000 milhas. O milheiro sai por R$ 20,00 com o cupom promocional.",
   "detalhes": [
    "Cupom de 75% de desconto na compra de milhas.",
@@ -12463,7 +12484,7 @@
   "tipo": "promocao",
   "titulo": "SMILES - PRESENTEE MILHAS COM 75% DE DESCONTO",
   "ultimo_dia": false,
-  "selo": "",
+  "selo": "Milheiro Acima da Média",
   "resumo": "Presenteie milhas Smiles com 75% de desconto e garanta o milheiro por R$ 20,00.",
   "detalhes": [
    "75% de desconto na opção Presenteie Milhas."
