@@ -1,5 +1,40 @@
 [
  {
+  "id": "2361370250-5823",
+  "data": "2026-10-30T12:48:21Z",
+  "origem": "Cidade do México",
+  "origem_iata": "MEX",
+  "destino": "Tóquio",
+  "destino_iata": "NRT",
+  "companhia": "ANA",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "85.000 milhas + Taxas",
+  "volta": "85.000 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Jul/27",
+    "dias": "01, 15, 28"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "01, 05, 20"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Jul/27",
+    "dias": "21"
+   },
+   {
+    "mes": "Ago/27",
+    "dias": "14, 21, 23"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/8vQPSJe",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "3761373661-8695",
   "data": "2026-10-30T12:40:19Z",
   "origem": "Maceió",
@@ -13073,156 +13108,6 @@
   ],
   "link": "https://link.dia23.com.br/r/V8aHTut",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8513",
-  "data": "2026-10-28T12:48:05Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Salvador",
-  "destino_iata": "SSA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "26.800 milhas + Taxas",
-  "volta": "26.800 milhas + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Fev/27",
-    "dias": "17, 18, 24, 28"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "03, 06, 07, 16, 19, 21, 22"
-   },
-   {
-    "mes": "Abr/27",
-    "dias": "04, 15, 18, 27, 29, 30"
-   },
-   {
-    "mes": "Mai/27",
-    "dias": "02, 03, 14, 27"
-   },
-   {
-    "mes": "Jun/27",
-    "dias": "01, 10, 29"
-   },
-   {
-    "mes": "Ago/27",
-    "dias": "11, 18, 19, 26"
-   },
-   {
-    "mes": "Set/27",
-    "dias": "01, 07, 08, 10"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Fev/27",
-    "dias": "16, 18, 26"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "01, 02, 04, 06, 09, 12, 20, 24"
-   },
-   {
-    "mes": "Abr/27",
-    "dias": "04, 18, 25"
-   },
-   {
-    "mes": "Mai/27",
-    "dias": "01, 06, 07, 09, 16, 20"
-   },
-   {
-    "mes": "Jun/27",
-    "dias": "05, 13, 15"
-   },
-   {
-    "mes": "Ago/27",
-    "dias": "10, 11, 13, 24, 25, 30"
-   },
-   {
-    "mes": "Set/27",
-    "dias": "07, 13, 15"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/0vH5LVc",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8512",
-  "data": "2026-10-28T12:46:20Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "GOL",
-  "cabine": "Economica",
-  "programa": "Smiles",
-  "ida": "24.600 milhas + Taxas",
-  "volta": "24.600 milhas + Taxas",
-  "datas_ida": [
-   {
-    "mes": "Fev/27",
-    "dias": "17, 21, 25, 27"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "02, 08, 10, 15, 17, 21, 22, 27, 31"
-   },
-   {
-    "mes": "Abr/27",
-    "dias": "10, 13, 15"
-   },
-   {
-    "mes": "Mai/27",
-    "dias": "08, 13, 18, 22"
-   },
-   {
-    "mes": "Jun/27",
-    "dias": "01, 03, 07, 14, 19, 21"
-   },
-   {
-    "mes": "Ago/27",
-    "dias": "11, 13, 21, 29, 31"
-   },
-   {
-    "mes": "Set/27",
-    "dias": "11"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Fev/27",
-    "dias": "16, 25, 27, 28"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "02, 11, 13, 17, 19, 22, 27"
-   },
-   {
-    "mes": "Abr/27",
-    "dias": "01, 03, 06, 09, 10, 12, 15, 26, 29, 30"
-   },
-   {
-    "mes": "Mai/27",
-    "dias": "01, 02, 15, 16, 18, 19, 21, 24, 31"
-   },
-   {
-    "mes": "Jun/27",
-    "dias": "15, 16, 18"
-   },
-   {
-    "mes": "Ago/27",
-    "dias": "09, 15, 20, 21"
-   },
-   {
-    "mes": "Set/27",
-    "dias": "01"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/AWMCwVa",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7449",
