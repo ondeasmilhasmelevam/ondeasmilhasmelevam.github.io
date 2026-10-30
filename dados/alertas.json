@@ -1,5 +1,39 @@
 [
  {
+  "id": "3761373661-8661",
+  "data": "2026-10-30T10:05:01Z",
+  "origem": "Uberlândia",
+  "origem_iata": "UDI",
+  "destino": "Belo Horizonte",
+  "destino_iata": "CNF",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "10.000 milhas + Taxas",
+  "volta": "",
+  "datas_ida": [
+   {
+    "mes": "Nov/26",
+    "dias": "30"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "01, 07, 08, 11, 14, 15"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "24"
+   },
+   {
+    "mes": "Abr/27",
+    "dias": "20"
+   }
+  ],
+  "datas_volta": [],
+  "link": "https://link.dia23.com.br/r/DEXQpfE",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-8660",
   "data": "2026-10-30T09:51:01Z",
   "origem": "Sinop",
