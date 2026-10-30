@@ -12539,41 +12539,6 @@
   "ate": "2026-10-30T23:59:59-03:00"
  },
  {
-  "id": "3761373661-8529",
-  "data": "2026-10-28T14:29:11Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "A partir de 11.400 milhas",
-  "volta": "A partir de 11.400 milhas",
-  "datas_ida": [
-   {
-    "mes": "Nov/26",
-    "dias": "18, 19, 21, 24"
-   },
-   {
-    "mes": "Dez/26",
-    "dias": "01, 02, 03, 04, 05, 07, 08, 09, 10"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Nov/26",
-    "dias": "18, 24, 29, 30"
-   },
-   {
-    "mes": "Dez/26",
-    "dias": "01, 02, 03, 05, 06, 07, 08, 09, 10"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/DTjdqP1",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7449",
   "data": "2026-10-26T20:23:05Z",
   "tipo": "promocao",
