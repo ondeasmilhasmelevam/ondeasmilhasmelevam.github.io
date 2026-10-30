@@ -1,5 +1,87 @@
 [
  {
+  "id": "3761373661-8696",
+  "data": "2026-10-30T13:33:15Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "Fortaleza",
+  "destino_iata": "FOR",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "13.100 milhas + Taxas",
+  "volta": "13.100 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Fev/27",
+    "dias": "10"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Fev/27",
+    "dias": "18"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/2xxBkLz",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2361370250-5824",
+  "data": "2026-10-30T13:32:32Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Roma",
+  "destino_iata": "FCO",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Executiva",
+  "programa": "TAP Miles&Go",
+  "ida": "135.000 milhas + Taxas",
+  "volta": "135.000 milhas + Taxas",
+  "datas_ida": [
+   {
+    "mes": "Out/26",
+    "dias": "31"
+   },
+   {
+    "mes": "Nov/26",
+    "dias": "03, 05, 07, 10, 14, 17, 19, 21, 24, 28"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "01, 03, 05, 08, 10, 12, 15, 17, 24, 29, 31"
+   },
+   {
+    "mes": "Jan/27",
+    "dias": "16, 19, 21, 23, 26, 28, 30"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "02, 06, 09, 11, 13, 16, 18, 20, 23, 27"
+   }
+  ],
+  "datas_volta": [
+   {
+    "mes": "Nov/26",
+    "dias": "02, 03, 04, 05, 06, 07, 09, 10, 16, 17, 18, 19, 23, 24, 25, 26, 27, 28, 30"
+   },
+   {
+    "mes": "Dez/26",
+    "dias": "01, 02, 03, 04, 07, 08, 09, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 28, 29, 30, 31"
+   },
+   {
+    "mes": "Jan/27",
+    "dias": "04, 05, 06, 07, 13, 14, 18, 19, 20, 21, 25, 26, 27, 28, 29, 30"
+   },
+   {
+    "mes": "Fev/27",
+    "dias": "01, 02, 04, 05, 06, 08, 09, 10, 11, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27"
+   }
+  ],
+  "link": "https://link.dia23.com.br/r/RORFgpH",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5823",
   "data": "2026-10-30T12:48:21Z",
   "origem": "Cidade do México",
@@ -12998,27 +13080,6 @@
   ],
   "link": "https://link.dia23.com.br/r/FuVK8Xl",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-7468",
-  "data": "2026-10-28T13:28:40Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFERÊNCIA DE PONTOS CENTURION PARA MARRIOTT BONVOY",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "O Centurion Card permite transferir pontos para o Marriott Bonvoy na proporção de 1:1. A transferência é restrita a clientes elegíveis do Centurion e não está disponível para pontos Livelo convencionais. Os pontos transferidos podem ser usados para reservar diárias em hotéis participantes do Marriott Bonvoy.",
-  "detalhes": [
-   "proporção 1:1",
-   "transferência restrita a clientes elegíveis do Centurion",
-   "não disponível para pontos Livelo convencionais",
-   "pontos transferidos podem ser usados para reservar diárias em hotéis participantes"
-  ],
-  "parceiros": "Marriott Bonvoy",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/ptqqGQP"
-  ],
-  "ate": ""
  },
  {
   "id": "1290836068-7449",
