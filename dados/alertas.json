@@ -1,5 +1,75 @@
 [
  {
+  "id": "1290836068-7516",
+  "data": "2026-10-30T17:24:09Z",
+  "tipo": "promocao",
+  "titulo": "SMILES OFERECE VOOS INTERNACIONAIS A PARTIR DE 28.500 MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Smiles disponibiliza voos internacionais com emissão a partir de 28.500 milhas + taxas. Os valores são por trecho e por passageiro. As datas de reserva variam por rota.",
+  "detalhes": [
+   "valor por trecho",
+   "por passageiro",
+   "taxas adicionais",
+   "datas de reserva específicas",
+   "emissões menores disponíveis em cada mês",
+   "Florianópolis (FLN) x Buenos Aires (AEP) a partir de 28.500 milhas o trecho",
+   "Recife (REC) x Buenos Aires (AEP) a partir de 39.000 milhas o trecho",
+   "Brasília (BSB) x Montevidéu (MVD) a partir de 42.000 milhas o trecho"
+  ],
+  "parceiros": "Smiles",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/mRIlJEH"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7515",
+  "data": "2026-10-30T17:24:05Z",
+  "tipo": "promocao",
+  "titulo": "CLASSE EXECUTIVA PARA MADRI A PARTIR DE 40 MIL AVIOS IBERIA CLUB",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Disponibilidade de bilhetes de ida e volta em Classe Executiva entre Fortaleza e Madri foi encontrada. Emissão pode ser feita a partir de 40.500 Avios Iberia Club mais taxas por trecho. A viagem é operada pela Iberia.",
+  "detalhes": [
+   "valor: 40.500 Avios Iberia Club por trecho",
+   "taxas adicionais",
+   "ida e volta disponível",
+   "volta disponível apenas para assinantes",
+   "Fortaleza (FOR) x Madri (MAD) executiva a partir de 40.500 milhas o trecho"
+  ],
+  "parceiros": "Iberia Plus",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/hjgf6DY"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7513",
+  "data": "2026-10-30T17:23:58Z",
+  "tipo": "promocao",
+  "titulo": "SMILES: VOOS SÃO PAULO-JOANESBURGO POR 83.900 MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A Smiles oferece voos diretos de São Paulo para Joanesburgo por 83.900 milhas por trecho, mais taxas aeroportuárias. Os voos são operados pela South African Airways e incluem duas bagagens despachadas de até 23 kg. A tarifa está disponível para viajar entre fevereiro e setembro de 2027, inclusive em julho.",
+  "detalhes": [
+   "83.900 milhas por trecho",
+   "mais taxas aeroportuárias",
+   "duas bagagens despachadas de até 23 kg",
+   "tarifa disponível para viajar entre fevereiro e setembro de 2027, inclusive em julho",
+   "São Paulo x Joanesburgo (JNB) economica a partir de 83.900 milhas o trecho a partir de R$ 1.318",
+   "Períodos de viagem: fevereiro e setembro de 2027, inclusive em julho"
+  ],
+  "parceiros": "Smiles, South African Airways",
+  "validade": "até hoje, 30 de outubro",
+  "links": [
+   "https://link.dia23.com.br/r/sGPH4Ht"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2361370250-5833",
   "data": "2026-10-30T17:03:34Z",
   "origem": "Brasília",
