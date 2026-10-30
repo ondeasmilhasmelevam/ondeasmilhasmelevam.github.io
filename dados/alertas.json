@@ -11890,57 +11890,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-5711",
-  "data": "2026-10-28T20:48:43Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Milão",
-  "destino_iata": "MXP",
-  "companhia": "LATAM",
-  "cabine": "Executiva",
-  "programa": "LATAM Pass",
-  "ida": "194.676 pontos LATAM Pass + R$ 105,00",
-  "volta": "194.676 pontos LATAM Pass + R$ 198,00",
-  "datas_ida": [
-   {
-    "mes": "Nov/26",
-    "dias": "24, 25, 26, 30"
-   },
-   {
-    "mes": "Dez/26",
-    "dias": "01, 02, 04, 06, 07, 09"
-   },
-   {
-    "mes": "Fev/27",
-    "dias": "11, 13, 21"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "03"
-   }
-  ],
-  "datas_volta": [
-   {
-    "mes": "Dez/26",
-    "dias": "01, 02, 07, 08, 09, 11, 13, 14, 16, 24, 25, 28"
-   },
-   {
-    "mes": "Fev/27",
-    "dias": "19, 24, 25, 26, 27"
-   },
-   {
-    "mes": "Mar/27",
-    "dias": "04, 05, 06, 07, 12, 13, 14, 15, 20, 21, 23, 28, 30, 31"
-   },
-   {
-    "mes": "Abr/27",
-    "dias": "01, 02"
-   }
-  ],
-  "link": "https://link.dia23.com.br/r/iP7aJ9S",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
