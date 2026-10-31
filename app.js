@@ -646,8 +646,10 @@
 
   /* ---------- tela ---------- */
 
+  let filtrosRkProntos = false;
   function desenhar() {
     if (!modelo) return;
+    if (!filtrosRkProntos) { montarFiltrosRk(); filtrosRkProntos = true; }
     calcular();
     const lista = [], ocultos = { restrito: 0, renda: 0, filtro: 0 };
     for (const r of resultados) { const v = visivel(r); if (v === true) lista.push(r); else ocultos[v]++; }
@@ -687,7 +689,7 @@
 
     // Ranking ("ver outros cartões"): só os que a renda permite pedir; primeiro os
     // sem anuidade no gasto informado, depois os que mais rendem em pontos.
-    const ordem = lista.map((r, i) => [r, i]).sort(([a, i], [b, j]) => semAnuidade(b) - semAnuidade(a) || i - j).map(([r]) => r);
+    const ordem = lista.filter(passaFiltroRk).map((r, i) => [r, i]).sort(([a, i], [b, j]) => semAnuidade(b) - semAnuidade(a) || i - j).map(([r]) => r);
     listaVisivel = ordem;
     const mostrados = ordem.slice(0, estado.limite);
     const maior = Math.max(1, ...lista.map(r => r.liquido));
@@ -701,9 +703,10 @@
         ehIsento(k) ? '' : anu === 0 ? '<span class="tag verde">Anuidade grátis</span>' : anu ? `<span class="tag cinza">Anuidade ${esc(brl.format(anu))}</span>` : '',
         k.recompensa === 'cashback' ? '<span class="tag">Cashback</span>' : k.recompensa === 'ambos' ? `${destinoTag(r)}<span class="tag">ou cashback</span>` : destinoTag(r),
         k.acelerador && k.acelerador !== '-' ? `<span class="tag">${esc(k.acelerador.length < 20 ? k.acelerador : 'Promoção')}</span>` : '',
+        k.vip.tem ? '<span class="tag">Sala VIP</span>' : '',
         requisitoTag(k)
       ].join('');
-      return `${grupo}<li class="item${i < 3 ? ' top' : ''}${aberto ? ' aberto' : ''}" id="${k.id}">
+      return `${grupo}<li class="item${i < 3 ? ' top' : ''}${i < 3 ? ` medalha-${i + 1}` : ''}${aberto ? ' aberto' : ''}" id="${k.id}">
         <button type="button" class="item-linha" aria-expanded="${aberto}" aria-controls="${k.id}-d">
           <span class="pos">${i + 1}</span>
           ${cartaoVisual(k, 'mini')}
@@ -718,19 +721,25 @@
             <span class="barra"><i style="width:${Math.max(0, r.liquido / maior * 100).toFixed(1)}%"></i></span>
           </span>
           <span class="seta" aria-hidden="true"></span>
+          ${metricasHtml(r)}
         </button>
         <div class="detalhe" id="${k.id}-d" ${aberto ? '' : 'hidden'}>${aberto ? detalheHtml(r) : ''}</div>
       </li>`;
     }).join('');
 
-    const faltam = lista.length - mostrados.length;
+    $('#rk-vazio').hidden = !!ordem.length;
+    const faltam = ordem.length - mostrados.length;
     const btnMais = $('#ranking-mais');
-    btnMais.hidden = !faltam && lista.length <= POR_PAGINA;
+    btnMais.hidden = !faltam && ordem.length <= POR_PAGINA;
     btnMais.dataset.acao = faltam ? 'mais' : 'menos';
     btnMais.textContent = faltam ? `Ver mais ${Math.min(POR_PAGINA, faltam)} cartões (faltam ${faltam})` : `Mostrar só os ${POR_PAGINA} melhores`;
 
     const paraQuem = estado.renda && !estado.verAcimaRenda ?` para a sua renda de ${brl.format(estado.renda)}` : '';
-    const partesNota = [`${mostrados.length} de ${lista.length} cartões${paraQuem}: primeiro os sem anuidade com ${moedaGasto()} por mês, depois os com anuidade; em cada grupo, do que mais rende em pontos para o que menos rende (valor por ano, já descontada a anuidade).`];
+    const nFiltros = [filtroRk.busca, filtroRk.banco, filtroRk.bandeira, filtroRk.vip, filtroRk.cashback, filtroRk.acelerador, estado.semAnuidade].filter(Boolean).length;
+    $('#rk-filtros-n').textContent = nFiltros ? ` · ${nFiltros}` : '';
+    if (document.activeElement !== $('#rk-gasto')) $('#rk-gasto').value = inteiro.format(estado.gasto);
+    $('#rk-sem-anuidade').checked = estado.semAnuidade;
+    const partesNota = [`${mostrados.length} de ${ordem.length} cartões${paraQuem}: primeiro os sem anuidade com ${moedaGasto()} por mês, depois os com anuidade; em cada grupo, do que mais rende em pontos para o que menos rende (valor por ano, já descontada a anuidade).`];
     if (!estado.renda) partesNota.push('Informe sua renda no simulador para ver só os cartões que você consegue pedir.');
     const nOcultos = ocultos.restrito + ocultos.renda;
     $('#ranking-nota').innerHTML = esc(partesNota.join(' ')) + (nOcultos ? ` <span class="ocultos">${[
@@ -742,6 +751,40 @@
   }
 
   const semAnuidade = r => ehIsento(r.cartao) || (ehNum(r.anuidade) && r.anuidade <= 0) ? 1 : 0;
+
+  // Filtros que valem só para a lista do ranking (o destaque do simulador não muda).
+  const filtroRk = { busca: '', banco: '', bandeira: '', vip: false, cashback: false, acelerador: false };
+  const temAcelerador = k => !!k.acelerador && k.acelerador !== '-';
+  // "Visa / Master", "ELO"... viram as bandeiras de verdade; cartão das duas entra nas duas.
+  const BANDEIRAS = [['Amex', /AMEX|AMERICAN/], ['Elo', /\bELO\b/], ['Mastercard', /MASTER/], ['Visa', /VISA/]];
+  const bandeirasDe = k => BANDEIRAS.filter(([, re]) => re.test(norm(k.bandeira))).map(([nome]) => nome);
+  function passaFiltroRk(r) {
+    const k = r.cartao, f = filtroRk;
+    if (f.busca && !norm([k.nome, k.banco, k.bandeira, k.programa].join(' ')).includes(norm(f.busca))) return false;
+    if (f.banco && k.banco !== f.banco) return false;
+    if (f.bandeira && !bandeirasDe(k).includes(f.bandeira)) return false;
+    if (f.vip && !k.vip.tem) return false;
+    if (f.cashback && k.recompensa === 'milhas') return false;
+    if (f.acelerador && !temAcelerador(k)) return false;
+    return true;
+  }
+  // Faixa de números de cada cartão na lista: como pontua, quanto entra por mês, quanto custa e quanto vale.
+  function metricasHtml(r) {
+    const k = r.cartao, mil = milheiroDe(r.transferencia), anu = ehNum(r.anuidade) ? r.anuidade : null;
+    const m = [['Pontuação', pontuacaoTxt(r) || '—']];
+    if (ehCashback(r)) m.push(['Cashback por mês', brl.format(r.pontosAno / 12)]);
+    else if (ehNum(r.pontosAno)) m.push([`${unidadeDe(k).replace(/^./, c => c.toUpperCase())} por mês`, inteiro.format(Math.round(r.pontosAno / 12))]);
+    m.push(['Anuidade', ehIsento(k) ? 'isenta (sua)' : anu === 0 ? 'grátis' : anu ? brl.format(anu) : '—']);
+    if (!ehCashback(r) && mil && ehNum(mil.valor)) m.push([`Milheiro ${mil.nome}`, brl2.format(mil.valor)]);
+    if (!ehCashback(r) && ehNum(r.valorMilhas)) m.push(['Valem no ano', brl.format(r.valorMilhas)]);
+    return `<span class="rk-metricas">${m.map(([a, b]) => `<span><small>${esc(a)}</small><b>${esc(b)}</b></span>`).join('')}</span>`;
+  }
+  function montarFiltrosRk() {
+    const opcoes = (lista, atual) => [...new Set(lista.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt'))
+      .map(v => `<option${v === atual ? ' selected' : ''}>${esc(v)}</option>`).join('');
+    $('#rk-banco').innerHTML = `<option value="">Todos os bancos</option>${opcoes(modelo.cartoes.map(k => k.banco), filtroRk.banco)}`;
+    $('#rk-bandeira').innerHTML = `<option value="">Todas as bandeiras</option>${opcoes(modelo.cartoes.flatMap(bandeirasDe), filtroRk.bandeira)}`;
+  }
 
   // Os 5 que mais rendem entre os que a pessoa pode pedir, logo na primeira tela.
   function top5Html(top) {
@@ -1812,6 +1855,27 @@
   });
   $('#restritos').addEventListener('change', e => { estado.esconderRestritos = e.target.checked; mudou(); });
   $('#sem-anuidade').addEventListener('change', e => { estado.semAnuidade = e.target.checked; mudou(); });
+
+  // Barra do ranking: gasto (o mesmo do simulador), busca e filtros.
+  const campoRk = $('#rk-gasto');
+  campoRk.addEventListener('input', () => {
+    const g = Math.min(soDigitos(campoRk.value), 1e7);
+    campoRk.value = g ? inteiro.format(g) : '';
+    if (g > 0) { estado.gasto = g; mudou(); }
+  });
+  campoRk.addEventListener('blur', () => { campoRk.value = inteiro.format(estado.gasto); });
+  campoRk.addEventListener('focus', () => campoRk.select());
+  $('#rk-busca').addEventListener('input', e => { filtroRk.busca = e.target.value; estado.limite = POR_PAGINA; desenhar(); });
+  $('#rk-banco').addEventListener('change', e => { filtroRk.banco = e.target.value; estado.limite = POR_PAGINA; desenhar(); });
+  $('#rk-bandeira').addEventListener('change', e => { filtroRk.bandeira = e.target.value; estado.limite = POR_PAGINA; desenhar(); });
+  [['#rk-vip', 'vip'], ['#rk-cashback', 'cashback'], ['#rk-acelerador', 'acelerador']].forEach(([id, chave]) =>
+    $(id).addEventListener('change', e => { filtroRk[chave] = e.target.checked; estado.limite = POR_PAGINA; desenhar(); }));
+  $('#rk-sem-anuidade').addEventListener('change', e => { estado.semAnuidade = e.target.checked; mudou(); });
+  $('#rk-filtros-btn').addEventListener('click', e => {
+    const abrir = $('#rk-filtros').hidden;
+    $('#rk-filtros').hidden = !abrir;
+    e.currentTarget.setAttribute('aria-expanded', String(abrir));
+  });
 
   /* ---------- cartões com isenção vitalícia ---------- */
 

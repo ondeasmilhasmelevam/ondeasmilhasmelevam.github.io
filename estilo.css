@@ -388,6 +388,34 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
   .seta{display:none}
 }
 
+/* barra, filtros, medalhas e números do ranking */
+.rk-barra{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 12px;margin:0 0 12px}
+.rk-campo{display:grid;gap:6px;flex:1 1 220px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ash-dim)}
+.rk-campo input{font:inherit;font-size:15px;font-weight:600;letter-spacing:0;text-transform:none;padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:var(--ink-2);color:var(--rice);min-width:0;width:100%}
+.rk-campo input:focus{outline:none;border-color:var(--ouro)}
+.rk-reais{position:relative;display:block}
+.rk-reais b{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;letter-spacing:0;color:var(--ash-dim)}
+.rk-reais input{padding-left:42px;font-variant-numeric:tabular-nums}
+.rk-filtros-btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:14px;font-weight:800;padding:11px 16px;border-radius:12px;border:1px solid var(--line);background:var(--ink-2);color:var(--rice);cursor:pointer}
+.rk-filtros-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.rk-filtros-btn[aria-expanded="true"]{border-color:var(--ouro);color:var(--ouro)}
+.rk-filtros-btn small{font-size:13px;color:var(--ouro)}
+.rk-filtros{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 16px;padding:16px;margin:0 0 16px;border:1px solid var(--line);border-radius:16px;background:var(--ink-2)}
+.rk-filtros[hidden]{display:none}
+.rk-filtros>label{display:grid;gap:6px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ash-dim)}
+.rk-filtros select{font:inherit;font-size:14.5px;font-weight:600;letter-spacing:0;text-transform:none;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--ink);color:var(--rice)}
+.rk-checks{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px 22px}
+.item-linha{flex-wrap:wrap}
+.rk-metricas{flex:1 0 100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:6px;margin:2px 0 0 44px;padding-top:10px;border-top:1px dashed var(--line)}
+.rk-metricas span{display:grid;gap:1px;padding:6px 10px;border-radius:10px;background:var(--ink-2)}
+.rk-metricas small{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ash-dim)}
+.rk-metricas b{font-size:14px;font-weight:800;color:var(--rice);font-variant-numeric:tabular-nums}
+.item.medalha-1 .pos,.item.medalha-2 .pos,.item.medalha-3 .pos{flex-basis:30px;height:30px;display:grid;place-items:center;border-radius:50%;font-size:15px;color:#1b1406}
+.medalha-1 .pos{background:radial-gradient(circle at 35% 30%,#ffe9a8,#e2b458 55%,#a8761f);box-shadow:0 0 0 3px rgba(226,180,88,.25)}
+.medalha-2 .pos{background:radial-gradient(circle at 35% 30%,#ffffff,#c4cad6 55%,#7d8597);box-shadow:0 0 0 3px rgba(196,202,214,.22)}
+.medalha-3 .pos{background:radial-gradient(circle at 35% 30%,#ffd2a8,#cd8a4e 55%,#8a5124);box-shadow:0 0 0 3px rgba(205,138,78,.22)}
+@media (max-width:560px){.rk-metricas{margin-left:0;grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 .detalhe{padding:6px 6px 26px 50px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:26px}
 @media (max-width:760px){.detalhe{grid-template-columns:1fr;padding-left:6px;gap:18px}}
 .detalhe h4{font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro);margin:0 0 10px}

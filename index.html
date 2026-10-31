@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=49">
+<link rel="stylesheet" href="estilo.css?v=51">
 </head>
 <body>
 <header class="bar">
@@ -143,9 +143,24 @@
         <p class="eyebrow">Ranking</p>
         <h2>Os cartões que mais rendem para você</h2>
         <p class="sec-note" id="ranking-nota"></p>
-        <p class="voltar-sim"><a href="#simulador">← Mudar o gasto mensal no simulador</a></p>
+      </div>
+      <div class="rk-barra">
+        <label class="rk-campo rk-busca"><span>Buscar cartão</span><input type="search" id="rk-busca" placeholder="ex.: Itaú, Black, Nomad" autocomplete="off"></label>
+        <label class="rk-campo rk-gasto"><span>Quanto você gasta por mês</span><span class="rk-reais"><b>R$</b><input id="rk-gasto" inputmode="numeric" autocomplete="off" enterkeyhint="done"></span></label>
+        <button type="button" class="rk-filtros-btn" id="rk-filtros-btn" aria-expanded="false" aria-controls="rk-filtros"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>Filtros<small id="rk-filtros-n"></small></button>
+      </div>
+      <div class="rk-filtros" id="rk-filtros" hidden>
+        <label>Banco<select id="rk-banco"><option value="">Todos os bancos</option></select></label>
+        <label>Bandeira<select id="rk-bandeira"><option value="">Todas as bandeiras</option></select></label>
+        <div class="rk-checks">
+          <label class="chave"><input type="checkbox" id="rk-sem-anuidade"><span></span>Sem anuidade no meu gasto</label>
+          <label class="chave"><input type="checkbox" id="rk-vip"><span></span>Com sala VIP</label>
+          <label class="chave"><input type="checkbox" id="rk-cashback"><span></span>Com cashback</label>
+          <label class="chave"><input type="checkbox" id="rk-acelerador"><span></span>Com acelerador de pontos</label>
+        </div>
       </div>
       <ol class="ranking" id="ranking"></ol>
+      <p class="vazio" id="rk-vazio" hidden>Nenhum cartão com esses filtros. Tire algum deles para ver mais.</p>
       <p class="ranking-mais"><button type="button" class="cta cta-b" id="ranking-mais" hidden></button></p>
     </section>
 
@@ -565,7 +580,7 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=54"></script>
+<script src="app.js?v=56"></script>
 <script type="module" src="assinatura.js?v=5"></script>
 </body>
 </html>
