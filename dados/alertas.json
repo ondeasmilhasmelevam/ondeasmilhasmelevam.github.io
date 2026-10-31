@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5885",
+  "data": "2026-10-31T11:19:51Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "167.500 milhas",
+  "volta": "208.100 milhas",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5884",
   "data": "2026-10-31T11:14:15Z",
   "origem": "São Paulo",
@@ -3541,62 +3555,6 @@
   "ida": "405.900 milhas",
   "volta": "424.000 milhas",
   "link_nome": "GOL Smiles"
- },
- {
-  "id": "3761373661-8586",
-  "data": "2026-10-29T11:16:24Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Salvador",
-  "destino_iata": "SSA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "18.800 milhas + Taxas",
-  "volta": "18.800 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8585",
-  "data": "2026-10-29T11:16:12Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Cuiabá",
-  "destino_iata": "CGB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "20.300 milhas + Taxas",
-  "volta": "20.300 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-5768",
-  "data": "2026-10-29T11:16:00Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "GOL + Copa Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "159.900 milhas",
-  "volta": "166.800 milhas",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "3761373661-8584",
-  "data": "2026-10-29T11:15:22Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "5.800 milhas + Taxas",
-  "volta": "5.800 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7476",
