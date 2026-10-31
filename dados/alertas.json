@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5881",
+  "data": "2026-10-31T10:59:26Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Amsterdã",
+  "destino_iata": "AMS",
+  "companhia": "Air France + KLM",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "517.500 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5880",
   "data": "2026-10-31T10:52:33Z",
   "origem": "São Paulo",
@@ -3568,20 +3582,6 @@
   "programa": "GOL Smiles",
   "ida": "500.500 milhas",
   "volta": "500.600 milhas",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-5765",
-  "data": "2026-10-29T11:00:18Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "Copa Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "248.200 milhas",
-  "volta": "",
   "link_nome": "GOL Smiles"
  },
  {
