@@ -1519,6 +1519,48 @@
   document.addEventListener('assinatura', mostrarPassagens);
   $('#mais-passagens').addEventListener('click', () => { filtroPassagem.todas = !filtroPassagem.todas; mostrarPassagens(); });
 
+  // Meus cadastros (dados/programas.json): lista de programas com o site oficial; o que a pessoa
+  // marca como feito fica no navegador dela.
+  const CAD_CHAVE = 'oamml-cadastros';
+  let cadFeitos = new Set();
+  try { cadFeitos = new Set(JSON.parse(localStorage.getItem(CAD_CHAVE)) || []); } catch (e) { /* começa vazio */ }
+  let cadDados = null;
+  function mostrarCadastros() {
+    if (!cadDados) return;
+    const todos = cadDados.grupos.flatMap(g => g.programas);
+    const feitos = todos.filter(p => cadFeitos.has(p.id)).length;
+    $('#cad-progresso-txt').textContent = `${feitos} de ${todos.length} feitos`;
+    $('#cad-progresso-barra').style.width = `${(feitos / todos.length * 100).toFixed(1)}%`;
+    $('#cad-grupos').innerHTML = cadDados.grupos.map(g => {
+      const n = g.programas.filter(p => cadFeitos.has(p.id)).length;
+      return `<section class="cad-grupo">
+        <h3>${esc(g.titulo)}<small>${n} de ${g.programas.length}</small></h3>
+        ${g.nota ? `<p>${esc(g.nota)}</p>` : ''}
+        <ul class="cad-lista">${g.programas.map(p => `<li class="${cadFeitos.has(p.id) ? 'feito' : ''}">
+          <p class="cad-nome">${esc(p.nome)}</p>
+          <label class="cad-feito"><input type="checkbox" data-cad="${esc(p.id)}" ${cadFeitos.has(p.id) ? 'checked' : ''} aria-label="Já me cadastrei no ${esc(p.nome)}">Já fiz</label>
+          <p class="cad-sobre">${esc(p.sobre)}</p>
+          <a href="${esc(p.link)}" target="_blank" rel="noopener">Abrir cadastro ↗</a>
+        </li>`).join('')}</ul>
+      </section>`;
+    }).join('');
+  }
+  $('#cad-grupos').addEventListener('change', e => {
+    const id = e.target.dataset.cad; if (!id) return;
+    if (e.target.checked) cadFeitos.add(id); else cadFeitos.delete(id);
+    try { localStorage.setItem(CAD_CHAVE, JSON.stringify([...cadFeitos])); } catch (er) { /* só nesta visita */ }
+    mostrarCadastros();
+  });
+  (async () => {
+    try {
+      cadDados = await (await fetch('dados/programas.json')).json();
+      $('#cad-dica').textContent = cadDados.dica;
+      const [ano, mes, dia] = cadDados.conferido.split('-');
+      $('#cad-conferido').textContent = `Links conferidos nos sites oficiais em ${dia}/${mes}/${ano}.`;
+      mostrarCadastros();
+    } catch (e) { /* página fica sem a lista */ }
+  })();
+
   // Salas VIP dos principais aeroportos (dados/salas.json): busca por aeroporto, cidade ou sala
   // e filtro pela forma de entrar.
   const ACESSO_SALA = { LK: 'LoungeKey', PP: 'Priority Pass', DP: 'DragonPass', AB: 'App do banco', AV: 'Pagando na hora', CE: 'Cartão específico', CA: 'Companhia aérea' };
@@ -1991,7 +2033,7 @@
   const ARQUIVO_DA_PAGINA = {
     passagens: 'dados/alertas.json', termometro: 'dados/termometro.json', guia: 'dados/guia.json',
     transferencias: 'dados/transferencias.json', novidades: 'dados/noticias.json',
-    restaurantes: 'restaurantes.js', salas: 'dados/salas.json', quanto: 'dados/precos-milhas.csv', comprar: 'precos.js', contatos: 'dados/contatos.csv'
+    restaurantes: 'restaurantes.js', salas: 'dados/salas.json', cadastros: 'dados/programas.json', quanto: 'dados/precos-milhas.csv', comprar: 'precos.js', contatos: 'dados/contatos.csv'
   };
   const datasArquivo = {};
   function quandoTxt(d) {
