@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-5903",
+  "data": "2026-10-31T16:35:57Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Lima",
+  "destino_iata": "LIM",
+  "companhia": "LATAM",
+  "cabine": "Premium Executiva Standard",
+  "programa": "LATAM Pass",
+  "ida": "88.106 milhas + R$ 184,65",
+  "volta": "88.106 milhas + R$ 197,29",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2361370250-5902",
+  "data": "2026-10-31T16:35:52Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Barcelona",
+  "destino_iata": "BCN",
+  "companhia": "LATAM",
+  "cabine": "Premium Executiva Standard",
+  "programa": "LATAM Pass",
+  "ida": "254.672 milhas + R$ 149,32",
+  "volta": "287.503 milhas + R$ 215,95",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2361370250-5901",
   "data": "2026-10-31T16:15:24Z",
   "origem": "Milão",
