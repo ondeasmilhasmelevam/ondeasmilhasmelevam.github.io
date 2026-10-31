@@ -2772,34 +2772,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-8647",
-  "data": "2026-10-29T19:40:48Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Navegantes",
-  "destino_iata": "NVT",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "21.100 milhas + Taxas",
-  "volta": "21.100 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8646",
-  "data": "2026-10-29T19:40:21Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "15.000 milhas + Taxas",
-  "volta": "15.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7483",
   "data": "2026-10-29T12:02:20Z",
   "tipo": "promocao",
