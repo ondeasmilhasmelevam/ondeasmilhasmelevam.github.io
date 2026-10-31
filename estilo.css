@@ -593,7 +593,7 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .guia-texto{display:grid;gap:6px;padding:12px 14px 16px}
 .guia-texto b{font-size:17px}
 .guia-texto span{font-size:13.5px;line-height:1.5;color:var(--ash);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.guia-detalhe{width:min(760px,calc(100vw - 24px));max-height:calc(100vh - 40px);padding:0;border:1px solid var(--line);border-radius:20px;background:var(--ink-2);color:var(--rice);overflow:auto}
+.guia-detalhe{width:min(1040px,calc(100vw - 24px));max-height:calc(100vh - 40px);padding:0;border:1px solid var(--line);border-radius:20px;background:var(--ink-2);color:var(--rice);overflow:auto}
 .guia-detalhe::backdrop{background:rgba(3,6,12,.72)}
 .gd-topo{position:relative;min-height:200px;display:grid;align-content:end;padding:20px 22px;background:var(--ink-3) center/cover no-repeat;color:#fff}
 .gd-topo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,16,.1),rgba(5,8,16,.85))}
@@ -622,6 +622,12 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .gd-itens li{display:grid;gap:3px;padding:12px 14px;border-radius:12px;background:var(--ink-3)}
 .gd-itens b{font-size:15px;color:var(--rice)}
 .gd-itens span{font-size:14px;line-height:1.55;color:var(--ash)}
+/* tela larga: todas as abas aparecem (quebram linha) e os itens ficam em duas colunas */
+@media (min-width:760px){
+  .gd-abas{flex-wrap:wrap;overflow-x:visible;padding:12px 22px}
+  .gd-itens{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gd-topo{min-height:230px}
+}
 
 /* ---------- meu radar ---------- */
 .radar-fechado{display:grid;justify-items:center;gap:10px;padding:28px 20px;text-align:center;border:1px dashed rgba(226,180,88,.45);border-radius:18px;background:var(--ink-2)}
