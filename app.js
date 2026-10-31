@@ -2274,6 +2274,30 @@
     } catch (e) { /* sem campanhas na tela */ }
   }
 
+  // Uma calculadora por vez, escolhida nas abas; a escolhida fica guardada no navegador.
+  const RESUMO_CALC = ['vale comprar e transferir?', 'Livelo ou Esfera', 'qual compensa?', 'pontos em milhas', 'diárias com pontos ALL'];
+  function montarAbasCalc() {
+    const cards = [...document.querySelectorAll('#calc-grade .calc-card')];
+    let atual = 0;
+    try { atual = Math.min(cards.length - 1, +localStorage.getItem('oamml-calc') || 0); } catch (e) { /* primeira */ }
+    $('#calc-abas').innerHTML = cards.map((c, i) => `<button type="button" role="tab" id="calc-aba-${i}" aria-controls="calc-${i}" aria-selected="false" data-i="${i}">
+      <b>${esc(c.querySelector('h3').textContent.replace(/\s*\(.*\)$/, '').replace(/\?$/, ''))}</b><small>${esc(RESUMO_CALC[i] || '')}</small></button>`).join('');
+    cards.forEach((c, i) => {
+      c.id = `calc-${i}`; c.setAttribute('role', 'tabpanel'); c.setAttribute('aria-labelledby', `calc-aba-${i}`);
+      // a resposta ocupa a coluna da direita só na altura do conteúdo (título, texto, campanhas e campos em duas colunas)
+      const linhas = c.querySelectorAll(':scope > h3, :scope > .sec-note, :scope > .calc-campanhas').length + Math.ceil(c.querySelectorAll(':scope > label').length / 2);
+      c.querySelector(':scope > .termo-resposta').style.setProperty('--linhas', linhas);
+    });
+    $('#calc-grade').classList.add('em-abas');
+    const abrir = i => {
+      cards.forEach((c, j) => { c.hidden = j !== i; });
+      document.querySelectorAll('#calc-abas button').forEach((b, j) => b.setAttribute('aria-selected', String(j === i)));
+      try { localStorage.setItem('oamml-calc', i); } catch (e) { /* só nesta visita */ }
+    };
+    $('#calc-abas').addEventListener('click', e => { const b = e.target.closest('button'); if (b) abrir(+b.dataset.i); });
+    abrir(atual);
+  }
+
   function montarCalculadoras() {
     const opcoes = Object.keys(window.MILHEIROS || {}).map(k => `<option value="${esc(k)}">${esc(NOMES_MILHEIRO[k] || k)}</option>`).join('');
     $('#cc-destino').innerHTML = opcoes;
@@ -2290,6 +2314,7 @@
     ['#pm-pontos', '#pm-prop', '#pm-bonus'].forEach(id => $(id).addEventListener('input', calcPontos));
     ['#ac-pontos', '#ac-origem', '#ac-preco', '#ac-bonus'].forEach(id => $(id).addEventListener('input', calcAccor));
     calcCompra(); calcCarrinho(); calcDinheiro(); calcPontos(); calcAccor();
+    montarAbasCalc();
     campanhasNoAr();
     lerEuro();
   }

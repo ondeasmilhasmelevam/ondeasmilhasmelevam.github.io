@@ -16,7 +16,7 @@
   --display:"Cinzel",Georgia,serif;
   --body:"Manrope","Segoe UI",system-ui,sans-serif;
 
-  --wrap:1280px;
+  --wrap:1440px;
   color-scheme:dark;
 }
 
@@ -971,6 +971,26 @@ footer .badge{width:84px;height:84px;margin-bottom:14px}
 .calc-card label{display:grid;gap:6px;font-size:13px;font-weight:700;color:var(--ash)}
 .calc-card select,.calc-card input{font:inherit;font-size:15px;font-weight:600;padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:var(--ink);color:var(--rice);min-width:0}
 .calc-card .termo-resposta{margin-top:4px}
+.calc-abas{display:flex;gap:8px;margin:0 0 16px;padding:5px;border:1px solid var(--line);border-radius:16px;background:var(--ink-2);overflow-x:auto;scrollbar-width:none}
+.calc-abas::-webkit-scrollbar{display:none}
+.calc-abas button{flex:1 0 auto;display:grid;gap:2px;justify-items:start;font:inherit;text-align:left;padding:10px 14px;border:0;border-radius:12px;background:none;color:var(--ash);cursor:pointer;white-space:nowrap}
+.calc-abas button b{font-size:14.5px;color:var(--rice)}
+.calc-abas button small{font-size:11.5px;font-weight:600;color:var(--ash-dim)}
+.calc-abas button[aria-selected="true"]{background:linear-gradient(135deg,var(--ouro-lt),var(--ouro) 55%,var(--ouro-dk))}
+.calc-abas button[aria-selected="true"] b,.calc-abas button[aria-selected="true"] small{color:var(--sobre-ouro)}
+.calc-grade.em-abas{display:block}
+@media (max-width:700px){.calc-abas{display:grid;grid-template-columns:1fr 1fr;overflow:visible}.calc-abas button{white-space:normal;padding:9px 10px}.calc-abas button b{font-size:13.5px;line-height:1.25}.calc-abas button small{display:none}}
+.calc-grade.em-abas .calc-card[hidden]{display:none}
+.calc-card .termo-resposta{font-size:15.5px;line-height:1.55}
+.calc-card .termo-resposta b{color:var(--ouro-lt)}
+.calc-card .termo-resposta.ok b{color:#9ff0c8}
+@media (min-width:900px){
+  .calc-grade.em-abas .calc-card{grid-template-columns:repeat(2,minmax(0,1fr)) minmax(280px,.95fr);gap:14px 18px;padding:26px 28px}
+  .calc-grade.em-abas .calc-card>h3,.calc-grade.em-abas .calc-card>.sec-note,.calc-grade.em-abas .calc-card>.calc-campanhas{grid-column:1/3}
+  .calc-grade.em-abas .calc-card>.termo-resposta{grid-column:3;grid-row:1/span var(--linhas,6);align-self:start;position:sticky;top:20px;margin:0;padding:20px 22px;min-height:140px;font-size:16.5px}
+  .calc-grade.em-abas .calc-card>.termo-resposta b{font-size:1.25em}
+  .calc-grade.em-abas .calc-card h3{font-size:22px}
+}
 .calc-campanhas{display:grid;gap:6px}
 .calc-campanhas>span{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ash-dim)}
 .calc-campanhas div{display:flex;flex-wrap:wrap;gap:6px}
