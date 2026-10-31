@@ -1749,7 +1749,7 @@
       </div>
       <div class="gd-corpo">
         <p>${esc(g.resumo)}</p>
-        <dl class="gd-fatos">${fatos.map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl>
+        <dl class="gd-fatos">${fatos.map(([a, b]) => `<div${b.length > 60 ? ' class="longo"' : ''}><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl>
         ${g.destaques && g.destaques.length ? `<div><h4>Não deixe de ver</h4><ul>${g.destaques.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
         ${g.dicas && g.dicas.length ? `<div><h4>Dicas</h4><ul>${g.dicas.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
         <div class="gd-acoes">

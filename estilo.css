@@ -538,6 +538,8 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .gd-corpo>p{margin:0;font-size:15.5px;line-height:1.65;color:var(--rice)}
 .gd-fatos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:0}
 .gd-fatos div{padding:10px 12px;border-radius:12px;background:var(--ink-3)}
+.gd-fatos div.longo{grid-column:1/-1}
+.gd-fatos div.longo dd{font-weight:600}
 .gd-fatos dt{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ash-dim)}
 .gd-fatos dd{margin:3px 0 0;font-size:14px;font-weight:700;color:var(--rice);line-height:1.4}
 .gd-corpo h4{margin:0 0 6px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro)}
