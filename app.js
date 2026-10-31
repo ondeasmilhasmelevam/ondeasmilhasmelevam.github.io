@@ -1399,6 +1399,12 @@
       if (metades === 2) alguma = true;
     });
     $('#pass-credito').hidden = !alguma;
+    const usadasGuias = new Set();
+    document.querySelectorAll('#guias-lista [data-foto]').forEach(el => {
+      const url = (fotos[el.dataset.foto] || []).find(u => !usadasGuias.has(u));
+      el.style.backgroundImage = url ? `url("${url}")` : '';
+      if (url) usadasGuias.add(url);
+    });
     const usadasHoje = new Set();
     document.querySelectorAll('#hoje [data-foto]').forEach(el => {
       const url = (fotos[el.dataset.foto] || []).find(u => !usadasHoje.has(u));
@@ -1463,7 +1469,7 @@
   async function buscarFotos() {
     pintarFotos();
     const faltam = [...new Set([...document.querySelectorAll('#lista-passagens .pass-foto [data-cidade]')].map(el => el.dataset.cidade)
-      .concat([...document.querySelectorAll('#hoje [data-foto]')].map(el => el.dataset.foto)))]
+      .concat([...document.querySelectorAll('#hoje [data-foto], #guias-lista [data-foto]')].map(el => el.dataset.foto)))]
       .filter(c => c && !(c in fotos) && !fotosPedidas.has(c));
     if (!faltam.length) return;
     faltam.forEach(c => fotosPedidas.add(c));
@@ -1700,6 +1706,80 @@
     mostrarPassagens();
   });
 
+  // Guia de destinos (dados/guias.json, montado por ferramentas/guias.py): cartões por tipo e
+  // região, e o guia completo numa janela, com as passagens no ar para o destino.
+  let guias = [];
+  const filtroDestino = { tipo: 'nacional', busca: '', regiao: '' };
+  const passagensPara = iata => passagens.filter(p => !ehPromocao(p) && p.destino_iata === iata && Date.now() < venceEm(p));
+  function mostrarGuias() {
+    const vazio = $('#guias-vazio');
+    if (!guias.length) { $('#guias-lista').innerHTML = ''; vazio.hidden = false; vazio.textContent = 'Os guias estão sendo preparados. Volte em breve.'; return; }
+    const f = filtroDestino, busca = norm(f.busca);
+    $('#guias-tipo').querySelectorAll('button').forEach(b => {
+      b.setAttribute('aria-pressed', String(b.dataset.tipo === f.tipo));
+      b.querySelector('small').textContent = guias.filter(g => g.tipo === b.dataset.tipo).length;
+    });
+    const doTipo = guias.filter(g => g.tipo === f.tipo);
+    const regioes = [...new Set(doTipo.map(g => g.regiao).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt'));
+    $('#guias-regiao').innerHTML = `<option value="">Todas as regiões</option>${regioes.map(r => `<option${r === f.regiao ? ' selected' : ''}>${esc(r)}</option>`).join('')}`;
+    const lista = doTipo.filter(g => (!f.regiao || g.regiao === f.regiao) && (!busca || norm([g.nome, g.pais, g.regiao, g.aeroporto_iata].join(' ')).includes(busca)))
+      .sort((a, b) => a.nome.localeCompare(b.nome, 'pt'));
+    $('#guias-lista').innerHTML = lista.map(g => {
+      const n = g.aeroporto_iata ? passagensPara(g.aeroporto_iata).length : 0;
+      return `<li><button type="button" class="guia-card" data-guia="${esc(g.slug)}">
+        <span class="guia-foto" data-foto="${esc(`${g.nome}|${g.aeroporto_iata || ''}`)}"><small>${esc([g.regiao, g.tipo === 'internacional' ? g.pais : ''].filter(Boolean).join(' · '))}</small>${n ? `<em>${n} ${n === 1 ? 'passagem' : 'passagens'} no ar</em>` : ''}</span>
+        <span class="guia-texto"><b>${esc(g.nome)}</b><span>${esc(g.resumo)}</span></span>
+      </button></li>`;
+    }).join('');
+    vazio.hidden = !!lista.length;
+    vazio.textContent = 'Nenhum destino com esse filtro.';
+    buscarFotos();
+  }
+  function abrirGuia(slug) {
+    const g = guias.find(x => x.slug === slug); if (!g) return;
+    const n = g.aeroporto_iata ? passagensPara(g.aeroporto_iata).length : 0;
+    const fatos = [['Melhor época', g.melhor_epoca], ['Quantos dias', g.quantos_dias], ['Aeroporto', g.aeroporto_iata],
+      ['Moeda', g.moeda], ['Idioma', g.idioma], ['Documentos', g.documentos]].filter(([, v]) => v);
+    const foto = (fotos[`${g.nome}|${g.aeroporto_iata || ''}`] || [])[0];
+    const d = $('#guia-detalhe');
+    d.innerHTML = `<div class="gd-topo" ${foto ? `style="background-image:url('${esc(foto)}')"` : ''}>
+        <button type="button" class="gd-fechar" data-fechar aria-label="Fechar">✕</button>
+        <small>${esc([g.regiao, g.pais].filter(Boolean).join(' · '))}</small><h3 id="gd-nome">${esc(g.nome)}</h3>
+      </div>
+      <div class="gd-corpo">
+        <p>${esc(g.resumo)}</p>
+        <dl class="gd-fatos">${fatos.map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl>
+        ${g.destaques && g.destaques.length ? `<div><h4>Não deixe de ver</h4><ul>${g.destaques.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
+        ${g.dicas && g.dicas.length ? `<div><h4>Dicas</h4><ul>${g.dicas.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
+        <div class="gd-acoes">
+          ${n ? `<button type="button" class="cta cta-a" data-guia-passagens="${esc(g.aeroporto_iata)}">Ver ${n} ${n === 1 ? 'passagem' : 'passagens'} para ${esc(g.nome)}</button>` : ''}
+          ${g.aeroporto_iata ? `<a class="cta cta-b" href="#radar" data-guia-radar="${esc(g.aeroporto_iata)}">Avisar quando aparecer passagem</a>` : ''}
+        </div>
+      </div>`;
+    if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', '');
+  }
+  $('#guias-tipo').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; Object.assign(filtroDestino, { tipo: b.dataset.tipo, regiao: '' }); mostrarGuias(); });
+  $('#guias-busca').addEventListener('input', e => { filtroDestino.busca = e.target.value; mostrarGuias(); });
+  $('#guias-regiao').addEventListener('change', e => { filtroDestino.regiao = e.target.value; mostrarGuias(); });
+  $('#guias-lista').addEventListener('click', e => { const b = e.target.closest('[data-guia]'); if (b) abrirGuia(b.dataset.guia); });
+  $('#guia-detalhe').addEventListener('click', e => {
+    const d = $('#guia-detalhe');
+    if (e.target === d || e.target.closest('[data-fechar]')) { d.close(); return; }
+    const p = e.target.closest('[data-guia-passagens]');
+    if (p) {
+      d.close();
+      Object.assign(filtroPassagem, { tipo: 'passagem', destino: p.dataset.guiaPassagens, busca: '', todas: false });
+      $('#passagens-destino').value = p.dataset.guiaPassagens; $('#passagens-busca').value = '';
+      location.hash = 'passagens'; mostrarPassagens();
+    }
+    const r = e.target.closest('[data-guia-radar]');
+    if (r) { d.close(); $('#radar-destino').value = r.dataset.guiaRadar; }
+  });
+  (async () => {
+    try { guias = ((await (await fetch('dados/guias.json', { cache: 'no-store' })).json()).destinos || []); } catch (e) { guias = []; }
+    mostrarGuias();
+  })();
+
   async function desenharPassagens() {
     try {
       const r = await fetch('dados/alertas.json', { cache: 'no-store' });
@@ -1712,6 +1792,7 @@
     mostrarPassagens();
     mostrarPromocoes();
     mostrarHoje();
+    if (guias.length) mostrarGuias(); // contagem de passagens no ar por destino
     // Meu Radar (assinatura.js) usa a mesma lista e o mesmo cartão de passagem.
     window.oammlPassagens = passagens.filter(p => !ehPromocao(p) && Date.now() < venceEm(p));
     document.dispatchEvent(new Event('passagens'));
@@ -2250,7 +2331,7 @@
   }
   // "Atualizado ..." de cada página: a data do arquivo de dados dela no site.
   const ARQUIVO_DA_PAGINA = {
-    passagens: 'dados/alertas.json', hoje: 'dados/alertas.json', promocoes: 'dados/alertas.json', radar: 'dados/alertas.json', termometro: 'dados/termometro.json', guia: 'dados/guia.json',
+    passagens: 'dados/alertas.json', hoje: 'dados/alertas.json', guias: 'dados/guias.json', promocoes: 'dados/alertas.json', radar: 'dados/alertas.json', termometro: 'dados/termometro.json', guia: 'dados/guia.json',
     transferencias: 'dados/transferencias.json', novidades: 'dados/noticias.json',
     restaurantes: 'restaurantes.js', salas: 'dados/salas.json', cadastros: 'dados/programas.json', quanto: 'dados/precos-milhas.csv', comprar: 'precos.js', contatos: 'dados/contatos.csv'
   };

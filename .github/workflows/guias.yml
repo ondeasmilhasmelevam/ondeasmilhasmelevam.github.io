@@ -1,0 +1,45 @@
+# Atualiza o Guia de destinos (ferramentas/guias.py): confere os guias de origem todo dia
+# e reescreve com o Claude só os que mudaram (no máximo 40 por vez).
+name: Guia de destinos
+
+on:
+  schedule:
+    - cron: '40 7 * * *'   # 4h40 de Brasília
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['ferramentas/guias.py', '.github/workflows/guias.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guias
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'anthropic>=1,<2'
+      - name: Reescrever guias
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python ferramentas/guias.py
+      - name: Salvar se mudou
+        run: |
+          if git diff --quiet -- dados/guias.json 2>/dev/null && git ls-files --error-unmatch dados/guias.json >/dev/null 2>&1; then
+            echo "Sem mudança nos guias."
+            exit 0
+          fi
+          git config user.name "Onde as Milhas Me Levam"
+          git config user.email "ondeasmilhasmelevam@users.noreply.github.com"
+          git add dados/guias.json
+          git commit -m "Guia de destinos atualizado"
+          git pull --rebase
+          git push
