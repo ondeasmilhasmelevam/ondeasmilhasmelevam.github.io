@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=69">
+<link rel="stylesheet" href="estilo.css?v=72">
 </head>
 <body>
 <header class="bar">
@@ -212,10 +212,13 @@
           <h3>Comprar pontos e transferir com bônus</h3>
           <p class="sec-note">Quanto sai cada 1.000 milhas no fim, comprando pontos em promoção (Livelo, Esfera…) e transferindo com bônus.</p>
           <div class="calc-campanhas" id="cc-campanhas" hidden><span>Campanhas no ar</span><div></div></div>
-          <label>Programa de destino<select id="cc-destino"></select></label>
-          <label>Quanto você paga por 1.000 pontos (R$)<input id="cc-preco" type="number" inputmode="decimal" min="0" step="0.01" placeholder="ex.: 35"></label>
-          <label>Pontos para cada milha<input id="cc-prop" type="number" inputmode="decimal" min="0.1" step="0.1" value="1"></label>
+          <label>Onde vou comprar os pontos<select id="cc-origem"><option>Livelo</option><option>Esfera</option></select></label>
+          <label>Para onde vou transferir<select id="cc-destino"></select></label>
+          <label>Pontos que vou comprar<input id="cc-qtd" type="number" inputmode="numeric" min="0" step="1000" placeholder="ex.: 10000"></label>
+          <label>Preço de 1.000 pontos sem desconto (R$)<input id="cc-preco" type="number" inputmode="decimal" min="0" step="0.01" placeholder="ex.: 70"></label>
+          <label>Desconto na compra (%)<input id="cc-desc" type="number" inputmode="decimal" min="0" max="100" step="1" placeholder="ex.: 50"></label>
           <label>Bônus da transferência (%)<input id="cc-bonus" type="number" inputmode="decimal" min="0" step="1" placeholder="ex.: 100"></label>
+          <label>Pontos para cada milha<input id="cc-prop" type="number" inputmode="decimal" min="0.1" step="0.1" value="1"><small id="cc-prop-nota" class="calc-nota"></small></label>
           <p class="termo-resposta" id="cc-resposta" aria-live="polite"></p>
         </article>
 
@@ -729,7 +732,7 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=78"></script>
+<script src="app.js?v=80"></script>
 <script type="module" src="assinatura.js?v=6"></script>
 </body>
 </html>

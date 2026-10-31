@@ -1096,7 +1096,7 @@ footer .badge{width:84px;height:84px;margin-bottom:14px}
 .calc-card{position:relative}
 .calc-card.travada>*:not(.calc-trava),.calc-campanhas.travada>*:not(.calc-trava){filter:blur(5px);opacity:.55;pointer-events:none;user-select:none}
 .calc-card:not(.travada)>.calc-trava,.calc-campanhas:not(.travada)>.calc-trava{display:none}
-.calc-trava{position:absolute;inset:0;z-index:2;display:grid;place-content:center;justify-items:center;gap:10px;padding:20px;text-align:center;border-radius:inherit;background:rgba(7,12,23,.45)}
+.calc-trava{position:absolute;inset:0;z-index:2;display:grid;place-content:center;justify-items:center;gap:10px;padding:20px;text-align:center;border-radius:inherit;background:color-mix(in srgb,var(--ink) 55%,transparent)}
 .calc-trava p{margin:0;max-width:34ch;font-size:15px;font-weight:800;color:var(--rice)}
 .calc-trava small{font-size:12.5px;color:var(--ash)}
 .calc-trava small a{color:var(--ouro)}
@@ -1124,6 +1124,26 @@ footer .badge{width:84px;height:84px;margin-bottom:14px}
 .calc-campanhas button[aria-pressed="true"]{background:var(--ouro);color:var(--sobre-ouro);border-color:var(--ouro)}
 .calc-campanhas small{color:var(--ash-dim);font-weight:600;margin-left:4px}
 .calc-campanhas button[aria-pressed="true"] small{color:inherit}
+.calc-nota{font-size:11.5px;font-weight:600;color:var(--ash-dim);line-height:1.35}
+.cr-numeros{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:8px;margin:0 0 12px}
+.cr-numeros div{padding:9px 11px;border-radius:12px;background:var(--ink);border:1px solid var(--line)}
+.cr-numeros small{display:block;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ash-dim)}
+.calc-card .termo-resposta .cr-numeros b{display:block;margin-top:2px;font-size:18px;font-variant-numeric:tabular-nums;color:var(--rice)}
+.cr-numeros i{display:block;font-style:normal;font-size:11.5px;color:var(--ash-dim)}
+.cr-numeros .final{grid-column:1/-1;border-color:rgba(226,180,88,.5)}
+.calc-card .termo-resposta .cr-numeros .final b{font-size:24px;color:var(--ouro)}
+.cr-veredito{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin:0 0 8px}
+.cr-veredito strong{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--ink-3);color:var(--rice)}
+.cr-veredito.barato strong{background:#1f9d68;color:#fff}
+.cr-veredito.caro strong{background:#c2502f;color:#fff}
+.cr-veredito.preco strong{background:var(--ouro);color:var(--sobre-ouro)}
+.cr-veredito span{font-size:14px;color:var(--rice)}
+.cr-texto{margin:0 0 8px;font-size:14px;color:var(--ash);line-height:1.5}
+.cr-passos{margin-top:8px;font-size:13.5px}
+.cr-passos summary{cursor:pointer;font-weight:800;color:var(--ouro)}
+.cr-passos ol{margin:8px 0 0;padding-left:20px;display:grid;gap:4px;color:var(--ash)}
+.cr-passos li span{display:flex;justify-content:space-between;gap:10px}
+.calc-card .termo-resposta .cr-passos li b{color:var(--rice);font-variant-numeric:tabular-nums;white-space:nowrap}
 .calc-card .termo-resposta ul{margin:8px 0 0;padding-left:18px;display:grid;gap:3px}
 .eyebrow .beta{margin-left:6px;vertical-align:2px}
 

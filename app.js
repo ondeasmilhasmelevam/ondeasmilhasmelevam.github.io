@@ -1257,6 +1257,7 @@
       const r = await fetch('dados/transferencias.json', { cache: 'no-store' });
       transf = r.ok ? await r.json() : null;
     } catch (e) { transf = null; }
+    document.dispatchEvent(new Event('transf')); // a calculadora usa as proporções
     if (!transf || !transf.origens) { $('#transferencias').hidden = true; return; }
     $('#transf-data').textContent = `Conferido em ${new Date(transf.conferido + 'T12:00:00').toLocaleDateString('pt-BR')}. ${transf.aviso}`;
     $('#transf-extras').innerHTML = `<div class="termo-bloco">
@@ -2372,37 +2373,102 @@
   const NOMES_MILHEIRO = { 'Smiles': 'Smiles', 'LATAM Pass': 'LATAM Pass', 'Azul Fidelidade': 'Azul Fidelidade', 'TAP': 'TAP Miles&Go', 'AA': 'AAdvantage', 'Avios': 'Avios (Iberia, British, Qatar)' };
   const numCampo = id => { const v = parseFloat(String($(id).value).replace(',', '.')); return isFinite(v) ? v : null; };
   const emReais = v => brl2.format(v);
+  // Resposta das calculadoras: números em cartões, veredito contra a nossa referência e a conta passo a passo.
+  function respostaCalc(el, { numeros = [], veredito = null, texto = '', passos = [] }) {
+    el.className = 'termo-resposta' + (veredito ? ` ${veredito.classe === 'barato' ? 'ok' : veredito.classe === 'caro' ? 'espera' : ''}` : '');
+    el.innerHTML = `${veredito ? `<p class="cr-veredito ${veredito.classe}"><strong>${esc(veredito.selo)}</strong><span>${veredito.html}</span></p>` : ''}
+      <div class="cr-numeros">${numeros.map(([rot, val, nota, classe]) => `<div class="${classe || ''}"><small>${esc(rot)}</small><b>${esc(val)}</b>${nota ? `<i>${esc(nota)}</i>` : ''}</div>`).join('')}</div>
+      ${texto ? `<p class="cr-texto">${texto}</p>` : ''}
+      ${passos.length ? `<details class="cr-passos"><summary>Ver a conta passo a passo</summary><ol>${passos.map(([a, b]) => `<li><span>${esc(a)}<b>${esc(b)}</b></span></li>`).join('')}</ol></details>` : ''}`;
+  }
+  // Barato (10% ou mais abaixo da referência), no preço (até 10% de diferença) ou caro.
+  // Para quem paga (custo do milheiro), abaixo é bom; para quem usa milhas (quanto valem), acima é bom.
+  function vereditoMilheiro(valor, ref, programa, usar = false) {
+    if (!ref) return null;
+    const dif = (valor - ref) / ref * 100, bom = usar ? dif >= 10 : dif <= -10, ruim = usar ? dif <= -10 : dif >= 10;
+    const pct = `${decimal.format(Math.abs(dif))}% ${dif < 0 ? 'abaixo' : 'acima'} da nossa referência de ${emReais(ref)} para ${programa}`;
+    return bom ? { classe: 'barato', selo: usar ? 'Use as milhas' : 'Barato', html: `${esc(pct)}.` }
+      : ruim ? { classe: 'caro', selo: usar ? 'Pague em dinheiro' : 'Caro', html: `${esc(pct)}.` }
+        : { classe: 'preco', selo: 'No preço', html: `${esc(pct)}: nem pechincha, nem roubada.` };
+  }
+  // Referência do milheiro (milheiros.js) pelo nome do programa de destino.
+  const REF_PROGRAMA = [[/SMILES/, 'Smiles'], [/LATAM/, 'LATAM Pass'], [/AZUL/, 'Azul Fidelidade'], [/\bTAP\b/, 'TAP'], [/AADVANTAGE|AMERICAN/, 'AA'], [/IBERIA|BRITISH|QATAR|AVIOS/, 'Avios']];
+  const chaveRef = nome => (REF_PROGRAMA.find(([re]) => re.test(norm(nome))) || [])[1];
+  const refDe = nome => (window.MILHEIROS || {})[chaveRef(nome)];
+  const proporcaoDe = t => { const m = /^\s*(\d+(?:,\d+)?)\s*:\s*1/.exec(t || ''); return m ? Number(m[1].replace(',', '.')) : null; };
+
+  // Origens e destinos da página Transferências; enquanto ela não carrega, os programas da referência.
+  function destinosDaOrigem() {
+    const o = transf && transf.origens.find(x => x.nome === $('#cc-origem').value);
+    return o ? o.destinos.filter(d => proporcaoDe(d.proporcao)) : Object.keys(window.MILHEIROS || {}).map(k => ({ programa: NOMES_MILHEIRO[k] || k, proporcao: '1:1', bonus: '' }));
+  }
+  function montarDestinosCompra() {
+    const atual = $('#cc-destino').value;
+    const lista = destinosDaOrigem();
+    $('#cc-destino').innerHTML = lista.map(d => `<option value="${esc(d.programa)}">${esc(d.programa)} · ${esc(d.proporcao.split(' ')[0])}${refDe(d.programa) ? '' : ' (sem referência)'}</option>`).join('');
+    if (lista.some(d => d.programa === atual)) $('#cc-destino').value = atual;
+    ajustarProporcao();
+  }
+  function ajustarProporcao() {
+    const d = destinosDaOrigem().find(x => x.programa === $('#cc-destino').value);
+    if (!d) return;
+    $('#cc-prop').value = proporcaoDe(d.proporcao) || 1;
+    $('#cc-prop-nota').textContent = [`${$('#cc-origem').value} → ${d.programa}: ${d.proporcao}`, d.bonus ? `bônus costuma ser ${d.bonus}` : ''].filter(Boolean).join(' · ');
+  }
+  function montarOrigensCompra() {
+    if (!transf || !transf.origens) return;
+    const atual = $('#cc-origem').value;
+    $('#cc-origem').innerHTML = transf.origens.filter(o => o.destinos.some(d => proporcaoDe(d.proporcao)))
+      .map(o => `<option${o.nome === atual ? ' selected' : ''}>${esc(o.nome)}</option>`).join('');
+    montarDestinosCompra();
+    calcCompra();
+  }
+
   function calcCompra() {
-    const ref = (window.MILHEIROS || {})[$('#cc-destino').value];
-    const preco = numCampo('#cc-preco'), prop = numCampo('#cc-prop') || 1, bonus = numCampo('#cc-bonus') || 0;
+    const destino = $('#cc-destino').value, ref = refDe(destino);
+    const qtd = numCampo('#cc-qtd') || 10000, tabela = numCampo('#cc-preco'), desc = Math.min(100, numCampo('#cc-desc') || 0);
+    const prop = numCampo('#cc-prop') || 1, bonus = numCampo('#cc-bonus') || 0;
     const el = $('#cc-resposta');
-    if (!preco) { el.className = 'termo-resposta'; el.textContent = 'Informe quanto você paga por 1.000 pontos.'; return; }
-    const custo = preco * prop / (1 + bonus / 100);
-    const bom = ref && custo <= ref;
-    el.className = 'termo-resposta ' + (ref ? (bom ? 'ok' : 'espera') : '');
-    el.innerHTML = `Cada 1.000 milhas sai por <b>${esc(emReais(custo))}</b>.` + (ref
-      ? (bom ? ` Compensa: está abaixo dos ${esc(emReais(ref))} que usamos como valor do milheiro desse programa.`
-        : ` Não compensa agora: acima dos ${esc(emReais(ref))} que usamos como valor do milheiro. Espere um desconto ou bônus maior.`) : '');
+    if (!tabela) { el.className = 'termo-resposta'; el.textContent = 'Informe o preço de 1.000 pontos (sem desconto) e, se tiver, o desconto da promoção.'; return; }
+    const pago = tabela * (1 - desc / 100), pedido = qtd / 1000 * pago;
+    const base = qtd / prop, milhas = Math.round(base * (1 + bonus / 100));
+    const final = pedido / milhas * 1000;
+    respostaCalc(el, {
+      veredito: vereditoMilheiro(final, ref, destino),
+      numeros: [['Milheiro pago', emReais(pago), desc ? `${decimal.format(desc)}% de desconto` : 'sem desconto'], ['Valor do pedido', emReais(pedido), `${inteiro.format(qtd)} pontos`],
+        ['Milhas no fim', inteiro.format(milhas), bonus ? `com ${decimal.format(bonus)}% de bônus` : 'sem bônus'], ['Milheiro final', emReais(final), 'cada 1.000 milhas, já com o bônus', 'final']],
+      texto: ref ? '' : 'Ainda não temos referência de preço para esse programa: compare com o valor da passagem que você quer emitir.',
+      passos: [['Preço de 1.000 pontos', emReais(tabela)], ...(desc ? [[`Menos ${decimal.format(desc)}% de desconto`, emReais(pago)]] : []),
+        [`× ${inteiro.format(qtd)} pontos ÷ 1.000`, emReais(pedido)], [`${inteiro.format(qtd)} pontos ÷ ${decimal.format(prop)} (proporção)`, `${inteiro.format(Math.floor(base))} milhas`],
+        ...(bonus ? [[`+ ${decimal.format(bonus)}% de bônus`, `${inteiro.format(milhas)} milhas`]] : []), [`${emReais(pedido)} ÷ ${inteiro.format(milhas)} milhas × 1.000`, emReais(final)]]
+    });
   }
   function calcDinheiro() {
-    const ref = (window.MILHEIROS || {})[$('#dm-programa').value];
+    const prog = $('#dm-programa').value, ref = (window.MILHEIROS || {})[prog], nome = NOMES_MILHEIRO[prog] || prog;
     const r = numCampo('#dm-reais'), m = numCampo('#dm-milhas'), t = numCampo('#dm-taxas') || 0;
     const el = $('#dm-resposta');
     if (!r || !m) { el.className = 'termo-resposta'; el.textContent = 'Informe o preço em dinheiro e as milhas pedidas.'; return; }
-    const vale = (r - t) / m * 1000;
-    const bom = ref && vale >= ref;
-    el.className = 'termo-resposta ' + (ref ? (bom ? 'ok' : 'espera') : '');
-    el.innerHTML = `Nessa emissão, cada 1.000 milhas valem <b>${esc(emReais(Math.max(0, vale)))}</b>.` + (ref
-      ? (bom ? ` Use as milhas: vale mais que os ${esc(emReais(ref))} de referência.`
-        : ` Melhor pagar em dinheiro e guardar as milhas: vale menos que os ${esc(emReais(ref))} de referência.`) : '');
+    const vale = Math.max(0, (r - t) / m * 1000);
+    const custoMilhas = ref ? m / 1000 * ref + t : null;
+    respostaCalc(el, {
+      veredito: vereditoMilheiro(vale, ref, nome, true),
+      numeros: [['Cada 1.000 milhas valem', emReais(vale), 'nessa emissão', 'final'], ['Pagando em dinheiro', emReais(r)],
+        ['Com milhas', `${inteiro.format(m)} + ${emReais(t)}`, custoMilhas ? `as milhas custam ~${emReais(custoMilhas - t)}` : '']],
+      texto: ref ? (vale >= ref ? `Usar as milhas aqui rende mais do que elas costumam valer: boa emissão.` : `As milhas renderiam mais em outra emissão: aqui vale guardar e pagar em dinheiro.`) : '',
+      passos: [['Preço em dinheiro', emReais(r)], ['Menos as taxas da emissão com milhas', emReais(r - t)], [`÷ ${inteiro.format(m)} milhas × 1.000`, emReais(vale)],
+        ...(ref ? [[`Nossa referência para ${nome}`, emReais(ref)]] : [])]
+    });
   }
   function calcPontos() {
     const p = numCampo('#pm-pontos'), prop = numCampo('#pm-prop') || 1, bonus = numCampo('#pm-bonus') || 0;
     const el = $('#pm-resposta');
     if (!p) { el.className = 'termo-resposta'; el.textContent = 'Informe quantos pontos você tem.'; return; }
     const base = Math.floor(p / prop), total = Math.floor(base * (1 + bonus / 100));
-    el.className = 'termo-resposta ok';
-    el.innerHTML = `Viram <b>${esc(inteiro.format(total))} milhas</b>` + (bonus ? ` (${esc(inteiro.format(base))} da transferência + ${esc(inteiro.format(total - base))} de bônus).` : '.');
+    respostaCalc(el, {
+      numeros: [['Da transferência', inteiro.format(base), `proporção ${decimal.format(prop)}:1`], ['De bônus', inteiro.format(total - base), `${decimal.format(bonus)}%`],
+        ['Milhas no fim', inteiro.format(total), '', 'final']],
+      passos: [[`${inteiro.format(p)} pontos ÷ ${decimal.format(prop)}`, `${inteiro.format(base)} milhas`], ...(bonus ? [[`+ ${decimal.format(bonus)}% de bônus`, `${inteiro.format(total)} milhas`]] : [])]
+    });
   }
   // Preço médio pago por 1.000 pontos nos últimos 12 meses (compras com desconto da comunidade).
   const PRECO_MEDIO_PONTOS = { Livelo: 23.39, Esfera: 29.84 };
@@ -2419,11 +2485,15 @@
     const pago = comprados / 1000 * preco, jaTinha = Math.min(conta, total) / 1000 * precoConta;
     const milhas = Math.floor(total * (1 + bonus / 100));
     const final = (pago + jaTinha) / milhas * 1000;
-    const bom = ref && final <= ref;
-    const aviso = conta < total * 0.01 ? `<br><small>Atenção: a Livelo pede pelo menos 1% dos pontos já na conta (${esc(inteiro.format(Math.ceil(total * 0.01)))} aqui).</small>` : '';
-    el.className = 'termo-resposta ' + (ref ? (bom ? 'ok' : 'espera') : '');
-    el.innerHTML = `Você paga agora <b>${esc(emReais(pago))}</b> e usa ${esc(emReais(jaTinha))} em pontos que já tinha. Viram <b>${esc(inteiro.format(milhas))} milhas</b>, e cada 1.000 sai por <b>${esc(emReais(final))}</b>.` +
-      (ref ? (bom ? ` Compensa: abaixo dos ${esc(emReais(ref))} de referência.` : ` Não compensa: acima dos ${esc(emReais(ref))} de referência.`) : '') + aviso;
+    const nome = NOMES_MILHEIRO[$('#ca-destino').value] || $('#ca-destino').value;
+    respostaCalc(el, {
+      veredito: vereditoMilheiro(final, ref, nome),
+      numeros: [['Você paga agora', emReais(pago), `${inteiro.format(comprados)} pontos comprados`], ['Pontos que já tinha', emReais(jaTinha), `${inteiro.format(Math.min(conta, total))} pontos`],
+        ['Milhas no fim', inteiro.format(milhas), bonus ? `com ${decimal.format(bonus)}% de bônus` : ''], ['Milheiro final', emReais(final), 'contando os dois', 'final']],
+      texto: conta < total * 0.01 ? `Atenção: a Livelo pede pelo menos 1% dos pontos já na conta (${esc(inteiro.format(Math.ceil(total * 0.01)))} aqui).` : '',
+      passos: [[`${inteiro.format(comprados)} pontos × ${emReais(preco)} ÷ 1.000`, emReais(pago)], [`${inteiro.format(Math.min(conta, total))} pontos da conta × ${emReais(precoConta)} ÷ 1.000`, emReais(jaTinha)],
+        [`${inteiro.format(total)} pontos + ${decimal.format(bonus)}% de bônus`, `${inteiro.format(milhas)} milhas`], [`(${emReais(pago)} + ${emReais(jaTinha)}) ÷ ${inteiro.format(milhas)} × 1.000`, emReais(final)]]
+    });
   }
 
   // Hotel Accor: 1.000 pontos ALL = € 20 na diária; euro do dia pela AwesomeAPI.
@@ -2473,7 +2543,9 @@
         const b = e.target.closest('button'); if (!b) return;
         const c = campanhas[b.dataset.i];
         caixa.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-        $('#cc-destino').value = c.destino; $('#cc-bonus').value = c.bonus; $('#cc-prop').value = PROPORCAO_DESTINO[c.destino] || 1;
+        const opcao = [...$('#cc-destino').options].find(o => chaveRef(o.value) === c.destino);
+        if (opcao) { $('#cc-destino').value = opcao.value; ajustarProporcao(); }
+        $('#cc-bonus').value = c.bonus;
         calcCompra();
       };
     } catch (e) { /* sem campanhas na tela */ }
@@ -2523,7 +2595,11 @@
 
   function montarCalculadoras() {
     const opcoes = Object.keys(window.MILHEIROS || {}).map(k => `<option value="${esc(k)}">${esc(NOMES_MILHEIRO[k] || k)}</option>`).join('');
-    $('#cc-destino').innerHTML = opcoes;
+    montarDestinosCompra();
+    $('#cc-origem').addEventListener('change', () => { montarDestinosCompra(); calcCompra(); });
+    $('#cc-destino').addEventListener('change', () => { ajustarProporcao(); calcCompra(); });
+    document.addEventListener('transf', montarOrigensCompra);
+    montarOrigensCompra();
     $('#dm-programa').innerHTML = opcoes;
     $('#ca-destino').innerHTML = opcoes;
     const placeholderMedio = (origem, campo) => { $(campo).placeholder = `média de ${emReais(PRECO_MEDIO_PONTOS[$(origem).value])}`; };
@@ -2531,7 +2607,7 @@
     placeholderMedio('#ac-origem', '#ac-preco');
     $('#ca-origem').addEventListener('input', () => placeholderMedio('#ca-origem', '#ca-preco-conta'));
     $('#ac-origem').addEventListener('input', () => placeholderMedio('#ac-origem', '#ac-preco'));
-    ['#cc-destino', '#cc-preco', '#cc-prop', '#cc-bonus'].forEach(id => $(id).addEventListener('input', calcCompra));
+    ['#cc-qtd', '#cc-preco', '#cc-desc', '#cc-prop', '#cc-bonus'].forEach(id => $(id).addEventListener('input', calcCompra));
     ['#ca-origem', '#ca-destino', '#ca-total', '#ca-conta', '#ca-preco', '#ca-preco-conta', '#ca-bonus'].forEach(id => $(id).addEventListener('input', calcCarrinho));
     ['#dm-programa', '#dm-reais', '#dm-milhas', '#dm-taxas'].forEach(id => $(id).addEventListener('input', calcDinheiro));
     ['#pm-pontos', '#pm-prop', '#pm-bonus'].forEach(id => $(id).addEventListener('input', calcPontos));
