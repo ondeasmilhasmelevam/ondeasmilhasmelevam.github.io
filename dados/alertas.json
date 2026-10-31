@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-8744",
+  "data": "2026-10-31T14:14:50Z",
+  "origem": "Rio Branco",
+  "origem_iata": "RBR",
+  "destino": "Manaus",
+  "destino_iata": "MAO",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "20.000 milhas + Taxas",
+  "volta": "20.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-8743",
   "data": "2026-10-31T13:41:19Z",
   "origem": "Salvador",
@@ -3288,62 +3302,6 @@
   "ida": "13.200 milhas + Taxas",
   "volta": "13.200 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8615",
-  "data": "2026-10-29T14:20:25Z",
-  "origem": "Natal",
-  "origem_iata": "NAT",
-  "destino": "Salvador",
-  "destino_iata": "SSA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "30.400 milhas + Taxas",
-  "volta": "30.400 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8614",
-  "data": "2026-10-29T14:20:10Z",
-  "origem": "Natal",
-  "origem_iata": "NAT",
-  "destino": "Campo Grande",
-  "destino_iata": "CGR",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "24.100 milhas + Taxas",
-  "volta": "24.100 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8613",
-  "data": "2026-10-29T14:20:05Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Bonito",
-  "destino_iata": "BYO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.500 milhas + Taxas",
-  "volta": "11.500 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8612",
-  "data": "2026-10-29T14:20:00Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "SDU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "24.500 milhas + Taxas",
-  "volta": "24.500 milhas + Taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7483",
