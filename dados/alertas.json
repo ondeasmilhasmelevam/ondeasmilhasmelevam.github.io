@@ -3501,20 +3501,6 @@
   "ate": "2026-10-31T23:59:59-03:00"
  },
  {
-  "id": "3761373661-8590",
-  "data": "2026-10-29T12:01:42Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Fortaleza",
-  "destino_iata": "FOR",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 12.364 milhas",
-  "volta": "A partir de 12.364 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
