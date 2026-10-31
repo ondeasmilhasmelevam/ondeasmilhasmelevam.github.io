@@ -3,6 +3,7 @@
 Roda sozinho no GitHub (ver .github/workflows/noticias.yml). Guarda só
 título, data, link e fonte: o texto da notícia fica no site de origem.
 """
+import html
 import json
 import re
 import sys
@@ -92,8 +93,44 @@ def ler_feed(feed):
     return itens
 
 
+# Cartões e milhas do Melhores Destinos (notícias e emissões): a seção não tem feed, então a
+# lista vem das próprias páginas; a data, de cada artigo. Entra tudo dessa seção (pedido do Felipe), como tema milhas.
+MD_LISTAS = ('https://www.melhoresdestinos.com.br/noticias-milhas-e-cartoes', 'https://www.melhoresdestinos.com.br/emissoes-com-milhas')
+MD_POR_LISTA = 12
+MD_ARTIGO = re.compile(r'<a[^>]+href="(https://www\.melhoresdestinos\.com\.br/milhas/[^"#?]+)"[^>]*>\s*(?:<[^>]+>\s*)*([^<]{20,200})<')
+
+
+def baixar(url):
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (OndeAsMilhasMeLevam noticias)'})
+    return urllib.request.urlopen(req, timeout=30).read().decode('utf-8', 'replace')
+
+
+def ler_melhores_destinos():
+    itens, vistos = [], set()
+    achados = []
+    for lista in MD_LISTAS:
+        unicos = [x for x in dict.fromkeys(MD_ARTIGO.findall(baixar(lista))) if x[0] not in {a for a, _ in achados}]
+        achados += unicos[:MD_POR_LISTA]
+    for link, titulo in achados:
+        if link in vistos:
+            continue
+        vistos.add(link)
+        data = ''
+        try:
+            m = re.search(r'(?:published_time|datePublished)[^0-9]{0,30}(\d{4}-\d{2}-\d{2})', baixar(link))
+            data = m.group(1) if m else ''
+        except Exception:
+            pass
+        itens.append({'titulo': html.unescape(titulo).strip(), 'data': data, 'link': link, 'fonte': 'Melhores Destinos', 'tema': 'milhas'})
+    return itens
+
+
 def main():
     todas, erros = [], 0
+    try:
+        todas += ler_melhores_destinos()
+    except Exception as e:
+        print(f'Falhou Melhores Destinos: {e}', file=sys.stderr)
     for feed in FEEDS:
         try:
             todas += ler_feed(feed)
@@ -107,7 +144,8 @@ def main():
     # As já guardadas passam pelo mesmo filtro (o filtro pode ter ficado mais rígido).
     try:
         for n in json.loads(SAIDA.read_text(encoding='utf-8')):
-            n['tema'] = tema(n.get('titulo', ''))
+            if n.get('fonte') != 'Melhores Destinos':  # essa fonte entra inteira
+                n['tema'] = tema(n.get('titulo', ''))
             if n['tema']:
                 todas.append(n)
     except Exception:
