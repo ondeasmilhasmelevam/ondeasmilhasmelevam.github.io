@@ -44,10 +44,11 @@
   "1290836068-7529"
  ],
  "ultimo_em": "2026-10-31T15:03:18.813167+00:00",
- "ultimo_tipo": "promocao",
+ "ultimo_tipo": "passagem",
  "lotes_stories": [
   "08:00",
-  "12:00"
+  "12:00",
+  "16:00"
  ],
  "horarios_feed": [
   "09:00",
