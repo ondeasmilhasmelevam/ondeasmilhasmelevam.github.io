@@ -99,7 +99,7 @@
       try {
         const { buf, origem, quando } = await fonte();
         const novoLivro = await Planilha.abrir(buf);
-        const novoModelo = montarModelo(novoLivro);
+        const novoModelo = aplicarCorrecoes(montarModelo(novoLivro));
         if (!novoModelo.cartoes.length) throw new Error('nenhum cartão lido');
         livro = novoLivro; modelo = novoModelo;
         if (origem === 'vivo') { try { localStorage.setItem(CHAVE_CACHE, JSON.stringify({ dados: paraBase64(buf), quando: quando.toISOString() })); } catch (e) { /* ok */ } }
@@ -417,6 +417,34 @@
   }
 
   /* ---------- contas ---------- */
+
+  // Correções do site por cima da planilha (correcoes.js): pontuação nacional, pontuação no exterior,
+  // fórmula que usava o dólar no lugar do gasto e cartões que saem da lista.
+  function aplicarCorrecoes(m) {
+    const C = window.CORRECOES;
+    if (!C) return m;
+    m.cartoes = m.cartoes.filter(k => !(C.fora || []).includes(norm(k.nome)));
+    const celula = (col, k) => col && m.aba.celulas.get(col + k.linha);
+    const ref = r => { const x = /^\$?([A-Z]+)\$?(\d+)$/.exec(r || ''); return x && { col: x[1], lin: x[2] }; };
+    const dolar = ref(m.refDolar), gasto = ref(m.refGasto);
+    for (const k of m.cartoes) {
+      const c = (C.cartoes || {})[norm(k.nome)];
+      if (!c) continue;
+      if (c.exterior) k.exterior = c.exterior;
+      if (typeof c.pontuacao === 'number') {
+        const cel = celula(m.col.pontuacao, k);
+        if (cel) { cel.f = null; cel.v = c.pontuacao; cel.arvore = undefined; }
+      }
+      if (c.gastoNoLugarDoDolar && dolar && gasto) {
+        const re = new RegExp('\\$?' + dolar.col + '\\$?' + dolar.lin + '(?!\\d)', 'g');
+        for (const chave of ['mensal', 'anuidade', 'pontuacao']) {
+          const cel = celula(m.col[chave], k);
+          if (cel && cel.f) { cel.f = cel.f.replace(re, `$${gasto.col}$${gasto.lin}`); cel.arvore = undefined; }
+        }
+      }
+    }
+    return m;
+  }
 
   function milheiroProprio(nome) {
     const M = window.MILHEIROS || {};
@@ -799,7 +827,7 @@
   // Faixa de números de cada cartão na lista: como pontua, quanto entra por mês, quanto custa e quanto vale.
   function metricasHtml(r) {
     const k = r.cartao, mil = milheiroDe(r.transferencia), anu = ehNum(r.anuidade) ? r.anuidade : null;
-    const m = [['Pontuação', pontuacaoTxt(r) || '—']];
+    const m = [['Pontuação', (pontuacaoTxt(r) || '—') + (k.exterior ? ` · ${decimal.format(k.exterior)} no exterior` : '')]];
     if (ehCashback(r)) m.push(['Cashback por mês', brl.format(r.pontosAno / 12)]);
     else if (ehNum(r.pontosAno)) m.push([`${unidadeDe(k).replace(/^./, c => c.toUpperCase())} por mês`, inteiro.format(Math.round(r.pontosAno / 12))]);
     m.push(['Anuidade', ehIsento(k) ? 'isenta (sua)' : anu === 0 ? 'grátis' : anu ? brl.format(anu) : '—']);
@@ -877,6 +905,7 @@
       ['Categoria', k.tipo],
       ['Exige', k.renda],
       ['Pontuação', pontuacaoTxt(r)],
+      ['No exterior', k.exterior ? `${decimal.format(k.exterior)} pontos por US$ 1` : ''],
       ['Transfere para', r.transferencia],
       ['Anuidade no seu gasto', ehNum(r.anuidade) ? (r.anuidade > 0 ? brl.format(r.anuidade) : 'Grátis') : '']
     ].filter(([, v]) => v && !/^[-?—\s]+$/.test(String(v)));
