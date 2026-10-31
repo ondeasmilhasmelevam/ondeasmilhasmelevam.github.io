@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['ferramentas/guias.py', '.github/workflows/guias.yml']
+    paths: ['ferramentas/guias.py', 'ferramentas/guias_milhas.py', '.github/workflows/guias.yml']
 
 permissions:
   contents: write
@@ -31,15 +31,21 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python ferramentas/guias.py
+      - name: Reescrever guias de salas VIP e programas
+        continue-on-error: true   # se falhar, os guias de destino ainda são salvos
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python ferramentas/guias_milhas.py
       - name: Salvar se mudou
         run: |
-          if git diff --quiet -- dados/guias.json 2>/dev/null && git ls-files --error-unmatch dados/guias.json >/dev/null 2>&1; then
+          git add -N dados/guias-milhas.json 2>/dev/null || true
+          if git diff --quiet -- dados/guias.json dados/guias-milhas.json; then
             echo "Sem mudança nos guias."
             exit 0
           fi
           git config user.name "Onde as Milhas Me Levam"
           git config user.email "ondeasmilhasmelevam@users.noreply.github.com"
-          git add dados/guias.json
+          git add dados/guias.json dados/guias-milhas.json 2>/dev/null || git add dados/guias.json
           git commit -m "Guia de destinos atualizado"
           git pull --rebase
           git push

@@ -2091,6 +2091,45 @@
   $('#ab-volta').addEventListener('input', mostrarAbertura);
   $('#ab-form').addEventListener('submit', e => e.preventDefault());
 
+  // Guias de salas VIP e de programas de fidelidade (robô ferramentas/guias_milhas.py).
+  let guiasMilhas = null, programaAtual = '';
+  const listaHtml = (xs, cls = '') => (xs && xs.length ? `<ul${cls ? ` class="${cls}"` : ''}>${xs.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : '');
+  const secoesHtml = secs => (secs && secs.length ? `<div class="pg-secs">${secs.map(s => `<div class="pg-sec"><b>${esc(s.titulo)}</b>${s.texto ? `<p>${esc(s.texto)}</p>` : ''}${listaHtml(s.itens)}</div>`).join('')}</div>` : '');
+  function guiaDaSala(iata) {
+    const g = guiasMilhas && guiasMilhas.salas.find(x => x.iata === iata);
+    if (!g) return '';
+    return `<details class="sala-guia"><summary>Guia das salas VIP de ${esc(g.assunto || iata)}</summary><div>
+        <p>${esc(g.resumo)}</p>${secoesHtml(g.secoes)}
+        ${g.dicas.length ? `<div><p class="pg-tit">Dicas</p>${listaHtml(g.dicas, 'pg-dicas')}</div>` : ''}
+      </div></details>`;
+  }
+  function mostrarPrograma() {
+    const lista = (guiasMilhas && guiasMilhas.programas) || [];
+    if (!lista.length) return;
+    const g = lista.find(x => x.url === programaAtual) || lista[0];
+    programaAtual = g.url;
+    $('#pg-atalhos').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === g.url)));
+    $('#pg-guia').innerHTML = `<div class="pg-cab"><small>${esc(g.assunto)}</small><h3>${esc(g.titulo)}</h3><p>${esc(g.resumo)}</p></div>
+      ${g.categorias.length ? `<p class="pg-tit">Categorias</p><div class="pg-cats">${g.categorias.map(c => `<article><b>${esc(c.nome)}</b>${c.requisito ? `<em>${esc(c.requisito)}</em>` : ''}${listaHtml(c.beneficios)}</article>`).join('')}</div>` : ''}
+      ${g.secoes.length ? `<p class="pg-tit">Como funciona</p>${secoesHtml(g.secoes)}` : ''}
+      ${g.dicas.length ? `<p class="pg-tit">Dicas</p>${listaHtml(g.dicas, 'pg-dicas')}` : ''}`;
+    const [ano, mes, dia] = (g.atualizado || '').split('-');
+    $('#pg-conferido').textContent = ano ? `Atualizado em ${dia}/${mes}/${ano}. Regras mudam: confira no site do programa.` : '';
+  }
+  (async () => {
+    try {
+      guiasMilhas = await (await fetch('dados/guias-milhas.json', { cache: 'no-cache' })).json();
+    } catch (e) { return; } // ainda sem o arquivo: a página mostra o aviso
+    const lista = guiasMilhas.programas || [];
+    $('#pg-atalhos').innerHTML = lista.map(g => `<button type="button" data-v="${esc(g.url)}" aria-pressed="false">${esc(g.assunto)}</button>`).join('');
+    mostrarPrograma();
+    mostrarSalas();
+  })();
+  $('#pg-atalhos').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    programaAtual = b.dataset.v; mostrarPrograma();
+  });
+
   function mostrarSalas() {
     if (!salas) return;
     const busca = norm(filtroSala.busca);
@@ -2100,6 +2139,7 @@
       (!busca || norm([a.iata, a.cidade, s.nome, s.terminal].join(' ')).includes(busca))) })).filter(a => a.salas.length);
     $('#salas-lista').innerHTML = aeros.map(a => `<section class="salas-aero">
         <h3><b>${esc(a.iata)}</b>${esc(a.cidade)}<small>${a.salas.length} ${a.salas.length === 1 ? 'sala' : 'salas'}</small></h3>
+        ${guiaDaSala(a.iata)}
         <ul class="salas-grade">${a.salas.map(s => `<li class="${s.fechada ? 'fechada' : ''}">
           <p class="sala-term">${esc(s.terminal)}${s.fechada ? ' · fechada agora' : ''}</p>
           <p class="sala-nome">${esc(s.nome)}</p>
@@ -2566,7 +2606,7 @@
   const ARQUIVO_DA_PAGINA = {
     passagens: 'dados/alertas.json', hoje: 'dados/alertas.json', guias: 'dados/guias.json', promocoes: 'dados/alertas.json', radar: 'dados/alertas.json', termometro: 'dados/termometro.json', guia: 'dados/guia.json',
     transferencias: 'dados/transferencias.json', novidades: 'dados/noticias.json',
-    restaurantes: 'restaurantes.js', salas: 'dados/salas.json', cadastros: 'dados/programas.json', quanto: 'dados/precos-milhas.csv', comprar: 'precos.js', contatos: 'dados/contatos.csv'
+    restaurantes: 'restaurantes.js', salas: 'dados/salas.json', programas: 'dados/guias-milhas.json', cadastros: 'dados/programas.json', quanto: 'dados/precos-milhas.csv', comprar: 'precos.js', contatos: 'dados/contatos.csv'
   };
   const datasArquivo = {};
   function quandoTxt(d) {

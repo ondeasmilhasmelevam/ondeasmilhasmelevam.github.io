@@ -547,6 +547,30 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .ab-g-cas{color:#e2705a!important}
 .ab-passos{margin-top:14px}
 
+/* ---------- guias de programas e de salas VIP (dados/guias-milhas.json) ---------- */
+.pg-atalhos{justify-content:flex-start;margin:0 0 18px}
+.pg-cab{padding:18px;border:1px solid rgba(226,180,88,.4);border-radius:16px;background:linear-gradient(120deg,rgba(226,180,88,.1),var(--ink-2) 55%);margin-bottom:16px}
+.pg-cab small{font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro)}
+.pg-cab h3{margin:4px 0 8px;font-family:var(--display);font-size:clamp(22px,3.5vw,30px);color:var(--rice)}
+.pg-cab p{margin:0;font-size:15px;line-height:1.6;color:var(--ash)}
+.pg-tit{margin:22px 0 10px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro)}
+.pg-cats{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.pg-cats article{padding:14px 16px;border:1px solid var(--line);border-top:3px solid var(--ouro);border-radius:14px;background:var(--ink-2)}
+.pg-cats b{display:block;font-size:16px;color:var(--rice)}
+.pg-cats em{display:block;margin:4px 0 8px;font-style:normal;font-size:13px;font-weight:700;color:var(--ouro)}
+.pg-cats ul,.pg-sec ul,.pg-dicas{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14px;line-height:1.5;color:var(--ash)}
+.pg-secs{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.pg-sec{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2)}
+.pg-sec b{display:block;font-size:15px;color:var(--rice);margin-bottom:6px}
+.pg-sec p{margin:0 0 6px;font-size:14px;line-height:1.55;color:var(--ash)}
+.sala-guia{margin:0 0 12px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2)}
+.sala-guia summary{cursor:pointer;padding:12px 16px;font-size:14px;font-weight:800;color:var(--ouro);list-style:none}
+.sala-guia summary::-webkit-details-marker{display:none}
+.sala-guia summary::before{content:"▸ ";color:var(--ouro)}
+.sala-guia[open] summary::before{content:"▾ "}
+.sala-guia>div{display:grid;gap:12px;padding:0 16px 16px}
+.sala-guia>div>p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ash)}
+
 /* ---------- hoje ---------- */
 .hoje-destaque{position:relative;display:grid;align-content:end;min-height:300px;padding:26px 28px;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--ink-2) center/cover no-repeat;color:#fff;margin:0 0 30px}
 .hoje-destaque::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,16,.15) 0%,rgba(5,8,16,.55) 45%,rgba(5,8,16,.92) 100%)}
