@@ -3753,20 +3753,6 @@
   "link_nome": "TAP Miles&Go"
  },
  {
-  "id": "2361370250-5714",
-  "data": "2026-10-29T09:22:31Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Zurique",
-  "destino_iata": "ZRH",
-  "companhia": "TAP Air Portugal",
-  "cabine": "Executiva",
-  "programa": "TAP Miles&Go",
-  "ida": "135.000 milhas",
-  "volta": "135.000 milhas",
-  "link_nome": "TAP Miles&Go"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
