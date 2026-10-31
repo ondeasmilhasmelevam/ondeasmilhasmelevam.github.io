@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-8745",
+  "data": "2026-10-31T14:22:10Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "8.720 milhas + Taxas",
+  "volta": "8.720 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8744",
   "data": "2026-10-31T14:14:50Z",
   "origem": "Rio Branco",
@@ -3246,62 +3260,6 @@
    "https://link.dia23.com.br/r/GZNCpLn"
   ],
   "ate": ""
- },
- {
-  "id": "3761373661-8619",
-  "data": "2026-10-29T14:21:28Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "18.000 milhas + Taxas",
-  "volta": "18.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8618",
-  "data": "2026-10-29T14:21:23Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Florianópolis",
-  "destino_iata": "FLN",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "25.800 milhas + Taxas",
-  "volta": "25.800 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8617",
-  "data": "2026-10-29T14:21:18Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Palmas",
-  "destino_iata": "PMW",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "17.000 milhas + Taxas",
-  "volta": "17.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8616",
-  "data": "2026-10-29T14:20:32Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Fortaleza",
-  "destino_iata": "FOR",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "13.200 milhas + Taxas",
-  "volta": "13.200 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7483",
