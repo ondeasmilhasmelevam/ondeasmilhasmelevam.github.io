@@ -2618,20 +2618,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2361370250-5814",
-  "data": "2026-10-29T21:26:29Z",
-  "origem": "Madrid",
-  "origem_iata": "MAD",
-  "destino": "Hong Kong",
-  "destino_iata": "HKG",
-  "companhia": "Qatar Airways",
-  "cabine": "Executiva",
-  "programa": "AAdvantage",
-  "ida": "75.000 milhas + R$ 358,62",
-  "volta": "75.000 milhas + R$ 903,40",
-  "link_nome": "AAdvantage"
- },
- {
   "id": "1290836068-7483",
   "data": "2026-10-29T12:02:20Z",
   "tipo": "promocao",
