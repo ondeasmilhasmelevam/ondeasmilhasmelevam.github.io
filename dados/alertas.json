@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5888",
+  "data": "2026-10-31T11:32:05Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Orlando",
+  "destino_iata": "MCO",
+  "companhia": "Copa Airlines",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "751.000 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5887",
   "data": "2026-10-31T11:26:25Z",
   "origem": "São Paulo",
@@ -3539,34 +3553,6 @@
   "cabine": "Executiva",
   "programa": "GOL Smiles",
   "ida": "57.700 milhas",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-5771",
-  "data": "2026-10-29T11:30:24Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "GOL + American Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "161.200 milhas",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-5770",
-  "data": "2026-10-29T11:26:56Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "376.900 milhas",
   "volta": "",
   "link_nome": "GOL Smiles"
  },
