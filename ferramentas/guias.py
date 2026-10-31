@@ -22,7 +22,7 @@ from pathlib import Path
 
 INDICE = 'https://guia.melhoresdestinos.com.br/'
 SAIDA = Path(__file__).resolve().parent.parent / 'dados' / 'guias.json'
-MAXIMO_POR_VEZ = int(os.environ.get('GUIAS_POR_VEZ') or 60)
+MAXIMO_POR_VEZ = int(os.environ.get('GUIAS_POR_VEZ') or 200)
 SIMULTANEOS = 4
 # Subpáginas de cada guia, achadas pelo texto do link (o endereço muda de destino para destino).
 SECOES = {'quando_ir': 'Quando ir', 'como_chegar': 'Como chegar', 'onde_ficar': 'Onde ficar', 'o_que_fazer': 'O que fazer',

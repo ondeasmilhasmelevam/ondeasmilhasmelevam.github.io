@@ -1,5 +1,5 @@
 # Atualiza o Guia de destinos (ferramentas/guias.py): confere os guias de origem todo dia
-# (página principal e subpáginas) e reescreve com o Claude só os que mudaram (no máximo 60 por vez).
+# (página principal e subpáginas) e reescreve com o Claude só os que mudaram (no máximo 200 por vez).
 name: Guia de destinos
 
 on:
