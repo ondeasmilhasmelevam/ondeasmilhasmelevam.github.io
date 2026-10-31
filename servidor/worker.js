@@ -26,6 +26,7 @@ export default {
       if (req.method === 'POST' && url.pathname === '/codigo') return json(await pedirCodigo(await req.json(), env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/entrar') return json(await entrar(await req.json(), env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/alertas') return json(await guardarAlertas(req, env));
+      if (req.method === 'GET' && url.pathname === '/alertas') return json(await estadoAlertas(env));
       return json({ erro: 'não encontrado' }, 404, cors);
     } catch (e) {
       return json({ erro: e.message || 'erro' }, e.status || 500, cors);
@@ -248,6 +249,12 @@ async function guardarAlertas(req, env) {
   if (!completos || typeof completos !== 'object' || Array.isArray(completos)) throw falha('formato errado');
   await gravarDoc(env, 'privado/alertas', { json: texto, atualizadoEm: new Date() });
   return { ok: true, itens: Object.keys(completos).length };
+}
+
+// Só para conferir se o plantão está entregando: quando chegou e quantas passagens (sem o conteúdo).
+async function estadoAlertas(env) {
+  const d = await lerDoc(env, 'privado/alertas');
+  return d ? { atualizadoEm: d.atualizadoEm, itens: Object.keys(JSON.parse(d.json)).length } : { atualizadoEm: null, itens: 0 };
 }
 
 async function lerDoc(env, caminho) {
