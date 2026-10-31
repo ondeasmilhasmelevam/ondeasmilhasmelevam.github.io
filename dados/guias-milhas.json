@@ -1,0 +1,2499 @@
+{
+ "atualizado": "2026-10-31",
+ "salas": [
+  {
+   "url": "https://www.melhorescartoes.com.br/sala-vip-aeroporto-de-guarulhos.html",
+   "marca": "6a82e6ab4c6dc4c7",
+   "atualizado": "2026-10-31",
+   "titulo": "Salas VIP do aeroporto de Guarulhos",
+   "assunto": "Guarulhos (GRU)",
+   "iata": "GRU",
+   "resumo": "Guarulhos tem cerca de 25 salas VIP distribuídas entre os três terminais. O acesso pode ser feito por cartões, programas como LoungeKey, Priority Pass e Visa Airport Companion (DragonPass), status de companhias aéreas ou pagando. O Terminal 3, de voos internacionais, concentra o maior número de opções.",
+   "categorias": [],
+   "salas": [
+    {
+     "nome": "W Premium Lounge T1",
+     "terminal": "Terminal 1",
+     "onde": "Mezanino do Terminal 1, na área de embarque, após o controle de segurança",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "LoungeKey, Priority Pass, Visa Airport Companion e DragonPass",
+      "Cartões C6 Bank e Sisprime",
+      "Seguros Hero, Coris e GTA e Mileon Air",
+      "Pagando: R$ 200 por pessoa na recepção"
+     ]
+    },
+    {
+     "nome": "Advantage VIP Lounge",
+     "terminal": "Terminal 2",
+     "onde": "Piso 2 da área de embarque doméstico, com acesso pela escada próxima à loja Dufry",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "LoungeKey ou Priority Pass",
+      "Pagando: R$ 180 por pessoa, com permanência máxima de 3 horas",
+      "Crianças até 2 anos não pagam"
+     ]
+    },
+    {
+     "nome": "Bradesco Cartões Lounge Nacional",
+     "terminal": "Terminal 2",
+     "onde": "Mezanino da área de embarque doméstico, após o controle de segurança",
+     "horario": "6h às 23h, todos os dias",
+     "como_entrar": [
+      "The Centurion Card, The Platinum Card, Bradesco Visa Aeternum e Bradesco Elo Diners Club: acesso gratuito e ilimitado, com 1 acompanhante e filhos até 16 anos",
+      "Bradesco Principal: 4 acessos gratuitos por ano, com 1 acompanhante e filhos até 16 anos",
+      "Não há acesso pago"
+     ]
+    },
+    {
+     "nome": "GOL Premium Lounge Nacional",
+     "terminal": "Terminal 2",
+     "onde": "Mezanino da área de embarque doméstico, no lado Oeste",
+     "horario": "6h às 00h, todos os dias",
+     "como_entrar": [
+      "Clientes Smiles Diamante (com acompanhante) e Smiles Ouro (50% de desconto para acompanhante) voando GOL",
+      "Cartão Mastercard Smiles Platinum",
+      "Passageiros de Premium Economy da GOL em conexão",
+      "Primeira classe e executiva da Delta e da Air France/KLM e membros SkyMiles e Flying Blue elegíveis, em conexão com a GOL",
+      "Visa Airport Companion (não aceita mais Priority Pass nem LoungeKey)",
+      "Pagando: compra antecipada nos canais digitais da GOL ou na recepção, conforme disponibilidade, ou com milhas Smiles"
+     ]
+    },
+    {
+     "nome": "GOL Premium Lounge Internacional",
+     "terminal": "Terminal 2",
+     "onde": "Piso de embarque internacional, no lado Leste, após o controle de imigração",
+     "horario": "5h à 01h, todos os dias",
+     "como_entrar": [
+      "Mesma política da sala nacional",
+      "Clientes Smiles Diamante e Ouro voando GOL",
+      "Cartão Mastercard Smiles Platinum e passageiros da classe GOL Premium",
+      "Primeira classe e executiva da Delta, Air France/KLM e parceiras",
+      "Visa Airport Companion",
+      "Pagando: compra antecipada nos canais da GOL, na recepção ou com milhas Smiles"
+     ]
+    },
+    {
+     "nome": "VIP Lounge Inter",
+     "terminal": "Terminal 2",
+     "onde": "Mezanino da área de embarque doméstico",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "Clientes Inter Win e Prime, com acesso gratuito e ilimitado",
+      "Pontos Loop para adquirir um acesso",
+      "Não há acesso pago"
+     ]
+    },
+    {
+     "nome": "Plaza Premium Lounge (lado terra)",
+     "terminal": "Terminal 2",
+     "onde": "Área pública, próximo ao balcão de check-in D",
+     "horario": "5h às 22h, todos os dias",
+     "como_entrar": [
+      "Visa Airport Companion e DragonPass",
+      "Amex The Platinum Card emitido no exterior e Capital One Venture",
+      "Pagando: R$ 195 por 3 horas ou R$ 130 por 1 hora"
+     ]
+    },
+    {
+     "nome": "Plaza Premium Lounge (lado ar)",
+     "terminal": "Terminal 2",
+     "onde": "Área de embarque doméstico",
+     "horario": "5h às 23h, todos os dias",
+     "como_entrar": [
+      "Visa Airport Companion e DragonPass",
+      "Amex The Platinum Card emitido no exterior e Capital One Venture",
+      "Pagando: R$ 240 por 3 horas ou R$ 159 por 1 hora"
+     ]
+    },
+    {
+     "nome": "The Lounge São Paulo (nacional)",
+     "terminal": "Terminal 2",
+     "onde": "Mezanino da área de embarque nacional, entre as salas da GOL e do Bradesco",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "LoungeKey e Priority Pass",
+      "Pagando: R$ 200 por pessoa",
+      "Crianças até 11 anos entram grátis, uma por adulto pagante",
+      "Sem limite de tempo de permanência"
+     ]
+    },
+    {
+     "nome": "The Lounge SkyTeam (internacional)",
+     "terminal": "Terminal 2",
+     "onde": "Mezanino da área de embarque internacional, logo após a revisão de passaportes",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "LoungeKey e Priority Pass",
+      "Status SkyTeam Elite Plus",
+      "Classe executiva na Aeroméxico ou Air Europa",
+      "Pagando: R$ 200 por pessoa; crianças até 11 anos entram grátis, uma por adulto pagante"
+     ]
+    },
+    {
+     "nome": "Urban Lounge & Work",
+     "terminal": "Terminal 2",
+     "onde": "Mezanino, ao lado da casa lotérica, acima do check-in E da Latam, fora da área de embarque",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "LoungeKey e Priority Pass",
+      "Pagando: R$ 165 (3 horas), R$ 252 (6 horas) ou R$ 370 (12 horas) por adulto",
+      "Crianças até 4 anos não pagam; de 5 a 10 anos pagam 50%"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge T2",
+     "terminal": "Terminal 2",
+     "onde": "Embarque doméstico Oeste, ao lado da Dufry, próximo ao portão 201",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "LoungeKey, Priority Pass, Visa Airport Companion e DragonPass",
+      "Cartões C6 Bank e Sisprime",
+      "Seguros Hero, Coris e GTA e Mileon Air",
+      "Pagando: R$ 220 por pessoa"
+     ]
+    },
+    {
+     "nome": "American Airlines Admirals Club",
+     "terminal": "Terminal 3",
+     "onde": "Mezanino, na área de embarque internacional",
+     "horario": "11h15 às 23h45, todos os dias",
+     "como_entrar": [
+      "Executiva e primeira classe da American ou da oneworld",
+      "AAdvantage Executive Platinum, Platinum Pro e Platinum voando American ou oneworld",
+      "Status oneworld Emerald e Sapphire",
+      "Pagando: day pass no site ou app da American, sujeito à disponibilidade"
+     ]
+    },
+    {
+     "nome": "Bradesco Cartões Lounge Internacional",
+     "terminal": "Terminal 3",
+     "onde": "1º andar da área de embarque internacional, após o controle de segurança",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "The Centurion Card, The Platinum Card, Bradesco Visa Aeternum e Elo Diners Club: acesso gratuito e ilimitado, com acompanhante e filhos até 16 anos",
+      "Bradesco Principal: 4 acessos gratuitos por ano, com 1 acompanhante e filhos até 16 anos",
+      "Bradesco Elo Nanquim não tem acesso",
+      "Não há acesso pago"
+     ]
+    },
+    {
+     "nome": "Casa BB",
+     "terminal": "Terminal 3",
+     "onde": "Mezanino da área de embarque internacional",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "Cartões Banco do Brasil Elo Nanquim, Elo Nanquim Diners, Mastercard Black, Visa Infinite, Smiles Visa Infinite, Altus e Altus Liv, além de cartões PJ elegíveis; a quantidade de acessos varia por cartão",
+      "Primeira classe ou executiva de Air France, KLM, TAP, Lufthansa, Swiss, Turkish, United, Copa, Air Canada, Air China, South African, ITA Airways e Emirates",
+      "Não aceita Priority Pass",
+      "Não há acesso pago"
+     ]
+    },
+    {
+     "nome": "LATAM VIP Lounge",
+     "terminal": "Terminal 3",
+     "onde": "Mezanino da área de embarque internacional",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "Black Signature do LATAM Pass voando LATAM: família imediata e mais 1 acompanhante",
+      "Platinum e Black voando LATAM: 1 acompanhante",
+      "Cartões LATAM Pass Itaucard Mastercard Black ou Itaú Personnalité LATAM Pass Visa Infinite, voando LATAM: 1 acompanhante",
+      "Visa Airport Companion / DragonPass",
+      "Não há acesso pago"
+     ]
+    },
+    {
+     "nome": "Sala VIP Mastercard Black",
+     "terminal": "Terminal 3",
+     "onde": "Black 1 no mezanino; Black 2 no piso de embarque, no corredor de lojas",
+     "horario": "10h às 23h30, todos os dias",
+     "como_entrar": [
+      "Cartões Mastercard Black, titular ou adicional, com cartão de embarque; entrada a partir de 4 horas antes do embarque",
+      "Dependentes diretos até 12 anos entram grátis",
+      "Acompanhantes pagam R$ 200 por pessoa, no máximo 3 por cartão",
+      "Cartões emitidos no exterior pagam US$ 35 pelo LoungeKey",
+      "Alguns emissores exigem gasto mínimo na fatura"
+     ]
+    },
+    {
+     "nome": "Taste of Priceless",
+     "terminal": "Terminal 3",
+     "onde": "Térreo, após o controle de passaportes, à direita",
+     "horario": "6h às 2h, todos os dias",
+     "como_entrar": [
+      "Cartão World Legend Mastercard, titular ou adicional, com documento e lista de convidados dos emissores",
+      "Dependentes diretos até 12 anos entram grátis",
+      "Titular leva 2 acompanhantes grátis e até 2 pagantes a R$ 500 por pessoa"
+     ]
+    },
+    {
+     "nome": "Nomad Lounge",
+     "terminal": "Terminal 3",
+     "onde": "Área de embarque internacional, ao lado do portão 303",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "Clientes Nomad Pass, conforme o nível, pelo app da Nomad",
+      "Níveis mais baixos podem entrar em ações promocionais",
+      "Não há acesso pago"
+     ]
+    },
+    {
+     "nome": "Nubank Ultravioleta Lounge",
+     "terminal": "Terminal 3",
+     "onde": "Área de embarque internacional, próximo ao portão 329",
+     "horario": "6h às 23h, todos os dias",
+     "como_entrar": [
+      "Clientes Nubank Ultravioleta, acesso ilimitado, com 1 acompanhante maior de 18 anos e dependentes legais ilimitados até 17 anos",
+      "Quando aplicável, US$ 32 por pessoa, pagos em reais na recepção"
+     ]
+    },
+    {
+     "nome": "Sala Pedra Preta (Itaú)",
+     "terminal": "Terminal 3",
+     "onde": "Área de embarque internacional, piso térreo, após o controle de passaportes",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "Clientes Itaú Personnalité com cartões The One e World Legend",
+      "Clientes Itaú Private elegíveis",
+      "Acesso por QR Code no app do Itaú",
+      "Não há acesso pago"
+     ]
+    },
+    {
+     "nome": "Visa Infinite Lounge",
+     "terminal": "Terminal 3",
+     "onde": "Área de embarque internacional, logo após o duty free",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "Cartões Visa Infinite e clientes com Visa Airport Companion",
+      "A entrada grátis depende do benefício do cartão",
+      "Não há acesso pago"
+     ]
+    },
+    {
+     "nome": "Visa Infinite Privilege Lounge",
+     "terminal": "Terminal 3",
+     "onde": "Área de embarque internacional",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "Exclusivo para cartões Visa Infinite Privilege",
+      "Agendamento prévio pelo Visa Infinite Privilege Lifestyle Manager",
+      "Não há acesso pago"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge The Pier",
+     "terminal": "Terminal 3",
+     "onde": "Área de embarque internacional, próximo aos portões 323 e 324",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "LoungeKey, Priority Pass, Visa Airport Companion e DragonPass",
+      "C6 Bank, Sisprime, American Express (acesso prioritário), ITA, GTA, Assist Card e Mileon Air",
+      "Executiva ou primeira classe da Air France e KLM e status SkyTeam Elite Plus",
+      "Pagando: R$ 320 por 3 horas"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge 5th Avenue",
+     "terminal": "Terminal 3",
+     "onde": "Área de embarque internacional, entre as lojas Havaianas e Heineken",
+     "horario": "24 horas, todos os dias",
+     "como_entrar": [
+      "Exclusivo para associados American Express",
+      "The Platinum Card: 1 acompanhante sem custo",
+      "The Centurion Card: 2 acompanhantes ou familiares diretos sem custo",
+      "Crianças até 12 anos acompanhadas são isentas",
+      "Acompanhantes extras e crianças a partir de 13 anos pagam US$ 50",
+      "Não aceita LoungeKey, Priority Pass nem DragonPass"
+     ]
+    }
+   ],
+   "secoes": [
+    {
+     "titulo": "Como os terminais se dividem",
+     "texto": "A maioria das salas fica após o controle de segurança. Só o Plaza Premium (lado terra) e o Urban Lounge & Work, no Terminal 2, atendem quem ainda está fora da área restrita.",
+     "itens": [
+      "Terminal 1: só voos domésticos da Azul e uma sala",
+      "Terminal 2: maioria dos voos nacionais e alguns internacionais, com 2 salas internacionais e 9 nacionais",
+      "Terminal 3: voos internacionais e 13 salas",
+      "O Terminal 1 é isolado e só se liga aos outros por traslado gratuito"
+     ]
+    },
+    {
+     "titulo": "Programas de acesso",
+     "texto": "LoungeKey, Priority Pass e Visa Airport Companion/DragonPass são intermediários entre banco, bandeira e salas. Em geral, Mastercard usa LoungeKey, Elo Nanquim usa Priority Pass e Visa pode usar os três, conforme o emissor.",
+     "itens": [
+      "O valor do acesso pode ser gratuito ou taxado, normalmente de US$ 27 a US$ 35",
+      "A quantidade pode ser ilimitada ou fixa por ano",
+      "Acompanhantes variam conforme o cartão"
+     ]
+    },
+    {
+     "titulo": "Restaurantes que aceitam os programas",
+     "texto": "Alguns restaurantes parceiros trocam um acesso por crédito de cerca de US$ 27 a US$ 32 por pessoa. Se a conta for menor, não se paga nada; se for maior, paga-se a diferença.",
+     "itens": [
+      "Terminal 1: Living HNK",
+      "Terminal 2: A Saideira, Bleriot Bar & Lounge, Burguer Boss, General Prime e Living HNK",
+      "Terminal 3: Bleriot Bar & Lounge, General Prime, Living HNK, Paris 6 e Tryp GRU Airport",
+      "Cada restaurante aceita programas diferentes"
+     ]
+    },
+    {
+     "titulo": "Terminal BTG Pactual",
+     "texto": "É um terminal privativo logo após o Terminal 3, com check-in, raio-x, Polícia Federal e Alfândega próprios. Um carro leva o passageiro até a aeronave. Atende qualquer companhia e classe, com reserva antecipada e pagamento por uso.",
+     "itens": [
+      "Funciona 24 horas",
+      "Tem concierge, restaurante à la carte, salas de reunião e chuveiro",
+      "Valores bem acima de uma sala VIP tradicional",
+      "Clientes do BTG Pactual têm desconto"
+     ]
+    },
+    {
+     "titulo": "Quanto custa e há acesso grátis",
+     "texto": "Há acesso gratuito por alguns cartões, por classe executiva ou primeira classe e por salas de bancos. O acesso pago parte de R$ 180 e chega a R$ 320 nas salas independentes, e a R$ 500 por acompanhante no Taste of Priceless.",
+     "itens": []
+    },
+    {
+     "titulo": "Circulação entre terminais",
+     "texto": "Com voo internacional, é possível ir entre as áreas internacionais dos terminais 2 e 3 por um corredor, caminhando alguns minutos. Quem faz conexão para o exterior pode usar salas nacionais antes de entrar na área internacional.",
+     "itens": [
+      "Voos nacionais nos terminais 1 e 2 não dão acesso às salas do Terminal 3",
+      "Terminal 3 é exclusivo para voos internacionais"
+     ]
+    }
+   ],
+   "dicas": [
+    "Confira a regra do seu cartão antes de ir: gasto mínimo, número de acessos e acompanhantes mudam por emissor.",
+    "Atenção aos limites de tempo: a Advantage limita a 3 horas e a W Premium vende blocos de 3 horas.",
+    "Para sossego, Admirals Club e Nubank Ultravioleta Lounge costumam ser menos lotados.",
+    "Em conexões longas fora da área de embarque, o Urban Lounge & Work e o Plaza Premium (lado terra) são boas opções.",
+    "Quem usa Priority Pass ou LoungeKey no Terminal 3 tem como principal opção a W Premium Lounge The Pier."
+   ]
+  },
+  {
+   "url": "https://www.melhorescartoes.com.br/sala-vip-aeroporto-sao-paulo-congonhas.html",
+   "marca": "cfc60bc786628f08",
+   "atualizado": "2026-10-31",
+   "titulo": "Salas VIP do aeroporto de Congonhas",
+   "assunto": "Congonhas (São Paulo)",
+   "iata": "CGH",
+   "resumo": "O aeroporto de Congonhas tem seis salas VIP, todas em um único terminal de passageiros. O acesso pode ser feito por LoungeKey, Priority Pass, Dragon Pass/Visa Airport Companion, cartões de bancos selecionados ou pagando a entrada em algumas salas.",
+   "categorias": [],
+   "salas": [
+    {
+     "nome": "ADVT VIP Lounge",
+     "terminal": "Terminal único",
+     "onde": "Logo após o controle de cartões de embarque e antes da inspeção de segurança (raio-x).",
+     "horario": "4h às 22h",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Acesso avulso: R$ 250 por 3 horas ou R$ 450 por 6 horas",
+      "Espaço ADVT Plus+ para cartões como Santander Unlimited, BRB Dux, Bradesco Aeternum, Banco do Brasil Altus, Sicredi Visa Infinite e Caixa Ícone"
+     ]
+    },
+    {
+     "nome": "Ambaar Lounge",
+     "terminal": "Terminal único",
+     "onde": "Após o controle de cartões de embarque e antes da inspeção de segurança.",
+     "horario": "4h às 23h",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Acesso avulso: R$ 220 por 4 horas ou R$ 330 por 6 horas"
+     ]
+    },
+    {
+     "nome": "Bradesco Cartões Ambaar Lounge",
+     "terminal": "Terminal único",
+     "onde": "Sala de embarque, em frente ao portão 8.",
+     "horario": "6h às 23h",
+     "como_entrar": [
+      "Cartões Bradesco Aeternum, American Express Centurion, American Express The Platinum Card, Principal Visa Infinite e ELO Diners Club (inclusive no desembarque)",
+      "Não há acesso avulso"
+     ]
+    },
+    {
+     "nome": "Bradesco Cartões Lounge",
+     "terminal": "Terminal único",
+     "onde": "Sala de embarque, em frente ao portão 5.",
+     "horario": "6h às 23h",
+     "como_entrar": [
+      "Cartões Bradesco Aeternum, American Express Centurion, American Express The Platinum Card, Principal Visa Infinite e ELO Diners Club",
+      "Não há acesso avulso"
+     ]
+    },
+    {
+     "nome": "Emerald VIP Lounge by ADVT (antiga Latitude e BRB Coworking)",
+     "terminal": "Terminal único",
+     "onde": "Ao lado do acesso da sala de embarque (lado terra).",
+     "horario": "5h às 23h",
+     "como_entrar": [
+      "Dragon Pass/Visa Airport Companion"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge",
+     "terminal": "Terminal único",
+     "onde": "Piso 1, ao lado do setor Achados e Perdidos, antes da inspeção de segurança (lado terra).",
+     "horario": "4h às 23h",
+     "como_entrar": [
+      "Dragon Pass/Visa Airport Companion",
+      "Cartões Amex selecionados",
+      "Não há acesso avulso"
+     ]
+    }
+   ],
+   "secoes": [
+    {
+     "titulo": "Estrutura das salas",
+     "texto": "A ADVT tem ambientes para sentar, espaço para trabalhar com Wi-Fi e buffet com salgados, doces, bolos e pratos quentes. A Ambaar tem mais de 1.000 m², comporta quase 300 pessoas e tem bar com drinks preparados na hora.",
+     "itens": [
+      "ADVT Plus+: lotação limitada, mais silêncio, buffet e bebidas melhores, sem entrada de crianças",
+      "Bradesco Ambaar: bar, estações de trabalho, espaço kids e serviço de fast-pass na segurança",
+      "Bradesco Cartões (portão 5): só snacks secos, frutas e café",
+      "Emerald: sala pequena, com sala de reuniões mediante agendamento e cobrança à parte"
+     ]
+    },
+    {
+     "titulo": "Salão Bluma",
+     "texto": "Quem tem LoungeKey ou Priority Pass pode usar serviços do salão Bluma em Congonhas. Ele fica na sala de embarque, entre os portões 2 e 3, e abre das 6h às 22h.",
+     "itens": [
+      "Escova ou babyliss",
+      "Sobrancelha",
+      "Manicure e pedicure",
+      "Spa dos pés ou das mãos",
+      "Os serviços também podem ser pagos"
+     ]
+    },
+    {
+     "titulo": "Programas de acesso por sala",
+     "texto": "Cada programa vale em salas diferentes, então confira antes de ir.",
+     "itens": [
+      "LoungeKey: ADVT VIP Lounge, Ambaar Lounge e Bluma",
+      "Priority Pass: ADVT VIP Lounge, Ambaar Lounge e Bluma",
+      "Dragon Pass/Visa Airport Companion: Emerald VIP Lounge e W Premium Lounge"
+     ]
+    },
+    {
+     "titulo": "Quem pode entrar",
+     "texto": "As salas deixaram de ser exclusivas de executiva e primeira classe. Hoje o acesso vem de cartões de crédito, parcerias com bancos, programas de fidelidade ou pagamento.",
+     "itens": []
+    },
+    {
+     "titulo": "Chuveiro e banheiro",
+     "texto": "Nenhuma sala de Congonhas oferece chuveiro. Todas têm banheiro privativo.",
+     "itens": []
+    }
+   ],
+   "dicas": [
+    "Confira a política de acesso do seu cartão e o programa aceito em cada sala antes de ir ao aeroporto.",
+    "No ADVT Plus+ costuma haver espera por causa da lotação máxima, então chegue com antecedência.",
+    "Se a ADVT estiver cheia, a Bradesco Cartões Ambaar (portão 8) é uma boa alternativa para quem tem cartão elegível.",
+    "A sala Bradesco Cartões do portão 5 tem estrutura bem mais simples que a do portão 8.",
+    "Sem acesso por cartão, o acesso avulso parte de R$ 220 e o valor varia conforme a sala e o tempo de permanência."
+   ]
+  },
+  {
+   "url": "https://www.melhorescartoes.com.br/sala-vip-aeroporto-rio-de-janeiro-galeao.html",
+   "marca": "d1b1939db667367a",
+   "atualizado": "2026-10-31",
+   "titulo": "Salas VIP do aeroporto do Galeão",
+   "assunto": "Galeão (Rio de Janeiro)",
+   "iata": "GIG",
+   "resumo": "O Galeão tem salas VIP de companhias aéreas e do grupo Plaza Premium, tanto antes quanto depois da segurança. Elas ficam quase todas no terminal 2, onde está a maior parte dos voos. O acesso pode ser feito com cartões, programas como LoungeKey, Priority Pass e Visa Airport Companion/DragonPass, status de companhia ou pagando.",
+   "categorias": [],
+   "salas": [
+    {
+     "nome": "American Airlines Admirals Club",
+     "terminal": "T1",
+     "onde": "Primeiro andar da área de embarque, após o controle de segurança (pier sul)",
+     "horario": "14h30 às 23h30",
+     "como_entrar": [
+      "Passageiros de classe executiva ou primeira classe da American ou da aliança Oneworld",
+      "Clientes AAdvantage Executive Platinum, Platinum Pro e Platinum voando American em uma companhia da Oneworld",
+      "Clientes com status Oneworld Emerald e Sapphire",
+      "Acesso avulso por US$ 59 por pessoa"
+     ]
+    },
+    {
+     "nome": "Lounge GOL Smiles Doméstico",
+     "terminal": "T2",
+     "onde": "2º andar, perto dos portões B36 e B37",
+     "horario": "6h às 0h",
+     "como_entrar": [
+      "Cartão GOL Smiles Visa Platinum ou Infinite",
+      "Clientes Smiles Diamante com acompanhante ou Smiles Ouro com 50% de desconto para o acompanhante",
+      "Passageiros de Premium Economy em voos nacionais",
+      "LoungeKey, Priority Pass e Visa Airport Companion",
+      "Acesso avulso de R$ 92 a R$ 154 por pessoa, conforme o status"
+     ]
+    },
+    {
+     "nome": "Lounge GOL Smiles Internacional",
+     "terminal": "T2",
+     "onde": "3º andar, perto dos portões B36 e B37",
+     "horario": "5h às 23h",
+     "como_entrar": [
+      "Cartão GOL Smiles Visa Platinum ou Infinite",
+      "Clientes Smiles Diamante com acompanhante ou Smiles Ouro com 50% de desconto para o acompanhante",
+      "Passageiros de Premium Economy em voos nacionais",
+      "LoungeKey, Priority Pass e Visa Airport Companion",
+      "Acesso avulso de R$ 92 a R$ 154 por pessoa, conforme o status"
+     ]
+    },
+    {
+     "nome": "Plaza Premium Lounge Internacional",
+     "terminal": "T2",
+     "onde": "3º andar, depois do duty free e antes dos portões de embarque",
+     "horario": "24 horas",
+     "como_entrar": [
+      "Visa Airport Companion",
+      "Cartões American Express The Platinum Card emitidos nos Estados Unidos",
+      "Acesso avulso por R$ 282 por pessoa"
+     ]
+    },
+    {
+     "nome": "Plaza Premium Lounge Nacional (área segura)",
+     "terminal": "T2",
+     "onde": "2º andar, após a segurança dos embarques nacionais",
+     "horario": "6h às 22h",
+     "como_entrar": [
+      "Visa Airport Companion",
+      "Cartões American Express The Platinum Card emitidos nos Estados Unidos",
+      "Acesso avulso a partir de R$ 180"
+     ]
+    },
+    {
+     "nome": "Plaza Premium Lounge Nacional (área pública)",
+     "terminal": "T2",
+     "onde": "1º andar, antes da segurança dos embarques nacionais",
+     "horario": "24 horas",
+     "como_entrar": [
+      "Visa Airport Companion",
+      "Cartões American Express The Platinum Card emitidos nos Estados Unidos",
+      "Acesso avulso a partir de R$ 165"
+     ]
+    },
+    {
+     "nome": "Star Alliance Lounge",
+     "terminal": "T2",
+     "onde": "3º andar, depois do duty free e antes dos portões, ao lado do Plaza Premium Internacional",
+     "horario": "24 horas",
+     "como_entrar": [
+      "Passageiros de classe executiva das companhias da Star Alliance (Avianca, Copa, Lufthansa, TAP e United operam no Galeão)",
+      "Clientes com status TAP Miles&Go",
+      "Acesso avulso a partir de US$ 55 por pessoa"
+     ]
+    },
+    {
+     "nome": "Restaurante A Saideira (nacional e internacional)",
+     "terminal": "T2",
+     "onde": "Áreas seguras dos embarques nacional e internacional, após a segurança",
+     "horario": "Nacional das 6h às 22h; internacional das 8h à 1h",
+     "como_entrar": [
+      "LoungeKey e Priority Pass, com crédito de refeição e cardápio específico"
+     ]
+    }
+   ],
+   "secoes": [
+    {
+     "titulo": "Onde ficam as salas",
+     "texto": "O Galeão tem dois terminais conectados, mas a maioria dos voos e serviços está no terminal 2. As salas ficam no lado terra e no lado ar.",
+     "itens": []
+    },
+    {
+     "titulo": "Cobertura por programa de acesso",
+     "texto": "Cada programa dá acesso a salas diferentes no aeroporto.",
+     "itens": [
+      "LoungeKey: os dois lounges GOL Smiles e os restaurantes A Saideira",
+      "Priority Pass: os dois lounges GOL Smiles e os restaurantes A Saideira",
+      "Visa Airport Companion/DragonPass: as três salas Plaza Premium e os dois lounges GOL Smiles"
+     ]
+    },
+    {
+     "titulo": "Restaurante A Saideira",
+     "texto": "Tem proposta casual, com lanches, saladas, sanduíches, bebidas e coquetéis. Quem usa LoungeKey ou Priority Pass tem cardápio próprio.",
+     "itens": [
+      "Opção 1: entrada, prato principal, bebida e café",
+      "Opção 2: prato principal, bebida, sobremesa e café"
+     ]
+    },
+    {
+     "titulo": "Quem pode entrar em uma sala VIP",
+     "texto": "Hoje o acesso não se limita à classe executiva ou primeira classe. Também é possível entrar por cartões de crédito, bancos parceiros, programas de fidelidade, contas digitais ou pagando.",
+     "itens": []
+    },
+    {
+     "titulo": "Acesso gratuito",
+     "texto": "Alguns cartões dão acesso grátis via LoungeKey, Priority Pass e DragonPass, conforme a política do banco. Passageiros de classe executiva ou primeira classe geralmente entram sem custo extra.",
+     "itens": [
+      "Alguns bancos têm parcerias diretas ou espaços próprios, como Bradesco e Inter"
+     ]
+    },
+    {
+     "titulo": "Sobre o aeroporto",
+     "texto": "O Galeão, oficialmente Aeroporto Internacional Tom Jobim, tem 23 destinos internacionais e liga 24 cidades brasileiras ao Rio. Já foi o maior aeroporto do país, mas perdeu o posto para Guarulhos.",
+     "itens": []
+    }
+   ],
+   "dicas": [
+    "Confira o horário de cada sala antes de ir, pois variam bastante.",
+    "Se tiver Visa Airport Companion, você tem três salas Plaza Premium e dois lounges GOL Smiles à disposição.",
+    "Com LoungeKey ou Priority Pass, use uma visita para refeição no A Saideira.",
+    "O Admirals Club fica no T1, então reserve tempo para chegar até lá.",
+    "Sem cartão ou status, compare os preços do acesso avulso: vão de R$ 92 a R$ 282, além das opções em dólar."
+   ]
+  },
+  {
+   "url": "https://www.melhorescartoes.com.br/sala-vip-aeroporto-santos-dumont.html",
+   "marca": "8113e43c332577f4",
+   "atualizado": "2026-10-31",
+   "titulo": "Salas VIP do aeroporto Santos Dumont",
+   "assunto": "Rio de Janeiro – Santos Dumont (SDU)",
+   "iata": "SDU",
+   "resumo": "O Santos Dumont, no centro do Rio, recebe só voos nacionais e tem quatro salas da Advantage, uma sala do Bradesco e um espaço do BRB. O acesso pode ser feito por LoungeKey, Priority Pass, Visa Airport Companion/Dragon Pass, cartões de bancos selecionados ou pagando.",
+   "categorias": [],
+   "salas": [
+    {
+     "nome": "Advantage VIP Lounge (lado terra, menor sala)",
+     "terminal": "",
+     "onde": "Antes do controle de segurança. Segundo o texto, está temporariamente fechada.",
+     "horario": "Diariamente, das 4h às 22h",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Acesso avulso por R$ 180 por 3 horas"
+     ]
+    },
+    {
+     "nome": "Advantage VIP Lounge (lado terra, em frente à sala do Bradesco)",
+     "terminal": "",
+     "onde": "Antes do raio-x, perto do McDonald's e em frente à sala do Bradesco",
+     "horario": "Diariamente, das 4h às 22h",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Acesso avulso por R$ 180 por 3 horas"
+     ]
+    },
+    {
+     "nome": "Advantage VIP Lounge (embarque)",
+     "terminal": "",
+     "onde": "Na área de embarque, à esquerda depois do raio-x, perto da Polícia Federal. É a única da Advantage nessa área e costuma ficar cheia; deve ser ampliada.",
+     "horario": "Diariamente, das 4h às 22h",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Acesso avulso por R$ 180 por 3 horas"
+     ]
+    },
+    {
+     "nome": "Advantage VIP Lounge – Bossa Mall",
+     "terminal": "",
+     "onde": "No Bossa Nova Mall, shopping anexo ao aeroporto, ao lado do centro de atendimento de vistos americanos (CASV). Tem quase 600 m² e comporta até 200 pessoas.",
+     "horario": "Diariamente, das 5h às 22h",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Acesso avulso por R$ 180 por 3 horas"
+     ]
+    },
+    {
+     "nome": "Bradesco Cartões Lounge",
+     "terminal": "",
+     "onde": "No 1º andar, fora da área de embarque",
+     "horario": "Diariamente, das 5h30 às 22h30",
+     "como_entrar": [
+      "Bradesco Visa Aeternum",
+      "The Centurion Card",
+      "The Platinum Card",
+      "Bradesco Elo Diners Club",
+      "Bradesco Elo Nanquim"
+     ]
+    },
+    {
+     "nome": "BRB Coworking – Latitude",
+     "terminal": "",
+     "onde": "",
+     "horario": "",
+     "como_entrar": [
+      "Visa Airport Companion / Dragon Pass",
+      "Clientes de cartões de crédito BRB selecionados"
+     ]
+    }
+   ],
+   "secoes": [
+    {
+     "titulo": "Serviço de beleza Singu",
+     "texto": "O Singu é um quiosque de serviços de beleza que aceita LoungeKey e Priority Pass. Cada serviço usa um acesso do programa escolhido.",
+     "itens": [
+      "Escova, sobrancelhas, spa dos pés, manicure e pedicure",
+      "Horário: diariamente, das 6h às 22h",
+      "Fica na área de embarque, entre os portões 2 e 3"
+     ]
+    },
+    {
+     "titulo": "O que há nas salas",
+     "texto": "As salas da Advantage têm poltronas, mesas para refeição e trabalho, snacks, comidas quentes e frias e bebidas com e sem álcool. A do Bossa Mall inclui vinhos, café Nespresso e cappuccino.",
+     "itens": []
+    },
+    {
+     "titulo": "BRB Coworking",
+     "texto": "O espaço tem sala de reuniões, Wi-Fi e pods individuais. O buffet traz salgadinhos, sanduíches, frutas, cookies, bolos e bebidas variadas.",
+     "itens": []
+    },
+    {
+     "titulo": "Quais programas dão acesso a cada sala",
+     "texto": "LoungeKey e Priority Pass abrem as quatro salas da Advantage e o Singu. O Dragon Pass / Visa Airport Companion vale apenas para o BRB Coworking.",
+     "itens": []
+    },
+    {
+     "titulo": "Formas de acesso em geral",
+     "texto": "Além da classe executiva ou primeira classe, o acesso vem de cartões de crédito, parcerias com bancos, programas de fidelidade, contas digitais ou pagamento. Gratuidade ou cobrança depende da política do banco.",
+     "itens": [
+      "Cartões Mastercard, Visa e American Express",
+      "Programas LoungeKey, Priority Pass e Dragon Pass",
+      "Espaços próprios de bancos como BRB, Bradesco e Inter"
+     ]
+    },
+    {
+     "titulo": "Sobre o aeroporto",
+     "texto": "O SDU fica no centro do Rio, opera só voos nacionais e é administrado pela Infraero. É conhecido pela Ponte Aérea Rio–São Paulo.",
+     "itens": [
+      "Lojas, restaurantes, serviços bancários e estacionamento",
+      "Transporte para o centro: táxi, ônibus e VLT"
+     ]
+    }
+   ],
+   "dicas": [
+    "Saia da sala do Bradesco com antecedência para passar pela inspeção de segurança, principalmente em horários de pico.",
+    "A sala da Advantage no embarque costuma lotar; considere as salas do lado terra ou do Bossa Mall.",
+    "Confirme se a sala do lado terra já reabriu antes de ir.",
+    "Se o cartão for Visa com Dragon Pass, a opção é o BRB Coworking.",
+    "Sem cartão com acesso, a entrada avulsa na Advantage custa R$ 180 por 3 horas."
+   ]
+  },
+  {
+   "url": "https://www.melhorescartoes.com.br/sala-vip-aeroporto-brasilia.html",
+   "marca": "ccc09f81b4b1ced6",
+   "atualizado": "2026-10-31",
+   "titulo": "Salas VIP do aeroporto de Brasília",
+   "assunto": "Brasília (BSB)",
+   "iata": "BSB",
+   "resumo": "O aeroporto de Brasília tem quatro salas da rede Aeroportos VIP Club, uma sala exclusiva para clientes de cartões BRB e cabines de descanso Siesta Box. O acesso pode ser feito por LoungeKey, Priority Pass, Visa Airport Companion (Dragon Pass), cartões de bancos selecionados ou pagando.",
+   "categorias": [],
+   "salas": [
+    {
+     "nome": "Aeroportos VIP Club – Nacional",
+     "terminal": "Terminal doméstico",
+     "onde": "Térreo, à esquerda do Duty Free. Tem 1.500 m², cabines privativas de TV, salas de reunião com videoconferência, sanitários com duchas privativas e business center.",
+     "horario": "Diariamente, 24 horas",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Visa Airport Companion (Dragon Pass)",
+      "Acesso avulso por R$ 199,00",
+      "Clientes de cartões Bradesco selecionados"
+     ]
+    },
+    {
+     "nome": "Aeroportos VIP Club – Internacional",
+     "terminal": "Terminal internacional",
+     "onde": "Subsolo da sala de embarque internacional. É a única sala VIP do terminal internacional, com 315 m², capacidade para 81 pessoas, sofás, poltronas, mesas, quatro TVs, Wi-Fi de alta velocidade e pequeno business center.",
+     "horario": "A partir de 2h antes dos voos internacionais",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Visa Airport Companion (Dragon Pass)",
+      "Acesso avulso por R$ 199,00",
+      "Clientes de cartões Bradesco selecionados"
+     ]
+    },
+    {
+     "nome": "Aeroportos VIP Club – VIP Express Club Pier Norte",
+     "terminal": "Píer Norte",
+     "onde": "Mezanino da sala de embarque, perto do portão 10. Fica próxima aos portões 1 a 11. Tem refeições e bebidas liberadas, sala de TV, Wi-Fi e espaço kids.",
+     "horario": "Diariamente, das 6h à 0h",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Visa Airport Companion (Dragon Pass)",
+      "Acesso avulso por R$ 199,00",
+      "Clientes de cartões Bradesco selecionados"
+     ]
+    },
+    {
+     "nome": "Aeroportos VIP Club – VIP Express Club Pier Sul",
+     "terminal": "Píer Sul",
+     "onde": "Primeiro mezanino da sala de embarque, perto do portão 41. Fica próxima aos portões 38 a 51. Tem refeições e bebidas liberadas, sala de TV, Wi-Fi e espaço kids.",
+     "horario": "Diariamente, das 6h à 0h",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Visa Airport Companion (Dragon Pass)",
+      "Acesso avulso por R$ 199,00",
+      "Clientes de cartões Bradesco selecionados"
+     ]
+    },
+    {
+     "nome": "BRB Vip Club",
+     "terminal": "",
+     "onde": "Entrada principal na Praça de Serviço, no 2º andar do terminal, em área de acesso público. Há outra entrada dentro da mega store da Dufry, na saída do raio-x. Tem espaço de reunião, mesas de trabalho, comidas e bebidas, área de descanso, duchas privativas e raio-x exclusivo com acesso direto ao embarque.",
+     "horario": "Diariamente, das 6h à 0h",
+     "como_entrar": [
+      "Cartões de crédito BRB elegíveis, incluindo Dux, Mastercard Black e Infinite em todas as versões",
+      "Não aceita LoungeKey, Priority Pass nem Visa Airport Companion"
+     ]
+    }
+   ],
+   "secoes": [
+    {
+     "titulo": "Siesta Box",
+     "texto": "São cabines de descanso para quem quer apenas dormir. Clientes Priority Pass e LoungeKey podem ficar até 3 horas sem custo.",
+     "itens": [
+      "Cabines de 5 m²",
+      "TV a cabo, ar condicionado, tomadas e Wi-Fi de alta velocidade",
+      "Aceita pets",
+      "Comporta até dois viajantes, em beliches ou camas de solteiro"
+     ]
+    },
+    {
+     "titulo": "Quais salas cada programa cobre",
+     "texto": "LoungeKey, Priority Pass e Visa Airport Companion (Dragon Pass) dão acesso a todas as salas da VIP Club: a principal e as express dos píeres Norte e Sul.",
+     "itens": [
+      "LoungeKey e Priority Pass também incluem o Siesta Box",
+      "Dragon Pass não inclui o Siesta Box",
+      "Nenhum dos três vale no BRB Vip Club"
+     ]
+    },
+    {
+     "titulo": "Quem pode entrar em uma sala VIP",
+     "texto": "Antes, só passageiros de classe executiva ou primeira classe entravam. Hoje também há acesso por cartões de crédito, parcerias com bancos, programas de fidelidade, contas digitais e pagamento avulso.",
+     "itens": [
+      "Cartões Mastercard, Visa e American Express costumam ser o caminho mais fácil",
+      "O acesso por LoungeKey, Priority Pass e Dragon Pass pode ser gratuito ou pago, conforme o banco",
+      "Alguns bancos têm salas próprias ou parcerias, como BRB, Bradesco e Inter"
+     ]
+    },
+    {
+     "titulo": "Sala VIP grátis",
+     "texto": "É possível entrar sem pagar em alguns casos. Depende do cartão, do programa de acesso ou da cabine em que você voa.",
+     "itens": [
+      "Cartões com LoungeKey, Priority Pass ou Dragon Pass incluso",
+      "Passageiros de classe executiva ou primeira classe, em geral",
+      "Clientes de bancos com sala própria ou parceria direta"
+     ]
+    },
+    {
+     "titulo": "Sobre o aeroporto",
+     "texto": "O Aeroporto Internacional de Brasília – Presidente Juscelino Kubitschek fica a cerca de 11 km do centro e é administrado pela Inframerica. É o principal ponto de conexão doméstica do país.",
+     "itens": [
+      "Lojas, restaurantes, serviços bancários e estacionamento",
+      "Transporte para o centro por táxi, ônibus e aplicativos",
+      "Hotel dentro do terminal"
+     ]
+    }
+   ],
+   "dicas": [
+    "Escolha a sala pelo portão de embarque: a do Píer Norte atende os portões 1 a 11 e a do Píer Sul, os portões 38 a 51.",
+    "No embarque internacional, lembre que a sala só abre 2h antes dos voos internacionais.",
+    "Confira se o seu cartão tem LoungeKey, Priority Pass ou Dragon Pass antes de pagar os R$ 199,00 do acesso avulso.",
+    "Se tem cartão BRB elegível, use o BRB Vip Club e o raio-x exclusivo para chegar mais rápido ao embarque.",
+    "Para uma pausa longa entre voos, use o Siesta Box, com até 3 horas grátis para clientes Priority Pass e LoungeKey."
+   ]
+  },
+  {
+   "url": "https://www.melhorescartoes.com.br/sala-vip-aeroporto-belo-horizonte.html",
+   "marca": "5f4474c95ea34e95",
+   "atualizado": "2026-10-31",
+   "titulo": "Salas VIP do aeroporto de Belo Horizonte (Confins)",
+   "assunto": "Belo Horizonte – Confins (CNF)",
+   "iata": "CNF",
+   "resumo": "O aeroporto de Confins tem salas VIP nas áreas de embarque nacional e internacional, quase todas da rede Ambaar Lounge, além da Advantage VIP Lounge. O acesso pode ser feito por LoungeKey, Priority Pass, Visa Airport Companion (Dragon Pass), cartões Bradesco selecionados, classe executiva ou pagando avulso.",
+   "categorias": [],
+   "salas": [
+    {
+     "nome": "Advantage VIP Lounge",
+     "terminal": "Embarque nacional",
+     "onde": "Na área de embarque nacional. É o maior lounge do grupo, com mais de mil metros quadrados.",
+     "horario": "24 horas",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Acesso avulso"
+     ]
+    },
+    {
+     "nome": "Ambaar Lounge Nacional (portão 7)",
+     "terminal": "Embarque nacional",
+     "onde": "No 1º andar, logo após o raio-x. É a maior sala do aeroporto e costuma ter fila e lotação.",
+     "horario": "Diariamente, das 04h30 às 23h00",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Visa Airport Companion (Dragon Pass)",
+      "Cartões Bradesco selecionados",
+      "Acesso avulso por R$ 200 por quatro horas"
+     ]
+    },
+    {
+     "nome": "Ambaar Lounge Nacional (portão 2)",
+     "terminal": "Embarque nacional",
+     "onde": "No 1º andar, perto dos portões 2 e 3, logo após o controle de segurança. É a mais nova e um pouco menor.",
+     "horario": "Diariamente, das 04h30 às 23h00",
+     "como_entrar": [
+      "Visa Airport Companion",
+      "Bradesco Visa Aeternum, The Centurion Card, The Platinum Card, Bradesco Elo Diners Club e Bradesco Elo Nanquim",
+      "Acesso avulso por R$ 200 por quatro horas",
+      "Não aceita LoungeKey nem Priority Pass"
+     ]
+    },
+    {
+     "nome": "Ambaar Lounge Internacional",
+     "terminal": "Embarque internacional",
+     "onde": "Na área de embarque internacional, após o controle de passaporte, perto da praça de alimentação. Tem chuveiro, espaço de trabalho e sala de reunião.",
+     "horario": "Diariamente, do primeiro ao último voo internacional",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Visa Airport Companion",
+      "Cartões Bradesco selecionados",
+      "Classe executiva da TAP (sem acompanhante)",
+      "Miles&Go e Star Alliance Gold (com acompanhante)",
+      "Acesso avulso por R$ 230 por quatro horas"
+     ]
+    }
+   ],
+   "secoes": [
+    {
+     "titulo": "Quem pode acessar",
+     "texto": "A forma mais comum é o cartão de crédito das bandeiras Mastercard, Visa e American Express, nas categorias mais altas. Voar em cabines premium, como a classe executiva, também costuma dar acesso.",
+     "itens": [
+      "LoungeKey",
+      "Priority Pass",
+      "Dragon Pass",
+      "Classe executiva ou primeira classe"
+     ]
+    },
+    {
+     "titulo": "Quanto custa",
+     "texto": "Quem não tem acesso gratuito paga, em geral, de R$ 100 a R$ 250 por pessoa, conforme aeroporto e sala. O acesso gratuito depende da política do banco ou do cartão.",
+     "itens": [
+      "Ambaar nacional: R$ 200 por quatro horas",
+      "Ambaar internacional: R$ 230 por quatro horas"
+     ]
+    },
+    {
+     "titulo": "Qual sala escolher",
+     "texto": "As salas abertas são administradas pela Ambaar Lounge, com padrão parecido. A do portão 7 é a que mais sofre com filas e lotação.",
+     "itens": []
+    },
+    {
+     "titulo": "Banco Inter",
+     "texto": "O Banco Inter não tem sala própria em Belo Horizonte. Clientes dos cartões Inter Black e Win acessam salas Priority Pass, como as da Ambaar.",
+     "itens": []
+    },
+    {
+     "titulo": "Sobre o aeroporto",
+     "texto": "Confins fica a cerca de 40 km do centro de Belo Horizonte e é um hub da Azul. Também operam GOL, Latam, Copa Airlines, Sky e TAP. A administração é da BH Airport.",
+     "itens": []
+    }
+   ],
+   "dicas": [
+    "Confira qual programa seu cartão oferece antes de ir, pois a sala do portão 2 não aceita LoungeKey nem Priority Pass.",
+    "Se a sala do portão 7 estiver cheia, considere a Advantage VIP ou a sala do portão 2, se tiver acesso.",
+    "Respeite o horário: as salas nacionais da Ambaar fecham às 23h00.",
+    "Verifique as regras de acompanhante e custo no seu banco ou cartão.",
+    "Em voos internacionais, passageiros TAP em classe executiva e membros Miles&Go ou Star Alliance Gold podem ter acesso à sala internacional."
+   ]
+  },
+  {
+   "url": "https://www.melhorescartoes.com.br/sala-vip-aeroporto-de-curitiba.html",
+   "marca": "d54c995e592e928b",
+   "atualizado": "2026-10-31",
+   "titulo": "Salas VIP do aeroporto de Curitiba",
+   "assunto": "Curitiba (CWB)",
+   "iata": "CWB",
+   "resumo": "O aeroporto Afonso Pena, em São José dos Pinhais, tem um único terminal e seis salas VIP: quatro no embarque nacional, uma no internacional e uma na área pública. Cada sala tem regras próprias de acesso, que incluem LoungeKey, Priority Pass, Visa Airport Companion/DragonPass, cartões de bancos e entrada avulsa.",
+   "categorias": [],
+   "salas": [
+    {
+     "nome": "Advantage VIP Lounge (Doméstico)",
+     "terminal": "Terminal único, embarque nacional",
+     "onde": "1º andar, logo após os controles de segurança, ao lado do raio-x",
+     "horario": "Todos os dias, das 3h30 às 23h",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Acesso avulso: R$ 180 por três horas"
+     ]
+    },
+    {
+     "nome": "Advantage VIP Lounge (Internacional)",
+     "terminal": "Terminal único, embarque internacional",
+     "onde": "1º andar, logo após o controle de passaportes, ao lado da imigração",
+     "horario": "Durante os voos internacionais",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Acesso avulso: R$ 180 por três horas"
+     ]
+    },
+    {
+     "nome": "Bradesco Lounge",
+     "terminal": "Terminal único, embarque nacional",
+     "onde": "1º andar, logo após os controles de segurança, ao lado do raio-x",
+     "horario": "Diariamente, das 5h30 às 22h30",
+     "como_entrar": [
+      "Cartões Bradesco Visa Aeternum",
+      "Bradesco Principal (4 acessos por ano)",
+      "Bradesco Elo Diners Club",
+      "The Centurion Card e The Platinum Card",
+      "American Express Business Platinum, Gold Corporate e Corporate Platinum",
+      "O Elo Nanquim deixou de ser elegível em outubro de 2024"
+     ]
+    },
+    {
+     "nome": "Break Travel Lounge",
+     "terminal": "Terminal único, área pública",
+     "onde": "Andar superior, perto da praça de alimentação, antes do raio-x",
+     "horario": "24 horas",
+     "como_entrar": [
+      "Visa Airport Companion",
+      "DragonPass",
+      "Acesso avulso: R$ 120 por três horas"
+     ]
+    },
+    {
+     "nome": "Orange Lounge (Banco Inter)",
+     "terminal": "Terminal único, embarque nacional",
+     "onde": "Em frente ao portão 13",
+     "horario": "Todos os dias, das 6h às 22h",
+     "como_entrar": [
+      "Clientes Inter Prime e Inter Win: acesso ilimitado",
+      "Clientes com cartão Black fora desses segmentos: 6 acessos por ano"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge",
+     "terminal": "Terminal único, embarque nacional",
+     "onde": "Em frente ao portão 5",
+     "horario": "Todos os dias, 24 horas",
+     "como_entrar": [
+      "Visa Airport Companion/DragonPass",
+      "Cartões C6 Bank (Carbon e Graphene)",
+      "Sisprime Mastercard Black",
+      "Sicredi",
+      "CVC",
+      "Acesso avulso pelo W Pass",
+      "Não aceita LoungeKey nem Priority Pass"
+     ]
+    }
+   ],
+   "secoes": [
+    {
+     "titulo": "Resumo por programa de acesso",
+     "texto": "Cada programa vale para salas diferentes no aeroporto.",
+     "itens": [
+      "LoungeKey: Advantage nacional e internacional",
+      "Priority Pass: Advantage nacional e internacional",
+      "Visa Airport Companion/DragonPass: Break Travel Lounge e W Premium Lounge"
+     ]
+    },
+    {
+     "titulo": "Destaques das salas",
+     "texto": "A Advantage nacional foi a primeira da rede e eleita a melhor da América Latina e Caribe em 2024 entre as do Priority Pass. A W Premium, inaugurada em novembro de 2025, tem duchas e cardápio à la carte cobrado à parte.",
+     "itens": [
+      "Advantage nacional: maior sala, com mais opções de comida e bebida",
+      "W Premium: funciona 24 horas e tem duchas",
+      "Bradesco Lounge: ampliado e reinaugurado em novembro de 2024, com cafeteria",
+      "Orange Lounge: pequeno, inaugurado em 2024"
+     ]
+    },
+    {
+     "titulo": "Quem tem direito a acessar",
+     "texto": "O jeito mais comum é pelo cartão de crédito de categorias mais altas das bandeiras Mastercard, Visa, Elo e American Express. Passageiros de classe executiva ou primeira classe geralmente também entram sem custo extra.",
+     "itens": [
+      "Acessos podem ser gratuitos ou pagos, conforme a política do banco",
+      "Vários bancos passaram a exigir gasto mínimo para liberar acessos gratuitos"
+     ]
+    },
+    {
+     "titulo": "Quanto custa entrar sem acesso gratuito",
+     "texto": "Em geral, os valores ficam entre R$ 100 e R$ 250 por pessoa, dependendo do aeroporto e da sala. Em Curitiba, o avulso custa R$ 120 no Break Travel e R$ 180 na Advantage, por três horas.",
+     "itens": []
+    },
+    {
+     "titulo": "Voo internacional",
+     "texto": "Depois do controle de passaportes, a única opção é a Advantage internacional, via LoungeKey, Priority Pass ou avulso. Quem vai no voo da TAP para Lisboa e não tem acesso pode usar as salas da área pública ou do embarque nacional antes de seguir para a imigração.",
+     "itens": []
+    },
+    {
+     "titulo": "Sobre o aeroporto",
+     "texto": "O Afonso Pena fica em São José dos Pinhais, a cerca de 18 km do centro de Curitiba, e é administrado pela Motiva Aeroportos. Tem voos diretos para Lisboa (TAP, desde julho de 2026), Buenos Aires, Santiago e Lima.",
+     "itens": []
+    }
+   ],
+   "dicas": [
+    "Confira as regras vigentes do seu cartão antes de viajar, pois os bancos mudam as políticas com frequência.",
+    "Para madrugada, use a W Premium ou o Break Travel, que funcionam 24 horas.",
+    "A Advantage internacional só abre durante os voos internacionais, então confirme o horário do seu voo.",
+    "Se não tiver acesso à sala internacional, aproveite uma sala antes de passar pela imigração.",
+    "No Bradesco Principal e nos cartões Black do Inter, o número de acessos por ano é limitado, então controle o uso."
+   ]
+  },
+  {
+   "url": "https://www.melhoresdestinos.com.br/milhas/sala-vip-aeroporto-florianopolis",
+   "marca": "16d781489c3fe9c5",
+   "atualizado": "2026-10-31",
+   "titulo": "Salas VIP do aeroporto de Florianópolis",
+   "assunto": "Florianópolis (FLN)",
+   "iata": "FLN",
+   "resumo": "O aeroporto Hercílio Luz tem duas salas VIP da The Lounge, uma para voos domésticos e outra para internacionais. Há ainda um restaurante, o A Saideira, que aceita acessos em troca de uma refeição. O acesso é possível por LoungeKey, Priority Pass, Visa Airport Companion/Dragon Pass (só no restaurante) ou pagando na hora.",
+   "categorias": [],
+   "salas": [
+    {
+     "nome": "The Lounge (voos domésticos)",
+     "terminal": "",
+     "onde": "Área de embarque, em frente ao portão 6",
+     "horario": "Das 4h às 21h, todos os dias",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Acesso avulso a partir de R$ 180"
+     ]
+    },
+    {
+     "nome": "The Lounge (internacional)",
+     "terminal": "",
+     "onde": "Área de embarque, após o controle de passaporte",
+     "horario": "Das 9h às 4h",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Acesso avulso"
+     ]
+    },
+    {
+     "nome": "A Saideira (restaurante)",
+     "terminal": "",
+     "onde": "Área de embarque, próximo ao portão 7",
+     "horario": "Das 4h às 21h, diariamente",
+     "como_entrar": [
+      "Visa Airport Companion/Dragon Pass, em troca de uma refeição"
+     ]
+    }
+   ],
+   "secoes": [
+    {
+     "titulo": "Estrutura das salas",
+     "texto": "A sala doméstica tem capacidade para 130 passageiros e várias áreas. A internacional é menor e costuma lotar nos horários de pico.",
+     "itens": [
+      "Doméstica: espaço kids, sala de descanso, sala de TV, business center e sala de reuniões",
+      "Doméstica: buffet variado ao longo do dia e banheiros com duchas",
+      "Internacional: áreas de descanso, espaço kids e buffet com serviço à la carte"
+     ]
+    },
+    {
+     "titulo": "O restaurante A Saideira",
+     "texto": "Clientes do Visa Airport Companion e do Dragon Pass não têm sala VIP no aeroporto. Podem usar o acesso no A Saideira, que tem cardápio próprio para quem usa esses programas.",
+     "itens": [
+      "Combinações com entrada, prato principal, sobremesa e bebida"
+     ]
+    },
+    {
+     "titulo": "Quem pode entrar",
+     "texto": "O acesso depende do cartão, da classe de viagem ou de pagamento direto na recepção.",
+     "itens": [
+      "Cartões premium como Mastercard Black, Visa Infinite, Elo Nanquim e American Express Platinum, via LoungeKey, Priority Pass ou Dragon Pass",
+      "Passageiros de classe executiva em algumas companhias aéreas",
+      "Acesso avulso, pago na recepção, com preços entre R$ 100 e R$ 250 conforme a sala",
+      "Alguns bancos, como Bradesco e Inter, têm parcerias ou espaços próprios"
+     ]
+    },
+    {
+     "titulo": "Qual sala escolher",
+     "texto": "As duas salas são operadas pela The Lounge e oferecem serviços parecidos, sem diferença significativa. A escolha depende de o voo ser doméstico ou internacional.",
+     "itens": []
+    },
+    {
+     "titulo": "Sobre o aeroporto",
+     "texto": "O aeroporto fica a cerca de 15 km do centro e é administrado pela Zurich Airport Brasil. É o terceiro mais movimentado do país em voos internacionais.",
+     "itens": [
+      "Destinos internacionais: Buenos Aires, Córdoba, Rosário, Assunção, Santiago, Montevidéu, Cidade do Panamá e Lisboa"
+     ]
+    }
+   ],
+   "dicas": [
+    "Confira a política do seu cartão ou banco para saber se o acesso é gratuito ou pago.",
+    "Em voos internacionais, chegue cedo à sala, que é pequena e lota nos horários de pico.",
+    "Atenção ao horário: a sala doméstica fecha às 21h e a internacional abre às 9h.",
+    "Se usa Visa Airport Companion ou Dragon Pass, o acesso vale apenas no restaurante A Saideira.",
+    "Sem cartão elegível, leve de R$ 100 a R$ 250 para o acesso avulso, que na sala doméstica parte de R$ 180."
+   ]
+  },
+  {
+   "url": "https://www.melhorescartoes.com.br/sala-vip-aeroporto-fortaleza.html",
+   "marca": "6ee0213d45fafbd4",
+   "atualizado": "2026-10-31",
+   "titulo": "Salas VIP do aeroporto de Fortaleza",
+   "assunto": "Fortaleza – Pinto Martins (FOR)",
+   "iata": "FOR",
+   "resumo": "O aeroporto de Fortaleza tem duas salas Ambaar Club, duas salas W Premium Lounge e dois restaurantes que aceitam acesso VIP. O acesso pode ser feito por LoungeKey, Priority Pass, Visa Airport Companion, cartões selecionados ou pagando avulso.",
+   "categorias": [],
+   "salas": [
+    {
+     "nome": "Ambaar Club (nacional)",
+     "terminal": "Terminal doméstico",
+     "onde": "Após o raio-x, no 3º andar, entre os portões 8 e 9. Tem 396 m² e capacidade para 124 pessoas. Não tem banheiros.",
+     "horario": "Aberta 24 horas",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Visa Airport Companion",
+      "Cartões Bradesco Visa Aeternum, American Express The Platinum Card, Elo Diners Club e Elo Nanquim",
+      "Acesso avulso por R$ 200 por 4 horas"
+     ]
+    },
+    {
+     "nome": "Ambaar Club (internacional)",
+     "terminal": "Área internacional",
+     "onde": "Após o controle de passaporte",
+     "horario": "Diariamente, das 4h às 22h",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Visa Airport Companion",
+      "Cartões Bradesco Visa Aeternum, American Express The Platinum Card, Elo Diners Club e Elo Nanquim",
+      "Acesso avulso por R$ 230 por 4 horas"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge",
+     "terminal": "Embarque doméstico",
+     "onde": "Lado ar, após o raio-x, no segundo andar da área de embarque. Inaugurada em 2024.",
+     "horario": "Aberta 24 horas",
+     "como_entrar": [
+      "Visa Airport Companion",
+      "Cartões Inter Black, C6 Carbon, Sisprime Black ou Credicoamo Black",
+      "Acesso avulso por R$ 200"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge Arrival",
+     "terminal": "Área de desembarque",
+     "onde": "Logo após a saída do desembarque. Atende quem chega ou está em conexão.",
+     "horario": "Aberta 24 horas",
+     "como_entrar": [
+      "Visa Airport Companion",
+      "Cartões Inter Black, C6 Carbon, Sisprime Black ou Credicoamo Black",
+      "Acesso avulso por R$ 160"
+     ]
+    },
+    {
+     "nome": "A Saideira (restaurante)",
+     "terminal": "",
+     "onde": "Lado ar, perto dos portões 16 e 17, e lado terra (antes do raio-x), no segundo piso da praça de alimentação",
+     "horario": "Diariamente, das 10h às 22h",
+     "como_entrar": [
+      "Visa Airport Companion"
+     ]
+    },
+    {
+     "nome": "Vignoli Cucina (restaurante)",
+     "terminal": "",
+     "onde": "Lado ar, perto dos portões 16 e 17, e lado terra (antes do raio-x), no segundo piso da praça de alimentação",
+     "horario": "Diariamente, das 10h às 22h",
+     "como_entrar": [
+      "Visa Airport Companion, trocando um acesso à sala VIP por menu completo com entrada, prato principal, sobremesa e bebida"
+     ]
+    }
+   ],
+   "secoes": [
+    {
+     "titulo": "Acesso por programa",
+     "texto": "Cada programa dá entrada a salas diferentes em Fortaleza.",
+     "itens": [
+      "Priority Pass e LoungeKey: as duas salas Ambaar Club",
+      "Visa Airport Companion (Dragon Pass): as duas W Premium Lounge, A Saideira e Vignoli Cucina"
+     ]
+    },
+    {
+     "titulo": "Quem pode entrar em salas VIP",
+     "texto": "Hoje o acesso vai além da classe executiva ou primeira classe. O jeito mais comum é por cartão de crédito, e o benefício pode ser gratuito ou pago, conforme o banco.",
+     "itens": [
+      "Cartões de crédito",
+      "Parcerias com bancos",
+      "Programas de fidelidade",
+      "Contas digitais",
+      "Pagamento avulso"
+     ]
+    },
+    {
+     "titulo": "Qual é a melhor sala",
+     "texto": "Segundo o texto, o W Premium Lounge tem espaço e alimentação um pouco superiores aos da Ambaar. A diferença é pequena e a experiência varia com o horário e a lotação.",
+     "itens": []
+    },
+    {
+     "titulo": "Sobre o aeroporto",
+     "texto": "O Pinto Martins fica a 6 km do centro e é administrado pela Fraport Brasil. Tem voos para Paris, Lisboa, Orlando, Miami e Buenos Aires.",
+     "itens": [
+      "Lojas, restaurantes e serviços bancários",
+      "Estacionamento",
+      "Táxis, ônibus e aplicativos até o centro"
+     ]
+    }
+   ],
+   "dicas": [
+    "Confira qual programa seu cartão oferece, pois ele define a sala que você pode usar.",
+    "Quem tem Visa Airport Companion pode trocar a sala por uma refeição completa em A Saideira ou Vignoli Cucina.",
+    "Na chegada ou em conexão, use a W Premium Lounge Arrival, logo após o desembarque.",
+    "Antes do voo internacional, lembre que a Ambaar internacional fecha às 22h.",
+    "Sem acesso por cartão, compare o preço avulso: R$ 160 a R$ 230, conforme a sala."
+   ]
+  },
+  {
+   "url": "https://www.melhoresdestinos.com.br/sala-vip-aeroporto-porto-alegre-guia.html",
+   "marca": "7efc3f4fa91e9f7f",
+   "atualizado": "2026-10-31",
+   "titulo": "Salas VIP do aeroporto de Porto Alegre",
+   "assunto": "Porto Alegre (POA)",
+   "iata": "POA",
+   "resumo": "O Aeroporto Internacional Salgado Filho tem três salas VIP: dois lounges Ambaar (doméstico e internacional) e o W Premium Lounge. O acesso varia conforme a sala: LoungeKey, Priority Pass, Visa Airport Companion/Dragon Pass, cartões selecionados ou pagamento avulso.",
+   "categorias": [],
+   "salas": [
+    {
+     "nome": "Ambaar Club (Doméstico)",
+     "terminal": "Terminal doméstico",
+     "onde": "No mezanino, após a inspeção de segurança, próximo aos portões 117 e 118. Tem 508 m² e capacidade para 170 pessoas.",
+     "horario": "Todos os dias, das 3h30 às 23h",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Cartões Bradesco selecionados (Aeternum, Amex The Platinum Card, Diners Club e Principal)",
+      "Cartões Inter Mastercard Black e Black Win",
+      "Clientes de classe executiva da TAP e membros Miles&Go Gold, Navigator e Star Alliance Gold voando TAP",
+      "Acesso avulso a partir de R$ 200"
+     ]
+    },
+    {
+     "nome": "Ambaar Club (Internacional)",
+     "terminal": "Embarque internacional",
+     "onde": "Depois do controle de passaporte, próximo aos portões 101 e 102.",
+     "horario": "Durante os voos internacionais do dia",
+     "como_entrar": [
+      "LoungeKey",
+      "Priority Pass",
+      "Cartões Bradesco selecionados (Aeternum, Amex The Platinum Card, Diners Club e Principal)",
+      "Cartões Inter Mastercard Black e Black Win",
+      "Acesso avulso a partir de R$ 230"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge",
+     "terminal": "Embarque nacional",
+     "onde": "No 1º andar, logo após os controles de segurança. Tem 420 m² e capacidade para 118 pessoas.",
+     "horario": "Diariamente, das 5h30 às 22h30",
+     "como_entrar": [
+      "Visa Airport Companion",
+      "Dragon Pass",
+      "Cartões C6 Carbon e Sisprime Black",
+      "Seguros selecionados: Assist Card, Coris e Hero",
+      "Acesso avulso a partir de R$ 220"
+     ]
+    }
+   ],
+   "secoes": [
+    {
+     "titulo": "Quem pode entrar",
+     "texto": "O acesso às salas pode ser gratuito ou pago, dependendo da forma de entrada e da política do banco.",
+     "itens": [
+      "Cartões premium como Mastercard Black, Visa Infinite, Elo Nanquim e American Express Platinum, via LoungeKey, Priority Pass ou Visa Airport Companion",
+      "Passageiros de classe executiva de algumas companhias aéreas",
+      "Acesso avulso, pago na recepção da sala"
+     ]
+    },
+    {
+     "titulo": "Quanto custa o acesso avulso",
+     "texto": "Para quem não tem acesso gratuito, os valores ficam entre R$ 100 e R$ 250 por pessoa, conforme o aeroporto e a sala.",
+     "itens": [
+      "Ambaar doméstico: a partir de R$ 200",
+      "Ambaar internacional: a partir de R$ 230",
+      "W Premium Lounge: a partir de R$ 220"
+     ]
+    },
+    {
+     "titulo": "Qual programa vale em cada sala",
+     "texto": "Priority Pass e LoungeKey dão acesso aos lounges Ambaar, tanto no doméstico quanto no internacional. Visa Airport Companion e Dragon Pass dão acesso ao W Premium Lounge.",
+     "itens": []
+    },
+    {
+     "titulo": "Estrutura e serviços",
+     "texto": "As salas oferecem buffet, bar e áreas de descanso. O Ambaar doméstico tem estações de trabalho e tomadas com USB, e o W Premium tem áreas para reuniões.",
+     "itens": [
+      "Ambaar internacional: pratos quentes, pães de queijo, bolos, frutas, saladas, snacks, café, chá, cappuccino, refrigerantes, cervejas, vinhos e destilados",
+      "W Premium: buffet que muda ao longo do dia, com pratos quentes no almoço e jantar e drinks preparados na hora"
+     ]
+    },
+    {
+     "titulo": "Sobre o aeroporto",
+     "texto": "O Salgado Filho é administrado pela Fraport Brasil e é um dos mais movimentados do Sul do Brasil. Tem voos diretos internacionais para diversos destinos.",
+     "itens": [
+      "Buenos Aires",
+      "Lima",
+      "Santiago",
+      "Montevidéu",
+      "Bariloche (alta temporada)",
+      "Cidade do Panamá",
+      "Lisboa"
+     ]
+    }
+   ],
+   "dicas": [
+    "Confira a política do seu cartão ou banco para saber se o acesso é gratuito e se há custo para acompanhantes.",
+    "Para o lounge internacional, veja o horário dos voos do dia, pois ele funciona conforme as saídas internacionais.",
+    "Cartão Visa ou Dragon Pass não entra nos Ambaar; use o W Premium Lounge.",
+    "O W Premium tem serviço de bar e buffet mais completo, com pratos quentes no almoço e jantar.",
+    "Se não tiver acesso por cartão, compare os valores avulsos, que variam de R$ 200 a R$ 230 conforme a sala."
+   ]
+  }
+ ],
+ "programas": [
+  {
+   "url": "https://www.melhoresdestinos.com.br/latam-pass-gold-platinum-black-2025.html",
+   "marca": "c1ceb97c631e3778",
+   "atualizado": "2026-10-31",
+   "titulo": "Categorias do LATAM Pass em 2026",
+   "assunto": "LATAM Pass",
+   "iata": "",
+   "resumo": "O LATAM Pass promove os clientes às categorias Gold, Platinum, Black e Black Signature conforme os pontos qualificáveis somados de janeiro a dezembro de cada ano. Os pontos vêm de voos, serviços, reservas pelo site, cartões Itaú e Clube LATAM Pass. Cada categoria libera benefícios como bagagem grátis, assentos, upgrades e salas VIP.",
+   "categorias": [
+    {
+     "nome": "Gold",
+     "requisito": "12.000 pontos qualificáveis no ano",
+     "beneficios": [
+      "1 bagagem despachada adicional grátis em voos dentro do Brasil",
+      "Seleção gratuita de assentos comuns em voos LATAM",
+      "50% de desconto em assentos LATAM+ (com mais espaço)",
+      "4 trechos para upgrade de cabine na América do Sul",
+      "Check-in e embarque preferenciais em voos LATAM"
+     ]
+    },
+    {
+     "nome": "Platinum",
+     "requisito": "35.000 pontos qualificáveis no ano",
+     "beneficios": [
+      "2 bagagens despachadas adicionais grátis em voos LATAM e Delta Air Lines",
+      "Seleção gratuita de assentos LATAM+ em voos LATAM",
+      "4 trechos de upgrade na América do Sul e 2 fora da América do Sul",
+      "Acesso às salas VIP LATAM e parceiras",
+      "Antecipação e prorrogação de voos LATAM com 24h de antecedência",
+      "Check-in e embarque preferenciais",
+      "Benefícios extras ao voar com Iberia, Qatar Airways e Delta Air Lines"
+     ]
+    },
+    {
+     "nome": "Black",
+     "requisito": "100.000 pontos qualificáveis no ano",
+     "beneficios": [
+      "2 bagagens despachadas adicionais grátis em voos LATAM e Delta Air Lines",
+      "Seleção gratuita de assentos LATAM+ em voos LATAM",
+      "Trechos ilimitados de upgrade na América do Sul e 8 fora da América do Sul",
+      "Acesso às salas VIP LATAM e parceiras",
+      "Antecipação e prorrogação de voos LATAM com 24h de antecedência",
+      "Atendimento preferencial por WhatsApp",
+      "Check-in e embarque preferenciais",
+      "Benefícios extras ao voar com Iberia, Qatar Airways e Delta Air Lines"
+     ]
+    },
+    {
+     "nome": "Black Signature",
+     "requisito": "200.000 pontos qualificáveis no ano",
+     "beneficios": [
+      "2 bagagens despachadas adicionais grátis em voos LATAM e Delta Air Lines",
+      "Seleção gratuita de assentos LATAM+ em voos LATAM",
+      "Trechos ilimitados de upgrade na América do Sul e 14 fora da América do Sul",
+      "Acesso às salas VIP LATAM e parceiras",
+      "Antecipação e prorrogação de voos LATAM com 24h de antecedência",
+      "Atendimento preferencial por WhatsApp",
+      "Embarque exclusivo em veículo Audi no Aeroporto de Congonhas (São Paulo)",
+      "Check-in e embarque preferenciais",
+      "Benefícios extras ao voar com Iberia, Qatar Airways e Delta Air Lines",
+      "Atendimento do Special Services em aeroportos e à distância, inclusive em atrasos e cancelamentos"
+     ]
+    }
+   ],
+   "salas": [],
+   "secoes": [
+    {
+     "titulo": "Como acumular pontos qualificáveis",
+     "texto": "Há várias formas de somar pontos qualificáveis ao longo do ano. Taxas aeroportuárias não entram na conta dos voos.",
+     "itens": [
+      "Voos com LATAM, Delta Air Lines e Aeromexico",
+      "Serviços adicionais comprados na LATAM",
+      "Reservas de hotel, carro e seguro viagem pelo site do programa",
+      "Gastos nos cartões LATAM Pass Itaú",
+      "Clube LATAM Pass com o adicional Embarque"
+     ]
+    },
+    {
+     "titulo": "Acúmulo em voos",
+     "texto": "Em voos nacionais da LATAM, são 3 pontos qualificáveis por real gasto na tarifa. Em voos internacionais, são 6 pontos por dólar. Em parceiras, o acúmulo depende da classe tarifária e da distância.",
+     "itens": [
+      "Exemplo nacional: R$ 500 de tarifa geram 1.500 pontos qualificáveis",
+      "Exemplo internacional: US$ 1.000 de tarifa geram 6.000 pontos qualificáveis",
+      "Tarifas mais caras só têm acúmulo diferenciado a partir de 23.500 pontos qualificáveis, com a opção de acúmulo turbinado"
+     ]
+    },
+    {
+     "titulo": "Serviços, hotéis e carro",
+     "texto": "Serviços adicionais da LATAM rendem 1 ponto qualificável por real, mas só para quem chegou a 6.000 pontos e escolheu esse bônus. Hotéis, carro e seguro viagem pelo site variam conforme parceiro e oferta.",
+     "itens": [
+      "Serviços elegíveis: bagagem despachada, marcação de assento, upgrade de cabine e transporte de pet",
+      "Exemplo: 6 pontos qualificáveis por dólar em hotéis pela Booking.com ou aluguel de carro",
+      "Há ofertas frequentes em pacotes"
+     ]
+    },
+    {
+     "titulo": "Cartões LATAM Pass Itaú",
+     "texto": "Os cartões Platinum, Infinite e Black geram 1 ponto qualificável a cada 5 pontos acumulados, com limite anual.",
+     "itens": [
+      "Platinum: até 5.000 pontos qualificáveis por ano",
+      "Black e Infinite: até 9.000 pontos qualificáveis por ano",
+      "Anuidade grátis no Platinum com R$ 4.000 de gastos mensais",
+      "Anuidade grátis no Black e Infinite com R$ 20.000 de gastos mensais"
+     ]
+    },
+    {
+     "titulo": "Clube LATAM Pass",
+     "texto": "O adicional Embarque custa R$ 49,90 por mês e rende 750 pontos qualificáveis mensais com o cartão Itaú ou 500 sem ele. Os pacotes Acelere e Turbo dão a categoria Gold imediatamente.",
+     "itens": [
+      "Embarque: 9.000 pontos qualificáveis por ano com cartão Itaú e Gold, ou 6.000 sem o cartão",
+      "Acelere: R$ 146 por mês, 4.500 pontos mensais, 25% de bônus em parceiros e 25% extras em transferências de bancos",
+      "Turbo: R$ 315 por mês, 10.500 pontos mensais, 35% de bônus em parceiros e 35% extras em transferências de bancos",
+      "Os adicionais podem ser cancelados a qualquer momento sem custo"
+     ]
+    }
+   ],
+   "dicas": [
+    "Informe o CPF na compra da passagem ou no check-in; se esquecer, peça os pontos retroativos pelo site.",
+    "Dê preferência a voar com a LATAM ou parceiras para somar mais pontos qualificáveis.",
+    "Use cartão, Clube e reservas de hotel ou carro pelo site para reduzir o gasto necessário em voos.",
+    "Se precisa despachar bagagem, compare o custo (a partir de R$ 140 em voos nacionais) com os adicionais do Clube.",
+    "Não conte com campanhas de equiparação de status em 2026, pois não há garantia de que existam."
+   ]
+  },
+  {
+   "url": "https://www.melhoresdestinos.com.br/smiles-prata-ouro-diamante-gol-2025.html",
+   "marca": "cf1dc58d0749cf8b",
+   "atualizado": "2026-10-31",
+   "titulo": "Categorias do Smiles (GOL) em 2026",
+   "assunto": "Smiles",
+   "iata": "",
+   "resumo": "O Smiles tem quatro categorias elite: Prata, Ouro, Diamante e Diamante Magno. A promoção depende das milhas ou dos trechos qualificáveis acumulados de janeiro a dezembro de cada ano. Cada nível dá benefícios como bagagem grátis, assentos, salas VIP e passagem cortesia.",
+   "categorias": [
+    {
+     "nome": "Prata",
+     "requisito": "6.000 milhas qualificáveis ou 6 trechos no ano",
+     "beneficios": [
+      "Uma bagagem despachada grátis em voos Gol",
+      "Milhas bônus em voos Gol",
+      "Antecipação gratuita de voos Gol em até 6 horas",
+      "Com 8 trechos ou 8.000 milhas: 2.000 milhas bônus e cupom de 10% para emitir passagens Gol com milhas",
+      "Com 10 trechos ou 10.000 milhas: Passe Ouro por um dia, marcação antecipada de assentos e acesso aos Lounges Gol Smiles com 50% de desconto"
+     ]
+    },
+    {
+     "nome": "Ouro",
+     "requisito": "12.000 milhas qualificáveis ou 12 trechos no ano",
+     "beneficios": [
+      "Duas bagagens despachadas grátis em voos Gol",
+      "Milhas bônus em voos Gol e de parceiros",
+      "Antecipação gratuita de voos Gol em até 6 horas",
+      "Marcação grátis de assentos comuns",
+      "Acesso grátis e ilimitado aos Lounges Gol Smiles",
+      "8 acessos grátis a salas VIP Avianca",
+      "Benefícios adicionais ao voar com a Avianca",
+      "Tarifa teto Ouro: 5 trechos nacionais por até 50 mil milhas cada, com 18 mil milhas ou 18 trechos",
+      "Com 15 trechos ou 15.000 milhas: 5.000 milhas bônus e um acesso de acompanhante ao Lounge",
+      "Com 18 trechos ou 18.000 milhas: 1.000 milhas qualificáveis extras, cupom de 10%, upgrade de cabine e cancelamento sem multa em 2 trechos Gol, e Passe Diamante por um dia"
+     ]
+    },
+    {
+     "nome": "Diamante",
+     "requisito": "24.000 milhas qualificáveis ou 24 trechos no ano",
+     "beneficios": [
+      "Três bagagens despachadas grátis em voos Gol",
+      "Milhas bônus em voos Gol e de parceiros",
+      "Antecipação de voos Gol no mesmo dia",
+      "Postergação de voos Gol em até 6 horas",
+      "Upgrade de cabine em 2 trechos Gol",
+      "Assentos Gol+Conforto grátis, inclusive para acompanhantes",
+      "Acesso grátis e ilimitado aos Lounges Gol Smiles",
+      "8 acessos grátis a salas VIP Avianca",
+      "Embarque e check-in prioritários em voos Gol",
+      "Cancelamento de 2 voos Gol sem multa",
+      "Uma passagem cortesia por ano para acompanhante, com 26 mil milhas ou 26 trechos",
+      "Atendimento preferencial por WhatsApp",
+      "Desconto no Shopping Smiles",
+      "Tarifa teto Diamante: 15 trechos nacionais por até 35 mil milhas cada, com 32 mil milhas ou 32 trechos",
+      "Benefícios adicionais com Avianca, American Airlines, Air France e KLM",
+      "Faixas extras de 28, 32, 36 e 40 mil milhas ou trechos liberam acessos de acompanhante ao Lounge, cupons de 10% e 15% em parceiras, remarcação sem taxa, mais upgrades e cancelamentos sem multa"
+     ]
+    },
+    {
+     "nome": "Diamante Magno",
+     "requisito": "50.000 milhas qualificáveis e 50 trechos no ano",
+     "beneficios": [
+      "Três bagagens despachadas grátis em voos Gol",
+      "Milhas bônus em voos Gol e de parceiros",
+      "Antecipação de voos Gol no mesmo dia",
+      "Adiamento de voos Gol em até 6 horas",
+      "Upgrade de cabine em 4 trechos Gol",
+      "Assentos Gol+Conforto grátis, inclusive para acompanhantes",
+      "Acesso grátis e ilimitado aos Lounges Gol Smiles",
+      "8 acessos a salas VIP Avianca",
+      "Embarque e check-in prioritários em voos Gol",
+      "Concierge Gol Smiles por WhatsApp",
+      "Uma passagem cortesia por ano para acompanhante",
+      "Cancelamento de 4 trechos Gol sem multa",
+      "Remarcação de 2 trechos Gol sem taxa",
+      "Presentear outro participante com status Ouro",
+      "Tarifa teto: 15 trechos nacionais por até 35 mil milhas cada",
+      "Desconto no Shopping Smiles"
+     ]
+    }
+   ],
+   "salas": [],
+   "secoes": [
+    {
+     "titulo": "Como contam os trechos qualificáveis",
+     "texto": "Cada viagem conta como um trecho, não importa o número de conexões ou escalas. Uma viagem de ida e volta soma dois trechos.",
+     "itens": [
+      "Todos os trechos voados com a Gol contam, inclusive passagens emitidas com milhas",
+      "Em parceiras, só contam bilhetes de classe tarifária elegível ao acúmulo de milhas Smiles",
+      "Natal–Porto Alegre com conexão em São Paulo vale um trecho na ida e um na volta"
+     ]
+    },
+    {
+     "titulo": "Milhas qualificáveis em voos",
+     "texto": "Em voos Gol, cada R$ 1 gasto na tarifa aérea gera 1 milha qualificável, sem depender de rota ou tipo de tarifa. Taxas aeroportuárias não entram na conta.",
+     "itens": [
+      "Passagem de R$ 550, sendo R$ 500 de tarifa, rende 500 milhas qualificáveis",
+      "Em parceiras, o acúmulo depende da classe tarifária e da distância",
+      "Parceiras que acumulam: American Airlines, Air France, KLM, Copa, Air Europa, Aerolíneas Argentinas, Emirates, Air Canada, Avianca, Aeromexico, Ethiopian, TAP, Korean Air e South African Airways"
+     ]
+    },
+    {
+     "titulo": "Cartões Gol Smiles e Clube Smiles",
+     "texto": "Cartões e Clube geram 1 milha qualificável a cada 10 milhas acumuladas, exceto milhas bônus. Os cartões são emitidos por Banco do Brasil, Bradesco e Santander.",
+     "itens": [
+      "Clube Smiles 1.000 rende 100 milhas qualificáveis por mês",
+      "Clube 10.000 permite chegar a 12.000 milhas qualificáveis no ano, o que garante Ouro",
+      "Clube 20.000 dá Diamante imediato, mas custa a partir de R$ 778 por mês",
+      "Cartão Gol Smiles Visa Infinite dá Prata automático até o fim de 2027",
+      "Cartões Platinum e Infinite dão bagagem grátis, sala VIP e embarque e check-in prioritários"
+     ]
+    },
+    {
+     "titulo": "O que não gera milhas qualificáveis",
+     "texto": "Algumas operações aumentam o saldo de milhas, mas não ajudam a subir de categoria.",
+     "itens": [
+      "Transferência de pontos de cartões de crédito",
+      "Envio de pontos Livelo e Esfera",
+      "Compra de milhas",
+      "Transferência entre contas",
+      "Renovação de milhas"
+     ]
+    },
+    {
+     "titulo": "Roll-over",
+     "texto": "As milhas e os trechos qualificáveis que passam do necessário para a categoria valem para a qualificação do ano seguinte. Por isso, vale continuar acumulando depois de atingir o nível.",
+     "itens": []
+    },
+    {
+     "titulo": "Milhas de voos não creditadas",
+     "texto": "Se as milhas de um voo não caíram, é possível pedir o crédito pelo site do programa.",
+     "itens": [
+      "Voos Gol: até 6 meses após o voo",
+      "Voos de parceiras: até 5 meses após a viagem",
+      "Informe sempre o CPF ou o número Smiles na compra ou no check-in"
+     ]
+    }
+   ],
+   "dicas": [
+    "Dê preferência à Gol e às parceiras e informe o CPF ou número Smiles em toda compra e check-in.",
+    "Passagens emitidas com milhas contam para a qualificação, então use-as também para somar trechos.",
+    "Compare o custo do Clube Smiles com o benefício: o plano 20.000 dá Diamante, mas tem custo-benefício baixo.",
+    "Se o seu cartão não acumula pontos, considere um cartão Gol Smiles, que gera milhas qualificáveis e pode dar bagagem grátis e sala VIP.",
+    "Continue acumulando depois de atingir a categoria, pois o excedente vale para o ano seguinte."
+   ]
+  },
+  {
+   "url": "https://www.melhoresdestinos.com.br/azul-topazio-safira-diamante-2025.html",
+   "marca": "f2a1ffaacda654fd",
+   "atualizado": "2026-10-31",
+   "titulo": "Categorias do Azul Fidelidade em 2026",
+   "assunto": "Azul Fidelidade",
+   "iata": "",
+   "resumo": "O Azul Fidelidade tem cinco categorias elite: Topázio, Safira, Diamante, Diamante Unique e One. As quatro primeiras dependem de pontos, trechos ou gastos qualificáveis de janeiro a dezembro, e a One é só por convite. Cartões Azul Itaú, Clube Azul e equiparação de status são atalhos para subir de nível.",
+   "categorias": [
+    {
+     "nome": "Topázio",
+     "requisito": "6.000 pontos qualificáveis ou 6 trechos; também vem de imediato com o cartão Azul Itaú Gold",
+     "beneficios": [
+      "6 beneficiários para resgate de passagens com pontos",
+      "Pontos bônus em voos Azul",
+      "Uma marcação de assento com mais espaço",
+      "Uma bagagem despachada em voos da Azul"
+     ]
+    },
+    {
+     "nome": "Safira",
+     "requisito": "10.000 pontos qualificáveis ou 10 trechos; também vem de imediato com o Clube Azul 10.000 ou o cartão Azul Itaú Platinum",
+     "beneficios": [
+      "7 beneficiários para resgate de passagens com pontos",
+      "Pontos bônus em voos Azul",
+      "Antecipação de voo",
+      "2 marcações de assento com mais espaço",
+      "2 bagagens despachadas",
+      "Resgate Especial Azul (tarifa teto): até 5 reservas por até 70 mil pontos"
+     ]
+    },
+    {
+     "nome": "Diamante",
+     "requisito": "12.000 pontos e 12 trechos ou R$ 25 mil em gastos; também vem de imediato com o Clube Azul 20.000 ou os cartões Azul Itaú Visa Infinite e Skyline Mastercard Black",
+     "beneficios": [
+      "8 beneficiários para resgate de passagens com pontos",
+      "3 bagagens despachadas",
+      "Entrega de bagagem prioritária",
+      "Pontos bônus em voos Azul",
+      "Antecipação de voo",
+      "Marcação de assento com mais conforto ilimitada em voos nacionais",
+      "Benefícios elite em voos da United (bagagem despachada, check-in e embarque prioritários)",
+      "Uma passagem grátis para acompanhante, se cumprir os requisitos de trechos e pontos ou gastos",
+      "Resgate Especial Azul: até 10 reservas por até 50 mil pontos",
+      "Acesso ao Lounge Azul em Campinas em voos internacionais, válido até 1º de abril de 2026"
+     ]
+    },
+    {
+     "nome": "Diamante Unique",
+     "requisito": "26.000 pontos e 26 trechos ou R$ 50 mil em gastos",
+     "beneficios": [
+      "15 beneficiários para resgate de passagens com pontos",
+      "3 bagagens despachadas",
+      "Entrega de bagagem prioritária",
+      "Pontos bônus em voos Azul",
+      "Antecipação de voo",
+      "Assento com mais conforto ilimitado, nacional e internacional",
+      "Assentos Economy Xtra em voos internacionais",
+      "Check-in e embarque prioritários em voos da Azul",
+      "Benefícios elite em voos da United",
+      "Duas passagens de ida e volta grátis para acompanhante, uma podendo ser internacional",
+      "Resgate Especial Azul: até 15 reservas por até 50 mil pontos",
+      "Acesso ao Lounge Azul em Campinas em voos internacionais"
+     ]
+    },
+    {
+     "nome": "One",
+     "requisito": "Somente por convite da Azul, com base em gastos, trechos voados e preferência por produtos premium",
+     "beneficios": [
+      "20 beneficiários para resgate de passagens com pontos",
+      "3 bagagens despachadas",
+      "Entrega de bagagem prioritária",
+      "Pontos bônus em voos Azul",
+      "Antecipação e postergação de voo",
+      "Assento com mais conforto ilimitado, nacional e internacional",
+      "Assentos Economy Xtra em voos internacionais",
+      "Check-in e embarque prioritários em voos da Azul",
+      "Benefícios elite em voos da United",
+      "Duas passagens de ida e volta grátis para acompanhante, todas podendo ser internacionais",
+      "Resgate Especial Azul: até 15 reservas por até 40 mil pontos",
+      "Acesso ao Lounge Azul em Campinas em voos internacionais",
+      "Salas VIP parceiras em Lisboa, Fort Lauderdale, Orlando e Porto",
+      "Isenção da taxa de resgate de passagens com pontos",
+      "Atendimento diferenciado por WhatsApp",
+      "Atendimento presencial em Campinas, Recife, Congonhas, Brasília, Orlando e Fort Lauderdale"
+     ]
+    }
+   ],
+   "salas": [],
+   "secoes": [
+    {
+     "titulo": "Como contam os trechos qualificáveis",
+     "texto": "Cada viagem conta um trecho, independentemente de conexões e escalas. Todos os trechos voados com a Azul valem, inclusive os resgatados com pontos, mas voos de parceiras não geram trechos.",
+     "itens": [
+      "Ida simples: 1 trecho",
+      "Ida e volta: 2 trechos",
+      "Fortaleza–Curitiba com conexão em Campinas: 1 trecho na ida e 1 na volta"
+     ]
+    },
+    {
+     "titulo": "Como acumular pontos qualificáveis",
+     "texto": "Cada R$ 1 gasto na tarifa aérea da Azul gera 1 ponto qualificável, seja qual for a tarifa. Uma passagem de R$ 750, com R$ 700 de tarifa e R$ 50 de taxas, rende 700 pontos.",
+     "itens": [
+      "Voos da Azul e das parceiras TAP e United",
+      "Serviços adicionais elegíveis, como bagagem, assento, upgrade e pet, na regra de 1 ponto por real, desde abril de 2024",
+      "Cartões Azul Itaú: 1 ponto qualificável a cada 10 pontos acumulados, exceto bônus",
+      "Clube Azul: 1 ponto qualificável a cada 10 pontos acumulados, exceto bônus"
+     ]
+    },
+    {
+     "titulo": "O que não gera pontos qualificáveis",
+     "texto": "Hoje algumas transações deixaram de contar para a mudança de categoria.",
+     "itens": [
+      "Transferência de pontos de cartões de crédito",
+      "Pontos Livelo e Esfera enviados ao programa",
+      "Compra de pontos",
+      "Transferência entre contas",
+      "Renovação de pontos",
+      "Voos de Air Canada, Copa, Emirates e Turkish acumulam pontos, mas não qualificáveis"
+     ]
+    },
+    {
+     "titulo": "Atalhos para subir de categoria",
+     "texto": "Cartões e assinatura do Clube Azul dão status imediato, sem precisar voar.",
+     "itens": [
+      "Cartão Azul Itaú Gold: Topázio; anuidade grátis com R$ 2.000 em compras por mês",
+      "Cartão Azul Itaú Platinum: Safira; anuidade grátis com R$ 4.000 por mês",
+      "Clube Azul 10.000: Safira, a partir de R$ 344 por mês",
+      "Visa Infinite ou Skyline Mastercard Black: Diamante; anuidade grátis com R$ 20.000 por mês",
+      "Clube Azul 20.000: Diamante, a partir de R$ 762 por mês"
+     ]
+    },
+    {
+     "titulo": "Desafio Azul (equiparação de status)",
+     "texto": "Quem tem status em outro programa pode receber categoria equivalente na Azul por 6 meses, sem custo. São aceitos Latam Pass, AAdvantage, Smiles, United, Delta e companhias da Star Alliance, mediante formulário e documentos. A One não está disponível.",
+     "itens": [
+      "Prazo de até 180 dias para acumular uma quantidade reduzida para manter o status",
+      "Topázio: 3.000 pontos ou 3 trechos",
+      "Safira: 5.000 pontos ou 5 trechos",
+      "Diamante: 6.000 pontos e 6 trechos ou R$ 12.500",
+      "Diamante Unique: 13.000 pontos e 13 trechos ou R$ 25.000"
+     ]
+    },
+    {
+     "titulo": "Como funciona o convite para a One",
+     "texto": "A Azul avalia o volume gasto, os trechos voados e a preferência por produtos premium. Quem é convidado dá o aceite pelo aplicativo, onde também estão os termos do convite.",
+     "itens": []
+    }
+   ],
+   "dicas": [
+    "Informe sempre o CPF ou o número Azul Fidelidade na compra e no check-in para os pontos serem creditados.",
+    "Se voou e os pontos não caíram, é possível solicitar o crédito retroativo pelo site do programa.",
+    "Se tem status em outro programa, avalie o Desafio Azul para ganhar categoria por 6 meses.",
+    "Compare a anuidade e o gasto mensal exigido dos cartões Azul Itaú antes de escolher o caminho para o status.",
+    "Dê preferência a voar com Azul, TAP ou United, pois só esses voos geram pontos qualificáveis."
+   ]
+  },
+  {
+   "url": "https://www.melhorescartoes.com.br/pontos-livelo.html",
+   "marca": "382ed1ba5a4bb9ea",
+   "atualizado": "2026-10-31",
+   "titulo": "Guia do programa Livelo",
+   "assunto": "Livelo",
+   "iata": "",
+   "resumo": "A Livelo é um programa de pontos gratuito, criado em 2016 pelo Banco do Brasil e pelo Bradesco, com mais de 19 milhões de clientes. Os pontos podem ser acumulados com cartões, compras em lojas parceiras e assinatura do Clube Livelo. Eles servem para transferir a programas aéreos e de hotéis, emitir viagens, comprar produtos e até receber dinheiro.",
+   "categorias": [
+    {
+     "nome": "Clube Classic",
+     "requisito": "Assinatura com 1.000 pontos por mês",
+     "beneficios": [
+      "Pontos creditados todo mês sem precisar comprar",
+      "Pontos não expiram enquanto a assinatura estiver ativa",
+      "Condições exclusivas no Shopping Livelo"
+     ]
+    },
+    {
+     "nome": "Clube Special",
+     "requisito": "Assinatura com 2.000 pontos por mês",
+     "beneficios": [
+      "Pontos creditados todo mês sem precisar comprar",
+      "Pontos não expiram enquanto a assinatura estiver ativa",
+      "Ofertas exclusivas de transferência e compra de pontos"
+     ]
+    },
+    {
+     "nome": "Clube Plus",
+     "requisito": "Assinatura com 3.000 pontos por mês",
+     "beneficios": [
+      "Pontos creditados todo mês sem precisar comprar",
+      "Pontos não expiram enquanto a assinatura estiver ativa",
+      "Descontos e transferências bonificadas para assinantes"
+     ]
+    },
+    {
+     "nome": "Clube Super",
+     "requisito": "Assinatura com 7.000 pontos por mês",
+     "beneficios": [
+      "Pontos creditados todo mês sem precisar comprar",
+      "Pontos não expiram enquanto a assinatura estiver ativa",
+      "Pontos extras a cada 3 meses de permanência"
+     ]
+    },
+    {
+     "nome": "Clube Mega",
+     "requisito": "Assinatura com 12.000 pontos por mês",
+     "beneficios": [
+      "Pontos creditados todo mês sem precisar comprar",
+      "Pontos não expiram enquanto a assinatura estiver ativa",
+      "Descontos adicionais na compra de pontos para quem fica mais tempo"
+     ]
+    },
+    {
+     "nome": "Clube Top",
+     "requisito": "Assinatura com 20.000 pontos por mês",
+     "beneficios": [
+      "Maior volume mensal de pontos entre os planos",
+      "Pontos não expiram enquanto a assinatura estiver ativa",
+      "Pontos extras a cada 3 meses de permanência"
+     ]
+    }
+   ],
+   "salas": [],
+   "secoes": [
+    {
+     "titulo": "Quanto vale o ponto",
+     "texto": "O valor é medido por lote de 1.000 pontos. O valor-base no site é R$ 70, mas o valor-alvo de 2026, calculado pelas ofertas recentes, é R$ 30 (R$ 0,03 por ponto).",
+     "itens": [
+      "5.000 pontos: R$ 150",
+      "10.000 pontos: R$ 300",
+      "20.000 pontos: R$ 600",
+      "50.000 pontos: R$ 1.500"
+     ]
+    },
+    {
+     "titulo": "Como acumular pontos",
+     "texto": "Há várias formas além do cartão de crédito. Clientes de Banco do Brasil, Bradesco, Next, Banesecard e Banco Bari pontuam direto na Livelo.",
+     "itens": [
+      "Cartões de crédito de bancos parceiros",
+      "Transferência de programas de bancos como C6 Bank e BTG Pactual",
+      "Compras em lojas online e no Compre e Pontue",
+      "Assinatura do Clube Livelo, com até 20.000 pontos por mês",
+      "Compra de pontos e Turbo Livelo"
+     ]
+    },
+    {
+     "titulo": "Transferência para programas nacionais",
+     "texto": "A transferência para LATAM Pass, Azul Fidelidade e Smiles é de 1 para 1, com bônus que podem ir de 25% a 130% nas promoções.",
+     "itens": [
+      "Azul Fidelidade: mínimo de 1.000 pontos",
+      "Smiles: mínimo de 10.000 pontos",
+      "Latam Pass: mínimo de 12.000 pontos",
+      "Bônus típicos: 80% a 100% na Smiles, 70% a 130% na Azul e 25% a 30% no Latam Pass"
+     ]
+    },
+    {
+     "titulo": "Transferência para programas internacionais",
+     "texto": "Há deságio na conversão e as promoções são mais raras. Em alguns casos, são necessários até 4 pontos Livelo para 1 ponto no programa de destino.",
+     "itens": [
+      "Copa Airlines: 3 para 1",
+      "Iberia Plus, British Airways, Flying Blue, Etihad Guest e Aeroméxico Rewards: 3,5 para 1",
+      "MileagePlus (United): 4 para 1",
+      "TAP Miles&Go: 1 para 1, só para clientes do American Express The Centurion Card do Bradesco"
+     ]
+    },
+    {
+     "titulo": "Programas de hotéis e outros resgates",
+     "texto": "Os pontos também podem ser trocados por hospedagem, viagens no site, produtos e dinheiro, embora a conversão em dinheiro costume valer pouco.",
+     "itens": [
+      "Accor ALL: 3 pontos Livelo para 1",
+      "Hilton Honors e IHG Rewards Club: 2 para 1",
+      "Pontos Viram Dinheiro: cerca de R$ 17 por 1.000 pontos, em até 2 dias",
+      "Shopping Livelo, Pix, sites parceiros e doações"
+     ]
+    },
+    {
+     "titulo": "Cadastro e validade",
+     "texto": "O cadastro é gratuito para maiores de 18 anos com CPF válido. Em geral, os pontos valem por 24 meses após o crédito, mas não expiram para assinantes ativos do Clube.",
+     "itens": [
+      "Santander não é parceiro, pois tem o programa Esfera",
+      "Itaú não é parceiro e não permite transferência de pontos"
+     ]
+    }
+   ],
+   "dicas": [
+    "Use o valor-alvo de R$ 30 por milheiro como referência para saber se uma compra de pontos compensa.",
+    "Prefira transferir para programas aéreos nacionais durante promoções com bônus.",
+    "Evite trocar pontos por dinheiro, pois a cotação de R$ 17 por milheiro fica bem abaixo do valor-alvo.",
+    "Aproveite descontos na compra de pontos, que podem chegar a 58% e costumam ser exclusivos para assinantes do Clube.",
+    "Verifique o regulamento antes de transferir pontos de bancos parceiros, pois o crédito pode demorar até 5 dias úteis e não pode ser desfeito."
+   ]
+  },
+  {
+   "url": "https://www.melhorescartoes.com.br/iberia-plus.html",
+   "marca": "d4ecb95f6347de90",
+   "atualizado": "2026-10-31",
+   "titulo": "Guia do Iberia Plus",
+   "assunto": "Iberia Plus",
+   "iata": "",
+   "resumo": "O Iberia Plus é o programa de fidelidade da companhia espanhola Iberia e usa os Avios como moeda. Ele tem tabela fixa para resgates em parceiras, como a Latam, e recebe pontos de Esfera e Livelo. Vale mais para quem quer voar à Europa em econômica ou executiva por um preço razoável em pontos.",
+   "categorias": [
+    {
+     "nome": "Iberia Plus Basic",
+     "requisito": "Nível inicial, em que todos os membros começam.",
+     "beneficios": [
+      "Acumular e trocar pontos",
+      "Acesso a promoções exclusivas",
+      "Acesso a ofertas especiais"
+     ]
+    },
+    {
+     "nome": "Iberia Plus Silver",
+     "requisito": "600 pontos Elite ou 10 voos qualificáveis em um ano.",
+     "beneficios": [
+      "Prioridade no check-in, no embarque e no desembarque",
+      "Acesso a salas VIP selecionadas da Iberia e de parceiras",
+      "Franquia de bagagem adicional"
+     ]
+    },
+    {
+     "nome": "Iberia Plus Oro",
+     "requisito": "1.500 pontos Elite ou 25 voos qualificáveis em um ano.",
+     "beneficios": [
+      "Todas as vantagens do Silver",
+      "Prioridade na lista de espera",
+      "Franquia de bagagem ainda maior",
+      "Check-in e embarque prioritários para acompanhantes",
+      "Outros benefícios exclusivos"
+     ]
+    }
+   ],
+   "salas": [],
+   "secoes": [
+    {
+     "titulo": "Como acumular Avios",
+     "texto": "Voar com a Iberia ou com parceiras é a forma mais simples de acumular. O ganho por euro gasto depende da categoria na companhia: Clasica 5, Plata 6, Oro 7 e Platino, Infinita e Infinita Prime 8 Avios. Também há acúmulo com hotéis, aluguel de carros, compras e transferências.",
+     "itens": [
+      "Hotéis parceiros: Booking.com, IHG One Rewards, Marriott Bonvoy, All Accor, Best Western Rewards e Melia Rewards",
+      "Aluguel de carros: Avis e Budget",
+      "Bancos e fidelidade: Livelo, Esfera e Membership Rewards"
+     ]
+    },
+    {
+     "titulo": "Transferência de Esfera e Livelo",
+     "texto": "Esses são os dois programas brasileiros que transferem para o Iberia Plus. O Esfera tem conversão melhor e já fez promoções com até 30% de bônus.",
+     "itens": [
+      "Esfera: 2 pontos = 1 Avios, mínimo de 15 mil pontos (7.500 Avios)",
+      "Esfera: transferência em até 3 dias úteis, ou em até 3 horas pagando 4 mil pontos",
+      "Livelo: 3,5 pontos = 1 Avios, mínimo de 3.500 pontos (1.000 Avios)",
+      "Livelo: crédito em até 7 dias úteis; pontos comprados não podem ser transferidos",
+      "Amex do Santander também converte 2:1"
+     ]
+    },
+    {
+     "titulo": "Resgate de passagens",
+     "texto": "Os resgates são feitos no site ou no aplicativo da Iberia, escolhendo pagar com Avios. Nos voos da Iberia há alta e baixa temporada; nas parceiras vale uma tabela fixa por distância. Também existe a opção Avios e Money, que completa com dinheiro.",
+     "itens": [
+      "São Paulo–Madri, econômica: cerca de 21.250 Avios por trecho na baixa temporada",
+      "São Paulo–Madri, econômica na alta: de 35.000 a 40.500",
+      "São Paulo–Madri, executiva: a partir de 42.500, chegando a 80.000 ou mais na alta",
+      "Madri–Barcelona: 4.500; Madri–Londres: 6.500",
+      "Voos da Latam em rotas como São Paulo–Rio: cerca de 6.000",
+      "Preços de referência de fevereiro de 2023; taxas não podem ser parceladas"
+     ]
+    },
+    {
+     "titulo": "Upgrade com Avios",
+     "texto": "É possível subir para Premium Economy ou Business quem comprou econômica nas tarifas Y, B ou H. Vale somente em voos operados pela Iberia.",
+     "itens": []
+    },
+    {
+     "titulo": "Validade e transferência de Avios",
+     "texto": "Os Avios vencem 36 meses após a última atividade de acúmulo ou resgate. É possível enviar Avios 1:1 para Executive Club, Aer Lingus AerClub e Qatar Airways Privilege Club, apenas entre contas próprias.",
+     "itens": [
+      "As contas precisam ter pelo menos 90 dias e atividade",
+      "Nome, data de nascimento, endereço e e-mail devem ser idênticos nos dois programas",
+      "Não há envio direto da Iberia para a Qatar; é preciso passar pelo Executive Club"
+     ]
+    },
+    {
+     "titulo": "Onde usar e atendimento",
+     "texto": "Os Avios servem para passagens da Iberia, British Airways, Qatar, Aer Lingus e Latam (tabela fixa). Também podem ser transferidos para o All Accor. O telefone no Brasil é (11) 3956-5999, em português.",
+     "itens": [
+      "Emissões pelo telefone podem custar 15 libras",
+      "Parcelamento em até 10 vezes sem juros no site da Iberia, em Visa, Mastercard, Amex e Elo"
+     ]
+    }
+   ],
+   "dicas": [
+    "Compare a disponibilidade no site e no aplicativo da Iberia, pois o site pode apresentar falhas.",
+    "Prefira transferir pelo Esfera e espere promoções de bônus, que chegam a 30%.",
+    "Mil Avios custam cerca de R$ 70 pelo Esfera com desconto padrão, ou cerca de R$ 50 em campanhas de compra.",
+    "Use a tabela fixa da Latam quando o Latam Pass estiver com preços altos.",
+    "Faça alguma movimentação a cada 36 meses para não perder os Avios."
+   ]
+  },
+  {
+   "url": "https://www.melhoresdestinos.com.br/status-tap-milesgo.html",
+   "marca": "d184d92bb4739269",
+   "atualizado": "2026-10-31",
+   "titulo": "Categorias do TAP Miles&GO",
+   "assunto": "TAP Miles&GO",
+   "iata": "",
+   "resumo": "O TAP Miles&GO tem quatro categorias: Miles&GO, Silver, Gold e Navigator. O status é conquistado com milhas status ou trechos status acumulados em 12 meses, ou pela assinatura de planos do Club TAP Miles&GO. Cada nível traz mais vantagens, como bagagem extra, acesso a salas VIP e upgrades.",
+   "categorias": [
+    {
+     "nome": "Miles&GO",
+     "requisito": "Basta se cadastrar no programa.",
+     "beneficios": [
+      "Nível inicial, sem benefícios extras",
+      "Milhas válidas por 3 anos (exceto as promocionais)"
+     ]
+    },
+    {
+     "nome": "Silver (Star Alliance Silver)",
+     "requisito": "30.000 milhas status ou 25 trechos status em 12 meses. Também é concedido automaticamente a quem assina o Club Platinum ou Platinum+. Para manter: 20.000 milhas status ou 15 trechos status em 12 meses.",
+     "beneficios": [
+      "Marcação de assentos grátis",
+      "Central de atendimento exclusiva",
+      "25% de milhas status bônus em voos TAP",
+      "Prioridade no embarque",
+      "Fast track",
+      "Lounge em Lisboa voando com a TAP: 4 acessos em viagens para Europa ou África do Norte e acesso ilimitado em viagens intercontinentais",
+      "Antecipação de até 5 mil milhas para resgates",
+      "Milhas válidas por 3 anos (exceto as promocionais)"
+     ]
+    },
+    {
+     "nome": "Gold (Star Alliance Gold)",
+     "requisito": "70.000 milhas status ou 50 trechos status em 12 meses. Para manter: 50.000 milhas status ou 40 trechos status.",
+     "beneficios": [
+      "Assentos conforto grátis",
+      "Central de atendimento exclusiva",
+      "50% de milhas status bônus em voos TAP",
+      "Prioridade no check-in e no embarque",
+      "Uma bagagem despachada extra",
+      "Acesso ao lounge da TAP e de parceiras Star Alliance com convidado",
+      "Fast track",
+      "Remarcação e reembolso de bilhetes com milhas sem taxa",
+      "Bilhete para acompanhante com 40% de desconto",
+      "Antecipação de até 10 mil milhas para resgates",
+      "Possibilidade de presentear outro participante com o mesmo status",
+      "Milhas que não vencem"
+     ]
+    },
+    {
+     "nome": "Navigator (Star Alliance Gold)",
+     "requisito": "125.000 milhas status ou 70 trechos status (ao menos 10 nas tarifas Plus, Executiva ou Top Executiva) em 12 meses. Para manter: 100.000 milhas status ou 70 trechos status, com a mesma exigência de 10 trechos.",
+     "beneficios": [
+      "Todos os benefícios do Gold",
+      "Transporte grátis de equipamento esportivo",
+      "Dois upgrades gratuitos de cabine por ano",
+      "Wi-fi grátis a bordo",
+      "Antecipação de até 20 mil milhas para resgates",
+      "Prioridade na escolha da refeição a bordo",
+      "Possibilidade de presentear outro participante com o mesmo status",
+      "Milhas que não vencem"
+     ]
+    }
+   ],
+   "salas": [],
+   "secoes": [
+    {
+     "titulo": "Período de qualificação",
+     "texto": "O período de 12 meses começa na data de inscrição no programa, e não em janeiro. A data pode ser consultada na aba Meu Perfil da conta.",
+     "itens": []
+    },
+    {
+     "titulo": "Milhas status em voos",
+     "texto": "Em voos TAP, as milhas dependem do tipo de viagem e da tarifa. Em parceiras da Star Alliance, dependem da distância e da classe tarifária, com tabela própria de cada companhia.",
+     "itens": [
+      "Parceiras Star Alliance que pontuam incluem United, Lufthansa, Air Canada, Copa, Avianca, Turkish e Swiss",
+      "Azul, Emirates, Gol e Sata geram apenas milhas resgatáveis, sem contar para status"
+     ]
+    },
+    {
+     "titulo": "Trechos status",
+     "texto": "Cada segmento voado com a TAP em classe tarifária elegível conta como um trecho, inclusive conexões. Bilhetes emitidos com milhas não são elegíveis.",
+     "itens": [
+      "São Paulo–Lisboa, ida e volta: 2 trechos",
+      "São Paulo–Paris com parada em Lisboa, ida e volta: 4 trechos"
+     ]
+    },
+    {
+     "titulo": "Club TAP Miles&GO",
+     "texto": "A assinatura dá milhas status mensais mesmo sem voar e um bônus na renovação. Os planos Platinum e Platinum+ garantem o status Silver automaticamente.",
+     "itens": [
+      "Basic: 50 por mês e 400 na renovação",
+      "Extra: 100 por mês e 800 na renovação",
+      "Top: 200 por mês e 2.600 na renovação",
+      "Platinum e Platinum+: 400 por mês e 5.200 na renovação",
+      "Platinum e Platinum+ custam a partir de R$ 499,90 por mês, com carência de 12 meses"
+     ]
+    },
+    {
+     "titulo": "Converter milhas resgatáveis em milhas status",
+     "texto": "Cada lote de 2.000 milhas resgatáveis gera 1.000 milhas status. Há taxa de 70 euros por lote, o que torna a opção pouco recomendada.",
+     "itens": []
+    },
+    {
+     "titulo": "Validade do status",
+     "texto": "O status vale até o fim do período de qualificação seguinte, ou enquanto durar a assinatura de um plano do clube que o conceda. Os requisitos de renovação são menores que os de conquista.",
+     "itens": [
+      "Silver: 20 mil milhas status, 15 trechos ou manter o Club Platinum/Platinum+",
+      "Gold: 50 mil milhas status ou 40 trechos",
+      "Navigator: 100 mil milhas status ou 70 trechos"
+     ]
+    }
+   ],
+   "dicas": [
+    "Informe o número Miles&GO ao comprar a passagem e no check-in; se esquecer, peça as milhas retroativas o quanto antes.",
+    "Prefira voar com a TAP e com parceiras da Star Alliance que pontuam, pois Azul e Gol não geram milhas status.",
+    "O Club Platinum dá o Silver direto, mas avalie o custo anual antes de assinar.",
+    "Os planos menores do clube ajudam a subir de categoria com milhas status mensais.",
+    "Converter milhas resgatáveis em status custa caro; use só se fizer conta."
+   ]
+  },
+  {
+   "url": "https://www.melhorescartoes.com.br/como-acumular-milhas-aadvantage.html",
+   "marca": "1f72976d303bdc89",
+   "atualizado": "2026-10-31",
+   "titulo": "Como acumular milhas no AAdvantage",
+   "assunto": "AAdvantage (American Airlines)",
+   "iata": "",
+   "resumo": "O AAdvantage, programa de fidelidade da American Airlines, permite acumular milhas com cartões, voos, hotéis, compras online, cruzeiros e aluguel de carros. Ele tem tabela fixa de emissões na American e na GOL e dá acesso a resgates em companhias da aliança oneworld.",
+   "categorias": [],
+   "salas": [],
+   "secoes": [
+    {
+     "titulo": "Cartões Santander AAdvantage",
+     "texto": "São os únicos cartões de banco parceiro no Brasil que pontuam direto no programa. São três, todos Mastercard, e participam da promoção \"Bateu, Ganhou\" do Santander, que dá pontuação extra a quem bate a meta de gastos.",
+     "itens": [
+      "Quartz: 1 ponto por dólar; 2 em compras internacionais; 2 na American; 3 na American em moeda estrangeira",
+      "Platinum: 1,5 ponto por dólar; 2,5 em compras internacionais; 3 na American; 4 na American em moeda estrangeira",
+      "Black: 2 pontos por dólar; 3 em compras internacionais; 4 na American; 5 na American em moeda estrangeira"
+     ]
+    },
+    {
+     "titulo": "Voando com a American, GOL e parceiras",
+     "texto": "É preciso comprar bilhete elegível de tarifa publicada, em código de reserva válido e em rota válida. As milhas dependem da distância do voo e da classe tarifária. Na GOL, bilhetes em Premium Economy e Economy em tarifas elegíveis geram milhas e loyalty points, usados para alcançar status.",
+     "itens": [
+      "Aliança oneworld: Qatar Airways, Iberia, Japan Airlines, Alaska Airlines, British Airways, Qantas, Cathay Pacific, Royal Air Maroc, Finnair, Malaysia Airlines, Royal Jordanian e SriLankan",
+      "Outras parceiras: GOL, JetSMART, Etihad, China Southern, Aer Lingus, Hawaiian, Air Tahiti Nui, Cape Air, Fiji Airways, IndiGo e Silver Airways"
+     ]
+    },
+    {
+     "titulo": "Hotéis e transferência de pontos",
+     "texto": "Reservas em parceiros hoteleiros geram milhas e loyalty points, bastando informar o número de membro na reserva ou no check-in. Também dá para transferir pontos de redes de hotéis.",
+     "itens": [
+      "Parceiros: Hotéis AAdvantage, Hyatt, Marriott, InterContinental e Rocketmiles",
+      "Hyatt: 2,5 para 1 (5.000 pontos = 2.000 milhas)",
+      "IHG: 5 para 1 (10.000 pontos = 2.000 milhas)",
+      "Marriott Bonvoy: 3 para 1 (30.000 pontos = 10.000 milhas)",
+      "Marriott Vacation Club: 500 pontos = 8.000 milhas, com 4.000 milhas de bônus a cada 250 pontos convertidos na mesma transação"
+     ]
+    },
+    {
+     "titulo": "AAdvantage Shopping",
+     "texto": "O shopping do programa tem mais de 1.200 lojas que dão milhas nas compras, entre elas Nike, Adidas, Lenovo e Samsung. Algumas lojas exigem endereço e telefone dos Estados Unidos.",
+     "itens": []
+    },
+    {
+     "titulo": "Cruzeiros",
+     "texto": "Reservas feitas no site American Airlines Cruises geram milhas e loyalty points. Há ofertas por tempo limitado, como 2 pontos por dólar gasto. Titulares de cartões AAdvantage ganham 1 milha extra por dólar em cruzeiros até 31/12/25.",
+     "itens": []
+    },
+    {
+     "titulo": "Aluguel de carros",
+     "texto": "As locadoras parceiras são AVIS e Budget, no Brasil e no exterior. Alugando pelo site da American, é possível ganhar até 5 vezes mais milhas por dólar gasto.",
+     "itens": [
+      "Associados AAdvantage: 2 pontos por dólar",
+      "Titulares de cartões Mastercard sem status: 3 pontos por dólar",
+      "AAdvantage Gold e Platinum: 4 pontos por dólar",
+      "Platinum Pro e Executive Platinum: 5 pontos por dólar"
+     ]
+    }
+   ],
+   "dicas": [
+    "Informe o número de membro AAdvantage na reserva do hotel ou no check-in para garantir as milhas.",
+    "Confira no site da American Airlines as regras de tarifa e de rota de cada parceira antes de comprar o voo.",
+    "Veja se a loja do AAdvantage Shopping exige endereço e telefone dos EUA antes de comprar.",
+    "Fique atento à promoção \"Bateu, Ganhou\" do Santander para turbinar a pontuação do cartão.",
+    "Compare a conversão dos programas de hotel antes de transferir pontos."
+   ]
+  },
+  {
+   "url": "https://www.melhorescartoes.com.br/esfera-santander.html",
+   "marca": "ed8de598d3c5accf",
+   "atualizado": "2026-10-31",
+   "titulo": "Como funciona a Esfera Santander",
+   "assunto": "Esfera Santander",
+   "iata": "",
+   "resumo": "A Esfera é o programa de pontos do Santander e o cadastro é gratuito para qualquer pessoa com CPF, correntista ou não. Os pontos vêm de cartões Santander, compras em lojas parceiras, do Clube Esfera e da compra direta, e podem ser transferidos para companhias aéreas e hotéis ou trocados por viagens, produtos e cashback.",
+   "categorias": [
+    {
+     "nome": "Cliente Esfera (sem Clube)",
+     "requisito": "Gratuito, sem mensalidade",
+     "beneficios": [
+      "0 ponto por mês",
+      "Transferência a partir de 30.000 pontos",
+      "Sem desconto na compra de pontos",
+      "Limite mensal de compra de 200.000 pontos"
+     ]
+    },
+    {
+     "nome": "Plano Essencial",
+     "requisito": "Mensalidade de R$ 14,90 (indisponível para novas assinaturas na data do texto)",
+     "beneficios": [
+      "100 pontos por mês",
+      "Transferência a partir de 25.000 pontos",
+      "20% de desconto na compra de pontos",
+      "Limite mensal de compra de 300.000 pontos"
+     ]
+    },
+    {
+     "nome": "Plano Pro",
+     "requisito": "Mensalidade de R$ 43,90",
+     "beneficios": [
+      "1.000 pontos por mês",
+      "Transferência a partir de 20.000 pontos",
+      "20% de desconto na compra de pontos",
+      "Limite mensal de compra de 400.000 pontos"
+     ]
+    },
+    {
+     "nome": "Plano Master",
+     "requisito": "Mensalidade de R$ 106,90",
+     "beneficios": [
+      "2.500 pontos por mês",
+      "Transferência a partir de 10.000 pontos",
+      "40% de desconto na compra de pontos",
+      "Limite mensal de compra de 500.000 pontos"
+     ]
+    },
+    {
+     "nome": "Plano VIP",
+     "requisito": "Mensalidade de R$ 211,90",
+     "beneficios": [
+      "5.000 pontos por mês",
+      "Transferência a partir de 5.000 pontos",
+      "40% de desconto na compra de pontos",
+      "Limite mensal de compra de 750.000 pontos"
+     ]
+    },
+    {
+     "nome": "Plano Premium",
+     "requisito": "Mensalidade de R$ 414,90 (indisponível para novas assinaturas na data do texto)",
+     "beneficios": [
+      "10.000 pontos por mês",
+      "Transferência a partir de 1.000 pontos",
+      "40% de desconto na compra de pontos",
+      "Limite mensal de compra de 1.000.000 de pontos"
+     ]
+    },
+    {
+     "nome": "Plano Exclusive",
+     "requisito": "Mensalidade de R$ 799,90",
+     "beneficios": [
+      "20.000 pontos por mês",
+      "Transferência a partir de 100 pontos",
+      "50% de desconto na compra de pontos",
+      "Limite mensal de compra de 1.250.000 pontos"
+     ]
+    },
+    {
+     "nome": "Santander Rewards - Nível 1",
+     "requisito": "Até 34 passos",
+     "beneficios": [
+      "Pontuação normal nos cartões"
+     ]
+    },
+    {
+     "nome": "Santander Rewards - Nível 2",
+     "requisito": "De 35 a 89 passos",
+     "beneficios": [
+      "15% a mais na pontuação"
+     ]
+    },
+    {
+     "nome": "Santander Rewards - Nível 3",
+     "requisito": "De 90 a 209 passos",
+     "beneficios": [
+      "30% a mais na pontuação"
+     ]
+    },
+    {
+     "nome": "Santander Rewards - Nível 4",
+     "requisito": "Mais de 210 passos",
+     "beneficios": [
+      "50% a mais na pontuação"
+     ]
+    }
+   ],
+   "salas": [],
+   "secoes": [
+    {
+     "titulo": "Como acumular pontos",
+     "texto": "A forma mais comum é usar cartões Santander que pontuam no programa. Também é possível comprar em lojas parceiras, assinar o Clube Esfera ou comprar pontos.",
+     "itens": [
+      "Cartões: Elite, Unique, Unlimited e American Express Gold, Platinum e Centurion",
+      "Pontuação dos cartões de 1,2 a 6 pontos por dólar",
+      "Unlimited: 3 a 6 pontos, sem expiração",
+      "Unique: 2,2 a 4,5 pontos, expiram em 3 anos",
+      "Elite: 1,5 a 2,25 pontos, expiram em 3 anos",
+      "Amex Gold 1,2, Platinum 2,2 e Centurion até 3,8 (estimativa), sem expiração",
+      "Santander Free não pontua",
+      "Mais de 70 lojas parceiras, de 1 a 5 pontos por real, até 24 em promoções",
+      "Compra de pontos: R$ 70 o milheiro, até 200 mil pontos a cada 6 meses"
+     ]
+    },
+    {
+     "titulo": "Quem pode se cadastrar",
+     "texto": "Desde setembro de 2022, qualquer pessoa física pode abrir conta na Esfera, basta ter CPF. O cadastro é feito pelo site, em Criar conta, e validado por celular e e-mail.",
+     "itens": []
+    },
+    {
+     "titulo": "Clube Esfera",
+     "texto": "Os assinantes pagam mensalidade e recebem pontos todo mês. Há 10% de desconto na assinatura anual à vista e 5% parcelada.",
+     "itens": [
+      "Pontos nunca expiram",
+      "Transferência expressa sem custo",
+      "Maior bonificação em algumas promoções",
+      "5% de desconto em viagens",
+      "10% de desconto em produtos Esfera",
+      "Até 50% de desconto na compra de pontos"
+     ]
+    },
+    {
+     "titulo": "Transferência de pontos",
+     "texto": "Cada ponto Esfera vira 1 ponto ou milha em Azul Fidelidade, LATAM Pass e Smiles. A transferência é feita pelo site ou pela central. O envio tradicional leva até 3 dias úteis e o expresso até 24h, com cobrança de percentual, que não vale para assinantes do Clube.",
+     "itens": [
+      "Parceiros internacionais: Aeromexico Rewards, All Accor, Iberia Club, ConnectMiles, Etihad Guest, Flying Blue, IHG One Rewards, TAP Miles&Go e Miles&Smiles",
+      "Aeromexico, Etihad, Flying Blue, IHG, TAP e Turkish são só para assinantes do Clube",
+      "Iberia Club: 2 pontos Esfera por 1 ponto, mínimo de 15 mil",
+      "Mínimo geral de 30 mil pontos, menor para assinantes ou em promoções",
+      "Não é possível transferir para a Livelo"
+     ]
+    },
+    {
+     "titulo": "Outros resgates",
+     "texto": "Os pontos também podem ser trocados por viagens na Esfera Viagens, serviços, produtos e crédito na fatura. Em geral, serviços e produtos têm custo-benefício baixo.",
+     "itens": [
+      "Cashback: de R$ 17 a R$ 22 a cada 1.000 pontos, até R$ 500 por mês",
+      "Pontos + dinheiro: exige em média 40% dos pontos necessários",
+      "Serviços: recarga de celular, vale-presentes e combustível",
+      "Produtos: eletrônicos, roupas, cosméticos e itens para casa"
+     ]
+    },
+    {
+     "titulo": "Santander Rewards e atendimento",
+     "texto": "O Santander Rewards turbina a pontuação dos cartões em até 50%, com passos ganhos automaticamente ou em missões no app. Ele substituiu a promoção Bateu, Ganhou, encerrada neste ano. A central atende em 4004 3535 (capitais) e 0800 702 3535 (demais localidades).",
+     "itens": [
+      "Cartões AAdvantage e GOL Smiles ganham passos, mas não têm pontuação turbinada",
+      "Só o American Express Santander não acumula passos",
+      "Atendimento de segunda a sábado, das 8h às 22h; domingos e feriados, das 9h às 18h"
+     ]
+    }
+   ],
+   "dicas": [
+    "Compare o valor da passagem em pontos na Esfera Viagens com o resgate no programa da companhia aérea.",
+    "Evite a transferência expressa, pois nas promoções vale o dia do pedido e não o do crédito.",
+    "Compre pontos só para completar um resgate ou combinar compra com desconto e transferência bonificada.",
+    "Leia o regulamento das promoções e compre pelo link do parceiro para os pontos serem creditados.",
+    "Para transferir a programas nacionais, a Livelo tende a ter mais bônus; a Esfera faz sentido para o Iberia Club."
+   ]
+  }
+ ]
+}
