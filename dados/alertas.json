@@ -3086,20 +3086,6 @@
   "ate": ""
  },
  {
-  "id": "2361370250-5792",
-  "data": "2026-10-29T17:53:28Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Cusco",
-  "destino_iata": "CUZ",
-  "companhia": "LATAM",
-  "cabine": "Executiva",
-  "programa": "LATAM Pass",
-  "ida": "155.929 pontos + R$ 216,00",
-  "volta": "105.541 pontos + R$ 193,00",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7483",
   "data": "2026-10-29T12:02:20Z",
   "tipo": "promocao",
