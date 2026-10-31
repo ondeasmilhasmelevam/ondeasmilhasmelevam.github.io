@@ -14,7 +14,7 @@ SELF = "https://oamml-assinatura.ondeasmilhasmelevam.workers.dev"
 EMAILJS_SERVICE = "ondeasmilhasmelevam"
 EMAILJS_TEMPLATE = "template_j9nq06f"
 EMAILJS_PUBLIC = "Um8E46A356PJUH4-U"
-EMAILJS_TEMPLATE_AVISO = "aviso_vencimento"
+EMAILJS_TEMPLATE_MSG = "mensagem"  # modelo genérico: assunto e corpo montados aqui
 
 # Aviso de vencimento: todo dia às 9h de Brasília.
 [triggers]

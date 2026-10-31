@@ -1325,6 +1325,7 @@
         <span class="pass-trava-txt">${ativo ? 'Carregando datas e link…' : '🔒 Datas e link de emissão para assinantes · <u>Assinar</u>'}</span>
       </a>`;
   }
+  window.oammlPassagemHtml = p => passagemHtml(p, Date.now());
   function passagemHtml(p, agora) {
     const completo = httpOk(p.link) ? p : (assinatura().alertas || {})[p.id];
     const nivel = nivelPassagem(p);
@@ -1621,6 +1622,9 @@
     } catch (e) { /* mantém os que já estavam na tela */ }
     mostrarPassagens();
     mostrarPromocoes();
+    // Meu Radar (assinatura.js) usa a mesma lista e o mesmo cartão de passagem.
+    window.oammlPassagens = passagens.filter(p => !ehPromocao(p) && Date.now() < venceEm(p));
+    document.dispatchEvent(new Event('passagens'));
   }
   $('#passagens-busca').addEventListener('input', e => { filtroPassagem.busca = e.target.value; mostrarPassagens(); });
   $('#passagens-destino').addEventListener('input', e => { filtroPassagem.destino = e.target.value; mostrarPassagens(); });
@@ -2156,7 +2160,7 @@
   }
   // "Atualizado ..." de cada página: a data do arquivo de dados dela no site.
   const ARQUIVO_DA_PAGINA = {
-    passagens: 'dados/alertas.json', promocoes: 'dados/alertas.json', termometro: 'dados/termometro.json', guia: 'dados/guia.json',
+    passagens: 'dados/alertas.json', promocoes: 'dados/alertas.json', radar: 'dados/alertas.json', termometro: 'dados/termometro.json', guia: 'dados/guia.json',
     transferencias: 'dados/transferencias.json', novidades: 'dados/noticias.json',
     restaurantes: 'restaurantes.js', salas: 'dados/salas.json', cadastros: 'dados/programas.json', quanto: 'dados/precos-milhas.csv', comprar: 'precos.js', contatos: 'dados/contatos.csv'
   };

@@ -27,6 +27,13 @@ service cloud.firestore {
       allow read: if logado() && assinaturaAtiva();
       allow write: if false;
     }
+    // Meu Radar: cada assinante grava as próprias rotas (lista em texto JSON, pequena).
+    match /radares/{email} {
+      allow read: if logado() && meuEmail() == email;
+      allow write: if logado() && meuEmail() == email && assinaturaAtiva()
+        && request.resource.data.keys().hasOnly(['lista', 'atualizadoEm'])
+        && request.resource.data.lista is string && request.resource.data.lista.size() <= 4000;
+    }
     match /{tudo=**} {
       allow read, write: if false;
     }

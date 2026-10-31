@@ -31,6 +31,8 @@ SAIDA = Path(__file__).resolve().parent.parent / 'dados' / 'alertas.json'
 # Datas e link de emissão das passagens são da assinatura: saem do arquivo público e vão para o
 # servidor. A lista inteira fica em alertas-completo.json (fora do git), para o Instagram.
 SO_ASSINANTE = ('datas_ida', 'datas_volta', 'link')
+# O servidor também recebe a rota de cada passagem, para avisar quem tem Meu Radar.
+CAMPOS_RADAR = ('origem', 'origem_iata', 'destino', 'destino_iata', 'companhia', 'cabine', 'programa', 'ida', 'volta', 'link_nome')
 COMPLETO = SAIDA.with_name('alertas-completo.json')
 ENVIADO = SAIDA.with_name('.alertas-enviado')
 SERVIDOR = 'https://oamml-assinatura.ondeasmilhasmelevam.workers.dev'
@@ -160,10 +162,10 @@ async def quem_publica(cliente, grupo):
 
 
 def enviar_para_assinantes(passagens):
-    """Manda datas e link de cada passagem para o servidor da assinatura (servidor/worker.js),
+    """Manda datas, link e rota de cada passagem para o servidor da assinatura (servidor/worker.js),
     que guarda no Firestore só para assinantes. Entra com o token OIDC da execução no GitHub;
     só reenvia quando algo mudou."""
-    completos = {p['id']: {k: p[k] for k in SO_ASSINANTE if k in p} for p in passagens if p.get('tipo') != 'promocao'}
+    completos = {p['id']: {k: p[k] for k in SO_ASSINANTE + CAMPOS_RADAR if k in p} for p in passagens if p.get('tipo') != 'promocao'}
     corpo = json.dumps(completos, ensure_ascii=False, sort_keys=True)
     marca = hashlib.sha256(corpo.encode()).hexdigest()
     if ENVIADO.exists() and ENVIADO.read_text() == marca:

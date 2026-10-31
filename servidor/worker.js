@@ -251,8 +251,100 @@ async function guardarAlertas(req, env) {
   if (texto.length > 900e3) throw falha('grande demais', 413);
   const completos = JSON.parse(texto);
   if (!completos || typeof completos !== 'object' || Array.isArray(completos)) throw falha('formato errado');
+  const antes = await lerDoc(env, 'privado/alertas').catch(() => null);
+  const conhecidos = new Set(antes ? Object.keys(JSON.parse(antes.json)) : []);
   await gravarDoc(env, 'privado/alertas', { json: texto, atualizadoEm: new Date() });
-  return { ok: true, itens: Object.keys(completos).length };
+  // Na primeira carga não há "novas": tudo já estava no ar antes do radar existir.
+  const novas = antes ? Object.entries(completos).filter(([id]) => !conhecidos.has(id)).map(([id, p]) => ({ id, ...p })) : [];
+  const radar = await rodarRadar(env, novas, completos).catch(e => ({ erro: e.message }));
+  return { ok: true, itens: Object.keys(completos).length, novas: novas.length, radar };
+}
+
+/* ---------- e-mail (modelo "mensagem" do EmailJS: assunto e corpo vêm daqui) ---------- */
+const escHtml = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const botaoEmail = (texto, link) => `<a href="${escHtml(link)}" style="display:inline-block;padding:12px 22px;border-radius:999px;background:#e2b458;color:#1b1406;font-weight:bold;text-decoration:none;">${escHtml(texto)}</a>`;
+async function enviarEmail(env, email, assunto, corpo) {
+  const r = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({
+      service_id: env.EMAILJS_SERVICE, template_id: env.EMAILJS_TEMPLATE_MSG, user_id: env.EMAILJS_PUBLIC, accessToken: env.EMAILJS_PRIVATE_KEY,
+      template_params: { email, assunto, corpo }
+    })
+  });
+  return r.ok;
+}
+
+/* ---------- Meu Radar ---------- */
+// Cada assinante guarda até 5 rotas em radares/{email} (lista em JSON). A cada carga de passagens
+// novas, as que batem entram na fila dele (radarFila/{email}); a fila vira um e-mail no máximo
+// a cada 3 horas, para não lotar a caixa nem estourar o limite do EmailJS.
+const RADAR_INTERVALO = 3 * 3600e3, RADAR_MAX_FILA = 30, RADAR_MAX_EMAIL = 12;
+const normR = t => String(t ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().trim();
+const milhasDe = t => { const m = /(\d{1,3}(?:\.\d{3})+|\d+)/.exec(t || ''); return m ? Number(m[1].replace(/\./g, '')) : Infinity; };
+const ehExecutiva = c => /EXECUT|PRIMEIRA|FIRST|BUSINESS|PREMIUM/.test(normR(c));
+function bateRadar(r, p) {
+  const lugar = (filtro, nome, iata) => !filtro || normR(`${nome} ${iata}`).includes(normR(filtro));
+  return lugar(r.origem, p.origem, p.origem_iata) && lugar(r.destino, p.destino, p.destino_iata) &&
+    (!r.cabine || (r.cabine === 'exe') === ehExecutiva(p.cabine)) &&
+    (!r.programa || normR(p.programa).includes(normR(r.programa))) &&
+    (!r.maxMilhas || milhasDe(p.ida) <= r.maxMilhas);
+}
+async function listarDocs(env, colecao) {
+  const docs = [];
+  let pagina = '';
+  do {
+    const r = await fetch(`${docUrl(env, colecao)}?pageSize=300${pagina ? `&pageToken=${pagina}` : ''}`, { headers: { authorization: `Bearer ${await token(env)}` } });
+    if (!r.ok) throw falha(`Erro ao listar ${colecao}.`, 500);
+    const d = await r.json();
+    for (const doc of d.documents || []) {
+      docs.push({ id: decodeURIComponent(doc.name.split('/').pop()), ...Object.fromEntries(Object.entries(doc.fields || {}).map(([k, v]) => [k, deFs(v)])) });
+    }
+    pagina = d.nextPageToken || '';
+  } while (pagina);
+  return docs;
+}
+function passagemEmail(p) {
+  const datas = l => (l || []).map(d => `${escHtml(d.mes)} ${escHtml(d.dias)}`).join(' · ');
+  return `<div style="margin:0 0 16px;padding:12px 14px;border:1px solid #e5e2d8;border-radius:12px;">
+    <strong style="font-size:16px;">${escHtml(p.origem_iata)} ${escHtml(p.origem)} → ${escHtml(p.destino_iata)} ${escHtml(p.destino)}</strong><br>
+    ${escHtml([p.companhia, p.programa, p.cabine].filter(Boolean).join(' · '))}<br>
+    Ida: <strong>${escHtml(p.ida)}</strong>${p.volta ? ` · Volta: <strong>${escHtml(p.volta)}</strong>` : ''}<br>
+    ${p.datas_ida && p.datas_ida.length ? `Datas de ida: ${datas(p.datas_ida)}<br>` : ''}${p.datas_volta && p.datas_volta.length ? `Datas de volta: ${datas(p.datas_volta)}<br>` : ''}
+    ${p.link ? `<a href="${escHtml(p.link)}" style="color:#a8761f;font-weight:bold;">Ver passagem${p.link_nome ? ` na ${escHtml(p.link_nome)}` : ''} →</a>` : ''}
+  </div>`;
+}
+async function rodarRadar(env, novas, completos) {
+  const radares = await listarDocs(env, 'radares');
+  if (!radares.length) return { radares: 0 };
+  const filas = new Map((await listarDocs(env, 'radarFila')).map(f => [f.id, f]));
+  const agora = Date.now();
+  let enviados = 0;
+  for (const rad of radares) {
+    let lista = [];
+    try { lista = JSON.parse(rad.lista || '[]'); } catch (e) { continue; }
+    const fila = filas.get(rad.id) || {};
+    let ids = [];
+    try { ids = JSON.parse(fila.ids || '[]'); } catch (e) { ids = []; }
+    const batem = novas.filter(p => lista.some(r => bateRadar(r, p))).map(p => p.id);
+    ids = [...new Set([...ids, ...batem])].filter(id => completos[id]).slice(-RADAR_MAX_FILA);
+    const ultimo = fila.ultimo instanceof Date ? fila.ultimo.getTime() : 0;
+    if (ids.length && agora - ultimo >= RADAR_INTERVALO) {
+      const ass = await lerDoc(env, `assinantes/${rad.id}`);
+      if (ass && ass.validoAte instanceof Date && ass.validoAte.getTime() > agora) {
+        const itens = ids.slice(-RADAR_MAX_EMAIL).reverse().map(id => completos[id]);
+        const corpo = `Olá! O seu radar achou ${ids.length === 1 ? 'uma passagem nova' : `${ids.length} passagens novas`}:<br><br>${itens.map(passagemEmail).join('')}
+          Disponibilidade muda rápido: confira no site do programa antes de transferir pontos.<br><br>${botaoEmail('Ver no site', `${env.SITE}#radar`)}`;
+        if (await enviarEmail(env, rad.id, `Meu Radar: ${ids.length === 1 ? '1 passagem nova' : `${ids.length} passagens novas`}`, corpo)) {
+          await gravarDoc(env, `radarFila/${rad.id}`, { ids: '[]', ultimo: new Date() });
+          enviados++;
+          continue;
+        }
+      } else ids = [];
+    }
+    if (batem.length || ids.length !== JSON.parse(fila.ids || '[]').length) await gravarDoc(env, `radarFila/${rad.id}`, { ids: JSON.stringify(ids), ultimo: fila.ultimo instanceof Date ? fila.ultimo : new Date(0) });
+  }
+  return { radares: radares.length, enviados };
 }
 
 // Só para conferir se o plantão está entregando: quando chegou e quantas passagens (sem o conteúdo).
@@ -275,15 +367,11 @@ async function avisarVencimentos(env) {
       const vence = a.validoAte instanceof Date ? a.validoAte.getTime() : NaN;
       if (!(vence > agora && vence - agora <= DIAS_AVISO * 864e5) || a.avisoPara === a.validoAte.toISOString() || !emailValido(a.email)) continue;
       const dias = Math.max(1, Math.ceil((vence - agora) / 864e5));
-      const envio = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({
-          service_id: env.EMAILJS_SERVICE, template_id: env.EMAILJS_TEMPLATE_AVISO, user_id: env.EMAILJS_PUBLIC, accessToken: env.EMAILJS_PRIVATE_KEY,
-          template_params: { email: a.email, dias, data: a.validoAte.toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }), link: `${env.SITE}#assinar` }
-        })
-      });
-      if (!envio.ok) continue; // tenta de novo amanhã
+      const data = a.validoAte.toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+      const corpo = `Olá!<br><br>Sua assinatura do Onde as Milhas Me Levam vence em <strong>${data}</strong>, daqui a ${dias} ${dias === 1 ? 'dia' : 'dias'}.<br><br>
+        Para continuar vendo as datas e os links de emissão de todas as passagens, usar as calculadoras completas e receber o Meu Radar, renove pelo site com este mesmo e-mail:<br><br>
+        ${botaoEmail('Renovar minha assinatura', `${env.SITE}#assinar`)}<br><br>Se você já renovou, pode ignorar esta mensagem.`;
+      if (!await enviarEmail(env, a.email, `Sua assinatura vence em ${dias} ${dias === 1 ? 'dia' : 'dias'}`, corpo)) continue; // tenta de novo amanhã
       await atualizarCampos(env, doc.name.split('/documents/')[1], { avisoPara: a.validoAte.toISOString() });
       enviados.push(a.email);
     }

@@ -4,7 +4,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/fireba
 import {
   getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, signInWithCustomToken
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
-import { getFirestore, doc, getDoc, collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+import { getFirestore, doc, getDoc, setDoc, serverTimestamp, collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
 const app = initializeApp({
   apiKey: 'AIzaSyCDdTn2JotSDdCxp2fSlWcNV0LtZJRf7Sg',
@@ -100,11 +100,85 @@ async function desenharHistorico(email) {
   } catch (e) { /* sem histórico disponível */ }
 }
 
+// Meu Radar: até 5 rotas por assinante em radares/{email}; o servidor manda o e-mail quando bate.
+const RADAR_MAX = 5;
+let radares = [];
+const normR = t => String(t ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().trim();
+const milhasDe = t => { const m = /(\d{1,3}(?:\.\d{3})+|\d+)/.exec(t || ''); return m ? Number(m[1].replace(/\./g, '')) : Infinity; };
+const ehExecutiva = c => /EXECUT|PRIMEIRA|FIRST|BUSINESS|PREMIUM/.test(normR(c));
+function bateRadar(r, p) {
+  const lugar = (filtro, nome, iata) => !filtro || normR(`${nome} ${iata}`).includes(normR(filtro));
+  return lugar(r.origem, p.origem, p.origem_iata) && lugar(r.destino, p.destino, p.destino_iata) &&
+    (!r.cabine || (r.cabine === 'exe') === ehExecutiva(p.cabine)) &&
+    (!r.programa || normR(p.programa).includes(normR(r.programa))) &&
+    (!r.maxMilhas || milhasDe(p.ida) <= r.maxMilhas);
+}
+const radarTexto = r => [
+  `${r.origem || 'Qualquer origem'} → ${r.destino || 'qualquer destino'}`,
+  [r.cabine === 'exe' ? 'Executiva ou Primeira' : r.cabine === 'eco' ? 'Econômica' : '', r.programa, r.maxMilhas ? `até ${r.maxMilhas.toLocaleString('pt-BR')} milhas` : ''].filter(Boolean).join(' · ') || 'qualquer cabine e programa'
+];
+const escR = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const msgRadar = t => { const el = $('#radar-msg'); el.textContent = t; el.hidden = !t; };
+function desenharRadar() {
+  const estado = window.oammlAssinatura;
+  $('#radar-fechado').hidden = !!estado.ativo;
+  $('#radar-aberto').hidden = !estado.ativo;
+  if (!estado.ativo) return;
+  $('#radar-conta').textContent = `${radares.length} de ${RADAR_MAX}`;
+  $('#radar-lista').innerHTML = radares.length ? radares.map((r, i) => {
+    const [a, b] = radarTexto(r);
+    return `<li><span><b>${escR(a)}</b><br><span>${escR(b)}</span></span><button type="button" data-tirar="${i}">Tirar</button></li>`;
+  }).join('') : '<li class="vazio">Nenhum radar ainda. Adicione o primeiro acima.</li>';
+  const achados = (window.oammlPassagens || []).filter(p => radares.some(r => bateRadar(r, p)));
+  $('#radar-achados').innerHTML = window.oammlPassagemHtml ? achados.map(window.oammlPassagemHtml).join('') : '';
+  $('#radar-achados-n').textContent = radares.length ? `${achados.length}` : '';
+  $('#radar-achados-vazio').hidden = !radares.length || !!achados.length;
+}
+async function lerRadares(email) {
+  radares = [];
+  if (!email) return;
+  try {
+    const s = await getDoc(doc(db, 'radares', email));
+    radares = s.exists() ? JSON.parse(s.data().lista || '[]') : [];
+  } catch (e) { radares = []; }
+}
+async function gravarRadares() {
+  const email = window.oammlAssinatura.email;
+  await setDoc(doc(db, 'radares', email), { lista: JSON.stringify(radares), atualizadoEm: serverTimestamp() });
+}
+$('#radar-form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const r = {
+    origem: $('#radar-origem').value.trim().slice(0, 40), destino: $('#radar-destino').value.trim().slice(0, 40),
+    cabine: $('#radar-cabine').value, programa: $('#radar-programa').value, maxMilhas: Math.max(0, Math.round(+$('#radar-milhas').value || 0)) || null
+  };
+  if (/^qualquer$/i.test(r.origem)) r.origem = '';
+  if (/^qualquer$/i.test(r.destino)) r.destino = '';
+  if (!r.origem && !r.destino) return msgRadar('Diga ao menos de onde sai ou para onde quer ir.');
+  if (radares.length >= RADAR_MAX) return msgRadar(`São até ${RADAR_MAX} radares. Tire um para pôr outro.`);
+  radares.push(r);
+  try {
+    await gravarRadares();
+    msgRadar('Radar salvo. Avisamos por e-mail quando aparecer passagem assim.');
+    e.target.reset();
+  } catch (er) { radares.pop(); msgRadar('Não deu para salvar agora. Tente de novo em instantes.'); }
+  desenharRadar();
+});
+$('#radar-lista').addEventListener('click', async e => {
+  const b = e.target.closest('[data-tirar]'); if (!b) return;
+  const tirado = radares.splice(+b.dataset.tirar, 1);
+  try { await gravarRadares(); msgRadar(''); } catch (er) { radares.splice(+b.dataset.tirar, 0, ...tirado); msgRadar('Não deu para tirar agora. Tente de novo.'); }
+  desenharRadar();
+});
+document.addEventListener('passagens', desenharRadar);
+
 onAuthStateChanged(auth, async user => {
   const estado = await lerAssinatura(user);
   desenharConta(estado);
   desenharHistorico(estado.email);
+  await lerRadares(estado.ativo ? estado.email : '');
   avisar(estado);
+  desenharRadar();
 });
 
 // Volta do pagamento da InfinitePay.
