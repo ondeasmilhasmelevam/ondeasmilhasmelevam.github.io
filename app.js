@@ -1085,6 +1085,7 @@
     $('#milheiro-tetos').innerHTML = lista.map(m => `<li><b>${esc(m.programa)}</b> até ${MOEDA[m.moeda] || ''} ${m.teto.toLocaleString('pt-BR')}</li>`).join('');
     mostrarTermometro();
     mostrarMilheiro();
+    if (typeof mostrarHoje === 'function') mostrarHoje(); // o destaque de Hoje depende do Termômetro
     mostrarPassagens();
   }
   $('#termo-regiao').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { termo.regiao = b.dataset.regiao; mostrarTermometro(); } });
@@ -1398,6 +1399,12 @@
       if (metades === 2) alguma = true;
     });
     $('#pass-credito').hidden = !alguma;
+    const usadasHoje = new Set();
+    document.querySelectorAll('#hoje [data-foto]').forEach(el => {
+      const url = (fotos[el.dataset.foto] || []).find(u => !usadasHoje.has(u));
+      el.style.backgroundImage = url ? `url("${url}")` : '';
+      if (url) usadasHoje.add(url);
+    });
   }
   // O Commons cataloga as cidades de fora pelo nome em inglês.
   const CIDADE_EN = { 'Atenas': 'Athens', 'Zurique': 'Zurich', 'Amsterdã': 'Amsterdam', 'Genebra': 'Geneva', 'Londres': 'London',
@@ -1455,7 +1462,8 @@
   }
   async function buscarFotos() {
     pintarFotos();
-    const faltam = [...new Set([...document.querySelectorAll('#lista-passagens .pass-foto [data-cidade]')].map(el => el.dataset.cidade))]
+    const faltam = [...new Set([...document.querySelectorAll('#lista-passagens .pass-foto [data-cidade]')].map(el => el.dataset.cidade)
+      .concat([...document.querySelectorAll('#hoje [data-foto]')].map(el => el.dataset.foto)))]
       .filter(c => c && !(c in fotos) && !fotosPedidas.has(c));
     if (!faltam.length) return;
     faltam.forEach(c => fotosPedidas.add(c));
@@ -1611,6 +1619,64 @@
   $('#promo-busca').addEventListener('input', e => { filtroPromo.busca = e.target.value; mostrarPromocoes(); });
   $('#promo-ordem').addEventListener('change', e => { filtroPromo.ordem = e.target.value; mostrarPromocoes(); });
 
+  // Página Hoje: o destaque do dia, os destinos com mais alertas, o que está abaixo do preço
+  // normal (Termômetro) e as promoções que acabam logo.
+  const ORDEM_NIVEL = { espetacular: 0, 'muito bom': 1, bom: 2 };
+  function mostrarHoje() {
+    const agora = Date.now();
+    const vivas = passagens.filter(p => !ehPromocao(p) && agora < venceEm(p));
+    if (!vivas.length) return;
+    const nota = p => ORDEM_NIVEL[nivelPassagem(p)] ?? 9;
+    const porNota = [...vivas].sort((a, b) => nota(a) - nota(b) || Date.parse(b.data) - Date.parse(a.data));
+    // O destaque é "de hoje": a melhor das últimas 24 horas (se houver alguma).
+    const recentes = porNota.filter(p => agora - Date.parse(p.data) < 24 * 3600e3);
+    const d = (recentes.length ? recentes : porNota)[0], nivel = nivelPassagem(d);
+    $('#hoje-destaque').innerHTML = `<article class="hoje-destaque" data-foto="${esc(`${d.destino}|${d.destino_iata}`)}">
+        <p class="hd-selos">${nivel in ORDEM_NIVEL ? `<span class="${CLASSE_NIVEL[nivel] || ''}">${esc(nivel)}</span>` : ''}${d.cabine ? `<span>${esc(d.cabine)}</span>` : ''}</p>
+        <p class="hd-rotulo">A melhor oportunidade de hoje</p>
+        <h3 class="hd-rota">${esc(d.origem)}<i>✈</i>${esc(d.destino)}</h3>
+        <div class="hd-pe">
+          <p class="hd-info">${esc([d.companhia, d.programa].filter(Boolean).join(' · '))} · ${haQuanto(agora - new Date(d.data))}</p>
+          <div class="hd-valor"><b>${esc(d.ida.replace(/\s*\+\s*taxas?/i, ''))}</b><small>${d.volta ? 'por trecho' : 'só ida'} · ${esc(d.programa || '')}</small></div>
+        </div>
+        <p><button type="button" class="cta cta-a" data-hoje-destino="${esc(d.destino_iata)}">Ver passagens para ${esc(d.destino)}</button></p>
+      </article>`;
+    const grupos = new Map();
+    vivas.forEach(p => {
+      const g = grupos.get(p.destino_iata) || { iata: p.destino_iata, cidade: p.destino, n: 0, min: Infinity, exe: 0 };
+      g.n++; if (ehExecutiva(p.cabine)) g.exe++;
+      const m = numeroMilhas(p.ida); if (m && m < g.min) g.min = m;
+      grupos.set(p.destino_iata, g);
+    });
+    $('#hoje-destinos').innerHTML = [...grupos.values()].sort((a, b) => b.n - a.n).slice(0, 12).map(g =>
+      `<button type="button" class="hoje-dest" data-hoje-destino="${esc(g.iata)}" data-foto="${esc(`${g.cidade}|${g.iata}`)}">
+        <span class="hd-n">${g.n} ${g.n === 1 ? 'alerta' : 'alertas'}</span>
+        <small>${esc(g.iata)}${g.exe ? ' · executiva' : ''}</small><b>${esc(g.cidade)}</b>
+        ${isFinite(g.min) ? `<span>a partir de ${esc(inteiro.format(g.min))} milhas</span>` : ''}
+      </button>`).join('');
+    const abaixo = porNota.filter(p => p !== d && nota(p) <= 1).slice(0, 6);
+    $('#hoje-abaixo').innerHTML = abaixo.map(p => passagemHtml(p, agora)).join('');
+    $('#hoje-abaixo-vazio').hidden = !!abaixo.length;
+    const promos = passagens.filter(p => ehPromocao(p) && agora < venceEm(p) && !isNaN(Date.parse(p.ate))).sort((a, b) => venceEm(a) - venceEm(b)).slice(0, 3);
+    $('#hoje-promos').innerHTML = promos.map(p => {
+      const [prog, , cor] = programaPromo(p);
+      return `<li class="promo-card" style="--pc:${cor}">${bannerPromo(p, prog, true)}<div class="promo-corpo"><h3>${esc(tituloPromo(p.titulo))}</h3>
+        <a class="cta cta-b pass-link" href="#promocoes">Ver detalhes</a></div></li>`;
+    }).join('');
+    const hora = new Date().getHours();
+    $('#hoje-titulo').textContent = `${hora < 12 ? 'Bom dia' : hora < 18 ? 'Boa tarde' : 'Boa noite'}: sua próxima viagem começa aqui`;
+    $('#hoje-nota').textContent = `${vivas.length} passagens e ${passagens.filter(p => ehPromocao(p) && agora < venceEm(p)).length} promoções no ar agora, com o melhor do dia em destaque pelo nosso Termômetro de milhas.`;
+    buscarFotos();
+  }
+  $('#hoje').addEventListener('click', e => {
+    const b = e.target.closest('[data-hoje-destino]'); if (!b) return;
+    Object.assign(filtroPassagem, { tipo: 'passagem', destino: b.dataset.hojeDestino, busca: '', todas: false });
+    $('#passagens-destino').value = b.dataset.hojeDestino;
+    $('#passagens-busca').value = '';
+    location.hash = 'passagens';
+    mostrarPassagens();
+  });
+
   async function desenharPassagens() {
     try {
       const r = await fetch('dados/alertas.json', { cache: 'no-store' });
@@ -1622,6 +1688,7 @@
     } catch (e) { /* mantém os que já estavam na tela */ }
     mostrarPassagens();
     mostrarPromocoes();
+    mostrarHoje();
     // Meu Radar (assinatura.js) usa a mesma lista e o mesmo cartão de passagem.
     window.oammlPassagens = passagens.filter(p => !ehPromocao(p) && Date.now() < venceEm(p));
     document.dispatchEvent(new Event('passagens'));
@@ -2160,7 +2227,7 @@
   }
   // "Atualizado ..." de cada página: a data do arquivo de dados dela no site.
   const ARQUIVO_DA_PAGINA = {
-    passagens: 'dados/alertas.json', promocoes: 'dados/alertas.json', radar: 'dados/alertas.json', termometro: 'dados/termometro.json', guia: 'dados/guia.json',
+    passagens: 'dados/alertas.json', hoje: 'dados/alertas.json', promocoes: 'dados/alertas.json', radar: 'dados/alertas.json', termometro: 'dados/termometro.json', guia: 'dados/guia.json',
     transferencias: 'dados/transferencias.json', novidades: 'dados/noticias.json',
     restaurantes: 'restaurantes.js', salas: 'dados/salas.json', cadastros: 'dados/programas.json', quanto: 'dados/precos-milhas.csv', comprar: 'precos.js', contatos: 'dados/contatos.csv'
   };
