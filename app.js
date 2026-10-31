@@ -27,7 +27,7 @@
     return v;
   })();
 
-  const estado = { gasto: 5000, recompensa: 'todos', renda: null, esconderRestritos: false, semAnuidade: false, isentos: new Set(), abertos: new Set(),
+  const estado = { gasto: 5000, recompensa: 'todos', renda: null, investido: null, esconderRestritos: false, semAnuidade: false, isentos: new Set(), abertos: new Set(),
     limite: 10, verRestritos: false, verAcimaRenda: false };
   // O ranking começa com os 10 melhores; cada clique em "ver mais" abre outros 10.
   const POR_PAGINA = 10;
@@ -41,6 +41,7 @@
     if (ehNum(p.gasto)) estado.gasto = p.gasto;
     if (['todos', 'pontos', 'milhas', 'cashback'].includes(p.recompensa)) estado.recompensa = p.recompensa;
     if (ehNum(p.renda)) estado.renda = p.renda;
+    if (ehNum(p.investido)) estado.investido = p.investido;
     estado.esconderRestritos = !!p.esconderRestritos;
     estado.semAnuidade = !!p.semAnuidade;
     if (Array.isArray(p.isentos)) estado.isentos = new Set(p.isentos.filter(x => typeof x === 'string'));
@@ -50,8 +51,8 @@
 
   function guardarPrefs() {
     try {
-      const { gasto, recompensa, renda, esconderRestritos, semAnuidade } = estado;
-      localStorage.setItem(CHAVE_PREFS, JSON.stringify({ gasto, recompensa, renda, esconderRestritos, semAnuidade, isentos: [...estado.isentos] }));
+      const { gasto, recompensa, renda, investido, esconderRestritos, semAnuidade } = estado;
+      localStorage.setItem(CHAVE_PREFS, JSON.stringify({ gasto, recompensa, renda, investido, esconderRestritos, semAnuidade, isentos: [...estado.isentos] }));
     } catch (e) { /* ok */ }
     try {
       const u = new URL(location.href);
@@ -374,11 +375,17 @@
       </div>`;
   }
 
+  function valorEmReais(n) {
+    const m = /(\d{1,3}(?:\.\d{3})+|\d+)(?:,\d+)?\s*(MILHOES|MILHAO|MIL\b)?/.exec(n);
+    if (!m) return null;
+    const v = parseFloat(m[1].replace(/\./g, ''));
+    return m[2] === 'MIL' ? v * 1e3 : m[2] ? v * 1e6 : v;
+  }
   function classificarRenda(bruto) {
     const n = norm(bruto);
     if (!n || n === '-' || n.includes('NAO EXIGIDA') || n.includes('SEM INVESTIMENTO')) return { tipo: 'livre' };
     if (n.includes('CONVITE')) return { tipo: 'convite' };
-    if (n.includes('INVESTID') && !n.includes(' OU ') && !n.includes('R$')) return { tipo: 'investimento' };
+    if (n.includes('INVESTID') && !n.includes(' OU ') && !n.includes('R$')) return { tipo: 'investimento', valor: valorEmReais(n) };
     const m = /(\d{1,3}(?:\.\d{3})+|\d+)(?:,\d+)?\s*(MILHOES|MILHAO|MIL\b)?/.exec(n);
     if (m) {
       let v = parseFloat(m[1].replace(/\./g, ''));
@@ -428,6 +435,8 @@
     const ref = r => { const x = /^\$?([A-Z]+)\$?(\d+)$/.exec(r || ''); return x && { col: x[1], lin: x[2] }; };
     const dolar = ref(m.refDolar), gasto = ref(m.refGasto);
     for (const k of m.cartoes) {
+      const inv = (C.isencaoInvestindo || []).find(x => x.cartao === norm(k.nome) && (!x.trecho || norm(k.obs).includes(norm(x.trecho))));
+      if (inv) k.isencaoInvest = inv;
       const c = (C.cartoes || {})[norm(k.nome)];
       if (!c) continue;
       if (c.exterior) k.exterior = c.exterior;
@@ -452,6 +461,12 @@
     return chave && ehNum(M[chave]) ? M[chave] : null;
   }
 
+  // A anuidade sai de graça com o valor que o visitante informou ter investido (correcoes.js).
+  const isentoInvestindo = (k, gasto = estado.gasto) => {
+    const q = k.isencaoInvest;
+    return !!(q && estado.investido && estado.investido >= q.valor && (!q.gastoMin || gasto >= q.gastoMin));
+  };
+  const investimentoBasta = k => k.requisito.tipo === 'investimento' && ehNum(k.requisito.valor) && estado.investido >= k.requisito.valor;
   function calculadora(gasto) {
     const trocas = { [modelo.aba.nome + '!' + modelo.refGasto]: gasto };
     if (dolarAoVivo && modelo.refDolar) trocas[modelo.aba.nome + '!' + modelo.refDolar] = dolarAoVivo.valor;
@@ -460,9 +475,9 @@
       const v = milheiroProprio(m.nome);
       if (v !== null) trocas[modelo.aba.nome + '!' + m.ref] = v;
     }
-    // Isenção vitalícia marcada pelo visitante: anuidade e mensalidade zeradas.
+    // Isenção vitalícia marcada pelo visitante, ou alcançada com o valor investido: anuidade e mensalidade zeradas.
     for (const k of modelo.cartoes) {
-      if (!estado.isentos.has(k.chave)) continue;
+      if (!estado.isentos.has(k.chave) && !isentoInvestindo(k, gasto)) continue;
       for (const c of ['anuidade', 'mensal']) if (modelo.col[c]) trocas[modelo.aba.nome + '!' + modelo.col[c] + k.linha] = 0;
     }
     return new Planilha.Calculo(livro, trocas);
@@ -504,7 +519,7 @@
     if (estado.semAnuidade && ehNum(r.anuidade) && r.anuidade > 0) return 'filtro';
     // Com a renda informada, ficam de fora os só por convite e os de investimento alto (até pedir para ver).
     const escondeRestritos = estado.esconderRestritos || (estado.renda && !estado.verRestritos);
-    if (escondeRestritos && (k.requisito.tipo === 'convite' || k.requisito.tipo === 'investimento')) return 'restrito';
+    if (escondeRestritos && (k.requisito.tipo === 'convite' || k.requisito.tipo === 'investimento') && !investimentoBasta(k)) return 'restrito';
     if (estado.renda && !estado.verAcimaRenda && k.requisito.tipo === 'renda' && k.requisito.valor > estado.renda) return 'renda';
     return true;
   }
@@ -579,7 +594,7 @@
   const podePedir = r => {
     const k = r.cartao, q = k.requisito;
     if (ehIsento(k)) return true;
-    if (q.tipo === 'convite' || q.tipo === 'investimento') return false;
+    if (q.tipo === 'convite' || (q.tipo === 'investimento' && !investimentoBasta(k))) return false;
     if (estado.renda && q.tipo === 'renda' && q.valor > estado.renda) return false;
     return true;
   };
@@ -694,7 +709,7 @@
       if (ehNum(r.valorMilhas)) linhas.push([`Valor em reais${mil && ehNum(mil.valor) ? ` (milheiro ${esc(mil.nome)} a ${brl2.format(mil.valor)})` : ''}`, brl.format(r.valorMilhas)]);
     }
     const anu = ehNum(r.anuidade) ? r.anuidade : 0;
-    linhas.push([ehIsento(r.cartao) ? 'Anuidade (sua isenção vitalícia)' : 'Anuidade no seu gasto', anu > 0 ? '− ' + brl.format(anu) : 'Grátis', anu > 0 ? 'menos' : '']);
+    linhas.push([ehIsento(r.cartao) ? 'Anuidade (sua isenção vitalícia)' : isentoInvestindo(r.cartao) ? 'Anuidade (grátis com seu investimento)' : 'Anuidade no seu gasto', anu > 0 ? '− ' + brl.format(anu) : 'Grátis', anu > 0 ? 'menos' : '']);
     if (ehNum(r.tarifas) && r.tarifas > 0) linhas.push(['Tarifas extras', '− ' + brl.format(r.tarifas), 'menos']);
     linhas.push(['Sobra por ano', brl.format(r.liquido), 'total']);
     return `<ul class="conta">${linhas.map(([a, b, c]) => `<li class="${c || ''}"><span>${a}</span><span>${b}</span></li>`).join('')}</ul>`;
@@ -756,7 +771,8 @@
       const anu = ehNum(r.anuidade) ? r.anuidade : null;
       const tags = [
         ehIsento(k) ? '<span class="tag verde">Sua isenção vitalícia</span>' : '',
-        ehIsento(k) ? '' : anu === 0 ? '<span class="tag verde">Anuidade grátis</span>' : anu ? `<span class="tag cinza">Anuidade ${esc(brl.format(anu))}</span>` : '',
+        !ehIsento(k) && isentoInvestindo(k) ? '<span class="tag verde">Anuidade grátis com seu investimento</span>' : '',
+        ehIsento(k) || isentoInvestindo(k) ? '' : k.isencaoInvest && anu ? `<span class="tag cinza">Anuidade ${esc(brl.format(anu))} · grátis investindo ${esc(brl.format(k.isencaoInvest.valor))}</span>` : anu === 0 ? '<span class="tag verde">Anuidade grátis</span>' : anu ? `<span class="tag cinza">Anuidade ${esc(brl.format(anu))}</span>` : '',
         k.recompensa === 'cashback' ? '<span class="tag">Cashback</span>' : k.recompensa === 'ambos' ? `${destinoTag(r)}<span class="tag">ou cashback</span>` : destinoTag(r),
         k.acelerador && k.acelerador !== '-' ? `<span class="tag">${esc(k.acelerador.length < 20 ? k.acelerador : 'Promoção')}</span>` : '',
         k.vip.tem ? '<span class="tag">Sala VIP</span>' : '',
@@ -2351,7 +2367,7 @@
 
   /* ---------- controles ---------- */
 
-  const campo = $('#gasto'), faixa = $('#gasto-faixa'), campoRenda = $('#renda');
+  const campo = $('#gasto'), faixa = $('#gasto-faixa'), campoRenda = $('#renda'), campoInvest = $('#investido');
   const passoMaisPerto = g => PASSOS.reduce((m, v, i) => Math.abs(v - g) < Math.abs(PASSOS[m] - g) ? i : m, 0);
   faixa.max = PASSOS.length - 1;
 
@@ -2364,6 +2380,7 @@
     $('#restritos').checked = estado.esconderRestritos;
     $('#sem-anuidade').checked = estado.semAnuidade;
     if (document.activeElement !== campoRenda) campoRenda.value = estado.renda ? inteiro.format(estado.renda) : '';
+    if (document.activeElement !== campoInvest) campoInvest.value = estado.investido ? inteiro.format(estado.investido) : '';
   }
 
   let espera;
@@ -2397,6 +2414,11 @@
     const v = soDigitos(campoRenda.value);
     campoRenda.value = v ? inteiro.format(v) : '';
     estado.renda = v || null; estado.verRestritos = estado.verAcimaRenda = false; mudou();
+  });
+  campoInvest.addEventListener('input', () => {
+    const v = soDigitos(campoInvest.value);
+    campoInvest.value = v ? inteiro.format(v) : '';
+    estado.investido = v || null; mudou();
   });
   $('#ranking-mais').addEventListener('click', e => {
     if (e.target.dataset.acao === 'menos') {
