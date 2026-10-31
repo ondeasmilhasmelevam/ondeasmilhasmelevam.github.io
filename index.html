@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=47">
+<link rel="stylesheet" href="estilo.css?v=48">
 </head>
 <body>
 <header class="bar">
@@ -55,6 +55,7 @@
         <div class="menu-sub">
           <a href="#passagens" title="Passagens"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 10.5 13.5M21 3l-6.5 18-4-7.5L3 9.5z"/></svg><span>Passagens</span></a>
           <a href="#guia" title="Como emitir"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v3.5a2.5 2.5 0 0 0 0 5V18H4v-3.5a2.5 2.5 0 0 0 0-5z"/><path d="M14 6v12" stroke-dasharray="2 2.5"/></svg><span>Como emitir</span></a>
+          <a href="#salas" title="Salas VIP"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11V8a3 3 0 0 1 6 0v3M13 11V8a3 3 0 0 1 6 0v3"/><path d="M3 11h18v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM6 18v2M18 18v2"/></svg><span>Salas VIP</span></a>
           <a href="#restaurantes" title="Restaurantes VIP"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v18M4.5 3v5a2.5 2.5 0 0 0 5 0V3M17 21V3c-2.2 0-3.5 2.3-3.5 5.5S14.8 13 17 13"/></svg><span>Restaurantes VIP</span></a>
         </div>
       </div>
@@ -367,6 +368,31 @@
       <div class="transf-extras" id="transf-extras"></div>
     </section>
 
+    <section id="salas" data-pagina="salas">
+      <div class="sec-head">
+        <p class="eyebrow">Aeroportos do Brasil</p>
+        <h2>Salas VIP: onde ficam e como entrar</h2>
+        <p class="sec-note">As salas dos principais aeroportos do país, com o caminho até a porta, o horário e as formas de entrar: pelo programa do cartão (LoungeKey, Priority Pass, DragonPass), pelo app do banco, pagando na hora ou pela companhia aérea. Regras e horários mudam: confira no app do seu cartão antes de ir.</p>
+      </div>
+      <div class="passagens-filtros">
+        <input type="search" id="salas-busca" placeholder="Aeroporto, cidade ou sala, ex.: GRU" autocomplete="off" aria-label="Buscar aeroporto, cidade ou sala">
+        <select id="salas-acesso" aria-label="Como você entra">
+          <option value="">Qualquer acesso</option>
+          <option value="LK">LoungeKey (Mastercard)</option>
+          <option value="PP">Priority Pass</option>
+          <option value="DP">DragonPass (Visa)</option>
+          <option value="AB">App do banco (Itaú, Nubank, Nomad, Inter)</option>
+          <option value="AV">Pagando na hora</option>
+          <option value="CE">Cartão específico</option>
+          <option value="CA">Companhia aérea (classe ou categoria)</option>
+        </select>
+      </div>
+      <div class="atalhos" id="salas-aeroportos" role="group" aria-label="Aeroporto"></div>
+      <div id="salas-lista"></div>
+      <p class="passagens-vazio" id="salas-vazio" hidden>Nenhuma sala com esse filtro.</p>
+      <p class="fine" id="salas-conferido"></p>
+    </section>
+
     <section id="restaurantes" data-pagina="restaurantes">
       <div class="sec-head">
         <p class="eyebrow">Guia exclusivo</p>
@@ -539,7 +565,7 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=48"></script>
+<script src="app.js?v=49"></script>
 <script type="module" src="assinatura.js?v=5"></script>
 </body>
 </html>

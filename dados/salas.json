@@ -1,0 +1,1235 @@
+{
+ "conferido": "2026-10-30",
+ "aeroportos": [
+  {
+   "iata": "GRU",
+   "cidade": "São Paulo · Guarulhos",
+   "salas": [
+    {
+     "nome": "Advantage VIP Lounge",
+     "terminal": "Terminal 2",
+     "onde": "Após a segurança, vire à direita e, no fim do corredor, à direita; suba elevador/escada rolante, ao lado das escadas rolantes (1º andar).",
+     "horario": "24 horas, todos os dias",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "Bradesco VIP Lounge",
+     "terminal": "Terminal 2",
+     "onde": "Pós-embarque doméstico, mezanino (1º andar).",
+     "horario": "06h às 23h, todos os dias",
+     "acessos": [
+      "CE"
+     ]
+    },
+    {
+     "nome": "GOL Premium Lounge Doméstico",
+     "terminal": "Terminal 2",
+     "onde": "Área de embarque doméstico, mezanino (1º andar).",
+     "horario": "06h às 00h, todos os dias",
+     "acessos": [
+      "DP",
+      "CE",
+      "CA"
+     ]
+    },
+    {
+     "nome": "Plaza Premium Lounge (embarque doméstico)",
+     "terminal": "Terminal 2",
+     "onde": "Área de embarque doméstico (lado ar), 1º andar.",
+     "horario": "05h às 23h, todos os dias",
+     "acessos": [
+      "DP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "The Lounge São Paulo (doméstico)",
+     "terminal": "Terminal 2",
+     "onde": "Área restrita do embarque doméstico, mezanino (1º andar), entre as salas GOL e Bradesco.",
+     "horario": "24 horas, todos os dias",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "W Lounge Guarulhos",
+     "terminal": "Terminal 1",
+     "onde": "Após o controle de segurança, no mezanino, à esquerda. Somente voos domésticos e em trânsito.",
+     "horario": "24 horas, todos os dias",
+     "acessos": [
+      "DP",
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge – The West",
+     "terminal": "Terminal 2",
+     "onde": "Embarque doméstico Oeste: após a segurança, à direita, ao lado do Duty Free (Dufry), perto dos portões 201 a 205. Em trânsito: antes da esteira de bagagem, à direita.",
+     "horario": "24 horas, todos os dias",
+     "acessos": [
+      "DP",
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "ADVT / Advantage VIP Lounge (Terminal 3)",
+     "terminal": "Terminal 3",
+     "onde": "",
+     "horario": "24 horas",
+     "acessos": [],
+     "fechada": true
+    },
+    {
+     "nome": "American Airlines Admirals Club",
+     "terminal": "Terminal 3",
+     "onde": "Mezanino (3º piso) da área de embarque internacional, sobre o Duty Free.",
+     "horario": "11h às 23h35, diariamente",
+     "acessos": [
+      "AV",
+      "CE",
+      "CA"
+     ]
+    },
+    {
+     "nome": "Casa BB",
+     "terminal": "Terminal 3",
+     "onde": "Mezanino da área de embarque internacional, sobre o Duty Free (antigo Espaço Banco Safra / ex-Star Alliance Lounge).",
+     "horario": "24 horas, todos os dias",
+     "acessos": [
+      "CE",
+      "CA"
+     ]
+    },
+    {
+     "nome": "Bradesco Cartões Lounge",
+     "terminal": "Terminal 3",
+     "onde": "Pós-embarque internacional; piso térreo perto do restaurante Bleriot / 1º andar.",
+     "horario": "24 horas (o aeroporto informa 06h às 23h)",
+     "acessos": [
+      "CE"
+     ]
+    },
+    {
+     "nome": "GOL Premium Lounge Internacional",
+     "terminal": "Terminal 2",
+     "onde": "Área de embarque internacional do T2, 1º andar, logo após a imigração.",
+     "horario": "05h às 01h, todos os dias",
+     "acessos": [
+      "DP",
+      "CE",
+      "CA"
+     ]
+    },
+    {
+     "nome": "Sala Pedra Preta (Itaú)",
+     "terminal": "Terminal 3",
+     "onde": "Após raio-x e imigração; entrada no piso de embarque em frente ao Duty Free/escada rolante, perto da LATAM; 2 andares com mezanino de vista para a pista.",
+     "horario": "24 horas, todos os dias",
+     "acessos": [
+      "AB"
+     ]
+    },
+    {
+     "nome": "LATAM VIP Lounge São Paulo",
+     "terminal": "Terminal 3",
+     "onde": "Mezanino da área de embarque internacional, após o controle de passaportes; suba a escada rolante em frente ao Duty Free.",
+     "horario": "24 horas, todos os dias",
+     "acessos": [
+      "DP",
+      "CE",
+      "CA"
+     ]
+    },
+    {
+     "nome": "Mastercard Black Lounge (Black 1 – mezanino)",
+     "terminal": "Terminal 3",
+     "onde": "Após o controle de passaporte, vire à esquerda e suba as escadas rolantes ao 2º andar (mezanino, sobre o Duty Free).",
+     "horario": "10h às 23h30, todos os dias",
+     "acessos": [
+      "LK",
+      "CE"
+     ]
+    },
+    {
+     "nome": "Mastercard Black Lounge (Black 2 – piso de embarque)",
+     "terminal": "Terminal 3",
+     "onde": "Após o controle de passaporte, vire à esquerda; no piso térreo de embarque (corredor de lojas, em frente ao Duty Free).",
+     "horario": "10h às 23h30, todos os dias",
+     "acessos": [
+      "LK",
+      "CE"
+     ]
+    },
+    {
+     "nome": "Taste of Priceless (Mastercard Black 3)",
+     "terminal": "Terminal 3",
+     "onde": "Piso de embarque (térreo), logo após o controle de passaporte / raio-x (Black 3).",
+     "horario": "06h às 02h, todos os dias",
+     "acessos": [
+      "CE"
+     ]
+    },
+    {
+     "nome": "Nomad Lounge",
+     "terminal": "Terminal 3",
+     "onde": "Após o controle de passaporte, ao lado do portão 303 (1º andar, escada rolante e elevador).",
+     "horario": "24 horas, todos os dias",
+     "acessos": [
+      "AB"
+     ]
+    },
+    {
+     "nome": "Nubank Ultravioleta Lounge",
+     "terminal": "Terminal 3",
+     "onde": "Após segurança e imigração, próximo ao portão 329 (piso térreo, 3 andares), vista para a pista.",
+     "horario": "06h às 23h, todos os dias",
+     "acessos": [
+      "AB"
+     ]
+    },
+    {
+     "nome": "The Lounge SkyTeam (The Lounge São Paulo – internacional)",
+     "terminal": "Terminal 2",
+     "onde": "Área restrita do embarque internacional do T2, mezanino (2º andar), logo após a imigração: escadas rolantes à esquerda.",
+     "horario": "24 horas, todos os dias",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CA"
+     ]
+    },
+    {
+     "nome": "Visa Infinite Lounge",
+     "terminal": "Terminal 3",
+     "onde": "Após raio-x e imigração, à esquerda em direção aos portões; piso térreo em frente ao Duty Free.",
+     "horario": "24 horas, todos os dias",
+     "acessos": [
+      "DP"
+     ]
+    },
+    {
+     "nome": "Visa Infinite Privilege Lounge",
+     "terminal": "Terminal 3",
+     "onde": "Área de embarque internacional, piso térreo, perto da Vivara.",
+     "horario": "24 horas, todos os dias",
+     "acessos": [
+      "CE"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge 5th Avenue (American Express)",
+     "terminal": "Terminal 3",
+     "onde": "Área de embarque internacional, piso térreo, entre as lojas Havaianas e Heineken (em frente ao Duty Free).",
+     "horario": "24 horas, todos os dias",
+     "acessos": [
+      "CE"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge – The Pier",
+     "terminal": "Terminal 3",
+     "onde": "Após a segurança, à direita, perto dos portões 323 e 324; 1º andar, vista para o pátio.",
+     "horario": "24 horas, todos os dias",
+     "acessos": [
+      "DP",
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "GIG",
+   "cidade": "Rio de Janeiro · Galeão",
+   "salas": [
+    {
+     "nome": "Lounge GOL Smiles (doméstico)",
+     "terminal": "Terminal 2",
+     "onde": "Piso 2, em frente aos portões B36 e B37",
+     "horario": "6h às 22h; quarta e sexta até 23h",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CA"
+     ]
+    },
+    {
+     "nome": "Plaza Premium Lounge (embarque doméstico)",
+     "terminal": "Terminal 2",
+     "onde": "Piso 1 (mezanino), Píer Sul, após o raio-X, próximo aos portões B27 e B28",
+     "horario": "24 horas",
+     "acessos": [
+      "DP",
+      "LK",
+      "PP",
+      "AV",
+      "CA"
+     ]
+    },
+    {
+     "nome": "American Airlines Admirals Club",
+     "terminal": "Terminal 2",
+     "onde": "Embarque internacional",
+     "horario": "",
+     "acessos": [
+      "AV",
+      "CA"
+     ]
+    },
+    {
+     "nome": "Lounge GOL Smiles (internacional)",
+     "terminal": "Terminal 2",
+     "onde": "Piso 3, Píer Sul, depois do Duty Free (escadas ou elevador)",
+     "horario": "5h às 23h",
+     "acessos": [
+      "PP",
+      "AV",
+      "CA"
+     ]
+    },
+    {
+     "nome": "Plaza Premium Lounge (embarque internacional)",
+     "terminal": "Terminal 2",
+     "onde": "Embarque internacional, Píer Sul, piso 3, após o controle de passaportes",
+     "horario": "24 horas",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CA"
+     ]
+    },
+    {
+     "nome": "Star Alliance Lounge",
+     "terminal": "Terminal 2",
+     "onde": "Embarque internacional; vista para a pista",
+     "horario": "12h à 1h",
+     "acessos": [
+      "CA"
+     ]
+    },
+    {
+     "nome": "Flybondi by Global Lounge Network",
+     "terminal": "Terminal 2",
+     "onde": "Piso 3, Píer Sul, após o controle de passaportes",
+     "horario": "24 horas",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "Plaza Premium Lounge (área pública / desembarque)",
+     "terminal": "Terminal 2",
+     "onde": "Área pública, antes do raio-X (mezanino do T2; pela LoungeKey, 2º andar do edifício-garagem, seguindo as placas). Atende também quem desembarca",
+     "horario": "24 horas",
+     "acessos": [
+      "DP",
+      "LK",
+      "PP",
+      "AV"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "CGH",
+   "cidade": "São Paulo · Congonhas",
+   "salas": [
+    {
+     "nome": "Advantage VIP Lounge",
+     "terminal": "Terminal único",
+     "onde": "1º andar (mezanino), depois do controle do cartão de embarque e ANTES das máquinas de raio-X, do lado direito",
+     "horario": "4h30 às 22h, diariamente",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "Ambaar Club Congonhas",
+     "terminal": "Terminal único",
+     "onde": "Próximo ao portão 08.",
+     "horario": "4h às 23h, diariamente",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "Bradesco Cartões Lounge (portão 5)",
+     "terminal": "Terminal único",
+     "onde": "Pós-embarque, em frente ao portão 5",
+     "horario": "4h às 23h, diariamente",
+     "acessos": [
+      "CE"
+     ]
+    },
+    {
+     "nome": "Bradesco Cartões Lounge (portão 8)",
+     "terminal": "Terminal único",
+     "onde": "Pós-embarque, próximo ao portão 8",
+     "horario": "4h às 23h, diariamente",
+     "acessos": [
+      "CE"
+     ]
+    },
+    {
+     "nome": "Emerald VIP Lounge",
+     "terminal": "Terminal único",
+     "onde": "Área pública do 1º andar, fora da área de embarque, ao lado do acesso à sala de embarque",
+     "horario": "5h às 23h, diariamente",
+     "acessos": [
+      "DP"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge Congonhas",
+     "terminal": "Terminal único",
+     "onde": "Mezanino (1º piso), fora da área de embarque, à esquerda das escadas rolantes que levam ao raio-X, junto ao Achados e Perdidos",
+     "horario": "4h às 23h, diariamente",
+     "acessos": [
+      "DP",
+      "AV",
+      "CE"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "SDU",
+   "cidade": "Rio de Janeiro · Santos Dumont",
+   "salas": [
+    {
+     "nome": "Advantage VIP Lounge Rio de Janeiro (embarque)",
+     "terminal": "Terminal único",
+     "onde": "Após o raio-X, à esquerda, próximo ao posto da Polícia Federal (1º andar)",
+     "horario": "4h30 às 22h, diariamente",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "Advantage VIP Lounge Bossa Nova Mall (área pública)",
+     "terminal": "Terminal único",
+     "onde": "Área pública, piso térreo, ao lado do Consulado dos EUA (lado do Bossa Nova Mall)",
+     "horario": "5h às 21h, diariamente",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "Bradesco Cartões Lounge Santos Dumont",
+     "terminal": "Terminal único",
+     "onde": "1º andar, área de pré-embarque (antes do raio-X)",
+     "horario": "5h30 às 22h30",
+     "acessos": [
+      "CE"
+     ]
+    },
+    {
+     "nome": "Emerald VIP Lounge Rio de Janeiro",
+     "terminal": "Terminal único",
+     "onde": "Área pública, 1º andar, no corredor de ligação com o Bossa Nova Mall",
+     "horario": "5h às 21h, diariamente",
+     "acessos": [
+      "DP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "Harmony Lounge Rio de Janeiro",
+     "terminal": "Terminal único",
+     "onde": "1º pavimento, lado direito, próximo ao raio-X, área pública",
+     "horario": "5h30 às 21h",
+     "acessos": [
+      "DP",
+      "AV"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "BSB",
+   "cidade": "Brasília",
+   "salas": [
+    {
+     "nome": "Sala VIP Doméstica (Aeroportos VIP Club)",
+     "terminal": "Terminal 1",
+     "onde": "Logo após o raio-X: dentro da Dufry, escada rolante à direita, 2º andar, até o final do corredor (lado esquerdo)",
+     "horario": "24 horas",
+     "acessos": [
+      "DP",
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "VIP Express Club Píer Norte",
+     "terminal": "Terminal 1",
+     "onde": "Mezanino do Píer Norte, próximo ao portão 10 (subir a escada rolante)",
+     "horario": "6h à 0h (pelo Bradesco, 6h às 22h)",
+     "acessos": [
+      "DP",
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "VIP Express Club Píer Sul",
+     "terminal": "Terminal 1",
+     "onde": "Primeiro mezanino da sala de embarque, próximo ao portão 41",
+     "horario": "6h às 22h (pela Priority Pass, até 0h)",
+     "acessos": [
+      "DP",
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "Sala VIP Internacional (Aeroportos VIP Club)",
+     "terminal": "Terminal 1",
+     "onde": "Subsolo/térreo da sala de embarque internacional, ao lado da Dufry (piso inferior ao raio-X)",
+     "horario": "24 horas (pelo Bradesco, conforme os voos internacionais)",
+     "acessos": [
+      "DP",
+      "LK",
+      "PP",
+      "AV",
+      "CE",
+      "CA"
+     ]
+    },
+    {
+     "nome": "Sala VIP BRB",
+     "terminal": "Terminal 1",
+     "onde": "Entrada principal na Praça de Serviço, 2º andar, área pública; segunda entrada dentro da Dufry, na saída do raio-X (escada rolante, à direita). Tem raio-X próprio para a sala de embarque",
+     "horario": "",
+     "acessos": [
+      "CE"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "CNF",
+   "cidade": "Belo Horizonte · Confins",
+   "salas": [
+    {
+     "nome": "ADVT VIP Lounge (Advantage) Confins",
+     "terminal": "Terminal 1",
+     "onde": "2º andar. Pelo lado ar: elevador/escadas em frente ao portão 2. Com Fast Track: pelo saguão, escadas/elevador ao lado do raio-X",
+     "horario": "24 horas (entrada com Fast Track das 4h às 22h)",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "Ambaar Lounge Confins Doméstico",
+     "terminal": "Terminal 1",
+     "onde": "Após o raio-X, próximo ao portão remoto 07 (acesso por escadas)",
+     "horario": "24 horas (pelo Bradesco, 4h30 às 23h)",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "Ambaar Lounge Confins Doméstico 2",
+     "terminal": "Terminal 1",
+     "onde": "Após o raio-X, entre os portões 2 e 3, piso superior, ao lado da Dufry",
+     "horario": "4h30 às 23h, diariamente",
+     "acessos": [
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "VIP Lounge Inter (BRT Lounges)",
+     "terminal": "Terminal 1",
+     "onde": "Lado ar, embarque doméstico, em frente ao portão 1",
+     "horario": "24 horas",
+     "acessos": [
+      "DP",
+      "AB",
+      "AV"
+     ]
+    },
+    {
+     "nome": "Ambaar Lounge Confins Internacional",
+     "terminal": "Terminal 2",
+     "onde": "Pós-embarque, após a verificação de passaportes, ao lado do Duty Free, próximo ao portão 60",
+     "horario": "",
+     "acessos": []
+    },
+    {
+     "nome": "BRT Lounges Confins – Sala Terra (área pública)",
+     "terminal": "Terminal 1",
+     "onde": "Lado terra (área pública), em frente ao raio-X central",
+     "horario": "",
+     "acessos": []
+    }
+   ]
+  },
+  {
+   "iata": "VCP",
+   "cidade": "Campinas · Viracopos",
+   "salas": [
+    {
+     "nome": "Advantage VIP Lounge Viracopos",
+     "terminal": "Terminal 1 (doméstico)",
+     "onde": "1º andar, após o raio-X, ao lado da praça de alimentação; também há entrada com Fast Track junto ao acesso do embarque",
+     "horario": "24 horas (entrada com Fast Track das 4h às 22h)",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "Ambaar Club Viracopos",
+     "terminal": "Terminal 1 (doméstico)",
+     "onde": "1º andar, após o raio-X, perto da praça de alimentação e do corredor dos portões",
+     "horario": "24 horas",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "The Lounge Viracopos",
+     "terminal": "Terminal 1 (doméstico)",
+     "onde": "Após o controle de segurança, elevador para o 1º andar",
+     "horario": "24 horas",
+     "acessos": [
+      "LK",
+      "PP"
+     ]
+    },
+    {
+     "nome": "Lounge Azul",
+     "terminal": "Terminal 1 (área internacional)",
+     "onde": "Embarque internacional, após o controle de segurança",
+     "horario": "Fechada para reforma desde 24/07/2026, sem previsão de volta",
+     "acessos": [
+      "PP",
+      "AV",
+      "CE",
+      "CA"
+     ],
+     "fechada": true
+    },
+    {
+     "nome": "BRT Lounge Viracopos",
+     "terminal": "Terminal 1 (área internacional)",
+     "onde": "Píer A, depois do controle de passaportes, em frente aos portões 6 e 8. Só voos internacionais",
+     "horario": "",
+     "acessos": []
+    }
+   ]
+  },
+  {
+   "iata": "REC",
+   "cidade": "Recife",
+   "salas": [
+    {
+     "nome": "Paço Píer Doméstico (restaurante conveniado)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, perto do portão 18, logo após a entrada do Duty Free. Só voos domésticos",
+     "horario": "24 horas",
+     "acessos": [
+      "LK",
+      "PP"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge Recife São João",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, depois do raio-X vire à esquerda; em frente ao portão 7. Só voos domésticos",
+     "horario": "24 horas",
+     "acessos": [
+      "DP",
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "Paço Píer Internacional (restaurante conveniado)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, após o controle de passaporte, perto do portão 16, logo após o Duty Free. Só voos internacionais",
+     "horario": "24 horas",
+     "acessos": [
+      "LK",
+      "PP"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge Recife Frevo",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, depois do raio-X, 2º piso (pelo elevador), perto do portão 17",
+     "horario": "24 horas",
+     "acessos": [
+      "DP",
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "Paço Real (restaurante conveniado)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado terra, 2º piso, ao norte da praça de alimentação",
+     "horario": "24 horas",
+     "acessos": [
+      "LK",
+      "PP"
+     ]
+    },
+    {
+     "nome": "W Airport Rooms Recife (quartos de descanso)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado terra, térreo, em frente ao desembarque sul",
+     "horario": "24 horas",
+     "acessos": [
+      "DP"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "SSA",
+   "cidade": "Salvador",
+   "salas": [
+    {
+     "nome": "Ambaar Club Salvador Airside (embarque)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, depois do raio-X, à direita, no corredor dos portões 18 a 23. Doméstico e internacional",
+     "horario": "24 horas (o aeroporto informa 7h à 0h)",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CE",
+      "CA"
+     ]
+    },
+    {
+     "nome": "Bluma (spa conveniado)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, depois do Duty Free, na Praça Tropical. Só voos domésticos",
+     "horario": "6h às 22h, todos os dias",
+     "acessos": [
+      "LK",
+      "PP"
+     ]
+    },
+    {
+     "nome": "Amaní Lounge",
+     "terminal": "Terminal de passageiros",
+     "onde": "Área de embarque, 1º piso, depois da segurança, no sentido dos portões 18 a 26",
+     "horario": "8h à 0h, todos os dias",
+     "acessos": [
+      "DP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "Ambaar Club Salvador Landside (pré-embarque)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Pré-embarque, 2º piso, antes do raio-X, à direita, perto do acesso aos portões",
+     "horario": "7h às 19h, todos os dias",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "FOR",
+   "cidade": "Fortaleza",
+   "salas": [
+    {
+     "nome": "W Arrival Lounge Fortaleza",
+     "terminal": "Terminal 1",
+     "onde": "Área pública, piso 1, perto do desembarque doméstico, em frente à porta 5",
+     "horario": "24 horas",
+     "acessos": [
+      "DP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "Ambaar Club Fortaleza Doméstico",
+     "terminal": "Terminal 1",
+     "onde": "Lado ar, depois do raio-X, 3º piso, perto dos portões 8 e 9",
+     "horario": "24 horas",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "Sala VIP Inter Fortaleza",
+     "terminal": "Terminal 1",
+     "onde": "Embarque doméstico, em frente ao portão 12",
+     "horario": "6h às 22h",
+     "acessos": [
+      "AB"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge Fortaleza",
+     "terminal": "Terminal 1",
+     "onde": "Lado ar, depois do raio-X, ao lado da Dufry, perto dos portões 12 e 13",
+     "horario": "24 horas",
+     "acessos": [
+      "DP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "Ambaar Club Fortaleza Internacional",
+     "terminal": "Terminal 1",
+     "onde": "Área internacional, depois do controle de passaporte, em frente ao portão 3",
+     "horario": "Conforme os voos internacionais",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CE",
+      "CA"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge Fortaleza Internacional",
+     "terminal": "Terminal 1",
+     "onde": "Lado ar, depois da segurança e do Duty Free vire à esquerda; perto do portão 2. Só voos internacionais",
+     "horario": "24 horas",
+     "acessos": [
+      "DP"
+     ]
+    },
+    {
+     "nome": "W Airport Rooms Fortaleza (quartos de descanso)",
+     "terminal": "Terminal 1",
+     "onde": "Lado terra, entre os desembarques internacional e doméstico, em frente à porta 6",
+     "horario": "24 horas",
+     "acessos": [
+      "DP"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "POA",
+   "cidade": "Porto Alegre",
+   "salas": [
+    {
+     "nome": "Ambaar Club (doméstico)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Após o raio-X, mezanino, perto dos portões 117 e 118. Só voos domésticos e em trânsito",
+     "horario": "24 horas",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge Porto Alegre",
+     "terminal": "Terminal de passageiros",
+     "onde": "Logo após o raio-X do embarque doméstico, no mezanino do 3º piso, à direita",
+     "horario": "24 horas",
+     "acessos": [
+      "DP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "Ambaar Club (internacional)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Após o passaporte e o free shop (3º andar), desça a escada rolante ao 2º andar; perto dos portões 101 e 102",
+     "horario": "Conforme os voos internacionais do dia",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CE",
+      "CA"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge Porto Alegre International",
+     "terminal": "Terminal de passageiros",
+     "onde": "Embarque internacional, após segurança e passaporte, perto dos portões 1 e 2, ao lado da Dufry",
+     "horario": "Conforme os voos internacionais",
+     "acessos": [
+      "DP",
+      "AV",
+      "CE"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "CWB",
+   "cidade": "Curitiba",
+   "salas": [
+    {
+     "nome": "Advantage VIP Lounge (doméstico)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, 1º piso: depois da conferência do cartão de embarque e antes do raio-X, à esquerda. Passageiro internacional também pode usar",
+     "horario": "4h às 23h",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "VIP Lounge Inter",
+     "terminal": "Terminal de passageiros",
+     "onde": "Embarque nacional, em frente ao portão 13",
+     "horario": "6h às 22h",
+     "acessos": [
+      "AB"
+     ]
+    },
+    {
+     "nome": "Bradesco Cartões Lounge",
+     "terminal": "Terminal de passageiros",
+     "onde": "Embarque doméstico, após o raio-X, 1º piso, ao lado da Advantage",
+     "horario": "5h30 às 22h30",
+     "acessos": [
+      "CE"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge Curitiba",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, logo após o raio-X à esquerda, em frente ao portão 5",
+     "horario": "4h às 23h",
+     "acessos": [
+      "DP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "Advantage VIP Lounge (internacional)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, depois da segurança e do passaporte, à direita. Só voos internacionais e em trânsito",
+     "horario": "Conforme os voos internacionais",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "Break Travel Lounge",
+     "terminal": "Terminal de passageiros",
+     "onde": "Área pública, antes do raio-X, piso superior junto à praça de alimentação",
+     "horario": "24 horas",
+     "acessos": [
+      "DP",
+      "AV"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "FLN",
+   "cidade": "Florianópolis",
+   "salas": [
+    {
+     "nome": "AMAE Lounge",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado terra, térreo da área de desembarque, abaixo do check-in, ao lado do Restaurante Riviera (2 minutos do raio-X). Atende quem chega e quem parte",
+     "horario": "24 horas",
+     "acessos": [
+      "DP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "The Lounge Florianópolis (doméstico)",
+     "terminal": "Terminal de passageiros",
+     "onde": "No embarque doméstico, à esquerda, passe a primeira porta e vire à esquerda de novo; 2º andar, em frente ao portão 6",
+     "horario": "4h às 21h",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "The Lounge Florianópolis Internacional",
+     "terminal": "Terminal de passageiros",
+     "onde": "2º piso, logo após o passaporte, à esquerda (antes do free shop). Só voos internacionais",
+     "horario": "6h à 0h (pode variar com os voos)",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "BEL",
+   "cidade": "Belém",
+   "salas": [
+    {
+     "nome": "Living HNK (bar/restaurante conveniado)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Embarque, depois da segurança, em frente ao portão 3. Só voos domésticos",
+     "horario": "24 horas",
+     "acessos": [
+      "PP"
+     ]
+    },
+    {
+     "nome": "W Premium Lounge Belém (portão 4)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, depois do raio-X, perto do portão 4, junto à praça de alimentação. Só voos domésticos",
+     "horario": "24 horas",
+     "acessos": [
+      "DP",
+      "LK",
+      "PP"
+     ]
+    },
+    {
+     "nome": "W Lounge Belém (portão 10)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, perto do portão 10. Doméstico: fim do corredor à esquerda, logo após o balcão da Polícia Federal",
+     "horario": "24 horas",
+     "acessos": [
+      "DP",
+      "LK",
+      "PP",
+      "AV",
+      "CE",
+      "CA"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "MAO",
+   "cidade": "Manaus",
+   "salas": [
+    {
+     "nome": "Harmony Lounge Manaus",
+     "terminal": "Terminal de passageiros",
+     "onde": "Sala de embarque doméstico, térreo: passe a segurança e vire à esquerda",
+     "horario": "24 horas",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "NAT",
+   "cidade": "Natal",
+   "salas": [
+    {
+     "nome": "Advantage VIP Lounge Natal (doméstico)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, 1º piso, em frente à Dufry. Só voos domésticos",
+     "horario": "24 horas",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    },
+    {
+     "nome": "Advantage VIP Lounge Natal (internacional)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, após o passaporte, perto dos portões 3 e 4, logo depois da Dufry. Só voos internacionais",
+     "horario": "Conforme os voos internacionais",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "MCZ",
+   "cidade": "Maceió",
+   "salas": [
+    {
+     "nome": "Advantage VIP Lounge Maceió",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado terra, 1º piso, ao lado da praça de alimentação. Só voos domésticos",
+     "horario": "24 horas",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV",
+      "CE"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "VIX",
+   "cidade": "Vitória",
+   "salas": [
+    {
+     "nome": "The Lounge Vitória",
+     "terminal": "Terminal único",
+     "onde": "Após o raio-X, 2º andar, em frente ao portão 6",
+     "horario": "4h às 20h",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "GYN",
+   "cidade": "Goiânia",
+   "salas": [
+    {
+     "nome": "Advantage VIP Lounge Goiânia",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, perto do portão 9. Só voos domésticos e em trânsito",
+     "horario": "4h às 22h",
+     "acessos": [
+      "LK",
+      "PP"
+     ]
+    },
+    {
+     "nome": "Sala VIP BRB Goiânia",
+     "terminal": "Terminal de passageiros",
+     "onde": "1º andar, área restrita, perto do portão 4",
+     "horario": "6h às 22h",
+     "acessos": [
+      "CE"
+     ]
+    },
+    {
+     "nome": "Living HNK (bar da Heineken)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, área de embarque, em frente ao portão 3. Só voos domésticos",
+     "horario": "24 horas",
+     "acessos": [
+      "LK",
+      "PP"
+     ]
+    },
+    {
+     "nome": "W Lounge Goiânia (W Premium Lounge)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, depois do raio-X; elevador para o nível 1, na área comercial",
+     "horario": "24 horas (o aeroporto informa 5h às 23h)",
+     "acessos": [
+      "DP",
+      "AV"
+     ]
+    }
+   ]
+  },
+  {
+   "iata": "CGB",
+   "cidade": "Cuiabá",
+   "salas": [
+    {
+     "nome": "The Lounge Cuiabá",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, 2º andar, depois do raio-X. Só voos domésticos",
+     "horario": "24 horas",
+     "acessos": [
+      "LK",
+      "PP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "W Lounge Cuiabá (W Premium Lounge)",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado ar, logo à frente depois do raio-X",
+     "horario": "24 horas (pode variar com os voos)",
+     "acessos": [
+      "DP",
+      "LK",
+      "PP",
+      "AV"
+     ]
+    },
+    {
+     "nome": "BRT Lounges Cuiabá",
+     "terminal": "Terminal de passageiros",
+     "onde": "Lado terra, em frente à escada rolante do piso 1",
+     "horario": "24 horas",
+     "acessos": [
+      "DP",
+      "AV"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1412,6 +1412,49 @@
   document.addEventListener('assinatura', mostrarPassagens);
   $('#mais-passagens').addEventListener('click', () => { filtroPassagem.todas = !filtroPassagem.todas; mostrarPassagens(); });
 
+  // Salas VIP dos principais aeroportos (dados/salas.json): busca por aeroporto, cidade ou sala
+  // e filtro pela forma de entrar.
+  const ACESSO_SALA = { LK: 'LoungeKey', PP: 'Priority Pass', DP: 'DragonPass', AB: 'App do banco', AV: 'Pagando na hora', CE: 'Cartão específico', CA: 'Companhia aérea' };
+  const filtroSala = { busca: '', acesso: '', aero: '' };
+  let salas = null;
+  function mostrarSalas() {
+    if (!salas) return;
+    const busca = norm(filtroSala.busca);
+    const aeros = salas.aeroportos.map(a => ({ ...a, salas: a.salas.filter(s =>
+      (!filtroSala.aero || a.iata === filtroSala.aero) &&
+      (!filtroSala.acesso || s.acessos.includes(filtroSala.acesso)) &&
+      (!busca || norm([a.iata, a.cidade, s.nome, s.terminal].join(' ')).includes(busca))) })).filter(a => a.salas.length);
+    $('#salas-lista').innerHTML = aeros.map(a => `<section class="salas-aero">
+        <h3><b>${esc(a.iata)}</b>${esc(a.cidade)}<small>${a.salas.length} ${a.salas.length === 1 ? 'sala' : 'salas'}</small></h3>
+        <ul class="salas-grade">${a.salas.map(s => `<li class="${s.fechada ? 'fechada' : ''}">
+          <p class="sala-term">${esc(s.terminal)}${s.fechada ? ' · fechada agora' : ''}</p>
+          <p class="sala-nome">${esc(s.nome)}</p>
+          ${s.onde ? `<p class="sala-onde">${esc(s.onde)}</p>` : ''}
+          ${s.horario ? `<p class="sala-hora">🕒 ${esc(s.horario)}</p>` : ''}
+          ${s.acessos.length ? `<p class="sala-acessos">${s.acessos.map(c => `<span class="ac-${esc(c)}">${esc(ACESSO_SALA[c] || c)}</span>`).join('')}</p>` : ''}
+        </li>`).join('')}</ul>
+      </section>`).join('');
+    $('#salas-vazio').hidden = !!aeros.length;
+    $('#salas-aeroportos').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === filtroSala.aero)));
+  }
+  async function desenharSalas() {
+    try {
+      salas = await (await fetch('dados/salas.json')).json();
+      $('#salas-aeroportos').innerHTML = `<button type="button" data-v="" aria-pressed="true">Todos</button>` +
+        salas.aeroportos.map(a => `<button type="button" data-v="${esc(a.iata)}" aria-pressed="false" title="${esc(a.cidade)}">${esc(a.iata)}</button>`).join('');
+      const [ano, mes, dia] = salas.conferido.split('-');
+      $('#salas-conferido').textContent = `Conferido em ${dia}/${mes}/${ano}.`;
+      mostrarSalas();
+    } catch (e) { /* página fica sem a lista */ }
+  }
+  $('#salas-busca').addEventListener('input', e => { filtroSala.busca = e.target.value; mostrarSalas(); });
+  $('#salas-acesso').addEventListener('change', e => { filtroSala.acesso = e.target.value; mostrarSalas(); });
+  $('#salas-aeroportos').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    filtroSala.aero = b.dataset.v; mostrarSalas();
+  });
+  desenharSalas();
+
   // Telefones das companhias e programas: planilha do Felipe (Nome, Telefone),
   // lida ao vivo; se o Google não responder, vale a cópia em dados/contatos.csv.
   const URL_CONTATOS = 'https://docs.google.com/spreadsheets/d/1i6xbxNXBqKnGIJCXnQpQpRY0n2BQdjZDnP82fECtirs/export?format=csv&gid=0';
@@ -1820,7 +1863,7 @@
   const ARQUIVO_DA_PAGINA = {
     passagens: 'dados/alertas.json', termometro: 'dados/termometro.json', guia: 'dados/guia.json',
     transferencias: 'dados/transferencias.json', novidades: 'dados/noticias.json',
-    restaurantes: 'restaurantes.js', quanto: 'dados/precos-milhas.csv', comprar: 'precos.js', contatos: 'dados/contatos.csv'
+    restaurantes: 'restaurantes.js', salas: 'dados/salas.json', quanto: 'dados/precos-milhas.csv', comprar: 'precos.js', contatos: 'dados/contatos.csv'
   };
   const datasArquivo = {};
   function quandoTxt(d) {
