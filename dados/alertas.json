@@ -2562,20 +2562,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2361370250-5817",
-  "data": "2026-10-29T22:29:04Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Napoli",
-  "destino_iata": "NAP",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "Flying Blue",
-  "ida": "85.000 milhas + Taxas",
-  "volta": "85.000 milhas + Taxas",
-  "link_nome": "Flying Blue"
- },
- {
   "id": "1290836068-7483",
   "data": "2026-10-29T12:02:20Z",
   "tipo": "promocao",
