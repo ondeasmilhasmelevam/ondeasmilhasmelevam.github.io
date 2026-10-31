@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-5884",
+  "data": "2026-10-31T11:14:15Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Dallas",
+  "destino_iata": "DFW",
+  "companhia": "American Airlines",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "188.600 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2361370250-5883",
+  "data": "2026-10-31T11:11:19Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Joanesburgo",
+  "destino_iata": "JNB",
+  "companhia": "South African Airways",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "201.000 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5882",
   "data": "2026-10-31T11:07:49Z",
   "origem": "Manaus",
@@ -3569,20 +3597,6 @@
   "ida": "5.800 milhas + Taxas",
   "volta": "5.800 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2361370250-5767",
-  "data": "2026-10-29T11:09:24Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "488.800 milhas",
-  "volta": "",
-  "link_nome": "GOL Smiles"
  },
  {
   "id": "1290836068-7476",
