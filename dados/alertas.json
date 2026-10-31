@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5882",
+  "data": "2026-10-31T11:07:49Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Cidade do Panamá",
+  "destino_iata": "PTY",
+  "companhia": "Copa Airlines",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "57.700 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5881",
   "data": "2026-10-31T10:59:26Z",
   "origem": "São Paulo",
@@ -3568,20 +3582,6 @@
   "programa": "GOL Smiles",
   "ida": "488.800 milhas",
   "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-5766",
-  "data": "2026-10-29T11:03:18Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "500.500 milhas",
-  "volta": "500.600 milhas",
   "link_nome": "GOL Smiles"
  },
  {
