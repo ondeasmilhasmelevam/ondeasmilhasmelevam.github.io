@@ -1,5 +1,30 @@
 [
  {
+  "id": "1290836068-7530",
+  "data": "2026-10-31T13:07:08Z",
+  "tipo": "promocao",
+  "titulo": "PASSAGENS NACIONAIS A PARTIR DE 3.250 PONTOS + TAXAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "O alerta PPV reúne trechos nacionais com valores a partir de 3.250 pontos + taxas. As tarifas são por trecho e por passageiro, com datas de disponibilidade específicas. As emissões são de programas Azul Fidelidade, Smiles e LATAM Pass.",
+  "detalhes": [
+   "valor em pontos por trecho",
+   "taxa de resgate em Azul Fidelidade para reservas com menos de 90 dias, exceto para cliente diamante",
+   "milhas por trecho são os valores listados",
+   "preço em reais não informado",
+   "Campina Grande (CPV) x Recife (REC) a partir de 3.250 milhas o trecho",
+   "Curitiba (CWB) x Porto Alegre (POA) a partir de 5.340 milhas o trecho",
+   "São Paulo (GRU) x Rio de Janeiro (SDU) a partir de 6.650 milhas o trecho",
+   "Belo Horizonte (CNF) x Salvador (SSA) a partir de 9.750 milhas o trecho"
+  ],
+  "parceiros": "",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/QMiOnzm"
+  ],
+  "ate": ""
+ },
+ {
   "id": "1290836068-7529",
   "data": "2026-10-31T12:35:24Z",
   "tipo": "promocao",
@@ -3254,20 +3279,6 @@
   "programa": "Azul Fidelidade",
   "ida": "330.000 milhas + R$ 100,62",
   "volta": "330.000 milhas + R$ 175,75",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-8609",
-  "data": "2026-10-29T13:03:41Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Fernando de Noronha",
-  "destino_iata": "FEN",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "A partir de 15.000 milhas",
-  "volta": "A partir de 15.000 milhas",
   "link_nome": "Azul Fidelidade"
  },
  {
