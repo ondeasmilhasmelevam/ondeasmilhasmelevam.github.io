@@ -1749,16 +1749,27 @@
     const fatos = [['Melhor época', g.melhor_epoca], ['Quantos dias', g.quantos_dias], ['Aeroporto', g.aeroporto_iata],
       ['Moeda', g.moeda], ['Idioma', g.idioma], ['Documentos', g.documentos]].filter(([, v]) => v);
     const foto = (fotos[`${g.nome}|${g.aeroporto_iata || ''}`] || [])[0];
+    // Abas: visão geral e as seções que o guia tiver (quando ir, como chegar, onde ficar...).
+    const ROTULO_SECAO = { quando_ir: 'Quando ir', como_chegar: 'Como chegar', onde_ficar: 'Onde ficar', o_que_fazer: 'O que fazer',
+      passeios: 'Passeios', praias: 'Praias', pontos_turisticos: 'Pontos turísticos', onde_comer: 'Onde comer', dicas: 'Dicas' };
+    const abas = [['geral', 'Visão geral'], ...Object.entries(ROTULO_SECAO).filter(([k]) => g.secoes && g.secoes[k] && (g.secoes[k].resumo || g.secoes[k].itens.length))];
     const d = $('#guia-detalhe');
     d.innerHTML = `<div class="gd-topo" ${foto ? `style="background-image:url('${esc(foto)}')"` : ''}>
         <button type="button" class="gd-fechar" data-fechar aria-label="Fechar">✕</button>
         <small>${esc([g.regiao, g.pais].filter(Boolean).join(' · '))}</small><h3 id="gd-nome">${esc(g.nome)}</h3>
       </div>
+      ${abas.length > 1 ? `<nav class="gd-abas" role="tablist">${abas.map(([k, rot], i) => `<button type="button" role="tab" data-secao="${k}" aria-selected="${i === 0}">${esc(rot)}</button>`).join('')}</nav>` : ''}
       <div class="gd-corpo">
-        <p>${esc(g.resumo)}</p>
-        <dl class="gd-fatos">${fatos.map(([a, b]) => `<div${b.length > 60 ? ' class="longo"' : ''}><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl>
-        ${g.destaques && g.destaques.length ? `<div><h4>Não deixe de ver</h4><ul>${g.destaques.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
-        ${g.dicas && g.dicas.length ? `<div><h4>Dicas</h4><ul>${g.dicas.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
+        <div class="gd-painel" data-painel="geral">
+          <p>${esc(g.resumo)}</p>
+          <dl class="gd-fatos">${fatos.map(([a, b]) => `<div${b.length > 60 ? ' class="longo"' : ''}><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl>
+          ${g.destaques && g.destaques.length ? `<div><h4>Não deixe de ver</h4><ul>${g.destaques.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
+          ${g.dicas && g.dicas.length ? `<div><h4>Dicas</h4><ul>${g.dicas.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
+        </div>
+        ${abas.slice(1).map(([k]) => { const sec = g.secoes[k]; return `<div class="gd-painel" data-painel="${k}" hidden>
+          ${sec.resumo ? `<p>${esc(sec.resumo)}</p>` : ''}
+          ${sec.itens.length ? `<ul class="gd-itens">${sec.itens.map(i => `<li><b>${esc(i.nome)}</b><span>${esc(i.texto)}</span></li>`).join('')}</ul>` : ''}
+        </div>`; }).join('')}
         <div class="gd-acoes">
           ${n ? `<button type="button" class="cta cta-a" data-guia-passagens="${esc(g.aeroporto_iata)}">Ver ${n} ${n === 1 ? 'passagem' : 'passagens'} para ${esc(g.nome)}</button>` : ''}
           ${g.aeroporto_iata ? `<a class="cta cta-b" href="#radar" data-guia-radar="${esc(g.aeroporto_iata)}">Avisar quando aparecer passagem</a>` : ''}
@@ -1773,6 +1784,12 @@
   $('#guia-detalhe').addEventListener('click', e => {
     const d = $('#guia-detalhe');
     if (e.target === d || e.target.closest('[data-fechar]')) { d.close(); return; }
+    const aba = e.target.closest('[data-secao]');
+    if (aba) {
+      d.querySelectorAll('[data-secao]').forEach(b => b.setAttribute('aria-selected', String(b === aba)));
+      d.querySelectorAll('[data-painel]').forEach(p => { p.hidden = p.dataset.painel !== aba.dataset.secao; });
+      return;
+    }
     const p = e.target.closest('[data-guia-passagens]');
     if (p) {
       d.close();

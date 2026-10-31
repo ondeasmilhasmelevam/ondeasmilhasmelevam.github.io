@@ -545,6 +545,16 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .gd-corpo h4{margin:0 0 6px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro)}
 .gd-corpo ul{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line-height:1.55;color:var(--ash)}
 .gd-acoes{display:flex;flex-wrap:wrap;gap:10px}
+.gd-abas{position:sticky;top:0;z-index:3;display:flex;gap:6px;overflow-x:auto;padding:10px 16px;background:var(--ink-2);border-bottom:1px solid var(--line);scrollbar-width:thin}
+.gd-abas button{flex:0 0 auto;font:inherit;font-size:13.5px;font-weight:800;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--ink);color:var(--ash);cursor:pointer}
+.gd-abas button[aria-selected="true"]{background:var(--ouro);border-color:var(--ouro);color:var(--sobre-ouro)}
+.gd-painel{display:grid;gap:16px}
+.gd-painel[hidden]{display:none}
+.gd-painel>p{margin:0;font-size:15.5px;line-height:1.65;color:var(--rice)}
+.gd-itens{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.gd-itens li{display:grid;gap:3px;padding:12px 14px;border-radius:12px;background:var(--ink-3)}
+.gd-itens b{font-size:15px;color:var(--rice)}
+.gd-itens span{font-size:14px;line-height:1.55;color:var(--ash)}
 
 /* ---------- meu radar ---------- */
 .radar-fechado{display:grid;justify-items:center;gap:10px;padding:28px 20px;text-align:center;border:1px dashed rgba(226,180,88,.45);border-radius:18px;background:var(--ink-2)}
