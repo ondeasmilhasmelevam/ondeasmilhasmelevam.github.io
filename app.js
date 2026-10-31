@@ -1815,6 +1815,7 @@
     mostrarPassagens();
   });
   document.addEventListener('assinatura', mostrarPassagens);
+  document.addEventListener('assinatura', () => { if (typeof mostrarHoje === 'function') mostrarHoje(); }); // "Abaixo do preço" também libera as datas
   $('#mais-passagens').addEventListener('click', () => { filtroPassagem.todas = !filtroPassagem.todas; mostrarPassagens(); });
 
   // Meus cadastros (dados/programas.json): lista de programas com o site oficial; o que a pessoa
