@@ -1260,7 +1260,11 @@
     const selo = ['espetacular', 'muito bom', 'bom'].includes(nivel)
       ? `<a class="pass-selo ${CLASSE_NIVEL[nivel]}" href="#termometro" title="Pelo termômetro de milhas">${nivel === 'espetacular' ? '🔥 ' : ''}${esc(nivel)}</a>` : '';
     return `<li class="${ehExecutiva(p.cabine) ? 'exe' : ''}">
-        <div class="pass-foto" data-cidade="${esc(`${p.destino}|${p.destino_iata}`)}" aria-hidden="true"></div>
+        <div class="pass-foto" aria-hidden="true">
+          <span class="pf-origem" data-cidade="${esc(`${p.origem}|${p.origem_iata}`)}"></span>
+          <span class="pf-destino" data-cidade="${esc(`${p.destino}|${p.destino_iata}`)}"></span>
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="56" y1="-2" x2="44" y2="102" vector-effect="non-scaling-stroke"/></svg>
+        </div>
         <p class="pass-meta"><time datetime="${esc(p.data)}">${haQuanto(agora - new Date(p.data))}</time>${p.cabine ? ` · ${esc(p.cabine)}` : ''}${selo}</p>
         <h3 class="pass-rota">
           <span><b>${esc(p.origem_iata)}</b>${esc(p.origem)}</span>
@@ -1310,11 +1314,16 @@
   function pintarFotos() {
     const usadas = new Set();
     let alguma = false;
-    document.querySelectorAll('#lista-passagens .pass-foto[data-cidade]').forEach(el => {
-      const url = (fotos[el.dataset.cidade] || []).find(u => !usadas.has(u));
-      el.classList.toggle('ok', !!url);
-      el.style.backgroundImage = url ? `url("${url}")` : '';
-      if (url) { usadas.add(url); alguma = true; }
+    // Metade da origem e metade do destino; a faixa aparece quando as duas já têm foto.
+    document.querySelectorAll('#lista-passagens .pass-foto').forEach(faixa => {
+      let metades = 0;
+      faixa.querySelectorAll('[data-cidade]').forEach(el => {
+        const url = (fotos[el.dataset.cidade] || []).find(u => !usadas.has(u));
+        el.style.backgroundImage = url ? `url("${url}")` : '';
+        if (url) { usadas.add(url); metades++; }
+      });
+      faixa.classList.toggle('ok', metades === 2);
+      if (metades === 2) alguma = true;
     });
     $('#pass-credito').hidden = !alguma;
   }
@@ -1374,7 +1383,7 @@
   }
   async function buscarFotos() {
     pintarFotos();
-    const faltam = [...new Set([...document.querySelectorAll('#lista-passagens .pass-foto[data-cidade]')].map(el => el.dataset.cidade))]
+    const faltam = [...new Set([...document.querySelectorAll('#lista-passagens .pass-foto [data-cidade]')].map(el => el.dataset.cidade))]
       .filter(c => c && !(c in fotos) && !fotosPedidas.has(c));
     if (!faltam.length) return;
     faltam.forEach(c => fotosPedidas.add(c));
