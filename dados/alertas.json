@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5905",
+  "data": "2026-10-31T20:07:49Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "American Airlines",
+  "cabine": "Executiva",
+  "programa": "Finnair Plus",
+  "ida": "55.000 AVIOS",
+  "volta": "55.000 AVIOS",
+  "link_nome": "Finnair Plus"
+ },
+ {
   "id": "2361370250-5904",
   "data": "2026-10-31T18:06:14Z",
   "origem": "Toronto",
