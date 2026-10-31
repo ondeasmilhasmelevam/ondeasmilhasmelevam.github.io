@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5898",
+  "data": "2026-10-31T12:07:37Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Joanesburgo",
+  "destino_iata": "JNB",
+  "companhia": "LATAM",
+  "cabine": "Executiva",
+  "programa": "LATAM Pass",
+  "ida": "251.925 pontos + R$ 69",
+  "volta": "251.925 pontos + R$ 186",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2361370250-5892",
   "data": "2026-10-31T11:45:02Z",
   "origem": "São Paulo",
@@ -3427,20 +3441,6 @@
   "ida": "14.500 milhas + Taxas",
   "volta": "14.500 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2361370250-5780",
-  "data": "2026-10-29T12:03:44Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Lisboa",
-  "destino_iata": "LIS",
-  "companhia": "Azul",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "80.000 milhas + Taxas",
-  "volta": "80.000 milhas + Taxas",
-  "link_nome": "Aeroplan"
  },
  {
   "id": "1290836068-7483",
