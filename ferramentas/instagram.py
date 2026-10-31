@@ -494,7 +494,7 @@ def legenda(itens, dia, tipo):
 
 # Textos com o Claude (opcional): chamada curta de cada imagem e a legenda do carrossel.
 # Sem ANTHROPIC_API_KEY, ou se a resposta não passar na conferência, usa os textos fixos.
-MODELO = 'claude-opus-5-5'
+MODELO = 'claude-sonnet-5-5'
 SISTEMA = """Você escreve para o Instagram @ondeasmilhasmelevam, sobre milhas, pontos e passagens aéreas.
 Recebe ofertas em JSON e devolve:
 - "chamadas": uma por oferta, na mesma ordem. Cada uma com no máximo 24 caracteres, em maiúsculas, sem números

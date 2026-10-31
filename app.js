@@ -1843,7 +1843,9 @@
     ethiopian: 'Ethiopian ShebaMiles', saudia: 'Saudia', finnair: 'Finnair Plus', lufthansa: 'Miles & More', iberia: 'Iberia Club', tap: 'TAP Miles&Go', latam: 'LATAM Pass' };
   const nomeSeats = s => PROGRAMA_SEATS[s] || String(s || '').replace(/^./, c => c.toUpperCase());
   const msgSeats = t => { $('#seats-msg').textContent = t; $('#seats-msg').hidden = !t; };
-  const iataDe = t => { const m = /\b([A-Z]{3})\b/.exec(String(t).toUpperCase()); return m ? m[1] : ''; };
+  // Aceita até 5 aeroportos separados por vírgula ou espaço (o seats.aero busca todos de uma vez).
+  const iataDe = t => [...new Set(String(t).toUpperCase().match(/\b[A-Z]{3}\b/g) || [])].slice(0, 5).join(',');
+  const listaIata = t => t.replace(/,/g, ', ');
   (() => { // datas iniciais: de hoje a 30 dias
     const hoje = new Date(), d = n => new Date(hoje.getTime() + n * 864e5).toISOString().slice(0, 10);
     $('#seats-de').value = d(7); $('#seats-ate').value = d(37);
@@ -1895,10 +1897,10 @@
       }));
       return { v, cabs, boa: Object.values(cabs).some(Boolean) };
     }).filter(l => l.boa);
-    if (!voos.length) { msgSeats(`Nenhuma disponibilidade em milhas de ${origem} para ${destino} nessas datas.`); $('#seats-res').innerHTML = ''; return; }
-    msgSeats(todas ? `${voos.length} ${voos.length === 1 ? 'opção' : 'opções'} de ${origem} para ${destino}.`
-      : linhas.length ? `${linhas.length} boas opções de ${origem} para ${destino} (de ${voos.length} encontradas): voo direto ou preço bom no Termômetro.`
-        : `Nenhuma opção boa de ${origem} para ${destino} nessas datas (${voos.length} encontradas). Marque "Mostrar todas" para ver as demais.`);
+    if (!voos.length) { msgSeats(`Nenhuma disponibilidade em milhas de ${listaIata(origem)} para ${listaIata(destino)} nessas datas.`); $('#seats-res').innerHTML = ''; return; }
+    msgSeats(todas ? `${voos.length} ${voos.length === 1 ? 'opção' : 'opções'} de ${listaIata(origem)} para ${listaIata(destino)}.`
+      : linhas.length ? `${linhas.length} ${linhas.length === 1 ? "boa opção" : "boas opções"} de ${listaIata(origem)} para ${listaIata(destino)} (de ${voos.length} ${voos.length === 1 ? "encontrada" : "encontradas"}): voo direto ou preço bom no Termômetro.`
+        : `Nenhuma opção boa de ${listaIata(origem)} para ${listaIata(destino)} nessas datas (${voos.length} encontradas). Marque "Mostrar todas" para ver as demais.`);
     const cel = c => (c ? `<td><b>${c.milhas ? esc(inteiro.format(c.milhas)) : '—'}</b>${c.selos.length ? `<span class="seats-selos">${c.selos.map(([t, n]) => `<em class="s-${t}">${esc(n)}</em>`).join('')}</span>` : ''}<small>${[c.direto ? '' : 'com conexão', c.assentos ? `${c.assentos} ${c.assentos === 1 ? 'assento' : 'assentos'}` : '', c.cias].filter(Boolean).map(esc).join(' · ')}</small></td>` : '<td class="vazio">—</td>');
     $('#seats-res').innerHTML = linhas.length ? `<table class="seats-tab"><thead><tr><th>Data</th><th>Programa</th><th>Econômica</th><th>Premium</th><th>Executiva</th><th>Primeira</th></tr></thead><tbody>${linhas.slice(0, 300).map(({ v, cabs }) => `<tr>
       <td>${esc(new Date(v.data + 'T12:00:00').toLocaleDateString('pt-BR', { weekday: 'short', day: '2-digit', month: '2-digit' }))}</td>

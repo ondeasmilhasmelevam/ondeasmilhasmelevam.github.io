@@ -30,7 +30,7 @@ SECOES = {'quando_ir': 'Quando ir', 'como_chegar': 'Como chegar', 'onde_ficar': 
 POR_SECAO = 7000  # caracteres de cada subpágina mandados ao Claude
 # Links do índice que não são guia de destino (artigos, hotéis, ingressos...).
 FORA = re.compile(r'^(blog/|categorias/|onde-ficar|ingresso|cupom|que-moeda|passeios|melhores-|dicas|seguro|chip|aluguel|hoteis|o-que-fazer)')
-MODELO = 'claude-opus-5-5'
+MODELO = 'claude-sonnet-5-5'
 SISTEMA = """Você escreve o Guia de destinos do site Onde as Milhas Me Levam (milhas, pontos e passagens aéreas).
 Recebe o texto de um guia de viagem de outro site (a página principal e as subpáginas: quando ir, como chegar, onde ficar,
 o que fazer, passeios, praias, pontos turísticos, onde comer, dicas) e devolve um guia NOVO, com as suas palavras, no formato pedido.
