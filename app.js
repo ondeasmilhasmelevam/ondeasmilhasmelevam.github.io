@@ -1546,6 +1546,33 @@
     el.innerHTML = [['', 'Todas', null, itens.reduce((s, x) => s + x[3], 0)], ...itens].map(([v, nome, cor, n]) =>
       `<button type="button" data-${chave}="${esc(v)}" aria-pressed="${v === atual}"${cor ? ` style="--pc:${cor}"` : ''}>${cor ? '<i></i>' : ''}${esc(nome)}<small>${n}</small></button>`).join('');
   }
+  // Banner de cada promoção: o número que importa em destaque (70% de bônus, 10.000 milhas, R$ 20 off),
+  // tirado do título, ao lado de um "ticket" com o nome do programa.
+  function ofertaPromo(t) {
+    const n = norm(t), ate = m => (/ATE\s*$/.test(n.slice(0, m.index)) ? 'até' : '');
+    let m = /(\d{1,3})\s*%/.exec(n);
+    if (m) return { pre: ate(m), num: `${m[1]}%`, legenda: /BONUS|BONIFICA/.test(n) ? 'de bônus' : /DESCONTO|OFF/.test(n) ? 'de desconto' : 'de vantagem' };
+    m = /R\$\s?([\d.,]+)/.exec(n);
+    if (m) return { pre: ate(m), num: `R$ ${m[1]}`, legenda: /OFF|DESCONTO/.test(n) ? 'de desconto' : /PARTIR/.test(n) ? 'a partir de' : '' };
+    m = /([\d.]+)\s*(MIL\b)?\s*(MILHAS|PONTOS|AVIOS)/.exec(n);
+    if (m) return { pre: /PARTIR DE\s*$/.test(n.slice(0, m.index)) ? 'a partir de' : ate(m), num: m[2] ? `${m[1]} mil` : m[1], legenda: { MILHAS: 'milhas', PONTOS: 'pontos', AVIOS: 'Avios' }[m[3]] + (/POR REAL/.test(n.slice(m.index)) ? ' por real' : '') };
+    return null;
+  }
+  function bannerPromo(p, prog, temData) {
+    const o = ofertaPromo(p.titulo);
+    const quem = (p.parceiros || '').split(/,\s*/).slice(0, 2).join(' e ');
+    return `<div class="promo-banner" aria-hidden="true">
+        <div class="pb-topo"><span class="promo-tipo">${esc(tipoPromo(p))}</span>${temData ? `<span class="pb-ate">até ${esc(diaBR(Date.parse(p.ate)))}</span>` : ''}</div>
+        <div class="pb-meio">
+          <span class="pb-ticket"><b>${esc(prog === 'Outros' ? (p.parceiros || 'Promoção').split(/,| e /)[0] : prog)}</b></span>
+          <span class="pb-oferta">
+            ${quem ? `<small>${esc(quem.length > 34 ? `${quem.slice(0, 32).trim()}…` : quem)}</small>` : ''}
+            ${o ? `${o.pre ? `<i>${esc(o.pre)}</i>` : ''}<strong>${esc(o.num)}</strong>${o.legenda ? `<em>${esc(o.legenda)}</em>` : ''}` : `<strong class="pb-texto">${esc(tipoPromo(p) === 'Outras' ? 'Promoção' : tipoPromo(p))}</strong>`}
+          </span>
+        </div>
+        <div class="pb-pe"><span>Onde as Milhas Me Levam</span><span>alerta de ${esc(diaBR(Date.parse(p.data)).slice(0, 5))}</span></div>
+      </div>`;
+  }
   function mostrarPromocoes() {
     const agora = Date.now(), f = filtroPromo;
     const vivas = passagens.filter(p => ehPromocao(p) && agora < venceEm(p));
@@ -1565,7 +1592,7 @@
       const site = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return 'site'; } };
       const temData = !isNaN(Date.parse(p.ate));
       return `<li class="promo-card" style="--pc:${cor}">
-        <div class="promo-topo"><span class="promo-tipo">${esc(tipoPromo(p))}</span><span class="promo-prog">${esc(prog)}</span></div>
+        ${bannerPromo(p, prog, temData)}
         <div class="promo-corpo">
           <p class="promo-quando"><span>${haQuanto(agora - new Date(p.data))}</span>${ultimoDia(p, agora) ? '<span class="urgente">Último dia</span>' : temData ? `<span class="vence">Vence ${esc(diaBR(Date.parse(p.ate)).slice(0, 5))}</span>` : ''}${p.selo ? `<span>${esc(p.selo)}</span>` : ''}</p>
           <h3>${esc(tituloPromo(p.titulo))}</h3>
@@ -2296,6 +2323,24 @@
     };
     $('#calc-abas').addEventListener('click', e => { const b = e.target.closest('button'); if (b) abrir(+b.dataset.i); });
     abrir(atual);
+    travarCalc();
+    document.addEventListener('assinatura', travarCalc);
+  }
+  // Só para assinantes: Compra no carrinho, Hotel Accor e os atalhos de campanhas no ar.
+  const CALC_ASSINANTE = [1, 4];
+  function travarCalc() {
+    const livre = !!(window.oammlAssinatura && window.oammlAssinatura.ativo);
+    const aviso = (txt) => `<div class="calc-trava"><p>🔒 ${txt}</p><a class="cta cta-a" href="#assinar">Assinar</a><small>Já assina? <a href="#assinar">Entre aqui</a></small></div>`;
+    CALC_ASSINANTE.forEach(i => {
+      const c = $(`#calc-${i}`), b = $(`#calc-aba-${i}`);
+      if (!c || !b) return;
+      c.classList.toggle('travada', !livre);
+      b.classList.toggle('trava', !livre);
+      if (!livre && !c.querySelector('.calc-trava')) c.insertAdjacentHTML('beforeend', aviso('Calculadora exclusiva para assinantes.'));
+    });
+    const camp = $('#cc-campanhas');
+    camp.classList.toggle('travada', !livre);
+    if (!livre && !camp.querySelector('.calc-trava')) camp.insertAdjacentHTML('beforeend', aviso('As campanhas no ar, com um clique para preencher, são para assinantes.'));
   }
 
   function montarCalculadoras() {
