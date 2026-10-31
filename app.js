@@ -1556,7 +1556,7 @@
     return i && MINUSCULAS.has(l) ? l : l.replace(/(^[^\p{L}]*|-)(\p{L})/gu, (m, a, b) => a + b.toUpperCase());
   }).join('') : t);
   function chipsPromo(el, itens, atual, chave) {
-    el.innerHTML = [['', 'Todas', null, itens.reduce((s, x) => s + x[3], 0)], ...itens].map(([v, nome, cor, n]) =>
+    el.innerHTML = [['', 'Todas', null, itens.filter(x => x[0] !== 'shopping').reduce((s, x) => s + x[3], 0)], ...itens].map(([v, nome, cor, n]) =>
       `<button type="button" data-${chave}="${esc(v)}" aria-pressed="${v === atual}"${cor ? ` style="--pc:${cor}"` : ''}>${cor ? '<i></i>' : ''}${esc(nome)}<small>${n}</small></button>`).join('');
   }
   // Banner de cada promoção: o número que importa em destaque (70% de bônus, 10.000 milhas, R$ 20 off),
@@ -1571,13 +1571,26 @@
     if (m) return { pre: /PARTIR DE\s*$/.test(n.slice(0, m.index)) ? 'a partir de' : ate(m), num: m[2] ? `${m[1]} mil` : m[1], legenda: { MILHAS: 'milhas', PONTOS: 'pontos', AVIOS: 'Avios' }[m[3]] + (/POR REAL/.test(n.slice(m.index)) ? ' por real' : '') };
     return null;
   }
+  // Logo do programa no "ticket": os principais ficam em img/programas; parceiro novo usa o ícone
+  // do site da promoção (atualiza sozinho conforme surgem ofertas); sem isso, o nome escrito.
+  const LOGO_PROGRAMA = { 'Smiles': 'smiles', 'LATAM Pass': 'latam', 'Azul': 'azul', 'Livelo': 'livelo', 'Esfera': 'esfera', 'TAP': 'tap',
+    'ALL Accor': 'accor', 'Avios': 'avios', 'Flying Blue': 'flyingblue', 'C6': 'c6', 'Itaú': 'itau', 'Revolut': 'revolut',
+    'Premmia': 'premmia', 'Inter': 'inter', 'Méliuz': 'meliuz' };
+  const ENCURTADORES = /bit\.ly|tinyurl|t\.co$|l\.ead\.me|linktr\.ee|onelink|app\.link|lnk\.|cutt\.ly|rebrand\.ly|wa\.me|t\.me/;
+  function logoPromo(p, prog) {
+    const nome = prog === 'Outros' ? (p.parceiros || 'Promoção').split(/,| e /)[0].trim() : prog;
+    if (LOGO_PROGRAMA[prog]) return `<img src="img/programas/${LOGO_PROGRAMA[prog]}.webp" alt="${esc(nome)}" loading="lazy">`;
+    const host = (() => { try { return new URL((p.links || []).find(httpOk)).hostname.replace(/^www\./, ''); } catch (e) { return ''; } })();
+    const icone = host && !ENCURTADORES.test(host) ? `<img class="pb-icone" src="https://www.google.com/s2/favicons?domain=${encodeURIComponent(host)}&sz=128" alt="" loading="lazy" onerror="this.remove()">` : '';
+    return `${icone}<b>${esc(nome)}</b>`;
+  }
   function bannerPromo(p, prog, temData) {
     const o = ofertaPromo(p.titulo);
     const quem = (p.parceiros || '').split(/,\s*/).slice(0, 2).join(' e ');
     return `<div class="promo-banner" aria-hidden="true">
         <div class="pb-topo"><span class="promo-tipo">${esc(tipoPromo(p))}</span>${temData ? `<span class="pb-ate">até ${esc(diaBR(Date.parse(p.ate)))}</span>` : ''}</div>
         <div class="pb-meio">
-          <span class="pb-ticket"><b>${esc(prog === 'Outros' ? (p.parceiros || 'Promoção').split(/,| e /)[0] : prog)}</b></span>
+          <span class="pb-ticket">${logoPromo(p, prog)}</span>
           <span class="pb-oferta">
             ${quem ? `<small>${esc(quem.length > 34 ? `${quem.slice(0, 32).trim()}…` : quem)}</small>` : ''}
             ${o ? `${o.pre ? `<i>${esc(o.pre)}</i>` : ''}<strong>${esc(o.num)}</strong>${o.legenda ? `<em>${esc(o.legenda)}</em>` : ''}` : `<strong class="pb-texto">${esc(tipoPromo(p) === 'Outras' ? 'Promoção' : tipoPromo(p))}</strong>`}
