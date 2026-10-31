@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=81">
+<link rel="stylesheet" href="estilo.css?v=82">
 </head>
 <body>
 <header class="bar">
@@ -48,6 +48,7 @@
           <a href="#termometro" title="Termômetro"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 14.6V5a2 2 0 0 0-4 0v9.6a4 4 0 1 0 4 0z"/><path d="M12 11v6"/></svg><span>Termômetro</span></a>
           <a href="#quanto" title="Tabela de preços"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="2.5"/><path d="M3.5 9.5h17M3.5 14.5h17M9.5 9.5V20"/></svg><span>Tabela de preços</span></a>
           <a href="#comprar" title="Comprar milhas"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2.2l2.3 11h10.2L20 8H6.4"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg><span>Comprar milhas</span></a>
+          <a href="#abertura" title="Quando emitir"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M12 13v3.5l2.2 1.3"/></svg><span>Quando emitir</span><em class="beta">Novo</em></a>
           <a href="#combos" title="Combos"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="13" width="7.5" height="7.5" rx="2"/><path d="M13 7.2h4.5a2 2 0 0 1 2 2V11M11 16.8H6.5a2 2 0 0 1-2-2V13"/></svg><span>Combos</span><em class="beta">Novo</em></a>
         </div>
       </div>
@@ -509,6 +510,94 @@
       <p class="fine" id="cad-conferido"></p>
     </section>
 
+    <section id="abertura" data-pagina="abertura">
+      <div class="sec-head">
+        <p class="eyebrow">Emissão antecipada</p>
+        <h2>Quando a sua data abre em cada programa</h2>
+        <p class="sec-note">Cada programa coloca os voos à venda com alguns meses de antecedência, e os lugares mais baratos em milhas entram no dia em que a data abre. São poucos, e em julho, Natal, Réveillon e Carnaval acabam primeiro. Escolha a viagem e veja o dia certo de procurar em cada programa.</p>
+      </div>
+
+      <div class="ab-calc">
+        <div class="atalhos ab-atalhos" id="ab-atalhos" role="group" aria-label="Viagens comuns"></div>
+        <form class="ab-form" id="ab-form">
+          <label>Data da ida<input type="date" id="ab-ida" required></label>
+          <label>Data da volta <small>(opcional)</small><input type="date" id="ab-volta"></label>
+        </form>
+        <p class="ab-resumo" id="ab-resumo"></p>
+        <div class="ab-lista" id="ab-lista"></div>
+        <p class="fine">Contagem em dias antes do voo, conferida em outubro de 2026. Dê um dia de folga: se a data não apareceu, procure de novo no dia seguinte, porque cada site vira num horário. O que vale é o programa onde estão as suas milhas, não a companhia que voa: a Air France abre antes pelo Flying Blue do que pela Smiles.</p>
+      </div>
+
+      <h3 class="ab-tit">Três erros que fazem perder a abertura</h3>
+      <div class="ab-cards">
+        <article><b>Achar que calendário aberto é voo à venda</b><p>O site deixa escolher a data, mas volta vazio. A Azul mostra o calendário até 15 meses à frente e só vende até uns 11; a TAP deixa marcar 365 dias e vende 361. Volta vazio? A data ainda não abriu.</p></article>
+        <article><b>Buscar ida e volta juntas</b><p>A busca de ida e volta só traz resultado quando a volta também abriu. Em data disputada, emita a ida no dia em que ela abre e a volta no dia dela, em outra reserva. Confira as taxas: duas reservas podem cobrar duas vezes.</p></article>
+        <article><b>Transferir as milhas em cima da hora</b><p>No dia da abertura as milhas já precisam estar no programa. No Avios, a conta precisa de 30 dias de vida para mover saldo, e de 90 dias depois de entrar no Iberia Club. Na JAL, membro novo só resgata depois de 60 dias.</p></article>
+      </div>
+
+      <h3 class="ab-tit">Preciso emitir no dia em que abre?</h3>
+      <div class="ab-duas">
+        <article class="ab-corra"><b>Emita logo</b><ul>
+          <li>A viagem é em julho, Natal, Réveillon ou Carnaval.</li>
+          <li>Vocês precisam de vários lugares no mesmo voo.</li>
+          <li>O programa tem tabela fixa (Iberia, British, Qatar): o preço não cai, o que acaba é o lugar.</li>
+        </ul></article>
+        <article class="ab-espera"><b>Pode acompanhar</b><ul>
+          <li>A sua data é flexível.</li>
+          <li>O programa tem preço dinâmico (Smiles, LATAM Pass, Azul, TAP, Flying Blue): uma promoção pode bater o preço da abertura.</li>
+          <li>Emita quando a conta fechar. O <a href="#termometro">Termômetro</a> diz se o preço está bom.</li>
+        </ul></article>
+      </div>
+      <div class="ab-nota"><b>Avios tem alta e baixa temporada.</b> Iberia e British cobram dois preços pelo mesmo voo. Na executiva da Iberia, só ida, de São Paulo ou Rio para Madri, a baixa sai por 50.500 Avios e a alta por 74.000, às vezes com um dia de diferença. Na Iberia costuma ser alta a primeira semana de janeiro, a Semana Santa, de meados de junho a meados de setembro e os dias perto do Natal; fevereiro (bom para o Carnaval) e o dia 25 de dezembro costumam ser baixa. Na British, o pico é julho, agosto, Páscoa e fim de ano. Vale o calendário da companhia que opera o voo.</div>
+
+      <h3 class="ab-tit">A família cabe no avião?</h3>
+      <p class="sec-note">Quantos lugares em executiva costumam aparecer no mesmo voo, nas rotas saindo do Brasil. É uma tendência, não garantia: busque a sua rota antes de juntar milhas.</p>
+      <div class="ab-grupos">
+        <article><b class="ab-g-fam">Cabe a família (4 ou mais)</b><p>Copa (Brasília–Miami e Orlando), Air France (GRU e GIG–Paris), Delta (GRU–Atlanta), SWISS (GRU–Zurique), KLM (GRU e GIG–Amsterdã), LATAM (GRU–Lima), Turkish (GRU–Buenos Aires) e British saindo de Guarulhos.</p></article>
+        <article><b class="ab-g-dep">Depende da rota</b><p>Lufthansa (melhor do Galeão), American (Miami melhor que Nova York) e TAP (melhor de Guarulhos que do Galeão).</p></article>
+        <article><b class="ab-g-cas">Mais para casal (1 ou 2)</b><p>Emirates, Qatar, Iberia no voo direto, South African, Aeroméxico, Air Canada, Avianca, Royal Air Maroc e Azul para Orlando.</p></article>
+      </div>
+      <ol class="guia-passos ab-passos">
+        <li><b>Escolha a companhia pelo número de lugares</b><span>Para quatro na executiva, comece por Air France e KLM (pela Smiles ou pelo Flying Blue).</span></li>
+        <li><b>Busque de um em um</b><span>Procure para 1, depois 2, 3 e 4 passageiros. A busca para quatro pode esconder o voo ou cobrar todos pela faixa mais cara.</span></li>
+        <li><b>Olhe as conexões</b><span>Na Iberia é comum ter 2 executivas no voo direto e bem mais com conexão em Madri.</span></li>
+        <li><b>Divida em duas reservas</b><span>Cada criança com um adulto. Se der, prefira uma reserva só: duas reservas não andam juntas se o voo mudar.</span></li>
+        <li><b>Emita o que tem e complete depois</b><span>Conseguiu dois lugares? Emita e acompanhe as semanas seguintes para os outros dois.</span></li>
+        <li><b>Vá até a tela de pagamento antes de transferir</b><span>Confirme que o voo fecha para todos antes de mover as milhas. Criança em outra cabine tem regra própria em cada companhia: ligue antes.</span></li>
+      </ol>
+
+      <h3 class="ab-tit">Perdeu a abertura?</h3>
+      <p class="sec-note">Nem sempre acabou. Algumas companhias soltam executiva no último mês antes do voo; outras quase nunca.</p>
+      <div class="ab-grupos">
+        <article><b class="ab-g-fam">Vale esperar</b><p>Etihad, Avianca, Delta, Lufthansa, KLM e JAL soltam bastante lugar perto do voo.</p></article>
+        <article><b class="ab-g-dep">Fique de olho</b><p>SWISS, American, Air France, Air Canada, British e Turkish soltam às vezes.</p></article>
+        <article><b class="ab-g-cas">Emita antes</b><p>Iberia, Copa, TAP, LATAM, Qatar, Emirates, Azul e Singapore quase não soltam. A United quase não aparece para quem emite por parceira.</p></article>
+      </div>
+      <p class="sec-note">Lugar de última hora some rápido: deixe um plano B pronto e use o <a href="#radar">Meu Radar</a> para ser avisado.</p>
+
+      <h3 class="ab-tit">Checklist do dia da abertura</h3>
+      <div class="ab-cards">
+        <article><b>Uma semana antes</b><ul>
+          <li>Cadastro feito em cada programa que vai usar (veja <a href="#cadastros">Meus cadastros</a>).</li>
+          <li>Milhas já na conta do programa, sem depender de bônus que acaba no dia.</li>
+          <li>Passageiros cadastrados com o nome igual ao do passaporte.</li>
+          <li>Cartão salvo para as taxas, com limite livre.</li>
+          <li>Datas de abertura da ida e da volta anotadas, com um dia de folga.</li>
+        </ul></article>
+        <article><b>No dia</b><ul>
+          <li>Comece buscando só a ida, para um passageiro. Depois busque para todos.</li>
+          <li>O site aceitou a data e voltou vazio? Tente mais tarde.</li>
+          <li>Achou em tabela fixa? Emita. Em preço dinâmico, compare antes.</li>
+          <li>Não achou? Procure de novo nas semanas seguintes.</li>
+        </ul></article>
+        <article><b>Depois</b><ul>
+          <li>Confira o e-mail da emissão e o número do bilhete de cada reserva.</li>
+          <li>Emitiu ida e volta separadas? Guarde as duas reservas juntas.</li>
+          <li>Prazos e regras mudam: confira no site do programa antes de emitir.</li>
+        </ul></article>
+      </div>
+    </section>
+
     <section id="salas" data-pagina="salas">
       <div class="sec-head">
         <p class="eyebrow">Aeroportos do Brasil</p>
@@ -760,7 +849,7 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=88"></script>
+<script src="app.js?v=89"></script>
 <script type="module" src="assinatura.js?v=7"></script>
 </body>
 </html>

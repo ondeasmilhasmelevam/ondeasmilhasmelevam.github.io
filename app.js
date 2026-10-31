@@ -1994,6 +1994,87 @@
   const ACESSO_SALA = { LK: 'LoungeKey', PP: 'Priority Pass', DP: 'DragonPass', AB: 'App do banco', AV: 'Pagando na hora', CE: 'Cartão específico', CA: 'Companhia aérea' };
   const filtroSala = { busca: '', acesso: '', aero: '' };
   let salas = null;
+  // Quando emitir: dias de antecedência com que cada programa abre a venda (conferido em out/2026).
+  const ABERTURA = [
+    ['Smiles', 329, 'dinâmico'], ['LATAM Pass', 330, 'dinâmico'], ['Azul Fidelidade', 331, 'dinâmico'], ['AAdvantage (American)', 331, 'dinâmico'],
+    ['Delta SkyMiles', 331, 'dinâmico'], ['United MileagePlus', 337, 'dinâmico'], ['British Airways Club', 355, 'tabela fixa'], ['ANA Mileage Club', 355, 'tabela fixa'],
+    ['KrisFlyer (Singapore)', 355, 'tabela fixa'], ['Iberia Club', 359, 'tabela fixa'], ['Flying Blue', 359, 'dinâmico'], ['JAL Mileage Bank', 360, 'tabela fixa'],
+    ['Finnair Plus', 360, 'tabela fixa'], ['Emirates Skywards', 360, 'dinâmico'], ['Miles & More (Lufthansa)', 360, 'dinâmico'], ['Asia Miles (Cathay)', 360, 'tabela fixa'],
+    ['TAP Miles&Go', 361, 'dinâmico'], ['Privilege Club (Qatar)', 361, 'tabela fixa']
+  ];
+  const diaIso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const deIso = t => { const [a, m, d] = t.split('-').map(Number); return new Date(a, m - 1, d); };
+  const somaDias = (d, n) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
+  function pascoa(a) { // algoritmo de Meeus
+    const b = a % 19, c = Math.floor(a / 100), d = a % 100, e = Math.floor(c / 4), f = c % 4, g = Math.floor((c + 8) / 25), h = Math.floor((c - g + 1) / 3);
+    const i = (19 * b + c - e - h + 15) % 30, k = Math.floor(d / 4), l = d % 4;
+    const L = (32 + 2 * f + 2 * k - i - l) % 7, M = Math.floor((b + 11 * i + 22 * L) / 451);
+    const mes = Math.floor((i + L - 7 * M + 114) / 31), dia = ((i + L - 7 * M + 114) % 31) + 1;
+    return new Date(a, mes - 1, dia);
+  }
+  // Viagens comuns: [rótulo, ida, volta] da próxima que ainda não abriu em todos os programas
+  // (a Smiles, a última a abrir, ainda não chegou na data).
+  function viagensComuns() {
+    const hoje = new Date(), ano = hoje.getFullYear(), menor = Math.min(...ABERTURA.map(p => p[1]));
+    const proxima = f => { for (let a = ano; ; a++) { const d = f(a); if (somaDias(d, -menor) >= hoje) return [d, f]; } };
+    const fixa = (m, d) => a => new Date(a, m - 1, d);
+    const lista = [
+      ['Férias de janeiro', fixa(1, 8), 14], ['Carnaval', a => somaDias(pascoa(a), -50), 6], ['Semana Santa', a => somaDias(pascoa(a), -3), 4],
+      ['Corpus Christi', a => somaDias(pascoa(a), 59), 4], ['Férias de julho', fixa(7, 10), 14], ['7 de Setembro', fixa(9, 5), 4],
+      ['12 de Outubro', fixa(10, 10), 4], ['Feriados de novembro', fixa(11, 14), 4], ['Natal', fixa(12, 20), 8], ['Réveillon', fixa(12, 28), 7]
+    ];
+    return lista.map(([nome, f, dias]) => { const [ida] = proxima(f); return [nome, ida, somaDias(ida, dias)]; })
+      .sort((x, y) => x[1] - y[1]);
+  }
+  const fmtDia = d => d.toLocaleDateString('pt-BR', { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' });
+  function linkAgenda(prog, abre, trecho) {
+    const fim = somaDias(abre, 1), f = d => diaIso(d).replace(/-/g, '');
+    const q = new URLSearchParams({ action: 'TEMPLATE', text: `Abre a ${trecho} no ${prog}`, dates: `${f(abre)}/${f(fim)}`,
+      details: 'Dia em que a data abre para emissão com milhas. Procure só a ida, para um passageiro, e depois para todos. Onde as Milhas Me Levam.' });
+    return `https://calendar.google.com/calendar/render?${q}`;
+  }
+  function mostrarAbertura() {
+    const ida = $('#ab-ida').value, volta = $('#ab-volta').value;
+    $('#ab-atalhos').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.ida === ida && b.dataset.volta === volta)));
+    if (!ida) { $('#ab-resumo').textContent = 'Escolha uma viagem acima ou digite a data.'; $('#ab-lista').innerHTML = ''; return; }
+    const hoje = deIso(diaIso(new Date())), dIda = deIso(ida), dVolta = volta && volta > ida ? deIso(volta) : null;
+    const estado = abre => {
+      const n = Math.round((abre - hoje) / 864e5);
+      if (n < 0) return '<span class="ab-st aberto">Já abriu</span>';
+      if (n === 0) return '<span class="ab-st hoje">Abre hoje</span>';
+      return `<span class="ab-st ${n <= 30 ? 'breve' : 'longe'}">Faltam ${n} ${n === 1 ? 'dia' : 'dias'}</span>`;
+    };
+    const cel = (prog, dias, d, trecho) => {
+      const abre = somaDias(d, -dias);
+      return `<td><b>${esc(fmtDia(abre))}</b><small>${estado(abre)} <a class="ab-agenda" href="${esc(linkAgenda(prog, abre, trecho))}" target="_blank" rel="noopener">+ agenda</a></small></td>`;
+    };
+    const linhas = [...ABERTURA].sort((a, b) => b[1] - a[1]);
+    const abertos = linhas.filter(l => somaDias(dIda, -l[1]) <= hoje), faltam = linhas.filter(l => somaDias(dIda, -l[1]) > hoje);
+    const primeira = faltam.length && somaDias(dIda, -faltam[0][1]), ultima = faltam.length && somaDias(dIda, -faltam.at(-1)[1]);
+    $('#ab-resumo').textContent = !faltam.length
+      ? `Ida em ${fmtDia(dIda)}: a data já abriu em todos os programas. Procure agora e emita se o preço estiver bom.`
+      : !abertos.length
+        ? `Ida em ${fmtDia(dIda)}: a primeira abertura é em ${fmtDia(primeira)} (${faltam[0][0]}) e a última em ${fmtDia(ultima)} (${faltam.at(-1)[0]}). Anote na agenda.`
+        : `Ida em ${fmtDia(dIda)}: já abriu em ${abertos.length} ${abertos.length === 1 ? 'programa' : 'programas'}. Nos outros ${faltam.length}, abre entre ${fmtDia(primeira)} e ${fmtDia(ultima)}.`;
+    $('#ab-lista').innerHTML = `<table class="ab-tab"><thead><tr><th>Programa</th><th>Abre a ida</th>${dVolta ? '<th>Abre a volta</th>' : ''}</tr></thead><tbody>${linhas.map(([prog, dias, tipo]) => `<tr>
+        <td><b>${esc(prog)}</b><small>${dias} dias antes · <span class="ab-tipo">${tipo === 'tabela fixa' ? 'tabela fixa: emita logo' : 'preço dinâmico: compare'}</span></small></td>
+        ${cel(prog, dias, dIda, 'ida')}${dVolta ? cel(prog, dias, dVolta, 'volta') : ''}</tr>`).join('')}</tbody></table>`;
+  }
+  (() => {
+    $('#ab-atalhos').innerHTML = viagensComuns().map(([nome, ida, volta]) =>
+      `<button type="button" data-ida="${diaIso(ida)}" data-volta="${diaIso(volta)}" aria-pressed="false">${esc(nome)} ${ida.getFullYear()}</button>`).join('');
+    const primeiro = $('#ab-atalhos button');
+    if (primeiro) { $('#ab-ida').value = primeiro.dataset.ida; $('#ab-volta').value = primeiro.dataset.volta; }
+    mostrarAbertura();
+  })();
+  $('#ab-atalhos').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    $('#ab-ida').value = b.dataset.ida; $('#ab-volta').value = b.dataset.volta; mostrarAbertura();
+  });
+  $('#ab-ida').addEventListener('input', mostrarAbertura);
+  $('#ab-volta').addEventListener('input', mostrarAbertura);
+  $('#ab-form').addEventListener('submit', e => e.preventDefault());
+
   function mostrarSalas() {
     if (!salas) return;
     const busca = norm(filtroSala.busca);

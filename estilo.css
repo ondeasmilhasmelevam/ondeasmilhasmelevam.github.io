@@ -509,6 +509,44 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .seats-fonte{margin:10px 16px 14px;font-size:12px;color:var(--ash-dim)}
 .seats-fonte a{color:var(--ouro)}
 
+/* ---------- quando emitir (abertura das datas) ---------- */
+.ab-calc{padding:18px;border:1px solid rgba(226,180,88,.4);border-radius:16px;background:linear-gradient(120deg,rgba(226,180,88,.1),var(--ink-2) 55%);margin-bottom:28px}
+.ab-atalhos{justify-content:flex-start;margin:0 0 14px}
+.ab-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;max-width:520px}
+.ab-form label{display:grid;gap:5px;font-size:12px;font-weight:700;color:var(--ash)}
+.ab-form small{font-weight:500;color:var(--ash-dim)}
+.ab-form input{font:inherit;font-size:14.5px;font-weight:600;padding:9px 11px;border-radius:12px;border:1px solid var(--line);background:var(--ink);color:var(--rice);min-width:0}
+.ab-resumo{margin:14px 0 10px;font-size:14.5px;font-weight:700;color:var(--ouro)}
+.ab-lista{overflow-x:auto}
+.ab-tab{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+.ab-tab th{text-align:left;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ash-dim);padding:8px;border-bottom:1px solid var(--line)}
+.ab-tab td{padding:9px 8px;border-bottom:1px solid var(--line);color:var(--rice);vertical-align:top}
+.ab-tab td small{display:block;font-size:12px;color:var(--ash-dim)}
+.ab-tab td b{font-variant-numeric:tabular-nums}
+.ab-st{display:inline-block;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;letter-spacing:.04em}
+.ab-st.aberto{background:rgba(52,168,108,.18);color:#3fbf7f}
+.ab-st.hoje{background:var(--ouro);color:var(--sobre-ouro)}
+.ab-st.breve{background:rgba(226,180,88,.18);color:var(--ouro)}
+.ab-st.longe{background:var(--ink-3);color:var(--ash)}
+.ab-tipo{font-size:11px;font-weight:700;color:var(--ash-dim)}
+.ab-agenda{font-size:12.5px;font-weight:700;color:var(--ouro);text-decoration:none;white-space:nowrap}
+.ab-agenda:hover{text-decoration:underline}
+.ab-tit{font-family:var(--display);font-size:20px;letter-spacing:.03em;margin:30px 0 12px;color:var(--rice)}
+.ab-cards,.ab-grupos,.ab-duas{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.ab-cards article,.ab-grupos article,.ab-duas article{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2)}
+.ab-cards b,.ab-grupos b,.ab-duas b{display:block;font-size:15px;color:var(--rice);margin-bottom:6px}
+.ab-cards p,.ab-grupos p{margin:0;font-size:14px;color:var(--ash);line-height:1.5}
+.ab-cards ul,.ab-duas ul{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14px;color:var(--ash);line-height:1.45}
+.ab-cards a,.ab-duas a,.ab-calc a,#abertura .sec-note a{color:var(--ouro)}
+.ab-corra{border-top:3px solid #e2705a!important}
+.ab-espera{border-top:3px solid #3fbf7f!important}
+.ab-nota{margin-top:12px;padding:14px 16px;border-radius:14px;background:var(--ink-3);font-size:14px;color:var(--ash);line-height:1.55}
+.ab-nota b{color:var(--rice)}
+.ab-g-fam{color:#3fbf7f!important}
+.ab-g-dep{color:var(--ouro)!important}
+.ab-g-cas{color:#e2705a!important}
+.ab-passos{margin-top:14px}
+
 /* ---------- hoje ---------- */
 .hoje-destaque{position:relative;display:grid;align-content:end;min-height:300px;padding:26px 28px;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--ink-2) center/cover no-repeat;color:#fff;margin:0 0 30px}
 .hoje-destaque::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,16,.15) 0%,rgba(5,8,16,.55) 45%,rgba(5,8,16,.92) 100%)}
