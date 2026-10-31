@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-8737",
+  "data": "2026-10-31T13:15:21Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Curitiba",
+  "destino_iata": "CWB",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "9.000 milhas + Taxas",
+  "volta": "9.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-8736",
   "data": "2026-10-31T13:12:39Z",
   "origem": "São Paulo",
