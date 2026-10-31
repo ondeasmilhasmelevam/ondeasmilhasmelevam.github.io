@@ -350,7 +350,8 @@ async function rodarRadar(env, novas, completos) {
 // Só para conferir se o plantão está entregando: quando chegou e quantas passagens (sem o conteúdo).
 async function estadoAlertas(env) {
   const d = await lerDoc(env, 'privado/alertas');
-  return d ? { atualizadoEm: d.atualizadoEm, itens: Object.keys(JSON.parse(d.json)).length } : { atualizadoEm: null, itens: 0 };
+  const todos = d ? Object.values(JSON.parse(d.json)) : [];
+  return { atualizadoEm: d ? d.atualizadoEm : null, itens: todos.length, comRota: todos.filter(p => p.destino_iata).length };
 }
 
 // Aviso de vencimento: uma vez por validade (avisoPara guarda a validade já avisada).
