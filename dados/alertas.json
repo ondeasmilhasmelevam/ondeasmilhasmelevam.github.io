@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-5890",
+  "data": "2026-10-31T11:37:53Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "428.400 milhas",
+  "volta": "424.000 milhas",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2361370250-5889",
+  "data": "2026-10-31T11:35:14Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "Copa Airlines",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "241.100 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5888",
   "data": "2026-10-31T11:32:05Z",
   "origem": "Brasília",
@@ -3541,20 +3569,6 @@
   "ida": "17.500 milhas + Taxas",
   "volta": "17.500 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2361370250-5772",
-  "data": "2026-10-29T11:34:13Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "Copa Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "57.700 milhas",
-  "volta": "",
-  "link_nome": "GOL Smiles"
  },
  {
   "id": "1290836068-7476",
