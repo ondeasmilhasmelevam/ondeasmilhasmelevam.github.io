@@ -5,6 +5,9 @@
 # a corrente pare. Enquanto os segredos TELEGRAM_* não existirem, não faz nada.
 # A cada volta também cuida do Instagram (ferramentas/instagram.py): stories
 # com limite por dia e o carrossel diário no feed.
+# Datas e link de emissão das passagens não vão para o arquivo público: alertas.py
+# manda essa parte ao servidor da assinatura (servidor/worker.js), entrando com o
+# token OIDC desta execução.
 name: Alertas do Telegram
 
 on:
