@@ -3515,34 +3515,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2361370250-5775",
-  "data": "2026-10-29T11:49:08Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Cidade do Cabo",
-  "destino_iata": "CPT",
-  "companhia": "South African Airways",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "171.600 milhas",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-5774",
-  "data": "2026-10-29T11:45:25Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Joanesburgo",
-  "destino_iata": "JNB",
-  "companhia": "South African Airways",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "190.400 milhas",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
