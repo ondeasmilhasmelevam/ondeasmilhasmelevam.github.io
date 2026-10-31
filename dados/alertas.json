@@ -2632,20 +2632,6 @@
   "link_nome": "AAdvantage"
  },
  {
-  "id": "3761373661-8652",
-  "data": "2026-10-29T21:21:46Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 17.700 milhas",
-  "volta": "A partir de 17.700 milhas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7483",
   "data": "2026-10-29T12:02:20Z",
   "tipo": "promocao",
