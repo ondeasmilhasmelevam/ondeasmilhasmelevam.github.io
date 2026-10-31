@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=45">
+<link rel="stylesheet" href="estilo.css?v=46">
 </head>
 <body>
 <header class="bar">
@@ -159,7 +159,11 @@
         <button type="button" data-tipo="promocao" aria-pressed="false">Promoções de pontos <small></small></button>
       </div>
       <div class="passagens-filtros">
-        <input type="search" id="passagens-busca" placeholder="Buscar cidade ou aeroporto, ex.: GRU" autocomplete="off" aria-label="Buscar cidade ou aeroporto">
+        <input type="search" id="passagens-busca" placeholder="Saindo de… ex.: GRU" autocomplete="off" aria-label="Saindo de" list="passagens-cidades">
+        <input type="search" id="passagens-destino" placeholder="Indo para… ex.: Lisboa" autocomplete="off" aria-label="Indo para" list="passagens-cidades">
+        <datalist id="passagens-cidades"></datalist>
+        <select id="passagens-programa" aria-label="Programa"><option value="">Todos os programas</option></select>
+        <select id="passagens-ordem" aria-label="Ordem"><option value="">Mais recentes</option><option value="milhas">Menos milhas</option></select>
         <div class="atalhos" id="passagens-cabine" role="group" aria-label="Cabine">
           <button type="button" data-cabine="" aria-pressed="true">Todas</button>
           <button type="button" data-cabine="eco" aria-pressed="false">Econômica</button>
@@ -167,6 +171,7 @@
         </div>
       </div>
       <ul class="passagens" id="lista-passagens"></ul>
+      <p class="pass-credito" id="pass-credito" hidden>Fotos das cidades: <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a>, via Wikidata.</p>
       <p class="voltar-sim">Problema com o voo ou com as milhas? <a href="#contatos">Telefones das companhias e programas →</a></p>
       <p class="passagens-vazio" id="passagens-vazio" hidden></p>
       <button type="button" class="cta cta-b" id="mais-passagens" hidden></button>
@@ -510,7 +515,7 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=46"></script>
+<script src="app.js?v=47"></script>
 <script type="module" src="assinatura.js?v=5"></script>
 </body>
 </html>

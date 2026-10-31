@@ -1209,7 +1209,7 @@
   // O arquivo já vem só com o que ainda vale; aqui o prazo é conferido de novo,
   // para o item sumir na hora certa mesmo se a atualização atrasar.
   const PRAZO_PASSAGEM = 48 * 3600e3, POR_VEZ = 12;
-  const filtroPassagem = { tipo: 'passagem', busca: '', cabine: '', todas: false };
+  const filtroPassagem = { tipo: 'passagem', busca: '', destino: '', programa: '', ordem: '', cabine: '', todas: false };
   let passagens = [];
   function haQuanto(ms) {
     const min = Math.max(1, Math.round(ms / 60e3));
@@ -1260,6 +1260,7 @@
     const selo = ['espetacular', 'muito bom', 'bom'].includes(nivel)
       ? `<a class="pass-selo ${CLASSE_NIVEL[nivel]}" href="#termometro" title="Pelo termômetro de milhas">${nivel === 'espetacular' ? '🔥 ' : ''}${esc(nivel)}</a>` : '';
     return `<li class="${ehExecutiva(p.cabine) ? 'exe' : ''}">
+        <div class="pass-foto" data-iata="${esc(p.destino_iata)}" aria-hidden="true"></div>
         <p class="pass-meta"><time datetime="${esc(p.data)}">${haQuanto(agora - new Date(p.data))}</time>${p.cabine ? ` · ${esc(p.cabine)}` : ''}${selo}</p>
         <h3 class="pass-rota">
           <span><b>${esc(p.origem_iata)}</b>${esc(p.origem)}</span>
@@ -1288,21 +1289,72 @@
         <div class="promo-links">${links.map((u, i) => `<a class="cta ${i ? 'cta-b' : 'cta-a'} pass-link" href="${esc(u)}" target="_blank" rel="noopener">${links.length > 1 ? `Abrir ${esc(site(u))}` : 'Ver promoção'} ↗</a>`).join('')}</div>
       </li>`;
   }
+  // Programa da passagem sem o nome da companhia na frente ("GOL Smiles" → Smiles, "LATAM" → LATAM Pass).
+  const programaPassagem = p => {
+    const t = (p.programa || '').trim();
+    if (/smiles/i.test(t)) return 'Smiles';
+    if (/^latam/i.test(t)) return 'LATAM Pass';
+    if (/^azul/i.test(t)) return 'Azul Fidelidade';
+    return t;
+  };
+  // "23.900 milhas + Taxas", "A partir de 14.400 milhas", "55.000 AVIOS" → 23900, 14400, 55000.
+  const milhasDe = p => { const m = (p.ida || '').match(/(\d{1,3}(?:\.\d{3})+|\d+)/); return m ? Number(m[1].replace(/\./g, '')) : Infinity; };
+
+  // Foto da cidade de destino: Wikidata (aeroporto pelo código IATA → cidade atendida → imagem),
+  // numa consulta só para os códigos da tela; guardada no navegador por 30 dias.
+  const FOTOS_CHAVE = 'oamml-fotos-cidades', FOTOS_VALIDADE = 30 * 864e5;
+  let fotos = {};
+  try { const f = JSON.parse(localStorage.getItem(FOTOS_CHAVE)); if (f && Date.now() - f.em < FOTOS_VALIDADE) fotos = f.fotos; } catch (e) { /* sem cache */ }
+  const fotosPedidas = new Set();
+  function pintarFotos() {
+    let alguma = false;
+    document.querySelectorAll('#lista-passagens .pass-foto[data-iata]').forEach(el => {
+      const url = fotos[el.dataset.iata];
+      if (url) { el.style.backgroundImage = `url("${url}")`; el.classList.add('ok'); alguma = true; }
+    });
+    $('#pass-credito').hidden = !alguma;
+  }
+  async function buscarFotos() {
+    pintarFotos();
+    const faltam = [...new Set([...document.querySelectorAll('#lista-passagens .pass-foto[data-iata]')].map(el => el.dataset.iata))]
+      .filter(c => /^[A-Z]{3}$/.test(c) && !(c in fotos) && !fotosPedidas.has(c));
+    if (!faltam.length) return;
+    faltam.forEach(c => fotosPedidas.add(c));
+    const consulta = `SELECT ?iata ?img WHERE { VALUES ?iata {${faltam.map(c => `"${c}"`).join(' ')}} ?ap wdt:P238 ?iata; wdt:P931 ?c. ?c wdt:P18 ?img. }`;
+    try {
+      const r = await fetch(`https://query.wikidata.org/sparql?format=json&query=${encodeURIComponent(consulta)}`, { headers: { accept: 'application/sparql-results+json' } });
+      const d = await r.json();
+      faltam.forEach(c => { fotos[c] = ''; });
+      d.results.bindings.forEach(b => {
+        const c = b.iata.value;
+        if (!fotos[c]) fotos[c] = `${b.img.value.replace(/^http:/, 'https:')}?width=640`;
+      });
+      try { localStorage.setItem(FOTOS_CHAVE, JSON.stringify({ em: Date.now(), fotos })); } catch (e) { /* sem espaço */ }
+      pintarFotos();
+    } catch (e) { /* fica sem foto */ }
+  }
+
   function mostrarPassagens() {
     const agora = Date.now(), f = filtroPassagem;
     const promo = f.tipo === 'promocao';
     const busca = norm(f.busca);
     const vivas = passagens.filter(p => agora < venceEm(p));
     const doTipo = vivas.filter(p => ehPromocao(p) === promo);
+    const destino = norm(f.destino);
     const lista = doTipo.filter(p => promo
       ? (!busca || norm([p.titulo, p.parceiros, p.resumo].join(' ')).includes(busca))
       : (!f.cabine || (f.cabine === 'exe') === ehExecutiva(p.cabine)) &&
-        (!busca || norm([p.origem, p.origem_iata, p.destino, p.destino_iata].join(' ')).includes(busca)));
+        (!busca || norm([p.origem, p.origem_iata].join(' ')).includes(busca)) &&
+        (!destino || norm([p.destino, p.destino_iata].join(' ')).includes(destino)) &&
+        (!f.programa || programaPassagem(p) === f.programa));
+    if (!promo && f.ordem === 'milhas') lista.sort((a, b) => milhasDe(a) - milhasDe(b));
     const mostrar = f.todas ? lista : lista.slice(0, POR_VEZ);
     $('#lista-passagens').innerHTML = mostrar.map(p => promo ? promocaoHtml(p, agora) : passagemHtml(p, agora)).join('');
-    $('#passagens-cabine').hidden = promo;
+    if (promo) $('#pass-credito').hidden = true;
+    else { buscarFotos(); preencherFiltros(doTipo); }
+    ['#passagens-cabine', '#passagens-destino', '#passagens-programa', '#passagens-ordem'].forEach(id => { $(id).hidden = promo; });
     const campo = $('#passagens-busca');
-    campo.placeholder = promo ? 'Buscar programa ou loja, ex.: Livelo' : 'Buscar cidade ou aeroporto, ex.: GRU';
+    campo.placeholder = promo ? 'Buscar programa ou loja, ex.: Livelo' : 'Saindo de… ex.: GRU';
     campo.setAttribute('aria-label', campo.placeholder.replace(/, ex\..*/, ''));
     const qtd = t => vivas.filter(p => ehPromocao(p) === (t === 'promocao')).length;
     $('#passagens-tipo').querySelectorAll('button').forEach(x => {
@@ -1317,6 +1369,19 @@
     btn.hidden = lista.length <= POR_VEZ;
     btn.textContent = f.todas ? 'Mostrar menos' : `Ver todas as ${lista.length} ${promo ? 'promoções' : 'passagens'}`;
   }
+  // Opções dos filtros a partir das passagens no ar (cidades para sugerir e programas).
+  function preencherFiltros(lista) {
+    const cidades = new Map();
+    lista.forEach(p => { cidades.set(p.origem_iata, p.origem); cidades.set(p.destino_iata, p.destino); });
+    const htmlCidades = [...cidades].sort((a, b) => a[1].localeCompare(b[1], 'pt'))
+      .map(([iata, nome]) => `<option value="${esc(iata)}">${esc(nome)}</option>`).join('');
+    const dl = $('#passagens-cidades');
+    if (dl.innerHTML !== htmlCidades) dl.innerHTML = htmlCidades;
+    const programas = [...new Set(lista.map(programaPassagem).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt'));
+    const htmlProgramas = `<option value="">Todos os programas</option>${programas.map(x => `<option${x === filtroPassagem.programa ? ' selected' : ''}>${esc(x)}</option>`).join('')}`;
+    const sel = $('#passagens-programa');
+    if (sel.innerHTML !== htmlProgramas) sel.innerHTML = htmlProgramas;
+  }
   async function desenharPassagens() {
     try {
       const r = await fetch('dados/alertas.json', { cache: 'no-store' });
@@ -1329,6 +1394,9 @@
     mostrarPassagens();
   }
   $('#passagens-busca').addEventListener('input', e => { filtroPassagem.busca = e.target.value; mostrarPassagens(); });
+  $('#passagens-destino').addEventListener('input', e => { filtroPassagem.destino = e.target.value; mostrarPassagens(); });
+  $('#passagens-programa').addEventListener('change', e => { filtroPassagem.programa = e.target.value; mostrarPassagens(); });
+  $('#passagens-ordem').addEventListener('change', e => { filtroPassagem.ordem = e.target.value; mostrarPassagens(); });
   $('#passagens-tipo').addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
     Object.assign(filtroPassagem, { tipo: b.dataset.tipo, busca: '', todas: false });
