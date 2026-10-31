@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=46">
+<link rel="stylesheet" href="estilo.css?v=47">
 </head>
 <body>
 <header class="bar">
@@ -181,18 +181,32 @@
       <div class="sec-head">
         <p class="eyebrow">Calculadoras <em class="beta">Beta</em></p>
         <h2>Faça a conta antes de decidir</h2>
-        <p class="sec-note">Três contas que respondem as dúvidas mais comuns: se vale comprar pontos para transferir, se vale pagar a passagem com milhas e quantas milhas seus pontos viram. Os valores de referência são os da nossa tabela de preços.</p>
+        <p class="sec-note">As contas que respondem as dúvidas mais comuns: se vale comprar pontos para transferir, se a compra no carrinho compensa, se vale pagar a passagem com milhas, quantas milhas seus pontos viram e quanto sai um hotel Accor com pontos. Os valores de referência são os da nossa tabela de preços.</p>
       </div>
 
       <div class="calc-grade">
         <article class="calc-card">
           <h3>Comprar pontos e transferir com bônus</h3>
           <p class="sec-note">Quanto sai cada 1.000 milhas no fim, comprando pontos em promoção (Livelo, Esfera…) e transferindo com bônus.</p>
+          <div class="calc-campanhas" id="cc-campanhas" hidden><span>Campanhas no ar</span><div></div></div>
           <label>Programa de destino<select id="cc-destino"></select></label>
           <label>Quanto você paga por 1.000 pontos (R$)<input id="cc-preco" type="number" inputmode="decimal" min="0" step="0.01" placeholder="ex.: 35"></label>
           <label>Pontos para cada milha<input id="cc-prop" type="number" inputmode="decimal" min="0.1" step="0.1" value="1"></label>
           <label>Bônus da transferência (%)<input id="cc-bonus" type="number" inputmode="decimal" min="0" step="1" placeholder="ex.: 100"></label>
           <p class="termo-resposta" id="cc-resposta" aria-live="polite"></p>
+        </article>
+
+        <article class="calc-card">
+          <h3>Compra no carrinho (Livelo ou Esfera)</h3>
+          <p class="sec-note">Comprando pontos no carrinho e juntando com os que você já tinha: quanto sai cada 1.000 milhas no fim, contando os dois.</p>
+          <label>Onde vai comprar<select id="ca-origem"><option value="Livelo">Livelo</option><option value="Esfera">Esfera</option></select></label>
+          <label>Programa de destino<select id="ca-destino"></select></label>
+          <label>Total de pontos que vai transferir<input id="ca-total" type="number" inputmode="numeric" min="0" step="1000" placeholder="ex.: 100000"></label>
+          <label>Desses, quantos já estão na sua conta<input id="ca-conta" type="number" inputmode="numeric" min="0" step="100" placeholder="ex.: 1000"></label>
+          <label>Preço de 1.000 pontos no carrinho (R$)<input id="ca-preco" type="number" inputmode="decimal" min="0" step="0.01" placeholder="ex.: 30"></label>
+          <label>Quanto te custaram os pontos que já tinha, por 1.000 (R$)<input id="ca-preco-conta" type="number" inputmode="decimal" min="0" step="0.01"></label>
+          <label>Bônus da transferência (%)<input id="ca-bonus" type="number" inputmode="decimal" min="0" step="1" placeholder="ex.: 100"></label>
+          <p class="termo-resposta" id="ca-resposta" aria-live="polite"></p>
         </article>
 
         <article class="calc-card">
@@ -212,6 +226,16 @@
           <label>Pontos para cada milha<input id="pm-prop" type="number" inputmode="decimal" min="0.1" step="0.1" value="1"></label>
           <label>Bônus (%)<input id="pm-bonus" type="number" inputmode="decimal" min="0" step="1" placeholder="ex.: 80"></label>
           <p class="termo-resposta" id="pm-resposta" aria-live="polite"></p>
+        </article>
+
+        <article class="calc-card">
+          <h3>Hotel Accor com pontos ALL</h3>
+          <p class="sec-note">Cada 2.000 pontos ALL viram € 40 de desconto na diária (Ibis, Novotel, Mercure, Sofitel…). Veja quanto isso vale em reais hoje e quanto custa chegar lá transferindo pontos do cartão.</p>
+          <label>Pontos ALL que você quer juntar<input id="ac-pontos" type="number" inputmode="numeric" min="2000" step="1000" value="15000"></label>
+          <label>De onde vêm os pontos<select id="ac-origem"><option value="Livelo">Livelo (3,5 pontos = 1 ALL)</option><option value="Esfera">Esfera (3,5 pontos = 1 ALL)</option></select></label>
+          <label>Quanto te custa cada 1.000 pontos do cartão (R$)<input id="ac-preco" type="number" inputmode="decimal" min="0" step="0.01"></label>
+          <label>Bônus da transferência (%)<input id="ac-bonus" type="number" inputmode="decimal" min="0" step="1" placeholder="ex.: 20"></label>
+          <p class="termo-resposta" id="ac-resposta" aria-live="polite"></p>
         </article>
       </div>
     </section>
@@ -515,7 +539,7 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=47"></script>
+<script src="app.js?v=48"></script>
 <script type="module" src="assinatura.js?v=5"></script>
 </body>
 </html>

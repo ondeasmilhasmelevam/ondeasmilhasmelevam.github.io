@@ -1890,14 +1890,99 @@
     el.className = 'termo-resposta ok';
     el.innerHTML = `Viram <b>${esc(inteiro.format(total))} milhas</b>` + (bonus ? ` (${esc(inteiro.format(base))} da transferência + ${esc(inteiro.format(total - base))} de bônus).` : '.');
   }
+  // Preço médio pago por 1.000 pontos nos últimos 12 meses (compras com desconto da comunidade).
+  const PRECO_MEDIO_PONTOS = { Livelo: 23.39, Esfera: 29.84 };
+  const PROPORCAO_DESTINO = { 'Smiles': 1, 'LATAM Pass': 1, 'Azul Fidelidade': 1, 'TAP': 1, 'AA': 1, 'Avios': 1 };
+
+  // Compra no carrinho: os pontos comprados + os que já estavam na conta (a Livelo pede ao menos 1% da conta).
+  function calcCarrinho() {
+    const ref = (window.MILHEIROS || {})[$('#ca-destino').value];
+    const total = numCampo('#ca-total'), conta = numCampo('#ca-conta') || 0, preco = numCampo('#ca-preco'), bonus = numCampo('#ca-bonus') || 0;
+    const precoConta = numCampo('#ca-preco-conta') ?? PRECO_MEDIO_PONTOS[$('#ca-origem').value];
+    const el = $('#ca-resposta');
+    if (!total || !preco) { el.className = 'termo-resposta'; el.textContent = 'Informe o total de pontos e o preço do carrinho.'; return; }
+    const comprados = Math.max(0, total - conta);
+    const pago = comprados / 1000 * preco, jaTinha = Math.min(conta, total) / 1000 * precoConta;
+    const milhas = Math.floor(total * (1 + bonus / 100));
+    const final = (pago + jaTinha) / milhas * 1000;
+    const bom = ref && final <= ref;
+    const aviso = conta < total * 0.01 ? `<br><small>Atenção: a Livelo pede pelo menos 1% dos pontos já na conta (${esc(inteiro.format(Math.ceil(total * 0.01)))} aqui).</small>` : '';
+    el.className = 'termo-resposta ' + (ref ? (bom ? 'ok' : 'espera') : '');
+    el.innerHTML = `Você paga agora <b>${esc(emReais(pago))}</b> e usa ${esc(emReais(jaTinha))} em pontos que já tinha. Viram <b>${esc(inteiro.format(milhas))} milhas</b>, e cada 1.000 sai por <b>${esc(emReais(final))}</b>.` +
+      (ref ? (bom ? ` Compensa: abaixo dos ${esc(emReais(ref))} de referência.` : ` Não compensa: acima dos ${esc(emReais(ref))} de referência.`) : '') + aviso;
+  }
+
+  // Hotel Accor: 1.000 pontos ALL = € 20 na diária; euro do dia pela AwesomeAPI.
+  let euroHoje = null;
+  async function lerEuro() {
+    try {
+      const d = await (await fetch('https://economia.awesomeapi.com.br/json/last/EUR-BRL')).json();
+      euroHoje = Number(d.EURBRL.bid) || null;
+    } catch (e) { euroHoje = null; }
+    calcAccor();
+  }
+  function calcAccor() {
+    const all = numCampo('#ac-pontos'), bonus = numCampo('#ac-bonus') || 0;
+    const preco = numCampo('#ac-preco') ?? PRECO_MEDIO_PONTOS[$('#ac-origem').value];
+    const el = $('#ac-resposta');
+    if (!all) { el.className = 'termo-resposta'; el.textContent = 'Informe quantos pontos ALL quer juntar.'; return; }
+    const euros = all / 1000 * 20;
+    const pontos = Math.ceil(all * 3.5 / (1 + bonus / 100));
+    const custo = pontos / 1000 * preco;
+    const emReal = euroHoje ? euros * euroHoje : null;
+    const bom = emReal && custo < emReal;
+    el.className = 'termo-resposta ' + (emReal ? (bom ? 'ok' : 'espera') : '');
+    el.innerHTML = `${esc(inteiro.format(all))} pontos ALL valem <b>€ ${esc(inteiro.format(euros))}</b> em diárias` +
+      (emReal ? ` (${esc(emReais(emReal))} com o euro a ${esc(emReais(euroHoje))}).` : '.') +
+      `<ul><li>Transfere <b>${esc(inteiro.format(pontos))} pontos ${esc($('#ac-origem').value)}</b>${bonus ? ` com ${esc(inteiro.format(bonus))}% de bônus` : ''}.</li>` +
+      `<li>Custo desses pontos: <b>${esc(emReais(custo))}</b>.</li>` +
+      (emReal ? `<li>${bom ? `Economia de <b>${esc(emReais(emReal - custo))}</b> contra pagar a diária em dinheiro.` : `Sai <b>${esc(emReais(custo - emReal))}</b> mais caro que pagar a diária em dinheiro.`} Cada euro sai por ${esc(emReais(custo / euros))}.</li>` : '') +
+      '</ul>';
+  }
+
+  // Campanhas de bônus na transferência que estão no ar (das promoções de pontos dos alertas).
+  const DESTINO_CAMPANHA = [[/SMILES/, 'Smiles'], [/LATAM/, 'LATAM Pass'], [/AZUL/, 'Azul Fidelidade'], [/TAP/, 'TAP'], [/AADVANTAGE|AMERICAN/, 'AA'], [/AVIOS|IBERIA|BRITISH|QATAR/, 'Avios']];
+  async function campanhasNoAr() {
+    try {
+      const lista = await (await fetch('dados/alertas.json', { cache: 'no-store' })).json();
+      const agora = Date.now();
+      const campanhas = lista.filter(p => p.tipo === 'promocao' && /B[OÔ]NUS/i.test(p.titulo) && /TRANSFER/i.test(p.titulo) &&
+        !isNaN(Date.parse(p.ate)) && Date.parse(p.ate) > agora && /(\d{2,3})\s*%/.test(p.titulo) && !/ENTRE CONTAS/.test(norm(p.titulo)))
+        .map(p => ({ titulo: p.parceiros || p.titulo, bonus: Number(p.titulo.match(/(\d{2,3})\s*%/)[1]), ate: diaBR(Date.parse(p.ate)).slice(0, 5),
+          destino: (DESTINO_CAMPANHA.find(([re]) => re.test(norm(p.titulo))) || [])[1] }))
+        .filter(c => c.destino && (window.MILHEIROS || {})[c.destino]);
+      const caixa = $('#cc-campanhas');
+      caixa.hidden = !campanhas.length;
+      const curto = t => (t.length > 40 ? `${t.slice(0, 38).trim()}…` : t);
+      caixa.querySelector('div').innerHTML = campanhas.map((c, i) => `<button type="button" data-i="${i}" aria-pressed="false" title="${esc(c.titulo)}">${esc(curto(c.titulo))} · ${c.bonus}%<small>até ${esc(c.ate)}</small></button>`).join('');
+      caixa.querySelector('div').onclick = e => {
+        const b = e.target.closest('button'); if (!b) return;
+        const c = campanhas[b.dataset.i];
+        caixa.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+        $('#cc-destino').value = c.destino; $('#cc-bonus').value = c.bonus; $('#cc-prop').value = PROPORCAO_DESTINO[c.destino] || 1;
+        calcCompra();
+      };
+    } catch (e) { /* sem campanhas na tela */ }
+  }
+
   function montarCalculadoras() {
     const opcoes = Object.keys(window.MILHEIROS || {}).map(k => `<option value="${esc(k)}">${esc(NOMES_MILHEIRO[k] || k)}</option>`).join('');
     $('#cc-destino').innerHTML = opcoes;
     $('#dm-programa').innerHTML = opcoes;
+    $('#ca-destino').innerHTML = opcoes;
+    const placeholderMedio = (origem, campo) => { $(campo).placeholder = `média de ${emReais(PRECO_MEDIO_PONTOS[$(origem).value])}`; };
+    placeholderMedio('#ca-origem', '#ca-preco-conta');
+    placeholderMedio('#ac-origem', '#ac-preco');
+    $('#ca-origem').addEventListener('input', () => placeholderMedio('#ca-origem', '#ca-preco-conta'));
+    $('#ac-origem').addEventListener('input', () => placeholderMedio('#ac-origem', '#ac-preco'));
     ['#cc-destino', '#cc-preco', '#cc-prop', '#cc-bonus'].forEach(id => $(id).addEventListener('input', calcCompra));
+    ['#ca-origem', '#ca-destino', '#ca-total', '#ca-conta', '#ca-preco', '#ca-preco-conta', '#ca-bonus'].forEach(id => $(id).addEventListener('input', calcCarrinho));
     ['#dm-programa', '#dm-reais', '#dm-milhas', '#dm-taxas'].forEach(id => $(id).addEventListener('input', calcDinheiro));
     ['#pm-pontos', '#pm-prop', '#pm-bonus'].forEach(id => $(id).addEventListener('input', calcPontos));
-    calcCompra(); calcDinheiro(); calcPontos();
+    ['#ac-pontos', '#ac-origem', '#ac-preco', '#ac-bonus'].forEach(id => $(id).addEventListener('input', calcAccor));
+    calcCompra(); calcCarrinho(); calcDinheiro(); calcPontos(); calcAccor();
+    campanhasNoAr();
+    lerEuro();
   }
   montarCalculadoras();
 

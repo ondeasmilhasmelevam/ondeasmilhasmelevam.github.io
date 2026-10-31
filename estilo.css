@@ -869,6 +869,14 @@ footer .badge{width:84px;height:84px;margin-bottom:14px}
 .calc-card label{display:grid;gap:6px;font-size:13px;font-weight:700;color:var(--ash)}
 .calc-card select,.calc-card input{font:inherit;font-size:15px;font-weight:600;padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:var(--ink);color:var(--rice);min-width:0}
 .calc-card .termo-resposta{margin-top:4px}
+.calc-campanhas{display:grid;gap:6px}
+.calc-campanhas>span{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ash-dim)}
+.calc-campanhas div{display:flex;flex-wrap:wrap;gap:6px}
+.calc-campanhas button{font:inherit;font-size:12.5px;font-weight:700;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:var(--ink);color:var(--rice);cursor:pointer;text-align:left}
+.calc-campanhas button[aria-pressed="true"]{background:var(--ouro);color:var(--sobre-ouro);border-color:var(--ouro)}
+.calc-campanhas small{color:var(--ash-dim);font-weight:600;margin-left:4px}
+.calc-campanhas button[aria-pressed="true"] small{color:inherit}
+.calc-card .termo-resposta ul{margin:8px 0 0;padding-left:18px;display:grid;gap:3px}
 .eyebrow .beta{margin-left:6px;vertical-align:2px}
 
 /* Tema claro (botão no menu; a escolha fica guardada neste navegador) */
