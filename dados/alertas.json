@@ -617,25 +617,6 @@
   "ate": "2026-11-30T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7509",
-  "data": "2026-10-30T14:50:57Z",
-  "tipo": "promocao",
-  "titulo": "ASSINATURA CLUBE LIVELO PREMIUM: ATÉ 376.000 PONTOS",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Assine o Clube Livelo Premium 20.000 e acumule até 376.000 pontos em 12 meses com condições promocionais.",
-  "detalhes": [
-   "Plano Anual: até 376.000 pontos acumulados.",
-   "Plano Mensal: até 370.000 pontos acumulados."
-  ],
-  "parceiros": "Livelo",
-  "validade": "30/10/2026",
-  "links": [
-   "https://www.livelo.com.br/clube"
-  ],
-  "ate": "2026-10-30T23:59:59-03:00"
- },
- {
   "id": "1290836068-7508",
   "data": "2026-10-30T14:50:52Z",
   "tipo": "promocao",
@@ -675,25 +656,6 @@
   "ate": "2026-10-31T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7506",
-  "data": "2026-10-30T14:50:45Z",
-  "tipo": "promocao",
-  "titulo": "ESFERA: BONIFICAÇÃO DE 200% DE BÔNUS SOBRE OS PLANOS ELEGÍVEIS",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Assine ou atualize seu plano do Clube Esfera e garanta até 40.000 pontos bônus distribuídos em 12 meses.",
-  "detalhes": [
-   "Bonificação de 200% de bônus sobre os planos elegíveis.",
-   "Planos Pro, Master, VIP e Exclusive."
-  ],
-  "parceiros": "Esfera",
-  "validade": "30/10/2026",
-  "links": [
-   "https://www.esfera.com.vc/clube"
-  ],
-  "ate": "2026-10-30T23:59:59-03:00"
- },
- {
   "id": "1290836068-7505",
   "data": "2026-10-30T14:50:41Z",
   "tipo": "promocao",
@@ -730,26 +692,6 @@
    "https://www.livelo.com.br/livelo-para-parceiros/flying-blue/LIVK0007"
   ],
   "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7503",
-  "data": "2026-10-30T14:50:34Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFERÊNCIA SMILES: ATÉ 70% DE BÔNUS + 75% OFF EM COMPRA DE MILHAS",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Transfira pontos dos cartões de crédito parceiros para a Smiles e garanta até 70% de bônus, além de um cupom exclusivo de 75% de desconto para adquirir novas milhas.",
-  "detalhes": [
-   "70% de bônus para assinantes do Clube Smiles e/ou clientes Diamante.",
-   "40% de bônus para demais clientes Smiles.",
-   "Cupom de 75% OFF para compra de milhas Smiles."
-  ],
-  "parceiros": "Bancos parceiros da Smiles e PaGol",
-  "validade": "30/10/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanhas/bancos-28-10-2026"
-  ],
-  "ate": "2026-10-30T23:59:59-03:00"
  },
  {
   "id": "3761373661-8710",
@@ -2703,29 +2645,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "1290836068-7488",
-  "data": "2026-10-29T13:00:37Z",
-  "tipo": "promocao",
-  "titulo": "ASSINATURA CLUBE LIVELO PREMIUM COM ATÉ 96.000 PONTOS BÔNUS",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Assine o Clube Livelo Premium e ganhe até 96.000 pontos bônus, com milheiro a partir de R$24,94 (à vista).",
-  "detalhes": [
-   "Plano Premium Mensal: 90.000 pontos bônus (7.500/mês).",
-   "Plano Premium Anual: 96.000 pontos bônus (8.000/mês).",
-   "Bônus por permanência de 40.000 pontos em 12 meses.",
-   "Milheiro à vista: R$24,94 (anual).",
-   "Milheiro parcelado: R$26,32 (anual).",
-   "Milheiro mensal: R$28,16."
-  ],
-  "parceiros": "Livelo",
-  "validade": "30/10/2026",
-  "links": [
-   "https://www.livelo.com.br/clube"
-  ],
-  "ate": "2026-10-30T23:59:59-03:00"
- },
- {
   "id": "3761373661-8608",
   "data": "2026-10-29T12:59:07Z",
   "origem": "Vitória",
@@ -2908,26 +2827,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "1290836068-7484",
-  "data": "2026-10-29T12:28:29Z",
-  "tipo": "promocao",
-  "titulo": "COMPRA DE MILHAS SMILES COM 75% DE DESCONTO",
-  "ultimo_dia": true,
-  "selo": "Milheiro Acima da Média",
-  "resumo": "Compre milhas Smiles com 75% de desconto, limitado a 100.000 milhas. O milheiro sai por R$ 20,00 com o cupom promocional.",
-  "detalhes": [
-   "Cupom de 75% de desconto na compra de milhas.",
-   "Limite de 100.000 milhas por compra.",
-   "Milheiro saindo por R$ 20,00."
-  ],
-  "parceiros": "Smiles",
-  "validade": "30/10/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanhas/bancos-28-10-2026"
-  ],
-  "ate": "2026-10-30T23:59:59-03:00"
- },
- {
   "id": "3761373661-8595",
   "data": "2026-10-29T12:13:46Z",
   "origem": "Florianópolis",
@@ -3029,25 +2928,6 @@
    "https://www.flytap.com/pt-br/miles-and-go/revolut"
   ],
   "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7482",
-  "data": "2026-10-29T12:02:16Z",
-  "tipo": "promocao",
-  "titulo": "CLUBE ESFERA - ADESÃO OU UPGRADE COM 200% DE BÔNUS",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Assine ou atualize seu plano no Clube Esfera e receba 200% de pontos bônus em 12 meses.",
-  "detalhes": [
-   "200% de pontos bônus distribuídos em 12 parcelas mensais.",
-   "Bônus de até 40.000 pontos no plano Exclusive."
-  ],
-  "parceiros": "Esfera",
-  "validade": "30/10/2026",
-  "links": [
-   "https://www.esfera.com.vc/clube"
-  ],
-  "ate": "2026-10-30T23:59:59-03:00"
  },
  {
   "id": "1290836068-7481",
@@ -3908,26 +3788,6 @@
   "ate": "2026-11-02T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7472",
-  "data": "2026-10-28T14:49:38Z",
-  "tipo": "promocao",
-  "titulo": "CLUBE ESFERA: ATÉ 40.000 PONTOS BÔNUS COM 200% DE BÔNUS",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Assine ou atualize seu plano do Clube Esfera com até 200% de bônus e acumule até 40.000 pontos bônus em 12 meses.",
-  "detalhes": [
-   "200% de bônus distribuído em 12 meses",
-   "Planos Pro, Master, VIP e Exclusive",
-   "Milheiro a partir de R$ 30,85 no plano Exclusive anual à vista"
-  ],
-  "parceiros": "Esfera",
-  "validade": "30/10",
-  "links": [
-   "https://www.esfera.com.vc/clube"
-  ],
-  "ate": "2026-10-30T23:59:59-03:00"
- },
- {
   "id": "1290836068-7471",
   "data": "2026-10-28T14:49:31Z",
   "tipo": "promocao",
@@ -3948,25 +3808,6 @@
    "https://www.hilton.com/en/p/hilton-honors/buy-give-receive-points"
   ],
   "ate": "2026-11-21T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7470",
-  "data": "2026-10-28T14:49:24Z",
-  "tipo": "promocao",
-  "titulo": "PREMMIA & SMILES: TRANSFERÊNCIA COM 100% DE BÔNUS",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Resgate pontos Premmia por milhas Smiles e garanta 100% de bônus para todos os clientes.",
-  "detalhes": [
-   "100% de bônus na transferência",
-   "Exemplo: 300 pontos Premmia + R$ 321,90 geram 20.000 milhas Smiles totais"
-  ],
-  "parceiros": "Smiles e Premmia",
-  "validade": "30/10",
-  "links": [
-   "https://www.smiles.com.br/portal/campanhas/premmia-26102026"
-  ],
-  "ate": "2026-10-30T23:59:59-03:00"
  },
  {
   "id": "1290836068-7449",
@@ -4034,31 +3875,6 @@
   "ate": "2026-10-31T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7446",
-  "data": "2026-10-26T18:47:13Z",
-  "tipo": "promocao",
-  "titulo": "ASSINATURA CLUBE ESFERA COM ATÉ 40.000 PONTOS BÔNUS EM 1 ANO",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Assine ou atualize o Clube Esfera e ganhe até 40.000 pontos bônus em 1 ano, distribuídos conforme o plano escolhido.",
-  "detalhes": [
-   "Clube Pro: 14.000 pontos bônus (167/mês).",
-   "Clube Master: 35.000 pontos bônus (417/mês).",
-   "Clube VIP: 70.000 pontos bônus (833/mês).",
-   "Clube Exclusive: 280.000 pontos bônus (3.333/mês).",
-   "Milheiro Clube Pro: R$ 33,86 (à vista), R$ 35,74 (parcelado anual), R$ 37,62 (mensal).",
-   "Milheiro Clube Master: R$ 32,98 (à vista), R$ 34,81 (parcelado anual), R$ 36,65 (mensal).",
-   "Milheiro Clube VIP: R$ 32,69 (à vista), R$ 34,50 (parcelado anual), R$ 36,32 (mensal).",
-   "Milheiro Clube Exclusive: R$ 30,85 (à vista), R$ 32,56 (parcelado anual), R$ 34,28 (mensal)."
-  ],
-  "parceiros": "Esfera",
-  "validade": "30/10/2026",
-  "links": [
-   "https://www.esfera.com.vc/clube"
-  ],
-  "ate": "2026-10-30T23:59:59-03:00"
- },
- {
   "id": "1290836068-7445",
   "data": "2026-10-26T18:47:09Z",
   "tipo": "promocao",
@@ -4121,31 +3937,6 @@
   "ate": "2026-11-02T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7433",
-  "data": "2026-10-26T14:31:58Z",
-  "tipo": "promocao",
-  "titulo": "CLUBE ESFERA: ASSINE OU ATUALIZE SEU PLANO COM BÔNUS DE 200% E GANHE ATÉ 40.000 PONTOS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine ou atualize seu plano do Clube Esfera até 30/10 e ganhe até 40.000 pontos bônus em 12 meses com 200% de bônus. Validade exclusiva para novas adesões ou atualizações imediatas.",
-  "detalhes": [
-   "Bônus de 200% sobre pontos acumulados durante 12 meses.",
-   "Pontos bônus por plano:",
-   "PRO: 2.000 pontos bônus",
-   "",
-   "MASTER: 5.000 pontos bônus",
-   "VIP: 10.000 pontos bônus",
-   "",
-   "EXCLUSIVE: 40.000 pontos bônus"
-  ],
-  "parceiros": "Clube Esfera",
-  "validade": "30/10",
-  "links": [
-   "https://www.esfera.com.vc/clube"
-  ],
-  "ate": "2026-10-30T23:59:59-03:00"
- },
- {
   "id": "1290836068-7432",
   "data": "2026-10-26T14:09:31Z",
   "tipo": "promocao",
@@ -4163,24 +3954,6 @@
    "https://all.accor.com/a/pt-br/loyalty-program/subscription-program/all-signature.html"
   ],
   "ate": "2026-11-20T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7428",
-  "data": "2026-10-26T12:34:47Z",
-  "tipo": "promocao",
-  "titulo": "ADESÃO AO CLUBE ESFERA COM 200% DE BÔNUS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Clube Esfera e receba 200% de pontos bônus na adesão.",
-  "detalhes": [
-   "200% de pontos bônus na adesão ao Clube Esfera."
-  ],
-  "parceiros": "Esfera",
-  "validade": "30/10/2026",
-  "links": [
-   "https://www.esfera.com.vc/clube"
-  ],
-  "ate": "2026-10-30T23:59:59-03:00"
  },
  {
   "id": "1290836068-7426",
@@ -4344,42 +4117,6 @@
    "https://latampass.latam.com/br/pt/promocoes/bonus-cartao-itau"
   ],
   "ate": "2026-11-14T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7298",
-  "data": "2026-10-17T12:38:06Z",
-  "tipo": "promocao",
-  "titulo": "SMILES - TRANSFERÊNCIA ENTRE CONTAS COM ATÉ 250% DE BÔNUS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira milhas entre contas Smiles e receba até 250% de bônus com milheiro a partir de R$ 28,00.",
-  "detalhes": [
-   "Até 250% de bônus na transferência entre contas."
-  ],
-  "parceiros": "Smiles",
-  "validade": "30/10/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanhas/transferirmilhas-250bonus-20260930"
-  ],
-  "ate": "2026-10-30T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7297",
-  "data": "2026-10-17T12:38:01Z",
-  "tipo": "promocao",
-  "titulo": "SMILES - PRESENTEE MILHAS COM 75% DE DESCONTO",
-  "ultimo_dia": false,
-  "selo": "Milheiro Acima da Média",
-  "resumo": "Presenteie milhas Smiles com 75% de desconto e garanta o milheiro por R$ 20,00.",
-  "detalhes": [
-   "75% de desconto na opção Presenteie Milhas."
-  ],
-  "parceiros": "Smiles",
-  "validade": "30/10/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanhas/gift-75-20261007"
-  ],
-  "ate": "2026-10-30T23:59:59-03:00"
  },
  {
   "id": "1290836068-7290",
