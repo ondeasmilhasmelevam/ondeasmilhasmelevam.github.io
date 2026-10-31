@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5906",
+  "data": "2026-10-31T22:07:58Z",
+  "origem": "Doha",
+  "origem_iata": "DOH",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "Qatar Airways",
+  "cabine": "Executiva",
+  "programa": "Qatar Privilege Club",
+  "ida": "70.000 AVIOS + R$ 0",
+  "volta": "70.000 AVIOS + R$ 0",
+  "link_nome": "Privilege Club"
+ },
+ {
   "id": "2361370250-5905",
   "data": "2026-10-31T20:07:49Z",
   "origem": "São Paulo",
@@ -2559,20 +2573,6 @@
   "programa": "Flying Blue",
   "ida": "85.000 milhas + Taxas",
   "volta": "85.000 milhas + Taxas",
-  "link_nome": "Flying Blue"
- },
- {
-  "id": "2361370250-5816",
-  "data": "2026-10-29T22:03:27Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Seul",
-  "destino_iata": "ICN",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "Flying Blue",
-  "ida": "120.000 milhas + $ 87,50 USD",
-  "volta": "125.000 milhas + $ 683,50 USD",
   "link_nome": "Flying Blue"
  },
  {
