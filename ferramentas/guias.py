@@ -39,14 +39,14 @@ Regras:
 - Use só fatos que estão no texto de origem (clima, época, atrações, documentos, moeda). Não invente preços, horários nem nomes.
 - "aeroporto_iata": o código IATA do aeroporto mais usado para chegar ao destino (pode ser de uma cidade próxima, ex.: Jericoacoara -> JJD). Use o seu conhecimento se o texto não disser.
 - "regiao": no Brasil, a região do país (Norte, Nordeste, Centro-Oeste, Sudeste, Sul); fora, o continente ou a região (Caribe, América do Sul, América do Norte, Europa, Ásia, África, Oriente Médio, Oceania).
-- "secoes": para cada assunto, um "resumo" de 2 a 4 frases e "itens" com os principais lugares, bairros, praias, passeios
+- "secoes": uma entrada por assunto (em "assunto" a chave: quando_ir, como_chegar...), com um "resumo" de 2 a 4 frases e "itens" com os principais lugares, bairros, praias, passeios
   ou restaurantes (nome próprio do lugar em "nome" e 1 ou 2 frases suas em "texto"; até 8 itens). Se o texto de origem não
-  tiver o assunto, deixe o resumo vazio e a lista vazia. Nomes de lugares e estabelecimentos podem ser mantidos.
+  tiver o assunto, não inclua esse assunto em "secoes". Nomes de lugares e estabelecimentos podem ser mantidos.
 - Só informação útil e nomes: nada de links, endereços de sites, preços de hotel, cupons, ofertas ou chamadas como "veja também",
   "leia mais" ou "reserve aqui".
 - Português do Brasil, frases curtas e diretas, tom de quem já viajou e quer ajudar. Sem emojis."""
-SECAO = {'type': 'object', 'additionalProperties': False, 'required': ['resumo', 'itens'],
-         'properties': {'resumo': {'type': 'string'},
+SECAO = {'type': 'object', 'additionalProperties': False, 'required': ['assunto', 'resumo', 'itens'],
+         'properties': {'assunto': {'type': 'string', 'enum': list(SECOES)}, 'resumo': {'type': 'string'},
                         'itens': {'type': 'array', 'items': {'type': 'object', 'additionalProperties': False, 'required': ['nome', 'texto'],
                                                               'properties': {'nome': {'type': 'string'}, 'texto': {'type': 'string'}}}}}}
 ESQUEMA = {
@@ -64,7 +64,7 @@ ESQUEMA = {
         'moeda': {'type': 'string', 'description': 'Moeda local; vazio no Brasil'},
         'idioma': {'type': 'string', 'description': 'Idioma local; vazio no Brasil'},
         'documentos': {'type': 'string', 'description': 'Documento para brasileiros entrarem (passaporte, RG, visto); vazio no Brasil'},
-        'secoes': {'type': 'object', 'additionalProperties': False, 'required': list(SECOES), 'properties': {k: SECAO for k in SECOES}},
+        'secoes': {'type': 'array', 'items': SECAO, 'description': 'Uma entrada por assunto que o texto de origem cobre'},
     },
 }
 
@@ -120,11 +120,12 @@ def texto_completo(slug):
 
 
 def reescrever(cliente, anthropic, nome, tipo, texto):
-    r = cliente.beta.messages.create(
-        model=MODELO, max_tokens=16000, system=SISTEMA,
-        betas=['server-side-fallback-2026-07-01'], fallbacks='default',
-        output_config={'effort': 'low', 'format': {'type': 'json_schema', 'schema': ESQUEMA}},
-        messages=[{'role': 'user', 'content': f'Destino: {nome} ({tipo})\n\nTexto de origem:\n{texto}'}])
+    with cliente.beta.messages.stream(
+            model=MODELO, max_tokens=16000, system=SISTEMA,
+            betas=['server-side-fallback-2026-07-01'], fallbacks='default',
+            output_config={'effort': 'low', 'format': {'type': 'json_schema', 'schema': ESQUEMA}},
+            messages=[{'role': 'user', 'content': f'Destino: {nome} ({tipo})\n\nTexto de origem:\n{texto}'}]) as fluxo:
+        r = fluxo.get_final_message()
     if r.stop_reason != 'end_turn':
         return None
     saida = json.loads(next(b.text for b in r.content if b.type == 'text'))
@@ -133,8 +134,13 @@ def reescrever(cliente, anthropic, nome, tipo, texto):
     saida['dicas'] = [d.strip() for d in saida['dicas'] if d.strip()][:5]
     iata = saida['aeroporto_iata'].strip().upper()
     saida['aeroporto_iata'] = iata if re.fullmatch(r'[A-Z]{3}', iata) else ''
-    for sec in saida['secoes'].values():
-        sec['itens'] = [i for i in sec['itens'] if i['nome'].strip() and i['texto'].strip()][:8]
+    # O site lê as seções por assunto (quando_ir, como_chegar...).
+    secoes = {}
+    for sec in saida['secoes']:
+        itens = [i for i in sec['itens'] if i['nome'].strip() and i['texto'].strip()][:8]
+        if sec['assunto'] in SECOES and sec['assunto'] not in secoes and (sec['resumo'].strip() or itens):
+            secoes[sec['assunto']] = {'resumo': sec['resumo'].strip(), 'itens': itens}
+    saida['secoes'] = secoes
     if len(saida['resumo']) < 40 or len(saida['destaques']) < 2:
         return None
     return saida
@@ -177,7 +183,7 @@ def main():
         try:
             return item, reescrever(cliente, anthropic, nome, tipo, texto)
         except (anthropic.APIStatusError, anthropic.APIConnectionError, ValueError, StopIteration, KeyError) as e:
-            print(f'::warning::Não reescreveu {nome}: {type(e).__name__}')
+            print(f'::warning::Não reescreveu {nome}: {type(e).__name__}: {str(e)[:300]}')
             return item, None
 
     feitos = 0
