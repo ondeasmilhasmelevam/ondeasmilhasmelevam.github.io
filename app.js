@@ -1517,6 +1517,72 @@
     const sel = $('#passagens-programa');
     if (sel.innerHTML !== htmlProgramas) sel.innerHTML = htmlProgramas;
   }
+  // Página de Promoções: as promoções de pontos dos alertas, por programa e por tipo, com a cor do programa.
+  const PROGRAMAS_PROMO = [
+    ['Smiles', /SMILES|\bGOL\b|PAGOL/, '#ff7a1a'], ['LATAM Pass', /LATAM/, '#c8174b'], ['Azul', /AZUL/, '#1d5fd1'],
+    ['Livelo', /LIVELO/, '#e0127c'], ['Esfera', /ESFERA/, '#d81e1e'], ['TAP', /\bTAP\b/, '#2bb04a'],
+    ['ALL Accor', /ACCOR|ALL SIGNATURE|LIMITLESS/, '#2d2f8f'], ['Avios', /IBERIA|AVIOS|BRITISH|QATAR/, '#8a1538'],
+    ['Flying Blue', /FLYING BLUE|AIR FRANCE|KLM/, '#0b5cad'], ['C6', /\bC6\b|ATOMOS/, '#4a4f5c'], ['Itaú', /ITAU/, '#ec7000'],
+    ['Revolut', /REVOLUT/, '#6b7cff'], ['Premmia', /PREMMIA/, '#00a19a'], ['Inter', /\bINTER\b/, '#ff8a00'], ['Méliuz', /MELIUZ/, '#e5007e']
+  ];
+  const OUTROS_PROMO = ['Outros', null, '#5b6478'];
+  const TIPOS_PROMO = [
+    ['Transferência', /TRANSFER|TRANSFIRA/], ['Compra de pontos', /COMPRA DE (MILHAS|PONTOS)|COMPRE (MILHAS|PONTOS)/], ['Cashback', /CASHBACK/],
+    ['Clubes', /CLUBE|ASSINATURA|ASSINE|ADESAO/], ['Compra bonificada', /POR REAL|PONTOS POR R|GANHE ATE|SOLICITAR CARTAO/],
+    ['Passagens', /VOOS?\b|PASSAGE|POR TRECHO|CLASSE EXECUTIVA|A PARTIR DE [\d.]+ ?(MIL|MILHAS|PONTOS|AVIOS)/], ['Desconto', /DESCONTO|% OFF/]
+  ];
+  const programaPromo = p => { const t = norm(`${p.titulo} ${p.parceiros || ''}`); return PROGRAMAS_PROMO.find(([, re]) => re.test(t)) || OUTROS_PROMO; };
+  const tipoPromo = p => { const t = norm(p.titulo); return (TIPOS_PROMO.find(([, re]) => re.test(t)) || ['Outras'])[0]; };
+  const filtroPromo = { programa: '', tipo: '', busca: '', ordem: '' };
+  // Os títulos chegam em maiúsculas: primeira letra de cada palavra, siglas como estão.
+  const SIGLAS = new Set(['TAP', 'GOL', 'KLM', 'IHG', 'BTG', 'C6', 'ALL', 'LATAM', 'XP', 'BB', 'PAN', 'AA', 'VIP', 'MG', 'UK', 'EUA']);
+  const MINUSCULAS = new Set(['de', 'da', 'do', 'das', 'dos', 'e', 'com', 'para', 'por', 'em', 'na', 'no', 'nas', 'nos', 'a', 'o', 'as', 'os', 'ao', 'até', 'sobre', 'ou', 'mais']);
+  const tituloPromo = t => (t === t.toUpperCase() ? t.split(/(\s+)/).map((w, i) => {
+    if (/^\s+$/.test(w) || SIGLAS.has(w.replace(/[^\w]/g, ''))) return w;
+    const l = w.toLowerCase();
+    return i && MINUSCULAS.has(l) ? l : l.replace(/(^[^\p{L}]*|-)(\p{L})/gu, (m, a, b) => a + b.toUpperCase());
+  }).join('') : t);
+  function chipsPromo(el, itens, atual, chave) {
+    el.innerHTML = [['', 'Todas', null, itens.reduce((s, x) => s + x[3], 0)], ...itens].map(([v, nome, cor, n]) =>
+      `<button type="button" data-${chave}="${esc(v)}" aria-pressed="${v === atual}"${cor ? ` style="--pc:${cor}"` : ''}>${cor ? '<i></i>' : ''}${esc(nome)}<small>${n}</small></button>`).join('');
+  }
+  function mostrarPromocoes() {
+    const agora = Date.now(), f = filtroPromo;
+    const vivas = passagens.filter(p => ehPromocao(p) && agora < venceEm(p));
+    const contar = (lista, chaveDe) => { const m = new Map(); lista.forEach(p => { const k = chaveDe(p); m.set(k, (m.get(k) || 0) + 1); }); return m; };
+    const porProg = contar(vivas, p => programaPromo(p)[0]);
+    chipsPromo($('#promo-programas'), [...PROGRAMAS_PROMO, OUTROS_PROMO].filter(([n]) => porProg.has(n)).map(([n, , cor]) => [n, n, cor, porProg.get(n)])
+      .sort((a, b) => b[3] - a[3]), f.programa, 'prog');
+    const doProg = vivas.filter(p => !f.programa || programaPromo(p)[0] === f.programa);
+    const porTipo = contar(doProg, tipoPromo);
+    chipsPromo($('#promo-tipos'), [...TIPOS_PROMO.map(([n]) => n), 'Outras'].filter(n => porTipo.has(n)).map(n => [n, n, null, porTipo.get(n)]), f.tipo, 'tipo');
+    const busca = norm(f.busca);
+    const lista = doProg.filter(p => (!f.tipo || tipoPromo(p) === f.tipo) &&
+      (!busca || norm([p.titulo, p.parceiros, p.resumo].join(' ')).includes(busca)));
+    if (f.ordem === 'vence') lista.sort((a, b) => venceEm(a) - venceEm(b));
+    $('#promo-lista').innerHTML = lista.map(p => {
+      const [prog, , cor] = programaPromo(p), links = (p.links || []).filter(httpOk);
+      const site = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return 'site'; } };
+      const temData = !isNaN(Date.parse(p.ate));
+      return `<li class="promo-card" style="--pc:${cor}">
+        <div class="promo-topo"><span class="promo-tipo">${esc(tipoPromo(p))}</span><span class="promo-prog">${esc(prog)}</span></div>
+        <div class="promo-corpo">
+          <p class="promo-quando"><span>${haQuanto(agora - new Date(p.data))}</span>${ultimoDia(p, agora) ? '<span class="urgente">Último dia</span>' : temData ? `<span class="vence">Vence ${esc(diaBR(Date.parse(p.ate)).slice(0, 5))}</span>` : ''}${p.selo ? `<span>${esc(p.selo)}</span>` : ''}</p>
+          <h3>${esc(tituloPromo(p.titulo))}</h3>
+          ${p.resumo ? `<p class="promo-resumo">${esc(p.resumo)}</p>` : ''}
+          ${p.detalhes && p.detalhes.length ? `<details class="promo-detalhes"><summary>Como funciona</summary><ul>${p.detalhes.map(d => `<li>${esc(d)}</li>`).join('')}</ul></details>` : ''}
+          <div class="promo-links">${links.map((u, i) => `<a class="cta ${i ? 'cta-b' : 'cta-a'} pass-link" href="${esc(u)}" target="_blank" rel="noopener">${links.length > 1 ? `Abrir ${esc(site(u))}` : 'Ver promoção'} ↗</a>`).join('')}</div>
+        </div>
+      </li>`;
+    }).join('');
+    $('#promo-vazio').hidden = !!lista.length;
+    $('#promo-nota').textContent = `${vivas.length} promoções no ar agora: bônus de transferência, compra de pontos com desconto, clubes e passagens, conferidos nos grupos de alertas. Cada uma fica aqui até o fim da validade.`;
+  }
+  $('#promo-programas').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; Object.assign(filtroPromo, { programa: b.dataset.prog, tipo: '' }); mostrarPromocoes(); });
+  $('#promo-tipos').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; filtroPromo.tipo = b.dataset.tipo; mostrarPromocoes(); });
+  $('#promo-busca').addEventListener('input', e => { filtroPromo.busca = e.target.value; mostrarPromocoes(); });
+  $('#promo-ordem').addEventListener('change', e => { filtroPromo.ordem = e.target.value; mostrarPromocoes(); });
+
   async function desenharPassagens() {
     try {
       const r = await fetch('dados/alertas.json', { cache: 'no-store' });
@@ -1527,6 +1593,7 @@
       }
     } catch (e) { /* mantém os que já estavam na tela */ }
     mostrarPassagens();
+    mostrarPromocoes();
   }
   $('#passagens-busca').addEventListener('input', e => { filtroPassagem.busca = e.target.value; mostrarPassagens(); });
   $('#passagens-destino').addEventListener('input', e => { filtroPassagem.destino = e.target.value; mostrarPassagens(); });
@@ -1534,6 +1601,7 @@
   $('#passagens-ordem').addEventListener('change', e => { filtroPassagem.ordem = e.target.value; mostrarPassagens(); });
   $('#passagens-tipo').addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.tipo === 'promocao') { location.hash = 'promocoes'; return; } // as promoções têm página própria
     Object.assign(filtroPassagem, { tipo: b.dataset.tipo, busca: '', todas: false });
     $('#passagens-busca').value = '';
     mostrarPassagens();
@@ -2059,7 +2127,7 @@
   }
   // "Atualizado ..." de cada página: a data do arquivo de dados dela no site.
   const ARQUIVO_DA_PAGINA = {
-    passagens: 'dados/alertas.json', termometro: 'dados/termometro.json', guia: 'dados/guia.json',
+    passagens: 'dados/alertas.json', promocoes: 'dados/alertas.json', termometro: 'dados/termometro.json', guia: 'dados/guia.json',
     transferencias: 'dados/transferencias.json', novidades: 'dados/noticias.json',
     restaurantes: 'restaurantes.js', salas: 'dados/salas.json', cadastros: 'dados/programas.json', quanto: 'dados/precos-milhas.csv', comprar: 'precos.js', contatos: 'dados/contatos.csv'
   };
