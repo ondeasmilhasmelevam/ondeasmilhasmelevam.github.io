@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=78">
+<link rel="stylesheet" href="estilo.css?v=79">
 </head>
 <body>
 <header class="bar">
@@ -190,6 +190,7 @@
           <label>Cabine<select id="seats-cabine"><option value="">Todas</option><option value="eco">Econômica</option><option value="premium">Premium economy</option><option value="exe">Executiva</option><option value="primeira">Primeira</option></select></label>
           <button type="submit" class="cta cta-a">Buscar</button>
         </form>
+        <label class="chave seats-todas"><input type="checkbox" id="seats-todas"><span></span>Mostrar todas (não só as boas: voo direto ou preço bom no Termômetro)</label>
         <p class="seats-msg" id="seats-msg" hidden></p>
         <div class="seats-res" id="seats-res"></div>
         <p class="seats-fonte">Disponibilidade do <a href="https://seats.aero" target="_blank" rel="noopener">seats.aero</a>, atualizada com frequência; confirme no site do programa antes de transferir pontos.</p>
@@ -759,7 +760,7 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=86"></script>
+<script src="app.js?v=87"></script>
 <script type="module" src="assinatura.js?v=7"></script>
 </body>
 </html>

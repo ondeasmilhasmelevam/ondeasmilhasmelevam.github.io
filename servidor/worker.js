@@ -270,7 +270,7 @@ async function buscarVoos(req, url, env) {
   const d = await r.json();
   const CABS = [['Y', 'eco'], ['W', 'premium'], ['J', 'exe'], ['F', 'primeira']];
   const voos = (d.data || []).map(v => ({
-    data: v.Date, programa: v.Source, origem: v.Route && v.Route.OriginAirport, destino: v.Route && v.Route.DestinationAirport,
+    data: v.Date, programa: v.Source, origem: v.Route && v.Route.OriginAirport, destino: v.Route && v.Route.DestinationAirport, distancia: v.Route && v.Route.Distance,
     cabines: Object.fromEntries(CABS.filter(([L]) => v[`${L}Available`]).map(([L, nome]) => [nome, {
       milhas: Number(v[`${L}MileageCost`]) || null, assentos: v[`${L}RemainingSeats`] || null, cias: v[`${L}Airlines`] || '', direto: !!v[`${L}Direct`] }]))
   })).filter(v => Object.keys(v.cabines).length);

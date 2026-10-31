@@ -1862,16 +1862,50 @@
       const r = await fetch(`${SERVIDOR_ASSINATURA}/voos?${q}`, { headers: token ? { authorization: `Bearer ${token}` } : {} });
       const d = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(d.erro || 'Não deu para buscar agora.');
-      const voos = (d.voos || []).sort((a, b) => a.data.localeCompare(b.data) || nomeSeats(a.programa).localeCompare(nomeSeats(b.programa)));
-      if (!voos.length) { msgSeats(`Nenhuma disponibilidade em milhas de ${origem} para ${destino} nessas datas.`); return; }
-      msgSeats(`${voos.length} ${voos.length === 1 ? 'opção' : 'opções'} de ${origem} para ${destino}.`);
-      const cel = c => (c ? `<td><b>${c.milhas ? esc(inteiro.format(c.milhas)) : '—'}</b><small>${[c.direto ? 'direto' : 'com conexão', c.assentos ? `${c.assentos} ${c.assentos === 1 ? 'assento' : 'assentos'}` : '', c.cias].filter(Boolean).map(esc).join(' · ')}</small></td>` : '<td class="vazio">—</td>');
-      $('#seats-res').innerHTML = `<table class="seats-tab"><thead><tr><th>Data</th><th>Programa</th><th>Econômica</th><th>Premium</th><th>Executiva</th><th>Primeira</th></tr></thead><tbody>${voos.slice(0, 300).map(v => `<tr>
-        <td>${esc(new Date(v.data + 'T12:00:00').toLocaleDateString('pt-BR', { weekday: 'short', day: '2-digit', month: '2-digit' }))}</td>
-        <td><b>${esc(nomeSeats(v.programa))}</b><small>${esc(`${v.origem || ''} → ${v.destino || ''}`)}</small></td>
-        ${cel(v.cabines.eco)}${cel(v.cabines.premium)}${cel(v.cabines.exe)}${cel(v.cabines.primeira)}</tr>`).join('')}</tbody></table>`;
+      ultimaBuscaSeats = { voos: (d.voos || []).sort((a, b) => a.data.localeCompare(b.data) || nomeSeats(a.programa).localeCompare(nomeSeats(b.programa))), origem, destino };
+      desenharSeats();
     } catch (er) { msgSeats(er.message); } finally { botao.disabled = false; }
   });
+  // Só as boas, por padrão: voo direto, faixa "bom" para cima no Termômetro, ou Iberia na tabela de baixa temporada.
+  // Tabela de Avios da Iberia (baixa temporada, só ida), pela distância em milhas: econômica básica, premium e executiva.
+  const IBERIA_FAIXAS = [650, 1150, 2000, 3000, 4000, 5500, 6500, 7000, Infinity];
+  const IBERIA_TABELA = { eco: [3500, 6500, 9500, 10500, 16000, 20000, 24000, 28250, 41000],
+    premium: [null, null, null, null, 29500, 36750, 44000, 51000, 71000], exe: [9750, 16500, 22000, 23000, 40500, 50500, 60500, 70500, 97000] };
+  const CABINE_SEATS = { eco: 'Econômica', premium: 'Premium', exe: 'Executiva', primeira: 'Primeira' };
+  let ultimaBuscaSeats = null;
+  function selosSeats(v, cab, c) {
+    const selos = [];
+    if (c.direto) selos.push(['direto', 'Direto']);
+    const nivel = c.milhas ? nivelPassagem({ origem_iata: v.origem, destino_iata: v.destino, cabine: CABINE_SEATS[cab], programa: nomeSeats(v.programa), ida: `${c.milhas} milhas` }) : '';
+    if (['espetacular', 'muito bom', 'bom'].includes(nivel)) selos.push(['termo', nivel.replace(/^./, x => x.toUpperCase())]);
+    if (v.programa === 'iberia' && v.distancia && c.milhas && IBERIA_TABELA[cab]) {
+      const teto = IBERIA_TABELA[cab][IBERIA_FAIXAS.findIndex(f => v.distancia <= f)];
+      if (teto && c.milhas <= teto) selos.push(['tabela', 'Tabela Iberia']);
+    }
+    return selos;
+  }
+  function desenharSeats() {
+    if (!ultimaBuscaSeats) return;
+    const { voos, origem, destino } = ultimaBuscaSeats, todas = $('#seats-todas').checked;
+    const linhas = voos.map(v => {
+      const cabs = Object.fromEntries(['eco', 'premium', 'exe', 'primeira'].map(cab => {
+        const c = v.cabines[cab]; if (!c) return [cab, null];
+        const selos = selosSeats(v, cab, c);
+        return [cab, todas || selos.length ? { ...c, selos } : null];
+      }));
+      return { v, cabs, boa: Object.values(cabs).some(Boolean) };
+    }).filter(l => l.boa);
+    if (!voos.length) { msgSeats(`Nenhuma disponibilidade em milhas de ${origem} para ${destino} nessas datas.`); $('#seats-res').innerHTML = ''; return; }
+    msgSeats(todas ? `${voos.length} ${voos.length === 1 ? 'opção' : 'opções'} de ${origem} para ${destino}.`
+      : linhas.length ? `${linhas.length} boas opções de ${origem} para ${destino} (de ${voos.length} encontradas): voo direto ou preço bom no Termômetro.`
+        : `Nenhuma opção boa de ${origem} para ${destino} nessas datas (${voos.length} encontradas). Marque "Mostrar todas" para ver as demais.`);
+    const cel = c => (c ? `<td><b>${c.milhas ? esc(inteiro.format(c.milhas)) : '—'}</b>${c.selos.length ? `<span class="seats-selos">${c.selos.map(([t, n]) => `<em class="s-${t}">${esc(n)}</em>`).join('')}</span>` : ''}<small>${[c.direto ? '' : 'com conexão', c.assentos ? `${c.assentos} ${c.assentos === 1 ? 'assento' : 'assentos'}` : '', c.cias].filter(Boolean).map(esc).join(' · ')}</small></td>` : '<td class="vazio">—</td>');
+    $('#seats-res').innerHTML = linhas.length ? `<table class="seats-tab"><thead><tr><th>Data</th><th>Programa</th><th>Econômica</th><th>Premium</th><th>Executiva</th><th>Primeira</th></tr></thead><tbody>${linhas.slice(0, 300).map(({ v, cabs }) => `<tr>
+      <td>${esc(new Date(v.data + 'T12:00:00').toLocaleDateString('pt-BR', { weekday: 'short', day: '2-digit', month: '2-digit' }))}</td>
+      <td><b>${esc(nomeSeats(v.programa))}</b><small>${esc(`${v.origem || ''} → ${v.destino || ''}`)}</small></td>
+      ${cel(cabs.eco)}${cel(cabs.premium)}${cel(cabs.exe)}${cel(cabs.primeira)}</tr>`).join('')}</tbody></table>` : '';
+  }
+  $('#seats-todas').addEventListener('change', desenharSeats);
 
   async function desenharPassagens() {
     try {
