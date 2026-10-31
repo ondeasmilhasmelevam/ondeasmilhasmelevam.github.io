@@ -1228,3 +1228,15 @@ footer .badge{width:84px;height:84px;margin-bottom:14px}
 .ass-historico th{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ash-dim);padding:6px 8px}
 .ass-historico td{padding:9px 8px;border-top:1px solid var(--line);color:var(--rice);white-space:nowrap}
 .ass-historico a{color:var(--ouro)}
+
+/* novidades: mudanças de regra recolhidas no fim; a última de cada cartão aparece no ranking */
+.regras-bloco{margin-top:30px;border:1px solid var(--line);border-radius:16px;background:var(--ink-2);padding:4px 16px}
+.regras-bloco summary{display:grid;gap:2px;padding:12px 0;cursor:pointer;list-style-position:outside}
+.regras-bloco summary b{font-size:16px;color:var(--rice)}
+.regras-bloco summary small{font-size:13px;color:var(--ash)}
+.regras-bloco[open] summary{border-bottom:1px solid var(--line);margin-bottom:14px}
+.regras-bloco .cta{margin:0 0 14px}
+.mudanca-cartao{margin:0 0 18px;padding:12px 14px;border-radius:14px;border:1px solid rgba(226,180,88,.4);background:rgba(226,180,88,.07)}
+.mudanca-cartao h4{margin:0 0 4px}
+.mudanca-cartao p{margin:0;font-size:14px;line-height:1.55;color:var(--rice)}
+.mudanca-cartao small{display:block;margin-top:6px;font-size:12px;color:var(--ash-dim)}

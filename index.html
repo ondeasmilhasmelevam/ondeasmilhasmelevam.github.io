@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=75">
+<link rel="stylesheet" href="estilo.css?v=76">
 </head>
 <body>
 <header class="bar">
@@ -556,17 +556,13 @@
 
     <section id="novidades" data-pagina="novidades">
       <div class="sec-head">
-        <p class="eyebrow">Novidades</p>
-        <h2>O que mudou nos cartões</h2>
-        <p class="sec-note">Mudanças de regra que já entraram na conta acima.</p>
+        <p class="eyebrow"><span class="ao-vivo"></span>Novidades</p>
+        <h2>O que mudou em cartões e milhas</h2>
+        <p class="sec-note">Lançamentos, parcerias, novas rotas, emissões e mudanças de regra, atualizados sozinhos algumas vezes por dia. A matéria completa abre no site de origem.</p>
       </div>
       <div id="avisos"></div>
-      <ul class="novidades" id="lista-novidades"></ul>
-      <button type="button" class="cta cta-b" id="mais-novidades" hidden></button>
 
       <div class="noticias-bloco" id="noticias" hidden>
-        <h3>Notícias de cartões e milhas</h3>
-        <p class="sec-note">Lançamentos, parcerias, novas rotas e mudanças de regra publicados na imprensa especializada. Atualizado sozinho algumas vezes por dia; a matéria completa abre no site de origem.</p>
         <div class="seg-tipo" id="noticias-tema" role="group" aria-label="Assunto das notícias">
           <button type="button" data-tema="" aria-pressed="true">Todas</button>
           <button type="button" data-tema="cartoes" aria-pressed="false">Cartões e salas VIP</button>
@@ -575,6 +571,12 @@
         <ul class="noticias" id="lista-noticias"></ul>
         <button type="button" class="cta cta-b" id="mais-noticias" hidden></button>
       </div>
+
+      <details class="regras-bloco">
+        <summary><b>Mudanças de regra dos cartões</b><small>Registradas na nossa planilha e já incluídas no cálculo do ranking. Cada cartão mostra a sua em "Ver benefícios".</small></summary>
+        <ul class="novidades" id="lista-novidades"></ul>
+        <button type="button" class="cta cta-b" id="mais-novidades" hidden></button>
+      </details>
     </section>
 
     <section id="assinar" data-pagina="assinar">
@@ -732,7 +734,7 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=81"></script>
+<script src="app.js?v=83"></script>
 <script type="module" src="assinatura.js?v=6"></script>
 </body>
 </html>

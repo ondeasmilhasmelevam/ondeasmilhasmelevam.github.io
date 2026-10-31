@@ -883,7 +883,13 @@
 
     const nomeLink = url => { try { return new URL(url).hostname.replace(/^www\./, ''); } catch (e) { return 'site'; } };
 
+    // Última mudança de regra deste cartão registrada na planilha (aba de histórico).
+    const mud = (modelo.historico || []).find(n => { const i = n.texto.indexOf(':'); const t = norm(i > 0 && i < 50 ? n.texto.slice(0, i) : '').replace('PORTO BANK', 'PORTO SEGURO'); return t && (norm(k.nome).startsWith(t) || t.startsWith(norm(k.nome))); });
+    const mudHtml = mud ? `<div class="mudanca-cartao"><h4>Última mudança de regra</h4><p>${esc(mud.texto.slice(mud.texto.indexOf(':') + 1).trim().replace(/^./, c => c.toUpperCase()))}</p>
+      <small>${mud.detectada ? `Registrada em ${esc(mud.detectada.toLocaleDateString('pt-BR'))}` : ''}${mud.mudanca && !/^n[aã]o especificad/i.test(mud.mudanca) ? ` · vale desde ${esc(mud.mudanca)}` : ''}</small></div>` : '';
+
     return `<div>
+        ${mudHtml}
         ${salasHtml(k)}
         ${todosBeneficios ? `<h4>Benefícios</h4><ul class="beneficios">${todosBeneficios}</ul>` : ''}
       </div>
@@ -908,8 +914,9 @@
     const vistas = new Set();
     const recentes = lista.filter(n => !vistas.has(nomeDe(n)) && vistas.add(nomeDe(n)));
     const ul = $('#lista-novidades'), btn = $('#mais-novidades');
-    if (!lista.length) { $('#novidades').hidden = true; return; }
-    $('#novidades').hidden = false;
+    const bloco = document.querySelector('.regras-bloco');
+    bloco.hidden = !lista.length; // sem histórico na planilha, só as notícias
+    if (!lista.length) return;
     const todas = btn.dataset.todas === '1';
     const mostrar = todas ? lista : recentes;
     ul.innerHTML = mostrar.map(n => {
