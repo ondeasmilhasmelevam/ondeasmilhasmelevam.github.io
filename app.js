@@ -599,7 +599,35 @@
   }
   const SEM_CONTATO = '<svg class="nfc" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7.5a6 6 0 0 1 0 9M11.5 5a10 10 0 0 1 0 14M15 2.8a13.5 13.5 0 0 1 0 18.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
 
+  // Foto do cartão (img/cartoes, achadas na internet e recortadas); sem foto, fica o desenho.
+  const FOTO_CARTAO = {
+    'BRADESCO THE CENTURION CARD': 'centurion', 'REVOLUT ULTRA': 'revolut-ultra', 'SANTANDER AADVANTAGE': 'santander-aadvantage',
+    'CAIXA ICONE': 'caixa-icone', 'C6 BANK GRAPHENE WORLD LEGEND': 'c6-graphene', 'BANCO DO BRASIL ALTUS': 'bb-altus',
+    'XP INVESTIMENTOS PRIVILEGE': 'xp-privilege', 'REVOLUT METAL': 'revolut-metal', 'SICOOB ZENITH': 'sicoob-zenith',
+    'PORTO SEGURO': 'porto-seguro', 'BRADESCO AETERNUM': 'bradesco-aeternum', 'ITAU THE ONE': 'itau-the-one',
+    'NOMAD EXPLORER': 'nomad-explorer', 'SICREDI': 'sicredi', 'BRB DUX': 'brb-dux', 'SANTANDER UNLIMITED': 'santander-unlimited',
+    'UNICRED IMPAR': 'unicred-impar', 'BANESCARD': 'banescard', 'C6 BANK CARBON': 'c6-carbon', 'C6 BANK CARBON (COM ACELERADOR)': 'c6-carbon',
+    'CAIXA ELO DINERS': 'caixa-elo-diners', 'C6 BANK PLATINUM': 'c6-platinum', 'BANCO DO BRASIL ALTUS LIV': 'bb-altus-liv',
+    'SANTANDER UNIQUE': 'santander-unique', 'XP INVESTIMENTOS': 'xp', 'BTG+ BLACK': 'btg-black', 'NUBANK ULTRAVIOLETA': 'nubank-ultravioleta',
+    'SICOOB BLACK MERIT PRO': 'sicoob-merit', 'UNICRED': 'unicred', 'C6 BANK BLACK': 'c6-black', 'BTG ULTRABLUE': 'btg-ultrablue',
+    'BANCO INTER WIN': 'inter-win', 'ITAU LATAM PASS INFINITE / BLACK': 'itau-latam-black', 'UNIPRIME BLACK MASTERCARD': 'uniprime-black',
+    'PICPAY CARD': 'picpay', 'BANCO INTER BLACK': 'inter-black', 'ITAU LATAM PASS PLATINUM': 'itau-latam-platinum',
+    'BANCO PAN MELIUZ': 'pan-meliuz', 'ITAU AZUL': 'itau-azul', 'BRADESCO THE PLATINUM CARD': 'bradesco-platinum',
+    'NUBANK CROMA': 'nubank-croma', 'BANCO PAN BUSCAPE': 'pan-buscape', 'BRADESCO ELO NANQUIM': 'bradesco-nanquim',
+    'RAPPICARD INFINITE': 'rappi-infinite', 'BARI BARICARD': 'bari', 'ITAU CLICK': 'itau-click', 'RAPPICARD GOLD': 'rappi-gold', 'DIGIO': 'digio'
+  };
+  const fotoDe = k => {
+    const n = norm(k.nome).replace(/®/g, '');
+    return FOTO_CARTAO[n] || (n.startsWith('C6 BANK C6 NORMAL') ? 'c6-normal' : null);
+  };
+
   const cartaoVisual = (k, classe = 'cartao') => {
+    const foto = fotoDe(k);
+    if (foto) {
+      const img = `<img src="img/cartoes/${foto}.webp" alt="" loading="lazy" decoding="async">`;
+      return classe === 'mini' ? `<span class="mini foto" aria-hidden="true">${img}</span>`
+        : `<div class="cartao foto" role="img" aria-label="Cartão ${esc(k.nome)}, ${esc(k.bandeira)}">${img}</div>`;
+    }
     const est = `style="--acc:${esc(k.fundo)};--c:${esc(k.fundo)};--t:${esc(k.corTexto)}"`;
     const ac = acabamento(k);
     if (classe === 'mini') return `<span class="mini ${ac}" ${est} aria-hidden="true"><span>${esc(k.banco)}</span>${bandeiraSvg(k)}</span>`;
