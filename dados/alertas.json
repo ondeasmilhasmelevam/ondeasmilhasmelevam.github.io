@@ -2646,34 +2646,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-5812",
-  "data": "2026-10-29T20:59:36Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Santiago",
-  "destino_iata": "SCL",
-  "companhia": "LATAM",
-  "cabine": "Executiva",
-  "programa": "Privilege Club",
-  "ida": "22.000 AVIOS Qatar Privilege Club + Taxas",
-  "volta": "22.000 AVIOS Qatar Privilege Club + Taxas",
-  "link_nome": "Privilege Club"
- },
- {
-  "id": "2361370250-5811",
-  "data": "2026-10-29T20:59:31Z",
-  "origem": "Copenhagen",
-  "origem_iata": "CPH",
-  "destino": "Abu Dhabi",
-  "destino_iata": "AUH",
-  "companhia": "Etihad Airways",
-  "cabine": "Executiva",
-  "programa": "Azul pelo Mundo",
-  "ida": "202.000 milhas TudoAzul + R$ 416,33",
-  "volta": "202.000 milhas TudoAzul + R$ 196,10",
-  "link_nome": "Azul pelo Mundo"
- },
- {
   "id": "1290836068-7483",
   "data": "2026-10-29T12:02:20Z",
   "tipo": "promocao",
