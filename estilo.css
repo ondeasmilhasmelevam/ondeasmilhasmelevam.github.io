@@ -507,6 +507,13 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .hoje-dest small{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro)}
 .hoje-dest span{font-size:13.5px;font-weight:700}
 .hoje-dest:hover{border-color:var(--ouro)}
+.hoje-shopping{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:16px 18px;border-radius:16px;border:1px solid rgba(226,180,88,.4);background:linear-gradient(120deg,rgba(226,180,88,.14),var(--ink-2) 60%);text-decoration:none;color:var(--rice)}
+.hoje-shopping[hidden]{display:none}
+.hoje-shopping>span:first-child{font-size:28px}
+.hoje-shopping>span:nth-child(2){flex:1;display:grid}
+.hoje-shopping b{font-size:17px}
+.hoje-shopping small{font-size:13.5px;color:var(--ash)}
+.hoje-shopping i{font-style:normal;font-size:13.5px;font-weight:800;color:var(--ouro)}
 
 /* ---------- meu radar ---------- */
 .radar-fechado{display:grid;justify-items:center;gap:10px;padding:28px 20px;text-align:center;border:1px dashed rgba(226,180,88,.45);border-radius:18px;background:var(--ink-2)}

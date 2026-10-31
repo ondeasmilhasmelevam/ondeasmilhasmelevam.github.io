@@ -1543,11 +1543,15 @@
   const programaPromo = p => { const t = norm(`${p.titulo} ${p.parceiros || ''}`); return PROGRAMAS_PROMO.find(([, re]) => re.test(t)) || OUTROS_PROMO; };
   const tipoPromo = p => { const t = norm(p.titulo); return (TIPOS_PROMO.find(([, re]) => re.test(t)) || ['Outras'])[0]; };
   const filtroPromo = { programa: '', tipo: '', busca: '', ordem: '' };
+  // Shopping do dia: o que rende pontos, cashback ou desconto nas compras do dia a dia.
+  const SHOPPING = ['Compra bonificada', 'Cashback', 'Desconto'];
+  const ehShopping = p => SHOPPING.includes(tipoPromo(p));
   // Os títulos chegam em maiúsculas: primeira letra de cada palavra, siglas como estão.
   const SIGLAS = new Set(['TAP', 'GOL', 'KLM', 'IHG', 'BTG', 'C6', 'ALL', 'LATAM', 'XP', 'BB', 'PAN', 'AA', 'VIP', 'MG', 'UK', 'EUA']);
   const MINUSCULAS = new Set(['de', 'da', 'do', 'das', 'dos', 'e', 'com', 'para', 'por', 'em', 'na', 'no', 'nas', 'nos', 'a', 'o', 'as', 'os', 'ao', 'até', 'sobre', 'ou', 'mais']);
-  const tituloPromo = t => (t === t.toUpperCase() ? t.split(/(\s+)/).map((w, i) => {
-    if (/^\s+$/.test(w) || SIGLAS.has(w.replace(/[^\w]/g, ''))) return w;
+  const quaseTudoMaiusculo = t => (t.match(/\p{Lu}/gu) || []).length > 0.7 * ((t.match(/\p{L}/gu) || []).length || 1);
+  const tituloPromo = t => (quaseTudoMaiusculo(t) ? t.split(/(\s+)/).map((w, i) => {
+    if (/^\s+$/.test(w) || SIGLAS.has(w.replace(/[^\w]/g, '')) || w !== w.toUpperCase()) return w;
     const l = w.toLowerCase();
     return i && MINUSCULAS.has(l) ? l : l.replace(/(^[^\p{L}]*|-)(\p{L})/gu, (m, a, b) => a + b.toUpperCase());
   }).join('') : t);
@@ -1591,9 +1595,11 @@
       .sort((a, b) => b[3] - a[3]), f.programa, 'prog');
     const doProg = vivas.filter(p => !f.programa || programaPromo(p)[0] === f.programa);
     const porTipo = contar(doProg, tipoPromo);
-    chipsPromo($('#promo-tipos'), [...TIPOS_PROMO.map(([n]) => n), 'Outras'].filter(n => porTipo.has(n)).map(n => [n, n, null, porTipo.get(n)]), f.tipo, 'tipo');
+    const nShopping = doProg.filter(ehShopping).length;
+    chipsPromo($('#promo-tipos'), [...(nShopping ? [['shopping', '🛒 Shopping do dia', null, nShopping]] : []),
+      ...[...TIPOS_PROMO.map(([n]) => n), 'Outras'].filter(n => porTipo.has(n)).map(n => [n, n, null, porTipo.get(n)])], f.tipo, 'tipo');
     const busca = norm(f.busca);
-    const lista = doProg.filter(p => (!f.tipo || tipoPromo(p) === f.tipo) &&
+    const lista = doProg.filter(p => (!f.tipo || (f.tipo === 'shopping' ? ehShopping(p) : tipoPromo(p) === f.tipo)) &&
       (!busca || norm([p.titulo, p.parceiros, p.resumo].join(' ')).includes(busca)));
     if (f.ordem === 'vence') lista.sort((a, b) => venceEm(a) - venceEm(b));
     $('#promo-lista').innerHTML = lista.map(p => {
@@ -1663,12 +1669,16 @@
       return `<li class="promo-card" style="--pc:${cor}">${bannerPromo(p, prog, true)}<div class="promo-corpo"><h3>${esc(tituloPromo(p.titulo))}</h3>
         <a class="cta cta-b pass-link" href="#promocoes">Ver detalhes</a></div></li>`;
     }).join('');
+    const nShop = passagens.filter(p => ehPromocao(p) && agora < venceEm(p) && ehShopping(p)).length;
+    $('#hoje-shopping').hidden = !nShop;
+    $('#hoje-shopping-n').textContent = `${nShop} ${nShop === 1 ? 'oferta' : 'ofertas'} para ganhar pontos, cashback ou desconto nas compras`;
     const hora = new Date().getHours();
     $('#hoje-titulo').textContent = `${hora < 12 ? 'Bom dia' : hora < 18 ? 'Boa tarde' : 'Boa noite'}: sua próxima viagem começa aqui`;
     $('#hoje-nota').textContent = `${vivas.length} passagens e ${passagens.filter(p => ehPromocao(p) && agora < venceEm(p)).length} promoções no ar agora, com o melhor do dia em destaque pelo nosso Termômetro de milhas.`;
     buscarFotos();
   }
   $('#hoje').addEventListener('click', e => {
+    if (e.target.closest('#hoje-shopping')) { Object.assign(filtroPromo, { programa: '', tipo: 'shopping', busca: '' }); mostrarPromocoes(); return; }
     const b = e.target.closest('[data-hoje-destino]'); if (!b) return;
     Object.assign(filtroPassagem, { tipo: 'passagem', destino: b.dataset.hojeDestino, busca: '', todas: false });
     $('#passagens-destino').value = b.dataset.hojeDestino;
