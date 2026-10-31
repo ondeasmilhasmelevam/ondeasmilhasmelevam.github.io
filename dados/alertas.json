@@ -2744,34 +2744,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-8649",
-  "data": "2026-10-29T19:47:56Z",
-  "origem": "Natal",
-  "origem_iata": "NAT",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 11.200 milhas",
-  "volta": "A partir de 11.200 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8648",
-  "data": "2026-10-29T19:47:45Z",
-  "origem": "Natal",
-  "origem_iata": "NAT",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 12.100 milhas",
-  "volta": "A partir de 12.100 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7483",
   "data": "2026-10-29T12:02:20Z",
   "tipo": "promocao",
