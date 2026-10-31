@@ -1,5 +1,85 @@
 [
  {
+  "id": "1290836068-7529",
+  "data": "2026-10-31T12:35:24Z",
+  "tipo": "promocao",
+  "titulo": "LIVELO & SAM'S CLUB: 84 PONTOS/R$ NA ANUIDADE DO PLANO CLUB PARA ASSINANTES DO CLUBE LIVELO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Sam's Club via Livelo e ganhe até 84 pontos por real gasto, 1.000 pontos extras e 50% OFF na anuidade.",
+  "detalhes": [
+   "84 pontos/R$ na anuidade do Plano Club para assinantes do Clube Livelo.",
+   "14 pontos/R$ na anuidade do Plano Plus para demais clientes.",
+   "+1.000 pontos extras ao incluir 1 sócio adicional gratuitamente.",
+   "50% OFF na anuidade no primeiro ano."
+  ],
+  "parceiros": "Livelo, Sam's Club",
+  "validade": "02/11/2026",
+  "links": [
+   "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club/WMB"
+  ],
+  "ate": "2026-11-02T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7528",
+  "data": "2026-10-31T12:35:21Z",
+  "tipo": "promocao",
+  "titulo": "SMILES: BÔNUS CONCEDIDO NA ADESÃO PARA PLANOS ANUAIS OU EM 6 PARCELAS PARA PLANOS MENSAIS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Smiles e receba até 270.000 milhas em 12 meses com milheiro a partir de R$ 23,66.",
+  "detalhes": [
+   "Bônus concedido na adesão para planos anuais ou em 6 parcelas para planos mensais.",
+   "Permanência mínima de 6 meses (planos 1.000 a 10.000) e 10 meses (plano 20.000)."
+  ],
+  "parceiros": "Smiles",
+  "validade": "03/11/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja/bau-20261026"
+  ],
+  "ate": "2026-11-03T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7527",
+  "data": "2026-10-31T12:35:15Z",
+  "tipo": "promocao",
+  "titulo": "LIVELO: PLANO ANUAL: 25.000 PONTOS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Livelo Essencial 1.000 e acumule até 25.000 pontos em 12 meses com milheiro a partir de R$ 21,56.",
+  "detalhes": [
+   "Plano Anual: 25.000 pontos .",
+   "Plano Mensal: 24.000 pontos .",
+   "Cupom obrigatório: CLUBEOUT."
+  ],
+  "parceiros": "Livelo",
+  "validade": "02/11/2026",
+  "links": [
+   "https://www.livelo.com.br/clube"
+  ],
+  "ate": "2026-11-02T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7526",
+  "data": "2026-10-31T12:35:11Z",
+  "tipo": "promocao",
+  "titulo": "ALL SIGNATURE - PRÉ-BLACK FRIDAY",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Assine o ALL Signature com 20% OFF em qualquer plano para novos assinantes.",
+  "detalhes": [
+   "20% OFF na primeira cobrança da assinatura de qualquer plano.",
+   "Usar o cupom PREBLACK2026 no checkout.",
+   "Válido nas modalidades mensal, trimestral e anual."
+  ],
+  "parceiros": "ALL Accor, ALL Signature",
+  "validade": "20/11/2026",
+  "links": [
+   "https://all.accor.com/a/pt-br/loyalty-program/subscription-program/all-signature.html"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
   "id": "2361370250-5898",
   "data": "2026-10-31T12:07:37Z",
   "origem": "São Paulo",
