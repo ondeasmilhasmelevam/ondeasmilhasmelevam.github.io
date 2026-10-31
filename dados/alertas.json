@@ -2576,48 +2576,6 @@
   "link_nome": "Flying Blue"
  },
  {
-  "id": "3761373661-8655",
-  "data": "2026-10-29T21:45:48Z",
-  "origem": "São Luís",
-  "origem_iata": "SLZ",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.626 milhas + R$ 49,73 Taxas",
-  "volta": "11.626 milhas + R$ 35,75 Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8654",
-  "data": "2026-10-29T21:45:44Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "20.900 milhas + Taxas",
-  "volta": "17.700 milhas + R$ 89,06 Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8653",
-  "data": "2026-10-29T21:45:38Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Palmas",
-  "destino_iata": "PMW",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "12.423 milhas + R$ 55,62 Taxas",
-  "volta": "12.423 milhas + R$ 49,73 Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7483",
   "data": "2026-10-29T12:02:20Z",
   "tipo": "promocao",
