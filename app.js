@@ -1260,7 +1260,7 @@
     const selo = ['espetacular', 'muito bom', 'bom'].includes(nivel)
       ? `<a class="pass-selo ${CLASSE_NIVEL[nivel]}" href="#termometro" title="Pelo termômetro de milhas">${nivel === 'espetacular' ? '🔥 ' : ''}${esc(nivel)}</a>` : '';
     return `<li class="${ehExecutiva(p.cabine) ? 'exe' : ''}">
-        <div class="pass-foto" data-iata="${esc(p.destino_iata)}" aria-hidden="true"></div>
+        <div class="pass-foto" data-cidade="${esc(`${p.destino}|${p.destino_iata}`)}" aria-hidden="true"></div>
         <p class="pass-meta"><time datetime="${esc(p.data)}">${haQuanto(agora - new Date(p.data))}</time>${p.cabine ? ` · ${esc(p.cabine)}` : ''}${selo}</p>
         <h3 class="pass-rota">
           <span><b>${esc(p.origem_iata)}</b>${esc(p.origem)}</span>
@@ -1300,38 +1300,93 @@
   // "23.900 milhas + Taxas", "A partir de 14.400 milhas", "55.000 AVIOS" → 23900, 14400, 55000.
   const milhasDe = p => { const m = (p.ida || '').match(/(\d{1,3}(?:\.\d{3})+|\d+)/); return m ? Number(m[1].replace(/\./g, '')) : Infinity; };
 
-  // Foto da cidade de destino: Wikidata (aeroporto pelo código IATA → cidade atendida → imagem),
-  // numa consulta só para os códigos da tela; guardada no navegador por 30 dias.
-  const FOTOS_CHAVE = 'oamml-fotos-cidades', FOTOS_VALIDADE = 30 * 864e5;
+  // Fotos da cidade de destino: várias por cidade, da busca do Wikimedia Commons (paisagens
+  // horizontais), guardadas no navegador por 30 dias. Nenhuma foto se repete na tela: cada
+  // passagem pega a primeira da sua cidade ainda não usada; acabaram as da cidade, fica sem foto.
+  const FOTOS_CHAVE = 'oamml-fotos-cidades-5', FOTOS_VALIDADE = 30 * 864e5;
   let fotos = {};
   try { const f = JSON.parse(localStorage.getItem(FOTOS_CHAVE)); if (f && Date.now() - f.em < FOTOS_VALIDADE) fotos = f.fotos; } catch (e) { /* sem cache */ }
   const fotosPedidas = new Set();
   function pintarFotos() {
+    const usadas = new Set();
     let alguma = false;
-    document.querySelectorAll('#lista-passagens .pass-foto[data-iata]').forEach(el => {
-      const url = fotos[el.dataset.iata];
-      if (url) { el.style.backgroundImage = `url("${url}")`; el.classList.add('ok'); alguma = true; }
+    document.querySelectorAll('#lista-passagens .pass-foto[data-cidade]').forEach(el => {
+      const url = (fotos[el.dataset.cidade] || []).find(u => !usadas.has(u));
+      el.classList.toggle('ok', !!url);
+      el.style.backgroundImage = url ? `url("${url}")` : '';
+      if (url) { usadas.add(url); alguma = true; }
     });
     $('#pass-credito').hidden = !alguma;
   }
+  // O Commons cataloga as cidades de fora pelo nome em inglês.
+  const CIDADE_EN = { 'Atenas': 'Athens', 'Zurique': 'Zurich', 'Amsterdã': 'Amsterdam', 'Genebra': 'Geneva', 'Londres': 'London',
+    'Nova York': 'New York', 'Nova Iorque': 'New York', 'Roma': 'Rome', 'Lisboa': 'Lisbon', 'Munique': 'Munich', 'Milão': 'Milan',
+    'Viena': 'Vienna', 'Copenhague': 'Copenhagen', 'Estocolmo': 'Stockholm', 'Varsóvia': 'Warsaw', 'Praga': 'Prague',
+    'Bruxelas': 'Brussels', 'Cidade do México': 'Mexico City', 'Cidade do Cabo': 'Cape Town', 'Joanesburgo': 'Johannesburg',
+    'Pequim': 'Beijing', 'Xangai': 'Shanghai', 'Tóquio': 'Tokyo', 'Seul': 'Seoul', 'Istambul': 'Istanbul', 'Edimburgo': 'Edinburgh',
+    'Dublim': 'Dublin', 'Florença': 'Florence', 'Veneza': 'Venice', 'Nápoles': 'Naples', 'Sevilha': 'Seville', 'Montevidéu': 'Montevideo',
+    'Assunção': 'Asunción', 'Cingapura': 'Singapore', 'Filadélfia': 'Philadelphia', 'Frankfurt am Main': 'Frankfurt', 'Marrakech': 'Marrakesh',
+    'Cairo': 'Cairo', 'Nova Délhi': 'New Delhi', 'Bancoc': 'Bangkok', 'Banguecoque': 'Bangkok', 'Helsinque': 'Helsinki', 'Moscou': 'Moscow' };
+  // No Brasil a busca leva o estado (só o país não separa Palmas, no Tocantins, de Las Palmas).
+  const UF_AEROPORTO = {};
+  Object.entries({
+    'São Paulo': 'GRU CGH VCP SJP RAO PPB MII SJK BAU AQA SOD', 'Rio de Janeiro': 'GIG SDU CAW MEA', 'Minas Gerais': 'CNF PLU UDI MOC IPN GVR VAG JDF',
+    'Espírito Santo': 'VIX', 'Bahia': 'SSA BPS IOS LEC VDC BRA FEC', 'Pernambuco': 'REC PNZ', 'Ceará': 'FOR JJD JDO', 'Rio Grande do Norte': 'NAT MVF',
+    'Paraíba': 'JPA CPV', 'Alagoas': 'MCZ', 'Sergipe': 'AJU', 'Piauí': 'THE PHB', 'Maranhão': 'SLZ IMP', 'Pará': 'BEL STM MAB ATM CKS',
+    'Amazonas': 'MAO TBT', 'Amapá': 'MCP', 'Roraima': 'BVB', 'Acre': 'RBR CZS', 'Rondônia': 'PVH JPR', 'Tocantins': 'PMW', 'Goiás': 'GYN CLV RVD',
+    'Distrito Federal': 'BSB', 'Mato Grosso': 'CGB ROO OPS AFL', 'Mato Grosso do Sul': 'CGR CMG DOU', 'Paraná': 'CWB IGU LDB MGF CAC',
+    'Santa Catarina': 'FLN NVT JOI XAP CCM', 'Rio Grande do Sul': 'POA CXJ PFB RIA PET URG'
+  }).forEach(([uf, codigos]) => codigos.split(' ').forEach(c => { UF_AEROPORTO[c] = uf; }));
+  // Nome em inglês da cidade e do país pelo código do aeroporto (Wikidata), para a busca não
+  // confundir cidades de mesmo nome.
+  async function lugaresDosAeroportos(pedidos) {
+    const consulta = `SELECT ?iata ?cidade ?pais WHERE { VALUES ?iata {${pedidos.map(([, iata]) => `"${iata}"`).join(' ')}}
+      ?ap wdt:P238 ?iata; wdt:P931 ?c. ?c rdfs:label ?cidade. FILTER(lang(?cidade) = "en")
+      OPTIONAL { ?c wdt:P17 ?p. ?p rdfs:label ?pais. FILTER(lang(?pais) = "en") } }`;
+    const lugares = {};
+    try {
+      const d = await (await fetch(`https://query.wikidata.org/sparql?format=json&query=${encodeURIComponent(consulta)}`)).json();
+      pedidos.forEach(([nome, iata]) => {
+        const opcoes = d.results.bindings.filter(b => b.iata.value === iata);
+        const igual = opcoes.find(b => [norm(nome), norm(CIDADE_EN[nome])].includes(norm(b.cidade.value)));
+        const b = igual || opcoes[0];
+        lugares[iata] = { cidade: igual ? b.cidade.value : CIDADE_EN[nome] || nome, pais: UF_AEROPORTO[iata] || (b && b.pais ? b.pais.value : '') };
+      });
+    } catch (e) { /* segue só com o nome */ }
+    return lugares;
+  }
+  async function fotosDaCidade(nome, lugar) {
+    const cidade = (lugar && lugar.cidade) || CIDADE_EN[nome] || nome;
+    const pais = lugar && lugar.pais && norm(lugar.pais) !== norm(cidade) ? lugar.pais : '';
+    const buscar = async termo => {
+      const q = new URLSearchParams({ action: 'query', format: 'json', origin: '*', generator: 'search', gsrnamespace: '6',
+        gsrsearch: `"${cidade}" ${pais} ${termo} filetype:bitmap`.replace(/\s+/g, ' '), gsrlimit: '40', prop: 'imageinfo', iiprop: 'url|size', iiurlwidth: '640' });
+      const d = await (await fetch(`https://commons.wikimedia.org/w/api.php?${q}`)).json();
+      return Object.values((d.query || {}).pages || {}).sort((a, b) => a.index - b.index)
+        .map(p => (p.imageinfo || [])[0]).filter(i => i && i.width >= 1000 && i.width / i.height >= 1.25 && i.width / i.height <= 3.6)
+        .map(i => i.thumburl);
+    };
+    // Primeiro as vistas da cidade; cidade pequena (poucas vistas) completa com outras fotos do lugar.
+    let lista = await buscar('skyline');
+    if (lista.length < 15) lista = lista.concat(await buscar('panorama'));
+    if (lista.length < 15) lista = lista.concat(await buscar(''));
+    return [...new Set(lista)];
+  }
   async function buscarFotos() {
     pintarFotos();
-    const faltam = [...new Set([...document.querySelectorAll('#lista-passagens .pass-foto[data-iata]')].map(el => el.dataset.iata))]
-      .filter(c => /^[A-Z]{3}$/.test(c) && !(c in fotos) && !fotosPedidas.has(c));
+    const faltam = [...new Set([...document.querySelectorAll('#lista-passagens .pass-foto[data-cidade]')].map(el => el.dataset.cidade))]
+      .filter(c => c && !(c in fotos) && !fotosPedidas.has(c));
     if (!faltam.length) return;
     faltam.forEach(c => fotosPedidas.add(c));
-    const consulta = `SELECT ?iata ?img WHERE { VALUES ?iata {${faltam.map(c => `"${c}"`).join(' ')}} ?ap wdt:P238 ?iata; wdt:P931 ?c. ?c wdt:P18 ?img. }`;
-    try {
-      const r = await fetch(`https://query.wikidata.org/sparql?format=json&query=${encodeURIComponent(consulta)}`, { headers: { accept: 'application/sparql-results+json' } });
-      const d = await r.json();
-      faltam.forEach(c => { fotos[c] = ''; });
-      d.results.bindings.forEach(b => {
-        const c = b.iata.value;
-        if (!fotos[c]) fotos[c] = `${b.img.value.replace(/^http:/, 'https:')}?width=640`;
-      });
-      try { localStorage.setItem(FOTOS_CHAVE, JSON.stringify({ em: Date.now(), fotos })); } catch (e) { /* sem espaço */ }
+    const lugares = await lugaresDosAeroportos(faltam.map(c => c.split('|')));
+    for (let i = 0; i < faltam.length; i += 4) {
+      await Promise.all(faltam.slice(i, i + 4).map(async c => {
+        const [nome, iata] = c.split('|');
+        try { fotos[c] = await fotosDaCidade(nome, lugares[iata]); } catch (e) { fotosPedidas.delete(c); }
+      }));
       pintarFotos();
-    } catch (e) { /* fica sem foto */ }
+    }
+    try { localStorage.setItem(FOTOS_CHAVE, JSON.stringify({ em: Date.now(), fotos })); } catch (e) { /* sem espaço */ }
   }
 
   function mostrarPassagens() {
