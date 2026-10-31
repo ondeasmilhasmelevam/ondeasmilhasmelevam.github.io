@@ -2145,7 +2145,9 @@
       a.setAttribute('aria-current', String(ok));
       if (ok) ativa = a;
     });
-    document.title = pagina === 'simulador' || !ativa ? TITULO : `${(ativa.querySelector('span') || ativa).textContent} · Onde as Milhas Me Levam`;
+    // página fora do menu (ex.: termos) usa o título dela
+    const nome = ativa ? (ativa.querySelector('span') || ativa).textContent : (el && (el.closest('[data-pagina]').querySelector('h2') || {}).textContent);
+    document.title = pagina === 'simulador' || !nome ? TITULO : `${nome} · Onde as Milhas Me Levam`;
     abrirMenu(false);
     mostrarAtualizado(pagina);
     if (!rolar) return;

@@ -480,6 +480,16 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .transferir-dica{margin:10px 0 0;padding-left:22px;position:relative;color:var(--rice);font-size:13.5px;line-height:1.5}
 .transferir-dica::before{content:"✓";position:absolute;left:0;top:0;width:16px;height:16px;border-radius:50%;background:rgba(111,214,166,.18);color:var(--verde);font-size:11px;font-weight:800;text-align:center;line-height:16px}
 
+/* ---------- termos ---------- */
+.termos{max-width:78ch;display:grid;gap:4px}
+.termos h3{margin:18px 0 4px;font-size:17px;color:var(--rice)}
+.termos p,.termos li{margin:0;font-size:15px;line-height:1.65;color:var(--ash)}
+.termos ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.termos b{color:var(--rice)}
+.termos a,.ass-termos a,.foot-links a{color:var(--ouro)}
+.ass-termos{margin:-6px 0 18px;font-size:13px;color:var(--ash)}
+.foot-links{margin:14px 0 0;font-size:13.5px;color:var(--ash-dim)}
+
 /* ---------- promoções ---------- */
 .promo-rotulo{margin:0 0 8px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ash-dim)}
 .promo-chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 18px}
