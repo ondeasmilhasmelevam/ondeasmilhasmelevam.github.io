@@ -3411,48 +3411,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-8598",
-  "data": "2026-10-29T12:40:21Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "Maceió",
-  "destino_iata": "MCZ",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "25.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-8597",
-  "data": "2026-10-29T12:40:09Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "9.300 milhas + Taxas",
-  "volta": "9.300 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8596",
-  "data": "2026-10-29T12:37:33Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 25.700 milhas",
-  "volta": "A partir de 25.700 milhas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7483",
   "data": "2026-10-29T12:02:20Z",
   "tipo": "promocao",
