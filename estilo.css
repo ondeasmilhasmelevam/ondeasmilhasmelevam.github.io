@@ -480,6 +480,29 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .transferir-dica{margin:10px 0 0;padding-left:22px;position:relative;color:var(--rice);font-size:13.5px;line-height:1.5}
 .transferir-dica::before{content:"✓";position:absolute;left:0;top:0;width:16px;height:16px;border-radius:50%;background:rgba(111,214,166,.18);color:var(--verde);font-size:11px;font-weight:800;text-align:center;line-height:16px}
 
+/* ---------- busca de disponibilidade (seats.aero) ---------- */
+.seats{margin:0 0 18px;border:1px solid rgba(226,180,88,.4);border-radius:16px;background:linear-gradient(120deg,rgba(226,180,88,.1),var(--ink-2) 55%)}
+.seats summary{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;list-style:none}
+.seats summary::-webkit-details-marker{display:none}
+.seats summary>span:first-child{font-size:24px}
+.seats summary>span:last-child{display:grid}
+.seats summary b{font-size:16px;color:var(--rice)}
+.seats summary small{font-size:13px;color:var(--ash)}
+.seats-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;align-items:end;padding:0 16px 14px}
+.seats-form label{display:grid;gap:5px;font-size:12px;font-weight:700;color:var(--ash)}
+.seats-form input,.seats-form select{font:inherit;font-size:14.5px;font-weight:600;padding:9px 11px;border-radius:12px;border:1px solid var(--line);background:var(--ink);color:var(--rice);min-width:0;text-transform:none}
+.seats-form .cta{justify-content:center}
+.seats-msg{margin:0 16px 12px;font-size:14px;font-weight:700;color:var(--ouro)}
+.seats-res{padding:0 16px;overflow-x:auto}
+.seats-tab{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px}
+.seats-tab th{position:sticky;top:0;text-align:left;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ash-dim);padding:8px;border-bottom:1px solid var(--line);background:var(--ink-2)}
+.seats-tab td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--rice)}
+.seats-tab td b{display:block;font-variant-numeric:tabular-nums}
+.seats-tab td small{display:block;font-size:11.5px;color:var(--ash-dim)}
+.seats-tab td.vazio{color:var(--ash-dim)}
+.seats-fonte{margin:10px 16px 14px;font-size:12px;color:var(--ash-dim)}
+.seats-fonte a{color:var(--ouro)}
+
 /* ---------- hoje ---------- */
 .hoje-destaque{position:relative;display:grid;align-content:end;min-height:300px;padding:26px 28px;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--ink-2) center/cover no-repeat;color:#fff;margin:0 0 30px}
 .hoje-destaque::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,16,.15) 0%,rgba(5,8,16,.55) 45%,rgba(5,8,16,.92) 100%)}

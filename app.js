@@ -1834,6 +1834,45 @@
     mostrarGuias();
   })();
 
+  // Busca de disponibilidade em milhas (seats.aero, pelo servidor da assinatura): só para assinantes.
+  const SERVIDOR_ASSINATURA = 'https://oamml-assinatura.ondeasmilhasmelevam.workers.dev';
+  const PROGRAMA_SEATS = { smiles: 'Smiles', azul: 'Azul Fidelidade', aeroplan: 'Aeroplan', united: 'United MileagePlus', american: 'AAdvantage',
+    alaska: 'Alaska Atmos', delta: 'Delta SkyMiles', virginatlantic: 'Virgin Flying Club', flyingblue: 'Flying Blue', emirates: 'Emirates Skywards',
+    etihad: 'Etihad Guest', qatar: 'Qatar Privilege Club', eurobonus: 'SAS EuroBonus', lifemiles: 'LifeMiles', qantas: 'Qantas', velocity: 'Velocity',
+    turkish: 'Turkish Miles&Smiles', connectmiles: 'Copa ConnectMiles', aeromexico: 'Aeroméxico', jetblue: 'JetBlue', singapore: 'KrisFlyer',
+    ethiopian: 'Ethiopian ShebaMiles', saudia: 'Saudia', finnair: 'Finnair Plus', lufthansa: 'Miles & More', iberia: 'Iberia Club', tap: 'TAP Miles&Go', latam: 'LATAM Pass' };
+  const nomeSeats = s => PROGRAMA_SEATS[s] || String(s || '').replace(/^./, c => c.toUpperCase());
+  const msgSeats = t => { $('#seats-msg').textContent = t; $('#seats-msg').hidden = !t; };
+  const iataDe = t => { const m = /\b([A-Z]{3})\b/.exec(String(t).toUpperCase()); return m ? m[1] : ''; };
+  (() => { // datas iniciais: de hoje a 30 dias
+    const hoje = new Date(), d = n => new Date(hoje.getTime() + n * 864e5).toISOString().slice(0, 10);
+    $('#seats-de').value = d(7); $('#seats-ate').value = d(37);
+  })();
+  $('#seats-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const ass = window.oammlAssinatura || {};
+    if (!ass.ativo) { msgSeats('A busca de disponibilidade é para assinantes. Assine ou entre com o e-mail da assinatura.'); return; }
+    const origem = iataDe($('#seats-origem').value), destino = iataDe($('#seats-destino').value);
+    if (!origem || !destino) { msgSeats('Use o código do aeroporto, por exemplo GRU, GIG, LIS.'); return; }
+    const botao = e.target.querySelector('button'); botao.disabled = true;
+    msgSeats('Buscando…'); $('#seats-res').innerHTML = '';
+    try {
+      const token = window.oammlToken ? await window.oammlToken() : null;
+      const q = new URLSearchParams({ origem, destino, de: $('#seats-de').value, ate: $('#seats-ate').value, cabine: $('#seats-cabine').value });
+      const r = await fetch(`${SERVIDOR_ASSINATURA}/voos?${q}`, { headers: token ? { authorization: `Bearer ${token}` } : {} });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(d.erro || 'Não deu para buscar agora.');
+      const voos = (d.voos || []).sort((a, b) => a.data.localeCompare(b.data) || nomeSeats(a.programa).localeCompare(nomeSeats(b.programa)));
+      if (!voos.length) { msgSeats(`Nenhuma disponibilidade em milhas de ${origem} para ${destino} nessas datas.`); return; }
+      msgSeats(`${voos.length} ${voos.length === 1 ? 'opção' : 'opções'} de ${origem} para ${destino}.`);
+      const cel = c => (c ? `<td><b>${c.milhas ? esc(inteiro.format(c.milhas)) : '—'}</b><small>${[c.direto ? 'direto' : 'com conexão', c.assentos ? `${c.assentos} ${c.assentos === 1 ? 'assento' : 'assentos'}` : '', c.cias].filter(Boolean).map(esc).join(' · ')}</small></td>` : '<td class="vazio">—</td>');
+      $('#seats-res').innerHTML = `<table class="seats-tab"><thead><tr><th>Data</th><th>Programa</th><th>Econômica</th><th>Premium</th><th>Executiva</th><th>Primeira</th></tr></thead><tbody>${voos.slice(0, 300).map(v => `<tr>
+        <td>${esc(new Date(v.data + 'T12:00:00').toLocaleDateString('pt-BR', { weekday: 'short', day: '2-digit', month: '2-digit' }))}</td>
+        <td><b>${esc(nomeSeats(v.programa))}</b><small>${esc(`${v.origem || ''} → ${v.destino || ''}`)}</small></td>
+        ${cel(v.cabines.eco)}${cel(v.cabines.premium)}${cel(v.cabines.exe)}${cel(v.cabines.primeira)}</tr>`).join('')}</tbody></table>`;
+    } catch (er) { msgSeats(er.message); } finally { botao.disabled = false; }
+  });
+
   async function desenharPassagens() {
     try {
       const r = await fetch('dados/alertas.json', { cache: 'no-store' });

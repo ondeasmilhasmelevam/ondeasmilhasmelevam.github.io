@@ -6,7 +6,7 @@
 // E guarda as datas e links das passagens (POST /alertas, vindo do GitHub) para só assinantes lerem.
 //
 // Segredos (wrangler secret put): INFINITEPAY_API_KEY, FIREBASE_SERVICE_ACCOUNT (o JSON inteiro),
-// e EMAILJS_PRIVATE_KEY. Variáveis (wrangler.toml): HANDLE, PROJETO, SITE, ORIGENS, SELF, EMAILJS_*.
+// EMAILJS_PRIVATE_KEY e SEATS_AERO_KEY (busca de disponibilidade em milhas, GET /voos). Variáveis (wrangler.toml): HANDLE, PROJETO, SITE, ORIGENS, SELF, EMAILJS_*.
 
 const PLANOS = {
   mensal: { dias: 30, preco: 2990, nome: 'Assinatura mensal' },
@@ -31,6 +31,7 @@ export default {
       if (req.method === 'POST' && url.pathname === '/entrar') return json(await entrar(await req.json(), env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/alertas') return json(await guardarAlertas(req, env));
       if (req.method === 'GET' && url.pathname === '/alertas') return json(await estadoAlertas(env));
+      if (req.method === 'GET' && url.pathname === '/voos') return json(await buscarVoos(req, url, env), 200, cors);
       return json({ erro: 'não encontrado' }, 404, cors);
     } catch (e) {
       return json({ erro: e.message || 'erro' }, e.status || 500, cors);
@@ -41,7 +42,7 @@ export default {
 function corsDe(req, env) {
   const origem = req.headers.get('origin') || '';
   const ok = env.ORIGENS.split(',').map(s => s.trim()).includes(origem);
-  return ok ? { 'access-control-allow-origin': origem, 'access-control-allow-methods': 'GET,POST', 'access-control-allow-headers': 'content-type', vary: 'origin' } : {};
+  return ok ? { 'access-control-allow-origin': origem, 'access-control-allow-methods': 'GET,POST', 'access-control-allow-headers': 'content-type,authorization', vary: 'origin' } : {};
 }
 const json = (d, status = 200, extra = {}) => new Response(JSON.stringify(d), { status, headers: { 'content-type': 'application/json', ...extra } });
 const falha = (msg, status = 400) => Object.assign(new Error(msg), { status });
@@ -224,6 +225,58 @@ function deFs(f) {
   if ('doubleValue' in f) return f.doubleValue;
   return f.stringValue ?? null;
 }
+/* ---------- disponibilidade em milhas (seats.aero) ---------- */
+// Só para assinantes: confere o token do Firebase (login do site) e a validade da assinatura.
+// Cada resposta fica 30 minutos no cache do Cloudflare, para poupar o limite de 1.000 consultas por dia.
+const FIREBASE_JWK = 'https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com';
+async function assinanteDoToken(req, env) {
+  const [h, c, s] = (req.headers.get('authorization') || '').replace(/^Bearer /, '').split('.');
+  if (!s) return null;
+  const ler = t => JSON.parse(atob(t.replace(/-/g, '+').replace(/_/g, '/')));
+  const cab = ler(h), corpo = ler(c);
+  const { keys } = await (await fetch(FIREBASE_JWK, { cf: { cacheTtl: 3600 } })).json();
+  const jwk = keys.find(k => k.kid === cab.kid);
+  if (!jwk || cab.alg !== 'RS256') return null;
+  const chave = await crypto.subtle.importKey('jwk', jwk, { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, false, ['verify']);
+  const assinatura = Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), x => x.charCodeAt(0));
+  const ok = await crypto.subtle.verify('RSASSA-PKCS1-v1_5', chave, assinatura, new TextEncoder().encode(`${h}.${c}`));
+  if (!ok || corpo.iss !== `https://securetoken.google.com/${env.PROJETO}` || corpo.aud !== env.PROJETO || corpo.exp * 1000 < Date.now() || !corpo.email_verified) return null;
+  const email = String(corpo.email || '').toLowerCase();
+  const a = await lerDoc(env, `assinantes/${email}`);
+  return a && a.validoAte instanceof Date && a.validoAte.getTime() > Date.now() ? email : null;
+}
+const IATA = t => /^[A-Z]{3}(,[A-Z]{3}){0,4}$/.test(t || '');
+const DATA = t => /^\d{4}-\d{2}-\d{2}$/.test(t || '');
+async function buscarVoos(req, url, env) {
+  if (!env.SEATS_AERO_KEY) throw falha('Busca de disponibilidade ainda não ligada.', 503);
+  if (!await assinanteDoToken(req, env).catch(() => null)) throw falha('Busca exclusiva para assinantes. Entre com o e-mail da assinatura.', 401);
+  const origem = (url.searchParams.get('origem') || '').toUpperCase(), destino = (url.searchParams.get('destino') || '').toUpperCase();
+  const de = url.searchParams.get('de'), ate = url.searchParams.get('ate');
+  const cabine = { eco: 'economy', premium: 'premium', exe: 'business', primeira: 'first' }[url.searchParams.get('cabine')] || '';
+  if (!IATA(origem) || !IATA(destino) || !DATA(de) || !DATA(ate)) throw falha('Informe origem, destino (códigos de aeroporto) e as datas.');
+  if ((Date.parse(ate) - Date.parse(de)) / 864e5 > 62 || Date.parse(ate) < Date.parse(de)) throw falha('Escolha um intervalo de até 2 meses.');
+  const q = new URLSearchParams({ origin_airport: origem, destination_airport: destino, start_date: de, end_date: ate, take: '500' });
+  if (cabine) q.set('cabins', cabine);
+  const alvo = `https://seats.aero/partnerapi/search?${q}`;
+  const cache = caches.default, chaveCache = new Request(alvo);
+  let r = await cache.match(chaveCache);
+  if (!r) {
+    const resp = await fetch(alvo, { headers: { 'Partner-Authorization': env.SEATS_AERO_KEY, accept: 'application/json' } });
+    if (resp.status === 429) throw falha('Muitas buscas hoje. Tente de novo mais tarde.', 429);
+    if (!resp.ok) throw falha('A busca de disponibilidade não respondeu agora. Tente de novo em instantes.', 502);
+    r = new Response(await resp.text(), { headers: { 'content-type': 'application/json', 'cache-control': 'max-age=1800' } });
+    await cache.put(chaveCache, r.clone());
+  }
+  const d = await r.json();
+  const CABS = [['Y', 'eco'], ['W', 'premium'], ['J', 'exe'], ['F', 'primeira']];
+  const voos = (d.data || []).map(v => ({
+    data: v.Date, programa: v.Source, origem: v.Route && v.Route.OriginAirport, destino: v.Route && v.Route.DestinationAirport,
+    cabines: Object.fromEntries(CABS.filter(([L]) => v[`${L}Available`]).map(([L, nome]) => [nome, {
+      milhas: Number(v[`${L}MileageCost`]) || null, assentos: v[`${L}RemainingSeats`] || null, cias: v[`${L}Airlines`] || '', direto: !!v[`${L}Direct`] }]))
+  })).filter(v => Object.keys(v.cabines).length);
+  return { voos, atualizado: new Date().toISOString() };
+}
+
 // Datas e link de cada passagem, mandados pelo plantão do GitHub (ferramentas/alertas.py).
 // Ficam em privado/alertas, que as regras só abrem para assinatura ativa.
 // Sem senha combinada: o GitHub assina um token (OIDC) para cada execução, e aqui se confere

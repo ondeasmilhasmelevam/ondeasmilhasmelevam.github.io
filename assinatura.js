@@ -26,6 +26,8 @@ const reais = c => (c / 100).toLocaleString('pt-BR', { style: 'currency', curren
 const msg = (texto, tipo = '') => { const el = $('#ass-msg'); el.textContent = texto; el.className = `ass-msg ${tipo}`; el.hidden = !texto; };
 
 window.oammlAssinatura = { ativo: false, email: '', validoAte: null };
+// Token do login, para o servidor confirmar que é assinante (busca de disponibilidade).
+window.oammlToken = async () => (auth.currentUser ? auth.currentUser.getIdToken() : null);
 function avisar(estado) {
   window.oammlAssinatura = estado;
   document.dispatchEvent(new CustomEvent('assinatura', { detail: estado }));
