@@ -15,6 +15,10 @@ const PLANOS = {
 const API = 'https://api.checkout.infinitepay.io';
 
 export default {
+  // Todo dia (cron no wrangler.toml): avisa por e-mail quem vence nos próximos 3 dias.
+  async scheduled(evento, env, ctx) {
+    ctx.waitUntil(avisarVencimentos(env));
+  },
   async fetch(req, env) {
     const url = new URL(req.url);
     const cors = corsDe(req, env);
@@ -255,6 +259,49 @@ async function guardarAlertas(req, env) {
 async function estadoAlertas(env) {
   const d = await lerDoc(env, 'privado/alertas');
   return d ? { atualizadoEm: d.atualizadoEm, itens: Object.keys(JSON.parse(d.json)).length } : { atualizadoEm: null, itens: 0 };
+}
+
+// Aviso de vencimento: uma vez por validade (avisoPara guarda a validade já avisada).
+const DIAS_AVISO = 3;
+async function avisarVencimentos(env) {
+  const agora = Date.now(), enviados = [];
+  let pagina = '';
+  do {
+    const r = await fetch(`${docUrl(env, 'assinantes')}?pageSize=300${pagina ? `&pageToken=${pagina}` : ''}`, { headers: { authorization: `Bearer ${await token(env)}` } });
+    if (!r.ok) throw falha('Erro ao listar assinantes.', 500);
+    const d = await r.json();
+    for (const doc of d.documents || []) {
+      const a = Object.fromEntries(Object.entries(doc.fields || {}).map(([k, v]) => [k, deFs(v)]));
+      const vence = a.validoAte instanceof Date ? a.validoAte.getTime() : NaN;
+      if (!(vence > agora && vence - agora <= DIAS_AVISO * 864e5) || a.avisoPara === a.validoAte.toISOString() || !emailValido(a.email)) continue;
+      const dias = Math.max(1, Math.ceil((vence - agora) / 864e5));
+      const envio = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          service_id: env.EMAILJS_SERVICE, template_id: env.EMAILJS_TEMPLATE_AVISO, user_id: env.EMAILJS_PUBLIC, accessToken: env.EMAILJS_PRIVATE_KEY,
+          template_params: { email: a.email, dias, data: a.validoAte.toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }), link: `${env.SITE}#assinar` }
+        })
+      });
+      if (!envio.ok) continue; // tenta de novo amanhã
+      await atualizarCampos(env, doc.name.split('/documents/')[1], { avisoPara: a.validoAte.toISOString() });
+      enviados.push(a.email);
+    }
+    pagina = d.nextPageToken || '';
+  } while (pagina);
+  console.log(`avisos de vencimento: ${enviados.length}`);
+  return enviados.length;
+}
+// Muda só os campos informados (gravarDoc troca o documento inteiro).
+async function atualizarCampos(env, caminho, dados) {
+  const fields = Object.fromEntries(Object.entries(dados).map(([k, v]) => [k, paraFs(v)]));
+  const mascara = Object.keys(dados).map(k => `updateMask.fieldPaths=${encodeURIComponent(k)}`).join('&');
+  const r = await fetch(`${docUrl(env, caminho)}?${mascara}`, {
+    method: 'PATCH',
+    headers: { authorization: `Bearer ${await token(env)}`, 'content-type': 'application/json' },
+    body: JSON.stringify({ fields })
+  });
+  if (!r.ok) throw falha('Erro ao gravar no banco.', 500);
 }
 
 async function lerDoc(env, caminho) {
