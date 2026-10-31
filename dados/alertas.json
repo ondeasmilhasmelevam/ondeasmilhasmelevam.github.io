@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-8738",
+  "data": "2026-10-31T13:27:30Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "27.000 milhas + Taxas",
+  "volta": "12.900 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8737",
   "data": "2026-10-31T13:15:21Z",
   "origem": "Rio de Janeiro",
