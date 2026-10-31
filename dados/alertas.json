@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5904",
+  "data": "2026-10-31T18:06:14Z",
+  "origem": "Toronto",
+  "origem_iata": "YYZ",
+  "destino": "Abu Dhabi",
+  "destino_iata": "AUH",
+  "companhia": "Etihad Airways",
+  "cabine": "Primeira Classe",
+  "programa": "AAdvantage",
+  "ida": "115.000 milhas + R$ 313,26",
+  "volta": "115.000 milhas + R$ 197,55",
+  "link_nome": "AAdvantage"
+ },
+ {
   "id": "2361370250-5903",
   "data": "2026-10-31T16:35:57Z",
   "origem": "Rio de Janeiro",
@@ -3061,29 +3075,6 @@
   "ida": "38.750 AVIOS + Taxas",
   "volta": "38.750 AVIOS + Taxas",
   "link_nome": "Privilege Club"
- },
- {
-  "id": "1290836068-7497",
-  "data": "2026-10-29T18:08:17Z",
-  "tipo": "promocao",
-  "titulo": "MADRI POR 38 MIL MILHAS TAP MILES&GO POR TRECHO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Disponibilidade de bilhetes de ida e volta entre Belo Horizonte e Madri por 38.000 milhas TAP Miles&Go por trecho + taxas. Voos operados pela TAP Air Portugal com itinerário via Lisboa. Emissão disponível para classe econômica com taxas adicionais.",
-  "detalhes": [
-   "38.000 milhas por trecho",
-   "taxas adicionais",
-   "classe econômica",
-   "ida e volta disponível apenas para assinantes",
-   "itinerário via Lisboa",
-   "Belo Horizonte (CNF) x Madri (MAD) economica a partir de 38.000 milhas o trecho"
-  ],
-  "parceiros": "TAP Miles&Go, TAP Air Portugal",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/P3paYqj"
-  ],
-  "ate": ""
  },
  {
   "id": "1290836068-7483",
