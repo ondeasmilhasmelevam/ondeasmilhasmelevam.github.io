@@ -1,5 +1,41 @@
 [
  {
+  "id": "1290836068-7531",
+  "data": "2026-10-31T13:37:11Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFIRA PONTOS DE BANCOS PARCEIROS PARA SMILES COM BÔNUS E COMPRA DE MILHAS COM DESCONTO",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Transfira pontos de bancos parceiros para o programa Smiles e ganhe até 70% de bônus. Além disso, aproveite um cupom de 75% OFF para compra de milhas Smiles.",
+  "detalhes": [
+   "70% de bônus para assinantes do Clube Smiles e clientes Diamante.",
+   "40% de bônus para demais clientes Smiles.",
+   "Cupom de 75% OFF para compra de milhas Smiles.",
+   "Milheiro do cupom: R$ 20,00 por 1.000 milhas.",
+   "Compra parcelada em até 12x sem juros no cartão GOL Smiles e até 5x sem juros em outros cartões."
+  ],
+  "parceiros": "Smiles, Bancos Parceiros (nacionais e internacionais, exceto GOL Smiles), PaGol",
+  "validade": "31/10/2026 (milhas bônus creditadas até 13/11/2026 e válidas por 12 meses)",
+  "links": [
+   "https://www.smiles.com.br/portal/campanhas/bancos-28-10-2026"
+  ],
+  "ate": "2026-10-31T23:59:59-03:00"
+ },
+ {
+  "id": "3761373661-8739",
+  "data": "2026-10-31T13:31:44Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Belo Horizonte",
+  "destino_iata": "CNF",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.100 milhas + Taxas",
+  "volta": "11.100 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8738",
   "data": "2026-10-31T13:27:30Z",
   "origem": "Florianópolis",
