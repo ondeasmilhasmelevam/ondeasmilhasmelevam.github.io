@@ -2825,34 +2825,6 @@
   "ate": ""
  },
  {
-  "id": "3761373661-8645",
-  "data": "2026-10-29T18:34:51Z",
-  "origem": "Petrolina",
-  "origem_iata": "PNZ",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "Azul Linhas Aéreas",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "15.000 milhas + Taxas",
-  "volta": "15.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-8644",
-  "data": "2026-10-29T18:34:31Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "LATAM Airlines Brasil",
-  "cabine": "Econômica",
-  "programa": "LATAM",
-  "ida": "7.997 milhas + Taxas",
-  "volta": "7.997 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7483",
   "data": "2026-10-29T12:02:20Z",
   "tipo": "promocao",
