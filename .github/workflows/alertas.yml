@@ -18,6 +18,7 @@ on:
 permissions:
   contents: write
   actions: write   # para chamar o próximo plantão
+  id-token: write  # crachá para mandar datas e links ao servidor da assinatura
 
 concurrency:
   group: alertas

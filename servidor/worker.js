@@ -3,8 +3,9 @@
 //
 // Também faz a entrada por código: manda 7 números para o e-mail de quem já assinou (EmailJS)
 // e, com o código certo, devolve um token para o site entrar no Firebase com aquele e-mail.
+// E guarda as datas e links das passagens (POST /alertas, vindo do GitHub) para só assinantes lerem.
 //
-// Segredos (wrangler secret put): INFINITEPAY_API_KEY, FIREBASE_SERVICE_ACCOUNT (o JSON inteiro)
+// Segredos (wrangler secret put): INFINITEPAY_API_KEY, FIREBASE_SERVICE_ACCOUNT (o JSON inteiro),
 // e EMAILJS_PRIVATE_KEY. Variáveis (wrangler.toml): HANDLE, PROJETO, SITE, ORIGENS, SELF, EMAILJS_*.
 
 const PLANOS = {
@@ -24,6 +25,7 @@ export default {
       if (req.method === 'GET' && url.pathname === '/precos') return json(await precos(url.searchParams.get('email'), env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/codigo') return json(await pedirCodigo(await req.json(), env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/entrar') return json(await entrar(await req.json(), env), 200, cors);
+      if (req.method === 'POST' && url.pathname === '/alertas') return json(await guardarAlertas(req, env));
       return json({ erro: 'não encontrado' }, 404, cors);
     } catch (e) {
       return json({ erro: e.message || 'erro' }, e.status || 500, cors);
@@ -217,6 +219,37 @@ function deFs(f) {
   if ('doubleValue' in f) return f.doubleValue;
   return f.stringValue ?? null;
 }
+// Datas e link de cada passagem, mandados pelo plantão do GitHub (ferramentas/alertas.py).
+// Ficam em privado/alertas, que as regras só abrem para assinatura ativa.
+// Sem senha combinada: o GitHub assina um token (OIDC) para cada execução, e aqui se confere
+// que veio do plantão de alertas deste repositório, no main.
+const GITHUB_OIDC = 'https://token.actions.githubusercontent.com';
+const REPO = 'ondeasmilhasmelevam/ondeasmilhasmelevam.github.io';
+async function doPlantao(req, env) {
+  const [h, c, s] = (req.headers.get('authorization') || '').replace(/^Bearer /, '').split('.');
+  if (!s) return false;
+  const ler = t => JSON.parse(atob(t.replace(/-/g, '+').replace(/_/g, '/')));
+  const cab = ler(h), corpo = ler(c);
+  const { keys } = await (await fetch(`${GITHUB_OIDC}/.well-known/jwks`)).json();
+  const jwk = keys.find(k => k.kid === cab.kid);
+  if (!jwk || cab.alg !== 'RS256') return false;
+  const chave = await crypto.subtle.importKey('jwk', jwk, { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, false, ['verify']);
+  const assinatura = Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), x => x.charCodeAt(0));
+  const ok = await crypto.subtle.verify('RSASSA-PKCS1-v1_5', chave, assinatura, new TextEncoder().encode(`${h}.${c}`));
+  return ok && corpo.iss === GITHUB_OIDC && corpo.aud === env.SELF && corpo.exp * 1000 > Date.now() &&
+    corpo.repository === REPO && corpo.ref === 'refs/heads/main' &&
+    String(corpo.workflow_ref || '').startsWith(`${REPO}/.github/workflows/alertas.yml@`);
+}
+async function guardarAlertas(req, env) {
+  if (!await doPlantao(req, env).catch(() => false)) throw falha('sem permissão', 401);
+  const texto = await req.text();
+  if (texto.length > 900e3) throw falha('grande demais', 413);
+  const completos = JSON.parse(texto);
+  if (!completos || typeof completos !== 'object' || Array.isArray(completos)) throw falha('formato errado');
+  await gravarDoc(env, 'privado/alertas', { json: texto, atualizadoEm: new Date() });
+  return { ok: true, itens: Object.keys(completos).length };
+}
+
 async function lerDoc(env, caminho) {
   const r = await fetch(docUrl(env, caminho), { headers: { authorization: `Bearer ${await token(env)}` } });
   if (r.status === 404) return null;

@@ -1244,7 +1244,18 @@
     const codigos = [...new Set(t.split('+').map(parte => (IATA_CIA.find(([re]) => re.test(parte)) || [])[1]).filter(Boolean))];
     return codigos.map(c => `<img class="pass-logo" src="https://www.gstatic.com/flights/airline_logos/70px/${c}.png" alt="" width="22" height="22" loading="lazy" onerror="this.remove()">`).join('');
   }
+  // Datas e link de emissão são da assinatura (assinatura.js traz do Firestore para quem assina).
+  // Quem não assina vê a passagem na hora, com essa parte borrada.
+  const assinatura = () => window.oammlAssinatura || {};
+  function travaHtml() {
+    const ativo = assinatura().ativo;
+    return `<a class="pass-trava" href="#assinar">
+        <span class="pass-trava-borrao" aria-hidden="true"><b>Abr/27</b> 06, 08, 13 a 15<br><b>Mai/27</b> 02, 05, 19</span>
+        <span class="pass-trava-txt">${ativo ? 'Carregando datas e link…' : '🔒 Datas e link de emissão para assinantes · <u>Assinar</u>'}</span>
+      </a>`;
+  }
   function passagemHtml(p, agora) {
+    const completo = httpOk(p.link) ? p : (assinatura().alertas || {})[p.id];
     const nivel = nivelPassagem(p);
     const selo = ['espetacular', 'muito bom', 'bom'].includes(nivel)
       ? `<a class="pass-selo ${CLASSE_NIVEL[nivel]}" href="#termometro" title="Pelo termômetro de milhas">${nivel === 'espetacular' ? '🔥 ' : ''}${esc(nivel)}</a>` : '';
@@ -1260,8 +1271,8 @@
           <div><dt>Ida</dt><dd>${esc(p.ida)}</dd></div>
           ${p.volta ? `<div><dt>Volta</dt><dd>${esc(p.volta)}</dd></div>` : ''}
         </dl>
-        ${datasHtml('Datas de ida', p.datas_ida)}${datasHtml('Datas de volta', p.datas_volta)}
-        <a class="cta cta-a pass-link" href="${esc(p.link)}" target="_blank" rel="noopener">Ver passagem${p.link_nome ? ` na ${esc(p.link_nome)}` : ''} ↗</a>
+        ${completo && httpOk(completo.link) ? `${datasHtml('Datas de ida', completo.datas_ida)}${datasHtml('Datas de volta', completo.datas_volta)}
+        <a class="cta cta-a pass-link" href="${esc(completo.link)}" target="_blank" rel="noopener">Ver passagem${p.link_nome ? ` na ${esc(p.link_nome)}` : ''} ↗</a>` : travaHtml()}
       </li>`;
   }
   function promocaoHtml(p, agora) {
@@ -1312,7 +1323,7 @@
       const lista = r.ok ? await r.json() : [];
       if (Array.isArray(lista)) {
         passagens = lista.filter(p => p && !isNaN(Date.parse(p.data)) &&
-          (ehPromocao(p) ? p.titulo && (p.links || []).some(httpOk) : p.origem_iata && httpOk(p.link)));
+          (ehPromocao(p) ? p.titulo && (p.links || []).some(httpOk) : p.origem_iata));
       }
     } catch (e) { /* mantém os que já estavam na tela */ }
     mostrarPassagens();
@@ -1330,6 +1341,7 @@
     $('#passagens-cabine').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
     mostrarPassagens();
   });
+  document.addEventListener('assinatura', mostrarPassagens);
   $('#mais-passagens').addEventListener('click', () => { filtroPassagem.todas = !filtroPassagem.todas; mostrarPassagens(); });
 
   // Telefones das companhias e programas: planilha do Felipe (Nome, Telefone),

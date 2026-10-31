@@ -6,3 +6,7 @@ logo.jpeg
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Alertas completos (datas e links são só de assinantes)
+dados/alertas-completo.json
+dados/.alertas-enviado

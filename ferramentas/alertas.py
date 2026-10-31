@@ -12,6 +12,7 @@ com validade fica até o fim do dia da validade, mesmo depois das 48 horas.
 Em grupos (não canais), só valem as mensagens dos administradores.
 """
 import asyncio
+import hashlib
 import json
 import os
 import re
@@ -19,6 +20,7 @@ import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import requests
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from telethon.tl.types import (ChannelParticipantAdmin, ChannelParticipantCreator, ChannelParticipantsAdmins,
@@ -26,6 +28,12 @@ from telethon.tl.types import (ChannelParticipantAdmin, ChannelParticipantCreato
 
 HORAS = 48
 SAIDA = Path(__file__).resolve().parent.parent / 'dados' / 'alertas.json'
+# Datas e link de emissão das passagens são da assinatura: saem do arquivo público e vão para o
+# servidor. A lista inteira fica em alertas-completo.json (fora do git), para o Instagram.
+SO_ASSINANTE = ('datas_ida', 'datas_volta', 'link')
+COMPLETO = SAIDA.with_name('alertas-completo.json')
+ENVIADO = SAIDA.with_name('.alertas-enviado')
+SERVIDOR = 'https://oamml-assinatura.ondeasmilhasmelevam.workers.dev'
 CONVITE = re.compile(r'(https?://)?(t\.me|telegram\.me)/', re.I)
 
 LUGAR = r'([^\n()]*?)\s*\(([A-Z]{3})\)'
@@ -151,6 +159,29 @@ async def quem_publica(cliente, grupo):
     return ids
 
 
+def enviar_para_assinantes(passagens):
+    """Manda datas e link de cada passagem para o servidor da assinatura (servidor/worker.js),
+    que guarda no Firestore só para assinantes. Entra com o token OIDC da execução no GitHub;
+    só reenvia quando algo mudou."""
+    completos = {p['id']: {k: p[k] for k in SO_ASSINANTE if k in p} for p in passagens if p.get('tipo') != 'promocao'}
+    corpo = json.dumps(completos, ensure_ascii=False, sort_keys=True)
+    marca = hashlib.sha256(corpo.encode()).hexdigest()
+    if ENVIADO.exists() and ENVIADO.read_text() == marca:
+        return
+    pedido_url, pedido_token = os.environ.get('ACTIONS_ID_TOKEN_REQUEST_URL'), os.environ.get('ACTIONS_ID_TOKEN_REQUEST_TOKEN')
+    if not pedido_url:
+        print('::warning::Sem token do GitHub (rodando fora do Actions?); datas e links não foram para os assinantes.')
+        return
+    try:
+        oidc = requests.get(pedido_url, params={'audience': SERVIDOR}, headers={'Authorization': f'Bearer {pedido_token}'}, timeout=20).json()['value']
+        r = requests.post(f'{SERVIDOR}/alertas', data=corpo.encode(), timeout=30,
+                          headers={'Authorization': f'Bearer {oidc}', 'Content-Type': 'application/json'})
+        r.raise_for_status()
+        ENVIADO.write_text(marca)
+    except Exception as e:
+        print(f'::warning::Datas e links não chegaram aos assinantes agora ({type(e).__name__}); tenta na próxima volta.')
+
+
 def falhar(msg):
     """Erro visível nas anotações do GitHub (aparecem sem login; nunca levam as chaves)."""
     print(f'::error::{msg}')
@@ -217,7 +248,10 @@ async def main():
     await cliente.disconnect()
     passagens.sort(key=lambda p: p['data'], reverse=True)
     SAIDA.parent.mkdir(exist_ok=True)
-    SAIDA.write_text(json.dumps(passagens, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    COMPLETO.write_text(json.dumps(passagens, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    enviar_para_assinantes(passagens)
+    publico = [{k: v for k, v in p.items() if k not in SO_ASSINANTE} if p.get('tipo') != 'promocao' else p for p in passagens]
+    SAIDA.write_text(json.dumps(publico, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     print(f'{len(passagens)} itens gravados ({sum(1 for p in passagens if p.get("tipo") == "promocao")} promoções, {len(grupos)} grupos).')
 
 

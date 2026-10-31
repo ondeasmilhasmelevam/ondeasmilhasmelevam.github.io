@@ -37,11 +37,25 @@ async function lerAssinatura(user) {
   try {
     const s = await getDoc(doc(db, 'assinantes', email));
     const validoAte = s.exists() && s.data().validoAte ? s.data().validoAte.toDate() : null;
-    return { ativo: Boolean(validoAte && validoAte > new Date()), email, validoAte, plano: s.exists() ? s.data().plano : '' };
+    const ativo = Boolean(validoAte && validoAte > new Date());
+    return { ativo, email, validoAte, plano: s.exists() ? s.data().plano : '', alertas: ativo ? await lerAlertas() : {} };
   } catch (e) {
     return { ativo: false, email, validoAte: null };
   }
 }
+
+// Datas e link de cada passagem ({id: {datas_ida, datas_volta, link}}), gravados pelo servidor.
+async function lerAlertas() {
+  try {
+    const s = await getDoc(doc(db, 'privado', 'alertas'));
+    return s.exists() ? JSON.parse(s.data().json) : {};
+  } catch (e) { return {}; }
+}
+// Passagens novas chegam a cada poucos minutos; quem assina recebe as datas delas também.
+setInterval(async () => {
+  if (!window.oammlAssinatura.ativo || document.hidden) return;
+  avisar({ ...window.oammlAssinatura, alertas: await lerAlertas() });
+}, 5 * 60e3);
 
 function desenharConta(estado) {
   const conta = $('#ass-conta');

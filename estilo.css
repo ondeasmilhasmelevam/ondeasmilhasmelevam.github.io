@@ -574,6 +574,12 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .pass-datas ul{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:2px;font-size:13.5px;color:var(--ash);max-height:9.5em;overflow:auto}
 .pass-datas b{color:var(--rice);margin-right:4px}
 .pass-link{margin-top:auto;justify-content:center}
+.pass-trava{margin-top:auto;position:relative;display:grid;place-items:center;min-height:96px;padding:10px;border-radius:12px;border:1px dashed var(--line);background:var(--ink-3);text-decoration:none;overflow:hidden}
+.pass-trava-borrao{filter:blur(6px);user-select:none;font-size:13.5px;color:var(--ash);line-height:1.6;text-align:center}
+.pass-trava-borrao b{color:var(--rice);margin-right:4px}
+.pass-trava-txt{position:absolute;inset:auto 10px;text-align:center;font-size:13.5px;font-weight:800;color:var(--rice)}
+.pass-trava-txt u{color:var(--ouro);text-decoration-thickness:2px}
+.pass-trava:hover .pass-trava-txt u{text-decoration-style:double}
 .seg-tipo{display:flex;gap:6px;margin:0 0 14px;padding:4px;border:1px solid var(--line);border-radius:999px;background:var(--ink-2);width:max-content;max-width:100%}
 .seg-tipo button{border:0;background:none;color:var(--ash);font:inherit;font-size:14px;font-weight:700;padding:9px 16px;border-radius:999px;cursor:pointer;white-space:nowrap}
 .seg-tipo button small{margin-left:6px;font-size:12px;font-weight:800;color:var(--ash-dim)}

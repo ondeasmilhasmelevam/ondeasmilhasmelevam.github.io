@@ -45,7 +45,7 @@ import requests
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 RAIZ = Path(__file__).resolve().parent.parent
-ALERTAS = RAIZ / 'dados' / 'alertas.json'
+ALERTAS = RAIZ / 'dados' / 'alertas-completo.json'  # a lista inteira, com datas (ferramentas/alertas.py)
 ESTADO = RAIZ / 'dados' / 'stories.json'
 PASTA = RAIZ / 'stories'
 LOGO = RAIZ / 'logo.jpeg'
