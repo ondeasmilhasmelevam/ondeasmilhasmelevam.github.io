@@ -2292,48 +2292,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-8673",
-  "data": "2026-10-30T11:20:25Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "14.200 milhas + Taxas",
-  "volta": "14.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8672",
-  "data": "2026-10-30T11:20:21Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "João Pessoa",
-  "destino_iata": "JPA",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "14.000 milhas + Taxas",
-  "volta": "14.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-8671",
-  "data": "2026-10-30T11:20:14Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Porto Seguro",
-  "destino_iata": "BPS",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "18.000 milhas + Taxas",
-  "volta": "18.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
