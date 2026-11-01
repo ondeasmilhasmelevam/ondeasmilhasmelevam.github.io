@@ -2404,48 +2404,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-8665",
-  "data": "2026-10-30T11:01:10Z",
-  "origem": "Teresina",
-  "origem_iata": "THE",
-  "destino": "Bonito",
-  "destino_iata": "BYO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 14.997 milhas",
-  "volta": "A partir de 14.997 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8664",
-  "data": "2026-10-30T10:59:09Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Porto Velho",
-  "destino_iata": "PVH",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "20.700 milhas + Taxas",
-  "volta": "20.700 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8663",
-  "data": "2026-10-30T10:58:10Z",
-  "origem": "Teresina",
-  "origem_iata": "THE",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 13.123 milhas",
-  "volta": "A partir de 13.123 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
