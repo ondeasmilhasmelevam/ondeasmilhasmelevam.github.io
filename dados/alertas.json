@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-8761",
+  "data": "2026-11-01T14:35:28Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "14.000 milhas + Taxas",
+  "volta": "14.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-8760",
   "data": "2026-11-01T14:25:11Z",
   "origem": "Brasília",
