@@ -2488,20 +2488,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-8659",
-  "data": "2026-10-30T09:46:59Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "Cuiabá",
-  "destino_iata": "CGB",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "24.000 milhas + Taxas",
-  "volta": "24.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
