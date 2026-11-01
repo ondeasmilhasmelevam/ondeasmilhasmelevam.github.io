@@ -1548,20 +1548,6 @@
   "link_nome": "AAdvantage"
  },
  {
-  "id": "2361370250-5837",
-  "data": "2026-10-30T20:08:38Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Porto",
-  "destino_iata": "OPO",
-  "companhia": "Azul",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "80.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "1290836068-7519",
   "data": "2026-10-30T18:44:18Z",
   "tipo": "promocao",
