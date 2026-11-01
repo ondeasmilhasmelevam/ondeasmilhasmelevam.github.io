@@ -1956,20 +1956,6 @@
   "link_nome": "TAP Miles&Go"
  },
  {
-  "id": "2361370250-5823",
-  "data": "2026-10-30T12:48:21Z",
-  "origem": "Cidade do México",
-  "origem_iata": "MEX",
-  "destino": "Tóquio",
-  "destino_iata": "NRT",
-  "companhia": "ANA",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "85.000 milhas + Taxas",
-  "volta": "85.000 milhas + Taxas",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
