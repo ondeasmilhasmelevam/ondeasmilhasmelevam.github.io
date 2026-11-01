@@ -1576,20 +1576,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-8730",
-  "data": "2026-10-30T19:32:21Z",
-  "origem": "Petrolina",
-  "origem_iata": "PNZ",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 11.100 milhas",
-  "volta": "A partir de 11.100 milhas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7519",
   "data": "2026-10-30T18:44:18Z",
   "tipo": "promocao",
