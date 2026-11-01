@@ -2460,20 +2460,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-8661",
-  "data": "2026-10-30T10:05:01Z",
-  "origem": "Uberlândia",
-  "origem_iata": "UDI",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "10.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
