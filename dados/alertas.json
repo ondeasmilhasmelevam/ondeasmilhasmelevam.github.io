@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-8768",
+  "data": "2026-11-01T19:29:30Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Navegantes",
+  "destino_iata": "NVT",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "15.100 milhas + R$ 35,75 de taxas",
+  "volta": "15.100 milhas + R$ 50,57 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-7551",
   "data": "2026-11-01T19:00:21Z",
   "tipo": "promocao",
