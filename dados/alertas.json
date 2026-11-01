@@ -1839,20 +1839,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-8705",
-  "data": "2026-10-30T14:09:31Z",
-  "origem": "Uberlândia",
-  "origem_iata": "UDI",
-  "destino": "Salvador",
-  "destino_iata": "SSA",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "21.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
