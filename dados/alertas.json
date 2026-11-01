@@ -1,5 +1,81 @@
 [
  {
+  "id": "1290836068-7540",
+  "data": "2026-11-01T15:17:45Z",
+  "tipo": "promocao",
+  "titulo": "LIVELO & SAM’S CLUB - ADESÃO BONIFICADA",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Assine o Sam's Club com 50% OFF na anuidade e ganhe até 84 pontos Livelo por real gasto, além de bônus por adicional.",
+  "detalhes": [
+   "84 pontos por real na anuidade do Plano Club para assinantes do Clube Livelo.",
+   "14 pontos por real na anuidade do Plano Plus para demais clientes.",
+   "1.000 pontos extras ao incluir 1 sócio adicional gratuito.",
+   "50% OFF na anuidade do 1º ano em ambos os planos."
+  ],
+  "parceiros": "Livelo, Sam's Club",
+  "validade": "02/11/2026",
+  "links": [
+   "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club/WMB"
+  ],
+  "ate": "2026-11-02T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7539",
+  "data": "2026-11-01T15:17:40Z",
+  "tipo": "promocao",
+  "titulo": "PRÉ-BLACK FRIDAY ALL SIGNATURE",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Assine o clube ALL Signature com 20% OFF em qualquer plano utilizando o cupom PREBLACK2026.",
+  "detalhes": [
+   "20% de desconto na primeira cobrança dos planos Essential, Discover, Explorer, Absolute, XP e XP Legacy.",
+   "Cupom obrigatório: PREBLACK2026."
+  ],
+  "parceiros": "ALL Accor, ALL Signature",
+  "validade": "20/11/2026",
+  "links": [
+   "https://all.accor.com/a/pt-br/loyalty-program/subscription-program/all-signature.html"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7538",
+  "data": "2026-11-01T15:17:29Z",
+  "tipo": "promocao",
+  "titulo": "CARTÃO GOL SMILES BANCO DO BRASIL COM ANUIDADE GRÁTIS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Solicite o Cartão de Crédito GOL Smiles BB e aproveite anuidade ZERO por até 3 meses.",
+  "detalhes": [
+   "Isenção de anuidade no cartão GOL Smiles Banco do Brasil por até 3 meses."
+  ],
+  "parceiros": "Smiles, Banco do Brasil",
+  "validade": "31/12/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanhas/cartao-de-credito/isencao-da-anuidade-bb-07-2026⁠"
+  ],
+  "ate": "2026-12-31T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7537",
+  "data": "2026-11-01T15:17:25Z",
+  "tipo": "promocao",
+  "titulo": "SMILES: RECEBA ATÉ 270.000 MILHAS EM 12 MESES DEPENDENDO DO PLANO ASSINADO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Smiles e receba até 270.000 milhas em 12 meses com milheiro a partir de R$ 23,66 no plano 1.000 anual à vista.",
+  "detalhes": [
+   "Receba até 270.000 milhas em 12 meses dependendo do plano assinado."
+  ],
+  "parceiros": "Smiles",
+  "validade": "03/11/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja/bau-20261026"
+  ],
+  "ate": "2026-11-03T23:59:59-03:00"
+ },
+ {
   "id": "3761373661-8761",
   "data": "2026-11-01T14:35:28Z",
   "origem": "Goiânia",
