@@ -2474,20 +2474,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-8660",
-  "data": "2026-10-30T09:51:01Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "25.900 milhas + Taxas",
-  "volta": "25.900 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
