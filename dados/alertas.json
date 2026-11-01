@@ -2096,48 +2096,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-8686",
-  "data": "2026-10-30T12:22:15Z",
-  "origem": "Vitória",
-  "origem_iata": "VIX",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "9.600 milhas",
-  "volta": "9.600 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8685",
-  "data": "2026-10-30T12:20:37Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Vitória",
-  "destino_iata": "VIX",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "23.000 milhas + Taxas",
-  "volta": "23.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8684",
-  "data": "2026-10-30T12:20:25Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "26.000 milhas + Taxas",
-  "volta": "26.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
