@@ -1413,20 +1413,6 @@
   "link_nome": "Aeroplan"
  },
  {
-  "id": "3761373661-8728",
-  "data": "2026-10-30T18:50:39Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "5.000 milhas + Taxas",
-  "volta": "5.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7519",
   "data": "2026-10-30T18:44:18Z",
   "tipo": "promocao",
