@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-8754",
+  "data": "2026-11-01T13:41:29Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Foz do Iguaçu",
+  "destino_iata": "IGU",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "18.000 milhas TudoAzul + Taxas",
+  "volta": "20.000 milhas TudoAzul + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2361370250-5906",
   "data": "2026-10-31T22:07:58Z",
   "origem": "Doha",
@@ -1879,25 +1893,6 @@
   "ida": "16.100 milhas + Taxas",
   "volta": "16.100 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "1290836068-7502",
-  "data": "2026-10-30T13:37:59Z",
-  "tipo": "promocao",
-  "titulo": "GANHE ATÉ 40.000 PONTOS AO SOLICITAR CARTÃO LATAM Pass ITAÚ",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "O cartão LATAM Pass Itaú oferece até 40.000 pontos bônus ao solicitar. Além disso, acumula até 5,25 milhas por dólar gasto. Também traz benefícios exclusivos e descontos em passagens e produtos.",
-  "detalhes": [
-   "até 40.000 pontos bônus ao solicitar agora",
-   "acúmulo turbinado de até 5,25 milhas por dólar gasto"
-  ],
-  "parceiros": "LATAM Pass",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/arqbcww"
-  ],
-  "ate": ""
  },
  {
   "id": "1290836068-7476",
