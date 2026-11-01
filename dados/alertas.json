@@ -294,28 +294,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "1290836068-7531",
-  "data": "2026-10-31T13:37:11Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFIRA PONTOS DE BANCOS PARCEIROS PARA SMILES COM BÔNUS E COMPRA DE MILHAS COM DESCONTO",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Transfira pontos de bancos parceiros para o programa Smiles e ganhe até 70% de bônus. Além disso, aproveite um cupom de 75% OFF para compra de milhas Smiles.",
-  "detalhes": [
-   "70% de bônus para assinantes do Clube Smiles e clientes Diamante.",
-   "40% de bônus para demais clientes Smiles.",
-   "Cupom de 75% OFF para compra de milhas Smiles.",
-   "Milheiro do cupom: R$ 20,00 por 1.000 milhas.",
-   "Compra parcelada em até 12x sem juros no cartão GOL Smiles e até 5x sem juros em outros cartões."
-  ],
-  "parceiros": "Smiles, Bancos Parceiros (nacionais e internacionais, exceto GOL Smiles), PaGol",
-  "validade": "31/10/2026 (milhas bônus creditadas até 13/11/2026 e válidas por 12 meses)",
-  "links": [
-   "https://www.smiles.com.br/portal/campanhas/bancos-28-10-2026"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
   "id": "3761373661-8739",
   "data": "2026-10-31T13:31:44Z",
   "origem": "Brasília",
@@ -1660,25 +1638,6 @@
   "ate": "2026-11-02T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7507",
-  "data": "2026-10-30T14:50:49Z",
-  "tipo": "promocao",
-  "titulo": "C6 BANK & SMILES: ATÉ 70% DE BÔNUS NA TRANSFERÊNCIA",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira pontos C6 Átomos para a Smiles com até 70% de bônus conforme a sua categoria no programa.",
-  "detalhes": [
-   "70% de bônus para assinantes do Clube Smiles ou clientes Diamante/Magno.",
-   "40% de bônus para demais clientes."
-  ],
-  "parceiros": "C6 Bank e Smiles",
-  "validade": "31/10/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanhas/bancos-C6-bank-10-2026"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
   "id": "1290836068-7505",
   "data": "2026-10-30T14:50:41Z",
   "tipo": "promocao",
@@ -1696,25 +1655,6 @@
    "https://www.livelo.com.br/clube"
   ],
   "ate": "2026-11-02T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7504",
-  "data": "2026-10-30T14:50:38Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFERÊNCIA FLYING BLUE: 20% DE BÔNUS",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Transfira pontos Livelo para o programa Flying Blue com paridade diferenciada e ganhe 20% de bônus.",
-  "detalhes": [
-   "Paridade de transferência de 3,5:1.",
-   "20% de bônus nas milhas transferidas."
-  ],
-  "parceiros": "Livelo e Flying Blue",
-  "validade": "31/10/2026",
-  "links": [
-   "https://www.livelo.com.br/livelo-para-parceiros/flying-blue/LIVK0007"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
  },
  {
   "id": "3761373661-8710",
@@ -2562,64 +2502,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "1290836068-7483",
-  "data": "2026-10-29T12:02:20Z",
-  "tipo": "promocao",
-  "titulo": "REVOLUT E TAP MILES&GO - 20% DE BÔNUS NA TRANSFERÊNCIA DE REVPOINTS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira seus RevPoints para o TAP Miles&Go e ganhe 20% de bônus em milhas.",
-  "detalhes": [
-   "Paridade regular: 1 RevPoint = 1 milha.",
-   "Com bônus de 20%: 1.000 RevPoints = 1.200 milhas TAP Miles&Go."
-  ],
-  "parceiros": "Revolut, TAP Miles&Go",
-  "validade": "31/10/2026",
-  "links": [
-   "https://www.flytap.com/pt-br/miles-and-go/revolut"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7481",
-  "data": "2026-10-29T12:02:10Z",
-  "tipo": "promocao",
-  "titulo": "SAM'S CLUB E AZUL FIDELIDADE - GANHE ATÉ 15.000 PONTOS AZUL",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Sam's Club com anuidade promocional e receba até 15.000 pontos no Azul Fidelidade.",
-  "detalhes": [
-   "15.000 pontos para assinantes do Clube Azul.",
-   "10.500 pontos para demais clientes Azul.",
-   "Anuidade promocional do Plano Club por R$ 67 e Plano Plus por R$ 122."
-  ],
-  "parceiros": "Sam's Club, Azul Fidelidade",
-  "validade": "31/10/2026",
-  "links": [
-   "https://sejasocio.samsclub.com.br/index.php/parceria-azul-out"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7480",
-  "data": "2026-10-29T12:02:03Z",
-  "tipo": "promocao",
-  "titulo": "BANCOS PARCEIROS E LATAM Pass - BÔNUS DE ATÉ 25% MAIS MILHAS EXTRAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira pontos de bancos parceiros para o LATAM Pass e ganhe 25% de bônus mais 1.000 milhas extras na primeira transferência.",
-  "detalhes": [
-   "25% de bônus para todos os clientes.",
-   "1.000 milhas extras na primeira transferência para o LATAM Pass."
-  ],
-  "parceiros": "LATAM Pass, Itaú, Credicard, Sicredi, C6 Bank, BTG Pactual, Revolut, Banco Banrisul, SICOOB, Coopera, Banco Banestes, Banco do Nordeste, Banco Mercantil, Banpará, Banco Industrial BIB, Sisprime, PicPay",
-  "validade": "31/10/2026",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/bancos-milhas-extras"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
@@ -2686,46 +2568,6 @@
    "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja/bau-20261026"
   ],
   "ate": "2026-11-03T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7448",
-  "data": "2026-10-26T20:23:00Z",
-  "tipo": "promocao",
-  "titulo": "REVOLUT: TRANSFIRA REVPOINTS E GANHE 20% DE BÔNUS EM MILHAS TAP",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira RevPoints para o TAP Miles&Go e ganhe 20% de bônus em milhas, válido até 31/10/2026. Conversão mínima de 1 RevPoint, com limite de 999.999 RevPoints por transação.",
-  "detalhes": [
-   "20% de bônus sobre os RevPoints transferidos para o TAP Miles&Go.",
-   "Conversão regular: 1 RevPoint = 1 milha TAP Miles&Go.",
-   "Com bônus: 1.000 RevPoints = 1.200 milhas TAP Miles&Go."
-  ],
-  "parceiros": "Revolut, TAP Miles&Go",
-  "validade": "31/10/2026",
-  "links": [
-   "https://www.flytap.com/pt-br/miles-and-go/revolut"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7447",
-  "data": "2026-10-26T20:22:54Z",
-  "tipo": "promocao",
-  "titulo": "PREMMIA: TRANSFIRA PONTOS E GANHE 100% DE BÔNUS PARA SMILES",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Transfira pontos Premmia para o Smiles e receba 100% de bônus em milhas, válido até 31/10/2026. Cada transferência gera 10.000 milhas bônus, com limite de 400.000 milhas por CPF.",
-  "detalhes": [
-   "100% de bônus em milhas Smiles para todos os clientes Smiles, incluindo assinantes do Clube Smiles.",
-   "300 pontos Premmia + R$ 321,90 = 10.000 milhas Smiles + 10.000 milhas bônus (total de 20.000 milhas).",
-   "Milheiro Smiles: R$ 16,09 por 1.000 milhas."
-  ],
-  "parceiros": "Premmia, Smiles",
-  "validade": "31/10/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanhas/premmia-26102026"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
  },
  {
   "id": "1290836068-7445",
@@ -2807,62 +2649,6 @@
    "https://all.accor.com/a/pt-br/loyalty-program/subscription-program/all-signature.html"
   ],
   "ate": "2026-11-20T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7426",
-  "data": "2026-10-26T12:34:39Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFERÊNCIA BONIFICADA LIVELO PARA FLYING BLUE",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Transfira pontos Livelo para o Flying Blue com 20% de bônus e paridade 3,5:1.",
-  "detalhes": [
-   "Bônus: 20%",
-   "Paridade: 3,5:1",
-   "Milheiro estimado a R$ 87,50 (pontos Livelo acumulados a R$ 30)"
-  ],
-  "parceiros": "Livelo, Flying Blue",
-  "validade": "31/10/2026",
-  "links": [
-   "https://www.livelo.com.br/livelo-para-parceiros/flying-blue/LIVK0007"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7423",
-  "data": "2026-10-25T16:21:57Z",
-  "tipo": "promocao",
-  "titulo": "MASTERCARD SURPREENDA: GANHE ATÉ 30 PONTOS EXTRAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Resgate pontos extras no Mastercard Surpreenda utilizando os cupons promocionais.",
-  "detalhes": [
-   "Cupons: OUT26 e NOV26"
-  ],
-  "parceiros": "Mastercard Surpreenda",
-  "validade": "Até 31/10/2026",
-  "links": [
-   "https://surpreenda.naotempreco.com.br/codigo-promocional"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7413",
-  "data": "2026-10-24T13:24:21Z",
-  "tipo": "promocao",
-  "titulo": "MASTERCARD SURPREENDA: GANHE PONTOS COM CUPOM",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Resgate pontos extras no Mastercard Surpreenda utilizando códigos promocionais.",
-  "detalhes": [
-   "Ganhe até 30 pontos com os cupons OUT26 e NOV26"
-  ],
-  "parceiros": "Mastercard Surpreenda",
-  "validade": "Até 31/10/2026",
-  "links": [
-   "https://surpreenda.naotempreco.com.br/codigo-promocional"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
  },
  {
   "id": "1290836068-7403",
@@ -3015,197 +2801,6 @@
   "ate": "2026-11-21T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7171",
-  "data": "2026-10-08T14:40:56Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FIDELIDADE & SAM’S CLUB: ASSINE O SAM’S CLUB E GANHE ATÉ 15.000 PONTOS AZUL",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Sam's Club com valores promocionais a partir de R$ 67/ano e ganhe até 15.000 pontos Azul.",
-  "detalhes": [
-   "15.000 pontos para assinantes do Clube Azul.",
-   "10.500 pontos para demais clientes Azul.",
-   "Plano Club por R$ 67/ano e Plano Plus por R$ 122/ano."
-  ],
-  "parceiros": "Sam's Club, Azul Fidelidade",
-  "validade": "31/10/2026",
-  "links": [
-   "https://sejasocio.samsclub.com.br/index.php/parceria-azul-out"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7161",
-  "data": "2026-10-08T14:05:45Z",
-  "tipo": "promocao",
-  "titulo": "LIVELO E FLYING BLUE: 20% DE BÔNUS NA TRANSFERÊNCIA",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Oportunidade de transferir seus pontos Livelo para o Flying Blue (Air France/KLM) com 20% de bônus.",
-  "detalhes": [
-   "20% de bônus para todos os clientes elegíveis.",
-   "Paridade de transferência: 3,5 pontos Livelo = 1 milha Flying Blue.",
-   "Envio mínimo de 3.500 pontos Livelo."
-  ],
-  "parceiros": "Livelo e Flying Blue",
-  "validade": "31/10/2026",
-  "links": [
-   "https://www.livelo.com.br/livelo-para-parceiros/flying-blue/LIVK0007"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7063",
-  "data": "2026-10-05T14:09:58Z",
-  "tipo": "promocao",
-  "titulo": "LIVELO & FLYING BLUE: 20% DE BÔNUS NA TRANSFERÊNCIA",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira seus pontos Livelo para o programa Flying Blue (Air France/KLM) com 20% de bônus.",
-  "detalhes": [
-   "Paridade: 3,5 pontos Livelo = 1 milha Flying Blue + bônus.",
-   "Bônus de 20% para todos os clientes elegíveis."
-  ],
-  "parceiros": "Livelo, Flying Blue",
-  "validade": "Até 31/10/2026",
-  "links": [
-   "https://www.livelo.com.br/livelo-para-parceiros/flying-blue/LIVK0007"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7062",
-  "data": "2026-10-05T14:09:53Z",
-  "tipo": "promocao",
-  "titulo": "CARTÕES CAIXA: 1ª ANUIDADE GRÁTIS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Contrate um novo cartão de crédito CAIXA elegível e garanta isenção total da primeira anuidade cumprindo as metas de gastos.",
-  "detalhes": [
-   "1ª anuidade grátis para Pessoa Física e Jurídica em cartões elegíveis."
-  ],
-  "parceiros": "CAIXA",
-  "validade": "Até 31/10/2026",
-  "links": [
-   "https://www.caixa.gov.br/voce/promocoes"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7025",
-  "data": "2026-10-03T00:07:11Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFIRA LIVELO PARA FLYING BLUE COM 20% DE BÔNUS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira pontos Livelo para o programa Flying Blue e ganhe 20% de bônus. Campanha válida até 31/10/2026.",
-  "detalhes": [
-   "Bônus de 20% sobre a transferência de pontos Livelo para Flying Blue.",
-   "Transferência mínima de 3.500 pontos Livelo (equivalente a 1.000 milhas Flying Blue).",
-   "Paridade de 3.5:1 (3.500 pontos Livelo = 1.000 milhas Flying Blue).",
-   "Não há limite para quantidade de transferências durante a campanha.",
-   "Limite máximo de 999.999 pontos Livelo por transferência.",
-   "Milhas bônus creditadas em até 7 dias úteis após o término da campanha.",
-   "Validade das milhas bônus: 24 meses a partir do crédito na conta Flying Blue."
-  ],
-  "parceiros": "Livelo, Flying Blue",
-  "validade": "31/10/2026",
-  "links": [
-   "https://www.livelo.com.br/livelo-para-parceiros/flying-blue/LIVK0007"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7023",
-  "data": "2026-10-02T22:39:21Z",
-  "tipo": "promocao",
-  "titulo": "Acúmulo extra de milhas nos cartões Latam Pass",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "A promoção oferece 50% de milhas extras em todas as compras para assinantes do Clube Latam Pass. O acúmulo extra vale até 31/10/26 e varia por cartão e tipo de compra. Também há bônus de adesão de até 40.000 milhas para alguns cartões.",
-  "detalhes": [
-   "50% de milhas extras em todas as compras",
-   "válido até 31/10/26",
-   "milhas por dólar: 5,25 para Black e Infinite internacionais",
-   "milhas por dólar: 3,75 para Black e Infinite nacionais",
-   "milhas por dólar: 3,0 para Platinum",
-   "milhas por dólar: 2,4 para Gold",
-   "milhas por dólar: 1,95 para Internacional",
-   "não é necessário fazer nenhuma ativação para receber a pontuação turbinada"
-  ],
-  "parceiros": "LATAM Pass, LATAM",
-  "validade": "até 31/10/26",
-  "links": [
-   "https://link.dia23.com.br/r/Askzqcj"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7013",
-  "data": "2026-10-02T13:05:13Z",
-  "tipo": "promocao",
-  "titulo": "CARTÕES CAIXA: CONTRATE E GANHE 1ª ANUIDADE GRÁTIS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Contrate um novo cartão de crédito CAIXA elegível e garanta isenção total da primeira anuidade ao cumprir as condições estipuladas.",
-  "detalhes": [
-   "Anuidade zero no primeiro ano para contratações entre 08/09 e 31/10/2026.",
-   "Meta de compras até 30/11/2026 para cartões de alta variante (ex: R$ 30.000 para CAIXA Ícone Visa; R$ 15.000 para Elo Diners Club e Empresariais).",
-   "Para demais cartões elegíveis, basta realizar o desbloqueio e a 1ª compra no crédito."
-  ],
-  "parceiros": "CAIXA, Visa, Elo",
-  "validade": "31/10/2026",
-  "links": [
-   "https://www.caixa.gov.br/voce/promocoes",
-   "https://www.caixa.gov.br/Downloads/cartoes-caixa-pessoa-fisica-regulamentos/regulamento-sua-primeira-anuidade-e-por-nossa-conta-cartoes-caixa.pdf"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7000",
-  "data": "2026-10-01T22:01:21Z",
-  "tipo": "promocao",
-  "titulo": "ANUIDADE GRÁTIS EM CARTÕES CAIXA VISA E ELO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Contrate cartões CAIXA Visa ou Elo e ganhe isenção da primeira anuidade. Promoção válida até 31/10/2026.",
-  "detalhes": [
-   "Isenção da primeira anuidade para clientes Pessoa Física e Jurídica que contratarem cartões elegíveis entre 08/09 e 31/10/2026.",
-   "Cartões elegíveis: CAIXA Visa (Ícone, Infinite, Platinum, Platinum Mulher, Gold, Empresarial) e CAIXA Elo (Diners, Nanquim, Grafite, Grafite Mulher, Mais, Empresarial, Empresarial Mais, Empresarial Grafite).",
-   "Metas de gastos mínimos para manutenção da isenção:",
-   "R$ 30.000 (CAIXA Ícone Visa).",
-   "R$ 15.000 (CAIXA Elo Diners Club, Empresarial Elo Grafite, Empresarial Elo Mais, Empresarial Visa, Empresarial Elo).",
-   "Demais cartões: primeira compra na função crédito até 30/11/2026."
-  ],
-  "parceiros": "CAIXA",
-  "validade": "31/10/2026",
-  "links": [
-   "https://www.caixa.gov.br/Downloads/cartoes-caixa-pessoa-fisica-regulamentos/regulamento-sua-primeira-anuidade-e-por-nossa-conta-cartoes-caixa.pdf"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
-  "id": "1290836068-6991",
-  "data": "2026-10-01T17:37:23Z",
-  "tipo": "promocao",
-  "titulo": "CONTRATE CARTÃO AZUL ITAÚ E GANHE ATÉ 120.000 PONTOS BÔNUS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Contrate um dos cartões Azul Itaú e ganhe até 120.000 pontos bônus ao atingir metas de gastos e aderir ao Clube Azul até 31/10/2026.",
-  "detalhes": [
-   "Azul Itaú Visa Infinite / Mastercard Skyline: 60.000 pontos por atingir R$ 20.000 em gastos elegíveis nas 3 primeiras faturas. +60.000 pontos ao aderir/upgradar Clube Azul até 31/10 (total: 120.000 pontos).",
-   "Azul Itaú Platinum Visa / Mastercard: 40.000 pontos por atingir R$ 4.000 em gastos elegíveis nas 3 primeiras faturas. +40.000 pontos ao aderir/upgradar Clube Azul até 31/10 (total: 80.000 pontos).",
-   "Azul Itaú Gold Visa / Mastercard: 5.000 pontos por atingir R$ 2.000 em gastos elegíveis nas 3 primeiras faturas. +5.000 pontos ao aderir/upgradar Clube Azul até 31/10 (total: 10.000 pontos).",
-   "Bônus adicional de 50% sobre os pontos de gastos para clientes já ativos no Clube Azul 20.000."
-  ],
-  "parceiros": "Azul, Itaú",
-  "validade": "31/10/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/aniversario-cartao-azul-itau"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
- },
- {
   "id": "1290836068-6834",
   "data": "2026-09-25T03:40:37Z",
   "tipo": "promocao",
@@ -3229,27 +2824,5 @@
    "https://link.dia23.com.br/r/IYsc6Xt"
   ],
   "ate": "2026-12-21T23:59:59-03:00"
- },
- {
-  "id": "1290836068-6805",
-  "data": "2026-09-23T15:59:06Z",
-  "tipo": "promocao",
-  "titulo": "SUAS COMPRAS VALEM+ COM BRADESCO E LIVELO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Cadastre-se na campanha 'Suas Compras Valem+' do Bradesco e ganhe até 30.000 pontos Livelo por período promocional. Meta personalizada e válida para clientes pré-selecionados.",
-  "detalhes": [
-   "Meta de gastos e pontos personalizados para cada cliente elegível.",
-   "Até 30.000 pontos Livelo por CPF em cada período promocional (setembro e outubro).",
-   "Até 60.000 pontos Livelo no total para clientes elegíveis que cumprirem os requisitos.",
-   "Período de SET: cadastro até 20/09, compras até 30/09, apuração em 19/10.",
-   "Período de OUT: cadastro até 20/10, compras até 31/10, apuração em 19/11."
-  ],
-  "parceiros": "Bradesco, Livelo",
-  "validade": "31/10/2026 (apuração)",
-  "links": [
-   "https://banco.bradesco/html/classic/promocoes/gaste-ganhe"
-  ],
-  "ate": "2026-10-31T23:59:59-03:00"
  }
 ]
