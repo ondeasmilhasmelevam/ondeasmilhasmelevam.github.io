@@ -1534,20 +1534,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-5838",
-  "data": "2026-10-30T20:32:51Z",
-  "origem": "Toronto",
-  "origem_iata": "YYZ",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "American Airlines + GOL",
-  "cabine": "Executiva",
-  "programa": "AAdvantage",
-  "ida": "57.500 milhas + Taxas",
-  "volta": "",
-  "link_nome": "AAdvantage"
- },
- {
   "id": "1290836068-7519",
   "data": "2026-10-30T18:44:18Z",
   "tipo": "promocao",
