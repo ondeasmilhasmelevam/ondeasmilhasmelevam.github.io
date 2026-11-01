@@ -1711,20 +1711,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-8711",
-  "data": "2026-10-30T14:51:15Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Manaus",
-  "destino_iata": "MAO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "9.510 milhas LATAM Pass + Taxas",
-  "volta": "14.860 milhas LATAM Pass + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7510",
   "data": "2026-10-30T14:51:02Z",
   "tipo": "promocao",
@@ -1781,34 +1767,6 @@
    "https://www.livelo.com.br/clube"
   ],
   "ate": "2026-11-02T23:59:59-03:00"
- },
- {
-  "id": "3761373661-8710",
-  "data": "2026-10-30T14:50:17Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "SDU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 22.100 milhas",
-  "volta": "A partir de 22.100 milhas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-5828",
-  "data": "2026-10-30T14:47:29Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Fort Lauderdale",
-  "destino_iata": "FLL",
-  "companhia": "Azul",
-  "cabine": "Executiva",
-  "programa": "Azul Fidelidade",
-  "ida": "430.000 milhas + Taxas",
-  "volta": "420.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "1290836068-7476",
