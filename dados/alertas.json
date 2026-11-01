@@ -1535,20 +1535,6 @@
   "link_nome": "Finnair Plus"
  },
  {
-  "id": "3761373661-8725",
-  "data": "2026-10-30T18:06:48Z",
-  "origem": "Foz do Iguaçu",
-  "origem_iata": "IGU",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "16.320 milhas + Taxas",
-  "volta": "16.320 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7510",
   "data": "2026-10-30T14:51:02Z",
   "tipo": "promocao",
