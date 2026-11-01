@@ -1521,20 +1521,6 @@
   "ate": ""
  },
  {
-  "id": "2361370250-5835",
-  "data": "2026-10-30T18:14:43Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Nova York",
-  "destino_iata": "JFK",
-  "companhia": "American Airlines",
-  "cabine": "Executiva",
-  "programa": "Finnair Plus",
-  "ida": "55.000 AVIOS + R$ 0,00",
-  "volta": "",
-  "link_nome": "Finnair Plus"
- },
- {
   "id": "1290836068-7510",
   "data": "2026-10-30T14:51:02Z",
   "tipo": "promocao",
