@@ -2446,20 +2446,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-8662",
-  "data": "2026-10-30T10:55:03Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "21.000 milhas + Taxas",
-  "volta": "21.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
