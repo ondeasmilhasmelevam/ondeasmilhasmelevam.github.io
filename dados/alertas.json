@@ -1562,20 +1562,6 @@
   "link_nome": "Aeroplan"
  },
  {
-  "id": "3761373661-8731",
-  "data": "2026-10-30T20:01:46Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 14.400 milhas",
-  "volta": "A partir de 14.400 milhas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7519",
   "data": "2026-10-30T18:44:18Z",
   "tipo": "promocao",
