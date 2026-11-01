@@ -2138,20 +2138,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2361370250-5822",
-  "data": "2026-10-30T12:03:21Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Lisboa",
-  "destino_iata": "LIS",
-  "companhia": "GOL",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "80.000 milhas + Taxas",
-  "volta": "80.000 milhas + R$ 101,40",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "1290836068-7476",
   "data": "2026-10-28T18:51:13Z",
   "tipo": "promocao",
