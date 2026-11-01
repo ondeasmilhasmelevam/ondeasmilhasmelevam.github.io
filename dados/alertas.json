@@ -1683,34 +1683,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-5829",
-  "data": "2026-10-30T15:03:06Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Perth",
-  "destino_iata": "PER",
-  "companhia": "South African Airways",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "425.400 milhas + R$ 359,61",
-  "volta": "425.400 milhas + R$ 578,55",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8712",
-  "data": "2026-10-30T15:00:53Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "21.000 milhas + Taxas",
-  "volta": "21.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7510",
   "data": "2026-10-30T14:51:02Z",
   "tipo": "promocao",
