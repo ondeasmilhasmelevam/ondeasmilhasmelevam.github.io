@@ -1669,20 +1669,6 @@
   "link_nome": "AAdvantage"
  },
  {
-  "id": "3761373661-8713",
-  "data": "2026-10-30T15:05:54Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Goiânia",
-  "destino_iata": "GYN",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "21.000 milhas + Taxas",
-  "volta": "21.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7510",
   "data": "2026-10-30T14:51:02Z",
   "tipo": "promocao",
