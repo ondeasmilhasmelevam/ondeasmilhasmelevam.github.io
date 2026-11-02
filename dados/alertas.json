@@ -1349,20 +1349,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-8744",
-  "data": "2026-10-31T14:14:50Z",
-  "origem": "Rio Branco",
-  "origem_iata": "RBR",
-  "destino": "Manaus",
-  "destino_iata": "MAO",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "20.000 milhas + Taxas",
-  "volta": "20.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7529",
   "data": "2026-10-31T12:35:24Z",
   "tipo": "promocao",
