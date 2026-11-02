@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-5953",
+  "data": "2026-11-02T10:55:18Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Zurique",
+  "destino_iata": "ZRH",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Executiva",
+  "programa": "TAP Miles&Go",
+  "ida": "135.000 milhas",
+  "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2361370250-5952",
+  "data": "2026-11-02T10:51:04Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Milão",
+  "destino_iata": "MXP",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Executiva",
+  "programa": "TAP Miles&Go",
+  "ida": "135.000 milhas",
+  "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5951",
   "data": "2026-11-02T10:42:59Z",
   "origem": "Brasília",
@@ -1518,34 +1546,6 @@
   "ida": "517.500 milhas",
   "volta": "",
   "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-5880",
-  "data": "2026-10-31T10:52:33Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Barcelona",
-  "destino_iata": "BCN",
-  "companhia": "TAP Air Portugal",
-  "cabine": "Executiva",
-  "programa": "TAP Miles&Go",
-  "ida": "135.000 milhas",
-  "volta": "135.000 milhas",
-  "link_nome": "TAP Miles&Go"
- },
- {
-  "id": "2361370250-5879",
-  "data": "2026-10-31T10:50:31Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Porto",
-  "destino_iata": "OPO",
-  "companhia": "TAP Air Portugal",
-  "cabine": "Executiva",
-  "programa": "TAP Miles&Go",
-  "ida": "135.000 milhas",
-  "volta": "135.000 milhas",
-  "link_nome": "TAP Miles&Go"
  },
  {
   "id": "1290836068-7519",
