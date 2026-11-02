@@ -1,5 +1,65 @@
 [
  {
+  "id": "1290836068-7557",
+  "data": "2026-11-02T12:21:37Z",
+  "tipo": "promocao",
+  "titulo": "ALL ACCOR+ RESERVE E GANHE ATÉ 9.000 PONTOS REWARD EXTRAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assinantes ALL Accor+ ganham até 9.000 pontos Reward extras ao realizar e concluir uma hospedagem elegível.",
+  "detalhes": [
+   "ALL Accor+ Voyager: 9.000 pontos Reward extras.",
+   "ALL Accor+ ibis: 5.000 pontos Reward extras."
+  ],
+  "parceiros": "ALL Accor",
+  "validade": "20/11/2026",
+  "links": [
+   "https://all.accor.com/a/en/offers/all-accor---mega-bonus-offer.html"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7556",
+  "data": "2026-11-02T12:21:31Z",
+  "tipo": "promocao",
+  "titulo": "LIVELO E SAM'S CLUB COM ATÉ 84 PONTOS POR REAL E 50% OFF NA ANUIDADE",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Assine o Sam's Club e ganhe até 84 pontos por real na anuidade, 50% OFF no primeiro ano e mais 1.000 pontos extras com sócio adicional.",
+  "detalhes": [
+   "84 pontos por real no Plano Club para assinantes do Clube Livelo.",
+   "14 pontos por real no Plano Plus para demais clientes.",
+   "+1.000 pontos Livelo ao incluir 1 sócio adicional gratuitamente.",
+   "50% OFF na anuidade dos dois planos no primeiro ano."
+  ],
+  "parceiros": "Livelo, Sam's Club",
+  "validade": "02/11/2026",
+  "links": [
+   "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club/WMB"
+  ],
+  "ate": "2026-11-02T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7555",
+  "data": "2026-11-02T12:21:26Z",
+  "tipo": "promocao",
+  "titulo": "ADESÃO CLUBE LIVELO ESSENCIAL COM ATÉ 25.000 PONTOS EM 12 MESES",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Assine o Clube Livelo Essencial 1.000 com o cupom CLUBEOUT e acumule até 25.000 pontos em 12 meses.",
+  "detalhes": [
+   "Bonificação Anual: 25.000 pontos .",
+   "Bonificação Mensal: 24.000 pontos .",
+   "Cupom obrigatório: CLUBEOUT."
+  ],
+  "parceiros": "Livelo",
+  "validade": "02/11/2026",
+  "links": [
+   "https://www.livelo.com.br/clube"
+  ],
+  "ate": "2026-11-02T23:59:59-03:00"
+ },
+ {
   "id": "2361370250-5964",
   "data": "2026-11-02T11:51:28Z",
   "origem": "Brasília",
