@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5961",
+  "data": "2026-11-02T11:36:47Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "175.400 milhas",
+  "volta": "170.000 milhas",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5960",
   "data": "2026-11-02T11:30:28Z",
   "origem": "Brasília",
@@ -1502,34 +1516,6 @@
   "cabine": "Executiva",
   "programa": "GOL Smiles",
   "ida": "160.800 milhas",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-5890",
-  "data": "2026-10-31T11:37:53Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "428.400 milhas",
-  "volta": "424.000 milhas",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-5889",
-  "data": "2026-10-31T11:35:14Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "Copa Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "241.100 milhas",
   "volta": "",
   "link_nome": "GOL Smiles"
  },
