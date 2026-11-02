@@ -1,9 +1,9 @@
 {
- "atualizado": "2026-11-02T18:28:23.176121Z",
+ "atualizado": "2026-11-02T18:34:28.611920Z",
  "dias": 30,
- "passagens": 94,
+ "passagens": 96,
  "promocoes": 39,
- "destinos": 48,
+ "destinos": 49,
  "executiva": 51,
  "destaques": [
   {
@@ -74,7 +74,7 @@
   }
  ],
  "semana": {
-  "passagens": 94,
+  "passagens": 96,
   "destaques": [
    {
     "origem": "Brasília",

@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-8784",
+  "data": "2026-11-02T18:29:37Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "SDU",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "12.700 milhas + R$ 62,14 de taxas",
+  "volta": "12.700 milhas + R$ 62,62 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8783",
+  "data": "2026-11-02T18:29:28Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.400 milhas + R$ 35,75 de taxas",
+  "volta": "11.400 milhas + R$ 35,91 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-7562",
   "data": "2026-11-02T17:56:34Z",
   "tipo": "promocao",
