@@ -11,6 +11,7 @@
 // do dono (GET /metricas, só para os e-mails de ADMINS).
 // Depoimentos: quem assina (ou já assinou) conta o que achou (POST /depoimento); só aparece no
 // site (GET /depoimentos) depois que o dono aprova no painel (GET /depoimentos/todos, POST /depoimento/moderar).
+// Não manda e-mail ao dono: os novos esperam na parte de depoimentos do painel.
 //
 // Segredos (wrangler secret put): INFINITEPAY_API_KEY, FIREBASE_SERVICE_ACCOUNT (o JSON inteiro),
 // EMAILJS_PRIVATE_KEY e SEATS_AERO_KEY (busca de disponibilidade em milhas, GET /voos). Variáveis (wrangler.toml): HANDLE, PROJETO, SITE, ORIGENS, SELF, EMAILJS_*.
@@ -634,11 +635,6 @@ async function gravarDepoimento(req, env) {
   const antes = await lerDoc(env, `depoimentos/${email}`);
   await gravarDoc(env, `depoimentos/${email}`, { email, nome, cidade, texto, nota, autorizo: true, status: 'pendente',
     criadoEm: antes?.criadoEm || new Date(), atualizadoEm: new Date() });
-  const admins = String(env.ADMINS || '').split(',').map(x => x.trim()).filter(Boolean);
-  if (admins.length && (await emailsDoMes(env)) < 195) {
-    await enviarEmail(env, admins[0], 'Depoimento novo para aprovar',
-      `${'★'.repeat(nota)}${'☆'.repeat(5 - nota)}<br><b>${escHtml(nome)}</b>${cidade ? `, ${escHtml(cidade)}` : ''}<br><br>${escHtml(texto)}<br><br>${botaoEmail('Aprovar no painel', `${env.SITE}#painel`)}`).catch(() => {});
-  }
   return { ok: true };
 }
 async function exigirAdmin(req, env) {
