@@ -9,6 +9,8 @@
 // guarda quem pede o alerta grátis da semana (POST /lead, GET /sair para cancelar), dá a cada
 // assinante um link de indicação que rende 7 dias (GET /indicacao) e mostra tudo no painel
 // do dono (GET /metricas, só para os e-mails de ADMINS).
+// Depoimentos: quem assina (ou já assinou) conta o que achou (POST /depoimento); só aparece no
+// site (GET /depoimentos) depois que o dono aprova no painel (GET /depoimentos/todos, POST /depoimento/moderar).
 //
 // Segredos (wrangler secret put): INFINITEPAY_API_KEY, FIREBASE_SERVICE_ACCOUNT (o JSON inteiro),
 // EMAILJS_PRIVATE_KEY e SEATS_AERO_KEY (busca de disponibilidade em milhas, GET /voos). Variáveis (wrangler.toml): HANDLE, PROJETO, SITE, ORIGENS, SELF, EMAILJS_*.
@@ -42,6 +44,11 @@ export default {
       if (req.method === 'GET' && url.pathname === '/sair') return await sairLead(url, env);
       if (req.method === 'GET' && url.pathname === '/indicacao') return json(await minhaIndicacao(req, env), 200, cors);
       if (req.method === 'GET' && url.pathname === '/metricas') return json(await metricas(req, url, env), 200, cors);
+      if (req.method === 'GET' && url.pathname === '/depoimentos') return json(await depoimentosPublicos(env), 200, { ...cors, 'cache-control': 'public, max-age=300' });
+      if (req.method === 'GET' && url.pathname === '/depoimento') return json(await meuDepoimento(req, env), 200, cors);
+      if (req.method === 'POST' && url.pathname === '/depoimento') return json(await gravarDepoimento(req, env), 200, cors);
+      if (req.method === 'GET' && url.pathname === '/depoimentos/todos') return json(await todosDepoimentos(req, env), 200, cors);
+      if (req.method === 'POST' && url.pathname === '/depoimento/moderar') return json(await moderarDepoimento(req, env), 200, cors);
       return json({ erro: 'não encontrado' }, 404, cors);
     } catch (e) {
       return json({ erro: e.message || 'erro' }, e.status || 500, cors);
@@ -598,11 +605,65 @@ async function premiarIndicacao(env, ref, novoEmail) {
     `Olá!<br><br>Alguém que você indicou acabou de assinar o Onde as Milhas Me Levam. Obrigado! Como prometido, sua assinatura ganhou <strong>${DIAS_INDICACAO} dias</strong> e agora vale até <strong>${data}</strong>.<br><br>Continue indicando: cada amigo que assinar rende mais ${DIAS_INDICACAO} dias.<br><br>${botaoEmail('Ver meu link de indicação', `${env.SITE}#assinar`)}`);
 }
 
-/* ---------- Painel do dono ---------- */
-async function metricas(req, url, env) {
+/* ---------- Depoimentos: só de quem assina ou já assinou, e só aparecem depois de aprovados ---------- */
+const DEPO_TEXTO = 500, DEPO_NOME = 40;
+const limpo = (t, max) => String(t ?? '').replace(/[<>]/g, '').replace(/\s+/g, ' ').trim().slice(0, max);
+const depoPublico = d => ({ nome: d.nome, cidade: d.cidade || '', nota: d.nota, texto: d.texto, data: d.criadoEm instanceof Date ? d.criadoEm.toISOString().slice(0, 10) : '' });
+async function depoimentosPublicos(env) {
+  const todos = await listarDocs(env, 'depoimentos');
+  return { depoimentos: todos.filter(d => d.status === 'aprovado').sort((a, b) => (b.criadoEm || 0) - (a.criadoEm || 0)).map(depoPublico) };
+}
+async function clienteDoToken(req, env) {
+  const email = await emailDoToken(req, env);
+  if (!email || !(await lerDoc(env, `assinantes/${email}`))) throw falha('Só quem assina (ou já assinou) pode deixar depoimento.', 401);
+  return email;
+}
+async function meuDepoimento(req, env) {
+  const d = await lerDoc(env, `depoimentos/${await clienteDoToken(req, env)}`);
+  return { depoimento: d ? { ...depoPublico(d), status: d.status } : null };
+}
+async function gravarDepoimento(req, env) {
+  const email = await clienteDoToken(req, env);
+  const b = await req.json();
+  const nome = limpo(b.nome, DEPO_NOME), cidade = limpo(b.cidade, DEPO_NOME), texto = limpo(b.texto, DEPO_TEXTO);
+  const nota = Math.round(Number(b.nota));
+  if (!nome) throw falha('Diga como quer aparecer (por exemplo, seu primeiro nome).');
+  if (texto.length < 20) throw falha('Conte um pouco mais: pelo menos uma frase.');
+  if (!(nota >= 1 && nota <= 5)) throw falha('Escolha de 1 a 5 estrelas.');
+  if (b.autorizo !== true) throw falha('Marque que autoriza publicar o depoimento.');
+  const antes = await lerDoc(env, `depoimentos/${email}`);
+  await gravarDoc(env, `depoimentos/${email}`, { email, nome, cidade, texto, nota, autorizo: true, status: 'pendente',
+    criadoEm: antes?.criadoEm || new Date(), atualizadoEm: new Date() });
+  const admins = String(env.ADMINS || '').split(',').map(x => x.trim()).filter(Boolean);
+  if (admins.length && (await emailsDoMes(env)) < 195) {
+    await enviarEmail(env, admins[0], 'Depoimento novo para aprovar',
+      `${'★'.repeat(nota)}${'☆'.repeat(5 - nota)}<br><b>${escHtml(nome)}</b>${cidade ? `, ${escHtml(cidade)}` : ''}<br><br>${escHtml(texto)}<br><br>${botaoEmail('Aprovar no painel', `${env.SITE}#painel`)}`).catch(() => {});
+  }
+  return { ok: true };
+}
+async function exigirAdmin(req, env) {
   const email = await emailDoToken(req, env);
   const admins = String(env.ADMINS || '').split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
   if (!email || !admins.includes(email)) throw falha('Só para o dono do site.', 403);
+  return email;
+}
+async function todosDepoimentos(req, env) {
+  await exigirAdmin(req, env);
+  const todos = await listarDocs(env, 'depoimentos');
+  return { depoimentos: todos.sort((a, b) => (b.atualizadoEm || 0) - (a.atualizadoEm || 0)).map(d => ({ ...depoPublico(d), email: d.id, status: d.status })) };
+}
+async function moderarDepoimento(req, env) {
+  await exigirAdmin(req, env);
+  const { email, status } = await req.json();
+  if (!['aprovado', 'oculto', 'pendente'].includes(status) || !emailValido(email)) throw falha('Pedido inválido.');
+  if (!(await lerDoc(env, `depoimentos/${email}`))) throw falha('Depoimento não encontrado.', 404);
+  await atualizarCampos(env, `depoimentos/${email}`, { status, moderadoEm: new Date() });
+  return { ok: true };
+}
+
+/* ---------- Painel do dono ---------- */
+async function metricas(req, url, env) {
+  await exigirAdmin(req, env);
   const dias = Math.min(90, Math.max(1, Number(url.searchParams.get('dias')) || 30));
   const datas = [...Array(dias)].map((_, i) => new Date(Date.now() - 3 * 3600e3 - i * 864e5).toISOString().slice(0, 10));
   const porDia = {};

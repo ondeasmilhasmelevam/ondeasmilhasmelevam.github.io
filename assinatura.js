@@ -240,6 +240,163 @@ async function desenharPainel() {
     </div>
     ${tabela('Origem', Object.entries(porOrigem).sort((x, y) => y[1].visita - x[1].visita).map(([o, l]) => [ORIGEM_NOME[o] || o, l]))}
     ${tabela('Dia', porDia)}`;
+  desenharDeposPainel();
+}
+
+// Depoimentos no painel: aprovar põe no site; ocultar tira.
+const DEPO_SITUACAO = { pendente: 'Esperando aprovação', aprovado: 'No site', oculto: 'Oculto' };
+const estrelas = n => `${'★'.repeat(n)}<span>${'★'.repeat(5 - n)}</span>`;
+async function desenharDeposPainel() {
+  const el = $('#painel-depos');
+  if (!auth.currentUser) return;
+  let lista;
+  try {
+    const r = await fetch(`${SERVIDOR}/depoimentos/todos`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
+    if (!r.ok) { el.innerHTML = ''; return; }
+    lista = (await r.json()).depoimentos;
+  } catch (e) { return; }
+  const pendentes = lista.filter(d => d.status === 'pendente').length;
+  el.innerHTML = `<h3 class="prova-sub">Depoimentos${pendentes ? ` · ${pendentes} esperando aprovação` : ''}</h3>` + (lista.length
+    ? `<ul class="depos-lista painel">${lista.map(d => `<li class="${escR(d.status)}" data-email="${escR(d.email)}">
+        <p class="depo-status">${DEPO_SITUACAO[d.status] || ''}</p>
+        <p class="depo-estrelas">${estrelas(d.nota)}</p>
+        <blockquote>${escR(d.texto)}</blockquote>
+        <p class="depo-autor"><b>${escR(d.nome)}</b>${d.cidade ? ` · ${escR(d.cidade)}` : ''} · ${escR(d.email)}</p>
+        <div class="depo-botoes">${d.status !== 'aprovado' ? '<button type="button" class="cta cta-a" data-status="aprovado">Aprovar</button>' : ''}${d.status !== 'oculto' ? '<button type="button" class="cta cta-b" data-status="oculto">Ocultar</button>' : ''}</div>
+      </li>`).join('')}</ul>`
+    : '<p class="passagens-vazio">Nenhum depoimento ainda.</p>');
+}
+$('#painel-depos').addEventListener('click', async e => {
+  const b = e.target.closest('[data-status]'); if (!b) return;
+  b.disabled = true;
+  try {
+    await fetch(`${SERVIDOR}/depoimento/moderar`, { method: 'POST',
+      headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' },
+      body: JSON.stringify({ email: b.closest('li').dataset.email, status: b.dataset.status }) });
+  } finally { desenharDeposPainel(); }
+});
+
+// Depoimento de quem assina ou já assinou: vai para aprovação e pode virar story no Instagram da pessoa.
+async function desenharDepoimento(estado, aviso = '') {
+  const el = $('#ass-depo');
+  el.hidden = true;
+  if (!estado.validoAte || !auth.currentUser) return;
+  const cab = async () => ({ authorization: `Bearer ${await auth.currentUser.getIdToken()}` });
+  let meu = null;
+  try { meu = (await (await fetch(`${SERVIDOR}/depoimento`, { headers: await cab() })).json()).depoimento; } catch (e) { /* formulário vazio */ }
+  const SITUACAO = { pendente: 'Recebido! Aparece no site assim que for aprovado.', aprovado: 'Publicado no site. Obrigado!', oculto: 'Não foi publicado. Você pode editar e mandar de novo.' };
+  const nota = meu?.nota || 5;
+  el.innerHTML = `<form class="depo-form" novalidate>
+      <p><b>O que você está achando do site?</b> Conte em poucas linhas, por exemplo uma passagem que emitiu graças a um alerta. Isso ajuda muito quem está pensando em assinar.</p>
+      ${meu ? `<p class="depo-situacao">${SITUACAO[meu.status] || ''}</p>` : ''}
+      <fieldset class="depo-nota"><legend>Sua nota</legend>${[1, 2, 3, 4, 5].map(n => `<label><input type="radio" name="nota" value="${n}"${nota === n ? ' checked' : ''}><span aria-hidden="true">★</span><i class="sr">${n} ${n === 1 ? 'estrela' : 'estrelas'}</i></label>`).join('')}</fieldset>
+      <textarea name="texto" rows="4" maxlength="500" aria-label="Seu depoimento" placeholder="Ex.: Emiti São Paulo–Lisboa em executiva por 70 mil milhas no mesmo dia em que o alerta saiu.">${escR(meu?.texto || '')}</textarea>
+      <div class="depo-campos">
+        <input name="nome" maxlength="40" aria-label="Nome" placeholder="Como quer aparecer (ex.: Ana)" value="${escR(meu?.nome || '')}">
+        <input name="cidade" maxlength="40" aria-label="Cidade" placeholder="Sua cidade (opcional)" value="${escR(meu?.cidade || '')}">
+      </div>
+      <label class="lead-aceite"><input type="checkbox" name="autorizo"${meu ? ' checked' : ''}> Autorizo publicar este depoimento no site e no Instagram do Onde as Milhas Me Levam, com o nome e a cidade acima. Meu e-mail não aparece.</label>
+      <div class="depo-botoes">
+        <button type="submit" class="cta cta-a">${meu ? 'Atualizar depoimento' : 'Enviar depoimento'}</button>
+        ${meu ? '<button type="button" class="cta cta-b" data-depo-insta>Postar no meu Instagram</button>' : ''}
+      </div>
+      <p class="lead-msg${aviso ? ' ok' : ''}" role="status"${aviso ? '' : ' hidden'}>${escR(aviso)}</p>
+    </form>`;
+  el.hidden = false;
+  const f = el.querySelector('form'), saida = f.querySelector('.lead-msg');
+  const dizer = (t, ok) => { saida.textContent = t; saida.className = `lead-msg ${ok ? 'ok' : 'erro'}`; saida.hidden = false; };
+  const pintar = () => f.querySelectorAll('.depo-nota label').forEach((l, i) => l.classList.toggle('on', i < +f.elements.nota.value));
+  f.addEventListener('change', pintar);
+  pintar();
+  const dados = () => ({ nota: +f.elements.nota.value, texto: f.elements.texto.value.trim(), nome: f.elements.nome.value.trim(), cidade: f.elements.cidade.value.trim() });
+  f.addEventListener('submit', async e => {
+    e.preventDefault();
+    const b = f.querySelector('[type=submit]');
+    b.disabled = true;
+    try {
+      const r = await fetch(`${SERVIDOR}/depoimento`, { method: 'POST', headers: { ...(await cab()), 'content-type': 'application/json' },
+        body: JSON.stringify({ ...dados(), autorizo: f.elements.autorizo.checked }) });
+      const res = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(res.erro);
+      await desenharDepoimento(estado, 'Obrigado! Agora poste no seu Instagram: o botão ao lado monta a imagem. Marque @ondeasmilhasmelevam no story.');
+    } catch (er) {
+      dizer(er.message || 'Não deu agora. Tente de novo em instantes.');
+      b.disabled = false;
+    }
+  });
+  f.querySelector('[data-depo-insta]')?.addEventListener('click', async () => {
+    const d = dados();
+    if (d.texto.length < 20 || !d.nome) return dizer('Preencha o depoimento e o nome primeiro.');
+    const r = await compartilharDepoimento(d);
+    if (r === 'baixou') dizer('Imagem baixada. Abra o Instagram, crie um story com ela e marque @ondeasmilhasmelevam.', true);
+  });
+}
+
+// Imagem do depoimento no tamanho do story (1080x1920), com a cara do site.
+function carregarImagem(src) {
+  return new Promise(ok => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => ok(null); i.src = src; });
+}
+function linhas(x, texto, largura) {
+  const saida = [];
+  let atual = '';
+  for (const p of texto.split(/\s+/)) {
+    const teste = atual ? `${atual} ${p}` : p;
+    if (x.measureText(teste).width > largura && atual) { saida.push(atual); atual = p; } else atual = teste;
+  }
+  if (atual) saida.push(atual);
+  return saida;
+}
+async function imagemDepoimento(d) {
+  await document.fonts.ready;
+  const W = 1080, H = 1920, c = document.createElement('canvas');
+  c.width = W; c.height = H;
+  const x = c.getContext('2d');
+  const g = x.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, '#101B34'); g.addColorStop(1, '#060A14');
+  x.fillStyle = g; x.fillRect(0, 0, W, H);
+  const luz = x.createRadialGradient(260, 180, 0, 260, 180, 1000);
+  luz.addColorStop(0, 'rgba(226,180,88,.24)'); luz.addColorStop(1, 'rgba(226,180,88,0)');
+  x.fillStyle = luz; x.fillRect(0, 0, W, H);
+  x.textAlign = 'center';
+  const logo = await carregarImagem('logo.jpeg');
+  if (logo) {
+    x.save(); x.beginPath(); x.arc(W / 2, 250, 100, 0, Math.PI * 2); x.clip();
+    x.drawImage(logo, W / 2 - 100, 150, 200, 200); x.restore();
+    x.strokeStyle = '#E2B458'; x.lineWidth = 5; x.beginPath(); x.arc(W / 2, 250, 108, 0, Math.PI * 2); x.stroke();
+  }
+  x.fillStyle = '#E2B458'; x.font = '700 38px Cinzel';
+  if ('letterSpacing' in x) x.letterSpacing = '6px';
+  x.fillText('ONDE AS MILHAS ME LEVAM', W / 2, 440);
+  if ('letterSpacing' in x) x.letterSpacing = '0px';
+  x.font = '64px sans-serif';
+  x.fillText('★'.repeat(d.nota), W / 2, 590);
+  x.fillStyle = 'rgba(226,180,88,.35)'; x.font = '700 260px Cinzel';
+  x.fillText('“', W / 2, 820);
+  let tam = 58, ls;
+  do { x.font = `600 ${tam}px Manrope`; ls = linhas(x, d.texto, 880); tam -= 4; } while (ls.length * tam * 1.42 > 760 && tam > 34);
+  const alto = (tam + 4) * 1.42;
+  let y = 760 + Math.max(0, (760 - ls.length * alto) / 2);
+  x.fillStyle = '#F3EEE3';
+  for (const l of ls) { y += alto; x.fillText(l, W / 2, y); }
+  x.fillStyle = '#E2B458'; x.font = '800 44px Manrope';
+  x.fillText(`— ${d.nome}${d.cidade ? `, ${d.cidade}` : ''}`, W / 2, Math.max(y + 110, 1600));
+  x.fillStyle = '#A3ACBD'; x.font = '600 34px Manrope';
+  x.fillText('@ondeasmilhasmelevam', W / 2, 1760);
+  x.fillText('ondeasmilhasmelevam.github.io', W / 2, 1812);
+  return new Promise(ok => c.toBlob(ok, 'image/jpeg', 0.92));
+}
+async function compartilharDepoimento(d) {
+  const blob = await imagemDepoimento(d);
+  const arquivo = new File([blob], 'depoimento-onde-as-milhas.jpg', { type: 'image/jpeg' });
+  if (navigator.canShare && navigator.canShare({ files: [arquivo] })) {
+    try { await navigator.share({ files: [arquivo], text: 'Indico o @ondeasmilhasmelevam para achar passagens com milhas.' }); return 'compartilhou'; }
+    catch (e) { if (e.name === 'AbortError') return 'cancelou'; }
+  }
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = arquivo.name;
+  document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  return 'baixou';
 }
 $('#painel-dias').addEventListener('click', e => {
   const b = e.target.closest('[data-dias]'); if (!b) return;
@@ -253,6 +410,7 @@ onAuthStateChanged(auth, async user => {
   const estado = await lerAssinatura(user);
   desenharConta(estado);
   desenharIndicacao(estado);
+  desenharDepoimento(estado);
   if (location.hash === '#painel') desenharPainel();
   desenharHistorico(estado.email);
   await lerRadares(estado.ativo ? estado.email : '');

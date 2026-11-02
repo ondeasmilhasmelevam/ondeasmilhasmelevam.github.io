@@ -72,6 +72,20 @@
     document.querySelectorAll('[data-lead-caixa]').forEach(el => { el.hidden = !!e.detail.ativo; });
   });
 
+  // Depoimentos de assinantes, só os aprovados pelo dono (servidor/worker.js, GET /depoimentos).
+  (async () => {
+    const caixas = document.querySelectorAll('[data-depoimentos]');
+    if (!caixas.length) return;
+    let lista;
+    try { lista = (await (await fetch(`${SERVIDOR}/depoimentos`)).json()).depoimentos; } catch (e) { return; }
+    if (!lista || !lista.length) return;
+    const html = `<p class="prova-tit">O que dizem os assinantes</p><ul class="depos-lista">${lista.slice(0, 6).map(d => `<li>
+        <p class="depo-estrelas" aria-label="${d.nota} de 5 estrelas">${'★'.repeat(d.nota)}<span>${'★'.repeat(5 - d.nota)}</span></p>
+        <blockquote>${esc(d.texto)}</blockquote>
+        <p class="depo-autor"><b>${esc(d.nome)}</b>${d.cidade ? ` · ${esc(d.cidade)}` : ''}</p></li>`).join('')}</ul>`;
+    caixas.forEach(el => { el.innerHTML = html; el.hidden = false; });
+  })();
+
   // Prova social: números dos últimos 30 dias e as melhores achadas.
   const milhas = n => Number(n).toLocaleString('pt-BR');
   const NIVEL = { espetacular: '🔥 espetacular', 'muito bom': 'muito bom', bom: 'bom' };

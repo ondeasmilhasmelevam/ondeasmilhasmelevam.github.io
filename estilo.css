@@ -1408,3 +1408,36 @@ footer .badge{width:84px;height:84px;margin-bottom:14px}
 .painel-tabela th:first-child,.painel-tabela td:first-child{text-align:left;color:var(--rice)}
 .painel-tabela thead th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ouro)}
 .painel-tabela tfoot td{font-weight:800;color:var(--rice)}
+
+/* ---------- depoimentos ---------- */
+.ass-depo[hidden],.depos[hidden]{display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ass-depo{flex:1 1 100%;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2)}
+.depo-form{display:grid;gap:12px}
+.depo-form p{margin:0;color:var(--ash);font-size:14px;line-height:1.5}
+.depo-form b{color:var(--rice)}
+.depo-form .depo-situacao{color:var(--ouro);font-weight:700}
+.depo-nota{display:flex;align-items:center;gap:2px;margin:0;padding:0;border:0}
+.depo-nota legend{float:left;margin-right:10px;font-size:13px;color:var(--ash)}
+.depo-nota label{position:relative;cursor:pointer;font-size:32px;line-height:1;color:var(--line);transition:color .12s ease}
+.depo-nota label.on{color:var(--ouro)}
+.depo-nota input{position:absolute;opacity:0;width:1px;height:1px}
+.depo-nota label:focus-within span{outline:2px solid var(--ouro);outline-offset:2px;border-radius:4px}
+.depo-form textarea,.depo-campos input{box-sizing:border-box;width:100%;min-width:0;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--ink);color:var(--rice);font:inherit;font-size:16px;resize:vertical}
+.depo-campos{display:flex;flex-wrap:wrap;gap:10px}
+.depo-campos input{flex:1 1 200px;width:auto}
+.depo-botoes{display:flex;flex-wrap:wrap;gap:10px}
+.depo-botoes .cta{justify-content:center}
+.depos{margin:0 0 24px}
+.depos-gratis{margin:26px 0 0}
+.depos-lista{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))}
+.depos-lista li{padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2)}
+.depo-estrelas{margin:0;font-size:17px;letter-spacing:2px;color:var(--ouro)}
+.depo-estrelas span{color:var(--line)}
+.depos-lista blockquote{margin:8px 0 10px;font-size:15px;line-height:1.55;color:var(--rice)}
+.depo-autor{margin:0;font-size:13.5px;color:var(--ash);overflow-wrap:anywhere}
+.depo-autor b{color:var(--rice)}
+.depo-status{margin:0 0 6px;font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro)}
+.depos-lista.painel li.pendente{border-color:rgba(226,180,88,.6)}
+.depos-lista.painel li.oculto{opacity:.6}
+.depos-lista.painel .depo-botoes{margin-top:12px}
