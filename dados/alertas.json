@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5971",
+  "data": "2026-11-02T15:26:46Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American Airlines",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "178.700 milhas + R$ 331",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8779",
   "data": "2026-11-02T15:04:54Z",
   "origem": "Cuiabá",

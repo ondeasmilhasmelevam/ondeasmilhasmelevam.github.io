@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-02T15:24:18.030746Z",
+ "atualizado": "2026-11-02T15:30:23.013133Z",
  "dias": 30,
- "passagens": 90,
+ "passagens": 91,
  "promocoes": 38,
- "destinos": 45,
- "executiva": 50,
+ "destinos": 46,
+ "executiva": 51,
  "destaques": [
   {
    "origem": "Brasília",
@@ -15,6 +15,17 @@
    "programa": "GOL Smiles",
    "data": "2026-11-02T11:30:28Z",
    "milhas": 161200,
+   "nivel": "espetacular"
+  },
+  {
+   "origem": "Rio de Janeiro",
+   "origem_iata": "GIG",
+   "destino": "Nova York",
+   "destino_iata": "JFK",
+   "cabine": "Executiva",
+   "programa": "Smiles",
+   "data": "2026-11-02T15:26:46Z",
+   "milhas": 178700,
    "nivel": "espetacular"
   },
   {
@@ -60,21 +71,10 @@
    "data": "2026-11-02T15:04:54Z",
    "milhas": 7840,
    "nivel": ""
-  },
-  {
-   "origem": "Porto Alegre",
-   "origem_iata": "POA",
-   "destino": "Belo Horizonte",
-   "destino_iata": "CNF",
-   "cabine": "Econômica",
-   "programa": "LATAM Pass",
-   "data": "2026-11-02T14:55:29Z",
-   "milhas": 8300,
-   "nivel": ""
   }
  ],
  "semana": {
-  "passagens": 90,
+  "passagens": 91,
   "destaques": [
    {
     "origem": "Brasília",
@@ -85,6 +85,17 @@
     "programa": "GOL Smiles",
     "data": "2026-11-02T11:30:28Z",
     "milhas": 161200,
+    "nivel": "espetacular"
+   },
+   {
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
+    "destino": "Nova York",
+    "destino_iata": "JFK",
+    "cabine": "Executiva",
+    "programa": "Smiles",
+    "data": "2026-11-02T15:26:46Z",
+    "milhas": 178700,
     "nivel": "espetacular"
    },
    {
@@ -118,17 +129,6 @@
     "programa": "Smiles",
     "data": "2026-11-02T02:29:06Z",
     "milhas": 6500,
-    "nivel": ""
-   },
-   {
-    "origem": "Cuiabá",
-    "origem_iata": "CGB",
-    "destino": "Curitiba",
-    "destino_iata": "CWB",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-02T15:04:54Z",
-    "milhas": 7840,
     "nivel": ""
    }
   ]
