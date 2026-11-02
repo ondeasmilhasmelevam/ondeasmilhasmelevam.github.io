@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5957",
+  "data": "2026-11-02T11:18:54Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "428.400 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5956",
   "data": "2026-11-02T11:13:47Z",
   "origem": "Brasília",
@@ -1517,20 +1531,6 @@
   "programa": "GOL Smiles",
   "ida": "110.400 milhas",
   "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-5885",
-  "data": "2026-10-31T11:19:51Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "167.500 milhas",
-  "volta": "208.100 milhas",
   "link_nome": "GOL Smiles"
  },
  {
