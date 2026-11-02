@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-8774",
+  "data": "2026-11-02T14:29:52Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "13.500 milhas + R$ 35,75 de taxas",
+  "volta": "13.500 milhas + R$ 62,69 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8773",
   "data": "2026-11-02T14:24:58Z",
   "origem": "São Paulo",
