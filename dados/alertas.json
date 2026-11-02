@@ -1349,20 +1349,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2361370250-5900",
-  "data": "2026-10-31T16:08:39Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "British Airways",
-  "cabine": "Executiva",
-  "programa": "British Airways Executive Club",
-  "ida": "R$ 3.054",
-  "volta": "R$ 3.054",
-  "link_nome": "British Airways Executive Club"
- },
- {
   "id": "1290836068-7529",
   "data": "2026-10-31T12:35:24Z",
   "tipo": "promocao",
