@@ -1346,20 +1346,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2361370250-5906",
-  "data": "2026-10-31T22:07:58Z",
-  "origem": "Doha",
-  "origem_iata": "DOH",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "Qatar Airways",
-  "cabine": "Executiva",
-  "programa": "Qatar Privilege Club",
-  "ida": "70.000 AVIOS + R$ 0",
-  "volta": "70.000 AVIOS + R$ 0",
-  "link_nome": "Privilege Club"
- },
- {
   "id": "1290836068-7529",
   "data": "2026-10-31T12:35:24Z",
   "tipo": "promocao",
