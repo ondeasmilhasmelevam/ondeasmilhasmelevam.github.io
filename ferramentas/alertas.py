@@ -277,11 +277,41 @@ def melhores(itens, quantos):
         if a.get('destino_iata') in vistos or milhas(a.get('ida')) >= 10 ** 9 or nivel(a) in ('caro', 'péssimo'):
             continue
         vistos.add(a.get('destino_iata'))
-        saida.append({**{k: a.get(k, '') for k in ('origem', 'origem_iata', 'destino', 'destino_iata', 'cabine', 'programa', 'data')},
+        saida.append({**{k: a.get(k, '') for k in ('id', 'origem', 'origem_iata', 'destino', 'destino_iata', 'cabine', 'programa', 'data')},
                       'milhas': milhas(a.get('ida')), 'nivel': nivel(a)})
         if len(saida) == quantos:
             break
     return saida
+
+
+ROTAS = Path(__file__).resolve().parent.parent / 'img' / 'rotas'
+
+
+def fotos_rotas(listas):
+    """Foto dividida origem/destino de cada destaque (img/rotas/GRU-LIS.jpg), para o e-mail da semana.
+    Só baixa a foto da rota que ainda não tem; apaga as que saíram dos destaques."""
+    from instagram import faixa_fotos
+    ROTAS.mkdir(parents=True, exist_ok=True)
+    usadas = set()
+    for d in (d for lista in listas for d in lista):
+        if not (re.fullmatch(r'[A-Z]{3}', d.get('origem_iata') or '') and re.fullmatch(r'[A-Z]{3}', d.get('destino_iata') or '')):
+            continue
+        nome = f"{d['origem_iata']}-{d['destino_iata']}.jpg"
+        arq = ROTAS / nome
+        if not arq.exists():
+            try:
+                img = faixa_fotos(d, 1120, 360, sombra=False)
+            except Exception as e:
+                print(f'::warning::Foto da rota {nome} não saiu: {e}')
+                img = None
+            if img is None:
+                continue
+            img.convert('RGB').save(arq, 'JPEG', quality=78, optimize=True)
+        d['foto'] = f'img/rotas/{nome}'
+        usadas.add(nome)
+    for f in ROTAS.glob('*.jpg'):
+        if f.name not in usadas:
+            f.unlink()
 
 
 def atualizar_numeros(passagens, agora):
@@ -294,7 +324,7 @@ def atualizar_numeros(passagens, agora):
     data = lambda dias: (agora - timedelta(days=dias)).isoformat().replace('+00:00', 'Z')
     hist = {k: v for k, v in hist.items() if v['data'] >= data(35)}
     HISTORICO.write_text(json.dumps(hist, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
-    mes = [a for a in hist.values() if a['data'] >= data(30)]
+    mes = [{**a, 'id': k} for k, a in hist.items() if a['data'] >= data(30)]
     viagens = [a for a in mes if a.get('tipo') != 'promocao']
     semana = [a for a in viagens if a['data'] >= data(7)]
     numeros = {
@@ -307,6 +337,10 @@ def atualizar_numeros(passagens, agora):
         'destaques': melhores(viagens, 6),
         'semana': {'passagens': len(semana), 'destaques': melhores(semana, 5)},
     }
+    try:
+        fotos_rotas([numeros['destaques'], numeros['semana']['destaques']])
+    except Exception as e:  # sem foto o e-mail sai igual, só sem imagem
+        print(f'::warning::Fotos das rotas não atualizadas: {type(e).__name__}: {e}')
     NUMEROS.write_text(json.dumps(numeros, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
 
 

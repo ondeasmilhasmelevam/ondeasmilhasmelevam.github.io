@@ -57,6 +57,7 @@ jobs:
             if python ferramentas/alertas.py; then
               falhas=0
               for f in dados/alertas.json dados/numeros.json dados/historico.json; do [ -f "$f" ] && git add "$f"; done
+              [ -d img/rotas ] && git add -A img/rotas
               if ! git diff --cached --quiet; then
                 git commit -q -m "Passagens dos grupos atualizadas"
                 git pull -q --rebase && git push -q || echo "::warning::Não deu para enviar agora; tenta na próxima volta."

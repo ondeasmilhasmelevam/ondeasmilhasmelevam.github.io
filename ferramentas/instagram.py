@@ -475,8 +475,9 @@ def foto(nome, iata, semente, usadas):
     return None
 
 
-def faixa_fotos(a, largura, altura):
-    """Metade da origem e metade do destino, cortadas na diagonal com fio dourado (como .pass-foto no site)."""
+def faixa_fotos(a, largura, altura, sombra=True):
+    """Metade da origem e metade do destino, cortadas na diagonal com fio dourado (como .pass-foto no site).
+    Sem sombra (e-mail): a foto não escurece embaixo."""
     usadas = set()
     fo = foto(a.get('origem', ''), a.get('origem_iata', ''), a.get('id', '') + 'o', usadas)
     fd = foto(a.get('destino', ''), a.get('destino_iata', ''), a.get('id', '') + 'd', usadas) if fo else None
@@ -489,12 +490,12 @@ def faixa_fotos(a, largura, altura):
         mascara = Image.new('L', (meia, altura), 0)
         ImageDraw.Draw(mascara).polygon(poligono, fill=255)
         faixa.paste(ImageOps.fit(img, (meia, altura), Image.LANCZOS), (x, 0), mascara)
-    # escurece a parte de baixo, para a foto se fundir com o bilhete
-    sombra = Image.new('RGBA', (largura, altura), (0, 0, 0, 0))
-    sd = ImageDraw.Draw(sombra)
-    for i in range(altura // 2):
-        sd.line([(0, altura // 2 + i), (largura, altura // 2 + i)], fill=(19, 29, 51, int(240 * (i / (altura / 2)) ** 1.6)))
-    faixa.alpha_composite(sombra)
+    if sombra:  # escurece a parte de baixo, para a foto se fundir com o bilhete
+        camada = Image.new('RGBA', (largura, altura), (0, 0, 0, 0))
+        sd = ImageDraw.Draw(camada)
+        for i in range(altura // 2):
+            sd.line([(0, altura // 2 + i), (largura, altura // 2 + i)], fill=(19, 29, 51, int(240 * (i / (altura / 2)) ** 1.6)))
+        faixa.alpha_composite(camada)
     ImageDraw.Draw(faixa).line((largura * 0.56, -2, largura * 0.44, altura + 2), fill=OURO, width=6)
     return faixa
 
