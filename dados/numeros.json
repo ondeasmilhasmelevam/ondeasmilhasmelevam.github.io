@@ -1,9 +1,9 @@
 {
- "atualizado": "2026-11-02T12:10:55.515004Z",
+ "atualizado": "2026-11-02T15:16:58.805411Z",
  "dias": 30,
- "passagens": 83,
- "promocoes": 35,
- "destinos": 44,
+ "passagens": 90,
+ "promocoes": 38,
+ "destinos": 45,
  "executiva": 50,
  "destaques": [
   {
@@ -51,30 +51,30 @@
    "nivel": ""
   },
   {
-   "origem": "Goiânia",
-   "origem_iata": "GYN",
-   "destino": "Brasília",
-   "destino_iata": "BSB",
-   "cabine": "Econômica",
-   "programa": "LATAM Pass",
-   "data": "2026-10-31T14:22:10Z",
-   "milhas": 8720,
-   "nivel": ""
-  },
-  {
-   "origem": "Rio de Janeiro",
-   "origem_iata": "GIG",
+   "origem": "Cuiabá",
+   "origem_iata": "CGB",
    "destino": "Curitiba",
    "destino_iata": "CWB",
    "cabine": "Econômica",
-   "programa": "Azul Fidelidade",
-   "data": "2026-10-31T13:15:21Z",
-   "milhas": 9000,
+   "programa": "LATAM Pass",
+   "data": "2026-11-02T15:04:54Z",
+   "milhas": 7840,
+   "nivel": ""
+  },
+  {
+   "origem": "Porto Alegre",
+   "origem_iata": "POA",
+   "destino": "Belo Horizonte",
+   "destino_iata": "CNF",
+   "cabine": "Econômica",
+   "programa": "LATAM Pass",
+   "data": "2026-11-02T14:55:29Z",
+   "milhas": 8300,
    "nivel": ""
   }
  ],
  "semana": {
-  "passagens": 83,
+  "passagens": 90,
   "destaques": [
    {
     "origem": "Brasília",
@@ -121,14 +121,14 @@
     "nivel": ""
    },
    {
-    "origem": "Goiânia",
-    "origem_iata": "GYN",
-    "destino": "Brasília",
-    "destino_iata": "BSB",
+    "origem": "Cuiabá",
+    "origem_iata": "CGB",
+    "destino": "Curitiba",
+    "destino_iata": "CWB",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-10-31T14:22:10Z",
-    "milhas": 8720,
+    "data": "2026-11-02T15:04:54Z",
+    "milhas": 7840,
     "nivel": ""
    }
   ]
