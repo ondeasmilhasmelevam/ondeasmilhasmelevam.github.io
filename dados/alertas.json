@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5956",
+  "data": "2026-11-02T11:13:47Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Orlando",
+  "destino_iata": "MCO",
+  "companhia": "GOL + American Airlines",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "176.100 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5955",
   "data": "2026-11-02T11:09:45Z",
   "origem": "São Paulo",
@@ -1517,34 +1531,6 @@
   "programa": "GOL Smiles",
   "ida": "167.500 milhas",
   "volta": "208.100 milhas",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-5884",
-  "data": "2026-10-31T11:14:15Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Dallas",
-  "destino_iata": "DFW",
-  "companhia": "American Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "188.600 milhas",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-5883",
-  "data": "2026-10-31T11:11:19Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Joanesburgo",
-  "destino_iata": "JNB",
-  "companhia": "South African Airways",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "201.000 milhas",
-  "volta": "",
   "link_nome": "GOL Smiles"
  },
  {
