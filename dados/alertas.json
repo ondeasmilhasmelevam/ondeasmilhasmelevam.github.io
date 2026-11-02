@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5960",
+  "data": "2026-11-02T11:30:28Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "GOL + Avianca",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "161.200 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5959",
   "data": "2026-11-02T11:27:46Z",
   "origem": "Fortaleza",
@@ -1516,20 +1530,6 @@
   "cabine": "Executiva",
   "programa": "GOL Smiles",
   "ida": "241.100 milhas",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-5888",
-  "data": "2026-10-31T11:32:05Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Orlando",
-  "destino_iata": "MCO",
-  "companhia": "Copa Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "751.000 milhas",
   "volta": "",
   "link_nome": "GOL Smiles"
  },
