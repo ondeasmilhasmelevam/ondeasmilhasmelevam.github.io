@@ -1520,20 +1520,6 @@
   "ate": "2026-11-20T23:59:59-03:00"
  },
  {
-  "id": "2361370250-5898",
-  "data": "2026-10-31T12:07:37Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Joanesburgo",
-  "destino_iata": "JNB",
-  "companhia": "LATAM",
-  "cabine": "Executiva",
-  "programa": "LATAM Pass",
-  "ida": "251.925 pontos + R$ 69",
-  "volta": "251.925 pontos + R$ 186",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7519",
   "data": "2026-10-30T18:44:18Z",
   "tipo": "promocao",
