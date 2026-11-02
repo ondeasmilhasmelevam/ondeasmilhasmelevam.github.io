@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-8773",
+  "data": "2026-11-02T14:24:58Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Florianópolis",
+  "destino_iata": "FLN",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "6.500 milhas + Taxas",
+  "volta": "6.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-7557",
   "data": "2026-11-02T12:21:37Z",
   "tipo": "promocao",
@@ -1333,20 +1347,6 @@
   "ida": "45.000 AVIOS + Taxas",
   "volta": "45.000 AVIOS + Taxas",
   "link_nome": "Privilege Club"
- },
- {
-  "id": "3761373661-8745",
-  "data": "2026-10-31T14:22:10Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "8.720 milhas + Taxas",
-  "volta": "8.720 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7529",
