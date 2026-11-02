@@ -82,7 +82,7 @@
     const html = `<p class="prova-tit">O que dizem os assinantes</p><ul class="depos-lista">${lista.slice(0, 6).map(d => `<li>
         <p class="depo-estrelas" aria-label="${d.nota} de 5 estrelas">${'★'.repeat(d.nota)}<span>${'★'.repeat(5 - d.nota)}</span></p>
         <blockquote>${esc(d.texto)}</blockquote>
-        <p class="depo-autor"><b>${esc(d.nome)}</b>${d.cidade ? ` · ${esc(d.cidade)}` : ''}</p></li>`).join('')}</ul>`;
+        <p class="depo-autor"><b>${esc(d.nome)}</b>${d.cidade ? ` · ${esc(d.cidade)}` : ''}${d.instagram ? ` · <a href="https://www.instagram.com/${esc(d.instagram)}/" target="_blank" rel="noopener nofollow">@${esc(d.instagram)}</a>` : ''}</p></li>`).join('')}</ul>`;
     caixas.forEach(el => { el.innerHTML = html; el.hidden = false; });
   })();
 

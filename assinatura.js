@@ -261,7 +261,7 @@ async function desenharDeposPainel() {
         <p class="depo-status">${DEPO_SITUACAO[d.status] || ''}</p>
         <p class="depo-estrelas">${estrelas(d.nota)}</p>
         <blockquote>${escR(d.texto)}</blockquote>
-        <p class="depo-autor"><b>${escR(d.nome)}</b>${d.cidade ? ` · ${escR(d.cidade)}` : ''} · ${escR(d.email)}</p>
+        <p class="depo-autor"><b>${escR(d.nome)}</b>${d.cidade ? ` · ${escR(d.cidade)}` : ''}${d.instagram ? ` · @${escR(d.instagram)}` : ''} · ${escR(d.email)}</p>
         <div class="depo-botoes">${d.status !== 'aprovado' ? '<button type="button" class="cta cta-a" data-status="aprovado">Aprovar</button>' : ''}${d.status !== 'oculto' ? '<button type="button" class="cta cta-b" data-status="oculto">Ocultar</button>' : ''}</div>
       </li>`).join('')}</ul>`
     : '<p class="passagens-vazio">Nenhum depoimento ainda.</p>');
@@ -294,8 +294,9 @@ async function desenharDepoimento(estado, aviso = '') {
       <div class="depo-campos">
         <input name="nome" maxlength="40" aria-label="Nome" placeholder="Como quer aparecer (ex.: Ana)" value="${escR(meu?.nome || '')}">
         <input name="cidade" maxlength="40" aria-label="Cidade" placeholder="Sua cidade (opcional)" value="${escR(meu?.cidade || '')}">
+        <input name="instagram" maxlength="40" aria-label="Seu Instagram" placeholder="Seu @ no Instagram (opcional)" value="${meu?.instagram ? `@${escR(meu.instagram)}` : ''}">
       </div>
-      <label class="lead-aceite"><input type="checkbox" name="autorizo"${meu ? ' checked' : ''}> Autorizo publicar este depoimento no site e no Instagram do Onde as Milhas Me Levam, com o nome e a cidade acima. Meu e-mail não aparece.</label>
+      <label class="lead-aceite"><input type="checkbox" name="autorizo"${meu ? ' checked' : ''}> Autorizo publicar este depoimento no site e no Instagram do Onde as Milhas Me Levam, com o nome, a cidade e o @ do Instagram acima (se informei). Meu e-mail não aparece.</label>
       <div class="depo-botoes">
         <button type="submit" class="cta cta-a">${meu ? 'Atualizar depoimento' : 'Enviar depoimento'}</button>
         ${meu ? '<button type="button" class="cta cta-b" data-depo-insta>Postar no meu Instagram</button>' : ''}
@@ -308,7 +309,7 @@ async function desenharDepoimento(estado, aviso = '') {
   const pintar = () => f.querySelectorAll('.depo-nota label').forEach((l, i) => l.classList.toggle('on', i < +f.elements.nota.value));
   f.addEventListener('change', pintar);
   pintar();
-  const dados = () => ({ nota: +f.elements.nota.value, texto: f.elements.texto.value.trim(), nome: f.elements.nome.value.trim(), cidade: f.elements.cidade.value.trim() });
+  const dados = () => ({ nota: +f.elements.nota.value, texto: f.elements.texto.value.trim(), nome: f.elements.nome.value.trim(), cidade: f.elements.cidade.value.trim(), instagram: f.elements.instagram.value.trim().replace(/^@/, '') });
   f.addEventListener('submit', async e => {
     e.preventDefault();
     const b = f.querySelector('[type=submit]');
@@ -380,6 +381,7 @@ async function imagemDepoimento(d) {
   for (const l of ls) { y += alto; x.fillText(l, W / 2, y); }
   x.fillStyle = '#E2B458'; x.font = '800 44px Manrope';
   x.fillText(`— ${d.nome}${d.cidade ? `, ${d.cidade}` : ''}`, W / 2, Math.max(y + 110, 1600));
+  if (d.instagram) { x.fillStyle = '#F3EEE3'; x.font = '600 36px Manrope'; x.fillText(`@${d.instagram}`, W / 2, Math.max(y + 170, 1660)); }
   x.fillStyle = '#A3ACBD'; x.font = '600 34px Manrope';
   x.fillText('@ondeasmilhasmelevam', W / 2, 1760);
   x.fillText('ondeasmilhasmelevam.github.io', W / 2, 1812);

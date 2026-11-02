@@ -609,7 +609,7 @@ async function premiarIndicacao(env, ref, novoEmail) {
 /* ---------- Depoimentos: só de quem assina ou já assinou, e só aparecem depois de aprovados ---------- */
 const DEPO_TEXTO = 500, DEPO_NOME = 40;
 const limpo = (t, max) => String(t ?? '').replace(/[<>]/g, '').replace(/\s+/g, ' ').trim().slice(0, max);
-const depoPublico = d => ({ nome: d.nome, cidade: d.cidade || '', nota: d.nota, texto: d.texto, data: d.criadoEm instanceof Date ? d.criadoEm.toISOString().slice(0, 10) : '' });
+const depoPublico = d => ({ nome: d.nome, cidade: d.cidade || '', instagram: d.instagram || '', nota: d.nota, texto: d.texto, data: d.criadoEm instanceof Date ? d.criadoEm.toISOString().slice(0, 10) : '' });
 async function depoimentosPublicos(env) {
   const todos = await listarDocs(env, 'depoimentos');
   return { depoimentos: todos.filter(d => d.status === 'aprovado').sort((a, b) => (b.criadoEm || 0) - (a.criadoEm || 0)).map(depoPublico) };
@@ -628,12 +628,14 @@ async function gravarDepoimento(req, env) {
   const b = await req.json();
   const nome = limpo(b.nome, DEPO_NOME), cidade = limpo(b.cidade, DEPO_NOME), texto = limpo(b.texto, DEPO_TEXTO);
   const nota = Math.round(Number(b.nota));
+  const instagram = String(b.instagram ?? '').trim().replace(/^@/, '').replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/\/.*$/, '');
+  if (instagram && !/^[A-Za-z0-9._]{1,30}$/.test(instagram)) throw falha('Esse @ do Instagram não parece certo.');
   if (!nome) throw falha('Diga como quer aparecer (por exemplo, seu primeiro nome).');
   if (texto.length < 20) throw falha('Conte um pouco mais: pelo menos uma frase.');
   if (!(nota >= 1 && nota <= 5)) throw falha('Escolha de 1 a 5 estrelas.');
   if (b.autorizo !== true) throw falha('Marque que autoriza publicar o depoimento.');
   const antes = await lerDoc(env, `depoimentos/${email}`);
-  await gravarDoc(env, `depoimentos/${email}`, { email, nome, cidade, texto, nota, autorizo: true, status: 'pendente',
+  await gravarDoc(env, `depoimentos/${email}`, { email, nome, cidade, instagram, texto, nota, autorizo: true, status: 'pendente',
     criadoEm: antes?.criadoEm || new Date(), atualizadoEm: new Date() });
   return { ok: true };
 }
