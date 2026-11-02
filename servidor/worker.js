@@ -7,7 +7,7 @@
 //
 // Vendas: conta visitas e passos do funil por origem (POST /evento, sem cookie e sem dado pessoal),
 // guarda quem pede o alerta grátis da semana (POST /lead, GET /sair para cancelar), dá a cada
-// assinante um link de indicação que rende 30 dias (GET /indicacao) e mostra tudo no painel
+// assinante um link de indicação que rende 7 dias (GET /indicacao) e mostra tudo no painel
 // do dono (GET /metricas, só para os e-mails de ADMINS).
 //
 // Segredos (wrangler secret put): INFINITEPAY_API_KEY, FIREBASE_SERVICE_ACCOUNT (o JSON inteiro),
@@ -558,8 +558,8 @@ async function semanal(env) {
   return enviados;
 }
 
-/* ---------- Indicação: o assinante que traz alguém ganha 30 dias quando ele paga ---------- */
-const DIAS_INDICACAO = 30;
+/* ---------- Indicação: o assinante que traz alguém ganha 7 dias quando ele paga ---------- */
+const DIAS_INDICACAO = 7;
 async function emailDoToken(req, env) {
   const [h, c, s] = (req.headers.get('authorization') || '').replace(/^Bearer /, '').split('.');
   if (!s) return null;

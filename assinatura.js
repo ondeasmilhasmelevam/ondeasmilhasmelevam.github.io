@@ -174,7 +174,7 @@ $('#radar-lista').addEventListener('click', async e => {
 });
 document.addEventListener('passagens', desenharRadar);
 
-// Indicação: o assinante ganha 30 dias por amigo que assinar pelo link dele.
+// Indicação: o assinante ganha 7 dias por amigo que assinar pelo link dele.
 async function desenharIndicacao(estado) {
   const el = $('#ass-indica');
   el.hidden = true;
