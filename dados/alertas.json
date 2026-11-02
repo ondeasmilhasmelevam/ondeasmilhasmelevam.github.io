@@ -1447,20 +1447,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-8737",
-  "data": "2026-10-31T13:15:21Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Curitiba",
-  "destino_iata": "CWB",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "9.000 milhas + Taxas",
-  "volta": "9.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7529",
   "data": "2026-10-31T12:35:24Z",
   "tipo": "promocao",
