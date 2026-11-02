@@ -6,7 +6,8 @@ programas de fidelidade", baixa o texto de cada artigo e pede ao Claude que o re
 as nossas palavras, num formato fixo. O Felipe tem autorização da plataforma para usar o
 conteúdo; ele vai sem crédito e reescrito, nunca copiado.
 
-Como no guias.py, só reescreve o artigo cujo texto mudou (guarda um hash dele).
+Como no guias.py, só refaz um guia pronto depois de 12 meses, e só se o texto do artigo mudou
+(guarda um hash dele). Artigo novo entra na hora.
 """
 import hashlib
 import html
@@ -15,7 +16,7 @@ import os
 import re
 import sys
 import urllib.request
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 PAGINA = 'https://www.melhoresdestinos.com.br/cartoes-e-milhas'
@@ -23,6 +24,7 @@ LISTAS = {'salas': 'Guias de Salas VIP', 'programas': 'Guias dos programas de fi
 SAIDA = Path(__file__).resolve().parent.parent / 'dados' / 'guias-milhas.json'
 MODELO = 'claude-sonnet-5-5'
 SIMULTANEOS = 4
+RENOVAR_DIAS = 365  # idade mínima de um guia pronto para ser refeito
 SISTEMA = """Você escreve guias para o site Onde as Milhas Me Levam (milhas, pontos, cartões e passagens aéreas).
 Recebe o texto de um artigo de outro site, sobre as salas VIP de um aeroporto ou sobre um programa de fidelidade,
 e devolve um guia NOVO, com as suas palavras, no formato pedido.
@@ -136,8 +138,12 @@ def main():
     listas = links_das_listas()
     print({k: len(v) for k, v in listas.items()})
     resultado, pendentes = {}, []
+    recente = (date.today() - timedelta(days=RENOVAR_DIAS)).isoformat()
     for tipo, urls in listas.items():
         for url in urls:
+            if url in antigos and antigos[url].get('atualizado', '') > recente:
+                resultado[url] = antigos[url]
+                continue
             try:
                 texto = texto_do_artigo(baixar(url))
             except Exception as e:

@@ -6,8 +6,9 @@ reescreva com as nossas palavras, num formato fixo (resumo, melhor época, quant
 dias, destaques, dicas, aeroporto). O Felipe tem autorização da plataforma para usar
 o conteúdo; ele vai sem crédito e reescrito, nunca copiado.
 
-Só reescreve o que mudou: guarda um resumo (hash) do texto de origem e, se for igual
-ao da última vez, mantém o guia que já existe. Cada execução reescreve no máximo
+Guia pronto só é refeito depois de RENOVAR_DIAS (12 meses), e só se o texto de origem mudou
+(guarda um resumo, hash, dele): as páginas de origem mudam detalhes todo dia e refazer tudo
+gastava crédito à toa. Destino novo entra na hora. Cada execução reescreve no máximo
 MAXIMO_POR_VEZ guias, para a conta e o tempo ficarem sob controle.
 """
 import hashlib
@@ -17,13 +18,14 @@ import os
 import re
 import sys
 import urllib.request
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 INDICE = 'https://guia.melhoresdestinos.com.br/'
 SAIDA = Path(__file__).resolve().parent.parent / 'dados' / 'guias.json'
 MAXIMO_POR_VEZ = int(os.environ.get('GUIAS_POR_VEZ') or 200)
 SIMULTANEOS = 4
+RENOVAR_DIAS = 365  # idade mínima de um guia pronto para ser refeito
 # Subpáginas de cada guia, achadas pelo texto do link (o endereço muda de destino para destino).
 SECOES = {'quando_ir': 'Quando ir', 'como_chegar': 'Como chegar', 'onde_ficar': 'Onde ficar', 'o_que_fazer': 'O que fazer',
           'passeios': 'Passeios', 'praias': 'Praias', 'pontos_turisticos': 'Pontos turísticos', 'onde_comer': 'Onde comer', 'dicas': 'Dicas'}
@@ -161,8 +163,12 @@ def main():
     print(f'{len(lista)} destinos no índice ({sum(1 for d in lista if d[2] == "nacional")} nacionais).')
     import concurrent.futures as cf
     resultado, pendentes = {}, []
+    recente = (date.today() - timedelta(days=RENOVAR_DIAS)).isoformat()
     for slug, nome, tipo in lista:
         velho = antigos.get(slug)
+        if velho and velho.get('atualizado', '') > recente:
+            resultado[slug] = velho
+            continue
         try:
             texto = texto_completo(slug)
         except Exception as e:
