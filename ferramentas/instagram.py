@@ -27,8 +27,8 @@ na conferência volta para os textos fixos).
 
 O story não tem legenda nem link: o texto vai desenhado na imagem, com o botão
 "LINK NA BIO". Cada story vai como vídeo de 12 s: a imagem parada com uma das
-trilhas de musicas/ (feitas por ferramentas/trilhas.py, sem direito autoral de
-ninguém). Sem ffmpeg, ou se o vídeo falhar, vai a imagem. As imagens e vídeos
+trilhas de musicas/ (trechos de 12 s das partes mais fortes de "Midnight Pulse",
+música do Felipe feita no Suno). Sem ffmpeg, ou se o vídeo falhar, vai a imagem. As imagens e vídeos
 ficam em stories/ no repositório (o Instagram baixa de lá; o vídeo pelo GitHub
 Pages) e só os mais recentes são mantidos.
 
