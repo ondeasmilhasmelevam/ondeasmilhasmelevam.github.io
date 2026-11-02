@@ -254,7 +254,60 @@ async def main():
     enviar_para_assinantes(passagens)
     publico = [{k: v for k, v in p.items() if k not in SO_ASSINANTE} if p.get('tipo') != 'promocao' else p for p in passagens]
     SAIDA.write_text(json.dumps(publico, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    try:
+        atualizar_numeros(passagens, agora)
+    except Exception as e:  # os números são enfeite: nunca param os alertas
+        print(f'::warning::Números do site não atualizados: {type(e).__name__}: {e}')
     print(f'{len(passagens)} itens gravados ({sum(1 for p in passagens if p.get("tipo") == "promocao")} promoções, {len(grupos)} grupos).')
+
+
+# Prova social no site e no e-mail da semana: quantas passagens e promoções apareceram nos
+# últimos 30 dias e as melhores achadas. O histórico (35 dias, só rota e milhas, sem datas
+# nem link) fica em dados/historico.json; o resumo pequeno que o site lê, em dados/numeros.json.
+HISTORICO = SAIDA.with_name('historico.json')
+NUMEROS = SAIDA.with_name('numeros.json')
+CAMPOS_HISTORICO = ('tipo', 'titulo', 'origem', 'origem_iata', 'destino', 'destino_iata', 'cabine', 'programa', 'ida', 'volta')
+
+
+def melhores(itens, quantos):
+    """Passagens boas no termômetro primeiro, depois as de menos milhas; um destino de cada."""
+    from instagram import BONS, milhas, nivel
+    vistos, saida = set(), []
+    for a in sorted(itens, key=lambda a: (BONS.index(nivel(a)) if nivel(a) in BONS else 9, milhas(a.get('ida')))):
+        if a.get('destino_iata') in vistos or milhas(a.get('ida')) >= 10 ** 9 or nivel(a) in ('caro', 'péssimo'):
+            continue
+        vistos.add(a.get('destino_iata'))
+        saida.append({**{k: a.get(k, '') for k in ('origem', 'origem_iata', 'destino', 'destino_iata', 'cabine', 'programa', 'data')},
+                      'milhas': milhas(a.get('ida')), 'nivel': nivel(a)})
+        if len(saida) == quantos:
+            break
+    return saida
+
+
+def atualizar_numeros(passagens, agora):
+    try:
+        hist = json.loads(HISTORICO.read_text(encoding='utf-8'))
+    except Exception:
+        hist = {}
+    for p in passagens:
+        hist.setdefault(p['id'], {'data': p['data'], **{k: p[k] for k in CAMPOS_HISTORICO if p.get(k)}})
+    data = lambda dias: (agora - timedelta(days=dias)).isoformat().replace('+00:00', 'Z')
+    hist = {k: v for k, v in hist.items() if v['data'] >= data(35)}
+    HISTORICO.write_text(json.dumps(hist, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
+    mes = [a for a in hist.values() if a['data'] >= data(30)]
+    viagens = [a for a in mes if a.get('tipo') != 'promocao']
+    semana = [a for a in viagens if a['data'] >= data(7)]
+    numeros = {
+        'atualizado': agora.isoformat().replace('+00:00', 'Z'),
+        'dias': 30,
+        'passagens': len(viagens),
+        'promocoes': sum(1 for a in mes if a.get('tipo') == 'promocao'),
+        'destinos': len({a.get('destino_iata') for a in viagens}),
+        'executiva': sum(1 for a in viagens if re.search(r'execut|primeira|first|business|premium', a.get('cabine') or '', re.I)),
+        'destaques': melhores(viagens, 6),
+        'semana': {'passagens': len(semana), 'destaques': melhores(semana, 5)},
+    }
+    NUMEROS.write_text(json.dumps(numeros, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
 
 
 if __name__ == '__main__':

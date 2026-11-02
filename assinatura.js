@@ -174,9 +174,86 @@ $('#radar-lista').addEventListener('click', async e => {
 });
 document.addEventListener('passagens', desenharRadar);
 
+// Indicação: o assinante ganha 30 dias por amigo que assinar pelo link dele.
+async function desenharIndicacao(estado) {
+  const el = $('#ass-indica');
+  el.hidden = true;
+  if (!estado.ativo || !auth.currentUser) return;
+  try {
+    const r = await fetch(`${SERVIDOR}/indicacao`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
+    const d = await r.json();
+    if (!r.ok || !d.codigo) return;
+    const link = `https://ondeasmilhasmelevam.github.io/?ref=${d.codigo}`;
+    const texto = `Estou usando o Onde as Milhas Me Levam para achar passagens com milhas antes de esgotarem. Dá uma olhada: ${link}`;
+    el.innerHTML = `<p><b>Indique e ganhe ${d.dias} dias.</b> Cada amigo que assinar pelo seu link soma ${d.dias} dias à sua assinatura.${d.indicados ? ` Até agora: <b>${d.indicados} ${d.indicados === 1 ? 'amigo' : 'amigos'}</b>, <b>${d.diasGanhos} dias</b> ganhos.` : ''}</p>
+      <div class="indica-link"><input type="text" readonly value="${link}" aria-label="Seu link de indicação">
+      <button type="button" class="cta cta-b" id="indica-copiar">Copiar link</button>
+      <a class="cta cta-a" href="https://wa.me/?text=${encodeURIComponent(texto)}" target="_blank" rel="noopener">Mandar no WhatsApp</a></div>`;
+    el.hidden = false;
+    $('#indica-copiar').addEventListener('click', async e => {
+      try { await navigator.clipboard.writeText(link); e.target.textContent = 'Copiado!'; }
+      catch (er) { el.querySelector('input').select(); }
+    });
+  } catch (e) { /* sem indicação agora */ }
+}
+
+// Painel do dono (#painel): o servidor só responde para os e-mails da lista ADMINS.
+let painelDias = 30;
+const ORIGEM_NOME = { direto: 'Direto / sem origem', instagram: 'Instagram', google: 'Google', indicacao: 'Indicação', email: 'E-mail', telegram: 'Telegram',
+  whatsapp: 'WhatsApp', facebook: 'Facebook', site: 'Outros sites', bing: 'Bing', youtube: 'YouTube', tiktok: 'TikTok' };
+async function desenharPainel() {
+  const el = $('#painel-conteudo');
+  if (!auth.currentUser) return;
+  let d;
+  try {
+    const r = await fetch(`${SERVIDOR}/metricas?dias=${painelDias}`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
+    d = await r.json();
+    if (!r.ok) { el.innerHTML = `<p class="passagens-vazio">${r.status === 403 ? 'Este painel é só do dono do site. Entre com o Google do e-mail da marca.' : 'Não deu para carregar agora.'}</p>`; return; }
+  } catch (e) { el.innerHTML = '<p class="passagens-vazio">Não deu para carregar agora.</p>'; return; }
+  const COLS = [['visita', 'Visitas'], ['gratis_ver', 'Viram alerta grátis'], ['lead', 'Cadastros grátis'], ['assinar_ver', 'Viram assinar'], ['assinar_clique', 'Clicaram assinar'], ['checkout', 'Abriram pagamento'], ['pago', 'Pagaram'], ['receita', 'Receita']];
+  const porOrigem = {}, porDia = [];
+  const total = Object.fromEntries(COLS.map(([k]) => [k, 0]));
+  Object.entries(d.porDia).sort().reverse().forEach(([dia, campos]) => {
+    const linha = Object.fromEntries(COLS.map(([k]) => [k, 0]));
+    Object.entries(campos).forEach(([campo, n]) => {
+      const col = COLS.find(([k]) => campo.startsWith(`${k}_`));
+      if (!col || campo === 'pago_mensal' || campo === 'pago_anual') return;
+      const origem = campo.slice(col[0].length + 1);
+      (porOrigem[origem] ||= Object.fromEntries(COLS.map(([k]) => [k, 0])))[col[0]] += n;
+      linha[col[0]] += n; total[col[0]] += n;
+    });
+    porDia.push([dia.split('-').reverse().join('/'), linha]);
+  });
+  const valor = (k, v) => (k === 'receita' ? reais(v) : v.toLocaleString('pt-BR'));
+  const pct = (a, b) => (b ? `${(100 * a / b).toLocaleString('pt-BR', { maximumFractionDigits: 1 })}%` : '—');
+  const tabela = (titulo, linhas) => `<div class="painel-tabela"><table><thead><tr><th>${titulo}</th>${COLS.map(([, n]) => `<th>${n}</th>`).join('')}</tr></thead>
+    <tbody>${linhas.map(([nome, l]) => `<tr><td>${nome}</td>${COLS.map(([k]) => `<td>${valor(k, l[k])}</td>`).join('')}</tr>`).join('') || `<tr><td colspan="${COLS.length + 1}">Ainda sem dados no período.</td></tr>`}</tbody>
+    <tfoot><tr><td>Total</td>${COLS.map(([k]) => `<td>${valor(k, total[k])}</td>`).join('')}</tr></tfoot></table></div>`;
+  const a = d.assinantes;
+  el.innerHTML = `<div class="painel-cards">
+      <div><b>${a.ativos}</b><small>assinantes ativos (${a.mensal} mensal, ${a.anual} anual)</small></div>
+      <div><b>${a.vencem7}</b><small>vencem nos próximos 7 dias</small></div>
+      <div><b>${d.leads.ativos}</b><small>na lista do alerta grátis${d.leads.sairam ? ` (${d.leads.sairam} saíram)` : ''}</small></div>
+      <div><b>${reais(total.receita)}</b><small>vendas em ${d.dias} dias</small></div>
+      <div><b>${pct(total.pago, total.visita)}</b><small>das visitas viraram assinatura</small></div>
+      <div><b>${d.emailsMes}/200</b><small>e-mails do EmailJS neste mês</small></div>
+    </div>
+    ${tabela('Origem', Object.entries(porOrigem).sort((x, y) => y[1].visita - x[1].visita).map(([o, l]) => [ORIGEM_NOME[o] || o, l]))}
+    ${tabela('Dia', porDia)}`;
+}
+$('#painel-dias').addEventListener('click', e => {
+  const b = e.target.closest('[data-dias]'); if (!b) return;
+  painelDias = +b.dataset.dias;
+  $('#painel-dias').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  desenharPainel();
+});
+addEventListener('hashchange', () => { if (location.hash === '#painel') desenharPainel(); });
+
 onAuthStateChanged(auth, async user => {
   const estado = await lerAssinatura(user);
   desenharConta(estado);
+  desenharIndicacao(estado);
+  if (location.hash === '#painel') desenharPainel();
   desenharHistorico(estado.email);
   await lerRadares(estado.ativo ? estado.email : '');
   avisar(estado);
@@ -248,8 +325,11 @@ async function mostrarPrecos(email) {
     const p = await (await fetch(`${SERVIDOR}/precos${q}`)).json();
     $('#ass-preco-mensal').textContent = reais(p.mensal);
     $('#ass-preco-anual').textContent = reais(p.anual);
-    $('#ass-parcela-anual').textContent = `ou 12x no cartão · ${reais(p.anual / 12)} por mês`;
+    $('#ass-mes-anual').textContent = reais(Math.round(p.anual / 12));
     $('#ass-de-anual').hidden = p.anual >= p.anualCheio;
+    const economia = p.mensal * 12 - p.anual;
+    $('#ass-economia').textContent = `Você economiza ${reais(economia)} em relação a 12 meses do mensal`;
+    $('#ass-economia').hidden = economia <= 0;
   } catch (e) { /* fica o preço escrito na página */ }
 }
 mostrarPrecos('');
@@ -260,8 +340,10 @@ document.querySelectorAll('[data-plano]').forEach(b => b.addEventListener('click
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { $('#ass-email').focus(); return msg('Digite o e-mail que vai usar para entrar no site. Só ele fica liberado.', 'erro'); }
   if (!SERVIDOR) return msg('As assinaturas abrem em breve. Siga o Instagram para saber quando.', 'erro');
   b.disabled = true;
+  if (window.oammlEvento) window.oammlEvento('assinar_clique');
   try {
-    const r = await fetch(`${SERVIDOR}/checkout`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ plano: b.dataset.plano, email }) });
+    const extra = { origem: window.oammlOrigem ? window.oammlOrigem() : '', ref: window.oammlRef ? window.oammlRef() : '' };
+    const r = await fetch(`${SERVIDOR}/checkout`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ plano: b.dataset.plano, email, ...extra }) });
     const d = await r.json();
     if (!r.ok || !d.url) throw new Error(d.erro);
     location.href = d.url;

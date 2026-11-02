@@ -55,8 +55,8 @@ jobs:
           while [ "$(date +%s)" -lt "$fim" ]; do
             if python ferramentas/alertas.py; then
               falhas=0
-              if ! git diff --quiet -- dados/alertas.json; then
-                git add dados/alertas.json
+              for f in dados/alertas.json dados/numeros.json dados/historico.json; do [ -f "$f" ] && git add "$f"; done
+              if ! git diff --cached --quiet; then
                 git commit -q -m "Passagens dos grupos atualizadas"
                 git pull -q --rebase && git push -q || echo "::warning::Não deu para enviar agora; tenta na próxima volta."
               fi

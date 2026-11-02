@@ -5,6 +5,11 @@
 // e, com o código certo, devolve um token para o site entrar no Firebase com aquele e-mail.
 // E guarda as datas e links das passagens (POST /alertas, vindo do GitHub) para só assinantes lerem.
 //
+// Vendas: conta visitas e passos do funil por origem (POST /evento, sem cookie e sem dado pessoal),
+// guarda quem pede o alerta grátis da semana (POST /lead, GET /sair para cancelar), dá a cada
+// assinante um link de indicação que rende 30 dias (GET /indicacao) e mostra tudo no painel
+// do dono (GET /metricas, só para os e-mails de ADMINS).
+//
 // Segredos (wrangler secret put): INFINITEPAY_API_KEY, FIREBASE_SERVICE_ACCOUNT (o JSON inteiro),
 // EMAILJS_PRIVATE_KEY e SEATS_AERO_KEY (busca de disponibilidade em milhas, GET /voos). Variáveis (wrangler.toml): HANDLE, PROJETO, SITE, ORIGENS, SELF, EMAILJS_*.
 
@@ -15,9 +20,9 @@ const PLANOS = {
 const API = 'https://api.checkout.infinitepay.io';
 
 export default {
-  // Todo dia (cron no wrangler.toml): avisa por e-mail quem vence nos próximos 3 dias.
+  // Todo dia (cron no wrangler.toml): avisos de vencimento e o e-mail da semana do alerta grátis.
   async scheduled(evento, env, ctx) {
-    ctx.waitUntil(avisarVencimentos(env));
+    ctx.waitUntil(avisarVencimentos(env).finally(() => semanal(env)));
   },
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -32,6 +37,11 @@ export default {
       if (req.method === 'POST' && url.pathname === '/alertas') return json(await guardarAlertas(req, env));
       if (req.method === 'GET' && url.pathname === '/alertas') return json(await estadoAlertas(env));
       if (req.method === 'GET' && url.pathname === '/voos') return json(await buscarVoos(req, url, env), 200, cors);
+      if (req.method === 'POST' && url.pathname === '/evento') return json(await evento(await req.json(), env), 200, cors);
+      if (req.method === 'POST' && url.pathname === '/lead') return json(await novoLead(await req.json(), env), 200, cors);
+      if (req.method === 'GET' && url.pathname === '/sair') return await sairLead(url, env);
+      if (req.method === 'GET' && url.pathname === '/indicacao') return json(await minhaIndicacao(req, env), 200, cors);
+      if (req.method === 'GET' && url.pathname === '/metricas') return json(await metricas(req, url, env), 200, cors);
       return json({ erro: 'não encontrado' }, 404, cors);
     } catch (e) {
       return json({ erro: e.message || 'erro' }, e.status || 500, cors);
@@ -69,7 +79,9 @@ async function checkout(body, env) {
   if (!emailValido(email)) throw falha('E-mail inválido.');
   const preco = await precoDe(plano, email, env);
   const nsu = `${plano}-${crypto.randomUUID()}`;
-  await gravarDoc(env, `pedidos/${nsu}`, { email, plano, preco, status: 'criado', criadoEm: new Date() });
+  const origem = origemValida(body.origem), ref = /^[0-9a-f]{8}$/.test(body.ref || '') ? body.ref : '';
+  await gravarDoc(env, `pedidos/${nsu}`, { email, plano, preco, status: 'criado', criadoEm: new Date(), origem, ref });
+  await somar(env, `metricas/${hojeBR()}`, { [`checkout_${origem}`]: 1 }).catch(() => {});
   const r = await fetch(`${API}/links`, {
     method: 'POST',
     headers: { 'content-type': 'application/json', 'X-Api-Key': env.INFINITEPAY_API_KEY },
@@ -118,6 +130,9 @@ async function webhook(b, env) {
     ...pedido, status: 'pago', pagoEm: new Date(), transacao: b.transaction_nsu, slug: b.invoice_slug,
     parcelas: c.installments || 1, forma: c.capture_method || '', recibo: b.receipt_url || ''
   });
+  const origem = origemValida(pedido.origem);
+  await somar(env, `metricas/${hojeBR()}`, { [`pago_${origem}`]: 1, [`receita_${origem}`]: pedido.preco, [`pago_${pedido.plano}`]: 1 }).catch(() => {});
+  if (pedido.ref && !atual) await premiarIndicacao(env, pedido.ref, pedido.email).catch(e => console.log('indicação:', e.message));
   return json({ ok: true });
 }
 
@@ -146,6 +161,7 @@ async function pedirCodigo(body, env) {
     })
   });
   if (!r.ok) throw falha('Não deu para mandar o código agora. Tente de novo em instantes.', 502);
+  await contarEmail(env);
   return resposta;
 }
 
@@ -230,18 +246,8 @@ function deFs(f) {
 // Cada resposta fica 30 minutos no cache do Cloudflare, para poupar o limite de 1.000 consultas por dia.
 const FIREBASE_JWK = 'https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com';
 async function assinanteDoToken(req, env) {
-  const [h, c, s] = (req.headers.get('authorization') || '').replace(/^Bearer /, '').split('.');
-  if (!s) return null;
-  const ler = t => JSON.parse(atob(t.replace(/-/g, '+').replace(/_/g, '/')));
-  const cab = ler(h), corpo = ler(c);
-  const { keys } = await (await fetch(FIREBASE_JWK, { cf: { cacheTtl: 3600 } })).json();
-  const jwk = keys.find(k => k.kid === cab.kid);
-  if (!jwk || cab.alg !== 'RS256') return null;
-  const chave = await crypto.subtle.importKey('jwk', jwk, { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, false, ['verify']);
-  const assinatura = Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), x => x.charCodeAt(0));
-  const ok = await crypto.subtle.verify('RSASSA-PKCS1-v1_5', chave, assinatura, new TextEncoder().encode(`${h}.${c}`));
-  if (!ok || corpo.iss !== `https://securetoken.google.com/${env.PROJETO}` || corpo.aud !== env.PROJETO || corpo.exp * 1000 < Date.now() || !corpo.email_verified) return null;
-  const email = String(corpo.email || '').toLowerCase();
+  const email = await emailDoToken(req, env);
+  if (!email) return null;
   const a = await lerDoc(env, `assinantes/${email}`);
   return a && a.validoAte instanceof Date && a.validoAte.getTime() > Date.now() ? email : null;
 }
@@ -325,6 +331,7 @@ async function enviarEmail(env, email, assunto, corpo) {
       template_params: { email, assunto, corpo }
     })
   });
+  if (r.ok) await contarEmail(env);
   return r.ok;
 }
 
@@ -407,33 +414,213 @@ async function estadoAlertas(env) {
   return { atualizadoEm: d ? d.atualizadoEm : null, itens: todos.length, comRota: todos.filter(p => p.destino_iata).length };
 }
 
-// Aviso de vencimento: uma vez por validade (avisoPara guarda a validade já avisada).
-const DIAS_AVISO = 3;
+// Avisos de vencimento: 7 dias antes, 1 dia antes e 3 dias depois de vencer (a assinatura não renova
+// sozinha). Cada aviso sai uma vez por validade: "avisos" guarda "validade|etapa" dos já mandados.
+// O mensal recebe a conta do anual, que sai bem mais barato por mês.
+const ETAPAS_AVISO = [[7, 1], [1, 0], [-3, -10]]; // [até quantos dias antes, mais de quantos dias antes]
 async function avisarVencimentos(env) {
   const agora = Date.now(), enviados = [];
-  let pagina = '';
-  do {
-    const r = await fetch(`${docUrl(env, 'assinantes')}?pageSize=300${pagina ? `&pageToken=${pagina}` : ''}`, { headers: { authorization: `Bearer ${await token(env)}` } });
-    if (!r.ok) throw falha('Erro ao listar assinantes.', 500);
-    const d = await r.json();
-    for (const doc of d.documents || []) {
-      const a = Object.fromEntries(Object.entries(doc.fields || {}).map(([k, v]) => [k, deFs(v)]));
-      const vence = a.validoAte instanceof Date ? a.validoAte.getTime() : NaN;
-      if (!(vence > agora && vence - agora <= DIAS_AVISO * 864e5) || a.avisoPara === a.validoAte.toISOString() || !emailValido(a.email)) continue;
-      const dias = Math.max(1, Math.ceil((vence - agora) / 864e5));
-      const data = a.validoAte.toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
-      const corpo = `Olá!<br><br>Sua assinatura do Onde as Milhas Me Levam vence em <strong>${data}</strong>, daqui a ${dias} ${dias === 1 ? 'dia' : 'dias'}.<br><br>
-        Para continuar vendo as datas e os links de emissão de todas as passagens, usar as calculadoras completas e receber o Meu Radar, renove pelo site com este mesmo e-mail:<br><br>
-        ${botaoEmail('Renovar minha assinatura', `${env.SITE}#assinar`)}<br><br>Se você já renovou, pode ignorar esta mensagem.`;
-      if (!await enviarEmail(env, a.email, `Sua assinatura vence em ${dias} ${dias === 1 ? 'dia' : 'dias'}`, corpo)) continue; // tenta de novo amanhã
-      await atualizarCampos(env, doc.name.split('/documents/')[1], { avisoPara: a.validoAte.toISOString() });
-      enviados.push(a.email);
+  const numeros = await numerosDoSite(env);
+  for (const a of await listarDocs(env, 'assinantes')) {
+    const vence = a.validoAte instanceof Date ? a.validoAte.getTime() : NaN;
+    if (!emailValido(a.email) || !(vence > 0)) continue;
+    const dias = (vence - agora) / 864e5;
+    const etapa = ETAPAS_AVISO.find(([ate, depois]) => dias <= ate && dias > depois);
+    if (!etapa) continue;
+    const feitos = String(a.avisos || '').split(',').filter(Boolean);
+    if (a.avisoPara === a.validoAte.toISOString()) feitos.push(`${a.avisoPara}|7`); // aviso antigo, de 3 dias
+    const chave = `${a.validoAte.toISOString()}|${etapa[0]}`;
+    if (feitos.includes(chave)) continue;
+    const data = a.validoAte.toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+    const venceu = dias <= 0, n = Math.max(1, Math.ceil(Math.abs(dias)));
+    const resumo = numeros && numeros.passagens
+      ? `Nos últimos 30 dias apareceram no site <strong>${numeros.passagens} passagens com milhas</strong> e <strong>${numeros.promocoes} promoções</strong>, todas com as datas e o link de emissão na hora para quem assina.<br><br>` : '';
+    let anual = '';
+    if (a.plano !== 'anual') {
+      const preco = await precoDe('anual', a.email, env);
+      anual = `<strong>Dica:</strong> no plano anual sai por ${reaisEmail(preco)} (${reaisEmail(Math.round(preco / 12))} por mês em 12x), contra ${reaisEmail(PLANOS.mensal.preco)} todo mês no mensal.<br><br>`;
     }
-    pagina = d.nextPageToken || '';
-  } while (pagina);
+    const corpo = `Olá!<br><br>${venceu
+      ? `Sua assinatura do Onde as Milhas Me Levam venceu em <strong>${data}</strong>. Desde então, as datas e os links das passagens ficaram fechados para você.`
+      : `Sua assinatura do Onde as Milhas Me Levam vence em <strong>${data}</strong>, daqui a ${n} ${n === 1 ? 'dia' : 'dias'}. Ela não renova sozinha.`}<br><br>
+      ${resumo}${anual}Para continuar com tudo, é só renovar pelo site com este mesmo e-mail:<br><br>
+      ${botaoEmail(venceu ? 'Voltar a assinar' : 'Renovar minha assinatura', `${env.SITE}?utm_source=email&utm_campaign=renovacao#assinar`)}<br><br>Se você já renovou, pode ignorar esta mensagem.`;
+    const assunto = venceu ? 'Sua assinatura venceu: as passagens continuam aparecendo'
+      : `Sua assinatura vence em ${n} ${n === 1 ? 'dia' : 'dias'}`;
+    if (!await enviarEmail(env, a.email, assunto, corpo)) continue; // tenta de novo amanhã
+    await atualizarCampos(env, `assinantes/${a.id}`, { avisos: [...feitos, chave].slice(-6).join(',') });
+    enviados.push(a.email);
+  }
   console.log(`avisos de vencimento: ${enviados.length}`);
   return enviados.length;
 }
+const reaisEmail = c => (c / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+async function numerosDoSite(env) {
+  try { return await (await fetch(`${env.SITE}dados/numeros.json`, { cf: { cacheTtl: 600 } })).json(); } catch (e) { return null; }
+}
+
+/* ---------- Funil: contadores por dia e por origem (metricas/{AAAA-MM-DD}) ---------- */
+const EVENTOS = new Set(['visita', 'assinar_ver', 'assinar_clique', 'gratis_ver']);
+const origemValida = o => (/^[a-z0-9]{1,20}$/.test(o || '') ? o : 'direto');
+const hojeBR = () => new Date(Date.now() - 3 * 3600e3).toISOString().slice(0, 10);
+async function somar(env, caminho, campos) {
+  const nome = `projects/${env.PROJETO}/databases/(default)/documents/${caminho}`;
+  const r = await fetch(`https://firestore.googleapis.com/v1/projects/${env.PROJETO}/databases/(default)/documents:commit`, {
+    method: 'POST',
+    headers: { authorization: `Bearer ${await token(env)}`, 'content-type': 'application/json' },
+    body: JSON.stringify({ writes: [{ transform: { document: nome, fieldTransforms: Object.entries(campos).map(([f, n]) => ({ fieldPath: f, increment: { integerValue: String(n) } })) } }] })
+  });
+  if (!r.ok) throw falha('Erro ao somar.', 500);
+}
+async function evento(body, env) {
+  const e = body && body.e;
+  if (!EVENTOS.has(e)) throw falha('evento desconhecido');
+  await somar(env, `metricas/${hojeBR()}`, { [`${e}_${origemValida(body.o)}`]: 1 });
+  return { ok: true };
+}
+
+/* ---------- Limite do EmailJS (200 por mês no plano grátis) ---------- */
+// Código de entrada, avisos e Meu Radar vêm antes: o e-mail do alerta grátis só sai até COTA_LEADS.
+const COTA_LEADS = 150;
+const mesBR = () => hojeBR().slice(0, 7);
+const contarEmail = env => somar(env, `metricas/emails-${mesBR()}`, { enviados: 1 }).catch(() => {});
+async function emailsDoMes(env) {
+  const d = await lerDoc(env, `metricas/emails-${mesBR()}`).catch(() => null);
+  return (d && d.enviados) || 0;
+}
+
+/* ---------- Alerta grátis da semana (leads/{email}) ---------- */
+const hmac = async (env, texto) => {
+  const chave = await crypto.subtle.importKey('raw', new TextEncoder().encode(env.EMAILJS_PRIVATE_KEY || env.PROJETO), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  return [...new Uint8Array(await crypto.subtle.sign('HMAC', chave, new TextEncoder().encode(texto)))].map(b => b.toString(16).padStart(2, '0')).join('');
+};
+const linkSair = async (env, email) => `${new URL('/sair', env.SELF).href}?e=${encodeURIComponent(email)}&t=${(await hmac(env, `sair:${email}`)).slice(0, 24)}`;
+function destaquesEmail(lista, env) {
+  const nivel = n => (n ? ` · <span style="color:#a8761f;font-weight:bold;">${escHtml(n)} no termômetro</span>` : '');
+  return (lista || []).map(d => `<div style="margin:0 0 12px;padding:12px 14px;border:1px solid #e5e2d8;border-radius:12px;">
+    <strong style="font-size:16px;">${escHtml(d.origem)} (${escHtml(d.origem_iata)}) → ${escHtml(d.destino)} (${escHtml(d.destino_iata)})</strong><br>
+    A partir de <strong>${Number(d.milhas).toLocaleString('pt-BR')} milhas</strong> + taxas o trecho · ${escHtml([d.programa, d.cabine].filter(Boolean).join(' · '))}${nivel(d.nivel)}<br>
+    <span style="color:#777;">Datas e link de emissão: só para assinantes</span>
+  </div>`).join('');
+}
+async function emailDaSemana(env, email, primeiro) {
+  const n = await numerosDoSite(env);
+  const semana = (n && n.semana) || {};
+  const lista = (semana.destaques && semana.destaques.length ? semana.destaques : (n && n.destaques) || []).slice(0, 5);
+  if (!lista.length) return false;
+  const assinar = `${env.SITE}?utm_source=email&utm_campaign=semanal#assinar`;
+  const corpo = `Olá!<br><br>${primeiro ? 'Pronto, você vai receber toda semana as melhores passagens com milhas que apareceram no site. Para começar, ' : ''}${semana.passagens
+      ? `nos últimos 7 dias apareceram <strong>${semana.passagens} passagens com milhas</strong>. Algumas das melhores:` : 'algumas das melhores passagens com milhas dos últimos dias:'}<br><br>
+    ${destaquesEmail(lista, env)}
+    Passagem boa some em horas. Quem assina vê cada uma na hora em que ela aparece, com todas as datas e o link direto para emitir, e ainda recebe o Meu Radar com as rotas que escolher.<br><br>
+    ${botaoEmail('Ver os planos', assinar)}<br><br>
+    <span style="color:#777;font-size:12px;">Você recebe este e-mail porque pediu o alerta grátis no site Onde as Milhas Me Levam. <a href="${escHtml(await linkSair(env, email))}" style="color:#777;">Não quero mais receber</a>.</span>`;
+  return enviarEmail(env, email, primeiro ? 'Seu alerta grátis de passagens com milhas' : `As melhores passagens com milhas da semana`, corpo);
+}
+async function novoLead(body, env) {
+  const email = String((body && body.email) || '').trim().toLowerCase();
+  if (!emailValido(email)) throw falha('Digite um e-mail válido.');
+  if (body.aceite !== true) throw falha('Marque que aceita receber o e-mail.');
+  const antes = await lerDoc(env, `leads/${email}`);
+  if (antes && antes.ativo) return { ok: true, ja: true };
+  const origem = origemValida(body.origem);
+  const lead = { email, origem, ativo: true, criadoEm: (antes && antes.criadoEm) || new Date(), ultimoEnvio: new Date(0) };
+  await gravarDoc(env, `leads/${email}`, lead);
+  await somar(env, `metricas/${hojeBR()}`, { [`lead_${origem}`]: 1 }).catch(() => {});
+  if (await emailsDoMes(env) < COTA_LEADS && await emailDaSemana(env, email, true)) await atualizarCampos(env, `leads/${email}`, { ultimoEnvio: new Date() });
+  return { ok: true };
+}
+async function sairLead(url, env) {
+  const email = String(url.searchParams.get('e') || '').toLowerCase();
+  const ok = emailValido(email) && url.searchParams.get('t') === (await hmac(env, `sair:${email}`)).slice(0, 24);
+  if (ok && await lerDoc(env, `leads/${email}`)) await atualizarCampos(env, `leads/${email}`, { ativo: false, saiuEm: new Date() });
+  const texto = ok ? 'Pronto. Você não vai mais receber o alerta grátis da semana.' : 'Link inválido. Responda o e-mail pedindo para sair, que tiramos você da lista.';
+  return new Response(`<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Onde as Milhas Me Levam</title>
+    <body style="font-family:system-ui,sans-serif;background:#070c17;color:#f3eee3;display:grid;place-items:center;min-height:90vh;margin:0;padding:16px;text-align:center">
+    <div><p style="font-size:18px">${texto}</p><p><a style="color:#e2b458" href="${escHtml(env.SITE)}">Voltar ao site</a></p></div>`, { headers: { 'content-type': 'text/html; charset=utf-8' } });
+}
+// Uma vez por semana para cada pessoa da lista (quem já assina não recebe), até a cota do mês.
+async function semanal(env) {
+  let enviados = 0, cota = COTA_LEADS - await emailsDoMes(env);
+  const agora = Date.now();
+  const leads = (await listarDocs(env, 'leads')).filter(l => l.ativo && emailValido(l.email))
+    .filter(l => agora - (l.ultimoEnvio instanceof Date ? l.ultimoEnvio.getTime() : 0) >= 7 * 864e5 - 3600e3)
+    .sort((a, b) => (a.ultimoEnvio || 0) - (b.ultimoEnvio || 0));
+  for (const l of leads) {
+    if (cota <= 0) break;
+    const ass = await lerDoc(env, `assinantes/${l.email}`);
+    if (ass && ass.validoAte instanceof Date && ass.validoAte.getTime() > agora) continue;
+    if (!await emailDaSemana(env, l.email, false)) break; // sem envio hoje (cota do EmailJS ou fora do ar)
+    await atualizarCampos(env, `leads/${l.id}`, { ultimoEnvio: new Date() });
+    enviados++; cota--;
+  }
+  console.log(`alerta grátis da semana: ${enviados} enviados, ${leads.length} na fila`);
+  return enviados;
+}
+
+/* ---------- Indicação: o assinante que traz alguém ganha 30 dias quando ele paga ---------- */
+const DIAS_INDICACAO = 30;
+async function emailDoToken(req, env) {
+  const [h, c, s] = (req.headers.get('authorization') || '').replace(/^Bearer /, '').split('.');
+  if (!s) return null;
+  const ler = t => JSON.parse(atob(t.replace(/-/g, '+').replace(/_/g, '/')));
+  const cab = ler(h), corpo = ler(c);
+  const { keys } = await (await fetch(FIREBASE_JWK, { cf: { cacheTtl: 3600 } })).json();
+  const jwk = keys.find(k => k.kid === cab.kid);
+  if (!jwk || cab.alg !== 'RS256') return null;
+  const chave = await crypto.subtle.importKey('jwk', jwk, { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, false, ['verify']);
+  const assinatura = Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), x => x.charCodeAt(0));
+  const ok = await crypto.subtle.verify('RSASSA-PKCS1-v1_5', chave, assinatura, new TextEncoder().encode(`${h}.${c}`));
+  if (!ok || corpo.iss !== `https://securetoken.google.com/${env.PROJETO}` || corpo.aud !== env.PROJETO || corpo.exp * 1000 < Date.now() || !corpo.email_verified) return null;
+  return String(corpo.email || '').toLowerCase();
+}
+async function minhaIndicacao(req, env) {
+  const email = await emailDoToken(req, env);
+  const a = email && await lerDoc(env, `assinantes/${email}`);
+  if (!a) throw falha('Entre com o e-mail da assinatura.', 401);
+  const codigo = (await hmac(env, `ref:${email}`)).slice(0, 8);
+  let ind = await lerDoc(env, `indicacoes/${codigo}`);
+  if (!ind) await gravarDoc(env, `indicacoes/${codigo}`, ind = { email, indicados: 0, diasGanhos: 0, criadoEm: new Date() });
+  return { codigo, indicados: ind.indicados || 0, diasGanhos: ind.diasGanhos || 0, dias: DIAS_INDICACAO };
+}
+async function premiarIndicacao(env, ref, novoEmail) {
+  const ind = await lerDoc(env, `indicacoes/${ref}`);
+  if (!ind || ind.email === novoEmail) return;
+  const dono = await lerDoc(env, `assinantes/${ind.email}`);
+  if (!dono) return;
+  const base = Math.max(Date.now(), dono.validoAte instanceof Date ? dono.validoAte.getTime() : 0);
+  const validoAte = new Date(base + DIAS_INDICACAO * 864e5);
+  await atualizarCampos(env, `assinantes/${ind.email}`, { validoAte, atualizadoEm: new Date() });
+  await atualizarCampos(env, `indicacoes/${ref}`, { indicados: (ind.indicados || 0) + 1, diasGanhos: (ind.diasGanhos || 0) + DIAS_INDICACAO });
+  await somar(env, `metricas/${hojeBR()}`, { indicacao_paga: 1 }).catch(() => {});
+  const data = validoAte.toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+  await enviarEmail(env, ind.email, `Você ganhou ${DIAS_INDICACAO} dias de assinatura`,
+    `Olá!<br><br>Alguém que você indicou acabou de assinar o Onde as Milhas Me Levam. Obrigado! Como prometido, sua assinatura ganhou <strong>${DIAS_INDICACAO} dias</strong> e agora vale até <strong>${data}</strong>.<br><br>Continue indicando: cada amigo que assinar rende mais ${DIAS_INDICACAO} dias.<br><br>${botaoEmail('Ver meu link de indicação', `${env.SITE}#assinar`)}`);
+}
+
+/* ---------- Painel do dono ---------- */
+async function metricas(req, url, env) {
+  const email = await emailDoToken(req, env);
+  const admins = String(env.ADMINS || '').split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+  if (!email || !admins.includes(email)) throw falha('Só para o dono do site.', 403);
+  const dias = Math.min(90, Math.max(1, Number(url.searchParams.get('dias')) || 30));
+  const datas = [...Array(dias)].map((_, i) => new Date(Date.now() - 3 * 3600e3 - i * 864e5).toISOString().slice(0, 10));
+  const porDia = {};
+  for (let i = 0; i < datas.length; i += 10) {
+    await Promise.all(datas.slice(i, i + 10).map(async d => { const m = await lerDoc(env, `metricas/${d}`); if (m) porDia[d] = m; }));
+  }
+  const agora = Date.now();
+  const assinantes = await listarDocs(env, 'assinantes');
+  const ativos = assinantes.filter(a => a.validoAte instanceof Date && a.validoAte.getTime() > agora);
+  const leads = await listarDocs(env, 'leads');
+  return {
+    dias, porDia, emailsMes: await emailsDoMes(env), cotaLeads: COTA_LEADS,
+    assinantes: { ativos: ativos.length, mensal: ativos.filter(a => a.plano !== 'anual').length, anual: ativos.filter(a => a.plano === 'anual').length,
+      vencem7: ativos.filter(a => a.validoAte.getTime() - agora < 7 * 864e5).length, vencidos: assinantes.length - ativos.length },
+    leads: { ativos: leads.filter(l => l.ativo).length, sairam: leads.filter(l => !l.ativo).length }
+  };
+}
+
 // Muda só os campos informados (gravarDoc troca o documento inteiro).
 async function atualizarCampos(env, caminho, dados) {
   const fields = Object.fromEntries(Object.entries(dados).map(([k, v]) => [k, paraFs(v)]));

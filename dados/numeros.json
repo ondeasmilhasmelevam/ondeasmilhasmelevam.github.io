@@ -1,0 +1,136 @@
+{
+ "atualizado": "2026-11-02T12:10:55.515004Z",
+ "dias": 30,
+ "passagens": 83,
+ "promocoes": 35,
+ "destinos": 44,
+ "executiva": 50,
+ "destaques": [
+  {
+   "origem": "Brasília",
+   "origem_iata": "BSB",
+   "destino": "Miami",
+   "destino_iata": "MIA",
+   "cabine": "Executiva",
+   "programa": "GOL Smiles",
+   "data": "2026-11-02T11:30:28Z",
+   "milhas": 161200,
+   "nivel": "espetacular"
+  },
+  {
+   "origem": "São Paulo",
+   "origem_iata": "GRU",
+   "destino": "Barcelona",
+   "destino_iata": "BCN",
+   "cabine": "Executiva",
+   "programa": "LATAM Pass",
+   "data": "2026-10-31T16:35:52Z",
+   "milhas": 254672,
+   "nivel": "bom"
+  },
+  {
+   "origem": "Fortaleza",
+   "origem_iata": "FOR",
+   "destino": "Paris",
+   "destino_iata": "CDG",
+   "cabine": "Executiva",
+   "programa": "GOL Smiles",
+   "data": "2026-11-02T11:27:46Z",
+   "milhas": 376900,
+   "nivel": "bom"
+  },
+  {
+   "origem": "São Paulo",
+   "origem_iata": "CGH",
+   "destino": "Florianópolis",
+   "destino_iata": "FLN",
+   "cabine": "Econômica",
+   "programa": "Smiles",
+   "data": "2026-11-02T02:29:06Z",
+   "milhas": 6500,
+   "nivel": ""
+  },
+  {
+   "origem": "Goiânia",
+   "origem_iata": "GYN",
+   "destino": "Brasília",
+   "destino_iata": "BSB",
+   "cabine": "Econômica",
+   "programa": "LATAM Pass",
+   "data": "2026-10-31T14:22:10Z",
+   "milhas": 8720,
+   "nivel": ""
+  },
+  {
+   "origem": "Rio de Janeiro",
+   "origem_iata": "GIG",
+   "destino": "Curitiba",
+   "destino_iata": "CWB",
+   "cabine": "Econômica",
+   "programa": "Azul Fidelidade",
+   "data": "2026-10-31T13:15:21Z",
+   "milhas": 9000,
+   "nivel": ""
+  }
+ ],
+ "semana": {
+  "passagens": 83,
+  "destaques": [
+   {
+    "origem": "Brasília",
+    "origem_iata": "BSB",
+    "destino": "Miami",
+    "destino_iata": "MIA",
+    "cabine": "Executiva",
+    "programa": "GOL Smiles",
+    "data": "2026-11-02T11:30:28Z",
+    "milhas": 161200,
+    "nivel": "espetacular"
+   },
+   {
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Barcelona",
+    "destino_iata": "BCN",
+    "cabine": "Executiva",
+    "programa": "LATAM Pass",
+    "data": "2026-10-31T16:35:52Z",
+    "milhas": 254672,
+    "nivel": "bom"
+   },
+   {
+    "origem": "Fortaleza",
+    "origem_iata": "FOR",
+    "destino": "Paris",
+    "destino_iata": "CDG",
+    "cabine": "Executiva",
+    "programa": "GOL Smiles",
+    "data": "2026-11-02T11:27:46Z",
+    "milhas": 376900,
+    "nivel": "bom"
+   },
+   {
+    "origem": "São Paulo",
+    "origem_iata": "CGH",
+    "destino": "Florianópolis",
+    "destino_iata": "FLN",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-02T02:29:06Z",
+    "milhas": 6500,
+    "nivel": ""
+   },
+   {
+    "origem": "Goiânia",
+    "origem_iata": "GYN",
+    "destino": "Brasília",
+    "destino_iata": "BSB",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-10-31T14:22:10Z",
+    "milhas": 8720,
+    "nivel": ""
+   }
+  ]
+ }
+}

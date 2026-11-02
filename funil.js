@@ -1,0 +1,97 @@
+// Funil de vendas: de onde a pessoa veio (Instagram, Google, indicação...), contadores de
+// visita e dos passos até assinar (servidor/worker.js, POST /evento: sem cookie e sem dado
+// pessoal, só um número por dia e por origem), o formulário do alerta grátis da semana e os
+// números de prova social (dados/numeros.json, feito pelo robô das passagens).
+(() => {
+  const SERVIDOR = 'https://oamml-assinatura.ondeasmilhasmelevam.workers.dev';
+  const guardar = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* sem armazenamento */ } };
+  const ler = k => { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } };
+  const sessao = k => { try { if (sessionStorage.getItem(k)) return false; sessionStorage.setItem(k, '1'); } catch (e) { /* conta mesmo assim */ } return true; };
+  const esc = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  // Origem: a primeira de cada 30 dias vale (quem chega pelo Instagram e volta pelo Google conta para o Instagram).
+  const busca = new URLSearchParams(location.search);
+  const ref = (busca.get('ref') || '').toLowerCase();
+  let origem = (busca.get('utm_source') || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 20);
+  if (/^[0-9a-f]{8}$/.test(ref)) { guardar('oamml-ref', { codigo: ref, em: Date.now() }); origem = origem || 'indicacao'; }
+  if (!origem && document.referrer) {
+    const host = (() => { try { return new URL(document.referrer).hostname; } catch (e) { return ''; } })();
+    if (host && host !== location.hostname) {
+      origem = [['instagram', /instagram/], ['facebook', /facebook|fb\.com/], ['telegram', /t\.me|telegram/], ['whatsapp', /whatsapp|wa\.me/],
+        ['google', /google\./], ['bing', /bing\./], ['youtube', /youtube/], ['tiktok', /tiktok/]].find(([, re]) => re.test(host))?.[0] || 'site';
+    }
+  }
+  const antes = ler('oamml-origem');
+  if (!antes || Date.now() - antes.em > 30 * 864e5) guardar('oamml-origem', { o: origem || 'direto', em: Date.now() });
+  window.oammlOrigem = () => (ler('oamml-origem') || {}).o || 'direto';
+  window.oammlRef = () => { const r = ler('oamml-ref'); return r && Date.now() - r.em < 30 * 864e5 ? r.codigo : ''; };
+  // O link fica limpo para quem copiar e mandar adiante.
+  if (busca.has('ref') || [...busca.keys()].some(k => k.startsWith('utm_'))) {
+    ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(k => busca.delete(k));
+    history.replaceState(null, '', `${location.pathname}${busca.toString() ? `?${busca}` : ''}${location.hash}`);
+  }
+
+  window.oammlEvento = e => {
+    if (/localhost|127\.0\.0\.1/.test(location.hostname)) return;
+    const corpo = JSON.stringify({ e, o: window.oammlOrigem() });
+    try { if (navigator.sendBeacon && navigator.sendBeacon(`${SERVIDOR}/evento`, corpo)) return; } catch (er) { /* tenta o fetch */ }
+    fetch(`${SERVIDOR}/evento`, { method: 'POST', body: corpo, keepalive: true }).catch(() => {});
+  };
+  if (sessao('oamml-visita')) window.oammlEvento('visita');
+  const paginaVista = () => {
+    if (location.hash === '#assinar' && sessao('oamml-v-assinar')) window.oammlEvento('assinar_ver');
+    if (location.hash === '#gratis' && sessao('oamml-v-gratis')) window.oammlEvento('gratis_ver');
+  };
+  addEventListener('hashchange', paginaVista);
+  paginaVista();
+
+  // Alerta grátis da semana: qualquer form[data-lead] da página.
+  document.addEventListener('submit', async ev => {
+    const f = ev.target.closest('form[data-lead]');
+    if (!f) return;
+    ev.preventDefault();
+    const email = f.querySelector('input[type=email]').value.trim();
+    const aceite = f.querySelector('input[type=checkbox]').checked;
+    const msg = f.querySelector('.lead-msg'), botao = f.querySelector('button');
+    const dizer = (t, ok) => { msg.textContent = t; msg.className = `lead-msg ${ok ? 'ok' : 'erro'}`; msg.hidden = false; };
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return dizer('Digite um e-mail válido.');
+    if (!aceite) return dizer('Marque que aceita receber o e-mail da semana.');
+    botao.disabled = true;
+    try {
+      const r = await fetch(`${SERVIDOR}/lead`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email, aceite, origem: window.oammlOrigem() }) });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(d.erro);
+      dizer(d.ja ? 'Esse e-mail já está na lista. Toda semana chega um novo.' : 'Pronto! O primeiro e-mail já está a caminho (veja também o spam).', true);
+      f.reset();
+    } catch (er) {
+      dizer(er.message || 'Não deu agora. Tente de novo em instantes.');
+    } finally { botao.disabled = false; }
+  });
+  // Quem já assina não precisa do alerta grátis.
+  document.addEventListener('assinatura', e => {
+    document.querySelectorAll('[data-lead-caixa]').forEach(el => { el.hidden = !!e.detail.ativo; });
+  });
+
+  // Prova social: números dos últimos 30 dias e as melhores achadas.
+  const milhas = n => Number(n).toLocaleString('pt-BR');
+  const NIVEL = { espetacular: '🔥 espetacular', 'muito bom': 'muito bom', bom: 'bom' };
+  (async () => {
+    let n;
+    try { n = await (await fetch('dados/numeros.json', { cache: 'no-cache' })).json(); } catch (e) { return; }
+    if (!n || !n.passagens) return;
+    const blocos = [[n.passagens, 'passagens com milhas'], [n.destinos, 'destinos diferentes'], [n.executiva, 'em executiva ou primeira'], [n.promocoes, 'promoções de pontos']];
+    document.querySelectorAll('[data-prova]').forEach(el => {
+      el.innerHTML = `<p class="prova-tit">Nos últimos ${n.dias} dias, aqui no site</p>
+        <div class="prova-nums">${blocos.map(([v, t]) => `<div><b>${milhas(v)}</b><small>${t}</small></div>`).join('')}</div>`;
+      el.hidden = false;
+    });
+    const lista = document.getElementById('gratis-destaques');
+    if (lista) {
+      lista.innerHTML = (n.destaques || []).map(d => `<li>
+          <p class="prova-rota"><b>${esc(d.origem_iata)}</b> ${esc(d.origem)} <i>✈</i> <b>${esc(d.destino_iata)}</b> ${esc(d.destino)}</p>
+          <p class="prova-milhas"><b>${milhas(d.milhas)}</b> milhas + taxas o trecho</p>
+          <p class="prova-meta">${esc([d.programa, d.cabine].filter(Boolean).join(' · '))}${NIVEL[d.nivel] ? ` · <span>${esc(NIVEL[d.nivel])} no termômetro</span>` : ''}</p>
+        </li>`).join('');
+    }
+  })();
+})();
