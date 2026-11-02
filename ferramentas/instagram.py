@@ -10,11 +10,16 @@ Stories (1080 x 1920), um alerta por story, em lotes de até 5:
   - prioridade: promoção no último dia, promoção nova, passagem com menos milhas,
     alternando promoção e passagem quando dá.
 
-Carrosséis no feed (1080 x 1350), dois em cada horário (manhã 9h, tarde 14h e
-noite 19h de Brasília): um de promoções e um de passagens, até 6 cada.
+Carrossel de promoções no feed (1080 x 1350), um em cada horário (manhã 9h,
+tarde 14h e noite 19h de Brasília), até 6 promoções. Passagem não vai para o
+feed, só para os stories (pedido do Felipe).
   - só alertas das últimas 24 horas que ainda não foram para o feed no dia, para
-    a sequência não repetir; passagens com destinos diferentes;
+    a sequência não repetir;
   - legenda curta com a lista, "link na bio" e hashtags.
+
+Como no site, a passagem leva no alto a foto da cidade de origem e a da de
+destino, divididas por um fio dourado (Wikimedia Commons), e a promoção leva a
+logo do programa que está fazendo a promoção (img/programas).
 
 Com o segredo ANTHROPIC_API_KEY, o Claude escreve a chamada de cada imagem e a
 legenda do carrossel (só com os números que estão nos alertas; o que não passar
@@ -41,8 +46,12 @@ import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import hashlib
+import unicodedata
+from io import BytesIO
+
 import requests
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 RAIZ = Path(__file__).resolve().parent.parent
 ALERTAS = RAIZ / 'dados' / 'alertas-completo.json'  # a lista inteira, com datas (ferramentas/alertas.py)
@@ -57,7 +66,7 @@ POR_LOTE = int(os.environ.get('STORIES_POR_LOTE') or 5)
 HORAS_FRESCO = 12
 HORARIO = (8, 22)
 FEED = (('manhã', 9, 0), ('tarde', 14, 0), ('noite', 19, 0))
-TIPOS_FEED = ('promocao', 'passagem')
+TIPOS_FEED = ('promocao',)
 POR_CARROSSEL = 6
 RENOVAR_DIAS = 7
 BRASILIA = timezone(timedelta(hours=-3))
@@ -314,14 +323,192 @@ def chamada_padrao(a):
     return 'PASSAGEM COM MILHAS' if n else 'PASSAGEM BARATA'
 
 
+# Programa da promoção e a logo dele (as mesmas do site: PROGRAMAS_PROMO e LOGO_PROGRAMA no app.js).
+PROGRAMAS = (('Smiles', r'SMILES|\bGOL\b|PAGOL', 'smiles'), ('LATAM Pass', r'LATAM', 'latam'), ('Azul', r'AZUL', 'azul'),
+             ('Livelo', r'LIVELO', 'livelo'), ('Esfera', r'ESFERA', 'esfera'), ('TAP', r'\bTAP\b', 'tap'),
+             ('ALL Accor', r'ACCOR|ALL SIGNATURE|LIMITLESS', 'accor'), ('Avios', r'IBERIA|AVIOS|BRITISH|QATAR', 'avios'),
+             ('Flying Blue', r'FLYING BLUE|AIR FRANCE|KLM', 'flyingblue'), ('C6', r'\bC6\b|ATOMOS', 'c6'), ('Itaú', r'ITAU', 'itau'),
+             ('Revolut', r'REVOLUT', 'revolut'), ('Premmia', r'PREMMIA', 'premmia'), ('Inter', r'\bINTER\b', 'inter'),
+             ('Méliuz', r'MELIUZ', 'meliuz'))
+ENCURTADORES = re.compile(r'bit\.ly|tinyurl|t\.co$|l\.ead\.me|linktr\.ee|onelink|app\.link|lnk\.|cutt\.ly|rebrand\.ly|wa\.me|t\.me|dia23')
+UA = {'User-Agent': 'OndeAsMilhasMeLevam/1.0 (https://ondeasmilhasmelevam.github.io; instagram)'}
+
+
+def sem_acento(t):
+    return ''.join(c for c in unicodedata.normalize('NFD', t or '') if unicodedata.category(c) != 'Mn').upper()
+
+
+def logo_promo(a):
+    """(logo RGBA ou None, nome do programa ou do parceiro, se é só o ícone do site do parceiro)."""
+    t = sem_acento(f"{a.get('titulo', '')} {a.get('parceiros', '')}")
+    for nome, padrao, arq in PROGRAMAS:
+        if re.search(padrao, t):
+            caminho = RAIZ / 'img' / 'programas' / f'{arq}.webp'
+            return (Image.open(caminho).convert('RGBA') if caminho.exists() else None), nome, False
+    nome = re.split(r',| e | & ', a.get('parceiros') or '')[0].strip()
+    # Parceiro sem logo guardada: o ícone do site dele (como no site), se o link não for encurtado.
+    for u in a.get('links') or []:
+        m = re.match(r'https?://(?:www\.)?([^/]+)', u or '')
+        if m and not ENCURTADORES.search(m.group(1)):
+            try:
+                r = requests.get('https://www.google.com/s2/favicons', params={'domain': m.group(1), 'sz': 128}, timeout=20)
+                ico = Image.open(BytesIO(r.content)).convert('RGBA') if r.ok else None
+                if ico and ico.width >= 64:
+                    return ico, nome, True
+            except Exception:
+                pass
+            break
+    return None, nome, False
+
+
+def ticket_logo(camada, y, a):
+    """Bilhete branco com a logo do programa e recortes dos lados (o "ticket" das promoções do site)."""
+    logo, nome, icone = logo_promo(a)
+    if logo is None and not nome:
+        return y
+    lw, lh = 600, 230
+    x0 = (W - lw) // 2
+    sombra = Image.new('RGBA', camada.size, (0, 0, 0, 0))
+    ImageDraw.Draw(sombra).rounded_rectangle((x0, y + 18, x0 + lw, y + lh + 18), radius=34, fill=(0, 0, 0, 120))
+    camada.alpha_composite(sombra.filter(ImageFilter.GaussianBlur(22)))
+    d = ImageDraw.Draw(camada)
+    d.rounded_rectangle((x0, y, x0 + lw, y + lh), radius=34, fill=(255, 255, 255, 255))
+    for cx in (x0, x0 + lw):
+        d.ellipse((cx - 26, y + lh / 2 - 26, cx + 26, y + lh / 2 + 26), fill=(0, 0, 0, 0))
+    if logo is not None:
+        com_nome = icone and nome
+        k = min((lw - 140) / logo.width, (lh - (120 if com_nome else 70)) / logo.height)
+        logo = logo.resize((max(1, int(logo.width * k)), max(1, int(logo.height * k))), Image.LANCZOS)
+        topo = y + (lh - logo.height - (56 if com_nome else 0)) // 2
+        camada.alpha_composite(logo, ((W - logo.width) // 2, int(topo)))
+        if com_nome:
+            f = fonte(40, 800)
+            nome = quebrar(d, nome, f, lw - 100, 1)[0]
+            d.text(((W - d.textlength(nome, font=f)) / 2, topo + logo.height + 10), nome, font=f, fill=INK)
+    else:
+        f = fonte(64, 800)
+        linhas = quebrar(d, nome.upper(), f, lw - 120, 2)
+        centro(d, y + (lh - len(linhas) * int(f.size * 1.1)) / 2, linhas, f, INK, 1.1)
+    return y + lh
+
+
+# Fotos das cidades (a mesma busca do site: Wikidata pelo código do aeroporto e Wikimedia Commons).
+UF = {}
+for _uf, _codigos in {
+        'São Paulo': 'GRU CGH VCP SJP RAO PPB MII SJK BAU AQA SOD', 'Rio de Janeiro': 'GIG SDU CAW MEA',
+        'Minas Gerais': 'CNF PLU UDI MOC IPN GVR VAG JDF', 'Espírito Santo': 'VIX', 'Bahia': 'SSA BPS IOS LEC VDC BRA FEC',
+        'Pernambuco': 'REC PNZ', 'Ceará': 'FOR JJD JDO', 'Rio Grande do Norte': 'NAT MVF', 'Paraíba': 'JPA CPV', 'Alagoas': 'MCZ',
+        'Sergipe': 'AJU', 'Piauí': 'THE PHB', 'Maranhão': 'SLZ IMP', 'Pará': 'BEL STM MAB ATM CKS', 'Amazonas': 'MAO TBT',
+        'Amapá': 'MCP', 'Roraima': 'BVB', 'Acre': 'RBR CZS', 'Rondônia': 'PVH JPR', 'Tocantins': 'PMW', 'Goiás': 'GYN CLV RVD',
+        'Distrito Federal': 'BSB', 'Mato Grosso': 'CGB ROO OPS AFL', 'Mato Grosso do Sul': 'CGR CMG DOU',
+        'Paraná': 'CWB IGU LDB MGF CAC', 'Santa Catarina': 'FLN NVT JOI XAP CCM', 'Rio Grande do Sul': 'POA CXJ PFB RIA PET URG'}.items():
+    for _c in _codigos.split():
+        UF[_c] = _uf
+_fotos = {}
+
+
+def lugar(iata, nome):
+    """(cidade em inglês, estado ou país) pelo código do aeroporto, no Wikidata."""
+    consulta = ('SELECT ?cidade ?pais WHERE { ?ap wdt:P238 "%s"; wdt:P931 ?c. ?c rdfs:label ?cidade. FILTER(lang(?cidade) = "en") '
+                'OPTIONAL { ?c wdt:P17 ?p. ?p rdfs:label ?pais. FILTER(lang(?pais) = "en") } }' % iata)
+    try:
+        r = requests.get('https://query.wikidata.org/sparql', params={'format': 'json', 'query': consulta}, headers=UA, timeout=30)
+        b = r.json()['results']['bindings']
+        x = next((x for x in b if sem_acento(x['cidade']['value']) == sem_acento(nome)), None) or (b[0] if b else None)
+        if x:
+            return x['cidade']['value'], UF.get(iata) or x.get('pais', {}).get('value', '')
+    except Exception:
+        pass
+    return nome, UF.get(iata, '')
+
+
+def fotos_cidade(nome, iata):
+    """Endereços de vistas horizontais da cidade (1000 px de largura), na ordem da busca."""
+    chave = f'{nome}|{iata}'
+    if chave in _fotos:
+        return _fotos[chave]
+    cidade, regiao = lugar(iata, nome)
+    regiao = '' if sem_acento(regiao) == sem_acento(cidade) else regiao
+    lista = []
+    for termo in ('skyline', 'panorama', ''):
+        try:
+            r = requests.get('https://commons.wikimedia.org/w/api.php', headers=UA, timeout=30, params={
+                'action': 'query', 'format': 'json', 'generator': 'search', 'gsrnamespace': '6',
+                'gsrsearch': re.sub(r'\s+', ' ', f'"{cidade}" {regiao} {termo} filetype:bitmap'), 'gsrlimit': '40',
+                'prop': 'imageinfo', 'iiprop': 'url|size', 'iiurlwidth': '1000'})
+            for pg in sorted(r.json().get('query', {}).get('pages', {}).values(), key=lambda x: x.get('index', 0)):
+                i = (pg.get('imageinfo') or [{}])[0]
+                if i.get('width', 0) >= 1000 and 1.25 <= i['width'] / max(i.get('height', 1), 1) <= 3.6 \
+                        and i.get('thumburl') and i['thumburl'] not in lista:
+                    lista.append(i['thumburl'])
+        except Exception:
+            pass
+        if len(lista) >= 15:
+            break
+    _fotos[chave] = lista
+    return lista
+
+
+def foto(nome, iata, semente, usadas):
+    """Uma das primeiras fotos da cidade (muda de story para story; nunca a mesma nas duas metades)."""
+    lista = [u for u in fotos_cidade(nome, iata)[:8] if u not in usadas]
+    if not lista:
+        return None
+    ini = int(hashlib.md5(semente.encode()).hexdigest(), 16) % len(lista)
+    for u in (lista[ini:] + lista[:ini])[:4]:
+        try:
+            r = requests.get(u, headers=UA, timeout=40)
+            r.raise_for_status()
+            img = Image.open(BytesIO(r.content)).convert('RGB')
+        except Exception:
+            continue
+        # foto antiga em preto e branco não combina com o bilhete: tenta a próxima
+        if sum(img.convert('HSV').getchannel('S').resize((64, 32)).getdata()) / 2048 < 30:
+            continue
+        usadas.add(u)
+        return img
+    return None
+
+
+def faixa_fotos(a, largura, altura):
+    """Metade da origem e metade do destino, cortadas na diagonal com fio dourado (como .pass-foto no site)."""
+    usadas = set()
+    fo = foto(a.get('origem', ''), a.get('origem_iata', ''), a.get('id', '') + 'o', usadas)
+    fd = foto(a.get('destino', ''), a.get('destino_iata', ''), a.get('id', '') + 'd', usadas) if fo else None
+    if not fd:
+        return None
+    faixa = Image.new('RGBA', (largura, altura), INK3)
+    meia = int(largura * 0.56)
+    for img, x, poligono in ((fo, 0, [(0, 0), (meia, 0), (int(meia * 0.786), altura), (0, altura)]),
+                             (fd, largura - meia, [(int(meia * 0.214), 0), (meia, 0), (meia, altura), (0, altura)])):
+        mascara = Image.new('L', (meia, altura), 0)
+        ImageDraw.Draw(mascara).polygon(poligono, fill=255)
+        faixa.paste(ImageOps.fit(img, (meia, altura), Image.LANCZOS), (x, 0), mascara)
+    # escurece a parte de baixo, para a foto se fundir com o bilhete
+    sombra = Image.new('RGBA', (largura, altura), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(sombra)
+    for i in range(altura // 2):
+        sd.line([(0, altura // 2 + i), (largura, altura // 2 + i)], fill=(19, 29, 51, int(240 * (i / (altura / 2)) ** 1.6)))
+    faixa.alpha_composite(sombra)
+    ImageDraw.Draw(faixa).line((largura * 0.56, -2, largura * 0.44, altura + 2), fill=OURO, width=6)
+    return faixa
+
+
 def miolo_passagem(a, chamada=''):
     """Cartão de embarque: IATA grande, rota tracejada com avião e as milhas em destaque."""
     camada, d = tela()
     y, _ = pilula(d, 0, (chamada or chamada_padrao(a)).upper(), OURO)
     y += 60
-    # cartão
-    topo = y
-    d.rounded_rectangle((70, topo, W - 70, topo + 900), radius=44, fill=(19, 29, 51, 235), outline=OURO, width=3)
+    # cartão, com a foto das duas cidades no alto quando der para achar
+    faixa = faixa_fotos(a, W - 140, 400)
+    alto_foto = faixa.height - 40 if faixa else 0
+    d.rounded_rectangle((70, y, W - 70, y + 900 + alto_foto), radius=44, fill=(19, 29, 51, 235))
+    if faixa:
+        mascara = Image.new('L', faixa.size, 0)
+        ImageDraw.Draw(mascara).rounded_rectangle((0, 0, faixa.width - 1, faixa.height + 60), radius=44, fill=255)
+        camada.paste(faixa, (70, y), mascara)
+    d.rounded_rectangle((70, y, W - 70, y + 900 + alto_foto), radius=44, outline=OURO, width=3)
+    topo = y + alto_foto
     for cx in (70, W - 70):  # recortes laterais do bilhete
         d.ellipse((cx - 34, topo + 420 - 34, cx + 34, topo + 420 + 34), fill=(0, 0, 0, 0))
     for xx in range(130, W - 130, 34):  # picote
@@ -363,6 +550,8 @@ def miolo_passagem(a, chamada=''):
         for t in fichas:
             _, x = pilula(d, yy + 40, t, (0, 0, 0, 0), RICE, 30, x, contorno=LINHA)
             x += 20
+    if faixa:
+        centro(d, y + 900 + alto_foto + 18, ['Fotos: Wikimedia Commons'], fonte(24, 500), ASH)
     return camada
 
 
@@ -378,7 +567,8 @@ def miolo_promocao(a, chamada=''):
     ultimo = a.get('ultimo_dia')
     y, _ = pilula(d, 0, (chamada or chamada_padrao(a)).upper(), VERMELHO if ultimo else OURO,
                   RICE if ultimo else INK)
-    y += 80
+    y = ticket_logo(camada, y + 60, a) + 70
+    d = ImageDraw.Draw(camada)
     titulo = a['titulo'].upper()
     num = destaque(titulo)
     if num:
@@ -730,7 +920,7 @@ def feed(alertas, estado, agora, conta, token):
 def teste(pasta):
     """Gera stories e os carrosséis de exemplo com os alertas atuais, sem publicar."""
     pasta.mkdir(parents=True, exist_ok=True)
-    alertas = ler_json(ALERTAS, [])
+    alertas = ler_json(ALERTAS, []) or ler_json(RAIZ / 'dados' / 'alertas.json', [])
     agora = max((quando(a) for a in alertas), default=datetime.now(timezone.utc))
     promos, passagens = separar(alertas)
     for n, a in enumerate(promos[:2] + passagens[:2]):
