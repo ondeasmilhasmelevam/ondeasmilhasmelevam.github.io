@@ -1335,20 +1335,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2361370250-5901",
-  "data": "2026-10-31T16:15:24Z",
-  "origem": "Milão",
-  "origem_iata": "MXP",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "LATAM",
-  "cabine": "Executiva",
-  "programa": "LATAM Pass",
-  "ida": "197.840 milhas + R$ 193,76",
-  "volta": "",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7529",
   "data": "2026-10-31T12:35:24Z",
   "tipo": "promocao",
