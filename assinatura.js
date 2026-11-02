@@ -236,7 +236,7 @@ async function desenharPainel() {
       <div><b>${d.leads.ativos}</b><small>na lista do alerta grátis${d.leads.sairam ? ` (${d.leads.sairam} saíram)` : ''}</small></div>
       <div><b>${reais(total.receita)}</b><small>vendas em ${d.dias} dias</small></div>
       <div><b>${pct(total.pago, total.visita)}</b><small>das visitas viraram assinatura</small></div>
-      <div><b>${d.emailsMes}/200</b><small>e-mails do EmailJS neste mês</small></div>
+      <div><b>${d.servicoEmail === 'gmail' ? d.emailsMes : `${d.emailsMes}/200`}</b><small>${d.servicoEmail === 'gmail' ? 'e-mails pelo Gmail neste mês (limite de uns 500 por dia)' : 'e-mails do EmailJS neste mês'}</small></div>
     </div>
     ${tabela('Origem', Object.entries(porOrigem).sort((x, y) => y[1].visita - x[1].visita).map(([o, l]) => [ORIGEM_NOME[o] || o, l]))}
     ${tabela('Dia', porDia)}`;

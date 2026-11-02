@@ -14,7 +14,8 @@
 // Não manda e-mail ao dono: os novos esperam na parte de depoimentos do painel.
 //
 // Segredos (wrangler secret put): INFINITEPAY_API_KEY, FIREBASE_SERVICE_ACCOUNT (o JSON inteiro),
-// EMAILJS_PRIVATE_KEY e SEATS_AERO_KEY (busca de disponibilidade em milhas, GET /voos). Variáveis (wrangler.toml): HANDLE, PROJETO, SITE, ORIGENS, SELF, EMAILJS_*.
+// EMAILJS_PRIVATE_KEY e SEATS_AERO_KEY. Com GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET e GMAIL_REFRESH_TOKEN, os e-mails
+// saem direto pelo Gmail da marca (API do Gmail, uns 500 por dia) em vez do EmailJS (200 por mês); (busca de disponibilidade em milhas, GET /voos). Variáveis (wrangler.toml): HANDLE, PROJETO, SITE, ORIGENS, SELF, EMAILJS_*.
 
 const PLANOS = {
   mensal: { dias: 30, preco: 2990, nome: 'Assinatura mensal' },
@@ -25,7 +26,9 @@ const API = 'https://api.checkout.infinitepay.io';
 export default {
   // Todo dia (cron no wrangler.toml): avisos de vencimento e o e-mail da semana do alerta grátis.
   async scheduled(evento, env, ctx) {
-    ctx.waitUntil(avisarVencimentos(env).finally(() => semanal(env)));
+    // 12h UTC: avisos de vencimento. Aos 30 de cada hora: um lote do alerta grátis da semana (o plano grátis da
+    // Cloudflare deixa só 50 chamadas externas por execução, então manda poucos de cada vez).
+    ctx.waitUntil(evento.cron === '0 12 * * *' ? avisarVencimentos(env) : semanal(env));
   },
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -160,6 +163,13 @@ async function pedirCodigo(body, env) {
   const n = crypto.getRandomValues(new Uint32Array(1))[0] % 1e7;
   const codigo = String(n).padStart(7, '0');
   await gravarDoc(env, `codigos/${email}`, { hash: await sha256(`${email}:${codigo}`), criadoEm: new Date(), tentativas: 0 });
+  if (usaGmail(env)) {
+    const ok = await gmailEnviar(env, email, `Seu código de entrada: ${codigo}`,
+      `Use este código para entrar no Onde as Milhas Me Levam:<br><br><span style="font-size:32px;font-weight:bold;letter-spacing:6px;color:#0c1426;">${codigo}</span><br><br>Ele vale por ${CODIGO_VALE_MIN} minutos. Se não foi você que pediu, é só ignorar este e-mail.`).catch(() => false);
+    if (!ok) throw falha('Não deu para mandar o código agora. Tente de novo em instantes.', 502);
+    await contarEmail(env);
+    return resposta;
+  }
   const r = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -330,7 +340,45 @@ async function guardarAlertas(req, env) {
 /* ---------- e-mail (modelo "mensagem" do EmailJS: assunto e corpo vêm daqui) ---------- */
 const escHtml = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const botaoEmail = (texto, link) => `<a href="${escHtml(link)}" style="display:inline-block;padding:12px 22px;border-radius:999px;background:#e2b458;color:#1b1406;font-weight:bold;text-decoration:none;">${escHtml(texto)}</a>`;
+// Gmail da marca: troca o refresh token por um token de acesso (vale 1 h) e manda pela API do Gmail.
+const usaGmail = env => !!(env.GMAIL_CLIENT_ID && env.GMAIL_CLIENT_SECRET && env.GMAIL_REFRESH_TOKEN);
+let gmailCache = { token: '', ate: 0 };
+async function gmailToken(env) {
+  if (gmailCache.ate > Date.now() + 60e3) return gmailCache.token;
+  const r = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    body: new URLSearchParams({ client_id: env.GMAIL_CLIENT_ID, client_secret: env.GMAIL_CLIENT_SECRET, refresh_token: env.GMAIL_REFRESH_TOKEN, grant_type: 'refresh_token' })
+  });
+  const d = await r.json();
+  if (!r.ok || !d.access_token) throw falha('Gmail recusou a chave.', 502);
+  gmailCache = { token: d.access_token, ate: Date.now() + (d.expires_in || 3600) * 1000 };
+  return d.access_token;
+}
+const b64utf8 = t => btoa(unescape(encodeURIComponent(t)));
+const layoutEmail = corpo => `<div style="background:#f3eee3;padding:24px 12px;font-family:Arial,Helvetica,sans-serif;">
+  <div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e6dcc6;">
+    <div style="background:#0c1426;padding:18px 24px;color:#e2b458;font-weight:bold;letter-spacing:3px;font-size:13px;">ONDE AS MILHAS ME LEVAM</div>
+    <div style="padding:24px;color:#1b2335;font-size:15px;line-height:1.6;">${corpo}</div>
+  </div>
+  <p style="max-width:560px;margin:12px auto 0;color:#8a8f9c;font-size:12px;text-align:center;">ondeasmilhasmelevam.github.io</p>
+</div>`;
+async function gmailEnviar(env, para, assunto, html) {
+  const remetente = env.GMAIL_REMETENTE || 'ondeasmilhasmelevam@gmail.com';
+  const mime = [`From: =?UTF-8?B?${b64utf8('Onde as Milhas Me Levam')}?= <${remetente}>`, `To: ${para}`, `Subject: =?UTF-8?B?${b64utf8(assunto)}?=`,
+    'MIME-Version: 1.0', 'Content-Type: text/html; charset=UTF-8', 'Content-Transfer-Encoding: base64', '', b64utf8(layoutEmail(html))].join('\r\n');
+  const raw = btoa(mime).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  const r = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
+    method: 'POST', headers: { authorization: `Bearer ${await gmailToken(env)}`, 'content-type': 'application/json' }, body: JSON.stringify({ raw })
+  });
+  return r.ok;
+}
+
 async function enviarEmail(env, email, assunto, corpo) {
+  if (usaGmail(env)) {
+    const ok = await gmailEnviar(env, email, assunto, corpo).catch(() => false);
+    if (ok) await contarEmail(env);
+    return ok;
+  }
   const r = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -463,8 +511,11 @@ async function avisarVencimentos(env) {
   return enviados.length;
 }
 const reaisEmail = c => (c / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+let numerosCache = { d: null, ate: 0 };
 async function numerosDoSite(env) {
-  try { return await (await fetch(`${env.SITE}dados/numeros.json`, { cf: { cacheTtl: 600 } })).json(); } catch (e) { return null; }
+  if (numerosCache.ate > Date.now()) return numerosCache.d;
+  try { numerosCache = { d: await (await fetch(`${env.SITE}dados/numeros.json`, { cf: { cacheTtl: 600 } })).json(), ate: Date.now() + 600e3 }; } catch (e) { return null; }
+  return numerosCache.d;
 }
 
 /* ---------- Funil: contadores por dia e por origem (metricas/{AAAA-MM-DD}) ---------- */
@@ -490,6 +541,9 @@ async function evento(body, env) {
 /* ---------- Limite do EmailJS (200 por mês no plano grátis) ---------- */
 // Código de entrada, avisos e Meu Radar vêm antes: o e-mail do alerta grátis só sai até COTA_LEADS.
 const COTA_LEADS = 150;
+// Pelo Gmail o limite é por dia (uns 500): a cota do mês fica alta; LOTE_SEMANAL por hora dá no máximo ~220 por dia.
+const LOTE_SEMANAL = 9;
+const cotaLeads = env => (usaGmail(env) ? 12000 : COTA_LEADS);
 const mesBR = () => hojeBR().slice(0, 7);
 const contarEmail = env => somar(env, `metricas/emails-${mesBR()}`, { enviados: 1 }).catch(() => {});
 async function emailsDoMes(env) {
@@ -535,7 +589,7 @@ async function novoLead(body, env) {
   const lead = { email, origem, ativo: true, criadoEm: (antes && antes.criadoEm) || new Date(), ultimoEnvio: new Date(0) };
   await gravarDoc(env, `leads/${email}`, lead);
   await somar(env, `metricas/${hojeBR()}`, { [`lead_${origem}`]: 1 }).catch(() => {});
-  if (await emailsDoMes(env) < COTA_LEADS && await emailDaSemana(env, email, true)) await atualizarCampos(env, `leads/${email}`, { ultimoEnvio: new Date() });
+  if (await emailsDoMes(env) < cotaLeads(env) && await emailDaSemana(env, email, true)) await atualizarCampos(env, `leads/${email}`, { ultimoEnvio: new Date() });
   return { ok: true };
 }
 async function sairLead(url, env) {
@@ -549,7 +603,7 @@ async function sairLead(url, env) {
 }
 // Uma vez por semana para cada pessoa da lista (quem já assina não recebe), até a cota do mês.
 async function semanal(env) {
-  let enviados = 0, cota = COTA_LEADS - await emailsDoMes(env);
+  let enviados = 0, cota = Math.min(cotaLeads(env) - await emailsDoMes(env), LOTE_SEMANAL);
   const agora = Date.now();
   const leads = (await listarDocs(env, 'leads')).filter(l => l.ativo && emailValido(l.email))
     .filter(l => agora - (l.ultimoEnvio instanceof Date ? l.ultimoEnvio.getTime() : 0) >= 7 * 864e5 - 3600e3)
@@ -677,7 +731,7 @@ async function metricas(req, url, env) {
   const ativos = assinantes.filter(a => a.validoAte instanceof Date && a.validoAte.getTime() > agora);
   const leads = await listarDocs(env, 'leads');
   return {
-    dias, porDia, emailsMes: await emailsDoMes(env), cotaLeads: COTA_LEADS,
+    dias, porDia, emailsMes: await emailsDoMes(env), cotaLeads: cotaLeads(env), servicoEmail: usaGmail(env) ? 'gmail' : 'emailjs',
     assinantes: { ativos: ativos.length, mensal: ativos.filter(a => a.plano !== 'anual').length, anual: ativos.filter(a => a.plano === 'anual').length,
       vencem7: ativos.filter(a => a.validoAte.getTime() - agora < 7 * 864e5).length, vencidos: assinantes.length - ativos.length },
     leads: { ativos: leads.filter(l => l.ativo).length, sairam: leads.filter(l => !l.ativo).length }
