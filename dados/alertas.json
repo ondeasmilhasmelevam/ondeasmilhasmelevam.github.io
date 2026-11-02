@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-8782",
+  "data": "2026-11-02T17:29:40Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.600 milhas + R$ 49,18 de taxas",
+  "volta": "11.600 milhas + R$ 62,14 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8781",
   "data": "2026-11-02T15:33:52Z",
   "origem": "Recife",
