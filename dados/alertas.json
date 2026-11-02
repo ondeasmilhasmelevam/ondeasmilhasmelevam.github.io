@@ -1332,20 +1332,6 @@
   "link_nome": "Finnair Plus"
  },
  {
-  "id": "2361370250-5904",
-  "data": "2026-10-31T18:06:14Z",
-  "origem": "Toronto",
-  "origem_iata": "YYZ",
-  "destino": "Abu Dhabi",
-  "destino_iata": "AUH",
-  "companhia": "Etihad Airways",
-  "cabine": "Primeira Classe",
-  "programa": "AAdvantage",
-  "ida": "115.000 milhas + R$ 313,26",
-  "volta": "115.000 milhas + R$ 197,55",
-  "link_nome": "AAdvantage"
- },
- {
   "id": "1290836068-7529",
   "data": "2026-10-31T12:35:24Z",
   "tipo": "promocao",
