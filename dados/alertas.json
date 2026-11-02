@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5962",
+  "data": "2026-11-02T11:42:34Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "245.000 milhas",
+  "volta": "151.900 milhas",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5961",
   "data": "2026-11-02T11:36:47Z",
   "origem": "São Paulo",
@@ -1490,34 +1504,6 @@
   "ida": "251.925 pontos + R$ 69",
   "volta": "251.925 pontos + R$ 186",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2361370250-5892",
-  "data": "2026-10-31T11:45:02Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Nova York",
-  "destino_iata": "JFK",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "320.400 milhas",
-  "volta": "222.600 milhas",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-5891",
-  "data": "2026-10-31T11:41:47Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "GOL + American Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "160.800 milhas",
-  "volta": "",
-  "link_nome": "GOL Smiles"
  },
  {
   "id": "1290836068-7519",
