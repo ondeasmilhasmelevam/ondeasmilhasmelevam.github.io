@@ -261,10 +261,11 @@ async function desenharDeposPainel() {
         <p class="depo-status">${DEPO_SITUACAO[d.status] || ''}</p>
         <p class="depo-estrelas">${estrelas(d.nota)}</p>
         <blockquote>${escR(d.texto)}</blockquote>
-        <p class="depo-autor"><b>${escR(d.nome)}</b>${d.cidade ? ` · ${escR(d.cidade)}` : ''}${d.instagram ? ` · @${escR(d.instagram)}` : ''} · ${escR(d.email)}</p>
+        <div class="depo-quem">${window.oammlFoto(d)}<p class="depo-autor"><b>${escR(d.nome)}</b>${d.cidade ? ` · ${escR(d.cidade)}` : ''}${d.instagram ? ` · @${escR(d.instagram)}` : ''} · ${escR(d.email)}</p></div>
         <div class="depo-botoes">${d.status !== 'aprovado' ? '<button type="button" class="cta cta-a" data-status="aprovado">Aprovar</button>' : ''}${d.status !== 'oculto' ? '<button type="button" class="cta cta-b" data-status="oculto">Ocultar</button>' : ''}</div>
       </li>`).join('')}</ul>`
     : '<p class="passagens-vazio">Nenhum depoimento ainda.</p>');
+  window.oammlFotoErros(el);
 }
 $('#painel-depos').addEventListener('click', async e => {
   const b = e.target.closest('[data-status]'); if (!b) return;
@@ -296,6 +297,13 @@ async function desenharDepoimento(estado, aviso = '') {
         <input name="cidade" maxlength="40" aria-label="Cidade" placeholder="Sua cidade (opcional)" value="${escR(meu?.cidade || '')}">
         <input name="instagram" maxlength="40" aria-label="Seu Instagram" placeholder="Seu @ no Instagram (opcional)" value="${meu?.instagram ? `@${escR(meu.instagram)}` : ''}">
       </div>
+      <div class="depo-foto-campo">
+        <span class="depo-foto-prev"></span>
+        <div>
+          <div class="depo-botoes"><label class="cta cta-b">Escolher foto<input type="file" accept="image/*" hidden></label><button type="button" class="cta cta-b" data-tirar-foto hidden>Tirar foto</button></div>
+          <small>Opcional. Se você entrou com o Google, já vem a foto da sua conta; dá para trocar ou tirar.</small>
+        </div>
+      </div>
       <label class="lead-aceite"><input type="checkbox" name="autorizo"${meu ? ' checked' : ''}> Autorizo publicar este depoimento no site e no Instagram do Onde as Milhas Me Levam, com o nome, a cidade e o @ do Instagram acima (se informei). Meu e-mail não aparece.</label>
       <div class="depo-botoes">
         <button type="submit" class="cta cta-a">${meu ? 'Atualizar depoimento' : 'Enviar depoimento'}</button>
@@ -309,6 +317,23 @@ async function desenharDepoimento(estado, aviso = '') {
   const pintar = () => f.querySelectorAll('.depo-nota label').forEach((l, i) => l.classList.toggle('on', i < +f.elements.nota.value));
   f.addEventListener('change', pintar);
   pintar();
+  const fotoGoogle = /^https:\/\/lh3\.googleusercontent\.com\//.test(auth.currentUser.photoURL || '') ? auth.currentUser.photoURL : '';
+  let foto = meu ? meu.foto || '' : fotoGoogle, fotoMudou = !meu && !!fotoGoogle;
+  const mostrarFoto = () => {
+    const prev = f.querySelector('.depo-foto-prev');
+    prev.innerHTML = window.oammlFoto({ nome: f.elements.nome.value || meu?.nome, foto });
+    window.oammlFotoErros(prev);
+    f.querySelector('[data-tirar-foto]').hidden = !foto;
+  };
+  mostrarFoto();
+  f.elements.nome.addEventListener('change', mostrarFoto);
+  f.querySelector('input[type=file]').addEventListener('change', async e => {
+    const arq = e.target.files[0];
+    if (!arq) return;
+    try { foto = await reduzirFoto(arq); fotoMudou = true; mostrarFoto(); }
+    catch (er) { dizer('Não consegui abrir essa imagem. Tente uma foto JPG ou PNG.'); }
+  });
+  f.querySelector('[data-tirar-foto]').addEventListener('click', () => { foto = ''; fotoMudou = true; mostrarFoto(); });
   const dados = () => ({ nota: +f.elements.nota.value, texto: f.elements.texto.value.trim(), nome: f.elements.nome.value.trim(), cidade: f.elements.cidade.value.trim(), instagram: f.elements.instagram.value.trim().replace(/^@/, '') });
   f.addEventListener('submit', async e => {
     e.preventDefault();
@@ -316,7 +341,7 @@ async function desenharDepoimento(estado, aviso = '') {
     b.disabled = true;
     try {
       const r = await fetch(`${SERVIDOR}/depoimento`, { method: 'POST', headers: { ...(await cab()), 'content-type': 'application/json' },
-        body: JSON.stringify({ ...dados(), autorizo: f.elements.autorizo.checked }) });
+        body: JSON.stringify({ ...dados(), autorizo: f.elements.autorizo.checked, ...(fotoMudou ? { foto } : {}) }) });
       const res = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(res.erro);
       await desenharDepoimento(estado, 'Obrigado! Agora poste no seu Instagram: o botão ao lado monta a imagem. Marque @ondeasmilhasmelevam no story.');
@@ -328,9 +353,18 @@ async function desenharDepoimento(estado, aviso = '') {
   f.querySelector('[data-depo-insta]')?.addEventListener('click', async () => {
     const d = dados();
     if (d.texto.length < 20 || !d.nome) return dizer('Preencha o depoimento e o nome primeiro.');
-    const r = await compartilharDepoimento(d);
+    const r = await compartilharDepoimento({ ...d, foto });
     if (r === 'baixou') dizer('Imagem baixada. Abra o Instagram, crie um story com ela e marque @ondeasmilhasmelevam.', true);
   });
+}
+
+// Foto do depoimento: recorta o centro em quadrado e reduz para 256x256 (fica pequena no banco).
+async function reduzirFoto(arquivo) {
+  const img = await createImageBitmap(arquivo);
+  const lado = Math.min(img.width, img.height), c = document.createElement('canvas');
+  c.width = c.height = 256;
+  c.getContext('2d').drawImage(img, (img.width - lado) / 2, (img.height - lado) / 2, lado, lado, 0, 0, 256, 256);
+  return c.toDataURL('image/jpeg', 0.82);
 }
 
 // Imagem do depoimento no tamanho do story (1080x1920), com a cara do site.
@@ -374,14 +408,23 @@ async function imagemDepoimento(d) {
   x.fillStyle = 'rgba(226,180,88,.35)'; x.font = '700 260px Cinzel';
   x.fillText('“', W / 2, 820);
   let tam = 58, ls;
-  do { x.font = `600 ${tam}px Manrope`; ls = linhas(x, d.texto, 880); tam -= 4; } while (ls.length * tam * 1.42 > 760 && tam > 34);
+  const foto = d.foto?.startsWith('data:') ? await carregarImagem(d.foto) : null;  // só a foto enviada: a de fora travaria o canvas
+  const area = foto ? 600 : 760;
+  do { x.font = `600 ${tam}px Manrope`; ls = linhas(x, d.texto, 880); tam -= 4; } while (ls.length * tam * 1.42 > area && tam > 34);
   const alto = (tam + 4) * 1.42;
-  let y = 760 + Math.max(0, (760 - ls.length * alto) / 2);
+  let y = 760 + Math.max(0, (area - ls.length * alto) / 2);
   x.fillStyle = '#F3EEE3';
   for (const l of ls) { y += alto; x.fillText(l, W / 2, y); }
+  let yNome = Math.max(y + 110, 1600);
+  if (foto) {
+    x.save(); x.beginPath(); x.arc(W / 2, 1470, 75, 0, Math.PI * 2); x.clip();
+    x.drawImage(foto, W / 2 - 75, 1395, 150, 150); x.restore();
+    x.strokeStyle = '#E2B458'; x.lineWidth = 4; x.beginPath(); x.arc(W / 2, 1470, 80, 0, Math.PI * 2); x.stroke();
+    yNome = 1620;
+  }
   x.fillStyle = '#E2B458'; x.font = '800 44px Manrope';
-  x.fillText(`— ${d.nome}${d.cidade ? `, ${d.cidade}` : ''}`, W / 2, Math.max(y + 110, 1600));
-  if (d.instagram) { x.fillStyle = '#F3EEE3'; x.font = '600 36px Manrope'; x.fillText(`@${d.instagram}`, W / 2, Math.max(y + 170, 1660)); }
+  x.fillText(`— ${d.nome}${d.cidade ? `, ${d.cidade}` : ''}`, W / 2, yNome);
+  if (d.instagram) { x.fillStyle = '#F3EEE3'; x.font = '600 36px Manrope'; x.fillText(`@${d.instagram}`, W / 2, yNome + 58); }
   x.fillStyle = '#A3ACBD'; x.font = '600 34px Manrope';
   x.fillText('@ondeasmilhasmelevam', W / 2, 1760);
   x.fillText('ondeasmilhasmelevam.github.io', W / 2, 1812);

@@ -1441,3 +1441,10 @@ footer .badge{width:84px;height:84px;margin-bottom:14px}
 .depos-lista.painel li.pendente{border-color:rgba(226,180,88,.6)}
 .depos-lista.painel li.oculto{opacity:.6}
 .depos-lista.painel .depo-botoes{margin-top:12px}
+.depo-quem{display:flex;align-items:center;gap:10px}
+.depo-foto{flex:0 0 44px;width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--ouro);background:var(--ink-3)}
+.depo-foto.inicial{display:inline-grid;place-items:center;box-sizing:border-box;font-weight:800;font-size:18px;color:var(--ouro)}
+.depo-foto-campo{display:flex;align-items:center;gap:14px}
+.depo-foto-campo .depo-foto{flex-basis:64px;width:64px;height:64px;font-size:26px}
+.depo-foto-campo small{display:block;margin-top:6px;font-size:12.5px;color:var(--ash)}
+.depo-foto-campo label.cta{cursor:pointer}

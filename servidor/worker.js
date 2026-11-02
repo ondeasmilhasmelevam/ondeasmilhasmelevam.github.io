@@ -609,7 +609,7 @@ async function premiarIndicacao(env, ref, novoEmail) {
 /* ---------- Depoimentos: só de quem assina ou já assinou, e só aparecem depois de aprovados ---------- */
 const DEPO_TEXTO = 500, DEPO_NOME = 40;
 const limpo = (t, max) => String(t ?? '').replace(/[<>]/g, '').replace(/\s+/g, ' ').trim().slice(0, max);
-const depoPublico = d => ({ nome: d.nome, cidade: d.cidade || '', instagram: d.instagram || '', nota: d.nota, texto: d.texto, data: d.criadoEm instanceof Date ? d.criadoEm.toISOString().slice(0, 10) : '' });
+const depoPublico = d => ({ nome: d.nome, cidade: d.cidade || '', instagram: d.instagram || '', foto: d.foto || '', nota: d.nota, texto: d.texto, data: d.criadoEm instanceof Date ? d.criadoEm.toISOString().slice(0, 10) : '' });
 async function depoimentosPublicos(env) {
   const todos = await listarDocs(env, 'depoimentos');
   return { depoimentos: todos.filter(d => d.status === 'aprovado').sort((a, b) => (b.criadoEm || 0) - (a.criadoEm || 0)).map(depoPublico) };
@@ -635,7 +635,11 @@ async function gravarDepoimento(req, env) {
   if (!(nota >= 1 && nota <= 5)) throw falha('Escolha de 1 a 5 estrelas.');
   if (b.autorizo !== true) throw falha('Marque que autoriza publicar o depoimento.');
   const antes = await lerDoc(env, `depoimentos/${email}`);
-  await gravarDoc(env, `depoimentos/${email}`, { email, nome, cidade, instagram, texto, nota, autorizo: true, status: 'pendente',
+  // Foto: a enviada (o site manda já reduzida, 256x256 JPEG) ou a da conta Google; '' tira, sem o campo mantém a anterior.
+  let foto = b.foto === undefined ? (antes?.foto || '') : String(b.foto || '');
+  const fotoGoogle = /^https:\/\/lh3\.googleusercontent\.com\/[A-Za-z0-9_\-/=.%]+$/.test(foto) && foto.length < 600;
+  if (foto && !fotoGoogle && (foto.length > 120000 || !/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(foto))) throw falha('Essa foto não deu certo. Tente outra.');
+  await gravarDoc(env, `depoimentos/${email}`, { email, nome, cidade, instagram, foto, texto, nota, autorizo: true, status: 'pendente',
     criadoEm: antes?.criadoEm || new Date(), atualizadoEm: new Date() });
   return { ok: true };
 }

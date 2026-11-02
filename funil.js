@@ -72,6 +72,18 @@
     document.querySelectorAll('[data-lead-caixa]').forEach(el => { el.hidden = !!e.detail.ativo; });
   });
 
+  // Foto do depoimento: a que a pessoa mandou ou a da conta Google dela; sem foto (ou se não carregar), a inicial.
+  window.oammlFoto = d => {
+    const inicial = esc((d.nome || '?').trim().charAt(0).toUpperCase());
+    return d.foto ? `<img class="depo-foto" src="${esc(d.foto)}" alt="" loading="lazy" referrerpolicy="no-referrer" data-inicial="${inicial}">` : `<span class="depo-foto inicial">${inicial}</span>`;
+  };
+  window.oammlFotoErros = raiz => raiz.querySelectorAll('img.depo-foto[data-inicial]').forEach(img => img.addEventListener('error', () => {
+    const s = document.createElement('span');
+    s.className = 'depo-foto inicial';
+    s.textContent = img.dataset.inicial;
+    img.replaceWith(s);
+  }, { once: true }));
+
   // Depoimentos de assinantes, só os aprovados pelo dono (servidor/worker.js, GET /depoimentos).
   (async () => {
     const caixas = document.querySelectorAll('[data-depoimentos]');
@@ -82,8 +94,8 @@
     const html = `<p class="prova-tit">O que dizem os assinantes</p><ul class="depos-lista">${lista.slice(0, 6).map(d => `<li>
         <p class="depo-estrelas" aria-label="${d.nota} de 5 estrelas">${'★'.repeat(d.nota)}<span>${'★'.repeat(5 - d.nota)}</span></p>
         <blockquote>${esc(d.texto)}</blockquote>
-        <p class="depo-autor"><b>${esc(d.nome)}</b>${d.cidade ? ` · ${esc(d.cidade)}` : ''}${d.instagram ? ` · <a href="https://www.instagram.com/${esc(d.instagram)}/" target="_blank" rel="noopener nofollow">@${esc(d.instagram)}</a>` : ''}</p></li>`).join('')}</ul>`;
-    caixas.forEach(el => { el.innerHTML = html; el.hidden = false; });
+        <div class="depo-quem">${window.oammlFoto(d)}<p class="depo-autor"><b>${esc(d.nome)}</b>${d.cidade ? ` · ${esc(d.cidade)}` : ''}${d.instagram ? ` · <a href="https://www.instagram.com/${esc(d.instagram)}/" target="_blank" rel="noopener nofollow">@${esc(d.instagram)}</a>` : ''}</p></div></li>`).join('')}</ul>`;
+    caixas.forEach(el => { el.innerHTML = html; el.hidden = false; window.oammlFotoErros(el); });
   })();
 
   // Prova social: números dos últimos 30 dias e as melhores achadas.
