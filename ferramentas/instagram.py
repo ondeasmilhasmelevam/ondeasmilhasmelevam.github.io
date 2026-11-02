@@ -26,8 +26,11 @@ legenda do carrossel (só com os números que estão nos alertas; o que não pas
 na conferência volta para os textos fixos).
 
 O story não tem legenda nem link: o texto vai desenhado na imagem, com o botão
-"LINK NA BIO". As imagens ficam em stories/ no repositório (o Instagram baixa de
-lá) e só as mais recentes são mantidas.
+"LINK NA BIO". Cada story vai como vídeo de 12 s: a imagem parada com uma das
+trilhas de musicas/ (feitas por ferramentas/trilhas.py, sem direito autoral de
+ninguém). Sem ffmpeg, ou se o vídeo falhar, vai a imagem. As imagens e vídeos
+ficam em stories/ no repositório (o Instagram baixa de lá; o vídeo pelo GitHub
+Pages) e só os mais recentes são mantidos.
 
 A chave do Instagram (token de Instagram Login, vale 60 dias) é renovada
 sozinha uma vez por semana. Como a Meta pode devolver uma chave nova, ela é
@@ -57,6 +60,8 @@ RAIZ = Path(__file__).resolve().parent.parent
 ALERTAS = RAIZ / 'dados' / 'alertas-completo.json'  # a lista inteira, com datas (ferramentas/alertas.py)
 ESTADO = RAIZ / 'dados' / 'stories.json'
 PASTA = RAIZ / 'stories'
+MUSICAS = RAIZ / 'musicas'
+SITE = 'https://ondeasmilhasmelevam.github.io'
 LOGO = RAIZ / 'logo.jpeg'
 REPO = os.environ.get('GITHUB_REPOSITORY', 'ondeasmilhasmelevam/ondeasmilhasmelevam.github.io')
 GRAPH = 'https://graph.instagram.com/v21.0'
@@ -764,7 +769,7 @@ def criar(conta, token, **dados):
     if not r.ok or 'id' not in r.json():
         raise RuntimeError(f'container: {r.status_code} {r.text[:300]}')
     cid = r.json()['id']
-    for _ in range(24):
+    for _ in range(60 if 'video_url' in dados else 24):  # vídeo demora mais para processar
         s = api('GET', cid, params={'fields': 'status_code', 'access_token': token}).json()
         if s.get('status_code') == 'FINISHED':
             return cid
@@ -828,17 +833,56 @@ def guardar(estado, msg):
     return True
 
 
-def enviar(imagens, estado, msg):
-    """Salva as imagens em stories/ e devolve os endereços públicos (fixos no commit)."""
+def fazer_video(jpg, mp4):
+    """Imagem parada + trilha, no formato que o story aceita (H.264, AAC 48 kHz, 9:16)."""
+    trilhas = sorted(MUSICAS.glob('*.m4a'))
+    if not trilhas:
+        return False
+    trilha = trilhas[int(hashlib.md5(jpg.name.encode()).hexdigest(), 16) % len(trilhas)]
+    try:
+        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-loop', '1', '-framerate', '30', '-i', str(jpg), '-i', str(trilha),
+                        '-t', '12', '-vf', 'scale=1080:1920,format=yuv420p', '-c:v', 'libx264', '-tune', 'stillimage',
+                        '-preset', 'veryfast', '-crf', '26', '-c:a', 'aac', '-ar', '48000', '-b:a', '128k',
+                        '-shortest', '-movflags', '+faststart', str(mp4)], check=True, timeout=120)
+        return True
+    except (OSError, subprocess.SubprocessError) as e:
+        print(f'::warning::Vídeo do story não saiu, vai a imagem: {e}')
+        mp4.unlink(missing_ok=True)
+        return False
+
+
+def no_ar(url, espera=420):
+    """Espera o GitHub Pages publicar o arquivo (o vídeo não vai pelo raw.githubusercontent)."""
+    fim = time.time() + espera
+    while time.time() < fim:
+        try:
+            if requests.head(url, timeout=20).status_code == 200:
+                return True
+        except requests.RequestException:
+            pass
+        time.sleep(15)
+    return False
+
+
+def enviar(imagens, estado, msg, com_video=False):
+    """Salva as imagens em stories/ e devolve os endereços públicos (fixos no commit).
+    Com com_video, devolve pares (imagem, vídeo ou None)."""
     PASTA.mkdir(exist_ok=True)
-    for f in PASTA.glob('*.jpg'):  # o Instagram já baixou as anteriores
+    for f in [*PASTA.glob('*.jpg'), *PASTA.glob('*.mp4')]:  # o Instagram já baixou os anteriores
         f.unlink()
+    videos = set()
     for nome, img in imagens:
         img.save(PASTA / nome, 'JPEG', quality=90)
+        if com_video and fazer_video(PASTA / nome, PASTA / nome.replace('.jpg', '.mp4')):
+            videos.add(nome)
     if not guardar(estado, msg):
         return []
     sha = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=RAIZ, capture_output=True, text=True).stdout.strip()
-    return [f'https://raw.githubusercontent.com/{REPO}/{sha}/stories/{nome}' for nome, _ in imagens]
+    urls = [f'https://raw.githubusercontent.com/{REPO}/{sha}/stories/{nome}' for nome, _ in imagens]
+    if not com_video:
+        return urls
+    return [(u, f"{SITE}/stories/{nome.replace('.jpg', '.mp4')}?v={sha[:8]}" if nome in videos else None)
+            for u, (nome, _) in zip(urls, imagens)]
 
 
 def horario_pendente(agora, estado, chave, horarios):
@@ -866,15 +910,24 @@ def stories(alertas, estado, agora, conta, token):
     if not itens:
         return print(f'Stories das {lote}: nenhum alerta novo nos grupos.')
     chamadas = textos_ia(itens).get('chamadas') or [''] * len(itens)
-    urls = enviar([(f"{a['id']}.jpg", imagem(a, STORY, c)) for a, c in zip(itens, chamadas)], estado,
-                  f'Imagens dos stories das {lote}')
-    if not urls:
+    pares = enviar([(f"{a['id']}.jpg", imagem(a, STORY, c)) for a, c in zip(itens, chamadas)], estado,
+                   f'Imagens dos stories das {lote}', com_video=True)
+    if not pares:
         return
+    pronto = any(v for _, v in pares) and no_ar(next(v for _, v in pares if v).split('?')[0])
     feitos = 0
-    for a, u in zip(itens, urls):
+    for a, (u, v) in zip(itens, pares):
         estado.setdefault('postados', []).append(a['id'])
         try:
-            publicar(conta, token, criar(conta, token, image_url=u, media_type='STORIES'))
+            try:
+                if not (pronto and v):
+                    raise RuntimeError('sem vídeo')
+                cid = criar(conta, token, video_url=v, media_type='STORIES')
+            except Exception as e:
+                if v:
+                    print(f'::warning::Story em vídeo não saiu, vai a imagem: {e}')
+                cid = criar(conta, token, image_url=u, media_type='STORIES')
+            publicar(conta, token, cid)
             feitos += 1
         except Exception as e:
             print(f'::warning::Story não publicado: {e}')

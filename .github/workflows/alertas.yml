@@ -37,6 +37,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install telethon==1.44.0 pillow==12.2.0 requests==2.32.5 'anthropic>=1,<2'
+      - run: command -v ffmpeg >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)  # vídeo dos stories
       - name: Plantão nos grupos
         env:
           TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
