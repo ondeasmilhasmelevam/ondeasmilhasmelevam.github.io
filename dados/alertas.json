@@ -4057,48 +4057,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2361370250-5909",
-  "data": "2026-11-01T14:01:22Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Doha",
-  "destino_iata": "DOH",
-  "companhia": "Qatar Airways",
-  "cabine": "Executiva",
-  "programa": "Privilege Club Qatar",
-  "ida": "70.000 AVIOS + Taxas",
-  "volta": "94.500 AVIOS + Taxas",
-  "link_nome": "Privilege Club"
- },
- {
-  "id": "2008590742-14390",
-  "data": "2026-11-01T13:57:17Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "41.500 milhas + Taxas",
-  "volta": "41.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-14389",
-  "data": "2026-11-01T13:56:40Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "62.260 milhas + Taxas",
-  "volta": "62.460 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7528",
   "data": "2026-10-31T12:35:21Z",
   "tipo": "promocao",
