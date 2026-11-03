@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-03T17:33:40.356320Z",
+ "atualizado": "2026-11-03T17:39:50.840435Z",
  "dias": 30,
- "passagens": 327,
+ "passagens": 331,
  "promocoes": 47,
  "destinos": 92,
  "executiva": 59,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 327,
+  "passagens": 331,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -102,18 +102,18 @@
     "foto": "img/rotas/GRU-CWB.jpg"
    },
    {
-    "id": "3761373661-8770",
-    "origem": "São Paulo",
-    "origem_iata": "CGH",
-    "destino": "Florianópolis",
-    "destino_iata": "FLN",
+    "id": "3761373661-8857",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Campinas",
+    "destino_iata": "VCP",
     "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-02T02:29:06Z",
-    "milhas": 6500,
+    "programa": "LATAM Pass",
+    "data": "2026-11-03T17:39:25Z",
+    "milhas": 5700,
     "nivel": "",
     "grupo": "Nacional",
-    "foto": "img/rotas/CGH-FLN.jpg"
+    "foto": "img/rotas/POA-VCP.jpg"
    },
    {
     "id": "2008590742-14481",
