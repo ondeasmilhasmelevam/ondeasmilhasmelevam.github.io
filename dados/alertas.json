@@ -1,5 +1,26 @@
 [
  {
+  "id": "1290836068-7564",
+  "data": "2026-11-03T10:00:02Z",
+  "tipo": "promocao",
+  "titulo": "IPIRANGA KMV: 8% DE CASHBACK NO IPIMAX TODA TERÇA",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Hoje, terça-feira 03/11, quem abastece com a linha Ipimax nos postos Ipiranga e paga pelo app KMV troca 1.000 pontos KMV por 8% de cashback.",
+  "detalhes": [
+   "Abasteça com um combustível da linha Ipimax.",
+   "No app KMV, troque 1.000 pontos pela oferta de 8% de cashback.",
+   "Pague o abastecimento pelo app KMV.",
+   "O cashback fica no app para usar no próximo abastecimento."
+  ],
+  "parceiros": "Ipiranga, KMV",
+  "validade": "Hoje, 03/11",
+  "links": [
+   "https://www.ipiranga.com.br/wps/portal/pt-br/ipiranga/km-de-vantagens"
+  ],
+  "ate": "2026-11-03T23:59:59-03:00"
+ },
+ {
   "id": "3761373661-8787",
   "data": "2026-11-02T23:40:03Z",
   "origem": "Salvador",
