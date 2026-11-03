@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-03T13:43:58.909278Z",
+ "atualizado": "2026-11-03T13:50:08.478315Z",
  "dias": 30,
  "passagens": 299,
  "promocoes": 40,
@@ -72,22 +72,50 @@
    "foto": "img/rotas/GIG-MVD.jpg"
   },
   {
-   "id": "2008590742-14555",
-   "origem": "Uberlândia",
-   "origem_iata": "UDI",
-   "destino": "Punta Cana",
-   "destino_iata": "PUJ",
+   "id": "2008590742-14559",
+   "origem": "Sinop",
+   "origem_iata": "OPS",
+   "destino": "San José",
+   "destino_iata": "SJO",
    "cabine": "Econômica",
    "programa": "LATAM Pass",
-   "data": "2026-11-03T13:18:12Z",
-   "milhas": 56500,
+   "data": "2026-11-03T13:29:29Z",
+   "milhas": 54600,
    "nivel": "muito bom",
-   "foto": "img/rotas/UDI-PUJ.jpg"
+   "foto": "img/rotas/OPS-SJO.jpg"
   }
  ],
  "semana": {
   "passagens": 299,
   "destaques": [
+   {
+    "id": "3761373661-8819",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Curitiba",
+    "destino_iata": "CWB",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-03T12:54:52Z",
+    "milhas": 4926,
+    "nivel": "",
+    "grupo": "Nacional",
+    "foto": "img/rotas/GRU-CWB.jpg"
+   },
+   {
+    "id": "3761373661-8770",
+    "origem": "São Paulo",
+    "origem_iata": "CGH",
+    "destino": "Florianópolis",
+    "destino_iata": "FLN",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-02T02:29:06Z",
+    "milhas": 6500,
+    "nivel": "",
+    "grupo": "Nacional",
+    "foto": "img/rotas/CGH-FLN.jpg"
+   },
    {
     "id": "2008590742-14481",
     "origem": "Manaus",
@@ -99,6 +127,7 @@
     "data": "2026-11-02T11:21:39Z",
     "milhas": 26100,
     "nivel": "espetacular",
+    "grupo": "Internacional",
     "foto": "img/rotas/MAO-PTY.jpg"
    },
    {
@@ -112,6 +141,7 @@
     "data": "2026-11-01T16:29:22Z",
     "milhas": 48110,
     "nivel": "espetacular",
+    "grupo": "Internacional",
     "foto": "img/rotas/FOR-MIA.jpg"
    },
    {
@@ -125,33 +155,8 @@
     "data": "2026-11-02T15:26:46Z",
     "milhas": 178700,
     "nivel": "espetacular",
+    "grupo": "Executiva",
     "foto": "img/rotas/GIG-JFK.jpg"
-   },
-   {
-    "id": "2008590742-14542",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Bogotá",
-    "destino_iata": "BOG",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-03T12:40:03Z",
-    "milhas": 16800,
-    "nivel": "muito bom",
-    "foto": "img/rotas/MAO-BOG.jpg"
-   },
-   {
-    "id": "2008590742-14543",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "Montevidéu",
-    "destino_iata": "MVD",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-03T12:40:10Z",
-    "milhas": 28000,
-    "nivel": "muito bom",
-    "foto": "img/rotas/GIG-MVD.jpg"
    }
   ]
  }

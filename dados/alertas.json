@@ -4035,34 +4035,6 @@
   "link_nome": "Iberia Plus"
  },
  {
-  "id": "2008590742-14387",
-  "data": "2026-11-01T13:48:20Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "8.000 milhas + Taxas",
-  "volta": "8.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-8755",
-  "data": "2026-11-01T13:46:20Z",
-  "origem": "Vitória",
-  "origem_iata": "VIX",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "AZUL",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "16.000 milhas + Taxas",
-  "volta": "16.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7528",
   "data": "2026-10-31T12:35:21Z",
   "tipo": "promocao",
