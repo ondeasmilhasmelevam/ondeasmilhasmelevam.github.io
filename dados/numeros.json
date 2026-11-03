@@ -1,9 +1,9 @@
 {
- "atualizado": "2026-11-03T14:15:38.783081Z",
+ "atualizado": "2026-11-03T14:21:47.794710Z",
  "dias": 30,
- "passagens": 306,
+ "passagens": 308,
  "promocoes": 42,
- "destinos": 89,
+ "destinos": 90,
  "executiva": 59,
  "destaques": [
   {
@@ -18,6 +18,18 @@
    "milhas": 26100,
    "nivel": "espetacular",
    "foto": "img/rotas/MAO-PTY.jpg"
+  },
+  {
+   "id": "2008590742-14564",
+   "origem": "Belém",
+   "origem_iata": "BEL",
+   "destino": "Punta Cana",
+   "destino_iata": "PUJ",
+   "cabine": "Econômica",
+   "programa": "Smiles",
+   "data": "2026-11-03T14:21:47Z",
+   "milhas": 43200,
+   "nivel": "espetacular"
   },
   {
    "id": "2008590742-14405",
@@ -70,23 +82,10 @@
    "milhas": 28000,
    "nivel": "muito bom",
    "foto": "img/rotas/GIG-MVD.jpg"
-  },
-  {
-   "id": "2008590742-14559",
-   "origem": "Sinop",
-   "origem_iata": "OPS",
-   "destino": "San José",
-   "destino_iata": "SJO",
-   "cabine": "Econômica",
-   "programa": "LATAM Pass",
-   "data": "2026-11-03T13:29:29Z",
-   "milhas": 54600,
-   "nivel": "muito bom",
-   "foto": "img/rotas/OPS-SJO.jpg"
   }
  ],
  "semana": {
-  "passagens": 306,
+  "passagens": 308,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -131,32 +130,31 @@
     "foto": "img/rotas/MAO-PTY.jpg"
    },
    {
-    "id": "2008590742-14405",
-    "origem": "Fortaleza",
-    "origem_iata": "FOR",
-    "destino": "Miami",
-    "destino_iata": "MIA",
+    "id": "2008590742-14564",
+    "origem": "Belém",
+    "origem_iata": "BEL",
+    "destino": "Punta Cana",
+    "destino_iata": "PUJ",
     "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-01T16:29:22Z",
-    "milhas": 48110,
+    "programa": "Smiles",
+    "data": "2026-11-03T14:21:47Z",
+    "milhas": 43200,
     "nivel": "espetacular",
-    "grupo": "Internacional",
-    "foto": "img/rotas/FOR-MIA.jpg"
+    "grupo": "Internacional"
    },
    {
-    "id": "2361370250-5971",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "Nova York",
-    "destino_iata": "JFK",
+    "id": "2361370250-5960",
+    "origem": "Brasília",
+    "origem_iata": "BSB",
+    "destino": "Miami",
+    "destino_iata": "MIA",
     "cabine": "Executiva",
-    "programa": "Smiles",
-    "data": "2026-11-02T15:26:46Z",
-    "milhas": 178700,
+    "programa": "GOL Smiles",
+    "data": "2026-11-02T11:30:28Z",
+    "milhas": 161200,
     "nivel": "espetacular",
     "grupo": "Executiva",
-    "foto": "img/rotas/GIG-JFK.jpg"
+    "foto": "img/rotas/BSB-MIA.jpg"
    }
   ]
  }
