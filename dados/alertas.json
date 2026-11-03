@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5998",
+  "data": "2026-11-03T21:08:21Z",
+  "origem": "Joanesburgo",
+  "origem_iata": "JNB",
+  "destino": "Maurício",
+  "destino_iata": "MRU",
+  "companhia": "South African Airways",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "82.800 ~ 91.100 milhas + R$ 228",
+  "volta": "82.800 ~ 91.100 milhas + R$ 733",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8863",
   "data": "2026-11-03T21:01:24Z",
   "origem": "Salvador",
