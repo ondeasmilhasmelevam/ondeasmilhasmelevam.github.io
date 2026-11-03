@@ -36,6 +36,8 @@ CAMPOS_RADAR = ('origem', 'origem_iata', 'destino', 'destino_iata', 'companhia',
 COMPLETO = SAIDA.with_name('alertas-completo.json')
 ENVIADO = SAIDA.with_name('.alertas-enviado')
 SERVIDOR = 'https://oamml-assinatura.ondeasmilhasmelevam.workers.dev'
+# Canais lidos pelo nome, além dos ids de TELEGRAM_GRUPO (a conta precisa estar no canal).
+CANAIS_POR_NOME = ('VMM - Passagens Internacionais',)
 CONVITE = re.compile(r'(https?://)?(t\.me|telegram\.me)/', re.I)
 
 LUGAR = r'([^\n()]*?)\s*\(([A-Z]{3})\)'
@@ -215,7 +217,7 @@ async def main():
     if not autorizado:
         falhar('A sessão do Telegram foi encerrada. Rode ferramentas/telegram_entrar.py de novo.')
     alvos = {int(g) for g in re.findall(r'-?\d+', env['TELEGRAM_GRUPO'])}
-    grupos = [d.entity async for d in cliente.iter_dialogs() if d.id in alvos]
+    grupos = [d.entity async for d in cliente.iter_dialogs() if d.id in alvos or (d.name or '').strip() in CANAIS_POR_NOME]
     if not grupos:
         falhar(f'Nenhum dos {len(alvos)} grupos de TELEGRAM_GRUPO foi encontrado na conta.')
     limite = datetime.now(timezone.utc) - timedelta(hours=HORAS)
@@ -224,6 +226,7 @@ async def main():
     limite_promo = agora - timedelta(days=DIAS_PROMO)
     passagens = []
     for grupo in grupos:
+        antes = len(passagens)
         autores = await quem_publica(cliente, grupo)
         tem_promo = False
         async for m in cliente.iter_messages(grupo, limit=3000):
@@ -247,6 +250,7 @@ async def main():
             if p:
                 passagens.append({'id': f'{grupo.id}-{m.id}',
                                   'data': m.date.astimezone(timezone.utc).isoformat().replace('+00:00', 'Z'), **p})
+        print(f'{getattr(grupo, "title", grupo.id)}: {len(passagens) - antes} passagens/promoções')
     await cliente.disconnect()
     passagens.sort(key=lambda p: p['data'], reverse=True)
     SAIDA.parent.mkdir(exist_ok=True)
