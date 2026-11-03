@@ -4015,34 +4015,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-8767",
-  "data": "2026-11-01T16:47:13Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Boa Vista",
-  "destino_iata": "BVB",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "14.000 milhas + Taxas",
-  "volta": "18.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-8766",
-  "data": "2026-11-01T16:45:13Z",
-  "origem": "Macapá",
-  "origem_iata": "MCP",
-  "destino": "Belém",
-  "destino_iata": "BEL",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "20.000 milhas + Taxas",
-  "volta": "18.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7539",
   "data": "2026-11-01T15:17:40Z",
   "tipo": "promocao",
