@@ -1,5 +1,26 @@
 [
  {
+  "id": "1290836068-7574",
+  "data": "2026-11-03T17:22:12Z",
+  "tipo": "promocao",
+  "titulo": "ASSINATURA CLUBE LIVELO PREMIUM COM 105.000 PONTOS BÔNUS",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Assine o Clube Livelo Premium anual e ganhe 105.000 pontos bônus divididos em 12 parcelas de 8.750 pontos. Milheiro a partir de R$ 24,36 (à vista) ou R$ 25,71 (parcelado).",
+  "detalhes": [
+   "Bonificação total de 105.000 pontos Livelo (8.750 pontos/mês).",
+   "Clube Premium Anual: 385.000 pontos em 12 meses .",
+   "Milheiro à vista: R$ 24,36.",
+   "Milheiro parcelado: R$ 25,71."
+  ],
+  "parceiros": "Livelo",
+  "validade": "03/11/2026",
+  "links": [
+   "https://www.livelo.com.br/clube"
+  ],
+  "ate": "2026-11-03T23:59:59-03:00"
+ },
+ {
   "id": "1290836068-7573",
   "data": "2026-11-03T16:35:56Z",
   "tipo": "promocao",
