@@ -1,21 +1,21 @@
 {
- "atualizado": "2026-11-03T19:39:49.105697Z",
+ "atualizado": "2026-11-03T19:46:23.271297Z",
  "dias": 30,
- "passagens": 345,
+ "passagens": 347,
  "promocoes": 48,
  "destinos": 96,
- "executiva": 65,
+ "executiva": 66,
  "destaques": [
   {
-   "id": "2008590742-14481",
+   "id": "2008590742-14583",
    "origem": "Manaus",
    "origem_iata": "MAO",
    "destino": "Cidade do Panamá",
    "destino_iata": "PTY",
    "cabine": "Econômica",
-   "programa": "GOL Smiles",
-   "data": "2026-11-02T11:21:39Z",
-   "milhas": 26100,
+   "programa": "Smiles",
+   "data": "2026-11-03T19:45:25Z",
+   "milhas": 25400,
    "nivel": "espetacular",
    "foto": "img/rotas/MAO-PTY.jpg"
   },
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 345,
+  "passagens": 347,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -116,15 +116,15 @@
     "foto": "img/rotas/POA-VCP.jpg"
    },
    {
-    "id": "2008590742-14481",
+    "id": "2008590742-14583",
     "origem": "Manaus",
     "origem_iata": "MAO",
     "destino": "Cidade do Panamá",
     "destino_iata": "PTY",
     "cabine": "Econômica",
-    "programa": "GOL Smiles",
-    "data": "2026-11-02T11:21:39Z",
-    "milhas": 26100,
+    "programa": "Smiles",
+    "data": "2026-11-03T19:45:25Z",
+    "milhas": 25400,
     "nivel": "espetacular",
     "grupo": "Internacional",
     "foto": "img/rotas/MAO-PTY.jpg"
