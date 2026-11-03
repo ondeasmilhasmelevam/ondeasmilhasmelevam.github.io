@@ -288,6 +288,25 @@ def melhores(itens, quantos):
     return saida
 
 
+def destaques_semana(itens):
+    """E-mail da semana: 2 nacionais e 2 internacionais em econômica e 1 executiva, as melhores de cada.
+    Se faltar algum tipo na semana, completa com as melhores que sobraram."""
+    from instagram import BR
+    exe = lambda a: bool(re.search(r'execut|primeira|first|business|premium', a.get('cabine') or '', re.I))
+    nac = lambda a: a.get('origem_iata') in BR and a.get('destino_iata') in BR
+    eco = [a for a in itens if not exe(a)]
+    saida = []
+    for grupo, lista, quantos in (('Nacional', [a for a in eco if nac(a)], 2), ('Internacional', [a for a in eco if not nac(a)], 2),
+                                  ('Executiva', [a for a in itens if exe(a)], 1)):
+        usados = {d['destino_iata'] for d in saida}
+        saida += [{**d, 'grupo': grupo} for d in melhores([a for a in lista if a.get('destino_iata') not in usados], quantos)]
+    if len(saida) < 5:
+        usados = {d['destino_iata'] for d in saida}
+        saida += [{**d, 'grupo': 'Executiva' if exe(d) else 'Nacional' if nac(d) else 'Internacional'}
+                  for d in melhores([a for a in itens if a.get('destino_iata') not in usados], 5 - len(saida))]
+    return saida
+
+
 ROTAS = Path(__file__).resolve().parent.parent / 'img' / 'rotas'
 
 
@@ -339,7 +358,7 @@ def atualizar_numeros(passagens, agora):
         'destinos': len({a.get('destino_iata') for a in viagens}),
         'executiva': sum(1 for a in viagens if re.search(r'execut|primeira|first|business|premium', a.get('cabine') or '', re.I)),
         'destaques': melhores(viagens, 6),
-        'semana': {'passagens': len(semana), 'destaques': melhores(semana, 5)},
+        'semana': {'passagens': len(semana), 'destaques': destaques_semana(semana)},
     }
     try:
         fotos_rotas([numeros['destaques'], numeros['semana']['destaques']])

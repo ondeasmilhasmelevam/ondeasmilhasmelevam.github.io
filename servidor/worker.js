@@ -561,8 +561,10 @@ function destaquesEmail(lista, env) {
   const nivel = n => (n ? ` · <span style="color:#a8761f;font-weight:bold;">${escHtml(n)} no termômetro</span>` : '');
   const foto = d => (/^img\/rotas\/[A-Z]{3}-[A-Z]{3}\.jpg$/.test(d.foto || '')
     ? `<img src="${escHtml(env.SITE + d.foto)}" width="512" alt="${escHtml(`${d.origem} e ${d.destino}`)}" style="display:block;width:100%;max-width:512px;height:auto;border:0;border-radius:12px 12px 0 0;">` : '');
+  const grupo = d => (/^(Nacional|Internacional|Executiva)$/.test(d.grupo || '')
+    ? `<span style="display:inline-block;margin:0 0 6px;padding:2px 9px;border-radius:999px;background:${d.grupo === 'Executiva' ? '#efe6ff;color:#6b3fb5' : '#f6ecd6;color:#8a6116'};font-size:11px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;">${d.grupo}</span><br>` : '');
   return (lista || []).map(d => `<div style="margin:0 0 14px;border:1px solid #e5e2d8;border-radius:12px;overflow:hidden;">${foto(d)}<div style="padding:12px 14px;">
-    <strong style="font-size:16px;">${escHtml(d.origem)} (${escHtml(d.origem_iata)}) → ${escHtml(d.destino)} (${escHtml(d.destino_iata)})</strong><br>
+    ${grupo(d)}<strong style="font-size:16px;">${escHtml(d.origem)} (${escHtml(d.origem_iata)}) → ${escHtml(d.destino)} (${escHtml(d.destino_iata)})</strong><br>
     A partir de <strong>${Number(d.milhas).toLocaleString('pt-BR')} milhas</strong> + taxas o trecho · ${escHtml([d.programa, d.cabine].filter(Boolean).join(' · '))}${nivel(d.nivel)}<br>
     <span style="color:#777;">Datas e link de emissão: só para assinantes</span>
   </div></div>`).join('');
