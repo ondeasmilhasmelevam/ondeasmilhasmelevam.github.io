@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-03T19:27:15.485003Z",
+ "atualizado": "2026-11-03T19:33:25.377978Z",
  "dias": 30,
- "passagens": 338,
+ "passagens": 345,
  "promocoes": 48,
- "destinos": 93,
- "executiva": 62,
+ "destinos": 96,
+ "executiva": 65,
  "destaques": [
   {
    "id": "2008590742-14481",
@@ -45,6 +45,19 @@
    "foto": "img/rotas/FOR-MIA.jpg"
   },
   {
+   "id": "2008590742-14580",
+   "origem": "São Paulo",
+   "origem_iata": "GRU",
+   "destino": "Aruba",
+   "destino_iata": "AUA",
+   "cabine": "Econômica",
+   "programa": "Smiles",
+   "data": "2026-11-03T19:29:44Z",
+   "milhas": 54000,
+   "nivel": "espetacular",
+   "foto": "img/rotas/GRU-AUA.jpg"
+  },
+  {
    "id": "2361370250-5971",
    "origem": "Rio de Janeiro",
    "origem_iata": "GIG",
@@ -69,23 +82,10 @@
    "milhas": 16800,
    "nivel": "muito bom",
    "foto": "img/rotas/MAO-BOG.jpg"
-  },
-  {
-   "id": "2008590742-14543",
-   "origem": "Rio de Janeiro",
-   "origem_iata": "GIG",
-   "destino": "Montevidéu",
-   "destino_iata": "MVD",
-   "cabine": "Econômica",
-   "programa": "Smiles",
-   "data": "2026-11-03T12:40:10Z",
-   "milhas": 28000,
-   "nivel": "muito bom",
-   "foto": "img/rotas/GIG-MVD.jpg"
   }
  ],
  "semana": {
-  "passagens": 338,
+  "passagens": 345,
   "destaques": [
    {
     "id": "3761373661-8819",
