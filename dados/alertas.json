@@ -1,5 +1,68 @@
 [
  {
+  "id": "1290836068-7567",
+  "data": "2026-11-03T14:07:43Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE OFERECE ATÉ 130% DE BÔNUS NAS TRANSFERÊNCIAS DE PONTOS LIVELO",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Transfira pontos Livelo para o Azul Fidelidade e garanta até 130% de bônus, com milheiro a partir de R$ 13,80.",
+  "detalhes": [
+   "100% de bônus para assinantes do Clube Azul Fidelidade E Clube Livelo",
+   "90% de bônus para assinantes do Clube Azul Fidelidade OU Clube Livelo",
+   "60% de bônus para todos os Clientes Azul Fidelidade",
+   "Bônus adicional por tempo de Clube Azul: +5% , +10% (12 a 35 meses), +20% (36 a 59 meses) e +30%"
+  ],
+  "parceiros": "Livelo, Azul Fidelidade",
+  "validade": "06/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/livelo"
+  ],
+  "ate": "2026-11-06T23:59:59-03:00"
+ },
+ {
+  "id": "3761373661-8847",
+  "data": "2026-11-03T14:03:27Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "17.300 milhas + Taxas",
+  "volta": "17.300 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8846",
+  "data": "2026-11-03T14:03:24Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "19.000 milhas + Taxas",
+  "volta": "19.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-14563",
+  "data": "2026-11-03T14:03:17Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Buenos Aires",
+  "destino_iata": "AEP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "34.500 milhas + Taxas",
+  "volta": "34.500 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8845",
   "data": "2026-11-03T13:55:34Z",
   "origem": "São Luís",
@@ -4013,48 +4076,6 @@
   "ida": "64.180 milhas + Taxas",
   "volta": "71.240 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8756",
-  "data": "2026-11-01T14:07:53Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "Juiz de Fora",
-  "destino_iata": "JDF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "28.000 milhas + Taxas",
-  "volta": "28.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-14392",
-  "data": "2026-11-01T14:07:22Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "Avianca + Azul",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "79.700 milhas + Taxas",
-  "volta": "79.700 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-14391",
-  "data": "2026-11-01T14:07:20Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Cascavel",
-  "destino_iata": "CAC",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "8.000 milhas + Taxas",
-  "volta": "18.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "1290836068-7528",
