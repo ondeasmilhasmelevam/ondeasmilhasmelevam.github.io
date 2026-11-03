@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-03T12:54:29.567718Z",
+ "atualizado": "2026-11-03T13:00:34.723331Z",
  "dias": 30,
- "passagens": 129,
+ "passagens": 141,
  "promocoes": 40,
- "destinos": 59,
- "executiva": 53,
+ "destinos": 61,
+ "executiva": 54,
  "destaques": [
   {
    "id": "2361370250-5960",
@@ -59,6 +59,19 @@
    "foto": "img/rotas/FOR-CDG.jpg"
   },
   {
+   "id": "3761373661-8819",
+   "origem": "São Paulo",
+   "origem_iata": "GRU",
+   "destino": "Curitiba",
+   "destino_iata": "CWB",
+   "cabine": "Econômica",
+   "programa": "LATAM Pass",
+   "data": "2026-11-03T12:54:52Z",
+   "milhas": 4926,
+   "nivel": "",
+   "foto": "img/rotas/GRU-CWB.jpg"
+  },
+  {
    "id": "3761373661-8770",
    "origem": "São Paulo",
    "origem_iata": "CGH",
@@ -70,23 +83,10 @@
    "milhas": 6500,
    "nivel": "",
    "foto": "img/rotas/CGH-FLN.jpg"
-  },
-  {
-   "id": "3761373661-8779",
-   "origem": "Cuiabá",
-   "origem_iata": "CGB",
-   "destino": "Curitiba",
-   "destino_iata": "CWB",
-   "cabine": "Econômica",
-   "programa": "LATAM Pass",
-   "data": "2026-11-02T15:04:54Z",
-   "milhas": 7840,
-   "nivel": "",
-   "foto": "img/rotas/CGB-CWB.jpg"
   }
  ],
  "semana": {
-  "passagens": 129,
+  "passagens": 141,
   "destaques": [
    {
     "id": "2361370250-5960",
@@ -141,17 +141,17 @@
     "foto": "img/rotas/FOR-CDG.jpg"
    },
    {
-    "id": "3761373661-8770",
+    "id": "3761373661-8819",
     "origem": "São Paulo",
-    "origem_iata": "CGH",
-    "destino": "Florianópolis",
-    "destino_iata": "FLN",
+    "origem_iata": "GRU",
+    "destino": "Curitiba",
+    "destino_iata": "CWB",
     "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-02T02:29:06Z",
-    "milhas": 6500,
+    "programa": "LATAM Pass",
+    "data": "2026-11-03T12:54:52Z",
+    "milhas": 4926,
     "nivel": "",
-    "foto": "img/rotas/CGH-FLN.jpg"
+    "foto": "img/rotas/GRU-CWB.jpg"
    }
   ]
  }
