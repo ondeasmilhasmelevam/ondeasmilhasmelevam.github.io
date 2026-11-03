@@ -254,47 +254,6 @@
   "ate": "2026-11-20T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7556",
-  "data": "2026-11-02T12:21:31Z",
-  "tipo": "promocao",
-  "titulo": "LIVELO E SAM'S CLUB COM ATÉ 84 PONTOS POR REAL E 50% OFF NA ANUIDADE",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Assine o Sam's Club e ganhe até 84 pontos por real na anuidade, 50% OFF no primeiro ano e mais 1.000 pontos extras com sócio adicional.",
-  "detalhes": [
-   "84 pontos por real no Plano Club para assinantes do Clube Livelo.",
-   "14 pontos por real no Plano Plus para demais clientes.",
-   "+1.000 pontos Livelo ao incluir 1 sócio adicional gratuitamente.",
-   "50% OFF na anuidade dos dois planos no primeiro ano."
-  ],
-  "parceiros": "Livelo, Sam's Club",
-  "validade": "02/11/2026",
-  "links": [
-   "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club/WMB"
-  ],
-  "ate": "2026-11-02T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7555",
-  "data": "2026-11-02T12:21:26Z",
-  "tipo": "promocao",
-  "titulo": "ADESÃO CLUBE LIVELO ESSENCIAL COM ATÉ 25.000 PONTOS EM 12 MESES",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Assine o Clube Livelo Essencial 1.000 com o cupom CLUBEOUT e acumule até 25.000 pontos em 12 meses.",
-  "detalhes": [
-   "Bonificação Anual: 25.000 pontos .",
-   "Bonificação Mensal: 24.000 pontos .",
-   "Cupom obrigatório: CLUBEOUT."
-  ],
-  "parceiros": "Livelo",
-  "validade": "02/11/2026",
-  "links": [
-   "https://www.livelo.com.br/clube"
-  ],
-  "ate": "2026-11-02T23:59:59-03:00"
- },
- {
   "id": "2361370250-5964",
   "data": "2026-11-02T11:51:28Z",
   "origem": "Brasília",
@@ -1158,27 +1117,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "1290836068-7540",
-  "data": "2026-11-01T15:17:45Z",
-  "tipo": "promocao",
-  "titulo": "LIVELO & SAM’S CLUB - ADESÃO BONIFICADA",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Assine o Sam's Club com 50% OFF na anuidade e ganhe até 84 pontos Livelo por real gasto, além de bônus por adicional.",
-  "detalhes": [
-   "84 pontos por real na anuidade do Plano Club para assinantes do Clube Livelo.",
-   "14 pontos por real na anuidade do Plano Plus para demais clientes.",
-   "1.000 pontos extras ao incluir 1 sócio adicional gratuito.",
-   "50% OFF na anuidade do 1º ano em ambos os planos."
-  ],
-  "parceiros": "Livelo, Sam's Club",
-  "validade": "02/11/2026",
-  "links": [
-   "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club/WMB"
-  ],
-  "ate": "2026-11-02T23:59:59-03:00"
- },
- {
   "id": "1290836068-7539",
   "data": "2026-11-01T15:17:40Z",
   "tipo": "promocao",
@@ -1360,27 +1298,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "1290836068-7529",
-  "data": "2026-10-31T12:35:24Z",
-  "tipo": "promocao",
-  "titulo": "LIVELO & SAM'S CLUB: 84 PONTOS/R$ NA ANUIDADE DO PLANO CLUB PARA ASSINANTES DO CLUBE LIVELO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Sam's Club via Livelo e ganhe até 84 pontos por real gasto, 1.000 pontos extras e 50% OFF na anuidade.",
-  "detalhes": [
-   "84 pontos/R$ na anuidade do Plano Club para assinantes do Clube Livelo.",
-   "14 pontos/R$ na anuidade do Plano Plus para demais clientes.",
-   "+1.000 pontos extras ao incluir 1 sócio adicional gratuitamente.",
-   "50% OFF na anuidade no primeiro ano."
-  ],
-  "parceiros": "Livelo, Sam's Club",
-  "validade": "02/11/2026",
-  "links": [
-   "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club/WMB"
-  ],
-  "ate": "2026-11-02T23:59:59-03:00"
- },
- {
   "id": "1290836068-7528",
   "data": "2026-10-31T12:35:21Z",
   "tipo": "promocao",
@@ -1398,26 +1315,6 @@
    "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja/bau-20261026"
   ],
   "ate": "2026-11-03T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7527",
-  "data": "2026-10-31T12:35:15Z",
-  "tipo": "promocao",
-  "titulo": "LIVELO: PLANO ANUAL: 25.000 PONTOS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Clube Livelo Essencial 1.000 e acumule até 25.000 pontos em 12 meses com milheiro a partir de R$ 21,56.",
-  "detalhes": [
-   "Plano Anual: 25.000 pontos .",
-   "Plano Mensal: 24.000 pontos .",
-   "Cupom obrigatório: CLUBEOUT."
-  ],
-  "parceiros": "Livelo",
-  "validade": "02/11/2026",
-  "links": [
-   "https://www.livelo.com.br/clube"
-  ],
-  "ate": "2026-11-02T23:59:59-03:00"
  },
  {
   "id": "1290836068-7526",
@@ -1477,66 +1374,6 @@
    "https://all.accor.com/a/en/loyalty-program/partners/airlines/emirates.html"
   ],
   "ate": "2026-11-30T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7508",
-  "data": "2026-10-30T14:50:52Z",
-  "tipo": "promocao",
-  "titulo": "LIVELO & SAM'S CLUB: ATÉ 84 PONTOS POR REAL NA ASSINATURA",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Sam's Club através da Livelo com desconto na anuidade e pontuação bonificada agressiva.",
-  "detalhes": [
-   "Até 84 pontos por real na anuidade para assinantes do Clube Livelo.",
-   "14 pontos por real para demais clientes.",
-   "50% de desconto na anuidade do primeiro ano."
-  ],
-  "parceiros": "Livelo e Sam's Club",
-  "validade": "02/11/2026",
-  "links": [
-   "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club/WMB"
-  ],
-  "ate": "2026-11-02T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7505",
-  "data": "2026-10-30T14:50:41Z",
-  "tipo": "promocao",
-  "titulo": "ASSINATURA CLUBE LIVELO: ATÉ 25.000 PONTOS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Clube Livelo Essencial e acumule até 25.000 pontos em 12 meses utilizando o cupom promocional.",
-  "detalhes": [
-   "Plano anual à vista: 25.000 pontos .",
-   "Plano mensal: 24.000 pontos ."
-  ],
-  "parceiros": "Livelo",
-  "validade": "02/11/2026",
-  "links": [
-   "https://www.livelo.com.br/clube"
-  ],
-  "ate": "2026-11-02T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7476",
-  "data": "2026-10-28T18:51:13Z",
-  "tipo": "promocao",
-  "titulo": "LIVELO & SAM'S CLUB: ATÉ 84 PONTOS POR REAL + BÔNUS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Sam's Club com desconto na anuidade, ganhe muitos pontos Livelo e adicione um sócio grátis.",
-  "detalhes": [
-   "84 pontos por real sobre a anuidade (Plano Club, exclusivo Clube Livelo)",
-   "14 pontos por real sobre a anuidade (Plano Plus, demais clientes)",
-   "+1.000 pontos extras ao incluir 1 sócio adicional grátis",
-   "50% OFF na anuidade"
-  ],
-  "parceiros": "Livelo e Sam's Club",
-  "validade": "02/11/2026",
-  "links": [
-   "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club/WMB"
-  ],
-  "ate": "2026-11-02T23:59:59-03:00"
  },
  {
   "id": "1290836068-7471",
@@ -1623,29 +1460,6 @@
    "https://all.accor.com/a/pt-br/loyalty-program/subscription-program/all-signature.html"
   ],
   "ate": "2026-11-20T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7440",
-  "data": "2026-10-26T18:01:26Z",
-  "tipo": "promocao",
-  "titulo": "CLUBE LIVELO ESSENCIAL: 25.000 PONTOS EM 12 MESES",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Clube Livelo Essencial e ganhe 25.000 pontos em 12 meses  com o cupom CLUBEOUT. Modalidades à vista, parcelada ou mensal disponíveis.",
-  "detalhes": [
-   "Bônus anual: 25.000 pontos .",
-   "Bônus mensal: 24.000 pontos .",
-   "Cupom obrigatório: CLUBEOUT.",
-   "Milheiro à vista: R$ 21,56.",
-   "Milheiro parcelado: R$ 22,76.",
-   "Milheiro mensal: R$ 24,95."
-  ],
-  "parceiros": "Livelo",
-  "validade": "02/11/2026",
-  "links": [
-   "https://www.livelo.com.br/clube"
-  ],
-  "ate": "2026-11-02T23:59:59-03:00"
  },
  {
   "id": "1290836068-7432",
