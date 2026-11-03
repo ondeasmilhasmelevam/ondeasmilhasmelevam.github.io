@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-14565",
+  "data": "2026-11-03T14:31:36Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "81.800 milhas + Taxas",
+  "volta": "86.300 milhas + R$ 368,84 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8853",
   "data": "2026-11-03T14:22:12Z",
   "origem": "Brasília",
