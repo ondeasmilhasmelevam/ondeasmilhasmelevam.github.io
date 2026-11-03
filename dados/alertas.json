@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-8856",
+  "data": "2026-11-03T16:14:21Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Vitória",
+  "destino_iata": "VIX",
+  "companhia": "LATAM Airlines",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "6.824 milhas + R$ 35,91",
+  "volta": "6.824 milhas + R$ 54,09",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "1290836068-7570",
   "data": "2026-11-03T15:58:27Z",
   "tipo": "promocao",
@@ -4161,34 +4175,6 @@
   "ida": "16.000 milhas + Taxas",
   "volta": "16.000 milhas + Taxas",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-14400",
-  "data": "2026-11-01T16:15:30Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Zaventem",
-  "destino_iata": "BRU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "61.100 milhas + Taxas",
-  "volta": "61.100 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-14399",
-  "data": "2026-11-01T16:15:24Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Orlando",
-  "destino_iata": "MCO",
-  "companhia": "Copa Airlines + LATAM",
-  "cabine": "Econômica",
-  "programa": "Azul pelo Mundo",
-  "ida": "87.500 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Azul pelo Mundo"
  },
  {
   "id": "1290836068-7539",
