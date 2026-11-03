@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-5999",
+  "data": "2026-11-03T22:23:31Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "Emirates",
+  "cabine": "Executiva",
+  "programa": "Azul pelo Mundo",
+  "ida": "165.000 Milhas TudoAzul + R$ 63,59",
+  "volta": "165.000 Milhas TudoAzul + R$ 504,58",
+  "link_nome": "Azul pelo Mundo"
+ },
+ {
   "id": "2361370250-5998",
   "data": "2026-11-03T21:08:21Z",
   "origem": "Joanesburgo",
