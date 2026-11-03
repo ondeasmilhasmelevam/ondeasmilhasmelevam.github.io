@@ -4036,34 +4036,6 @@
   "ate": "2026-11-03T23:59:59-03:00"
  },
  {
-  "id": "3761373661-8761",
-  "data": "2026-11-01T14:35:28Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "14.000 milhas + Taxas",
-  "volta": "14.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-14398",
-  "data": "2026-11-01T14:35:25Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Curitiba",
-  "destino_iata": "CWB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "21.600 milhas + Taxas",
-  "volta": "21.600 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7528",
   "data": "2026-10-31T12:35:21Z",
   "tipo": "promocao",
