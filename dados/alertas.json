@@ -4043,48 +4043,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2008590742-14409",
-  "data": "2026-11-01T16:42:13Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Madrid",
-  "destino_iata": "MAD",
-  "companhia": "Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "90.300 milhas + Taxas",
-  "volta": "90.300 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-14408",
-  "data": "2026-11-01T16:39:20Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Santa Cruz da Serra",
-  "destino_iata": "SCS",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "53.500 milhas + Taxas",
-  "volta": "53.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-14407",
-  "data": "2026-11-01T16:37:13Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "26.500 milhas + Taxas",
-  "volta": "26.500 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7539",
   "data": "2026-11-01T15:17:40Z",
   "tipo": "promocao",
