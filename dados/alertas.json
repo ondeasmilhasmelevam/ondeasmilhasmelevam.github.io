@@ -1,5 +1,25 @@
 [
  {
+  "id": "1290836068-7580",
+  "data": "2026-11-03T23:44:34Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFIRA PONTOS AZUL ENTRE CONTAS COM 80% DE DESCONTO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira pontos entre contas Azul com 80% de desconto no milheiro, saindo por R$12,00 (ou R$10,80 com cartão Azul Itaú). Validade até 09/11/2026.",
+  "detalhes": [
+   "80% de desconto na taxa de transferência de pontos entre contas Azul.",
+   "Milheiro por R$12,00 (R$10,80 com cartão Azul Itaú).",
+   "Limite de 100.000 pontos por CPF durante a promoção."
+  ],
+  "parceiros": "Azul",
+  "validade": "09/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/facilidades#transferencia-de-pontos"
+  ],
+  "ate": "2026-11-09T23:59:59-03:00"
+ },
+ {
   "id": "2361370250-5999",
   "data": "2026-11-03T22:23:31Z",
   "origem": "Rio de Janeiro",
