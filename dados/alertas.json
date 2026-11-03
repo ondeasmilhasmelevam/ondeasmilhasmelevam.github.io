@@ -1,5 +1,67 @@
 [
  {
+  "id": "2008590742-14573",
+  "data": "2026-11-03T15:11:14Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "Bonito",
+  "destino_iata": "BYO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "12.170 milhas + Taxas",
+  "volta": "10.890 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14572",
+  "data": "2026-11-03T15:09:44Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Cartagena",
+  "destino_iata": "CTG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "39.683 milhas + R$ 190,28 Taxas",
+  "volta": "32.643 milhas + R$ 318,54 Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14571",
+  "data": "2026-11-03T15:09:22Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Cartagena",
+  "destino_iata": "CTG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "33.922 milhas + R$ 196,45 Taxas",
+  "volta": "33.922 milhas + R$ 354,29 Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "1290836068-7568",
+  "data": "2026-11-03T15:06:14Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass E PORTOBANK: ATÉ 25% DE BÔNUS NAS TRANSFERÊNCIAS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Transfira seus pontos do PortoBank para o LATAM Pass e receba 25% de milhas bônus, além de um bônus especial de 1.000 milhas na primeira transferência.",
+  "detalhes": [
+   "25% de bônus para todos os clientes LATAM Pass.",
+   "1.000 milhas bônus adicionais na primeira transferência realizada."
+  ],
+  "parceiros": "LATAM Pass, PortoBank",
+  "validade": "03/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/promocoes/portobank-milhas-extras",
+   "https://d3rwujusajfqlr.cloudfront.net/uploads/83bb1222-0d8c-4b36-b1ff-f11727aec8ef.pdf"
+  ],
+  "ate": "2026-11-03T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-14570",
   "data": "2026-11-03T14:47:37Z",
   "origem": "Belém",
