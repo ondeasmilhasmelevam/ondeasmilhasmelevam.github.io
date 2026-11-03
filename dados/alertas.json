@@ -1,5 +1,26 @@
 [
  {
+  "id": "1290836068-7575",
+  "data": "2026-11-03T18:36:25Z",
+  "tipo": "promocao",
+  "titulo": "ASSINE CLUBE SMILES ANUAL E RECEBA 11.000 MILHAS NA HORA",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Assine o Clube Smiles Anual e receba 11.000 milhas na hora .",
+  "detalhes": [
+   "Plano 1.000 Anual: 11.000 milhas na hora .",
+   "Pagamento à vista: R$ 496,80 por 22.000 milhas (R$ 22,58/milheiro).",
+   "Pagamento parcelado: R$ 524,40 por 22.000 milhas (R$ 23,84/milheiro).",
+   "Com 6 meses de permanência, o milheiro sai por R$ 15,53 (à vista) ou R$ 16,39 (parcelado)."
+  ],
+  "parceiros": "Smiles",
+  "validade": "03/11/2026 (até 21h)",
+  "links": [
+   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja/20261102"
+  ],
+  "ate": "2026-11-03T23:59:59-03:00"
+ },
+ {
   "id": "2361370250-5986",
   "data": "2026-11-03T18:19:08Z",
   "origem": "São Paulo",
