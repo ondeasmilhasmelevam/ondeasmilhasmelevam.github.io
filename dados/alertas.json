@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-8860",
+  "data": "2026-11-03T19:00:20Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "Florianópolis",
+  "destino_iata": "FLN",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "23.600 milhas + Taxas",
+  "volta": "23.600 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8859",
+  "data": "2026-11-03T19:00:18Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "São Luís",
+  "destino_iata": "SLZ",
+  "companhia": "AZUL",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "19.000 milhas + Taxas",
+  "volta": "19.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2008590742-14579",
   "data": "2026-11-03T18:40:32Z",
   "origem": "Porto Alegre",
@@ -3962,197 +3990,6 @@
   "ida": "15.100 milhas + R$ 35,75 de taxas",
   "volta": "15.100 milhas + R$ 50,57 de taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-7551",
-  "data": "2026-11-01T19:00:21Z",
-  "tipo": "promocao",
-  "titulo": "VOOS DA LATAM PARA PALMAS A PARTIR DE 8 MIL MILHAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Latam oferece voos para Palmas com milhas a partir de 8 mil por trecho. A tarifa está disponível para viajar entre fevereiro e março de 2027. Os valores são para viagens de ida e volta com taxas aeroportuárias a incluir.",
-  "detalhes": [
-   "milhas_por_trecho: 8000",
-   "tarifa disponível para viajar entre fevereiro e março de 2027",
-   "valores para viagens de ida e volta com taxas aeroportuárias a incluir",
-   "São Paulo x Palmas (PAL) a partir de 8.000 milhas o trecho",
-   "Períodos de viagem: fevereiro e março de 2027"
-  ],
-  "parceiros": "LATAM",
-  "validade": "entre fevereiro e março de 2027",
-  "links": [
-   "https://link.dia23.com.br/r/Askzqcj"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7550",
-  "data": "2026-11-01T19:00:16Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass: SÃO PAULO-JERICOACOARA 15 MIL MILHAS TRECHO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "LATAM Pass oferece passagem de São Paulo para Jericoacoara por 15 mil milhas por trecho, com taxas aeroportuárias adicionais. Voo direto disponível entre março e maio de 2027. Valores são para ida e volta e podem mudar conforme disponibilidade.",
-  "detalhes": [
-   "15 mil milhas por trecho",
-   "taxas aeroportuárias adicionais",
-   "voo direto",
-   "disponível entre março e maio de 2027",
-   "São Paulo x Jericoacoara a partir de 15.000 milhas o trecho",
-   "Períodos de viagem: março e maio de 2027"
-  ],
-  "parceiros": "LATAM Pass",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/Askzqcj"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7549",
-  "data": "2026-11-01T19:00:11Z",
-  "tipo": "promocao",
-  "titulo": "5 RESGATES NACIONAIS COM AZUL A PARTIR DE 3.150 PONTOS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Azul oferece cinco sugestões de trechos nacionais a partir de 3.150 pontos + taxas por trecho. Os valores variam por nível de cliente, com descontos para membros Diamante. As rotas incluem Maringá-Curitiba, São Paulo-Curitiba, São Paulo-Campinas-Florianópolis, Recife-Fernando de Noronha, e São Paulo-Campinas-Recife.",
-  "detalhes": [
-   "custo em pontos por trecho varia conforme nível de cliente (Diamante ou demais)",
-   "taxas em reais aplicam-se por trecho",
-   "desconto aplicado diretamente para passageiros com nível Diamante",
-   "valores apresentados são originais das passagens",
-   "Maringá (MGF) x Curitiba (CWB) a partir de 3.150 milhas o trecho a partir de R$ 52",
-   "São Paulo (GRU) x Curitiba (CWB) a partir de 7.560 milhas o trecho a partir de R$ 36",
-   "São Paulo – Campinas (VCP) x Florianópolis (GIG) a partir de 11.400 milhas o trecho a partir de R$ 33",
-   "Recife (REC) x Fernando de Noronha (FEN) a partir de 11.250 milhas o trecho a partir de R$ 61"
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/WddsCKp"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7548",
-  "data": "2026-11-01T19:00:05Z",
-  "tipo": "promocao",
-  "titulo": "PASSAGENS INTERNACIONAIS A PARTIR DE 20.801 MILHAS + TAXAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "O alerta PPV oferece 15 opções de passagens internacionais com valores a partir de 20.801 milhas + taxas. As emissões são por trecho e por passageiro. A disponibilidade pode mudar a qualquer momento.",
-  "detalhes": [
-   "valor por trecho",
-   "taxa de resgate Azul Fidelidade em menos de 90 dias exceto cliente diamante",
-   "emissões são as menores disponíveis em cada mês",
-   "valores são por trecho e por passageiro",
-   "disponibilidade pode mudar a qualquer momento",
-   "Rio de Janeiro (GIG) x Buenos Aires (EZE) a partir de 20.801 milhas o trecho",
-   "Curitiba (CWB) x Santiago (SCL) a partir de 25.602 milhas o trecho",
-   "São Paulo (GRU) x Medellín (MDE) a partir de 32.322 milhas o trecho"
-  ],
-  "parceiros": "",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/3hIN1Zi"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7547",
-  "data": "2026-11-01T18:56:58Z",
-  "tipo": "promocao",
-  "titulo": "LATAM: PASSAGENS AÉREAS A PARTIR DE 3.538 MILHAS O TRECHO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Latam oferece passagens aéreas a partir de 3.538 milhas por trecho, com taxas aeroportuárias adicionais. O menor valor é para São Paulo a Passo Fundo. Promoção válida em final de semana.",
-  "detalhes": [
-   "valor mínimo 3.538 milhas por trecho",
-   "taxas aeroportuárias adicionais",
-   "promoção válida em final de semana",
-   "São Paulo x Passo Fundo (POF) a partir de 3.538 milhas o trecho"
-  ],
-  "parceiros": "LATAM",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/Askzqcj"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7546",
-  "data": "2026-11-01T18:56:52Z",
-  "tipo": "promocao",
-  "titulo": "5 RESGATES NACIONAIS COM AZUL A PARTIR DE 3.150 PONTOS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Azul oferece cinco sugestões de trechos nacionais a partir de 3.150 pontos + taxas. Os valores variam por nível de cliente, com desconto para membros Diamante. As rotas incluem Maringá-Curitiba, São Paulo-Curitiba, Campinas-Florianópolis, Recife-Fernando de Noronha, e Campinas-Recife.",
-  "detalhes": [
-   "custo em pontos por trecho",
-   "taxas em reais por trecho",
-   "desconto em pontos para clientes Diamante",
-   "Maringá (MGF) x Curitiba (CWB) a partir de 3.150 milhas o trecho a partir de R$ 52",
-   "São Paulo (GRU) x Curitiba (CWB) a partir de 7.560 milhas o trecho a partir de R$ 36",
-   "Campinas (VCP) x Florianópolis (GIG) a partir de 11.400 milhas o trecho a partir de R$ 33",
-   "Recife (REC) x Fernando de Noronha (FEN) a partir de 11.250 milhas o trecho a partir de R$ 61",
-   "Campinas (VCP) x Recife (REC) a partir de 18.050 milhas o trecho a partir de R$ 33"
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/WddsCKp"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7545",
-  "data": "2026-11-01T18:56:45Z",
-  "tipo": "promocao",
-  "titulo": "ASSINE CLUBE SMILES 1.000 E GANHE 21 MIL MILHAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "O Clube Smiles 1.000 oferece 21.000 milhas em 12 meses. O bônus de 9.000 milhas é creditado na hora da adesão. A promoção é válida até 10h do dia 3 de novembro de 2026.",
-  "detalhes": [
-   "Bônus de 9.000 milhas na adesão",
-   "Milhas mensais de 1.000 milhas por mês",
-   "Milhas acumuladas 12.000 milhas das mensalidades + 9.000 bônus = 21.000 milhas",
-   "Custo do milheiro: R$ 24,97 (anual parcelado) ou R$ 23,66 (anual à vista)",
-   "Valor pago no plano mensal em 12 meses: R$ 524,40 (12x R$ 43,70) ou R$ 496,80 (anual à vista)",
-   "Promoção válida para novas adesões ao Clube Smiles no plano anual",
-   "Ganhe 9 mil milhas bônus no primeiro mês de assinatura",
-   "Cancelamento em 365 dias não elegível à bonificação"
-  ],
-  "parceiros": "Smiles",
-  "validade": "até às 10h do dia 3 de novembro de 2026",
-  "links": [
-   "https://link.dia23.com.br/r/VcuBruJ"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7544",
-  "data": "2026-11-01T18:56:39Z",
-  "tipo": "promocao",
-  "titulo": "PASSAGENS INTERNACIONAIS A PARTIR DE 20.801 MILHAS + TAXAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "O alerta PPV traz 15 opções de passagens internacionais com valores a partir de 20.801 milhas + taxas. As emissões são de programas LATAM Pass, Azul Fidelidade e Smiles, com datas de reserva indicadas. Os valores são por trecho e por passageiro.",
-  "detalhes": [
-   "Valores são por trecho e por passageiro",
-   "Passagens com menos de 90 dias de antecedência no Azul Fidelidade têm o acréscimo da taxa de resgate, exceto para cliente diamante",
-   "A busca das emissões foi realizada no momento da produção do artigo, podendo haver alteração no valor ou disponibilidade a qualquer momento",
-   "Os valores são as menores disponíveis em cada um dos respectivos meses",
-   "Rio de Janeiro (GIG) x Buenos Aires (EZE) a partir de 20.801 milhas o trecho",
-   "Curitiba (CWB) x Santiago (SCL) a partir de 25.602 milhas o trecho",
-   "São Paulo (GRU) x Medellín (MDE) a partir de 32.322 milhas o trecho",
-   "São Paulo (GRU) x Aruba (AUA) a partir de 43.294 milhas o trecho"
-  ],
-  "parceiros": "",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/3hIN1Zi"
-  ],
-  "ate": ""
  },
  {
   "id": "1290836068-7539",
