@@ -1,5 +1,47 @@
 [
  {
+  "id": "3761373661-8807",
+  "data": "2026-11-03T11:44:08Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Uberlândia",
+  "destino_iata": "UDI",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "20.400 milhas + Taxas",
+  "volta": "20.400 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8806",
+  "data": "2026-11-03T11:44:03Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Porto Seguro",
+  "destino_iata": "BPS",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "18.900 milhas + Taxas",
+  "volta": "18.900 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-8805",
+  "data": "2026-11-03T11:44:01Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "16.000 milhas + Taxas",
+  "volta": "16.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-8804",
   "data": "2026-11-03T11:29:21Z",
   "origem": "Florianópolis",
