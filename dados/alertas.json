@@ -1,5 +1,83 @@
 [
  {
+  "id": "3761373661-8845",
+  "data": "2026-11-03T13:55:34Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "20.800 milhas + Taxas",
+  "volta": "20.800 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8844",
+  "data": "2026-11-03T13:55:32Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Imperatriz",
+  "destino_iata": "IMP",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "17.000 milhas + Taxas",
+  "volta": "17.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-14562",
+  "data": "2026-11-03T13:55:25Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Montevidéu",
+  "destino_iata": "MVD",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "31.800 milhas + Taxas",
+  "volta": "31.800 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-8843",
+  "data": "2026-11-03T13:55:19Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "15.100 milhas + Taxas",
+  "volta": "15.100 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "1290836068-7566",
+  "data": "2026-11-03T13:51:56Z",
+  "tipo": "promocao",
+  "titulo": "MILHEIRO A PARTIR DE R$ 11,76 TRANSFERIR LIVELO PARA AZUL",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "O Azul Fidelidade oferece até 130% de bônus na transferência de pontos Livelo. Usando pontos + dinheiro, é possível obter 1.000 pontos Azul a partir de R$ 11,76. A promoção é válida até 6 de novembro.",
+  "detalhes": [
+   "Até 130% de bônus na transferência Livelo para Azul",
+   "Opção pontos + dinheiro",
+   "É necessário ter pelo menos 1% da quantidade total de pontos Livelo para transferir",
+   "Assinante do Clube Azul há 5 anos para receber 130% de bônus",
+   "Milheiro a partir de R$ 11,76 via Pix para 130% de bônus"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "até sexta-feira, 6 de novembro",
+  "links": [
+   "https://link.dia23.com.br/r/KXAogPc"
+  ],
+  "ate": ""
+ },
+ {
   "id": "3761373661-8842",
   "data": "2026-11-03T13:43:29Z",
   "origem": "Foz do Iguaçu",
@@ -4019,20 +4097,6 @@
   "ida": "62.260 milhas + Taxas",
   "volta": "62.460 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-14388",
-  "data": "2026-11-01T13:51:23Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Cairo",
-  "destino_iata": "CAI",
-  "companhia": "Iberia",
-  "cabine": "Econômica",
-  "programa": "Iberia Plus",
-  "ida": "31.250 AVIOS + Taxas",
-  "volta": "31.250 AVIOS + Taxas",
-  "link_nome": "Iberia Plus"
  },
  {
   "id": "1290836068-7528",
