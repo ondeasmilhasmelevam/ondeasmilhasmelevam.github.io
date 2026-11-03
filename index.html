@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=88">
+<link rel="stylesheet" href="estilo.css?v=89">
 </head>
 <body>
 <header class="bar">
@@ -213,6 +213,11 @@
         <datalist id="passagens-cidades"></datalist>
         <select id="passagens-programa" aria-label="Programa"><option value="">Todos os programas</option></select>
         <select id="passagens-ordem" aria-label="Ordem"><option value="">Mais recentes</option><option value="milhas">Menos milhas</option></select>
+        <div class="atalhos" id="passagens-escopo" role="group" aria-label="Nacional ou internacional">
+          <button type="button" data-escopo="" aria-pressed="true">Todas</button>
+          <button type="button" data-escopo="nac" aria-pressed="false">Nacionais</button>
+          <button type="button" data-escopo="int" aria-pressed="false">Internacionais</button>
+        </div>
         <div class="atalhos" id="passagens-cabine" role="group" aria-label="Cabine">
           <button type="button" data-cabine="" aria-pressed="true">Todas</button>
           <button type="button" data-cabine="eco" aria-pressed="false">Econômica</button>
@@ -938,7 +943,7 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=91"></script>
+<script src="app.js?v=92"></script>
 <script src="funil.js?v=4"></script>
 <script type="module" src="assinatura.js?v=13"></script>
 </body>

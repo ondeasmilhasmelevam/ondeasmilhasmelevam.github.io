@@ -1071,7 +1071,9 @@
   const termo = { regiao: '', cabine: 'eco' };
   const NOME_CABINE = { eco: 'Econômica', exe: 'Executiva' };
   const CLASSE_NIVEL = { espetacular: 'n-esp', 'muito bom': 'n-top', bom: 'n-otimo', normal: 'n-normal', caro: 'n-caro', 'péssimo': 'n-pess' };
-  const BR = new Set('GRU GIG CGH SDU BSB CNF PLU VCP POA REC FOR SSA CWB FLN BEL MAO NAT MCZ VIX GYN CGB JPA AJU THE SLZ PMW CGR IGU NVT PVH MCP BVB RBR UDI LDB MGF JOI IOS BPS JDO CPV CXJ PNZ STM IMP RAO SJP'.split(' '));
+  const BR = new Set('GRU GIG CGH SDU BSB CNF PLU VCP POA REC FOR SSA CWB FLN BEL MAO NAT MCZ VIX GYN CGB JPA AJU THE SLZ PMW CGR IGU NVT PVH MCP BVB RBR UDI LDB MGF JOI IOS BPS JDO CPV CXJ PNZ STM IMP RAO SJP ATM BRA BYO CAC XAP JDF OPS PET CFB CKS AUX PFB GPB FEN MOC VDC IPN UNA TFF CZS ROO JTC'.split(' '));
+  // Nacional: sai e chega no Brasil; senão, internacional.
+  const ehNacional = p => BR.has(p.origem_iata) && BR.has(p.destino_iata);
   const programaTermo = p => {
     const t = norm(p);
     return /LATAM/.test(t) ? 'LATAM' : /SMILES|GOL/.test(t) ? 'Smiles' : /AZUL/.test(t) ? 'Azul'
@@ -1334,7 +1336,7 @@
   // O arquivo já vem só com o que ainda vale; aqui o prazo é conferido de novo,
   // para o item sumir na hora certa mesmo se a atualização atrasar.
   const PRAZO_PASSAGEM = 48 * 3600e3, POR_VEZ = 12;
-  const filtroPassagem = { tipo: 'passagem', busca: '', destino: '', programa: '', ordem: '', cabine: '', todas: false };
+  const filtroPassagem = { tipo: 'passagem', busca: '', destino: '', programa: '', ordem: '', cabine: '', escopo: '', todas: false };
   let passagens = [];
   function haQuanto(ms) {
     const min = Math.max(1, Math.round(ms / 60e3));
@@ -1391,7 +1393,7 @@
           <span class="pf-destino" data-cidade="${esc(`${p.destino}|${p.destino_iata}`)}"></span>
           <svg viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="56" y1="-2" x2="44" y2="102" vector-effect="non-scaling-stroke"/></svg>
         </div>
-        <p class="pass-meta"><time datetime="${esc(p.data)}">${haQuanto(agora - new Date(p.data))}</time>${p.cabine ? ` · ${esc(p.cabine)}` : ''}${selo}</p>
+        <p class="pass-meta"><time datetime="${esc(p.data)}">${haQuanto(agora - new Date(p.data))}</time><span class="pass-escopo">${ehNacional(p) ? 'Nacional' : 'Internacional'}</span>${p.cabine ? ` · ${esc(p.cabine)}` : ''}${selo}</p>
         <h3 class="pass-rota">
           <span><b>${esc(p.origem_iata)}</b>${esc(p.origem)}</span>
           <i aria-label="para">✈</i>
@@ -1547,6 +1549,7 @@
     const lista = doTipo.filter(p => promo
       ? (!busca || norm([p.titulo, p.parceiros, p.resumo].join(' ')).includes(busca))
       : (!f.cabine || (f.cabine === 'exe') === ehExecutiva(p.cabine)) &&
+        (!f.escopo || (f.escopo === 'nac') === ehNacional(p)) &&
         (!busca || norm([p.origem, p.origem_iata].join(' ')).includes(busca)) &&
         (!destino || norm([p.destino, p.destino_iata].join(' ')).includes(destino)) &&
         (!f.programa || programaPassagem(p) === f.programa));
@@ -1555,7 +1558,7 @@
     $('#lista-passagens').innerHTML = mostrar.map(p => promo ? promocaoHtml(p, agora) : passagemHtml(p, agora)).join('');
     if (promo) $('#pass-credito').hidden = true;
     else { buscarFotos(); preencherFiltros(doTipo); }
-    ['#passagens-cabine', '#passagens-destino', '#passagens-programa', '#passagens-ordem'].forEach(id => { $(id).hidden = promo; });
+    ['#passagens-escopo', '#passagens-cabine', '#passagens-destino', '#passagens-programa', '#passagens-ordem'].forEach(id => { $(id).hidden = promo; });
     const campo = $('#passagens-busca');
     campo.placeholder = promo ? 'Buscar programa ou loja, ex.: Livelo' : 'Saindo de… ex.: GRU';
     campo.setAttribute('aria-label', campo.placeholder.replace(/, ex\..*/, ''));
@@ -1951,6 +1954,12 @@
     if (b.dataset.tipo === 'promocao') { location.hash = 'promocoes'; return; } // as promoções têm página própria
     Object.assign(filtroPassagem, { tipo: b.dataset.tipo, busca: '', todas: false });
     $('#passagens-busca').value = '';
+    mostrarPassagens();
+  });
+  $('#passagens-escopo').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    filtroPassagem.escopo = b.dataset.escopo;
+    $('#passagens-escopo').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
     mostrarPassagens();
   });
   $('#passagens-cabine').addEventListener('click', e => {
