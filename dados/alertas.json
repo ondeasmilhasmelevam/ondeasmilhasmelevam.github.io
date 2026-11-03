@@ -4050,34 +4050,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2008590742-14394",
-  "data": "2026-11-01T14:14:03Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "49.000 milhas + Taxas",
-  "volta": "49.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-14393",
-  "data": "2026-11-01T14:11:18Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "64.180 milhas + Taxas",
-  "volta": "71.240 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7528",
   "data": "2026-10-31T12:35:21Z",
   "tipo": "promocao",
