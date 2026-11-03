@@ -1,5 +1,25 @@
 [
  {
+  "id": "1290836068-7576",
+  "data": "2026-11-03T19:56:01Z",
+  "tipo": "promocao",
+  "titulo": "RENOVAÇÃO DE PONTOS AZUL FIDELIDADE COM 80% DE DESCONTO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Renove pontos expirados do Azul Fidelidade com 80% de desconto. Com cartão Azul Itaú, ganhe mais 10% de desconto, chegando a R$ 9,00 por milheiro.",
+  "detalhes": [
+   "80% de desconto na renovação de pontos expirados do Azul Fidelidade.",
+   "10% de desconto adicional ao usar cartão Azul Itaú.",
+   "Valor final por milheiro: R$ 9,00 (com cartão Azul Itaú)."
+  ],
+  "parceiros": "Azul, Itaú",
+  "validade": "09/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/facilidades#renovacao-de-pontos"
+  ],
+  "ate": "2026-11-09T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-14583",
   "data": "2026-11-03T19:45:25Z",
   "origem": "Manaus",
