@@ -1,5 +1,55 @@
 [
  {
+  "id": "1290836068-7570",
+  "data": "2026-11-03T15:58:27Z",
+  "tipo": "promocao",
+  "titulo": "PASSAGENS INTERNACIONAIS COM MILHAS SMILES A PARTIR DE 16.800",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A promoção oferece passagens internacionais com Smiles a partir de 16.800 milhas por trecho. Os valores variam por companhia e destino. As datas de reserva são listadas no artigo.",
+  "detalhes": [
+   "valor por trecho",
+   "taxas adicionais",
+   "datas de reserva",
+   "Manaus (MAO) x Bogotá (BOG) a partir de 16.800 milhas o trecho",
+   "Goiânia (GYN) x Buenos Aires (AEP) a partir de 51.500 milhas o trecho",
+   "São Paulo (GRU) x Miami (MIA) a partir de 68.500 milhas o trecho",
+   "Manaus (MAO) x Miami (MIA) a partir de 68.600 milhas o trecho",
+   "Rio de Janeiro (GIG) x Miami (MIA) a partir de 70.100 milhas o trecho"
+  ],
+  "parceiros": "Smiles",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/pJ83Mwh"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7569",
+  "data": "2026-11-03T15:58:19Z",
+  "tipo": "promocao",
+  "titulo": "PASSAGENS INTERNACIONAIS COM MILHAS SMILES",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A promoção oferece passagens internacionais com milhas Smiles a partir de 16.800 milhas por trecho, com taxas adicionais. Os valores são por trecho e por passageiro e variam por companhia e destino. As datas de reserva estão listadas na tabela.",
+  "detalhes": [
+   "valor mínimo 16.800 milhas por trecho",
+   "taxas adicionais não incluídas",
+   "milhas por trecho listadas",
+   "por trecho e por passageiro",
+   "Manaus (MAO) x Bogotá (BOG) a partir de 16.800 milhas o trecho",
+   "Goiânia (GYN) x Buenos Aires (AEP) a partir de 51.500 milhas o trecho",
+   "São Paulo (GRU) x Miami (MIA) a partir de 68.500 milhas o trecho",
+   "Manaus (MAO) x Miami (MIA) a partir de 68.600 milhas o trecho"
+  ],
+  "parceiros": "Smiles",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/pJ83Mwh"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2008590742-14573",
   "data": "2026-11-03T15:11:14Z",
   "origem": "Cuiabá",
