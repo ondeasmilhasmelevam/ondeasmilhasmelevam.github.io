@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-14557",
+  "data": "2026-11-03T13:21:26Z",
+  "origem": "Uberlândia",
+  "origem_iata": "UDI",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "51.000 milhas + Taxas",
+  "volta": "51.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14556",
+  "data": "2026-11-03T13:21:21Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Roma",
+  "destino_iata": "FCO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "61.360 milhas + Taxas",
+  "volta": "68.140 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14555",
+  "data": "2026-11-03T13:18:12Z",
+  "origem": "Uberlândia",
+  "origem_iata": "UDI",
+  "destino": "Punta Cana",
+  "destino_iata": "PUJ",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "56.500 milhas + Taxas",
+  "volta": "56.500 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8835",
   "data": "2026-11-03T13:17:29Z",
   "origem": "Palmas",
@@ -42,6 +84,20 @@
   "link_nome": "LATAM Pass"
  },
  {
+  "id": "2008590742-14554",
+  "data": "2026-11-03T13:17:13Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "41.000 milhas + Taxas",
+  "volta": "41.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8832",
   "data": "2026-11-03T13:12:41Z",
   "origem": "Curitiba",
@@ -68,6 +124,20 @@
   "ida": "20.000 milhas + Taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-14553",
+  "data": "2026-11-03T13:08:58Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "75.500 milhas + Taxas",
+  "volta": "75.500 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "3761373661-8830",
@@ -98,6 +168,20 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "2008590742-14552",
+  "data": "2026-11-03T13:06:54Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "37.000 milhas + Taxas",
+  "volta": "37.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8828",
   "data": "2026-11-03T13:06:49Z",
   "origem": "Foz do Iguaçu",
@@ -109,6 +193,20 @@
   "programa": "LATAM Pass",
   "ida": "11.800 milhas + Taxas",
   "volta": "11.800 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14551",
+  "data": "2026-11-03T13:02:13Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "68.300 milhas + Taxas",
+  "volta": "68.300 milhas + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
@@ -182,6 +280,34 @@
   "link_nome": "LATAM Pass"
  },
  {
+  "id": "2008590742-14550",
+  "data": "2026-11-03T12:58:17Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "Mendoza",
+  "destino_iata": "MDZ",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "29.200 milhas + Taxas",
+  "volta": "29.200 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14549",
+  "data": "2026-11-03T12:57:59Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Orlando",
+  "destino_iata": "MCO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "75.300 milhas + Taxas",
+  "volta": "75.300 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8823",
   "data": "2026-11-03T12:57:55Z",
   "origem": "Maceió",
@@ -224,6 +350,20 @@
   "link_nome": "LATAM Pass"
  },
  {
+  "id": "2008590742-14548",
+  "data": "2026-11-03T12:56:57Z",
+  "origem": "Maceió",
+  "origem_iata": "MCZ",
+  "destino": "Mendoza",
+  "destino_iata": "MDZ",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "30.800 milhas + Taxas",
+  "volta": "30.800 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8820",
   "data": "2026-11-03T12:55:54Z",
   "origem": "Foz do Iguaçu",
@@ -236,6 +376,20 @@
   "ida": "25.800 milhas + Taxas",
   "volta": "25.800 milhas + Taxas",
   "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14547",
+  "data": "2026-11-03T12:55:47Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "21.650 milhas + Taxas",
+  "volta": "21.650 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "3761373661-8819",
@@ -277,6 +431,48 @@
   "programa": "LATAM Pass",
   "ida": "20.066 milhas + R$ 48,26",
   "volta": "22.104 milhas + R$ 62,14",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14546",
+  "data": "2026-11-03T12:42:05Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Split",
+  "destino_iata": "SPU",
+  "companhia": "Iberia",
+  "cabine": "Econômica",
+  "programa": "Iberia Plus",
+  "ida": "26.500 AVIOS + Taxas",
+  "volta": "26.500 AVIOS + Taxas",
+  "link_nome": "Iberia Plus"
+ },
+ {
+  "id": "2008590742-14545",
+  "data": "2026-11-03T12:41:59Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Frankfurt",
+  "destino_iata": "FRA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "63.100 milhas + Taxas",
+  "volta": "63.100 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14544",
+  "data": "2026-11-03T12:41:51Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Barcelona",
+  "destino_iata": "BCN",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "69.500 milhas + Taxas",
+  "volta": "69.500 milhas + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
@@ -322,6 +518,20 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "2008590742-14543",
+  "data": "2026-11-03T12:40:10Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Montevidéu",
+  "destino_iata": "MVD",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "28.000 milhas + Taxas",
+  "volta": "28.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8813",
   "data": "2026-11-03T12:40:08Z",
   "origem": "Manaus",
@@ -336,6 +546,20 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "2008590742-14542",
+  "data": "2026-11-03T12:40:03Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.800 milhas + Taxas",
+  "volta": "16.800 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8812",
   "data": "2026-11-03T12:39:58Z",
   "origem": "Manaus",
@@ -347,6 +571,118 @@
   "programa": "LATAM Pass",
   "ida": "21.500 milhas + Taxas",
   "volta": "21.500 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14541",
+  "data": "2026-11-03T12:39:51Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "47.000 milhas + Taxas",
+  "volta": "47.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14540",
+  "data": "2026-11-03T12:20:31Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "LATAM Airlines",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "31.682 milhas + Taxas R$ 103,16",
+  "volta": "31.682 milhas + Taxas R$ 455,33",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14539",
+  "data": "2026-11-03T12:20:25Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "LATAM Airlines",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "45.365 milhas + Taxas R$ 123,06",
+  "volta": "43.843 milhas + Taxas R$ 455,33",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14538",
+  "data": "2026-11-03T12:20:20Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "LATAM Airlines",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "44.800 milhas + Taxas R$ 128,57",
+  "volta": "38.083 milhas + Taxas R$ 480,12",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14537",
+  "data": "2026-11-03T12:20:13Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "LATAM Airlines",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "19.681 milhas + Taxas R$ 129,15",
+  "volta": "33.282 milhas + Taxas R$ 419,58",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14536",
+  "data": "2026-11-03T12:16:36Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "74.200 milhas + Taxas",
+  "volta": "74.200 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14535",
+  "data": "2026-11-03T12:13:37Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "74.400 milhas + Taxas",
+  "volta": "74.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14534",
+  "data": "2026-11-03T12:10:44Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Barcelona",
+  "destino_iata": "BCN",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "65.300 milhas + Taxas",
+  "volta": "65.300 milhas + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
@@ -378,6 +714,20 @@
   "link_nome": "LATAM Pass"
  },
  {
+  "id": "2008590742-14533",
+  "data": "2026-11-03T12:06:06Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Córdoba",
+  "destino_iata": "COR",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "34.700 milhas + Taxas",
+  "volta": "34.700 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2361370250-5975",
   "data": "2026-11-03T12:05:06Z",
   "origem": "Rio de Janeiro",
@@ -392,6 +742,48 @@
   "link_nome": "Aeroplan"
  },
  {
+  "id": "2008590742-14532",
+  "data": "2026-11-03T12:02:16Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "67.800 milhas + Taxas",
+  "volta": "67.800 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14531",
+  "data": "2026-11-03T12:00:20Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Cancún",
+  "destino_iata": "CUN",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "71.200 milhas + Taxas",
+  "volta": "71.200 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14530",
+  "data": "2026-11-03T12:00:15Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "74.200 milhas + Taxas",
+  "volta": "74.200 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8810",
   "data": "2026-11-03T12:00:06Z",
   "origem": "Goiânia",
@@ -404,6 +796,48 @@
   "ida": "21.000 milhas + Taxas",
   "volta": "21.000 milhas + Taxas",
   "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14529",
+  "data": "2026-11-03T11:50:47Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Ushuaia",
+  "destino_iata": "USH",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "54.500 milhas + Taxas",
+  "volta": "54.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14528",
+  "data": "2026-11-03T11:49:01Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Barcelona",
+  "destino_iata": "BCN",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "76.100 milhas + Taxas",
+  "volta": "76.100 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14527",
+  "data": "2026-11-03T11:48:56Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "77.000 milhas + Taxas",
+  "volta": "77.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "3761373661-8809",
@@ -476,6 +910,20 @@
   "link_nome": "Azul Fidelidade"
  },
  {
+  "id": "2008590742-14526",
+  "data": "2026-11-03T11:43:56Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Iquique",
+  "destino_iata": "IQQ",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "33.800 milhas + Taxas",
+  "volta": "33.800 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8804",
   "data": "2026-11-03T11:29:21Z",
   "origem": "Florianópolis",
@@ -502,6 +950,34 @@
   "ida": "8.000 milhas + Taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-14525",
+  "data": "2026-11-03T11:29:14Z",
+  "origem": "Navegantes",
+  "origem_iata": "NVT",
+  "destino": "Roma",
+  "destino_iata": "FCO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "77.400 milhas + Taxas",
+  "volta": "77.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14524",
+  "data": "2026-11-03T11:29:09Z",
+  "origem": "Navegantes",
+  "origem_iata": "NVT",
+  "destino": "Milão",
+  "destino_iata": "MXP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "77.200 milhas + Taxas",
+  "volta": "77.200 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "3761373661-8802",
@@ -560,6 +1036,20 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "2008590742-14523",
+  "data": "2026-11-03T11:12:47Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Córdoba",
+  "destino_iata": "COR",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "30.000 milhas + Taxas",
+  "volta": "30.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8798",
   "data": "2026-11-03T11:12:45Z",
   "origem": "Recife",
@@ -616,6 +1106,34 @@
   "link_nome": "Azul Fidelidade"
  },
  {
+  "id": "2008590742-14522",
+  "data": "2026-11-03T11:04:32Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Lima",
+  "destino_iata": "LIM",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "56.000 milhas + Taxas",
+  "volta": "56.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14521",
+  "data": "2026-11-03T11:01:31Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "74.000 milhas + Taxas",
+  "volta": "74.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8794",
   "data": "2026-11-03T10:58:18Z",
   "origem": "Cuiabá",
@@ -628,6 +1146,34 @@
   "ida": "19.000 milhas + Taxas",
   "volta": "19.000 milhas + Taxas",
   "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-14520",
+  "data": "2026-11-03T10:57:39Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "61.600 milhas + Taxas",
+  "volta": "61.600 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14519",
+  "data": "2026-11-03T10:53:36Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "Cancún",
+  "destino_iata": "CUN",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "74.800 milhas + Taxas",
+  "volta": "74.800 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "3761373661-8793",
@@ -658,6 +1204,34 @@
   "link_nome": "Azul Fidelidade"
  },
  {
+  "id": "2008590742-14518",
+  "data": "2026-11-03T10:46:12Z",
+  "origem": "Aracaju",
+  "origem_iata": "AJU",
+  "destino": "Lima",
+  "destino_iata": "LIM",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "56.000 milhas + Taxas",
+  "volta": "56.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14517",
+  "data": "2026-11-03T10:45:33Z",
+  "origem": "Aracaju",
+  "origem_iata": "AJU",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "70.200 milhas + Taxas",
+  "volta": "70.200 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8791",
   "data": "2026-11-03T10:33:12Z",
   "origem": "Uberlândia",
@@ -686,6 +1260,34 @@
   "link_nome": "Azul Fidelidade"
  },
  {
+  "id": "2008590742-14516",
+  "data": "2026-11-03T10:30:07Z",
+  "origem": "Uberlândia",
+  "origem_iata": "UDI",
+  "destino": "Joanesburgo",
+  "destino_iata": "JNB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "73.400 milhas + Taxas",
+  "volta": "73.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14515",
+  "data": "2026-11-03T10:30:01Z",
+  "origem": "Uberlândia",
+  "origem_iata": "UDI",
+  "destino": "Cancún",
+  "destino_iata": "CUN",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "60.900 milhas + Taxas",
+  "volta": "60.900 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8789",
   "data": "2026-11-03T10:27:17Z",
   "origem": "Sinop",
@@ -712,6 +1314,90 @@
   "ida": "24.000 milhas + Taxas",
   "volta": "24.000 milhas + Taxas",
   "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-14514",
+  "data": "2026-11-03T10:27:08Z",
+  "origem": "Sinop",
+  "origem_iata": "OPS",
+  "destino": "Punta Cana",
+  "destino_iata": "PUJ",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "72.800 milhas + Taxas",
+  "volta": "72.800 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14513",
+  "data": "2026-11-03T10:27:02Z",
+  "origem": "Sinop",
+  "origem_iata": "OPS",
+  "destino": "Cancún",
+  "destino_iata": "CUN",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "71.200 milhas + Taxas",
+  "volta": "71.200 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14512",
+  "data": "2026-11-03T10:22:17Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "AAdvantage",
+  "ida": "18.000 milhas",
+  "volta": "18.000 milhas",
+  "link_nome": "AAdvantage"
+ },
+ {
+  "id": "2008590742-14511",
+  "data": "2026-11-03T10:19:19Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Montego Bay",
+  "destino_iata": "MBJ",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "AAdvantage",
+  "ida": "A partir de 22.000 milhas",
+  "volta": "A partir de 22.000 milhas",
+  "link_nome": "AAdvantage"
+ },
+ {
+  "id": "2008590742-14510",
+  "data": "2026-11-03T10:19:17Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "AAdvantage",
+  "ida": "A partir de 18.000 milhas",
+  "volta": "A partir de 18.000 milhas",
+  "link_nome": "AAdvantage"
+ },
+ {
+  "id": "2008590742-14509",
+  "data": "2026-11-03T10:19:14Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "São Francisco",
+  "destino_iata": "SFO",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "AAdvantage",
+  "ida": "A partir de 18.000 milhas",
+  "volta": "A partir de 18.000 milhas",
+  "link_nome": "AAdvantage"
  },
  {
   "id": "1290836068-7564",
@@ -746,6 +1432,146 @@
   "programa": "LATAM Pass",
   "ida": "11.680 milhas + Taxas",
   "volta": "11.680 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14507",
+  "data": "2026-11-02T23:38:14Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "27.750 milhas + Taxas",
+  "volta": "27.750 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14506",
+  "data": "2026-11-02T23:35:31Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "20.000 milhas + Taxas",
+  "volta": "20.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-14505",
+  "data": "2026-11-02T23:35:01Z",
+  "origem": "Navegantes",
+  "origem_iata": "NVT",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "11.650 milhas + Taxas",
+  "volta": "11.650 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14504",
+  "data": "2026-11-02T23:15:52Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Casablanca",
+  "destino_iata": "CMN",
+  "companhia": "Royal Air Maroc",
+  "cabine": "Econômica",
+  "programa": "Privilege Club",
+  "ida": "25.750 AVIOS + Taxas",
+  "volta": "25.750 AVIOS + Taxas",
+  "link_nome": "Privilege Club"
+ },
+ {
+  "id": "2008590742-14503",
+  "data": "2026-11-02T23:08:47Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Roma",
+  "destino_iata": "FCO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "65.200 milhas + Taxas",
+  "volta": "65.020 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14502",
+  "data": "2026-11-02T23:07:47Z",
+  "origem": "Bonito",
+  "origem_iata": "BYO",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "9.680 milhas + Taxas",
+  "volta": "9.680 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14501",
+  "data": "2026-11-02T23:05:59Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Montevidéu",
+  "destino_iata": "MVD",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "42.000 milhas + Taxas",
+  "volta": "42.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14500",
+  "data": "2026-11-02T23:05:56Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "Avianca",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "63.700 milhas + Taxas",
+  "volta": "63.700 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14497",
+  "data": "2026-11-02T18:48:45Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "68.894 milhas + R$ 117,24",
+  "volta": "61.365 milhas + R$ 614,11",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14496",
+  "data": "2026-11-02T18:48:38Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "20.141 milhas + R$ 125,60",
+  "volta": "17.121 milhas + R$ 419,58",
   "link_nome": "LATAM Pass"
  },
  {
@@ -858,6 +1684,20 @@
   "link_nome": "LATAM Pass"
  },
  {
+  "id": "2008590742-14495",
+  "data": "2026-11-02T15:31:51Z",
+  "origem": "Petrolina",
+  "origem_iata": "PNZ",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "Azul + parceira",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "15.000 milhas + Taxas",
+  "volta": "15.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2361370250-5971",
   "data": "2026-11-02T15:26:46Z",
   "origem": "Rio de Janeiro",
@@ -942,6 +1782,20 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "2008590742-14494",
+  "data": "2026-11-02T14:55:22Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "24.700 milhas + Taxas",
+  "volta": "24.700 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8774",
   "data": "2026-11-02T14:29:52Z",
   "origem": "São Paulo",
@@ -970,6 +1824,20 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "2008590742-14493",
+  "data": "2026-11-02T14:02:57Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "68.500 milhas + Taxas",
+  "volta": "59.300 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-7557",
   "data": "2026-11-02T12:21:37Z",
   "tipo": "promocao",
@@ -989,6 +1857,20 @@
   "ate": "2026-11-20T23:59:59-03:00"
  },
  {
+  "id": "2008590742-14488",
+  "data": "2026-11-02T11:53:58Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Cidade do Cabo",
+  "destino_iata": "CPT",
+  "companhia": "South African Airways",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "70.300 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5964",
   "data": "2026-11-02T11:51:28Z",
   "origem": "Brasília",
@@ -999,6 +1881,20 @@
   "cabine": "Executiva",
   "programa": "GOL Smiles",
   "ida": "244.700 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2008590742-14487",
+  "data": "2026-11-02T11:50:23Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "GOL + Avianca",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "55.600 milhas",
   "volta": "",
   "link_nome": "GOL Smiles"
  },
@@ -1017,6 +1913,20 @@
   "link_nome": "GOL Smiles"
  },
  {
+  "id": "2008590742-14486",
+  "data": "2026-11-02T11:46:59Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "Avianca",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "65.600 milhas",
+  "volta": "60.600 milhas",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5962",
   "data": "2026-11-02T11:42:34Z",
   "origem": "São Paulo",
@@ -1031,6 +1941,34 @@
   "link_nome": "GOL Smiles"
  },
  {
+  "id": "2008590742-14485",
+  "data": "2026-11-02T11:41:11Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "Avianca",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "63.600 milhas",
+  "volta": "59.300 milhas",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2008590742-14484",
+  "data": "2026-11-02T11:38:56Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Dallas",
+  "destino_iata": "DFW",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "77.700 milhas",
+  "volta": "75.200 milhas",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5961",
   "data": "2026-11-02T11:36:47Z",
   "origem": "São Paulo",
@@ -1042,6 +1980,20 @@
   "programa": "GOL Smiles",
   "ida": "175.400 milhas",
   "volta": "170.000 milhas",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2008590742-14483",
+  "data": "2026-11-02T11:36:25Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "Avianca",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "40.800 milhas",
+  "volta": "40.800 milhas",
   "link_nome": "GOL Smiles"
  },
  {
@@ -1073,6 +2025,20 @@
   "link_nome": "GOL Smiles"
  },
  {
+  "id": "2008590742-14482",
+  "data": "2026-11-02T11:26:58Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "87.400 milhas",
+  "volta": "22.500 milhas",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5958",
   "data": "2026-11-02T11:22:14Z",
   "origem": "Manaus",
@@ -1083,6 +2049,20 @@
   "cabine": "Executiva",
   "programa": "GOL Smiles",
   "ida": "57.700 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2008590742-14481",
+  "data": "2026-11-02T11:21:39Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Cidade do Panamá",
+  "destino_iata": "PTY",
+  "companhia": "Copa Airlines",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "26.100 milhas",
   "volta": "",
   "link_nome": "GOL Smiles"
  },
@@ -1101,6 +2081,20 @@
   "link_nome": "GOL Smiles"
  },
  {
+  "id": "2008590742-14480",
+  "data": "2026-11-02T11:18:15Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "129.800 milhas",
+  "volta": "99.600 milhas",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5956",
   "data": "2026-11-02T11:13:47Z",
   "origem": "Brasília",
@@ -1112,6 +2106,20 @@
   "programa": "GOL Smiles",
   "ida": "176.100 milhas",
   "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2008590742-14479",
+  "data": "2026-11-02T11:11:55Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Orlando",
+  "destino_iata": "MCO",
+  "companhia": "GOL + American Airlines",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "92.200 milhas",
+  "volta": "92.200 milhas",
   "link_nome": "GOL Smiles"
  },
  {
@@ -1129,6 +2137,48 @@
   "link_nome": "GOL Smiles"
  },
  {
+  "id": "2008590742-14478",
+  "data": "2026-11-02T11:08:56Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "108.700 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2008590742-14477",
+  "data": "2026-11-02T11:06:15Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "61.000 milhas",
+  "volta": "69.100 milhas",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2008590742-14476",
+  "data": "2026-11-02T11:03:28Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "Turkish Airlines",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "66.500 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-5954",
   "data": "2026-11-02T10:59:46Z",
   "origem": "Recife",
@@ -1140,6 +2190,20 @@
   "programa": "TAP Miles&Go",
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14475",
+  "data": "2026-11-02T10:59:27Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "44.900 milhas",
+  "volta": "44.900 milhas",
   "link_nome": "TAP Miles&Go"
  },
  {
@@ -1157,6 +2221,34 @@
   "link_nome": "TAP Miles&Go"
  },
  {
+  "id": "2008590742-14474",
+  "data": "2026-11-02T10:54:56Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Zurique",
+  "destino_iata": "ZRH",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14473",
+  "data": "2026-11-02T10:52:52Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Munique",
+  "destino_iata": "MUC",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5952",
   "data": "2026-11-02T10:51:04Z",
   "origem": "São Paulo",
@@ -1168,6 +2260,34 @@
   "programa": "TAP Miles&Go",
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14472",
+  "data": "2026-11-02T10:50:44Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Milão",
+  "destino_iata": "MXP",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14471",
+  "data": "2026-11-02T10:45:01Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
   "link_nome": "TAP Miles&Go"
  },
  {
@@ -1185,6 +2305,20 @@
   "link_nome": "TAP Miles&Go"
  },
  {
+  "id": "2008590742-14470",
+  "data": "2026-11-02T10:42:29Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "44.900 milhas",
+  "volta": "44.900 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5950",
   "data": "2026-11-02T10:40:28Z",
   "origem": "São Paulo",
@@ -1196,6 +2330,20 @@
   "programa": "TAP Miles&Go",
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14469",
+  "data": "2026-11-02T10:40:11Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Amsterdã",
+  "destino_iata": "AMS",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
   "link_nome": "TAP Miles&Go"
  },
  {
@@ -1213,6 +2361,20 @@
   "link_nome": "TAP Miles&Go"
  },
  {
+  "id": "2008590742-14468",
+  "data": "2026-11-02T10:38:13Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Paris",
+  "destino_iata": "ORY",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5948",
   "data": "2026-11-02T10:34:43Z",
   "origem": "São Paulo",
@@ -1224,6 +2386,20 @@
   "programa": "TAP Miles&Go",
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14467",
+  "data": "2026-11-02T10:34:25Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Zurique",
+  "destino_iata": "ZRH",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
   "link_nome": "TAP Miles&Go"
  },
  {
@@ -1241,6 +2417,20 @@
   "link_nome": "TAP Miles&Go"
  },
  {
+  "id": "2008590742-14466",
+  "data": "2026-11-02T10:31:42Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Munique",
+  "destino_iata": "MUC",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5946",
   "data": "2026-11-02T10:29:54Z",
   "origem": "São Paulo",
@@ -1252,6 +2442,20 @@
   "programa": "TAP Miles&Go",
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14465",
+  "data": "2026-11-02T10:29:32Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Barcelona",
+  "destino_iata": "BCN",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
   "link_nome": "TAP Miles&Go"
  },
  {
@@ -1269,6 +2473,20 @@
   "link_nome": "TAP Miles&Go"
  },
  {
+  "id": "2008590742-14464",
+  "data": "2026-11-02T10:26:30Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Roma",
+  "destino_iata": "FCO",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5944",
   "data": "2026-11-02T10:23:49Z",
   "origem": "Fortaleza",
@@ -1280,6 +2498,34 @@
   "programa": "TAP Miles&Go",
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14462",
+  "data": "2026-11-02T10:23:31Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "44.900 milhas",
+  "volta": "44.900 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14461",
+  "data": "2026-11-02T10:21:10Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Genebra",
+  "destino_iata": "GVA",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
   "link_nome": "TAP Miles&Go"
  },
  {
@@ -1297,6 +2543,20 @@
   "link_nome": "TAP Miles&Go"
  },
  {
+  "id": "2008590742-14460",
+  "data": "2026-11-02T10:18:44Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Munique",
+  "destino_iata": "MUC",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5942",
   "data": "2026-11-02T10:15:48Z",
   "origem": "Rio de Janeiro",
@@ -1308,6 +2568,20 @@
   "programa": "TAP Miles&Go",
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14459",
+  "data": "2026-11-02T10:15:30Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Porto",
+  "destino_iata": "OPO",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "44.900 milhas",
+  "volta": "44.900 milhas",
   "link_nome": "TAP Miles&Go"
  },
  {
@@ -1325,6 +2599,20 @@
   "link_nome": "TAP Miles&Go"
  },
  {
+  "id": "2008590742-14458",
+  "data": "2026-11-02T10:12:58Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5940",
   "data": "2026-11-02T10:08:36Z",
   "origem": "Brasília",
@@ -1336,6 +2624,20 @@
   "programa": "TAP Miles&Go",
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14457",
+  "data": "2026-11-02T10:08:01Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
   "link_nome": "TAP Miles&Go"
  },
  {
@@ -1353,6 +2655,20 @@
   "link_nome": "TAP Miles&Go"
  },
  {
+  "id": "2008590742-14456",
+  "data": "2026-11-02T10:05:41Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Porto",
+  "destino_iata": "OPO",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "44.900 milhas",
+  "volta": "44.900 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5938",
   "data": "2026-11-02T10:03:52Z",
   "origem": "Rio de Janeiro",
@@ -1364,6 +2680,20 @@
   "programa": "TAP Miles&Go",
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14455",
+  "data": "2026-11-02T10:03:34Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "44.900 milhas",
+  "volta": "44.900 milhas",
   "link_nome": "TAP Miles&Go"
  },
  {
@@ -1381,6 +2711,48 @@
   "link_nome": "TAP Miles&Go"
  },
  {
+  "id": "2008590742-14454",
+  "data": "2026-11-02T10:00:16Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14453",
+  "data": "2026-11-02T09:57:12Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Roma",
+  "destino_iata": "FCO",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14452",
+  "data": "2026-11-02T09:51:43Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Atenas",
+  "destino_iata": "ATH",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5936",
   "data": "2026-11-02T09:48:55Z",
   "origem": "São Paulo",
@@ -1392,6 +2764,20 @@
   "programa": "TAP Miles&Go",
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14451",
+  "data": "2026-11-02T09:48:36Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Frankfurt",
+  "destino_iata": "FRA",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
   "link_nome": "TAP Miles&Go"
  },
  {
@@ -1409,6 +2795,20 @@
   "link_nome": "TAP Miles&Go"
  },
  {
+  "id": "2008590742-14450",
+  "data": "2026-11-02T09:44:12Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Bilbao",
+  "destino_iata": "BIO",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5934",
   "data": "2026-11-02T09:42:20Z",
   "origem": "São Paulo",
@@ -1423,6 +2823,20 @@
   "link_nome": "TAP Miles&Go"
  },
  {
+  "id": "2008590742-14449",
+  "data": "2026-11-02T09:42:04Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Londres",
+  "destino_iata": "LHR",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5933",
   "data": "2026-11-02T09:40:14Z",
   "origem": "São Paulo",
@@ -1434,6 +2848,20 @@
   "programa": "TAP Miles&Go",
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14448",
+  "data": "2026-11-02T09:39:51Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "44.900 milhas",
+  "volta": "44.900 milhas",
   "link_nome": "TAP Miles&Go"
  },
  {
@@ -1493,6 +2921,20 @@
   "link_nome": "TAP Miles&Go"
  },
  {
+  "id": "2008590742-14447",
+  "data": "2026-11-02T09:34:42Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Barcelona",
+  "destino_iata": "BCN",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5927",
   "data": "2026-11-02T09:32:49Z",
   "origem": "São Paulo",
@@ -1535,6 +2977,20 @@
   "link_nome": "TAP Miles&Go"
  },
  {
+  "id": "2008590742-14414",
+  "data": "2026-11-02T09:28:36Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Londres",
+  "destino_iata": "LHR",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-5910",
   "data": "2026-11-02T09:26:35Z",
   "origem": "Brasília",
@@ -1546,6 +3002,20 @@
   "programa": "TAP Miles&Go",
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-14413",
+  "data": "2026-11-02T09:26:04Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Londres",
+  "destino_iata": "LHR",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
   "link_nome": "TAP Miles&Go"
  },
  {
@@ -1768,6 +3238,34 @@
   "ate": ""
  },
  {
+  "id": "2008590742-14411",
+  "data": "2026-11-01T16:53:13Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Barcelona",
+  "destino_iata": "BCN",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "65.660 milhas + Taxas",
+  "volta": "65.660 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14410",
+  "data": "2026-11-01T16:51:12Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Fort Lauderdale",
+  "destino_iata": "FLL",
+  "companhia": "Avianca",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "49.600 milhas + Taxas",
+  "volta": "49.600 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8767",
   "data": "2026-11-01T16:47:13Z",
   "origem": "Manaus",
@@ -1796,6 +3294,62 @@
   "link_nome": "Azul Fidelidade"
  },
  {
+  "id": "2008590742-14409",
+  "data": "2026-11-01T16:42:13Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "Avianca",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "90.300 milhas + Taxas",
+  "volta": "90.300 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14408",
+  "data": "2026-11-01T16:39:20Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Santa Cruz da Serra",
+  "destino_iata": "SCS",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "53.500 milhas + Taxas",
+  "volta": "53.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14407",
+  "data": "2026-11-01T16:37:13Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "Avianca",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "26.500 milhas + Taxas",
+  "volta": "26.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14406",
+  "data": "2026-11-01T16:34:17Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL + parceira",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "21.100 Milhas Smiles + Taxas",
+  "volta": "21.100 Milhas Smiles + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8765",
   "data": "2026-11-01T16:30:11Z",
   "origem": "Belém",
@@ -1808,6 +3362,20 @@
   "ida": "10.000 milhas + R$ 0,00",
   "volta": "10.000 milhas + R$ 0,00",
   "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-14405",
+  "data": "2026-11-01T16:29:22Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "48.110 milhas + Taxas",
+  "volta": "48.110 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "3761373661-8764",
@@ -1850,6 +3418,90 @@
   "ida": "16.580 milhas + Taxas",
   "volta": "14.560 milhas + Taxas",
   "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14404",
+  "data": "2026-11-01T16:22:33Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "66.850 milhas + Taxas",
+  "volta": "66.850 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14403",
+  "data": "2026-11-01T16:22:28Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "Milão",
+  "destino_iata": "MXP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "67.230 milhas + Taxas",
+  "volta": "69.480 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14402",
+  "data": "2026-11-01T16:22:23Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "61.100 milhas + Taxas",
+  "volta": "61.100 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14401",
+  "data": "2026-11-01T16:17:48Z",
+  "origem": "Teresina",
+  "origem_iata": "THE",
+  "destino": "Belo Horizonte",
+  "destino_iata": "CNF",
+  "companhia": "Azul + parceira",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "16.000 milhas + Taxas",
+  "volta": "16.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-14400",
+  "data": "2026-11-01T16:15:30Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Zaventem",
+  "destino_iata": "BRU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "61.100 milhas + Taxas",
+  "volta": "61.100 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14399",
+  "data": "2026-11-01T16:15:24Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Orlando",
+  "destino_iata": "MCO",
+  "companhia": "Copa Airlines + LATAM",
+  "cabine": "Econômica",
+  "programa": "Azul pelo Mundo",
+  "ida": "87.500 milhas + Taxas",
+  "volta": "",
+  "link_nome": "Azul pelo Mundo"
  },
  {
   "id": "1290836068-7539",
@@ -1921,6 +3573,48 @@
   "link_nome": "Azul Fidelidade"
  },
  {
+  "id": "2008590742-14398",
+  "data": "2026-11-01T14:35:25Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "Curitiba",
+  "destino_iata": "CWB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "21.600 milhas + Taxas",
+  "volta": "21.600 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14397",
+  "data": "2026-11-01T14:27:04Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL + parceira",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "50.500 milhas + Taxas",
+  "volta": "50.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14396",
+  "data": "2026-11-01T14:26:23Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Montevidéu",
+  "destino_iata": "MVD",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "42.000 milhas + Taxas",
+  "volta": "41.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8760",
   "data": "2026-11-01T14:25:11Z",
   "origem": "Brasília",
@@ -1947,6 +3641,20 @@
   "ida": "9.230 milhas + Taxas",
   "volta": "9.230 milhas + Taxas",
   "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14395",
+  "data": "2026-11-01T14:24:20Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Santa Cruz de La Sierra",
+  "destino_iata": "VVI",
+  "companhia": "GOL + LATAM",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "47.000 milhas + Taxas",
+  "volta": "47.000 milhas + Taxas",
+  "link_nome": "Smiles"
  },
  {
   "id": "3761373661-8758",
@@ -1977,6 +3685,34 @@
   "link_nome": "Azul Fidelidade"
  },
  {
+  "id": "2008590742-14394",
+  "data": "2026-11-01T14:14:03Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "49.000 milhas + Taxas",
+  "volta": "49.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14393",
+  "data": "2026-11-01T14:11:18Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "64.180 milhas + Taxas",
+  "volta": "71.240 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8756",
   "data": "2026-11-01T14:07:53Z",
   "origem": "Florianópolis",
@@ -1988,6 +3724,34 @@
   "programa": "Azul Fidelidade",
   "ida": "28.000 milhas + Taxas",
   "volta": "28.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-14392",
+  "data": "2026-11-01T14:07:22Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "Avianca + Azul",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "79.700 milhas + Taxas",
+  "volta": "79.700 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14391",
+  "data": "2026-11-01T14:07:20Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Cascavel",
+  "destino_iata": "CAC",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "8.000 milhas + Taxas",
+  "volta": "18.000 milhas + Taxas",
   "link_nome": "Azul Fidelidade"
  },
  {
@@ -2005,6 +3769,62 @@
   "link_nome": "Privilege Club"
  },
  {
+  "id": "2008590742-14390",
+  "data": "2026-11-01T13:57:17Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "41.500 milhas + Taxas",
+  "volta": "41.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14389",
+  "data": "2026-11-01T13:56:40Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "62.260 milhas + Taxas",
+  "volta": "62.460 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14388",
+  "data": "2026-11-01T13:51:23Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Cairo",
+  "destino_iata": "CAI",
+  "companhia": "Iberia",
+  "cabine": "Econômica",
+  "programa": "Iberia Plus",
+  "ida": "31.250 AVIOS + Taxas",
+  "volta": "31.250 AVIOS + Taxas",
+  "link_nome": "Iberia Plus"
+ },
+ {
+  "id": "2008590742-14387",
+  "data": "2026-11-01T13:48:20Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "8.000 milhas + Taxas",
+  "volta": "8.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-8755",
   "data": "2026-11-01T13:46:20Z",
   "origem": "Vitória",
@@ -2019,6 +3839,20 @@
   "link_nome": "Azul Fidelidade"
  },
  {
+  "id": "2008590742-14386",
+  "data": "2026-11-01T13:43:25Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Vitória",
+  "destino_iata": "VIX",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.000 milhas + Taxas",
+  "volta": "14.800 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8754",
   "data": "2026-11-01T13:41:29Z",
   "origem": "São Paulo",
@@ -2031,6 +3865,48 @@
   "ida": "18.000 milhas TudoAzul + Taxas",
   "volta": "20.000 milhas TudoAzul + Taxas",
   "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-14385",
+  "data": "2026-11-01T13:41:26Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Ushuaia",
+  "destino_iata": "USH",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "41.500 milhas Smiles + Taxas",
+  "volta": "48.000 milhas Smiles + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14384",
+  "data": "2026-11-01T13:32:42Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Orlando",
+  "destino_iata": "MCO",
+  "companhia": "Copa Airlines",
+  "cabine": "Econômica",
+  "programa": "Azul pelo Mundo",
+  "ida": "88.000 milhas + Taxas",
+  "volta": "83.500 milhas + Taxas",
+  "link_nome": "Azul pelo Mundo"
+ },
+ {
+  "id": "2008590742-14383",
+  "data": "2026-11-01T13:27:24Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Veneza",
+  "destino_iata": "VCE",
+  "companhia": "Iberia",
+  "cabine": "Econômica",
+  "programa": "Iberia Plus",
+  "ida": "26.500 AVIOS + Taxas",
+  "volta": "26.500 AVIOS + Taxas",
+  "link_nome": "Iberia Plus"
  },
  {
   "id": "1290836068-7528",
