@@ -1,5 +1,25 @@
 [
  {
+  "id": "1290836068-7573",
+  "data": "2026-11-03T16:35:56Z",
+  "tipo": "promocao",
+  "titulo": "ASSINATURA CLUBE LIVELO PREMIUM: ATÉ 385.000 PONTOS EM 12 MESES",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Assine o Clube Livelo Premium na modalidade anual e acumule até 385.000 pontos em 12 meses, somando os pontos do plano, pontos extras e bônus por permanência.",
+  "detalhes": [
+   "Bonificação total de 385.000 pontos: 240.000 pontos do Clube + 105.000 pontos extras da oferta + 40.000 pontos bônus por permanência",
+   "105.000 pontos extras distribuídos em 12 parcelas mensais de 8.750 pontos",
+   "10.000 pontos bônus a cada 3 meses de permanência"
+  ],
+  "parceiros": "Livelo",
+  "validade": "03/11/2026",
+  "links": [
+   "https://www.livelo.com.br/clube"
+  ],
+  "ate": "2026-11-03T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-14575",
   "data": "2026-11-03T16:27:53Z",
   "origem": "Belo Horizonte",
@@ -4063,34 +4083,6 @@
   "ida": "26.500 milhas + Taxas",
   "volta": "26.500 milhas + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-14406",
-  "data": "2026-11-01T16:34:17Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL + parceira",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "21.100 Milhas Smiles + Taxas",
-  "volta": "21.100 Milhas Smiles + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8765",
-  "data": "2026-11-01T16:30:11Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Altamira",
-  "destino_iata": "ATM",
-  "companhia": "AZUL",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "10.000 milhas + R$ 0,00",
-  "volta": "10.000 milhas + R$ 0,00",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "1290836068-7539",
