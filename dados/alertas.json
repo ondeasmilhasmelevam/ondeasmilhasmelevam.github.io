@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-14683",
+  "data": "2026-11-04T12:05:09Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "70.100 milhas + Taxas",
+  "volta": "60.600 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-6065",
+  "data": "2026-11-04T12:02:14Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Frankfurt",
+  "destino_iata": "FRA",
+  "companhia": "Lufthansa",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "80.000 milhas + $ 57,60 CAD",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "2361370250-6064",
   "data": "2026-11-04T11:58:37Z",
   "origem": "São Paulo",
