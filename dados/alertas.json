@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-14744",
+  "data": "2026-11-04T21:30:21Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "Lima",
+  "destino_iata": "LIM",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "51.000 milhas + Taxas",
+  "volta": "51.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14743",
+  "data": "2026-11-04T21:30:16Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "Assunção",
+  "destino_iata": "ASU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "34.300 milhas + Taxas",
+  "volta": "34.300 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-8952",
+  "data": "2026-11-04T21:30:11Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "23.200 milhas + Taxas",
+  "volta": "23.200 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-8951",
   "data": "2026-11-04T21:26:50Z",
   "origem": "Uberlândia",
