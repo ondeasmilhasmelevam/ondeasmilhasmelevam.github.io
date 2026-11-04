@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-14691",
+  "data": "2026-11-04T13:15:16Z",
+  "origem": "Uberlândia",
+  "origem_iata": "UDI",
+  "destino": "Montevidéu",
+  "destino_iata": "MVD",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "32.300 milhas + Taxas",
+  "volta": "32.300 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14690",
+  "data": "2026-11-04T13:15:09Z",
+  "origem": "Uberlândia",
+  "origem_iata": "UDI",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "30.300 milhas + Taxas",
+  "volta": "30.300 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2361370250-6072",
   "data": "2026-11-04T13:03:03Z",
   "origem": "São Paulo",
