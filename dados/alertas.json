@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-14700",
+  "data": "2026-11-04T16:15:43Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Cartagena",
+  "destino_iata": "CTG",
+  "companhia": "Copa",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "38.000 milhas + Taxas",
+  "volta": "27.900 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14699",
+  "data": "2026-11-04T16:15:38Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Curaçao",
+  "destino_iata": "CUR",
+  "companhia": "Copa",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "46.800 milhas + Taxas",
+  "volta": "46.800 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14698",
+  "data": "2026-11-04T16:15:35Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Dallas",
+  "destino_iata": "DFW",
+  "companhia": "Avianca",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "56.400 milhas + Taxas",
+  "volta": "53.800 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-7595",
   "data": "2026-11-04T16:13:28Z",
   "tipo": "promocao",

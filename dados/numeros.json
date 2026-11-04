@@ -1,9 +1,9 @@
 {
- "atualizado": "2026-11-04T16:14:07.620984Z",
+ "atualizado": "2026-11-04T16:20:19.654892Z",
  "dias": 30,
- "passagens": 529,
+ "passagens": 532,
  "promocoes": 60,
- "destinos": 104,
+ "destinos": 105,
  "executiva": 125,
  "destaques": [
   {
@@ -45,6 +45,19 @@
    "nivel": "espetacular"
   },
   {
+   "id": "2008590742-14699",
+   "origem": "Manaus",
+   "origem_iata": "MAO",
+   "destino": "Curaçao",
+   "destino_iata": "CUR",
+   "cabine": "Econômica",
+   "programa": "Smiles",
+   "data": "2026-11-04T16:15:38Z",
+   "milhas": 46800,
+   "nivel": "espetacular",
+   "foto": "img/rotas/MAO-CUR.jpg"
+  },
+  {
    "id": "2008590742-14405",
    "origem": "Fortaleza",
    "origem_iata": "FOR",
@@ -69,23 +82,10 @@
    "milhas": 54000,
    "nivel": "espetacular",
    "foto": "img/rotas/GRU-AUA.jpg"
-  },
-  {
-   "id": "2361370250-5971",
-   "origem": "Rio de Janeiro",
-   "origem_iata": "GIG",
-   "destino": "Nova York",
-   "destino_iata": "JFK",
-   "cabine": "Executiva",
-   "programa": "Smiles",
-   "data": "2026-11-02T15:26:46Z",
-   "milhas": 178700,
-   "nivel": "espetacular",
-   "foto": "img/rotas/GIG-JFK.jpg"
   }
  ],
  "semana": {
-  "passagens": 529,
+  "passagens": 532,
   "destaques": [
    {
     "id": "3761373661-8819",
