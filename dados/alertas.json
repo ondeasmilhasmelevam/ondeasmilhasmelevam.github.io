@@ -6189,48 +6189,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-14497",
-  "data": "2026-11-02T18:48:45Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "68.894 milhas + R$ 117,24",
-  "volta": "61.365 milhas + R$ 614,11",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-14496",
-  "data": "2026-11-02T18:48:38Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "20.141 milhas + R$ 125,60",
-  "volta": "17.121 milhas + R$ 419,58",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8785",
-  "data": "2026-11-02T18:48:34Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Maceió",
-  "destino_iata": "MCZ",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "7.000 pontos + R$ 130,44",
-  "volta": "7.000 pontos + R$ 121,34",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7557",
   "data": "2026-11-02T12:21:37Z",
   "tipo": "promocao",
