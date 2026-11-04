@@ -6756,20 +6756,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-14504",
-  "data": "2026-11-02T23:15:52Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Casablanca",
-  "destino_iata": "CMN",
-  "companhia": "Royal Air Maroc",
-  "cabine": "Econômica",
-  "programa": "Privilege Club",
-  "ida": "25.750 AVIOS + Taxas",
-  "volta": "25.750 AVIOS + Taxas",
-  "link_nome": "Privilege Club"
- },
- {
   "id": "1290836068-7557",
   "data": "2026-11-02T12:21:37Z",
   "tipo": "promocao",
