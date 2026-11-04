@@ -1,11 +1,24 @@
 {
- "atualizado": "2026-11-04T15:24:50.357763Z",
+ "atualizado": "2026-11-04T15:30:59.186010Z",
  "dias": 30,
- "passagens": 520,
+ "passagens": 527,
  "promocoes": 59,
- "destinos": 103,
+ "destinos": 104,
  "executiva": 125,
  "destaques": [
+  {
+   "id": "2008590742-14697",
+   "origem": "São Paulo",
+   "origem_iata": "GRU",
+   "destino": "Lima",
+   "destino_iata": "LIM",
+   "cabine": "Econômica",
+   "programa": "LATAM Pass",
+   "data": "2026-11-04T15:30:24Z",
+   "milhas": 21000,
+   "nivel": "espetacular",
+   "foto": "img/rotas/GRU-LIM.jpg"
+  },
   {
    "id": "2008590742-14583",
    "origem": "Manaus",
@@ -69,23 +82,10 @@
    "milhas": 178700,
    "nivel": "espetacular",
    "foto": "img/rotas/GIG-JFK.jpg"
-  },
-  {
-   "id": "2008590742-14688",
-   "origem": "Florianópolis",
-   "origem_iata": "FLN",
-   "destino": "Buenos Aires",
-   "destino_iata": "EZE",
-   "cabine": "Econômica",
-   "programa": "LATAM Pass",
-   "data": "2026-11-04T12:51:07Z",
-   "milhas": 15728,
-   "nivel": "muito bom",
-   "foto": "img/rotas/FLN-EZE.jpg"
   }
  ],
  "semana": {
-  "passagens": 520,
+  "passagens": 527,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -116,6 +116,20 @@
     "foto": "img/rotas/POA-VCP.jpg"
    },
    {
+    "id": "2008590742-14697",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Lima",
+    "destino_iata": "LIM",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-04T15:30:24Z",
+    "milhas": 21000,
+    "nivel": "espetacular",
+    "grupo": "Internacional",
+    "foto": "img/rotas/GRU-LIM.jpg"
+   },
+   {
     "id": "2008590742-14583",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -128,19 +142,6 @@
     "nivel": "espetacular",
     "grupo": "Internacional",
     "foto": "img/rotas/MAO-PTY.jpg"
-   },
-   {
-    "id": "2008590742-14564",
-    "origem": "Belém",
-    "origem_iata": "BEL",
-    "destino": "Punta Cana",
-    "destino_iata": "PUJ",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-03T14:21:47Z",
-    "milhas": 43200,
-    "nivel": "espetacular",
-    "grupo": "Internacional"
    },
    {
     "id": "2361370250-5960",
