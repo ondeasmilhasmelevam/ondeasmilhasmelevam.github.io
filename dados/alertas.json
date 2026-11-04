@@ -1,5 +1,75 @@
 [
  {
+  "id": "2361370250-6086",
+  "data": "2026-11-04T21:07:55Z",
+  "origem": "Joanesburgo",
+  "origem_iata": "JNB",
+  "destino": "Abu Dhabi",
+  "destino_iata": "AUH",
+  "companhia": "Etihad Airways",
+  "cabine": "Executiva",
+  "programa": "AAdvantage",
+  "ida": "55.000 milhas + R$ 196,30",
+  "volta": "55.000 milhas + R$ 199,29",
+  "link_nome": "AAdvantage"
+ },
+ {
+  "id": "2008590742-14739",
+  "data": "2026-11-04T21:06:06Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "22.700 milhas + Taxas",
+  "volta": "22.700 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14738",
+  "data": "2026-11-04T21:06:00Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "San José",
+  "destino_iata": "SJO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "43.800 milhas + Taxas",
+  "volta": "43.800 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14737",
+  "data": "2026-11-04T21:05:55Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Maiquetía",
+  "destino_iata": "CCS",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "70.500 milhas + Taxas",
+  "volta": "70.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8950",
+  "data": "2026-11-04T21:05:51Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "6.000 milhas + Taxas",
+  "volta": "14.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "1290836068-7602",
   "data": "2026-11-04T20:58:59Z",
   "tipo": "promocao",
@@ -2677,20 +2747,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "3761373661-8875",
-  "data": "2026-11-04T11:07:13Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.300 milhas + Taxas",
-  "volta": "11.300 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "2361370250-6051",
   "data": "2026-11-04T11:07:13Z",
   "origem": "Brasília",
@@ -2703,6 +2759,20 @@
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
   "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "3761373661-8875",
+  "data": "2026-11-04T11:07:13Z",
+  "origem": "Aracaju",
+  "origem_iata": "AJU",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "11.300 milhas + Taxas",
+  "volta": "11.300 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "2008590742-14662",
