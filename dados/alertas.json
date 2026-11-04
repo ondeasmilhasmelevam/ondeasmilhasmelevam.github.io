@@ -1,5 +1,47 @@
 [
  {
+  "id": "3761373661-8900",
+  "data": "2026-11-04T14:19:25Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "29.400 milhas + Taxas",
+  "volta": "29.400 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-8899",
+  "data": "2026-11-04T14:19:21Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "21.000 milhas + Taxas",
+  "volta": "21.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-14695",
+  "data": "2026-11-04T14:19:16Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Buenos Aires",
+  "destino_iata": "AEP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "31.900 milhas + Taxas",
+  "volta": "31.900 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-14694",
   "data": "2026-11-04T14:17:13Z",
   "origem": "Natal",
