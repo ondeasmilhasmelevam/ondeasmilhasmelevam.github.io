@@ -4240,20 +4240,6 @@
   "link_nome": "TAP Miles&Go"
  },
  {
-  "id": "3761373661-8770",
-  "data": "2026-11-02T02:29:06Z",
-  "origem": "São Paulo",
-  "origem_iata": "CGH",
-  "destino": "Florianópolis",
-  "destino_iata": "FLN",
-  "companhia": "GOL Linhas Aéreas",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "6.500 milhas + R$ 62,14 de taxas",
-  "volta": "14.500 milhas + R$ 56,99 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7539",
   "data": "2026-11-01T15:17:40Z",
   "tipo": "promocao",
