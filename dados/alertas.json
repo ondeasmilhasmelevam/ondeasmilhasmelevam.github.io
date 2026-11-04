@@ -5993,31 +5993,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "1290836068-7562",
-  "data": "2026-11-02T17:56:34Z",
-  "tipo": "promocao",
-  "titulo": "PASSAGENS NACIONAIS A PARTIR DE 3 MIL PONTOS AZUL FIDELIDADE",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Promoção de passagens nacionais emitidas no Azul Fidelidade com valores a partir de 3.000 pontos + taxas. Disponíveis trechos listados com milhas por trecho e datas de reserva. Taxa de resgate aplica para reservas com menos de 90 dias, exceto clientes Diamante.",
-  "detalhes": [
-   "valor mínimo 3.000 pontos",
-   "taxas adicionais",
-   "taxa de resgate para reservas <90 dias exceto Diamante",
-   "milhas por trecho listadas",
-   "datas de reserva específicas",
-   "Curitiba (CWB) x Maringá (MGF) a partir de 3.250 milhas o trecho",
-   "Ipatinga (IPN) x Belo Horizonte (CNF) a partir de 3.250 milhas o trecho",
-   "Campina Grande (CPV) x Recife (REC) a partir de 3.250 milhas o trecho"
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/kLEDgnB"
-  ],
-  "ate": ""
- },
- {
   "id": "1290836068-7557",
   "data": "2026-11-02T12:21:37Z",
   "tipo": "promocao",
