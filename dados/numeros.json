@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-04T12:50:15.984641Z",
+ "atualizado": "2026-11-04T12:56:29.893700Z",
  "dias": 30,
- "passagens": 493,
+ "passagens": 496,
  "promocoes": 51,
  "destinos": 100,
  "executiva": 120,
@@ -71,21 +71,21 @@
    "foto": "img/rotas/GIG-JFK.jpg"
   },
   {
-   "id": "2008590742-14542",
-   "origem": "Manaus",
-   "origem_iata": "MAO",
-   "destino": "Bogotá",
-   "destino_iata": "BOG",
+   "id": "2008590742-14688",
+   "origem": "Florianópolis",
+   "origem_iata": "FLN",
+   "destino": "Buenos Aires",
+   "destino_iata": "EZE",
    "cabine": "Econômica",
-   "programa": "Smiles",
-   "data": "2026-11-03T12:40:03Z",
-   "milhas": 16800,
+   "programa": "LATAM Pass",
+   "data": "2026-11-04T12:51:07Z",
+   "milhas": 15728,
    "nivel": "muito bom",
-   "foto": "img/rotas/MAO-BOG.jpg"
+   "foto": "img/rotas/FLN-EZE.jpg"
   }
  ],
  "semana": {
-  "passagens": 493,
+  "passagens": 496,
   "destaques": [
    {
     "id": "3761373661-8819",

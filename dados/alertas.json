@@ -1,5 +1,47 @@
 [
  {
+  "id": "3761373661-8890",
+  "data": "2026-11-04T12:51:17Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "LATAM Airlines",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "7.388 milhas + R$ 56,99",
+  "volta": "5.912 milhas + R$ 35,75",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-8889",
+  "data": "2026-11-04T12:51:12Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "LATAM Airlines",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "8.321 milhas + R$ 56,99",
+  "volta": "8.321 milhas + R$ 34,55",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14688",
+  "data": "2026-11-04T12:51:07Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "LATAM Airlines",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "15.728 milhas + R$ 108,17",
+  "volta": "14.593 milhas + R$ 425,18",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-8888",
   "data": "2026-11-04T12:45:28Z",
   "origem": "Porto Alegre",
