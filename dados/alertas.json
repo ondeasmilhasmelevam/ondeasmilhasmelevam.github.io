@@ -1,5 +1,182 @@
 [
  {
+  "id": "2008590742-14694",
+  "data": "2026-11-04T14:17:13Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "Buenos Aires",
+  "destino_iata": "AEP",
+  "companhia": "Gol",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "A partir de 53.500 milhas",
+  "volta": "A partir de 53.500 milhas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "1290836068-7587",
+  "data": "2026-11-04T14:17:09Z",
+  "tipo": "promocao",
+  "titulo": "IHG ONE REWARDS: COMPRE PONTOS E GANHE ATÉ 100% DE BÔNUS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Compre pontos no programa IHG One Rewards e receba até 100% de bônus dependendo da quantidade adquirida.",
+  "detalhes": [
+   "80% de bônus para 5.000 a 10.000 pontos.",
+   "90% de bônus para 11.000 a 39.000 pontos.",
+   "100% de bônus para 40.000 pontos ou mais."
+  ],
+  "parceiros": "IHG One Rewards",
+  "validade": "05/11/2026",
+  "links": [
+   "https://storefront.points.com/IHG-rewards-club/sso/mv-delegate/buy"
+  ],
+  "ate": "2026-11-05T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7586",
+  "data": "2026-11-04T14:17:04Z",
+  "tipo": "promocao",
+  "titulo": "AZUL: LISBOA A PARTIR DE 77.600 PONTOS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Azul oferece trecho para Lisboa a partir de 77.600 pontos ou R$ 918,84 + taxas por trecho. Transferência de pontos Livelo para Azul Fidelidade tem bônus de até 130%. Assinantes do Clube Azul e Clube Livelo recebem 100% de bônus na transferência.",
+  "detalhes": [
+   "valor em pontos: 77.600 pontos por trecho",
+   "valor em dinheiro: R$ 918,84 + taxas por trecho",
+   "transferência de pontos Livelo para Azul Fidelidade com bônus de até 130%",
+   "assinantes do Clube Azul e Clube Livelo recebem 100% de bônus na transferência",
+   "assinantes do Clube Azul podem ganhar até 30% de bônus adicionais com base no tempo de adesão ao clube",
+   "bônus adicional por tempo de adesão do Clube Azul possui limite de 100.000 pontos por ano",
+   "custo efetivo da emissão em pontos é de R$ 11,78 por milheiro",
+   "parcelamento em até 6x sem juros"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/UBOaO5f"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7585",
+  "data": "2026-11-04T14:17:00Z",
+  "tipo": "promocao",
+  "titulo": "CLUBE ESFERA: ASSINE OU ATUALIZE COM ATÉ 300% DE BÔNUS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine ou faça upgrade no Clube Esfera e garanta até 60.000 pontos bônus distribuídos em 12 meses.",
+  "detalhes": [
+   "300% de bônus aplicados nos planos Pro (3.000 pts), Master (7.500 pts), VIP (15.000 pts) e Exclusive (60.000 pts)."
+  ],
+  "parceiros": "Esfera",
+  "validade": "20/11/2026",
+  "links": [
+   "https://www.esfera.com.vc/clube"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7584",
+  "data": "2026-11-04T14:16:55Z",
+  "tipo": "promocao",
+  "titulo": "LISBOA A PARTIR DE 77.600 PONTOS AZUL",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Azul oferece trecho para Lisboa a partir de 77.600 pontos ou R$ 918,84 + taxas por trecho. Transferência de pontos Livelo para Azul Fidelidade tem bônus de até 130%. Assinantes do Clube Azul e Clube Livelo recebem 100% de bônus na transferência.",
+  "detalhes": [
+   "valor em pontos: 77.600 pontos por trecho",
+   "valor em dinheiro: R$ 918,84 + taxas por trecho",
+   "transferência Livelo para Azul Fidelidade bônus de até 130%",
+   "assinantes do Clube Azul e Clube Livelo recebem 100% de bônus na transferência",
+   "assinantes do Clube Azul podem ganhar até 30% de bônus adicional baseado no tempo de adesão",
+   "custo efetivo da emissão em pontos: R$ 11,78 por milheiro considerando bônus",
+   "parcelamento em até 6x sem juros para pontos + dinheiro",
+   "volta disponível apenas para assinantes"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/UBOaO5f"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7583",
+  "data": "2026-11-04T14:16:49Z",
+  "tipo": "promocao",
+  "titulo": "UPGRADE CLUBE LIVELO ESPECIAL: ATÉ 105.000 PONTOS EM 12 MESES",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Faça o upgrade para o Clube Livelo Especial 5.000 e acumule até 105.000 pontos em 12 meses com bonificação promocional.",
+  "detalhes": [
+   "Anual: 60.000 pontos do Clube + 45.000 pontos extras (Total de 105.000 pontos).",
+   "Mensal: 60.000 pontos do Clube + 42.000 pontos extras (Total de 102.000 pontos)."
+  ],
+  "parceiros": "Livelo",
+  "validade": "05/11/2026, às 23h59",
+  "links": [
+   "https://www.livelo.com.br/upgrade-promo-CDC15600"
+  ],
+  "ate": "2026-11-05T23:59:59-03:00"
+ },
+ {
+  "id": "2361370250-6076",
+  "data": "2026-11-04T14:15:31Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Joanesburgo",
+  "destino_iata": "JNB",
+  "companhia": "GOL + Qatar Airways",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "201.700 milhas + Taxas",
+  "volta": "201.700 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-6075",
+  "data": "2026-11-04T14:15:27Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Cidade do Cabo",
+  "destino_iata": "CPT",
+  "companhia": "GOL + Qatar Airways",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "171.950 milhas + Taxas",
+  "volta": "171.950 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-6074",
+  "data": "2026-11-04T14:15:23Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "35.000 milhas + Taxas",
+  "volta": "35.000 milhas + Taxas",
+  "link_nome": "Aeroplan"
+ },
+ {
+  "id": "2361370250-6073",
+  "data": "2026-11-04T14:15:20Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "GOL",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "64.000 milhas + Taxas",
+  "volta": "64.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-14693",
   "data": "2026-11-04T13:19:43Z",
   "origem": "Porto Alegre",
@@ -910,20 +1087,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "3761373661-8875",
-  "data": "2026-11-04T11:07:13Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.300 milhas + Taxas",
-  "volta": "11.300 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "2361370250-6051",
   "data": "2026-11-04T11:07:13Z",
   "origem": "Brasília",
@@ -936,6 +1099,20 @@
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
   "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "3761373661-8875",
+  "data": "2026-11-04T11:07:13Z",
+  "origem": "Aracaju",
+  "origem_iata": "AJU",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "11.300 milhas + Taxas",
+  "volta": "11.300 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "2008590742-14662",
