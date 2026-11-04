@@ -1,5 +1,67 @@
 [
  {
+  "id": "1290836068-7591",
+  "data": "2026-11-04T14:56:21Z",
+  "tipo": "promocao",
+  "titulo": "PICPAY & LATAM Pass: TRANSFIRA PONTOS COM 25% DE BÔNUS + 1.000 MILHAS EXTRAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira pontos do PicPay para o LATAM Pass e ganhe 25% de bônus + 1.000 milhas extras na primeira transferência.",
+  "detalhes": [
+   "25% de bônus para todos os clientes elegíveis.",
+   "1.000 milhas extras para primeira transferência."
+  ],
+  "parceiros": "PicPay, LATAM Pass",
+  "validade": "Até 06/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/promocoes/picpay-milhas-extras"
+  ],
+  "ate": "2026-11-06T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7590",
+  "data": "2026-11-04T14:56:17Z",
+  "tipo": "promocao",
+  "titulo": "MELIUZ & ALL ACCOR: 10% DE CASHBACK EM HOTÉIS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Receba 10% de cashback ao reservar hotéis do grupo ALL Accor através do Méliuz.",
+  "detalhes": [
+   "10% de cashback em reservas de hotéis ALL Accor."
+  ],
+  "parceiros": "Méliuz, ALL Accor",
+  "validade": "Até 06/11/2026",
+  "links": [
+   "https://meliuz.onelink.me/2657008059/3kx8908c?id=57"
+  ],
+  "ate": "2026-11-06T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7588",
+  "data": "2026-11-04T14:56:07Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFERÊNCIA ESFERA PARA ALL ACCOR COM BÔNUS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Clientes Esfera podem transferir pontos para o programa ALL Accor. A promoção oferece 20% de pontos de volta e, para assinantes ALL Signature, 10% de bônus. A transferência mínima é de 30.000 pontos e a taxa de conversão é 3,5 Esfera por 1 ALL.",
+  "detalhes": [
+   "20% de pontos de volta",
+   "10% de bônus para assinantes ALL Signature",
+   "transferência mínima 30.000 pontos para clientes Esfera sem clube",
+   "taxa de conversão 3,5 pontos Esfera por 1 ponto ALL",
+   "limite de 1 transação por CPF",
+   "bônus exclusivo para assinantes ALL Signature limitado a 50.000 pontos Rewards por CPF",
+   "pontos de volta e bônus creditados em até 30 dias corridos após término da promoção",
+   "validade dos pontos 2 anos"
+  ],
+  "parceiros": "Esfera",
+  "validade": "até a próxima sexta-feira, 6 de novembro",
+  "links": [
+   "https://link.dia23.com.br/r/4MtbMyu"
+  ],
+  "ate": ""
+ },
+ {
   "id": "3761373661-8903",
   "data": "2026-11-04T14:24:28Z",
   "origem": "Natal",
@@ -5315,48 +5377,6 @@
   "ida": "26.000 milhas + Taxas",
   "volta": "26.000 milhas + Taxas",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-8776",
-  "data": "2026-11-02T14:55:29Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "8.300 milhas + Taxas",
-  "volta": "8.300 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8775",
-  "data": "2026-11-02T14:55:24Z",
-  "origem": "Navegantes",
-  "origem_iata": "NVT",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "21.300 milhas + Taxas",
-  "volta": "21.300 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-14494",
-  "data": "2026-11-02T14:55:22Z",
-  "origem": "Foz do Iguaçu",
-  "origem_iata": "IGU",
-  "destino": "Porto Alegre",
-  "destino_iata": "POA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "24.700 milhas + Taxas",
-  "volta": "24.700 milhas + Taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7557",
