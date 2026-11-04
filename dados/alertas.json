@@ -1,5 +1,61 @@
 [
  {
+  "id": "2361370250-6064",
+  "data": "2026-11-04T11:58:37Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "257.000 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2008590742-14681",
+  "data": "2026-11-04T11:58:01Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "Turkish Airlines",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "66.500 milhas",
+  "volta": "66.500 milhas",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2361370250-6063",
+  "data": "2026-11-04T11:55:56Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "424.100 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2008590742-14680",
+  "data": "2026-11-04T11:55:09Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France",
+  "cabine": "Econômica",
+  "programa": "GOL Smiles",
+  "ida": "92.100 milhas",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-6062",
   "data": "2026-11-04T11:52:07Z",
   "origem": "Rio de Janeiro",
@@ -4709,20 +4765,6 @@
    "https://all.accor.com/a/en/offers/all-accor---mega-bonus-offer.html"
   ],
   "ate": "2026-11-20T23:59:59-03:00"
- },
- {
-  "id": "2008590742-14488",
-  "data": "2026-11-02T11:53:58Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Cidade do Cabo",
-  "destino_iata": "CPT",
-  "companhia": "South African Airways",
-  "cabine": "Econômica",
-  "programa": "GOL Smiles",
-  "ida": "70.300 milhas",
-  "volta": "",
-  "link_nome": "GOL Smiles"
  },
  {
   "id": "1290836068-7539",
