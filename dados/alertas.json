@@ -6728,34 +6728,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-14506",
-  "data": "2026-11-02T23:35:31Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Salvador",
-  "destino_iata": "SSA",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "20.000 milhas + Taxas",
-  "volta": "20.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-14505",
-  "data": "2026-11-02T23:35:01Z",
-  "origem": "Navegantes",
-  "origem_iata": "NVT",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.650 milhas + Taxas",
-  "volta": "11.650 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7557",
   "data": "2026-11-02T12:21:37Z",
   "tipo": "promocao",
