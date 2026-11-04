@@ -6700,34 +6700,6 @@
   "link_nome": "AAdvantage"
  },
  {
-  "id": "3761373661-8787",
-  "data": "2026-11-02T23:40:03Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.680 milhas + Taxas",
-  "volta": "11.680 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-14507",
-  "data": "2026-11-02T23:38:14Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "27.750 milhas + Taxas",
-  "volta": "27.750 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7557",
   "data": "2026-11-02T12:21:37Z",
   "tipo": "promocao",
