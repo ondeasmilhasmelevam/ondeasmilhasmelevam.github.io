@@ -318,27 +318,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "1290836068-7575",
-  "data": "2026-11-03T18:36:25Z",
-  "tipo": "promocao",
-  "titulo": "ASSINE CLUBE SMILES ANUAL E RECEBA 11.000 MILHAS NA HORA",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Assine o Clube Smiles Anual e receba 11.000 milhas na hora .",
-  "detalhes": [
-   "Plano 1.000 Anual: 11.000 milhas na hora .",
-   "Pagamento à vista: R$ 496,80 por 22.000 milhas (R$ 22,58/milheiro).",
-   "Pagamento parcelado: R$ 524,40 por 22.000 milhas (R$ 23,84/milheiro).",
-   "Com 6 meses de permanência, o milheiro sai por R$ 15,53 (à vista) ou R$ 16,39 (parcelado)."
-  ],
-  "parceiros": "Smiles",
-  "validade": "03/11/2026 (até 21h)",
-  "links": [
-   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja/20261102"
-  ],
-  "ate": "2026-11-03T23:59:59-03:00"
- },
- {
   "id": "2361370250-5986",
   "data": "2026-11-03T18:19:08Z",
   "origem": "São Paulo",
@@ -449,47 +428,6 @@
   "ida": "50.100 milhas + Taxas",
   "volta": "50.100 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "1290836068-7574",
-  "data": "2026-11-03T17:22:12Z",
-  "tipo": "promocao",
-  "titulo": "ASSINATURA CLUBE LIVELO PREMIUM COM 105.000 PONTOS BÔNUS",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Assine o Clube Livelo Premium anual e ganhe 105.000 pontos bônus divididos em 12 parcelas de 8.750 pontos. Milheiro a partir de R$ 24,36 (à vista) ou R$ 25,71 (parcelado).",
-  "detalhes": [
-   "Bonificação total de 105.000 pontos Livelo (8.750 pontos/mês).",
-   "Clube Premium Anual: 385.000 pontos em 12 meses .",
-   "Milheiro à vista: R$ 24,36.",
-   "Milheiro parcelado: R$ 25,71."
-  ],
-  "parceiros": "Livelo",
-  "validade": "03/11/2026",
-  "links": [
-   "https://www.livelo.com.br/clube"
-  ],
-  "ate": "2026-11-03T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7573",
-  "data": "2026-11-03T16:35:56Z",
-  "tipo": "promocao",
-  "titulo": "ASSINATURA CLUBE LIVELO PREMIUM: ATÉ 385.000 PONTOS EM 12 MESES",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Assine o Clube Livelo Premium na modalidade anual e acumule até 385.000 pontos em 12 meses, somando os pontos do plano, pontos extras e bônus por permanência.",
-  "detalhes": [
-   "Bonificação total de 385.000 pontos: 240.000 pontos do Clube + 105.000 pontos extras da oferta + 40.000 pontos bônus por permanência",
-   "105.000 pontos extras distribuídos em 12 parcelas mensais de 8.750 pontos",
-   "10.000 pontos bônus a cada 3 meses de permanência"
-  ],
-  "parceiros": "Livelo",
-  "validade": "03/11/2026",
-  "links": [
-   "https://www.livelo.com.br/clube"
-  ],
-  "ate": "2026-11-03T23:59:59-03:00"
  },
  {
   "id": "2008590742-14575",
@@ -624,26 +562,6 @@
   "ida": "33.922 milhas + R$ 196,45 Taxas",
   "volta": "33.922 milhas + R$ 354,29 Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "1290836068-7568",
-  "data": "2026-11-03T15:06:14Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass E PORTOBANK: ATÉ 25% DE BÔNUS NAS TRANSFERÊNCIAS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira seus pontos do PortoBank para o LATAM Pass e receba 25% de milhas bônus, além de um bônus especial de 1.000 milhas na primeira transferência.",
-  "detalhes": [
-   "25% de bônus para todos os clientes LATAM Pass.",
-   "1.000 milhas bônus adicionais na primeira transferência realizada."
-  ],
-  "parceiros": "LATAM Pass, PortoBank",
-  "validade": "03/11/2026",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/portobank-milhas-extras",
-   "https://d3rwujusajfqlr.cloudfront.net/uploads/83bb1222-0d8c-4b36-b1ff-f11727aec8ef.pdf"
-  ],
-  "ate": "2026-11-03T23:59:59-03:00"
  },
  {
   "id": "2008590742-14570",
@@ -2621,27 +2539,6 @@
   "link_nome": "AAdvantage"
  },
  {
-  "id": "1290836068-7564",
-  "data": "2026-11-03T10:00:02Z",
-  "tipo": "promocao",
-  "titulo": "IPIRANGA KMV: 8% DE CASHBACK NO IPIMAX TODA TERÇA",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Hoje, terça-feira 03/11, quem abastece com a linha Ipimax nos postos Ipiranga e paga pelo app KMV troca 1.000 pontos KMV por 8% de cashback.",
-  "detalhes": [
-   "Abasteça com um combustível da linha Ipimax.",
-   "No app KMV, troque 1.000 pontos pela oferta de 8% de cashback.",
-   "Pague o abastecimento pelo app KMV.",
-   "O cashback fica no app para usar no próximo abastecimento."
-  ],
-  "parceiros": "Ipiranga, KMV",
-  "validade": "Hoje, 03/11",
-  "links": [
-   "https://www.ipiranga.com.br/wps/portal/pt-br/ipiranga/km-de-vantagens"
-  ],
-  "ate": "2026-11-03T23:59:59-03:00"
- },
- {
   "id": "3761373661-8787",
   "data": "2026-11-02T23:40:03Z",
   "origem": "Salvador",
@@ -4277,43 +4174,6 @@
   "ate": "2026-12-31T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7537",
-  "data": "2026-11-01T15:17:25Z",
-  "tipo": "promocao",
-  "titulo": "SMILES: RECEBA ATÉ 270.000 MILHAS EM 12 MESES DEPENDENDO DO PLANO ASSINADO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Clube Smiles e receba até 270.000 milhas em 12 meses com milheiro a partir de R$ 23,66 no plano 1.000 anual à vista.",
-  "detalhes": [
-   "Receba até 270.000 milhas em 12 meses dependendo do plano assinado."
-  ],
-  "parceiros": "Smiles",
-  "validade": "03/11/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja/bau-20261026"
-  ],
-  "ate": "2026-11-03T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7528",
-  "data": "2026-10-31T12:35:21Z",
-  "tipo": "promocao",
-  "titulo": "SMILES: BÔNUS CONCEDIDO NA ADESÃO PARA PLANOS ANUAIS OU EM 6 PARCELAS PARA PLANOS MENSAIS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Clube Smiles e receba até 270.000 milhas em 12 meses com milheiro a partir de R$ 23,66.",
-  "detalhes": [
-   "Bônus concedido na adesão para planos anuais ou em 6 parcelas para planos mensais.",
-   "Permanência mínima de 6 meses (planos 1.000 a 10.000) e 10 meses (plano 20.000)."
-  ],
-  "parceiros": "Smiles",
-  "validade": "03/11/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja/bau-20261026"
-  ],
-  "ate": "2026-11-03T23:59:59-03:00"
- },
- {
   "id": "1290836068-7526",
   "data": "2026-10-31T12:35:11Z",
   "tipo": "promocao",
@@ -4332,26 +4192,6 @@
    "https://all.accor.com/a/pt-br/loyalty-program/subscription-program/all-signature.html"
   ],
   "ate": "2026-11-20T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7519",
-  "data": "2026-10-30T18:44:18Z",
-  "tipo": "promocao",
-  "titulo": "CLUBE SMILES: 10.000 MILHAS AO ASSINAR PLANO 1.000",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Receba 10.000 milhas na hora ao assinar o Plano 1.000 do Clube Smiles. Valor do milheiro pode chegar a R$ 16,56 com permanência mínima de 6 meses.",
-  "detalhes": [
-   "10.000 milhas de bônus ao assinar o Plano 1.000.",
-   "21.000 milhas em 12 meses com permanência mínima de 6 meses.",
-   "Valor do milheiro a partir de R$ 16,56 (anual à vista com carência)."
-  ],
-  "parceiros": "Smiles",
-  "validade": "03/11/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja/bau-20261026"
-  ],
-  "ate": "2026-11-03T23:59:59-03:00"
  },
  {
   "id": "1290836068-7510",
@@ -4393,31 +4233,6 @@
    "https://www.hilton.com/en/p/hilton-honors/buy-give-receive-points"
   ],
   "ate": "2026-11-21T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7449",
-  "data": "2026-10-26T20:23:05Z",
-  "tipo": "promocao",
-  "titulo": "ASSINE O CLUBE SMILES E RECEBA ATÉ 270.000 MILHAS EM 12 MESES",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Clube Smiles e receba bônus de até 270.000 milhas em 12 meses, com planos anuais e mensais disponíveis. Validade até 10h do dia 03/11/2026.",
-  "detalhes": [
-   "Clube 1.000: Anual (21.000 milhas) - 9.000 milhas bônus + 12.000 milhas do plano. Mensal (18.000 milhas) - 6.000 milhas bônus + 12.000 milhas do plano.",
-   "Clube 2.000: Anual (37.000 milhas) - 13.000 milhas bônus + 24.000 milhas do plano. Mensal (33.000 milhas) - 9.000 milhas bônus + 24.000 milhas do plano.",
-   "Clube 5.000: 75.000 milhas - 15.000 milhas bônus + 60.000 milhas do plano.",
-   "Clube 10.000: 140.000 milhas - 20.000 milhas bônus + 120.000 milhas do plano.",
-   "Clube 20.000: 270.000 milhas - 30.000 milhas bônus + 240.000 milhas do plano.",
-   "Milheiro Clube 1.000: Mensal (R$ 30,67), Anual parcelado (R$ 24,97), Anual à vista (R$ 23,66).",
-   "Milheiro Clube 2.000: Mensal (R$ 29,82), Anual parcelado (R$ 25,26), Anual à vista (R$ 23,94).",
-   "Milheiro Clube 5.000: Mensal (R$ 29,44), Anual parcelado (R$ 30,25), Anual à vista (R$ 28,66)."
-  ],
-  "parceiros": "Smiles",
-  "validade": "10h do dia 03/11/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja/bau-20261026"
-  ],
-  "ate": "2026-11-03T23:59:59-03:00"
  },
  {
   "id": "1290836068-7445",
