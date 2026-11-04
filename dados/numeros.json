@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-04T18:31:26.430676Z",
+ "atualizado": "2026-11-04T18:37:38.362840Z",
  "dias": 30,
- "passagens": 585,
+ "passagens": 591,
  "promocoes": 60,
  "destinos": 107,
  "executiva": 127,
@@ -31,6 +31,19 @@
    "milhas": 25400,
    "nivel": "espetacular",
    "foto": "img/rotas/MAO-PTY.jpg"
+  },
+  {
+   "id": "2008590742-14723",
+   "origem": "Brasília",
+   "origem_iata": "BSB",
+   "destino": "San José",
+   "destino_iata": "SJO",
+   "cabine": "Econômica",
+   "programa": "LATAM Pass",
+   "data": "2026-11-04T18:31:36Z",
+   "milhas": 36600,
+   "nivel": "espetacular",
+   "foto": "img/rotas/BSB-SJO.jpg"
   },
   {
    "id": "2008590742-14564",
@@ -69,23 +82,10 @@
    "milhas": 48110,
    "nivel": "espetacular",
    "foto": "img/rotas/FOR-MIA.jpg"
-  },
-  {
-   "id": "2008590742-14580",
-   "origem": "São Paulo",
-   "origem_iata": "GRU",
-   "destino": "Aruba",
-   "destino_iata": "AUA",
-   "cabine": "Econômica",
-   "programa": "Smiles",
-   "data": "2026-11-03T19:29:44Z",
-   "milhas": 54000,
-   "nivel": "espetacular",
-   "foto": "img/rotas/GRU-AUA.jpg"
   }
  ],
  "semana": {
-  "passagens": 585,
+  "passagens": 591,
   "destaques": [
    {
     "id": "3761373661-8819",
