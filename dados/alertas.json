@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6093",
+  "data": "2026-11-05T15:18:17Z",
+  "origem": "Paris",
+  "origem_iata": "CDG",
+  "destino": "Abu Dhabi",
+  "destino_iata": "AUH",
+  "companhia": "Etihad Airways",
+  "cabine": "Primeira Classe",
+  "programa": "AAdvantage",
+  "ida": "62.500 milhas + R$ 871,62",
+  "volta": "62.500 milhas + R$ 191,90",
+  "link_nome": "AAdvantage"
+ },
+ {
   "id": "2361370250-6092",
   "data": "2026-11-05T15:03:39Z",
   "origem": "Seul",
