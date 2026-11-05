@@ -6709,48 +6709,6 @@
   "link_nome": "AAdvantage"
  },
  {
-  "id": "2008590742-14511",
-  "data": "2026-11-03T10:19:19Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Montego Bay",
-  "destino_iata": "MBJ",
-  "companhia": "American Airlines",
-  "cabine": "Econômica",
-  "programa": "AAdvantage",
-  "ida": "A partir de 22.000 milhas",
-  "volta": "A partir de 22.000 milhas",
-  "link_nome": "AAdvantage"
- },
- {
-  "id": "2008590742-14510",
-  "data": "2026-11-03T10:19:17Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Nova York",
-  "destino_iata": "JFK",
-  "companhia": "American Airlines",
-  "cabine": "Econômica",
-  "programa": "AAdvantage",
-  "ida": "A partir de 18.000 milhas",
-  "volta": "A partir de 18.000 milhas",
-  "link_nome": "AAdvantage"
- },
- {
-  "id": "2008590742-14509",
-  "data": "2026-11-03T10:19:14Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "São Francisco",
-  "destino_iata": "SFO",
-  "companhia": "American Airlines",
-  "cabine": "Econômica",
-  "programa": "AAdvantage",
-  "ida": "A partir de 18.000 milhas",
-  "volta": "A partir de 18.000 milhas",
-  "link_nome": "AAdvantage"
- },
- {
   "id": "1290836068-7557",
   "data": "2026-11-02T12:21:37Z",
   "tipo": "promocao",
