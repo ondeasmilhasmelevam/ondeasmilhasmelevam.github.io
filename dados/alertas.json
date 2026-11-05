@@ -6267,48 +6267,6 @@
   "ate": "2026-11-06T23:59:59-03:00"
  },
  {
-  "id": "3761373661-8847",
-  "data": "2026-11-03T14:03:27Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "17.300 milhas + Taxas",
-  "volta": "17.300 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8846",
-  "data": "2026-11-03T14:03:24Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Porto Alegre",
-  "destino_iata": "POA",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "19.000 milhas + Taxas",
-  "volta": "19.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-14563",
-  "data": "2026-11-03T14:03:17Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Buenos Aires",
-  "destino_iata": "AEP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "34.500 milhas + Taxas",
-  "volta": "34.500 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7557",
   "data": "2026-11-02T12:21:37Z",
   "tipo": "promocao",
