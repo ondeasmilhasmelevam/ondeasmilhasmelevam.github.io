@@ -1,5 +1,43 @@
 [
  {
+  "id": "2361370250-6094",
+  "data": "2026-11-05T15:48:55Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Executiva",
+  "programa": "TAP Miles&Go",
+  "ida": "135.000 milhas + R$ 186,95",
+  "volta": "135.000 milhas + R$ 380,71",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "1290836068-7605",
+  "data": "2026-11-05T15:48:19Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE OFERECE ATÉ 120% DE BÔNUS NAS TRANSFERÊNCIAS DE PONTOS DO NUBANK CROMA",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Transfira pontos do Nubank Croma para o Azul Fidelidade e ganhe até 120% de bônus, sendo 90% para assinantes do clube e até 30% extras por tempo de assinatura.",
+  "detalhes": [
+   "90% de bônus para assinantes do Clube Azul Fidelidade",
+   "60% de bônus para demais clientes Azul",
+   "Bônus adicional por tempo de Clube Azul:",
+   "+ 5% de bônus – assinantes há mais de 6 meses",
+   "+ 10% de bônus – assinantes entre 1 e 2 anos (12 a 35 meses)",
+   "+ 20% de bônus – assinantes entre 3 e 4 anos (36 a 59 meses)",
+   "+ 30% de bônus – assinantes há mais de 5 anos"
+  ],
+  "parceiros": "Azul Fidelidade, Nubank",
+  "validade": "06/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/nubank"
+  ],
+  "ate": "2026-11-06T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-14797",
   "data": "2026-11-05T15:41:31Z",
   "origem": "Campinas",
@@ -4296,20 +4334,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "3761373661-8875",
-  "data": "2026-11-04T11:07:13Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.300 milhas + Taxas",
-  "volta": "11.300 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "2361370250-6051",
   "data": "2026-11-04T11:07:13Z",
   "origem": "Brasília",
@@ -4322,6 +4346,20 @@
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
   "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "3761373661-8875",
+  "data": "2026-11-04T11:07:13Z",
+  "origem": "Aracaju",
+  "origem_iata": "AJU",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "11.300 milhas + Taxas",
+  "volta": "11.300 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "2008590742-14662",
