@@ -28,7 +28,7 @@ export default {
   async scheduled(evento, env, ctx) {
     // 12h UTC: avisos de vencimento. Aos 30 de cada hora: um lote do alerta grátis da semana (o plano grátis da
     // Cloudflare deixa só 50 chamadas externas por execução, então manda poucos de cada vez).
-    ctx.waitUntil(evento.cron === '0 12 * * *' ? avisarVencimentos(env) : semanal(env));
+    ctx.waitUntil(evento.cron === '0 12 * * *' ? avisarVencimentos(env).then(() => conferirEstornos(env)) : semanal(env));
   },
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -53,6 +53,7 @@ export default {
       if (req.method === 'POST' && url.pathname === '/depoimento') return json(await gravarDepoimento(req, env), 200, cors);
       if (req.method === 'GET' && url.pathname === '/depoimentos/todos') return json(await todosDepoimentos(req, env), 200, cors);
       if (req.method === 'GET' && url.pathname === '/assinantes') return json(await listaAssinantes(req, env), 200, cors);
+      if (req.method === 'GET' && url.pathname === '/assinante/conferir') return json(await conferirUm(req, url, env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/assinante/cancelar') return json(await cancelarAssinante(req, env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/depoimento/moderar') return json(await moderarDepoimento(req, env), 200, cors);
       return json({ erro: 'não encontrado' }, 404, cors);
@@ -755,10 +756,43 @@ async function cancelarAssinante(req, env) {
   const email = String((await req.json()).email || '').trim().toLowerCase();
   if (!emailValido(email)) throw falha('E-mail inválido.');
   if (!(await lerDoc(env, `assinantes/${email}`))) throw falha('Assinante não encontrado.', 404);
+  await tirarAcesso(env, email);
+  return { ok: true };
+}
+async function tirarAcesso(env, email) {
   await atualizarCampos(env, `assinantes/${email}`, { validoAte: new Date(), canceladoEm: new Date(), teveAnual: false });
   const pedido = (await listarDocs(env, 'pedidos')).filter(p => p.email === email && p.status === 'pago').sort((a, b) => (b.pagoEm || 0) - (a.pagoEm || 0))[0];
   if (pedido) await atualizarCampos(env, `pedidos/${pedido.id}`, { status: 'cancelado', canceladoEm: new Date() });
-  return { ok: true };
+}
+
+// Pergunta de novo à InfinitePay se um pagamento continua pago (a mesma consulta do webhook).
+async function consultarPagamento(env, p) {
+  const r = await fetch(`${API}/payment_check`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', 'X-Api-Key': env.INFINITEPAY_API_KEY },
+    body: JSON.stringify({ handle: env.HANDLE, order_nsu: p.id, transaction_nsu: p.transacao, slug: p.slug })
+  });
+  return { http: r.status, ...(await r.json().catch(() => ({}))) };
+}
+// Estorno: só tira o acesso quando a InfinitePay responde com certeza que o pagamento deixou de estar pago.
+const estornado = c => c.success === true && (c.paid === false || (Number(c.paid_amount) === 0 && c.paid_amount !== undefined));
+// Todo dia: confere os pagamentos dos últimos 10 dias (prazo da garantia) e tira o acesso de quem foi estornado.
+async function conferirEstornos(env) {
+  const limite = Date.now() - 10 * 864e5;
+  const recentes = (await listarDocs(env, 'pedidos')).filter(p => p.status === 'pago' && p.transacao && p.slug && p.pagoEm instanceof Date && p.pagoEm.getTime() > limite);
+  for (const p of recentes.slice(0, 10)) {
+    const c = await consultarPagamento(env, p).catch(() => ({}));
+    if (estornado(c)) await tirarAcesso(env, p.email).catch(e => console.log('estorno:', e.message));
+  }
+}
+// Painel: mostra a resposta crua da InfinitePay para o último pagamento de um e-mail (para conferir estornos).
+async function conferirUm(req, url, env) {
+  await exigirAdmin(req, env);
+  const email = String(url.searchParams.get('email') || '').trim().toLowerCase();
+  const p = (await listarDocs(env, 'pedidos')).filter(x => x.email === email && x.transacao).sort((a, b) => (b.pagoEm || 0) - (a.pagoEm || 0))[0];
+  if (!p) throw falha('Nenhum pagamento deste e-mail.', 404);
+  const c = await consultarPagamento(env, p);
+  return { pedido: p.id, status: p.status, forma: p.forma, infinitepay: c, estornado: estornado(c) };
 }
 
 async function metricas(req, url, env) {
