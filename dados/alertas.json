@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6111",
+  "data": "2026-11-05T21:22:50Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Seul",
+  "destino_iata": "ICN",
+  "companhia": "Aeroméxico",
+  "cabine": "Executiva",
+  "programa": "Flying Blue",
+  "ida": "152.000 milhas + Taxas",
+  "volta": "152.000 milhas + Taxas",
+  "link_nome": "Flying Blue"
+ },
+ {
   "id": "2361370250-6110",
   "data": "2026-11-05T21:18:20Z",
   "origem": "Campinas",
