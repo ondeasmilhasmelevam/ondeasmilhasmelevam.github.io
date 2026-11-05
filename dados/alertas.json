@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-14752",
+  "data": "2026-11-05T10:40:31Z",
+  "origem": "Aracaju",
+  "origem_iata": "AJU",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "35.900 milhas + Taxas",
+  "volta": "35.900 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-14751",
   "data": "2026-11-05T10:34:28Z",
   "origem": "Aracaju",
@@ -6580,20 +6594,6 @@
   "programa": "LATAM Pass",
   "ida": "56.000 milhas + Taxas",
   "volta": "56.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-14517",
-  "data": "2026-11-03T10:45:33Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "70.200 milhas + Taxas",
-  "volta": "70.200 milhas + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
