@@ -28,7 +28,7 @@ export default {
   async scheduled(evento, env, ctx) {
     // 12h UTC: avisos de vencimento. Aos 30 de cada hora: um lote do alerta grátis da semana (o plano grátis da
     // Cloudflare deixa só 50 chamadas externas por execução, então manda poucos de cada vez).
-    ctx.waitUntil(evento.cron === '0 12 * * *' ? avisarVencimentos(env).then(() => conferirEstornos(env)) : semanal(env));
+    ctx.waitUntil(evento.cron === '0 12 * * *' ? avisarVencimentos(env).then(() => conferirEstornos(env)).then(() => pesquisaSeteDias(env)) : semanal(env));
   },
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -70,6 +70,12 @@ function corsDe(req, env) {
 }
 const json = (d, status = 200, extra = {}) => new Response(JSON.stringify(d), { status, headers: { 'content-type': 'application/json', ...extra } });
 const falha = (msg, status = 400) => Object.assign(new Error(msg), { status });
+// WhatsApp opcional: só números, com DDI 55 na frente (o site pede com DDD).
+const telefoneValido = t => {
+  let n = String(t || '').replace(/\D/g, '');
+  if (n.length === 10 || n.length === 11) n = `55${n}`;
+  return /^55\d{10,11}$/.test(n) ? n : '';
+};
 const emailValido = e => typeof e === 'string' && e.length <= 200 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
 
 // O primeiro ano anual sai pelo preço de lançamento; quem já teve um anual renova pelo cheio.
@@ -94,7 +100,8 @@ async function checkout(body, env) {
   const preco = await precoDe(plano, email, env);
   const nsu = `${plano}-${crypto.randomUUID()}`;
   const origem = origemValida(body.origem), ref = /^[0-9a-f]{8}$/.test(body.ref || '') ? body.ref : '';
-  await gravarDoc(env, `pedidos/${nsu}`, { email, plano, preco, status: 'criado', criadoEm: new Date(), origem, ref });
+  const telefone = telefoneValido(body.telefone);
+  await gravarDoc(env, `pedidos/${nsu}`, { email, plano, preco, status: 'criado', criadoEm: new Date(), origem, ref, telefone });
   await somar(env, `metricas/${hojeBR()}`, { [`checkout_${origem}`]: 1 }).catch(() => {});
   const r = await fetch(`${API}/links`, {
     method: 'POST',
@@ -138,6 +145,9 @@ async function webhook(b, env) {
     plano: pedido.plano,
     validoAte: new Date(base + plano.dias * 864e5),
     teveAnual: Boolean((atual && atual.teveAnual) || pedido.plano === 'anual'),
+    telefone: pedido.telefone || (atual && atual.telefone) || '',
+    primeiroPagamento: (atual && atual.primeiroPagamento) || new Date(),
+    pesquisaEm: (atual && atual.pesquisaEm) || null,
     atualizadoEm: new Date()
   });
   await gravarDoc(env, `pedidos/${nsu}`, {
@@ -745,7 +755,7 @@ async function listaAssinantes(req, env) {
   return { assinantes: assinantes.map(a => {
     const p = pagos.find(x => x.email === a.id);
     const vence = a.validoAte instanceof Date ? a.validoAte.getTime() : 0;
-    return { email: a.id, nome: (depo[a.id] && depo[a.id].nome) || google[a.id] || '', instagram: (depo[a.id] && depo[a.id].instagram) || '',
+    return { email: a.id, nome: (depo[a.id] && depo[a.id].nome) || google[a.id] || '', instagram: (depo[a.id] && depo[a.id].instagram) || '', telefone: a.telefone || '',
       plano: a.plano || '', validoAte: vence ? new Date(vence).toISOString() : null, ativo: vence > agora, cancelado: !!a.canceladoEm,
       pagamento: p ? { preco: p.preco, forma: p.forma || '', parcelas: p.parcelas || 1, pagoEm: p.pagoEm instanceof Date ? p.pagoEm.toISOString() : null, status: p.status } : null };
   }).sort((a, b) => (b.ativo - a.ativo) || String(b.validoAte).localeCompare(String(a.validoAte))) };
@@ -785,6 +795,28 @@ async function conferirEstornos(env) {
     if (estornado(c)) await tirarAcesso(env, p.email).catch(e => console.log('estorno:', e.message));
   }
 }
+// 7 dias depois do primeiro pagamento: um e-mail perguntando o que a pessoa está achando, com o botão para
+// avaliar (vai para aprovação no painel, como os depoimentos). Responder o e-mail cai no Gmail da marca.
+async function pesquisaSeteDias(env) {
+  const agora = Date.now();
+  // Quem assinou antes deste aviso existir não tem primeiroPagamento: vale o pedido pago mais antigo.
+  const pagos = (await listarDocs(env, 'pedidos')).filter(p => p.status === 'pago' && p.pagoEm instanceof Date);
+  const inicio = a => (a.primeiroPagamento instanceof Date ? a.primeiroPagamento.getTime()
+    : Math.min(...pagos.filter(p => p.email === a.id).map(p => p.pagoEm.getTime())));
+  const alvo = (await listarDocs(env, 'assinantes')).filter(a => !a.pesquisaEm && !a.canceladoEm && emailValido(a.email || a.id)
+    && agora - inicio(a) >= 7 * 864e5 && agora - inicio(a) < 14 * 864e5
+    && a.validoAte instanceof Date && a.validoAte.getTime() > agora);
+  for (const a of alvo.slice(0, 5)) {
+    const email = a.email || a.id;
+    const corpo = `Olá!<br><br>Já faz uma semana que você assina o Onde as Milhas Me Levam. Queremos saber: <strong>o que você está achando?</strong><br><br>
+      Já encontrou alguma passagem boa? Sentiu falta de alguma rota, programa ou ferramenta? Tem algo que podemos melhorar?<br><br>
+      É só <strong>responder este e-mail</strong> contando, que a gente lê tudo. E se estiver gostando, deixe sua avaliação no site: ela ajuda outras pessoas a decidir.<br><br>
+      ${botaoEmail('Deixar minha avaliação', `${env.SITE}?utm_source=email&utm_campaign=pesquisa7#assinar`)}<br><br>
+      Obrigado por estar com a gente!`;
+    if (await enviarEmail(env, email, 'O que você está achando do Onde as Milhas Me Levam?', corpo)) await atualizarCampos(env, `assinantes/${email}`, { pesquisaEm: new Date() });
+  }
+}
+
 // Painel: mostra a resposta crua da InfinitePay para o último pagamento de um e-mail (para conferir estornos).
 async function conferirUm(req, url, env) {
   await exigirAdmin(req, env);

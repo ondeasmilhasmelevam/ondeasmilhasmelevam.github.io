@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=91">
+<link rel="stylesheet" href="estilo.css?v=92">
 </head>
 <body>
 <header class="bar">
@@ -790,6 +790,10 @@
         <input type="email" id="ass-email" placeholder="voce@gmail.com" autocomplete="email" inputmode="email">
         <small>Só este e-mail fica liberado. Use o mesmo na hora de pagar.</small>
       </label>
+      <label class="ass-campo"><span>WhatsApp <span class="opcional">(opcional)</span></span>
+        <input type="tel" id="ass-telefone" placeholder="(21) 99999-9999" autocomplete="tel" inputmode="tel" maxlength="20">
+        <small>Só para falarmos com você se precisar, como para saber o que está achando. Nada de propaganda.</small>
+      </label>
       <ul class="ass-inclui">
         <li>Todas as datas de ida e volta de cada passagem</li>
         <li>Link direto para emitir no programa</li>
@@ -903,7 +907,7 @@
 
         <h3>9. Privacidade (LGPD)</h3>
         <ul>
-          <li><b>Dados que guardamos:</b> seu e-mail, os dados do pedido (plano, valor, data, forma de pagamento, parcelas e link do recibo), as rotas que você cadastrar no Meu Radar e, se usar a indicação, o código do seu link e quantos amigos assinaram por ele. Na lista do alerta grátis, guardamos o e-mail, a data do cadastro, de onde você chegou ao site (por exemplo, Instagram) e a data do último envio. Se deixar um depoimento, guardamos o texto, a nota, o nome, a cidade, a foto (a que você enviou ou a da sua conta Google, se entrou com ela) e o @ do Instagram que você escolheu mostrar; ele só é publicado (no site e no Instagram) depois de revisado, sem o seu e-mail, e você pode pedir para tirar a qualquer momento. Os dados do cartão ficam com a InfinitePay: nós não os vemos.</li>
+          <li><b>Dados que guardamos:</b> seu e-mail, o WhatsApp (se você informar, para falarmos com você sobre a assinatura), os dados do pedido (plano, valor, data, forma de pagamento, parcelas e link do recibo), as rotas que você cadastrar no Meu Radar e, se usar a indicação, o código do seu link e quantos amigos assinaram por ele. Na lista do alerta grátis, guardamos o e-mail, a data do cadastro, de onde você chegou ao site (por exemplo, Instagram) e a data do último envio. Se deixar um depoimento, guardamos o texto, a nota, o nome, a cidade, a foto (a que você enviou ou a da sua conta Google, se entrou com ela) e o @ do Instagram que você escolheu mostrar; ele só é publicado (no site e no Instagram) depois de revisado, sem o seu e-mail, e você pode pedir para tirar a qualquer momento. Os dados do cartão ficam com a InfinitePay: nós não os vemos.</li>
           <li><b>Para quê:</b> liberar seu acesso e mandar os e-mails do serviço: o código de entrada, os avisos de vencimento, os avisos do Meu Radar, o aviso de dias ganhos por indicação e o alerta grátis da semana. Para parar os avisos do radar, é só tirar as rotas cadastradas; para sair do alerta grátis, use o link no fim do e-mail.</li>
           <li><b>Contagem de visitas:</b> contamos quantas pessoas visitam o site e passam por cada etapa até assinar, separadas pela origem (Instagram, Google, indicação...). Essa contagem não usa cookie e não guarda nome, e-mail, endereço IP nem nada que identifique quem visitou: só um número por dia e por origem.</li>
           <li><b>Com quem:</b> só com os serviços que fazem o site funcionar: Google Firebase (login e banco de dados), Cloudflare (servidor), EmailJS e Gmail (envio de e-mails), InfinitePay (pagamento) e GitHub Pages (hospedagem). Não vendemos nem cedemos seus dados para publicidade.</li>
@@ -946,6 +950,6 @@
 <script src="planilha.js?v=2"></script>
 <script src="app.js?v=93"></script>
 <script src="funil.js?v=4"></script>
-<script type="module" src="assinatura.js?v=14"></script>
+<script type="module" src="assinatura.js?v=15"></script>
 </body>
 </html>

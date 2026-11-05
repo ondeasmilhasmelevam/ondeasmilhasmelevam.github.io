@@ -265,7 +265,7 @@ async function desenharAssinantesPainel() {
   el.innerHTML = `<h3 class="prova-sub">Assinantes · ${ativos} ${ativos === 1 ? 'ativo' : 'ativos'} de ${lista.length}</h3>` + (lista.length
     ? `<div class="quanto-rolar"><table class="quanto-tab painel-ass"><thead><tr><th>Assinante</th><th>Plano</th><th>Válido até</th><th>Pagamento</th><th></th></tr></thead><tbody>
       ${lista.map(a => `<tr data-email="${escR(a.email)}">
-        <th>${a.nome ? escR(a.nome) : '<span class="ass-semnome">sem nome</span>'}<small>${escR(a.email)}${a.instagram ? ` · <a href="https://instagram.com/${escR(a.instagram)}" target="_blank" rel="noopener">@${escR(a.instagram)}</a>` : ''}</small></th>
+        <th>${a.nome ? escR(a.nome) : '<span class="ass-semnome">sem nome</span>'}<small>${escR(a.email)}${a.instagram ? ` · <a href="https://instagram.com/${escR(a.instagram)}" target="_blank" rel="noopener">@${escR(a.instagram)}</a>` : ''}${a.telefone ? ` · <a href="https://wa.me/${escR(a.telefone)}" target="_blank" rel="noopener">WhatsApp ${escR(a.telefone.replace(/^55(\d\d)(\d+)(\d{4})$/, '($1) $2-$3'))}</a>` : ''}</small></th>
         <td>${escR(a.plano === 'anual' ? 'Anual' : a.plano === 'mensal' ? 'Mensal' : a.plano || '—')}</td>
         <td>${situacao(a)}<small>${data(a.validoAte)}</small></td>
         <td>${pag(a.pagamento)}</td>
@@ -582,12 +582,15 @@ document.querySelectorAll('[data-plano]').forEach(b => b.addEventListener('click
   msg('');
   const email = $('#ass-email').value.trim();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { $('#ass-email').focus(); return msg('Digite o e-mail que vai usar para entrar no site. Só ele fica liberado.', 'erro'); }
+  const digitos = $('#ass-telefone').value.replace(/\D/g, '');
+  if (digitos && ![10, 11, 12, 13].includes(digitos.length)) { $('#ass-telefone').focus(); return msg('Confira o WhatsApp: DDD e número, ex.: (21) 99999-9999. Ou deixe em branco.', 'erro'); }
   if (!SERVIDOR) return msg('As assinaturas abrem em breve. Siga o Instagram para saber quando.', 'erro');
   b.disabled = true;
   if (window.oammlEvento) window.oammlEvento('assinar_clique');
   try {
     const extra = { origem: window.oammlOrigem ? window.oammlOrigem() : '', ref: window.oammlRef ? window.oammlRef() : '' };
-    const r = await fetch(`${SERVIDOR}/checkout`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ plano: b.dataset.plano, email, ...extra }) });
+    const telefone = $('#ass-telefone').value.trim();
+    const r = await fetch(`${SERVIDOR}/checkout`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ plano: b.dataset.plano, email, telefone, ...extra }) });
     const d = await r.json();
     if (!r.ok || !d.url) throw new Error(d.erro);
     location.href = d.url;
