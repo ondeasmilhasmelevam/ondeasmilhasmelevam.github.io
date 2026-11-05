@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9007",
+  "data": "2026-11-05T15:25:04Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Fortaleza",
+  "destino_iata": "FOR",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "10.666 milhas + R$ 35,75",
+  "volta": "13.482 milhas + R$ 59,96",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2361370250-6093",
   "data": "2026-11-05T15:18:17Z",
   "origem": "Paris",
@@ -4268,20 +4282,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "2361370250-6051",
-  "data": "2026-11-04T11:07:13Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Munique",
-  "destino_iata": "MUC",
-  "companhia": "TAP Air Portugal",
-  "cabine": "Executiva",
-  "programa": "TAP Miles&Go",
-  "ida": "135.000 milhas",
-  "volta": "135.000 milhas",
-  "link_nome": "TAP Miles&Go"
- },
- {
   "id": "3761373661-8875",
   "data": "2026-11-04T11:07:13Z",
   "origem": "Aracaju",
@@ -4294,6 +4294,20 @@
   "ida": "11.300 milhas + Taxas",
   "volta": "11.300 milhas + Taxas",
   "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2361370250-6051",
+  "data": "2026-11-04T11:07:13Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Munique",
+  "destino_iata": "MUC",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Executiva",
+  "programa": "TAP Miles&Go",
+  "ida": "135.000 milhas",
+  "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
  },
  {
   "id": "2008590742-14662",
