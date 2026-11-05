@@ -6408,34 +6408,6 @@
   "ate": "2026-11-09T23:59:59-03:00"
  },
  {
-  "id": "2008590742-14583",
-  "data": "2026-11-03T19:45:25Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "Copa Airlines",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 25.400 milhas",
-  "volta": "A partir de 25.400 milhas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-5996",
-  "data": "2026-11-03T19:44:33Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "166.800 ~ 175.400 milhas + R$ 190",
-  "volta": "166.800 ~ 175.400 milhas + R$ 548",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7567",
   "data": "2026-11-03T14:07:43Z",
   "tipo": "promocao",
