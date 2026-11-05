@@ -37,7 +37,7 @@ COMPLETO = SAIDA.with_name('alertas-completo.json')
 ENVIADO = SAIDA.with_name('.alertas-enviado')
 SERVIDOR = 'https://oamml-assinatura.ondeasmilhasmelevam.workers.dev'
 # Canais lidos pelo nome, além dos ids de TELEGRAM_GRUPO (a conta precisa estar no canal).
-CANAIS_POR_NOME = ('VMM - Passagens Internacionais',)
+CANAIS_POR_NOME = ('VMM - Passagens Internacionais', 'OndeAsMilhasMeLevam Europa')
 CONVITE = re.compile(r'(https?://)?(t\.me|telegram\.me)/', re.I)
 
 LUGAR = r'([^\n()]*?)\s*\(([A-Z]{3})\)'
@@ -121,8 +121,49 @@ def datas(texto, rotulo):
     return saida
 
 
+# Outro formato (grupos do próprio site): "Rota: Recife (REC) → Madrid (MAD)", "Programa:", "Custo: 656k + taxas",
+# "Trajeto: Ida e Volta", "Cabine: Executiva - Azul", "Data: 21/02 a 05/03/2027".
+CAMPO_ROTA = re.compile(r'^\W*(Rota|Programa|Custo|Trajeto|Cabine|Data)\s*:\s*(.+)$', re.I | re.M)
+MESES = ('Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez')
+
+
+def ler_passagem_rota(texto, urls_escondidas=()):
+    campos = {k.lower(): v.strip() for k, v in CAMPO_ROTA.findall(texto or '')}
+    lugares = re.findall(LUGAR, campos.get('rota', ''))
+    if len(lugares) < 2 or not campos.get('custo') or not campos.get('programa'):
+        return None
+    custo = re.match(r'([\d.,]+)\s*(k|mil)?', campos['custo'], re.I)
+    if not custo:
+        return None
+    n = float(custo.group(1).replace('.', '').replace(',', '.')) * (1000 if custo.group(2) else 1)
+    resto = campos['custo'][custo.end():].strip()
+    ida_volta = 'volta' in campos.get('trajeto', '').lower()
+    # "pontos" e não "milhas": o valor do formato é o total, e o termômetro compara por trecho
+    valor = f"{int(n):,} pontos {resto}".replace(',', '.').strip() + (', ida e volta' if ida_volta else '')
+    cabine, _, cia = campos.get('cabine', '').partition(' - ')
+    programa = campos['programa']
+    datas_ida, datas_volta = [], []
+    d = re.findall(r'(\d{1,2})/(\d{1,2})(?:/(\d{2,4}))?', campos.get('data', ''))
+    ano = next((a for *_, a in reversed(d) if a), '')[-2:]
+    for i, (dia, mes, a) in enumerate(d[:2]):
+        if 1 <= int(mes) <= 12:
+            (datas_ida if i == 0 else datas_volta).append({'mes': f'{MESES[int(mes) - 1]}/{(a or ano)[-2:]}', 'dias': dia.zfill(2)})
+    url = next((u for u in urls_escondidas if not CONVITE.match(u)), '') or next((u for chave, u in SITE_PROGRAMA.items() if chave in programa.lower()), '')
+    if not url:
+        return None
+    return {
+        'origem': nome(lugares[0][0]), 'origem_iata': lugares[0][1],
+        'destino': nome(lugares[1][0]), 'destino_iata': lugares[1][1],
+        'companhia': cia.strip() or programa, 'cabine': cabine.strip(), 'programa': programa,
+        'ida': valor, 'volta': '', 'datas_ida': datas_ida, 'datas_volta': datas_volta,
+        'link': url, 'link_nome': programa,
+    }
+
+
 def ler_passagem(texto, urls_escondidas=()):
     """Transforma a mensagem do grupo nos campos da passagem; None se não for uma."""
+    if not ROTA.search(texto or '') and CAMPO_ROTA.search(texto or ''):
+        return ler_passagem_rota(texto, urls_escondidas)
     rota = ROTA.search(texto or '')
     campos = {k.lower(): v.strip() for k, v in CAMPO.findall(texto or '')}
     if not rota or 'companhia' not in campos or 'ida' not in campos:
