@@ -1,21 +1,21 @@
 {
- "atualizado": "2026-11-05T18:51:28.196614Z",
+ "atualizado": "2026-11-05T18:57:34.865750Z",
  "dias": 30,
- "passagens": 769,
+ "passagens": 774,
  "promocoes": 67,
  "destinos": 115,
  "executiva": 143,
  "destaques": [
   {
-   "id": "2008590742-14697",
+   "id": "2008590742-14805",
    "origem": "São Paulo",
    "origem_iata": "GRU",
    "destino": "Lima",
    "destino_iata": "LIM",
    "cabine": "Econômica",
    "programa": "LATAM Pass",
-   "data": "2026-11-04T15:30:24Z",
-   "milhas": 21000,
+   "data": "2026-11-05T18:53:30Z",
+   "milhas": 20920,
    "nivel": "espetacular",
    "foto": "img/rotas/GRU-LIM.jpg"
   },
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 769,
+  "passagens": 774,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -116,15 +116,15 @@
     "foto": "img/rotas/POA-VCP.jpg"
    },
    {
-    "id": "2008590742-14697",
+    "id": "2008590742-14805",
     "origem": "São Paulo",
     "origem_iata": "GRU",
     "destino": "Lima",
     "destino_iata": "LIM",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-04T15:30:24Z",
-    "milhas": 21000,
+    "data": "2026-11-05T18:53:30Z",
+    "milhas": 20920,
     "nivel": "espetacular",
     "grupo": "Internacional",
     "foto": "img/rotas/GRU-LIM.jpg"
