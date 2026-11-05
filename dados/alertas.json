@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-14796",
+  "data": "2026-11-05T14:15:15Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "São Francisco",
+  "destino_iata": "SFO",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "AAdvantage",
+  "ida": "A partir de 18.000 milhas",
+  "volta": "A partir de 18.000 milhas",
+  "link_nome": "AAdvantage"
+ },
+ {
+  "id": "2361370250-6091",
+  "data": "2026-11-05T14:11:54Z",
+  "origem": "Campinas",
+  "origem_iata": "VCP",
+  "destino": "Porto",
+  "destino_iata": "OPO",
+  "companhia": "Azul",
+  "cabine": "Executiva",
+  "programa": "Azul Fidelidade",
+  "ida": "420.000 milhas",
+  "volta": "420.000 milhas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-9006",
   "data": "2026-11-05T14:08:39Z",
   "origem": "Cuiabá",
@@ -4212,20 +4240,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "3761373661-8875",
-  "data": "2026-11-04T11:07:13Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.300 milhas + Taxas",
-  "volta": "11.300 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "2361370250-6051",
   "data": "2026-11-04T11:07:13Z",
   "origem": "Brasília",
@@ -4238,6 +4252,20 @@
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
   "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "3761373661-8875",
+  "data": "2026-11-04T11:07:13Z",
+  "origem": "Aracaju",
+  "origem_iata": "AJU",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "11.300 milhas + Taxas",
+  "volta": "11.300 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "2008590742-14662",
