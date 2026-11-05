@@ -2342,6 +2342,18 @@
       .filter(x => x.valores.some(v => v.itens.length));
   }
   const NOME_NIVEL = { top: 'Top', otimo: 'Ótimo', normal: 'Normal', caro: 'Caro' };
+  // Sigla do aeroporto principal de cada cidade da planilha (países e regiões do Brasil ficam sem).
+  const IATA_CIDADE = Object.fromEntries(Object.entries({
+    'Londres': 'LHR', 'Amsterdã': 'AMS', 'Paris': 'CDG', 'Milão': 'MXP', 'Roma': 'FCO', 'Barcelona': 'BCN', 'Madri': 'MAD',
+    'Lisboa': 'LIS', 'Frankfurt': 'FRA', 'Munique': 'MUC', 'Dubai': 'DXB', 'Pequim': 'PEK', 'Xangai': 'PVG', 'Hong Kong': 'HKG',
+    'Nova Delhi': 'DEL', 'Bangkok': 'BKK', 'Tóquio': 'NRT', 'Singapura': 'SIN', 'Kuala Lumpur': 'KUL', 'La Paz': 'LPB',
+    'Lima': 'LIM', 'Quito': 'UIO', 'Bogotá': 'BOG', 'Santiago': 'SCL', 'Buenos Aires': 'EZE', 'Punta del Este': 'PDP',
+    'Montevidéu': 'MVD', 'Cidade do México': 'MEX', 'São Francisco': 'SFO', 'Los Angeles': 'LAX', 'Houston': 'IAH',
+    'Atlanta': 'ATL', 'Fort Lauderdale': 'FLL', 'Miami': 'MIA', 'Orlando': 'MCO', 'Washington': 'IAD', 'Nova York': 'JFK',
+    'Chicago': 'ORD', 'Dallas': 'DFW', 'Toronto': 'YYZ', 'San Juan': 'SJU', 'Cidade do Panamá': 'PTY', 'San José': 'SJO',
+    'São Salvador': 'SAL', 'Santo Domingo': 'SDQ', 'Montego Bay': 'MBJ', 'Havana': 'HAV', 'Johanesburgo': 'JNB',
+    'Joanesburgo': 'JNB', 'Cidade do Cabo': 'CPT', 'Fernando de Noronha': 'FEN',
+  }).map(([c, i]) => [norm(c), i]));
   function mostrarQuanto() {
     const lista = quanto[quanto.tipo] || [];
     const busca = norm($('#quanto-busca').value);
@@ -2358,7 +2370,7 @@
         <h3>${esc(g.nome)}</h3>
         <div class="quanto-rolar"><table class="quanto-tab">
           <thead><tr><th>Destino</th>${niveis.map(n => `<th><span class="n-${n}">${NOME_NIVEL[n]}</span></th>`).join('')}</tr></thead>
-          <tbody>${g.itens.map(x => `<tr><th>${esc(x.destino)}${x.sub ? `<small>${esc(x.sub)}</small>` : ''}</th>${x.valores.map(celula).join('')}</tr>`).join('')}</tbody>
+          <tbody>${g.itens.map(x => `<tr><th>${IATA_CIDADE[norm(x.destino)] ? `<b class="quanto-iata">${IATA_CIDADE[norm(x.destino)]}</b>` : ''}${esc(x.destino)}${x.sub ? `<small>${esc(x.sub)}</small>` : ''}</th>${x.valores.map(celula).join('')}</tr>`).join('')}</tbody>
         </table></div>
       </div>`).join('');
     $('#quanto-vazio').hidden = !!vis.length || !lista.length;
