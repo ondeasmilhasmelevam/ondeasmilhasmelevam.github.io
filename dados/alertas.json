@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-14798",
+  "data": "2026-11-05T16:31:52Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Avianca",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "123.900 milhas + Taxas",
+  "volta": "107.500 milhas + R$ 317,66 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6099",
   "data": "2026-11-05T16:11:45Z",
   "origem": "Belém",
@@ -6125,34 +6139,6 @@
   "programa": "LATAM Pass",
   "ida": "50.100 milhas + Taxas",
   "volta": "50.100 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-14575",
-  "data": "2026-11-03T16:27:53Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Santiago",
-  "destino_iata": "SCL",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "32.000 Milhas LATAM Pass + Taxas",
-  "volta": "32.000 Milhas LATAM Pass + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-14574",
-  "data": "2026-11-03T16:27:47Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Lima",
-  "destino_iata": "LIM",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "38.800 Milhas LATAM Pass + Taxas",
-  "volta": "38.800 Milhas LATAM Pass + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
