@@ -6506,34 +6506,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-8860",
-  "data": "2026-11-03T19:00:20Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Florianópolis",
-  "destino_iata": "FLN",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "23.600 milhas + Taxas",
-  "volta": "23.600 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8859",
-  "data": "2026-11-03T19:00:18Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "São Luís",
-  "destino_iata": "SLZ",
-  "companhia": "AZUL",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "19.000 milhas + Taxas",
-  "volta": "19.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7567",
   "data": "2026-11-03T14:07:43Z",
   "tipo": "promocao",
