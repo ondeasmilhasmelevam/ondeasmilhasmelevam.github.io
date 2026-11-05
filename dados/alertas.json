@@ -1,5 +1,41 @@
 [
  {
+  "id": "2361370250-6112",
+  "data": "2026-11-05T21:51:04Z",
+  "origem": "Paris",
+  "origem_iata": "CDG",
+  "destino": "Pequim",
+  "destino_iata": "PEK",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "Flying Blue",
+  "ida": "63.750 milhas + $550",
+  "volta": "63.750 milhas + $316",
+  "link_nome": "Flying Blue"
+ },
+ {
+  "id": "1290836068-7609",
+  "data": "2026-11-05T21:49:29Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FRIDAY: 5.000 PONTOS BÔNUS PARA NOVOS CLIENTES",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Cadastre-se gratuitamente no programa Azul Fidelidade e receba 5.000 pontos bônus ao utilizar o cupom AZF5000.",
+  "detalhes": [
+   "5.000 pontos bônus para novos clientes.",
+   "Cupom exclusivo: AZF5000.",
+   "Cadastro exclusivo pelo aplicativo Azul ou site oficial.",
+   "✅ Parceiros: Azul Fidelidade",
+   "✅ Validade: 15/11/2026"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "15/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/cadastro-azul-friday"
+  ],
+  "ate": "2026-11-15T23:59:59-03:00"
+ },
+ {
   "id": "2361370250-6111",
   "data": "2026-11-05T21:22:50Z",
   "origem": "São Paulo",
