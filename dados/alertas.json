@@ -6545,34 +6545,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-8863",
-  "data": "2026-11-03T21:01:24Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Belém",
-  "destino_iata": "BEL",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "15.200 milhas + Taxas",
-  "volta": "15.100 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-14584",
-  "data": "2026-11-03T21:01:21Z",
-  "origem": "Maceió",
-  "origem_iata": "MCZ",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "34.500 milhas + Taxas",
-  "volta": "34.500 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7577",
   "data": "2026-11-03T20:37:58Z",
   "tipo": "promocao",
