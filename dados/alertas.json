@@ -6415,34 +6415,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-14559",
-  "data": "2026-11-03T13:29:29Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "San José",
-  "destino_iata": "SJO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "54.600 milhas + Taxas",
-  "volta": "54.600 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-14558",
-  "data": "2026-11-03T13:29:06Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Barcelona",
-  "destino_iata": "BCN",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "73.980 milhas + Taxas",
-  "volta": "65.300 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7557",
   "data": "2026-11-02T12:21:37Z",
   "tipo": "promocao",
