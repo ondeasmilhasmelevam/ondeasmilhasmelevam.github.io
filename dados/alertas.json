@@ -1,5 +1,61 @@
 [
  {
+  "id": "2361370250-6099",
+  "data": "2026-11-05T16:11:45Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Roma",
+  "destino_iata": "FCO",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Executiva",
+  "programa": "TAP Miles&Go",
+  "ida": "135.000 milhas + Taxas",
+  "volta": "135.000 milhas + Taxas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2361370250-6098",
+  "data": "2026-11-05T16:11:40Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Executiva",
+  "programa": "TAP Miles&Go",
+  "ida": "135.000 milhas + Taxas",
+  "volta": "135.000 milhas + Taxas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2361370250-6097",
+  "data": "2026-11-05T16:11:35Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Bangkok",
+  "destino_iata": "BKK",
+  "companhia": "Qatar Airways",
+  "cabine": "Executiva",
+  "programa": "Privilege Club",
+  "ida": "95.000 AVIOS + Taxas",
+  "volta": "95.000 AVIOS + Taxas",
+  "link_nome": "Privilege Club"
+ },
+ {
+  "id": "2361370250-6096",
+  "data": "2026-11-05T16:11:31Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "New Delhi",
+  "destino_iata": "DEL",
+  "companhia": "Qatar Airways",
+  "cabine": "Executiva",
+  "programa": "Privilege Club",
+  "ida": "80.000 AVIOS + Taxas",
+  "volta": "80.000 AVIOS + Taxas",
+  "link_nome": "Privilege Club"
+ },
+ {
   "id": "1290836068-7608",
   "data": "2026-11-05T16:07:30Z",
   "tipo": "promocao",
@@ -6097,20 +6153,6 @@
   "programa": "LATAM Pass",
   "ida": "38.800 Milhas LATAM Pass + Taxas",
   "volta": "38.800 Milhas LATAM Pass + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8856",
-  "data": "2026-11-03T16:14:21Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Vitória",
-  "destino_iata": "VIX",
-  "companhia": "LATAM Airlines",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "6.824 milhas + R$ 35,91",
-  "volta": "6.824 milhas + R$ 54,09",
   "link_nome": "LATAM Pass"
  },
  {
