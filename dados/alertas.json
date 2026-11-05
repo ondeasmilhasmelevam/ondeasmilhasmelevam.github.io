@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-8959",
+  "data": "2026-11-05T10:58:21Z",
+  "origem": "Aracaju",
+  "origem_iata": "AJU",
+  "destino": "Fernando de Noronha",
+  "destino_iata": "FEN",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "28.900 milhas + Taxas",
+  "volta": "28.900 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14754",
+  "data": "2026-11-05T10:55:20Z",
+  "origem": "Aracaju",
+  "origem_iata": "AJU",
+  "destino": "Punta Cana",
+  "destino_iata": "PUJ",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "73.600 milhas + Taxas",
+  "volta": "73.600 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-14753",
   "data": "2026-11-05T10:52:18Z",
   "origem": "Aracaju",
@@ -6524,48 +6552,6 @@
   "programa": "LATAM Pass",
   "ida": "74.000 milhas + Taxas",
   "volta": "74.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8794",
-  "data": "2026-11-03T10:58:18Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Porto Velho",
-  "destino_iata": "PVH",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "19.000 milhas + Taxas",
-  "volta": "19.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-14520",
-  "data": "2026-11-03T10:57:39Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "61.600 milhas + Taxas",
-  "volta": "61.600 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-14519",
-  "data": "2026-11-03T10:53:36Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Cancún",
-  "destino_iata": "CUN",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "74.800 milhas + Taxas",
-  "volta": "74.800 milhas + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
