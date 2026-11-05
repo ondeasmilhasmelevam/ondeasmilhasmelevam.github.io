@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6092",
+  "data": "2026-11-05T15:03:39Z",
+  "origem": "Seul",
+  "origem_iata": "ICN",
+  "destino": "New Delhi",
+  "destino_iata": "DEL",
+  "companhia": "Korean Air",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "90.700 milhas + R$ 161,82",
+  "volta": "90.700 milhas + R$ 173,00",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-14796",
   "data": "2026-11-05T14:15:15Z",
   "origem": "São Paulo",
@@ -6034,48 +6048,6 @@
    "https://link.dia23.com.br/r/pJ83Mwh"
   ],
   "ate": ""
- },
- {
-  "id": "2008590742-14573",
-  "data": "2026-11-03T15:11:14Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Bonito",
-  "destino_iata": "BYO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "12.170 milhas + Taxas",
-  "volta": "10.890 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-14572",
-  "data": "2026-11-03T15:09:44Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Cartagena",
-  "destino_iata": "CTG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "39.683 milhas + R$ 190,28 Taxas",
-  "volta": "32.643 milhas + R$ 318,54 Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-14571",
-  "data": "2026-11-03T15:09:22Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Cartagena",
-  "destino_iata": "CTG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "33.922 milhas + R$ 196,45 Taxas",
-  "volta": "33.922 milhas + R$ 354,29 Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7567",
