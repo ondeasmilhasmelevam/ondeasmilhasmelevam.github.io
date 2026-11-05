@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-05T19:58:21.735747Z",
+ "atualizado": "2026-11-05T20:04:28.728681Z",
  "dias": 30,
- "passagens": 776,
+ "passagens": 779,
  "promocoes": 67,
  "destinos": 115,
  "executiva": 144,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 776,
+  "passagens": 779,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -102,18 +102,18 @@
     "foto": "img/rotas/GRU-CWB.jpg"
    },
    {
-    "id": "3761373661-8857",
-    "origem": "Porto Alegre",
-    "origem_iata": "POA",
-    "destino": "Campinas",
-    "destino_iata": "VCP",
+    "id": "3761373661-9035",
+    "origem": "Salvador",
+    "origem_iata": "SSA",
+    "destino": "Recife",
+    "destino_iata": "REC",
     "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-03T17:39:25Z",
-    "milhas": 5700,
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-05T20:00:23Z",
+    "milhas": 5600,
     "nivel": "",
     "grupo": "Nacional",
-    "foto": "img/rotas/POA-VCP.jpg"
+    "foto": "img/rotas/SSA-REC.jpg"
    },
    {
     "id": "2008590742-14805",
