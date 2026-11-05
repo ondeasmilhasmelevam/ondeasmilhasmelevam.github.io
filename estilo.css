@@ -1465,5 +1465,5 @@ footer .badge{width:84px;height:84px;margin-bottom:14px}
 .ass-semnome{color:var(--ash-dim);font-weight:600}
 .ass-sit{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
 .ass-sit.ativo{background:rgba(31,157,104,.18);color:#3fcf8e}.ass-sit.vencido{background:rgba(107,90,36,.18);color:#d9b45a}.ass-sit.cancelado{background:rgba(122,46,42,.2);color:#ff8a80}
-.painel-ass button{padding:6px 12px;font-size:12.5px;white-space:nowrap}
+.painel-ass button{padding:6px 12px;font-size:12.5px;white-space:nowrap;display:block;margin:0 0 6px}
 .ass-campo .opcional{font-weight:500;color:var(--ash-dim)}

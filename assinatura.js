@@ -269,12 +269,25 @@ async function desenharAssinantesPainel() {
         <td>${escR(a.plano === 'anual' ? 'Anual' : a.plano === 'mensal' ? 'Mensal' : a.plano || '—')}</td>
         <td>${situacao(a)}<small>${data(a.validoAte)}</small></td>
         <td>${pag(a.pagamento)}</td>
-        <td>${a.ativo ? '<button type="button" class="cta cta-b" data-cancelar>Cancelar acesso</button>' : ''}</td>
+        <td>${a.ativo ? '<button type="button" class="cta cta-b" data-cancelar>Cancelar acesso</button>' : ''}${a.pagamento ? '<button type="button" class="cta cta-b" data-conferir>Conferir na InfinitePay</button>' : ''}</td>
       </tr>`).join('')}</tbody></table></div>
       <p class="sec-note">Nome e @ aparecem quando a pessoa entrou com o Google ou deixou depoimento. Estornou na InfinitePay? Use "Cancelar acesso": a InfinitePay não avisa o site do estorno.</p>`
     : '<p class="passagens-vazio">Nenhum assinante ainda.</p>');
 }
 $('#painel-assinantes').addEventListener('click', async e => {
+  const c = e.target.closest('[data-conferir]');
+  if (c) {
+    c.disabled = true;
+    try {
+      const r = await fetch(`${SERVIDOR}/assinante/conferir?email=${encodeURIComponent(c.closest('tr').dataset.email)}`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
+      const d = await r.json();
+      const ip = d.infinitepay || {};
+      alert(r.ok ? `${d.estornado ? 'A InfinitePay diz que este pagamento NÃO está mais pago (estornado).' : ip.paid ? 'A InfinitePay diz que este pagamento continua pago.' : 'A InfinitePay não confirmou o pagamento.'}
+
+Resposta: ${JSON.stringify(ip)}` : d.erro || 'Não deu para conferir agora.');
+    } finally { c.disabled = false; }
+    return;
+  }
   const b = e.target.closest('[data-cancelar]'); if (!b) return;
   const email = b.closest('tr').dataset.email;
   if (!confirm(`Cancelar o acesso de ${email} agora? Faça isso só depois de estornar o pagamento na InfinitePay.`)) return;
