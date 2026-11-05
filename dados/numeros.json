@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-05T10:02:39.588730Z",
+ "atualizado": "2026-11-05T10:08:47.564320Z",
  "dias": 30,
- "passagens": 629,
+ "passagens": 631,
  "promocoes": 65,
  "destinos": 108,
  "executiva": 132,
@@ -33,17 +33,17 @@
    "foto": "img/rotas/MAO-PTY.jpg"
   },
   {
-   "id": "2008590742-14723",
-   "origem": "Brasília",
-   "origem_iata": "BSB",
+   "id": "2008590742-14750",
+   "origem": "Uberlândia",
+   "origem_iata": "UDI",
    "destino": "San José",
    "destino_iata": "SJO",
    "cabine": "Econômica",
    "programa": "LATAM Pass",
-   "data": "2026-11-04T18:31:36Z",
-   "milhas": 36600,
+   "data": "2026-11-05T10:06:15Z",
+   "milhas": 36500,
    "nivel": "espetacular",
-   "foto": "img/rotas/BSB-SJO.jpg"
+   "foto": "img/rotas/UDI-SJO.jpg"
   },
   {
    "id": "2008590742-14564",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 629,
+  "passagens": 631,
   "destaques": [
    {
     "id": "3761373661-8819",
