@@ -241,11 +241,52 @@ async function desenharPainel() {
     ${tabela('Origem', Object.entries(porOrigem).sort((x, y) => y[1].visita - x[1].visita).map(([o, l]) => [ORIGEM_NOME[o] || o, l]))}
     ${tabela('Dia', porDia)}`;
   desenharDeposPainel();
+  desenharAssinantesPainel();
 }
 
 // Depoimentos no painel: aprovar põe no site; ocultar tira.
 const DEPO_SITUACAO = { pendente: 'Esperando aprovação', aprovado: 'No site', oculto: 'Oculto' };
 const estrelas = n => `${'★'.repeat(n)}<span>${'★'.repeat(5 - n)}</span>`;
+// Quem assina: e-mail, nome, @, plano, validade e último pagamento; "Cancelar acesso" depois de estornar.
+async function desenharAssinantesPainel() {
+  const el = $('#painel-assinantes');
+  if (!auth.currentUser) return;
+  let lista;
+  try {
+    const r = await fetch(`${SERVIDOR}/assinantes`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
+    if (!r.ok) { el.innerHTML = ''; return; }
+    lista = (await r.json()).assinantes;
+  } catch (e) { return; }
+  const data = t => (t ? new Date(t).toLocaleDateString('pt-BR') : '—');
+  const situacao = a => (a.cancelado && !a.ativo ? '<span class="ass-sit cancelado">Cancelado</span>' : a.ativo ? '<span class="ass-sit ativo">Ativo</span>' : '<span class="ass-sit vencido">Vencido</span>');
+  const forma = f => ({ pix: 'Pix', credit_card: 'cartão' }[f] || f);
+  const pag = p => (p ? `${reais(p.preco)}${p.forma ? ` · ${escR(forma(p.forma))}` : ''}${p.parcelas > 1 ? ` ${p.parcelas}x` : ''}<small>${data(p.pagoEm)}${p.status === 'cancelado' ? ' · cancelado' : ''}</small>` : '—');
+  const ativos = lista.filter(a => a.ativo).length;
+  el.innerHTML = `<h3 class="prova-sub">Assinantes · ${ativos} ${ativos === 1 ? 'ativo' : 'ativos'} de ${lista.length}</h3>` + (lista.length
+    ? `<div class="quanto-rolar"><table class="quanto-tab painel-ass"><thead><tr><th>Assinante</th><th>Plano</th><th>Válido até</th><th>Pagamento</th><th></th></tr></thead><tbody>
+      ${lista.map(a => `<tr data-email="${escR(a.email)}">
+        <th>${a.nome ? escR(a.nome) : '<span class="ass-semnome">sem nome</span>'}<small>${escR(a.email)}${a.instagram ? ` · <a href="https://instagram.com/${escR(a.instagram)}" target="_blank" rel="noopener">@${escR(a.instagram)}</a>` : ''}</small></th>
+        <td>${escR(a.plano === 'anual' ? 'Anual' : a.plano === 'mensal' ? 'Mensal' : a.plano || '—')}</td>
+        <td>${situacao(a)}<small>${data(a.validoAte)}</small></td>
+        <td>${pag(a.pagamento)}</td>
+        <td>${a.ativo ? '<button type="button" class="cta cta-b" data-cancelar>Cancelar acesso</button>' : ''}</td>
+      </tr>`).join('')}</tbody></table></div>
+      <p class="sec-note">Nome e @ aparecem quando a pessoa entrou com o Google ou deixou depoimento. Estornou na InfinitePay? Use "Cancelar acesso": a InfinitePay não avisa o site do estorno.</p>`
+    : '<p class="passagens-vazio">Nenhum assinante ainda.</p>');
+}
+$('#painel-assinantes').addEventListener('click', async e => {
+  const b = e.target.closest('[data-cancelar]'); if (!b) return;
+  const email = b.closest('tr').dataset.email;
+  if (!confirm(`Cancelar o acesso de ${email} agora? Faça isso só depois de estornar o pagamento na InfinitePay.`)) return;
+  b.disabled = true;
+  try {
+    const r = await fetch(`${SERVIDOR}/assinante/cancelar`, { method: 'POST',
+      headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' },
+      body: JSON.stringify({ email }) });
+    if (!r.ok) alert((await r.json().catch(() => ({}))).erro || 'Não deu para cancelar agora.');
+  } finally { desenharAssinantesPainel(); }
+});
+
 async function desenharDeposPainel() {
   const el = $('#painel-depos');
   if (!auth.currentUser) return;

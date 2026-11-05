@@ -52,6 +52,8 @@ export default {
       if (req.method === 'GET' && url.pathname === '/depoimento') return json(await meuDepoimento(req, env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/depoimento') return json(await gravarDepoimento(req, env), 200, cors);
       if (req.method === 'GET' && url.pathname === '/depoimentos/todos') return json(await todosDepoimentos(req, env), 200, cors);
+      if (req.method === 'GET' && url.pathname === '/assinantes') return json(await listaAssinantes(req, env), 200, cors);
+      if (req.method === 'POST' && url.pathname === '/assinante/cancelar') return json(await cancelarAssinante(req, env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/depoimento/moderar') return json(await moderarDepoimento(req, env), 200, cors);
       return json({ erro: 'não encontrado' }, 404, cors);
     } catch (e) {
@@ -722,6 +724,43 @@ async function moderarDepoimento(req, env) {
 }
 
 /* ---------- Painel do dono ---------- */
+// Quem assina: nome e @ do depoimento (se deixou) ou o nome da conta Google; o último pagamento de cada um.
+async function listaAssinantes(req, env) {
+  await exigirAdmin(req, env);
+  const [assinantes, depos, pedidos] = await Promise.all([listarDocs(env, 'assinantes'), listarDocs(env, 'depoimentos'), listarDocs(env, 'pedidos')]);
+  const google = {};
+  const emails = assinantes.map(a => a.id);
+  for (let i = 0; i < emails.length; i += 100) {
+    try {
+      const l = await (await fetch(`https://identitytoolkit.googleapis.com/v1/projects/${env.PROJETO}/accounts:lookup`, {
+        method: 'POST', headers: { authorization: `Bearer ${await token(env)}`, 'content-type': 'application/json' }, body: JSON.stringify({ email: emails.slice(i, i + 100) })
+      })).json();
+      for (const u of l.users || []) if (u.email && u.displayName) google[u.email.toLowerCase()] = u.displayName;
+    } catch (e) { /* sem nome do Google */ }
+  }
+  const depo = Object.fromEntries(depos.map(d => [d.id, d]));
+  const pagos = pedidos.filter(p => p.status === 'pago' || p.status === 'cancelado').sort((a, b) => (b.pagoEm || 0) - (a.pagoEm || 0));
+  const agora = Date.now();
+  return { assinantes: assinantes.map(a => {
+    const p = pagos.find(x => x.email === a.id);
+    const vence = a.validoAte instanceof Date ? a.validoAte.getTime() : 0;
+    return { email: a.id, nome: (depo[a.id] && depo[a.id].nome) || google[a.id] || '', instagram: (depo[a.id] && depo[a.id].instagram) || '',
+      plano: a.plano || '', validoAte: vence ? new Date(vence).toISOString() : null, ativo: vence > agora, cancelado: !!a.canceladoEm,
+      pagamento: p ? { preco: p.preco, forma: p.forma || '', parcelas: p.parcelas || 1, pagoEm: p.pagoEm instanceof Date ? p.pagoEm.toISOString() : null, status: p.status } : null };
+  }).sort((a, b) => (b.ativo - a.ativo) || String(b.validoAte).localeCompare(String(a.validoAte))) };
+}
+// Depois de estornar no app da InfinitePay (ela não avisa o estorno): tira o acesso na hora.
+async function cancelarAssinante(req, env) {
+  await exigirAdmin(req, env);
+  const email = String((await req.json()).email || '').trim().toLowerCase();
+  if (!emailValido(email)) throw falha('E-mail inválido.');
+  if (!(await lerDoc(env, `assinantes/${email}`))) throw falha('Assinante não encontrado.', 404);
+  await atualizarCampos(env, `assinantes/${email}`, { validoAte: new Date(), canceladoEm: new Date(), teveAnual: false });
+  const pedido = (await listarDocs(env, 'pedidos')).filter(p => p.email === email && p.status === 'pago').sort((a, b) => (b.pagoEm || 0) - (a.pagoEm || 0))[0];
+  if (pedido) await atualizarCampos(env, `pedidos/${pedido.id}`, { status: 'cancelado', canceladoEm: new Date() });
+  return { ok: true };
+}
+
 async function metricas(req, url, env) {
   await exigirAdmin(req, env);
   const dias = Math.min(90, Math.max(1, Number(url.searchParams.get('dias')) || 30));
