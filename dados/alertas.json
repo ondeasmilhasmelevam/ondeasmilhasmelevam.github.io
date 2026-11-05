@@ -1,5 +1,75 @@
 [
  {
+  "id": "2008590742-14813",
+  "data": "2026-11-05T20:19:36Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Curaçao",
+  "destino_iata": "CUR",
+  "companhia": "Copa Airlines",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "46.800 milhas + Taxas",
+  "volta": "46.800 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-9038",
+  "data": "2026-11-05T20:19:34Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "23.200 milhas + Taxas",
+  "volta": "24.600 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14812",
+  "data": "2026-11-05T20:19:28Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Cartagena",
+  "destino_iata": "CTG",
+  "companhia": "Copa Airlines + Avianca",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "38.000 milhas + Taxas",
+  "volta": "27.900 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-9037",
+  "data": "2026-11-05T20:19:24Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Goiânia",
+  "destino_iata": "GYN",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "22.100 milhas + Taxas",
+  "volta": "22.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-9036",
+  "data": "2026-11-05T20:19:21Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "18.300 milhas + Taxas",
+  "volta": "18.300 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-14811",
   "data": "2026-11-05T20:00:26Z",
   "origem": "Salvador",
@@ -5026,20 +5096,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "3761373661-8875",
-  "data": "2026-11-04T11:07:13Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.300 milhas + Taxas",
-  "volta": "11.300 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "2361370250-6051",
   "data": "2026-11-04T11:07:13Z",
   "origem": "Brasília",
@@ -5052,6 +5108,20 @@
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
   "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "3761373661-8875",
+  "data": "2026-11-04T11:07:13Z",
+  "origem": "Aracaju",
+  "origem_iata": "AJU",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "11.300 milhas + Taxas",
+  "volta": "11.300 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "2008590742-14662",
