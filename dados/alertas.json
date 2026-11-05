@@ -6531,20 +6531,6 @@
   "link_nome": "Azul pelo Mundo"
  },
  {
-  "id": "2361370250-5998",
-  "data": "2026-11-03T21:08:21Z",
-  "origem": "Joanesburgo",
-  "origem_iata": "JNB",
-  "destino": "Maurício",
-  "destino_iata": "MRU",
-  "companhia": "South African Airways",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "82.800 ~ 91.100 milhas + R$ 228",
-  "volta": "82.800 ~ 91.100 milhas + R$ 733",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7577",
   "data": "2026-11-03T20:37:58Z",
   "tipo": "promocao",
