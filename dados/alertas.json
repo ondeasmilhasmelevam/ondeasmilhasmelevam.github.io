@@ -1,5 +1,25 @@
 [
  {
+  "id": "1290836068-7608",
+  "data": "2026-11-05T16:07:30Z",
+  "tipo": "promocao",
+  "titulo": "TURBO LIVELO: TURBINE SEUS PONTOS EM ATÉ 25X",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Assinantes do Clube Livelo podem turbinar pontos acumulados nos últimos 12 meses em até 25x com milheiro a partir de R$ 29,40 no Pix.",
+  "detalhes": [
+   "Multiplicadores 10x, 15x e 25x: R$ 30,00 no parcelado ou R$ 29,40 no Pix (2% OFF).",
+   "Multiplicadores 3x e 5x: R$ 31,00 no parcelado ou R$ 30,38 no Pix (2% OFF).",
+   "Pagamento no cartão em até 12x sem juros ou Pix com 2% de desconto."
+  ],
+  "parceiros": "Livelo",
+  "validade": "05/11/2026",
+  "links": [
+   "http://livelo.com.br/turbo-livelo⁠"
+  ],
+  "ate": "2026-11-05T23:59:59-03:00"
+ },
+ {
   "id": "2361370250-6095",
   "data": "2026-11-05T16:01:20Z",
   "origem": "São Paulo",
