@@ -210,25 +210,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "1290836068-7602",
-  "data": "2026-11-04T20:58:59Z",
-  "tipo": "promocao",
-  "titulo": "LIVELO OFERECE 20% DE DESCONTO EM VOOS PARA ITÁLIA",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Desconto de 20% na emissão de voos para Itália com pontos Livelo, válido somente hoje (04/11).",
-  "detalhes": [
-   "20% de desconto em voos para Itália.",
-   "Válido somente hoje, 04/11/2026."
-  ],
-  "parceiros": "Livelo",
-  "validade": "04/11/2026",
-  "links": [
-   "https://passageirodeprimeira.com/ate-amanha-livelo-oferece-20-desconto-emissao-voos-italia/"
-  ],
-  "ate": "2026-11-04T23:59:59-03:00"
- },
- {
   "id": "1290836068-7601",
   "data": "2026-11-04T20:58:53Z",
   "tipo": "promocao",
