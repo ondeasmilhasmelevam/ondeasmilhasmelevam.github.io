@@ -28,7 +28,7 @@ export default {
   async scheduled(evento, env, ctx) {
     // 12h UTC: avisos de vencimento. Aos 30 de cada hora: um lote do alerta grátis da semana (o plano grátis da
     // Cloudflare deixa só 50 chamadas externas por execução, então manda poucos de cada vez).
-    ctx.waitUntil(evento.cron === '0 12 * * *' ? avisarVencimentos(env).then(() => conferirEstornos(env)).then(() => pesquisaSeteDias(env)) : semanal(env));
+    ctx.waitUntil(evento.cron === '0 12 * * *' ? avisarVencimentos(env).then(() => conferirEstornos(env)).then(() => pesquisaDezDias(env)) : semanal(env));
   },
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -795,23 +795,23 @@ async function conferirEstornos(env) {
     if (estornado(c)) await tirarAcesso(env, p.email).catch(e => console.log('estorno:', e.message));
   }
 }
-// 7 dias depois do primeiro pagamento: um e-mail perguntando o que a pessoa está achando, com o botão para
+// 10 dias depois do primeiro pagamento (já fora da garantia de 7): um e-mail perguntando o que a pessoa está achando, com o botão para
 // avaliar (vai para aprovação no painel, como os depoimentos). Responder o e-mail cai no Gmail da marca.
-async function pesquisaSeteDias(env) {
+async function pesquisaDezDias(env) {
   const agora = Date.now();
   // Quem assinou antes deste aviso existir não tem primeiroPagamento: vale o pedido pago mais antigo.
   const pagos = (await listarDocs(env, 'pedidos')).filter(p => p.status === 'pago' && p.pagoEm instanceof Date);
   const inicio = a => (a.primeiroPagamento instanceof Date ? a.primeiroPagamento.getTime()
     : Math.min(...pagos.filter(p => p.email === a.id).map(p => p.pagoEm.getTime())));
   const alvo = (await listarDocs(env, 'assinantes')).filter(a => !a.pesquisaEm && !a.canceladoEm && emailValido(a.email || a.id)
-    && agora - inicio(a) >= 7 * 864e5 && agora - inicio(a) < 14 * 864e5
+    && agora - inicio(a) >= 10 * 864e5 && agora - inicio(a) < 17 * 864e5
     && a.validoAte instanceof Date && a.validoAte.getTime() > agora);
   for (const a of alvo.slice(0, 5)) {
     const email = a.email || a.id;
-    const corpo = `Olá!<br><br>Já faz uma semana que você assina o Onde as Milhas Me Levam. Queremos saber: <strong>o que você está achando?</strong><br><br>
+    const corpo = `Olá!<br><br>Já faz 10 dias que você assina o Onde as Milhas Me Levam. Queremos saber: <strong>o que você está achando?</strong><br><br>
       Já encontrou alguma passagem boa? Sentiu falta de alguma rota, programa ou ferramenta? Tem algo que podemos melhorar?<br><br>
       É só <strong>responder este e-mail</strong> contando, que a gente lê tudo. E se estiver gostando, deixe sua avaliação no site: ela ajuda outras pessoas a decidir.<br><br>
-      ${botaoEmail('Deixar minha avaliação', `${env.SITE}?utm_source=email&utm_campaign=pesquisa7#assinar`)}<br><br>
+      ${botaoEmail('Deixar minha avaliação', `${env.SITE}?utm_source=email&utm_campaign=pesquisa10#assinar`)}<br><br>
       Obrigado por estar com a gente!`;
     if (await enviarEmail(env, email, 'O que você está achando do Onde as Milhas Me Levam?', corpo)) await atualizarCampos(env, `assinantes/${email}`, { pesquisaEm: new Date() });
   }
