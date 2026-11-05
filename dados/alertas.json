@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-6110",
+  "data": "2026-11-05T21:18:20Z",
+  "origem": "Campinas",
+  "origem_iata": "VCP",
+  "destino": "Orlando",
+  "destino_iata": "MCO",
+  "companhia": "Azul",
+  "cabine": "Executiva",
+  "programa": "Azul Fidelidade",
+  "ida": "370.500 milhas + R$ 287,20",
+  "volta": "370.500 milhas + R$ 183,51",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2361370250-6109",
+  "data": "2026-11-05T21:18:13Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Cidade do Cabo",
+  "destino_iata": "CPT",
+  "companhia": "South African Airways",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "171.600 milhas + R$ 108,61",
+  "volta": "171.600 milhas + R$ 228,31",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9041",
   "data": "2026-11-05T20:58:53Z",
   "origem": "Manaus",
@@ -5222,20 +5250,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "3761373661-8875",
-  "data": "2026-11-04T11:07:13Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.300 milhas + Taxas",
-  "volta": "11.300 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "2361370250-6051",
   "data": "2026-11-04T11:07:13Z",
   "origem": "Brasília",
@@ -5248,6 +5262,20 @@
   "ida": "135.000 milhas",
   "volta": "135.000 milhas",
   "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "3761373661-8875",
+  "data": "2026-11-04T11:07:13Z",
+  "origem": "Aracaju",
+  "origem_iata": "AJU",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "11.300 milhas + Taxas",
+  "volta": "11.300 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "2008590742-14662",
