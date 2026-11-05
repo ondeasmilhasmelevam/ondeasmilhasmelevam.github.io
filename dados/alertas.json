@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-14782",
+  "data": "2026-11-05T13:12:52Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Buenos Aires",
+  "destino_iata": "AEP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "24.000 milhas + Taxas",
+  "volta": "24.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14781",
+  "data": "2026-11-05T13:12:45Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Assunção",
+  "destino_iata": "ASU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "29.100 milhas + Taxas",
+  "volta": "29.100 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-8997",
+  "data": "2026-11-05T13:12:42Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "13.500 milhas + Taxas",
+  "volta": "13.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-14780",
   "data": "2026-11-05T13:07:26Z",
   "origem": "Goiânia",
@@ -6413,34 +6455,6 @@
   "ida": "41.000 milhas + Taxas",
   "volta": "41.000 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8832",
-  "data": "2026-11-03T13:12:41Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Cascavel",
-  "destino_iata": "CAC",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "10.000 milhas + Taxas",
-  "volta": "15.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-8831",
-  "data": "2026-11-03T13:09:03Z",
-  "origem": "Natal",
-  "origem_iata": "NAT",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "20.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "1290836068-7557",
