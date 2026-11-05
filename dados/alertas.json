@@ -6595,20 +6595,6 @@
   "ate": "2026-11-09T23:59:59-03:00"
  },
  {
-  "id": "2361370250-5999",
-  "data": "2026-11-03T22:23:31Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "Emirates",
-  "cabine": "Executiva",
-  "programa": "Azul pelo Mundo",
-  "ida": "165.000 Milhas TudoAzul + R$ 63,59",
-  "volta": "165.000 Milhas TudoAzul + R$ 504,58",
-  "link_nome": "Azul pelo Mundo"
- },
- {
   "id": "1290836068-7577",
   "data": "2026-11-03T20:37:58Z",
   "tipo": "promocao",
