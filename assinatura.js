@@ -505,7 +505,10 @@ $('#painel-dias').addEventListener('click', e => {
 });
 addEventListener('hashchange', () => { if (location.hash === '#painel') desenharPainel(); });
 
+// Aba Painel no menu: aparece só para o e-mail do dono (quem decide o acesso é o servidor, pela lista ADMINS).
+const DONO = 'ondeasmilhasmelevam@gmail.com';
 onAuthStateChanged(auth, async user => {
+  $('#menu-painel').hidden = (user?.email || '').toLowerCase() !== DONO;
   const estado = await lerAssinatura(user);
   desenharConta(estado);
   desenharIndicacao(estado);
