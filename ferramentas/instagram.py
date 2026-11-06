@@ -832,13 +832,19 @@ def vale_a_pena(a):
     if b <= BONUS_BOM.get(destino[1], 100):
         return ''
     sai = tetos[origem] / (1 + b / 100)
-    turbo = ' Quem tem o Turbo LATAM chega a até 35%, respeitando o limite de envio do mês.' if destino[1] == 'LATAM Pass' and b < 35 else ''
-    real = lambda v: f'R$ {v:.2f}'.replace('.', ',')
-    if sai <= tetos[destino[0]]:
-        return (f'💡 Vale a pena? {origem} → {destino[1]} com {b}% de bônus: comprando {origem} a até {real(tetos[origem])} o milheiro, '
-                f'o ponto {destino[1]} sai a {real(sai)}, {'abaixo do' if sai < tetos[destino[0]] - 0.005 else 'dentro do'} teto bom de {real(tetos[destino[0]])}. Vale, se for usar!{turbo}')
-    return (f'💡 Vale a pena? {origem} → {destino[1]} com {b}% de bônus: só compensa se você já tem os pontos ou compra {origem} bem abaixo de '
-            f'{real(tetos[origem])}. No teto, o ponto {destino[1]} sairia a {real(sai)}, acima dos {real(tetos[destino[0]])} que valem a pena.{turbo}')
+    real = lambda v: f'R$ {v:.2f}'.replace('.', ',').replace(',00', '')
+    fator = f'{1 + b / 100:.2f}'.replace('.', ',').rstrip('0').rstrip(',')
+    milha = 'a milha' if destino[1] != 'Azul' else 'o ponto'
+    if sai <= tetos[destino[0]] + 0.005:
+        linha = f'💡 Vale a pena? Sim! Com {b}% de bônus, {milha} {destino[1]} sai a {real(sai)} o milheiro (o bom é até {real(tetos[destino[0]])}).'
+    else:
+        linha = (f'💡 Vale a pena? Só se você já tem os pontos ou achar {origem} mais barato: no teto, {milha} {destino[1]} sai a '
+                 f'{real(sai)} o milheiro (o bom é até {real(tetos[destino[0]])}).')
+    conta = (f'🧮 Como calcular: preço do milheiro {origem} ÷ {fator}. Ex.: {real(tetos[origem])} ÷ {fator} = {real(sai)}. '
+             'Se o preço mudar, refaça a conta com o valor do dia.')
+    if destino[1] == 'LATAM Pass' and b < 35:
+        conta += ' Com o Turbo LATAM (até 35%, no limite de envio do mês), divida por 1,35.'
+    return f'{linha}' + chr(10) + conta
 
 
 def bloco_vale(itens):
