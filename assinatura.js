@@ -820,30 +820,30 @@ document.querySelectorAll('[data-plano]').forEach(b => b.addEventListener('click
 $('#ass-email').addEventListener('change', e => mostrarPrecos(e.target.value.trim()));
 
 // Histórico de preços (só assinantes): o servidor soma cada passagem vista em privado/historico.
-let historico = null;
+let historicoRotas = null;
 const MESES_HIST = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 const ordemMes = m => { const [a, b] = String(m).split('/'); return (+b || 0) * 12 + MESES_HIST.indexOf(a); };
 const milHist = v => Number(v).toLocaleString('pt-BR');
 const normHist = t => String(t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 const haDias = d => { const n = Math.round((Date.now() - new Date(d + 'T12:00:00')) / 864e5); return n <= 0 ? 'hoje' : n === 1 ? 'ontem' : `há ${n} dias`; };
 async function carregarHistorico() {
-  if (historico || !auth.currentUser) return;
+  if (historicoRotas || !auth.currentUser) return;
   try {
     const r = await fetch(`${SERVIDOR}/historico`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
     if (!r.ok) throw new Error();
-    historico = Object.values((await r.json()).rotas || {});
-  } catch (e) { historico = null; $('#hist-info').textContent = 'Não deu para carregar o histórico agora. Tente de novo em instantes.'; }
+    historicoRotas = Object.values((await r.json()).rotas || {});
+  } catch (e) { historicoRotas = null; $('#hist-info').textContent = 'Não deu para carregar o histórico agora. Tente de novo em instantes.'; }
 }
-async function desenharHistorico() {
+async function desenharPrecosRota() {
   const ativo = !!(window.oammlAssinatura || {}).ativo || (auth.currentUser?.email || '').toLowerCase() === DONO;
   $('#hist-fechado').hidden = ativo;
   $('#hist-aberto').hidden = !ativo;
   if (!ativo || location.hash !== '#historico') return;
-  if (!historico) { $('#hist-info').textContent = 'Carregando o histórico...'; await carregarHistorico(); }
-  if (!historico) return;
+  if (!historicoRotas) { $('#hist-info').textContent = 'Carregando o histórico...'; await carregarHistorico(); }
+  if (!historicoRotas) return;
   const busca = normHist($('#hist-busca').value.trim()), cab = $('#hist-cabine').value;
   const noAr = new Set((window.oammlPassagens || []).map(p => `${p.origem_iata}-${p.destino_iata}`));
-  const lista = historico.filter(r => (!busca || normHist(`${r.o} ${r.oi} ${r.d} ${r.di}`).includes(busca)) &&
+  const lista = historicoRotas.filter(r => (!busca || normHist(`${r.o} ${r.oi} ${r.d} ${r.di}`).includes(busca)) &&
     (!cab || (cab === 'eco' ? /econ/i.test(r.c) : !/econ/i.test(r.c))))
     .sort((a, b) => b.n - a.n || (b.ult || '').localeCompare(a.ult || ''));
   $('#hist-info').textContent = `${lista.length} ${lista.length === 1 ? 'rota' : 'rotas'}${lista.length > 60 ? ' (mostrando as 60 que mais aparecem; busque para achar a sua)' : ''}. Preços por trecho, sem taxas.`;
@@ -862,8 +862,8 @@ async function desenharHistorico() {
     </li>`;
   }).join('') || '<li class="passagens-vazio">Nenhuma rota com esse filtro ainda. O histórico cresce a cada passagem que o robô encontra.</li>';
 }
-document.addEventListener('assinatura', desenharHistorico);
-window.addEventListener('hashchange', desenharHistorico);
-$('#hist-busca').addEventListener('input', desenharHistorico);
-$('#hist-cabine').addEventListener('change', desenharHistorico);
-desenharHistorico();
+document.addEventListener('assinatura', desenharPrecosRota);
+window.addEventListener('hashchange', desenharPrecosRota);
+$('#hist-busca').addEventListener('input', desenharPrecosRota);
+$('#hist-cabine').addEventListener('change', desenharPrecosRota);
+desenharPrecosRota();
