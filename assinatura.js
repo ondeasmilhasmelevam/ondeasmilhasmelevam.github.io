@@ -705,7 +705,11 @@ $('#painel-dias').addEventListener('click', e => {
   $('#painel-dias').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
   desenharPainel();
 });
-addEventListener('hashchange', () => { if (location.hash === '#painel') desenharPainel(); });
+addEventListener('hashchange', () => {
+  if (location.hash !== '#painel') return;
+  if ((auth.currentUser?.email || '').toLowerCase() !== DONO) { location.hash = '#inicio'; return; }
+  desenharPainel();
+});
 
 // Aba Painel no menu: aparece só para o e-mail do dono (quem decide o acesso é o servidor, pela lista ADMINS).
 const DONO = 'ondeasmilhasmelevam@gmail.com';
@@ -717,7 +721,8 @@ function limparPainel() {
 onAuthStateChanged(auth, async user => {
   const dono = (user?.email || '').toLowerCase() === DONO;
   $('#menu-painel').hidden = !dono;
-  if (!dono) limparPainel();
+  $('#painel').hidden = !dono; // para quem não é o dono, a página do painel nem existe
+  if (!dono) { limparPainel(); if (location.hash === '#painel') location.hash = '#inicio'; }
   const estado = await lerAssinatura(user);
   desenharConta(estado);
   desenharIndicacao(estado);
