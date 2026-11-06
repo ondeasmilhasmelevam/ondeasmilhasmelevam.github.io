@@ -51,6 +51,7 @@ def main():
         'access_type': 'offline', 'prompt': 'consent', 'state': estado, 'login_hint': 'ondeasmilhasmelevam@gmail.com',
         'code_challenge': desafio, 'code_challenge_method': 'S256'})
     print('Abrindo o navegador para você permitir o envio de vídeos...')
+    print(url)
     webbrowser.open(url)
     while 'code' not in recebido and 'error' not in recebido:
         servidor.handle_request()
