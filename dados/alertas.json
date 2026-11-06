@@ -1,5 +1,47 @@
 [
  {
+  "id": "3761373661-9095",
+  "data": "2026-11-06T13:05:01Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "10.600 milhas + Taxas",
+  "volta": "10.600 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14934",
+  "data": "2026-11-06T13:04:53Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Joanesburgo",
+  "destino_iata": "JNB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "83.400 milhas + Taxas",
+  "volta": "83.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14933",
+  "data": "2026-11-06T13:00:49Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "64.900 milhas + Taxas",
+  "volta": "64.900 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-9094",
   "data": "2026-11-06T12:54:38Z",
   "origem": "Natal",
@@ -7031,20 +7073,6 @@
   "ida": "30.300 milhas + Taxas",
   "volta": "30.300 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2361370250-6072",
-  "data": "2026-11-04T13:03:03Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Orlando",
-  "destino_iata": "MCO",
-  "companhia": "American Airlines",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "178.900 milhas + R$ 389,72",
-  "volta": "",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7580",
