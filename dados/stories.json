@@ -180,7 +180,9 @@
  ],
  "ultimo_em": "2026-11-06T00:35:45.823768+00:00",
  "ultimo_tipo": "passagem",
- "lotes_stories": [],
+ "lotes_stories": [
+  "08:00"
+ ],
  "horarios_feed": [],
  "feed_usados": []
 }
