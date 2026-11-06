@@ -208,7 +208,7 @@ const ORIGEM_NOME = { direto: 'Direto / sem origem', instagram: 'Instagram', goo
   whatsapp: 'WhatsApp', facebook: 'Facebook', site: 'Outros sites', bing: 'Bing', youtube: 'YouTube', tiktok: 'TikTok' };
 async function desenharPainel() {
   const el = $('#painel-conteudo');
-  if (!auth.currentUser) return;
+  if ((auth.currentUser?.email || '').toLowerCase() !== DONO) return limparPainel();
   let d;
   try {
     const r = await fetch(`${SERVIDOR}/metricas?dias=${painelDias}`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
@@ -709,8 +709,15 @@ addEventListener('hashchange', () => { if (location.hash === '#painel') desenhar
 
 // Aba Painel no menu: aparece só para o e-mail do dono (quem decide o acesso é o servidor, pela lista ADMINS).
 const DONO = 'ondeasmilhasmelevam@gmail.com';
+// Trocou de conta (ou saiu): apaga o que o painel mostrou na conta anterior antes de qualquer coisa.
+function limparPainel() {
+  ['#painel-campanha', '#painel-cortesias', '#painel-assinantes', '#painel-depos'].forEach(id => { const el = $(id); if (el) el.innerHTML = ''; });
+  $('#painel-conteudo').innerHTML = '<p class="passagens-vazio">Este painel é só do dono do site.</p>';
+}
 onAuthStateChanged(auth, async user => {
-  $('#menu-painel').hidden = (user?.email || '').toLowerCase() !== DONO;
+  const dono = (user?.email || '').toLowerCase() === DONO;
+  $('#menu-painel').hidden = !dono;
+  if (!dono) limparPainel();
   const estado = await lerAssinatura(user);
   desenharConta(estado);
   desenharIndicacao(estado);
