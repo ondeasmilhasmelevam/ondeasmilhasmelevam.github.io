@@ -216,8 +216,17 @@ def marca(img, y, compacto=False):
     d.polygon([(W / 2, y - 9), (W / 2 + 9, y), (W / 2, y + 9), (W / 2 - 9, y)], fill=OURO)
 
 
-def botao(img, y):
-    """Botão "LINK NA BIO" em dourado claro com brilho, seta para cima e o @ do perfil."""
+# Convite do ManyChat em cada post e story: quem manda a palavra no direct (ou responde o story com ela)
+# recebe o link na hora. No plano grátis do ManyChat, palavra no direct funciona em todos os posts.
+PALAVRA = {'promocao': 'PROMO', 'passagem': 'ALERTA'}
+
+
+def cta_tipo(tipo):
+    return PALAVRA['promocao' if tipo == 'promocao' else 'passagem']
+
+
+def botao(img, y, palavra=None, story=False):
+    """Botão dourado com brilho: o convite do ManyChat ("MANDE PROMO NO DIRECT") ou, sem palavra, "LINK NA BIO"."""
     caixa = (150, y, W - 150, y + 160)
     halo = Image.new('RGBA', img.size, (0, 0, 0, 0))
     ImageDraw.Draw(halo).rounded_rectangle(caixa, radius=80, fill=(245, 215, 136, 170))
@@ -232,20 +241,36 @@ def botao(img, y):
     ImageDraw.Draw(mascara).rounded_rectangle((0, 0, faixa.width - 1, faixa.height - 1), radius=80, fill=255)
     img.paste(faixa, caixa[:2], mascara)
     d = ImageDraw.Draw(img)
-    f = fonte(66, 800)
-    t = 'LINK NA BIO'
-    larg = d.textlength(t, font=f)
-    x = (W - larg - 64) / 2
-    # seta para cima, desenhada (a bio fica no alto do perfil)
-    sx, sy = x + 18, y + 80
-    d.polygon([(sx, sy - 30), (sx + 22, sy - 4), (sx + 8, sy - 4), (sx + 8, sy + 28), (sx - 8, sy + 28),
-               (sx - 8, sy - 4), (sx - 22, sy - 4)], fill=INK)
-    d.text((x + 64, y + 38), t, font=f, fill=INK)
-    centro(d, y + 190, [f'{PERFIL}  ·  {DOMINIO}'], fonte(34, 700), OURO_LT)
+    if palavra:
+        t = f'RESPONDA {palavra}' if story else f'MANDE {palavra} NO DIRECT'
+        tam = 66
+        while d.textlength(t, font=fonte(tam, 800)) > caixa[2] - caixa[0] - 150 and tam > 36:
+            tam -= 2
+        f = fonte(tam, 800)
+        larg = d.textlength(t, font=f)
+        x = (W - larg - 70) / 2
+        # balão de conversa, desenhado
+        bx, by = x + 22, y + 80
+        d.rounded_rectangle((bx - 24, by - 22, bx + 24, by + 14), radius=10, fill=INK)
+        d.polygon([(bx - 12, by + 12), (bx - 18, by + 28), (bx + 2, by + 12)], fill=INK)
+        d.text((x + 70, y + 80 - tam * 0.62), t, font=f, fill=INK)
+        sub = 'neste story e receba o link na hora' if story else 'e receba o link na hora'
+        centro(d, y + 190, [f'{sub}  ·  {DOMINIO}'], fonte(32, 700), OURO_LT)
+    else:
+        f = fonte(66, 800)
+        t = 'LINK NA BIO'
+        larg = d.textlength(t, font=f)
+        x = (W - larg - 64) / 2
+        # seta para cima, desenhada (a bio fica no alto do perfil)
+        sx, sy = x + 18, y + 80
+        d.polygon([(sx, sy - 30), (sx + 22, sy - 4), (sx + 8, sy - 4), (sx + 8, sy + 28), (sx - 8, sy + 28),
+                   (sx - 8, sy - 4), (sx - 22, sy - 4)], fill=INK)
+        d.text((x + 64, y + 38), t, font=f, fill=INK)
+        centro(d, y + 190, [f'{PERFIL}  ·  {DOMINIO}'], fonte(34, 700), OURO_LT)
     centro(d, y + 240, ['Valores podem mudar a qualquer momento.'], fonte(24, 500), ASH)
 
 
-def montar(miolo, fmt, cartao=True):
+def montar(miolo, fmt, cartao=True, palavra=None):
     """Fundo, marca, o miolo centrado no espaço livre e o botão."""
     img = fundo(fmt['alto'])
     marca(img, fmt['marca'], fmt.get('compacto'))
@@ -265,7 +290,7 @@ def montar(miolo, fmt, cartao=True):
             img.paste(vidro, (0, 0), vidro)
         # cola a camada inteira (com o halo), alinhando o conteúdo no centro
         img.alpha_composite(miolo, (int(W / 2 - (caixa[0] + larg / 2) * k), int(y - caixa[1] * k)))             if img.mode == 'RGBA' else img.paste(miolo, (int(W / 2 - (caixa[0] + larg / 2) * k), int(y - caixa[1] * k)), miolo)
-    botao(img, fmt['botao'])
+    botao(img, fmt['botao'], palavra, fmt is STORY)
     return img
 
 
@@ -633,7 +658,7 @@ def selo_arraste(img, mais):
 
 def imagem(a, fmt, chamada=''):
     feito = miolo_promocao if a.get('tipo') == 'promocao' else miolo_passagem
-    return montar(feito(a, chamada), fmt, a.get('tipo') == 'promocao')
+    return montar(feito(a, chamada), fmt, a.get('tipo') == 'promocao', cta_tipo(a.get('tipo')))
 
 
 def ler_json(p, padrao):
@@ -698,7 +723,7 @@ def legenda(itens, dia, tipo):
             m = milhas(a.get('ida'))
             preco = f" a partir de {m:,} milhas".replace(',', '.') if m < 10 ** 9 else ''
             linhas.append(f"🛫 {a['origem']} → {a['destino']}:{preco} ({a.get('programa', '')})")
-    linhas += ['', 'Detalhes e links: link na bio 👆', 'Valores e disponibilidade podem mudar a qualquer momento.', '', HASHTAGS]
+    linhas += ['', chamada_direct(tipo), 'Valores e disponibilidade podem mudar a qualquer momento.', '', HASHTAGS]
     return '\n'.join(linhas)
 
 
@@ -713,7 +738,8 @@ Recebe ofertas em JSON e devolve:
   (espetacular, muito bom ou bom), a chamada pode usar essa faixa (ex.: MUITO BOM NO TERMÔMETRO).
 - "legenda": só se "com_legenda" for true (senão, texto vazio). Legenda curta e envolvente para um carrossel:
   uma linha de gancho, depois uma linha por oferta na mesma ordem (começando com um emoji), depois um convite para
-  salvar, comentar ou marcar quem viaja junto, e por fim "Link na bio 👆". No máximo 900 caracteres, sem hashtags.
+  salvar, comentar ou marcar quem viaja junto. Não fale de link na bio (o convite para o direct é colocado depois).
+  No máximo 900 caracteres, sem hashtags.
 Use só os números, nomes e datas que estão nos dados: nunca invente valores, bônus, datas ou condições.
 Português do Brasil, tom animado mas confiável."""
 
@@ -771,7 +797,12 @@ def textos_ia(itens, com_legenda=False):
     return {'chamadas': chamadas + [''] * (len(itens) - len(chamadas)), 'legenda': legenda}
 
 
-RODAPE_LEGENDA = '\n\nValores e disponibilidade podem mudar a qualquer momento.\n\n' + HASHTAGS
+def chamada_direct(tipo):
+    return f'💬 Mande {cta_tipo(tipo)} no direct que eu te mando o link na hora!'
+
+
+def rodape_legenda(tipo):
+    return f'\n\n{chamada_direct(tipo)}\n\nValores e disponibilidade podem mudar a qualquer momento.\n\n' + HASHTAGS
 
 
 def api(metodo, caminho, **kw):
@@ -961,7 +992,7 @@ def carrossel(alertas, estado, agora, conta, token, tipo, periodo):
     usados.extend(a['id'] for a in itens)
     ia = textos_ia(itens, com_legenda=True)
     chamadas = ia.get('chamadas') or [''] * len(itens)
-    texto = ia['legenda'] + RODAPE_LEGENDA if ia.get('legenda') else legenda(itens, dia, tipo)
+    texto = ia['legenda'] + rodape_legenda(tipo) if ia.get('legenda') else legenda(itens, dia, tipo)
     # sem capa: abre direto na melhor oferta (a capa repetida deixava o perfil todo igual)
     telas = [(f'feed-{tipo}-{n}.jpg', imagem(a, FMT_FEED, c)) for n, (a, c) in enumerate(zip(itens, chamadas), 1)]
     selo_arraste(telas[0][1], len(itens) - 1)
@@ -1001,7 +1032,7 @@ def teste(pasta):
         for n, (a, c) in enumerate(zip(itens, chamadas), 1):
             tela = imagem(a, FMT_FEED, c)
             (selo_arraste(tela, len(itens) - 1) if n == 1 else tela).save(pasta / f'feed-{tipo}-{n}.jpg', quality=90)
-        texto = ia['legenda'] + RODAPE_LEGENDA if ia.get('legenda') else legenda(itens, agora.astimezone(BRASILIA), tipo)
+        texto = ia['legenda'] + rodape_legenda(tipo) if ia.get('legenda') else legenda(itens, agora.astimezone(BRASILIA), tipo)
         (pasta / f'legenda-{tipo}.txt').write_text(texto, encoding='utf-8')
     print(pasta)
 
