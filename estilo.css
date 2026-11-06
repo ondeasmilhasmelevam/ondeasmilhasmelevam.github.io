@@ -1548,3 +1548,15 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .painel-serie small{color:var(--ash);font-size:12px}
 .painel-serie div{display:flex;align-items:flex-end;gap:3px;height:70px;margin-top:6px}
 .painel-serie span{flex:1;min-width:4px;border-radius:3px 3px 0 0;background:var(--ouro)}
+.painel-grafico{margin:12px 0;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2)}
+.painel-grafico small{color:var(--ash);font-size:12px}
+.painel-grafico svg{display:block;width:100%;height:120px;margin-top:6px}
+.painel-eixo{display:flex;justify-content:space-between;font-size:11px;color:var(--ash)}
+.painel-funil{margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--ink-2);display:grid;gap:8px}
+.painel-funil h3{margin:0 0 4px;font-size:18px}
+.painel-funil div{position:relative;padding:8px 12px;border-radius:10px;overflow:hidden;font-size:14px}
+.painel-funil div span{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,rgba(226,180,88,.45),rgba(226,180,88,.15));border-radius:10px;z-index:0}
+.painel-funil div b,.painel-funil div small{position:relative}
+.painel-funil div{isolation:isolate}
+.painel-funil small{color:var(--ash);margin-left:6px}
+.painel-ig .ruim{color:var(--alerta)}

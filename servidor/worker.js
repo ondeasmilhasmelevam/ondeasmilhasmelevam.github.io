@@ -29,7 +29,13 @@ export default {
   async scheduled(evento, env, ctx) {
     // 12h UTC: avisos de vencimento. Aos 30 de cada hora: um lote do alerta grátis da semana (o plano grátis da
     // Cloudflare deixa só 50 chamadas externas por execução, então manda poucos de cada vez).
-    ctx.waitUntil(evento.cron === '0 12 * * *' ? avisarVencimentos(env).then(() => conferirEstornos(env)).then(() => pesquisaDezDias(env)) : semanal(env));
+    // Cada execução tem limite de chamadas externas: o resumo do dono (segunda, 8h30 de Brasília) e os números
+    // do YouTube/Google (a cada 3 horas) usam uma volta só para eles, no lugar do lote do alerta grátis.
+    const hora = new Date(evento.scheduledTime).getUTCHours();
+    const tarefa = evento.cron === '0 12 * * *' ? () => avisarVencimentos(env).then(() => conferirEstornos(env)).then(() => pesquisaDezDias(env))
+      : hora === 11 && new Date(evento.scheduledTime - 3 * 3600e3).getUTCDay() === 1 ? () => resumoDoDono(env)
+        : hora % 3 === 1 ? () => atualizarGoogle(env) : () => semanal(env);
+    ctx.waitUntil(tarefa());
   },
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -43,6 +49,7 @@ export default {
       if (req.method === 'POST' && url.pathname === '/entrar') return json(await entrar(await req.json(), env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/alertas') return json(await guardarAlertas(req, env));
       if (req.method === 'GET' && url.pathname === '/alertas') return json(await estadoAlertas(env));
+      if (req.method === 'POST' && url.pathname === '/google/conectar') return json(await conectarGoogle(await req.json(), env));
       if (req.method === 'POST' && url.pathname === '/instagram') return json(await guardarInstagram(req, env));
       if (req.method === 'GET' && url.pathname === '/historico') return json(await historicoAssinante(req, env), 200, cors);
       if (req.method === 'GET' && url.pathname === '/voos') return json(await buscarVoos(req, url, env), 200, cors);
@@ -408,6 +415,108 @@ async function atualizarHistorico(env, novas, completos) {
   if (entrando.length || !doc) await gravarDoc(env, 'privado/historico', { json: texto, atualizadoEm: new Date() });
   return { rotas: Object.keys(rotas).length, somadas: entrando.length };
 }
+// YouTube e Google (Search Console) no painel do dono. O Felipe autoriza uma vez no computador
+// (ferramentas/google_painel.py), que manda a credencial para cá; aqui se confere, pelo próprio
+// Google, que ela é da conta da marca. Fica em segredos/google (as regras não abrem para ninguém).
+// A cada 3 horas o servidor lê os números e guarda em privado/google.
+const SITE_BUSCA = 'https://ondeasmilhasmelevam.com.br/';
+async function tokenGoogle(c) {
+  const r = await fetch('https://oauth2.googleapis.com/token', { method: 'POST', body: new URLSearchParams({
+    client_id: c.client_id, client_secret: c.client_secret, refresh_token: c.refresh_token, grant_type: 'refresh_token' }) });
+  const d = await r.json();
+  if (!d.access_token) throw falha('O Google recusou a credencial.', 401);
+  return d.access_token;
+}
+async function conectarGoogle(c, env) {
+  if (!c || !c.client_id || !c.client_secret || !c.refresh_token) throw falha('credencial incompleta');
+  const token = await tokenGoogle(c);
+  const quem = await (await fetch('https://openidconnect.googleapis.com/v1/userinfo', { headers: { authorization: `Bearer ${token}` } })).json();
+  const admins = String(env.ADMINS || '').split(',').map(x => x.trim().toLowerCase());
+  if (!quem.email || !quem.email_verified || !admins.includes(quem.email.toLowerCase())) throw falha('Só a conta da marca pode ligar o painel.', 403);
+  await gravarDoc(env, 'segredos/google', { json: JSON.stringify({ client_id: c.client_id, client_secret: c.client_secret, refresh_token: c.refresh_token }), conta: quem.email, em: new Date() });
+  await atualizarGoogle(env, true);
+  return { ok: true, conta: quem.email };
+}
+async function atualizarGoogle(env, agoraMesmo = false) {
+  const seg = await lerDoc(env, 'segredos/google').catch(() => null);
+  if (!seg) return;
+  const antes = await lerDoc(env, 'privado/google').catch(() => null);
+  if (!agoraMesmo && antes && antes.atualizadoEm instanceof Date && Date.now() - antes.atualizadoEm.getTime() < 3 * 3600e3) return;
+  const token = await tokenGoogle(JSON.parse(seg.json));
+  const h = { authorization: `Bearer ${token}` };
+  const pega = (u, init) => fetch(u, { ...init, headers: { ...h, ...(init && init.headers) } }).then(r => r.json()).catch(() => ({}));
+  const dia = n => new Date(Date.now() - n * 864e5).toISOString().slice(0, 10);
+  const saida = { em: new Date().toISOString() };
+  // YouTube: canal, vídeos recentes e visualizações por dia
+  const canal = ((await pega('https://www.googleapis.com/youtube/v3/channels?part=statistics,snippet,contentDetails&mine=true')).items || [])[0];
+  if (canal) {
+    saida.youtube = { nome: canal.snippet.title, inscritos: +canal.statistics.subscriberCount || 0, views: +canal.statistics.viewCount || 0, videos: +canal.statistics.videoCount || 0 };
+    const up = canal.contentDetails.relatedPlaylists.uploads;
+    const ids = ((await pega(`https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=15&playlistId=${up}`)).items || []).map(i => i.contentDetails.videoId);
+    if (ids.length) {
+      const vs = (await pega(`https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,status&id=${ids.join(',')}`)).items || [];
+      saida.youtube.recentes = vs.map(v => ({ id: v.id, titulo: v.snippet.title, quando: v.snippet.publishedAt, publico: v.status.privacyStatus,
+        views: +v.statistics.viewCount || 0, curtidas: +v.statistics.likeCount || 0, comentarios: +v.statistics.commentCount || 0 }));
+    }
+    const rel = await pega(`https://youtubeanalytics.googleapis.com/v2/reports?ids=channel==MINE&startDate=${dia(28)}&endDate=${dia(1)}&metrics=views,estimatedMinutesWatched,subscribersGained,subscribersLost&dimensions=day&sort=day`);
+    saida.youtube.porDia = (rel.rows || []).map(([d, v, m, g, l]) => ({ d, views: v, minutos: m, ganhou: g, perdeu: l }));
+  }
+  // Google: buscas que mostraram o site, cliques e quais pesquisas e páginas
+  const sc = (dims, limite) => pega(`https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(SITE_BUSCA)}/searchAnalytics/query`, {
+    method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ startDate: dia(28), endDate: dia(1), dimensions: dims, rowLimit: limite }) });
+  const [porDia, buscas, paginas] = await Promise.all([sc(['date'], 40), sc(['query'], 15), sc(['page'], 10)]);
+  saida.busca = {
+    porDia: (porDia.rows || []).map(r => ({ d: r.keys[0], cliques: r.clicks, vezes: r.impressions })),
+    buscas: (buscas.rows || []).map(r => ({ q: r.keys[0], cliques: r.clicks, vezes: r.impressions, posicao: Math.round(r.position * 10) / 10 })),
+    paginas: (paginas.rows || []).map(r => ({ p: r.keys[0].replace(SITE_BUSCA, '/'), cliques: r.clicks, vezes: r.impressions }))
+  };
+  await gravarDoc(env, 'privado/google', { json: JSON.stringify(saida), atualizadoEm: new Date() });
+}
+
+// Resumo da semana no e-mail do dono, toda segunda de manhã: site, vendas, Instagram, YouTube e Google,
+// comparando com a semana anterior. Se o alcance ou as visitas caírem mais de 30%, vem um alerta no topo.
+async function resumoDoDono(env) {
+  const agora = new Date(Date.now() - 3 * 3600e3);
+  const dono = String(env.ADMINS || '').split(',')[0].trim();
+  const datas = [...Array(14)].map((_, i) => new Date(agora - (i + 1) * 864e5).toISOString().slice(0, 10));
+  const somar = async ds => {
+    const t = {};
+    for (const d of ds) {
+      const m = await lerDoc(env, `metricas/${d}`).catch(() => null);
+      Object.entries(m || {}).forEach(([k, v]) => { if (typeof v === 'number') { const base = k.split('_')[0]; t[base] = (t[base] || 0) + v; } });
+    }
+    return t;
+  };
+  const [esta, antes] = [await somar(datas.slice(0, 7)), await somar(datas.slice(7))];
+  const ig = await lerDoc(env, 'privado/instagram').catch(() => null), go = await lerDoc(env, 'privado/google').catch(() => null);
+  const igd = ig ? JSON.parse(ig.json) : null, serie = ig ? JSON.parse(ig.serie || '{}') : {}, god = go ? JSON.parse(go.json) : null;
+  const n = v => Number(v || 0).toLocaleString('pt-BR');
+  const seta = (a, b) => (b ? `${a >= b ? '▲' : '▼'} ${Math.round(100 * (a - b) / b)}%` : '');
+  const segs = Object.entries(serie).sort(), seg7 = segs.filter(([d]) => d <= datas[6]).pop();
+  const ytSemana = god && god.youtube && god.youtube.porDia ? god.youtube.porDia.slice(-7).reduce((a, x) => a + x.views, 0) : null;
+  const buscaSemana = god && god.busca ? god.busca.porDia.slice(-7).reduce((a, x) => ({ c: a.c + x.cliques, v: a.v + x.vezes }), { c: 0, v: 0 }) : null;
+  const melhor = igd && (igd.posts || []).slice().sort((a, b) => (b.reach || 0) - (a.reach || 0))[0];
+  const alertas = [];
+  if (antes.visita && esta.visita < antes.visita * 0.7) alertas.push(`Visitas no site caíram ${seta(esta.visita, antes.visita)} na semana.`);
+  const linhas = [
+    ['Visitas no site', `${n(esta.visita)} ${seta(esta.visita || 0, antes.visita)}`],
+    ['Cadastros no alerta grátis', `${n(esta.lead)} ${seta(esta.lead || 0, antes.lead)}`],
+    ['Assinaturas pagas', `${n(esta.pago)} ${seta(esta.pago || 0, antes.pago)}`],
+    ['Receita', `R$ ${((esta.receita || 0) / 100).toFixed(2).replace('.', ',')}`],
+    igd && ['Seguidores no Instagram', `${n(igd.perfil.followers_count)}${seg7 ? ` (${igd.perfil.followers_count - seg7[1] >= 0 ? '+' : ''}${igd.perfil.followers_count - seg7[1]} na semana)` : ''}`],
+    igd && ['Alcance no Instagram (7 dias)', n((igd.periodos['7'] || {}).reach)],
+    ytSemana != null && ['Visualizações no YouTube (7 dias)', n(ytSemana)],
+    buscaSemana && ['Google: vezes que o site apareceu / cliques', `${n(buscaSemana.v)} / ${n(buscaSemana.c)}`]
+  ].filter(Boolean);
+  const html = `<h2>Sua semana no Onde as Milhas Me Levam</h2>
+    ${alertas.map(a => `<p style="background:#fff3cd;padding:10px;border-radius:8px">⚠️ ${a}</p>`).join('')}
+    <table style="width:100%;border-collapse:collapse">${linhas.map(([a, b]) => `<tr><td style="padding:6px 0;border-bottom:1px solid #eee">${a}</td><td style="padding:6px 0;border-bottom:1px solid #eee;text-align:right"><b>${b}</b></td></tr>`).join('')}</table>
+    ${melhor ? `<p>Post que mais alcançou: <a href="${melhor.link}">${(melhor.texto || 'ver post').replace(/</g, '')}</a> (${n(melhor.reach)} contas).</p>` : ''}
+    ${god && god.busca && god.busca.buscas.length ? `<p>Buscas no Google que mostraram o site: ${god.busca.buscas.slice(0, 5).map(b => `"${b.q.replace(/</g, '')}"`).join(', ')}.</p>` : ''}
+    <p><a href="${env.SITE}#painel">Abrir o painel completo</a></p>`;
+  await enviarEmail(env, dono, 'Resumo da semana: site, Instagram, YouTube e Google', html);
+}
+
 // Números do Instagram, mandados pelo robô do GitHub a cada 3 horas, para o painel do dono.
 // Guarda também os seguidores de cada dia (até 400 dias) para mostrar o crescimento.
 async function guardarInstagram(req, env) {
@@ -1060,6 +1169,7 @@ async function metricas(req, url, env) {
   const ig = await lerDoc(env, 'privado/instagram').catch(() => null);
   return {
     instagram: ig ? { ...JSON.parse(ig.json), serie: JSON.parse(ig.serie || '{}'), atualizadoEm: ig.atualizadoEm } : null,
+    google: await lerDoc(env, 'privado/google').then(g => (g ? { ...JSON.parse(g.json), atualizadoEm: g.atualizadoEm } : null)).catch(() => null),
     dias, porDia, emailsMes: await emailsDoMes(env), cotaLeads: cotaLeads(env), servicoEmail: usaGmail(env) ? 'gmail' : 'emailjs',
     assinantes: { ativos: ativos.length, mensal: ativos.filter(a => a.plano !== 'anual').length, anual: ativos.filter(a => a.plano === 'anual').length,
       vencem7: ativos.filter(a => a.validoAte.getTime() - agora < 7 * 864e5).length, vencidos: assinantes.length - ativos.length },

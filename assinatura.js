@@ -240,13 +240,67 @@ async function desenharPainel() {
     </div>
     ${d.leads.preferencias && d.leads.preferencias.responderam ? `<div class="painel-prefs"><p><b>O que os leads responderam</b> · ${d.leads.preferencias.responderam} ${d.leads.preferencias.responderam === 1 ? 'pessoa respondeu' : 'pessoas responderam'}</p>
       ${[['aeroportos', 'Saem de'], ['regioes', 'Querem ir para'], ['programas', 'Têm pontos em'], ['cabine', 'Preferem voar']].map(([k, t]) => d.leads.preferencias[k].length ? `<p><span>${t}:</span> ${d.leads.preferencias[k].map(([v, n]) => `${escR(v)} (${n})`).join(' · ')}</p>` : '').join('')}</div>` : ''}
+    ${painelFunil(total)}
+    ${painelLinha('Visitas no site por dia', porDia.slice().reverse().map(([dia, l]) => [dia, l.visita]))}
     ${painelInstagram(d.instagram)}
+    ${painelYoutube(d.google)}
+    ${painelBusca(d.google)}
     ${tabela('Origem', Object.entries(porOrigem).sort((x, y) => y[1].visita - x[1].visita).map(([o, l]) => [ORIGEM_NOME[o] || o, l]))}
     ${tabela('Dia', porDia)}`;
   desenharDeposPainel();
   desenharAssinantesPainel();
   desenharCortesiasPainel();
   desenharCampanhaPainel();
+}
+
+// Gráficos do painel (SVG simples, sem biblioteca).
+function painelLinha(titulo, pontos, cor = 'var(--ouro)') {
+  if (pontos.length < 2) return '';
+  const W = 600, H = 120, max = Math.max(1, ...pontos.map(([, v]) => v || 0));
+  const xy = pontos.map(([, v], i) => [i * W / (pontos.length - 1), H - 8 - (H - 16) * (v || 0) / max]);
+  const linha = xy.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(' ');
+  return `<div class="painel-grafico"><small>${escR(titulo)} · máximo ${max.toLocaleString('pt-BR')}</small>
+    <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="${escR(titulo)}">
+      <polygon points="0,${H} ${linha} ${W},${H}" fill="${cor}" opacity=".15"/><polyline points="${linha}" fill="none" stroke="${cor}" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+    </svg><div class="painel-eixo"><span>${escR(pontos[0][0])}</span><span>${escR(pontos[pontos.length - 1][0])}</span></div></div>`;
+}
+function painelFunil(t) {
+  const etapas = [['visita', 'Visitaram o site'], ['gratis_ver', 'Viram o alerta grátis'], ['lead', 'Cadastraram no grátis'], ['assinar_ver', 'Viram a assinatura'],
+    ['checkout', 'Abriram o pagamento'], ['pago', 'Assinaram']];
+  const topo = Math.max(1, t.visita || 0);
+  return `<div class="painel-funil"><h3>Do visitante ao assinante</h3>${etapas.map(([k, nome], i) => {
+    const v = t[k] || 0, ant = i ? (t[etapas[i - 1][0]] || 0) : 0;
+    return `<div><span style="width:${Math.max(2, 100 * v / topo)}%"></span><b>${v.toLocaleString('pt-BR')}</b> ${nome}${i && ant ? ` <small>${Math.round(100 * v / ant)}% da etapa anterior</small>` : ''}</div>`;
+  }).join('')}</div>`;
+}
+function painelYoutube(g) {
+  const y = g && g.youtube;
+  if (!y) return '<div class="painel-ig"><h3>YouTube</h3><p class="passagens-vazio">Ainda não ligado. Rode ferramentas/google_painel.py uma vez para ver os números do canal aqui.</p></div>';
+  const n = v => Number(v || 0).toLocaleString('pt-BR');
+  const dias = y.porDia || [], semana = dias.slice(-7).reduce((a, x) => a + x.views, 0), ganhou = dias.reduce((a, x) => a + x.ganhou - x.perdeu, 0);
+  return `<div class="painel-ig"><h3>YouTube <small>${escR(y.nome)}</small></h3>
+    <div class="painel-cards"><div><b>${n(y.inscritos)}</b><small>inscritos (${ganhou >= 0 ? '+' : ''}${n(ganhou)} em 28 dias)</small></div>
+      <div><b>${n(semana)}</b><small>visualizações em 7 dias</small></div><div><b>${n(y.views)}</b><small>visualizações no total</small></div>
+      <div><b>${n(y.videos)}</b><small>vídeos no canal</small></div></div>
+    ${painelLinha('Visualizações por dia no YouTube', dias.map(x => [x.d.split('-').reverse().slice(0, 2).join('/'), x.views]), '#ff4e45')}
+    ${(y.recentes || []).length ? `<div class="painel-tabela"><table><thead><tr><th>Quando</th><th>Vídeo</th><th>Situação</th><th>Visualizações</th><th>Curtidas</th><th>Comentários</th></tr></thead><tbody>
+      ${y.recentes.map(v => `<tr><td>${new Date(v.quando).toLocaleDateString('pt-BR')}</td><td><a href="https://youtube.com/shorts/${escR(v.id)}" target="_blank" rel="noopener">${escR(v.titulo)}</a></td>
+        <td>${v.publico === 'public' ? 'Público' : v.publico === 'private' ? '<b class="ruim">Privado</b>' : escR(v.publico)}</td><td>${n(v.views)}</td><td>${n(v.curtidas)}</td><td>${n(v.comentarios)}</td></tr>`).join('')}</tbody></table></div>` : ''}
+  </div>`;
+}
+function painelBusca(g) {
+  const b = g && g.busca;
+  if (!b) return '';
+  const n = v => Number(v || 0).toLocaleString('pt-BR');
+  const tot = b.porDia.reduce((a, x) => ({ c: a.c + x.cliques, v: a.v + x.vezes }), { c: 0, v: 0 });
+  return `<div class="painel-ig"><h3>Google <small>buscas nos últimos 28 dias (o Google mostra com 2 a 3 dias de atraso)</small></h3>
+    <div class="painel-cards"><div><b>${n(tot.v)}</b><small>vezes que o site apareceu numa busca</small></div><div><b>${n(tot.c)}</b><small>cliques vindos do Google</small></div></div>
+    ${painelLinha('Vezes que o site apareceu no Google por dia', b.porDia.map(x => [x.d.split('-').reverse().slice(0, 2).join('/'), x.vezes]), '#6fd6a6')}
+    ${b.buscas.length ? `<div class="painel-tabela"><table><thead><tr><th>O que as pessoas buscaram</th><th>Apareceu</th><th>Cliques</th><th>Posição média</th></tr></thead><tbody>
+      ${b.buscas.map(x => `<tr><td>${escR(x.q)}</td><td>${n(x.vezes)}</td><td>${n(x.cliques)}</td><td>${x.posicao}</td></tr>`).join('')}</tbody></table></div>` : '<p class="passagens-vazio">O Google ainda está conhecendo o site: as buscas aparecem aqui em 1 a 3 semanas.</p>'}
+    ${b.paginas.length ? `<div class="painel-tabela"><table><thead><tr><th>Página</th><th>Apareceu</th><th>Cliques</th></tr></thead><tbody>
+      ${b.paginas.map(x => `<tr><td><a href="${escR(x.p)}" target="_blank" rel="noopener">${escR(x.p)}</a></td><td>${n(x.vezes)}</td><td>${n(x.cliques)}</td></tr>`).join('')}</tbody></table></div>` : ''}
+  </div>`;
 }
 
 // Instagram no painel: números que o robô lê da API a cada 3 horas (sem precisar entrar no Instagram).
@@ -260,8 +314,6 @@ function painelInstagram(ig) {
   const hoje = (ig.perfil || {}).followers_count || 0;
   const ha = dias => { const alvo = new Date(Date.now() - dias * 864e5).toISOString().slice(0, 10); const x = serie.filter(([d]) => d <= alvo).pop(); return x ? hoje - x[1] : null; };
   const delta = v => (v == null ? 'medindo desde hoje' : `${v >= 0 ? '+' : ''}${n(v)}`);
-  const max = Math.max(1, ...serie.slice(-30).map(([, v]) => v)), min = Math.min(...serie.slice(-30).map(([, v]) => v), max);
-  const barras = serie.slice(-30).map(([d, v]) => `<span title="${d.split('-').reverse().join('/')}: ${n(v)}" style="height:${12 + 88 * (v - min) / Math.max(1, max - min)}%"></span>`).join('');
   const publico = (ig.publico || {});
   const lista = (k, nomes) => (publico[k] || []).map(([v, q]) => `${escR((nomes && nomes[v]) || v)} (${n(q)})`).join(' · ');
   const posts = (ig.posts || []).map(x => `<tr><td>${new Date(x.quando).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })}</td>
@@ -279,7 +331,7 @@ function painelInstagram(ig) {
       <div><b>${n(s7.seguiu)}</b><small>começaram a seguir em 7 dias${s7.deixou ? ` · ${n(s7.deixou)} deixaram` : ''}</small></div>
       <div><b>${n(s1.reach)}</b><small>alcance nas últimas 24 horas</small></div>
     </div>
-    ${serie.length > 1 ? `<div class="painel-serie"><small>Seguidores por dia (últimos 30)</small><div>${barras}</div></div>` : ''}
+    ${painelLinha('Seguidores no Instagram por dia', serie.slice(-60).map(([d, v]) => [d.split('-').reverse().slice(0, 2).join('/'), v]), '#d6249f')}
     ${Object.keys(publico).length ? `<div class="painel-prefs"><p><b>Quem segue</b></p>
       ${publico.country ? `<p><span>Países:</span> ${lista('country', PAISES)}</p>` : ''}${publico.city ? `<p><span>Cidades:</span> ${lista('city')}</p>` : ''}
       ${publico.age ? `<p><span>Idade:</span> ${lista('age')}</p>` : ''}${publico.gender ? `<p><span>Gênero:</span> ${lista('gender', GENERO)}</p>` : ''}</div>` : ''}
