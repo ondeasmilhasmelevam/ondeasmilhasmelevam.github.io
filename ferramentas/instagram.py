@@ -837,9 +837,12 @@ def vale_a_pena(a):
     milha = 'a milha' if destino[1] != 'Azul' else 'o ponto'
     if sai <= tetos[destino[0]] + 0.005:
         linha = f'💡 Vale a pena? Sim! Com {b}% de bônus, {milha} {destino[1]} sai a {real(sai)} o milheiro (o bom é até {real(tetos[destino[0]])}).'
+    elif sai <= tetos[destino[0]] * 1.10:  # até 10% acima do teto: vale só para completar uma emissão
+        linha = (f'💡 Vale a pena? Quase: {milha} {destino[1]} sai a {real(sai)} o milheiro (o bom é até {real(tetos[destino[0]])}). '
+                 'Compensa comprar um pouco acima só para completar os pontos que faltam numa emissão, não para guardar.')
     else:
         linha = (f'💡 Vale a pena? Só se você já tem os pontos ou achar {origem} mais barato: no teto, {milha} {destino[1]} sai a '
-                 f'{real(sai)} o milheiro (o bom é até {real(tetos[destino[0]])}).')
+                 f'{real(sai)} o milheiro, bem acima do bom (até {real(tetos[destino[0]])}).')
     conta = (f'🧮 Como calcular: preço do milheiro {origem} ÷ {fator}. Ex.: {real(tetos[origem])} ÷ {fator} = {real(sai)}. '
              'Se o preço mudar, refaça a conta com o valor do dia.')
     if destino[1] == 'LATAM Pass' and b < 35:
