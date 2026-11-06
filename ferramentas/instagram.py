@@ -809,6 +809,7 @@ def textos_ia(itens, com_legenda=False):
 # "Vale a pena?": bônus de transferência partindo de Livelo ou Esfera, com o preço máximo do milheiro do
 # Termômetro. Ex.: Livelo a até R$ 31 com 130% de bônus deixa o ponto Azul a R$ 13,48 (teto bom: R$ 14).
 ORIGENS_TETO = {'livelo': 'Livelo', 'esfera': 'Esfera'}
+BONUS_BOM = {'LATAM Pass': 25}  # a partir de quanto % o bônus já é bom (os demais programas: 100%)
 DESTINOS_TETO = (('azul', 'Azul Fidelidade', 'Azul'), ('smiles', 'Smiles', 'Smiles'), ('latam', 'LATAM Pass', 'LATAM Pass'),
                  ('iberia', 'Iberia (Avios)', 'Avios'), ('avios', 'Iberia (Avios)', 'Avios'))
 
@@ -827,15 +828,17 @@ def vale_a_pena(a):
     if not (bonus and origem and destino and origem in tetos and destino[0] in tetos):
         return ''
     b = int(bonus.group(1))
-    if b <= 100:
-        return ''  # só entra no post quando o bônus passa de 100%
+    # Só entra no post quando o bônus é bom para o programa: LATAM acima de 25%; os outros, acima de 100%.
+    if b <= BONUS_BOM.get(destino[1], 100):
+        return ''
     sai = tetos[origem] / (1 + b / 100)
+    turbo = ' Quem tem o Turbo LATAM chega a até 35%, respeitando o limite de envio do mês.' if destino[1] == 'LATAM Pass' else ''
     real = lambda v: f'R$ {v:.2f}'.replace('.', ',')
     if sai <= tetos[destino[0]]:
         return (f'💡 Vale a pena? {origem} → {destino[1]} com {b}% de bônus: comprando {origem} a até {real(tetos[origem])} o milheiro, '
-                f'o ponto {destino[1]} sai a {real(sai)}, abaixo do teto bom de {real(tetos[destino[0]])}. Vale, se for usar!')
+                f'o ponto {destino[1]} sai a {real(sai)}, abaixo do teto bom de {real(tetos[destino[0]])}. Vale, se for usar!{turbo}')
     return (f'💡 Vale a pena? {origem} → {destino[1]} com {b}% de bônus: só compensa se você já tem os pontos ou compra {origem} bem abaixo de '
-            f'{real(tetos[origem])}. No teto, o ponto {destino[1]} sairia a {real(sai)}, acima dos {real(tetos[destino[0]])} que valem a pena.')
+            f'{real(tetos[origem])}. No teto, o ponto {destino[1]} sairia a {real(sai)}, acima dos {real(tetos[destino[0]])} que valem a pena.{turbo}')
 
 
 def bloco_vale(itens):
