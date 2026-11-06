@@ -63,10 +63,54 @@
       if (!r.ok) throw new Error(d.erro);
       dizer(d.ja ? 'Esse e-mail já está na lista. Toda semana chega um novo.' : 'Pronto! O primeiro e-mail já está a caminho (veja também o spam).', true);
       f.reset();
+      if (d.chave) perguntas(f, email, d.chave);
     } catch (er) {
       dizer(er.message || 'Não deu agora. Tente de novo em instantes.');
     } finally { botao.disabled = false; }
   });
+  // Depois do cadastro: 4 perguntas opcionais para o e-mail da semana trazer o que combina com a pessoa.
+  const AEROPORTOS = [['GRU', 'São Paulo'], ['CGH', 'Congonhas'], ['VCP', 'Campinas'], ['GIG', 'Rio (Galeão)'], ['SDU', 'Rio (Santos Dumont)'],
+    ['BSB', 'Brasília'], ['CNF', 'Belo Horizonte'], ['CWB', 'Curitiba'], ['POA', 'Porto Alegre'], ['FLN', 'Florianópolis'],
+    ['SSA', 'Salvador'], ['REC', 'Recife'], ['FOR', 'Fortaleza'], ['NAT', 'Natal'], ['BEL', 'Belém'], ['MAO', 'Manaus'],
+    ['VIX', 'Vitória'], ['GYN', 'Goiânia'], ['CGB', 'Cuiabá'], ['MCZ', 'Maceió']];
+  const REGIOES = [['brasil', 'Brasil'], ['america-do-sul', 'América do Sul'], ['america-do-norte', 'EUA e Canadá'], ['caribe', 'Caribe'], ['europa', 'Europa'], ['qualquer', 'Qualquer lugar']];
+  const PROGRAMAS = [['livelo', 'Livelo'], ['esfera', 'Esfera'], ['smiles', 'Smiles'], ['latam', 'LATAM Pass'], ['azul', 'Azul Fidelidade'], ['tap', 'TAP'], ['avios', 'Avios'], ['nenhum', 'Ainda não tenho']];
+  const CABINES = [['eco', 'Econômica'], ['exe', 'Executiva'], ['tanto', 'Tanto faz']];
+  const chips = (nome, itens, tipo = 'checkbox') => `<div class="perg-chips">${itens.map(([v, t]) => `<label class="perg-chip"><input type="${tipo}" name="${nome}" value="${v}"><span>${esc(t)}${nome === 'aeroportos' ? ` <b>${v}</b>` : ''}</span></label>`).join('')}</div>`;
+  function perguntas(f, email, chave) {
+    const caixa = document.createElement('form');
+    caixa.className = 'perguntas';
+    caixa.innerHTML = `<p class="perg-tit"><b>Quer receber só o que combina com você?</b><small>4 perguntas rápidas, todas opcionais. Dá para marcar mais de uma.</small></p>
+      <fieldset><legend>De quais aeroportos você costuma sair?</legend>${chips('aeroportos', AEROPORTOS)}
+        <input class="perg-outro" name="outro" maxlength="23" placeholder="Outro? Digite a sigla, ex.: JPA, IGU" aria-label="Outros aeroportos (siglas)"></fieldset>
+      <fieldset><legend>Para onde você sonha ir?</legend>${chips('regioes', REGIOES)}</fieldset>
+      <fieldset><legend>Onde você tem pontos ou milhas?</legend>${chips('programas', PROGRAMAS)}</fieldset>
+      <fieldset><legend>Como prefere voar?</legend>${chips('cabine', CABINES, 'radio')}</fieldset>
+      <div class="perg-botoes"><button class="cta cta-a" type="submit">Salvar minhas preferências</button><button class="cta cta-b" type="button" data-pular>Agora não</button></div>
+      <p class="lead-msg" role="status" hidden></p>`;
+    f.after(caixa);
+    f.hidden = true;
+    caixa.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const marcados = n => [...caixa.querySelectorAll(`input[name=${n}]:checked`)].map(i => i.value);
+    const fechar = t => { caixa.innerHTML = `<p class="lead-msg ok">${esc(t)}</p>`; };
+    caixa.querySelector('[data-pular]').addEventListener('click', () => fechar('Tudo certo! Você recebe as melhores passagens da semana. Se quiser personalizar depois, é só se cadastrar de novo.'));
+    caixa.addEventListener('submit', async ev => {
+      ev.preventDefault();
+      const outros = (caixa.elements.outro.value.toUpperCase().match(/\b[A-Z]{3}\b/g) || []);
+      const corpo = { email, chave, aeroportos: [...marcados('aeroportos'), ...outros], regioes: marcados('regioes'), programas: marcados('programas'), cabine: marcados('cabine')[0] || '' };
+      const b = caixa.querySelector('button[type=submit]');
+      b.disabled = true;
+      try {
+        const r = await fetch(`${SERVIDOR}/lead/perfil`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(corpo) });
+        if (!r.ok) throw new Error((await r.json().catch(() => ({}))).erro);
+        if (window.oammlEvento) window.oammlEvento('perfil');
+        fechar(corpo.aeroportos.length ? `Pronto! A partir do próximo e-mail, você recebe primeiro as passagens saindo de ${corpo.aeroportos.join(', ')}.` : 'Pronto! Suas preferências foram salvas.');
+      } catch (er) {
+        const m = caixa.querySelector('.lead-msg'); m.textContent = er.message || 'Não deu agora. Tente de novo.'; m.className = 'lead-msg erro'; m.hidden = false; b.disabled = false;
+      }
+    });
+  }
+
   // Quem já assina não precisa do alerta grátis.
   document.addEventListener('assinatura', e => {
     document.querySelectorAll('[data-lead-caixa]').forEach(el => { el.hidden = !!e.detail.ativo; });

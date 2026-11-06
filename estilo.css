@@ -1484,3 +1484,20 @@ details.menu-grupo>summary{list-style:none;cursor:pointer;user-select:none}
 details.menu-grupo>summary::-webkit-details-marker{display:none}
 details.menu-grupo>summary::after{content:'';margin-left:auto;margin-right:4px;width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .18s ease;opacity:.8}
 details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
+/* Perguntas de personalização (depois do cadastro no alerta grátis) */
+.perguntas{display:grid;gap:16px;padding:20px;margin:0 0 26px;border:1px solid rgba(226,180,88,.45);border-radius:16px;background:linear-gradient(120deg,rgba(226,180,88,.12),var(--ink-2) 60%)}
+.perg-tit{margin:0;display:grid;gap:4px}.perg-tit b{font-size:19px;color:var(--rice)}.perg-tit small{color:var(--ash);font-size:13.5px}
+.perguntas fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
+.perguntas legend{padding:0;margin-bottom:8px;font-weight:700;font-size:14.5px;color:var(--rice)}
+.perg-chips{display:flex;flex-wrap:wrap;gap:8px}
+.perg-chip{position:relative;cursor:pointer}
+.perg-chip input{position:absolute;opacity:0;pointer-events:none}
+.perg-chip span{display:inline-block;padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:var(--ink-2);color:var(--rice);font-size:13.5px;transition:background .15s ease,border-color .15s ease}
+.perg-chip span b{color:var(--ash);font-weight:800;font-size:11.5px;margin-left:2px}
+.perg-chip input:checked+span{background:var(--ouro);border-color:var(--ouro);color:#1b1406}
+.perg-chip input:checked+span b{color:#1b1406}
+.perg-chip input:focus-visible+span{outline:2px solid var(--ouro);outline-offset:2px}
+.perg-outro{max-width:320px;background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;color:var(--rice);font:inherit;font-size:14px}
+.perg-botoes{display:flex;flex-wrap:wrap;gap:10px}
+.painel-prefs{margin:0 0 22px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);display:grid;gap:6px;font-size:14px}
+.painel-prefs p{margin:0}.painel-prefs span{color:var(--ash)}

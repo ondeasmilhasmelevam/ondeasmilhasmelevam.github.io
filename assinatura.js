@@ -238,6 +238,8 @@ async function desenharPainel() {
       <div><b>${pct(total.pago, total.visita)}</b><small>das visitas viraram assinatura</small></div>
       <div><b>${d.servicoEmail === 'gmail' ? d.emailsMes : `${d.emailsMes}/200`}</b><small>${d.servicoEmail === 'gmail' ? 'e-mails pelo Gmail neste mês (limite de uns 500 por dia)' : 'e-mails do EmailJS neste mês'}</small></div>
     </div>
+    ${d.leads.preferencias && d.leads.preferencias.responderam ? `<div class="painel-prefs"><p><b>O que os leads responderam</b> · ${d.leads.preferencias.responderam} ${d.leads.preferencias.responderam === 1 ? 'pessoa respondeu' : 'pessoas responderam'}</p>
+      ${[['aeroportos', 'Saem de'], ['regioes', 'Querem ir para'], ['programas', 'Têm pontos em'], ['cabine', 'Preferem voar']].map(([k, t]) => d.leads.preferencias[k].length ? `<p><span>${t}:</span> ${d.leads.preferencias[k].map(([v, n]) => `${escR(v)} (${n})`).join(' · ')}</p>` : '').join('')}</div>` : ''}
     ${tabela('Origem', Object.entries(porOrigem).sort((x, y) => y[1].visita - x[1].visita).map(([o, l]) => [ORIGEM_NOME[o] || o, l]))}
     ${tabela('Dia', porDia)}`;
   desenharDeposPainel();

@@ -348,6 +348,24 @@ def destaques_semana(itens):
     return saida
 
 
+def candidatas_semana(itens):
+    """Até 80 boas da semana (um destino de cada, por cabine), com a região: o servidor escolhe entre elas as do
+    e-mail de quem disse de onde sai e para onde quer ir."""
+    from instagram import BR
+    try:
+        termo = json.loads((Path(__file__).resolve().parent.parent / 'dados' / 'termometro.json').read_text(encoding='utf-8'))
+        regiao_de = {i: ('america-do-sul' if r['id'].startswith('america-do-sul') else r['id']) for r in termo['regioes'] for i in r['aeroportos']}
+    except Exception:
+        regiao_de = {}
+    exe = lambda a: bool(re.search(r'execut|primeira|first|business|premium', a.get('cabine') or '', re.I))
+    saida = []
+    # econômica e executiva separadas: um destino de cada em cada cabine (senão a executiva some atrás da econômica)
+    for d in melhores([a for a in itens if not exe(a)], 60) + melhores([a for a in itens if exe(a)], 20):
+        brasil = d.get('origem_iata') in BR and d.get('destino_iata') in BR
+        saida.append({**d, 'regiao': 'brasil' if brasil else regiao_de.get(d.get('destino_iata'), 'outros')})
+    return saida
+
+
 ROTAS = Path(__file__).resolve().parent.parent / 'img' / 'rotas'
 
 
@@ -399,7 +417,7 @@ def atualizar_numeros(passagens, agora):
         'destinos': len({a.get('destino_iata') for a in viagens}),
         'executiva': sum(1 for a in viagens if re.search(r'execut|primeira|first|business|premium', a.get('cabine') or '', re.I)),
         'destaques': melhores(viagens, 6),
-        'semana': {'passagens': len(semana), 'destaques': destaques_semana(semana)},
+        'semana': {'passagens': len(semana), 'destaques': destaques_semana(semana), 'candidatas': candidatas_semana(semana)},
     }
     try:
         fotos_rotas([numeros['destaques'], numeros['semana']['destaques']])

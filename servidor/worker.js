@@ -45,6 +45,7 @@ export default {
       if (req.method === 'GET' && url.pathname === '/voos') return json(await buscarVoos(req, url, env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/evento') return json(await evento(await req.json(), env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/lead') return json(await novoLead(await req.json(), env), 200, cors);
+      if (req.method === 'POST' && url.pathname === '/lead/perfil') return json(await perfilLead(await req.json(), env), 200, cors);
       if (req.method === 'GET' && url.pathname === '/sair') return await sairLead(url, env);
       if (req.method === 'GET' && url.pathname === '/indicacao') return json(await minhaIndicacao(req, env), 200, cors);
       if (req.method === 'GET' && url.pathname === '/metricas') return json(await metricas(req, url, env), 200, cors);
@@ -532,7 +533,7 @@ async function numerosDoSite(env) {
 }
 
 /* ---------- Funil: contadores por dia e por origem (metricas/{AAAA-MM-DD}) ---------- */
-const EVENTOS = new Set(['visita', 'assinar_ver', 'assinar_clique', 'gratis_ver']);
+const EVENTOS = new Set(['visita', 'assinar_ver', 'assinar_clique', 'gratis_ver', 'perfil']);
 const origemValida = o => (/^[a-z0-9]{1,20}$/.test(o || '') ? o : 'direto');
 const hojeBR = () => new Date(Date.now() - 3 * 3600e3).toISOString().slice(0, 10);
 async function somar(env, caminho, campos) {
@@ -582,14 +583,15 @@ function destaquesEmail(lista, env) {
     <span style="color:#777;">Datas e link de emissão: só para assinantes</span>
   </div></div>`).join('');
 }
-async function emailDaSemana(env, email, primeiro) {
+async function emailDaSemana(env, email, primeiro, lead = null) {
   const n = await numerosDoSite(env);
   const semana = (n && n.semana) || {};
-  const lista = (semana.destaques && semana.destaques.length ? semana.destaques : (n && n.destaques) || []).slice(0, 5);
+  const geral = (semana.destaques && semana.destaques.length ? semana.destaques : (n && n.destaques) || []).slice(0, 5);
+  const { lista, aero } = paraOLead(semana, geral, lead);
   if (!lista.length) return false;
   const assinar = `${env.SITE}?utm_source=email&utm_campaign=semanal#assinar`;
   const corpo = `Olá!<br><br>${primeiro ? 'Pronto, você vai receber toda semana as melhores passagens com milhas que apareceram no site. Para começar, ' : ''}${semana.passagens
-      ? `nos últimos 7 dias apareceram <strong>${semana.passagens} passagens com milhas</strong>. Algumas das melhores:` : 'algumas das melhores passagens com milhas dos últimos dias:'}<br><br>
+      ? `nos últimos 7 dias apareceram <strong>${semana.passagens} passagens com milhas</strong>. ${aero.length ? `Separamos primeiro as que saem de ${escHtml(aero.join(', '))}:` : 'Algumas das melhores:'}` : 'algumas das melhores passagens com milhas dos últimos dias:'}<br><br>
     ${destaquesEmail(lista, env)}
     Passagem boa some em horas. Quem assina vê cada uma na hora em que ela aparece, com todas as datas e o link direto para emitir, e ainda recebe o Meu Radar com as rotas que escolher.<br><br>
     ${botaoEmail('Ver os planos', assinar)}<br><br>
@@ -601,13 +603,48 @@ async function novoLead(body, env) {
   if (!emailValido(email)) throw falha('Digite um e-mail válido.');
   if (body.aceite !== true) throw falha('Marque que aceita receber o e-mail.');
   const antes = await lerDoc(env, `leads/${email}`);
-  if (antes && antes.ativo) return { ok: true, ja: true };
+  const chave = (await hmac(env, `perfil:${email}`)).slice(0, 24);  // libera as perguntas de personalização deste e-mail
+  if (antes && antes.ativo) return { ok: true, ja: true, chave };
   const origem = origemValida(body.origem);
   const lead = { email, origem, ativo: true, criadoEm: (antes && antes.criadoEm) || new Date(), ultimoEnvio: new Date(0) };
   await gravarDoc(env, `leads/${email}`, lead);
   await somar(env, `metricas/${hojeBR()}`, { [`lead_${origem}`]: 1 }).catch(() => {});
   if (await emailsDoMes(env) < cotaLeads(env) && await emailDaSemana(env, email, true)) await atualizarCampos(env, `leads/${email}`, { ultimoEnvio: new Date() });
+  return { ok: true, chave };
+}
+
+// Perguntas depois do cadastro: de onde sai, para onde quer ir, onde tem pontos e como prefere voar.
+const REGIOES_LEAD = ['brasil', 'america-do-sul', 'america-do-norte', 'caribe', 'europa', 'qualquer'];
+const PROGRAMAS_LEAD = ['livelo', 'esfera', 'smiles', 'latam', 'azul', 'tap', 'avios', 'nenhum'];
+const lista = (v, ok, max) => [...new Set((Array.isArray(v) ? v : []).map(x => String(x).trim()).filter(ok))].slice(0, max);
+async function perfilLead(body, env) {
+  const email = String((body && body.email) || '').trim().toLowerCase();
+  if (!emailValido(email) || body.chave !== (await hmac(env, `perfil:${email}`)).slice(0, 24)) throw falha('Cadastre o e-mail primeiro.', 403);
+  if (!(await lerDoc(env, `leads/${email}`))) throw falha('Cadastre o e-mail primeiro.', 404);
+  const aeroportos = lista(body.aeroportos, x => /^[A-Z]{3}$/.test(x), 8);
+  const regioes = lista(body.regioes, x => REGIOES_LEAD.includes(x), 6);
+  const programas = lista(body.programas, x => PROGRAMAS_LEAD.includes(x), 8);
+  const cabine = ['eco', 'exe', 'tanto'].includes(body.cabine) ? body.cabine : '';
+  await atualizarCampos(env, `leads/${email}`, { perfilAeroportos: aeroportos.join(','), perfilRegioes: regioes.join(','), perfilProgramas: programas.join(','), perfilCabine: cabine, perfilEm: new Date() });
   return { ok: true };
+}
+// As 5 do e-mail: primeiro as que combinam com as respostas (saindo dos aeroportos dela, para as regiões e na cabine
+// que escolheu), depois completa com as melhores gerais da semana, sem repetir destino.
+function paraOLead(semana, geral, lead) {
+  const aero = String((lead && lead.perfilAeroportos) || '').split(',').filter(Boolean);
+  const regs = String((lead && lead.perfilRegioes) || '').split(',').filter(Boolean);
+  const cab = (lead && lead.perfilCabine) || '';
+  if (!aero.length && !regs.length && !cab) return { lista: geral, aero: [] };
+  const exe = d => /execut|primeira|first|business|premium/i.test(d.cabine || '');
+  const pontos = d => {
+    if (aero.length && !aero.includes(d.origem_iata)) return -1;
+    if (regs.length && !regs.includes('qualquer') && !regs.includes(d.regiao)) return -1;
+    return (cab === 'exe' ? (exe(d) ? 2 : 0) : cab === 'eco' ? (exe(d) ? -1 : 1) : 1) + (aero.includes(d.origem_iata) ? 2 : 0);
+  };
+  const minhas = (semana.candidatas || []).map((d, i) => ({ d, p: pontos(d), i })).filter(x => x.p >= 0)
+    .sort((a, b) => b.p - a.p || a.i - b.i).slice(0, 5).map(x => ({ ...x.d, grupo: aero.includes(x.d.origem_iata) ? `Saindo de ${x.d.origem_iata}` : 'Para você' }));
+  const vistos = new Set(minhas.map(d => d.destino_iata));
+  return { lista: [...minhas, ...geral.filter(d => !vistos.has(d.destino_iata))].slice(0, 5), aero: minhas.length ? aero : [] };
 }
 async function sairLead(url, env) {
   const email = String(url.searchParams.get('e') || '').toLowerCase();
@@ -629,7 +666,7 @@ async function semanal(env) {
     if (cota <= 0) break;
     const ass = await lerDoc(env, `assinantes/${l.email}`);
     if (ass && ass.validoAte instanceof Date && ass.validoAte.getTime() > agora) continue;
-    if (!await emailDaSemana(env, l.email, false)) break; // sem envio hoje (cota do EmailJS ou fora do ar)
+    if (!await emailDaSemana(env, l.email, false, l)) break; // sem envio hoje (cota do EmailJS ou fora do ar)
     await atualizarCampos(env, `leads/${l.id}`, { ultimoEnvio: new Date() });
     enviados++; cota--;
   }
@@ -843,8 +880,15 @@ async function metricas(req, url, env) {
     dias, porDia, emailsMes: await emailsDoMes(env), cotaLeads: cotaLeads(env), servicoEmail: usaGmail(env) ? 'gmail' : 'emailjs',
     assinantes: { ativos: ativos.length, mensal: ativos.filter(a => a.plano !== 'anual').length, anual: ativos.filter(a => a.plano === 'anual').length,
       vencem7: ativos.filter(a => a.validoAte.getTime() - agora < 7 * 864e5).length, vencidos: assinantes.length - ativos.length },
-    leads: { ativos: leads.filter(l => l.ativo).length, sairam: leads.filter(l => !l.ativo).length }
+    leads: { ativos: leads.filter(l => l.ativo).length, sairam: leads.filter(l => !l.ativo).length, preferencias: preferenciasLeads(leads.filter(l => l.ativo)) }
   };
+}
+
+// Painel: o que os leads responderam (quantos responderam e os mais escolhidos de cada pergunta).
+function preferenciasLeads(leads) {
+  const conta = campo => Object.entries(leads.reduce((m, l) => { String(l[campo] || '').split(',').filter(Boolean).forEach(x => { m[x] = (m[x] || 0) + 1; }); return m; }, {}))
+    .sort((a, b) => b[1] - a[1]).slice(0, 8);
+  return { responderam: leads.filter(l => l.perfilEm).length, aeroportos: conta('perfilAeroportos'), regioes: conta('perfilRegioes'), programas: conta('perfilProgramas'), cabine: conta('perfilCabine') };
 }
 
 // Muda só os campos informados (gravarDoc troca o documento inteiro).
