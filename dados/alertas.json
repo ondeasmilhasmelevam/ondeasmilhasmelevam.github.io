@@ -7057,34 +7057,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-8944",
-  "data": "2026-11-04T19:11:15Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Campo Grande",
-  "destino_iata": "CGR",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 15.400 milhas",
-  "volta": "A partir de 15.400 milhas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8943",
-  "data": "2026-11-04T19:09:47Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Macapá",
-  "destino_iata": "MCP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "6.900 milhas + Taxas",
-  "volta": "10.100 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7591",
   "data": "2026-11-04T14:56:21Z",
   "tipo": "promocao",
