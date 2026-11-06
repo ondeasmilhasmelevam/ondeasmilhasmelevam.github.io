@@ -592,6 +592,10 @@ async function mostrarPrecos(email) {
     const economia = p.mensal * 12 - p.anual;
     $('#ass-economia').textContent = `Você economiza ${reais(economia)} em relação a 12 meses do mensal`;
     $('#ass-economia').hidden = economia <= 0;
+    // Prazo do preço de lançamento: o servidor diz até quando vale; depois disso, o selo volta ao normal.
+    const ate = p.lancamentoAte ? new Date(Date.parse(p.lancamentoAte) - 1) : null;
+    $('#ass-selo-anual').textContent = ate && p.anual < p.anualCheio
+      ? `Melhor preço · 50% off até ${ate.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', timeZone: 'America/Sao_Paulo' })}` : 'Melhor preço';
   } catch (e) { /* fica o preço escrito na página */ }
 }
 mostrarPrecos('');

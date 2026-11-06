@@ -79,18 +79,22 @@ const telefoneValido = t => {
 };
 const emailValido = e => typeof e === 'string' && e.length <= 200 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
 
-// O primeiro ano anual sai pelo preço de lançamento; quem já teve um anual renova pelo cheio.
+// O primeiro ano anual sai pelo preço de lançamento (só para quem assinar até LANCAMENTO_ATE); quem já teve
+// um anual renova pelo cheio.
+const LANCAMENTO_ATE = '2027-01-01T03:00:00Z';  // até 31/12/2026, 23h59 de Brasília
+const lancamentoAtivo = () => Date.now() < Date.parse(LANCAMENTO_ATE);
 async function precoDe(plano, email, env) {
   const p = PLANOS[plano];
   if (plano !== 'anual') return p.preco;
+  if (!lancamentoAtivo()) return p.preco;
   const a = await lerDoc(env, `assinantes/${email}`);
   return a && a.teveAnual ? p.preco : p.lancamento;
 }
 
 async function precos(email, env) {
   email = (email || '').trim().toLowerCase();
-  const anual = emailValido(email) ? await precoDe('anual', email, env) : PLANOS.anual.lancamento;
-  return { mensal: PLANOS.mensal.preco, anual, anualCheio: PLANOS.anual.preco };
+  const anual = emailValido(email) ? await precoDe('anual', email, env) : (lancamentoAtivo() ? PLANOS.anual.lancamento : PLANOS.anual.preco);
+  return { mensal: PLANOS.mensal.preco, anual, anualCheio: PLANOS.anual.preco, lancamentoAte: lancamentoAtivo() ? LANCAMENTO_ATE : null };
 }
 
 async function checkout(body, env) {
