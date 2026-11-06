@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-14973",
+  "data": "2026-11-06T19:06:19Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "San José",
+  "destino_iata": "SJO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "43.600 milhas + Taxas",
+  "volta": "43.600 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14972",
+  "data": "2026-11-06T19:05:49Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Cidade do Panamá",
+  "destino_iata": "PTY",
+  "companhia": "Copa Airlines",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "54.400 milhas + Taxas",
+  "volta": "54.400 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-6201",
+  "data": "2026-11-06T19:03:45Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Executiva",
+  "programa": "LATAM Pass",
+  "ida": "92.931 pontos + R$ 69,00",
+  "volta": "92.932 pontos + R$ 137,00",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-14971",
   "data": "2026-11-06T18:59:46Z",
   "origem": "Manaus",
