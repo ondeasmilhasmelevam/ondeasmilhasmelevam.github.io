@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-9102",
+  "data": "2026-11-06T13:21:32Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.400 milhas + Taxas",
+  "volta": "10.400 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-9101",
+  "data": "2026-11-06T13:21:28Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.300 milhas + Taxas",
+  "volta": "11.300 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9100",
   "data": "2026-11-06T13:12:59Z",
   "origem": "Vitória",
@@ -7045,20 +7073,6 @@
   "ida": "64.000 milhas + Taxas",
   "volta": "64.000 milhas + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-14693",
-  "data": "2026-11-04T13:19:43Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "19.170 milhas + Taxas",
-  "volta": "17.890 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7580",
