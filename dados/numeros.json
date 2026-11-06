@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-06T12:02:14.359488Z",
+ "atualizado": "2026-11-06T12:09:02.813226Z",
  "dias": 30,
- "passagens": 950,
+ "passagens": 955,
  "promocoes": 68,
  "destinos": 121,
- "executiva": 203,
+ "executiva": 204,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 950,
+  "passagens": 955,
   "destaques": [
    {
     "id": "3761373661-8819",
