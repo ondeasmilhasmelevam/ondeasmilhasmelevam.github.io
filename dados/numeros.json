@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-06T16:32:55.669624Z",
+ "atualizado": "2026-11-06T17:29:54.611857Z",
  "dias": 30,
- "passagens": 1030,
- "promocoes": 74,
- "destinos": 126,
- "executiva": 211,
+ "passagens": 1035,
+ "promocoes": 76,
+ "destinos": 128,
+ "executiva": 213,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1030,
+  "passagens": 1035,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -1135,6 +1135,19 @@
     "regiao": "outros"
    },
    {
+    "id": "2361370250-6196",
+    "origem": "Los Angeles",
+    "origem_iata": "LAX",
+    "destino": "Nadi",
+    "destino_iata": "NAN",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-06T16:52:36Z",
+    "milhas": 80000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "2361370250-6084",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -1143,6 +1156,19 @@
     "cabine": "Executiva",
     "programa": "Flying Blue",
     "data": "2026-11-04T19:25:53Z",
+    "milhas": 85000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6197",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Düsseldorf",
+    "destino_iata": "DUS",
+    "cabine": "Executiva",
+    "programa": "Flying Blue",
+    "data": "2026-11-06T17:14:19Z",
     "milhas": 85000,
     "nivel": "",
     "regiao": "outros"
@@ -1170,32 +1196,6 @@
     "programa": "Smiles",
     "data": "2026-11-05T20:23:28Z",
     "milhas": 90200,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
-    "id": "2361370250-6092",
-    "origem": "Seul",
-    "origem_iata": "ICN",
-    "destino": "New Delhi",
-    "destino_iata": "DEL",
-    "cabine": "Executiva",
-    "programa": "Smiles",
-    "data": "2026-11-05T15:03:39Z",
-    "milhas": 90700,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
-    "id": "2361370250-5998",
-    "origem": "Joanesburgo",
-    "origem_iata": "JNB",
-    "destino": "Maurício",
-    "destino_iata": "MRU",
-    "cabine": "Executiva",
-    "programa": "Smiles",
-    "data": "2026-11-03T21:08:21Z",
-    "milhas": 91100,
     "nivel": "",
     "regiao": "outros"
    }
