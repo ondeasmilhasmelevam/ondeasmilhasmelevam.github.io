@@ -1,5 +1,26 @@
 [
  {
+  "titulo": "Itaú lança o cartão World Legend Exclusive com passagens aéreas grátis e até 8 pontos por dólar",
+  "data": "2026-11-06",
+  "link": "https://www.melhorescartoes.com.br/cartao-itau-world-legend-exclusive-mastercard.html",
+  "fonte": "Melhores Cartões",
+  "tema": "cartoes"
+ },
+ {
+  "titulo": "Singapore Airlines apresenta novas cabines para voos de longa distância",
+  "data": "2026-11-06",
+  "link": "https://passageirodeprimeira.com/singapore-airlines-apresenta-novas-cabines-para-voos-de-longa-distancia/",
+  "fonte": "Passageiro de Primeira",
+  "tema": "milhas"
+ },
+ {
+  "titulo": "Itaú anuncia cartão World Legend Exclusive Mastercard com até 8 pontos por dólar e passagem cortesia",
+  "data": "2026-11-06",
+  "link": "https://passageirodeprimeira.com/itau-world-legend-exclusive-mastercard/",
+  "fonte": "Passageiro de Primeira",
+  "tema": "cartoes"
+ },
+ {
   "titulo": "United anuncia novo menu da Classe Executiva com participação de chef brasileira",
   "data": "2026-11-05",
   "link": "https://passageirodeprimeira.com/united-anuncia-novo-menu-da-classe-executiva-com-participacao-de-chef-brasileira/",
@@ -11,20 +32,6 @@
   "data": "2026-11-05",
   "link": "https://passageirodeprimeira.com/smiles-e-livelo-lancam-ferramenta-que-simplifica-a-transferencia-de-pontos/",
   "fonte": "Passageiro de Primeira",
-  "tema": "milhas"
- },
- {
-  "titulo": "Latam tem voos para o Recife saindo de Brasília por 7 mil milhas o trecho",
-  "data": "2026-11-04",
-  "link": "https://www.melhoresdestinos.com.br/milhas/voos-latam-recife-bsb-nov26",
-  "fonte": "Melhores Cartões",
-  "tema": "milhas"
- },
- {
-  "titulo": "Má notícia (de novo)! Latam Pass reajusta tabela fixa para resgate de passagens com companhias parceiras",
-  "data": "2026-11-04",
-  "link": "https://www.melhoresdestinos.com.br/milhas/aumento-tabela-fixa-latam-nov26",
-  "fonte": "Melhores Cartões",
   "tema": "milhas"
  },
  {
@@ -46,6 +53,20 @@
   "data": "2026-11-04",
   "link": "https://passageirodeprimeira.com/latam-pass-vai-reajustar-tabela-fixa-de-resgate-com-companhias-parceiras-2/",
   "fonte": "Passageiro de Primeira",
+  "tema": "milhas"
+ },
+ {
+  "titulo": "Latam tem voos para o Recife saindo de Brasília por 7 mil milhas o trecho",
+  "data": "2026-11-04",
+  "link": "https://www.melhoresdestinos.com.br/milhas/voos-latam-recife-bsb-nov26",
+  "fonte": "Melhores Cartões",
+  "tema": "milhas"
+ },
+ {
+  "titulo": "Má notícia (de novo)! Latam Pass reajusta tabela fixa para resgate de passagens com companhias parceiras",
+  "data": "2026-11-04",
+  "link": "https://www.melhoresdestinos.com.br/milhas/aumento-tabela-fixa-latam-nov26",
+  "fonte": "Melhores Cartões",
   "tema": "milhas"
  },
  {
@@ -257,26 +278,5 @@
   "link": "https://passageirodeprimeira.com/inter-fechamento-sala-vip-guarulhos/",
   "fonte": "Passageiro de Primeira",
   "tema": "cartoes"
- },
- {
-  "titulo": "British Airways terá voos exclusivos para resgate com Avios em 2027",
-  "data": "2026-10-26",
-  "link": "https://passageirodeprimeira.com/british-airways-tera-voos-exclusivos-para-resgate-com-avios-em-2027/",
-  "fonte": "Passageiro de Primeira",
-  "tema": "milhas"
- },
- {
-  "titulo": "Azul Conecta terá voos inéditos para Angra dos Reis a partir de SP, MG e RJ",
-  "data": "2026-10-26",
-  "link": "https://passageirodeprimeira.com/azul-conecta-tera-voos-ineditos-para-angra-dos-reis-a-partir-de-sp-bh-rj/",
-  "fonte": "Passageiro de Primeira",
-  "tema": "milhas"
- },
- {
-  "titulo": "Voos da Latam de São Paulo para Natal a partir de 14 mil milhas o trecho",
-  "data": "2026-10-26",
-  "link": "https://www.melhoresdestinos.com.br/milhas/voos-sao-nat-latam-out26",
-  "fonte": "Melhores Destinos",
-  "tema": "milhas"
  }
 ]
