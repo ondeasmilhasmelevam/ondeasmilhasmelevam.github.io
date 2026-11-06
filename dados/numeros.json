@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-06T10:58:43.895203Z",
+ "atualizado": "2026-11-06T11:04:57.835780Z",
  "dias": 30,
- "passagens": 886,
+ "passagens": 893,
  "promocoes": 68,
  "destinos": 118,
- "executiva": 189,
+ "executiva": 191,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 886,
+  "passagens": 893,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -102,18 +102,18 @@
     "foto": "img/rotas/GRU-CWB.jpg"
    },
    {
-    "id": "3761373661-9035",
-    "origem": "Salvador",
-    "origem_iata": "SSA",
-    "destino": "Recife",
-    "destino_iata": "REC",
+    "id": "3761373661-9053",
+    "origem": "Campinas",
+    "origem_iata": "VCP",
+    "destino": "Navegantes",
+    "destino_iata": "NVT",
     "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-05T20:00:23Z",
-    "milhas": 5600,
+    "programa": "LATAM Pass",
+    "data": "2026-11-06T10:59:01Z",
+    "milhas": 5339,
     "nivel": "",
     "grupo": "Nacional",
-    "foto": "img/rotas/SSA-REC.jpg"
+    "foto": "img/rotas/VCP-NVT.jpg"
    },
    {
     "id": "2008590742-14805",
@@ -472,6 +472,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9053",
+    "origem": "Campinas",
+    "origem_iata": "VCP",
+    "destino": "Navegantes",
+    "destino_iata": "NVT",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-06T10:59:01Z",
+    "milhas": 5339,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9035",
     "origem": "Salvador",
     "origem_iata": "SSA",
@@ -819,19 +832,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-05T12:15:28Z",
     "milhas": 11700,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-8908",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Navegantes",
-    "destino_iata": "NVT",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-04T15:30:33Z",
-    "milhas": 12000,
     "nivel": "",
     "regiao": "brasil"
    },
