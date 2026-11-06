@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-06T18:19:45.605994Z",
+ "atualizado": "2026-11-06T18:26:00.118703Z",
  "dias": 30,
- "passagens": 1058,
+ "passagens": 1067,
  "promocoes": 76,
- "destinos": 129,
- "executiva": 214,
+ "destinos": 130,
+ "executiva": 215,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1058,
+  "passagens": 1067,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -1018,6 +1018,19 @@
     "regiao": "outros"
    },
    {
+    "id": "2361370250-6199",
+    "origem": "Madrid",
+    "origem_iata": "MAD",
+    "destino": "Maldivas",
+    "destino_iata": "MLE",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-06T18:21:01Z",
+    "milhas": 42500,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "2361370250-6078",
     "origem": "Abu Dhabi",
     "origem_iata": "AUH",
@@ -1185,19 +1198,6 @@
     "milhas": 85000,
     "nivel": "",
     "regiao": "europa"
-   },
-   {
-    "id": "2361370250-5903",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "Lima",
-    "destino_iata": "LIM",
-    "cabine": "Executiva",
-    "programa": "LATAM Pass",
-    "data": "2026-10-31T16:35:57Z",
-    "milhas": 88106,
-    "nivel": "",
-    "regiao": "america-do-sul"
    }
   ]
  }
