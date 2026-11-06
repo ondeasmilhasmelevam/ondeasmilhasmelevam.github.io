@@ -847,7 +847,9 @@ def vale_a_pena(a):
              'Se o preço mudar, refaça a conta com o valor do dia.')
     if destino[1] == 'LATAM Pass' and b < 35:
         conta += ' Com o Turbo LATAM (até 35%, no limite de envio do mês), divida por 1,35.'
-    return f'{linha}' + chr(10) + conta
+    aviso = (f'⚠️ Não é recomendação: antes de juntar pontos em qualquer companhia, veja para onde a {destino[1]} voa bem '
+             'e se faz sentido saindo da sua cidade.')
+    return f'{linha}' + chr(10) + conta + chr(10) + aviso
 
 
 def bloco_vale(itens):
