@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-14971",
+  "data": "2026-11-06T18:59:46Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "91.000 milhas + Taxas",
+  "volta": "91.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14970",
+  "data": "2026-11-06T18:57:49Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Joanesburgo",
+  "destino_iata": "JNB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "93.000 milhas + Taxas",
+  "volta": "93.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-14969",
   "data": "2026-11-06T18:56:02Z",
   "origem": "Manaus",
