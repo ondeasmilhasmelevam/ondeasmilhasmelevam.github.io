@@ -6940,48 +6940,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-14746",
-  "data": "2026-11-04T21:50:38Z",
-  "origem": "Foz do Iguaçu",
-  "origem_iata": "IGU",
-  "destino": "Punta Cana",
-  "destino_iata": "PUJ",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "56.200 milhas + Taxas",
-  "volta": "56.200 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-14745",
-  "data": "2026-11-04T21:49:12Z",
-  "origem": "Foz do Iguaçu",
-  "origem_iata": "IGU",
-  "destino": "Lima",
-  "destino_iata": "LIM",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "40.500 milhas + Taxas",
-  "volta": "40.500 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8953",
-  "data": "2026-11-04T21:49:09Z",
-  "origem": "Foz do Iguaçu",
-  "origem_iata": "IGU",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "16.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7601",
   "data": "2026-11-04T20:58:53Z",
   "tipo": "promocao",
