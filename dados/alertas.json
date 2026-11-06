@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-14942",
+  "data": "2026-11-06T14:04:49Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "50.500 milhas + Taxas",
+  "volta": "50.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-14940",
   "data": "2026-11-06T14:00:51Z",
   "origem": "Brasília",
