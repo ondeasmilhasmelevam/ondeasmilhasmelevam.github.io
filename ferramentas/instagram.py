@@ -827,6 +827,8 @@ def vale_a_pena(a):
     if not (bonus and origem and destino and origem in tetos and destino[0] in tetos):
         return ''
     b = int(bonus.group(1))
+    if b <= 100:
+        return ''  # só entra no post quando o bônus passa de 100%
     sai = tetos[origem] / (1 + b / 100)
     real = lambda v: f'R$ {v:.2f}'.replace('.', ',')
     if sai <= tetos[destino[0]]:
