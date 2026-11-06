@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-06T11:24:59.494009Z",
+ "atualizado": "2026-11-06T11:31:11.413562Z",
  "dias": 30,
- "passagens": 910,
+ "passagens": 915,
  "promocoes": 68,
  "destinos": 120,
  "executiva": 196,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 910,
+  "passagens": 915,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -498,6 +498,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9059",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Rio de Janeiro",
+    "destino_iata": "SDU",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-06T11:30:59Z",
+    "milhas": 5600,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-8857",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -637,19 +650,6 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-04T17:22:27Z",
     "milhas": 7600,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9025",
-    "origem": "Vitória",
-    "origem_iata": "VIX",
-    "destino": "Rio de Janeiro",
-    "destino_iata": "SDU",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-05T17:27:42Z",
-    "milhas": 7900,
     "nivel": "",
     "regiao": "brasil"
    },
