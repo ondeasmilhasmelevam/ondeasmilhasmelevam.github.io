@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-06T11:18:47.089971Z",
+ "atualizado": "2026-11-06T11:24:59.494009Z",
  "dias": 30,
- "passagens": 902,
+ "passagens": 910,
  "promocoes": 68,
- "destinos": 118,
- "executiva": 194,
+ "destinos": 120,
+ "executiva": 196,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 902,
+  "passagens": 910,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -524,6 +524,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9057",
+    "origem": "Curitiba",
+    "origem_iata": "CWB",
+    "destino": "Maringá",
+    "destino_iata": "MGF",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-06T11:24:32Z",
+    "milhas": 6000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-8770",
     "origem": "São Paulo",
     "origem_iata": "CGH",
@@ -923,19 +936,6 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-05T11:11:26Z",
     "milhas": 15000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-8944",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Campo Grande",
-    "destino_iata": "CGR",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-04T19:11:15Z",
-    "milhas": 15400,
     "nivel": "",
     "regiao": "brasil"
    },
