@@ -1,5 +1,58 @@
 [
  {
+  "id": "1290836068-7624",
+  "data": "2026-11-06T19:37:14Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass ROMA/MILÃO 60.800 MILHAS TRECHO",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "LATAM Pass oferece passagens para Roma ou Milão a partir de 60.800 milhas por trecho, com taxas aeroportuárias. Disponibilidade de Curitiba, São Paulo, Recife e Floripa para viagens entre novembro de 2026 e março de 2027. É necessário pesquisar ida e volta no site da Latam para obter os menores preços.",
+  "detalhes": [
+   "60.800 milhas por trecho",
+   "taxas aeroportuárias",
+   "pesquisa ida e volta obrigatória",
+   "preços em constante atualização",
+   "Curitiba (CWB) x Roma (FCO) a partir de 30.400 milhas o trecho",
+   "Curitiba (CWB) x Milão (MXP) a partir de 30.400 milhas o trecho",
+   "São Paulo (GRU) x Roma (FCO) a partir de 30.400 milhas o trecho",
+   "São Paulo (GRU) x Milão (MXP) a partir de 30.400 milhas o trecho"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/Askzqcj"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "2008590742-14980",
+  "data": "2026-11-06T19:32:59Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Mendoza",
+  "destino_iata": "MDZ",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "58.500 milhas + Taxas",
+  "volta": "58.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14979",
+  "data": "2026-11-06T19:32:57Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Assunção",
+  "destino_iata": "ASU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "48.000 milhas + Taxas",
+  "volta": "48.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-14978",
   "data": "2026-11-06T19:24:44Z",
   "origem": "São Paulo",
