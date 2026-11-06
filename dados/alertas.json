@@ -1,5 +1,26 @@
 [
  {
+  "id": "1290836068-7616",
+  "data": "2026-11-06T15:27:54Z",
+  "tipo": "promocao",
+  "titulo": "ASSINATURA CLUBE LIVELO ESSENCIAL COM BÔNUS DE 13.000 PONTOS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Livelo Essencial com cupom exclusivo e receba 13.000 pontos bônus. Total de 25.000 pontos em 12 meses.",
+  "detalhes": [
+   "Cupom exclusivo: CLUBEMDBF",
+   "Bônus de 13.000 pontos na adesão",
+   "Total de 25.000 pontos em 12 meses",
+   "Modalidades de pagamento: mensal, anual parcelado ou anual à vista"
+  ],
+  "parceiros": "Livelo",
+  "validade": "08/11/2026",
+  "links": [
+   "https://www.livelo.com.br/clube"
+  ],
+  "ate": "2026-11-08T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-14945",
   "data": "2026-11-06T15:02:02Z",
   "origem": "São Paulo",
@@ -7279,34 +7300,6 @@
   "ida": "10.600 milhas + R$ 34,55 de taxas",
   "volta": "10.600 milhas + R$ 62,62 de taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8905",
-  "data": "2026-11-04T15:29:21Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "8.040 milhas + Taxas",
-  "volta": "8.150 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8904",
-  "data": "2026-11-04T15:27:53Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "8.040 milhas + Taxas",
-  "volta": "8.150 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7591",
