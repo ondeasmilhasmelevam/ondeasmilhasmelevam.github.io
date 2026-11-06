@@ -1133,6 +1133,7 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 footer{margin-top:60px;padding:46px 0 40px;border-top:1px solid var(--line);text-align:center;background:linear-gradient(180deg,transparent,var(--ink-2))}
 footer .badge{width:84px;height:84px;margin-bottom:14px}
 .foot-name{font-family:var(--display);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:0;font-size:16px;background:linear-gradient(180deg,var(--ouro-lt),var(--ouro) 60%,var(--ouro-dk));-webkit-background-clip:text;background-clip:text;color:transparent}
+.foot-links{margin:10px 0 0;font-size:14px}.foot-links a{color:var(--ash)}
 .foot-status{display:flex;width:max-content;max-width:100%;align-items:center;gap:8px;margin:14px auto 0;font-size:13px;color:var(--ash);background:var(--ink-2);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
 .ponto{width:8px;height:8px;border-radius:50%;background:var(--ash-dim);flex:0 0 auto}
 .foot-status.vivo .ponto{background:var(--verde);box-shadow:0 0 0 4px rgba(111,214,166,.16)}

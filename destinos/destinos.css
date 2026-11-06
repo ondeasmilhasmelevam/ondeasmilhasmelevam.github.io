@@ -1,0 +1,54 @@
+/* Páginas de destino (geradas por ferramentas/paginas.py), no visual do site */
+:root{--ink:#070C17;--ink-2:#0C1426;--ink-3:#131D33;--line:#1E2A42;--rice:#F3EEE3;--ash:#A3ACBD;--ouro:#E2B458;--ouro-lt:#F5D788;
+  --display:"Cinzel",Georgia,serif;--body:"Manrope","Segoe UI",system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--rice);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--ouro-lt)}
+.topo{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:rgba(7,12,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+.marca img{border-radius:8px}
+.marca b{font-family:var(--display);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro)}
+.topo nav{display:flex;align-items:center;gap:14px;font-size:14px;font-weight:700}
+.topo nav a{text-decoration:none;color:var(--ash)}
+.botao{display:inline-block;padding:10px 18px;border-radius:999px;background:var(--ouro);color:var(--ink)!important;font-weight:800;text-decoration:none}
+.botao.vazado{background:none;border:2px solid var(--ouro);color:var(--ouro-lt)!important}
+.topo .botao{padding:7px 14px}
+main{max-width:860px;margin:0 auto;padding:16px 16px 40px}
+.trilha{font-size:13px;color:var(--ash);margin:4px 0 14px}
+.trilha a{color:var(--ash)}
+.capa{position:relative;min-height:300px;border-radius:20px;overflow:hidden;background:var(--ink-3) center/cover no-repeat;display:flex;align-items:flex-end;margin-bottom:22px}
+.capa::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,12,23,0) 30%,rgba(7,12,23,.92))}
+.capa>div{position:relative;padding:22px}
+.capa.sem-foto{min-height:180px;background:radial-gradient(circle at 70% 20%,rgba(226,180,88,.25),var(--ink-3) 60%)}
+.capa small{color:var(--ouro-lt);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+h1{font-family:var(--display);font-size:clamp(26px,5vw,40px);line-height:1.15;margin:6px 0 0}
+main>h1{margin:0 0 10px}
+.credito{position:absolute;right:12px;top:10px;font-size:11px;color:rgba(255,255,255,.7);text-decoration:none}
+h2{font-size:22px;line-height:1.3;margin:34px 0 10px;color:var(--ouro-lt)}
+h3{font-size:17px;margin:22px 0 8px;color:var(--ash);text-transform:uppercase;letter-spacing:.06em}
+.lead{font-size:19px;color:var(--rice)}
+.fatos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:18px 0}
+.fatos div{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.fatos dt{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ouro)}
+.fatos dd{margin:4px 0 0;font-size:15px}
+ul{padding-left:20px}
+li{margin:6px 0}
+.menores{list-style:none;padding:0}
+.menores li{background:var(--ink-2);border-left:4px solid var(--ouro);border-radius:10px;padding:10px 14px}
+.tabela{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--ash);background:var(--ink-2)}
+td small{color:var(--ash)}
+.num{font-variant-numeric:tabular-nums}
+.itens li b{color:var(--ouro-lt);margin-right:4px}
+.chamada{margin:38px 0;padding:24px;border-radius:20px;border:1px solid var(--ouro);background:linear-gradient(135deg,rgba(226,180,88,.14),var(--ink-2))}
+.chamada h2{margin-top:0}
+.acoes{display:flex;flex-wrap:wrap;gap:10px}
+.vizinhos,.lista{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.vizinhos li,.lista li{margin:0}
+.vizinhos a,.lista a{display:inline-block;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--ink-2);text-decoration:none;font-weight:600;font-size:15px}
+.lista small{color:var(--ouro);font-size:12px;margin-left:4px}
+.fino{font-size:13px;color:var(--ash)}
+.rodape{border-top:1px solid var(--line);padding:22px 16px;text-align:center;font-size:14px;color:var(--ash)}
+@media (max-width:560px){.topo nav a:not(.botao){display:none}.capa{min-height:230px}body{font-size:16px}}

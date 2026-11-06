@@ -1821,6 +1821,7 @@
         <div class="gd-acoes">
           ${n ? `<button type="button" class="cta cta-a" data-guia-passagens="${esc(g.aeroporto_iata)}">Ver ${n} ${n === 1 ? 'passagem' : 'passagens'} para ${esc(g.nome)}</button>` : ''}
           ${g.aeroporto_iata ? `<a class="cta cta-b" href="#radar" data-guia-radar="${esc(g.aeroporto_iata)}">Avisar quando aparecer passagem</a>` : ''}
+          <a class="cta cta-b" href="destinos/${esc(g.slug.replace(/\.html?$/, ''))}/">Página completa do destino</a>
         </div>
       </div>`;
     if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', '');
