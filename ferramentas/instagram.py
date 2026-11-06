@@ -61,7 +61,7 @@ ALERTAS = RAIZ / 'dados' / 'alertas-completo.json'  # a lista inteira, com datas
 ESTADO = RAIZ / 'dados' / 'stories.json'
 PASTA = RAIZ / 'stories'
 MUSICAS = RAIZ / 'musicas'
-SITE = 'https://ondeasmilhasmelevam.github.io'
+SITE = 'https://ondeasmilhasmelevam.com.br'
 LOGO = RAIZ / 'logo.jpeg'
 REPO = os.environ.get('GITHUB_REPOSITORY', 'ondeasmilhasmelevam/ondeasmilhasmelevam.github.io')
 GRAPH = 'https://graph.instagram.com/v21.0'
@@ -241,7 +241,7 @@ def botao(img, y):
     d.polygon([(sx, sy - 30), (sx + 22, sy - 4), (sx + 8, sy - 4), (sx + 8, sy + 28), (sx - 8, sy + 28),
                (sx - 8, sy - 4), (sx - 22, sy - 4)], fill=INK)
     d.text((x + 64, y + 38), t, font=f, fill=INK)
-    centro(d, y + 190, [PERFIL], fonte(34, 700), OURO_LT)  # domínio entra quando o .com.br estiver no ar
+    centro(d, y + 190, [f'{PERFIL}  ·  {DOMINIO}'], fonte(34, 700), OURO_LT)
     centro(d, y + 240, ['Valores podem mudar a qualquer momento.'], fonte(24, 500), ASH)
 
 
@@ -338,7 +338,7 @@ PROGRAMAS = (('Smiles', r'SMILES|\bGOL\b|PAGOL', 'smiles'), ('LATAM Pass', r'LAT
              ('Revolut', r'REVOLUT', 'revolut'), ('Premmia', r'PREMMIA', 'premmia'), ('Inter', r'\bINTER\b', 'inter'),
              ('Méliuz', r'MELIUZ', 'meliuz'))
 ENCURTADORES = re.compile(r'bit\.ly|tinyurl|t\.co$|l\.ead\.me|linktr\.ee|onelink|app\.link|lnk\.|cutt\.ly|rebrand\.ly|wa\.me|t\.me|dia23')
-UA = {'User-Agent': 'OndeAsMilhasMeLevam/1.0 (https://ondeasmilhasmelevam.github.io; instagram)'}
+UA = {'User-Agent': 'OndeAsMilhasMeLevam/1.0 (https://ondeasmilhasmelevam.com.br; instagram)'}
 
 
 def sem_acento(t):

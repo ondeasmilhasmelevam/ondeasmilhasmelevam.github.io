@@ -373,7 +373,7 @@ const layoutEmail = corpo => `<div style="background:#f3eee3;padding:24px 12px;f
     <div style="background:#0c1426;padding:18px 24px;color:#e2b458;font-weight:bold;letter-spacing:3px;font-size:13px;">ONDE AS MILHAS ME LEVAM</div>
     <div style="padding:24px;color:#1b2335;font-size:15px;line-height:1.6;">${corpo}</div>
   </div>
-  <p style="max-width:560px;margin:12px auto 0;color:#8a8f9c;font-size:12px;text-align:center;">ondeasmilhasmelevam.github.io</p>
+  <p style="max-width:560px;margin:12px auto 0;color:#8a8f9c;font-size:12px;text-align:center;">ondeasmilhasmelevam.com.br</p>
 </div>`;
 async function gmailEnviar(env, para, assunto, html) {
   const remetente = env.GMAIL_REMETENTE || 'ondeasmilhasmelevam@gmail.com';

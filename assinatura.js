@@ -183,7 +183,7 @@ async function desenharIndicacao(estado) {
     const r = await fetch(`${SERVIDOR}/indicacao`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
     const d = await r.json();
     if (!r.ok || !d.codigo) return;
-    const link = `https://ondeasmilhasmelevam.github.io/?ref=${d.codigo}`;
+    const link = `https://ondeasmilhasmelevam.com.br/?ref=${d.codigo}`;
     const texto = `Estou usando o Onde as Milhas Me Levam para achar passagens com milhas antes de esgotarem. Dá uma olhada: ${link}`;
     el.innerHTML = `<p><b>Indique e ganhe ${d.dias} dias.</b> Cada amigo que assinar pelo seu link soma ${d.dias} dias à sua assinatura.${d.indicados ? ` Até agora: <b>${d.indicados} ${d.indicados === 1 ? 'amigo' : 'amigos'}</b>, <b>${d.diasGanhos} dias</b> ganhos.` : ''}</p>
       <div class="indica-link"><input type="text" readonly value="${link}" aria-label="Seu link de indicação">
@@ -481,7 +481,7 @@ async function imagemDepoimento(d) {
   if (d.instagram) { x.fillStyle = '#F3EEE3'; x.font = '600 36px Manrope'; x.fillText(`@${d.instagram}`, W / 2, yNome + 58); }
   x.fillStyle = '#A3ACBD'; x.font = '600 34px Manrope';
   x.fillText('@ondeasmilhasmelevam', W / 2, 1760);
-  x.fillText('ondeasmilhasmelevam.github.io', W / 2, 1812);
+  x.fillText('ondeasmilhasmelevam.com.br', W / 2, 1812);
   return new Promise(ok => c.toBlob(ok, 'image/jpeg', 0.92));
 }
 async function compartilharDepoimento(d) {
