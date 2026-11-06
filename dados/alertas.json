@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6195",
+  "data": "2026-11-06T15:42:53Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "GOL",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "80.000 milhas + Taxas",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "1290836068-7616",
   "data": "2026-11-06T15:27:54Z",
   "tipo": "promocao",
