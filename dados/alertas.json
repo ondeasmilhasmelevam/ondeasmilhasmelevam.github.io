@@ -1,5 +1,80 @@
 [
  {
+  "id": "3761373661-9119",
+  "data": "2026-11-06T14:34:54Z",
+  "origem": "Rio Branco",
+  "origem_iata": "RBR",
+  "destino": "Manaus",
+  "destino_iata": "MAO",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "A partir de 36.000 milhas",
+  "volta": "A partir de 36.000 milhas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "1290836068-7615",
+  "data": "2026-11-06T14:34:00Z",
+  "tipo": "promocao",
+  "titulo": "PICPAY PARA LATAM Pass: 25% DE BÔNUS + 1.000 MILHAS EXTRAS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Transfira seus pontos do programa PicPay para o LATAM Pass e receba 25% de bônus padrão, além de 1.000 milhas extras se for sua primeira transferência.",
+  "detalhes": [
+   "25% de bônus em milhas para todos os clientes",
+   "+1.000 milhas extras para a primeira transferência realizada da conta PicPay para o LATAM Pass"
+  ],
+  "parceiros": "PicPay, LATAM Pass",
+  "validade": "06/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/promocoes/picpay-milhas-extras"
+  ],
+  "ate": "2026-11-06T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7614",
+  "data": "2026-11-06T14:33:54Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFERÊNCIA ESFERA PARA ALL ACCOR: 20% POINTS BACK + ATÉ 10% BÔNUS",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Transfira seus pontos Esfera para o programa ALL Accor e receba 20% de pontos de volta na Esfera e até 10% de bônus em pontos Reward para assinantes ALL Signature.",
+  "detalhes": [
+   "Paridade: 3,5 pontos Esfera = 1 ponto ALL Accor",
+   "20% de Points Back na conta Esfera para todos os participantes elegíveis",
+   "10% de bônus ALL Accor exclusivo para assinantes ALL Signature ativos"
+  ],
+  "parceiros": "Esfera, ALL Accor",
+  "validade": "06/11/2026",
+  "links": [
+   "https://www.esfera.com.vc/p/all-accor/e000100158",
+   "https://all.accor.com/a/pt-br/loyalty-program/partners/offers/oferta-esfera.html"
+  ],
+  "ate": "2026-11-06T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7613",
+  "data": "2026-11-06T14:33:49Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFERÊNCIA LIVELO PARA AZUL FIDELIDADE: ATÉ 130% DE BÔNUS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Transfira seus pontos da Livelo para o Azul Fidelidade e garanta até 100% de bônus padrão combinado com até 30% de bônus adicional por tempo de permanência no Clube Azul.",
+  "detalhes": [
+   "60% de bônus: Demais clientes Azul Fidelidade",
+   "90% de bônus: Assinantes do Clube Azul OU Clube Livelo",
+   "100% de bônus: Assinantes do Clube Azul E Clube Livelo",
+   "Bônus por tempo de Clube Azul: +5% (6 a 11 meses), +10% (12 a 35 meses), +20% (36 a 59 meses) e +30%"
+  ],
+  "parceiros": "Livelo, Azul Fidelidade",
+  "validade": "06/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/livelo"
+  ],
+  "ate": "2026-11-06T23:59:59-03:00"
+ },
+ {
   "id": "3761373661-9118",
   "data": "2026-11-06T14:23:53Z",
   "origem": "Belém",
