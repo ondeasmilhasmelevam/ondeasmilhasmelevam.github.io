@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9121",
+  "data": "2026-11-06T15:44:19Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Navegantes",
+  "destino_iata": "NVT",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "A partir de 9.792 milhas",
+  "volta": "A partir de 9.792 milhas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2361370250-6195",
   "data": "2026-11-06T15:42:53Z",
   "origem": "Rio de Janeiro",
