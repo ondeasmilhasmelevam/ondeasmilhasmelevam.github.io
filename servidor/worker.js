@@ -521,13 +521,23 @@ async function avisarVencimentos(env) {
       const preco = await precoDe('anual', a.email, env);
       anual = `<strong>Dica:</strong> no plano anual sai por ${reaisEmail(preco)} (${reaisEmail(Math.round(preco / 12))} por mês em 12x), contra ${reaisEmail(PLANOS.mensal.preco)} todo mês no mensal.<br><br>`;
     }
-    const corpo = `Olá!<br><br>${venceu
-      ? `Sua assinatura do Onde as Milhas Me Levam venceu em <strong>${data}</strong>. Desde então, as datas e os links das passagens ficaram fechados para você.`
-      : `Sua assinatura do Onde as Milhas Me Levam vence em <strong>${data}</strong>, daqui a ${n} ${n === 1 ? 'dia' : 'dias'}. Ela não renova sozinha.`}<br><br>
-      ${resumo}${anual}Para continuar com tudo, é só renovar pelo site com este mesmo e-mail:<br><br>
-      ${botaoEmail(venceu ? 'Voltar a assinar' : 'Renovar minha assinatura', `${env.SITE}?utm_source=email&utm_campaign=renovacao#assinar`)}<br><br>Se você já renovou, pode ignorar esta mensagem.`;
-    const assunto = venceu ? 'Sua assinatura venceu: as passagens continuam aparecendo'
-      : `Sua assinatura vence em ${n} ${n === 1 ? 'dia' : 'dias'}`;
+    const cortesia = a.plano === 'cortesia', oQue = cortesia ? 'Sua cortesia' : 'Sua assinatura';
+    let corpo = `Olá!<br><br>${venceu
+      ? `${oQue} do Onde as Milhas Me Levam venceu em <strong>${data}</strong>. Desde então, as datas e os links das passagens ficaram fechados para você.`
+      : `${oQue} do Onde as Milhas Me Levam vence em <strong>${data}</strong>, daqui a ${n} ${n === 1 ? 'dia' : 'dias'}.${cortesia ? '' : ' Ela não renova sozinha.'}`}<br><br>
+      ${resumo}${anual}Para continuar com tudo, é só ${cortesia ? 'assinar' : 'renovar'} pelo site com este mesmo e-mail:<br><br>
+      ${botaoEmail(venceu || cortesia ? 'Quero assinar' : 'Renovar minha assinatura', `${env.SITE}?utm_source=email&utm_campaign=renovacao#assinar`)}<br><br>Se você já ${cortesia ? 'assinou' : 'renovou'}, pode ignorar esta mensagem.`;
+    let assunto = venceu ? `${oQue} venceu: as passagens continuam aparecendo`
+      : `${oQue} vence em ${n} ${n === 1 ? 'dia' : 'dias'}`;
+    // Cortesia, primeiro aviso: pergunta o que a pessoa achou (depoimento) e mostra os planos.
+    if (cortesia && etapa[0] === 7) {
+      assunto = 'O que você achou desses dias no Onde as Milhas Me Levam?';
+      corpo = `Olá${a.nome ? `, ${escHtml(String(a.nome).split(' ')[0])}` : ''}!<br><br>Sua cortesia termina em <strong>${data}</strong>, daqui a ${n} ${n === 1 ? 'dia' : 'dias'}. Queremos saber: <strong>o que você achou?</strong><br><br>
+        Se curtiu, deixe um depoimento rapidinho no site (leva 1 minuto, com estrelas e, se quiser, sua foto e seu @). Ele ajuda muita gente a decidir, e você ainda pode postar nos seus stories.<br><br>
+        ${botaoEmail('Deixar meu depoimento', `${env.SITE}?utm_source=email&utm_campaign=cortesia_depoimento#assinar`)}<br><br>
+        Tem alguma sugestão? É só responder este e-mail.<br><br>${resumo}${anual}Para continuar vendo as datas e os links depois da cortesia:<br><br>
+        ${botaoEmail('Ver os planos', `${env.SITE}?utm_source=email&utm_campaign=cortesia_fim#assinar`)}`;
+    }
     if (!await enviarEmail(env, a.email, assunto, corpo)) continue; // tenta de novo amanhã
     await atualizarCampos(env, `assinantes/${a.id}`, { avisos: [...feitos, chave].slice(-6).join(',') });
     enviados.push(a.email);
