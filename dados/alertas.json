@@ -6987,34 +6987,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-8942",
-  "data": "2026-11-04T18:33:34Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Porto Alegre",
-  "destino_iata": "POA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "12.940 milhas + Taxas",
-  "volta": "14.560 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8941",
-  "data": "2026-11-04T18:33:31Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Goiânia",
-  "destino_iata": "GYN",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "22.100 milhas + Taxas",
-  "volta": "22.100 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7591",
   "data": "2026-11-04T14:56:21Z",
   "tipo": "promocao",
