@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-14939",
+  "data": "2026-11-06T13:48:46Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "49.000 milhas + Taxas",
+  "volta": "51.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6192",
   "data": "2026-11-06T13:40:49Z",
   "origem": "São Paulo",
