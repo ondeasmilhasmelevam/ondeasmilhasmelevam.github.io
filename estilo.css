@@ -1539,3 +1539,12 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .hist-meses{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:10px}
 .hist-meses small{font-size:12px;color:var(--ash);margin-right:4px}
 .hist-meses span{font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;color:var(--ink);background:rgba(111,214,166,var(--f))}
+
+/* Instagram no painel */
+.painel-ig{margin:22px 0}
+.painel-ig h3{margin:0 0 10px;font-size:18px}
+.painel-ig h3 small{font-size:12px;font-weight:600;color:var(--ash);margin-left:6px}
+.painel-serie{margin:12px 0;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2)}
+.painel-serie small{color:var(--ash);font-size:12px}
+.painel-serie div{display:flex;align-items:flex-end;gap:3px;height:70px;margin-top:6px}
+.painel-serie span{flex:1;min-width:4px;border-radius:3px 3px 0 0;background:var(--ouro)}

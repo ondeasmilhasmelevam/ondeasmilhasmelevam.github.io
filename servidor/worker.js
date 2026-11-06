@@ -43,6 +43,7 @@ export default {
       if (req.method === 'POST' && url.pathname === '/entrar') return json(await entrar(await req.json(), env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/alertas') return json(await guardarAlertas(req, env));
       if (req.method === 'GET' && url.pathname === '/alertas') return json(await estadoAlertas(env));
+      if (req.method === 'POST' && url.pathname === '/instagram') return json(await guardarInstagram(req, env));
       if (req.method === 'GET' && url.pathname === '/historico') return json(await historicoAssinante(req, env), 200, cors);
       if (req.method === 'GET' && url.pathname === '/voos') return json(await buscarVoos(req, url, env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/evento') return json(await evento(await req.json(), env), 200, cors);
@@ -406,6 +407,19 @@ async function atualizarHistorico(env, novas, completos) {
   }
   if (entrando.length || !doc) await gravarDoc(env, 'privado/historico', { json: texto, atualizadoEm: new Date() });
   return { rotas: Object.keys(rotas).length, somadas: entrando.length };
+}
+// Números do Instagram, mandados pelo robô do GitHub a cada 3 horas, para o painel do dono.
+// Guarda também os seguidores de cada dia (até 400 dias) para mostrar o crescimento.
+async function guardarInstagram(req, env) {
+  if (!await doPlantao(req, env).catch(() => false)) throw falha('sem permissão', 401);
+  const d = await req.json();
+  const antes = await lerDoc(env, 'privado/instagram').catch(() => null);
+  const serie = antes ? JSON.parse(antes.serie || '{}') : {};
+  if (d.perfil && d.perfil.followers_count != null) serie[d.dia] = d.perfil.followers_count;
+  const dias = Object.keys(serie).sort();
+  while (dias.length > 400) delete serie[dias.shift()];
+  await gravarDoc(env, 'privado/instagram', { json: JSON.stringify(d), serie: JSON.stringify(serie), atualizadoEm: new Date() });
+  return { ok: true };
 }
 async function historicoAssinante(req, env) {
   const email = await emailDoToken(req, env);
@@ -1043,7 +1057,9 @@ async function metricas(req, url, env) {
   const assinantes = await listarDocs(env, 'assinantes');
   const ativos = assinantes.filter(a => a.validoAte instanceof Date && a.validoAte.getTime() > agora);
   const leads = await listarDocs(env, 'leads');
+  const ig = await lerDoc(env, 'privado/instagram').catch(() => null);
   return {
+    instagram: ig ? { ...JSON.parse(ig.json), serie: JSON.parse(ig.serie || '{}'), atualizadoEm: ig.atualizadoEm } : null,
     dias, porDia, emailsMes: await emailsDoMes(env), cotaLeads: cotaLeads(env), servicoEmail: usaGmail(env) ? 'gmail' : 'emailjs',
     assinantes: { ativos: ativos.length, mensal: ativos.filter(a => a.plano !== 'anual').length, anual: ativos.filter(a => a.plano === 'anual').length,
       vencem7: ativos.filter(a => a.validoAte.getTime() - agora < 7 * 864e5).length, vencidos: assinantes.length - ativos.length },

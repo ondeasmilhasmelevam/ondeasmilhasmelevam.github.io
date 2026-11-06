@@ -240,12 +240,51 @@ async function desenharPainel() {
     </div>
     ${d.leads.preferencias && d.leads.preferencias.responderam ? `<div class="painel-prefs"><p><b>O que os leads responderam</b> · ${d.leads.preferencias.responderam} ${d.leads.preferencias.responderam === 1 ? 'pessoa respondeu' : 'pessoas responderam'}</p>
       ${[['aeroportos', 'Saem de'], ['regioes', 'Querem ir para'], ['programas', 'Têm pontos em'], ['cabine', 'Preferem voar']].map(([k, t]) => d.leads.preferencias[k].length ? `<p><span>${t}:</span> ${d.leads.preferencias[k].map(([v, n]) => `${escR(v)} (${n})`).join(' · ')}</p>` : '').join('')}</div>` : ''}
+    ${painelInstagram(d.instagram)}
     ${tabela('Origem', Object.entries(porOrigem).sort((x, y) => y[1].visita - x[1].visita).map(([o, l]) => [ORIGEM_NOME[o] || o, l]))}
     ${tabela('Dia', porDia)}`;
   desenharDeposPainel();
   desenharAssinantesPainel();
   desenharCortesiasPainel();
   desenharCampanhaPainel();
+}
+
+// Instagram no painel: números que o robô lê da API a cada 3 horas (sem precisar entrar no Instagram).
+const PAISES = { BR: 'Brasil', US: 'Estados Unidos', IN: 'Índia', PT: 'Portugal', AR: 'Argentina', ES: 'Espanha', IT: 'Itália', FR: 'França', DE: 'Alemanha', GB: 'Reino Unido', MX: 'México', CO: 'Colômbia', CL: 'Chile', PY: 'Paraguai', UY: 'Uruguai', JP: 'Japão', CA: 'Canadá' };
+const GENERO = { M: 'Homens', F: 'Mulheres', U: 'Não informado' };
+function painelInstagram(ig) {
+  if (!ig) return '<div class="painel-ig"><h3>Instagram</h3><p class="passagens-vazio">Os números do Instagram aparecem aqui depois da próxima volta do robô (até 3 horas).</p></div>';
+  const n = v => Number(v || 0).toLocaleString('pt-BR');
+  const p = ig.periodos || {}, s7 = p['7'] || {}, s28 = p['28'] || {}, s1 = p['1'] || {};
+  const serie = Object.entries(ig.serie || {}).sort();
+  const hoje = (ig.perfil || {}).followers_count || 0;
+  const ha = dias => { const alvo = new Date(Date.now() - dias * 864e5).toISOString().slice(0, 10); const x = serie.filter(([d]) => d <= alvo).pop(); return x ? hoje - x[1] : null; };
+  const delta = v => (v == null ? 'medindo desde hoje' : `${v >= 0 ? '+' : ''}${n(v)}`);
+  const max = Math.max(1, ...serie.slice(-30).map(([, v]) => v)), min = Math.min(...serie.slice(-30).map(([, v]) => v), max);
+  const barras = serie.slice(-30).map(([d, v]) => `<span title="${d.split('-').reverse().join('/')}: ${n(v)}" style="height:${12 + 88 * (v - min) / Math.max(1, max - min)}%"></span>`).join('');
+  const publico = (ig.publico || {});
+  const lista = (k, nomes) => (publico[k] || []).map(([v, q]) => `${escR((nomes && nomes[v]) || v)} (${n(q)})`).join(' · ');
+  const posts = (ig.posts || []).map(x => `<tr><td>${new Date(x.quando).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })}</td>
+    <td>${escR({ REELS: 'Reel', FEED: 'Post', STORY: 'Story', CAROUSEL_ALBUM: 'Carrossel' }[x.tipo] || x.tipo || '')}</td>
+    <td><a href="${escR(x.link)}" target="_blank" rel="noopener">${escR(x.texto || 'ver post')}</a></td>
+    <td>${n(x.reach)}</td><td>${n(x.views)}</td><td>${n(x.curtidas)}</td><td>${n(x.comentarios)}</td><td>${n(x.saved)}</td><td>${n(x.shares)}</td></tr>`).join('');
+  return `<div class="painel-ig"><h3>Instagram <small>@${escR((ig.perfil || {}).username || 'ondeasmilhasmelevam')} · atualizado ${new Date(ig.atualizadoEm || ig.em).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })}</small></h3>
+    <div class="painel-cards">
+      <div><b>${n(hoje)}</b><small>seguidores · ${delta(ha(7))} em 7 dias · ${delta(ha(30))} em 30</small></div>
+      <div><b>${n(s7.reach)}</b><small>contas alcançadas em 7 dias (${n(s28.reach)} em 28)</small></div>
+      <div><b>${n(s7.views)}</b><small>visualizações em 7 dias</small></div>
+      <div><b>${n(s7.profile_views)}</b><small>visitas ao perfil em 7 dias</small></div>
+      <div><b>${n(s7.profile_links_taps)}</b><small>cliques no link do perfil em 7 dias</small></div>
+      <div><b>${n(s7.accounts_engaged)}</b><small>contas que interagiram em 7 dias (${n(s7.total_interactions)} interações)</small></div>
+      <div><b>${n(s7.seguiu)}</b><small>começaram a seguir em 7 dias${s7.deixou ? ` · ${n(s7.deixou)} deixaram` : ''}</small></div>
+      <div><b>${n(s1.reach)}</b><small>alcance nas últimas 24 horas</small></div>
+    </div>
+    ${serie.length > 1 ? `<div class="painel-serie"><small>Seguidores por dia (últimos 30)</small><div>${barras}</div></div>` : ''}
+    ${Object.keys(publico).length ? `<div class="painel-prefs"><p><b>Quem segue</b></p>
+      ${publico.country ? `<p><span>Países:</span> ${lista('country', PAISES)}</p>` : ''}${publico.city ? `<p><span>Cidades:</span> ${lista('city')}</p>` : ''}
+      ${publico.age ? `<p><span>Idade:</span> ${lista('age')}</p>` : ''}${publico.gender ? `<p><span>Gênero:</span> ${lista('gender', GENERO)}</p>` : ''}</div>` : ''}
+    ${posts ? `<div class="painel-tabela"><table><thead><tr><th>Quando</th><th>Tipo</th><th>Post</th><th>Alcance</th><th>Visualizações</th><th>Curtidas</th><th>Comentários</th><th>Salvos</th><th>Compart.</th></tr></thead><tbody>${posts}</tbody></table></div>` : ''}
+  </div>`;
 }
 
 // Depoimentos no painel: aprovar põe no site; ocultar tira.

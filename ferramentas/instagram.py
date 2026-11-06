@@ -1403,6 +1403,68 @@ def teste(pasta):
     print(pasta)
 
 
+# ---------- Números do Instagram para o painel do site (#painel) ----------
+# A cada 3 horas o robô lê da API do Instagram seguidores, alcance, visitas ao perfil e o desempenho
+# dos últimos posts, e manda ao servidor da assinatura (mesmo crachá do GitHub dos alertas). Assim o
+# Felipe vê tudo no painel do site, sem entrar no Instagram nem no Metricool.
+METRICAS_HORAS = 3
+SERVIDOR_ASSINATURA = 'https://oamml-assinatura.ondeasmilhasmelevam.workers.dev'
+
+
+def metricas_instagram(conta, token, estado, agora):
+    ultima = estado.get('metricas_em')
+    if ultima and agora - datetime.fromisoformat(ultima) < timedelta(hours=METRICAS_HORAS):
+        return
+    pedido_url, pedido_token = os.environ.get('ACTIONS_ID_TOKEN_REQUEST_URL'), os.environ.get('ACTIONS_ID_TOKEN_REQUEST_TOKEN')
+    if not pedido_url:
+        return
+
+    def pega(caminho, **params):
+        r = api('GET', caminho, params={**params, 'access_token': token})
+        return r.json() if r.ok else {}
+
+    perfil = pega(conta, fields='followers_count,follows_count,media_count,username')
+    periodos = {}
+    for dias in (1, 7, 28):
+        inicio = int((agora - timedelta(days=dias)).timestamp())
+        totais = {}
+        for m in ('reach', 'views', 'profile_views', 'accounts_engaged', 'total_interactions', 'likes', 'comments',
+                  'shares', 'saves', 'follows_and_unfollows', 'profile_links_taps'):
+            d = pega(f'{conta}/insights', metric=m, period='day', metric_type='total_value', since=inicio, until=int(agora.timestamp()))
+            for item in d.get('data', []):
+                tv = item.get('total_value') or {}
+                if m == 'follows_and_unfollows':
+                    for b in (tv.get('breakdowns') or [{}])[0].get('results', []):
+                        totais['seguiu' if 'FOLLOWER' == (b.get('dimension_values') or [''])[0] else 'deixou'] = b.get('value', 0)
+                    totais.setdefault('seguiu', tv.get('value', 0))
+                else:
+                    totais[m] = tv.get('value', 0)
+        periodos[str(dias)] = totais
+    posts = []
+    for mdia in pega(f'{conta}/media', fields='id,caption,media_type,media_product_type,timestamp,permalink,like_count,comments_count', limit=15).get('data', []):
+        metricas = 'reach,saved,shares,views,total_interactions'
+        ins = {i['name']: (i.get('values') or [{}])[0].get('value', 0) for i in pega(f"{mdia['id']}/insights", metric=metricas).get('data', [])}
+        posts.append({'quando': mdia.get('timestamp'), 'tipo': mdia.get('media_product_type') or mdia.get('media_type'),
+                      'texto': (mdia.get('caption') or '').split(chr(10))[0][:90], 'link': mdia.get('permalink'),
+                      'curtidas': mdia.get('like_count', 0), 'comentarios': mdia.get('comments_count', 0), **ins})
+    publico = {}
+    for quebra in ('country', 'city', 'age', 'gender'):
+        d = pega(f'{conta}/insights', metric='follower_demographics', period='lifetime', metric_type='total_value', breakdown=quebra)
+        for item in d.get('data', []):
+            res = ((item.get('total_value') or {}).get('breakdowns') or [{}])[0].get('results', [])
+            publico[quebra] = sorted(([(r.get('dimension_values') or ['?'])[0], r.get('value', 0)] for r in res), key=lambda x: -x[1])[:8]
+    corpo = {'perfil': perfil, 'periodos': periodos, 'posts': posts, 'publico': publico,
+             'em': agora.isoformat(), 'dia': agora.astimezone(BRASILIA).date().isoformat()}
+    try:
+        oidc = requests.get(pedido_url, params={'audience': SERVIDOR_ASSINATURA}, headers={'Authorization': f'Bearer {pedido_token}'}, timeout=20).json()['value']
+        r = requests.post(f'{SERVIDOR_ASSINATURA}/instagram', json=corpo, timeout=30, headers={'Authorization': f'Bearer {oidc}'})
+        r.raise_for_status()
+        estado['metricas_em'] = agora.isoformat()
+        print(f"Painel: números do Instagram enviados ({perfil.get('followers_count')} seguidores, {len(posts)} posts).")
+    except Exception as e:
+        print(f'::warning::Números do Instagram não chegaram ao painel ({type(e).__name__}).')
+
+
 def main():
     if '--teste' in sys.argv:
         resto = sys.argv[sys.argv.index('--teste') + 1:]
@@ -1426,6 +1488,10 @@ def main():
         educativo(estado, agora, conta, token)
         campanha_cortesia(estado, agora, conta, token)
         reels(alertas, estado, agora, conta, token)
+    try:
+        metricas_instagram(conta, token, estado, agora)
+    except Exception as e:  # o painel é extra: nunca atrapalha as postagens
+        print(f'::warning::Números do Instagram: {type(e).__name__}: {e}')
     guardar(estado, 'Instagram: controle atualizado')
 
 
