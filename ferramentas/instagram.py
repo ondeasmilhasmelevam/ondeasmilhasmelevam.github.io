@@ -66,11 +66,12 @@ LOGO = RAIZ / 'logo.jpeg'
 REPO = os.environ.get('GITHUB_REPOSITORY', 'ondeasmilhasmelevam/ondeasmilhasmelevam.github.io')
 GRAPH = 'https://graph.instagram.com/v21.0'
 
-LOTES_STORIES = ((8, 0), (12, 0), (16, 0), (20, 0), (21, 30))  # hora e minuto de Brasília
+# Pico do Instagram: noite (19h-21h) e almoço; de manhã cedo pega quem confere o celular antes do trabalho.
+LOTES_STORIES = ((8, 0), (12, 0), (17, 30), (19, 30), (21, 0))  # hora e minuto de Brasília
 POR_LOTE = int(os.environ.get('STORIES_POR_LOTE') or 5)
 HORAS_FRESCO = 12
 HORARIO = (8, 22)
-FEED = (('manhã', 9, 0), ('tarde', 14, 0), ('noite', 19, 0))
+FEED = (('manhã', 9, 0), ('almoço', 12, 30), ('noite', 20, 0))
 TIPOS_FEED = ('promocao',)
 POR_CARROSSEL = 6
 RENOVAR_DIAS = 7
@@ -730,6 +731,7 @@ def legenda(itens, dia, tipo):
             m = milhas(a.get('ida'))
             preco = f" a partir de {m:,} milhas".replace(',', '.') if m < 10 ** 9 else ''
             linhas.append(f"🛫 {a['origem']} → {a['destino']}:{preco} ({a.get('programa', '')})")
+    linhas += [x for v in dict.fromkeys(v for v in (vale_a_pena(a) for a in itens) if v) for x in ('', v)]
     linhas += ['', chamada_direct(tipo), 'Valores e disponibilidade podem mudar a qualquer momento.', '', HASHTAGS]
     return '\n'.join(linhas)
 
@@ -802,6 +804,41 @@ def textos_ia(itens, com_legenda=False):
     if not com_legenda or len(legenda) > 1200 or not numeros(legenda) <= validos:
         legenda = ''
     return {'chamadas': chamadas + [''] * (len(itens) - len(chamadas)), 'legenda': legenda}
+
+
+# "Vale a pena?": bônus de transferência partindo de Livelo ou Esfera, com o preço máximo do milheiro do
+# Termômetro. Ex.: Livelo a até R$ 31 com 130% de bônus deixa o ponto Azul a R$ 13,48 (teto bom: R$ 14).
+ORIGENS_TETO = {'livelo': 'Livelo', 'esfera': 'Esfera'}
+DESTINOS_TETO = (('azul', 'Azul Fidelidade', 'Azul'), ('smiles', 'Smiles', 'Smiles'), ('latam', 'LATAM Pass', 'LATAM Pass'),
+                 ('iberia', 'Iberia (Avios)', 'Avios'), ('avios', 'Iberia (Avios)', 'Avios'))
+
+
+def vale_a_pena(a):
+    if a.get('tipo') != 'promocao':
+        return ''
+    titulo = a.get('titulo', '').lower()
+    if 'transfer' not in titulo or not re.search(r'b[oô]nus', titulo):
+        return ''  # só promoção de transferência com bônus (não anúncio de passagem que cita bônus no resumo)
+    texto = f"{titulo} {a.get('parceiros', '')}".lower()
+    bonus = re.search(r'(\d{2,3})\s*%', titulo)
+    origem = next((nome for chave, nome in ORIGENS_TETO.items() if chave in texto), '')
+    destino = next(((nome, curto) for chave, nome, curto in DESTINOS_TETO if chave in texto), None)
+    tetos = {m['programa']: m['teto'] for m in (termometro() or {}).get('milheiro', []) if m.get('moeda') == 'BRL'}
+    if not (bonus and origem and destino and origem in tetos and destino[0] in tetos):
+        return ''
+    b = int(bonus.group(1))
+    sai = tetos[origem] / (1 + b / 100)
+    real = lambda v: f'R$ {v:.2f}'.replace('.', ',')
+    if sai <= tetos[destino[0]]:
+        return (f'💡 Vale a pena? {origem} → {destino[1]} com {b}% de bônus: comprando {origem} a até {real(tetos[origem])} o milheiro, '
+                f'o ponto {destino[1]} sai a {real(sai)}, abaixo do teto bom de {real(tetos[destino[0]])}. Vale, se for usar!')
+    return (f'💡 Vale a pena? {origem} → {destino[1]} com {b}% de bônus: só compensa se você já tem os pontos ou compra {origem} bem abaixo de '
+            f'{real(tetos[origem])}. No teto, o ponto {destino[1]} sairia a {real(sai)}, acima dos {real(tetos[destino[0]])} que valem a pena.')
+
+
+def bloco_vale(itens):
+    linhas = list(dict.fromkeys(v for v in (vale_a_pena(a) for a in itens) if v))
+    return ('\n\n' + '\n\n'.join(linhas)) if linhas else ''
 
 
 def chamada_direct(tipo):
@@ -999,7 +1036,7 @@ def carrossel(alertas, estado, agora, conta, token, tipo, periodo):
     usados.extend(a['id'] for a in itens)
     ia = textos_ia(itens, com_legenda=True)
     chamadas = ia.get('chamadas') or [''] * len(itens)
-    texto = ia['legenda'] + rodape_legenda(tipo) if ia.get('legenda') else legenda(itens, dia, tipo)
+    texto = ia['legenda'] + bloco_vale(itens) + rodape_legenda(tipo) if ia.get('legenda') else legenda(itens, dia, tipo)
     # sem capa: abre direto na melhor oferta (a capa repetida deixava o perfil todo igual)
     telas = [(f'feed-{tipo}-{n}.jpg', imagem(a, FMT_FEED, c)) for n, (a, c) in enumerate(zip(itens, chamadas), 1)]
     selo_arraste(telas[0][1], len(itens) - 1)
@@ -1163,7 +1200,7 @@ def story_cortesia():
 def campanha_cortesia(estado, agora, conta, token):
     dia = agora.astimezone(BRASILIA)
     mes = dia.strftime('%Y-%m')
-    if dia.day != 1 or estado.get('campanha_mes') == mes:
+    if dia.day > 7 or estado.get('campanha_mes') == mes:
         return
     urls = enviar([('story-cortesia.jpg', story_cortesia())], estado, 'Story da campanha de cortesia')
     if not urls:
@@ -1191,7 +1228,7 @@ def teste(pasta):
         for n, (a, c) in enumerate(zip(itens, chamadas), 1):
             tela = imagem(a, FMT_FEED, c)
             (selo_arraste(tela, len(itens) - 1) if n == 1 else tela).save(pasta / f'feed-{tipo}-{n}.jpg', quality=90)
-        texto = ia['legenda'] + rodape_legenda(tipo) if ia.get('legenda') else legenda(itens, agora.astimezone(BRASILIA), tipo)
+        texto = ia['legenda'] + bloco_vale(itens) + rodape_legenda(tipo) if ia.get('legenda') else legenda(itens, agora.astimezone(BRASILIA), tipo)
         (pasta / f'legenda-{tipo}.txt').write_text(texto, encoding='utf-8')
     story_cortesia().convert('RGB').save(pasta / 'story-cortesia.jpg', quality=90)
     for t, tema in enumerate(temas_educativos()):
