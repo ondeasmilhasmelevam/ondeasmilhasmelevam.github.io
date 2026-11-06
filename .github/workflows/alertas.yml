@@ -45,6 +45,7 @@ jobs:
           TELEGRAM_SESSAO: ${{ secrets.TELEGRAM_SESSAO }}
           TELEGRAM_GRUPO: ${{ secrets.TELEGRAM_GRUPO }}
           INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+          YOUTUBE_CREDENCIAL: ${{ secrets.YOUTUBE_CREDENCIAL }}
           INSTAGRAM_ID: ${{ secrets.INSTAGRAM_ID }}
           GH_SEGREDOS: ${{ secrets.GH_SEGREDOS }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

@@ -1329,6 +1329,36 @@ def reel(alertas, estado, agora, conta, token):
         return print(f'::warning::Reel não publicado: {e}')
     estado['reel_dia'] = hoje
     print(f'Reel do dia publicado com {len(itens)} ofertas.')
+    rotas = ', '.join(dict.fromkeys(a.get('destino') or a.get('titulo', '') for a in itens if a.get('destino') or a.get('titulo')))
+    shorts(mp4, f'Passagens com milhas de hoje: {rotas}', texto)
+
+
+# ---------- YouTube Shorts: o mesmo vídeo do Reel, no canal @ondeasmilhasmelevam ----------
+# Credencial em YOUTUBE_CREDENCIAL (JSON com client_id, client_secret e refresh_token), gerada
+# uma vez por ferramentas/youtube_entrar.py. Sem ela, só pula.
+def shorts(mp4, titulo, descricao):
+    cred = os.environ.get('YOUTUBE_CREDENCIAL', '').strip()
+    if not cred:
+        return
+    try:
+        c = json.loads(cred)
+        token = requests.post('https://oauth2.googleapis.com/token', timeout=30, data={
+            'client_id': c['client_id'], 'client_secret': c['client_secret'], 'refresh_token': c['refresh_token'],
+            'grant_type': 'refresh_token'}).json()['access_token']
+        titulo = (titulo[:88].rsplit(',', 1)[0] if len(titulo) > 88 else titulo) + ' #Shorts'
+        descricao = descricao.replace('<', '').replace('>', '')[:4500] + chr(10) + chr(10) + f'Alertas na hora: {SITE}'
+        meta = {'snippet': {'title': titulo, 'description': descricao, 'categoryId': '19', 'defaultLanguage': 'pt-BR',
+                            'tags': ['milhas', 'passagens com milhas', 'viagem', 'promoção de passagem', 'pontos']},
+                'status': {'privacyStatus': 'public', 'selfDeclaredMadeForKids': False}}
+        inicio = requests.post('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status', json=meta,
+                               headers={'Authorization': f'Bearer {token}', 'X-Upload-Content-Type': 'video/mp4'}, timeout=30)
+        inicio.raise_for_status()
+        envio = requests.put(inicio.headers['Location'], data=Path(mp4).read_bytes(), timeout=300,
+                             headers={'Authorization': f'Bearer {token}', 'Content-Type': 'video/mp4'})
+        envio.raise_for_status()
+        print(f"Shorts publicado: https://youtube.com/shorts/{envio.json().get('id')}")
+    except Exception as e:  # o YouTube é extra: nunca atrapalha o Instagram
+        print(f'::warning::Shorts não publicado: {type(e).__name__}: {str(e)[:200]}')
 
 
 def teste(pasta):
