@@ -1,5 +1,27 @@
 [
  {
+  "id": "1290836068-7619",
+  "data": "2026-11-06T16:07:50Z",
+  "tipo": "promocao",
+  "titulo": "ASSINE O CLUBE AZUL 1.000 COM DESCONTO ESPECIAL",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Assine o Clube Azul 1.000 por apenas R$ 15,00 no primeiro mês e obtenha 50% de desconto nas 11 mensalidades seguintes, pagando R$ 22,50/mês. Ideal para acumular pontos com custo reduzido.",
+  "detalhes": [
+   "Primeiro mês: R$ 15,00 (promoção Azul Friday).",
+   "11 mensalidades seguintes: R$ 22,50 (50% de desconto).",
+   "Valor integral após promoção: R$ 45,00/mês.",
+   "Pontuação mensal: 1.000 pontos.",
+   "Pontuação total em 12 meses: 12.000 pontos."
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "06/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/adesao-relampago"
+  ],
+  "ate": "2026-11-06T23:59:59-03:00"
+ },
+ {
   "id": "3761373661-9121",
   "data": "2026-11-06T15:44:19Z",
   "origem": "Belo Horizonte",
