@@ -1255,6 +1255,82 @@ def campanha_cortesia(estado, agora, conta, token):
     print('Story da campanha de cortesia publicado.')
 
 
+# ---------- Reel do dia (19h): as melhores ofertas em sequência, com música ----------
+# Reels são o que o Instagram mais mostra para quem ainda não segue o perfil: é o que traz gente nova.
+REEL_HORA = (19, 0)
+REEL_SEGUNDOS = 3  # por oferta
+PERGUNTAS_REEL = ('Qual dessas você emitiria hoje? Comenta o número 👇', 'Pra onde você iria primeiro? Comenta aqui 👇',
+                  'Marca quem viaja com você nessa 👇', 'Qual destino tá na sua lista? Me conta nos comentários 👇')
+
+
+def video_reel(jpgs, mp4):
+    """Uma tela por oferta, com entrada suave, e a trilha da marca (9:16, H.264 + AAC)."""
+    trilhas = sorted(MUSICAS.glob('*.m4a'))
+    if not trilhas:
+        return False
+    trilha = trilhas[int(hashlib.md5(mp4.name.encode()).hexdigest(), 16) % len(trilhas)]
+    entradas, filtros = [], []
+    for i, j in enumerate(jpgs):
+        entradas += ['-loop', '1', '-framerate', '30', '-t', str(REEL_SEGUNDOS), '-i', str(j)]
+        filtros.append(f'[{i}:v]scale=1080:1920,format=yuv420p,fade=t=in:st=0:d=0.35[v{i}]')
+    filtro = ';'.join(filtros) + ';' + ''.join(f'[v{i}]' for i in range(len(jpgs))) + f'concat=n={len(jpgs)}:v=1:a=0[v]'
+    total = REEL_SEGUNDOS * len(jpgs)
+    try:
+        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', *entradas, '-i', str(trilha), '-filter_complex', filtro,
+                        '-map', '[v]', '-map', f'{len(jpgs)}:a', '-t', str(total), '-af', f'afade=t=out:st={total - 1}:d=1',
+                        '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23', '-c:a', 'aac', '-ar', '48000', '-b:a', '128k',
+                        '-movflags', '+faststart', str(mp4)], check=True, timeout=240)
+        return True
+    except (OSError, subprocess.SubprocessError) as e:
+        print(f'::warning::Vídeo do Reel não saiu: {e}')
+        mp4.unlink(missing_ok=True)
+        return False
+
+
+def itens_reel(alertas, agora):
+    itens = escolher_carrossel(alertas, agora, 'passagem')[:4]
+    if len(itens) < 3:
+        itens += escolher_carrossel(alertas, agora, 'promocao')[:4 - len(itens)]
+    return itens
+
+
+def reel(alertas, estado, agora, conta, token):
+    dia = agora.astimezone(BRASILIA)
+    hoje = dia.date().isoformat()
+    if estado.get('reel_dia') == hoje or (dia.hour, dia.minute) < REEL_HORA:
+        return
+    itens = itens_reel(alertas, agora)
+    if len(itens) < 2:
+        return print('Reel: menos de 2 ofertas boas hoje, fica para amanhã.')
+    ia = textos_ia(itens, com_legenda=True)
+    chamadas = ia.get('chamadas') or [''] * len(itens)
+    PASTA.mkdir(exist_ok=True)
+    for f in [*PASTA.glob('*.jpg'), *PASTA.glob('*.mp4')]:
+        f.unlink()
+    jpgs = []
+    for i, (a, c) in enumerate(zip(itens, chamadas)):
+        jpgs.append(PASTA / f'reel-{hoje}-{i}.jpg')
+        imagem(a, STORY, c).convert('RGB').save(jpgs[-1], 'JPEG', quality=90)
+    mp4 = PASTA / f'reel-{hoje}.mp4'
+    if not video_reel(jpgs, mp4) or not guardar(estado, 'Vídeo do Reel do dia'):
+        return
+    sha = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=RAIZ, capture_output=True, text=True).stdout.strip()
+    url = f'{SITE}/stories/{mp4.name}?v={sha[:8]}'
+    if not no_ar(url):
+        return print('::warning::Reel: o vídeo não ficou no ar a tempo; tenta na próxima volta.')
+    tipo = 'promocao' if all(a.get('tipo') == 'promocao' for a in itens) else 'passagem'
+    pergunta = PERGUNTAS_REEL[dia.toordinal() % len(PERGUNTAS_REEL)]
+    base = ia['legenda'] if ia.get('legenda') else legenda(itens, dia, tipo).split(chr(10) + chr(10) + '💬')[0]
+    texto = base + bloco_vale(itens, ia.get('regras')) + chr(10) + chr(10) + pergunta + rodape_legenda(tipo)
+    try:
+        cid = criar(conta, token, media_type='REELS', video_url=url, caption=texto[:2100], share_to_feed='true')
+        publicar(conta, token, cid)
+    except Exception as e:
+        return print(f'::warning::Reel não publicado: {e}')
+    estado['reel_dia'] = hoje
+    print(f'Reel do dia publicado com {len(itens)} ofertas.')
+
+
 def teste(pasta):
     """Gera stories e os carrosséis de exemplo com os alertas atuais, sem publicar."""
     pasta.mkdir(parents=True, exist_ok=True)
@@ -1273,6 +1349,13 @@ def teste(pasta):
         texto = ia['legenda'] + bloco_vale(itens, ia.get('regras')) + rodape_legenda(tipo) if ia.get('legenda') else legenda(itens, agora.astimezone(BRASILIA), tipo)
         (pasta / f'legenda-{tipo}.txt').write_text(texto, encoding='utf-8')
     story_cortesia().convert('RGB').save(pasta / 'story-cortesia.jpg', quality=90)
+    itens = itens_reel(alertas, agora)
+    jpgs = []
+    for i, a in enumerate(itens):
+        jpgs.append(pasta / f'reel-{i}.jpg')
+        imagem(a, STORY).convert('RGB').save(jpgs[-1], quality=90)
+    if len(jpgs) >= 2:
+        video_reel(jpgs, pasta / 'reel.mp4')
     for t, tema in enumerate(temas_educativos()):
         imgs, texto = carrossel_educativo(tema)
         for i, im in enumerate(imgs):
@@ -1303,6 +1386,7 @@ def main():
         feed(alertas, estado, agora, conta, token)
         educativo(estado, agora, conta, token)
         campanha_cortesia(estado, agora, conta, token)
+        reel(alertas, estado, agora, conta, token)
     guardar(estado, 'Instagram: controle atualizado')
 
 
