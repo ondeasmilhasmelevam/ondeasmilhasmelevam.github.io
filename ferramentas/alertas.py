@@ -13,7 +13,6 @@ Em grupos (não canais), só valem as mensagens dos administradores.
 """
 import asyncio
 import hashlib
-import html
 import json
 import os
 import re
@@ -293,12 +292,8 @@ async def main():
                 passagens.append({'id': f'{grupo.id}-{m.id}',
                                   'data': m.date.astimezone(timezone.utc).isoformat().replace('+00:00', 'Z'), **p})
         print(f'{getattr(grupo, "title", grupo.id)}: {len(passagens) - antes} passagens/promoções')
-    passagens.sort(key=lambda p: p['data'], reverse=True)
-    try:
-        await canal_publico(cliente, passagens)
-    except Exception as e:  # o canal é vitrine: nunca para os alertas
-        print(f'::warning::Canal público não postou: {type(e).__name__}: {e}')
     await cliente.disconnect()
+    passagens.sort(key=lambda p: p['data'], reverse=True)
     SAIDA.parent.mkdir(exist_ok=True)
     COMPLETO.write_text(json.dumps(passagens, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     enviar_para_assinantes(passagens)
@@ -309,58 +304,6 @@ async def main():
     except Exception as e:  # os números são enfeite: nunca param os alertas
         print(f'::warning::Números do site não atualizados: {type(e).__name__}: {e}')
     print(f'{len(passagens)} itens gravados ({sum(1 for p in passagens if p.get("tipo") == "promocao")} promoções, {len(grupos)} grupos).')
-
-
-# Canal público no Telegram (vitrine): 3 passagens boas por dia, só rota, programa e milhas, e
-# sempre com algumas horas de atraso. As datas e o link para emitir, na hora, são do assinante.
-CANAL_PUBLICO = 'ondeasmilhasmelevam'  # t.me/ondeasmilhasmelevam (a conta do robô é dona do canal)
-HORARIOS_CANAL = ((9, 0), (13, 0), (20, 0))  # Brasília
-ATRASO_CANAL = timedelta(hours=3)
-
-
-async def canal_publico(cliente, passagens):
-    from instagram import BONS
-    try:
-        canal = await cliente.get_entity(CANAL_PUBLICO)
-    except Exception:
-        return  # canal ainda não criado
-    agora = datetime.now(timezone.utc)
-    hoje = agora.astimezone(BRASILIA)
-    vez = max((hoje.replace(hour=h, minute=m, second=0, microsecond=0) for h, m in HORARIOS_CANAL if (hoje.hour, hoje.minute) >= (h, m)), default=None)
-    if not vez:
-        return
-    recentes = [m async for m in cliente.iter_messages(canal, limit=20) if m.out]
-    if recentes and recentes[0].date >= vez:
-        return  # este horário já saiu
-    ja = ' '.join(m.message or '' for m in recentes)
-    candidatas = [p for p in passagens if p.get('tipo') != 'promocao' and p.get('destino_iata') and f"({p['destino_iata']})" not in ja
-                  and agora - timedelta(hours=30) <= datetime.fromisoformat(p['data'].replace('Z', '+00:00')) <= agora - ATRASO_CANAL]
-    escolha = melhores(candidatas, 1)
-    if not escolha or escolha[0]['nivel'] not in BONS:
-        return print('Canal público: nenhuma passagem boa para este horário.')
-    a = escolha[0]
-    site = 'https://ondeasmilhasmelevam.com.br'
-    try:
-        guias = json.loads(SAIDA.with_name('guias.json').read_text(encoding='utf-8')).get('destinos', [])
-    except (OSError, ValueError):
-        guias = []
-    guia = next((g for g in guias if g.get('aeroporto_iata') == a['destino_iata']), None)
-    destino = f"{site}/destinos/{re.sub(r'[.]html?$', '', guia['slug'])}/" if guia else f'{site}/#passagens'
-    unidade = 'pontos' if re.search(r'avios|pontos|points', a['programa'], re.I) else 'milhas'
-    selo = {'espetacular': '🔥 Preço ESPETACULAR', 'muito bom': '✅ Preço MUITO BOM', 'bom': '👍 Preço BOM'}.get(a['nivel'], '')
-    milhas_txt = f"{a['milhas']:,}".replace(',', '.')
-    linhas = [f"✈️ <b>{html.escape(a['origem'])} ({a['origem_iata']}) → {html.escape(a['destino'])} ({a['destino_iata']})</b>",
-              f"💺 {html.escape(a['cabine'])} · {html.escape(a['programa'])}",
-              f"💰 <b>{milhas_txt} {unidade}</b> o trecho + taxas"]
-    if selo:
-        linhas.append(f'{selo} pelo nosso Termômetro de milhas')
-    linhas += ['',
-               f'🔒 Datas e link para emitir saem <b>na hora</b> para assinantes: <a href="{site}/#assinar">assinar</a>',
-               f'🆓 As melhores da semana no seu e-mail, grátis: <a href="{site}/#gratis">receber</a>',
-               f'🌎 Guia e preços de {html.escape(a["destino"])}: <a href="{destino}">ver</a>']
-    texto = chr(10).join(linhas)
-    await cliente.send_message(canal, texto, parse_mode='html', link_preview=False)
-    print(f"Canal público: postou {a['origem_iata']} → {a['destino_iata']}.")
 
 
 # Prova social no site e no e-mail da semana: quantas passagens e promoções apareceram nos
