@@ -184,9 +184,10 @@
   "3761373661-9049"
  ],
  "ultimo_em": "2026-11-06T11:05:13.170788+00:00",
- "ultimo_tipo": "passagem",
+ "ultimo_tipo": "promocao",
  "lotes_stories": [
-  "08:00"
+  "08:00",
+  "12:00"
  ],
  "horarios_feed": [
   "09:00"
