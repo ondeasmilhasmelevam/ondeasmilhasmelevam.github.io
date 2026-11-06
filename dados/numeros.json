@@ -1,9 +1,9 @@
 {
- "atualizado": "2026-11-06T13:30:02.737221Z",
+ "atualizado": "2026-11-06T13:36:27.182756Z",
  "dias": 30,
- "passagens": 998,
+ "passagens": 1007,
  "promocoes": 68,
- "destinos": 124,
+ "destinos": 125,
  "executiva": 207,
  "destaques": [
   {
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 998,
+  "passagens": 1007,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -301,6 +301,19 @@
     "milhas": 17800,
     "nivel": "muito bom",
     "regiao": "america-do-sul"
+   },
+   {
+    "id": "2008590742-14937",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Boston",
+    "destino_iata": "BOS",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-06T13:30:13Z",
+    "milhas": 59700,
+    "nivel": "muito bom",
+    "regiao": "america-do-norte"
    },
    {
     "id": "2008590742-14402",
@@ -922,19 +935,6 @@
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
     "data": "2026-11-01T16:47:13Z",
-    "milhas": 14000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-8795",
-    "origem": "São Luís",
-    "origem_iata": "SLZ",
-    "destino": "Belém",
-    "destino_iata": "BEL",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-03T11:06:45Z",
     "milhas": 14000,
     "nivel": "",
     "regiao": "brasil"
