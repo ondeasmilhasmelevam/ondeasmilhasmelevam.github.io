@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-06T11:56:02.085726Z",
+ "atualizado": "2026-11-06T12:02:14.359488Z",
  "dias": 30,
- "passagens": 944,
+ "passagens": 950,
  "promocoes": 68,
- "destinos": 120,
- "executiva": 202,
+ "destinos": 121,
+ "executiva": 203,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 944,
+  "passagens": 950,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -836,6 +836,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9073",
+    "origem": "Brasília",
+    "origem_iata": "BSB",
+    "destino": "Teresina",
+    "destino_iata": "THE",
+    "cabine": "Econômica",
+    "programa": "Latam",
+    "data": "2026-11-06T11:56:40Z",
+    "milhas": 10736,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-8751",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -923,19 +936,6 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-03T11:06:45Z",
     "milhas": 14000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-8883",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Vitória da Conquista",
-    "destino_iata": "VDC",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-04T12:29:58Z",
-    "milhas": 14300,
     "nivel": "",
     "regiao": "brasil"
    },
