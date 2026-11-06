@@ -1030,26 +1030,6 @@
   "link_nome": "Privilege Club"
  },
  {
-  "id": "1290836068-7608",
-  "data": "2026-11-05T16:07:30Z",
-  "tipo": "promocao",
-  "titulo": "TURBO LIVELO: TURBINE SEUS PONTOS EM ATÉ 25X",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Assinantes do Clube Livelo podem turbinar pontos acumulados nos últimos 12 meses em até 25x com milheiro a partir de R$ 29,40 no Pix.",
-  "detalhes": [
-   "Multiplicadores 10x, 15x e 25x: R$ 30,00 no parcelado ou R$ 29,40 no Pix (2% OFF).",
-   "Multiplicadores 3x e 5x: R$ 31,00 no parcelado ou R$ 30,38 no Pix (2% OFF).",
-   "Pagamento no cartão em até 12x sem juros ou Pix com 2% de desconto."
-  ],
-  "parceiros": "Livelo",
-  "validade": "05/11/2026",
-  "links": [
-   "http://livelo.com.br/turbo-livelo⁠"
-  ],
-  "ate": "2026-11-05T23:59:59-03:00"
- },
- {
   "id": "2361370250-6095",
   "data": "2026-11-05T16:01:20Z",
   "origem": "São Paulo",
@@ -4325,26 +4305,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "1290836068-7587",
-  "data": "2026-11-04T14:17:09Z",
-  "tipo": "promocao",
-  "titulo": "IHG ONE REWARDS: COMPRE PONTOS E GANHE ATÉ 100% DE BÔNUS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Compre pontos no programa IHG One Rewards e receba até 100% de bônus dependendo da quantidade adquirida.",
-  "detalhes": [
-   "80% de bônus para 5.000 a 10.000 pontos.",
-   "90% de bônus para 11.000 a 39.000 pontos.",
-   "100% de bônus para 40.000 pontos ou mais."
-  ],
-  "parceiros": "IHG One Rewards",
-  "validade": "05/11/2026",
-  "links": [
-   "https://storefront.points.com/IHG-rewards-club/sso/mv-delegate/buy"
-  ],
-  "ate": "2026-11-05T23:59:59-03:00"
- },
- {
   "id": "1290836068-7586",
   "data": "2026-11-04T14:17:04Z",
   "tipo": "promocao",
@@ -4411,25 +4371,6 @@
    "https://link.dia23.com.br/r/UBOaO5f"
   ],
   "ate": ""
- },
- {
-  "id": "1290836068-7583",
-  "data": "2026-11-04T14:16:49Z",
-  "tipo": "promocao",
-  "titulo": "UPGRADE CLUBE LIVELO ESPECIAL: ATÉ 105.000 PONTOS EM 12 MESES",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Faça o upgrade para o Clube Livelo Especial 5.000 e acumule até 105.000 pontos em 12 meses com bonificação promocional.",
-  "detalhes": [
-   "Anual: 60.000 pontos do Clube + 45.000 pontos extras (Total de 105.000 pontos).",
-   "Mensal: 60.000 pontos do Clube + 42.000 pontos extras (Total de 102.000 pontos)."
-  ],
-  "parceiros": "Livelo",
-  "validade": "05/11/2026, às 23h59",
-  "links": [
-   "https://www.livelo.com.br/upgrade-promo-CDC15600"
-  ],
-  "ate": "2026-11-05T23:59:59-03:00"
  },
  {
   "id": "2361370250-6076",
@@ -6876,25 +6817,6 @@
   "ate": "2026-11-21T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7445",
-  "data": "2026-10-26T18:47:09Z",
-  "tipo": "promocao",
-  "titulo": "EXPERIÊNCIA LIMITLESS: PALMEIRAS X CLUBE DO REMO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Adquira ingressos para o jogo Palmeiras x Clube do Remo com 8.000 pontos no programa Accor Limitless.",
-  "detalhes": [
-   "8.000 pontos para o evento.",
-   "Local: Brasil/SP."
-  ],
-  "parceiros": "Accor Limitless",
-  "validade": "05/11/2026",
-  "links": [
-   "https://limitlessexperiences.accor.com/le-np-pxcr-vp-051126"
-  ],
-  "ate": "2026-11-05T23:59:59-03:00"
- },
- {
   "id": "1290836068-7444",
   "data": "2026-10-26T18:47:03Z",
   "tipo": "promocao",
@@ -6932,27 +6854,6 @@
    "https://all.accor.com/a/pt-br/loyalty-program/subscription-program/all-signature.html"
   ],
   "ate": "2026-11-20T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7403",
-  "data": "2026-10-23T18:43:02Z",
-  "tipo": "promocao",
-  "titulo": "IHG ONE REWARDS: COMPRA DE PONTOS COM BÔNUS DE ATÉ 100%",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Compre pontos IHG One Rewards e ganhe até 100% de bônus, válido até 05/11/2026. Milheiros a partir de R$ 25,07.",
-  "detalhes": [
-   "80% de bônus na compra de 5.000 a 10.000 pontos.",
-   "90% de bônus na compra de 11.000 a 39.000 pontos.",
-   "100% de bônus na compra de 40.000 pontos ou mais.",
-   "Milheiro a partir de R$ 25,07 (100% de bônus)."
-  ],
-  "parceiros": "IHG One Rewards",
-  "validade": "05/11/2026",
-  "links": [
-   "https://storefront.points.com/IHG-rewards-club/sso/mv-delegate/buy"
-  ],
-  "ate": "2026-11-05T23:59:59-03:00"
  },
  {
   "id": "1290836068-7366",
