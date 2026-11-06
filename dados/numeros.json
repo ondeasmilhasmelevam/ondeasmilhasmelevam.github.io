@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-06T14:51:09.440871Z",
+ "atualizado": "2026-11-06T14:57:17.044220Z",
  "dias": 30,
- "passagens": 1022,
+ "passagens": 1023,
  "promocoes": 72,
- "destinos": 125,
- "executiva": 209,
+ "destinos": 126,
+ "executiva": 210,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1022,
+  "passagens": 1023,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -1122,6 +1122,19 @@
     "regiao": "europa"
    },
    {
+    "id": "2361370250-6193",
+    "origem": "Vancouver",
+    "origem_iata": "YVR",
+    "destino": "Sydney",
+    "destino_iata": "SYD",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-06T14:52:48Z",
+    "milhas": 80000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "2361370250-6084",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -1185,19 +1198,6 @@
     "milhas": 91100,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "2361370250-5953",
-    "origem": "Fortaleza",
-    "origem_iata": "FOR",
-    "destino": "Zurique",
-    "destino_iata": "ZRH",
-    "cabine": "Executiva",
-    "programa": "TAP Miles&Go",
-    "data": "2026-11-02T10:55:18Z",
-    "milhas": 135000,
-    "nivel": "normal",
-    "regiao": "europa"
    }
   ]
  }

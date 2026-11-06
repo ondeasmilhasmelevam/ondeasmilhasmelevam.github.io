@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6193",
+  "data": "2026-11-06T14:52:48Z",
+  "origem": "Vancouver",
+  "origem_iata": "YVR",
+  "destino": "Sydney",
+  "destino_iata": "SYD",
+  "companhia": "Qantas",
+  "cabine": "Executiva",
+  "programa": "AAdvantage",
+  "ida": "80.000 milhas + R$ 398,57",
+  "volta": "",
+  "link_nome": "AAdvantage"
+ },
+ {
   "id": "3761373661-9120",
   "data": "2026-11-06T14:42:52Z",
   "origem": "Salvador",
@@ -7316,31 +7330,6 @@
    "https://meliuz.onelink.me/2657008059/3kx8908c?id=57"
   ],
   "ate": "2026-11-06T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7588",
-  "data": "2026-11-04T14:56:07Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFERÊNCIA ESFERA PARA ALL ACCOR COM BÔNUS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Clientes Esfera podem transferir pontos para o programa ALL Accor. A promoção oferece 20% de pontos de volta e, para assinantes ALL Signature, 10% de bônus. A transferência mínima é de 30.000 pontos e a taxa de conversão é 3,5 Esfera por 1 ALL.",
-  "detalhes": [
-   "20% de pontos de volta",
-   "10% de bônus para assinantes ALL Signature",
-   "transferência mínima 30.000 pontos para clientes Esfera sem clube",
-   "taxa de conversão 3,5 pontos Esfera por 1 ponto ALL",
-   "limite de 1 transação por CPF",
-   "bônus exclusivo para assinantes ALL Signature limitado a 50.000 pontos Rewards por CPF",
-   "pontos de volta e bônus creditados em até 30 dias corridos após término da promoção",
-   "validade dos pontos 2 anos"
-  ],
-  "parceiros": "Esfera",
-  "validade": "até a próxima sexta-feira, 6 de novembro",
-  "links": [
-   "https://link.dia23.com.br/r/4MtbMyu"
-  ],
-  "ate": ""
  },
  {
   "id": "1290836068-7585",
