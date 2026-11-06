@@ -188,6 +188,11 @@
  "lotes_stories": [
   "08:00"
  ],
- "horarios_feed": [],
- "feed_usados": []
+ "horarios_feed": [
+  "09:00"
+ ],
+ "feed_usados": [
+  "1290836068-7605",
+  "1290836068-7609"
+ ]
 }
