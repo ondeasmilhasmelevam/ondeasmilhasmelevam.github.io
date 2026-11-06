@@ -59,7 +59,7 @@ def main():
     resposta = json.load(urllib.request.urlopen(cliente['token_uri'], corpo))
     if not resposta.get('refresh_token'):
         sys.exit('O Google não devolveu o acesso permanente. Rode de novo.')
-    pedido = urllib.request.Request(f'{SERVIDOR}/google/conectar', method='POST', headers={'Content-Type': 'application/json'}, data=json.dumps({
+    pedido = urllib.request.Request(f'{SERVIDOR}/google/conectar', method='POST', headers={'Content-Type': 'application/json', 'User-Agent': 'OndeAsMilhas-painel/1.0'}, data=json.dumps({
         'client_id': cliente['client_id'], 'client_secret': cliente['client_secret'], 'refresh_token': resposta['refresh_token']}).encode())
     try:
         print('Painel ligado:', json.load(urllib.request.urlopen(pedido, timeout=60)).get('conta'))
