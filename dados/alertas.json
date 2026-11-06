@@ -1,5 +1,42 @@
 [
  {
+  "id": "3761373661-9113",
+  "data": "2026-11-06T13:52:49Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "Foz do Iguaçu",
+  "destino_iata": "IGU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "21.300 milhas + Taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "1290836068-7612",
+  "data": "2026-11-06T13:51:41Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFERÊNCIA DE PONTOS PREMMIA PARA AZUL FIDELIDADE COM BÔNUS",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Transfira pontos Premmia para o programa Azul Fidelidade com até 120% de bônus para clientes Clube ou Diamante e 80% para demais clientes. Custo do milheiro a partir de R$ 15,32.",
+  "detalhes": [
+   "120% de bônus para clientes Clube ou Diamante do Azul Fidelidade.",
+   "80% de bônus para demais clientes.",
+   "Lote de 50 pontos Premmia + R$ 35,00 = 1.000 milhas + 1.200 milhas bônus (clube) / 800 milhas bônus (demais).",
+   "Lote de 200 pontos Premmia + R$ 170,00 = 5.000 milhas + 6.000 milhas bônus (clube) / 4.000 milhas bônus (demais).",
+   "Lote de 300 pontos Premmia + R$ 337,00 = 10.000 milhas + 12.000 milhas bônus (clube) / 8.000 milhas bônus (demais).",
+   "Limite de bonificação de 300.000 pontos extras por CPF."
+  ],
+  "parceiros": "Premmia, Azul Fidelidade",
+  "validade": "13/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/premmia"
+  ],
+  "ate": "2026-11-13T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-14939",
   "data": "2026-11-06T13:48:46Z",
   "origem": "Curitiba",
