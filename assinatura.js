@@ -586,6 +586,7 @@ async function mostrarPrecos(email) {
     const q = email ? `?email=${encodeURIComponent(email)}` : '';
     const p = await (await fetch(`${SERVIDOR}/precos${q}`)).json();
     $('#ass-preco-mensal').textContent = reais(p.mensal);
+    $('#ass-parcela-mensal').textContent = `Pix ou cartão · ${reais(p.mensal * 12)} em 12 meses`;
     $('#ass-preco-anual').textContent = reais(p.anual);
     $('#ass-mes-anual').textContent = reais(Math.round(p.anual / 12));
     $('#ass-de-anual').hidden = p.anual >= p.anualCheio;

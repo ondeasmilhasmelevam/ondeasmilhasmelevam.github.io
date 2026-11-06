@@ -18,8 +18,9 @@
 // saem direto pelo Gmail da marca (API do Gmail, uns 500 por dia) em vez do EmailJS (200 por mês); (busca de disponibilidade em milhas, GET /voos). Variáveis (wrangler.toml): HANDLE, PROJETO, SITE, ORIGENS, SELF, EMAILJS_*.
 
 const PLANOS = {
-  mensal: { dias: 30, preco: 2990, nome: 'Assinatura mensal' },
-  anual: { dias: 365, preco: 29700, lancamento: 14850, nome: 'Assinatura anual' }
+  // Até 31/12/2026 (LANCAMENTO_ATE): mensal R$ 29,90 e anual R$ 297 (R$ 148,50 no 1º ano). Depois: R$ 39,90 e R$ 397.
+  mensal: { dias: 30, get preco() { return lancamentoAtivo() ? 2990 : 3990; }, nome: 'Assinatura mensal' },
+  anual: { dias: 365, get preco() { return lancamentoAtivo() ? 29700 : 39700; }, lancamento: 14850, nome: 'Assinatura anual' }
 };
 const API = 'https://api.checkout.infinitepay.io';
 
