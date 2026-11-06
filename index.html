@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=98">
+<link rel="stylesheet" href="estilo.css?v=99">
 </head>
 <body>
 <header class="bar">
@@ -51,6 +51,7 @@
         <div class="menu-sub">
           <a href="#hoje" title="Hoje"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><span>Hoje</span></a>
           <a href="#radar" title="Meu Radar"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 12 18.5 5.5"/></svg><span>Meu Radar</span></a>
+          <a href="#historico" title="Histórico de preços"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg><span>Histórico de preços</span></a>
           <a href="#guias" title="Guia de destinos"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5 9 4l6 2.5L20.5 4v13.5L15 20l-6-2.5L3.5 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span>Guia de destinos</span></a>
           <a href="#guia" title="Como emitir"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v3.5a2.5 2.5 0 0 0 0 5V18H4v-3.5a2.5 2.5 0 0 0 0-5z"/><path d="M14 6v12" stroke-dasharray="2 2.5"/></svg><span>Como emitir</span></a>
           <a href="#termometro" title="Termômetro"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 14.6V5a2 2 0 0 0-4 0v9.6a4 4 0 1 0 4 0z"/><path d="M12 11v6"/></svg><span>Termômetro</span></a>
@@ -578,6 +579,27 @@
       </div>
     </section>
 
+    <section id="historico" data-pagina="historico">
+      <div class="sec-head">
+        <p class="eyebrow">Histórico de preços · para assinantes</p>
+        <h2>Emitir agora ou esperar?</h2>
+        <p class="sec-note">O menor preço em milhas que já vimos em cada rota, em cada programa, quantas vezes apareceu e em quais meses costuma ter data aberta. Se o preço de hoje está perto do menor visto, é hora de emitir.</p>
+      </div>
+      <div class="radar-fechado" id="hist-fechado">
+        <p>🔒 O histórico de preços é exclusivo para assinantes.</p>
+        <a class="cta cta-a" href="#assinar">Assinar</a>
+        <small>Já assina? <a href="#assinar">Entre aqui</a> com o e-mail do pagamento.</small>
+      </div>
+      <div id="hist-aberto" hidden>
+        <div class="hist-filtros">
+          <label>Destino ou origem<input id="hist-busca" list="passagens-cidades" placeholder="ex.: Lisboa, MIA ou Recife" autocomplete="off"></label>
+          <label>Cabine<select id="hist-cabine"><option value="">Todas</option><option value="eco">Econômica</option><option value="exe">Executiva ou Primeira</option></select></label>
+        </div>
+        <p class="hist-info" id="hist-info"></p>
+        <ul class="hist-lista" id="hist-lista"></ul>
+      </div>
+    </section>
+
     <section id="promocoes" data-pagina="promocoes">
       <div class="sec-head">
         <p class="eyebrow"><span class="ao-vivo"></span>Promoções de pontos e milhas</p>
@@ -871,6 +893,7 @@
         <li>Todas as datas de ida e volta de cada passagem</li>
         <li>Link direto para emitir no programa</li>
         <li>Calculadoras exclusivas: compra no carrinho, hotel Accor e campanhas no ar</li>
+        <li>Histórico de preços: o menor preço já visto em cada rota e os meses com data aberta</li>
         <li>Sem renovação automática: avisamos por e-mail antes de vencer</li>
         <li>Meu Radar: e-mail quando aparecer passagem na rota que você escolher</li>
         <li>Indique um amigo: ganhe 7 dias a cada um que assinar</li>
@@ -1026,6 +1049,6 @@
 <script src="planilha.js?v=2"></script>
 <script src="app.js?v=95"></script>
 <script src="funil.js?v=6"></script>
-<script type="module" src="assinatura.js?v=25"></script>
+<script type="module" src="assinatura.js?v=26"></script>
 </body>
 </html>

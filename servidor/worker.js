@@ -43,6 +43,7 @@ export default {
       if (req.method === 'POST' && url.pathname === '/entrar') return json(await entrar(await req.json(), env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/alertas') return json(await guardarAlertas(req, env));
       if (req.method === 'GET' && url.pathname === '/alertas') return json(await estadoAlertas(env));
+      if (req.method === 'GET' && url.pathname === '/historico') return json(await historicoAssinante(req, env), 200, cors);
       if (req.method === 'GET' && url.pathname === '/voos') return json(await buscarVoos(req, url, env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/evento') return json(await evento(await req.json(), env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/lead') return json(await novoLead(await req.json(), env), 200, cors);
@@ -359,7 +360,60 @@ async function guardarAlertas(req, env) {
   // Na primeira carga não há "novas": tudo já estava no ar antes do radar existir.
   const novas = antes ? Object.entries(completos).filter(([id]) => !conhecidos.has(id)).map(([id, p]) => ({ id, ...p })) : [];
   const radar = await rodarRadar(env, novas, completos).catch(e => ({ erro: e.message }));
-  return { ok: true, itens: Object.keys(completos).length, novas: novas.length, radar };
+  const historico = await atualizarHistorico(env, novas, completos).catch(e => ({ erro: e.message }));
+  return { ok: true, itens: Object.keys(completos).length, novas: novas.length, radar, historico };
+}
+
+// Histórico de preço por rota (área do assinante): cada passagem nova soma na sua rota e cabine
+// o menor preço de cada programa, quantas vezes apareceu e os meses com datas abertas.
+// Fica em privado/historico; só sai pelo GET /historico, para quem tem assinatura ativa.
+const HISTORICO_DIAS = 400;
+// O mesmo programa chega com nomes diferentes de cada grupo ("GOL Smiles", "SMILES"...).
+const PROGRAMAS_HIST = [[/smiles/i, 'Smiles'], [/latam/i, 'LATAM Pass'], [/azul/i, 'Azul Fidelidade'], [/tap|miles ?& ?go/i, 'TAP Miles&Go'],
+  [/iberia/i, 'Iberia Plus'], [/british|executive club/i, 'British Airways'], [/qatar|privilege/i, 'Qatar Privilege Club'],
+  [/flying ?blue|air france|klm/i, 'Flying Blue'], [/aadvantage|american/i, 'AAdvantage'], [/aeroplan|air canada/i, 'Aeroplan'],
+  [/connect ?miles|copa/i, 'ConnectMiles'], [/finnair/i, 'Finnair Plus'], [/avios/i, 'Avios']];
+const nomePrograma = t => (PROGRAMAS_HIST.find(([re]) => re.test(t || '')) || [, String(t || '?').trim()])[1];
+async function atualizarHistorico(env, novas, completos) {
+  const doc = await lerDoc(env, 'privado/historico').catch(() => null);
+  const rotas = doc ? JSON.parse(doc.json) : {};
+  // Primeira vez: começa com o histórico público do último mês (sem datas) e o que está no ar agora.
+  let entrando = novas;
+  if (!doc) {
+    const publico = await fetch(`${env.SITE}dados/historico.json`).then(r => r.json()).catch(() => ({}));
+    entrando = [...Object.entries(publico).filter(([id]) => !(id in completos)).map(([id, p]) => ({ id, ...p })),
+      ...Object.entries(completos).map(([id, p]) => ({ id, ...p }))];
+  }
+  const hoje = new Date().toISOString().slice(0, 10);
+  for (const p of entrando) {
+    const milhas = milhasDe(p.ida), dia = String(p.data || '').slice(0, 10) || hoje;
+    if (!p.origem_iata || !p.destino_iata || !Number.isFinite(milhas) || !milhas) continue;
+    const chave = `${p.origem_iata}-${p.destino_iata}-${p.cabine || ''}`;
+    const r = rotas[chave] || (rotas[chave] = { o: p.origem, oi: p.origem_iata, d: p.destino, di: p.destino_iata, c: p.cabine || '', p: {}, m: {}, n: 0, desde: dia });
+    const prog = nomePrograma(p.programa || p.link_nome);
+    const g = r.p[prog] || (r.p[prog] = { min: milhas, n: 0, ult: dia, minEm: dia });
+    if (milhas < g.min) { g.min = milhas; g.minEm = dia; }
+    g.n++; if (dia > g.ult) g.ult = dia; r.n++; if (!r.ult || dia > r.ult) r.ult = dia; if (dia < r.desde) r.desde = dia;
+    for (const d of [...(p.datas_ida || []), ...(p.datas_volta || [])]) if (d && d.mes) r.m[d.mes] = (r.m[d.mes] || 0) + 1;
+  }
+  const corte = new Date(Date.now() - HISTORICO_DIAS * 864e5).toISOString().slice(0, 10);
+  for (const [k, r] of Object.entries(rotas)) if ((r.ult || r.desde) < corte) delete rotas[k];
+  let texto = JSON.stringify(rotas);
+  // Limite do documento: se crescer demais, saem as rotas vistas há mais tempo.
+  if (texto.length > 850e3) {
+    const ordem = Object.entries(rotas).sort((a, b) => (a[1].ult || '').localeCompare(b[1].ult || ''));
+    while (texto.length > 750e3 && ordem.length) { delete rotas[ordem.shift()[0]]; texto = JSON.stringify(rotas); }
+  }
+  if (entrando.length || !doc) await gravarDoc(env, 'privado/historico', { json: texto, atualizadoEm: new Date() });
+  return { rotas: Object.keys(rotas).length, somadas: entrando.length };
+}
+async function historicoAssinante(req, env) {
+  const email = await emailDoToken(req, env);
+  const a = email && await lerDoc(env, `assinantes/${email}`);
+  const admins = String(env.ADMINS || '').split(',').map(s => s.trim().toLowerCase());
+  if (!(a && a.validoAte instanceof Date && a.validoAte > new Date()) && !admins.includes(email)) throw falha('Só para assinantes.', 403);
+  const doc = await lerDoc(env, 'privado/historico');
+  return { rotas: doc ? JSON.parse(doc.json) : {}, atualizadoEm: doc ? doc.atualizadoEm : null };
 }
 
 /* ---------- e-mail (modelo "mensagem" do EmailJS: assunto e corpo vêm daqui) ---------- */
