@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-14989",
+  "data": "2026-11-06T20:58:59Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Santa Cruz de La Sierra",
+  "destino_iata": "VVI",
+  "companhia": "GOL + parceira",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "47.000 milhas + Taxas",
+  "volta": "47.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-9145",
+  "data": "2026-11-06T20:58:55Z",
+  "origem": "Campo Grande",
+  "origem_iata": "CGR",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "26.000 milhas + Taxas",
+  "volta": "26.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-9144",
+  "data": "2026-11-06T20:58:52Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "14.000 milhas + Taxas",
+  "volta": "14.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2008590742-14988",
   "data": "2026-11-06T20:41:53Z",
   "origem": "Porto Alegre",
@@ -7061,81 +7103,6 @@
    "https://link.dia23.com.br/r/fPnF3kI"
   ],
   "ate": "2026-11-16T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7600",
-  "data": "2026-11-04T20:58:49Z",
-  "tipo": "promocao",
-  "titulo": "PASSAGENS JOÃO PESSOA A PARTIR DE 10.140 PONTOS AZUL",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Passagens de Belo Horizonte (CNF) para João Pessoa (JPA) estão disponíveis a partir de 10.140 pontos Azul mais taxas. Também é possível emitir trechos a partir de R$ 130,46 + taxas usando pontos + dinheiro. Transferências de Livelo para Azul oferecem bônus de até 130% para assinantes do Clube Azul.",
-  "detalhes": [
-   "10.140 pontos por trecho",
-   "R$ 130,46 + taxas por trecho",
-   "Transferência de Livelo para Azul com bônus de até 130% para assinantes do Clube Azul",
-   "Bônus adicional de até 30% por tempo de Clube com limite de 100.000 pontos por ano",
-   "CPM de Azul Fidelidade até R$ 11,86 por mil pontos",
-   "Transferência de Livelo pode ser parcelada em até 6x sem juros",
-   "Belo Horizonte (CNF) x João Pessoa (JPA) a partir de 10.140 milhas o trecho",
-   "Períodos de viagem: dezembro"
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "até sexta-feira (6)",
-  "links": [
-   "https://link.dia23.com.br/r/0w9ON2d"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7599",
-  "data": "2026-11-04T20:58:45Z",
-  "tipo": "promocao",
-  "titulo": "DESTINOS PELO BRASIL A PARTIR DE 8.000 MILHAS SMILES",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "O Alerta PPV oferece emissões de passagens nacionais com Smiles a partir de 8.000 milhas + taxas. Os valores são por trecho e por passageiro. As datas de reserva estão listadas para cada rota.",
-  "detalhes": [
-   "valor mínimo de 8.000 milhas por trecho",
-   "taxas adicionais não incluídas",
-   "valores por trecho e por passageiro",
-   "emissões são as menores disponíveis em cada mês",
-   "São José do Rio Preto (SJP) x São Paulo (CGH) a partir de 8.000 milhas o trecho",
-   "São Paulo (CGH) x Florianópolis (FLN) a partir de 10.400 milhas o trecho",
-   "Curitiba (CWB) x São Paulo (CGH) a partir de 10.600 milhas o trecho",
-   "Vitória (VIX) x Rio de Janeiro (GIG) a partir de 10.600 milhas o trecho"
-  ],
-  "parceiros": "Smiles, GOL",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/LOf7QtQ"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7598",
-  "data": "2026-11-04T20:58:35Z",
-  "tipo": "promocao",
-  "titulo": "DESTINOS INTERNACIONAIS A PARTIR DE 17.800 PONTOS AZUL FIDELIDADE",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "A promoção oferece passagens internacionais com Azul Fidelidade a partir de 17.800 pontos por trecho, mais taxas. As rotas incluem destinos como Montevidéu, Madri, Porto, Orlando e Lisboa, com datas de reserva específicas. Os valores são por trecho e por passageiro, e há acréscimo de taxa de resgate para reservas com menos de 90 dias, exceto para clientes Diamante.",
-  "detalhes": [
-   "milhas por trecho a partir de 17.800 pontos",
-   "taxas adicionais aplicáveis",
-   "acréscimo de taxa de resgate para reservas com menos de 90 dias, exceto para clientes Diamante",
-   "valores são por trecho e por passageiro",
-   "Belo Horizonte (CNF) x Montevidéu (MVD) a partir de 17.800 milhas o trecho",
-   "Recife (REC) x Montevidéu (MVD) a partir de 40.050 milhas o trecho",
-   "Recife (REC) x Madri (MAD) a partir de 57.850 milhas o trecho",
-   "Recife (REC) x Porto (OPO) a partir de 57.850 milhas o trecho"
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/ItzjUUz"
-  ],
-  "ate": ""
  },
  {
   "id": "1290836068-7591",
