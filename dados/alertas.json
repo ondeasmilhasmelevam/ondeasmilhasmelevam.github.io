@@ -7231,57 +7231,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "1290836068-7595",
-  "data": "2026-11-04T16:13:28Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass VOOS RECIFE BRASÍLIA 7.387 MILHAS TRECHO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "LATAM Pass oferece voos de Brasília a Recife por 7.387 milhas por trecho, ou 15.065 milhas ida e volta, com taxas adicionais. A promoção é válida para viagens entre fevereiro e abril de 2027. Os preços podem mudar conforme disponibilidade.",
-  "detalhes": [
-   "7.387 milhas por trecho",
-   "15.065 milhas ida e volta",
-   "taxas adicionais",
-   "válido para viagens entre fevereiro e abril de 2027",
-   "Brasília (BSB) x Recife (REC) a partir de 7.387 milhas o trecho",
-   "Períodos de viagem: fevereiro e abril de 2027"
-  ],
-  "parceiros": "LATAM Pass",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/Askzqcj"
-  ],
-  "ate": ""
- },
- {
-  "id": "3761373661-8910",
-  "data": "2026-11-04T16:12:23Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Chapecó",
-  "destino_iata": "XAP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 12.300 milhas",
-  "volta": "A partir de 12.300 milhas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8909",
-  "data": "2026-11-04T16:12:20Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "SDU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 22.100 milhas",
-  "volta": "A partir de 22.100 milhas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7591",
   "data": "2026-11-04T14:56:21Z",
   "tipo": "promocao",
