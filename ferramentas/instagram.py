@@ -326,6 +326,13 @@ def programa_termo(p):
     return ''
 
 
+def termometro():
+    global TERMO
+    if TERMO is None:
+        TERMO = ler_json(RAIZ / 'dados' / 'termometro.json', {})
+    return TERMO
+
+
 def nivel(a):
     # Faixa do termômetro da passagem ('muito bom', 'caro'...) ou ''.
     global TERMO
@@ -644,11 +651,11 @@ def miolo_capa(dia, n, tipo, periodo='hoje'):
     return camada
 
 
-def selo_arraste(img, mais):
+def selo_arraste(img, mais, texto=None):
     """Primeira tela do carrossel: selo no canto avisando que há mais ofertas para arrastar."""
     d = ImageDraw.Draw(img)
     f = fonte(30, 800)
-    t = f'+{mais} {"oferta" if mais == 1 else "ofertas"}  →'
+    t = texto or f'+{mais} {"oferta" if mais == 1 else "ofertas"}  →'
     larg = d.textlength(t, font=f)
     x1, y0 = W - 46, 46
     d.rounded_rectangle((x1 - larg - 52, y0, x1, y0 + 62), radius=31, fill=OURO_LT)
@@ -1017,6 +1024,124 @@ def feed(alertas, estado, agora, conta, token):
         carrossel(alertas, estado, agora, conta, token, tipo, periodo)
 
 
+# ---------- Carrossel educativo da semana (domingo 11h): só dados conferidos do Termômetro do site ----------
+# Gira entre as regiões ("quanto pagar em milhas para a Europa") e o preço do milheiro. Cada tela mostra até
+# quantas milhas, por trecho e sem taxas, uma passagem é espetacular, muito boa ou boa em cada programa.
+EDUCATIVO_DIA, EDUCATIVO_HORA = 6, 11  # domingo, 11h de Brasília
+NOME_REGIAO = {'europa': 'a Europa', 'america-do-norte': 'os EUA', 'caribe': 'o Caribe',
+               'america-do-sul-sul': 'Chile, Argentina e Uruguai', 'america-do-sul-norte': 'Colômbia, Peru e Equador'}
+COR_NIVEL = {'espetacular': '#FF8A4C', 'muito bom': '#3FCF8E', 'bom': '#9BE38D'}
+
+
+def temas_educativos():
+    termo = termometro() or {}
+    return [('regiao', r) for r in termo.get('regioes', []) if r.get('id') in NOME_REGIAO] + [('milheiro', termo.get('milheiro', []))]
+
+
+def miolo_texto(sobre, titulo, linhas_titulo_cor=OURO):
+    camada, d = tela()
+    y = 60
+    if sobre:
+        y = pilula(d, y, sobre, OURO_LT, tam=28)[0] + 40
+    y = centro(d, y, titulo, fonte(78, 800), RICE, 1.08)
+    return camada, d, y + 30
+
+
+def tela_regiao_capa(r, cab):
+    camada, d, y = miolo_texto('GUIA RÁPIDO DE MILHAS', ['QUANTO PAGAR', 'EM MILHAS PARA', NOME_REGIAO[r['id']].upper() + '?'])
+    y = centro(d, y + 10, ['Ida, por pessoa, sem as taxas', 'Econômica' if cab == 'eco' else 'Executiva'], fonte(38, 600), ASH)
+    centro(d, y + 40, ['ARRASTE PARA VER POR PROGRAMA  →'], fonte(30, 800), OURO)
+    return camada
+
+
+def tela_programa(r, cab, prog, faixas):
+    termo = termometro() or {}
+    nome = termo.get('programas', {}).get(prog, prog)
+    camada, d, y = miolo_texto(f"{NOME_REGIAO[r['id']].upper()} · {'ECONÔMICA' if cab == 'eco' else 'EXECUTIVA'}", [nome.split(' (')[0].upper()])
+    for nivel_, teto in faixas:
+        f = fonte(40, 800)
+        rot = nivel_.upper()
+        d.rounded_rectangle((170, y, W - 170, y + 130), radius=30, fill=INK3, outline=COR_NIVEL[nivel_], width=3)
+        d.text((210, y + 22), rot, font=fonte(28, 800), fill=COR_NIVEL[nivel_])
+        d.text((210, y + 60), f'até {numero(teto)} milhas', font=f, fill=RICE)
+        y += 160
+    centro(d, y + 10, ['Achou nessa faixa? Emita rápido: some em horas.'], fonte(30, 600), ASH)
+    return camada
+
+
+def tela_milheiro_capa():
+    camada, d, y = miolo_texto('GUIA RÁPIDO DE MILHAS', ['QUANTO PAGAR', 'NO MILHEIRO?'])
+    y = centro(d, y + 10, ['O teto para comprar 1.000 pontos', 'ou milhas sem pagar caro'], fonte(38, 600), ASH)
+    centro(d, y + 40, ['ARRASTE PARA VER  →'], fonte(30, 800), OURO)
+    return camada
+
+
+def tela_milheiro(itens):
+    camada, d, y = miolo_texto('PREÇO MÁXIMO DO MILHEIRO', ['ATÉ QUANTO PAGAR'])
+    y = centro(d, y - 10, ['por 1.000 pontos ou milhas'], fonte(32, 600), ASH) + 20
+    simbolo = {'BRL': 'R$', 'EUR': '€', 'GBP': '£'}
+    for m in itens:
+        d.rounded_rectangle((150, y, W - 150, y + 100), radius=26, fill=INK3, outline=LINHA, width=2)
+        d.text((190, y + 28), m['programa'], font=fonte(36, 700), fill=RICE)
+        v = f"{simbolo.get(m.get('moeda'), '')} {m['teto']}"
+        f = fonte(42, 800)
+        d.text((W - 190 - d.textlength(v, font=f), y + 24), v, font=f, fill=OURO)
+        y += 118
+    return camada
+
+
+def carrossel_educativo(tema):
+    """Telas e legenda do carrossel educativo do tema."""
+    tipo, dado = tema
+    if tipo == 'regiao':
+        cab = 'eco'
+        porprog = {}
+        for nivel_ in ('espetacular', 'muito bom', 'bom'):
+            for prog, teto in (dado['cabines'].get(cab, {}).get(nivel_) or {}).items():
+                porprog.setdefault(prog, []).append((nivel_, teto))
+        progs = sorted(porprog, key=lambda p: -len(porprog[p]))[:5]
+        telas = [tela_regiao_capa(dado, cab)] + [tela_programa(dado, cab, p, porprog[p]) for p in progs]
+        nome = NOME_REGIAO[dado['id']]
+        linhas = [f'✈️ Quanto pagar em milhas para {nome}?', '',
+                  'Salve este post: é a régua para saber se uma passagem está boa de verdade (ida, por pessoa, sem taxas, econômica).', '']
+        for p in progs:
+            melhor = porprog[p][0]
+            linhas.append(f"• {(termometro() or {}).get('programas', {}).get(p, p)}: {melhor[0]} até {numero(melhor[1])} milhas")
+    else:
+        itens = [m for m in dado if m.get('teto')][:9]
+        telas = [tela_milheiro_capa(), tela_milheiro(itens[:5])] + ([tela_milheiro(itens[5:9])] if len(itens) > 5 else [])
+        linhas = ['💸 Até quanto pagar no milheiro?', '', 'Salve este post antes de comprar pontos ou milhas:', '']
+        simbolo = {'BRL': 'R$', 'EUR': '€', 'GBP': '£'}
+        linhas += [f"• {m['programa']}: até {simbolo.get(m.get('moeda'), '')} {m['teto']}" for m in itens]
+    linhas += ['', 'Marque quem está juntando milhas com você 👇', '', chamada_direct('passagem'), '', HASHTAGS]
+    imgs = [montar(t, FMT_FEED, False, 'ALERTA') for t in telas]
+    selo_arraste(imgs[0], len(imgs) - 1, 'Arraste  →')
+    return imgs, '\n'.join(linhas)
+
+
+def educativo(estado, agora, conta, token):
+    dia = agora.astimezone(BRASILIA)
+    semana = dia.strftime('%G-%V')
+    if dia.weekday() != EDUCATIVO_DIA or dia.hour < EDUCATIVO_HORA or estado.get('educativo_semana') == semana:
+        return
+    temas = temas_educativos()
+    if not temas:
+        return
+    n = estado.get('educativo_n', 0)
+    imgs, texto = carrossel_educativo(temas[n % len(temas)])
+    urls = enviar([(f'feed-edu-{i}.jpg', im) for i, im in enumerate(imgs)], estado, 'Imagens do carrossel educativo')
+    if not urls:
+        return
+    try:
+        filhos = [criar(conta, token, image_url=u, is_carousel_item='true') for u in urls]
+        publicar(conta, token, criar(conta, token, media_type='CAROUSEL', children=','.join(filhos), caption=texto))
+    except Exception as e:
+        return print(f'::warning::Carrossel educativo não publicado: {e}')
+    estado.update(educativo_semana=semana, educativo_n=n + 1)
+    print('Carrossel educativo publicado.')
+
+
+
 def teste(pasta):
     """Gera stories e os carrosséis de exemplo com os alertas atuais, sem publicar."""
     pasta.mkdir(parents=True, exist_ok=True)
@@ -1034,6 +1159,11 @@ def teste(pasta):
             (selo_arraste(tela, len(itens) - 1) if n == 1 else tela).save(pasta / f'feed-{tipo}-{n}.jpg', quality=90)
         texto = ia['legenda'] + rodape_legenda(tipo) if ia.get('legenda') else legenda(itens, agora.astimezone(BRASILIA), tipo)
         (pasta / f'legenda-{tipo}.txt').write_text(texto, encoding='utf-8')
+    for t, tema in enumerate(temas_educativos()):
+        imgs, texto = carrossel_educativo(tema)
+        for i, im in enumerate(imgs):
+            im.convert('RGB').save(pasta / f'edu-{t}-{i}.jpg', quality=90)
+        (pasta / f'legenda-edu-{t}.txt').write_text(texto, encoding='utf-8')
     print(pasta)
 
 
@@ -1057,6 +1187,7 @@ def main():
         alertas = ler_json(ALERTAS, [])
         stories(alertas, estado, agora, conta, token)
         feed(alertas, estado, agora, conta, token)
+        educativo(estado, agora, conta, token)
     guardar(estado, 'Instagram: controle atualizado')
 
 
