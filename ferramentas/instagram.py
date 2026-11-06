@@ -749,12 +749,16 @@ Recebe ofertas em JSON e devolve:
   uma linha de gancho, depois uma linha por oferta na mesma ordem (começando com um emoji), depois um convite para
   salvar, comentar ou marcar quem viaja junto. Não fale de link na bio (o convite para o direct é colocado depois).
   No máximo 900 caracteres, sem hashtags.
+- "regras": uma por oferta, na mesma ordem. Para promoção de transferência de pontos com bônus, diga em até 170
+  caracteres quem ganha qual percentual (clube, tempo de clube, faixas), com "base" = o menor percentual que qualquer
+  pessoa recebe na promoção e "maximo" = o maior. Se os dados só trazem um percentual, base e maximo são iguais.
+  Para as outras ofertas, texto vazio e base = maximo = 0.
 Use só os números, nomes e datas que estão nos dados: nunca invente valores, bônus, datas ou condições.
 Português do Brasil, tom animado mas confiável."""
 
 
 def dados_ia(a):
-    campos = ('tipo', 'titulo', 'ultimo_dia', 'validade', 'origem', 'destino', 'companhia', 'cabine', 'programa', 'ida', 'volta')
+    campos = ('tipo', 'titulo', 'resumo', 'parceiros', 'ultimo_dia', 'validade', 'origem', 'destino', 'companhia', 'cabine', 'programa', 'ida', 'volta')
     d = {k: a[k] for k in campos if a.get(k)}
     if nivel(a) in BONS:
         d['termometro'] = nivel(a)
@@ -775,8 +779,11 @@ def textos_ia(itens, com_legenda=False):
     except ImportError:
         return {}
     entrada = {'com_legenda': com_legenda, 'ofertas': [dados_ia(a) for a in itens]}
-    esquema = {'type': 'object', 'additionalProperties': False, 'required': ['chamadas', 'legenda'],
-               'properties': {'chamadas': {'type': 'array', 'items': {'type': 'string'}}, 'legenda': {'type': 'string'}}}
+    regra = {'type': 'object', 'additionalProperties': False, 'required': ['texto', 'base', 'maximo'],
+             'properties': {'texto': {'type': 'string'}, 'base': {'type': 'integer'}, 'maximo': {'type': 'integer'}}}
+    esquema = {'type': 'object', 'additionalProperties': False, 'required': ['chamadas', 'legenda', 'regras'],
+               'properties': {'chamadas': {'type': 'array', 'items': {'type': 'string'}}, 'legenda': {'type': 'string'},
+                              'regras': {'type': 'array', 'items': regra}}}
     cliente = anthropic.Anthropic(api_key=chave, timeout=120)
     try:
         r = cliente.beta.messages.create(
@@ -803,7 +810,16 @@ def textos_ia(itens, com_legenda=False):
     legenda = saida.get('legenda', '').strip()
     if not com_legenda or len(legenda) > 1200 or not numeros(legenda) <= validos:
         legenda = ''
-    return {'chamadas': chamadas + [''] * (len(itens) - len(chamadas)), 'legenda': legenda}
+    # Regras do bônus: só valem se os percentuais e números estiverem nos dados daquela oferta.
+    regras = []
+    for a, r_ in zip(itens, saida.get('regras', [])):
+        nums = numeros(json.dumps(dados_ia(a), ensure_ascii=False))
+        texto = str(r_.get('texto', '')).strip()
+        base, maximo = int(r_.get('base') or 0), int(r_.get('maximo') or 0)
+        ok = texto and len(texto) <= 200 and numeros(texto) <= nums and str(base) in nums and str(maximo) in nums and 0 < base <= maximo
+        regras.append({'texto': texto, 'base': base, 'maximo': maximo} if ok else None)
+    regras += [None] * (len(itens) - len(regras))
+    return {'chamadas': chamadas + [''] * (len(itens) - len(chamadas)), 'legenda': legenda, 'regras': regras}
 
 
 # "Vale a pena?": bônus de transferência partindo de Livelo ou Esfera, com o preço máximo do milheiro do
@@ -814,7 +830,7 @@ DESTINOS_TETO = (('azul', 'Azul Fidelidade', 'Azul'), ('smiles', 'Smiles', 'Smil
                  ('iberia', 'Iberia (Avios)', 'Avios'), ('avios', 'Iberia (Avios)', 'Avios'))
 
 
-def vale_a_pena(a):
+def vale_a_pena(a, regra=None):
     if a.get('tipo') != 'promocao':
         return ''
     titulo = a.get('titulo', '').lower()
@@ -822,6 +838,8 @@ def vale_a_pena(a):
         return ''  # só promoção de transferência com bônus (não anúncio de passagem que cita bônus no resumo)
     texto = f"{titulo} {a.get('parceiros', '')}".lower()
     bonus = re.search(r'(\d{2,3})\s*%', titulo)
+    if regra:  # percentuais conferidos das regras da promoção (o máximo e o que todo mundo recebe)
+        bonus = re.match(r'(\d+)', str(regra['maximo']))
     origem = next((nome for chave, nome in ORIGENS_TETO.items() if chave in texto), '')
     destino = next(((nome, curto) for chave, nome, curto in DESTINOS_TETO if chave in texto), None)
     tetos = {m['programa']: m['teto'] for m in (termometro() or {}).get('milheiro', []) if m.get('moeda') == 'BRL'}
@@ -836,7 +854,9 @@ def vale_a_pena(a):
     fator = f'{1 + b / 100:.2f}'.replace('.', ',').rstrip('0').rstrip(',')
     milha = 'a milha' if destino[1] != 'Azul' else 'o ponto'
     if sai <= tetos[destino[0]] + 0.005:
-        linha = f'💡 Vale a pena? Sim! Com {b}% de bônus, {milha} {destino[1]} sai a {real(sai)} o milheiro (o bom é até {real(tetos[destino[0]])}).'
+        so_maximo = regra and regra['base'] < b and tetos[origem] / (1 + regra['base'] / 100) > tetos[destino[0]] + 0.005
+        linha = (f"💡 Vale a pena? Sim{', para quem leva o bônus máximo' if so_maximo else ''}! Com {b}% de bônus, {milha} {destino[1]} sai a "
+                 f'{real(sai)} o milheiro (o bom é até {real(tetos[destino[0]])}).')
     elif sai <= tetos[destino[0]] * 1.10:  # até 10% acima do teto: vale só para completar uma emissão
         linha = (f'💡 Vale a pena? Quase: {milha} {destino[1]} sai a {real(sai)} o milheiro (o bom é até {real(tetos[destino[0]])}). '
                  'Compensa comprar um pouco acima só para completar os pontos que faltam numa emissão, não para guardar.')
@@ -847,13 +867,19 @@ def vale_a_pena(a):
              'Se o preço mudar, refaça a conta com o valor do dia.')
     if destino[1] == 'LATAM Pass' and b < 35:
         conta += ' Com o Turbo LATAM (até 35%, no limite de envio do mês), divida por 1,35.'
+    if regra and regra['base'] < b:
+        fb = f"{1 + regra['base'] / 100:.2f}".replace('.', ',').rstrip('0').rstrip(',')
+        conta += f" Com {regra['base']}% de bônus, divida por {fb}: sai a {real(tetos[origem] / (1 + regra['base'] / 100))}."
+    regras_txt = (f"📋 Regras: {regra['texto']}" if regra else
+                  '📋 Confira as regras: o percentual costuma variar com clube, tempo de assinatura e programa de origem.')
     aviso = (f'⚠️ Não é recomendação: antes de juntar pontos em qualquer companhia, veja para onde a {destino[1]} voa bem '
              'e se faz sentido saindo da sua cidade.')
-    return f'{linha}' + chr(10) + conta + chr(10) + aviso
+    return f'{linha}' + chr(10) + regras_txt + chr(10) + conta + chr(10) + aviso
 
 
-def bloco_vale(itens):
-    linhas = list(dict.fromkeys(v for v in (vale_a_pena(a) for a in itens) if v))
+def bloco_vale(itens, regras=None):
+    regras = regras or [None] * len(itens)
+    linhas = list(dict.fromkeys(v for v in (vale_a_pena(a, r) for a, r in zip(itens, regras)) if v))
     return ('\n\n' + '\n\n'.join(linhas)) if linhas else ''
 
 
@@ -1052,7 +1078,7 @@ def carrossel(alertas, estado, agora, conta, token, tipo, periodo):
     usados.extend(a['id'] for a in itens)
     ia = textos_ia(itens, com_legenda=True)
     chamadas = ia.get('chamadas') or [''] * len(itens)
-    texto = ia['legenda'] + bloco_vale(itens) + rodape_legenda(tipo) if ia.get('legenda') else legenda(itens, dia, tipo)
+    texto = ia['legenda'] + bloco_vale(itens, ia.get('regras')) + rodape_legenda(tipo) if ia.get('legenda') else legenda(itens, dia, tipo)
     # sem capa: abre direto na melhor oferta (a capa repetida deixava o perfil todo igual)
     telas = [(f'feed-{tipo}-{n}.jpg', imagem(a, FMT_FEED, c)) for n, (a, c) in enumerate(zip(itens, chamadas), 1)]
     selo_arraste(telas[0][1], len(itens) - 1)
@@ -1244,7 +1270,7 @@ def teste(pasta):
         for n, (a, c) in enumerate(zip(itens, chamadas), 1):
             tela = imagem(a, FMT_FEED, c)
             (selo_arraste(tela, len(itens) - 1) if n == 1 else tela).save(pasta / f'feed-{tipo}-{n}.jpg', quality=90)
-        texto = ia['legenda'] + bloco_vale(itens) + rodape_legenda(tipo) if ia.get('legenda') else legenda(itens, agora.astimezone(BRASILIA), tipo)
+        texto = ia['legenda'] + bloco_vale(itens, ia.get('regras')) + rodape_legenda(tipo) if ia.get('legenda') else legenda(itens, agora.astimezone(BRASILIA), tipo)
         (pasta / f'legenda-{tipo}.txt').write_text(texto, encoding='utf-8')
     story_cortesia().convert('RGB').save(pasta / 'story-cortesia.jpg', quality=90)
     for t, tema in enumerate(temas_educativos()):
