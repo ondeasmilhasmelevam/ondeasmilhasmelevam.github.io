@@ -82,6 +82,7 @@ INK, INK3, LINHA = '#070C17', '#131D33', '#1E2A42'
 RICE, ASH, OURO, OURO_LT, VERMELHO = '#F3EEE3', '#A3ACBD', '#E2B458', '#F5D788', '#FF6B5E'
 W = 1080
 PERFIL = '@ondeasmilhasmelevam'
+DOMINIO = 'ondeasmilhasmelevam.com.br'
 # Altura da imagem, onde fica a marca, o espaço do miolo e o botão "LINK NA BIO".
 STORY = {'alto': 1920, 'marca': 120, 'miolo': (490, 1500), 'botao': 1570}
 FMT_FEED = {'alto': 1350, 'marca': 50, 'miolo': (330, 1010), 'botao': 1040, 'compacto': True}
@@ -240,7 +241,7 @@ def botao(img, y):
     d.polygon([(sx, sy - 30), (sx + 22, sy - 4), (sx + 8, sy - 4), (sx + 8, sy + 28), (sx - 8, sy + 28),
                (sx - 8, sy - 4), (sx - 22, sy - 4)], fill=INK)
     d.text((x + 64, y + 38), t, font=f, fill=INK)
-    centro(d, y + 190, [PERFIL], fonte(34, 700), OURO_LT)
+    centro(d, y + 190, [PERFIL], fonte(34, 700), OURO_LT)  # domínio entra quando o .com.br estiver no ar
     centro(d, y + 240, ['Valores podem mudar a qualquer momento.'], fonte(24, 500), ASH)
 
 
@@ -618,6 +619,18 @@ def miolo_capa(dia, n, tipo, periodo='hoje'):
     return camada
 
 
+def selo_arraste(img, mais):
+    """Primeira tela do carrossel: selo no canto avisando que há mais ofertas para arrastar."""
+    d = ImageDraw.Draw(img)
+    f = fonte(30, 800)
+    t = f'+{mais} {"oferta" if mais == 1 else "ofertas"}  →'
+    larg = d.textlength(t, font=f)
+    x1, y0 = W - 46, 46
+    d.rounded_rectangle((x1 - larg - 52, y0, x1, y0 + 62), radius=31, fill=OURO_LT)
+    d.text((x1 - larg - 26, y0 + 13), t, font=f, fill=INK)
+    return img
+
+
 def imagem(a, fmt, chamada=''):
     feito = miolo_promocao if a.get('tipo') == 'promocao' else miolo_passagem
     return montar(feito(a, chamada), fmt, a.get('tipo') == 'promocao')
@@ -949,8 +962,9 @@ def carrossel(alertas, estado, agora, conta, token, tipo, periodo):
     ia = textos_ia(itens, com_legenda=True)
     chamadas = ia.get('chamadas') or [''] * len(itens)
     texto = ia['legenda'] + RODAPE_LEGENDA if ia.get('legenda') else legenda(itens, dia, tipo)
-    telas = [(f'feed-{tipo}-0.jpg', montar(miolo_capa(dia, len(itens), tipo, periodo), FMT_FEED))]
-    telas += [(f'feed-{tipo}-{n}.jpg', imagem(a, FMT_FEED, c)) for n, (a, c) in enumerate(zip(itens, chamadas), 1)]
+    # sem capa: abre direto na melhor oferta (a capa repetida deixava o perfil todo igual)
+    telas = [(f'feed-{tipo}-{n}.jpg', imagem(a, FMT_FEED, c)) for n, (a, c) in enumerate(zip(itens, chamadas), 1)]
+    selo_arraste(telas[0][1], len(itens) - 1)
     urls = enviar(telas, estado, f'Imagens do carrossel de {tipo} ({periodo})')
     if not urls:
         return
@@ -984,9 +998,9 @@ def teste(pasta):
         itens = escolher_carrossel(alertas, agora, tipo)
         ia = textos_ia(itens, com_legenda=True)
         chamadas = ia.get('chamadas') or [''] * len(itens)
-        montar(miolo_capa(agora.astimezone(BRASILIA), len(itens), tipo), FMT_FEED).save(pasta / f'feed-{tipo}-0.jpg', quality=90)
         for n, (a, c) in enumerate(zip(itens, chamadas), 1):
-            imagem(a, FMT_FEED, c).save(pasta / f'feed-{tipo}-{n}.jpg', quality=90)
+            tela = imagem(a, FMT_FEED, c)
+            (selo_arraste(tela, len(itens) - 1) if n == 1 else tela).save(pasta / f'feed-{tipo}-{n}.jpg', quality=90)
         texto = ia['legenda'] + RODAPE_LEGENDA if ia.get('legenda') else legenda(itens, agora.astimezone(BRASILIA), tipo)
         (pasta / f'legenda-{tipo}.txt').write_text(texto, encoding='utf-8')
     print(pasta)

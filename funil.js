@@ -111,13 +111,11 @@
         <div class="prova-nums">${blocos.map(([v, t]) => `<div><b>${milhas(v)}</b><small>${t}</small></div>`).join('')}</div>`;
       el.hidden = false;
     });
-    const lista = document.getElementById('gratis-destaques');
-    if (lista) {
-      lista.innerHTML = (n.destaques || []).map(d => `<li>
+    const html = (n.destaques || []).map(d => `<li>
           <p class="prova-rota"><b>${esc(d.origem_iata)}</b> ${esc(d.origem)} <i>✈</i> <b>${esc(d.destino_iata)}</b> ${esc(d.destino)}</p>
           <p class="prova-milhas"><b>${milhas(d.milhas)}</b> milhas + taxas o trecho</p>
           <p class="prova-meta">${esc([d.programa, d.cabine].filter(Boolean).join(' · '))}${NIVEL[d.nivel] ? ` · <span>${esc(NIVEL[d.nivel])} no termômetro</span>` : ''}</p>
         </li>`).join('');
-    }
+    document.querySelectorAll('[data-destaques]').forEach(el => { el.innerHTML = html; });
   })();
 })();

@@ -1443,7 +1443,7 @@
     const usadas = new Set();
     let alguma = false;
     // Metade da origem e metade do destino; a faixa aparece quando as duas já têm foto.
-    document.querySelectorAll('#lista-passagens .pass-foto').forEach(faixa => {
+    document.querySelectorAll('#lista-passagens .pass-foto, #inicio-passagens .pass-foto').forEach(faixa => {
       let metades = 0;
       faixa.querySelectorAll('[data-cidade]').forEach(el => {
         const url = (fotos[el.dataset.cidade] || []).find(u => !usadas.has(u));
@@ -1523,7 +1523,7 @@
   }
   async function buscarFotos() {
     pintarFotos();
-    const faltam = [...new Set([...document.querySelectorAll('#lista-passagens .pass-foto [data-cidade]')].map(el => el.dataset.cidade)
+    const faltam = [...new Set([...document.querySelectorAll('#lista-passagens .pass-foto [data-cidade], #inicio-passagens .pass-foto [data-cidade]')].map(el => el.dataset.cidade)
       .concat([...document.querySelectorAll('#hoje [data-foto], #guias-lista [data-foto]')].map(el => el.dataset.foto)))]
       .filter(c => c && !(c in fotos) && !fotosPedidas.has(c));
     if (!faltam.length) return;
@@ -1943,6 +1943,11 @@
     if (guias.length) mostrarGuias(); // contagem de passagens no ar por destino
     // Meu Radar (assinatura.js) usa a mesma lista e o mesmo cartão de passagem.
     window.oammlPassagens = passagens.filter(p => !ehPromocao(p) && Date.now() < venceEm(p));
+    // Início: as 4 passagens mais recentes
+    const recentes = [...window.oammlPassagens].sort((a, b) => b.data.localeCompare(a.data));
+    $('#inicio-passagens').innerHTML = recentes.slice(0, 3).map(p => passagemHtml(p, Date.now())).join('');
+    $('#inicio-todas').textContent = recentes.length > 3 ? `Ver todas as ${recentes.length} passagens` : 'Ver todas as passagens';
+    buscarFotos();
     document.dispatchEvent(new Event('passagens'));
   }
   $('#passagens-busca').addEventListener('input', e => { filtroPassagem.busca = e.target.value; mostrarPassagens(); });
@@ -2599,13 +2604,15 @@
   // Cada aba do topo é uma página: mostra só as seções dela (data-pagina).
   // O endereço continua o mesmo; o #da-aba diz qual página abrir (dá para mandar o link).
   const abas = [...document.querySelectorAll('.tabs .menu-sub a')];
+  new MutationObserver(() => { if (document.body.classList.contains('menu-recolhido')) document.querySelectorAll('details.menu-grupo').forEach(d => { d.open = true; }); })
+    .observe(document.body, { attributes: true, attributeFilter: ['class'] });
   const paginas = [...document.querySelectorAll('[data-pagina]')];
   const TITULO = document.title;
   let paginaAtual = '';
   const paginaDe = el => (el && el.closest('[data-pagina]') || {}).dataset?.pagina;
   function mostrarPagina(alvo, rolar = true) {
     const el = alvo && document.getElementById(alvo);
-    const pagina = paginaDe(el) || 'simulador';
+    const pagina = paginaDe(el) || 'inicio';
     paginaAtual = pagina;
     paginas.forEach(p => p.classList.toggle('fora', p.dataset.pagina !== pagina));
     let ativa = null;
@@ -2616,7 +2623,8 @@
     });
     // página fora do menu (ex.: termos) usa o título dela
     const nome = ativa ? (ativa.querySelector('span') || ativa).textContent : (el && (el.closest('[data-pagina]').querySelector('h2') || {}).textContent);
-    document.title = pagina === 'simulador' || !nome ? TITULO : `${nome} · Onde as Milhas Me Levam`;
+    document.title = pagina === 'inicio' || !nome ? TITULO : `${nome} · Onde as Milhas Me Levam`;
+    if (ativa) { const grupo = ativa.closest('details'); if (grupo) grupo.open = true; } // abre o grupo da página atual
     abrirMenu(false);
     mostrarAtualizado(pagina);
     if (!rolar) return;

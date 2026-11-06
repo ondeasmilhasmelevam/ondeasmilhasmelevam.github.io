@@ -1467,3 +1467,20 @@ footer .badge{width:84px;height:84px;margin-bottom:14px}
 .ass-sit.ativo{background:rgba(31,157,104,.18);color:#3fcf8e}.ass-sit.vencido{background:rgba(107,90,36,.18);color:#d9b45a}.ass-sit.cancelado{background:rgba(122,46,42,.2);color:#ff8a80}
 .painel-ass button{padding:6px 12px;font-size:12.5px;white-space:nowrap;display:block;margin:0 0 6px}
 .ass-campo .opcional{font-weight:500;color:var(--ash-dim)}
+/* Início */
+.inicio-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:26px 0 10px}
+.inicio-planos{margin:6px 0 0;font-size:14px;color:var(--ash)}
+.inicio-planos a{color:var(--ouro);font-weight:700}
+.inicio-corpo{padding-top:30px}
+.inicio-sub{margin-top:34px}
+.inicio-mais{text-align:center;margin:18px 0 30px}
+.inicio-ferr{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:10px}
+.inicio-ferr a{display:grid;gap:6px;padding:18px 18px 20px;border:1px solid var(--line);border-radius:16px;background:var(--ink-2);color:var(--rice);text-decoration:none;transition:border-color .18s ease,transform .18s ease}
+.inicio-ferr a:hover{border-color:var(--ouro);transform:translateY(-2px)}
+.inicio-ferr b{font-size:16px}
+.inicio-ferr small{color:var(--ash);font-size:13.5px;line-height:1.5}
+/* Menu: grupos que abrem e fecham */
+details.menu-grupo>summary{list-style:none;cursor:pointer;user-select:none}
+details.menu-grupo>summary::-webkit-details-marker{display:none}
+details.menu-grupo>summary::after{content:'';margin-left:auto;margin-right:4px;width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .18s ease;opacity:.8}
+details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
