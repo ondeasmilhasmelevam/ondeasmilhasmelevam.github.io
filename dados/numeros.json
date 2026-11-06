@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-06T11:43:36.454861Z",
+ "atualizado": "2026-11-06T11:49:48.236911Z",
  "dias": 30,
- "passagens": 925,
+ "passagens": 934,
  "promocoes": 68,
  "destinos": 120,
- "executiva": 198,
+ "executiva": 200,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 925,
+  "passagens": 934,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -144,18 +144,18 @@
     "foto": "img/rotas/MAO-PTY.jpg"
    },
    {
-    "id": "2361370250-5960",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
+    "id": "2361370250-6178",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
     "destino": "Miami",
     "destino_iata": "MIA",
     "cabine": "Executiva",
     "programa": "GOL Smiles",
-    "data": "2026-11-02T11:30:28Z",
-    "milhas": 161200,
+    "data": "2026-11-06T11:47:07Z",
+    "milhas": 108200,
     "nivel": "espetacular",
     "grupo": "Executiva",
-    "foto": "img/rotas/BSB-MIA.jpg"
+    "foto": "img/rotas/MAO-MIA.jpg"
    }
   ],
   "candidatas": [
@@ -550,6 +550,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9067",
+    "origem": "Recife",
+    "origem_iata": "REC",
+    "destino": "Petrolina",
+    "destino_iata": "PNZ",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-06T11:47:17Z",
+    "milhas": 6400,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-8770",
     "origem": "São Paulo",
     "origem_iata": "CGH",
@@ -927,28 +940,15 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-8963",
-    "origem": "Recife",
-    "origem_iata": "REC",
-    "destino": "Fernando de Noronha",
-    "destino_iata": "FEN",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-05T11:11:26Z",
-    "milhas": 15000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "2361370250-5960",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
+    "id": "2361370250-6178",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
     "destino": "Miami",
     "destino_iata": "MIA",
     "cabine": "Executiva",
     "programa": "GOL Smiles",
-    "data": "2026-11-02T11:30:28Z",
-    "milhas": 161200,
+    "data": "2026-11-06T11:47:07Z",
+    "milhas": 108200,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
    },
