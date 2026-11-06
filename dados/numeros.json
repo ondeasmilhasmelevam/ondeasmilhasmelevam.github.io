@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-06T17:42:28.246349Z",
+ "atualizado": "2026-11-06T17:48:37.897247Z",
  "dias": 30,
- "passagens": 1036,
+ "passagens": 1040,
  "promocoes": 76,
- "destinos": 128,
- "executiva": 213,
+ "destinos": 129,
+ "executiva": 214,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1036,
+  "passagens": 1040,
   "destaques": [
    {
     "id": "3761373661-8819",
@@ -1174,6 +1174,19 @@
     "regiao": "outros"
    },
    {
+    "id": "2361370250-6198",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Milão",
+    "destino_iata": "MXP",
+    "cabine": "Executiva",
+    "programa": "Flying Blue",
+    "data": "2026-11-06T17:43:11Z",
+    "milhas": 85000,
+    "nivel": "",
+    "regiao": "europa"
+   },
+   {
     "id": "2361370250-5903",
     "origem": "Rio de Janeiro",
     "origem_iata": "GIG",
@@ -1185,19 +1198,6 @@
     "milhas": 88106,
     "nivel": "",
     "regiao": "america-do-sul"
-   },
-   {
-    "id": "2361370250-6107",
-    "origem": "Seul",
-    "origem_iata": "ICN",
-    "destino": "Singapura",
-    "destino_iata": "SIN",
-    "cabine": "Executiva",
-    "programa": "Smiles",
-    "data": "2026-11-05T20:23:28Z",
-    "milhas": 90200,
-    "nivel": "",
-    "regiao": "outros"
    }
   ]
  }
