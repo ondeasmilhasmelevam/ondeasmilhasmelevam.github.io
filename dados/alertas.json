@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-14944",
+  "data": "2026-11-06T14:11:57Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Boston",
+  "destino_iata": "BOS",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "A partir de 67.423 milhas",
+  "volta": "A partir de 67.423 milhas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-9115",
+  "data": "2026-11-06T14:09:46Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "Navegantes",
+  "destino_iata": "NVT",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "20.300 milhas + Taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-14943",
+  "data": "2026-11-06T14:08:02Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "Curitiba",
+  "destino_iata": "CWB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "21.600 milhas + Taxas",
+  "volta": "21.600 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-14942",
   "data": "2026-11-06T14:04:49Z",
   "origem": "Goiânia",
