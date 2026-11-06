@@ -55,6 +55,11 @@ export default {
       if (req.method === 'POST' && url.pathname === '/depoimento') return json(await gravarDepoimento(req, env), 200, cors);
       if (req.method === 'GET' && url.pathname === '/depoimentos/todos') return json(await todosDepoimentos(req, env), 200, cors);
       if (req.method === 'GET' && url.pathname === '/assinantes') return json(await listaAssinantes(req, env), 200, cors);
+      if (req.method === 'GET' && url.pathname === '/cortesia') return json(await verCortesia(url, env), 200, cors);
+      if (req.method === 'POST' && url.pathname === '/cortesia/pedir') return json(await pedirCortesia(await req.json(), env), 200, cors);
+      if (req.method === 'GET' && url.pathname === '/cortesias') return json(await listaCortesias(req, env), 200, cors);
+      if (req.method === 'POST' && url.pathname === '/cortesia/criar') return json(await criarCortesia(req, env), 200, cors);
+      if (req.method === 'POST' && url.pathname === '/cortesia/decidir') return json(await decidirCortesia(req, env), 200, cors);
       if (req.method === 'GET' && url.pathname === '/assinante/conferir') return json(await conferirUm(req, url, env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/assinante/cancelar') return json(await cancelarAssinante(req, env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/depoimento/moderar') return json(await moderarDepoimento(req, env), 200, cors);
@@ -776,6 +781,72 @@ async function moderarDepoimento(req, env) {
   return { ok: true };
 }
 
+/* ---------- Cortesia: o dono gera um link de X dias, a pessoa pede com nome e e-mail, o dono aprova ---------- */
+// Cada link vale para uma pessoa só; o que ninguém usou expira em CORTESIA_LINK_DIAS.
+const CORTESIA_LINK_DIAS = 30;
+const novoCodigo = () => [...crypto.getRandomValues(new Uint8Array(10))].map(b => 'abcdefghjkmnpqrstuvwxyz23456789'[b % 31]).join('');
+const cortesiaExpirada = c => c.status === 'aberta' && c.criadoEm instanceof Date && Date.now() - c.criadoEm.getTime() > CORTESIA_LINK_DIAS * 864e5;
+const codigoCortesia = v => (/^[a-z0-9]{10}$/.test(String(v || '')) ? String(v) : '');
+async function verCortesia(url, env) {
+  const codigo = codigoCortesia(url.searchParams.get('c'));
+  const c = codigo && await lerDoc(env, `cortesias/${codigo}`);
+  if (!c) return { status: 'invalida' };
+  return { status: cortesiaExpirada(c) ? 'expirada' : c.status, dias: c.dias };
+}
+async function pedirCortesia(body, env) {
+  const codigo = codigoCortesia(body && body.codigo);
+  const email = String((body && body.email) || '').trim().toLowerCase();
+  const nome = String((body && body.nome) || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+  if (!emailValido(email)) throw falha('Digite um e-mail válido.');
+  if (nome.length < 2) throw falha('Digite seu nome.');
+  if (body.aceite !== true) throw falha('Marque que aceita os Termos de Uso.');
+  const c = codigo && await lerDoc(env, `cortesias/${codigo}`);
+  if (!c || cortesiaExpirada(c)) throw falha('Este link de cortesia não vale mais. Peça um novo para quem te enviou.', 404);
+  if (c.status !== 'aberta') throw falha('Este link de cortesia já foi usado.', 409);
+  await atualizarCampos(env, `cortesias/${codigo}`, { status: 'pendente', nome, email, telefone: telefoneValido(body.telefone), pedidoEm: new Date() });
+  return { ok: true };
+}
+async function listaCortesias(req, env) {
+  await exigirAdmin(req, env);
+  const todas = await listarDocs(env, 'cortesias');
+  return { cortesias: todas.map(c => ({ codigo: c.id, dias: c.dias, para: c.para || '', status: cortesiaExpirada(c) ? 'expirada' : c.status, nome: c.nome || '', email: c.email || '',
+    telefone: c.telefone || '', criadoEm: c.criadoEm instanceof Date ? c.criadoEm.toISOString() : null, ate: c.ate instanceof Date ? c.ate.toISOString() : null }))
+    .sort((a, b) => ({ pendente: 0, aberta: 1 }[a.status] ?? 2) - ({ pendente: 0, aberta: 1 }[b.status] ?? 2) || String(b.criadoEm).localeCompare(String(a.criadoEm))) };
+}
+async function criarCortesia(req, env) {
+  await exigirAdmin(req, env);
+  const b = await req.json();
+  const dias = [7, 15, 30].includes(Number(b.dias)) ? Number(b.dias) : 15;
+  const codigo = novoCodigo();
+  await gravarDoc(env, `cortesias/${codigo}`, { dias, para: String(b.para || '').trim().slice(0, 60), status: 'aberta', criadoEm: new Date() });
+  return { ok: true, codigo, dias };
+}
+async function decidirCortesia(req, env) {
+  await exigirAdmin(req, env);
+  const b = await req.json();
+  const codigo = codigoCortesia(b.codigo);
+  const c = codigo && await lerDoc(env, `cortesias/${codigo}`);
+  if (!c || c.status !== 'pendente' || !emailValido(c.email)) throw falha('Não há pedido para decidir neste link.', 404);
+  if (!b.aprovar) {
+    await atualizarCampos(env, `cortesias/${codigo}`, { status: 'recusada', decididoEm: new Date() });
+    return { ok: true };
+  }
+  const atual = await lerDoc(env, `assinantes/${c.email}`);
+  const base = Math.max(Date.now(), atual && atual.validoAte instanceof Date ? atual.validoAte.getTime() : 0);
+  const ate = new Date(base + c.dias * 864e5);
+  const campos = { email: c.email, validoAte: ate, nome: (atual && atual.nome) || c.nome, telefone: (atual && atual.telefone) || c.telefone || '', cortesia: codigo, atualizadoEm: new Date() };
+  if (atual) await atualizarCampos(env, `assinantes/${c.email}`, campos);
+  else await gravarDoc(env, `assinantes/${c.email}`, { ...campos, plano: 'cortesia', teveAnual: false });
+  await atualizarCampos(env, `cortesias/${codigo}`, { status: 'aprovada', ate, decididoEm: new Date() });
+  const entrar = `${env.SITE}?utm_source=email&utm_campaign=cortesia#assinar`;
+  await enviarEmail(env, c.email, `Sua cortesia de ${c.dias} dias foi liberada! ✈️`,
+    `Olá, ${escHtml(c.nome.split(' ')[0])}!<br><br>Sua cortesia de <strong>${c.dias} dias</strong> no Onde as Milhas Me Levam está liberada, até <strong>${ate.toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })}</strong>.<br><br>
+    Você vê todas as datas e o link de emissão de cada passagem na hora em que ela aparece, usa as calculadoras e pode montar o seu Meu Radar.<br><br>
+    Para entrar, abra o site e use <strong>${escHtml(c.email)}</strong>: com o Google desse e-mail ou com o código que mandamos para ele.<br><br>
+    ${botaoEmail('Entrar no site', entrar)}<br><br>Boas viagens!`).catch(() => false);
+  return { ok: true, ate: ate.toISOString() };
+}
+
 /* ---------- Painel do dono ---------- */
 // Quem assina: nome e @ do depoimento (se deixou) ou o nome da conta Google; o último pagamento de cada um.
 async function listaAssinantes(req, env) {
@@ -797,7 +868,7 @@ async function listaAssinantes(req, env) {
   return { assinantes: assinantes.map(a => {
     const p = pagos.find(x => x.email === a.id);
     const vence = a.validoAte instanceof Date ? a.validoAte.getTime() : 0;
-    return { email: a.id, nome: (depo[a.id] && depo[a.id].nome) || google[a.id] || '', instagram: (depo[a.id] && depo[a.id].instagram) || '', telefone: a.telefone || '',
+    return { email: a.id, nome: (depo[a.id] && depo[a.id].nome) || a.nome || google[a.id] || '', instagram: (depo[a.id] && depo[a.id].instagram) || '', telefone: a.telefone || '',
       plano: a.plano || '', validoAte: vence ? new Date(vence).toISOString() : null, ativo: vence > agora, cancelado: !!a.canceladoEm,
       pagamento: p ? { preco: p.preco, forma: p.forma || '', parcelas: p.parcelas || 1, pagoEm: p.pagoEm instanceof Date ? p.pagoEm.toISOString() : null, status: p.status } : null };
   }).sort((a, b) => (b.ativo - a.ativo) || String(b.validoAte).localeCompare(String(a.validoAte))) };

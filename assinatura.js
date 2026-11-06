@@ -244,11 +244,105 @@ async function desenharPainel() {
     ${tabela('Dia', porDia)}`;
   desenharDeposPainel();
   desenharAssinantesPainel();
+  desenharCortesiasPainel();
 }
 
 // Depoimentos no painel: aprovar põe no site; ocultar tira.
 const DEPO_SITUACAO = { pendente: 'Esperando aprovação', aprovado: 'No site', oculto: 'Oculto' };
 const estrelas = n => `${'★'.repeat(n)}<span>${'★'.repeat(5 - n)}</span>`;
+// Cortesia: o link ?cortesia=CODIGO abre a página #cortesia com o pedido (nome, e-mail, WhatsApp).
+const codigoCortesia = (() => {
+  const c = new URLSearchParams(location.search).get('cortesia') || '';
+  if (/^[a-z0-9]{10}$/.test(c)) { try { sessionStorage.setItem('oamml-cortesia', c); } catch (e) { /* segue com o da URL */ } return c; }
+  try { return sessionStorage.getItem('oamml-cortesia') || ''; } catch (e) { return ''; }
+})();
+if (new URLSearchParams(location.search).has('cortesia') && location.hash !== '#cortesia') location.hash = 'cortesia';
+(async () => {
+  const f = $('#cortesia-form'), aviso = $('#cortesia-aviso');
+  const avisar = t => { aviso.textContent = t; aviso.hidden = false; f.hidden = true; };
+  if (!codigoCortesia) return avisar('Abra o link de cortesia que você recebeu para ativar os dias grátis.');
+  let c = {};
+  try { c = await (await fetch(`${SERVIDOR}/cortesia?c=${codigoCortesia}`)).json(); } catch (e) { return avisar('Não deu para abrir a cortesia agora. Tente de novo em instantes.'); }
+  if (c.status !== 'aberta') {
+    return avisar({ pendente: 'Este convite já foi usado e está esperando a liberação. Você recebe um e-mail quando o acesso estiver pronto.',
+      aprovada: 'Este convite já foi usado. Se foi você, entre em Assinar / Entrar com o seu e-mail.', recusada: 'Este convite não vale mais.',
+      expirada: 'Este convite expirou. Peça um novo para quem te enviou.' }[c.status] || 'Este link de cortesia não é válido.');
+  }
+  $('#cortesia-titulo').textContent = `Você ganhou ${c.dias} dias grátis no Onde as Milhas Me Levam`;
+  f.hidden = false;
+  f.addEventListener('submit', async ev => {
+    ev.preventDefault();
+    const m = f.querySelector('.lead-msg'), b = f.querySelector('button');
+    const dizer = (t, ok) => { m.textContent = t; m.className = `lead-msg ${ok ? 'ok' : 'erro'}`; m.hidden = false; };
+    b.disabled = true;
+    try {
+      const r = await fetch(`${SERVIDOR}/cortesia/pedir`, { method: 'POST', headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ codigo: codigoCortesia, nome: f.elements.nome.value, email: f.elements.email.value, telefone: f.elements.telefone.value, aceite: f.elements.aceite.checked }) });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(d.erro);
+      f.querySelector('.cortesia-campos').hidden = true; f.querySelector('.lead-aceite').hidden = true; b.hidden = true;
+      dizer('Pedido enviado! Assim que o acesso for liberado, você recebe um e-mail com o passo a passo para entrar.', true);
+    } catch (er) { dizer(er.message || 'Não deu agora. Tente de novo em instantes.'); b.disabled = false; }
+  });
+})();
+
+// Painel: gerar link de cortesia e aprovar ou recusar os pedidos.
+async function desenharCortesiasPainel() {
+  const el = $('#painel-cortesias');
+  if (!auth.currentUser) return;
+  let lista;
+  try {
+    const r = await fetch(`${SERVIDOR}/cortesias`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
+    if (!r.ok) { el.innerHTML = ''; return; }
+    lista = (await r.json()).cortesias;
+  } catch (e) { return; }
+  const link = c => `${location.origin}/?cortesia=${c}`;
+  const data = t => (t ? new Date(t).toLocaleDateString('pt-BR') : '');
+  const pend = lista.filter(c => c.status === 'pendente').length;
+  const SIT = { aberta: 'Aguardando a pessoa', pendente: 'Esperando sua aprovação', aprovada: 'Liberada', recusada: 'Recusada', expirada: 'Expirou' };
+  el.innerHTML = `<h3 class="prova-sub">Cortesias${pend ? ` · ${pend} ${pend === 1 ? 'pedido esperando' : 'pedidos esperando'}` : ''}</h3>
+    <form class="cortesia-nova" id="cortesia-nova">
+      <select name="dias" aria-label="Dias de cortesia"><option value="7">7 dias</option><option value="15" selected>15 dias</option><option value="30">30 dias</option></select>
+      <input name="para" maxlength="60" placeholder="Para quem? (só para você saber)" aria-label="Para quem é a cortesia">
+      <button class="cta cta-a" type="submit">Gerar link de cortesia</button>
+    </form>
+    ${lista.length ? `<ul class="cortesias">${lista.map(c => `<li class="${escR(c.status)}" data-codigo="${escR(c.codigo)}">
+      <p><b>${c.dias} dias</b>${c.para ? ` · ${escR(c.para)}` : ''} · <span class="ass-sit ${c.status === 'aprovada' ? 'ativo' : c.status === 'pendente' ? 'vencido' : 'cancelado'}">${SIT[c.status] || escR(c.status)}</span> <small>criada em ${data(c.criadoEm)}</small></p>
+      ${c.nome ? `<p>${escR(c.nome)} · ${escR(c.email)}${c.telefone ? ` · <a href="https://wa.me/${escR(c.telefone)}" target="_blank" rel="noopener">WhatsApp</a>` : ''}${c.ate ? ` · até ${data(c.ate)}` : ''}</p>` : ''}
+      <div class="depo-botoes">
+        ${c.status === 'aberta' ? `<button type="button" class="cta cta-b" data-copiar>Copiar link</button><a class="cta cta-b" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(`Separei ${c.dias} dias grátis para você no Onde as Milhas Me Levam, o site com as melhores passagens com milhas na hora em que aparecem ✈️ Ative aqui: ${link(c.codigo)}`)}">Mandar no WhatsApp</a>` : ''}
+        ${c.status === 'pendente' ? '<button type="button" class="cta cta-a" data-aprovar>Aprovar</button><button type="button" class="cta cta-b" data-recusar>Recusar</button>' : ''}
+      </div></li>`).join('')}</ul>` : '<p class="passagens-vazio">Nenhuma cortesia gerada ainda.</p>'}`;
+}
+$('#painel-cortesias').addEventListener('submit', async e => {
+  if (e.target.id !== 'cortesia-nova') return;
+  e.preventDefault();
+  const f = e.target;
+  f.querySelector('button').disabled = true;
+  try {
+    await fetch(`${SERVIDOR}/cortesia/criar`, { method: 'POST', headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' },
+      body: JSON.stringify({ dias: f.elements.dias.value, para: f.elements.para.value }) });
+  } finally { desenharCortesiasPainel(); }
+});
+$('#painel-cortesias').addEventListener('click', async e => {
+  const li = e.target.closest('li[data-codigo]'); if (!li) return;
+  const codigo = li.dataset.codigo;
+  if (e.target.closest('[data-copiar]')) {
+    const b = e.target.closest('[data-copiar]');
+    try { await navigator.clipboard.writeText(`${location.origin}/?cortesia=${codigo}`); b.textContent = 'Link copiado!'; } catch (er) { prompt('Copie o link:', `${location.origin}/?cortesia=${codigo}`); }
+    return;
+  }
+  const aprovar = !!e.target.closest('[data-aprovar]');
+  if (!aprovar && !e.target.closest('[data-recusar]')) return;
+  if (!aprovar && !confirm('Recusar este pedido de cortesia?')) return;
+  e.target.disabled = true;
+  try {
+    const r = await fetch(`${SERVIDOR}/cortesia/decidir`, { method: 'POST', headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' },
+      body: JSON.stringify({ codigo, aprovar }) });
+    if (!r.ok) alert((await r.json().catch(() => ({}))).erro || 'Não deu agora.');
+  } finally { desenharCortesiasPainel(); desenharAssinantesPainel(); }
+});
+
 // Quem assina: e-mail, nome, @, plano, validade e último pagamento; "Cancelar acesso" depois de estornar.
 async function desenharAssinantesPainel() {
   const el = $('#painel-assinantes');
@@ -268,7 +362,7 @@ async function desenharAssinantesPainel() {
     ? `<div class="quanto-rolar"><table class="quanto-tab painel-ass"><thead><tr><th>Assinante</th><th>Plano</th><th>Válido até</th><th>Pagamento</th><th></th></tr></thead><tbody>
       ${lista.map(a => `<tr data-email="${escR(a.email)}">
         <th>${a.nome ? escR(a.nome) : '<span class="ass-semnome">sem nome</span>'}<small>${escR(a.email)}${a.instagram ? ` · <a href="https://instagram.com/${escR(a.instagram)}" target="_blank" rel="noopener">@${escR(a.instagram)}</a>` : ''}${a.telefone ? ` · <a href="https://wa.me/${escR(a.telefone)}" target="_blank" rel="noopener">WhatsApp ${escR(a.telefone.replace(/^55(\d\d)(\d+)(\d{4})$/, '($1) $2-$3'))}</a>` : ''}</small></th>
-        <td>${escR(a.plano === 'anual' ? 'Anual' : a.plano === 'mensal' ? 'Mensal' : a.plano || '—')}</td>
+        <td>${escR(a.plano === 'anual' ? 'Anual' : a.plano === 'mensal' ? 'Mensal' : a.plano === 'cortesia' ? 'Cortesia' : a.plano || '—')}</td>
         <td>${situacao(a)}<small>${data(a.validoAte)}</small></td>
         <td>${pag(a.pagamento)}</td>
         <td>${a.ativo ? '<button type="button" class="cta cta-b" data-cancelar>Cancelar acesso</button>' : ''}${a.pagamento ? '<button type="button" class="cta cta-b" data-conferir>Conferir na InfinitePay</button>' : ''}</td>

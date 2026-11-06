@@ -1501,3 +1501,15 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .perg-botoes{display:flex;flex-wrap:wrap;gap:10px}
 .painel-prefs{margin:0 0 22px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);display:grid;gap:6px;font-size:14px}
 .painel-prefs p{margin:0}.painel-prefs span{color:var(--ash)}
+/* Cortesia */
+.cortesia-campos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.cortesia-campos input,.cortesia-nova input,.cortesia-nova select{background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:11px 13px;color:var(--rice);font:inherit;font-size:14.5px}
+.cortesia-form .cta{justify-self:start}
+#painel-cortesias{margin-bottom:28px}
+.cortesia-nova{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px}
+.cortesia-nova input{flex:1 1 220px}
+.cortesias{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.cortesias li{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);display:grid;gap:6px;font-size:14px}
+.cortesias li.pendente{border-color:var(--ouro)}
+.cortesias li p{margin:0}.cortesias li small{color:var(--ash-dim)}
+.cortesias .depo-botoes .cta{padding:7px 14px;font-size:13px}
