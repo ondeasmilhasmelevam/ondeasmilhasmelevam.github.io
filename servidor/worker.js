@@ -953,6 +953,10 @@ async function exigirAdmin(req, env) {
   const email = await emailDoToken(req, env);
   const admins = String(env.ADMINS || '').split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
   if (!email || !admins.includes(email)) throw falha('Só para o dono do site.', 403);
+  // O dono vê o site como assinante (datas, links, radar e histórico), sem entrar nas contas de assinantes.
+  const a = await lerDoc(env, `assinantes/${email}`).catch(() => null);
+  if (!a || !(a.validoAte instanceof Date) || a.validoAte.getTime() < Date.now() + 365 * 864e5)
+    await gravarDoc(env, `assinantes/${email}`, { email, plano: 'dono', validoAte: new Date('2099-12-31T00:00:00Z'), atualizadoEm: new Date() }).catch(() => null);
   return email;
 }
 async function todosDepoimentos(req, env) {
@@ -1065,7 +1069,8 @@ async function decidirNaCampanha(req, env) {
 // Quem assina: nome e @ do depoimento (se deixou) ou o nome da conta Google; o último pagamento de cada um.
 async function listaAssinantes(req, env) {
   await exigirAdmin(req, env);
-  const [assinantes, depos, pedidos] = await Promise.all([listarDocs(env, 'assinantes'), listarDocs(env, 'depoimentos'), listarDocs(env, 'pedidos')]);
+  const [todos, depos, pedidos] = await Promise.all([listarDocs(env, 'assinantes'), listarDocs(env, 'depoimentos'), listarDocs(env, 'pedidos')]);
+  const assinantes = todos.filter(a => a.plano !== 'dono');
   const google = {};
   const emails = assinantes.map(a => a.id);
   for (let i = 0; i < emails.length; i += 100) {
@@ -1163,7 +1168,7 @@ async function metricas(req, url, env) {
     await Promise.all(datas.slice(i, i + 10).map(async d => { const m = await lerDoc(env, `metricas/${d}`); if (m) porDia[d] = m; }));
   }
   const agora = Date.now();
-  const assinantes = await listarDocs(env, 'assinantes');
+  const assinantes = (await listarDocs(env, 'assinantes')).filter(a => a.plano !== 'dono');
   const ativos = assinantes.filter(a => a.validoAte instanceof Date && a.validoAte.getTime() > agora);
   const leads = await listarDocs(env, 'leads');
   const ig = await lerDoc(env, 'privado/instagram').catch(() => null);

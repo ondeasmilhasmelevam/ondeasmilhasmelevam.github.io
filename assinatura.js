@@ -37,7 +37,12 @@ async function lerAssinatura(user) {
   if (!user || !user.email) return { ativo: false, email: '', validoAte: null };
   const email = user.email.toLowerCase();
   try {
-    const s = await getDoc(doc(db, 'assinantes', email));
+    let s = await getDoc(doc(db, 'assinantes', email));
+    // Dono do site: o servidor libera tudo como assinante na primeira visita (e mantém liberado).
+    if (email === 'ondeasmilhasmelevam@gmail.com' && !(s.exists() && s.data().plano === 'dono')) {
+      await fetch(`${SERVIDOR}/metricas?dias=1`, { headers: { authorization: `Bearer ${await user.getIdToken()}` } }).catch(() => null);
+      s = await getDoc(doc(db, 'assinantes', email));
+    }
     const validoAte = s.exists() && s.data().validoAte ? s.data().validoAte.toDate() : null;
     const ativo = Boolean(validoAte && validoAte > new Date());
     return { ativo, email, validoAte, plano: s.exists() ? s.data().plano : '', alertas: ativo ? await lerAlertas() : {} };
