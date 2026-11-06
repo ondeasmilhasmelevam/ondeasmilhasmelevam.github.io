@@ -1142,6 +1142,40 @@ def educativo(estado, agora, conta, token):
 
 
 
+# ---------- Story da campanha de cortesia (dia 1º de cada mês) ----------
+# Quem responde CORTESIA recebe pelo ManyChat o link do pedido (site #cortesia, aberto do dia 1 ao 7).
+def story_cortesia():
+    camada, d = tela()
+    y = pilula(d, 120, 'CAMPANHA DO MÊS · VAGAS LIMITADAS', OURO_LT, tam=30)[0] + 60
+    y = centro(d, y, ['GANHE ATÉ'], fonte(70, 800), RICE)
+    y = centro(d, y, ['30 DIAS'], fonte(190, 800, 'Cinzel'), OURO, 1.0)
+    y = centro(d, y, ['GRÁTIS'], fonte(90, 800), RICE) + 30
+    y = centro(d, y, ['no site com as melhores passagens', 'com milhas, na hora em que aparecem'], fonte(40, 600), ASH) + 60
+    for n, t in enumerate(['Responda CORTESIA aqui', 'Poste nos seus stories e', 'marque @ondeasmilhasmelevam', 'Preencha o pedido no link'], 1):
+        if n == 3:
+            y = centro(d, y - 8, [t], fonte(40, 800), OURO_LT) + 22
+            continue
+        rot = f"{n if n < 3 else n - 1}. {t}"
+        y = centro(d, y, [rot], fonte(44, 800), RICE) + (8 if n == 2 else 22)
+    return montar(camada, STORY, False, 'CORTESIA')
+
+
+def campanha_cortesia(estado, agora, conta, token):
+    dia = agora.astimezone(BRASILIA)
+    mes = dia.strftime('%Y-%m')
+    if dia.day != 1 or estado.get('campanha_mes') == mes:
+        return
+    urls = enviar([('story-cortesia.jpg', story_cortesia())], estado, 'Story da campanha de cortesia')
+    if not urls:
+        return
+    try:
+        publicar(conta, token, criar(conta, token, image_url=urls[0], media_type='STORIES'))
+    except Exception as e:
+        return print(f'::warning::Story da campanha não publicado: {e}')
+    estado['campanha_mes'] = mes
+    print('Story da campanha de cortesia publicado.')
+
+
 def teste(pasta):
     """Gera stories e os carrosséis de exemplo com os alertas atuais, sem publicar."""
     pasta.mkdir(parents=True, exist_ok=True)
@@ -1159,6 +1193,7 @@ def teste(pasta):
             (selo_arraste(tela, len(itens) - 1) if n == 1 else tela).save(pasta / f'feed-{tipo}-{n}.jpg', quality=90)
         texto = ia['legenda'] + rodape_legenda(tipo) if ia.get('legenda') else legenda(itens, agora.astimezone(BRASILIA), tipo)
         (pasta / f'legenda-{tipo}.txt').write_text(texto, encoding='utf-8')
+    story_cortesia().convert('RGB').save(pasta / 'story-cortesia.jpg', quality=90)
     for t, tema in enumerate(temas_educativos()):
         imgs, texto = carrossel_educativo(tema)
         for i, im in enumerate(imgs):
@@ -1188,6 +1223,7 @@ def main():
         stories(alertas, estado, agora, conta, token)
         feed(alertas, estado, agora, conta, token)
         educativo(estado, agora, conta, token)
+        campanha_cortesia(estado, agora, conta, token)
     guardar(estado, 'Instagram: controle atualizado')
 
 

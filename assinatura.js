@@ -245,11 +245,74 @@ async function desenharPainel() {
   desenharDeposPainel();
   desenharAssinantesPainel();
   desenharCortesiasPainel();
+  desenharCampanhaPainel();
 }
 
 // Depoimentos no painel: aprovar põe no site; ocultar tira.
 const DEPO_SITUACAO = { pendente: 'Esperando aprovação', aprovado: 'No site', oculto: 'Oculto' };
 const estrelas = n => `${'★'.repeat(n)}<span>${'★'.repeat(5 - n)}</span>`;
+// Campanha do mês (página #cortesia): quem respondeu CORTESIA no story pede com nome, e-mail, @ e WhatsApp.
+(async () => {
+  const f = $('#cortesia-form'), aviso = $('#cortesia-aviso');
+  let c = {};
+  try { c = await (await fetch(`${SERVIDOR}/campanha`)).json(); } catch (e) { /* mostra o aviso abaixo */ }
+  if (!c.aberta) {
+    aviso.textContent = c.proxima ? `A campanha deste mês já encerrou. A próxima abre em ${new Date(c.proxima).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })}: fique de olho nos stories!` : 'Não deu para abrir agora. Tente de novo em instantes.';
+    aviso.hidden = false;
+    return;
+  }
+  f.hidden = false;
+  f.addEventListener('submit', async ev => {
+    ev.preventDefault();
+    const m = f.querySelector('.lead-msg'), b = f.querySelector('button');
+    const dizer = (t, ok) => { m.textContent = t; m.className = `lead-msg ${ok ? 'ok' : 'erro'}`; m.hidden = false; };
+    b.disabled = true;
+    try {
+      const r = await fetch(`${SERVIDOR}/campanha/pedir`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({
+        nome: f.elements.nome.value, email: f.elements.email.value, instagram: f.elements.instagram.value, telefone: f.elements.telefone.value,
+        postou: f.elements.postou.checked, aceite: f.elements.aceite.checked }) });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(d.erro);
+      [...f.querySelectorAll('.cortesia-campos, .lead-aceite')].forEach(x => { x.hidden = true; }); b.hidden = true;
+      dizer('Pedido recebido! A gente confere o seu story e, aprovado, você recebe um e-mail com o acesso.', true);
+    } catch (er) { dizer(er.message || 'Não deu agora. Tente de novo em instantes.'); b.disabled = false; }
+  });
+})();
+
+// Painel: pedidos da campanha. O dono confere o perfil (story e seguidores) e escolhe 7, 15 ou 30 dias.
+async function desenharCampanhaPainel() {
+  const el = $('#painel-campanha');
+  if (!auth.currentUser) return;
+  let d;
+  try {
+    const r = await fetch(`${SERVIDOR}/campanha/pedidos`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
+    if (!r.ok) { el.innerHTML = ''; return; }
+    d = await r.json();
+  } catch (e) { return; }
+  const pend = d.pedidos.filter(p => p.status === 'pendente');
+  const data = t => (t ? new Date(t).toLocaleDateString('pt-BR') : '');
+  el.innerHTML = `<h3 class="prova-sub">Campanha de cortesia · ${d.campanha.aberta ? `aberta até ${data(d.campanha.ate)}` : `próxima em ${data(d.campanha.proxima)}`}${pend.length ? ` · ${pend.length} ${pend.length === 1 ? 'pedido esperando' : 'pedidos esperando'}` : ''}</h3>
+    ${d.pedidos.length ? `<ul class="cortesias">${d.pedidos.slice(0, 40).map(p => `<li class="${p.status === 'pendente' ? 'pendente' : ''}" data-email="${escR(p.email)}">
+      <p><b>${escR(p.nome)}</b> · <a href="https://instagram.com/${escR(p.instagram)}" target="_blank" rel="noopener">@${escR(p.instagram)}</a> · ${escR(p.email)}${p.telefone ? ` · <a href="https://wa.me/${escR(p.telefone)}" target="_blank" rel="noopener">WhatsApp</a>` : ''} <small>${data(p.criadoEm)}</small></p>
+      ${p.status === 'pendente' ? `<div class="depo-botoes"><select aria-label="Dias de cortesia"><option value="7">7 dias</option><option value="15" selected>15 dias</option><option value="30">30 dias</option></select>
+        <button type="button" class="cta cta-a" data-aprovar>Aprovar</button><button type="button" class="cta cta-b" data-recusar>Recusar</button></div>`
+        : `<p><span class="ass-sit ${p.status === 'aprovado' ? 'ativo' : 'cancelado'}">${p.status === 'aprovado' ? `Aprovado · ${p.dias} dias` : 'Recusado'}</span></p>`}
+    </li>`).join('')}</ul>` : '<p class="passagens-vazio">Nenhum pedido ainda. O story da campanha sai no dia 1º de cada mês.</p>'}`;
+}
+$('#painel-campanha').addEventListener('click', async e => {
+  const li = e.target.closest('li[data-email]'); if (!li) return;
+  const aprovar = !!e.target.closest('[data-aprovar]');
+  if (!aprovar && !e.target.closest('[data-recusar]')) return;
+  const dias = li.querySelector('select').value;
+  if (!confirm(aprovar ? `Liberar ${dias} dias para ${li.dataset.email}?` : `Recusar o pedido de ${li.dataset.email}?`)) return;
+  e.target.disabled = true;
+  try {
+    const r = await fetch(`${SERVIDOR}/campanha/decidir`, { method: 'POST', headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' },
+      body: JSON.stringify({ email: li.dataset.email, aprovar, dias }) });
+    if (!r.ok) alert((await r.json().catch(() => ({}))).erro || 'Não deu agora.');
+  } finally { desenharCampanhaPainel(); desenharCortesiasPainel(); desenharAssinantesPainel(); }
+});
+
 // Cortesia: o dono dá X dias grátis direto para o e-mail da pessoa; ela recebe um e-mail com o passo a passo.
 async function desenharCortesiasPainel() {
   const el = $('#painel-cortesias');

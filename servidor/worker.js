@@ -57,6 +57,10 @@ export default {
       if (req.method === 'GET' && url.pathname === '/assinantes') return json(await listaAssinantes(req, env), 200, cors);
       if (req.method === 'GET' && url.pathname === '/cortesias') return json(await listaCortesias(req, env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/cortesia') return json(await darCortesia(req, env), 200, cors);
+      if (req.method === 'GET' && url.pathname === '/campanha') return json(estadoCampanha(), 200, cors);
+      if (req.method === 'POST' && url.pathname === '/campanha/pedir') return json(await pedirNaCampanha(await req.json(), env), 200, cors);
+      if (req.method === 'GET' && url.pathname === '/campanha/pedidos') return json(await pedidosDaCampanha(req, env), 200, cors);
+      if (req.method === 'POST' && url.pathname === '/campanha/decidir') return json(await decidirNaCampanha(req, env), 200, cors);
       if (req.method === 'GET' && url.pathname === '/assinante/conferir') return json(await conferirUm(req, url, env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/assinante/cancelar') return json(await cancelarAssinante(req, env), 200, cors);
       if (req.method === 'POST' && url.pathname === '/depoimento/moderar') return json(await moderarDepoimento(req, env), 200, cors);
@@ -789,7 +793,10 @@ async function listaCortesias(req, env) {
 async function darCortesia(req, env) {
   await exigirAdmin(req, env);
   const b = await req.json();
-  const email = String(b.email || '').trim().toLowerCase();
+  return concederCortesia(env, { email: String(b.email || '').trim().toLowerCase(), nome: b.nome, telefone: b.telefone, dias: b.dias });
+}
+async function concederCortesia(env, b) {
+  const email = b.email;
   const nome = String(b.nome || '').replace(/\s+/g, ' ').trim().slice(0, 60);
   const dias = [7, 15, 30].includes(Number(b.dias)) ? Number(b.dias) : 15;
   if (!emailValido(email)) throw falha('Digite um e-mail válido.');
@@ -808,6 +815,63 @@ async function darCortesia(req, env) {
     Para entrar, abra o site e use <strong>${escHtml(email)}</strong>: com o Google desse e-mail ou com o código que mandamos para ele.<br><br>
     ${botaoEmail('Entrar no site', entrar)}<br><br>Boas viagens!`).catch(() => false);
   return { ok: true, ate: ate.toISOString(), enviado };
+}
+
+// Campanha do mês: do dia 1 ao 7 (Brasília), quem respondeu CORTESIA no story pede pelo site. Uma vez por pessoa
+// (e-mail ou @); quem já assinou ou já teve cortesia não entra. O dono confere o perfil e escolhe os dias.
+const CAMPANHA_DIAS = 7;
+function estadoCampanha(agora = Date.now()) {
+  const br = new Date(agora - 3 * 3600e3);
+  const ano = br.getUTCFullYear(), mes = br.getUTCMonth();
+  const aberta = br.getUTCDate() <= CAMPANHA_DIAS;
+  const ate = new Date(Date.UTC(ano, mes, CAMPANHA_DIAS, 23, 59) + 3 * 3600e3);
+  const proxima = new Date(Date.UTC(ano, mes + 1, 1, 3));
+  return { aberta, ate: ate.toISOString(), proxima: proxima.toISOString(), campanha: `${ano}-${String(mes + 1).padStart(2, '0')}` };
+}
+const arrobaValido = t => { const a = String(t || '').trim().replace(/^@/, '').replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/[/?].*$/, ''); return /^[A-Za-z0-9._]{1,30}$/.test(a) ? a.toLowerCase() : ''; };
+async function pedirNaCampanha(body, env) {
+  const c = estadoCampanha();
+  if (!c.aberta) throw falha('A campanha deste mês já encerrou. A próxima abre no dia 1º.', 410);
+  const email = String((body && body.email) || '').trim().toLowerCase();
+  const nome = String((body && body.nome) || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+  const instagram = arrobaValido(body && body.instagram);
+  if (nome.length < 2) throw falha('Digite seu nome.');
+  if (!emailValido(email)) throw falha('Digite um e-mail válido.');
+  if (!instagram) throw falha('Digite o seu @ do Instagram.');
+  if (body.postou !== true) throw falha('Para participar, poste nos seus stories marcando @ondeasmilhasmelevam.');
+  if (body.aceite !== true) throw falha('Marque que aceita os Termos de Uso.');
+  const [jaPediu, jaAssina, pedidos, cortesias] = await Promise.all([lerDoc(env, `pedidosCortesia/${email}`), lerDoc(env, `assinantes/${email}`),
+    listarDocs(env, 'pedidosCortesia'), listarDocs(env, 'cortesias')]);
+  if (jaPediu || pedidos.some(p => p.instagram === instagram)) throw falha('Você já participou de uma campanha de cortesia. Ela vale uma vez por pessoa.', 409);
+  if (jaAssina || cortesias.some(x => x.email === email)) throw falha('Este e-mail já teve acesso ao site. A cortesia é para quem ainda não experimentou.', 409);
+  await gravarDoc(env, `pedidosCortesia/${email}`, { email, nome, instagram, telefone: telefoneValido(body.telefone), status: 'pendente', campanha: c.campanha, criadoEm: new Date() });
+  const dono = String(env.ADMINS || '').split(',')[0].trim();
+  if (emailValido(dono)) await enviarEmail(env, dono, `Novo pedido de cortesia: @${instagram}`,
+    `<strong>${escHtml(nome)}</strong> (@${escHtml(instagram)}, ${escHtml(email)}) pediu a cortesia da campanha.<br><br>
+    Confira se postou nos stories marcando o perfil e quantos seguidores tem, e escolha os dias no Painel.<br><br>
+    ${botaoEmail('Ver o perfil', `https://instagram.com/${instagram}`)} ${botaoEmail('Abrir o Painel', `${env.SITE}#painel`)}`).catch(() => false);
+  return { ok: true };
+}
+async function pedidosDaCampanha(req, env) {
+  await exigirAdmin(req, env);
+  const todos = await listarDocs(env, 'pedidosCortesia');
+  return { campanha: estadoCampanha(), pedidos: todos.map(p => ({ email: p.email, nome: p.nome, instagram: p.instagram, telefone: p.telefone || '', status: p.status,
+    dias: p.dias || null, campanha: p.campanha, criadoEm: p.criadoEm instanceof Date ? p.criadoEm.toISOString() : null }))
+    .sort((a, b) => (a.status === 'pendente' ? 0 : 1) - (b.status === 'pendente' ? 0 : 1) || String(b.criadoEm).localeCompare(String(a.criadoEm))) };
+}
+async function decidirNaCampanha(req, env) {
+  await exigirAdmin(req, env);
+  const b = await req.json();
+  const email = String(b.email || '').trim().toLowerCase();
+  const p = emailValido(email) && await lerDoc(env, `pedidosCortesia/${email}`);
+  if (!p || p.status !== 'pendente') throw falha('Não há pedido pendente para este e-mail.', 404);
+  if (!b.aprovar) {
+    await atualizarCampos(env, `pedidosCortesia/${email}`, { status: 'recusado', decididoEm: new Date() });
+    return { ok: true };
+  }
+  const r = await concederCortesia(env, { email, nome: p.nome, telefone: p.telefone, dias: b.dias });
+  await atualizarCampos(env, `pedidosCortesia/${email}`, { status: 'aprovado', dias: [7, 15, 30].includes(Number(b.dias)) ? Number(b.dias) : 15, decididoEm: new Date() });
+  return r;
 }
 
 /* ---------- Painel do dono ---------- */
