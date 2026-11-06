@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6202",
+  "data": "2026-11-06T21:02:41Z",
+  "origem": "Buenos Aires",
+  "origem_iata": "EZE",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "American Airlines",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "155.100 milhas + R$ 692,07",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-14989",
   "data": "2026-11-06T20:58:59Z",
   "origem": "Goiânia",
