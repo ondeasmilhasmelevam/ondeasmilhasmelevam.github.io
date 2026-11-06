@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-14983",
+  "data": "2026-11-06T20:17:48Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "39.500 milhas + Taxas",
+  "volta": "39.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9143",
   "data": "2026-11-06T20:10:01Z",
   "origem": "Florianópolis",
