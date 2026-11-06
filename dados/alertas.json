@@ -7110,20 +7110,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2008590742-14732",
-  "data": "2026-11-04T19:50:12Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Lima",
-  "destino_iata": "LIM",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "32.400 milhas + Taxas",
-  "volta": "32.400 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7591",
   "data": "2026-11-04T14:56:21Z",
   "tipo": "promocao",
