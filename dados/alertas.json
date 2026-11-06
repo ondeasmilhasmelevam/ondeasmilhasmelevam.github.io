@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-14925",
+  "data": "2026-11-06T12:27:00Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "64.800 milhas + Taxas",
+  "volta": "64.800 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-14924",
+  "data": "2026-11-06T12:26:53Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Joanesburgo",
+  "destino_iata": "JNB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "75.100 milhas + Taxas",
+  "volta": "75.100 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-9086",
   "data": "2026-11-06T12:17:26Z",
   "origem": "Maceió",
@@ -7031,20 +7059,6 @@
   "ida": "14.300 milhas + R$ 35,75 de taxas",
   "volta": "14.300 milhas + R$ 45,98 de taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8882",
-  "data": "2026-11-04T12:22:31Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Fortaleza",
-  "destino_iata": "FOR",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 10.398 milhas",
-  "volta": "A partir de 10.398 milhas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7580",
