@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9089",
+  "data": "2026-11-06T12:39:52Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "Caldas Novas",
+  "destino_iata": "CLV",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "A partir de 17.700 milhas",
+  "volta": "A partir de 17.700 milhas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9088",
   "data": "2026-11-06T12:31:56Z",
   "origem": "Vitória",
@@ -7044,48 +7058,6 @@
   "programa": "Azul Fidelidade",
   "ida": "A partir de 77.600 milhas",
   "volta": "A partir de 77.600 milhas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-14685",
-  "data": "2026-11-04T12:36:44Z",
-  "origem": "Navegantes",
-  "origem_iata": "NVT",
-  "destino": "Lima",
-  "destino_iata": "LIM",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "36.500 milhas + Taxas",
-  "volta": "36.500 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8886",
-  "data": "2026-11-04T12:36:41Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "15.700 milhas + Taxas",
-  "volta": "15.700 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8885",
-  "data": "2026-11-04T12:36:37Z",
-  "origem": "Navegantes",
-  "origem_iata": "NVT",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "23.000 milhas + Taxas",
-  "volta": "",
   "link_nome": "Azul Fidelidade"
  },
  {
