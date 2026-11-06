@@ -1255,12 +1255,15 @@ def campanha_cortesia(estado, agora, conta, token):
     print('Story da campanha de cortesia publicado.')
 
 
-# ---------- Reel do dia (19h): as melhores ofertas em sequência, com música ----------
+# ---------- Reels do dia: promoções de pontos ao meio-dia e passagens às 19h, com música ----------
 # Reels são o que o Instagram mais mostra para quem ainda não segue o perfil: é o que traz gente nova.
-REEL_HORA = (19, 0)
+# (tipo, hora de Brasília, chave no estado que marca o dia já postado)
+REELS = (('promocao', (12, 0), 'reel_promo_dia'), ('passagem', (19, 0), 'reel_dia'))
 REEL_SEGUNDOS = 3  # por oferta
 PERGUNTAS_REEL = ('Qual dessas você emitiria hoje? Comenta o número 👇', 'Pra onde você iria primeiro? Comenta aqui 👇',
                   'Marca quem viaja com você nessa 👇', 'Qual destino tá na sua lista? Me conta nos comentários 👇')
+PERGUNTAS_PROMO = ('Qual dessas você vai aproveitar? Comenta aqui 👇', 'Você junta pontos em qual programa? Me conta 👇',
+                   'Marca quem precisa ver essa promoção 👇', 'Já transferiu pontos com bônus? Conta como foi 👇')
 
 
 def video_reel(jpgs, mp4):
@@ -1287,21 +1290,24 @@ def video_reel(jpgs, mp4):
         return False
 
 
-def itens_reel(alertas, agora):
-    itens = escolher_carrossel(alertas, agora, 'passagem')[:4]
-    if len(itens) < 3:
-        itens += escolher_carrossel(alertas, agora, 'promocao')[:4 - len(itens)]
-    return itens
+def itens_reel(alertas, agora, tipo='passagem'):
+    return escolher_carrossel(alertas, agora, tipo)[:4]
 
 
-def reel(alertas, estado, agora, conta, token):
+def reels(alertas, estado, agora, conta, token):
+    for tipo, hora, chave in REELS:
+        reel(alertas, estado, agora, conta, token, tipo, hora, chave)
+
+
+def reel(alertas, estado, agora, conta, token, tipo, hora, chave):
     dia = agora.astimezone(BRASILIA)
     hoje = dia.date().isoformat()
-    if estado.get('reel_dia') == hoje or (dia.hour, dia.minute) < REEL_HORA:
+    if estado.get(chave) == hoje or (dia.hour, dia.minute) < hora:
         return
-    itens = itens_reel(alertas, agora)
+    itens = itens_reel(alertas, agora, tipo)
     if len(itens) < 2:
-        return print('Reel: menos de 2 ofertas boas hoje, fica para amanhã.')
+        estado[chave] = hoje  # não fica tentando o dia todo
+        return print(f'Reel de {tipo}: menos de 2 ofertas boas hoje, fica para amanhã.')
     ia = textos_ia(itens, com_legenda=True)
     chamadas = ia.get('chamadas') or [''] * len(itens)
     PASTA.mkdir(exist_ok=True)
@@ -1311,15 +1317,15 @@ def reel(alertas, estado, agora, conta, token):
     for i, (a, c) in enumerate(zip(itens, chamadas)):
         jpgs.append(PASTA / f'reel-{hoje}-{i}.jpg')
         imagem(a, STORY, c).convert('RGB').save(jpgs[-1], 'JPEG', quality=90)
-    mp4 = PASTA / f'reel-{hoje}.mp4'
+    mp4 = PASTA / f'reel-{tipo}-{hoje}.mp4'
     if not video_reel(jpgs, mp4) or not guardar(estado, 'Vídeo do Reel do dia'):
         return
     sha = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=RAIZ, capture_output=True, text=True).stdout.strip()
     url = f'{SITE}/stories/{mp4.name}?v={sha[:8]}'
     if not no_ar(url):
         return print('::warning::Reel: o vídeo não ficou no ar a tempo; tenta na próxima volta.')
-    tipo = 'promocao' if all(a.get('tipo') == 'promocao' for a in itens) else 'passagem'
-    pergunta = PERGUNTAS_REEL[dia.toordinal() % len(PERGUNTAS_REEL)]
+    perguntas = PERGUNTAS_PROMO if tipo == 'promocao' else PERGUNTAS_REEL
+    pergunta = perguntas[dia.toordinal() % len(perguntas)]
     base = ia['legenda'] if ia.get('legenda') else legenda(itens, dia, tipo).split(chr(10) + chr(10) + '💬')[0]
     texto = base + bloco_vale(itens, ia.get('regras')) + chr(10) + chr(10) + pergunta + rodape_legenda(tipo)
     try:
@@ -1327,10 +1333,13 @@ def reel(alertas, estado, agora, conta, token):
         publicar(conta, token, cid)
     except Exception as e:
         return print(f'::warning::Reel não publicado: {e}')
-    estado['reel_dia'] = hoje
-    print(f'Reel do dia publicado com {len(itens)} ofertas.')
-    rotas = ', '.join(dict.fromkeys(a.get('destino') or a.get('titulo', '') for a in itens if a.get('destino') or a.get('titulo')))
-    shorts(mp4, f'Passagens com milhas de hoje: {rotas}', texto)
+    estado[chave] = hoje
+    print(f'Reel de {tipo} publicado com {len(itens)} ofertas.')
+    if tipo == 'promocao':
+        shorts(mp4, 'Promoções de pontos e milhas de hoje: transferências com bônus', texto)
+    else:
+        rotas = ', '.join(dict.fromkeys(a.get('destino', '') for a in itens if a.get('destino')))
+        shorts(mp4, f'Passagens com milhas de hoje: {rotas}', texto)
 
 
 # ---------- YouTube Shorts: o mesmo vídeo do Reel, no canal @ondeasmilhasmelevam ----------
@@ -1416,7 +1425,7 @@ def main():
         feed(alertas, estado, agora, conta, token)
         educativo(estado, agora, conta, token)
         campanha_cortesia(estado, agora, conta, token)
-        reel(alertas, estado, agora, conta, token)
+        reels(alertas, estado, agora, conta, token)
     guardar(estado, 'Instagram: controle atualizado')
 
 
