@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-14996",
+  "data": "2026-11-07T02:29:35Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Orlando",
+  "destino_iata": "MCO",
+  "companhia": "Avianca",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "68.500 milhas + R$ 257,94 de taxas",
+  "volta": "68.500 milhas + R$ 257,94 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-9146",
+  "data": "2026-11-06T22:46:55Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Navegantes",
+  "destino_iata": "NVT",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "A partir de 5.796 milhas",
+  "volta": "A partir de 5.796 milhas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-14993",
   "data": "2026-11-06T21:07:06Z",
   "origem": "Manaus",
@@ -1195,28 +1223,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "1290836068-7619",
-  "data": "2026-11-06T16:07:50Z",
-  "tipo": "promocao",
-  "titulo": "ASSINE O CLUBE AZUL 1.000 COM DESCONTO ESPECIAL",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Assine o Clube Azul 1.000 por apenas R$ 15,00 no primeiro mês e obtenha 50% de desconto nas 11 mensalidades seguintes, pagando R$ 22,50/mês. Ideal para acumular pontos com custo reduzido.",
-  "detalhes": [
-   "Primeiro mês: R$ 15,00 (promoção Azul Friday).",
-   "11 mensalidades seguintes: R$ 22,50 (50% de desconto).",
-   "Valor integral após promoção: R$ 45,00/mês.",
-   "Pontuação mensal: 1.000 pontos.",
-   "Pontuação total em 12 meses: 12.000 pontos."
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "06/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/adesao-relampago"
-  ],
-  "ate": "2026-11-06T23:59:59-03:00"
- },
- {
   "id": "3761373661-9121",
   "data": "2026-11-06T15:44:19Z",
   "origem": "Belo Horizonte",
@@ -1320,67 +1326,6 @@
   "ida": "A partir de 36.000 milhas",
   "volta": "A partir de 36.000 milhas",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-7615",
-  "data": "2026-11-06T14:34:00Z",
-  "tipo": "promocao",
-  "titulo": "PICPAY PARA LATAM Pass: 25% DE BÔNUS + 1.000 MILHAS EXTRAS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira seus pontos do programa PicPay para o LATAM Pass e receba 25% de bônus padrão, além de 1.000 milhas extras se for sua primeira transferência.",
-  "detalhes": [
-   "25% de bônus em milhas para todos os clientes",
-   "+1.000 milhas extras para a primeira transferência realizada da conta PicPay para o LATAM Pass"
-  ],
-  "parceiros": "PicPay, LATAM Pass",
-  "validade": "06/11/2026",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/picpay-milhas-extras"
-  ],
-  "ate": "2026-11-06T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7614",
-  "data": "2026-11-06T14:33:54Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFERÊNCIA ESFERA PARA ALL ACCOR: 20% POINTS BACK + ATÉ 10% BÔNUS",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Transfira seus pontos Esfera para o programa ALL Accor e receba 20% de pontos de volta na Esfera e até 10% de bônus em pontos Reward para assinantes ALL Signature.",
-  "detalhes": [
-   "Paridade: 3,5 pontos Esfera = 1 ponto ALL Accor",
-   "20% de Points Back na conta Esfera para todos os participantes elegíveis",
-   "10% de bônus ALL Accor exclusivo para assinantes ALL Signature ativos"
-  ],
-  "parceiros": "Esfera, ALL Accor",
-  "validade": "06/11/2026",
-  "links": [
-   "https://www.esfera.com.vc/p/all-accor/e000100158",
-   "https://all.accor.com/a/pt-br/loyalty-program/partners/offers/oferta-esfera.html"
-  ],
-  "ate": "2026-11-06T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7613",
-  "data": "2026-11-06T14:33:49Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFERÊNCIA LIVELO PARA AZUL FIDELIDADE: ATÉ 130% DE BÔNUS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira seus pontos da Livelo para o Azul Fidelidade e garanta até 100% de bônus padrão combinado com até 30% de bônus adicional por tempo de permanência no Clube Azul.",
-  "detalhes": [
-   "60% de bônus: Demais clientes Azul Fidelidade",
-   "90% de bônus: Assinantes do Clube Azul OU Clube Livelo",
-   "100% de bônus: Assinantes do Clube Azul E Clube Livelo",
-   "Bônus por tempo de Clube Azul: +5% (6 a 11 meses), +10% (12 a 35 meses), +20% (36 a 59 meses) e +30%"
-  ],
-  "parceiros": "Livelo, Azul Fidelidade",
-  "validade": "06/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/livelo"
-  ],
-  "ate": "2026-11-06T23:59:59-03:00"
  },
  {
   "id": "3761373661-9118",
@@ -5488,30 +5433,6 @@
   "link_nome": "TAP Miles&Go"
  },
  {
-  "id": "1290836068-7605",
-  "data": "2026-11-05T15:48:19Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FIDELIDADE OFERECE ATÉ 120% DE BÔNUS NAS TRANSFERÊNCIAS DE PONTOS DO NUBANK CROMA",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira pontos do Nubank Croma para o Azul Fidelidade e ganhe até 120% de bônus, sendo 90% para assinantes do clube e até 30% extras por tempo de assinatura.",
-  "detalhes": [
-   "90% de bônus para assinantes do Clube Azul Fidelidade",
-   "60% de bônus para demais clientes Azul",
-   "Bônus adicional por tempo de Clube Azul:",
-   "+ 5% de bônus – assinantes há mais de 6 meses",
-   "+ 10% de bônus – assinantes entre 1 e 2 anos (12 a 35 meses)",
-   "+ 20% de bônus – assinantes entre 3 e 4 anos (36 a 59 meses)",
-   "+ 30% de bônus – assinantes há mais de 5 anos"
-  ],
-  "parceiros": "Azul Fidelidade, Nubank",
-  "validade": "06/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/nubank"
-  ],
-  "ate": "2026-11-06T23:59:59-03:00"
- },
- {
   "id": "2008590742-14797",
   "data": "2026-11-05T15:41:31Z",
   "origem": "Campinas",
@@ -6926,20 +6847,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-8956",
-  "data": "2026-11-05T03:29:11Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "GOL Linhas Aéreas",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "10.600 milhas + R$ 48,63 de taxas",
-  "volta": "10.600 milhas + R$ 62,14 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7601",
   "data": "2026-11-04T20:58:53Z",
   "tipo": "promocao",
@@ -6963,43 +6870,6 @@
    "https://link.dia23.com.br/r/fPnF3kI"
   ],
   "ate": "2026-11-16T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7591",
-  "data": "2026-11-04T14:56:21Z",
-  "tipo": "promocao",
-  "titulo": "PICPAY & LATAM Pass: TRANSFIRA PONTOS COM 25% DE BÔNUS + 1.000 MILHAS EXTRAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira pontos do PicPay para o LATAM Pass e ganhe 25% de bônus + 1.000 milhas extras na primeira transferência.",
-  "detalhes": [
-   "25% de bônus para todos os clientes elegíveis.",
-   "1.000 milhas extras para primeira transferência."
-  ],
-  "parceiros": "PicPay, LATAM Pass",
-  "validade": "Até 06/11/2026",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/picpay-milhas-extras"
-  ],
-  "ate": "2026-11-06T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7590",
-  "data": "2026-11-04T14:56:17Z",
-  "tipo": "promocao",
-  "titulo": "MELIUZ & ALL ACCOR: 10% DE CASHBACK EM HOTÉIS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Receba 10% de cashback ao reservar hotéis do grupo ALL Accor através do Méliuz.",
-  "detalhes": [
-   "10% de cashback em reservas de hotéis ALL Accor."
-  ],
-  "parceiros": "Méliuz, ALL Accor",
-  "validade": "Até 06/11/2026",
-  "links": [
-   "https://meliuz.onelink.me/2657008059/3kx8908c?id=57"
-  ],
-  "ate": "2026-11-06T23:59:59-03:00"
  },
  {
   "id": "1290836068-7585",
@@ -7084,27 +6954,6 @@
    "https://www.voeazul.com.br/br/pt/ofertas/facilidades#renovacao-de-pontos"
   ],
   "ate": "2026-11-09T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7567",
-  "data": "2026-11-03T14:07:43Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FIDELIDADE OFERECE ATÉ 130% DE BÔNUS NAS TRANSFERÊNCIAS DE PONTOS LIVELO",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Transfira pontos Livelo para o Azul Fidelidade e garanta até 130% de bônus, com milheiro a partir de R$ 13,80.",
-  "detalhes": [
-   "100% de bônus para assinantes do Clube Azul Fidelidade E Clube Livelo",
-   "90% de bônus para assinantes do Clube Azul Fidelidade OU Clube Livelo",
-   "60% de bônus para todos os Clientes Azul Fidelidade",
-   "Bônus adicional por tempo de Clube Azul: +5% , +10% (12 a 35 meses), +20% (36 a 59 meses) e +30%"
-  ],
-  "parceiros": "Livelo, Azul Fidelidade",
-  "validade": "06/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/livelo"
-  ],
-  "ate": "2026-11-06T23:59:59-03:00"
  },
  {
   "id": "1290836068-7557",
