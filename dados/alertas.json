@@ -6651,48 +6651,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-14756",
-  "data": "2026-11-05T11:04:17Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Lima",
-  "destino_iata": "LIM",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "40.400 milhas + Taxas",
-  "volta": "40.400 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-8962",
-  "data": "2026-11-05T11:02:31Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "12.400 milhas + R$ 0,00",
-  "volta": "12.400 milhas + R$ 0,00",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-8961",
-  "data": "2026-11-05T11:02:28Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "RIO",
-  "destino": "Porto Alegre",
-  "destino_iata": "POA",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "13.000 milhas + R$ 0,00",
-  "volta": "13.000 milhas + R$ 0,00",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7601",
   "data": "2026-11-04T20:58:53Z",
   "tipo": "promocao",
