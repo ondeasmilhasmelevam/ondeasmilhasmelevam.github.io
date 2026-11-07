@@ -6763,20 +6763,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-14752",
-  "data": "2026-11-05T10:40:31Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "35.900 milhas + Taxas",
-  "volta": "35.900 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7601",
   "data": "2026-11-04T20:58:53Z",
   "tipo": "promocao",
