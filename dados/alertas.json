@@ -6357,20 +6357,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-8974",
-  "data": "2026-11-05T11:47:33Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 10.934 milhas",
-  "volta": "A partir de 10.934 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7601",
   "data": "2026-11-04T20:58:53Z",
   "tipo": "promocao",
