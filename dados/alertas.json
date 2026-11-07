@@ -6735,34 +6735,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-14754",
-  "data": "2026-11-05T10:55:20Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Punta Cana",
-  "destino_iata": "PUJ",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "73.600 milhas + Taxas",
-  "volta": "73.600 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-14753",
-  "data": "2026-11-05T10:52:18Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "San José",
-  "destino_iata": "SJO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "55.500 milhas + Taxas",
-  "volta": "55.500 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7601",
   "data": "2026-11-04T20:58:53Z",
   "tipo": "promocao",
