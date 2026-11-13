@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-13T20:03:56.516555Z",
+ "atualizado": "2026-11-13T20:10:14.577714Z",
  "dias": 30,
- "passagens": 2368,
+ "passagens": 2371,
  "promocoes": 142,
  "destinos": 160,
- "executiva": 463,
+ "executiva": 464,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1277,
+  "passagens": 1279,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -810,6 +810,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9626",
+    "origem": "Campinas",
+    "origem_iata": "VCP",
+    "destino": "João Pessoa",
+    "destino_iata": "JPA",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-13T20:05:13Z",
+    "milhas": 8400,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9301",
     "origem": "Navegantes",
     "origem_iata": "NVT",
@@ -922,19 +935,6 @@
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
     "data": "2026-11-13T12:08:31Z",
-    "milhas": 11000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9561",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Tefé",
-    "destino_iata": "TFF",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-13T12:36:22Z",
     "milhas": 11000,
     "nivel": "",
     "regiao": "brasil"
