@@ -6312,48 +6312,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15405",
-  "data": "2026-11-11T19:06:52Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Punta Cana",
-  "destino_iata": "PUJ",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "75.000 milhas + Taxas",
-  "volta": "75.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15404",
-  "data": "2026-11-11T19:06:45Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Cidade do Cabo",
-  "destino_iata": "CPT",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "81.000 milhas + Taxas",
-  "volta": "81.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15403",
-  "data": "2026-11-11T19:01:39Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Buenos Aires",
-  "destino_iata": "AEP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "36.500 milhas + Taxas",
-  "volta": "36.500 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7710",
   "data": "2026-11-11T17:23:00Z",
   "tipo": "promocao",
