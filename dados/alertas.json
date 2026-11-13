@@ -6354,20 +6354,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-15402",
-  "data": "2026-11-11T18:57:43Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Montevidéu",
-  "destino_iata": "MVD",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "32.800 milhas + Taxas",
-  "volta": "32.800 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7710",
   "data": "2026-11-11T17:23:00Z",
   "tipo": "promocao",
