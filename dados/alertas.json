@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9613",
+  "data": "2026-11-13T18:35:57Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "12.000 milhas + Taxas",
+  "volta": "12.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2008590742-15584",
   "data": "2026-11-13T18:32:47Z",
   "origem": "Florianópolis",
@@ -6189,125 +6203,6 @@
   "ida": "41.000 milhas + Taxas",
   "volta": "41.000 milhas + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-7715",
-  "data": "2026-11-11T18:40:03Z",
-  "tipo": "promocao",
-  "titulo": "SMILES: PASSAGENS NACIONAIS A PARTIR DE 7.600 MILHAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Smiles oferece passagens nacionais a partir de 7.600 milhas por trecho, com taxas variando. Exemplos incluem Florianópolis–Porto Alegre 7.600 milhas e R$56,99, São Paulo–Navegantes 8.100 milhas e R$35,75, Brasília–Rio de Janeiro 10.600 milhas e R$34,55.",
-  "detalhes": [
-   "custo em milhas por trecho",
-   "taxas em reais",
-   "custo em milhas Smiles",
-   "Florianópolis (FLN) x Porto Alegre (POA) a partir de 7.600 milhas o trecho a partir de R$ 57",
-   "São Paulo (GRU) x Navegantes (NVT) a partir de 8.100 milhas o trecho a partir de R$ 36",
-   "Brasília (BSB) x Rio de Janeiro (SDU) a partir de 10.600 milhas o trecho a partir de R$ 35",
-   "São Paulo (CGH) x Londrina (LDB) a partir de 11.900 milhas o trecho a partir de R$ 62",
-   "São Paulo (CGH) x Campo Grande (CGR) a partir de 15.400 milhas o trecho a partir de R$ 62"
-  ],
-  "parceiros": "Smiles",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/gIidMvC"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7714",
-  "data": "2026-11-11T18:39:59Z",
-  "tipo": "promocao",
-  "titulo": "LIVELO OFERECE ATÉ 30% OFF EM PASSAGENS PARA FLÓRIDA + 30% DE POINTSBACK",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Desconto de até 30% em passagens para Flórida com 30% de pontos de volta ao utilizar o cartão Livelo.",
-  "detalhes": [
-   "30% OFF em passagens para Flórida.",
-   "30% de pointsback ao utilizar o cartão Livelo."
-  ],
-  "parceiros": "Livelo",
-  "validade": "",
-  "links": [
-   "https://passageirodeprimeira.com/livelo-oferece-ate-30-off-passagens-florida-30-pointsback/"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7713",
-  "data": "2026-11-11T18:39:49Z",
-  "tipo": "promocao",
-  "titulo": "PASSAGENS INTERNACIONAIS A PARTIR DE 26.800 MILHAS SMILES",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "A promoção oferece passagens internacionais com Smiles a partir de 26.800 milhas + taxas. As tarifas são por trecho e por passageiro, com valores listados por rota e companhia. A disponibilidade pode mudar a qualquer momento.",
-  "detalhes": [
-   "Valores são por trecho e por passageiro",
-   "Taxas adicionais aplicam-se",
-   "Disponibilidade pode mudar a qualquer momento",
-   "Emissões são as menores disponíveis em cada mês",
-   "Manaus (MAO) x Panamá (PTY) a partir de 26.800 milhas o trecho",
-   "São Paulo (GRU) x Bogotá (BOG) a partir de 43.100 milhas o trecho",
-   "Manaus (MAO) x Orlando (MCO) a partir de 45.100 milhas o trecho",
-   "Belo Horizonte (CNF) x Panamá (PTY) a partir de 53.200 milhas o trecho"
-  ],
-  "parceiros": "Smiles",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/IXFzI3F"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7712",
-  "data": "2026-11-11T18:39:44Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass: PASSAGENS PARA SALVADOR A PARTIR DE 9.302 MILHAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "O LATAM Pass oferece passagens aéreas para Salvador a partir de 9.302 milhas por trecho, com saídas de Brasília, Rio de Janeiro e São Paulo. A viagem pode ser feita entre fevereiro e junho de 2027. As taxas aeroportuárias não estão incluídas.",
-  "detalhes": [
-   "milhas_por_trecho: 9302",
-   "taxas_aeroportuarias_incluidas: false",
-   "origens: Brasília, Rio de Janeiro, São Paulo",
-   "período_viagem: fevereiro a junho de 2027",
-   "Brasília (BSB) x Salvador (SSA) a partir de 9.302 milhas o trecho",
-   "Rio de Janeiro x Salvador (SSA) a partir de 9.302 milhas o trecho",
-   "São Paulo x Salvador (SSA) a partir de 9.302 milhas o trecho",
-   "Períodos de viagem: entre os meses de fevereiro e junho de 2027"
-  ],
-  "parceiros": "LATAM Pass",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/Askzqcj"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7711",
-  "data": "2026-11-11T18:39:31Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass: VOOS PARA ORLANDO A PARTIR DE 42.028 MILHAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "LATAM Pass oferece voos para Orlando a partir de 42.028 milhas por trecho, com até 40% de desconto. Disponibilidade saindo de Brasília, Belo Horizonte, São Paulo, Rio de Janeiro e Curitiba entre fevereiro e março de 2027, incluindo voos diretos. É necessário pesquisar ida e volta no site da Latam, pois a pesquisa apenas de ida gera valores mais altos.",
-  "detalhes": [
-   "até 40% de desconto",
-   "passagens aéreas para Orlando a partir de 42.028 milhas o trecho + taxas aeroportuárias",
-   "disponibilidade saindo de Brasília, Belo Horizonte, São Paulo, Rio de Janeiro e Curitiba",
-   "viagem entre fevereiro e março de 2027",
-   "opções de voos diretos",
-   "obrigatório pesquisa ida e volta no site da Latam",
-   "pesquisa somente ida tem valores mais altos",
-   "Brasília (BSB) x Orlando (MCO) a partir de 42.028 milhas o trecho"
-  ],
-  "parceiros": "LATAM Pass",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/Askzqcj"
-  ],
-  "ate": ""
  },
  {
   "id": "1290836068-7710",
