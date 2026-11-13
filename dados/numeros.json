@@ -1,8 +1,8 @@
 {
- "atualizado": "2026-11-13T18:41:57.523731Z",
+ "atualizado": "2026-11-13T18:48:14.409053Z",
  "dias": 30,
- "passagens": 2336,
- "promocoes": 140,
+ "passagens": 2338,
+ "promocoes": 142,
  "destinos": 160,
  "executiva": 460,
  "destaques": [
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1269,
+  "passagens": 1270,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -784,15 +784,15 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9187",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
+    "id": "3761373661-9614",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
     "destino": "São Paulo",
     "destino_iata": "GRU",
     "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-08T14:17:21Z",
-    "milhas": 8040,
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-13T18:47:52Z",
+    "milhas": 8000,
     "nivel": "",
     "regiao": "brasil"
    },

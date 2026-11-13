@@ -1,5 +1,76 @@
 [
  {
+  "id": "3761373661-9615",
+  "data": "2026-11-13T18:47:54Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "9.000 milhas + Taxas",
+  "volta": "9.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-9614",
+  "data": "2026-11-13T18:47:52Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "8.000 milhas + Taxas",
+  "volta": "8.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "1290836068-7760",
+  "data": "2026-11-13T18:44:45Z",
+  "tipo": "promocao",
+  "titulo": "ASSINATURA CLUBE LIVELO ESSENCIAL COM ATÉ 13.000 PONTOS BÔNUS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Livelo Essencial e ganhe até 13.000 pontos bônus. Cupom exclusivo: CLUBEMDBF3. Cálculo de milheiro a partir de R$21,55.",
+  "detalhes": [
+   "Cupom exclusivo: CLUBEMDBF3.",
+   "Plano mensal: 24.000 pontos em 12 meses .",
+   "Plano anual: 25.000 pontos em 12 meses .",
+   "Bônus de 1.000 pontos/mês durante 12 meses."
+  ],
+  "parceiros": "Livelo",
+  "validade": "15/11/2026",
+  "links": [
+   "https://www.livelo.com.br/clube"
+  ],
+  "ate": "2026-11-15T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7759",
+  "data": "2026-11-13T18:44:41Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFIRA PONTOS NOMAD EXPLORER PARA AZUL FIDELIDADE COM ATÉ 120% DE BÔNUS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira pontos Nomad Explorer para Azul Fidelidade com até 120% de bônus, incluindo 3.000 pontos extras na primeira transferência. Bônus adicional por tempo de assinatura do Clube Azul.",
+  "detalhes": [
+   "Bônus de até 90% para assinantes do Clube Azul Fidelidade.",
+   "Bônus de 60% para todos os clientes Azul Fidelidade.",
+   "Bônus adicional por tempo de Clube Azul: +5% , +10% (1-2 anos), +20% (3-4 anos), +30% .",
+   "Limite de 100.000 pontos por ano para bônus adicional.",
+   "3.000 pontos extras na primeira transferência."
+  ],
+  "parceiros": "Nomad Explorer, Azul Fidelidade",
+  "validade": "15/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/transferencia-nomad"
+  ],
+  "ate": "2026-11-15T23:59:59-03:00"
+ },
+ {
   "id": "3761373661-9613",
   "data": "2026-11-13T18:35:57Z",
   "origem": "Vitória",
@@ -1031,26 +1102,6 @@
   "ida": "A partir de 17.800 milhas",
   "volta": "A partir de 17.800 milhas",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-7749",
-  "data": "2026-11-13T14:20:40Z",
-  "tipo": "promocao",
-  "titulo": "ADESÃO AO CLUBE LIVELO PREMIUM COM ATÉ 388.000 PONTOS EM 12 MESES",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Assine o Clube Livelo Premium 20.000 utilizando o cupom promocional e acumule até 388.000 pontos em 12 meses com milheiro a partir de R$ 24,17.",
-  "detalhes": [
-   "Modalidade Anual à Vista: 240.000 clube + 108.000 extras + 40.000 permanência = 388.000 pontos | R$ 24,17.",
-   "Modalidade Anual Parcelado: 388.000 pontos | R$ 25,52.",
-   "Modalidade Mensal: 240.000 clube + 103.000 extras + 40.000 permanência = 383.000 pontos | R$ 27,21."
-  ],
-  "parceiros": "Livelo",
-  "validade": "15/11/2026",
-  "links": [
-   "https://www.livelo.com.br/clube"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
  },
  {
   "id": "1290836068-7748",
@@ -6175,34 +6226,6 @@
   "ida": "32.800 milhas + Taxas",
   "volta": "32.800 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15401",
-  "data": "2026-11-11T18:45:49Z",
-  "origem": "São Luís",
-  "origem_iata": "SLZ",
-  "destino": "Cancún",
-  "destino_iata": "CUN",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "72.500 milhas + Taxas",
-  "volta": "72.500 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15400",
-  "data": "2026-11-11T18:43:02Z",
-  "origem": "São Luís",
-  "origem_iata": "SLZ",
-  "destino": "Santa Cruz de La Sierra",
-  "destino_iata": "VVI",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "41.000 milhas + Taxas",
-  "volta": "41.000 milhas + Taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7710",
