@@ -6513,48 +6513,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-15417",
-  "data": "2026-11-11T23:22:59Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Santa Cruz de la Sierra",
-  "destino_iata": "VVI",
-  "companhia": "GOL Linhas Aéreas",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "33.500 milhas",
-  "volta": "36.000 milhas + R$376,35",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-15416",
-  "data": "2026-11-11T23:22:56Z",
-  "origem": "Vitória",
-  "origem_iata": "VIX",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "GOL Linhas Aéreas",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "54.500 milhas",
-  "volta": "52.000 milhas + R$585,77",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9448",
-  "data": "2026-11-11T23:22:53Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "Azul Linhas Aéreas",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "24.000 milhas + R$60,54",
-  "volta": "49.000 milhas + R$62,14",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7710",
   "data": "2026-11-11T17:23:00Z",
   "tipo": "promocao",
