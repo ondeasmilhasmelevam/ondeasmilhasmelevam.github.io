@@ -6587,20 +6587,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2361370250-6415",
-  "data": "2026-11-11T21:23:42Z",
-  "origem": "Helsinque",
-  "origem_iata": "HEL",
-  "destino": "Seul",
-  "destino_iata": "ICN",
-  "companhia": "Finnair",
-  "cabine": "Executiva",
-  "programa": "AAdvantage",
-  "ida": "75.000 milhas + R$ 123,51",
-  "volta": "75.000 milhas + R$ 98,21",
-  "link_nome": "AAdvantage"
- },
- {
   "id": "1290836068-7710",
   "data": "2026-11-11T17:23:00Z",
   "tipo": "promocao",
