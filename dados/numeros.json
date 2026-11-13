@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-13T19:51:22.682532Z",
+ "atualizado": "2026-11-13T19:57:39.971522Z",
  "dias": 30,
- "passagens": 2362,
+ "passagens": 2363,
  "promocoes": 142,
  "destinos": 160,
- "executiva": 462,
+ "executiva": 463,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1272,
+  "passagens": 1273,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -1083,6 +1083,19 @@
     "regiao": "outros"
    },
    {
+    "id": "2361370250-6512",
+    "origem": "Paris",
+    "origem_iata": "CDG",
+    "destino": "Abu Dhabi",
+    "destino_iata": "AUH",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-13T19:51:53Z",
+    "milhas": 42500,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "2361370250-6213",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -1104,19 +1117,6 @@
     "cabine": "Executiva",
     "programa": "Aeroplan",
     "data": "2026-11-08T22:22:15Z",
-    "milhas": 50000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
-    "id": "2361370250-6392",
-    "origem": "Tóquio",
-    "origem_iata": "NRT",
-    "destino": "Abu Dhabi",
-    "destino_iata": "AUH",
-    "cabine": "Primeira Classe",
-    "programa": "American Airlines AAdvantage",
-    "data": "2026-11-10T22:46:10Z",
     "milhas": 50000,
     "nivel": "",
     "regiao": "outros"

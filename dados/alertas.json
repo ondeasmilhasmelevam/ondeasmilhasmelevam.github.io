@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6512",
+  "data": "2026-11-13T19:51:53Z",
+  "origem": "Paris",
+  "origem_iata": "CDG",
+  "destino": "Abu Dhabi",
+  "destino_iata": "AUH",
+  "companhia": "Etihad",
+  "cabine": "Executiva",
+  "programa": "AAdvantage",
+  "ida": "42.500 milhas + $158",
+  "volta": "42.500 milhas + $37",
+  "link_nome": "AAdvantage"
+ },
+ {
   "id": "2361370250-6511",
   "data": "2026-11-13T19:50:28Z",
   "origem": "Paris",
@@ -6288,28 +6302,6 @@
   "ida": "A partir de 13.300 milhas",
   "volta": "A partir de 13.300 milhas",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "1290836068-7718",
-  "data": "2026-11-11T19:52:28Z",
-  "tipo": "promocao",
-  "titulo": "CUPOM 20% DESCONTO ASSINATURA SEATS.AERO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Seats.Aero oferece 20% de desconto na assinatura anual usando o cupom FRIDAY2620CJ. O desconto é válido até 30 de novembro e aplica-se apenas a novos usuários. O cupom também pode ser usado em planos mensais e anuais.",
-  "detalhes": [
-   "20% de desconto na assinatura anual",
-   "cupom FRIDAY2620CJ",
-   "aplica apenas a novos usuários",
-   "aplica a planos mensais e anuais",
-   "✅ Validade: até 30 de novembro"
-  ],
-  "parceiros": "",
-  "validade": "até 30 de novembro",
-  "links": [
-   "https://link.dia23.com.br/r/DJIVfbO"
-  ],
-  "ate": ""
  },
  {
   "id": "1290836068-7710",
