@@ -6601,48 +6601,6 @@
   "link_nome": "AAdvantage"
  },
  {
-  "id": "3761373661-9441",
-  "data": "2026-11-11T21:21:44Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Recife",
-  "destino_iata": "REC",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "13.200 milhas + Taxas",
-  "volta": "13.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9440",
-  "data": "2026-11-11T21:21:42Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Porto Alegre",
-  "destino_iata": "POA",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "26.000 milhas + Taxas",
-  "volta": "26.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-15412",
-  "data": "2026-11-11T21:21:36Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "19.680 milhas + Taxas",
-  "volta": "19.680 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7710",
   "data": "2026-11-11T17:23:00Z",
   "tipo": "promocao",
