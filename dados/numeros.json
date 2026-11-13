@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-13T18:16:26.403574Z",
+ "atualizado": "2026-11-13T18:23:09.954728Z",
  "dias": 30,
  "passagens": 2327,
  "promocoes": 140,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1273,
+  "passagens": 1264,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -1083,19 +1083,6 @@
     "regiao": "outros"
    },
    {
-    "id": "2361370250-6199",
-    "origem": "Madrid",
-    "origem_iata": "MAD",
-    "destino": "Maldivas",
-    "destino_iata": "MLE",
-    "cabine": "Executiva",
-    "programa": "AAdvantage",
-    "data": "2026-11-06T18:21:01Z",
-    "milhas": 42500,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "2361370250-6213",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -1196,6 +1183,19 @@
     "programa": "Aeroplan",
     "data": "2026-11-13T15:32:57Z",
     "milhas": 60000,
+    "nivel": "",
+    "regiao": "europa"
+   },
+   {
+    "id": "2361370250-6327",
+    "origem": "Cidade do Panamá",
+    "origem_iata": "PTY",
+    "destino": "Amsterdã",
+    "destino_iata": "AMS",
+    "cabine": "Executiva",
+    "programa": "Flying Blue",
+    "data": "2026-11-10T09:37:58Z",
+    "milhas": 63750,
     "nivel": "",
     "regiao": "europa"
    }

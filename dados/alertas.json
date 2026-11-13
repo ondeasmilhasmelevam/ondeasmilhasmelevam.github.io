@@ -6240,20 +6240,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-15396",
-  "data": "2026-11-11T18:20:37Z",
-  "origem": "São Luís",
-  "origem_iata": "SLZ",
-  "destino": "Joanesburgo",
-  "destino_iata": "JNB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "75.000 milhas + Taxas",
-  "volta": "75.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7710",
   "data": "2026-11-11T17:23:00Z",
   "tipo": "promocao",
