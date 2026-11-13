@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-6514",
+  "data": "2026-11-13T20:50:52Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Barcelona",
+  "destino_iata": "BCN",
+  "companhia": "LATAM",
+  "cabine": "Executiva",
+  "programa": "LATAM Pass",
+  "ida": "205.273 pontos LATAM Pass + R$ 105",
+  "volta": "205.273 pontos LATAM Pass + R$ 225",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-15603",
+  "data": "2026-11-13T20:46:30Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Tampa",
+  "destino_iata": "TPA",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "AAdvantage",
+  "ida": "A partir de 18.000 milhas",
+  "volta": "A partir de 18.000 milhas",
+  "link_nome": "AAdvantage"
+ },
+ {
   "id": "2008590742-15602",
   "data": "2026-11-13T20:42:27Z",
   "origem": "Florianópolis",
