@@ -1,0 +1,46 @@
+# Atualiza as notícias de cartões do site algumas vezes por dia.
+# O programa (ferramentas/noticias.py) fica no repositório privado oamml-privado.
+name: Notícias de cartões
+
+on:
+  schedule:
+    - cron: '17 9,13,17,21 * * *'   # 6h, 10h, 14h e 18h (Brasília)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Buscar o robô no repositório privado
+        uses: actions/checkout@v4
+        with:
+          repository: ondeasmilhasmelevam/oamml-privado
+          token: ${{ secrets.PRIVADO_TOKEN }}
+          path: .privado
+      - name: Trazer ferramentas e histórico
+        run: |
+          cp -r .privado/ferramentas .privado/musicas .
+          for f in historico.json seats-vistos.json; do [ -f ".privado/dados/$f" ] && cp ".privado/dados/$f" dados/; done
+          git -C .privado config user.name "Onde as Milhas Me Levam"
+          git -C .privado config user.email "ondeasmilhasmelevam@users.noreply.github.com"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Buscar notícias
+        run: python ferramentas/noticias.py
+      - name: Salvar se mudou
+        run: |
+          if git diff --quiet -- dados/noticias.json; then
+            echo "Sem notícias novas."
+            exit 0
+          fi
+          git config user.name "Onde as Milhas Me Levam"
+          git config user.email "ondeasmilhasmelevam@users.noreply.github.com"
+          git add dados/noticias.json
+          git commit -m "Notícias de cartões atualizadas"
+          git pull --rebase
+          git push

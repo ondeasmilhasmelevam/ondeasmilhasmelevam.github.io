@@ -1,0 +1,105 @@
+# Traz as passagens dos grupos de alertas do Telegram para o site.
+# O agendamento do GitHub atrasa muito (às vezes horas), então cada execução
+# fica de plantão por quase 6 horas, olhando os grupos a cada 6 minutos, e no
+# fim chama a próxima. O agendamento de hora em hora fica só de reserva, caso
+# a corrente pare. Enquanto os segredos TELEGRAM_* não existirem, não faz nada.
+# A cada volta também cuida do Instagram (ferramentas/instagram.py): stories
+# com limite por dia e o carrossel diário no feed.
+# O programa do robô e o histórico completo ficam no repositório privado oamml-privado
+# (entra com o segredo PRIVADO_TOKEN). A cada volta ele busca a versão mais nova das
+# ferramentas lá e grava o histórico de volta lá; aqui só vai o que o site mostra.
+# Datas e link de emissão das passagens não vão para o arquivo público: alertas.py
+# manda essa parte ao servidor da assinatura (servidor/worker.js), entrando com o
+# token OIDC desta execução.
+name: Alertas do Telegram
+
+on:
+  schedule:
+    - cron: '7 * * * *'   # reserva: religa o plantão se ele tiver parado
+  workflow_dispatch:
+  push:   # roda também quando o programa de leitura muda
+    branches: [main]
+    paths: ['.github/workflows/alertas.yml']
+
+permissions:
+  contents: write
+  actions: write   # para chamar o próximo plantão
+  id-token: write  # crachá para mandar datas e links ao servidor da assinatura
+
+concurrency:
+  group: alertas
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - name: Buscar o robô no repositório privado
+        uses: actions/checkout@v4
+        with:
+          repository: ondeasmilhasmelevam/oamml-privado
+          token: ${{ secrets.PRIVADO_TOKEN }}
+          path: .privado
+      - name: Trazer ferramentas e histórico
+        run: |
+          cp -r .privado/ferramentas .privado/musicas .
+          for f in historico.json seats-vistos.json; do [ -f ".privado/dados/$f" ] && cp ".privado/dados/$f" dados/; done
+          git -C .privado config user.name "Onde as Milhas Me Levam"
+          git -C .privado config user.email "ondeasmilhasmelevam@users.noreply.github.com"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install telethon==1.44.0 pillow==12.2.0 requests==2.32.5 'anthropic>=1,<2'
+      - run: command -v ffmpeg >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)  # vídeo dos stories
+      - name: Plantão nos grupos
+        env:
+          TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
+          TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+          TELEGRAM_SESSAO: ${{ secrets.TELEGRAM_SESSAO }}
+          TELEGRAM_GRUPO: ${{ secrets.TELEGRAM_GRUPO }}
+          INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+          YOUTUBE_CREDENCIAL: ${{ secrets.YOUTUBE_CREDENCIAL }}
+          INSTAGRAM_ID: ${{ secrets.INSTAGRAM_ID }}
+          GH_SEGREDOS: ${{ secrets.GH_SEGREDOS }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          git config user.name "Onde as Milhas Me Levam"
+          git config user.email "ondeasmilhasmelevam@users.noreply.github.com"
+          fim=$(( $(date +%s) + 340*60 ))   # 5h40, deixando folga para chamar o próximo
+          falhas=0
+          salvar_privado() {
+            for f in historico.json seats-vistos.json; do [ -f "dados/$f" ] && cp "dados/$f" .privado/dados/; done
+            git -C .privado add dados/historico.json dados/seats-vistos.json
+            if ! git -C .privado diff --cached --quiet; then
+              git -C .privado commit -q -m "Historico do robo"
+              git -C .privado pull -q --rebase && git -C .privado push -q || echo "::warning::Histórico não foi para o privado agora; tenta na próxima volta."
+            fi
+            return 0
+          }
+          while [ "$(date +%s)" -lt "$fim" ]; do
+            # Ferramentas novas que eu mandar ao privado já valem na próxima volta.
+            git -C .privado pull -q --rebase && cp -r .privado/ferramentas .privado/musicas . || echo "::warning::Não deu para atualizar as ferramentas; segue com as atuais."
+            if python ferramentas/alertas.py; then
+              falhas=0
+              salvar_privado
+              for f in dados/alertas.json dados/numeros.json dados/normais.json; do [ -f "$f" ] && git add "$f"; done
+              [ -d img/rotas ] && git add -A img/rotas
+              if ! git diff --cached --quiet; then
+                git commit -q -m "Passagens dos grupos atualizadas"
+                git pull -q --rebase && git push -q || echo "::warning::Não deu para enviar agora; tenta na próxima volta."
+              fi
+              python ferramentas/instagram.py || echo "::warning::Instagram não saiu nesta volta."
+            else
+              falhas=$((falhas + 1))
+              # Sessão encerrada ou chave errada não se resolvem sozinhas: para e avisa.
+              [ "$falhas" -ge 3 ] && exit 1
+            fi
+            sleep 360
+          done
+      - name: Chamar o próximo plantão
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run alertas.yml --ref main

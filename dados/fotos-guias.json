@@ -1,0 +1,741 @@
+{
+ "conferido": "2026-11-08",
+ "fotos": {
+  "alter-do-chao-para.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Alter_do_ch%C3%A3o%2C_Santar%C3%A9m_%2823311400635%29.jpg/1280px-Alter_do_ch%C3%A3o%2C_Santar%C3%A9m_%2823311400635%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Alter_do_ch%C3%A3o,_Santar%C3%A9m_(23311400635).jpg"
+  },
+  "aracaju.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Arcos_da_Orla_de_Atalaia_-_1.jpg/1280px-Arcos_da_Orla_de_Atalaia_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Arcos_da_Orla_de_Atalaia_-_1.jpg"
+  },
+  "arraial-dajuda-bahia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Arraial_D%27Ajuda_-_Porto_Seguro-BA_-_panoramio_%282%29.jpg/1280px-Arraial_D%27Ajuda_-_Porto_Seguro-BA_-_panoramio_%282%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Arraial_D%27Ajuda_-_Porto_Seguro-BA_-_panoramio_%282%29.jpg"
+  },
+  "arraial-do-cabo.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Oven_S_Beach_Arraial_Do_Cabo_%28247765557%29.jpeg/1280px-Oven_S_Beach_Arraial_Do_Cabo_%28247765557%29.jpeg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Oven_S_Beach_Arraial_Do_Cabo_%28247765557%29.jpeg"
+  },
+  "balneario-camboriu-santa-catarina.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Balne%C3%A1rio_Cambori%C3%BA_from_Unipraias_Park_2023-04-02.jpg/1280px-Balne%C3%A1rio_Cambori%C3%BA_from_Unipraias_Park_2023-04-02.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Balne%C3%A1rio_Cambori%C3%BA_from_Unipraias_Park_2023-04-02.jpg"
+  },
+  "belem-para.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Bel%C3%A9m_Ver-o-Peso_01.jpg/1280px-Bel%C3%A9m_Ver-o-Peso_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Bel%C3%A9m_Ver-o-Peso_01.jpg"
+  },
+  "belo-horizonte-minas-gerais.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Est%C3%A1dio_Governador_Magalh%C3%A3es_Pinto_-_Belo_Horizonte_-_20250409150611.jpg/1280px-Est%C3%A1dio_Governador_Magalh%C3%A3es_Pinto_-_Belo_Horizonte_-_20250409150611.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Est%C3%A1dio_Governador_Magalh%C3%A3es_Pinto_-_Belo_Horizonte_-_20250409150611.jpg"
+  },
+  "bento-goncalves.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Vignobles_Miolo_04.JPG/1280px-Vignobles_Miolo_04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Vignobles_Miolo_04.JPG"
+  },
+  "beto-carrero-world.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Novo_Castelo_BCW.jpg/1280px-Novo_Castelo_BCW.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Novo_Castelo_BCW.jpg"
+  },
+  "blumenau-santa-catarina.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Foto_a%C3%A9rea_Blumenau.jpg/1280px-Foto_a%C3%A9rea_Blumenau.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Foto_a%C3%A9rea_Blumenau.jpg"
+  },
+  "bombinhas-santa-catarina.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Canto_Grande_Mariscal_Bombinhas.jpg/1280px-Canto_Grande_Mariscal_Bombinhas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Canto_Grande_Mariscal_Bombinhas.jpg"
+  },
+  "bonito-100-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Abismo_Anhumas%2C_Bonito%2C_MS.JPG/1280px-Abismo_Anhumas%2C_Bonito%2C_MS.JPG",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Abismo_Anhumas%2C_Bonito%2C_MS.JPG"
+  },
+  "brasilia-df.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Planalto_Central_%28cropped%29.jpg/1280px-Planalto_Central_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Planalto_Central_%28cropped%29.jpg"
+  },
+  "buzios-rj.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Buzios_11_2006_03.JPG/1280px-Buzios_11_2006_03.JPG",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Buzios_11_2006_03.JPG"
+  },
+  "caldas-novas-214-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Caldas_Novas_-_A%C3%A9rea.jpg/1280px-Caldas_Novas_-_A%C3%A9rea.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Caldas_Novas_-_A%C3%A9rea.jpg"
+  },
+  "campos-do-jordao.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Vista_%C3%A1rea_da_Vila_Capivari%2C_Campos_do_Jord%C3%A3o_%28cropped%29.jpg/1280px-Vista_%C3%A1rea_da_Vila_Capivari%2C_Campos_do_Jord%C3%A3o_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Vista_%C3%A1rea_da_Vila_Capivari%2C_Campos_do_Jord%C3%A3o_%28cropped%29.jpg"
+  },
+  "canoa-quebrada-ceara.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/CE_-_Canoa_Quebrada_-_Fal%C3%A9sia.jpg/1280px-CE_-_Canoa_Quebrada_-_Fal%C3%A9sia.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:CE_-_Canoa_Quebrada_-_Fal%C3%A9sia.jpg"
+  },
+  "capitolio-minas-gerais.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Canyons_de_Furnas_-_Minas_Gerais_%284246595438%29.jpg/1280px-Canyons_de_Furnas_-_Minas_Gerais_%284246595438%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Canyons_de_Furnas_-_Minas_Gerais_(4246595438).jpg"
+  },
+  "chapada-diamantina-bahia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Parque_Nacional_Chapada_Diamantina_Rafael_Cristo_Watanabe_04.jpg/1280px-Parque_Nacional_Chapada_Diamantina_Rafael_Cristo_Watanabe_04.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Parque_Nacional_Chapada_Diamantina_Rafael_Cristo_Watanabe_04.jpg"
+  },
+  "chapada-dos-veadeiros.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Chapada_Veadeiros%2C_Alto_Paraiso_GO_-_40252529604.jpg/1280px-Chapada_Veadeiros%2C_Alto_Paraiso_GO_-_40252529604.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Chapada_Veadeiros%2C_Alto_Paraiso_GO_-_40252529604.jpg"
+  },
+  "cumuruxatiba-bahia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Trecho_da_Praia_do_Centro_em_Cumuruxatiba%2C_Prado_BA.JPG/1280px-Trecho_da_Praia_do_Centro_em_Cumuruxatiba%2C_Prado_BA.JPG",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Trecho_da_Praia_do_Centro_em_Cumuruxatiba%2C_Prado_BA.JPG"
+  },
+  "curitiba.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Tangu%C3%A1_Curitiba.jpg/1280px-Tangu%C3%A1_Curitiba.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Tangu%C3%A1_Curitiba.jpg"
+  },
+  "diamantina-minas-gerais.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Centro_Hist%C3%B3rico_de_Diamantina_%28Amanhecer%29.jpg/1280px-Centro_Hist%C3%B3rico_de_Diamantina_%28Amanhecer%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Centro_Hist%C3%B3rico_de_Diamantina_%28Amanhecer%29.jpg"
+  },
+  "fernando-de-noronha.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/EDUARDO_MURUCI_-_BAIA_DOS_PORCOS-%28recorte%29.jpg/1280px-EDUARDO_MURUCI_-_BAIA_DOS_PORCOS-%28recorte%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:EDUARDO_MURUCI_-_BAIA_DOS_PORCOS-%28recorte%29.jpg"
+  },
+  "florianopolis-65-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Morro_da_Cruz%2C_Florian%C3%B3polis_-_SC%2C_Brazil_-_panoramio_%28cropped%29.jpg/1280px-Morro_da_Cruz%2C_Florian%C3%B3polis_-_SC%2C_Brazil_-_panoramio_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Morro_da_Cruz%2C_Florian%C3%B3polis_-_SC%2C_Brazil_-_panoramio_%28cropped%29.jpg"
+  },
+  "fortaleza-142-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Fortaleza%2C_Brazil_%284%29_%28cropped%29.jpg/1280px-Fortaleza%2C_Brazil_%284%29_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Fortaleza%2C_Brazil_%284%29_%28cropped%29.jpg"
+  },
+  "foz-do-iguacu.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Foz_do_Igua%C3%A7u_-_panoramio_%28cropped%29.jpg/1280px-Foz_do_Igua%C3%A7u_-_panoramio_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Foz_do_Igua%C3%A7u_-_panoramio_%28cropped%29.jpg"
+  },
+  "gramado-canela.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Panorama_of_Centro_de_Gramado_at_night_%2824884860720%29.jpg/1280px-Panorama_of_Centro_de_Gramado_at_night_%2824884860720%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Panorama_of_Centro_de_Gramado_at_night_%2824884860720%29.jpg"
+  },
+  "guaruja.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/ROGERIO_CASSIMIRO_morro_da_caixa_dagua_GUARUJA_SP_%2827787693658%29.jpg/1280px-ROGERIO_CASSIMIRO_morro_da_caixa_dagua_GUARUJA_SP_%2827787693658%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:ROGERIO_CASSIMIRO_morro_da_caixa_dagua_GUARUJA_SP_%2827787693658%29.jpg"
+  },
+  "ilhabela.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Sunset_View_-_Ilhabela.jpg/1280px-Sunset_View_-_Ilhabela.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Sunset_View_-_Ilhabela.jpg"
+  },
+  "ilha-grande.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/View_Ilha_Grande.JPG/1280px-View_Ilha_Grande.JPG",
+   "pagina": "https://commons.wikimedia.org/wiki/File:View_Ilha_Grande.JPG"
+  },
+  "itacare-bahia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/MARCIO_FILHO_ITACARE_CIDADE_ITACARE_BAHIA_%2840933336562%29.jpg/1280px-MARCIO_FILHO_ITACARE_CIDADE_ITACARE_BAHIA_%2840933336562%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:MARCIO_FILHO_ITACARE_CIDADE_ITACARE_BAHIA_%2840933336562%29.jpg"
+  },
+  "jalapao-tocantins.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Terras_Altas_do_Brasil.jpg/1280px-Terras_Altas_do_Brasil.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Terras_Altas_do_Brasil.jpg"
+  },
+  "jericoacoara.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Cavalos_nas_dunas_de_Jericoacora_%28edited%29.jpg/1280px-Cavalos_nas_dunas_de_Jericoacora_%28edited%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Cavalos_nas_dunas_de_Jericoacora_(edited).jpg"
+  },
+  "joao-pessoa-109-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Jo%C3%A3o_Pessoa%2C_capital_da_Para%C3%ADba%2C_Brasil.jpg/1280px-Jo%C3%A3o_Pessoa%2C_capital_da_Para%C3%ADba%2C_Brasil.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Jo%C3%A3o_Pessoa%2C_capital_da_Para%C3%ADba%2C_Brasil.jpg"
+  },
+  "lencois-maranhenses.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Parque_Nacional_dos_Len%C3%A7%C3%B3is_Maranhenses_Paulo_Cattelan_%2803%29.jpg/1280px-Parque_Nacional_dos_Len%C3%A7%C3%B3is_Maranhenses_Paulo_Cattelan_%2803%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Parque_Nacional_dos_Len%C3%A7%C3%B3is_Maranhenses_Paulo_Cattelan_(03).jpg"
+  },
+  "maceio-alagoas.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Ponta_Verde_Lighthouse_landscape_-_Macei%C3%B3%2C_Brazil_%28edited%29.jpg/1280px-Ponta_Verde_Lighthouse_landscape_-_Macei%C3%B3%2C_Brazil_%28edited%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Ponta_Verde_Lighthouse_landscape_-_Macei%C3%B3%2C_Brazil_%28edited%29.jpg"
+  },
+  "manaus-99-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Manaus_amazonas.jpg/1280px-Manaus_amazonas.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Manaus_amazonas.jpg"
+  },
+  "maragogi.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Maragogi%2C_Brazil_%2851440425064%29.jpg/1280px-Maragogi%2C_Brazil_%2851440425064%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Maragogi,_Brazil_(51440425064).jpg"
+  },
+  "morro-de-sao-paulo-bahia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Morro_de_S%C3%A3o_Paulo_Mirante.JPG/1280px-Morro_de_S%C3%A3o_Paulo_Mirante.JPG",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Morro_de_S%C3%A3o_Paulo_Mirante.JPG"
+  },
+  "natal-rn.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Natal%2C_capital_do_Rio_Grande_do_Norte%2C_Brasil.jpg/1280px-Natal%2C_capital_do_Rio_Grande_do_Norte%2C_Brasil.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Natal%2C_capital_do_Rio_Grande_do_Norte%2C_Brasil.jpg"
+  },
+  "ouro-preto-minas-gerais.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Ouro_Preto%2C_Brazil%2C_2011_%28cropped%29.jpg/1280px-Ouro_Preto%2C_Brazil%2C_2011_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Ouro_Preto%2C_Brazil%2C_2011_%28cropped%29.jpg"
+  },
+  "paraty.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Paraty_05.JPG/1280px-Paraty_05.JPG",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Paraty_05.JPG"
+  },
+  "barra-grande-peninsula-marau-bahia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/TAIPUS-DE-FORA-1.JPG/1280px-TAIPUS-DE-FORA-1.JPG",
+   "pagina": "https://commons.wikimedia.org/wiki/File:TAIPUS-DE-FORA-1.JPG"
+  },
+  "petropolis.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pal%C3%A1cio_Quitandinha%2C_Petropolis.jpg/1280px-Pal%C3%A1cio_Quitandinha%2C_Petropolis.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Pal%C3%A1cio_Quitandinha%2C_Petropolis.jpg"
+  },
+  "pirenopolis-goias.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Rua_Matutina%2C_Piren%C3%B3polis%2C_agosto_de_2023.jpg/1280px-Rua_Matutina%2C_Piren%C3%B3polis%2C_agosto_de_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Rua_Matutina,_Piren%C3%B3polis,_agosto_de_2023.jpg"
+  },
+  "porto-alegre.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/IBPA_17398_-_Vista_a%C3%A9rea_da_Orla_Moacyr_Scliar%2C_na_capital._O_-_2018-10-02_-_Luciano_Lanes-PMPA_%28cropped%29.jpg/1280px-IBPA_17398_-_Vista_a%C3%A9rea_da_Orla_Moacyr_Scliar%2C_na_capital._O_-_2018-10-02_-_Luciano_Lanes-PMPA_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:IBPA_17398_-_Vista_a%C3%A9rea_da_Orla_Moacyr_Scliar%2C_na_capital._O_-_2018-10-02_-_Luciano_Lanes-PMPA_%28cropped%29.jpg"
+  },
+  "porto-de-galinhas.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Porto_de_Galinhas-003.jpg/1280px-Porto_de_Galinhas-003.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Porto_de_Galinhas-003.jpg"
+  },
+  "porto-seguro-bahia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Porto_Seguro.1.jpg/1280px-Porto_Seguro.1.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Porto_Seguro.1.jpg"
+  },
+  "praia-da-pipa-rio-grande-do-norte-19-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/PipaBeachView.JPG/1280px-PipaBeachView.JPG",
+   "pagina": "https://commons.wikimedia.org/wiki/File:PipaBeachView.JPG"
+  },
+  "praia-do-rosa.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Praia_do_Rosa%2C_Imbutuba%2C_mar%C3%A7o_de_2023_%285%29.jpg/1280px-Praia_do_Rosa%2C_Imbutuba%2C_mar%C3%A7o_de_2023_%285%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Praia_do_Rosa%2C_Imbutuba%2C_mar%C3%A7o_de_2023_%285%29.jpg"
+  },
+  "recife.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Antonio_Vaz_island_-_Recife%2C_Pernambuco%2C_Brazil_%28cropped%29.jpg/1280px-Antonio_Vaz_island_-_Recife%2C_Pernambuco%2C_Brazil_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Antonio_Vaz_island_-_Recife%2C_Pernambuco%2C_Brazil_%28cropped%29.jpg"
+  },
+  "rio-de-janeiro-4-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Cidade_Maravilhosa.jpg/1280px-Cidade_Maravilhosa.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Cidade_Maravilhosa.jpg"
+  },
+  "salvador-bahia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Salvador_BA_%28cropped%29_2.jpg/1280px-Salvador_BA_%28cropped%29_2.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Salvador_BA_%28cropped%29_2.jpg"
+  },
+  "santos-sao-paulo.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/At_Santos%2C_Brazil_2018_480_%28cropped%29.jpg/1280px-At_Santos%2C_Brazil_2018_480_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:At_Santos%2C_Brazil_2018_480_%28cropped%29.jpg"
+  },
+  "sao-luis-maranhao.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Pra%C3%A7a_Ant%C3%B4nio_Lobo%2C_S%C3%A3o_Lu%C3%ADs%2C_Maranh%C3%A3o_aka_Sao_Luis%2C_Maranhao_10.jpg/1280px-Pra%C3%A7a_Ant%C3%B4nio_Lobo%2C_S%C3%A3o_Lu%C3%ADs%2C_Maranh%C3%A3o_aka_Sao_Luis%2C_Maranhao_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_Ant%C3%B4nio_Lobo,_S%C3%A3o_Lu%C3%ADs,_Maranh%C3%A3o_aka_Sao_Luis,_Maranhao_10.jpg"
+  },
+  "sao-miguel-dos-milagres.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Saomigueldosmilagres20.jpg/1280px-Saomigueldosmilagres20.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Saomigueldosmilagres20.jpg"
+  },
+  "sao-paulo-sp.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Marginal_Pinheiros_e_Jockey_Club.jpg/1280px-Marginal_Pinheiros_e_Jockey_Club.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Marginal_Pinheiros_e_Jockey_Club.jpg"
+  },
+  "sao-sebastiao-maresias.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Praia_Camburi_-_S%C3%A3o_Sebasti%C3%A3o.jpg/1280px-Praia_Camburi_-_S%C3%A3o_Sebasti%C3%A3o.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Praia_Camburi_-_S%C3%A3o_Sebasti%C3%A3o.jpg"
+  },
+  "tiradentes-minas-gerais.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Subida_da_f%C3%A9.jpg/1280px-Subida_da_f%C3%A9.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Subida_da_f%C3%A9.jpg"
+  },
+  "trancoso-bahia.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/MARCIO_FILHO_PRAIA_ITAPOROROCA_TRANCOSO_BAHIA_%2839168709600%29.jpg/1280px-MARCIO_FILHO_PRAIA_ITAPOROROCA_TRANCOSO_BAHIA_%2839168709600%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:MARCIO_FILHO_PRAIA_ITAPOROROCA_TRANCOSO_BAHIA_(39168709600).jpg"
+  },
+  "ubatuba.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Brasil_Ubatuba_beaches.jpg/1280px-Brasil_Ubatuba_beaches.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Brasil_Ubatuba_beaches.jpg"
+  },
+  "vitoria-62-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/-2016-11-05_ao_13-_Vit%C3%B3ria_94_Romerito_Pontes_%2830875449812%29_%28cropped%29.jpg/1280px--2016-11-05_ao_13-_Vit%C3%B3ria_94_Romerito_Pontes_%2830875449812%29_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:-2016-11-05_ao_13-_Vit%C3%B3ria_94_Romerito_Pontes_%2830875449812%29_%28cropped%29.jpg"
+  },
+  "aruba.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Mangrove_tree_%28Conocarpus_erectus%29_at_Eagle_Beach%2C_Aruba_2019.jpg/1280px-Mangrove_tree_%28Conocarpus_erectus%29_at_Eagle_Beach%2C_Aruba_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Mangrove_tree_(Conocarpus_erectus)_at_Eagle_Beach,_Aruba_2019.jpg"
+  },
+  "bahamas.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Tropic_of_Cancer%2C_Little_Exuma%2C_Bahamas_-_26826892000.jpg/1280px-Tropic_of_Cancer%2C_Little_Exuma%2C_Bahamas_-_26826892000.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Tropic_of_Cancer,_Little_Exuma,_Bahamas_-_26826892000.jpg"
+  },
+  "bocas-del-toro-panama.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Bocas_del_Toro_Panama_6.jpg/1280px-Bocas_del_Toro_Panama_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Bocas_del_Toro_Panama_6.jpg"
+  },
+  "cancun-mexico.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Cancun_Strand_Luftbild_%2822143397586%29.jpg/1280px-Cancun_Strand_Luftbild_%2822143397586%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Cancun_Strand_Luftbild_%2822143397586%29.jpg"
+  },
+  "cidade-do-mexico.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Sobrevuelos_CDMX_HJ2A4913_%2825514321687%29_%28cropped%29.jpg/1280px-Sobrevuelos_CDMX_HJ2A4913_%2825514321687%29_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Sobrevuelos_CDMX_HJ2A4913_%2825514321687%29_%28cropped%29.jpg"
+  },
+  "cidade-panama.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Panama_Papers_%28148830809%29.jpeg/1280px-Panama_Papers_%28148830809%29.jpeg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Panama_Papers_%28148830809%29.jpeg"
+  },
+  "costa-rica.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Arenal_volcano_%2870785p%29.jpg/1280px-Arenal_volcano_%2870785p%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Arenal_volcano_(70785p).jpg"
+  },
+  "curacao.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Facades_of_Handelskade%2C_Willemstad%2C_Cura%C3%A7ao_-_February_2020.jpg/1280px-Facades_of_Handelskade%2C_Willemstad%2C_Cura%C3%A7ao_-_February_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Facades_of_Handelskade,_Willemstad,_Cura%C3%A7ao_-_February_2020.jpg"
+  },
+  "havana-81-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/DJI_0197_crp_wiki.jpg/1280px-DJI_0197_crp_wiki.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:DJI_0197_crp_wiki.jpg"
+  },
+  "isla-contadora-panama.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Wyspa_Contadora%2C_Archipelag_Wysp_Per%C5%82owych%2C_Panama.jpg/1280px-Wyspa_Contadora%2C_Archipelag_Wysp_Per%C5%82owych%2C_Panama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Wyspa_Contadora,_Archipelag_Wysp_Per%C5%82owych,_Panama.jpg"
+  },
+  "los-roques-200-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Gran_roque.jpg/1280px-Gran_roque.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Gran_roque.jpg"
+  },
+  "playa-del-carmen-mexico.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Praia_de_Puerto_del_Carmen._Lanzarote-3.jpg/1280px-Praia_de_Puerto_del_Carmen._Lanzarote-3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Praia_de_Puerto_del_Carmen._Lanzarote-3.jpg"
+  },
+  "punta-cana.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Club_Med_%28Punta_Cana%29.jpg/1280px-Club_Med_%28Punta_Cana%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Club_Med_%28Punta_Cana%29.jpg"
+  },
+  "riviera-nayarit-135-c.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Playa_de_Sayulita_desde_un_dron_05.jpg/1280px-Playa_de_Sayulita_desde_un_dron_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Playa_de_Sayulita_desde_un_dron_05.jpg"
+  },
+  "san-andres.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Johny_Cay.jpg/1280px-Johny_Cay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Johny_Cay.jpg"
+  },
+  "san-blas-168-c.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Beach_in_San_Blas_Islands.jpg/1280px-Beach_in_San_Blas_Islands.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Beach_in_San_Blas_Islands.jpg"
+  },
+  "st-barth-122-c.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Beach_looking_east_at_the_Anse_de_Grande_Saline_on_St._Barthelemy%2C_French_West_Indies_-_panoramio.jpg/1280px-Beach_looking_east_at_the_Anse_de_Grande_Saline_on_St._Barthelemy%2C_French_West_Indies_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Beach_looking_east_at_the_Anse_de_Grande_Saline_on_St._Barthelemy,_French_West_Indies_-_panoramio.jpg"
+  },
+  "st-maarten-st-martin-121-c.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Orient_Bay%2C_SXM_island_in_the_Caribbean.JPG/1280px-Orient_Bay%2C_SXM_island_in_the_Caribbean.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Orient_Bay,_SXM_island_in_the_Caribbean.JPG"
+  },
+  "bariloche.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Catedral_desde_el_Lago_Nahuel_Huapi_-_panoramio.jpg/1280px-Catedral_desde_el_Lago_Nahuel_Huapi_-_panoramio.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Catedral_desde_el_Lago_Nahuel_Huapi_-_panoramio.jpg"
+  },
+  "bogota-colombia.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Bogot%C3%A1%2C_Monserrate%2C_2023-06_CN-02.jpg/1280px-Bogot%C3%A1%2C_Monserrate%2C_2023-06_CN-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Bogot%C3%A1,_Monserrate,_2023-06_CN-02.jpg"
+  },
+  "buenos-aires-argentina.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Puerto_Madero%2C_Buenos_Aires_%2840689219792%29_%28cropped%29.jpg/1280px-Puerto_Madero%2C_Buenos_Aires_%2840689219792%29_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Puerto_Madero%2C_Buenos_Aires_%2840689219792%29_%28cropped%29.jpg"
+  },
+  "cartagena.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Sunset-cartagena-tower-dewired.jpg/1280px-Sunset-cartagena-tower-dewired.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Sunset-cartagena-tower-dewired.jpg"
+  },
+  "cusco-peru.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Iglesia_de_la_Compa%C3%B1%C3%ADa_de_Jes%C3%BAs%2C_Plaza_de_Armas%2C_Cusco%2C_Per%C3%BA%2C_2015-07-31%2C_DD_74.JPG/1280px-Iglesia_de_la_Compa%C3%B1%C3%ADa_de_Jes%C3%BAs%2C_Plaza_de_Armas%2C_Cusco%2C_Per%C3%BA%2C_2015-07-31%2C_DD_74.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Iglesia_de_la_Compa%C3%B1%C3%ADa_de_Jes%C3%BAs,_Plaza_de_Armas,_Cusco,_Per%C3%BA,_2015-07-31,_DD_74.JPG"
+  },
+  "deserto-atacama-chile.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Miscanti_Lagoon_near_San_Pedro_de_Atacama_Chile_Luca_Galuzzi_2006.jpg/1280px-Miscanti_Lagoon_near_San_Pedro_de_Atacama_Chile_Luca_Galuzzi_2006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Miscanti_Lagoon_near_San_Pedro_de_Atacama_Chile_Luca_Galuzzi_2006.jpg"
+  },
+  "el-calafate-argentina.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Perito_Moreno_Glacier_Patagonia_Argentina_Luca_Galuzzi_2005.JPG/1280px-Perito_Moreno_Glacier_Patagonia_Argentina_Luca_Galuzzi_2005.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Perito_Moreno_Glacier_Patagonia_Argentina_Luca_Galuzzi_2005.JPG"
+  },
+  "ilha-de-pascoa.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Easter_Island_5.jpg/1280px-Easter_Island_5.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Easter_Island_5.jpg"
+  },
+  "lima-peru.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg/1280px-Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg"
+  },
+  "machu-picchu.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Machu_Picchu%2C_Peru_%282018%29.jpg/1280px-Machu_Picchu%2C_Peru_%282018%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Machu_Picchu%2C_Peru_%282018%29.jpg"
+  },
+  "mendoza-argentina.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Los_Pioneros_Vineyard_2.jpg/1280px-Los_Pioneros_Vineyard_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Los_Pioneros_Vineyard_2.jpg"
+  },
+  "montevideu-uruguai.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/PALACIO_LEGISLATIVO_01.JPG/1280px-PALACIO_LEGISLATIVO_01.JPG",
+   "pagina": "https://commons.wikimedia.org/wiki/File:PALACIO_LEGISLATIVO_01.JPG"
+  },
+  "providencia-santa-catalina-colombia.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Isla_de_Providencia_desde_el_Peak.jpg/1280px-Isla_de_Providencia_desde_el_Peak.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Isla_de_Providencia_desde_el_Peak.jpg"
+  },
+  "pucon-chile.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Puc%C3%B3n%2C_Villarrica_01.jpg/1280px-Puc%C3%B3n%2C_Villarrica_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Puc%C3%B3n,_Villarrica_01.jpg"
+  },
+  "puerto-varas-chile.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Panoramica_Puerto_Varas_2023.jpg/1280px-Panoramica_Puerto_Varas_2023.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Panoramica_Puerto_Varas_2023.jpg"
+  },
+  "punta-del-este-106-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Punta_del_Este_in_amazing_colors.jpg/1280px-Punta_del_Este_in_amazing_colors.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Punta_del_Este_in_amazing_colors.jpg"
+  },
+  "salar-uyuni-165-c.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Reflection_on_the_Salar_de_Uyuni%2C_bolivia.jpg/1280px-Reflection_on_the_Salar_de_Uyuni%2C_bolivia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Reflection_on_the_Salar_de_Uyuni,_bolivia.jpg"
+  },
+  "santiago-chile.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Palacio_de_La_Moneda_-_miguelreflex.jpg/1280px-Palacio_de_La_Moneda_-_miguelreflex.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Palacio_de_La_Moneda_-_miguelreflex.jpg"
+  },
+  "patagonia-chile.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Torres_del_Paine%2C_Laguna_Azul_09.jpg/1280px-Torres_del_Paine%2C_Laguna_Azul_09.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Torres_del_Paine%2C_Laguna_Azul_09.jpg"
+  },
+  "ushuaia-argentina.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Sobrevolando_Ushuaia_en_Helicoptero_-_Helicopter_flying_over_Ushuaia_._-_panoramio.jpg/1280px-Sobrevolando_Ushuaia_en_Helicoptero_-_Helicopter_flying_over_Ushuaia_._-_panoramio.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Sobrevolando_Ushuaia_en_Helicoptero_-_Helicopter_flying_over_Ushuaia_._-_panoramio.jpg"
+  },
+  "valle-nevado-188-c.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Lo_Barnechea_-Valle_Nevado_-_2009_-_03.jpg/1280px-Lo_Barnechea_-Valle_Nevado_-_2009_-_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Lo_Barnechea_-Valle_Nevado_-_2009_-_03.jpg"
+  },
+  "banff-rochosas-canada-canada.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Banff_Avenue_-_Cascade_Mountain01.jpg/1280px-Banff_Avenue_-_Cascade_Mountain01.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Banff_Avenue_-_Cascade_Mountain01.jpg"
+  },
+  "boston-estados-unidos.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Boston_skyline_from_Mount_Auburn_October_2014.jpg/1280px-Boston_skyline_from_Mount_Auburn_October_2014.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Boston_skyline_from_Mount_Auburn_October_2014.jpg"
+  },
+  "chicago-estados-unidos.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Chicago_River_ferry_b.jpg/1280px-Chicago_River_ferry_b.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Chicago_River_ferry_b.jpg"
+  },
+  "disney.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Cinderella_Castle_%40_Magic_Kingdom.jpg/1280px-Cinderella_Castle_%40_Magic_Kingdom.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Cinderella_Castle_@_Magic_Kingdom.jpg"
+  },
+  "fort-lauderdale-estados-unidos.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Skyline_of_Fort_Lauderdale%2C_Nov-15.jpg/1280px-Skyline_of_Fort_Lauderdale%2C_Nov-15.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Skyline_of_Fort_Lauderdale%2C_Nov-15.jpg"
+  },
+  "las-vegas-estados-unidos.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Center_Strip_Before_Sunrise.jpg/1280px-Center_Strip_Before_Sunrise.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Center_Strip_Before_Sunrise.jpg"
+  },
+  "los-angeles-estados-unidos.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Hollywood_sign_%288485145044%29.jpg/1280px-Hollywood_sign_%288485145044%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Hollywood_sign_%288485145044%29.jpg"
+  },
+  "miami.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Miami_Skyline_2020.jpg/1280px-Miami_Skyline_2020.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Miami_Skyline_2020.jpg"
+  },
+  "montreal-canada.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Mtl_from_mont_royal_%28cropped%29.jpg/1280px-Mtl_from_mont_royal_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Mtl_from_mont_royal_%28cropped%29.jpg"
+  },
+  "nova-orleans.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/FEMA_-_37674_-_Downtown_New_Orleans_and_Tulane_University_aerial_in_Louisiana.jpg/1280px-FEMA_-_37674_-_Downtown_New_Orleans_and_Tulane_University_aerial_in_Louisiana.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:FEMA_-_37674_-_Downtown_New_Orleans_and_Tulane_University_aerial_in_Louisiana.jpg"
+  },
+  "nova-york.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg/1280px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg"
+  },
+  "orlando.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Lake_Eola_Park_in_Orlando_02.jpg/1280px-Lake_Eola_Park_in_Orlando_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Lake_Eola_Park_in_Orlando_02.jpg"
+  },
+  "ottawa-canada.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Parliament_Hill_from_the_Ottawa_River.JPG/1280px-Parliament_Hill_from_the_Ottawa_River.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Parliament_Hill_from_the_Ottawa_River.JPG"
+  },
+  "cidade-de-quebec-189-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Quebec_City_skyline_from_L%C3%A9vis.jpg/1280px-Quebec_City_skyline_from_L%C3%A9vis.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Quebec_City_skyline_from_L%C3%A9vis.jpg"
+  },
+  "sao-francisco-california.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Zeppelin-ride-020100925-195_%285029394846%29.jpg/1280px-Zeppelin-ride-020100925-195_%285029394846%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Zeppelin-ride-020100925-195_%285029394846%29.jpg"
+  },
+  "toronto-184-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Toronto_Skyline_from_Olympic_Island%2C_June_20_2026_%285-3_cropped%29.jpg/1280px-Toronto_Skyline_from_Olympic_Island%2C_June_20_2026_%285-3_cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Toronto_Skyline_from_Olympic_Island%2C_June_20_2026_%285-3_cropped%29.jpg"
+  },
+  "vancouver-canada-195-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Concord_Pacific_Master_Plan_Area.jpg/1280px-Concord_Pacific_Master_Plan_Area.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Concord_Pacific_Master_Plan_Area.jpg"
+  },
+  "washington-dc.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/US_Capitol_west_side.JPG/1280px-US_Capitol_west_side.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:US_Capitol_west_side.JPG"
+  },
+  "amsterda.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/KeizersgrachtReguliersgrachtAmsterdam.jpg/1280px-KeizersgrachtReguliersgrachtAmsterdam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:KeizersgrachtReguliersgrachtAmsterdam.jpg"
+  },
+  "atenas-grecia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Athens_Acropolis_at_Daybreak.jpg/1280px-Athens_Acropolis_at_Daybreak.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Athens_Acropolis_at_Daybreak.jpg"
+  },
+  "barcelona-espanha.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Evening_light_over_Barcelona.jpg/1280px-Evening_light_over_Barcelona.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Evening_light_over_Barcelona.jpg"
+  },
+  "berlim-alemanha.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Museumsinsel_Berlin_Juli_2021_1_%28cropped%29_b.jpg/1280px-Museumsinsel_Berlin_Juli_2021_1_%28cropped%29_b.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Museumsinsel_Berlin_Juli_2021_1_%28cropped%29_b.jpg"
+  },
+  "bruges-belgica.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Rozenhoedkaai_Brugge.jpg/1280px-Rozenhoedkaai_Brugge.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Rozenhoedkaai_Brugge.jpg"
+  },
+  "bruxelas-belgica.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Grand_Place_Bruselas_2.jpg/1280px-Grand_Place_Bruselas_2.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Grand_Place_Bruselas_2.jpg"
+  },
+  "budapeste-hungria.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/View_from_Gell%C3%A9rt_Hill_to_the_Danube%2C_Hungary_-_Budapest_%2828493220635%29.jpg/1280px-View_from_Gell%C3%A9rt_Hill_to_the_Danube%2C_Hungary_-_Budapest_%2828493220635%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:View_from_Gell%C3%A9rt_Hill_to_the_Danube%2C_Hungary_-_Budapest_%2828493220635%29.jpg"
+  },
+  "copenhague.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Copenhagen_-_view_from_Christiansborg_castle.jpg/1280px-Copenhagen_-_view_from_Christiansborg_castle.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Copenhagen_-_view_from_Christiansborg_castle.jpg"
+  },
+  "dublin-irlanda.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Dublin_-_aerial_-_2025-07-07_01.jpg/1280px-Dublin_-_aerial_-_2025-07-07_01.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Dublin_-_aerial_-_2025-07-07_01.jpg"
+  },
+  "edimburgo-escocia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Skyline_of_Edinburgh.jpg/1280px-Skyline_of_Edinburgh.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Skyline_of_Edinburgh.jpg"
+  },
+  "florenca-italia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Firenze_-_Piazzale_Michelangelo%2C_Firenze%2C_Italy_-_April_6%2C_2015_02.jpg/1280px-Firenze_-_Piazzale_Michelangelo%2C_Firenze%2C_Italy_-_April_6%2C_2015_02.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Firenze_-_Piazzale_Michelangelo%2C_Firenze%2C_Italy_-_April_6%2C_2015_02.jpg"
+  },
+  "frankfurt-alemanha.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Frankfurt_Main_August_2020_1.jpg/1280px-Frankfurt_Main_August_2020_1.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Frankfurt_Main_August_2020_1.jpg"
+  },
+  "genebra-suica.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Geneve_2005_001_Ork.ch.jpg/1280px-Geneve_2005_001_Ork.ch.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Geneve_2005_001_Ork.ch.jpg"
+  },
+  "ibiza.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Ibiza_City_Dalt_Vila_from_seaport_asv2023-04.jpg/1280px-Ibiza_City_Dalt_Vila_from_seaport_asv2023-04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Ibiza_City_Dalt_Vila_from_seaport_asv2023-04.jpg"
+  },
+  "lisboa.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Lisbon_%2836831596786%29_%28cropped%29.jpg/1280px-Lisbon_%2836831596786%29_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Lisbon_%2836831596786%29_%28cropped%29.jpg"
+  },
+  "londres.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/London_Skyline_%28125508655%29.jpeg/1280px-London_Skyline_%28125508655%29.jpeg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:London_Skyline_%28125508655%29.jpeg"
+  },
+  "madri.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Plaza_Mayor_De_Madrid_%28215862629%29_edited.jpeg/1280px-Plaza_Mayor_De_Madrid_%28215862629%29_edited.jpeg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Plaza_Mayor_De_Madrid_%28215862629%29_edited.jpeg"
+  },
+  "maiorca.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Can_Picafort_beach.jpg/1280px-Can_Picafort_beach.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Can_Picafort_beach.jpg"
+  },
+  "malta.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Our_Lady_of_Mount_Carmel_and_St_Pauls_Pro-Cathedral.jpg/1280px-Our_Lady_of_Mount_Carmel_and_St_Pauls_Pro-Cathedral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Our_Lady_of_Mount_Carmel_and_St_Pauls_Pro-Cathedral.jpg"
+  },
+  "milao-91-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Milan_Cathedral_from_Piazza_del_Duomo.jpg/1280px-Milan_Cathedral_from_Piazza_del_Duomo.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Milan_Cathedral_from_Piazza_del_Duomo.jpg"
+  },
+  "moscou-137-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Saint_Basil%27s_Cathedral_and_the_Red_Square.jpg/1280px-Saint_Basil%27s_Cathedral_and_the_Red_Square.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Saint_Basil%27s_Cathedral_and_the_Red_Square.jpg"
+  },
+  "munique-alemanha.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Frauenkirche_and_Neues_Rathaus_Munich_March_2013.JPG/1280px-Frauenkirche_and_Neues_Rathaus_Munich_March_2013.JPG",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Frauenkirche_and_Neues_Rathaus_Munich_March_2013.JPG"
+  },
+  "normandia-franca.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Mont_St_Michel_at_sunrise.jpg/1280px-Mont_St_Michel_at_sunrise.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Mont_St_Michel_at_sunrise.jpg"
+  },
+  "paris-franca.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/The_Eiffel_Tower%2C_viewed_from_Tour_Montparnasse%2C_25_July_2022_%28cropped%29.jpg/1280px-The_Eiffel_Tower%2C_viewed_from_Tour_Montparnasse%2C_25_July_2022_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:The_Eiffel_Tower%2C_viewed_from_Tour_Montparnasse%2C_25_July_2022_%28cropped%29.jpg"
+  },
+  "pisa-180-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Pisa_-_veduta_aerea_2.JPG/1280px-Pisa_-_veduta_aerea_2.JPG",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Pisa_-_veduta_aerea_2.JPG"
+  },
+  "porto-portugal.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Puente_Don_Luis_I%2C_Oporto%2C_Portugal%2C_2012-05-09%2C_DD_13.JPG/1280px-Puente_Don_Luis_I%2C_Oporto%2C_Portugal%2C_2012-05-09%2C_DD_13.JPG",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Puente_Don_Luis_I%2C_Oporto%2C_Portugal%2C_2012-05-09%2C_DD_13.JPG"
+  },
+  "praga-tcheca.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Prague_%286365119737%29.jpg/1280px-Prague_%286365119737%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Prague_%286365119737%29.jpg"
+  },
+  "roma-italia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Trevi-Brunnen_abends.jpg/1280px-Trevi-Brunnen_abends.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Trevi-Brunnen_abends.jpg"
+  },
+  "sao-petersburgo-138-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Spb_06-2017_img20_StMichael_Castle_%28cropped%29.jpg/1280px-Spb_06-2017_img20_StMichael_Castle_%28cropped%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Spb_06-2017_img20_StMichael_Castle_%28cropped%29.jpg"
+  },
+  "siena-181-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/01_Sienne_vue_de_San_Clemente.jpg/1280px-01_Sienne_vue_de_San_Clemente.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:01_Sienne_vue_de_San_Clemente.jpg"
+  },
+  "split-117-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Split_080620-133710-IMG_0968x.jpg/1280px-Split_080620-133710-IMG_0968x.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Split_080620-133710-IMG_0968x.jpg"
+  },
+  "suica.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/CH.VS.Zermatt_Sunnegga_Grindjisee_Matterhorn_9034_16x9-R_16K.jpg/1280px-CH.VS.Zermatt_Sunnegga_Grindjisee_Matterhorn_9034_16x9-R_16K.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:CH.VS.Zermatt_Sunnegga_Grindjisee_Matterhorn_9034_16x9-R_16K.jpg"
+  },
+  "toscana.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Au_Pays_de_Dante_et_de_P%C3%A9trarque_Tuscany.jpg/1280px-Au_Pays_de_Dante_et_de_P%C3%A9trarque_Tuscany.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Au_Pays_de_Dante_et_de_P%C3%A9trarque_Tuscany.jpg"
+  },
+  "vale-do-loire-franca.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Ch%C3%A2teau_de_Chambord_at_dawn.jpg/1280px-Ch%C3%A2teau_de_Chambord_at_dawn.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Chambord_at_dawn.jpg"
+  },
+  "veneza-italia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Venezia_aerial_view.jpg/1280px-Venezia_aerial_view.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Venezia_aerial_view.jpg"
+  },
+  "verona-italia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Verona_cityscape_sunny.jpg/1280px-Verona_cityscape_sunny.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Verona_cityscape_sunny.jpg"
+  },
+  "viena.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Schoenbrunn_philharmoniker_2012.jpg/1280px-Schoenbrunn_philharmoniker_2012.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Schoenbrunn_philharmoniker_2012.jpg"
+  },
+  "zurique-suica.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Altstadt_Z%C3%BCrich_2015.jpg/1280px-Altstadt_Z%C3%BCrich_2015.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Altstadt_Z%C3%BCrich_2015.jpg"
+  },
+  "gold-coast-172-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Gold_Coast_skyline_%28Unsplash%29.jpg/1280px-Gold_Coast_skyline_%28Unsplash%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Gold_Coast_skyline_%28Unsplash%29.jpg"
+  },
+  "melbourne-australia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Melbourne_skyline_sor.jpg/1280px-Melbourne_skyline_sor.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Melbourne_skyline_sor.jpg"
+  },
+  "nova-zelandia.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Milford_Sound_in_Fiordland_National_Park_04.jpg/1280px-Milford_Sound_in_Fiordland_National_Park_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Milford_Sound_in_Fiordland_National_Park_04.jpg"
+  },
+  "perth-australia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Perth_CBD_skyline_from_State_War_Memorial_Lookout%2C_2023%2C_04_b.jpg/1280px-Perth_CBD_skyline_from_State_War_Memorial_Lookout%2C_2023%2C_04_b.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Perth_CBD_skyline_from_State_War_Memorial_Lookout%2C_2023%2C_04_b.jpg"
+  },
+  "sydney-176-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg/1280px-Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg"
+  },
+  "africa-do-sul-3.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Cape_Town_%28ZA%29%2C_Table_Mountain_--_2024_--_3437.jpg/1280px-Cape_Town_%28ZA%29%2C_Table_Mountain_--_2024_--_3437.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Cape_Town_(ZA),_Table_Mountain_--_2024_--_3437.jpg"
+  },
+  "cidade-do-cabo-africa-sul.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg/1280px-Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg"
+  },
+  "egito.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/All_Gizah_Pyramids.jpg/1280px-All_Gizah_Pyramids.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:All_Gizah_Pyramids.jpg"
+  },
+  "johannesburgo-africa-sul.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Johannesburg_skyline_2017.jpg/1280px-Johannesburg_skyline_2017.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Johannesburg_skyline_2017.jpg"
+  },
+  "maputo-215-c.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Conselho_Municipal_de_Maputo_frente.jpg/1280px-Conselho_Municipal_de_Maputo_frente.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Conselho_Municipal_de_Maputo_frente.jpg"
+  },
+  "namibia.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/006_Dune_45_in_Sossusvlei_at_sunrise_Photo_by_Giles_Laurent.jpg/1280px-006_Dune_45_in_Sossusvlei_at_sunrise_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:006_Dune_45_in_Sossusvlei_at_sunrise_Photo_by_Giles_Laurent.jpg"
+  },
+  "bali-indonesia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Tanah-Lot_Bali_Indonesia_Pura-Tanah-Lot-01.jpg/1280px-Tanah-Lot_Bali_Indonesia_Pura-Tanah-Lot-01.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Tanah-Lot_Bali_Indonesia_Pura-Tanah-Lot-01.jpg"
+  },
+  "bangkok.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/4Y1A1159_Bangkok_%2833536795515%29.jpg/1280px-4Y1A1159_Bangkok_%2833536795515%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:4Y1A1159_Bangkok_%2833536795515%29.jpg"
+  },
+  "capadocia.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Cappadocia_Aerial_View_%286998755984%29.jpg/1280px-Cappadocia_Aerial_View_%286998755984%29.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Cappadocia_Aerial_View_%286998755984%29.jpg"
+  },
+  "filipinas-240-c.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Island_lagoon_in_Bacuit_Bay%2C_El_Nido%2C_Palawan%2C_Philippines.jpg/1280px-Island_lagoon_in_Bacuit_Bay%2C_El_Nido%2C_Palawan%2C_Philippines.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Island_lagoon_in_Bacuit_Bay,_El_Nido,_Palawan,_Philippines.jpg"
+  },
+  "hong-kong.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Vista_del_Puerto_de_Victoria_desde_Sky100%2C_Hong_Kong%2C_2013-08-09%2C_DD_10.JPG/1280px-Vista_del_Puerto_de_Victoria_desde_Sky100%2C_Hong_Kong%2C_2013-08-09%2C_DD_10.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Vista_del_Puerto_de_Victoria_desde_Sky100,_Hong_Kong,_2013-08-09,_DD_10.JPG"
+  },
+  "istambul.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Historical_peninsula_and_modern_skyline_of_Istanbul.jpg/1280px-Historical_peninsula_and_modern_skyline_of_Istanbul.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Historical_peninsula_and_modern_skyline_of_Istanbul.jpg"
+  },
+  "kuala-lumpur-207-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Bukit_Bintang_junction_in_2024_2.jpg/1280px-Bukit_Bintang_junction_in_2024_2.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Bukit_Bintang_junction_in_2024_2.jpg"
+  },
+  "kyoto-japao-198-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Kiyomizu-dera%2C_Kyoto%2C_November_2016_-02.jpg/1280px-Kiyomizu-dera%2C_Kyoto%2C_November_2016_-02.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Kiyomizu-dera%2C_Kyoto%2C_November_2016_-02.jpg"
+  },
+  "maldivas.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Diamonds_Thudufushi_Beach_and_Water_Villas%2C_May_2017_-04.jpg/1280px-Diamonds_Thudufushi_Beach_and_Water_Villas%2C_May_2017_-04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Diamonds_Thudufushi_Beach_and_Water_Villas,_May_2017_-04.jpg"
+  },
+  "singapura-208-c.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Puente_Helix%2C_museo_ArtScience_y_hotel_Marina_Bay_Sands%2C_Marina_Bay%2C_Singapur%2C_2023-08-17%2C_DD_67-69_HDR.jpg/1280px-Puente_Helix%2C_museo_ArtScience_y_hotel_Marina_Bay_Sands%2C_Marina_Bay%2C_Singapur%2C_2023-08-17%2C_DD_67-69_HDR.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Puente_Helix,_museo_ArtScience_y_hotel_Marina_Bay_Sands,_Marina_Bay,_Singapur,_2023-08-17,_DD_67-69_HDR.jpg"
+  },
+  "tailandia.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Isla_Phi_Phi_Lay%2C_Tailandia%2C_2013-08-19%2C_DD_04.JPG/1280px-Isla_Phi_Phi_Lay%2C_Tailandia%2C_2013-08-19%2C_DD_04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Isla_Phi_Phi_Lay,_Tailandia,_2013-08-19,_DD_04.JPG"
+  },
+  "tokyo-japao-199-c.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/1280px-Skyscrapers_of_Shinjuku_2009_January.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Skyscrapers_of_Shinjuku_2009_January.jpg"
+  },
+  "dubai.html": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/The_view_of_Dubai_Creek.jpg/1280px-The_view_of_Dubai_Creek.jpg",
+   "pagina": "https://commons.wikimedia.org/wiki/File:The_view_of_Dubai_Creek.jpg"
+  },
+  "israel.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Jerusalem-2013%282%29-Aerial-Temple_Mount-%28south_exposure%29.jpg/1280px-Jerusalem-2013%282%29-Aerial-Temple_Mount-%28south_exposure%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Jerusalem-2013(2)-Aerial-Temple_Mount-(south_exposure).jpg"
+  },
+  "praias-de-ubatuba.html": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/UBATUBA_SP_-_BRASIL.JPG/1280px-UBATUBA_SP_-_BRASIL.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "pagina": "https://commons.wikimedia.org/wiki/File:UBATUBA_SP_-_BRASIL.JPG"
+  }
+ }
+}

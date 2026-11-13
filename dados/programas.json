@@ -1,0 +1,66 @@
+{
+ "conferido": "2026-10-30",
+ "dica": "Use os mesmos dados em todos: nome igual ao do passaporte, mesmo CPF, e-mail, celular e endereço. Assim a transferência de pontos e a emissão para você mesmo não travam.",
+ "grupos": [
+  {
+   "titulo": "Comece por estes",
+   "nota": "Os programas que mais aparecem nos alertas e nas transferências com bônus do Brasil.",
+   "programas": [
+    {"id": "latam", "nome": "LATAM Pass", "sobre": "Companhia LATAM e parceiras da oneworld", "link": "https://latampass.latam.com/pt_br/"},
+    {"id": "smiles", "nome": "Smiles", "sobre": "GOL e mais de 30 parceiras", "link": "https://www.smiles.com.br/"},
+    {"id": "azul", "nome": "Azul Fidelidade", "sobre": "Azul e parceiras como TAP e United", "link": "https://www.voeazul.com.br/br/pt/programa-fidelidade"},
+    {"id": "tap", "nome": "TAP Miles&Go", "sobre": "TAP e Star Alliance; bom para a Europa", "link": "https://www.flytap.com/pt-br/miles-and-go"},
+    {"id": "iberia", "nome": "Iberia Club", "sobre": "Avios da Iberia (antigo Iberia Plus)", "link": "https://www.iberia.com/br/iberia-club/"},
+    {"id": "ba", "nome": "The British Airways Club", "sobre": "Avios da British (antigo Executive Club)", "link": "https://www.britishairways.com/content/the-british-airways-club"},
+    {"id": "qatar", "nome": "Privilege Club", "sobre": "Avios da Qatar Airways", "link": "https://www.qatarairways.com/pt-br/Privilege-Club.html"},
+    {"id": "livelo", "nome": "Livelo", "sobre": "Pontos de Bradesco e Banco do Brasil", "link": "https://www.livelo.com.br/"},
+    {"id": "esfera", "nome": "Esfera", "sobre": "Pontos do Santander", "link": "https://www.esfera.com.vc/"}
+   ]
+  },
+  {
+   "titulo": "Companhias internacionais",
+   "nota": "Cadastre quando for usar: para emitir com milhas de parceiras ou acumular no voo.",
+   "programas": [
+    {"id": "aa", "nome": "AAdvantage", "sobre": "American Airlines e oneworld", "link": "https://www.aa.com/i18n/aadvantage-program/aadvantage-program.jsp"},
+    {"id": "flyingblue", "nome": "Flying Blue", "sobre": "Air France e KLM", "link": "https://www.flyingblue.com/pt/"},
+    {"id": "aeroplan", "nome": "Aeroplan", "sobre": "Air Canada e Star Alliance", "link": "https://www.aircanada.com/aeroplan"},
+    {"id": "lifemiles", "nome": "LifeMiles", "sobre": "Avianca e Star Alliance", "link": "https://www.lifemiles.com/"},
+    {"id": "skywards", "nome": "Emirates Skywards", "sobre": "Emirates e flydubai", "link": "https://www.emirates.com/br/portuguese/skywards/"},
+    {"id": "turkish", "nome": "Miles&Smiles", "sobre": "Turkish Airlines", "link": "https://www.turkishairlines.com/pt-int/miles-and-smiles/"},
+    {"id": "copa", "nome": "ConnectMiles", "sobre": "Copa Airlines", "link": "https://www.copaair.com/pt-br/web/connectmiles"},
+    {"id": "united", "nome": "MileagePlus", "sobre": "United Airlines", "link": "https://www.united.com/pt/br/fly/mileageplus.html"},
+    {"id": "virgin", "nome": "Flying Club", "sobre": "Virgin Atlantic", "link": "https://www.virginatlantic.com/flying-club"},
+    {"id": "milesmore", "nome": "Miles & More", "sobre": "Lufthansa, Swiss e Austrian", "link": "https://www.miles-and-more.com/br/pt.html"}
+   ]
+  },
+  {
+   "titulo": "Para juntar pontos",
+   "nota": "Programas de bancos e de compras que viram milhas.",
+   "programas": [
+    {"id": "meliuz", "nome": "Méliuz", "sobre": "Cashback em compras online", "link": "https://www.meliuz.com.br/"},
+    {"id": "uau", "nome": "Uau Caixa", "sobre": "Pontos dos cartões Caixa", "link": "https://www.uaucaixa.com.br/"},
+    {"id": "coopera", "nome": "Coopera", "sobre": "Pontos do Sicoob", "link": "https://www.shopcoopera.com.br/"},
+    {"id": "dotz", "nome": "Dotz", "sobre": "Pontos em mercados e parceiros", "link": "https://www.dotz.com.br/"}
+   ]
+  },
+  {
+   "titulo": "Hotéis",
+   "nota": "Pontos de hotel também viram milhas, e o cadastro já dá vantagens na estadia.",
+   "programas": [
+    {"id": "accor", "nome": "ALL Accor", "sobre": "Ibis, Novotel, Mercure, Sofitel", "link": "https://all.accor.com/loyalty-program/index.pt-br.shtml"},
+    {"id": "marriott", "nome": "Marriott Bonvoy", "sobre": "Marriott, Sheraton, Westin", "link": "https://www.marriott.com/pt-br/loyalty.mi"},
+    {"id": "hilton", "nome": "Hilton Honors", "sobre": "Hilton, DoubleTree, Conrad", "link": "https://www.hilton.com/pt/hilton-honors/"},
+    {"id": "hyatt", "nome": "World of Hyatt", "sobre": "Hyatt, Grand Hyatt, Park Hyatt", "link": "https://world.hyatt.com/"},
+    {"id": "ihg", "nome": "IHG One Rewards", "sobre": "Holiday Inn, InterContinental", "link": "https://www.ihg.com/onerewards/content/br/pt/home"},
+    {"id": "wyndham", "nome": "Wyndham Rewards", "sobre": "Wyndham, Ramada, Days Inn", "link": "https://www.wyndhamhotels.com/pt-br/wyndham-rewards"}
+   ]
+  },
+  {
+   "titulo": "Locadoras de carro",
+   "nota": "",
+   "programas": [
+    {"id": "movida", "nome": "Movida Fidelidade", "sobre": "Aluguel de carro com milhas e pontos", "link": "https://www.movida.com.br/movida-fidelidade"}
+   ]
+  }
+ ]
+}

@@ -1,0 +1,168 @@
+{
+ "conferido": "2026-11-08",
+ "roteiros": [
+  {
+   "id": "china",
+   "titulo": "China de norte a sul",
+   "paises": [
+    "China"
+   ],
+   "dias": "15 a 18 dias",
+   "ida": [
+    "São Paulo",
+    "Pequim"
+   ],
+   "volta": [
+    "Hong Kong",
+    "São Paulo"
+   ],
+   "paradas": [
+    [
+     "Pequim",
+     ""
+    ],
+    [
+     "Xi’an",
+     "trem"
+    ],
+    [
+     "Chongqing",
+     "trem"
+    ],
+    [
+     "Zhangjiajie",
+     "trem"
+    ],
+    [
+     "Xangai",
+     "trem"
+    ],
+    [
+     "Cantão",
+     "trem"
+    ],
+    [
+     "Shenzhen",
+     "trem"
+    ],
+    [
+     "Hong Kong",
+     "trem"
+    ]
+   ],
+   "eco": 95000,
+   "exe": 190000,
+   "taxa_eco": 1170,
+   "taxa_exe": 1834,
+   "interno": 1955,
+   "dica": "Entrar por Pequim e sair por Hong Kong evita voltar ao ponto de partida: o trem-bala faz todo o caminho."
+  },
+  {
+   "id": "japao-coreia",
+   "titulo": "Japão e Coreia do Sul",
+   "paises": [
+    "Japão",
+    "Coreia do Sul"
+   ],
+   "dias": "14 a 16 dias",
+   "ida": [
+    "São Paulo",
+    "Tóquio"
+   ],
+   "volta": [
+    "Seul",
+    "São Paulo"
+   ],
+   "paradas": [
+    [
+     "Tóquio",
+     ""
+    ],
+    [
+     "Kyoto",
+     "trem"
+    ],
+    [
+     "Osaka",
+     "trem"
+    ],
+    [
+     "Seul",
+     "voo"
+    ]
+   ],
+   "eco": 100000,
+   "exe": 200000,
+   "taxa_eco": 1170,
+   "taxa_exe": 1834,
+   "interno": 1200,
+   "dica": "Chegar em Tóquio e voltar por Seul: entre Osaka e Seul o voo é curto e barato."
+  },
+  {
+   "id": "sudeste-asiatico",
+   "titulo": "Tailândia, Singapura e Filipinas",
+   "paises": [
+    "Tailândia",
+    "Singapura",
+    "Filipinas"
+   ],
+   "dias": "18 a 21 dias",
+   "ida": [
+    "São Paulo",
+    "Bangkok"
+   ],
+   "volta": [
+    "Manila",
+    "São Paulo"
+   ],
+   "paradas": [
+    [
+     "Bangkok",
+     ""
+    ],
+    [
+     "Chiang Mai",
+     "voo"
+    ],
+    [
+     "Krabi",
+     "voo"
+    ],
+    [
+     "Phi Phi",
+     "barco"
+    ],
+    [
+     "Phuket",
+     "barco"
+    ],
+    [
+     "Singapura",
+     "voo"
+    ],
+    [
+     "Manila",
+     "voo"
+    ],
+    [
+     "Coron",
+     "voo"
+    ],
+    [
+     "El Nido",
+     "barco"
+    ],
+    [
+     "Manila",
+     "voo"
+    ]
+   ],
+   "eco": 97500,
+   "exe": 195000,
+   "taxa_eco": 1170,
+   "taxa_exe": 1834,
+   "interno": 3100,
+   "dica": "Um dia de parada em Singapura no voo de Phuket para Manila vale como uma cidade a mais no roteiro."
+  }
+ ]
+}

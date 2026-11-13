@@ -1,0 +1,24 @@
+# Arquivos de trabalho que não fazem parte do site
+V12 - *.xlsx
+logo.jpeg
+
+# Lixo do sistema / OneDrive
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Alertas completos (datas e links são só de assinantes)
+dados/alertas-completo.json
+dados/.alertas-enviado
+__pycache__/
+dados/.seats-cache.json
+
+# Parte privada: fica no repositório oamml-privado (ver .git-privado)
+.git-privado/
+.privado/
+ferramentas/
+musicas/
+servidor/
+dados/historico.json
+dados/seats-vistos.json
+Materiais/

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /resumo/
+Disallow: /servidor/
+Disallow: /ferramentas/
+
+Sitemap: https://ondeasmilhasmelevam.com.br/sitemap.xml
