@@ -6270,34 +6270,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-9435",
-  "data": "2026-11-11T19:21:33Z",
-  "origem": "Uberlândia",
-  "origem_iata": "UDI",
-  "destino": "Vitória",
-  "destino_iata": "VIX",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "18.200 milhas + Taxas",
-  "volta": "18.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9434",
-  "data": "2026-11-11T19:21:31Z",
-  "origem": "Uberlândia",
-  "origem_iata": "UDI",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "SDU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "17.000 milhas + Taxas",
-  "volta": "17.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7710",
   "data": "2026-11-11T17:23:00Z",
   "tipo": "promocao",
