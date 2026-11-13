@@ -1,5 +1,77 @@
 [
  {
+  "id": "1290836068-7772",
+  "data": "2026-11-13T23:02:57Z",
+  "tipo": "promocao",
+  "titulo": "CONVERTA CASHBACK MÉLIUZ EM PONTOS AZUL COM BÔNUS DE ATÉ 80%",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Converta cashback Méliuz em Pontos Azul com bônus de até 80% para assinantes do Clube Azul. Validade até 19/11/2026.",
+  "detalhes": [
+   "Bônus de 40% para clientes Azul Fidelidade.",
+   "Bônus de 80% para assinantes do Clube Azul.",
+   "Mínimo de 200 Pontos Azul por conversão.",
+   "Paridade: R$ 30 de cashback = 1.000 pontos Azul.",
+   "Cashback bloqueado por até 2 dias durante a confirmação da operação.",
+   "Cancelamento possível em até 7 dias corridos após a troca, desde que nenhum ponto tenha sido utilizado."
+  ],
+  "parceiros": "Méliuz, Azul Fidelidade",
+  "validade": "19/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/meliuz"
+  ],
+  "ate": "2026-11-19T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7771",
+  "data": "2026-11-13T23:02:54Z",
+  "tipo": "promocao",
+  "titulo": "AZUL VOOS RECIFE BRASÍLIA 9.800 PONTOS TRECHO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Azul oferece voos de Brasília a Recife por 9.800 pontos por trecho, mais taxas aeroportuárias. Disponível entre março e maio de 2027. Desconto depende do nível do titular.",
+  "detalhes": [
+   "9.800 pontos por trecho",
+   "taxas aeroportuárias adicionais",
+   "desconto de acordo com nível do titular",
+   "abatimento válido apenas se titular for passageiro",
+   "descontos removidos em compras para terceiros",
+   "Brasília (GIG) x Recife (REC) a partir de 9.800 milhas o trecho",
+   "Períodos de viagem: março e maio de 2027"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/KXAogPc"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7770",
+  "data": "2026-11-13T23:02:48Z",
+  "tipo": "promocao",
+  "titulo": "PASSAGENS INTERNACIONAIS A PARTIR DE 28.300 MILHAS SMILES",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A Smiles oferece passagens internacionais com emissão a partir de 28.300 milhas por trecho, mais taxas. As tarifas são as menores disponíveis em cada mês e variam por companhia e rota. Os valores são por trecho e por passageiro.",
+  "detalhes": [
+   "Valores são por trecho e por passageiro",
+   "Taxas adicionais não incluídas",
+   "Emissões são as menores disponíveis em cada mês",
+   "Busca realizada no momento da produção do artigo, podendo haver alteração no valor ou disponibilidade a qualquer momento",
+   "Manaus (MAO) x Panamá (PTY) a partir de 28.300 milhas o trecho",
+   "São Paulo (GRU) x Bogotá (BOG) a partir de 43.100 milhas o trecho",
+   "Manaus (MAO) x Orlando (MCO) a partir de 45.100 milhas o trecho",
+   "São Paulo (GRU) x Cartagena (CTG) a partir de 54.800 milhas o trecho"
+  ],
+  "parceiros": "Smiles",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/je1tSPi"
+  ],
+  "ate": ""
+ },
+ {
   "id": "seats-smiles-GRU-JFK-exe",
   "data": "2026-11-13T22:21:47.339117Z",
   "fonte": "seats.aero",
