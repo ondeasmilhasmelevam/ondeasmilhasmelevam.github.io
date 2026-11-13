@@ -6298,20 +6298,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15407",
-  "data": "2026-11-11T19:14:15Z",
-  "origem": "Uberlândia",
-  "origem_iata": "UDI",
-  "destino": "Roma",
-  "destino_iata": "FCO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "80.000 milhas + Taxas",
-  "volta": "80.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7710",
   "data": "2026-11-11T17:23:00Z",
   "tipo": "promocao",
