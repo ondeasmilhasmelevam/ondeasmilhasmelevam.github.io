@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6515",
+  "data": "2026-11-13T21:12:47Z",
+  "origem": "Joanesburgo",
+  "origem_iata": "JNB",
+  "destino": "Perth",
+  "destino_iata": "PER",
+  "companhia": "South African",
+  "cabine": "Executiva",
+  "programa": "TAP Miles & Go",
+  "ida": "115.000 milhas + R$ 2.011,69",
+  "volta": "",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2008590742-15604",
   "data": "2026-11-13T21:10:54Z",
   "origem": "Porto Alegre",
