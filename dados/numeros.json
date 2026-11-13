@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-13T23:36:31.802749Z",
+ "atualizado": "2026-11-13T23:42:40.341856Z",
  "dias": 30,
- "passagens": 2382,
+ "passagens": 2383,
  "promocoes": 150,
  "destinos": 162,
  "executiva": 467,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1275,
+  "passagens": 1276,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -875,6 +875,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9632",
+    "origem": "São Paulo",
+    "origem_iata": "CGH",
+    "destino": "Joinville",
+    "destino_iata": "JOI",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-13T23:41:05Z",
+    "milhas": 9200,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9454",
     "origem": "Brasília",
     "origem_iata": "BSB",
@@ -884,19 +897,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-12T11:20:47Z",
     "milhas": 9302,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9417",
-    "origem": "Goiânia",
-    "origem_iata": "GYN",
-    "destino": "Joinville",
-    "destino_iata": "JOI",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-11T16:15:37Z",
-    "milhas": 9640,
     "nivel": "",
     "regiao": "brasil"
    },

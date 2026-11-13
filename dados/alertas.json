@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9632",
+  "data": "2026-11-13T23:41:05Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "Joinville",
+  "destino_iata": "JOI",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "9.200 milhas + R$ 62,14 de taxas",
+  "volta": "9.200 milhas + R$ 48,81 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-7772",
   "data": "2026-11-13T23:02:57Z",
   "tipo": "promocao",
