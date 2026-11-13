@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-13T18:23:09.954728Z",
+ "atualizado": "2026-11-13T18:29:24.863802Z",
  "dias": 30,
  "passagens": 2327,
  "promocoes": 140,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1264,
+  "passagens": 1260,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -225,15 +225,15 @@
     "regiao": "caribe"
    },
    {
-    "id": "2008590742-14968",
+    "id": "2008590742-15388",
     "origem": "Manaus",
     "origem_iata": "MAO",
     "destino": "Bogotá",
     "destino_iata": "BOG",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-06T18:24:17Z",
-    "milhas": 16800,
+    "data": "2026-11-11T17:49:45Z",
+    "milhas": 17800,
     "nivel": "muito bom",
     "regiao": "america-do-sul"
    },
