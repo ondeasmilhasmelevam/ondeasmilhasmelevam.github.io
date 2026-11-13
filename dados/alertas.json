@@ -1,5 +1,120 @@
 [
  {
+  "id": "1290836068-7767",
+  "data": "2026-11-13T20:13:29Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass: PASSAGENS PARA PALMAS A PARTIR DE 7.288 MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Passagens aéreas para Palmas, Tocantins, disponíveis a partir de 7.288 milhas por trecho com LATAM Pass, incluindo taxas aeroportuárias. Saídas de São Paulo exigem 14.576 milhas ida e volta. Também há opções saindo de Brasília e Rio de Janeiro para viagens em fevereiro e março de 2027.",
+  "detalhes": [
+   "7.288 milhas por trecho + taxas aeroportuárias",
+   "14.576 milhas ida e volta de São Paulo",
+   "Saídas de Brasília e Rio de Janeiro para viagens em fevereiro e março de 2027",
+   "Taxas aeroportuárias não incluídas no valor de milhas",
+   "Milhas são por trecho",
+   "São Paulo x Palmas (PLS) a partir de 7.288 milhas o trecho",
+   "Períodos de viagem: fevereiro e março de 2027"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/Askzqcj"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7766",
+  "data": "2026-11-13T20:13:24Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE: VOOS PARA JOÃO PESSOA A PARTIR DE 8.400 PONTOS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A Azul Fidelidade oferece passagens para João Pessoa saindo de Campinas a partir de 8.400 pontos por trecho. O menor preço, em junho de 2027, é de 16.800 pontos ida e volta. Descontos são válidos apenas para titulares que viajam.",
+  "detalhes": [
+   "8.400 pontos por trecho",
+   "16.800 pontos ida e volta em junho de 2027",
+   "taxas aeroportuárias adicionais",
+   "desconto válido apenas para titulares que viajam",
+   "descontos removidos para compras de terceiros",
+   "Campinas (CWB) x João Pessoa (JPA) a partir de 8.400 milhas o trecho",
+   "Períodos de viagem: junho de 2027"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/KXAogPc"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7765",
+  "data": "2026-11-13T20:13:19Z",
+  "tipo": "promocao",
+  "titulo": "VOO PARA BARCELONA A PARTIR DE 94.500 PONTOS AZUL",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Disponibilidade de bilhetes de ida e volta entre São Paulo (GRU) e Barcelona (BCN) a partir de 94.500 pontos Azul Fidelidade + taxas. Voos operados pela Royal Air Maroc na classe econômica. Itinerário inclui São Paulo > Casablanca > Barcelona.",
+  "detalhes": [
+   "milhas_por_trecho: 94.500 pontos Azul",
+   "classe: econômica",
+   "volta disponível apenas para assinantes",
+   "taxas adicionais aplicáveis",
+   "São Paulo (GRU) x Barcelona (BCN) economica a partir de 47.250 milhas o trecho"
+  ],
+  "parceiros": "Azul Fidelidade, Royal Air Maroc",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/khk4W1C"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7764",
+  "data": "2026-11-13T20:13:09Z",
+  "tipo": "promocao",
+  "titulo": "PASSAGENS INTERNACIONAIS A PARTIR DE 13.950 PONTOS AZUL FIDELIDADE",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Emissões com Pontos Azul Fidelidade, com valores a partir de 13.950 pontos + taxas, para destinos internacionais. Os valores são por trecho e por passageiro, com datas de reserva específicas. Passagens com menos de 90 dias de antecedência têm acréscimo da taxa de resgate, exceto para cliente Diamante.",
+  "detalhes": [
+   "valor por trecho",
+   "taxa de resgate para reservas com menos de 90 dias, exceto clientes Diamante",
+   "valores são as menores disponíveis em cada mês",
+   "valores são por trecho e por passageiro",
+   "Porto Alegre (POA) x Montevidéu (MVD) a partir de 13.950 milhas o trecho",
+   "Porto Alegre (POA) x Punta Del Este (PDP) a partir de 13.950 milhas o trecho",
+   "Belo Horizonte (CNF) x Montevidéu (MVD) a partir de 17.800 milhas o trecho",
+   "São Paulo (GRU) x Santiago (SCL) a partir de 42.000 milhas o trecho"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/jibaSpM"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7763",
+  "data": "2026-11-13T20:13:06Z",
+  "tipo": "promocao",
+  "titulo": "GARRAFA TÉRMICA STANLEY COM 9.993 PONTOS AZUL FIDELIDADE",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Garrafa térmica Stanley Aerolight Transit Cream disponível por 9.993 pontos no Azul Fidelidade com 42% de desconto.",
+  "detalhes": [
+   "Produto: Garrafa Térmica Stanley Aerolight Transit Cream 1913 | 591ML.",
+   "9.993 pontos Azul Fidelidade.",
+   "42% OFF."
+  ],
+  "parceiros": "Azul Fidelidade, Top Store",
+  "validade": "Até durar o estoque",
+  "links": [
+   "https://shopping.azulfidelidade.com.br/produto/30994/SI3191/5317770/garrafa-termica-aerolight-transit-cream-stanley-1913-591ml?"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2361370250-6513",
   "data": "2026-11-13T20:05:18Z",
   "origem": "Norderney",
