@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-6510",
+  "data": "2026-11-13T19:13:23Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "50.000 milhas + CAD 123,50 de taxas",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
+  "id": "3761373661-9622",
+  "data": "2026-11-13T19:11:52Z",
+  "origem": "Campo Grande",
+  "origem_iata": "CGR",
+  "destino": "Belo Horizonte",
+  "destino_iata": "CNF",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "22.000 milhas + Taxas",
+  "volta": "22.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2008590742-15588",
   "data": "2026-11-13T18:51:29Z",
   "origem": "Aracaju",
@@ -6282,34 +6310,6 @@
   "ida": "80.000 milhas + Taxas",
   "volta": "80.000 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15406",
-  "data": "2026-11-11T19:10:50Z",
-  "origem": "Uberlândia",
-  "origem_iata": "UDI",
-  "destino": "San José",
-  "destino_iata": "SJO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "44.000 milhas + Taxas",
-  "volta": "44.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9433",
-  "data": "2026-11-11T19:08:21Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "SDU",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "11.200 milhas + R$ 62,62 de taxas",
-  "volta": "11.200 milhas + R$ 34,54 de taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7710",
