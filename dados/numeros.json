@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-13T22:45:45.263889Z",
+ "atualizado": "2026-11-13T22:51:53.798922Z",
  "dias": 30,
  "passagens": 2382,
  "promocoes": 147,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1276,
+  "passagens": 1275,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -615,19 +615,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9146",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Navegantes",
-    "destino_iata": "NVT",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-06T22:46:55Z",
-    "milhas": 5796,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9280",
     "origem": "Uberlândia",
     "origem_iata": "UDI",
@@ -793,6 +780,19 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-13T18:47:52Z",
     "milhas": 8000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9550",
+    "origem": "São Paulo",
+    "origem_iata": "CGH",
+    "destino": "Navegantes",
+    "destino_iata": "NVT",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-13T11:53:17Z",
+    "milhas": 8100,
     "nivel": "",
     "regiao": "brasil"
    },
