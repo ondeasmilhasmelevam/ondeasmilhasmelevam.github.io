@@ -6531,20 +6531,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9439",
-  "data": "2026-11-11T20:29:49Z",
-  "origem": "João Pessoa",
-  "origem_iata": "JPA",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "A partir de 13.300 milhas",
-  "volta": "A partir de 13.300 milhas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7710",
   "data": "2026-11-11T17:23:00Z",
   "tipo": "promocao",
