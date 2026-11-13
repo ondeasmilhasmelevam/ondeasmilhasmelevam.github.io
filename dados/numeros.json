@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-13T18:29:24.863802Z",
+ "atualizado": "2026-11-13T18:35:40.115254Z",
  "dias": 30,
- "passagens": 2327,
+ "passagens": 2335,
  "promocoes": 140,
  "destinos": 160,
  "executiva": 460,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1260,
+  "passagens": 1268,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -368,15 +368,15 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15124",
-    "origem": "Curitiba",
-    "origem_iata": "CWB",
+    "id": "2008590742-15583",
+    "origem": "Florianópolis",
+    "origem_iata": "FLN",
     "destino": "Milão",
     "destino_iata": "MXP",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-09T15:32:19Z",
-    "milhas": 67550,
+    "data": "2026-11-13T18:32:41Z",
+    "milhas": 66000,
     "nivel": "muito bom",
     "regiao": "europa"
    },
