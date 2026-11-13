@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-13T18:09:40.132218Z",
+ "atualizado": "2026-11-13T18:16:26.403574Z",
  "dias": 30,
- "passagens": 2322,
+ "passagens": 2327,
  "promocoes": 140,
  "destinos": 160,
  "executiva": 460,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1278,
+  "passagens": 1273,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -212,15 +212,15 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2008590742-14956",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
+    "id": "seats-smiles-GRU-AUA-eco",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
     "destino": "Aruba",
     "destino_iata": "AUA",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-06T18:11:17Z",
-    "milhas": 69200,
+    "data": "2026-11-10T00:03:03.524369Z",
+    "milhas": 78000,
     "nivel": "espetacular",
     "regiao": "caribe"
    },
