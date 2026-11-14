@@ -5452,34 +5452,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15519",
-  "data": "2026-11-12T22:46:22Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Montevidéu",
-  "destino_iata": "MVD",
-  "companhia": "GOL Linhas Aéreas",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "36.500 milhas + R$ 556,51",
-  "volta": "36.500 milhas + R$ 556,51",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-15518",
-  "data": "2026-11-12T22:46:19Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Santa Cruz de la Sierra",
-  "destino_iata": "VVI",
-  "companhia": "GOL Linhas Aéreas",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "36.000 milhas + R$ 389,47",
-  "volta": "36.000 milhas + R$ 389,47",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7729",
   "data": "2026-11-12T16:02:11Z",
   "tipo": "promocao",
