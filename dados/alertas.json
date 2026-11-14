@@ -6155,20 +6155,6 @@
   "ate": ""
  },
  {
-  "id": "3761373661-9517",
-  "data": "2026-11-12T17:56:00Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "9.700 milhas + R$ 35,15 de taxas",
-  "volta": "9.700 milhas + R$ 62,14 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7729",
   "data": "2026-11-12T16:02:11Z",
   "tipo": "promocao",
