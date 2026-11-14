@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-14T22:30:25.537776Z",
+ "atualizado": "2026-11-14T22:40:37.025754Z",
  "dias": 30,
  "passagens": 2539,
  "promocoes": 157,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1393,
+  "passagens": 1389,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -277,14 +277,14 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-15014",
+    "id": "2008590742-15105",
     "origem": "Florianópolis",
     "origem_iata": "FLN",
     "destino": "Buenos Aires",
     "destino_iata": "AEP",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-07T22:30:36Z",
+    "data": "2026-11-09T01:26:46Z",
     "milhas": 28000,
     "nivel": "muito bom",
     "regiao": "america-do-sul"
