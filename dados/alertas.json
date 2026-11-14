@@ -1,5 +1,142 @@
 [
  {
+  "id": "1290836068-7785",
+  "data": "2026-11-14T15:52:23Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass: 4.841 MILHAS + TAXAS POR TRECHO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A LATAM oferece passagens nacionais a partir de 4.841 milhas + taxas por trecho. A LATAM Pass oferece 25% de bônus na transferência de pontos do Sem Parar.",
+  "detalhes": [
+   "4.841 milhas + taxas por trecho",
+   "25% de bônus na transferência de pontos do Sem Parar"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/SlFuTJ2"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7784",
+  "data": "2026-11-14T15:52:20Z",
+  "tipo": "promocao",
+  "titulo": "50% OFF NO UNIVERSO AADVANTAGE",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Promoção Black da UDM oferece 50% de desconto no programa AAdvantage",
+  "detalhes": [
+   "50% OFF"
+  ],
+  "parceiros": "AAdvantage, United Airlines",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/SlFuTJ2"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7783",
+  "data": "2026-11-14T15:52:15Z",
+  "tipo": "promocao",
+  "titulo": "LIVELO & SAM’S CLUB: Assine e ganhe até 100 pontos por real + 1.000 pontos extras!",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Torne-se sócio do Sam's Club pela Livelo com desconto na anuidade e pontuação bonificada sobre o valor pago.",
+  "detalhes": [
+   "100 pontos por real no Plano Club (anuidade de R$ 95 por R$ 48)",
+   "14 pontos por real no Plano Plus (anuidade de R$ 175 por R$ 88)",
+   "+ 1.000 pontos Livelo extras ao incluir 1 sócio adicional gratuito"
+  ],
+  "parceiros": "Livelo, Sam's Club",
+  "validade": "15/11/2026",
+  "links": [
+   "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club/WMB"
+  ],
+  "ate": "2026-11-15T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7782",
+  "data": "2026-11-14T15:52:12Z",
+  "tipo": "promocao",
+  "titulo": "PROMOÇÕES DE MILHAS E PASSAGENS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "A matéria apresenta promoções de milhas e passagens. Inclui descontos no AAdvantage, Azul e LATAM Pass. Não há prazo de validade mencionado.",
+  "detalhes": [
+   "50% OFF no Universo AAdvantage",
+   "Voo a Barcelona a partir de 94 mil pontos Azul + taxas",
+   "Trecho para Roma a partir de 68 mil milhas LATAM Pass + taxas",
+   "Passagens nacionais a partir de 4.841 milhas + taxas por trecho",
+   "Trechos a partir de R$ 149 ou 3 mil milhas + taxas",
+   "Sugestões de voos a partir de 8.100 milhas Smiles"
+  ],
+  "parceiros": "",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/SlFuTJ2"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7781",
+  "data": "2026-11-14T15:52:09Z",
+  "tipo": "promocao",
+  "titulo": "HILTON HONORS: Compre pontos com até 120% de bônus!",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Adquira pontos Hilton Honors com bônus de 120% para contas elegíveis e maximize suas economias em hospedagens.",
+  "detalhes": [
+   "120% de bônus na compra de 5.000 pontos ou mais (Milheiro US$ 4,55 ~ R$ 22,73)"
+  ],
+  "parceiros": "Hilton Honors",
+  "validade": "21/11/2026",
+  "links": [
+   "https://www.hilton.com/en/p/hilton-honors/buy-give-receive-points"
+  ],
+  "ate": "2026-11-21T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7780",
+  "data": "2026-11-14T15:52:04Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass ITAÚ: Clientes selecionados ganham até 10.000 milhas bônus por meta de gastos!",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Campanha exclusiva para portadores de cartões LATAM Pass Itaú Mastercard que atingirem metas individuais de gastos durante o período promocional.",
+  "detalhes": [
+   "10.000 milhas bônus para cartão Mastercard Black",
+   "4.000 milhas bônus para cartão Mastercard Platinum",
+   "2.500 milhas bônus para cartão Mastercard Gold",
+   "1.000 milhas bônus para cartão Mastercard Internacional"
+  ],
+  "parceiros": "LATAM Pass, Itaú, Mastercard",
+  "validade": "14/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/promocoes/bonus-cartao-itau"
+  ],
+  "ate": "2026-11-14T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7779",
+  "data": "2026-11-14T15:52:01Z",
+  "tipo": "promocao",
+  "titulo": "VOE PARA BARCELONA A PARTIR DE 94 MIL PONTOS AZUL + TAXAS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Passagem aérea para Barcelona com 94 mil pontos Azul mais taxas. Não há mais detalhes no texto.",
+  "detalhes": [
+   "94 mil pontos Azul + taxas"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/SlFuTJ2"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2008590742-15691",
   "data": "2026-11-14T15:45:18Z",
   "origem": "Natal",
@@ -5794,20 +5931,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-9515",
-  "data": "2026-11-12T15:48:49Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "8.300 milhas + R$ 56,99 de taxas",
-  "volta": "8.300 milhas + R$ 35,75 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-PUJ-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
@@ -6057,27 +6180,6 @@
   "ida": "96.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-7684",
-  "data": "2026-11-10T16:16:31Z",
-  "tipo": "promocao",
-  "titulo": "ASSINATURA SAM’S CLUB: ATÉ 100 PONTOS POR REAL + 1.000 PONTOS EXTRAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Sam’s Club e ganhe até 100 pontos por real gasto na anuidade, 1.000 pontos extras e 50% OFF na anuidade. Validade até 15/11/2026.",
-  "detalhes": [
-   "Plano Club: 100 pontos por real gasto na anuidade (mínimo R$ 300 em compras).",
-   "Plano Plus: 14 pontos por real gasto na anuidade (mínimo R$ 100 em compras).",
-   "1.000 pontos extras ao incluir 1 sócio adicional gratuitamente.",
-   "50% OFF na anuidade para o primeiro ano (Plano Club: R$ 48 ao invés de R$ 95; Plano Plus: R$ 88 ao invés de R$ 175)."
-  ],
-  "parceiros": "Livelo, Sam’s Club",
-  "validade": "15/11/2026",
-  "links": [
-   "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club/WMB"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
  },
  {
   "id": "1290836068-7673",
@@ -6662,28 +6764,6 @@
   "ate": "2026-11-16T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7628",
-  "data": "2026-11-07T14:20:35Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass ITAÚ: ATÉ 10.000 MILHAS BÔNUS POR META DE GASTOS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Clientes selecionados dos cartões LATAM Pass Itaú Mastercard podem ganhar até 10.000 milhas bônus ao cumprirem suas metas individuais de gastos até 14/11/2026.",
-  "detalhes": [
-   "Cartão Mastercard Black: 10.000 milhas bônus",
-   "Cartão Mastercard Platinum: 4.000 milhas bônus",
-   "Cartão Mastercard Gold: 2.500 milhas bônus",
-   "Cartão Mastercard Internacional: 1.000 milhas bônus"
-  ],
-  "parceiros": "LATAM Pass, Itaú, Mastercard",
-  "validade": "14/11/2026",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/bonus-cartao-itau",
-   "https://image.info.latam.com/lib/fe2311717d/m/1/ee9cc845-6265-4f09-aaf6-a4f32c81df2c.pdf"
-  ],
-  "ate": "2026-11-14T23:59:59-03:00"
- },
- {
   "id": "1290836068-7609",
   "data": "2026-11-05T21:49:29Z",
   "tipo": "promocao",
@@ -6844,28 +6924,6 @@
    "https://www.smiles.com.br/portal/campanhas/cartao-de-credito/ate-55-mil-milhas"
   ],
   "ate": "2026-11-30T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7220",
-  "data": "2026-10-10T18:02:09Z",
-  "tipo": "promocao",
-  "titulo": "COMPRA DE PONTOS HILTON HONORS COM BÔNUS DE 120%",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Compre pontos Hilton Honors e ganhe até 120% de bônus na compra de 5.000 pontos ou mais. Ideal para reservas em hotéis de luxo com vantagens adicionais para membros Silver ou superiores.",
-  "detalhes": [
-   "Bônus de até 120% na compra de 5.000 pontos ou mais.",
-   "Milheiro a US$ 4,55 (~R$ 22,73) com câmbio de US$ 1 = R$ 5,00.",
-   "Câmbio e taxas (IOF, spread) não inclusos no cálculo.",
-   "Pontos creditados em até 48 horas após a transação.",
-   "Associados Silver ou superiores ganham quinta diária grátis em reservas elegíveis."
-  ],
-  "parceiros": "Hilton Honors",
-  "validade": "21/11/2026",
-  "links": [
-   "https://www.hilton.com/en/p/hilton-honors/buy-give-receive-points"
-  ],
-  "ate": "2026-11-21T23:59:59-03:00"
  },
  {
   "id": "1290836068-6834",
