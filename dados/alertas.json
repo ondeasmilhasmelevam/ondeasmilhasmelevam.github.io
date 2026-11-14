@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-6581",
+  "data": "2026-11-14T11:43:03Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "175.500 milhas (166.800 no Clube Smiles)",
+  "volta": "175.500 milhas (166.800 no Clube Smiles)",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2361370250-6580",
+  "data": "2026-11-14T11:40:44Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "472.200 milhas (448.600 no Clube Smiles)",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-6579",
   "data": "2026-11-14T11:37:44Z",
   "origem": "São Paulo",
@@ -6813,48 +6841,6 @@
   "programa": "GOL Smiles",
   "ida": "254.800 milhas (242.100 no Clube Smiles)",
   "volta": "218.500 milhas (207.700 no Clube Smiles)",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-6453",
-  "data": "2026-11-12T11:46:36Z",
-  "origem": "Bogotá",
-  "origem_iata": "BOG",
-  "destino": "Doha",
-  "destino_iata": "DOH",
-  "companhia": "Qatar Airways",
-  "cabine": "Executiva",
-  "programa": "Qatar Privilege Club",
-  "ida": "A partir de 70.000 AVIOS",
-  "volta": "A partir de 70.000 AVIOS",
-  "link_nome": "Privilege Club"
- },
- {
-  "id": "2361370250-6452",
-  "data": "2026-11-12T11:45:30Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Amsterdã",
-  "destino_iata": "AMS",
-  "companhia": "Air France + KLM",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "544.700 milhas (517.500 no Clube Smiles)",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-6451",
-  "data": "2026-11-12T11:41:37Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "526.800 milhas (500.500 no Clube Smiles)",
-  "volta": "",
   "link_nome": "GOL Smiles"
  },
  {
