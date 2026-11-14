@@ -6512,20 +6512,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-9451",
-  "data": "2026-11-12T01:41:34Z",
-  "origem": "Vitória da Conquista",
-  "origem_iata": "VDC",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "14.700 milhas + R$ 45,98 de taxas",
-  "volta": "14.700 milhas + R$ 35,75 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7710",
   "data": "2026-11-11T17:23:00Z",
   "tipo": "promocao",
