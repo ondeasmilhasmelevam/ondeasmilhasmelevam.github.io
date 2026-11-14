@@ -6150,25 +6150,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "1290836068-7734",
-  "data": "2026-11-12T18:34:10Z",
-  "tipo": "promocao",
-  "titulo": "AZUL: DESCONTO DE ATÉ 10% EM PASSAGENS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Desconto de até 10% em passagens aéreas do Azul para destinos nacionais e internacionais.",
-  "detalhes": [
-   "Desconto de até 10% em passagens.",
-   "Promoção válida para voos do Azul."
-  ],
-  "parceiros": "Azul",
-  "validade": "",
-  "links": [
-   "https://pontospravoar.com/?p=149702"
-  ],
-  "ate": ""
- },
- {
   "id": "1290836068-7729",
   "data": "2026-11-12T16:02:11Z",
   "tipo": "promocao",
