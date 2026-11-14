@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-14T16:20:29.538147Z",
+ "atualizado": "2026-11-14T16:26:44.516100Z",
  "dias": 30,
- "passagens": 2505,
+ "passagens": 2521,
  "promocoes": 157,
  "destinos": 163,
- "executiva": 518,
+ "executiva": 520,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -46,6 +46,19 @@
    "foto": "img/rotas/CNF-SJO.jpg"
   },
   {
+   "id": "2008590742-15693",
+   "origem": "Manaus",
+   "origem_iata": "MAO",
+   "destino": "Cancún",
+   "destino_iata": "CUN",
+   "cabine": "Econômica",
+   "programa": "Smiles",
+   "data": "2026-11-14T16:21:11Z",
+   "milhas": 40400,
+   "nivel": "espetacular",
+   "foto": "img/rotas/MAO-CUN.jpg"
+  },
+  {
    "id": "2008590742-14564",
    "origem": "Belém",
    "origem_iata": "BEL",
@@ -69,23 +82,10 @@
    "milhas": 44310,
    "nivel": "espetacular",
    "foto": "img/rotas/POA-MIA.jpg"
-  },
-  {
-   "id": "2008590742-14699",
-   "origem": "Manaus",
-   "origem_iata": "MAO",
-   "destino": "Curaçao",
-   "destino_iata": "CUR",
-   "cabine": "Econômica",
-   "programa": "Smiles",
-   "data": "2026-11-04T16:15:38Z",
-   "milhas": 46800,
-   "nivel": "espetacular",
-   "foto": "img/rotas/MAO-CUR.jpg"
   }
  ],
  "semana": {
-  "passagens": 1385,
+  "passagens": 1401,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -186,6 +186,19 @@
     "regiao": "caribe"
    },
    {
+    "id": "2008590742-15693",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "Cancún",
+    "destino_iata": "CUN",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-14T16:21:11Z",
+    "milhas": 40400,
+    "nivel": "espetacular",
+    "regiao": "caribe"
+   },
+   {
     "id": "2008590742-15099",
     "origem": "Belém",
     "origem_iata": "BEL",
@@ -275,19 +288,6 @@
     "milhas": 28000,
     "nivel": "muito bom",
     "regiao": "america-do-sul"
-   },
-   {
-    "id": "2008590742-15351",
-    "origem": "Uberlândia",
-    "origem_iata": "UDI",
-    "destino": "Cancún",
-    "destino_iata": "CUN",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-11T13:43:58Z",
-    "milhas": 51100,
-    "nivel": "muito bom",
-    "regiao": "caribe"
    },
    {
     "id": "2008590742-15359",
