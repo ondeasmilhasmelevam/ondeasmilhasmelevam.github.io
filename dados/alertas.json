@@ -2033,46 +2033,6 @@
   "ate": "2026-11-15T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7746",
-  "data": "2026-11-13T14:20:17Z",
-  "tipo": "promocao",
-  "titulo": "TURBO LIVELO PINK FRIDAY: TURBINE SEUS PONTOS EM ATÉ 25X",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Turbine acúmulos elegíveis de pontos Livelo realizados nos últimos 12 meses em até 25x com valores promocionais a partir de R$ 29,40 por milheiro.",
-  "detalhes": [
-   "Multiplicadores 10x, 15x e 25x: R$ 30,00 parcelado ou R$ 29,40 no Pix (2% OFF).",
-   "Multiplicadores 3x e 5x: R$ 31,00 parcelado ou R$ 30,38 no Pix.",
-   "Limite de até 400.000 pontos turbinados para assinantes do Clube Livelo."
-  ],
-  "parceiros": "Livelo",
-  "validade": "13/11/2026",
-  "links": [
-   "https://www.livelo.com.br/turbo-promo-CDC15950"
-  ],
-  "ate": "2026-11-13T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7745",
-  "data": "2026-11-13T14:20:12Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFERÊNCIA LIVELO PARA QATAR AIRWAYS WITH 35% DE BÔNUS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira seus pontos Livelo para o Qatar Airways Privilege Club e receba 35% de bônus em milhas sem limite de bonificação por CPF.",
-  "detalhes": [
-   "35% de bônus em milhas para todos os clientes Livelo.",
-   "Transferência mínima: 3.000 pontos Livelo (1.000 milhas antes do bônus).",
-   "Limite máximo por operação: 999.999 pontos Livelo."
-  ],
-  "parceiros": "Livelo, Qatar Airways Privilege Club",
-  "validade": "13/11/2026",
-  "links": [
-   "https://www.livelo.com.br/livelo-para-parceiros/qatar/QATTransfer"
-  ],
-  "ate": "2026-11-13T23:59:59-03:00"
- },
- {
   "id": "3761373661-9595",
   "data": "2026-11-13T14:16:40Z",
   "origem": "Sinop",
@@ -4210,28 +4170,6 @@
    "https://www.voeazul.com.br"
   ],
   "ate": "2026-11-15T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7728",
-  "data": "2026-11-12T16:02:06Z",
-  "tipo": "promocao",
-  "titulo": "TURBO LIVELO GERANDO MILHEIRO POR R$ 29,40",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "",
-  "detalhes": [
-   "Multiplicação de pontos em até 25x.",
-   "Milheiro no Pix: R$ 29,40.",
-   "Milheiro no Cartão de Crédito: R$ 30,00 (em até 6x sem juros).",
-   "Permite turbinar transações a partir de 100 pontos acumulados nos últimos 12 meses (Shopping, cartões, transferências e parceiros).",
-   "Limite diário: 200.000 pontos (não assinantes do Clube), até 400.000 pontos (assinantes Clube Super, Mega e Top)."
-  ],
-  "parceiros": "Livelo",
-  "validade": "13/11/2026",
-  "links": [
-   "https://www.livelo.com.br/turbo-livelo"
-  ],
-  "ate": "2026-11-13T23:59:59-03:00"
  },
  {
   "id": "2008590742-15498",
@@ -6534,51 +6472,6 @@
   "ate": "2026-11-16T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7703",
-  "data": "2026-11-11T15:26:51Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FIDELIDADE: 11% DE DESCONTO EM PASSAGENS COM PONTOS + BÔNUS DE PONTOS CAMICADO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Desconto de 11% em passagens aéreas (nacionais e internacionais) usando pontos Azul Fidelidade. Além disso, acúmulo de até 25 pontos por real gasto na Camicado (25 pts para assinantes do Clube Azul e 18 pts para demais clientes).",
-  "detalhes": [
-   "11% de desconto em passagens com pontos (incluindo internacionais).",
-   "25 pontos por real gasto na Camicado para assinantes do Clube Azul.",
-   "18 pontos por real gasto na Camicado para demais clientes.",
-   "Desconto válido até 13/11/2026."
-  ],
-  "parceiros": "Azul Fidelidade, Camicado",
-  "validade": "13/11/2026",
-  "links": [
-   "https://pontospravoar.com/?p=149315"
-  ],
-  "ate": "2026-11-13T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7702",
-  "data": "2026-11-11T14:05:03Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFIRA AZUL FIDELIDADE PARA ALL ACCOR COM ATÉ 30% DE BÔNUS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira pontos Azul Fidelidade para o programa ALL Accor com até 30% de bônus, especialmente para assinantes do ALL Signature e clientes dos clubes Azul, Azul One, Diamante Unique, Diamante e Azul Itaú.",
-  "detalhes": [
-   "Taxa de transferência: 7,3 pontos Azul para 1 ponto ALL Accor (clientes Clube Azul, Azul One, Diamante Unique, Diamante e Azul Itaú); 9,4 pontos Azul para 1 ponto ALL Accor (demais clientes).",
-   "Bônus de 20% para associados ALL Accor.",
-   "Bônus adicional de 10% para assinantes do ALL Signature.",
-   "Bônus total de até 30% para quem reúne as duas condições.",
-   "Limite de 3.000 transferências do Azul Fidelidade para o ALL Accor.",
-   "Valores promocionais: 1.000 pontos ALL Accor por 7.300 pontos Azul (totalizando 1.300 pontos Rewards com bônus máximo de 30%); 2.000 pontos ALL Accor por 14.600 pontos Azul (totalizando 2.600 pontos Rewards); 3.000 pontos ALL Accor por 21.900 pontos Azul (totalizando 3.900 pontos Rewards); 4.000 pontos ALL Accor por 29.200 pontos Azul (totalizando 5.200 pontos Rewards).",
-   "Crédito dos pontos em até 7 dias úteis após a transferência."
-  ],
-  "parceiros": "Azul Fidelidade, ALL Accor",
-  "validade": "13/11/2026",
-  "links": [
-   "https://all.accor.com/a/pt-br/loyalty-program/partners/offers/oferta-transferencia-azul-fidelidade.html"
-  ],
-  "ate": "2026-11-13T23:59:59-03:00"
- },
- {
   "id": "1290836068-7701",
   "data": "2026-11-11T13:42:06Z",
   "tipo": "promocao",
@@ -6596,25 +6489,6 @@
    "https://latampass.latam.com/br/pt/promocoes/credicard-milhas-extras"
   ],
   "ate": "2026-11-15T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7698",
-  "data": "2026-11-11T13:41:54Z",
-  "tipo": "promocao",
-  "titulo": "PREMMIA E AZUL FIDELIDADE: TRANSFIRA COM ATÉ 120% DE BÔNUS",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Troque seus pontos Premmia por pontos no Azul Fidelidade e receba até 120% de bônus com milheiro a partir de R$ 15,32.",
-  "detalhes": [
-   "120% de bônus para assinantes do Clube Azul.",
-   "80% de bônus para demais clientes Azul Fidelidade."
-  ],
-  "parceiros": "Premmia, Azul Fidelidade",
-  "validade": "13/11",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/premmia"
-  ],
-  "ate": "2026-11-13T23:59:59-03:00"
  },
  {
   "id": "seats-azul-VCP-MAD-eco",
@@ -6899,29 +6773,6 @@
   "ida": "77.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-7669",
-  "data": "2026-11-09T18:13:46Z",
-  "tipo": "promocao",
-  "titulo": "ORANGE FRIDAY: TRANSFIRA PONTOS DE BANCOS PARA SMILES COM ATÉ 70% DE BÔNUS + CUPOM DE 76% OFF EM MILHAS",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Transfira pontos de bancos parceiros para o Smiles e ganhe até 70% de bônus. Inclui cupom de 76% OFF para compra de até 200.000 milhas Smiles (válido por 2 dias).",
-  "detalhes": [
-   "70% de bônus para assinantes do Clube Smiles e clientes Diamante/Magno.",
-   "40% de bônus para demais clientes Smiles.",
-   "Cupom de 76% OFF para compra de até 200.000 milhas Smiles (exclusivo para Clube Smiles/Diamante/Magno).",
-   "Milheiro do cupom: R$ 19,20.",
-   "Transferências elegíveis de bancos nacionais e internacionais parceiros (exceto GOL Smiles).",
-   "Compra de milhas pelo PaGol também é válida."
-  ],
-  "parceiros": "Smiles, PaGol, Esfera, UAU CAIXA, Livelo",
-  "validade": "23h59 de 13/11/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/promo/orangefriday-bancos-11-2026"
-  ],
-  "ate": "2026-11-13T23:59:59-03:00"
  },
  {
   "id": "1290836068-7667",
