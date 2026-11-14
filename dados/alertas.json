@@ -6410,48 +6410,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15487",
-  "data": "2026-11-12T12:33:56Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Cartagena",
-  "destino_iata": "CTG",
-  "companhia": "LATAM Airlines",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "27.610 milhas + R$ 198,31",
-  "volta": "27.610 milhas + R$ 305,83",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15486",
-  "data": "2026-11-12T12:33:44Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Cartagena",
-  "destino_iata": "CTG",
-  "companhia": "LATAM Airlines",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "33.482 milhas + R$ 192,14",
-  "volta": "33.482 milhas + R$ 305,83",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15485",
-  "data": "2026-11-12T12:33:39Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "Copa Airlines",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "56.000 milhas + R$ 430,66",
-  "volta": "56.000 milhas + R$ 430,66",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-PUJ-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
