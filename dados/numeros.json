@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-14T01:04:58.860846Z",
+ "atualizado": "2026-11-14T01:11:19.617125Z",
  "dias": 30,
- "passagens": 2386,
+ "passagens": 2387,
  "promocoes": 150,
  "destinos": 162,
  "executiva": 467,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1279,
+  "passagens": 1280,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -680,6 +680,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9635",
+    "origem": "São Paulo",
+    "origem_iata": "CGH",
+    "destino": "Curitiba",
+    "destino_iata": "CWB",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-14T01:08:46Z",
+    "milhas": 6800,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "2008590742-15179",
     "origem": "Belém",
     "origem_iata": "BEL",
@@ -753,19 +766,6 @@
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
     "data": "2026-11-11T16:47:47Z",
-    "milhas": 8000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9588",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "Curitiba",
-    "destino_iata": "CWB",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-13T14:10:42Z",
     "milhas": 8000,
     "nivel": "",
     "regiao": "brasil"

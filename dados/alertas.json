@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9635",
+  "data": "2026-11-14T01:08:46Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "Curitiba",
+  "destino_iata": "CWB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "6.800 milhas + R$ 62,14 de taxas",
+  "volta": "6.800 milhas + R$ 48,63 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9634",
   "data": "2026-11-14T01:02:47Z",
   "origem": "Belo Horizonte",
