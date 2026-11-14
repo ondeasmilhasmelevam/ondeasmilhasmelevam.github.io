@@ -6550,48 +6550,6 @@
   "link_nome": "Azul pelo Mundo"
  },
  {
-  "id": "3761373661-9465",
-  "data": "2026-11-12T12:19:04Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "João Pessoa",
-  "destino_iata": "JPA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 12.659 milhas",
-  "volta": "A partir de 12.659 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15480",
-  "data": "2026-11-12T12:18:51Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Joanesburgo",
-  "destino_iata": "JNB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 65.600 milhas",
-  "volta": "A partir de 65.600 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2361370250-6466",
-  "data": "2026-11-12T12:15:35Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Joanesburgo",
-  "destino_iata": "JNB",
-  "companhia": "South African Airways",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "214.200 milhas (203.500 no Clube Smiles)",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
   "id": "seats-smiles-GRU-PUJ-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
