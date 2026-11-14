@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-15608",
+  "data": "2026-11-14T03:38:41Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "32.000 milhas + R$ 108,17 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9636",
   "data": "2026-11-14T01:53:25Z",
   "origem": "Belo Horizonte",
@@ -6517,21 +6531,6 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "81.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "seats-smiles-GRU-AUA-eco",
-  "data": "2026-11-11T00:03:25.922708Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Aruba",
-  "destino_iata": "AUA",
-  "companhia": "American / Avianca / Copa",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "88.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
