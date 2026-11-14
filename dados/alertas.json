@@ -6172,48 +6172,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-9480",
-  "data": "2026-11-12T13:00:48Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "9.500 milhas + Taxas",
-  "volta": "9.500 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9479",
-  "data": "2026-11-12T13:00:43Z",
-  "origem": "Navegantes",
-  "origem_iata": "NVT",
-  "destino": "Vitória",
-  "destino_iata": "VIX",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "12.100 milhas + Taxas",
-  "volta": "12.100 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9478",
-  "data": "2026-11-12T13:00:38Z",
-  "origem": "Navegantes",
-  "origem_iata": "NVT",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "SDU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "14.200 milhas + Taxas",
-  "volta": "14.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-PUJ-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
