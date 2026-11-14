@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-15689",
+  "data": "2026-11-14T15:34:17Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "Avianca",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "92.300 milhas + Taxas",
+  "volta": "92.300 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9649",
   "data": "2026-11-14T15:20:46Z",
   "origem": "São Luís",
@@ -5777,20 +5791,6 @@
   "programa": "Aeroplan",
   "ida": "50.000 milhas + CAD 118,10 de taxas",
   "volta": "",
-  "link_nome": "Aeroplan"
- },
- {
-  "id": "2361370250-6482",
-  "data": "2026-11-12T15:33:50Z",
-  "origem": "Montreal",
-  "origem_iata": "YUL",
-  "destino": "Casablanca",
-  "destino_iata": "CMN",
-  "companhia": "Air Canada",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "69.800 milhas + Taxas",
-  "volta": "68.900 milhas + Taxas",
   "link_nome": "Aeroplan"
  },
  {
