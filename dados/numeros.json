@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-14T15:15:32.164189Z",
+ "atualizado": "2026-11-14T15:21:52.867101Z",
  "dias": 30,
- "passagens": 2500,
+ "passagens": 2502,
  "promocoes": 150,
  "destinos": 163,
  "executiva": 518,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1382,
+  "passagens": 1384,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -758,6 +758,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9648",
+    "origem": "Brasília",
+    "origem_iata": "BSB",
+    "destino": "Palmas",
+    "destino_iata": "PMW",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-14T15:18:19Z",
+    "milhas": 7910,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9422",
     "origem": "Curitiba",
     "origem_iata": "CWB",
@@ -923,19 +936,6 @@
     "programa": "Smiles",
     "data": "2026-11-09T17:34:55Z",
     "milhas": 10600,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "2008590742-15525",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "Uberlândia",
-    "destino_iata": "UDI",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-13T12:08:31Z",
-    "milhas": 11000,
     "nivel": "",
     "regiao": "brasil"
    },
