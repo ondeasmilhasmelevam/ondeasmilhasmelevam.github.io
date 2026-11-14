@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9639",
+  "data": "2026-11-14T12:38:56Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "8.600 milhas + R$ 56,99 de taxas",
+  "volta": "8.600 milhas + R$ 62,14 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6581",
   "data": "2026-11-14T11:43:03Z",
   "origem": "São Paulo",
@@ -6351,62 +6365,6 @@
   "programa": "Smiles",
   "ida": "A partir de 16.500 milhas",
   "volta": "A partir de 16.500 milhas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9472",
-  "data": "2026-11-12T12:44:43Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "São Luís",
-  "destino_iata": "SLZ",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "20.000 milhas + Taxas",
-  "volta": "20.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9471",
-  "data": "2026-11-12T12:44:39Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Vitória",
-  "destino_iata": "VIX",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "23.000 milhas + Taxas",
-  "volta": "23.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9470",
-  "data": "2026-11-12T12:44:35Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Campo Grande",
-  "destino_iata": "CGR",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "30.200 milhas + Taxas",
-  "volta": "30.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9469",
-  "data": "2026-11-12T12:41:17Z",
-  "origem": "São Paulo",
-  "origem_iata": "CGH",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "11.200 milhas + R$ 62,14 de taxas",
-  "volta": "11.200 milhas + R$ 34,54 de taxas",
   "link_nome": "Smiles"
  },
  {
