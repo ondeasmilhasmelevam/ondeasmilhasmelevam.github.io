@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-15607",
+  "data": "2026-11-14T00:21:27Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "65.000 milhas + R$ 100,62 de taxas",
+  "volta": "",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-9633",
   "data": "2026-11-13T23:51:23Z",
   "origem": "São Paulo",
@@ -6496,20 +6510,6 @@
   "ida": "8.600 milhas + R$ 62,14 de taxas",
   "volta": "8.600 milhas + R$ 56,99 de taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-15418",
-  "data": "2026-11-12T00:23:56Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Orlando",
-  "destino_iata": "MCO",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "80.000 milhas + R$ 303,01 de taxas",
-  "volta": "",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "1290836068-7710",
