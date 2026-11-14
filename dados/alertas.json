@@ -6089,51 +6089,6 @@
   "ate": ""
  },
  {
-  "id": "1290836068-7731",
-  "data": "2026-11-12T17:04:25Z",
-  "tipo": "promocao",
-  "titulo": "PASSAGENS A PARTIR DE 6.900 MILHAS NA SMILES",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "A promoção oferece passagens aéreas com milhas Smiles a partir de 6.900 milhas por trecho, mais taxas. As tarifas são as menores disponíveis em cada mês e variam por rota. Os valores são por trecho e por passageiro.",
-  "detalhes": [
-   "valor por trecho",
-   "taxas adicionais",
-   "menores tarifas disponíveis em cada mês",
-   "valores por trecho e por passageiro",
-   "Macapá (MCP) x Belém (BEL) a partir de 6.900 milhas o trecho",
-   "São José do Rio Preto (SJP) x São Paulo (CGH) a partir de 8.000 milhas o trecho",
-   "São Paulo (CGH) x Navegantes (NVT) a partir de 8.100 milhas o trecho",
-   "São Paulo (CGH) x Florianópolis (FLN) a partir de 8.800 milhas o trecho"
-  ],
-  "parceiros": "Smiles",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/7MfeaaR"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7730",
-  "data": "2026-11-12T17:04:19Z",
-  "tipo": "promocao",
-  "titulo": "RESGATE DE PASSAGENS PARA FLORIANÓPOLIS E FOZ DO IGUAÇU COM ATÉ 25% DE DESCONTO NA LIVELO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Aproveite descontos de até 25% para resgatar passagens aéreas com pontos Livelo para os destinos de Florianópolis e Foz do Iguaçu.",
-  "detalhes": [
-   "Desconto de até 25% no resgate de passagens para Florianópolis",
-   "Desconto de até 25% no resgate de passagens para Foz do Iguaçu",
-   "Resgate realizado diretamente com pontos no programa Livelo"
-  ],
-  "parceiros": "Livelo",
-  "validade": "Até durar o estoque",
-  "links": [
-   "https://passageirodeprimeira.com/resgate-passagens-florianopolis-foz-do-iguacu-ate-25-desconto-livelo/"
-  ],
-  "ate": ""
- },
- {
   "id": "1290836068-7729",
   "data": "2026-11-12T16:02:11Z",
   "tipo": "promocao",
