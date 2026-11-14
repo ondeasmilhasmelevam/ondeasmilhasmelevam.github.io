@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6590",
+  "data": "2026-11-14T21:28:39Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "50.000 milhas + CAD 123,40 de taxas",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "3761373661-9667",
   "data": "2026-11-14T20:25:42Z",
   "origem": "Belo Horizonte",
@@ -5534,62 +5548,6 @@
   "ida": "28.000 milhas + R$ 108,17 de taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9534",
-  "data": "2026-11-12T21:28:52Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Porto Seguro",
-  "destino_iata": "BPS",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 11.597 milhas",
-  "volta": "A partir de 11.597 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15515",
-  "data": "2026-11-12T21:27:35Z",
-  "origem": "Petrolina",
-  "origem_iata": "PNZ",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "Azul + parceira",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "15.000 milhas + Taxas",
-  "volta": "15.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-15514",
-  "data": "2026-11-12T21:27:31Z",
-  "origem": "Teresina",
-  "origem_iata": "THE",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "16.000 milhas + Taxas",
-  "volta": "16.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2361370250-6496",
-  "data": "2026-11-12T21:26:12Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Las Vegas",
-  "destino_iata": "LAS",
-  "companhia": "United Airlines",
-  "cabine": "Executiva",
-  "programa": "Azul pelo Mundo",
-  "ida": "152.500 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Azul pelo Mundo"
  },
  {
   "id": "1290836068-7729",
