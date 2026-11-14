@@ -6676,48 +6676,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "2361370250-6462",
-  "data": "2026-11-12T12:04:00Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "396.500 milhas (376.800 no Clube Smiles)",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-6461",
-  "data": "2026-11-12T12:00:45Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "Turkish Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "70.000 milhas (66.500 no Clube Smiles)",
-  "volta": "70.000 milhas (66.500 no Clube Smiles)",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2008590742-15478",
-  "data": "2026-11-12T12:00:09Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "Air Canada",
-  "cabine": "Econômica",
-  "programa": "GOL Smiles",
-  "ida": "70.000 milhas (66.500 no Clube Smiles)",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
   "id": "seats-smiles-GRU-PUJ-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
