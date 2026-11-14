@@ -6076,13 +6076,13 @@
   "link_nome": "Iberia Plus"
  },
  {
-  "id": "seats-azul-REC-OPO-eco",
+  "id": "seats-azul-REC-LIS-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
   "origem": "Recife",
   "origem_iata": "REC",
-  "destino": "Porto",
-  "destino_iata": "OPO",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
   "companhia": "Azul",
   "cabine": "Econômica",
   "programa": "Azul Fidelidade",
@@ -6091,13 +6091,13 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "seats-azul-REC-LIS-eco",
+  "id": "seats-azul-REC-OPO-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
   "origem": "Recife",
   "origem_iata": "REC",
-  "destino": "Lisboa",
-  "destino_iata": "LIS",
+  "destino": "Porto",
+  "destino_iata": "OPO",
   "companhia": "Azul",
   "cabine": "Econômica",
   "programa": "Azul Fidelidade",
