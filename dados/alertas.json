@@ -170,21 +170,6 @@
   "ate": ""
  },
  {
-  "id": "seats-smiles-GRU-JFK-exe",
-  "data": "2026-11-13T22:21:47.339117Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Nova York",
-  "destino_iata": "JFK",
-  "companhia": "American",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "239.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "2361370250-6515",
   "data": "2026-11-13T21:12:47Z",
   "origem": "Joanesburgo",
@@ -6736,7 +6721,7 @@
   "origem_iata": "GRU",
   "destino": "Nova York",
   "destino_iata": "JFK",
-  "companhia": "American / Avianca / Copa",
+  "companhia": "American / Avianca / GOL",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "75.000 milhas + taxas",
@@ -7128,21 +7113,6 @@
   "link_nome": "Iberia Plus"
  },
  {
-  "id": "seats-iberia-GRU-MAD-exe",
-  "data": "2026-11-08T03:29:49.491996Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Madrid",
-  "destino_iata": "MAD",
-  "companhia": "Iberia / LATAM",
-  "cabine": "Executiva",
-  "programa": "Iberia Plus",
-  "ida": "50.500 Avios + taxas",
-  "volta": "",
-  "link_nome": "Iberia Plus"
- },
- {
   "id": "seats-azul-REC-MAD-eco",
   "data": "2026-11-08T03:29:49.491996Z",
   "fonte": "seats.aero",
@@ -7156,6 +7126,21 @@
   "ida": "65.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "seats-iberia-GRU-MAD-exe",
+  "data": "2026-11-08T03:29:49.491996Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "Iberia",
+  "cabine": "Executiva",
+  "programa": "Iberia Plus",
+  "ida": "74.000 Avios + taxas",
+  "volta": "",
+  "link_nome": "Iberia Plus"
  },
  {
   "id": "1290836068-7631",
