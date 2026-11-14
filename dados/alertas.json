@@ -6024,48 +6024,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15507",
-  "data": "2026-11-12T18:48:34Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Mendoza",
-  "destino_iata": "MDZ",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "54.500 milhas + Taxas",
-  "volta": "54.500 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-15506",
-  "data": "2026-11-12T18:46:41Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "56.475 milhas + R$ 220,60",
-  "volta": "56.475 milhas + R$ 93,27",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15504",
-  "data": "2026-11-12T18:46:08Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "56.822 milhas + R$ 222,39",
-  "volta": "60.298 milhas + R$ 66,88",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7729",
   "data": "2026-11-12T16:02:11Z",
   "tipo": "promocao",
