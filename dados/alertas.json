@@ -5780,20 +5780,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2361370250-6478",
-  "data": "2026-11-12T14:07:06Z",
-  "origem": "Singapura",
-  "origem_iata": "SIN",
-  "destino": "Abu Dhabi",
-  "destino_iata": "AUH",
-  "companhia": "Etihad Airways",
-  "cabine": "Primeira Classe",
-  "programa": "AAdvantage",
-  "ida": "50.000 milhas + R$ 278,96",
-  "volta": "50.000 milhas + R$ 205,28",
-  "link_nome": "AAdvantage"
- },
- {
   "id": "seats-smiles-GRU-PUJ-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
