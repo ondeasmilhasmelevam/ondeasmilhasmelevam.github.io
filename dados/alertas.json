@@ -5920,20 +5920,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-6485",
-  "data": "2026-11-12T19:37:28Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Fort Lauderdale",
-  "destino_iata": "FLL",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "50.000 milhas + CAD 123,20 de taxas",
-  "volta": "",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "1290836068-7729",
   "data": "2026-11-12T16:02:11Z",
   "tipo": "promocao",
