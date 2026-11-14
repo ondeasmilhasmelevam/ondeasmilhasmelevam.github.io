@@ -6158,20 +6158,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15490",
-  "data": "2026-11-12T13:09:18Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "33.000 Milhas LATAM Pass + Taxas",
-  "volta": "33.000 Milhas LATAM Pass + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "seats-smiles-GRU-PUJ-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
