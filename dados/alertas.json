@@ -5906,34 +5906,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-6476",
-  "data": "2026-11-12T13:53:34Z",
-  "origem": "Los Angeles",
-  "origem_iata": "LAX",
-  "destino": "Papeete",
-  "destino_iata": "PPT",
-  "companhia": "Air Tahiti Nui",
-  "cabine": "Executiva",
-  "programa": "AAdvantage",
-  "ida": "80.000 milhas + R$ 31,13",
-  "volta": "80.000 milhas + R$ 336,03",
-  "link_nome": "AAdvantage"
- },
- {
-  "id": "3761373661-9497",
-  "data": "2026-11-12T13:51:37Z",
-  "origem": "Vitória",
-  "origem_iata": "VIX",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "10.600 milhas",
-  "volta": "10.600 milhas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-PUJ-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
