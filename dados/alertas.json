@@ -5494,48 +5494,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-6499",
-  "data": "2026-11-12T22:08:55Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Porto",
-  "destino_iata": "OPO",
-  "companhia": "Azul",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "80.000 milhas + Taxas",
-  "volta": "80.000 milhas + Taxas",
-  "link_nome": "Aeroplan"
- },
- {
-  "id": "2361370250-6498",
-  "data": "2026-11-12T22:05:53Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Milão",
-  "destino_iata": "MXP",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "Flying Blue",
-  "ida": "85.000 milhas + Taxas",
-  "volta": "85.000 milhas + Taxas",
-  "link_nome": "Flying Blue"
- },
- {
-  "id": "2361370250-6497",
-  "data": "2026-11-12T22:03:56Z",
-  "origem": "Sydney",
-  "origem_iata": "SYD",
-  "destino": "Tóquio",
-  "destino_iata": "HND",
-  "companhia": "Japan Airlines",
-  "cabine": "Primeira Classe",
-  "programa": "AAdvantage",
-  "ida": "60.000 milhas + R$ 439,14",
-  "volta": "60.000 milhas + R$ 379,45",
-  "link_nome": "AAdvantage"
- },
- {
   "id": "1290836068-7729",
   "data": "2026-11-12T16:02:11Z",
   "tipo": "promocao",
