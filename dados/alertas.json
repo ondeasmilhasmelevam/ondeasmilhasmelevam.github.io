@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-15702",
+  "data": "2026-11-14T17:50:36Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Buenos Aires",
+  "destino_iata": "AEP",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "35.000 milhas + R$ 68,61 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9663",
   "data": "2026-11-14T17:33:37Z",
   "origem": "São Paulo",
