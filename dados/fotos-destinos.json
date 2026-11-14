@@ -51,6 +51,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Parque_Vila_Germ%C3%A2nica_Blumenau_SC_(40175077724).jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Parque_Vila_Germ%C3%A2nica_Blumenau_SC_%2840175077724%29.jpg/1280px-Parque_Vila_Germ%C3%A2nica_Blumenau_SC_%2840175077724%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "bocas-del-toro-panama": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:ISS026-E-7362_-_View_of_Panama.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/ISS026-E-7362_-_View_of_Panama.jpg/1280px-ISS026-E-7362_-_View_of_Panama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "bombinhas-santa-catarina": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Bombinhas_Santa_Catarina_Brazil_(92400511).jpeg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Bombinhas_Santa_Catarina_Brazil_%2892400511%29.jpeg/1280px-Bombinhas_Santa_Catarina_Brazil_%2892400511%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -75,6 +79,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Campos_Panorama.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Campos_Panorama.jpg/1280px-Campos_Panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "cancun-mexico": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Skyline_cancun_mexico._(24209557802).jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Skyline_cancun_mexico._%2824209557802%29.jpg/1280px-Skyline_cancun_mexico._%2824209557802%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "canoa-quebrada-ceara": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Para%C3%ADso_-_Canoa_-_Brasil.JPG",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Para%C3%ADso_-_Canoa_-_Brasil.JPG/1280px-Para%C3%ADso_-_Canoa_-_Brasil.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -91,9 +99,25 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Panorama_da_Chapada_dos_Veadeiros.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Panorama_da_Chapada_dos_Veadeiros.jpg/1280px-Panorama_da_Chapada_dos_Veadeiros.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "cidade-do-mexico": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Ciudad.de.Mexico.City.Distrito.Federal.DF.Paseo.Reforma.Skyline.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Ciudad.de.Mexico.City.Distrito.Federal.DF.Paseo.Reforma.Skyline.jpg/1280px-Ciudad.de.Mexico.City.Distrito.Federal.DF.Paseo.Reforma.Skyline.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "cidade-panama": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Panama_City_Skyline_1.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Panama_City_Skyline_1.jpg/1280px-Panama_City_Skyline_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "costa-rica": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Costa_Rica_M30_-_panoramio.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Costa_Rica_M30_-_panoramio.jpg/1280px-Costa_Rica_M30_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "cumuruxatiba-bahia": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Arco-%C3%8Dris_-_Comuruxatiba.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Arco-%C3%8Dris_-_Comuruxatiba.jpg/1280px-Arco-%C3%8Dris_-_Comuruxatiba.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "curacao": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Pano_Bluebay_front_Cropped.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Pano_Bluebay_front_Cropped.jpg/1280px-Pano_Bluebay_front_Cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "curitiba": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Brasil-_South_(2759036165).jpg",
@@ -126,6 +150,10 @@
  "guaruja": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Panorama_Enseada_Beach,_Guaruj%C3%A1,_S%C3%A3o_Paulo_-_panoramio.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Panorama_Enseada_Beach%2C_Guaruj%C3%A1%2C_S%C3%A3o_Paulo_-_panoramio.jpg/1280px-Panorama_Enseada_Beach%2C_Guaruj%C3%A1%2C_S%C3%A3o_Paulo_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "havana-81-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Cuba_LaHavana_Skyline_(www.pixinn.net).jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Cuba_LaHavana_Skyline_%28www.pixinn.net%29.jpg/1280px-Cuba_LaHavana_Skyline_%28www.pixinn.net%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "ilha-grande": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Praia_de_Provet%C3%A1_1,_Parque_Estadual_da_Ilha_Grande.JPG",
