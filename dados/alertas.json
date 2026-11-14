@@ -6498,20 +6498,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9450",
-  "data": "2026-11-12T00:49:35Z",
-  "origem": "São Paulo",
-  "origem_iata": "CGH",
-  "destino": "Florianópolis",
-  "destino_iata": "FLN",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "8.600 milhas + R$ 62,14 de taxas",
-  "volta": "8.600 milhas + R$ 56,99 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7710",
   "data": "2026-11-11T17:23:00Z",
   "tipo": "promocao",
