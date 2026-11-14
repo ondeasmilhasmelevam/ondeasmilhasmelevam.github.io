@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-9665",
+  "data": "2026-11-14T20:00:15Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "7.900 milhas + R$ 56,99 de taxas",
+  "volta": "9.900 milhas + R$ 35,75 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-9664",
+  "data": "2026-11-14T20:00:12Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "9.800 milhas + R$ 48,63 de taxas",
+  "volta": "9.000 milhas + R$ 35,90 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6589",
   "data": "2026-11-14T18:03:02Z",
   "origem": "Dallas",
@@ -5904,20 +5932,6 @@
    "https://link.dia23.com.br/r/Askzqcj"
   ],
   "ate": ""
- },
- {
-  "id": "2008590742-15509",
-  "data": "2026-11-12T19:55:29Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Maiquetía",
-  "destino_iata": "CCS",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "71.000 Milhas Smiles + Taxas",
-  "volta": "71.000 Milhas Smiles + Taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7729",
