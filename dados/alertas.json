@@ -6340,34 +6340,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-9474",
-  "data": "2026-11-12T12:47:08Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Juazeiro do Norte",
-  "destino_iata": "JDO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 4.306 milhas",
-  "volta": "A partir de 4.306 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9473",
-  "data": "2026-11-12T12:47:02Z",
-  "origem": "Teresina",
-  "origem_iata": "THE",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 16.500 milhas",
-  "volta": "A partir de 16.500 milhas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-PUJ-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
