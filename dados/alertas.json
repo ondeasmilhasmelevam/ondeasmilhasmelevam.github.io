@@ -4111,20 +4111,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9608",
-  "data": "2026-11-13T17:41:39Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Campo Grande",
-  "destino_iata": "CGR",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "16.500 milhas + Taxas",
-  "volta": "16.500 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-MAO-MIA-exe",
   "data": "2026-11-13T15:43:42.544954Z",
   "fonte": "seats.aero",
