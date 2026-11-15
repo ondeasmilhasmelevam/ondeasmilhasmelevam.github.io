@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6596",
+  "data": "2026-11-15T17:01:43Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Roma",
+  "destino_iata": "FCO",
+  "companhia": "Ethiopian",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "409.000 milhas + Taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9686",
   "data": "2026-11-15T16:26:00Z",
   "origem": "Brasília",
@@ -4179,20 +4193,6 @@
   "ida": "76.300 milhas + Taxas",
   "volta": "76.300 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15561",
-  "data": "2026-11-13T17:05:25Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Porto",
-  "destino_iata": "OPO",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "65.000 milhas + R$ 100,62 de taxas",
-  "volta": "",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "seats-smiles-MAO-MIA-exe",
