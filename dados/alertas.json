@@ -5438,20 +5438,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9537",
-  "data": "2026-11-13T00:00:18Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "6.800 milhas + R$ 48,63 de taxas",
-  "volta": "6.800 milhas + R$ 62,14 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7729",
   "data": "2026-11-12T16:02:11Z",
   "tipo": "promocao",
@@ -6030,11 +6016,26 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GRU-LIM-eco",
+  "id": "seats-qatar-GRU-BOG-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
   "origem": "São Paulo",
   "origem_iata": "GRU",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "LATAM / Qatar Airways",
+  "cabine": "Econômica",
+  "programa": "Qatar Privilege Club",
+  "ida": "13.000 Avios + taxas",
+  "volta": "",
+  "link_nome": "Qatar Privilege Club"
+ },
+ {
+  "id": "seats-qatar-GIG-LIM-eco",
+  "data": "2026-11-09T00:05:14.410466Z",
+  "fonte": "seats.aero",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
@@ -6060,26 +6061,11 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GRU-BOG-eco",
+  "id": "seats-qatar-GRU-LIM-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
   "origem": "São Paulo",
   "origem_iata": "GRU",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "LATAM / Qatar Airways",
-  "cabine": "Econômica",
-  "programa": "Qatar Privilege Club",
-  "ida": "13.000 Avios + taxas",
-  "volta": "",
-  "link_nome": "Qatar Privilege Club"
- },
- {
-  "id": "seats-qatar-GIG-LIM-eco",
-  "data": "2026-11-09T00:05:14.410466Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
