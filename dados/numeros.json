@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-15T22:18:45.604376Z",
+ "atualizado": "2026-11-15T22:24:54.654383Z",
  "dias": 30,
  "passagens": 2579,
  "promocoes": 156,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1284,
+  "passagens": 1283,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -1096,19 +1096,6 @@
     "regiao": "outros"
    },
    {
-    "id": "2361370250-6273",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "Orlando",
-    "destino_iata": "MCO",
-    "cabine": "Executiva",
-    "programa": "Aeroplan",
-    "data": "2026-11-08T22:22:15Z",
-    "milhas": 50000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "2361370250-6374",
     "origem": "Belém",
     "origem_iata": "BEL",
@@ -1117,6 +1104,19 @@
     "cabine": "Executiva",
     "programa": "Aeroplan",
     "data": "2026-11-10T15:09:08Z",
+    "milhas": 50000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6483",
+    "origem": "Belo Horizonte",
+    "origem_iata": "CNF",
+    "destino": "Orlando",
+    "destino_iata": "MCO",
+    "cabine": "Executiva",
+    "programa": "Aeroplan",
+    "data": "2026-11-12T15:42:51Z",
     "milhas": 50000,
     "nivel": "",
     "regiao": "outros"
