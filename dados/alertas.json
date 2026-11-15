@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9685",
+  "data": "2026-11-15T16:17:57Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Curitiba",
+  "destino_iata": "CWB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "25.200 milhas + Taxas",
+  "volta": "25.200 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-15718",
   "data": "2026-11-15T16:13:55Z",
   "origem": "São Luís",
@@ -4333,20 +4347,6 @@
   "ida": "77.500 milhas + Taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-15553",
-  "data": "2026-11-13T16:17:48Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Montevidéu",
-  "destino_iata": "MVD",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "22.800 milhas + Taxas",
-  "volta": "22.800 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "seats-smiles-MAO-MIA-exe",
