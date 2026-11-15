@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9672",
+  "data": "2026-11-15T13:32:39Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "7.200 milhas + R$ 56,99 de taxas",
+  "volta": "6.400 milhas + R$ 62,69 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-15706",
   "data": "2026-11-15T13:21:57Z",
   "origem": "Brasília",
@@ -4752,62 +4766,6 @@
   "ida": "13.800 milhas + Taxas",
   "volta": "13.800 milhas + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9574",
-  "data": "2026-11-13T13:32:49Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Fortaleza",
-  "destino_iata": "FOR",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "19.000 milhas + Taxas",
-  "volta": "19.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9573",
-  "data": "2026-11-13T13:32:45Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Vitória",
-  "destino_iata": "VIX",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "32.900 milhas + Taxas",
-  "volta": "32.900 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9572",
-  "data": "2026-11-13T13:32:40Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Florianópolis",
-  "destino_iata": "FLN",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "32.600 milhas + Taxas",
-  "volta": "32.600 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9571",
-  "data": "2026-11-13T13:32:34Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Bonito",
-  "destino_iata": "BYO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "18.400 milhas + Taxas",
-  "volta": "18.400 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "seats-smiles-GRU-BCN-eco",
