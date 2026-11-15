@@ -5343,20 +5343,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-9543",
-  "data": "2026-11-13T11:28:02Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "SDU",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "11.200 milhas + R$ 62,62 de taxas",
-  "volta": "11.200 milhas + R$ 34,54 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-BCN-eco",
   "data": "2026-11-13T02:30:16.760388Z",
   "fonte": "seats.aero",
