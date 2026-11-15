@@ -4908,48 +4908,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9563",
-  "data": "2026-11-13T12:52:34Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Goiânia",
-  "destino_iata": "GYN",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "16.200 milhas + Taxas",
-  "volta": "16.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-6505",
-  "data": "2026-11-13T12:51:35Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Viena",
-  "destino_iata": "VIE",
-  "companhia": "TAP",
-  "cabine": "Executiva",
-  "programa": "TAP Miles & Go",
-  "ida": "135.000 milhas + Taxas",
-  "volta": "135.000 milhas + Taxas",
-  "link_nome": "TAP Miles&Go"
- },
- {
-  "id": "2361370250-6504",
-  "data": "2026-11-13T12:51:28Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Munique",
-  "destino_iata": "MUC",
-  "companhia": "Air Canada",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "80.000 milhas + Taxas",
-  "volta": "80.000 milhas + Taxas",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "seats-smiles-GRU-BCN-eco",
   "data": "2026-11-13T02:30:16.760388Z",
   "fonte": "seats.aero",
