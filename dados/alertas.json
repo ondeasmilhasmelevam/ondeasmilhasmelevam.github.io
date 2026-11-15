@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9686",
+  "data": "2026-11-15T16:26:00Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "10.600 milhas + Taxas",
+  "volta": "9.440 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-9685",
   "data": "2026-11-15T16:17:57Z",
   "origem": "Palmas",
@@ -4319,34 +4333,6 @@
   "ida": "66.000 milhas + Taxas",
   "volta": "66.000 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15555",
-  "data": "2026-11-13T16:27:56Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Madrid",
-  "destino_iata": "MAD",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "76.000 milhas + Taxas",
-  "volta": "76.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15554",
-  "data": "2026-11-13T16:27:52Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Córdoba",
-  "destino_iata": "COR",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "77.500 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-MAO-MIA-exe",
