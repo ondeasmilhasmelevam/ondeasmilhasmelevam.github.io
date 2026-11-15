@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-15718",
+  "data": "2026-11-15T16:13:55Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Montevidéu",
+  "destino_iata": "MVD",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "49.000 milhas + Taxas",
+  "volta": "49.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-15717",
+  "data": "2026-11-15T16:10:56Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Montevidéu",
+  "destino_iata": "MVD",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "48.000 milhas + Taxas",
+  "volta": "48.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-smiles-BSB-PTY-eco",
   "data": "2026-11-15T16:08:54.197607Z",
   "fonte": "seats.aero",
@@ -4318,34 +4346,6 @@
   "programa": "LATAM Pass",
   "ida": "22.800 milhas + Taxas",
   "volta": "22.800 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15552",
-  "data": "2026-11-13T16:10:02Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Buenos Aires",
-  "destino_iata": "AEP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "37.000 milhas + Taxas",
-  "volta": "37.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-15551",
-  "data": "2026-11-13T16:09:53Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Roma",
-  "destino_iata": "FCO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "68.400 milhas + Taxas",
-  "volta": "68.400 milhas + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
