@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-15714",
+  "data": "2026-11-15T15:33:56Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Cuiabá",
+  "destino_iata": "CGB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "21.300 milhas + Taxas",
+  "volta": "21.300 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9681",
   "data": "2026-11-15T15:29:55Z",
   "origem": "Palmas",
@@ -4346,20 +4360,6 @@
   "programa": "Aeroplan",
   "ida": "50.000 milhas + CAD 123,50 de taxas",
   "volta": "",
-  "link_nome": "Aeroplan"
- },
- {
-  "id": "2361370250-6508",
-  "data": "2026-11-13T15:32:57Z",
-  "origem": "Nova York",
-  "origem_iata": "JFK",
-  "destino": "Frankfurt",
-  "destino_iata": "FRA",
-  "companhia": "Singapore Airlines",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "60.000 milhas + $ 80,00 CAD",
-  "volta": "60.000 milhas + $ 285,00 CAD",
   "link_nome": "Aeroplan"
  },
  {
