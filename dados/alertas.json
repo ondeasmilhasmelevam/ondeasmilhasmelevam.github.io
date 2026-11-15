@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6593",
+  "data": "2026-11-15T02:00:40Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "American Airlines",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "165.000 milhas + Taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9670",
   "data": "2026-11-15T00:36:47Z",
   "origem": "Rio de Janeiro",
@@ -6074,11 +6088,11 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GIG-LIM-eco",
+  "id": "seats-qatar-GRU-LIM-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
@@ -6089,11 +6103,11 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GRU-LIM-eco",
+  "id": "seats-qatar-GIG-LIM-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
