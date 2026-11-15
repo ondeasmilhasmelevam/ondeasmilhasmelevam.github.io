@@ -1,5 +1,5 @@
 {
- "conferido": "2026-10-30",
+ "conferido": "2026-11-15",
  "dica": "Use os mesmos dados em todos: nome igual ao do passaporte, mesmo CPF, e-mail, celular e endereço. Assim a transferência de pontos e a emissão para você mesmo não travam.",
  "grupos": [
   {
@@ -27,20 +27,37 @@
     {"id": "lifemiles", "nome": "LifeMiles", "sobre": "Avianca e Star Alliance", "link": "https://www.lifemiles.com/"},
     {"id": "skywards", "nome": "Emirates Skywards", "sobre": "Emirates e flydubai", "link": "https://www.emirates.com/br/portuguese/skywards/"},
     {"id": "turkish", "nome": "Miles&Smiles", "sobre": "Turkish Airlines", "link": "https://www.turkishairlines.com/pt-int/miles-and-smiles/"},
-    {"id": "copa", "nome": "ConnectMiles", "sobre": "Copa Airlines", "link": "https://www.copaair.com/pt-br/web/connectmiles"},
+    {"id": "copa", "nome": "ConnectMiles", "sobre": "Copa Airlines", "link": "https://www.copaair.com/pt-br/enrollment/"},
     {"id": "united", "nome": "MileagePlus", "sobre": "United Airlines", "link": "https://www.united.com/pt/br/fly/mileageplus.html"},
     {"id": "virgin", "nome": "Flying Club", "sobre": "Virgin Atlantic", "link": "https://www.virginatlantic.com/flying-club"},
-    {"id": "milesmore", "nome": "Miles & More", "sobre": "Lufthansa, Swiss e Austrian", "link": "https://www.miles-and-more.com/br/pt.html"}
+    {"id": "milesmore", "nome": "Miles & More", "sobre": "Lufthansa, Swiss e Austrian", "link": "https://www.miles-and-more.com/"},
+    {"id": "krisflyer", "nome": "KrisFlyer", "sobre": "Singapore Airlines e parceiras da Star Alliance", "link": "https://www.singaporeair.com/pt_BR/ppsclub-krisflyer/registration-form/"},
+    {"id": "suma", "nome": "SUMA", "sobre": "Air Europa e parceiras da SkyTeam", "link": "https://www.aireuropa.com/br/br/signup"}
+   ]
+  },
+  {
+   "titulo": "Bancos",
+   "nota": "Cadastro não obrigatório: os pontos do cartão já ficam no banco. Vale entrar para acompanhar o saldo e transferir na hora da promoção.",
+   "programas": [
+    {"id": "c6", "nome": "C6 Átomos", "sobre": "Pontos dos cartões C6", "link": "https://www.c6bank.com.br/programa-de-pontos-atomos/"},
+    {"id": "bb", "nome": "Benefícios BB", "sobre": "Pontos e vantagens dos cartões Banco do Brasil", "link": "https://www.bb.com.br/site/pra-voce/beneficios-bb/"},
+    {"id": "itaushop", "nome": "Itaú Shop", "sobre": "Onde usar os pontos dos cartões Itaú, no app", "link": "https://www.itau.com.br/itau-shop"},
+    {"id": "paodeacucar", "nome": "Pão de Açúcar Mais", "sobre": "Pontos dos cartões Itaú Pão de Açúcar", "link": "https://www.itau.com.br/cartoes/beneficios/programa-pontos-pao-de-acucar-cartoes-itau"},
+    {"id": "portoplus", "nome": "PortoPlus", "sobre": "Pontos dos cartões Porto Bank", "link": "https://www.portoplus.com.br/"},
+    {"id": "bvmerece", "nome": "BV Merece", "sobre": "Pontos dos cartões do banco BV", "link": "https://www.bv.com.br/cartao/bv-merece"},
+    {"id": "uau", "nome": "Uau Caixa", "sobre": "Pontos dos cartões Caixa", "link": "https://www.uaucaixa.com.br/"},
+    {"id": "coopera", "nome": "Coopera", "sobre": "Pontos do Sicoob", "link": "https://www.shopcoopera.com.br/"}
    ]
   },
   {
    "titulo": "Para juntar pontos",
-   "nota": "Programas de bancos e de compras que viram milhas.",
+   "nota": "Compras, cashback e postos de combustível que viram pontos ou milhas.",
    "programas": [
     {"id": "meliuz", "nome": "Méliuz", "sobre": "Cashback em compras online", "link": "https://www.meliuz.com.br/"},
-    {"id": "uau", "nome": "Uau Caixa", "sobre": "Pontos dos cartões Caixa", "link": "https://www.uaucaixa.com.br/"},
-    {"id": "coopera", "nome": "Coopera", "sobre": "Pontos do Sicoob", "link": "https://www.shopcoopera.com.br/"},
-    {"id": "dotz", "nome": "Dotz", "sobre": "Pontos em mercados e parceiros", "link": "https://www.dotz.com.br/"}
+    {"id": "dotz", "nome": "Dotz", "sobre": "Pontos em mercados e parceiros", "link": "https://www.dotz.com.br/"},
+    {"id": "kmv", "nome": "Km de Vantagens", "sobre": "Postos Ipiranga", "link": "https://www.ipiranga.com.br/wps/portal/pt-br/ipiranga/km-de-vantagens"},
+    {"id": "premmia", "nome": "Premmia", "sobre": "Postos Petrobras", "link": "https://www.premmia.com.br/"},
+    {"id": "shellbox", "nome": "Shell Box Clube", "sobre": "Postos Shell, pelo app Shell Box", "link": "https://www.shell.com.br/motoristas/app-shell-box/programa-de-fidelidade/shell-box-clube.html"}
    ]
   },
   {
@@ -52,14 +69,18 @@
     {"id": "hilton", "nome": "Hilton Honors", "sobre": "Hilton, DoubleTree, Conrad", "link": "https://www.hilton.com/pt/hilton-honors/"},
     {"id": "hyatt", "nome": "World of Hyatt", "sobre": "Hyatt, Grand Hyatt, Park Hyatt", "link": "https://world.hyatt.com/"},
     {"id": "ihg", "nome": "IHG One Rewards", "sobre": "Holiday Inn, InterContinental", "link": "https://www.ihg.com/onerewards/content/br/pt/home"},
-    {"id": "wyndham", "nome": "Wyndham Rewards", "sobre": "Wyndham, Ramada, Days Inn", "link": "https://www.wyndhamhotels.com/pt-br/wyndham-rewards"}
+    {"id": "wyndham", "nome": "Wyndham Rewards", "sobre": "Wyndham, Ramada, Days Inn", "link": "https://www.wyndhamhotels.com/pt-br/wyndham-rewards"},
+    {"id": "melia", "nome": "MeliáRewards", "sobre": "Hotéis Meliá", "link": "https://www.melia.com/pt/meliarewards"},
+    {"id": "choice", "nome": "Choice Privileges", "sobre": "Rede Choice Hotels", "link": "https://www.choicehotels.com/pt-br/choice-privileges"},
+    {"id": "onekey", "nome": "One Key", "sobre": "Hoteis.com, Expedia e Vrbo (antigo Hoteis.com Rewards)", "link": "https://www.hoteis.com/welcome-one-key"}
    ]
   },
   {
    "titulo": "Locadoras de carro",
    "nota": "",
    "programas": [
-    {"id": "movida", "nome": "Movida Fidelidade", "sobre": "Aluguel de carro com milhas e pontos", "link": "https://www.movida.com.br/movida-fidelidade"}
+    {"id": "movida", "nome": "Movida Fidelidade", "sobre": "Aluguel de carro com milhas e pontos", "link": "https://www.movida.com.br/movida-fidelidade"},
+    {"id": "hertz", "nome": "Hertz Gold Plus Rewards", "sobre": "Aluguel de carro Hertz, com retirada mais rápida", "link": "https://www.hertz.com.br/rentacar/member/enrollment"}
    ]
   }
  ]
