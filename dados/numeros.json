@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-15T21:25:46.705690Z",
+ "atualizado": "2026-11-15T21:31:58.772704Z",
  "dias": 30,
- "passagens": 2577,
+ "passagens": 2578,
  "promocoes": 156,
  "destinos": 163,
  "executiva": 528,
@@ -407,14 +407,14 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15102",
+    "id": "2008590742-15689",
     "origem": "Manaus",
     "origem_iata": "MAO",
     "destino": "Madrid",
     "destino_iata": "MAD",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-08T21:29:57Z",
+    "data": "2026-11-14T15:34:17Z",
     "milhas": 92300,
     "nivel": "muito bom",
     "regiao": "europa"
