@@ -2430,6 +2430,21 @@
   "ate": ""
  },
  {
+  "id": "seats-smiles-GRU-JFK-exe",
+  "data": "2026-11-13T22:21:47.339117Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "239.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6515",
   "data": "2026-11-13T21:12:47Z",
   "origem": "Joanesburgo",
@@ -5593,7 +5608,7 @@
   "origem_iata": "GRU",
   "destino": "Londres",
   "destino_iata": "LHR",
-  "companhia": "American / Air Canada / Air France",
+  "companhia": "Air Canada / Air France / AM",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "134.000 milhas + taxas",
