@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-15T14:15:48.581464Z",
+ "atualizado": "2026-11-15T14:22:13.100774Z",
  "dias": 30,
  "passagens": 2549,
  "promocoes": 157,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1272,
+  "passagens": 1260,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -116,15 +116,15 @@
     "foto": "img/rotas/FOR-JDO.jpg"
    },
    {
-    "id": "2008590742-15100",
+    "id": "2008590742-15694",
     "origem": "Manaus",
     "origem_iata": "MAO",
     "destino": "Cidade do Panamá",
     "destino_iata": "PTY",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-08T14:19:46Z",
-    "milhas": 26100,
+    "data": "2026-11-14T16:21:18Z",
+    "milhas": 27600,
     "nivel": "espetacular",
     "grupo": "Internacional",
     "foto": "img/rotas/MAO-PTY.jpg"
@@ -160,15 +160,15 @@
   ],
   "candidatas": [
    {
-    "id": "2008590742-15100",
+    "id": "2008590742-15694",
     "origem": "Manaus",
     "origem_iata": "MAO",
     "destino": "Cidade do Panamá",
     "destino_iata": "PTY",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-08T14:19:46Z",
-    "milhas": 26100,
+    "data": "2026-11-14T16:21:18Z",
+    "milhas": 27600,
     "nivel": "espetacular",
     "regiao": "caribe"
    },
@@ -195,19 +195,6 @@
     "programa": "Smiles",
     "data": "2026-11-14T16:21:11Z",
     "milhas": 40400,
-    "nivel": "espetacular",
-    "regiao": "caribe"
-   },
-   {
-    "id": "2008590742-15099",
-    "origem": "Belém",
-    "origem_iata": "BEL",
-    "destino": "Punta Cana",
-    "destino_iata": "PUJ",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-08T14:19:41Z",
-    "milhas": 43200,
     "nivel": "espetacular",
     "regiao": "caribe"
    },
@@ -288,6 +275,19 @@
     "milhas": 28000,
     "nivel": "muito bom",
     "regiao": "america-do-sul"
+   },
+   {
+    "id": "2008590742-15475",
+    "origem": "Foz do Iguaçu",
+    "origem_iata": "IGU",
+    "destino": "Punta Cana",
+    "destino_iata": "PUJ",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-12T11:33:14Z",
+    "milhas": 44400,
+    "nivel": "muito bom",
+    "regiao": "caribe"
    },
    {
     "id": "2008590742-15359",
