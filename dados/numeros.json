@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-15T17:55:03.816399Z",
+ "atualizado": "2026-11-15T18:01:14.379133Z",
  "dias": 30,
- "passagens": 2575,
+ "passagens": 2576,
  "promocoes": 156,
  "destinos": 163,
- "executiva": 527,
+ "executiva": 528,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1283,
+  "passagens": 1284,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -1057,15 +1057,15 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2361370250-6376",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
+    "id": "2361370250-6597",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
     "destino": "Bogotá",
     "destino_iata": "BOG",
     "cabine": "Executiva",
     "programa": "Aeroplan",
-    "data": "2026-11-10T15:16:16Z",
-    "milhas": 35000,
+    "data": "2026-11-15T17:56:39Z",
+    "milhas": 20000,
     "nivel": "",
     "regiao": "america-do-sul"
    },

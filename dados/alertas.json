@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6597",
+  "data": "2026-11-15T17:56:39Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "20.000 milhas + CAD 85,20 de taxas",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "2361370250-6596",
   "data": "2026-11-15T17:01:43Z",
   "origem": "São Paulo",
@@ -3916,20 +3930,6 @@
   "programa": "Smiles",
   "ida": "38.500 milhas Smiles + Taxas",
   "volta": "38.500 milhas Smiles + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9610",
-  "data": "2026-11-13T17:58:25Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "8.500 milhas + R$ 35,15 de taxas",
-  "volta": "8.500 milhas + R$ 35,75 de taxas",
   "link_nome": "Smiles"
  },
  {
