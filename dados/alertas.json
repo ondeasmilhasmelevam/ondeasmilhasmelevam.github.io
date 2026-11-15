@@ -4530,20 +4530,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2008590742-15535",
-  "data": "2026-11-13T14:02:19Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Rosario",
-  "destino_iata": "ROS",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "77.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-BCN-eco",
   "data": "2026-11-13T02:30:16.760388Z",
   "fonte": "seats.aero",
