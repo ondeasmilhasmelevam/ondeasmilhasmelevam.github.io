@@ -1,5 +1,20 @@
 [
  {
+  "id": "seats-smiles-BEL-MIA-eco",
+  "data": "2026-11-15T03:00:04.152853Z",
+  "fonte": "seats.aero",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "Avianca / GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "57.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6593",
   "data": "2026-11-15T02:00:40Z",
   "origem": "São Paulo",
@@ -587,27 +602,6 @@
    "https://www.hilton.com/en/p/hilton-honors/buy-give-receive-points"
   ],
   "ate": "2026-11-21T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7780",
-  "data": "2026-11-14T15:52:04Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass ITAÚ: Clientes selecionados ganham até 10.000 milhas bônus por meta de gastos!",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Campanha exclusiva para portadores de cartões LATAM Pass Itaú Mastercard que atingirem metas individuais de gastos durante o período promocional.",
-  "detalhes": [
-   "10.000 milhas bônus para cartão Mastercard Black",
-   "4.000 milhas bônus para cartão Mastercard Platinum",
-   "2.500 milhas bônus para cartão Mastercard Gold",
-   "1.000 milhas bônus para cartão Mastercard Internacional"
-  ],
-  "parceiros": "LATAM Pass, Itaú, Mastercard",
-  "validade": "14/11/2026",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/bonus-cartao-itau"
-  ],
-  "ate": "2026-11-14T23:59:59-03:00"
  },
  {
   "id": "1290836068-7779",
@@ -4039,7 +4033,7 @@
   "origem_iata": "MAO",
   "destino": "Miami",
   "destino_iata": "MIA",
-  "companhia": "Copa",
+  "companhia": "Avianca / Copa",
   "cabine": "Executiva",
   "programa": "Smiles",
   "ida": "137.000 milhas + taxas",
@@ -5693,6 +5687,21 @@
   "ate": "2026-11-15T23:59:59-03:00"
  },
  {
+  "id": "seats-smiles-MAO-PTY-eco",
+  "data": "2026-11-11T00:03:25.922708Z",
+  "fonte": "seats.aero",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Cidade do Panamá",
+  "destino_iata": "PTY",
+  "companhia": "Avianca / Copa / GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "33.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-azul-VCP-MAD-eco",
   "data": "2026-11-11T00:03:25.922708Z",
   "fonte": "seats.aero",
@@ -5745,7 +5754,7 @@
   "origem_iata": "GIG",
   "destino": "Miami",
   "destino_iata": "MIA",
-  "companhia": "American / Avianca / Copa",
+  "companhia": "American / Air Canada / Avianca",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "78.000 milhas + taxas",
