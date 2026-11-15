@@ -163,6 +163,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Caraguatatuba_panorama_(cropped).jpeg",
   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Caraguatatuba_panorama_%28cropped%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
  },
+ "isla-contadora-panama": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Wyspa_Contadora,_Archipelag_Wysp_Per%C5%82owych,_Panama.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Wyspa_Contadora%2C_Archipelag_Wysp_Per%C5%82owych%2C_Panama.jpg/1280px-Wyspa_Contadora%2C_Archipelag_Wysp_Per%C5%82owych%2C_Panama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "itacare-bahia": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Itacar%C3%A9_-_Bahia_-_Brasil._(10248650034).jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Itacar%C3%A9_-_Bahia_-_Brasil._%2810248650034%29.jpg/1280px-Itacar%C3%A9_-_Bahia_-_Brasil._%2810248650034%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -182,6 +186,10 @@
  "lencois-maranhenses": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Os_lencois.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Os_lencois.jpg/1280px-Os_lencois.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "los-roques-200-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Venezuela_en_Para%C3%ADso..jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Venezuela_en_Para%C3%ADso..jpg/1280px-Venezuela_en_Para%C3%ADso..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "maceio-alagoas": {
   "pagina": "https://commons.wikimedia.org/wiki/File:%C3%89tat_de_Alag%C3%B4as_-_Panorama_de_Macei%C3%B3_-_2,_Acervo_do_Museu_Paulista_da_USP.jpg",
@@ -219,6 +227,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Morro_do_Cabeludo_-_Panorama_de_Maio.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Morro_do_Cabeludo_-_Panorama_de_Maio.jpg/1280px-Morro_do_Cabeludo_-_Panorama_de_Maio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "playa-del-carmen-mexico": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Playa_del_carmen_panorama.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Playa_del_carmen_panorama.jpg/1280px-Playa_del_carmen_panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "porto-alegre": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Porto_Alegre_skyline_at_night.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Porto_Alegre_skyline_at_night.jpg/1280px-Porto_Alegre_skyline_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -238,6 +250,10 @@
  "praia-do-rosa": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Praia_do_Rosa,_SC.JPG",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Praia_do_Rosa%2C_SC.JPG/1280px-Praia_do_Rosa%2C_SC.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "punta-cana": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Isla_Saona_-_panoramio.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Isla_Saona_-_panoramio.jpg/1280px-Isla_Saona_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "recife": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Skyline_do_Bairro_Boa_Viagem_Recife_Pernambuco_Brasil.jpg",
