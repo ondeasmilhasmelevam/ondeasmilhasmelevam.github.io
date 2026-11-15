@@ -4670,48 +4670,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-9580",
-  "data": "2026-11-13T13:47:18Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "12.000 milhas + Taxas",
-  "volta": "12.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-15531",
-  "data": "2026-11-13T13:46:58Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "Copa Airlines",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "48.300 milhas + Taxas",
-  "volta": "48.300 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9579",
-  "data": "2026-11-13T13:46:33Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "14.000 milhas + Taxas",
-  "volta": "14.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "seats-smiles-GRU-BCN-eco",
   "data": "2026-11-13T02:30:16.760388Z",
   "fonte": "seats.aero",

@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-15T13:43:47.448883Z",
+ "atualizado": "2026-11-15T13:49:56.952761Z",
  "dias": 30,
  "passagens": 2548,
  "promocoes": 157,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1287,
+  "passagens": 1282,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -420,19 +420,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15092",
-    "origem": "Florianópolis",
-    "origem_iata": "FLN",
-    "destino": "Santiago",
-    "destino_iata": "SCL",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-08T13:48:41Z",
-    "milhas": 21650,
-    "nivel": "bom",
-    "regiao": "america-do-sul"
-   },
-   {
     "id": "2008590742-15354",
     "origem": "Rio de Janeiro",
     "origem_iata": "GIG",
@@ -455,6 +442,19 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-09T20:19:56Z",
     "milhas": 24250,
+    "nivel": "bom",
+    "regiao": "america-do-sul"
+   },
+   {
+    "id": "2008590742-15288",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Santiago",
+    "destino_iata": "SCL",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-10T17:37:28Z",
+    "milhas": 24800,
     "nivel": "bom",
     "regiao": "america-do-sul"
    },
