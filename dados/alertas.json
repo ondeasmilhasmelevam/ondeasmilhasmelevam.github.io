@@ -4073,21 +4073,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-SSA-MAD-eco",
-  "data": "2026-11-13T00:04:39.829038Z",
-  "fonte": "seats.aero",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Madrid",
-  "destino_iata": "MAD",
-  "companhia": "Air France / GOL / TAP",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "146.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-MIA-exe",
   "data": "2026-11-13T00:04:39.829038Z",
   "fonte": "seats.aero",
