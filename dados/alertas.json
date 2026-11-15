@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-15715",
+  "data": "2026-11-15T15:41:54Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Belém",
+  "destino_iata": "BEL",
+  "companhia": "LATAM + parceira",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "8.960 milhas + Taxas",
+  "volta": "8.940 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-15714",
   "data": "2026-11-15T15:33:56Z",
   "origem": "Foz do Iguaçu",
@@ -4347,20 +4361,6 @@
   "ida": "137.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-6509",
-  "data": "2026-11-13T15:39:25Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Fort Lauderdale",
-  "destino_iata": "FLL",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "50.000 milhas + CAD 123,50 de taxas",
-  "volta": "",
-  "link_nome": "Aeroplan"
  },
  {
   "id": "1290836068-7748",
