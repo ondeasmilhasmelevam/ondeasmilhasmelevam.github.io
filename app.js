@@ -1478,6 +1478,7 @@
         <span class="pass-trava-txt">${ativo ? 'Carregando datas e link…' : '🔒 Datas e link de emissão para assinantes · <u>Assinar</u>'}</span>
       </a>`;
   }
+  const slugCabine = c => String(c || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '') || 'sem-cabine';
   window.oammlPassagemHtml = p => passagemHtml(p, Date.now());
   function passagemHtml(p, agora) {
     const completo = httpOk(p.link) ? p : (assinatura().alertas || {})[p.id];
@@ -1501,6 +1502,7 @@
           <div><dt>Ida</dt><dd>${esc(p.ida)}</dd></div>
           ${p.volta ? `<div><dt>Volta</dt><dd>${esc(p.volta)}</dd></div>` : ''}
         </dl>${custoHtml(p)}
+        <a class="pass-hist" href="#rota/${esc(p.origem_iata)}-${esc(p.destino_iata)}-${slugCabine(p.cabine)}">📈 Histórico desta rota</a>
         ${completo && httpOk(completo.link) ? `${datasHtml('Datas de ida', completo.datas_ida)}${datasHtml('Datas de volta', completo.datas_volta)}
         <a class="cta cta-a pass-link" href="${esc(completo.link)}" target="_blank" rel="noopener">Ver passagem${p.link_nome ? ` na ${esc(p.link_nome)}` : ''} ↗</a>` : travaHtml()}
       </li>`;
@@ -2871,6 +2873,7 @@
   let paginaAtual = '';
   const paginaDe = el => (el && el.closest('[data-pagina]') || {}).dataset?.pagina;
   function mostrarPagina(alvo, rolar = true) {
+    if (alvo && alvo.startsWith('rota/')) alvo = 'rota'; // #rota/GRU-MIA-economica: a página da rota
     const el = alvo && document.getElementById(alvo);
     const pagina = paginaDe(el) || 'inicio';
     paginaAtual = pagina;

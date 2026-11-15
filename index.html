@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=131">
+<link rel="stylesheet" href="estilo.css?v=132">
 </head>
 <body>
 <header class="bar">
@@ -692,6 +692,46 @@
         <ul class="hist-lista" id="hist-lista"></ul>
       </div>
     </section>
+    <section id="rota" data-pagina="rota">
+      <div class="sec-head">
+        <p class="eyebrow">Página da rota · para assinantes</p>
+        <h2 id="rota-h2">Histórico da rota</h2>
+        <p class="sec-note" id="rota-sub">Tudo o que apareceu nesta rota nos últimos 12 meses: preço típico, quando costuma sair preço bom, o gráfico de cada alerta e o que está no ar agora.</p>
+      </div>
+      <div class="radar-fechado" id="rota-fechado">
+        <p>🔒 A página de cada rota é exclusiva para assinantes.</p>
+        <a class="cta cta-a" href="#assinar">Assinar</a>
+        <small>Já assina? <a href="#assinar">Entre aqui</a> com o e-mail do pagamento.</small>
+      </div>
+      <div id="rota-aberta" hidden>
+        <p class="hist-info" id="rota-info"></p>
+        <div id="rota-corpo" hidden>
+          <div class="rota-hero">
+            <span class="rota-cab" id="rota-cab"></span>
+            <h3 id="rota-titulo"></h3>
+            <p id="rota-meta"></p>
+            <div class="rota-acoes"><a class="cta cta-a" id="rota-radar" href="#radar">🔔 Me avise quando aparecer</a><button type="button" class="cta" id="rota-copiar">🔗 Copiar link da rota</button></div>
+          </div>
+          <div class="rota-chips" id="rota-chips" role="group" aria-label="Filtrar por programa"></div>
+          <div class="rota-cards" id="rota-cards"></div>
+          <p class="rota-nota">Milhas por trecho (média da ida e da volta), pra comparar alerta de só ida com ida e volta. O valor em reais usa o milheiro de referência de cada programa, o mesmo do Termômetro, sem as taxas.</p>
+          <div id="rota-noar"></div>
+          <h3 class="rota-tit">Esse preço é bom?</h3>
+          <div class="rota-veredito" id="rota-veredito"></div>
+          <div class="rota-bom" id="rota-bom"></div>
+          <div class="rota-graf">
+            <div class="rota-graf-cab"><b>Histórico de preço</b><div class="rota-tog" role="group" aria-label="Mostrar em"><button type="button" data-u="mi" aria-pressed="true">Milhas</button><button type="button" data-u="r" aria-pressed="false">Reais</button></div></div>
+            <div class="rota-graf-area"><svg id="rota-svg" role="img" aria-label="Preço de cada alerta da rota ao longo do tempo"></svg><div class="rota-tip" id="rota-tip" hidden></div></div>
+          </div>
+          <p class="rota-nota" id="rota-graf-nota"></p>
+          <div id="rota-meses"></div>
+          <h3 class="rota-tit">Alertas desta rota</h3>
+          <ul class="rota-lista" id="rota-lista"></ul>
+          <h3 class="rota-tit">Rotas parecidas</h3>
+          <div class="rota-parecidas" id="rota-parecidas"></div>
+        </div>
+      </div>
+    </section>
 
     <section id="promocoes" data-pagina="promocoes">
       <div class="aba-banner" style="background-image:url(img/banners/promocoes.jpg)" role="img" aria-label="Promoções em vigor"><div><p>Pontos e milhas</p><b>Promoções em vigor</b><small>Transferências bonificadas, clubes e compra de pontos.</small></div></div>
@@ -1240,8 +1280,8 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=120"></script>
+<script src="app.js?v=121"></script>
 <script src="funil.js?v=7"></script>
-<script type="module" src="assinatura.js?v=41"></script>
+<script type="module" src="assinatura.js?v=42"></script>
 </body>
 </html>

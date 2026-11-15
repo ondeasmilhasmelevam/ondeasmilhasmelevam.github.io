@@ -131,6 +131,7 @@ const radarTexto = r => [
   [r.cabine === 'exe' ? 'Executiva ou Primeira' : r.cabine === 'eco' ? 'Econômica' : '', r.programa, r.maxMilhas ? `até ${r.maxMilhas.toLocaleString('pt-BR')} milhas` : ''].filter(Boolean).join(' · ') || 'qualquer cabine e programa'
 ];
 const escR = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const slugCab = c => String(c || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '') || 'sem-cabine';
 const msgRadar = t => { const el = $('#radar-msg'); el.textContent = t; el.hidden = !t; };
 function desenharRadar() {
   const estado = window.oammlAssinatura;
@@ -937,7 +938,7 @@ async function desenharPrecosRota() {
     const maxMes = Math.max(1, ...meses.map(([, n]) => n));
     return `<li class="hist-rota">
       <div class="hist-topo"><b>${escR(r.o)} <small>${escR(r.oi)}</small> → ${escR(r.d)} <small>${escR(r.di)}</small></b>
-        <span>${escR(r.c || 'Cabine não informada')} · vista ${r.n}x · última ${haDias(r.ult)}${noAr.has(`${r.oi}-${r.di}`) ? ' · <a href="#passagens">no ar agora</a>' : ''}</span></div>
+        <span>${escR(r.c || 'Cabine não informada')} · vista ${r.n}x · última ${haDias(r.ult)}${noAr.has(`${r.oi}-${r.di}`) ? ' · <a href="#passagens">no ar agora</a>' : ''} · <a href="#rota/${escR(r.oi)}-${escR(r.di)}-${slugCab(r.c)}">ver a rota →</a></span></div>
       <table class="hist-progs"><thead><tr><th>Programa</th><th>Menor preço visto</th><th>Quando</th><th>Vezes</th></tr></thead><tbody>
         ${progs.map(([nome, g]) => `<tr><td>${escR(nome)}</td><td class="num"><b>${milHist(g.min)}</b></td><td>${haDias(g.minEm || g.ult)}</td><td class="num">${g.n}</td></tr>`).join('')}
       </tbody></table>
@@ -951,3 +952,178 @@ window.addEventListener('hashchange', desenharPrecosRota);
 $('#hist-busca').addEventListener('input', desenharPrecosRota);
 $('#hist-cabine').addEventListener('change', desenharPrecosRota);
 desenharPrecosRota();
+
+// Página da rota (#rota/GRU-MIA-economica), só assinantes: o servidor devolve o resumo da rota,
+// cada alerta já visto (pontos do gráfico), o que está no ar agora (com datas e link) e rotas parecidas.
+const rotaCache = {};
+let rotaTeto = null, rotaFiltro = '', rotaUn = 'mi', rotaDados = null;
+window.oammlLinkRota = p => `#rota/${p.origem_iata}-${p.destino_iata}-${slugCab(p.cabine)}`;
+const progRota = t => { const n = String(t || '').toUpperCase(); return /SMILES/.test(n) ? 'Smiles' : /LATAM/.test(n) ? 'LATAM Pass' : /AZUL/.test(n) ? 'Azul Fidelidade' : String(t || '?'); };
+const brR = v => 'R$ ' + Number(v).toLocaleString('pt-BR');
+const diaBr = d => { const [a, m, dd] = String(d).slice(0, 10).split('-'); return `${dd}/${m}/${a.slice(2)}`; };
+async function tetos() {
+  if (rotaTeto) return rotaTeto;
+  try {
+    const t = await (await fetch('dados/termometro.json', { cache: 'no-cache' })).json();
+    rotaTeto = Object.fromEntries((t.milheiro || []).filter(m => m.moeda === 'BRL').map(m => [m.programa, m.teto]));
+  } catch (e) { rotaTeto = {}; }
+  return rotaTeto;
+}
+function tetoDeProg(p) {
+  const n = String(p || '').toUpperCase(), T = rotaTeto || {};
+  return /SMILES/.test(n) ? T['Smiles'] : /LATAM/.test(n) ? T['LATAM Pass'] : /AZUL/.test(n) ? T['Azul Fidelidade'] : /AEROPLAN/.test(n) ? T['Aeroplan'] : /IBERIA|AVIOS|QATAR|BRITISH/.test(n) ? T['Iberia (Avios)'] : null;
+}
+async function desenharRota() {
+  const m = /^#rota\/([A-Z]{3}-[A-Z]{3}-[a-z-]+)$/.exec(location.hash);
+  if (!m) return;
+  const ativo = !!(window.oammlAssinatura || {}).ativo || (auth.currentUser?.email || '').toLowerCase() === DONO;
+  $('#rota-fechado').hidden = ativo;
+  $('#rota-aberta').hidden = !ativo;
+  const [oi, di] = m[1].split('-');
+  $('#rota-h2').textContent = `Histórico da rota ${oi} → ${di}`;
+  if (!ativo) return;
+  const chave = m[1];
+  if (!rotaCache[chave]) {
+    $('#rota-info').textContent = 'Carregando a rota...'; $('#rota-corpo').hidden = true;
+    try {
+      const [r] = await Promise.all([fetch(`${SERVIDOR}/historico/rota?c=${encodeURIComponent(chave)}`, { headers: { authorization: `Bearer ${auth.currentUser ? await auth.currentUser.getIdToken() : ''}` } }), tetos()]);
+      if (!r.ok) throw new Error();
+      rotaCache[chave] = await r.json();
+    } catch (e) { $('#rota-info').textContent = 'Não deu para carregar a rota agora. Tente de novo em instantes.'; return; }
+  }
+  if (location.hash !== `#rota/${chave}`) return; // a pessoa já mudou de página
+  rotaDados = rotaCache[chave]; rotaFiltro = '';
+  const D = rotaDados, R = D.rota;
+  const pts = (D.pts || []).map(([id, data, ida, volta, prog]) => {
+    const mi = Math.round((ida + (volta || ida)) / 2), teto = tetoDeProg(prog);
+    return { id, t: new Date(data + 'Z').getTime(), data, mi, r: teto ? Math.round(mi / 1000 * teto) : null, teto, prog: progRota(prog), tipo: volta ? 'ida e volta' : 'só ida' };
+  }).sort((a, b) => b.t - a.t);
+  // alerta muito fora do normal (tarifa cara que entrou no grupo) não entra nas contas nem no gráfico
+  const med = [...pts.map(p => p.mi)].sort((a, b) => a - b)[Math.floor((pts.length - 1) / 2)] || 0;
+  pts.forEach(p => { p.fora = pts.length >= 4 && p.mi > med * 2.5; });
+  D.lista = pts;
+  if (!pts.length && !R) { $('#rota-info').textContent = 'Ainda não há alertas desta rota no histórico.'; $('#rota-corpo').hidden = true; return; }
+  $('#rota-info').textContent = '';
+  $('#rota-corpo').hidden = false;
+  const nomeO = R ? R.o : oi, nomeD = R ? R.d : di, cab = R ? R.c : '';
+  $('#rota-cab').textContent = (cab || 'Cabine não informada').toUpperCase();
+  $('#rota-titulo').innerHTML = `${escR(nomeO)} <small>(${oi})</small> <i>✈</i> ${escR(nomeD)} <small>(${di})</small>`;
+  const n = R ? R.n : pts.length, desde = R ? R.desde : (pts[pts.length - 1] || {}).data;
+  $('#rota-meta').textContent = `${n} ${n === 1 ? 'alerta' : 'alertas'} desde ${desde ? diaBr(desde) : '—'}${R && R.ult ? ' · último ' + haDias(R.ult) : ''}`;
+  const progs = {}; pts.forEach(p => { progs[p.prog] = (progs[p.prog] || 0) + 1; });
+  $('#rota-chips').innerHTML = [['', 'Todos os programas'], ...Object.entries(progs).sort((a, b) => b[1] - a[1]).map(([p, k]) => [p, `${p} · ${k}`])]
+    .map(([v, t]) => `<button type="button" data-p="${escR(v)}" aria-pressed="${v === ''}">${escR(t)}</button>`).join('');
+  $('#rota-noar').innerHTML = (D.noAr || []).length ? `<h3 class="rota-tit">No ar agora</h3><ul class="rota-noar">${D.noAr.map(p => `<li>
+      <b>${escR(p.ida || '')}${p.volta ? ' · volta ' + escR(p.volta) : ''}</b><span>${escR(p.programa || p.link_nome || '')}${p.companhia ? ' · ' + escR(p.companhia) : ''}</span>
+      ${['datas_ida', 'datas_volta'].map((k, i) => (p[k] || []).length ? `<small>${i ? 'Volta' : 'Ida'}: ${p[k].map(d => `${escR(d.mes)} ${escR(d.dias)}`).join(' · ')}</small>` : '').join('')}
+      ${/^https?:/.test(p.link || '') ? `<a class="cta cta-a" href="${escR(p.link)}" target="_blank" rel="noopener">Ver passagem${p.link_nome ? ' na ' + escR(p.link_nome) : ''} ↗</a>` : ''}</li>`).join('')}</ul>` : '';
+  const meses = Object.entries((R && R.m) || {}).sort((a, b) => ordemMes(a[0]) - ordemMes(b[0]));
+  const maxMes = Math.max(1, ...meses.map(([, k]) => k));
+  $('#rota-meses').innerHTML = meses.length ? `<div class="hist-meses"><small>Meses de viagem que mais aparecem com data aberta</small>${meses.map(([mm, k]) =>
+    `<span style="--f:${(0.25 + 0.75 * k / maxMes).toFixed(2)}" title="${k} ${k === 1 ? 'vez' : 'vezes'}">${escR(mm)}</span>`).join('')}</div>` : '';
+  $('#rota-parecidas').innerHTML = (D.parecidas || []).map(p => `<a href="#rota/${escR(p.c)}">${p.volta ? '<span class="rota-tag">VOLTA</span>' : ''}<b>${escR(p.o)} → ${escR(p.d)}</b>
+      <small>${p.n} ${p.n === 1 ? 'alerta' : 'alertas'}</small><span>a partir de ${milHist(p.min)} milhas</span></a>`).join('') || '<p class="rota-nota">Nenhuma rota parecida no histórico ainda.</p>';
+  rotaTudo();
+}
+const rotaLista = () => (rotaDados.lista || []).filter(a => !rotaFiltro || a.prog === rotaFiltro);
+function rotaTudo() { rotaResumo(); rotaGrafico(); rotaAlertas(); }
+function rotaResumo() {
+  const A = rotaLista(), ok = A.filter(a => !a.fora), comR = ok.filter(a => a.r);
+  if (!A.length) { $('#rota-cards').innerHTML = ''; $('#rota-bom').innerHTML = ''; $('#rota-veredito').innerHTML = ''; return; }
+  const menor = comR.length ? comR.reduce((x, a) => a.r < x.r ? a : x) : (ok.length ? ok : A).reduce((x, a) => a.mi < x.mi ? a : x);
+  const base = ok.length ? ok : A;
+  const media = Math.round(base.reduce((s, a) => s + a.mi, 0) / base.length / 100) * 100;
+  const mediaR = comR.length ? Math.round(comR.reduce((s, a) => s + a.r, 0) / comR.length) : null;
+  const rec = A[0];
+  const card = (rot, mi, r, a, cls = '') => `<article class="${cls}"><b>${milHist(mi)} <small>milhas/trecho</small></b><span>${r ? brR(r) + ' em milhas' : ''}</span><em>${rot}</em>${a ? `<small>${escR(a.prog)} · ${diaBr(a.data)}</small>` : ''}</article>`;
+  $('#rota-cards').innerHTML = card('Menor custo já visto', menor.mi, menor.r, menor, 'ok') + card('Média do período', media, mediaR) + card('Alerta mais recente', rec.mi, rec.r, rec);
+  const rs = comR.map(a => a.r).sort((x, y) => x - y);
+  const tipico = rs.length ? rs[Math.floor((rs.length - 1) / 2)] : null;
+  const bom = rs.length >= 4 ? rs[Math.max(0, Math.floor(rs.length / 4) - 1)] : null;
+  const ultBom = bom ? ok.find(a => a.r && a.r <= bom) : null;
+  $('#rota-bom').innerHTML = `<div><b>${tipico ? brR(tipico) : '—'}</b><small>preço típico da rota</small></div>
+    <div class="ok"><b>${bom ? 'até ' + brR(bom) : '—'}</b><small>preço bom (25% mais baratos)</small></div>
+    <div><b>${ultBom ? diaBr(ultBom.data) : '—'}</b><small>último preço bom</small></div>
+    <div><b>${new Set(A.map(a => a.prog)).size}</b><small>programa(s) com alerta</small></div>`;
+  const v = $('#rota-veredito');
+  if (!bom || !rec.r) {
+    v.className = 'rota-veredito'; v.innerHTML = `<span>📊</span><div><b>Ainda poucos alertas para dizer</b><p>Com ${A.length} ${A.length === 1 ? 'alerta' : 'alertas'} aqui, os números ainda não são confiáveis. Veja todos os programas juntos ou volte daqui a alguns dias.</p></div>`;
+  } else if (rec.r <= bom) {
+    v.className = 'rota-veredito bom'; v.innerHTML = `<span>✅</span><div><b>O alerta mais recente está em preço bom</b><p>${brR(rec.r)} em milhas por trecho, entre os 25% mais baratos que já apareceram nesta rota.</p></div>`;
+  } else if (rec.r <= tipico) {
+    v.className = 'rota-veredito'; v.innerHTML = `<span>🤔</span><div><b>Abaixo do típico, mas ainda não é preço bom</b><p>O alerta mais recente (${brR(rec.r)}) está ${Math.round((rec.r / bom - 1) * 100)}% acima do preço bom. Se aparecer até ${brR(bom)}, vale emitir.</p></div>`;
+  } else {
+    v.className = 'rota-veredito caro'; v.innerHTML = `<span>⏳</span><div><b>Acima do normal: vale esperar</b><p>O alerta mais recente (${brR(rec.r)}) está ${Math.round((rec.r / tipico - 1) * 100)}% acima do típico desta rota. Preço bom aqui é até ${brR(bom)}; ative o aviso para saber quando aparecer.</p></div>`;
+  }
+}
+function rotaGrafico() {
+  const svg = $('#rota-svg'), tip = $('#rota-tip'), area = svg.parentElement;
+  tip.hidden = true;
+  if ($('#rota-corpo').hidden || !area.clientWidth) return;
+  const val = d => rotaUn === 'mi' ? d.mi : d.r;
+  const txt = v => rotaUn === 'mi' ? milHist(v) + ' milhas' : brR(v);
+  const eixo = v => rotaUn === 'mi' ? Math.round(v / 1000) + 'k' : 'R$ ' + (v >= 1000 ? (v / 1000).toFixed(1).replace('.', ',') + 'k' : Math.round(v));
+  const W = area.clientWidth, H = W < 560 ? 230 : 280, L = 52, Rm = 18, T = 16, B = 30;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.style.height = H + 'px';
+  const todos = rotaLista(), pts = todos.filter(d => !d.fora && val(d) != null).sort((a, b) => a.t - b.t);
+  const fora = todos.filter(d => d.fora).length;
+  $('#rota-graf-nota').textContent = `Cada ponto é um alerta da rota. Passe o mouse (ou toque) para ver os detalhes; o ponto verde é o melhor do período.${fora ? ` ${fora} ${fora === 1 ? 'alerta muito acima do normal ficou' : 'alertas muito acima do normal ficaram'} fora do gráfico e das contas.` : ''}`;
+  if (!pts.length) { svg.innerHTML = ''; return; }
+  const t0 = pts[0].t, t1 = pts[pts.length - 1].t;
+  const vs = pts.map(val), lo = Math.min(...vs), hi = Math.max(...vs), pad = (hi - lo) * 0.15 || hi * 0.1;
+  const y0 = Math.max(0, lo - pad), y1 = hi + pad;
+  const X = t => pts.length === 1 ? (L + W - Rm) / 2 : L + (t - t0) / (t1 - t0 || 1) * (W - L - Rm);
+  const Y = v => T + (1 - (v - y0) / (y1 - y0)) * (H - T - B);
+  let s = '';
+  for (let i = 0; i <= 4; i++) { const v = y0 + (y1 - y0) * i / 4; s += `<line class="gr" x1="${L}" x2="${W - Rm}" y1="${Y(v)}" y2="${Y(v)}"/><text class="ax" x="${L - 8}" y="${Y(v) + 4}" text-anchor="end">${eixo(v)}</text>`; }
+  let ult = -99; pts.forEach(d => { const x = X(d.t); if (x - ult > 64) { s += `<text class="ax" x="${x}" y="${H - 8}" text-anchor="middle">${diaBr(d.data).slice(0, 5)}</text>`; ult = x; } });
+  s += `<path class="ln" d="${pts.map((d, i) => (i ? 'L' : 'M') + X(d.t).toFixed(1) + ' ' + Y(val(d)).toFixed(1)).join(' ')}"/>`;
+  const melhor = pts.reduce((x, d) => (val(d) < val(x) ? d : x), pts[0]);
+  s += `<line class="cruz" y1="${T}" y2="${H - B}" visibility="hidden"/>`;
+  pts.forEach((d, i) => { s += `<circle class="pt${d === melhor ? ' best' : ''}" cx="${X(d.t)}" cy="${Y(val(d))}" r="${d === melhor ? 6 : 4.5}" data-i="${i}"/>`; });
+  const xm = X(melhor.t), anc = xm > W * 0.7 ? 'end' : xm < W * 0.3 ? 'start' : 'middle';
+  s += `<text class="lbl" x="${anc === 'end' ? xm + 6 : anc === 'start' ? xm - 6 : xm}" y="${Math.min(Y(val(melhor)) + 20, H - B - 4)}" text-anchor="${anc}">${rotaUn === 'mi' ? 'menos milhas' : 'menor custo'}: ${txt(val(melhor))}</text>`;
+  svg.innerHTML = s;
+  const cruz = svg.querySelector('.cruz');
+  const mostrar = k => {
+    const d = pts[k], x = X(d.t), y = Y(val(d));
+    cruz.setAttribute('visibility', 'visible'); cruz.setAttribute('x1', x); cruz.setAttribute('x2', x);
+    svg.querySelectorAll('.pt').forEach(p => p.classList.toggle('on', +p.dataset.i === k));
+    const outro = rotaUn === 'mi' ? (d.r ? brR(d.r) + ' em milhas' : '') : milHist(d.mi) + ' milhas';
+    tip.innerHTML = `<b>${txt(val(d))}</b><span>${outro} · por trecho</span><span>${escR(d.prog)} · ${d.tipo}</span><small>${diaBr(d.data)} às ${d.data.slice(11, 16)}</small>${d === melhor ? `<em>⭐ ${rotaUn === 'mi' ? 'menos milhas' : 'menor custo'} do período</em>` : ''}`;
+    tip.hidden = false;
+    const tw = tip.offsetWidth;
+    tip.style.left = Math.min(Math.max(x - tw / 2, 4), W - tw - 4) + 'px';
+    tip.style.top = Math.max(y - tip.offsetHeight - 14, 0) + 'px';
+  };
+  svg.onpointermove = e => { const r = svg.getBoundingClientRect(), mx = (e.clientX - r.left) * W / r.width; let k = 0, dm = 1e9; pts.forEach((d, i) => { const dd = Math.abs(X(d.t) - mx); if (dd < dm) { dm = dd; k = i; } }); mostrar(k); };
+  svg.onpointerleave = () => { tip.hidden = true; cruz.setAttribute('visibility', 'hidden'); svg.querySelectorAll('.pt').forEach(c => c.classList.remove('on')); };
+}
+function rotaAlertas() {
+  const A = rotaLista(), comR = A.filter(a => a.r && !a.fora);
+  const menor = comR.length ? comR.reduce((x, a) => a.r < x.r ? a : x) : null;
+  $('#rota-lista').innerHTML = A.map(a => `<li${a.fora ? ' class="fora"' : ''}><div><b>${milHist(a.mi)} milhas</b><small>por trecho · ${a.tipo}</small></div>
+    <div><span>${escR(a.prog)}</span><small>${diaBr(a.data)}</small></div>
+    <div class="r">${a.r ? brR(a.r) : '—'}<small>${a.fora ? 'muito acima do normal' : a.teto ? 'milheiro R$ ' + a.teto : ''}</small></div>
+    ${a === menor ? '<span class="rota-estrela">⭐ menor custo</span>' : ''}</li>`).join('') || '<li class="passagens-vazio">Nenhum alerta com esse filtro.</li>';
+}
+$('#rota-chips').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b || !rotaDados) return;
+  rotaFiltro = b.dataset.p;
+  $('#rota-chips').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  rotaTudo();
+});
+document.querySelectorAll('.rota-tog button').forEach(b => b.addEventListener('click', () => {
+  rotaUn = b.dataset.u;
+  document.querySelectorAll('.rota-tog button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  if (rotaDados) rotaGrafico();
+}));
+$('#rota-copiar').addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(location.href); $('#rota-copiar').textContent = '✅ Link copiado'; }
+  catch (e) { $('#rota-copiar').textContent = location.href; }
+  setTimeout(() => { $('#rota-copiar').textContent = '🔗 Copiar link da rota'; }, 2500);
+});
+addEventListener('resize', () => { if (rotaDados && location.hash.startsWith('#rota/')) rotaGrafico(); });
+document.addEventListener('assinatura', desenharRota);
+window.addEventListener('hashchange', desenharRota);
+desenharRota();
