@@ -5370,20 +5370,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9539",
-  "data": "2026-11-13T03:38:02Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "8.600 milhas + R$ 56,99 de taxas",
-  "volta": "8.600 milhas + R$ 62,14 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-BCN-eco",
   "data": "2026-11-13T02:30:16.760388Z",
   "fonte": "seats.aero",
