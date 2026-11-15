@@ -2963,20 +2963,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-6514",
-  "data": "2026-11-13T20:50:52Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Barcelona",
-  "destino_iata": "BCN",
-  "companhia": "LATAM",
-  "cabine": "Executiva",
-  "programa": "LATAM Pass",
-  "ida": "205.273 pontos LATAM Pass + R$ 105",
-  "volta": "205.273 pontos LATAM Pass + R$ 225",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7760",
   "data": "2026-11-13T18:44:45Z",
   "tipo": "promocao",
