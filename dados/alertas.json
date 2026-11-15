@@ -2977,34 +2977,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-15603",
-  "data": "2026-11-13T20:46:30Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Tampa",
-  "destino_iata": "TPA",
-  "companhia": "American Airlines",
-  "cabine": "Econômica",
-  "programa": "AAdvantage",
-  "ida": "A partir de 18.000 milhas",
-  "volta": "A partir de 18.000 milhas",
-  "link_nome": "AAdvantage"
- },
- {
-  "id": "2008590742-15602",
-  "data": "2026-11-13T20:42:27Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "Buenos Aires",
-  "destino_iata": "AEP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "34.000 milhas + R$ 108,17 de taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7760",
   "data": "2026-11-13T18:44:45Z",
   "tipo": "promocao",
