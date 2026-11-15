@@ -3386,34 +3386,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9624",
-  "data": "2026-11-13T19:43:25Z",
-  "origem": "São Paulo",
-  "origem_iata": "CGH",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "10.100 milhas + R$ 62,14 de taxas",
-  "volta": "10.100 milhas + R$ 35,15 de taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9623",
-  "data": "2026-11-13T19:41:24Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "8.300 milhas + R$ 56,99 de taxas",
-  "volta": "9.900 milhas + R$ 35,75 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7760",
   "data": "2026-11-13T18:44:45Z",
   "tipo": "promocao",
