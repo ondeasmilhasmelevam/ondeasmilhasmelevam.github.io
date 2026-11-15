@@ -5399,20 +5399,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2361370250-6502",
-  "data": "2026-11-13T09:28:02Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Roma",
-  "destino_iata": "FCO",
-  "companhia": "Ethiopian",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "417.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-BCN-eco",
   "data": "2026-11-13T02:30:16.760388Z",
   "fonte": "seats.aero",
