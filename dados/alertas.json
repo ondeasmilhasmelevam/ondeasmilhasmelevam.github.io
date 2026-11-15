@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9674",
+  "data": "2026-11-15T14:47:22Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Uberlândia",
+  "destino_iata": "UDI",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "12.900 milhas + Taxas",
+  "volta": "14.370 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-15707",
   "data": "2026-11-15T14:41:01Z",
   "origem": "São Paulo",
@@ -4319,20 +4333,6 @@
   "ida": "52.862 milhas + R$ 201,45",
   "volta": "52.862 milhas + R$ 363,72",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15540",
-  "data": "2026-11-13T14:44:55Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 17.800 milhas",
-  "volta": "A partir de 17.800 milhas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7748",
