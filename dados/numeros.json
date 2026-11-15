@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-15T10:57:40.309533Z",
+ "atualizado": "2026-11-15T11:03:46.966073Z",
  "dias": 30,
  "passagens": 2546,
  "promocoes": 157,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1310,
+  "passagens": 1307,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -144,14 +144,14 @@
     "foto": "img/rotas/CNF-SJO.jpg"
    },
    {
-    "id": "2361370250-6254",
+    "id": "2361370250-6356",
     "origem": "Manaus",
     "origem_iata": "MAO",
     "destino": "Miami",
     "destino_iata": "MIA",
     "cabine": "Executiva",
     "programa": "GOL Smiles",
-    "data": "2026-11-08T11:02:50Z",
+    "data": "2026-11-10T11:10:24Z",
     "milhas": 108200,
     "nivel": "espetacular",
     "grupo": "Executiva",
@@ -940,14 +940,14 @@
     "regiao": "brasil"
    },
    {
-    "id": "2361370250-6254",
+    "id": "2361370250-6356",
     "origem": "Manaus",
     "origem_iata": "MAO",
     "destino": "Miami",
     "destino_iata": "MIA",
     "cabine": "Executiva",
     "programa": "GOL Smiles",
-    "data": "2026-11-08T11:02:50Z",
+    "data": "2026-11-10T11:10:24Z",
     "milhas": 108200,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
