@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-15T18:44:41.080082Z",
+ "atualizado": "2026-11-15T18:50:52.880551Z",
  "dias": 30,
  "passagens": 2576,
  "promocoes": 156,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1284,
+  "passagens": 1283,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -1018,14 +1018,14 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6272",
+    "id": "2361370250-6380",
     "origem": "São Paulo",
     "origem_iata": "GRU",
     "destino": "Roma",
     "destino_iata": "FCO",
     "cabine": "Executiva",
     "programa": "Smiles",
-    "data": "2026-11-08T18:45:20Z",
+    "data": "2026-11-10T15:41:08Z",
     "milhas": 387000,
     "nivel": "bom",
     "regiao": "europa"
