@@ -964,6 +964,9 @@ desenharPrecosRota();
 // cada alerta já visto (pontos do gráfico), o que está no ar agora (com datas e link) e rotas parecidas.
 const rotaCache = {};
 let rotaTeto = null, rotaFiltro = '', rotaUn = 'mi', rotaDados = null;
+// Mapa de rotas (mapa.js) usa estes dois: quem pode ver e o token para o servidor.
+window.oammlPodeVerMapa = () => !!(window.oammlAssinatura || {}).ativo || (auth.currentUser?.email || '').toLowerCase() === DONO;
+window.oammlToken = async () => (auth.currentUser ? auth.currentUser.getIdToken() : '');
 window.oammlLinkRota = p => `#rota/${p.origem_iata}-${p.destino_iata}-${slugCab(p.cabine)}`;
 const progRota = t => { const n = String(t || '').toUpperCase(); return /SMILES/.test(n) ? 'Smiles' : /LATAM/.test(n) ? 'LATAM Pass' : /AZUL/.test(n) ? 'Azul Fidelidade' : String(t || '?'); };
 const brR = v => 'R$ ' + Number(v).toLocaleString('pt-BR');

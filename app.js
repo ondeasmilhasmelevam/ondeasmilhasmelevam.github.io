@@ -2898,6 +2898,7 @@
   const paginaDe = el => (el && el.closest('[data-pagina]') || {}).dataset?.pagina;
   function mostrarPagina(alvo, rolar = true) {
     if (alvo && alvo.startsWith('rota/')) alvo = 'rota'; // #rota/GRU-MIA-economica: a página da rota
+    if (alvo && alvo.startsWith('mapa/')) alvo = 'mapa'; // #mapa/GRU-LIS: mapa com origem e destino escolhidos
     const el = alvo && document.getElementById(alvo);
     const pagina = paginaDe(el) || 'inicio';
     paginaAtual = pagina;

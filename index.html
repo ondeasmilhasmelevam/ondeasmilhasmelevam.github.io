@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=133">
+<link rel="stylesheet" href="estilo.css?v=134">
 </head>
 <body>
 <header class="bar">
@@ -58,6 +58,7 @@
         <div class="menu-sub">
           <a href="#hoje" title="Hoje"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><span>Hoje</span></a>
           <a href="#radar" title="Rota Vigiada"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6.5" cy="15.5" r="3.5"/><circle cx="17.5" cy="15.5" r="3.5"/><path d="M10 15.5h4M5 12l2-6h3l.5 6M19 12l-2-6h-3l-.5 6"/></svg><span>Rota Vigiada</span></a>
+          <a href="#mapa" title="Mapa de rotas"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="17" r="2"/><circle cx="19" cy="7" r="2"/><path d="M6.6 15.6C9 9 13 6.5 17.2 7.4"/><path d="M12 21a9 9 0 1 0-9-9"/></svg><span>Mapa de rotas</span></a>
           <a href="#historico" title="Histórico de preços"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg><span>Histórico de preços</span></a>
           <a href="#guias" title="Guia de destinos"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5 9 4l6 2.5L20.5 4v13.5L15 20l-6-2.5L3.5 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span>Guia de destinos</span></a>
           <a href="#guia" title="Como emitir"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v3.5a2.5 2.5 0 0 0 0 5V18H4v-3.5a2.5 2.5 0 0 0 0-5z"/><path d="M14 6v12" stroke-dasharray="2 2.5"/></svg><span>Como emitir</span></a>
@@ -693,6 +694,43 @@
         <ul class="hist-lista" id="hist-lista"></ul>
       </div>
     </section>
+    <section id="mapa" data-pagina="mapa">
+      <div class="sec-head">
+        <p class="eyebrow">Mapa de rotas · para assinantes</p>
+        <h2>Para onde as milhas estão levando</h2>
+        <p class="sec-note">As rotas que tiveram alerta nos últimos 12 meses. Toque num aeroporto para acender as rotas dele e em outro para ver a rota. Quanto maior o ponto, mais alertas saem dali.</p>
+      </div>
+      <div class="radar-fechado" id="mapa-fechado">
+        <p>🔒 O mapa de rotas é exclusivo para assinantes.</p>
+        <a class="cta cta-a" href="#assinar">Assinar</a>
+        <small>Já assina? <a href="#assinar">Entre aqui</a> com o e-mail do pagamento.</small>
+      </div>
+      <div id="mapa-aberto" hidden>
+      <div class="mapa-ctrl">
+        <label class="mapa-campo"><span>De</span><input id="mapa-de" list="mapa-aeros" placeholder="ex.: GRU" autocomplete="off"></label>
+        <button type="button" class="mapa-trocar" id="mapa-trocar" aria-label="Trocar origem e destino">⇄</button>
+        <label class="mapa-campo"><span>Para</span><input id="mapa-para" list="mapa-aeros" placeholder="ex.: LIS" autocomplete="off"></label>
+        <datalist id="mapa-aeros"></datalist>
+        <label class="mapa-campo"><span>Cabine</span><select id="mapa-cabine"><option value="">Todas</option><option value="eco">Econômica</option><option value="exe">Executiva e Primeira</option></select></label>
+        <button type="button" class="mapa-limpar" id="mapa-limpar">Limpar</button>
+      </div>
+      <div class="mapa-vistas" id="mapa-vistas" role="group" aria-label="Região do mapa">
+        <button type="button" data-v="mundo" aria-pressed="true">Mundo</button><button type="button" data-v="brasil" aria-pressed="false">Brasil</button><button type="button" data-v="europa" aria-pressed="false">Brasil ↔ Europa</button><button type="button" data-v="eua" aria-pressed="false">Brasil ↔ EUA e Caribe</button>
+        <div class="mapa-modo" id="mapa-modo" role="group" aria-label="Jeito de ver"><button type="button" data-m="globo" aria-pressed="true">🌍 Globo</button><button type="button" data-m="mapa" aria-pressed="false">🗺️ Mapa plano</button></div>
+      </div>
+      <div class="mapa-grade">
+        <div class="mapa-caixa" id="mapa-caixa">
+          <svg id="mapa-svg" role="img" aria-label="Mapa-múndi com as rotas que tiveram alerta"></svg>
+          <div class="mapa-zoom"><button type="button" id="mapa-mais" aria-label="Aproximar">+</button><button type="button" id="mapa-menos" aria-label="Afastar">−</button><button type="button" id="mapa-tudo" aria-label="Ver o mapa inteiro">⤢</button></div>
+          <div class="mapa-tip" id="mapa-tip" hidden></div>
+          <div class="mapa-leg" id="mapa-leg"></div>
+          <p class="mapa-carregando" id="mapa-carregando">Carregando o mapa…</p>
+        </div>
+        <aside class="mapa-painel" id="mapa-painel" aria-live="polite"></aside>
+      </div>
+      <p class="mapa-fonte">Rotas e quantidade de alertas: histórico do Onde as Milhas Me Levam (últimos 12 meses). Distância e tempo de voo são estimativas em linha reta, não horário de companhia. Mapa: Natural Earth.</p>
+      </div>
+    </section>
     <section id="rota" data-pagina="rota">
       <div class="sec-head">
         <p class="eyebrow">Página da rota · para assinantes</p>
@@ -1282,8 +1320,9 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=122"></script>
+<script src="app.js?v=123"></script>
 <script src="funil.js?v=7"></script>
-<script type="module" src="assinatura.js?v=43"></script>
+<script type="module" src="assinatura.js?v=44"></script>
+<script src="mapa.js?v=4" defer></script>
 </body>
 </html>

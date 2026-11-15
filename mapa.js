@@ -1,0 +1,371 @@
+// Mapa de rotas (#mapa e #mapa/GRU-LIS): as rotas que tiveram alerta nos últimos 12 meses.
+// Rotas e contagens vêm do servidor (/malha, sem preço); coordenadas dos aeroportos em dados/aeroportos.json.
+// O mapa (d3 + contorno dos países do Natural Earth) só é baixado quando a pessoa abre a página.
+(() => {
+  const SERVIDOR = 'https://oamml-assinatura.ondeasmilhasmelevam.workers.dev';
+  const LIBS = ['https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js', 'https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js'];
+  const MUNDO = 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-50m.json';
+  const MUNDO_LEVE = 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json';
+  const VISTAS = { mundo: [[-122, -48], [62, 62]], tudo: null, brasil: [[-74, -34], [-34, 5]], europa: [[-75, -35], [32, 60]], eua: [[-125, -35], [-34, 50]] };
+  const $ = s => document.querySelector(s);
+  const esc = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const fmt = n => Number(n).toLocaleString('pt-BR');
+  const NOME_CAB = { economica: 'Econômica', executiva: 'Executiva', 'primeira-classe': 'Primeira Classe', 'economica-premium': 'Econômica Premium', primeira: 'Primeira Classe' };
+  const bandeira = iso => iso && iso.length === 2 ? String.fromCodePoint(...[...iso.toUpperCase()].map(c => 127397 + c.charCodeAt(0))) : '';
+  let pronto = null, D = null, est = { de: '', para: '', cab: '' }, z = null, svg, g, proj, caminho, k = 1;
+
+  const carregarScript = src => new Promise((ok, erro) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = erro; document.head.appendChild(s); });
+  function iniciar() {
+    if (pronto) return pronto;
+    pronto = (async () => {
+      for (const src of LIBS) await carregarScript(src);
+      const [malha, aeros, mundo] = await Promise.all([
+        (async () => { const r = await fetch(`${SERVIDOR}/malha`, { headers: { authorization: `Bearer ${window.oammlToken ? await window.oammlToken() : ''}` } }); if (!r.ok) throw new Error('malha'); return r.json(); })(),
+        fetch('dados/aeroportos.json', { cache: 'no-cache' }).then(r => r.json()),
+        fetch(MUNDO_LEVE).then(r => r.json())
+      ]);
+      montarDados(malha, aeros);
+      geo.leve = contornos(mundo);
+      desenharBase();
+      fetch(MUNDO).then(r => r.json()).then(m => { geo.detalhe = contornos(m); if (!movendo) posicionar(); }).catch(() => {});
+    })().catch(e => { $('#mapa-carregando').textContent = 'Não deu para carregar o mapa agora. Tente de novo em instantes.'; pronto = null; throw e; });
+    return pronto;
+  }
+
+  // Junta ida e volta numa linha só (o traço mostra o total) e soma os alertas de cada aeroporto.
+  function montarDados(malha, aeros) {
+    const nomes = {}, rotas = [];
+    for (const [oi, di, o, d, cab, n, ult, sl] of malha.rotas || []) {
+      if (!aeros[oi] || !aeros[di] || oi === di) continue;
+      nomes[oi] = nomes[oi] || o; nomes[di] = nomes[di] || d;
+      rotas.push({ oi, di, cab, n, ult, sl: sl || (cab === 'eco' ? 'economica' : 'executiva'), cabNome: NOME_CAB[sl] || (sl ? sl.replace(/-/g, ' ') : '') });
+    }
+    D = { rotas, nomes, aeros, gerado: malha.gerado };
+    $('#mapa-aeros').innerHTML = Object.keys(nomes).sort((a, b) => (nomes[a] || '').localeCompare(nomes[b] || '', 'pt'))
+      .map(i => `<option value="${i}">${esc(nomes[i])}</option>`).join('');
+  }
+  const daCabine = r => !est.cab || r.cab === est.cab;
+  function pares() {
+    const m = new Map();
+    for (const r of D.rotas.filter(daCabine)) {
+      const br = i => (D.aeros[i] || [])[2] === 'BR';
+      const [a, b] = br(r.oi) !== br(r.di) ? (br(r.oi) ? [r.oi, r.di] : [r.di, r.oi]) : [r.oi, r.di].sort(), ch = `${a}-${b}`;
+      const p = m.get(ch) || m.set(ch, { a, b, n: 0 }).get(ch);
+      p.n += r.n;
+    }
+    return [...m.values()];
+  }
+  function porAeroporto() {
+    const m = {};
+    for (const r of D.rotas.filter(daCabine)) {
+      for (const i of [r.oi, r.di]) { m[i] = m[i] || { n: 0, destinos: new Set() }; m[i].n += r.n; }
+      m[r.oi].destinos.add(r.di);
+    }
+    return m;
+  }
+  const xy = i => proj([D.aeros[i][1], D.aeros[i][0]]);
+  const nomeDe = i => D.nomes[i] || i;
+
+  // Dois jeitos de ver: globo (gira com o dedo ou o mouse, padrão) e mapa plano (zoom e arrasto).
+  let modo = 'globo', base = 1, agendado = false, movendo = false, parou = 0, inercia = null;
+  const geo = { leve: null, detalhe: null };
+  // Terra numa forma só (bem mais leve que 240 países separados), o Brasil por cima e as fronteiras.
+  const contornos = m => ({ terra: topojson.merge(m, m.objects.countries.geometries), br: topojson.feature(m, { type: 'GeometryCollection', geometries: m.objects.countries.geometries.filter(x => x.id === '076') }), fronteira: topojson.mesh(m, m.objects.countries, (a, b) => a !== b) });
+  const coord = i => [D.aeros[i][1], D.aeros[i][0]];
+  const linhaDe = p => ({ type: 'LineString', coordinates: [coord(p.a), coord(p.b)] });
+  const visivel = c => modo !== 'globo' || d3.geoDistance(c, [-proj.rotate()[0], -proj.rotate()[1]]) < Math.PI / 2 - 0.03;
+
+  function desenharBase() {
+    const caixa = $('#mapa-caixa');
+    caixa.classList.toggle('globo', modo === 'globo');
+    svg = d3.select('#mapa-svg');
+    const W = caixa.clientWidth, H = W < 600 ? Math.round(W * (modo === 'globo' ? 1 : 0.82)) : Math.round(Math.min(Math.max(W * 0.52, 380), 640));
+    svg.attr('viewBox', `0 0 ${W} ${H}`).style('height', H + 'px');
+    if (modo === 'globo') {
+      proj = d3.geoOrthographic().clipAngle(90).precision(0.6).fitExtent([[22, 22], [W - 22, H - 22]], { type: 'Sphere' }).rotate([45, 8, 0]);
+    } else {
+      proj = d3.geoNaturalEarth1().fitExtent([[8, 8], [W - 8, H - 8]], { type: 'Sphere' });
+    }
+    base = proj.scale(); k = 1;
+    caminho = d3.geoPath(proj);
+    svg.on('.zoom', null).on('.drag', null).on('wheel', null);
+    svg.selectAll('*').remove();
+    const defs = svg.append('defs');
+    const halo = defs.append('radialGradient').attr('id', 'mapa-halo');
+    halo.append('stop').attr('offset', '0.86').attr('class', 'mh0');
+    halo.append('stop').attr('offset', '1').attr('class', 'mh1');
+    const luz = defs.append('radialGradient').attr('id', 'mapa-luz').attr('cx', '35%').attr('cy', '30%');
+    luz.append('stop').attr('offset', '0').attr('class', 'ml0');
+    luz.append('stop').attr('offset', '1').attr('class', 'ml1');
+    svg.append('rect').attr('class', 'mapa-mar').attr('width', W).attr('height', H);
+    g = svg.append('g');
+    if (modo === 'globo') g.append('circle').attr('class', 'mapa-halo');
+    g.append('path').datum({ type: 'Sphere' }).attr('class', 'geo mapa-esfera');
+    g.append('path').datum(d3.geoGraticule10()).attr('class', 'geo mapa-grade-l');
+    g.append('path').attr('class', 'mundo mapa-pais').attr('data-c', 'terra');
+    g.append('path').attr('class', 'mundo mapa-pais br').attr('data-c', 'br');
+    g.append('path').attr('class', 'mundo mapa-fronteira').attr('data-c', 'fronteira');
+    if (modo === 'globo') g.append('path').datum({ type: 'Sphere' }).attr('class', 'geo mapa-luz');
+    g.append('g').attr('class', 'mapa-rotas');
+    g.append('g').attr('class', 'mapa-aeros');
+    g.append('g').attr('class', 'mapa-rotulos');
+    if (modo === 'mapa') {
+      z = d3.zoom().scaleExtent([1, 12]).translateExtent([[0, 0], [W, H]]).on('zoom', e => {
+        k = e.transform.k; g.attr('transform', e.transform); ajustarEscala();
+      });
+      svg.call(z).on('dblclick.zoom', null);
+    } else {
+      z = null;
+      let vel = [0, 0];
+      const girar = (dx, dy) => {
+        const r = proj.rotate(), f = 0.28 * base / proj.scale();
+        proj.rotate([r[0] + dx * f, Math.max(-80, Math.min(80, r[1] - dy * f)), 0]);
+        agendar();
+      };
+      svg.call(d3.drag()
+        .on('start', () => { if (inercia) { inercia.stop(); inercia = null; } vel = [0, 0]; })
+        .on('drag', e => { vel = [e.dx, e.dy]; girar(e.dx, e.dy); })
+        .on('end', () => {
+          // solta e o globo continua girando um pouco, freando aos poucos
+          if (Math.hypot(vel[0], vel[1]) < 1.5 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          inercia = d3.timer(() => { vel = [vel[0] * 0.92, vel[1] * 0.92]; girar(vel[0], vel[1]); if (Math.hypot(vel[0], vel[1]) < 0.2) { inercia.stop(); inercia = null; } });
+        }));
+      svg.on('wheel', e => { e.preventDefault(); escala(e.deltaY < 0 ? 1.15 : 1 / 1.15); }, { passive: false });
+    }
+    $('#mapa-carregando').hidden = true;
+    desenharRotas();
+    if (!est.de) vista('mundo', false); else enquadrarSelecao(false);
+  }
+  function escala(f) {
+    if (modo === 'mapa') return z && svg.transition().duration(300).call(z.scaleBy, f);
+    proj.scale(Math.max(base * 0.9, Math.min(base * 7, proj.scale() * f)));
+    agendar();
+  }
+  function agendar() {
+    movendo = true;
+    clearTimeout(parou);
+    parou = setTimeout(() => { movendo = false; posicionar(); }, 180); // parou: desenha com o contorno detalhado
+    if (agendado) return;
+    agendado = true;
+    requestAnimationFrame(() => { agendado = false; posicionar(); });
+  }
+  // Põe tudo no lugar para a projeção atual (no globo, roda a cada giro; no plano, uma vez).
+  function posicionar() {
+    if (modo === 'globo') {
+      const [tx, ty] = proj.translate();
+      g.select('.mapa-halo').attr('cx', tx).attr('cy', ty).attr('r', proj.scale() * 1.09);
+    }
+    // Girando: contorno leve e só as rotas em destaque; parado: tudo, com o contorno detalhado.
+    const leve = modo === 'globo' && movendo;
+    const c = (leve ? geo.leve : geo.detalhe || geo.leve);
+    proj.precision(leve ? 1.5 : 0.6);
+    g.selectAll('.geo').attr('d', caminho);
+    g.selectAll('.mundo').attr('d', function () { return caminho(c[this.dataset.c]); });
+    g.selectAll('.mapa-rota').each(function (p) {
+      const esconder = p.estado === 'oculta' || (leve && p.estado === 'fraca');
+      this.style.display = esconder ? 'none' : '';
+      if (!esconder) this.setAttribute('d', caminho(linhaDe(p)) || '');
+    });
+    g.selectAll('.mapa-aero').each(function (d) { d.xy = proj(coord(d.i)); d.ve = visivel(coord(d.i)); })
+      .attr('cx', d => d.xy[0]).attr('cy', d => d.xy[1]).style('display', d => d.ve ? null : 'none');
+    g.selectAll('.mapa-rotulo').each(function (d) { d.xy = proj(coord(d.i)); d.ve = visivel(coord(d.i)); })
+      .attr('x', d => d.xy[0]).attr('y', d => d.xy[1]);
+    ajustarEscala();
+  }
+  function ajustarEscala() {
+    const kk = modo === 'globo' ? Math.max(1, proj.scale() / base) : k, fator = modo === 'globo' ? 1 : k;
+    g.selectAll('.mapa-aero').attr('r', d => d.r / Math.sqrt(fator)).attr('stroke-width', 1.2 / fator);
+    // Rótulos: os mais importantes primeiro; um rótulo só aparece se não encostar em outro já posto.
+    const postos = [];
+    g.selectAll('.mapa-rotulo').attr('font-size', 11 / fator).attr('dy', d => -(d.r + 4) / Math.sqrt(fator))
+      .style('display', d => {
+        if (d.ve === false) return 'none';
+        const quer = d.sel || d.mostrar || (kk >= 2.2 && d.n >= 8) || kk >= 4;
+        if (!quer) return 'none';
+        const x = d.xy[0] * fator, y = d.xy[1] * fator, cx = [x - 16, y - 22, x + 16, y - 6];
+        if (!d.sel && postos.some(b => cx[0] < b[2] && cx[2] > b[0] && cx[1] < b[3] && cx[3] > b[1])) return 'none';
+        postos.push(cx);
+        return null;
+      });
+  }
+
+  function desenharRotas() {
+    const P = pares(), A = porAeroporto();
+    const maxN = d3.max(P, p => p.n) || 1, maxA = d3.max(Object.values(A), a => a.n) || 1;
+    const larg = d3.scaleSqrt().domain([1, maxN]).range([0.5, 3.6]);
+    const raio = d3.scaleSqrt().domain([1, maxA]).range([2.4, 9]);
+    const sel = est.de, alvo = est.para;
+    // Sem nada marcado, as linhas ficam apagadas: o globo mostra só os aeroportos. Elas acendem ao marcar.
+    const liga = p => !sel ? 'oculta' : (p.a === sel || p.b === sel) ? ((alvo && (p.a === alvo || p.b === alvo)) ? 'foco' : (alvo ? 'fraca' : 'ativa')) : 'fraca';
+    const ordem = P.map(p => ({ ...p, estado: liga(p) })).sort((x, y) => ['oculta', 'fraca', 'normal', 'ativa', 'foco'].indexOf(x.estado) - ['oculta', 'fraca', 'normal', 'ativa', 'foco'].indexOf(y.estado) || x.n - y.n);
+    g.select('.mapa-rotas').selectAll('path').data(ordem, p => `${p.a}-${p.b}`).join('path')
+      .attr('class', p => `mapa-rota ${p.estado}`)
+            .attr('stroke-width', p => p.estado === 'foco' ? Math.max(larg(p.n), 2.6) : larg(p.n))
+      .on('mousemove', (e, p) => dica(e, `<b>${p.a} ⇄ ${p.b}</b><span>${esc(nomeDe(p.a))} ⇄ ${esc(nomeDe(p.b))}</span><small>${fmt(p.n)} ${p.n === 1 ? 'alerta' : 'alertas'} em 12 meses</small>`))
+      .on('mouseleave', () => { $('#mapa-tip').hidden = true; })
+      .on('click', (e, p) => { e.stopPropagation(); escolher(sel === p.b ? p.b : p.a, sel === p.b ? p.a : p.b); });
+    const pontos = Object.entries(A).map(([i, a]) => ({ i, n: a.n, nd: a.destinos.size, r: raio(a.n), xy: xy(i), ve: true }))
+      .sort((x, y) => x.n - y.n);
+    const nivel = n => n >= 100 ? 'n4' : n >= 30 ? 'n3' : n >= 7 ? 'n2' : 'n1';
+    const ligados = sel ? new Set(P.filter(p => p.a === sel || p.b === sel).flatMap(p => [p.a, p.b])) : null;
+    g.select('.mapa-aeros').selectAll('circle').data(pontos, d => d.i).join('circle')
+      .attr('class', d => `mapa-aero ${nivel(d.n)}${d.i === sel ? ' de' : ''}${d.i === alvo ? ' para' : ''}${ligados && !ligados.has(d.i) ? ' apagado' : ''}`)
+      .on('mousemove', (e, d) => dica(e, `<b>${esc(nomeDe(d.i))} · ${d.i}</b><small>${fmt(d.n)} ${d.n === 1 ? 'alerta' : 'alertas'} · ${d.nd} ${d.nd === 1 ? 'destino' : 'destinos'} com alerta saindo daqui</small>`))
+      .on('mouseleave', () => { $('#mapa-tip').hidden = true; })
+      .on('click', (e, d) => { e.stopPropagation(); clicarAeroporto(d.i); });
+    const top = new Set(pontos.slice(-8).map(d => d.i));
+    const rot = pontos.map(d => ({ ...d, sel: d.i === sel || d.i === alvo, mostrar: top.has(d.i) || (ligados && ligados.has(d.i) && d.n >= 3) }))
+      .sort((x, y) => (y.sel - x.sel) || (y.n - x.n));
+    g.select('.mapa-rotulos').selectAll('text').data(rot, d => d.i).join('text')
+      .attr('class', d => `mapa-rotulo${d.i === sel || d.i === alvo ? ' sel' : ''}`)
+      .attr('text-anchor', 'middle').text(d => d.i);
+    posicionar();
+    legenda(maxN);
+    painel(A);
+  }
+  function legenda() {
+    $('#mapa-leg').innerHTML = `<b>Alertas por aeroporto</b><span><i class="n4"></i>100 ou mais</span><span><i class="n3"></i>30 a 99</span><span><i class="n2"></i>7 a 29</span><span><i class="n1"></i>até 6</span><span class="lg-rota"><i></i>linha mais grossa = mais alertas</span>`;
+  }
+  function dica(e, html) {
+    const t = $('#mapa-tip'), c = $('#mapa-caixa').getBoundingClientRect();
+    t.innerHTML = html; t.hidden = false;
+    const x = e.clientX - c.left, y = e.clientY - c.top, w = t.offsetWidth;
+    t.style.left = Math.min(Math.max(x - w / 2, 6), c.width - w - 6) + 'px';
+    t.style.top = Math.max(y - t.offsetHeight - 14, 6) + 'px';
+  }
+
+  // Seleção: primeiro clique escolhe a origem, o segundo o destino; clicar de novo na origem limpa.
+  function clicarAeroporto(i) {
+    if (!est.de || (est.de && est.para)) return escolher(i, est.de && est.para && i !== est.de ? '' : '');
+    if (i === est.de) return escolher('', '');
+    escolher(est.de, i);
+  }
+  function escolher(de, para, enquadrar = true) {
+    est.de = de; est.para = para;
+    $('#mapa-de').value = de; $('#mapa-para').value = para;
+    const hash = de ? `#mapa/${de}${para ? '-' + para : ''}` : '#mapa';
+    if (location.hash !== hash) history.replaceState(null, '', hash);
+    desenharRotas();
+    if (enquadrar) enquadrarSelecao();
+  }
+  function enquadrarSelecao(animar = true) {
+    if (!est.de) return;
+    const P = pares().filter(p => p.a === est.de || p.b === est.de).filter(p => !est.para || p.a === est.para || p.b === est.para);
+    irPara([est.de, ...(est.para ? [est.para] : P.flatMap(p => [p.a, p.b]))].map(coord), animar);
+  }
+  function irPara(pts, animar = true) {
+    if (!svg) return;
+    const W = +svg.attr('viewBox').split(' ')[2], H = +svg.attr('viewBox').split(' ')[3];
+    if (modo === 'globo') {
+      let rot = [45, 8, 0], esc = base;
+      if (pts && pts.length) {
+        const c = d3.geoCentroid({ type: 'MultiPoint', coordinates: pts });
+        const raioAng = Math.max(0.08, ...pts.map(p => d3.geoDistance(c, p)));
+        rot = [-c[0], -c[1], 0];
+        esc = Math.max(base, Math.min(base * 6, 0.8 * base / Math.sin(Math.min(raioAng + 0.12, Math.PI / 2))));
+      }
+      const r0 = proj.rotate();
+      rot[0] = r0[0] + ((((rot[0] - r0[0]) % 360) + 540) % 360 - 180); // gira pelo caminho mais curto
+      if (!animar) { proj.rotate(rot).scale(esc); posicionar(); return; }
+      const ir = d3.interpolate(r0, rot), is = d3.interpolate(proj.scale(), esc);
+      svg.transition().duration(1100).ease(d3.easeCubicInOut).tween('giro', () => t => { proj.rotate(ir(t)).scale(is(t)); agendar(); });
+      return;
+    }
+    const alvo = animar ? svg.transition().duration(750) : svg;
+    if (!pts || !pts.length) { alvo.call(z.transform, d3.zoomIdentity); return; }
+    const xy2 = pts.map(p => proj(p)), xs = xy2.map(p => p[0]), ys = xy2.map(p => p[1]);
+    const [x0, x1, y0, y1] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)];
+    const kk = Math.max(1, Math.min(8, 0.72 / Math.max((x1 - x0) / W, (y1 - y0) / H, 0.06)));
+    alvo.call(z.transform, d3.zoomIdentity.translate(W / 2, H / 2).scale(kk).translate(-(x0 + x1) / 2, -(y0 + y1) / 2));
+  }
+  // "Mundo" enquadra Américas, Europa, África e Oriente Médio, onde estão quase todas as rotas; o botão ⤢ mostra o planeta inteiro.
+  function vista(nome, animar = true) {
+    document.querySelectorAll('#mapa-vistas button[data-v]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === nome)));
+    const v = VISTAS[nome];
+    irPara(v ? [v[0], v[1], [(v[0][0] + v[1][0]) / 2, v[0][1]], [(v[0][0] + v[1][0]) / 2, v[1][1]]] : null, animar);
+  }
+
+  // Painel ao lado do mapa: visão geral, uma origem ou uma rota.
+  function painel(A) {
+    const el = $('#mapa-painel'), cabTxt = c => c === 'eco' ? 'Econômica' : 'Executiva/Primeira';
+    const linkRota = r => `#rota/${r.oi}-${r.di}-${r.sl}`;
+    if (!est.de) {
+      const P = pares().sort((a, b) => b.n - a.n), tot = d3.sum(P, p => p.n);
+      const origens = Object.entries(A).map(([i, a]) => [i, D.rotas.filter(daCabine).filter(r => r.oi === i).reduce((s, r) => s + r.n, 0)]).sort((a, b) => b[1] - a[1]).slice(0, 6);
+      el.innerHTML = `<p class="mp-kicker">Últimos 12 meses</p><div class="mp-nums"><div><b>${fmt(P.length)}</b><small>rotas com alerta</small></div><div><b>${fmt(tot)}</b><small>alertas</small></div><div><b>${fmt(Object.keys(A).length)}</b><small>aeroportos</small></div></div>
+        <div class="mp-colunas"><div><h3>Rotas com mais alertas</h3><ol class="mp-lista">${P.slice(0, 8).map(p => `<li><button type="button" data-de="${p.a}" data-para="${p.b}"><span>${p.a} ⇄ ${p.b}<small>${esc(nomeDe(p.a))} ⇄ ${esc(nomeDe(p.b))}</small></span><b>${fmt(p.n)}</b></button></li>`).join('')}</ol></div>
+        <div><h3>De onde mais sai alerta</h3><ol class="mp-lista">${origens.map(([i, n]) => `<li><button type="button" data-de="${i}"><span>${esc(nomeDe(i))}<small>${i} · ${esc(D.aeros[i][3] || '')}</small></span><b>${fmt(n)}</b></button></li>`).join('')}</ol></div></div>
+        <p class="mp-dica">Toque num aeroporto do mapa para ver para onde saem alertas dali.</p>`;
+      return;
+    }
+    const de = est.de, ad = D.aeros[de];
+    if (!est.para) {
+      const saindo = D.rotas.filter(daCabine).filter(r => r.oi === de);
+      const porDest = {}; saindo.forEach(r => { const p = porDest[r.di] || (porDest[r.di] = { n: 0, cabs: new Set(), ult: '' }); p.n += r.n; p.cabs.add(r.cab); if (r.ult > p.ult) p.ult = r.ult; });
+      const lista = Object.entries(porDest).sort((a, b) => b[1].n - a[1].n);
+      el.innerHTML = `<p class="mp-kicker">Saindo de</p><h3 class="mp-tit">${esc(nomeDe(de))} <small>${de} · ${esc(ad[3] || '')}</small></h3>
+        <div class="mp-nums"><div><b>${fmt(lista.length)}</b><small>destinos com alerta</small></div><div><b>${fmt(d3.sum(lista, ([, p]) => p.n))}</b><small>alertas</small></div></div>
+        ${lista.length ? `<ol class="mp-lista">${lista.slice(0, 14).map(([i, p]) => `<li><button type="button" data-de="${de}" data-para="${i}"><span>${esc(nomeDe(i))}<small>${i} · ${esc(D.aeros[i][3] || '')} · ${[...p.cabs].map(cabTxt).join(' e ')}</small></span><b>${fmt(p.n)}</b></button></li>`).join('')}</ol>${lista.length > 14 ? `<p class="mp-dica">E mais ${lista.length - 14} destinos no mapa.</p>` : ''}`
+          : '<p class="mp-dica">Nenhum alerta saindo daqui nos últimos 12 meses com esse filtro.</p>'}
+        <p class="mp-dica">Toque num destino da lista ou do mapa para ver a rota.</p>`;
+      return;
+    }
+    const para = est.para, ap = D.aeros[para];
+    const km = Math.round(d3.geoDistance([ad[1], ad[0]], [ap[1], ap[0]]) * 6371);
+    const horas = km / 830 + 0.5, hTxt = `${Math.floor(horas)}h${String(Math.round((horas % 1) * 60)).padStart(2, '0')}`;
+    const ida = D.rotas.filter(daCabine).filter(r => r.oi === de && r.di === para), volta = D.rotas.filter(daCabine).filter(r => r.oi === para && r.di === de);
+    const nIda = d3.sum(ida, r => r.n), nVolta = d3.sum(volta, r => r.n);
+    const ultimo = ida.reduce((u, r) => r.ult > u ? r.ult : u, '');
+    const quando = ultimo ? (() => { const n = Math.round((Date.now() - new Date(ultimo + 'T12:00:00')) / 864e5); return n <= 0 ? 'hoje' : n === 1 ? 'ontem' : `há ${n} dias`; })() : '';
+    el.innerHTML = `<p class="mp-kicker">Rota</p>
+      <h3 class="mp-tit">${de} <i>→</i> ${para}</h3><p class="mp-sub">${esc(nomeDe(de))}, ${esc(ad[3] || '')} → ${esc(nomeDe(para))}, ${esc(ap[3] || '')}</p>
+      <div class="mp-nums"><div><b>${fmt(km)} km</b><small>distância em linha reta</small></div><div><b>${hTxt}</b><small>voo direto estimado</small></div><div><b>${fmt(nIda)}</b><small>alertas em 12 meses</small></div></div>
+      ${nIda ? `<p class="mp-dica">Último alerta ${quando}. ${ida.map(r => `${esc(r.cabNome || cabTxt(r.cab))}: ${fmt(r.n)}`).join(' · ')}</p>
+        <div class="mp-acoes">${ida.map(r => `<a class="cta cta-a" href="${linkRota(r)}">📈 Histórico da rota${ida.length > 1 ? ` (${esc((r.cabNome || cabTxt(r.cab)).toLowerCase())})` : ''}</a>`).join('')}</div>`
+        : `<p class="mp-dica">Nenhum alerta nesse sentido nos últimos 12 meses${est.cab ? ' com essa cabine' : ''}.</p><div class="mp-acoes"><a class="cta cta-a" href="#radar">🔔 Me avise quando aparecer</a></div>`}
+      ${nVolta ? `<button type="button" class="mp-volta" data-de="${para}" data-para="${de}">No sentido ${para} → ${de}: ${fmt(nVolta)} ${nVolta === 1 ? 'alerta' : 'alertas'}. Ver esse sentido →</button>` : ''}
+      <p class="mp-nota">Distância em linha reta e tempo estimado a 830 km/h, sem escalas. Os horários reais dependem da companhia.</p>`;
+  }
+
+  // Controles
+  const iataDe = v => { const t = String(v || '').trim().toUpperCase(); if (D && D.aeros[t] && D.nomes[t]) return t; const n = t.normalize('NFD').replace(/[̀-ͯ]/g, ''); return D ? (Object.keys(D.nomes).find(i => (D.nomes[i] || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase() === n) || '') : ''; };
+  $('#mapa-painel').addEventListener('click', e => { const b = e.target.closest('button[data-de]'); if (b) escolher(b.dataset.de, b.dataset.para || ''); });
+  $('#mapa-de').addEventListener('change', e => escolher(iataDe(e.target.value), est.para));
+  $('#mapa-para').addEventListener('change', e => { const p = iataDe(e.target.value); if (est.de) escolher(est.de, p); else e.target.value = ''; });
+  $('#mapa-trocar').addEventListener('click', () => { if (est.de && est.para) escolher(est.para, est.de); });
+  $('#mapa-limpar').addEventListener('click', () => { escolher('', '', false); vista('mundo'); });
+  $('#mapa-cabine').addEventListener('change', e => { est.cab = e.target.value; if (D) desenharRotas(); });
+  $('#mapa-vistas').addEventListener('click', e => { const b = e.target.closest('button[data-v]'); if (b) vista(b.dataset.v); });
+  $('#mapa-modo').addEventListener('click', e => {
+    const b = e.target.closest('button[data-m]'); if (!b || b.dataset.m === modo) return;
+    modo = b.dataset.m;
+    document.querySelectorAll('#mapa-modo button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    if (geo.leve) desenharBase();
+  });
+  $('#mapa-mais').addEventListener('click', () => svg && escala(1.6));
+  $('#mapa-menos').addEventListener('click', () => svg && escala(1 / 1.6));
+  $('#mapa-tudo').addEventListener('click', () => vista('tudo'));
+
+  async function abrir() {
+    const m = /^#mapa(?:\/([A-Z]{3})(?:-([A-Z]{3}))?)?$/.exec(location.hash);
+    if (!m) return;
+    const pode = !!(window.oammlPodeVerMapa && window.oammlPodeVerMapa());
+    $('#mapa-fechado').hidden = pode;
+    $('#mapa-aberto').hidden = !pode;
+    if (!pode) return;
+    try { await iniciar(); } catch (e) { return; }
+    const [, de = '', para = ''] = m;
+    if (de !== est.de || para !== est.para) escolher(de && D.aeros[de] ? de : '', para && D.aeros[para] ? para : '');
+    else desenharRotas();
+  }
+  let largura = 0;
+  addEventListener('resize', () => {
+    const w = ($('#mapa-caixa') || {}).clientWidth || 0;
+    if (!D || !svg || !w || Math.abs(w - largura) < 40 || !location.hash.startsWith('#mapa')) return;
+    largura = w;
+    if (geo.leve) desenharBase();
+  });
+  addEventListener('hashchange', abrir);
+  document.addEventListener('assinatura', abrir); // o login pode terminar depois de a página abrir
+  abrir();
+})();
