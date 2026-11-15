@@ -4796,20 +4796,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-15530",
-  "data": "2026-11-13T13:16:26Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "70.500 milhas + Taxas",
-  "volta": "70.500 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "seats-smiles-GRU-BCN-eco",
   "data": "2026-11-13T02:30:16.760388Z",
   "fonte": "seats.aero",
@@ -5019,7 +5005,7 @@
   "origem_iata": "GRU",
   "destino": "Londres",
   "destino_iata": "LHR",
-  "companhia": "Air Canada / Air France / AM",
+  "companhia": "Air France / AM / Royal Air Maroc",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "134.000 milhas + taxas",
