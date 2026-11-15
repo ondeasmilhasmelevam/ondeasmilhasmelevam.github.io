@@ -3859,21 +3859,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-GIG-DFW-exe",
-  "data": "2026-11-08T03:29:49.491996Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Dallas",
-  "destino_iata": "DFW",
-  "companhia": "American / Avianca",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "245.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-iberia-REC-MAD-exe",
   "data": "2026-11-08T03:29:49.491996Z",
   "fonte": "seats.aero",
@@ -3932,6 +3917,21 @@
   "ida": "74.000 Avios + taxas",
   "volta": "",
   "link_nome": "Iberia Plus"
+ },
+ {
+  "id": "seats-smiles-GIG-DFW-exe",
+  "data": "2026-11-08T03:29:49.491996Z",
+  "fonte": "seats.aero",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Dallas",
+  "destino_iata": "DFW",
+  "companhia": "American",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "287.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7631",
