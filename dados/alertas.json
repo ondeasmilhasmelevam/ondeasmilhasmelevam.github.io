@@ -2907,34 +2907,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-6515",
-  "data": "2026-11-13T21:12:47Z",
-  "origem": "Joanesburgo",
-  "origem_iata": "JNB",
-  "destino": "Perth",
-  "destino_iata": "PER",
-  "companhia": "South African",
-  "cabine": "Executiva",
-  "programa": "TAP Miles & Go",
-  "ida": "115.000 milhas + R$ 2.011,69",
-  "volta": "",
-  "link_nome": "TAP Miles&Go"
- },
- {
-  "id": "2008590742-15604",
-  "data": "2026-11-13T21:10:54Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Ribeirão Preto",
-  "destino_iata": "RAO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "12.100 milhas + Taxas",
-  "volta": "12.100 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7760",
   "data": "2026-11-13T18:44:45Z",
   "tipo": "promocao",
