@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9682",
+  "data": "2026-11-15T15:50:00Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Foz do Iguaçu",
+  "destino_iata": "IGU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.500 milhas + Taxas",
+  "volta": "16.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-15716",
   "data": "2026-11-15T15:45:53Z",
   "origem": "Manaus",
@@ -4346,20 +4360,6 @@
   "ida": "29.000 milhas + Taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-9598",
-  "data": "2026-11-13T15:54:56Z",
-  "origem": "Porto Seguro",
-  "origem_iata": "BPS",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "29.100 milhas + Taxas",
-  "volta": "29.100 milhas + Taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-MAO-MIA-exe",
