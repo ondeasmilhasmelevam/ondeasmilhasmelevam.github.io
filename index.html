@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=132">
+<link rel="stylesheet" href="estilo.css?v=133">
 </head>
 <body>
 <header class="bar">
@@ -316,6 +316,7 @@
         <p class="seats-fonte">Disponibilidade do <a href="https://seats.aero" target="_blank" rel="noopener">seats.aero</a>, atualizada com frequência; confirme no site do programa antes de transferir pontos.</p>
       </details>
       <div class="passagens-filtros">
+        <select id="passagens-cidade" aria-label="Minha cidade"><option value="">Saindo de todas as cidades</option></select>
         <input type="search" id="passagens-busca" placeholder="Saindo de… ex.: GRU" autocomplete="off" aria-label="Saindo de" list="passagens-cidades">
         <input type="search" id="passagens-destino" placeholder="Indo para… ex.: Lisboa" autocomplete="off" aria-label="Indo para" list="passagens-cidades">
         <datalist id="passagens-cidades"></datalist>
@@ -720,8 +721,9 @@
           <div class="rota-veredito" id="rota-veredito"></div>
           <div class="rota-bom" id="rota-bom"></div>
           <div class="rota-graf">
-            <div class="rota-graf-cab"><b>Histórico de preço</b><div class="rota-tog" role="group" aria-label="Mostrar em"><button type="button" data-u="mi" aria-pressed="true">Milhas</button><button type="button" data-u="r" aria-pressed="false">Reais</button></div></div>
+            <div class="rota-graf-cab"><b>Histórico de preço</b><div class="rota-graf-ultimo" id="rota-graf-ultimo"></div><div class="rota-tog" role="group" aria-label="Mostrar em"><button type="button" data-u="mi" aria-pressed="true">Milhas</button><button type="button" data-u="r" aria-pressed="false">Reais</button></div></div>
             <div class="rota-graf-area"><svg id="rota-svg" role="img" aria-label="Preço de cada alerta da rota ao longo do tempo"></svg><div class="rota-tip" id="rota-tip" hidden></div></div>
+            <div class="rota-graf-leg" id="rota-graf-leg"></div>
           </div>
           <p class="rota-nota" id="rota-graf-nota"></p>
           <div id="rota-meses"></div>
@@ -1280,8 +1282,8 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=121"></script>
+<script src="app.js?v=122"></script>
 <script src="funil.js?v=7"></script>
-<script type="module" src="assinatura.js?v=42"></script>
+<script type="module" src="assinatura.js?v=43"></script>
 </body>
 </html>

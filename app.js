@@ -1433,7 +1433,17 @@
   // O arquivo já vem só com o que ainda vale; aqui o prazo é conferido de novo,
   // para o item sumir na hora certa mesmo se a atualização atrasar.
   const PRAZO_PASSAGEM = 48 * 3600e3, POR_VEZ = 12;
-  const filtroPassagem = { tipo: 'passagem', busca: '', destino: '', programa: '', ordem: '', cabine: '', escopo: '', todas: false };
+  // Cidades com mais de um aeroporto contam todos (São Paulo = GRU, CGH e Viracopos). A escolhida fica no navegador.
+  const CIDADES = [['São Paulo', ['GRU', 'CGH', 'VCP']], ['Rio de Janeiro', ['GIG', 'SDU']], ['Belo Horizonte', ['CNF', 'PLU']], ['Brasília', ['BSB']],
+    ['Porto Alegre', ['POA']], ['Curitiba', ['CWB']], ['Florianópolis', ['FLN']], ['Salvador', ['SSA']], ['Recife', ['REC']],
+    ['Fortaleza', ['FOR']], ['Natal', ['NAT']], ['Maceió', ['MCZ']], ['João Pessoa', ['JPA']], ['Aracaju', ['AJU']], ['São Luís', ['SLZ']],
+    ['Teresina', ['THE']], ['Belém', ['BEL']], ['Manaus', ['MAO']], ['Goiânia', ['GYN']], ['Cuiabá', ['CGB']], ['Campo Grande', ['CGR']],
+    ['Vitória', ['VIX']], ['Uberlândia', ['UDI']], ['Londrina', ['LDB']], ['Navegantes', ['NVT']], ['Foz do Iguaçu', ['IGU']]];
+  const CIDADE_CHAVE = 'oamml-cidade';
+  let cidadeSalva = '';
+  try { cidadeSalva = localStorage.getItem(CIDADE_CHAVE) || ''; } catch (e) { /* sem armazenamento */ }
+  const iatasDaCidade = nome => (CIDADES.find(([n]) => n === nome) || [, []])[1];
+  const filtroPassagem = { tipo: 'passagem', busca: '', destino: '', programa: '', ordem: '', cabine: '', escopo: '', todas: false, cidade: cidadeSalva };
   let passagens = [];
   function haQuanto(ms) {
     const min = Math.max(1, Math.round(ms / 60e3));
@@ -1650,6 +1660,7 @@
       : (!f.cabine || (f.cabine === 'exe') === ehExecutiva(p.cabine)) &&
         (!f.escopo || (f.escopo === 'nac') === ehNacional(p)) &&
         (!busca || norm([p.origem, p.origem_iata].join(' ')).includes(busca)) &&
+        (!f.cidade || iatasDaCidade(f.cidade).includes(p.origem_iata)) &&
         (!destino || norm([p.destino, p.destino_iata].join(' ')).includes(destino)) &&
         (!f.programa || programaPassagem(p) === f.programa));
     if (!promo && f.ordem === 'milhas') lista.sort((a, b) => milhasDe(a) - milhasDe(b));
@@ -1657,7 +1668,7 @@
     $('#lista-passagens').innerHTML = mostrar.map(p => promo ? promocaoHtml(p, agora) : passagemHtml(p, agora)).join('');
     if (promo) $('#pass-credito').hidden = true;
     else { buscarFotos(); preencherFiltros(doTipo); }
-    ['#passagens-escopo', '#passagens-cabine', '#passagens-destino', '#passagens-programa', '#passagens-ordem'].forEach(id => { $(id).hidden = promo; });
+    ['#passagens-escopo', '#passagens-cabine', '#passagens-destino', '#passagens-programa', '#passagens-ordem', '#passagens-cidade'].forEach(id => { $(id).hidden = promo; });
     const campo = $('#passagens-busca');
     campo.placeholder = promo ? 'Buscar programa ou loja, ex.: Livelo' : 'Saindo de… ex.: GRU';
     campo.setAttribute('aria-label', campo.placeholder.replace(/, ex\..*/, ''));
@@ -1680,8 +1691,16 @@
     lista.forEach(p => { cidades.set(p.origem_iata, p.origem); cidades.set(p.destino_iata, p.destino); });
     const htmlCidades = [...cidades].sort((a, b) => a[1].localeCompare(b[1], 'pt'))
       .map(([iata, nome]) => `<option value="${esc(iata)}">${esc(nome)}</option>`).join('');
+    const multi = CIDADES.filter(([, i]) => i.length > 1).map(([n, i]) => `<option value="${esc(n)} (todos os aeroportos)">${i.join(', ')}</option>`).join('');
     const dl = $('#passagens-cidades');
-    if (dl.innerHTML !== htmlCidades) dl.innerHTML = htmlCidades;
+    if (dl.innerHTML !== multi + htmlCidades) dl.innerHTML = multi + htmlCidades;
+    const conta = nome => lista.filter(p => iatasDaCidade(nome).includes(p.origem_iata)).length;
+    const htmlCidade = `<option value="">Saindo de todas as cidades</option>${CIDADES.map(([n, i]) => [n, i, conta(n)])
+      .filter(([n, , k]) => k || n === filtroPassagem.cidade)
+      .map(([n, i, k]) => `<option value="${esc(n)}"${n === filtroPassagem.cidade ? ' selected' : ''}>Saindo de ${esc(n)}${i.length > 1 ? ` (${i.join(', ')})` : ''} · ${k}</option>`).join('')}`;
+    const selC = $('#passagens-cidade');
+    if (selC.innerHTML !== htmlCidade) selC.innerHTML = htmlCidade;
+    selC.classList.toggle('ativo', !!filtroPassagem.cidade);
     const programas = [...new Set(lista.map(programaPassagem).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt'));
     const htmlProgramas = `<option value="">Todos os programas</option>${programas.map(x => `<option${x === filtroPassagem.programa ? ' selected' : ''}>${esc(x)}</option>`).join('')}`;
     const sel = $('#passagens-programa');
@@ -2207,6 +2226,11 @@
     document.dispatchEvent(new Event('passagens'));
   }
   $('#passagens-busca').addEventListener('input', e => { filtroPassagem.busca = e.target.value; mostrarPassagens(); });
+  $('#passagens-cidade').addEventListener('change', e => {
+    filtroPassagem.cidade = e.target.value;
+    try { if (e.target.value) localStorage.setItem(CIDADE_CHAVE, e.target.value); else localStorage.removeItem(CIDADE_CHAVE); } catch (er) { /* só nesta visita */ }
+    mostrarPassagens();
+  });
   $('#passagens-destino').addEventListener('input', e => { filtroPassagem.destino = e.target.value; mostrarPassagens(); });
   $('#passagens-programa').addEventListener('change', e => { filtroPassagem.programa = e.target.value; mostrarPassagens(); });
   $('#passagens-ordem').addEventListener('change', e => { filtroPassagem.ordem = e.target.value; mostrarPassagens(); });

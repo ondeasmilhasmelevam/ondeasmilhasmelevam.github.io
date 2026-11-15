@@ -119,8 +119,15 @@ let radares = [];
 const normR = t => String(t ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().trim();
 const milhasDe = t => { const m = /(\d{1,3}(?:\.\d{3})+|\d+)/.exec(t || ''); return m ? Number(m[1].replace(/\./g, '')) : Infinity; };
 const ehExecutiva = c => /EXECUT|PRIMEIRA|FIRST|BUSINESS|PREMIUM/.test(normR(c));
+// "São Paulo" ou "São Paulo (todos os aeroportos)" no radar vale para todos os aeroportos da cidade.
+const CIDADES_RADAR = Object.fromEntries([['São Paulo', ['GRU', 'CGH', 'VCP']], ['Rio de Janeiro', ['GIG', 'SDU']], ['Belo Horizonte', ['CNF', 'PLU']], ['Brasília', ['BSB']], ['Porto Alegre', ['POA']], ['Curitiba', ['CWB']], ['Florianópolis', ['FLN']], ['Salvador', ['SSA']], ['Recife', ['REC']], ['Fortaleza', ['FOR']], ['Natal', ['NAT']], ['Maceió', ['MCZ']], ['João Pessoa', ['JPA']], ['Aracaju', ['AJU']], ['São Luís', ['SLZ']], ['Teresina', ['THE']], ['Belém', ['BEL']], ['Manaus', ['MAO']], ['Goiânia', ['GYN']], ['Cuiabá', ['CGB']], ['Campo Grande', ['CGR']], ['Vitória', ['VIX']], ['Uberlândia', ['UDI']], ['Londrina', ['LDB']], ['Navegantes', ['NVT']], ['Foz do Iguaçu', ['IGU']]].map(([n, i]) => [n.normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase(), i]));
+const lugarRadar = (filtro, nome, iata) => {
+  if (!filtro) return true;
+  const c = CIDADES_RADAR[normR(filtro).replace(/\s*\(.*\)\s*$/, '')];
+  return c ? c.includes(iata) : normR(`${nome} ${iata}`).includes(normR(filtro));
+};
 function bateRadar(r, p) {
-  const lugar = (filtro, nome, iata) => !filtro || normR(`${nome} ${iata}`).includes(normR(filtro));
+  const lugar = lugarRadar;
   return lugar(r.origem, p.origem, p.origem_iata) && lugar(r.destino, p.destino, p.destino_iata) &&
     (!r.cabine || (r.cabine === 'exe') === ehExecutiva(p.cabine)) &&
     (!r.programa || normR(p.programa).includes(normR(r.programa))) &&
@@ -1062,41 +1069,62 @@ function rotaGrafico() {
   if ($('#rota-corpo').hidden || !area.clientWidth) return;
   const val = d => rotaUn === 'mi' ? d.mi : d.r;
   const txt = v => rotaUn === 'mi' ? milHist(v) + ' milhas' : brR(v);
+  const curto = v => rotaUn === 'mi' ? (v >= 1000 ? Math.round(v / 1000) + 'k' : String(v)) : brR(v);
   const eixo = v => rotaUn === 'mi' ? Math.round(v / 1000) + 'k' : 'R$ ' + (v >= 1000 ? (v / 1000).toFixed(1).replace('.', ',') + 'k' : Math.round(v));
-  const W = area.clientWidth, H = W < 560 ? 230 : 280, L = 52, Rm = 18, T = 16, B = 30;
+  const W = area.clientWidth, H = W < 560 ? 250 : 300, L = 52, Rm = 22, T = 26, B = 32;
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.style.height = H + 'px';
   const todos = rotaLista(), pts = todos.filter(d => !d.fora && val(d) != null).sort((a, b) => a.t - b.t);
   const fora = todos.filter(d => d.fora).length;
-  $('#rota-graf-nota').textContent = `Cada ponto é um alerta da rota. Passe o mouse (ou toque) para ver os detalhes; o ponto verde é o melhor do período.${fora ? ` ${fora} ${fora === 1 ? 'alerta muito acima do normal ficou' : 'alertas muito acima do normal ficaram'} fora do gráfico e das contas.` : ''}`;
-  if (!pts.length) { svg.innerHTML = ''; return; }
-  const t0 = pts[0].t, t1 = pts[pts.length - 1].t;
-  const vs = pts.map(val), lo = Math.min(...vs), hi = Math.max(...vs), pad = (hi - lo) * 0.15 || hi * 0.1;
+  $('#rota-graf-nota').textContent = `Cada ponto é um alerta da rota (por trecho, sem taxas). Passe o mouse ou toque para ver os detalhes.${fora ? ` ${fora} ${fora === 1 ? 'alerta muito acima do normal ficou' : 'alertas muito acima do normal ficaram'} fora do gráfico e das contas.` : ''}`;
+  if (!pts.length) { svg.innerHTML = ''; $('#rota-graf-ultimo').innerHTML = ''; $('#rota-graf-leg').innerHTML = ''; return; }
+  const vs = pts.map(val), lo = Math.min(...vs), hi = Math.max(...vs), pad = (hi - lo) * 0.18 || hi * 0.1;
+  const ord = [...vs].sort((a, b) => a - b);
+  const bom = ord.length >= 4 ? ord[Math.max(0, Math.floor(ord.length / 4) - 1)] : null; // faixa de preço bom: os 25% mais baratos
   const y0 = Math.max(0, lo - pad), y1 = hi + pad;
+  const t0 = pts[0].t, t1 = pts[pts.length - 1].t;
   const X = t => pts.length === 1 ? (L + W - Rm) / 2 : L + (t - t0) / (t1 - t0 || 1) * (W - L - Rm);
   const Y = v => T + (1 - (v - y0) / (y1 - y0)) * (H - T - B);
-  let s = '';
+  const melhor = pts.reduce((x, d) => (val(d) < val(x) ? d : x), pts[0]), ultimo = pts[pts.length - 1];
+  const xy = d => [X(d.t), Y(val(d))];
+  let s = '<defs><linearGradient id="rota-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="ar0"/><stop offset="1" class="ar1"/></linearGradient></defs>';
   for (let i = 0; i <= 4; i++) { const v = y0 + (y1 - y0) * i / 4; s += `<line class="gr" x1="${L}" x2="${W - Rm}" y1="${Y(v)}" y2="${Y(v)}"/><text class="ax" x="${L - 8}" y="${Y(v) + 4}" text-anchor="end">${eixo(v)}</text>`; }
-  let ult = -99; pts.forEach(d => { const x = X(d.t); if (x - ult > 64) { s += `<text class="ax" x="${x}" y="${H - 8}" text-anchor="middle">${diaBr(d.data).slice(0, 5)}</text>`; ult = x; } });
-  s += `<path class="ln" d="${pts.map((d, i) => (i ? 'L' : 'M') + X(d.t).toFixed(1) + ' ' + Y(val(d)).toFixed(1)).join(' ')}"/>`;
-  const melhor = pts.reduce((x, d) => (val(d) < val(x) ? d : x), pts[0]);
+  if (bom != null) {
+    const yb = Y(bom), ym = Math.min(Y(lo) + 6, H - B);
+    s += `<rect class="faixa" x="${L}" y="${yb}" width="${W - Rm - L}" height="${Math.max(ym - yb, 4)}"/><line class="faixa-top" x1="${L}" x2="${W - Rm}" y1="${yb}" y2="${yb}"/>`;
+  }
+  const linha = pts.map((d, i) => (i ? 'L' : 'M') + X(d.t).toFixed(1) + ' ' + Y(val(d)).toFixed(1)).join(' ');
+  if (pts.length > 1) s += `<path class="area" d="${linha} L${X(t1).toFixed(1)} ${H - B} L${X(t0).toFixed(1)} ${H - B} Z"/>`;
+  s += `<path class="ln" d="${linha}"/>`;
+  // datas no eixo: a do menor preço em destaque; as outras sem encostar nela
+  const xm = X(melhor.t);
+  let ult = -99;
+  pts.forEach(d => { const x = X(d.t); if (x - ult > 58 && Math.abs(x - xm) > 46) { s += `<text class="ax" x="${x}" y="${H - 9}" text-anchor="middle">${diaBr(d.data).slice(0, 5)}</text>`; ult = x; } });
+  s += `<text class="ax forte" x="${xm}" y="${H - 9}" text-anchor="middle">${diaBr(melhor.data).slice(0, 5)}</text><line class="guia" x1="${xm}" x2="${xm}" y1="${Y(val(melhor)) + 9}" y2="${H - B}"/>`;
   s += `<line class="cruz" y1="${T}" y2="${H - B}" visibility="hidden"/>`;
-  pts.forEach((d, i) => { s += `<circle class="pt${d === melhor ? ' best' : ''}" cx="${X(d.t)}" cy="${Y(val(d))}" r="${d === melhor ? 6 : 4.5}" data-i="${i}"/>`; });
-  const xm = X(melhor.t), anc = xm > W * 0.7 ? 'end' : xm < W * 0.3 ? 'start' : 'middle';
-  s += `<text class="lbl" x="${anc === 'end' ? xm + 6 : anc === 'start' ? xm - 6 : xm}" y="${Math.min(Y(val(melhor)) + 20, H - B - 4)}" text-anchor="${anc}">${rotaUn === 'mi' ? 'menos milhas' : 'menor custo'}: ${txt(val(melhor))}</text>`;
+  pts.forEach((d, i) => { const [x, y] = xy(d); s += `<circle class="pt${d === melhor ? ' best' : ''}${d === ultimo ? ' ult' : ''}" cx="${x}" cy="${y}" r="${d === melhor ? 6.5 : d === ultimo ? 5.5 : 4}" data-i="${i}"/>`; });
+  // etiqueta do menor preço (caixa dourada) e valor do último alerta
+  const [mx, my] = xy(melhor), rot = curto(val(melhor)), larg = rot.length * 7.4 + 16;
+  const bx = Math.min(Math.max(mx - larg / 2, L), W - Rm - larg), by = my + 14 + 22 <= H - B ? my + 14 : my - 36;
+  s += `<rect class="etq" x="${bx}" y="${by}" width="${larg}" height="22" rx="6"/><text class="etq-t" x="${bx + larg / 2}" y="${by + 15}" text-anchor="middle">${rot}</text>`;
+  if (ultimo !== melhor) { const [ux, uy] = xy(ultimo); s += `<text class="val" x="${Math.min(ux, W - Rm - 4)}" y="${uy - 11}" text-anchor="${ux > W - 70 ? 'end' : 'middle'}">${curto(val(ultimo))}</text>`; }
   svg.innerHTML = s;
+  // cabeçalho: último alerta e quanto está acima do menor; legenda embaixo
+  const dif = val(melhor) ? Math.round((val(ultimo) / val(melhor) - 1) * 100) : 0;
+  $('#rota-graf-ultimo').innerHTML = `<small>Último alerta</small><b>${txt(val(ultimo))}</b><span class="${dif <= 0 ? 'ok' : ''}">${dif <= 0 ? 'é o menor do período' : `+${dif}% do menor`}</span>`;
+  $('#rota-graf-leg').innerHTML = `<span><i class="lg-ln"></i>Preço de cada alerta</span><span><i class="lg-pt"></i>Menor do período</span>${bom != null ? `<span><i class="lg-fx"></i>Preço bom: até ${txt(bom)} (os 25% mais baratos)</span>` : ''}`;
   const cruz = svg.querySelector('.cruz');
   const mostrar = k => {
-    const d = pts[k], x = X(d.t), y = Y(val(d));
+    const d = pts[k], [x, y] = xy(d);
     cruz.setAttribute('visibility', 'visible'); cruz.setAttribute('x1', x); cruz.setAttribute('x2', x);
     svg.querySelectorAll('.pt').forEach(p => p.classList.toggle('on', +p.dataset.i === k));
     const outro = rotaUn === 'mi' ? (d.r ? brR(d.r) + ' em milhas' : '') : milHist(d.mi) + ' milhas';
-    tip.innerHTML = `<b>${txt(val(d))}</b><span>${outro} · por trecho</span><span>${escR(d.prog)} · ${d.tipo}</span><small>${diaBr(d.data)} às ${d.data.slice(11, 16)}</small>${d === melhor ? `<em>⭐ ${rotaUn === 'mi' ? 'menos milhas' : 'menor custo'} do período</em>` : ''}`;
+    tip.innerHTML = `<b>${txt(val(d))}</b><span>${outro} · por trecho</span><span>${escR(d.prog)} · ${d.tipo}</span><small>${diaBr(d.data)} às ${d.data.slice(11, 16)}</small>${d === melhor ? `<em>⭐ ${rotaUn === 'mi' ? 'menos milhas' : 'menor custo'} do período</em>` : bom != null && val(d) <= bom ? '<em>✅ na faixa de preço bom</em>' : ''}`;
     tip.hidden = false;
     const tw = tip.offsetWidth;
     tip.style.left = Math.min(Math.max(x - tw / 2, 4), W - tw - 4) + 'px';
     tip.style.top = Math.max(y - tip.offsetHeight - 14, 0) + 'px';
   };
-  svg.onpointermove = e => { const r = svg.getBoundingClientRect(), mx = (e.clientX - r.left) * W / r.width; let k = 0, dm = 1e9; pts.forEach((d, i) => { const dd = Math.abs(X(d.t) - mx); if (dd < dm) { dm = dd; k = i; } }); mostrar(k); };
+  svg.onpointermove = e => { const r = svg.getBoundingClientRect(), mx2 = (e.clientX - r.left) * W / r.width; let k = 0, dm = 1e9; pts.forEach((d, i) => { const dd = Math.abs(X(d.t) - mx2); if (dd < dm) { dm = dd; k = i; } }); mostrar(k); };
   svg.onpointerleave = () => { tip.hidden = true; cruz.setAttribute('visibility', 'hidden'); svg.querySelectorAll('.pt').forEach(c => c.classList.remove('on')); };
 }
 function rotaAlertas() {
