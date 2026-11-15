@@ -6059,11 +6059,11 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GIG-LIM-eco",
+  "id": "seats-qatar-POA-LIM-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
@@ -6074,11 +6074,11 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-POA-LIM-eco",
+  "id": "seats-qatar-GIG-LIM-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
