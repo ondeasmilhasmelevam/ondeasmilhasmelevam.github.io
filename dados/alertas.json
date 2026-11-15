@@ -4321,20 +4321,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2008590742-15556",
-  "data": "2026-11-13T16:28:03Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Los Angeles",
-  "destino_iata": "LAX",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "66.000 milhas + Taxas",
-  "volta": "66.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "seats-smiles-MAO-MIA-exe",
   "data": "2026-11-13T15:43:42.544954Z",
   "fonte": "seats.aero",
