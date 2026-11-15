@@ -5020,48 +5020,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9559",
-  "data": "2026-11-13T12:31:20Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "14.200 milhas",
-  "volta": "14.200 milhas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9558",
-  "data": "2026-11-13T12:29:07Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "12.900 milhas + Taxas",
-  "volta": "12.900 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9557",
-  "data": "2026-11-13T12:29:01Z",
-  "origem": "Navegantes",
-  "origem_iata": "NVT",
-  "destino": "Campo Grande",
-  "destino_iata": "CGR",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "17.100 milhas + Taxas",
-  "volta": "17.100 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "seats-smiles-GRU-BCN-eco",
   "data": "2026-11-13T02:30:16.760388Z",
   "fonte": "seats.aero",
