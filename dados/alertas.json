@@ -5259,48 +5259,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2008590742-15524",
-  "data": "2026-11-13T11:46:37Z",
-  "origem": "Natal",
-  "origem_iata": "NAT",
-  "destino": "Frankfurt",
-  "destino_iata": "FRA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "68.600 milhas + Taxas",
-  "volta": "68.600 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9547",
-  "data": "2026-11-13T11:46:33Z",
-  "origem": "Natal",
-  "origem_iata": "NAT",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "15.000 milhas + Taxas",
-  "volta": "15.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-9546",
-  "data": "2026-11-13T11:46:26Z",
-  "origem": "Natal",
-  "origem_iata": "NAT",
-  "destino": "São Luís",
-  "destino_iata": "SLZ",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "18.300 milhas + Taxas",
-  "volta": "18.300 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "seats-smiles-GRU-BCN-eco",
   "data": "2026-11-13T02:30:16.760388Z",
   "fonte": "seats.aero",
