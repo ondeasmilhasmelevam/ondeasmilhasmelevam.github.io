@@ -5301,48 +5301,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-9545",
-  "data": "2026-11-13T11:33:08Z",
-  "origem": "Foz do Iguaçu",
-  "origem_iata": "IGU",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "23.000 milhas + Taxas",
-  "volta": "23.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-9544",
-  "data": "2026-11-13T11:32:36Z",
-  "origem": "Foz do Iguaçu",
-  "origem_iata": "IGU",
-  "destino": "Campo Grande",
-  "destino_iata": "CGR",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "16.200 milhas + Taxas",
-  "volta": "16.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-15523",
-  "data": "2026-11-13T11:32:30Z",
-  "origem": "Foz do Iguaçu",
-  "origem_iata": "IGU",
-  "destino": "Córdoba",
-  "destino_iata": "COR",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "35.200 milhas + Taxas",
-  "volta": "35.200 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "seats-smiles-GRU-BCN-eco",
   "data": "2026-11-13T02:30:16.760388Z",
   "fonte": "seats.aero",
