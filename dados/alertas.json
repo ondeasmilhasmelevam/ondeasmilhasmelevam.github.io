@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-6684",
+  "data": "2026-11-16T18:04:52Z",
+  "origem": "Seul",
+  "origem_iata": "ICN",
+  "destino": "Bangkok",
+  "destino_iata": "BKK",
+  "companhia": "Korean Air",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "75.700 milhas + Taxas R$ 151,07",
+  "volta": "75.700 milhas + Taxas R$ 235,91",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-15869",
+  "data": "2026-11-16T18:02:59Z",
+  "origem": "Maceió",
+  "origem_iata": "MCZ",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "42.100 Milhas LATAM Pass + Taxas",
+  "volta": "42.100 Milhas LATAM Pass + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2361370250-6682",
   "data": "2026-11-16T17:44:52Z",
   "origem": "Rio de Janeiro",
@@ -4469,20 +4497,6 @@
   "ida": "9.800 milhas + R$ 48,63 de taxas",
   "volta": "9.000 milhas + R$ 35,90 de taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-6589",
-  "data": "2026-11-14T18:03:02Z",
-  "origem": "Dallas",
-  "origem_iata": "DFW",
-  "destino": "Sydney",
-  "destino_iata": "SYD",
-  "companhia": "Qantas",
-  "cabine": "Primeira Classe",
-  "programa": "AAdvantage",
-  "ida": "110.000 milhas + R$ 192,13",
-  "volta": "110.000 milhas + R$ 533,71",
-  "link_nome": "AAdvantage"
  },
  {
   "id": "1290836068-7781",
