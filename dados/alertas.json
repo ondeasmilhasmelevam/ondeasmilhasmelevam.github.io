@@ -63,10 +63,10 @@
   "origem_iata": "GRU",
   "destino": "Miami",
   "destino_iata": "MIA",
-  "companhia": "American / Avianca",
+  "companhia": "Avianca",
   "cabine": "Executiva",
   "programa": "Smiles",
-  "ida": "183.000 milhas + taxas",
+  "ida": "305.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -3331,7 +3331,7 @@
   "companhia": "American / Avianca / Copa",
   "cabine": "Econômica",
   "programa": "Smiles",
-  "ida": "77.000 milhas + taxas",
+  "ida": "98.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -3391,7 +3391,7 @@
   "companhia": "American / Avianca",
   "cabine": "Executiva",
   "programa": "Smiles",
-  "ida": "271.000 milhas + taxas",
+  "ida": "272.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
