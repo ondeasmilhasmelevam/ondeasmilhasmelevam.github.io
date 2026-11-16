@@ -33,9 +33,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
+<script>(function(){var h=document.documentElement;try{var v=+localStorage.getItem('oamml-entrada')||0;if(Date.now()-v<7*864e5)h.classList.add('sem-entrada');else localStorage.setItem('oamml-entrada',String(Date.now()))}catch(e){}setTimeout(function(){h.classList.add('sem-entrada')},2400)})()</script>
+<style>
+/* Entrada: o logo sai do desfoque no fundo escuro e o site aparece. Some pela animação e, por garantia, pelo relógio
+   (2,4 s) mesmo se a animação não rodar; uma vez a cada 7 dias (localStorage oamml-entrada); não aparece para quem pede menos movimento. */
+#entrada{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#070C17;pointer-events:none;animation:entrada-sai .55s ease 1.55s forwards}
+#entrada div{position:relative;width:148px;height:148px}
+#entrada img{width:100%;height:100%;border-radius:50%;opacity:0;filter:blur(16px);transform:scale(.9);animation:entrada-logo 1s cubic-bezier(.2,.8,.2,1) .1s forwards}
+#entrada div::after{content:'';position:absolute;inset:-14px;border-radius:50%;box-shadow:0 0 0 1.5px rgba(226,180,88,.0),0 0 70px rgba(226,180,88,0);animation:entrada-brilho 1.2s ease .55s forwards}
+@keyframes entrada-logo{60%{opacity:1}to{opacity:1;filter:blur(0);transform:none}}
+@keyframes entrada-brilho{50%{box-shadow:0 0 0 1.5px rgba(226,180,88,.55),0 0 70px rgba(226,180,88,.35)}to{box-shadow:0 0 0 1.5px rgba(226,180,88,.25),0 0 50px rgba(226,180,88,.15)}}
+@keyframes entrada-sai{to{opacity:0;visibility:hidden}}
+.sem-entrada #entrada{display:none}
+@media (prefers-reduced-motion:reduce){#entrada{display:none}}
+</style>
 <link rel="stylesheet" href="estilo.css?v=139">
 </head>
 <body>
+<div id="entrada" aria-hidden="true"><div><img src="img/logo-entrada.webp" alt="" width="148" height="148" fetchpriority="high"></div></div>
 <header class="bar">
   <div class="wrap bar-in">
     <a class="bar-mark" href="#topo" aria-label="Onde as Milhas Me Levam, início">
