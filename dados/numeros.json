@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-16T17:29:33.774144Z",
+ "atualizado": "2026-11-16T17:35:58.519570Z",
  "dias": 30,
  "passagens": 2832,
  "promocoes": 164,
@@ -81,11 +81,12 @@
    "programa": "Smiles",
    "data": "2026-11-03T14:21:47Z",
    "milhas": 43200,
-   "nivel": "espetacular"
+   "nivel": "espetacular",
+   "foto": "img/rotas/BEL-PUJ.jpg"
   }
  ],
  "semana": {
-  "passagens": 1420,
+  "passagens": 1416,
   "destaques": [
    {
     "id": "3761373661-9492",
