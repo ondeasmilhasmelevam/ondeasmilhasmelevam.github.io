@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "Onde as Milhas Me Levam",
+  "short_name": "Onde as Milhas",
+  "description": "Passagens com milhas na hora em que aparecem, promoções de pontos e ferramentas para escolher cartão.",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "start_url": "/?utm_source=app",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#070C17",
+  "theme_color": "#070C17",
+  "categories": ["travel", "finance"],
+  "icons": [
+    { "src": "/img/icone-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/img/icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/img/icone-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/img/icone-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Passagens", "url": "/?utm_source=app#passagens", "icons": [{ "src": "/img/icone-192.png", "sizes": "192x192" }] },
+    { "name": "Promoções", "url": "/?utm_source=app#promocoes", "icons": [{ "src": "/img/icone-192.png", "sizes": "192x192" }] },
+    { "name": "Hoje", "url": "/?utm_source=app#hoje", "icons": [{ "src": "/img/icone-192.png", "sizes": "192x192" }] }
+  ]
+}

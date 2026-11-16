@@ -2205,3 +2205,37 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .pass-dia:disabled{opacity:.35;cursor:default;text-decoration:line-through}
 .pass-dia:focus-visible{outline:2px solid var(--ouro-lt);outline-offset:1px}
 .pass-dica{margin:0;font-size:12.5px;color:var(--ash);text-align:center}
+
+/* ---------- Site como app (instalar.js) ---------- */
+.app-aviso{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:59;display:flex;align-items:center;gap:12px;
+  max-width:520px;margin:0 auto;padding:12px 12px 12px 14px;border-radius:18px;border:1px solid rgba(226,180,88,.45);
+  background:var(--ink-2);box-shadow:0 18px 48px rgba(0,0,0,.55),0 0 0 1px rgba(0,0,0,.2);
+  transform:translateY(140%);opacity:0;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .35s ease}
+.app-aviso.on{transform:none;opacity:1}
+.app-aviso img{flex:0 0 48px;width:48px;height:48px;border-radius:12px}
+.app-aviso div{flex:1;min-width:0;display:grid;line-height:1.3}
+.app-aviso b{font-size:14.5px;color:var(--rice)}
+.app-aviso span{font-size:12.5px;color:var(--ash)}
+.app-sim,.app-ok{flex:0 0 auto;font:inherit;font-weight:800;font-size:13.5px;padding:10px 14px;border-radius:12px;border:0;cursor:pointer;
+  color:var(--sobre-ouro);background:linear-gradient(135deg,var(--ouro-lt),var(--ouro) 55%,var(--ouro-dk));white-space:nowrap}
+.app-x{flex:0 0 auto;width:30px;height:30px;padding:0;border-radius:9px;border:1px solid var(--line);background:none;color:var(--ash);font-size:13px;cursor:pointer}
+.app-aviso .app-x{align-self:flex-start;margin:-4px -4px 0 0}
+.app-passos{width:min(440px,calc(100vw - 24px));max-height:calc(100dvh - 32px);padding:0;border:1px solid var(--line);border-radius:22px;background:var(--ink-2);color:var(--rice);overflow:auto}
+.app-passos::backdrop{background:rgba(3,6,12,.72)}
+.app-passos-in{position:relative;display:grid;justify-items:center;gap:6px;padding:26px 20px 20px;text-align:center}
+.app-passos-in>.app-x{position:absolute;top:12px;right:12px}
+.app-passos-in>img{border-radius:16px;box-shadow:0 0 0 2px rgba(226,180,88,.5),0 0 28px rgba(226,180,88,.2)}
+.app-passos h2{margin:10px 0 4px;font-family:var(--display);font-size:19px;letter-spacing:.03em;color:var(--rice)}
+.app-passos ol{list-style:none;margin:6px 0 4px;padding:0;display:grid;gap:10px;width:100%;text-align:left}
+.app-passos li{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:14px;background:var(--ink-3);border:1px solid var(--line)}
+.app-passos li p{margin:0;font-size:14.5px;line-height:1.5;color:var(--ash)}
+.app-passos li b{color:var(--rice)}
+.app-n{flex:0 0 26px;height:26px;display:grid;place-items:center;border-radius:50%;font-weight:800;font-size:13px;color:var(--sobre-ouro);background:var(--ouro)}
+.app-ic{display:inline-grid;place-items:center;width:26px;height:26px;vertical-align:-7px;border-radius:7px;background:rgba(226,180,88,.14);color:var(--ouro)}
+.app-ic svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.app-ic svg .cheio{fill:currentColor;stroke:none}
+.app-nota{margin:2px 0 0;font-size:12.5px;line-height:1.5;color:var(--ash-dim)}
+.app-copiar{font:inherit;font-weight:700;font-size:13.5px;padding:9px 14px;border-radius:12px;border:1px solid rgba(226,180,88,.5);background:none;color:var(--ouro);cursor:pointer}
+.app-ok{margin-top:8px;width:100%;padding:12px}
+.tabs a.menu-instalar{color:var(--ouro)}
+@media (max-width:380px){ .app-aviso span{display:none} }
