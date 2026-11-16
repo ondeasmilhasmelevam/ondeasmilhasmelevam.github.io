@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-16T11:38:59.808325Z",
+ "atualizado": "2026-11-16T11:45:14.092042Z",
  "dias": 30,
- "passagens": 2708,
+ "passagens": 2722,
  "promocoes": 156,
- "destinos": 163,
- "executiva": 574,
+ "destinos": 165,
+ "executiva": 576,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,17 +85,17 @@
   }
  ],
  "semana": {
-  "passagens": 1386,
+  "passagens": 1396,
   "destaques": [
    {
-    "id": "3761373661-9203",
+    "id": "3761373661-9492",
     "origem": "Curitiba",
     "origem_iata": "CWB",
     "destino": "Londrina",
     "destino_iata": "LDB",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-09T11:44:48Z",
+    "data": "2026-11-12T13:28:41Z",
     "milhas": 3500,
     "nivel": "",
     "grupo": "Nacional",
@@ -524,6 +524,19 @@
     "regiao": "caribe"
    },
    {
+    "id": "2008590742-15813",
+    "origem": "Belo Horizonte",
+    "origem_iata": "CNF",
+    "destino": "Boston",
+    "destino_iata": "BOS",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-16T11:41:54Z",
+    "milhas": 69700,
+    "nivel": "bom",
+    "regiao": "america-do-norte"
+   },
+   {
     "id": "2008590742-15126",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -563,14 +576,14 @@
     "regiao": "europa"
    },
    {
-    "id": "3761373661-9203",
+    "id": "3761373661-9492",
     "origem": "Curitiba",
     "origem_iata": "CWB",
     "destino": "Londrina",
     "destino_iata": "LDB",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-09T11:44:48Z",
+    "data": "2026-11-12T13:28:41Z",
     "milhas": 3500,
     "nivel": "",
     "regiao": "brasil"
@@ -641,19 +654,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9205",
-    "origem": "Curitiba",
-    "origem_iata": "CWB",
-    "destino": "Porto Alegre",
-    "destino_iata": "POA",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-09T11:44:59Z",
-    "milhas": 6000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9279",
     "origem": "Uberlândia",
     "origem_iata": "UDI",
@@ -662,6 +662,19 @@
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
     "data": "2026-11-09T21:23:54Z",
+    "milhas": 6000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9510",
+    "origem": "Curitiba",
+    "origem_iata": "CWB",
+    "destino": "Porto Alegre",
+    "destino_iata": "POA",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-12T14:15:32Z",
     "milhas": 6000,
     "nivel": "",
     "regiao": "brasil"
@@ -923,19 +936,6 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-16T10:56:57Z",
     "milhas": 10000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9255",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
-    "destino": "Rio de Janeiro",
-    "destino_iata": "SDU",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-09T17:34:55Z",
-    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },
