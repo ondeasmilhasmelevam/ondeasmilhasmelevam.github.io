@@ -2259,3 +2259,33 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .app-ok{margin-top:8px;width:100%;padding:12px}
 .tabs a.menu-instalar{color:var(--ouro)}
 @media (max-width:380px){ .app-aviso span{display:none} }
+
+/* ---------- Perguntas frequentes (#duvidas) ---------- */
+.faq{display:grid;gap:10px;max-width:820px}
+.faq-item{border:1px solid var(--line);border-radius:14px;background:var(--ink-2);overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 18px;font-weight:700;font-size:15.5px;color:var(--rice)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';flex:0 0 26px;height:26px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line);color:var(--ouro);font-size:18px;font-weight:600;transition:transform .2s ease}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item[open]{border-color:rgba(226,180,88,.45)}
+.faq-item summary:hover{color:var(--ouro-lt)}
+.faq-item p{margin:0;padding:0 18px 16px;font-size:15px;line-height:1.65;color:var(--ash)}
+.faq-item p a{color:var(--ouro)}
+
+/* Quanto você economiza (abaixo do "valor das milhas") */
+.pass-economia{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px;margin:-4px 0 10px;font-size:13px;color:var(--ash)}
+.pass-economia span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro)}
+.pass-economia b{font-size:15px;color:var(--rice)}
+.pass-economia em{font-style:normal;font-weight:800;font-size:12.5px;padding:2px 9px;border-radius:999px;color:#3ccf91;background:rgba(60,207,145,.1);border:1px solid rgba(60,207,145,.35)}
+.pass-economia.caro em{color:var(--alerta);background:rgba(255,154,122,.1);border-color:rgba(255,154,122,.35)}
+.pass-economia small{flex-basis:100%;font-size:11.5px}
+:root[data-theme="light"] .pass-economia em{color:#17734A}
+
+/* Receber no celular (Rota Vigiada) */
+.push-card{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin:0 0 18px;padding:14px 16px;border-radius:16px;border:1px solid rgba(226,180,88,.45);background:linear-gradient(135deg,rgba(226,180,88,.1),rgba(226,180,88,.02))}
+.push-ic{font-size:26px;line-height:1}
+.push-card>div:nth-child(2){flex:1 1 220px;display:grid;gap:2px}
+.push-card b{font-size:15.5px;color:var(--rice)}
+.push-card small{font-size:13px;line-height:1.45;color:var(--ash)}
+.push-botoes{display:flex;gap:8px;flex-wrap:wrap}
+.push-botoes .cta{padding:10px 16px;font-size:14px}

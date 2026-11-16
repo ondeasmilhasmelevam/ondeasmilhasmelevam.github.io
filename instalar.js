@@ -3,7 +3,7 @@
 // Quem já abriu pelo ícone (modo app) não vê nada disto. "Agora não" esconde o aviso por 21 dias;
 // o item "Instalar o app" do menu continua lá para quando a pessoa quiser.
 (() => {
-  if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
     addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
   }
   const emApp = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;

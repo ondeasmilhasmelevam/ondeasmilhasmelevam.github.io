@@ -1652,14 +1652,21 @@
   let fotos = {};
   try { const f = JSON.parse(localStorage.getItem(FOTOS_CHAVE)); if (f && Date.now() - f.em < FOTOS_VALIDADE) fotos = f.fotos; } catch (e) { /* sem cache */ }
   const fotosPedidas = new Set();
+  // Uma foto escolhida a dedo para cada aeroporto (dados/fotos-aeroportos.json, a mesma dos stories).
+  // Vale antes de qualquer busca e da memória do celular; só aeroporto fora da lista cai na busca automática.
+  let fotosFixas = null;
+  const carregarFixas = fetch('dados/fotos-aeroportos.json?v=1').then(r => r.json()).then(d => { fotosFixas = d.fotos || {}; }).catch(() => { fotosFixas = {}; });
+  const fotoFixa = c => { const f = fotosFixas && fotosFixas[String(c).split('|')[1]]; return f ? f.url : null; };
+  const fotosDe = c => { const f = fotoFixa(c); return f ? [f] : fotos[c] || []; };
   function pintarFotos() {
-    const usadas = new Set();
     let alguma = false;
     // Metade da origem e metade do destino; a faixa aparece quando as duas já têm foto.
+    // Cada aeroporto tem a sua foto fixa: ela se repete entre cartões, só não nas duas metades do mesmo cartão.
     document.querySelectorAll('#lista-passagens .pass-foto, #inicio-passagens .pass-foto, #inicio-destaque .pass-foto').forEach(faixa => {
+      const usadas = new Set();
       let metades = 0;
       faixa.querySelectorAll('[data-cidade]').forEach(el => {
-        const url = (fotos[el.dataset.cidade] || []).find(u => !usadas.has(u));
+        const url = fotosDe(el.dataset.cidade).find(u => !usadas.has(u));
         el.style.backgroundImage = url ? `url("${url}")` : '';
         if (url) { usadas.add(url); metades++; }
       });
@@ -1669,13 +1676,13 @@
     $('#pass-credito').hidden = !alguma;
     const usadasGuias = new Set();
     document.querySelectorAll('#guias-lista [data-foto]').forEach(el => {
-      const url = (fotos[el.dataset.foto] || []).find(u => !usadasGuias.has(u));
+      const url = (l => l.find(u => !usadasGuias.has(u)) || l[0])(fotosDe(el.dataset.foto));
       el.style.backgroundImage = url ? `url("${url}")` : '';
       if (url) usadasGuias.add(url);
     });
     const usadasHoje = new Set();
     document.querySelectorAll('#hoje [data-foto]').forEach(el => {
-      const url = (fotos[el.dataset.foto] || []).find(u => !usadasHoje.has(u));
+      const url = (l => l.find(u => !usadasHoje.has(u)) || l[0])(fotosDe(el.dataset.foto));
       el.style.backgroundImage = url ? `url("${url}")` : '';
       if (url) usadasHoje.add(url);
     });
@@ -1735,10 +1742,11 @@
     return [...new Set(lista)];
   }
   async function buscarFotos() {
+    await carregarFixas;
     pintarFotos();
     const faltam = [...new Set([...document.querySelectorAll('#lista-passagens .pass-foto [data-cidade], #inicio-passagens .pass-foto [data-cidade], #inicio-destaque .pass-foto [data-cidade]')].map(el => el.dataset.cidade)
       .concat([...document.querySelectorAll('#hoje [data-foto], #guias-lista [data-foto]')].map(el => el.dataset.foto)))]
-      .filter(c => c && !(c in fotos) && !fotosPedidas.has(c));
+      .filter(c => c && !fotoFixa(c) && !(c in fotos) && !fotosPedidas.has(c));
     if (!faltam.length) return;
     faltam.forEach(c => fotosPedidas.add(c));
     const lugares = await lugaresDosAeroportos(faltam.map(c => c.split('|')));
@@ -1941,8 +1949,60 @@
   function custoHtml(p) {
     try {
       const v = custoReais(p), teto = tetoDe(p.programa);
-      return v ? `<p class="pass-custo" title="Quanto custariam essas milhas se você comprasse cada 1.000 por R$ ${teto} (um bom preço). As taxas são à parte."><span>Valor das milhas</span><b>≈ ${esc(brl0(v))}</b><small>comprando cada 1.000 milhas por R$ ${esc(String(teto))} · taxas à parte</small></p>` : '';
+      return v ? `<p class="pass-custo" title="Quanto custariam essas milhas se você comprasse cada 1.000 por R$ ${teto} (um bom preço). As taxas são à parte."><span>Valor das milhas</span><b>≈ ${esc(brl0(v))}</b><small>comprando cada 1.000 milhas por R$ ${esc(String(teto))} · taxas à parte</small></p>${economiaHtml(p, v)}` : '';
     } catch (e) { return ''; }
+  }
+
+  // Quanto você economiza: o mesmo trecho em dinheiro, pela planilha "Quanto custa" (aba em reais: ida e volta
+  // na econômica, coluna NORMAL; a metade vale por trecho). Só econômica saindo do Brasil e destino na planilha.
+  const REGIAO_UF = {};
+  Object.entries({ Sudeste: 'São Paulo|Rio de Janeiro|Minas Gerais|Espírito Santo', Sul: 'Paraná|Santa Catarina|Rio Grande do Sul',
+    Nordeste: 'Bahia|Pernambuco|Ceará|Rio Grande do Norte|Paraíba|Alagoas|Sergipe|Piauí|Maranhão',
+    Norte: 'Pará|Amazonas|Amapá|Roraima|Acre|Rondônia|Tocantins', 'Centro-Oeste': 'Goiás|Distrito Federal|Mato Grosso|Mato Grosso do Sul' })
+    .forEach(([r, ufs]) => ufs.split('|').forEach(uf => { REGIAO_UF[uf] = r; }));
+  const ALIAS_DINHEIRO = { 'NOVA IORQUE': 'NOVA YORK', 'JOANESBURGO': 'JOHANESBURGO', 'AMSTERDAM': 'AMSTERDA', 'MADRID': 'MADRI',
+    'NOVA DELI': 'NOVA DELHI', 'TORONTO': 'CANADA', 'MONTREAL': 'CANADA', 'VANCOUVER': 'CANADA', 'WASHINGTON, D.C.': 'WASHINGTON' };
+  let dinheiro = null, dinheiroPedido = false;
+  async function carregarDinheiro() {
+    if (dinheiroPedido) return;
+    dinheiroPedido = true;
+    const g = await lerFonte(FONTES_QUANTO.reais);
+    const reais = v => { const m = String(v || '').match(/([\d.]+),(\d{2})/); return m ? +m[1].replace(/\./g, '') : 0; };
+    dinheiro = {};
+    lerTabela(g, 3, ['top', 'otimo', 'normal', 'caro']).forEach(({ linha, cols }) => {
+      const pais = limpa(linha[1]), cidade = limpa(linha[2]);
+      const c = cols.find(x => x.nivel === 'normal');
+      const v = c && reais(linha[c.col]);
+      if (v) dinheiro[norm(cidade && cidade !== '-' ? cidade : pais)] = v;
+    });
+    if (Object.keys(dinheiro).length) mostrarPassagens();
+  }
+  function dinheiroTrecho(p) {
+    if (!dinheiro) { carregarDinheiro(); return 0; }
+    if (ehExecutiva(p.cabine) || !UF_AEROPORTO[p.origem_iata]) return 0;
+    let chave;
+    const ufD = p.destino_iata === 'FEN' ? 'Noronha' : UF_AEROPORTO[p.destino_iata];
+    if (ufD) { // nacional: por região ("Sudeste p/ Nordeste")
+      const rO = REGIAO_UF[UF_AEROPORTO[p.origem_iata]], rD = ufD === 'Noronha' ? 'Noronha' : REGIAO_UF[ufD];
+      chave = rO && rD ? norm(`${rO} p/ ${rD}`) : '';
+    } else {
+      const n = norm(p.destino);
+      chave = ALIAS_DINHEIRO[n] || n;
+    }
+    const rt = chave && dinheiro[chave];
+    return rt ? Math.round(rt / 2) : 0;
+  }
+  function economiaHtml(p, milhasReais) {
+    const din = dinheiroTrecho(p);
+    if (!din) return '';
+    const t = String(p.ida || '').match(/R\$\s*([\d.]+,\d{2})/);
+    const taxa = t ? +t[1].replace(/\./g, '').replace(',', '.') : 0;
+    const comMilhas = milhasReais + taxa, dif = Math.round(din - comMilhas);
+    const nota = taxa ? 'milhas + taxas' : 'antes das taxas';
+    const ajuda = `Em dinheiro: metade do preço normal de ida e volta na econômica (${brl0(din * 2)}), pela nossa tabela de preços. Estimativa; confira o preço do dia.`;
+    return dif > 0
+      ? `<p class="pass-economia" title="${esc(ajuda)}"><span>Em dinheiro</span><b>≈ ${esc(brl0(din))}</b><em>economia ≈ ${esc(brl0(dif))}</em><small>por trecho · ${nota}</small></p>`
+      : `<p class="pass-economia caro" title="${esc(ajuda)}"><span>Em dinheiro</span><b>≈ ${esc(brl0(din))}</b><em>em dinheiro sai mais barato</em><small>por trecho · ${nota}</small></p>`;
   }
 
   // Preço normal da rota: a mediana das milhas dos alertas dos últimos meses (dados/historico.json),

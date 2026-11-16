@@ -25,6 +25,7 @@
 <link rel="icon" href="img/icone-192.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "Onde as Milhas Me Levam", "url": "https://ondeasmilhasmelevam.com.br/", "inLanguage": "pt-BR"}, {"@type": "Organization", "name": "Onde as Milhas Me Levam", "url": "https://ondeasmilhasmelevam.com.br/", "logo": "https://ondeasmilhasmelevam.com.br/img/icone-512.png", "sameAs": ["https://www.instagram.com/ondeasmilhasmelevam/"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "O que é o Onde as Milhas Me Levam?", "acceptedAnswer": {"@type": "Answer", "text": "Um site que mostra passagens com milhas assim que elas aparecem, com o preço em milhas, a companhia, a cabine e se o preço está bom no nosso Termômetro. Também tem ferramentas grátis: comparador de cartões, tabela de preços das milhas, guias de destinos e telefones das companhias."}}, {"@type": "Question", "name": "Preciso ter milhas para aproveitar os alertas?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Você pode usar pontos do cartão de crédito (transferindo para o programa da companhia) ou comprar milhas. Em cada passagem mostramos quanto custariam as milhas comprando o milheiro a um bom preço, para você comparar com o preço em dinheiro."}}, {"@type": "Question", "name": "O que a assinatura libera?", "acceptedAnswer": {"@type": "Answer", "text": "Todas as datas de ida e volta de cada passagem, o link direto para emitir no programa, as calculadoras sem limite, o histórico de preços de cada rota e a Rota Vigiada (e-mail quando aparecer passagem na rota que você escolher). O comparador de cartões e as ferramentas grátis continuam abertos para todo mundo."}}, {"@type": "Question", "name": "Quanto custa e como pago?", "acceptedAnswer": {"@type": "Answer", "text": "Há plano mensal e plano anual (o anual sai mais barato por mês). Você paga no Pix ou no cartão, e o anual pode ser parcelado. Os valores atualizados e as promoções do momento ficam na página Assinar."}}, {"@type": "Question", "name": "A assinatura renova sozinha?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Não há renovação automática: avisamos por e-mail antes de vencer, e você decide se quer continuar."}}, {"@type": "Question", "name": "E se eu não gostar?", "acceptedAnswer": {"@type": "Answer", "text": "Você tem garantia de 7 dias. Peça pelo e-mail e devolvemos o valor inteiro."}}, {"@type": "Question", "name": "Como entro na minha conta?", "acceptedAnswer": {"@type": "Answer", "text": "Use o mesmo e-mail do pagamento. Dá para entrar com o Google ou pedir um código de 7 números no e-mail, em Assinar / Entrar."}}, {"@type": "Question", "name": "As passagens dos alertas são garantidas?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Os assentos em milhas mudam muito rápido e podem acabar a qualquer momento. Antes de transferir ou comprar pontos, confira a disponibilidade no site do programa."}}, {"@type": "Question", "name": "Como eu emito a passagem?", "acceptedAnswer": {"@type": "Answer", "text": "Toque nas datas do alerta: o link abre a busca já preenchida no site do programa. Lá, entre na sua conta para ver o preço em milhas e concluir a emissão. O passo a passo está em Como emitir."}}, {"@type": "Question", "name": "Dá para usar o site como aplicativo no celular?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, sem passar pela loja de aplicativos. No iPhone: abra o site no Safari, toque em Compartilhar e em Adicionar à Tela de Início. No Android: abra no Chrome, toque no menu ⋮ e em Instalar app. O botão Instalar o app, no menu, mostra o passo a passo."}}, {"@type": "Question", "name": "Tem alguma opção grátis?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. O Alerta grátis manda por e-mail, uma vez por semana, uma seleção de passagens. As ferramentas, os guias e os telefones também são grátis."}}, {"@type": "Question", "name": "Ainda tenho dúvida. Como falo com vocês?", "acceptedAnswer": {"@type": "Answer", "text": "Chame a gente no WhatsApp."}}]}]}</script>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Onde as Milhas">
@@ -47,7 +48,7 @@
 .sem-entrada #entrada{display:none}
 @media (prefers-reduced-motion:reduce){#entrada{display:none}}
 </style>
-<link rel="stylesheet" href="estilo.css?v=140">
+<link rel="stylesheet" href="estilo.css?v=143">
 </head>
 <body>
 <div id="entrada" aria-hidden="true"><div><img src="img/logo-entrada.webp" alt="" width="148" height="148" fetchpriority="high"></div></div>
@@ -108,6 +109,7 @@
       <details class="menu-grupo">
         <summary class="menu-grupo-btn">Ajuda</summary>
         <div class="menu-sub">
+          <a href="#duvidas" title="Perguntas frequentes"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 1 1 3.6 2.4c-.7.3-1.1.9-1.1 1.6v.5M12 16.8v.2"/></svg><span>Perguntas frequentes</span></a>
           <a href="#contatos" title="Contatos"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3.5l2 5-2.4 1.5a11 11 0 0 0 5.4 5.4L15 13.5l5 2V19a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Contatos</span></a>
           <a href="#painel" title="Painel" id="menu-painel" hidden><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Painel</span></a>
         </div>
@@ -669,7 +671,7 @@
       <div class="sec-head">
         <p class="eyebrow"><span class="ao-vivo"></span>Rota Vigiada · para assinantes</p>
         <h2>Avise quando aparecer a minha viagem</h2>
-        <p class="sec-note">Diga de onde sai, para onde quer ir e até quantas milhas topa pagar. Quando uma passagem assim aparecer nos alertas, você recebe um e-mail com as datas e o link para emitir (no máximo um e-mail a cada 3 horas, com tudo o que achou).</p>
+        <p class="sec-note">Diga de onde sai, para onde quer ir e até quantas milhas topa pagar. Quando uma passagem assim aparecer nos alertas, você recebe um e-mail com as datas e o link para emitir (no máximo um e-mail a cada 3 horas, com tudo o que achou) e, se ativar, um aviso no celular na hora.</p>
       </div>
       <div class="radar-fechado" id="radar-fechado">
         <p>🔒 A Rota Vigiada é exclusiva para assinantes.</p>
@@ -677,6 +679,11 @@
         <small>Já assina? <a href="#assinar">Entre aqui</a> com o e-mail do pagamento.</small>
       </div>
       <div id="radar-aberto" hidden>
+        <div class="push-card" id="push-card">
+          <span class="push-ic" aria-hidden="true">📲</span>
+          <div><b>Receber no celular</b><small id="push-info">Aviso na tela do celular assim que aparecer passagem nas suas rotas, além do e-mail.</small></div>
+          <div class="push-botoes"><button type="button" class="cta cta-a" id="push-ligar">Ativar</button><button type="button" class="cta" id="push-teste" hidden>Enviar teste</button></div>
+        </div>
         <form class="radar-form" id="radar-form">
           <label>Saindo de<input id="radar-origem" list="passagens-cidades" placeholder="ex.: GRU ou qualquer" autocomplete="off"></label>
           <label>Indo para<input id="radar-destino" list="passagens-cidades" placeholder="ex.: Lisboa ou qualquer" autocomplete="off"></label>
@@ -770,7 +777,7 @@
             <span class="rota-cab" id="rota-cab"></span>
             <h3 id="rota-titulo"></h3>
             <p id="rota-meta"></p>
-            <div class="rota-acoes"><a class="cta cta-a" id="rota-radar" href="#radar">🔔 Me avise quando aparecer</a><button type="button" class="cta" id="rota-copiar">🔗 Copiar link da rota</button></div>
+            <div class="rota-acoes"><a class="cta cta-a" id="rota-radar" href="#radar">🔔 Me avise quando aparecer</a><button type="button" class="cta" id="rota-copiar">🔗 Compartilhar rota</button></div>
           </div>
           <div class="rota-chips" id="rota-chips" role="group" aria-label="Filtrar por programa"></div>
           <div class="rota-cards" id="rota-cards"></div>
@@ -1244,6 +1251,28 @@
       <p class="fine">Atendimento das próprias empresas; números podem mudar. Para dúvidas de passagens com milhas, tenha em mãos o localizador da reserva e o número do seu cadastro no programa.</p>
     </section>
 
+    <section id="duvidas" data-pagina="duvidas">
+      <div class="sec-head">
+        <p class="eyebrow">Ajuda</p>
+        <h2>Perguntas frequentes</h2>
+        <p class="sec-note">O que mais perguntam sobre os alertas, a assinatura e como emitir.</p>
+      </div>
+      <div class="faq">
+        <details class="faq-item"><summary>O que é o Onde as Milhas Me Levam?</summary><p>Um site que mostra passagens com milhas assim que elas aparecem, com o preço em milhas, a companhia, a cabine e se o preço está bom no nosso Termômetro. Também tem ferramentas grátis: comparador de cartões, tabela de preços das milhas, guias de destinos e telefones das companhias.</p></details>
+        <details class="faq-item"><summary>Preciso ter milhas para aproveitar os alertas?</summary><p>Não. Você pode usar pontos do cartão de crédito (transferindo para o programa da companhia) ou comprar milhas. Em cada passagem mostramos quanto custariam as milhas comprando o milheiro a um bom preço, para você comparar com o preço em dinheiro.</p></details>
+        <details class="faq-item"><summary>O que a assinatura libera?</summary><p>Todas as datas de ida e volta de cada passagem, o link direto para emitir no programa, as calculadoras sem limite, o histórico de preços de cada rota e a Rota Vigiada (e-mail quando aparecer passagem na rota que você escolher). O comparador de cartões e as ferramentas grátis continuam abertos para todo mundo.</p></details>
+        <details class="faq-item"><summary>Quanto custa e como pago?</summary><p>Há plano mensal e plano anual (o anual sai mais barato por mês). Você paga no Pix ou no cartão, e o anual pode ser parcelado. Os valores atualizados e as promoções do momento ficam na página <a href="#assinar">Assinar</a>.</p></details>
+        <details class="faq-item"><summary>A assinatura renova sozinha?</summary><p>Não. Não há renovação automática: avisamos por e-mail antes de vencer, e você decide se quer continuar.</p></details>
+        <details class="faq-item"><summary>E se eu não gostar?</summary><p>Você tem garantia de 7 dias. Peça pelo e-mail e devolvemos o valor inteiro.</p></details>
+        <details class="faq-item"><summary>Como entro na minha conta?</summary><p>Use o mesmo e-mail do pagamento. Dá para entrar com o Google ou pedir um código de 7 números no e-mail, em <a href="#assinar">Assinar / Entrar</a>.</p></details>
+        <details class="faq-item"><summary>As passagens dos alertas são garantidas?</summary><p>Não. Os assentos em milhas mudam muito rápido e podem acabar a qualquer momento. Antes de transferir ou comprar pontos, confira a disponibilidade no site do programa.</p></details>
+        <details class="faq-item"><summary>Como eu emito a passagem?</summary><p>Toque nas datas do alerta: o link abre a busca já preenchida no site do programa. Lá, entre na sua conta para ver o preço em milhas e concluir a emissão. O passo a passo está em <a href="#guia">Como emitir</a>.</p></details>
+        <details class="faq-item"><summary>Dá para usar o site como aplicativo no celular?</summary><p>Sim, sem passar pela loja de aplicativos. No iPhone: abra o site no Safari, toque em Compartilhar e em Adicionar à Tela de Início. No Android: abra no Chrome, toque no menu ⋮ e em Instalar app. O botão <b>Instalar o app</b>, no menu, mostra o passo a passo.</p></details>
+        <details class="faq-item"><summary>Tem alguma opção grátis?</summary><p>Sim. O <a href="#gratis">Alerta grátis</a> manda por e-mail, uma vez por semana, uma seleção de passagens. As ferramentas, os guias e os telefones também são grátis.</p></details>
+        <details class="faq-item"><summary>Ainda tenho dúvida. Como falo com vocês?</summary><p>Chame a gente no <a href="https://wa.me/5521972171131?text=Ol%C3%A1!%20Vim%20do%20site%20Onde%20as%20Milhas%20Me%20Levam%20e%20tenho%20uma%20d%C3%BAvida." target="_blank" rel="noopener">WhatsApp</a>.</p></details>
+      </div>
+    </section>
+
     <section id="como" data-pagina="como">
       <div class="sec-head">
         <p class="eyebrow">Transparência</p>
@@ -1348,10 +1377,10 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=127"></script>
+<script src="app.js?v=129"></script>
 <script src="funil.js?v=7"></script>
-<script type="module" src="assinatura.js?v=45"></script>
+<script type="module" src="assinatura.js?v=47"></script>
 <script src="mapa.js?v=9" defer></script>
-<script src="instalar.js?v=1" defer></script>
+<script src="instalar.js?v=2" defer></script>
 </body>
 </html>

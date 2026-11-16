@@ -1150,12 +1150,99 @@ document.querySelectorAll('.rota-tog button').forEach(b => b.addEventListener('c
   document.querySelectorAll('.rota-tog button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
   if (rotaDados) rotaGrafico();
 }));
+// Compartilhar: o link /r/GRU-LIS.html (feito pelo robô) mostra a rota e a foto do destino no WhatsApp e leva a esta página.
+// Rota sem página própria ainda usa o endereço desta página. No celular abre a lista de apps; no computador, copia.
 $('#rota-copiar').addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText(location.href); $('#rota-copiar').textContent = '✅ Link copiado'; }
-  catch (e) { $('#rota-copiar').textContent = location.href; }
-  setTimeout(() => { $('#rota-copiar').textContent = '🔗 Copiar link da rota'; }, 2500);
+  const b = $('#rota-copiar');
+  const m = location.hash.match(/^#rota\/([A-Z]{3})-([A-Z]{3})/);
+  let url = location.href;
+  if (m) {
+    const curto = `${location.origin}/r/${m[1]}-${m[2]}.html`;
+    try { if ((await fetch(curto, { method: 'HEAD', cache: 'no-store' })).ok) url = curto; } catch (e) { /* fica o endereço desta página */ }
+  }
+  const titulo = (document.querySelector('#rota h2') || {}).textContent || 'Rota com milhas';
+  if (navigator.share && matchMedia('(pointer: coarse)').matches) {
+    try { await navigator.share({ title: titulo, url }); return; } catch (e) { if (e && e.name === 'AbortError') return; }
+  }
+  try { await navigator.clipboard.writeText(url); b.textContent = '✅ Link copiado'; }
+  catch (e) { b.textContent = url; }
+  setTimeout(() => { b.textContent = '🔗 Compartilhar rota'; }, 2500);
 });
 addEventListener('resize', () => { if (rotaDados && location.hash.startsWith('#rota/')) rotaGrafico(); });
 document.addEventListener('assinatura', desenharRota);
 window.addEventListener('hashchange', desenharRota);
 desenharRota();
+
+// Notificação no celular (Rota Vigiada): inscreve o aparelho no servidor (/push/inscrever).
+// No iPhone só funciona com o site instalado na tela de início e aberto pelo ícone (regra da Apple).
+const VAPID_PUBLICA = 'BIfMzD3hDjr3utuwKluSdfqiyU8nJGk4siNqn-wk3e4YlTe4kuzr-hJjdVMW6LgUln7TxO5pwmblGeAl5w1nQa4';
+const pushIos = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const pushApp = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+const pushOk = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+const chaveBytes = s => Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((s.length + 3) % 4)), c => c.charCodeAt(0));
+async function pushChamar(rota, dados) {
+  const token = await window.oammlToken();
+  const r = await fetch(`${SERVIDOR}${rota}`, { method: 'POST', headers: { 'content-type': 'application/json', authorization: `Bearer ${token}` }, body: JSON.stringify(dados) });
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(d.erro || 'Não deu agora. Tente de novo em instantes.');
+  return d;
+}
+async function pushInscricao() {
+  if (!pushOk) return null;
+  const reg = await navigator.serviceWorker.getRegistration();
+  return reg ? reg.pushManager.getSubscription() : null;
+}
+async function desenharPush(msg) {
+  const info = $('#push-info'), ligar = $('#push-ligar'), teste = $('#push-teste');
+  if (!info) return;
+  teste.hidden = true;
+  ligar.hidden = false;
+  if (pushIos && !pushApp) {
+    info.textContent = 'No iPhone, a Apple só deixa avisar no celular com o site instalado como app. Instale, abra pelo ícone e ative aqui.';
+    ligar.textContent = 'Como instalar';
+    ligar.dataset.acao = 'instalar';
+    return;
+  }
+  if (!pushOk) { info.textContent = 'Este navegador não recebe notificações. Use o Chrome (Android) ou o app instalado (iPhone).'; ligar.hidden = true; return; }
+  if (Notification.permission === 'denied') { info.textContent = 'As notificações do site estão bloqueadas nas configurações do celular. Libere lá e volte aqui.'; ligar.hidden = true; return; }
+  const sub = await pushInscricao().catch(() => null);
+  if (sub && Notification.permission === 'granted') {
+    info.textContent = msg || 'Ligado neste aparelho: as passagens das suas rotas chegam aqui na hora.';
+    ligar.textContent = 'Desativar';
+    ligar.dataset.acao = 'desligar';
+    teste.hidden = false;
+  } else {
+    info.textContent = msg || 'Aviso na tela do celular assim que aparecer passagem nas suas rotas, além do e-mail.';
+    ligar.textContent = 'Ativar';
+    ligar.dataset.acao = 'ligar';
+  }
+}
+$('#push-ligar').addEventListener('click', async () => {
+  const b = $('#push-ligar');
+  if (b.dataset.acao === 'instalar') { if (window.oammlInstalar) window.oammlInstalar(); return; }
+  b.disabled = true;
+  try {
+    if (b.dataset.acao === 'desligar') {
+      const sub = await pushInscricao();
+      if (sub) { await pushChamar('/push/sair', { endpoint: sub.endpoint }).catch(() => {}); await sub.unsubscribe(); }
+      await desenharPush('Desligado neste aparelho. Os e-mails da Rota Vigiada continuam.');
+      return;
+    }
+    if (await Notification.requestPermission() !== 'granted') { await desenharPush(); return; }
+    const reg = await navigator.serviceWorker.ready;
+    const sub = (await reg.pushManager.getSubscription()) || await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: chaveBytes(VAPID_PUBLICA) });
+    const d = await pushChamar('/push/inscrever', { inscricao: sub.toJSON(), aparelho: pushIos ? 'iPhone' : /Android/i.test(navigator.userAgent) ? 'Android' : 'Computador' });
+    await desenharPush(d.teste ? 'Pronto! Mandamos uma notificação de boas-vindas para este aparelho.' : 'Ligado neste aparelho. As passagens das suas rotas chegam aqui na hora.');
+  } catch (e) {
+    $('#push-info').textContent = e.message || 'Não deu para ativar agora. Tente de novo.';
+  } finally { b.disabled = false; }
+});
+$('#push-teste').addEventListener('click', async () => {
+  const b = $('#push-teste');
+  b.disabled = true;
+  try { const d = await pushChamar('/push/teste', {}); $('#push-info').textContent = d.ok ? 'Teste enviado. Veja a notificação no celular.' : 'Não chegou em nenhum aparelho. Desative e ative de novo.'; }
+  catch (e) { $('#push-info').textContent = e.message; }
+  finally { b.disabled = false; }
+});
+document.addEventListener('assinatura', () => desenharPush());
+desenharPush();
