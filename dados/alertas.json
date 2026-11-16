@@ -1,5 +1,44 @@
 [
  {
+  "id": "1290836068-7813",
+  "data": "2026-11-16T16:39:26Z",
+  "tipo": "promocao",
+  "titulo": "CLUBE LIVELO ESPECIAL: FAÇA UPGRADE E ACUMULE ATÉ 100.000 PONTOS EM 12 MESES",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Oferta exclusiva para assinantes ativos do Clube Livelo realizarem upgrade para o plano Especial 5.000, garantindo 40.000 pontos extras em 12 meses e somando até 100.000 pontos.",
+  "detalhes": [
+   "Clube Especial 5.000: 60.000 pontos do plano + 40.000 pontos extras (creditados em 12 parcelas mensais de 3.334 pontos) = 100.000 pontos totais"
+  ],
+  "parceiros": "Livelo",
+  "validade": "19/11/2026",
+  "links": [
+   "https://assets.contentstack.io/v3/assets/blt2aea50371ca8d246/bltd0dc41b794ab1e22/6afae201612ac04307908be4/CDC16320-Regulamento-Upgrade-Especial40.000–161126.pdf",
+   "https://www.livelo.com.br/upgrade-promo-CDC16320"
+  ],
+  "ate": "2026-11-19T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7812",
+  "data": "2026-11-16T16:39:22Z",
+  "tipo": "promocao",
+  "titulo": "CLUBE LIVELO: ASSINE O ESSENCIAL OU ESPECIAL E ACUMULE ATÉ 102.000 PONTOS EM 12 MESES",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Campanha exclusiva de adesão aos planos Clube Livelo Essencial 1.000 e Especial 5.000. Acumule até 42.000 pontos extras ao longo de 12 meses, atingindo até 102.000 pontos totais.",
+  "detalhes": [
+   "Clube Essencial 1.000: 12.000 pontos do plano + 12.000 pontos extras = 24.000 pontos totais",
+   "Clube Especial 5.000: 60.000 pontos do plano + 42.000 pontos extras = 102.000 pontos totais"
+  ],
+  "parceiros": "Livelo",
+  "validade": "16/11/2026",
+  "links": [
+   "https://assets.contentstack.io/v3/assets/blt2aea50371ca8d246/blt6a03860e89f2e3c9/6afae7e692ff9c8fc5f93139/16112026_-_Ades%C3%A3o_Essencial_ao_Especial.pdf",
+   "https://www.livelo.com.br/adesao-promo-CDC16327"
+  ],
+  "ate": "2026-11-16T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-15860",
   "data": "2026-11-16T16:33:15Z",
   "origem": "Brasília",
