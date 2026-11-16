@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-16T16:45:05.762015Z",
+ "atualizado": "2026-11-16T16:51:22.420614Z",
  "dias": 30,
- "passagens": 2826,
+ "passagens": 2830,
  "promocoes": 161,
  "destinos": 166,
- "executiva": 587,
+ "executiva": 588,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1429,
+  "passagens": 1428,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -290,19 +290,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15132",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Nova York",
-    "destino_iata": "JFK",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-09T16:47:00Z",
-    "milhas": 57000,
-    "nivel": "muito bom",
-    "regiao": "america-do-norte"
-   },
-   {
     "id": "2008590742-15564",
     "origem": "Belo Horizonte",
     "origem_iata": "CNF",
@@ -496,6 +483,19 @@
     "milhas": 32800,
     "nivel": "bom",
     "regiao": "america-do-sul"
+   },
+   {
+    "id": "2008590742-15328",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "Nova York",
+    "destino_iata": "JFK",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-10T21:49:26Z",
+    "milhas": 54400,
+    "nivel": "bom",
+    "regiao": "america-do-norte"
    },
    {
     "id": "2008590742-15180",

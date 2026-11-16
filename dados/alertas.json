@@ -1,5 +1,61 @@
 [
  {
+  "id": "2361370250-6681",
+  "data": "2026-11-16T16:49:41Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Tóquio",
+  "destino_iata": "HND",
+  "companhia": "Iberia",
+  "cabine": "Executiva",
+  "programa": "Iberia Plus",
+  "ida": "A partir de 50.000 AVIOS",
+  "volta": "A partir de 50.000 AVIOS",
+  "link_nome": "Iberia Plus"
+ },
+ {
+  "id": "2008590742-15862",
+  "data": "2026-11-16T16:46:13Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "San José",
+  "destino_iata": "SJO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "45.100 milhas + Taxas",
+  "volta": "45.100 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-15861",
+  "data": "2026-11-16T16:46:08Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "26.600 milhas + Taxas",
+  "volta": "26.600 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-9777",
+  "data": "2026-11-16T16:46:04Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "8.000 milhas + Taxas",
+  "volta": "8.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "1290836068-7813",
   "data": "2026-11-16T16:39:26Z",
   "tipo": "promocao",
@@ -1566,20 +1622,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "3761373661-9725",
-  "data": "2026-11-16T11:42:23Z",
-  "origem": "Vitória",
-  "origem_iata": "VIX",
-  "destino": "Caldas Novas",
-  "destino_iata": "CLV",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "16.200 milhas + Taxas",
-  "volta": "16.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "2361370250-6661",
   "data": "2026-11-16T11:42:23Z",
   "origem": "São Paulo",
@@ -1592,6 +1634,20 @@
   "ida": "72.000 milhas (68.400 no Clube Smiles)",
   "volta": "70.000 milhas (66.500 no Clube Smiles)",
   "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "3761373661-9725",
+  "data": "2026-11-16T11:42:23Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Caldas Novas",
+  "destino_iata": "CLV",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.200 milhas + Taxas",
+  "volta": "16.200 milhas + Taxas",
+  "link_nome": "Smiles"
  },
  {
   "id": "3761373661-9724",
@@ -4338,20 +4394,6 @@
   "ida": "24.000 milhas + Taxas",
   "volta": "11.000 milhas + Taxas",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-9660",
-  "data": "2026-11-14T16:48:50Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "João Pessoa",
-  "destino_iata": "JPA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "21.300 milhas + Taxas",
-  "volta": "21.300 milhas + Taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7781",
