@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9770",
+  "data": "2026-11-16T15:16:56Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "7.500 milhas + Taxas",
+  "volta": "7.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-15856",
   "data": "2026-11-16T15:12:00Z",
   "origem": "Manaus",
@@ -4536,34 +4550,6 @@
   "ida": "92.300 milhas + Taxas",
   "volta": "92.300 milhas + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9649",
-  "data": "2026-11-14T15:20:46Z",
-  "origem": "São Luís",
-  "origem_iata": "SLZ",
-  "destino": "Fortaleza",
-  "destino_iata": "FOR",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "9.030 milhas + Taxas",
-  "volta": "9.030 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9648",
-  "data": "2026-11-14T15:18:19Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Palmas",
-  "destino_iata": "PMW",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "7.910 milhas + Taxas",
-  "volta": "7.150 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7772",
