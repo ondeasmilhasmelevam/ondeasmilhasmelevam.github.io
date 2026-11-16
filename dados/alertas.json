@@ -1,5 +1,49 @@
 [
  {
+  "id": "1290836068-7821",
+  "data": "2026-11-16T19:11:28Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE: 10% OFF NO RESGATE DE PASSAGENS INTERNACIONAIS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Aproveite 10% de desconto no resgate de passagens internacionais com pontos Azul para Madri, Porto e Lisboa utilizando os cupons específicos da campanha.",
+  "detalhes": [
+   "10% OFF no resgate de passagens internacionais com pontos Azul em todas as classes tarifárias",
+   "Madri (MAD): `MADRID10OFF`",
+   "Porto (OPO): `PORTO10OFF`",
+   "Lisboa (LIS): `LISBOA10OFF`"
+  ],
+  "parceiros": "Azul",
+  "validade": "19/11/2026",
+  "links": [
+   "https://passagens.voeazul.com.br/pt/azul-friday"
+  ],
+  "ate": "2026-11-19T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7820",
+  "data": "2026-11-16T19:11:23Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass VOOS A PARTIR DE 2 MIL MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "LATAM Pass oferece voos a partir de 2 mil milhas por trecho, com o menor valor entre Macapá e Belém. A promoção inclui taxas aeroportuárias adicionais. Há também desconto na compra de milhas até 20 de novembro.",
+  "detalhes": [
+   "voos a partir de 2 mil milhas por trecho",
+   "taxas aeroportuárias adicionais",
+   "desconto de até 66% na compra de milhas",
+   "clientes LATAM Pass Itaú recebem 1.000 milhas por R$ 23,80",
+   "Macapá (MPA) x Belém (BEL) a partir de 2.000 milhas o trecho a partir de R$ 48",
+   "Períodos de viagem: até 20 de novembro"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "até 20 de novembro",
+  "links": [
+   "https://link.dia23.com.br/r/Askzqcj"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2008590742-15875",
   "data": "2026-11-16T18:47:42Z",
   "origem": "Brasília",
