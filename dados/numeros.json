@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-16T13:58:15.636828Z",
+ "atualizado": "2026-11-16T14:04:32.700015Z",
  "dias": 30,
- "passagens": 2810,
+ "passagens": 2811,
  "promocoes": 158,
  "destinos": 166,
  "executiva": 587,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1450,
+  "passagens": 1446,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -901,14 +901,14 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9234",
+    "id": "3761373661-9567",
     "origem": "São Luís",
     "origem_iata": "SLZ",
     "destino": "Fortaleza",
     "destino_iata": "FOR",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-09T13:58:19Z",
+    "data": "2026-11-13T13:10:28Z",
     "milhas": 9000,
     "nivel": "",
     "regiao": "brasil"
