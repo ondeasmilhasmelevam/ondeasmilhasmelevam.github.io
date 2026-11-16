@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-16T17:42:18.820125Z",
+ "atualizado": "2026-11-16T17:48:47.551108Z",
  "dias": 30,
- "passagens": 2833,
+ "passagens": 2838,
  "promocoes": 164,
  "destinos": 166,
- "executiva": 588,
+ "executiva": 589,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1411,
+  "passagens": 1413,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -1084,19 +1084,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6292",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Buenos Aires",
-    "destino_iata": "EZE",
-    "cabine": "Executiva",
-    "programa": "Qatar Privilege Club",
-    "data": "2026-11-09T17:44:12Z",
-    "milhas": 16500,
-    "nivel": "",
-    "regiao": "america-do-sul"
-   },
-   {
     "id": "2361370250-6371",
     "origem": "Rio de Janeiro",
     "origem_iata": "GIG",
@@ -1132,19 +1119,6 @@
     "programa": "Finnair Plus",
     "data": "2026-11-11T15:43:48Z",
     "milhas": 20000,
-    "nivel": "",
-    "regiao": "america-do-sul"
-   },
-   {
-    "id": "2361370250-6293",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Santiago",
-    "destino_iata": "SCL",
-    "cabine": "Executiva",
-    "programa": "Qatar Privilege Club",
-    "data": "2026-11-09T17:47:12Z",
-    "milhas": 22000,
     "nivel": "",
     "regiao": "america-do-sul"
    },
@@ -1197,6 +1171,32 @@
     "programa": "Aeroplan",
     "data": "2026-11-12T15:42:51Z",
     "milhas": 50000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6681",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Tóquio",
+    "destino_iata": "HND",
+    "cabine": "Executiva",
+    "programa": "Iberia Plus",
+    "data": "2026-11-16T16:49:41Z",
+    "milhas": 50000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6379",
+    "origem": "Toronto",
+    "origem_iata": "YYZ",
+    "destino": "Helsinque",
+    "destino_iata": "HEL",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-10T15:16:25Z",
+    "milhas": 57500,
     "nivel": "",
     "regiao": "outros"
    }
