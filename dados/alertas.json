@@ -2843,20 +2843,6 @@
   "link_nome": "TAP Miles&Go"
  },
  {
-  "id": "2008590742-15609",
-  "data": "2026-11-14T09:08:38Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Barcelona",
-  "destino_iata": "BCN",
-  "companhia": "TAP Air Portugal",
-  "cabine": "Econômica",
-  "programa": "TAP Miles&Go",
-  "ida": "38.000 milhas",
-  "volta": "38.000 milhas",
-  "link_nome": "TAP Miles&Go"
- },
- {
   "id": "1290836068-7772",
   "data": "2026-11-13T23:02:57Z",
   "tipo": "promocao",
