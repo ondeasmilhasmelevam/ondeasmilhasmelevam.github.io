@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9785",
+  "data": "2026-11-16T22:27:43Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "7.000 milhas + R$ 35,15 de taxas",
+  "volta": "7.000 milhas + R$ 35,75 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2361370250-6699",
   "data": "2026-11-16T22:12:43Z",
   "origem": "Manaus",
@@ -2270,20 +2284,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "2361370250-6661",
-  "data": "2026-11-16T11:42:23Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "Turkish Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "72.000 milhas (68.400 no Clube Smiles)",
-  "volta": "70.000 milhas (66.500 no Clube Smiles)",
-  "link_nome": "GOL Smiles"
- },
- {
   "id": "3761373661-9725",
   "data": "2026-11-16T11:42:23Z",
   "origem": "Vitória",
@@ -2296,6 +2296,20 @@
   "ida": "16.200 milhas + Taxas",
   "volta": "16.200 milhas + Taxas",
   "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-6661",
+  "data": "2026-11-16T11:42:23Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "Turkish Airlines",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "72.000 milhas (68.400 no Clube Smiles)",
+  "volta": "70.000 milhas (66.500 no Clube Smiles)",
+  "link_nome": "GOL Smiles"
  },
  {
   "id": "3761373661-9724",
