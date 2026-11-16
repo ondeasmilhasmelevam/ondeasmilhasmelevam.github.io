@@ -27,6 +27,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Vista_a%C3%A9rea_praia_do_Buraco.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Vista_a%C3%A9rea_praia_do_Buraco.jpg/1280px-Vista_a%C3%A9rea_praia_do_Buraco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "bariloche": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Vista_a%C3%A9rea_de_Bariloche_y_la_Catedral.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Vista_a%C3%A9rea_de_Bariloche_y_la_Catedral.jpg/1280px-Vista_a%C3%A9rea_de_Bariloche_y_la_Catedral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "barra-grande-peninsula-marau-bahia": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Casamento_em_Taipu_de_Fora_-_2022.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Casamento_em_Taipu_de_Fora_-_2022.jpg/1280px-Casamento_em_Taipu_de_Fora_-_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -263,9 +267,21 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Rio_de_Janeiro_skyline_and_Sugarloaf_Mountain_at_sunset,_Brazil_3.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Rio_de_Janeiro_skyline_and_Sugarloaf_Mountain_at_sunset%2C_Brazil_3.jpg/1280px-Rio_de_Janeiro_skyline_and_Sugarloaf_Mountain_at_sunset%2C_Brazil_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "riviera-nayarit-135-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Bucer%C3%ADas_01.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Bucer%C3%ADas_01.jpg/1280px-Bucer%C3%ADas_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "salvador-bahia": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Webysther_20150907165153_-_Mercado_modelo_e_baia_de_todos_os_santos.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Webysther_20150907165153_-_Mercado_modelo_e_baia_de_todos_os_santos.jpg/1280px-Webysther_20150907165153_-_Mercado_modelo_e_baia_de_todos_os_santos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "san-andres": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Panor%C3%A1mica_esf%C3%A9rica_de_San_Andr%C3%A9s,_Calatayud,_Espa%C3%B1a,_2014-12-29,_DD_01-176_HDR_PAN.JPG",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Panor%C3%A1mica_esf%C3%A9rica_de_San_Andr%C3%A9s%2C_Calatayud%2C_Espa%C3%B1a%2C_2014-12-29%2C_DD_01-176_HDR_PAN.JPG/1280px-Panor%C3%A1mica_esf%C3%A9rica_de_San_Andr%C3%A9s%2C_Calatayud%2C_Espa%C3%B1a%2C_2014-12-29%2C_DD_01-176_HDR_PAN.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "san-blas-168-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Kanot_riggas._Stam,_Kuna._Lokal,_Kuept%C3%AD,_San_Blas,_Panam%C3%A1._San_Blas,_Kuepti._Panama_-_SMVK_-_004418.tif",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Kanot_riggas._Stam%2C_Kuna._Lokal%2C_Kuept%C3%AD%2C_San_Blas%2C_Panam%C3%A1._San_Blas%2C_Kuepti._Panama_-_SMVK_-_004418.tif/lossy-page1-1280px-Kanot_riggas._Stam%2C_Kuna._Lokal%2C_Kuept%C3%AD%2C_San_Blas%2C_Panam%C3%A1._San_Blas%2C_Kuepti._Panama_-_SMVK_-_004418.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "santos-sao-paulo": {
   "pagina": "https://commons.wikimedia.org/wiki/File:AV_SANTOS_DRUMONT_SKYLINE_SANTANA.png",
@@ -287,6 +303,11 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Panorama_da_Taboa_na_%C3%81rea_II.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Panorama_da_Taboa_na_%C3%81rea_II.jpg/1280px-Panorama_da_Taboa_na_%C3%81rea_II.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "st-barth-122-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:2020-01-24_01_STAR_FLYER_-_IMO_8915433.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/2020-01-24_01_STAR_FLYER_-_IMO_8915433.jpg/1280px-2020-01-24_01_STAR_FLYER_-_IMO_8915433.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "st-maarten-st-martin-121-c": {},
  "tiradentes-minas-gerais": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Ouro_Preto_November_2009-6a.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Ouro_Preto_November_2009-6a.jpg/1280px-Ouro_Preto_November_2009-6a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
