@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-16T10:56:17.463494Z",
+ "atualizado": "2026-11-16T11:02:31.584619Z",
  "dias": 30,
- "passagens": 2668,
+ "passagens": 2680,
  "promocoes": 156,
  "destinos": 163,
- "executiva": 563,
+ "executiva": 565,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1350,
+  "passagens": 1362,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -420,15 +420,15 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-15354",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
+    "id": "2008590742-15802",
+    "origem": "Cuiabá",
+    "origem_iata": "CGB",
     "destino": "Assunção",
     "destino_iata": "ASU",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-11T13:54:15Z",
-    "milhas": 24200,
+    "data": "2026-11-16T11:00:59Z",
+    "milhas": 22000,
     "nivel": "bom",
     "regiao": "america-do-sul"
    },
@@ -914,6 +914,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9702",
+    "origem": "Aracaju",
+    "origem_iata": "AJU",
+    "destino": "Recife",
+    "destino_iata": "REC",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-16T10:56:57Z",
+    "milhas": 10000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9255",
     "origem": "Brasília",
     "origem_iata": "BSB",
@@ -923,19 +936,6 @@
     "programa": "Smiles",
     "data": "2026-11-09T17:34:55Z",
     "milhas": 10600,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "2008590742-15525",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "Uberlândia",
-    "destino_iata": "UDI",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-13T12:08:31Z",
-    "milhas": 11000,
     "nivel": "",
     "regiao": "brasil"
    },
