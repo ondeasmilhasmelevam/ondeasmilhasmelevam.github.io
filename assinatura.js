@@ -2,7 +2,8 @@
 // e entrada com Google ou código de 7 números no e-mail. Avisa o resto do site com o evento "assinatura".
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
 import {
-  getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, signInWithCustomToken
+  initializeAuth, browserLocalPersistence, indexedDBLocalPersistence, browserPopupRedirectResolver,
+  onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, signInWithCustomToken
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
 import { getFirestore, doc, getDoc, setDoc, serverTimestamp, collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
@@ -14,7 +15,9 @@ const app = initializeApp({
   messagingSenderId: '557637836947',
   appId: '1:557637836947:web:2d39853b99030749f4ad66'
 });
-const auth = getAuth(app);
+// Login guardado primeiro no localStorage: no iPhone, o app instalado perde o acesso ao IndexedDB quando volta
+// do segundo plano e o login "sumia". Quem já estava logado no IndexedDB é migrado sozinho pelo Firebase.
+const auth = initializeAuth(app, { persistence: [browserLocalPersistence, indexedDBLocalPersistence], popupRedirectResolver: browserPopupRedirectResolver });
 auth.languageCode = 'pt';
 const db = getFirestore(app);
 
