@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-16T11:26:28.085975Z",
+ "atualizado": "2026-11-16T11:32:45.303067Z",
  "dias": 30,
- "passagens": 2701,
+ "passagens": 2704,
  "promocoes": 156,
  "destinos": 163,
- "executiva": 571,
+ "executiva": 573,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1379,
+  "passagens": 1382,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -966,15 +966,15 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2361370250-6368",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
+    "id": "2361370250-6658",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
     "destino": "Nova York",
     "destino_iata": "JFK",
     "cabine": "Executiva",
-    "programa": "Smiles",
-    "data": "2026-11-10T11:49:03Z",
-    "milhas": 192500,
+    "programa": "GOL Smiles",
+    "data": "2026-11-16T11:31:24Z",
+    "milhas": 185000,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
    },
