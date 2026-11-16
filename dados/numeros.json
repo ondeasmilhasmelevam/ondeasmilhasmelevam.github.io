@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-16T18:07:52.434822Z",
+ "atualizado": "2026-11-16T18:14:15.737421Z",
  "dias": 30,
  "passagens": 2840,
  "promocoes": 164,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1409,
+  "passagens": 1408,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -889,15 +889,15 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9261",
+    "id": "2008590742-15715",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
     "destino": "Belém",
     "destino_iata": "BEL",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-09T18:13:23Z",
-    "milhas": 8940,
+    "data": "2026-11-15T15:41:54Z",
+    "milhas": 8960,
     "nivel": "",
     "regiao": "brasil"
    },
