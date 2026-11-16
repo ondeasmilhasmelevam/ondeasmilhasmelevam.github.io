@@ -2820,20 +2820,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2008590742-15607",
-  "data": "2026-11-14T00:21:27Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Lisboa",
-  "destino_iata": "LIS",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "65.000 milhas + R$ 100,62 de taxas",
-  "volta": "",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7772",
   "data": "2026-11-13T23:02:57Z",
   "tipo": "promocao",
