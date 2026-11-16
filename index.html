@@ -47,7 +47,7 @@
 .sem-entrada #entrada{display:none}
 @media (prefers-reduced-motion:reduce){#entrada{display:none}}
 </style>
-<link rel="stylesheet" href="estilo.css?v=139">
+<link rel="stylesheet" href="estilo.css?v=140">
 </head>
 <body>
 <div id="entrada" aria-hidden="true"><div><img src="img/logo-entrada.webp" alt="" width="148" height="148" fetchpriority="high"></div></div>
@@ -1232,6 +1232,13 @@
       <div class="rest-busca">
         <input type="search" id="contatos-busca" placeholder="Buscar companhia ou programa, ex.: LATAM" autocomplete="off" aria-label="Buscar companhia ou programa">
       </div>
+      <div class="contatos-filtros" id="contatos-filtros" role="group" aria-label="Mostrar">
+        <button type="button" data-grupo="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-grupo="top" aria-pressed="false">Mais procurados</button>
+        <button type="button" data-grupo="aerea" aria-pressed="false">Companhias aéreas</button>
+        <button type="button" data-grupo="pontos" aria-pressed="false">Programas de pontos</button>
+        <button type="button" data-grupo="vip" aria-pressed="false">Atendimento VIP</button>
+      </div>
       <ul class="contatos" id="lista-contatos"></ul>
       <p class="passagens-vazio" id="contatos-vazio" hidden>Nenhum contato com esse nome.</p>
       <p class="fine">Atendimento das próprias empresas; números podem mudar. Para dúvidas de passagens com milhas, tenha em mãos o localizador da reserva e o número do seu cadastro no programa.</p>
@@ -1341,7 +1348,7 @@
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=124"></script>
+<script src="app.js?v=125"></script>
 <script src="funil.js?v=7"></script>
 <script type="module" src="assinatura.js?v=45"></script>
 <script src="mapa.js?v=9" defer></script>

@@ -2613,15 +2613,75 @@
     }
     return [...grupos.values()].sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
   }
+  // Ícone de app de cada empresa (os mesmos dos stories); sem ícone, as iniciais num quadradinho.
+  const ICONE_CONTATO = [[/latam/, 'latam'], [/smiles/, 'smiles'], [/azul/, 'azul'], [/^tap\b/, 'tap'], [/air canada|aeroplan/, 'aeroplan'],
+    [/american|aadvantage/, 'aadvantage'], [/air france|klm|flying blue/, 'flyingblue'], [/british|iberia|avios/, 'avios'],
+    [/livelo/, 'livelo'], [/esfera/, 'esfera']];
+  const TOPO_CONTATOS = ['latam', 'smiles', 'azul', 'tap', 'livelo', 'esfera', 'gol'];
+  const GRUPOS_CONTATOS = [['top', 'Mais procurados'], ['aerea', 'Companhias aéreas'], ['pontos', 'Programas de pontos'], ['vip', 'Atendimento VIP']];
+  const tipoContato = n => /diamante|platinum|black|elite|executive club/.test(n) ? 'vip'
+    : /^(all accor|esfera|livelo|pagol|smiles|azul fidelidade|latam pass|iupp|km de vantagens|dotz|meliuz)/.test(n) ? 'pontos' : 'aerea';
+  function iconeContato(nome) {
+    const n = norm(nome).toLowerCase();
+    const i = ICONE_CONTATO.find(([re]) => re.test(n));
+    if (i) return `<img class="ct-ico" src="img/programas/app/${i[1]}.webp" alt="" width="40" height="40" loading="lazy">`;
+    const ini = nome.replace(/[^A-Za-zÀ-ú ]/g, '').split(/\s+/).filter(Boolean).slice(0, 2).map(p => p[0]).join('').toUpperCase();
+    return `<span class="ct-ico ct-ini" aria-hidden="true">${esc(ini)}</span>`;
+  }
+  // Número no mesmo formato para todos, o link certo e a etiqueta do tipo de linha.
+  function formatarTel(n) {
+    let d = n.tel.replace(/\D/g, '');
+    if (n.zap) {
+      return { texto: `+${n.tel.replace(/^\+/, '').trim()}`, href: n.href, tags: ['WhatsApp'] };
+    }
+    if (/^(800|300|500)\d{7}$/.test(d)) d = '0' + d; // "8006432800" na planilha = 0800 643 2800
+    if (/^0(800|300|500)\d{7}$/.test(d)) return { texto: `${d.slice(0, 4)} ${d.slice(4, 7)} ${d.slice(7)}`, href: `tel:${d}`, tags: [d.startsWith('0800') ? 'grátis' : ''].filter(Boolean) };
+    if (/^[34]00\d{5}$/.test(d)) return { texto: `${d.slice(0, 4)}-${d.slice(4)}`, href: `tel:${d}`, tags: ['capitais'] };
+    if (/^[1-9][1-9]\d{8,9}$/.test(d)) {
+      const r = d.slice(2);
+      return { texto: `(${d.slice(0, 2)}) ${r.slice(0, r.length - 4)}-${r.slice(-4)}`, href: `tel:+55${d}`, tags: /^[34]00\d{5}$/.test(r) ? ['capitais'] : [] };
+    }
+    return { texto: n.tel, href: n.href, tags: [] }; // formato diferente: mostra como está na planilha
+  }
+  const minus = s => norm(s).toLowerCase();
+  let grupoContatos = 'todos';
   function mostrarContatos() {
     const busca = norm($('#contatos-busca').value);
     const lista = contatos.filter(c => !busca || norm(c.nome + ' ' + c.numeros.map(n => n.rotulo).join(' ')).includes(busca));
-    $('#lista-contatos').innerHTML = lista.map(c => `<li>
-        <h3>${esc(c.nome)}</h3>
-        <ul>${c.numeros.map(n => `<li><a class="${n.zap ? 'zap' : ''}" href="${esc(n.href)}"${n.zap ? ' target="_blank" rel="noopener"' : ''}>${esc(n.tel)}${n.rotulo ? ` <small>${esc(n.rotulo)}</small>` : ''}</a></li>`).join('')}</ul>
-      </li>`).join('');
+    const cartao = c => `<li>
+        <div class="ct-topo">${iconeContato(c.nome)}<h3>${esc(c.nome)}</h3></div>
+        <ul>${c.numeros.map(n => { const f = formatarTel(n); return `<li><a class="${n.zap ? 'zap' : ''}" href="${esc(f.href)}" data-tel="${esc(f.texto)}"${n.zap ? ' target="_blank" rel="noopener"' : ''}><span class="ct-num">${esc(f.texto)}</span>${f.tags.map(t => `<em class="ct-tag${t === 'grátis' ? ' gratis' : ''}">${esc(t)}</em>`).join('')}</a>${n.rotulo && !/^whats/i.test(n.rotulo) ? `<small>${esc(n.rotulo)}</small>` : ''}</li>`; }).join('')}</ul>
+      </li>`;
+    const blocos = [];
+    if (busca) blocos.push(['', lista]);
+    else {
+      const topo = TOPO_CONTATOS.map(t => lista.find(c => minus(c.nome) === t)).filter(Boolean);
+      for (const [id, titulo] of GRUPOS_CONTATOS) {
+        if (grupoContatos !== 'todos' && grupoContatos !== id) continue;
+        const itens = id === 'top' ? topo : lista.filter(c => tipoContato(minus(c.nome)) === id && (grupoContatos === id || !topo.includes(c)));
+        if (itens.length) blocos.push([titulo, itens]);
+      }
+    }
+    $('#lista-contatos').innerHTML = blocos.map(([titulo, itens]) =>
+      `${titulo ? `<li class="ct-grupo"><h3>${esc(titulo)}</h3></li>` : ''}${itens.map(cartao).join('')}`).join('');
     $('#contatos-vazio').hidden = !!lista.length || !contatos.length;
   }
+  $('#contatos-filtros').addEventListener('click', e => {
+    const b = e.target.closest('button[data-grupo]');
+    if (!b) return;
+    grupoContatos = b.dataset.grupo;
+    document.querySelectorAll('#contatos-filtros button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    mostrarContatos();
+  });
+  // No computador o "tel:" não liga: o clique copia o número e avisa.
+  $('#lista-contatos').addEventListener('click', async e => {
+    const a = e.target.closest('a[data-tel]');
+    if (!a || a.classList.contains('zap') || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    e.preventDefault();
+    try { await navigator.clipboard.writeText(a.dataset.tel); } catch (er) { return; }
+    a.classList.add('copiado');
+    setTimeout(() => a.classList.remove('copiado'), 1600);
+  });
   async function desenharContatos() {
     for (const url of [URL_CONTATOS, 'dados/contatos.csv']) {
       try {

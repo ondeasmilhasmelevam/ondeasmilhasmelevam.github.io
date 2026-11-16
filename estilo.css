@@ -1089,14 +1089,34 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 @media (max-width:560px){.termo-faixa{grid-template-columns:1fr;gap:8px}.guia-glossario dl,.guia-cab{grid-template-columns:1fr;gap:2px}}
 
 /* ---------- contatos ---------- */
-.contatos{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr))}
-.contatos>li{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);min-width:0}
-.contatos h3{margin:0 0 8px;font-size:16px;font-weight:800;color:var(--rice)}
-.contatos ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
-.contatos a{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;text-decoration:none;color:var(--ouro);font-weight:700;font-size:15.5px;font-variant-numeric:tabular-nums}
-.contatos a:hover{color:var(--ouro-lt)}
-.contatos a small{font-size:12px;font-weight:700;color:var(--ash)}
+.contatos-filtros{display:flex;gap:8px;overflow-x:auto;margin:0 0 16px;padding:2px 0 6px;scrollbar-width:none}
+.contatos-filtros::-webkit-scrollbar{display:none}
+.contatos-filtros button{flex:0 0 auto;font:inherit;font-size:13.5px;font-weight:700;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--ink-2);color:var(--ash);cursor:pointer}
+.contatos-filtros button:hover{color:var(--rice);border-color:rgba(226,180,88,.5)}
+.contatos-filtros button[aria-pressed="true"]{color:var(--sobre-ouro);border-color:transparent;background:linear-gradient(135deg,var(--ouro-lt),var(--ouro) 55%,var(--ouro-dk))}
+.contatos{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:10px;align-items:start;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr))}
+.contatos>li{padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);min-width:0}
+.contatos>li.ct-grupo{grid-column:1/-1;padding:10px 0 0;border:0;background:none}
+.ct-grupo h3{margin:0;display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro)}
+.ct-grupo h3::before{content:'';width:3px;height:12px;border-radius:2px;background:var(--ouro)}
+.ct-topo{display:flex;align-items:center;gap:10px;margin:0 0 8px}
+.ct-ico{flex:0 0 40px;width:40px;height:40px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.ct-ini{display:grid;place-items:center;background:var(--ink-3);border:1px solid var(--line);color:var(--ouro);font-weight:800;font-size:14px;letter-spacing:.04em;box-shadow:none}
+.contatos h3{margin:0;font-size:15.5px;font-weight:800;line-height:1.25;color:var(--rice)}
+.contatos ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.contatos ul li{display:grid;gap:0}
+.contatos a{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;padding:6px 10px;margin:0 -10px;border-radius:10px;text-decoration:none;color:var(--ouro);font-weight:700;font-size:15.5px;font-variant-numeric:tabular-nums;transition:background .15s ease}
+.contatos a:hover{color:var(--ouro-lt);background:rgba(226,180,88,.08)}
+.contatos a::before{content:'';flex:0 0 16px;width:16px;height:16px;background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2'/%3E%3C/svg%3E") center/contain no-repeat}
 .contatos a.zap{color:#3ccf91}
+.contatos a.zap::before{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20l1.3-3.9A8 8 0 1 1 8 19z'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20l1.3-3.9A8 8 0 1 1 8 19z'/%3E%3C/svg%3E")}
+.ct-tag{font-style:normal;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:6px;color:var(--ash);background:rgba(255,255,255,.06);border:1px solid var(--line)}
+.ct-tag.gratis{color:#3ccf91;background:rgba(60,207,145,.1);border-color:rgba(60,207,145,.35)}
+.contatos a.zap .ct-tag{color:#3ccf91;border-color:rgba(60,207,145,.35);background:rgba(60,207,145,.1)}
+.contatos ul small{padding:0 0 2px 24px;font-size:12px;font-weight:600;color:var(--ash)}
+.contatos a.copiado .ct-num::after{content:' · copiado';font-size:12px;color:var(--verde)}
 
 /* ---------- como calculamos ---------- */
 .como{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:30px}
