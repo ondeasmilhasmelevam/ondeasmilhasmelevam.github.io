@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-16T23:48:17.314680Z",
+ "atualizado": "2026-11-16T23:54:32.198005Z",
  "dias": 30,
  "passagens": 2866,
  "promocoes": 169,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1370,
+  "passagens": 1368,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -525,14 +525,14 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2008590742-15180",
+    "id": "2008590742-15329",
     "origem": "Manaus",
     "origem_iata": "MAO",
     "destino": "Dallas",
     "destino_iata": "DFW",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-09T23:49:59Z",
+    "data": "2026-11-11T00:53:15Z",
     "milhas": 56400,
     "nivel": "bom",
     "regiao": "america-do-norte"
@@ -716,19 +716,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-11T13:44:03Z",
     "milhas": 6700,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "2008590742-15179",
-    "origem": "Belém",
-    "origem_iata": "BEL",
-    "destino": "Macapá",
-    "destino_iata": "MCP",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-09T23:49:55Z",
-    "milhas": 6900,
     "nivel": "",
     "regiao": "brasil"
    },
@@ -937,6 +924,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-12T11:20:47Z",
     "milhas": 9302,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9688",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Belo Horizonte",
+    "destino_iata": "CNF",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-15T21:27:39Z",
+    "milhas": 9500,
     "nivel": "",
     "regiao": "brasil"
    },
