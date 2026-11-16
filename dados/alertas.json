@@ -4699,20 +4699,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-9666",
-  "data": "2026-11-14T20:08:40Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Curitiba",
-  "destino_iata": "CWB",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "5.000 milhas + R$ 62,69 de taxas",
-  "volta": "5.000 milhas + R$ 48,63 de taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7781",
   "data": "2026-11-14T15:52:09Z",
   "tipo": "promocao",
@@ -4761,7 +4747,7 @@
   "origem_iata": "MAO",
   "destino": "Miami",
   "destino_iata": "MIA",
-  "companhia": "Avianca / Copa",
+  "companhia": "Copa",
   "cabine": "Executiva",
   "programa": "Smiles",
   "ida": "137.000 milhas + taxas",
@@ -5026,7 +5012,7 @@
   "companhia": "American / Avianca / Copa",
   "cabine": "Econômica",
   "programa": "Smiles",
-  "ida": "80.000 milhas + taxas",
+  "ida": "81.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
