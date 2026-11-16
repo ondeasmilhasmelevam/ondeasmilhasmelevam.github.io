@@ -2834,20 +2834,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9634",
-  "data": "2026-11-14T01:02:47Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Salvador",
-  "destino_iata": "SSA",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "15.000 milhas + R$ 35,15 de taxas",
-  "volta": "15.000 milhas + R$ 52,72 de taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7772",
   "data": "2026-11-13T23:02:57Z",
   "tipo": "promocao",
