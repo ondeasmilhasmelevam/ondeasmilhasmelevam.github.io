@@ -419,7 +419,9 @@
  "lotes_stories": [
   "08:00"
  ],
- "horarios_feed": [],
+ "horarios_feed": [
+  "09:00"
+ ],
  "feed_usados": [],
  "reel_promo_dia": "2026-11-15",
  "metricas_em": "2026-11-16T11:02:48.914450+00:00",
