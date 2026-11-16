@@ -915,6 +915,7 @@ $('#ass-email').addEventListener('change', e => mostrarPrecos(e.target.value.tri
 let historicoRotas = null;
 const MESES_HIST = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 const ordemMes = m => { const [a, b] = String(m).split('/'); return (+b || 0) * 12 + MESES_HIST.indexOf(a); };
+const mesComAno = ([m]) => /^[A-Z][a-z]{2}\/\d{2}$/.test(m) && MESES_HIST.includes(m.slice(0, 3)); // só "Nov/26"; descarta "novembro" sem ano
 const milHist = v => Number(v).toLocaleString('pt-BR');
 const normHist = t => String(t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 const haDias = d => { const n = Math.round((Date.now() - new Date(d + 'T12:00:00')) / 864e5); return n <= 0 ? 'hoje' : n === 1 ? 'ontem' : `há ${n} dias`; };
@@ -941,7 +942,7 @@ async function desenharPrecosRota() {
   $('#hist-info').textContent = `${lista.length} ${lista.length === 1 ? 'rota' : 'rotas'}${lista.length > 60 ? ' (mostrando as 60 que mais aparecem; busque para achar a sua)' : ''}. Preços por trecho, sem taxas.`;
   $('#hist-lista').innerHTML = lista.slice(0, 60).map(r => {
     const progs = Object.entries(r.p).sort((a, b) => a[1].min - b[1].min);
-    const meses = Object.entries(r.m || {}).sort((a, b) => ordemMes(a[0]) - ordemMes(b[0]));
+    const meses = Object.entries(r.m || {}).filter(mesComAno).sort((a, b) => ordemMes(a[0]) - ordemMes(b[0]));
     const maxMes = Math.max(1, ...meses.map(([, n]) => n));
     return `<li class="hist-rota">
       <div class="hist-topo"><b>${escR(r.o)} <small>${escR(r.oi)}</small> → ${escR(r.d)} <small>${escR(r.di)}</small></b>
@@ -1027,7 +1028,7 @@ async function desenharRota() {
       <b>${escR(p.ida || '')}${p.volta ? ' · volta ' + escR(p.volta) : ''}</b><span>${escR(p.programa || p.link_nome || '')}${p.companhia ? ' · ' + escR(p.companhia) : ''}</span>
       ${['datas_ida', 'datas_volta'].map((k, i) => (p[k] || []).length ? `<small>${i ? 'Volta' : 'Ida'}: ${p[k].map(d => `${escR(d.mes)} ${escR(d.dias)}`).join(' · ')}</small>` : '').join('')}
       ${/^https?:/.test(p.link || '') ? `<a class="cta cta-a" href="${escR(p.link)}" target="_blank" rel="noopener">Ver passagem${p.link_nome ? ' na ' + escR(p.link_nome) : ''} ↗</a>` : ''}</li>`).join('')}</ul>` : '';
-  const meses = Object.entries((R && R.m) || {}).sort((a, b) => ordemMes(a[0]) - ordemMes(b[0]));
+  const meses = Object.entries((R && R.m) || {}).filter(mesComAno).sort((a, b) => ordemMes(a[0]) - ordemMes(b[0]));
   const maxMes = Math.max(1, ...meses.map(([, k]) => k));
   $('#rota-meses').innerHTML = meses.length ? `<div class="hist-meses"><small>Meses de viagem que mais aparecem com data aberta</small>${meses.map(([mm, k]) =>
     `<span style="--f:${(0.25 + 0.75 * k / maxMes).toFixed(2)}" title="${k} ${k === 1 ? 'vez' : 'vezes'}">${escR(mm)}</span>`).join('')}</div>` : '';
