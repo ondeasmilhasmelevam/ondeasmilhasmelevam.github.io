@@ -114,6 +114,7 @@
   // Quem já assina não precisa do alerta grátis.
   document.addEventListener('assinatura', e => {
     document.querySelectorAll('[data-lead-caixa], [data-so-visitante]').forEach(el => { el.hidden = !!e.detail.ativo; });
+    document.querySelectorAll('[data-so-assinante]').forEach(el => { el.hidden = !e.detail.ativo; });
   });
 
   // Foto do depoimento: a que a pessoa mandou ou a da conta Google dela; sem foto (ou se não carregar), a inicial.

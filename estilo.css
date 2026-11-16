@@ -2298,3 +2298,7 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .push-card small{font-size:13px;line-height:1.45;color:var(--ash)}
 .push-botoes{display:flex;gap:8px;flex-wrap:wrap}
 .push-botoes .cta{padding:10px 16px;font-size:14px}
+
+/* Alerta grátis: quadro para quem já assina (no lugar do formulário) */
+.ja-assina .lead-campos{display:flex;flex-wrap:wrap;gap:10px}
+.ja-assina .lead-campos .cta{text-decoration:none}
