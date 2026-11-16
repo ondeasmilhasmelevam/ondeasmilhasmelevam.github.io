@@ -1,5 +1,26 @@
 [
  {
+  "id": "1290836068-7808",
+  "data": "2026-11-16T14:20:32Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE OFERECE ATÉ 90% DE BÔNUS NAS TRANSFERÊNCIAS DE PONTOS DE TODOS OS PARCEIROS, EXCETO ESFERA",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira pontos de parceiros bancários (exceto Esfera) para o Azul Fidelidade e receba até 90% de bônus, além de bônus cumulativo por tempo de clube.",
+  "detalhes": [
+   "90% de bônus para assinantes do Clube Azul Fidelidade.",
+   "60% de bônus para todos os Clientes Azul Fidelidade.",
+   "Bônus adicional por tempo de Clube Azul: +5% , +10% (1 a 2 anos), +20% (3 a 4 anos), +30% .",
+   "1.000 pontos bônus na 1ª transferência."
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "19/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/bancos"
+  ],
+  "ate": "2026-11-19T23:59:59-03:00"
+ },
+ {
   "id": "3761373661-9767",
   "data": "2026-11-16T13:59:58Z",
   "origem": "São Paulo",
