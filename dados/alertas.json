@@ -4340,48 +4340,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-9662",
-  "data": "2026-11-14T17:13:30Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Macapá",
-  "destino_iata": "MCP",
-  "companhia": "GOL Linhas Aéreas",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "17.200 milhas + R$ 106,37",
-  "volta": "6.700 milhas + R$ 106,37",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9661",
-  "data": "2026-11-14T17:13:20Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL Linhas Aéreas",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "11.100 milhas + R$ 96,69",
-  "volta": "10.600 milhas + R$ 96,69",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-15700",
-  "data": "2026-11-14T17:13:08Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "GOL Linhas Aéreas",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "35.000 milhas + R$ 501,60",
-  "volta": "35.000 milhas + R$ 501,60",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7781",
   "data": "2026-11-14T15:52:09Z",
   "tipo": "promocao",
