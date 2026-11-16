@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-15865",
+  "data": "2026-11-16T17:40:21Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "49.000 Milhas LATAM Pass + Taxas",
+  "volta": "49.000 Milhas LATAM Pass + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "1290836068-7817",
   "data": "2026-11-16T17:27:31Z",
   "tipo": "promocao",
