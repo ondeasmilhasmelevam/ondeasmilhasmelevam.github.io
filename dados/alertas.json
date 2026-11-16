@@ -1183,26 +1183,6 @@
   "ate": ""
  },
  {
-  "id": "1290836068-7783",
-  "data": "2026-11-14T15:52:15Z",
-  "tipo": "promocao",
-  "titulo": "LIVELO & SAM’S CLUB: Assine e ganhe até 100 pontos por real + 1.000 pontos extras!",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Torne-se sócio do Sam's Club pela Livelo com desconto na anuidade e pontuação bonificada sobre o valor pago.",
-  "detalhes": [
-   "100 pontos por real no Plano Club (anuidade de R$ 95 por R$ 48)",
-   "14 pontos por real no Plano Plus (anuidade de R$ 175 por R$ 88)",
-   "+ 1.000 pontos Livelo extras ao incluir 1 sócio adicional gratuito"
-  ],
-  "parceiros": "Livelo, Sam's Club",
-  "validade": "15/11/2026",
-  "links": [
-   "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club/WMB"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
- },
- {
   "id": "1290836068-7781",
   "data": "2026-11-14T15:52:09Z",
   "tipo": "promocao",
@@ -2915,73 +2895,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "1290836068-7760",
-  "data": "2026-11-13T18:44:45Z",
-  "tipo": "promocao",
-  "titulo": "ASSINATURA CLUBE LIVELO ESSENCIAL COM ATÉ 13.000 PONTOS BÔNUS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Clube Livelo Essencial e ganhe até 13.000 pontos bônus. Cupom exclusivo: CLUBEMDBF3. Cálculo de milheiro a partir de R$21,55.",
-  "detalhes": [
-   "Cupom exclusivo: CLUBEMDBF3.",
-   "Plano mensal: 24.000 pontos em 12 meses .",
-   "Plano anual: 25.000 pontos em 12 meses .",
-   "Bônus de 1.000 pontos/mês durante 12 meses."
-  ],
-  "parceiros": "Livelo",
-  "validade": "15/11/2026",
-  "links": [
-   "https://www.livelo.com.br/clube"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7759",
-  "data": "2026-11-13T18:44:41Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFIRA PONTOS NOMAD EXPLORER PARA AZUL FIDELIDADE COM ATÉ 120% DE BÔNUS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira pontos Nomad Explorer para Azul Fidelidade com até 120% de bônus, incluindo 3.000 pontos extras na primeira transferência. Bônus adicional por tempo de assinatura do Clube Azul.",
-  "detalhes": [
-   "Bônus de até 90% para assinantes do Clube Azul Fidelidade.",
-   "Bônus de 60% para todos os clientes Azul Fidelidade.",
-   "Bônus adicional por tempo de Clube Azul: +5% , +10% (1-2 anos), +20% (3-4 anos), +30% .",
-   "Limite de 100.000 pontos por ano para bônus adicional.",
-   "3.000 pontos extras na primeira transferência."
-  ],
-  "parceiros": "Nomad Explorer, Azul Fidelidade",
-  "validade": "15/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/transferencia-nomad"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7758",
-  "data": "2026-11-13T17:47:28Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFIRA ALLOYAL PARA AZUL FIDELIDADE COM ATÉ 120% DE BÔNUS + 3.000 PONTOS EXTRAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira pontos Alloyal para Azul Fidelidade com até 120% de bônus e 3.000 pontos extras para primeira transferência. Validade até 15/11/2026.",
-  "detalhes": [
-   "60% de bônus para demais clientes Azul Fidelidade.",
-   "90% de bônus para assinantes do Clube Azul.",
-   "95% de bônus para Clube Azul ativo de 6 a 11 meses.",
-   "100% de bônus para Clube Azul ativo de 12 a 35 meses.",
-   "110% de bônus para Clube Azul ativo de 36 a 59 meses.",
-   "120% de bônus para Clube Azul ativo há 60 meses ou mais.",
-   "+3.000 pontos Azul extras para primeira transferência de Alloyal para Azul Fidelidade."
-  ],
-  "parceiros": "Alloyal, Azul Fidelidade",
-  "validade": "15/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/alloyal"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
- },
- {
   "id": "seats-smiles-MAO-MIA-exe",
   "data": "2026-11-13T15:43:42.544954Z",
   "fonte": "seats.aero",
@@ -2995,47 +2908,6 @@
   "ida": "137.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-7748",
-  "data": "2026-11-13T14:20:27Z",
-  "tipo": "promocao",
-  "titulo": "BÔNUS DE TRANSFERÊNCIA ITAÚ PARA LATAM Pass",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira seus pontos Itaú para o LATAM Pass e receba 25% de bônus, além de 1.000 milhas extras na primeira transferência.",
-  "detalhes": [
-   "25% de bônus para todos os clientes elegíveis.",
-   "+ 1.000 milhas extras na 1ª transferência dos programas Itaú participantes.",
-   "Programas elegíveis: Itaú Pontos e Cashback, Pão de Açúcar e Executiva Rewards."
-  ],
-  "parceiros": "Itaú, LATAM Pass",
-  "validade": "15/11/2026",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/itau-milhas-extras"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7747",
-  "data": "2026-11-13T14:20:22Z",
-  "tipo": "promocao",
-  "titulo": "COMPRA DE PONTOS LIVELO COM ATÉ 57% OFF E 2% EXTRA NO PIX",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Compre pontos Livelo com até 57% de desconto conforme seu tempo de Clube Livelo, mais 2% de desconto adicional no pagamento via Pix.",
-  "detalhes": [
-   "Até 12 meses de Clube (55% OFF): R$ 31,50 parcelado | R$ 30,87 Pix (Cupom: BOASVINDAS).",
-   "De 13 a 48 meses (56% OFF): R$ 30,80 parcelado | R$ 30,18 Pix (Cupom: ACELERA).",
-   "Acima de 49 meses (57% OFF): R$ 30,10 parcelado | R$ 29,50 Pix (Cupom: LEGADO).",
-   "Limite de até 500.000 pontos por CPF."
-  ],
-  "parceiros": "Livelo",
-  "validade": "15/11/2026",
-  "links": [
-   "https://www.livelo.com.br/compra-promo-CDC15958"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
  },
  {
   "id": "seats-smiles-GRU-BCN-eco",
@@ -3081,28 +2953,6 @@
   "ida": "125.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-7729",
-  "data": "2026-11-12T16:02:11Z",
-  "tipo": "promocao",
-  "titulo": "AZUL OFERECE ATÉ 20% DE DESCONTO NO RESGATE DE PASSAGENS AÉREAS PARA CLIENTES DO CLUBE",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "",
-  "detalhes": [
-   "Clube 20.000: até 20% OFF em tarifa promocional (10% nas demais).",
-   "Clube 10.000: até 17% OFF em tarifa promocional (9% nas demais).",
-   "Clube 5.000: até 14% OFF em tarifa promocional (7% nas demais).",
-   "Clube 2.000: até 11% OFF em tarifa promocional (6% nas demais).",
-   "Clube 1.000: até 8% OFF em tarifa promocional (4% nas demais)."
-  ],
-  "parceiros": "Azul Linhas Aéreas",
-  "validade": "15/11/2026",
-  "links": [
-   "https://www.voeazul.com.br"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
  },
  {
   "id": "seats-azul-REC-LIS-eco",
@@ -3247,25 +3097,6 @@
   "ate": "2026-11-16T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7701",
-  "data": "2026-11-11T13:42:06Z",
-  "tipo": "promocao",
-  "titulo": "CREDICARD E LATAM Pass: 25% DE BÔNUS + 1.000 MILHAS EXTRAS NA PRIMEIRA TRANSFERÊNCIA",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira seus pontos Credicard para o LATAM Pass e garanta 25% de bônus e 1.000 milhas extras se for sua primeira transferência.",
-  "detalhes": [
-   "25% de bônus para todos os clientes elegíveis.",
-   "+ 1.000 milhas extras para quem fizer a primeira transferência Credicard para LATAM Pass."
-  ],
-  "parceiros": "Credicard, LATAM Pass",
-  "validade": "15/11",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/credicard-milhas-extras"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
- },
- {
   "id": "seats-smiles-MAO-PTY-eco",
   "data": "2026-11-11T00:03:25.922708Z",
   "fonte": "seats.aero",
@@ -3354,29 +3185,6 @@
   "ida": "96.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-7673",
-  "data": "2026-11-10T01:15:52Z",
-  "tipo": "promocao",
-  "titulo": "ORANGE FRIDAY: CUPOM DE 76% OFF PARA COMPRA DE MILHAS SMILES",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Cupom exclusivo de 76% OFF para compra de até 200.000 milhas Smiles, válido por 2 dias após recebimento. Milheiro do cupom: R$ 19,20.",
-  "detalhes": [
-   "76% OFF na compra de até 200.000 milhas Smiles.",
-   "Cupom disponibilizado em até 72 horas após transferência.",
-   "Válido por 2 dias a partir do recebimento.",
-   "Cupom reutilizável durante sua validade.",
-   "Milheiro do cupom: R$ 19,20.",
-   "Compra parcelável em até 12x sem juros no cartão GOL Smiles e até 5x sem juros nos demais cartões."
-  ],
-  "parceiros": "Smiles, PaGol",
-  "validade": "2 dias após recebimento do cupom (até 15/11/2026, se recebido no dia 13/11/2026)",
-  "links": [
-   "https://www.smiles.com.br/portal/promo/orangefriday-bancos-11-2026⁠"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
  },
  {
   "id": "seats-smiles-GIG-JFK-exe",
@@ -3514,48 +3322,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "1290836068-7667",
-  "data": "2026-11-09T16:16:26Z",
-  "tipo": "promocao",
-  "titulo": "COMPRA DE PONTOS AZUL FIDELIDADE COM ATÉ 320% DE BÔNUS",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Compre pontos Azul Fidelidade e ganhe até 320% de bônus para assinantes do Clube Azul, até 15/11/2026.",
-  "detalhes": [
-   "320% de bônus para assinantes do Clube Azul (R$ 15,00 com Cartão Azul, R$ 16,67 com qualquer cartão).",
-   "220% de bônus para clientes Diamante Unique, Diamante, Safira e Topázio (R$ 19,69 com Cartão Azul, R$ 21,88 com qualquer cartão).",
-   "120% de bônus para demais clientes (R$ 28,64 com Cartão Azul, R$ 31,82 com qualquer cartão).",
-   "Desconto adicional de 10% para portadores do Cartão Azul Itaú."
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "23h59 de 15/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/compra-de-pontos-geral"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7661",
-  "data": "2026-11-09T15:13:14Z",
-  "tipo": "promocao",
-  "titulo": "COMPRA DE PONTOS LIVELO COM ATÉ 57% DE DESCONTO",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Compre pontos Livelo com até 57% de desconto, dependendo do tempo de assinatura do Clube Livelo. Validade até 15/11/2026.",
-  "detalhes": [
-   "57% de desconto para clientes Clube Livelo com assinatura ativa acima de 49 meses (cupom LEGADO).",
-   "56% de desconto para clientes Clube Livelo com assinatura ativa de 13 a 48 meses (cupom ACELERA).",
-   "55% de desconto para clientes Clube Livelo com assinatura ativa até 12 meses (cupom BOASVINDAS).",
-   "Limite de compra: 500.000 pontos por CPF durante a campanha."
-  ],
-  "parceiros": "Livelo",
-  "validade": "15/11/2026",
-  "links": [
-   "https://www.livelo.com.br/compra-de-pontos/produto/LIVCompraDePontos"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
- },
- {
   "id": "seats-iberia-GIG-MAD-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
@@ -3689,27 +3455,6 @@
   "ida": "13.000 Avios + taxas",
   "volta": "",
   "link_nome": "Qatar Privilege Club"
- },
- {
-  "id": "1290836068-7647",
-  "data": "2026-11-08T17:17:29Z",
-  "tipo": "promocao",
-  "titulo": "CARTÕES CAIXA: CONTRATE UM NOVO CARTÃO E GANHE ISENÇÃO DA ANUIDADE DO PRIMEIRO ANO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Contrate um novo Cartão de Crédito CAIXA elegível e obtenha isenção total da primeira anuidade cumprindo os requisitos de gastos.",
-  "detalhes": [
-   "1ª anuidade grátis para cartões elegíveis CAIXA Visa e Elo.",
-   "Requisito Ícone: R$ 30.000 em compras até 13/12/2026.",
-   "Requisito Elo Diners e Empresariais Grafite/Mais: R$ 15.000 em compras até 13/12/2026.",
-   "Requisito demais cartões elegíveis: desbloquear e fazer a 1ª compra no crédito até 13/12/2026."
-  ],
-  "parceiros": "Caixa, Visa, Elo",
-  "validade": "15/11/2026",
-  "links": [
-   "https://www.caixa.gov.br/voce/promocoes/Paginas/default.aspx"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
  },
  {
   "id": "1290836068-7645",
@@ -3936,28 +3681,6 @@
    "https://sejasocio.samsclub.com.br/index.php/parceria-azul-out"
   ],
   "ate": "2026-11-16T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7609",
-  "data": "2026-11-05T21:49:29Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FRIDAY: 5.000 PONTOS BÔNUS PARA NOVOS CLIENTES",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Cadastre-se gratuitamente no programa Azul Fidelidade e receba 5.000 pontos bônus ao utilizar o cupom AZF5000.",
-  "detalhes": [
-   "5.000 pontos bônus para novos clientes.",
-   "Cupom exclusivo: AZF5000.",
-   "Cadastro exclusivo pelo aplicativo Azul ou site oficial.",
-   "✅ Parceiros: Azul Fidelidade",
-   "✅ Validade: 15/11/2026"
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "15/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/cadastro-azul-friday"
-  ],
-  "ate": "2026-11-15T23:59:59-03:00"
  },
  {
   "id": "1290836068-7557",
