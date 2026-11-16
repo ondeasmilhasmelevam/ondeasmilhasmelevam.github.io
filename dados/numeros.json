@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-16T22:32:28.588100Z",
+ "atualizado": "2026-11-16T22:44:32.340001Z",
  "dias": 30,
  "passagens": 2864,
  "promocoes": 169,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1372,
+  "passagens": 1371,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -1032,19 +1032,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6302",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "Milão",
-    "destino_iata": "MXP",
-    "cabine": "Executiva",
-    "programa": "LATAM Pass",
-    "data": "2026-11-09T22:35:40Z",
-    "milhas": 200759,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
     "id": "2361370250-6514",
     "origem": "Rio de Janeiro",
     "origem_iata": "GIG",
@@ -1199,6 +1186,19 @@
     "milhas": 60000,
     "nivel": "",
     "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6446",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "Cidade do Panamá",
+    "destino_iata": "PTY",
+    "cabine": "Executiva",
+    "programa": "GOL Smiles",
+    "data": "2026-11-12T11:24:58Z",
+    "milhas": 60700,
+    "nivel": "",
+    "regiao": "caribe"
    }
   ]
  }
