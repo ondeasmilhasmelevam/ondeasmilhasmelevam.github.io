@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-16T15:55:11.357438Z",
+ "atualizado": "2026-11-16T16:01:25.937955Z",
  "dias": 30,
  "passagens": 2819,
  "promocoes": 159,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1434,
+  "passagens": 1429,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -550,14 +550,14 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2008590742-15126",
+    "id": "2008590742-15707",
     "origem": "São Paulo",
     "origem_iata": "GRU",
     "destino": "Washington",
     "destino_iata": "IAD",
     "cabine": "Econômica",
     "programa": "Azul pelo Mundo",
-    "data": "2026-11-09T15:59:30Z",
+    "data": "2026-11-15T14:41:01Z",
     "milhas": 88500,
     "nivel": "bom",
     "regiao": "america-do-norte"
