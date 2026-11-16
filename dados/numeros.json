@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-16T18:38:54.915312Z",
+ "atualizado": "2026-11-16T18:45:00.668090Z",
  "dias": 30,
- "passagens": 2840,
+ "passagens": 2847,
  "promocoes": 164,
  "destinos": 166,
  "executiva": 590,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1405,
+  "passagens": 1412,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -237,6 +237,19 @@
     "milhas": 78000,
     "nivel": "espetacular",
     "regiao": "caribe"
+   },
+   {
+    "id": "2008590742-15872",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Punta Del Este",
+    "destino_iata": "PDP",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-16T18:41:32Z",
+    "milhas": 15000,
+    "nivel": "muito bom",
+    "regiao": "america-do-sul"
    },
    {
     "id": "2008590742-15388",
@@ -430,19 +443,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-16T11:00:59Z",
     "milhas": 22000,
-    "nivel": "bom",
-    "regiao": "america-do-sul"
-   },
-   {
-    "id": "2008590742-15163",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Punta del Este",
-    "destino_iata": "PDP",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-09T20:19:56Z",
-    "milhas": 24250,
     "nivel": "bom",
     "regiao": "america-do-sul"
    },
