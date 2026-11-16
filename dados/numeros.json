@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-16T12:03:57.935267Z",
+ "atualizado": "2026-11-16T12:10:16.695989Z",
  "dias": 30,
- "passagens": 2734,
+ "passagens": 2737,
  "promocoes": 156,
  "destinos": 165,
  "executiva": 580,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1404,
+  "passagens": 1406,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -394,6 +394,19 @@
     "regiao": "europa"
    },
    {
+    "id": "2008590742-15819",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Amsterdã",
+    "destino_iata": "AMS",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-16T12:07:31Z",
+    "milhas": 71600,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
     "id": "2008590742-15689",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -559,19 +572,6 @@
     "programa": "Smiles",
     "data": "2026-11-12T05:14:55.794608Z",
     "milhas": 127000,
-    "nivel": "bom",
-    "regiao": "europa"
-   },
-   {
-    "id": "seats-smiles-GIG-AMS-eco",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "Amsterdã",
-    "destino_iata": "AMS",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-12T05:14:55.794608Z",
-    "milhas": 142000,
     "nivel": "bom",
     "regiao": "europa"
    },
