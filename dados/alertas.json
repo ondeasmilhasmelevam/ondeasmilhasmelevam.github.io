@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-9773",
+  "data": "2026-11-16T15:47:01Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "21.100 milhas + Taxas",
+  "volta": "21.900 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-9772",
+  "data": "2026-11-16T15:43:55Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Campo Grande",
+  "destino_iata": "CGR",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "16.820 milhas + Taxas",
+  "volta": "16.820 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-9771",
   "data": "2026-11-16T15:28:48Z",
   "origem": "Palmas",
@@ -4522,34 +4550,6 @@
    "https://link.dia23.com.br/r/SlFuTJ2"
   ],
   "ate": ""
- },
- {
-  "id": "2008590742-15691",
-  "data": "2026-11-14T15:45:18Z",
-  "origem": "Natal",
-  "origem_iata": "NAT",
-  "destino": "Belém",
-  "destino_iata": "BEL",
-  "companhia": "GOL + parceira",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "28.700 milhas + Taxas",
-  "volta": "28.600 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-15690",
-  "data": "2026-11-14T15:44:19Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Vitória",
-  "destino_iata": "VIX",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "20.300 milhas + Taxas",
-  "volta": "20.300 milhas + Taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7772",
