@@ -1,5 +1,47 @@
 [
  {
+  "id": "2361370250-6680",
+  "data": "2026-11-16T13:43:07Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "Air Canada",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "80.000 milhas + Taxas",
+  "volta": "80.000 milhas + Taxas",
+  "link_nome": "Aeroplan"
+ },
+ {
+  "id": "2361370250-6679",
+  "data": "2026-11-16T13:43:04Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Porto",
+  "destino_iata": "OPO",
+  "companhia": "Air Canada",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "80.000 milhas + Taxas",
+  "volta": "80.000 milhas + Taxas",
+  "link_nome": "Aeroplan"
+ },
+ {
+  "id": "2361370250-6678",
+  "data": "2026-11-16T13:42:58Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Frankfurt",
+  "destino_iata": "FRA",
+  "companhia": "Air Canada",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "80.000 milhas + Taxas",
+  "volta": "80.000 milhas + Taxas",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "3761373661-9763",
   "data": "2026-11-16T13:29:11Z",
   "origem": "Sinop",
@@ -1120,20 +1162,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "3761373661-9725",
-  "data": "2026-11-16T11:42:23Z",
-  "origem": "Vitória",
-  "origem_iata": "VIX",
-  "destino": "Caldas Novas",
-  "destino_iata": "CLV",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "16.200 milhas + Taxas",
-  "volta": "16.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "2361370250-6661",
   "data": "2026-11-16T11:42:23Z",
   "origem": "São Paulo",
@@ -1146,6 +1174,20 @@
   "ida": "72.000 milhas (68.400 no Clube Smiles)",
   "volta": "70.000 milhas (66.500 no Clube Smiles)",
   "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "3761373661-9725",
+  "data": "2026-11-16T11:42:23Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Caldas Novas",
+  "destino_iata": "CLV",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.200 milhas + Taxas",
+  "volta": "16.200 milhas + Taxas",
+  "link_nome": "Smiles"
  },
  {
   "id": "3761373661-9724",
