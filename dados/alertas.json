@@ -1,5 +1,61 @@
 [
  {
+  "id": "3761373661-9759",
+  "data": "2026-11-16T13:20:45Z",
+  "origem": "Uberlândia",
+  "origem_iata": "UDI",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "13.200 milhas + Taxas",
+  "volta": "13.200 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-9758",
+  "data": "2026-11-16T13:20:38Z",
+  "origem": "Uberlândia",
+  "origem_iata": "UDI",
+  "destino": "Recife",
+  "destino_iata": "REC",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "27.000 milhas + Taxas",
+  "volta": "27.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-9757",
+  "data": "2026-11-16T13:20:35Z",
+  "origem": "Uberlândia",
+  "origem_iata": "UDI",
+  "destino": "Goiânia",
+  "destino_iata": "GYN",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "19.600 milhas + Taxas",
+  "volta": "19.600 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-9756",
+  "data": "2026-11-16T13:20:31Z",
+  "origem": "Uberlândia",
+  "origem_iata": "UDI",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "12.600 milhas + Taxas",
+  "volta": "12.600 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6675",
   "data": "2026-11-16T13:07:58Z",
   "origem": "Fortaleza",
@@ -1008,20 +1064,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "2361370250-6661",
-  "data": "2026-11-16T11:42:23Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "Turkish Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "72.000 milhas (68.400 no Clube Smiles)",
-  "volta": "70.000 milhas (66.500 no Clube Smiles)",
-  "link_nome": "GOL Smiles"
- },
- {
   "id": "3761373661-9725",
   "data": "2026-11-16T11:42:23Z",
   "origem": "Vitória",
@@ -1034,6 +1076,20 @@
   "ida": "16.200 milhas + Taxas",
   "volta": "16.200 milhas + Taxas",
   "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-6661",
+  "data": "2026-11-16T11:42:23Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "Turkish Airlines",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "72.000 milhas (68.400 no Clube Smiles)",
+  "volta": "70.000 milhas (66.500 no Clube Smiles)",
+  "link_nome": "GOL Smiles"
  },
  {
   "id": "3761373661-9724",
