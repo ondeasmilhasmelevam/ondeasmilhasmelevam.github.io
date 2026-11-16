@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-16T20:18:32.485877Z",
+ "atualizado": "2026-11-16T20:24:42.887268Z",
  "dias": 30,
- "passagens": 2851,
+ "passagens": 2854,
  "promocoes": 168,
  "destinos": 166,
- "executiva": 591,
+ "executiva": 592,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1395,
+  "passagens": 1393,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -1123,19 +1123,6 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2361370250-6301",
-    "origem": "Seul",
-    "origem_iata": "ICN",
-    "destino": "Hong Kong",
-    "destino_iata": "HKG",
-    "cabine": "Executiva",
-    "programa": "Smiles",
-    "data": "2026-11-09T20:19:26Z",
-    "milhas": 41200,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "2361370250-6512",
     "origem": "Paris",
     "origem_iata": "CDG",
@@ -1197,6 +1184,19 @@
     "programa": "AAdvantage",
     "data": "2026-11-10T15:16:25Z",
     "milhas": 57500,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6481",
+    "origem": "Nova York",
+    "origem_iata": "JFK",
+    "destino": "Zaventem",
+    "destino_iata": "BRU",
+    "cabine": "Executiva",
+    "programa": "Aeroplan",
+    "data": "2026-11-12T15:16:07Z",
+    "milhas": 60000,
     "nivel": "",
     "regiao": "outros"
    }
