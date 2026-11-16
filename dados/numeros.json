@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-16T19:22:45.744295Z",
+ "atualizado": "2026-11-16T19:28:51.639651Z",
  "dias": 30,
  "passagens": 2849,
  "promocoes": 166,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1410,
+  "passagens": 1399,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -278,15 +278,15 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-15155",
+    "id": "2008590742-15516",
     "origem": "Florianópolis",
     "origem_iata": "FLN",
     "destino": "Buenos Aires",
     "destino_iata": "EZE",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-09T19:25:47Z",
-    "milhas": 27000,
+    "data": "2026-11-12T21:48:11Z",
+    "milhas": 28000,
     "nivel": "muito bom",
     "regiao": "america-do-sul"
    },
