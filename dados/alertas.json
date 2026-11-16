@@ -1,5 +1,63 @@
 [
  {
+  "id": "1290836068-7824",
+  "data": "2026-11-16T19:45:40Z",
+  "tipo": "promocao",
+  "titulo": "COMPRA DE PONTOS DO PROGRAMA ESFERA COM ATÉ 55% OFF",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Compre pontos do programa Esfera com até 55% de desconto usando os cupons GABRIEL55 ou GABRIEL50, dependendo do tempo de assinatura.",
+  "detalhes": [
+   "55% OFF para clientes do clube Esfera com tempo de assinatura >= 1 ano, cupom GABRIEL55",
+   "50% OFF para clientes do clube Esfera com tempo de assinatura < 1 ano, cupom GABRIEL50"
+  ],
+  "parceiros": "Esfera",
+  "validade": "19/11/2026",
+  "links": [
+   "https://www.esfera.com.vc/p/compra-de-pontos/e000100033"
+  ],
+  "ate": "2026-11-19T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7823",
+  "data": "2026-11-16T19:44:49Z",
+  "tipo": "promocao",
+  "titulo": "LATAM OFERECE PASSAGENS NA AMÉRICA DO SUL A PARTIR DE 15.014 MILHAS + TAXAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "LATAM disponibiliza passagens internacionais na América do Sul a partir de 15.014 milhas + taxas por trecho ou a partir de R$380,80 + taxas ao comprar pontos. O programa LATAM Pass oferece até 66% de desconto na compra de milhas, com limite de 350.000 milhas e aquisição em lotes de 1.000. O custo por mil milhas reduzido a R$23,80 ou R$25,90, dependendo do cliente.",
+  "detalhes": [
+   "passagens por trecho a partir de 15.014 milhas + taxas",
+   "passagens a partir de R$380,80 + taxas ao comprar pontos",
+   "desconto de até 66% na compra de milhas até sexta-feira (20)",
+   "limite de compra de até 350.000 milhas com desconto",
+   "acquisition em lotes de 1.000",
+   "custo por mil milhas reduzido a R$23,80 para LATAM Pass Itaú, R$25,90 para LATAM Pass/Clube",
+   "valor efetivo da emissão calculado como 16.000 milhas x CPM",
+   "Florianópolis (FLN) x Buenos Aires (EZE) a partir de 15.014 milhas o trecho"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "até sexta-feira (20)",
+  "links": [
+   "https://link.dia23.com.br/r/67AV7qW"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "2008590742-15876",
+  "data": "2026-11-16T19:42:40Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Buenos Aires",
+  "destino_iata": "AEP",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "29.000 milhas + R$ 108,17 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-7821",
   "data": "2026-11-16T19:11:28Z",
   "tipo": "promocao",
@@ -2007,20 +2065,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "2361370250-6661",
-  "data": "2026-11-16T11:42:23Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "Turkish Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "72.000 milhas (68.400 no Clube Smiles)",
-  "volta": "70.000 milhas (66.500 no Clube Smiles)",
-  "link_nome": "GOL Smiles"
- },
- {
   "id": "3761373661-9725",
   "data": "2026-11-16T11:42:23Z",
   "origem": "Vitória",
@@ -2033,6 +2077,20 @@
   "ida": "16.200 milhas + Taxas",
   "volta": "16.200 milhas + Taxas",
   "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-6661",
+  "data": "2026-11-16T11:42:23Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "Turkish Airlines",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "72.000 milhas (68.400 no Clube Smiles)",
+  "volta": "70.000 milhas (66.500 no Clube Smiles)",
+  "link_nome": "GOL Smiles"
  },
  {
   "id": "3761373661-9724",

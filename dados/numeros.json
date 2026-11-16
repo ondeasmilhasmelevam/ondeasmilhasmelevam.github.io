@@ -1,8 +1,8 @@
 {
- "atualizado": "2026-11-16T19:41:03.344476Z",
+ "atualizado": "2026-11-16T19:47:09.693582Z",
  "dias": 30,
- "passagens": 2849,
- "promocoes": 166,
+ "passagens": 2850,
+ "promocoes": 168,
  "destinos": 166,
  "executiva": 591,
  "destaques": [
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1399,
+  "passagens": 1400,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -291,6 +291,19 @@
     "regiao": "america-do-sul"
    },
    {
+    "id": "2008590742-15876",
+    "origem": "Florianópolis",
+    "origem_iata": "FLN",
+    "destino": "Buenos Aires",
+    "destino_iata": "AEP",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-16T19:42:40Z",
+    "milhas": 29000,
+    "nivel": "muito bom",
+    "regiao": "america-do-sul"
+   },
+   {
     "id": "2008590742-15475",
     "origem": "Foz do Iguaçu",
     "origem_iata": "IGU",
@@ -419,19 +432,6 @@
     "milhas": 92300,
     "nivel": "muito bom",
     "regiao": "europa"
-   },
-   {
-    "id": "2008590742-15550",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "Buenos Aires",
-    "destino_iata": "AEP",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-13T16:05:21Z",
-    "milhas": 21500,
-    "nivel": "bom",
-    "regiao": "america-do-sul"
    },
    {
     "id": "2008590742-15802",
