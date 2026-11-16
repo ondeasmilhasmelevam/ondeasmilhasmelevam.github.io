@@ -1,11 +1,24 @@
 {
- "atualizado": "2026-11-16T17:03:47.421644Z",
+ "atualizado": "2026-11-16T17:09:59.343549Z",
  "dias": 30,
  "passagens": 2830,
  "promocoes": 161,
  "destinos": 166,
  "executiva": 588,
  "destaques": [
+  {
+   "id": "seats-iberia-REC-MAD-eco",
+   "origem": "Recife",
+   "origem_iata": "REC",
+   "destino": "Madrid",
+   "destino_iata": "MAD",
+   "cabine": "Econômica",
+   "programa": "Iberia Plus",
+   "data": "2026-11-08T00:47:54.833463Z",
+   "milhas": 16000,
+   "nivel": "espetacular",
+   "foto": "img/rotas/REC-MAD.jpg"
+  },
   {
    "id": "2008590742-14805",
    "origem": "São Paulo",
@@ -69,23 +82,10 @@
    "data": "2026-11-03T14:21:47Z",
    "milhas": 43200,
    "nivel": "espetacular"
-  },
-  {
-   "id": "2008590742-15491",
-   "origem": "Porto Alegre",
-   "origem_iata": "POA",
-   "destino": "Miami",
-   "destino_iata": "MIA",
-   "cabine": "Econômica",
-   "programa": "LATAM Pass",
-   "data": "2026-11-12T13:34:43Z",
-   "milhas": 44310,
-   "nivel": "espetacular",
-   "foto": "img/rotas/POA-MIA.jpg"
   }
  ],
  "semana": {
-  "passagens": 1425,
+  "passagens": 1420,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -212,6 +212,19 @@
     "regiao": "america-do-norte"
    },
    {
+    "id": "3996014557-2514",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
+    "destino": "Los Angeles",
+    "destino_iata": "LAX",
+    "cabine": "Econômica",
+    "programa": "Latam Pass",
+    "data": "2026-11-13T19:26:58Z",
+    "milhas": 48000,
+    "nivel": "espetacular",
+    "regiao": "america-do-norte"
+   },
+   {
     "id": "seats-smiles-GRU-AUA-eco",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -288,19 +301,6 @@
     "milhas": 55500,
     "nivel": "muito bom",
     "regiao": "europa"
-   },
-   {
-    "id": "2008590742-15564",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "Los Angeles",
-    "destino_iata": "LAX",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-13T17:14:18Z",
-    "milhas": 57000,
-    "nivel": "muito bom",
-    "regiao": "america-do-norte"
    },
    {
     "id": "2008590742-15498",
@@ -485,6 +485,19 @@
     "regiao": "america-do-sul"
    },
    {
+    "id": "seats-qatar-GRU-LHR-eco",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Londres",
+    "destino_iata": "LHR",
+    "cabine": "Econômica",
+    "programa": "Qatar Privilege Club",
+    "data": "2026-11-10T00:03:03.524369Z",
+    "milhas": 38500,
+    "nivel": "bom",
+    "regiao": "europa"
+   },
+   {
     "id": "2008590742-15328",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -561,19 +574,6 @@
     "milhas": 88500,
     "nivel": "bom",
     "regiao": "america-do-norte"
-   },
-   {
-    "id": "seats-smiles-GRU-LHR-eco",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Londres",
-    "destino_iata": "LHR",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-12T05:14:55.794608Z",
-    "milhas": 127000,
-    "nivel": "bom",
-    "regiao": "europa"
    },
    {
     "id": "3761373661-9492",
@@ -992,15 +992,67 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2361370250-6586",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
+    "id": "seats-iberia-GIG-MAD-exe",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
+    "destino": "Madrid",
+    "destino_iata": "MAD",
+    "cabine": "Executiva",
+    "programa": "Iberia Plus",
+    "data": "2026-11-12T05:14:55.794608Z",
+    "milhas": 50500,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
+    "id": "2361370250-6675",
+    "origem": "Fortaleza",
+    "origem_iata": "FOR",
     "destino": "Lisboa",
     "destino_iata": "LIS",
     "cabine": "Executiva",
     "programa": "LATAM Pass",
-    "data": "2026-11-14T16:20:41Z",
-    "milhas": 190356,
+    "data": "2026-11-16T13:07:58Z",
+    "milhas": 161900,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
+    "id": "2361370250-6494",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
+    "destino": "Frankfurt",
+    "destino_iata": "FRA",
+    "cabine": "Executiva",
+    "programa": "LATAM Pass",
+    "data": "2026-11-12T21:25:26Z",
+    "milhas": 193849,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
+    "id": "2361370250-6302",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
+    "destino": "Milão",
+    "destino_iata": "MXP",
+    "cabine": "Executiva",
+    "programa": "LATAM Pass",
+    "data": "2026-11-09T22:35:40Z",
+    "milhas": 200759,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
+    "id": "2361370250-6514",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
+    "destino": "Barcelona",
+    "destino_iata": "BCN",
+    "cabine": "Executiva",
+    "programa": "LATAM Pass",
+    "data": "2026-11-13T20:50:52Z",
+    "milhas": 205273,
     "nivel": "muito bom",
     "regiao": "europa"
    },
@@ -1031,17 +1083,17 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6296",
+    "id": "2361370250-6292",
     "origem": "São Paulo",
     "origem_iata": "GRU",
-    "destino": "Madrid",
-    "destino_iata": "MAD",
+    "destino": "Buenos Aires",
+    "destino_iata": "EZE",
     "cabine": "Executiva",
-    "programa": "Smiles",
-    "data": "2026-11-09T19:14:36Z",
-    "milhas": 412000,
-    "nivel": "bom",
-    "regiao": "europa"
+    "programa": "Qatar Privilege Club",
+    "data": "2026-11-09T17:44:12Z",
+    "milhas": 16500,
+    "nivel": "",
+    "regiao": "america-do-sul"
    },
    {
     "id": "2361370250-6371",
@@ -1057,15 +1109,41 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2361370250-6597",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
+    "id": "2361370250-6370",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Lima",
+    "destino_iata": "LIM",
+    "cabine": "Executiva",
+    "programa": "Finnair Plus",
+    "data": "2026-11-10T12:31:11Z",
+    "milhas": 20000,
+    "nivel": "",
+    "regiao": "america-do-sul"
+   },
+   {
+    "id": "2361370250-6407",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
     "destino": "Bogotá",
     "destino_iata": "BOG",
     "cabine": "Executiva",
-    "programa": "Aeroplan",
-    "data": "2026-11-15T17:56:39Z",
+    "programa": "Finnair Plus",
+    "data": "2026-11-11T15:43:48Z",
     "milhas": 20000,
+    "nivel": "",
+    "regiao": "america-do-sul"
+   },
+   {
+    "id": "2361370250-6293",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Santiago",
+    "destino_iata": "SCL",
+    "cabine": "Executiva",
+    "programa": "Qatar Privilege Club",
+    "data": "2026-11-09T17:47:12Z",
+    "milhas": 22000,
     "nivel": "",
     "regiao": "america-do-sul"
    },
@@ -1120,84 +1198,6 @@
     "milhas": 50000,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "2361370250-6379",
-    "origem": "Toronto",
-    "origem_iata": "YYZ",
-    "destino": "Helsinque",
-    "destino_iata": "HEL",
-    "cabine": "Executiva",
-    "programa": "AAdvantage",
-    "data": "2026-11-10T15:16:25Z",
-    "milhas": 57500,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
-    "id": "2361370250-6481",
-    "origem": "Nova York",
-    "origem_iata": "JFK",
-    "destino": "Zaventem",
-    "destino_iata": "BRU",
-    "cabine": "Executiva",
-    "programa": "Aeroplan",
-    "data": "2026-11-12T15:16:07Z",
-    "milhas": 60000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
-    "id": "2361370250-6497",
-    "origem": "Sydney",
-    "origem_iata": "SYD",
-    "destino": "Tóquio",
-    "destino_iata": "HND",
-    "cabine": "Primeira Classe",
-    "programa": "AAdvantage",
-    "data": "2026-11-12T22:03:56Z",
-    "milhas": 60000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
-    "id": "2361370250-6508",
-    "origem": "Nova York",
-    "origem_iata": "JFK",
-    "destino": "Frankfurt",
-    "destino_iata": "FRA",
-    "cabine": "Executiva",
-    "programa": "Aeroplan",
-    "data": "2026-11-13T15:32:57Z",
-    "milhas": 60000,
-    "nivel": "",
-    "regiao": "europa"
-   },
-   {
-    "id": "2361370250-6446",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Cidade do Panamá",
-    "destino_iata": "PTY",
-    "cabine": "Executiva",
-    "programa": "GOL Smiles",
-    "data": "2026-11-12T11:24:58Z",
-    "milhas": 60700,
-    "nivel": "",
-    "regiao": "caribe"
-   },
-   {
-    "id": "2361370250-6327",
-    "origem": "Cidade do Panamá",
-    "origem_iata": "PTY",
-    "destino": "Amsterdã",
-    "destino_iata": "AMS",
-    "cabine": "Executiva",
-    "programa": "Flying Blue",
-    "data": "2026-11-10T09:37:58Z",
-    "milhas": 63750,
-    "nivel": "",
-    "regiao": "europa"
    }
   ]
  }
