@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-16T13:45:39.111568Z",
+ "atualizado": "2026-11-16T13:51:54.238164Z",
  "dias": 30,
- "passagens": 2805,
+ "passagens": 2807,
  "promocoes": 156,
  "destinos": 166,
  "executiva": 587,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1446,
+  "passagens": 1448,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -693,6 +693,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9765",
+    "origem": "Petrolina",
+    "origem_iata": "PNZ",
+    "destino": "Recife",
+    "destino_iata": "REC",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-16T13:51:50Z",
+    "milhas": 6491,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9400",
     "origem": "Uberlândia",
     "origem_iata": "UDI",
@@ -923,19 +936,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-12T11:20:47Z",
     "milhas": 9302,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9702",
-    "origem": "Aracaju",
-    "origem_iata": "AJU",
-    "destino": "Recife",
-    "destino_iata": "REC",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-16T10:56:57Z",
-    "milhas": 10000,
     "nivel": "",
     "regiao": "brasil"
    },
