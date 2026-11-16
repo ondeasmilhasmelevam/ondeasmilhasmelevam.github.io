@@ -2302,3 +2302,4 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 /* Alerta grátis: quadro para quem já assina (no lugar do formulário) */
 .ja-assina .lead-campos{display:flex;flex-wrap:wrap;gap:10px}
 .ja-assina .lead-campos .cta{text-decoration:none}
+.preco-regua.sem{background:none}

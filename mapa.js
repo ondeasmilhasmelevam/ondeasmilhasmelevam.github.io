@@ -101,7 +101,7 @@
     }
     base = proj.scale(); k = 1;
     caminho = d3.geoPath(proj);
-    svg.on('.zoom', null).on('.drag', null).on('wheel', null);
+    svg.on('.zoom', null).on('.drag', null).on('wheel', null).on('.pinca', null);
     svg.selectAll('*').remove();
     const defs = svg.append('defs');
     const halo = defs.append('radialGradient').attr('id', 'mapa-halo');
@@ -138,10 +138,25 @@
         proj.rotate([r[0] + dx * f, Math.max(-80, Math.min(80, r[1] - dy * f)), 0]);
         agendar();
       };
+      // Pinça com dois dedos (celular): afasta = aproxima, junta = afasta. Enquanto houver dois dedos, o globo não gira.
+      let pinca = null;
+      const dist = t => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
+      svg.on('touchstart.pinca', e => {
+        if (e.touches.length === 2) { pinca = { d: dist(e.touches), s: proj.scale() }; vel = [0, 0]; if (inercia) { inercia.stop(); inercia = null; } }
+      }, { passive: true });
+      svg.on('touchmove.pinca', e => {
+        if (!pinca || e.touches.length !== 2) return;
+        e.preventDefault();
+        proj.scale(Math.max(base * 0.9, Math.min(base * 7, pinca.s * dist(e.touches) / pinca.d)));
+        agendar();
+      }, { passive: false });
+      svg.on('touchend.pinca touchcancel.pinca', e => { if (e.touches.length < 2) { pinca = null; vel = [0, 0]; } });
       svg.call(d3.drag()
+        .filter(e => !(e.touches && e.touches.length > 1))
         .on('start', () => { if (inercia) { inercia.stop(); inercia = null; } vel = [0, 0]; })
-        .on('drag', e => { vel = [e.dx, e.dy]; girar(e.dx, e.dy); })
+        .on('drag', e => { if (pinca) return; vel = [e.dx, e.dy]; girar(e.dx, e.dy); })
         .on('end', () => {
+          if (pinca) return;
           // solta e o globo continua girando um pouco, freando aos poucos
           if (Math.hypot(vel[0], vel[1]) < 1.5 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
           inercia = d3.timer(() => { vel = [vel[0] * 0.92, vel[1] * 0.92]; girar(vel[0], vel[1]); if (Math.hypot(vel[0], vel[1]) < 0.2) { inercia.stop(); inercia = null; } });

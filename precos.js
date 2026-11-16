@@ -15,5 +15,8 @@ window.PRECO_MILHAS = [
   { nome: 'Esfera', icone: 'esfera', tipo: 'Banco de pontos', preco: 'R$ 35 ou menos', fundo: '#111111', tinta: '#FFFFFF' },
   { nome: 'ConnectMiles', icone: 'copa', tipo: 'Copa Airlines', preco: 'R$ 55 a 65', fundo: '#B07A4E', tinta: '#FFFFFF' },
   { nome: 'AAdvantage', icone: 'aadvantage', tipo: 'American Airlines', preco: 'R$ 80 a 90', fundo: '#FFFFFF', tinta: '#0078D2' },
-  { nome: 'Miles+Bonus', icone: 'aegean', tipo: 'Aegean', preco: 'R$ 68', fundo: '#FFFFFF', tinta: '#1B2A6B' }
+  { nome: 'Miles+Bonus', icone: 'aegean', tipo: 'Aegean', preco: 'R$ 68', fundo: '#FFFFFF', tinta: '#1B2A6B' },
+  { nome: 'Flying Blue', icone: 'flyingblue', tipo: 'Air France e KLM', preco: 'R$ 75 ou menos', fundo: '#1A1AC8', tinta: '#FFFFFF' },
+  { nome: 'JAL Mileage Bank', icone: 'jal', tipo: 'Japan Airlines · via Marriott', preco: 'R$ 84 ou menos', fundo: '#FFFFFF', tinta: '#C8102E' },
+  { nome: 'SUMA', icone: 'aireuropa', tipo: 'Air Europa · preço em euro', preco: '€ 10', fundo: '#0A6FC2', tinta: '#FFFFFF' }
 ];

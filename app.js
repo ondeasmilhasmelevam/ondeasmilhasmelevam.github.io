@@ -2915,8 +2915,9 @@
     if (!P || !P.length) { $('#comprar').hidden = true; return; }
     // Do milheiro mais barato ao mais caro; a régua mostra onde cada preço fica entre R$ 0 e o maior da lista.
     const faixa = t => { const n = String(t).match(/\d+/g) || []; return n.length ? [+n[0], +(n[1] || n[0])] : [0, 0]; };
-    const lista = P.map(p => ({ ...p, f: faixa(p.preco) })).sort((a, b) => a.f[0] - b.f[0] || a.f[1] - b.f[1]);
-    const teto = Math.max(...lista.map(p => p.f[1])) * 1.05 || 1;
+    const lista = P.map(p => ({ ...p, f: faixa(p.preco) })).sort((a, b) => (/^R\$/.test(b.preco.trim()) - /^R\$/.test(a.preco.trim())) || a.f[0] - b.f[0] || a.f[1] - b.f[1]);
+    const emReais = p => /^R\$/.test(p.preco.trim());
+    const teto = Math.max(...lista.filter(emReais).map(p => p.f[1])) * 1.05 || 1;
     const aberto = p => /ou menos/i.test(p.preco);
     $('#precos').innerHTML = lista.map(p => {
       const ini = aberto(p) ? 0 : p.f[0], fim = p.f[1];
@@ -2925,7 +2926,7 @@
           : `<span class="preco-ico preco-ini" style="background:${esc(p.fundo)};color:${esc(p.tinta)}">${esc(p.nome.slice(0, 2))}</span>`}
         <div class="preco-nome"><b>${esc(p.nome)}</b><small>${esc(p.tipo || '')}</small></div>
         <div class="preco-valor"><b>${esc(aberto(p) ? `até R$ ${p.f[1]}` : p.preco.replace(/^R\$\s*/, 'R$ '))}</b><small>por 1.000</small></div>
-        <span class="preco-regua" aria-hidden="true"><i></i></span>
+        ${emReais(p) ? '<span class="preco-regua" aria-hidden="true"><i></i></span>' : '<span class="preco-regua sem" aria-hidden="true"></span>'}
       </li>`;
     }).join('');
   }
