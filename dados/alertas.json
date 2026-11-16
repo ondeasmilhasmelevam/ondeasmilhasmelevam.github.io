@@ -4497,25 +4497,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "1290836068-7785",
-  "data": "2026-11-14T15:52:23Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass: 4.841 MILHAS + TAXAS POR TRECHO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "A LATAM oferece passagens nacionais a partir de 4.841 milhas + taxas por trecho. A LATAM Pass oferece 25% de bônus na transferência de pontos do Sem Parar.",
-  "detalhes": [
-   "4.841 milhas + taxas por trecho",
-   "25% de bônus na transferência de pontos do Sem Parar"
-  ],
-  "parceiros": "LATAM Pass",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/SlFuTJ2"
-  ],
-  "ate": ""
- },
- {
   "id": "1290836068-7781",
   "data": "2026-11-14T15:52:09Z",
   "tipo": "promocao",
@@ -4532,24 +4513,6 @@
    "https://www.hilton.com/en/p/hilton-honors/buy-give-receive-points"
   ],
   "ate": "2026-11-21T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7779",
-  "data": "2026-11-14T15:52:01Z",
-  "tipo": "promocao",
-  "titulo": "VOE PARA BARCELONA A PARTIR DE 94 MIL PONTOS AZUL + TAXAS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Passagem aérea para Barcelona com 94 mil pontos Azul mais taxas. Não há mais detalhes no texto.",
-  "detalhes": [
-   "94 mil pontos Azul + taxas"
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/SlFuTJ2"
-  ],
-  "ate": ""
  },
  {
   "id": "1290836068-7772",
