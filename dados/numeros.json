@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-16T11:02:31.584619Z",
+ "atualizado": "2026-11-16T11:13:56.088870Z",
  "dias": 30,
- "passagens": 2680,
+ "passagens": 2691,
  "promocoes": 156,
  "destinos": 163,
- "executiva": 565,
+ "executiva": 568,
  "destaques": [
   {
    "id": "2008590742-14805",
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1362,
+  "passagens": 1370,
   "destaques": [
    {
     "id": "3761373661-9203",
@@ -316,19 +316,6 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2008590742-15106",
-    "origem": "Recife",
-    "origem_iata": "REC",
-    "destino": "Roma",
-    "destino_iata": "FCO",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-09T11:10:21Z",
-    "milhas": 60300,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
     "id": "2008590742-15498",
     "origem": "Recife",
     "origem_iata": "REC",
@@ -351,6 +338,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-13T18:32:41Z",
     "milhas": 66000,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
+    "id": "2008590742-15512",
+    "origem": "Curitiba",
+    "origem_iata": "CWB",
+    "destino": "Roma",
+    "destino_iata": "FCO",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-12T20:24:25Z",
+    "milhas": 67190,
     "nivel": "muito bom",
     "regiao": "europa"
    },
