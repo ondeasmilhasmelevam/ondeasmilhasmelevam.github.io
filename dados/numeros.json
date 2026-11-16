@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-16T13:01:16.226802Z",
+ "atualizado": "2026-11-16T13:07:36.385889Z",
  "dias": 30,
- "passagens": 2792,
+ "passagens": 2793,
  "promocoes": 156,
  "destinos": 166,
  "executiva": 583,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1447,
+  "passagens": 1443,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -368,6 +368,19 @@
     "regiao": "europa"
    },
    {
+    "id": "2008590742-15850",
+    "origem": "Recife",
+    "origem_iata": "REC",
+    "destino": "Amsterdã",
+    "destino_iata": "AMS",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-16T13:04:27Z",
+    "milhas": 69000,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
     "id": "2008590742-15530",
     "origem": "Curitiba",
     "origem_iata": "CWB",
@@ -390,19 +403,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-10T18:16:19Z",
     "milhas": 71000,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
-    "id": "2008590742-15819",
-    "origem": "Porto Alegre",
-    "origem_iata": "POA",
-    "destino": "Amsterdã",
-    "destino_iata": "AMS",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-16T12:07:31Z",
-    "milhas": 71600,
     "nivel": "muito bom",
     "regiao": "europa"
    },
