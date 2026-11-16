@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-16T19:59:31.113600Z",
+ "atualizado": "2026-11-16T20:05:37.143187Z",
  "dias": 30,
- "passagens": 2850,
+ "passagens": 2851,
  "promocoes": 168,
  "destinos": 166,
  "executiva": 591,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1400,
+  "passagens": 1401,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -458,6 +458,19 @@
     "milhas": 24800,
     "nivel": "bom",
     "regiao": "america-do-sul"
+   },
+   {
+    "id": "2008590742-15877",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Zurique",
+    "destino_iata": "ZRH",
+    "cabine": "Econômica",
+    "programa": "Iberia Plus",
+    "data": "2026-11-16T20:01:42Z",
+    "milhas": 26500,
+    "nivel": "bom",
+    "regiao": "europa"
    },
    {
     "id": "2008590742-15281",
@@ -924,19 +937,6 @@
     "programa": "Smiles",
     "data": "2026-11-13T23:41:05Z",
     "milhas": 9200,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9454",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
-    "destino": "Salvador",
-    "destino_iata": "SSA",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-12T11:20:47Z",
-    "milhas": 9302,
     "nivel": "",
     "regiao": "brasil"
    },

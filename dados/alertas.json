@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-15877",
+  "data": "2026-11-16T20:01:42Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Zurique",
+  "destino_iata": "ZRH",
+  "companhia": "Iberia",
+  "cabine": "Econômica",
+  "programa": "Iberia Plus",
+  "ida": "A partir de 26.500 AVIOS",
+  "volta": "A partir de 26.500 AVIOS",
+  "link_nome": "Iberia Plus"
+ },
+ {
   "id": "1290836068-7824",
   "data": "2026-11-16T19:45:40Z",
   "tipo": "promocao",
@@ -4697,34 +4711,6 @@
   "ida": "5.000 milhas + R$ 62,69 de taxas",
   "volta": "5.000 milhas + R$ 48,63 de taxas",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-9665",
-  "data": "2026-11-14T20:00:15Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "7.900 milhas + R$ 56,99 de taxas",
-  "volta": "9.900 milhas + R$ 35,75 de taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9664",
-  "data": "2026-11-14T20:00:12Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "9.800 milhas + R$ 48,63 de taxas",
-  "volta": "9.000 milhas + R$ 35,90 de taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7781",
