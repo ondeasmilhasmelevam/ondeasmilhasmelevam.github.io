@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9784",
+  "data": "2026-11-16T21:11:00Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Foz do Iguaçu",
+  "destino_iata": "IGU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "16.920 milhas + Taxas",
+  "volta": "17.810 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-9783",
   "data": "2026-11-16T20:58:24Z",
   "origem": "Goiânia",
@@ -2191,20 +2205,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "2361370250-6661",
-  "data": "2026-11-16T11:42:23Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "Turkish Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "72.000 milhas (68.400 no Clube Smiles)",
-  "volta": "70.000 milhas (66.500 no Clube Smiles)",
-  "link_nome": "GOL Smiles"
- },
- {
   "id": "3761373661-9725",
   "data": "2026-11-16T11:42:23Z",
   "origem": "Vitória",
@@ -2217,6 +2217,20 @@
   "ida": "16.200 milhas + Taxas",
   "volta": "16.200 milhas + Taxas",
   "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-6661",
+  "data": "2026-11-16T11:42:23Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "Turkish Airlines",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "72.000 milhas (68.400 no Clube Smiles)",
+  "volta": "70.000 milhas (66.500 no Clube Smiles)",
+  "link_nome": "GOL Smiles"
  },
  {
   "id": "3761373661-9724",
