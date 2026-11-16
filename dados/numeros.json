@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-16T14:04:32.700015Z",
+ "atualizado": "2026-11-16T14:11:18.323776Z",
  "dias": 30,
  "passagens": 2811,
  "promocoes": 158,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1446,
+  "passagens": 1442,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -1135,19 +1135,6 @@
     "regiao": "outros"
    },
    {
-    "id": "2361370250-6285",
-    "origem": "Sydney",
-    "origem_iata": "SYD",
-    "destino": "Tóquio",
-    "destino_iata": "HND",
-    "cabine": "Primeira Classe",
-    "programa": "AAdvantage",
-    "data": "2026-11-09T14:09:37Z",
-    "milhas": 60000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "2361370250-6481",
     "origem": "Nova York",
     "origem_iata": "JFK",
@@ -1156,6 +1143,19 @@
     "cabine": "Executiva",
     "programa": "Aeroplan",
     "data": "2026-11-12T15:16:07Z",
+    "milhas": 60000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6497",
+    "origem": "Sydney",
+    "origem_iata": "SYD",
+    "destino": "Tóquio",
+    "destino_iata": "HND",
+    "cabine": "Primeira Classe",
+    "programa": "AAdvantage",
+    "data": "2026-11-12T22:03:56Z",
     "milhas": 60000,
     "nivel": "",
     "regiao": "outros"
