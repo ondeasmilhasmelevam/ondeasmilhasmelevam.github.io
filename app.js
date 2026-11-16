@@ -1456,10 +1456,115 @@
   const diaBR = t => new Date(t).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
   const ultimoDia = (p, agora) => (!isNaN(Date.parse(p.ate)) ? diaBR(Date.parse(p.ate)) === diaBR(agora) : p.ultimo_dia && agora - Date.parse(p.data) < 86400e3);
   const httpOk = u => /^https?:\/\//.test(u || '');
-  function datasHtml(rotulo, lista) {
-    if (!lista || !lista.length) return '';
-    return `<div class="pass-datas"><span>${rotulo}</span><ul>${lista.map(d => `<li><b>${esc(d.mes)}</b> ${esc(d.dias)}</li>`).join('')}</ul></div>`;
+  // Busca já preenchida: cada programa abre a própria busca com origem, destino e as datas que a pessoa tocar.
+  // Formatos conferidos nos sites (Smiles, LATAM, Azul, TAP, Qatar, Aeroplan). Os outros seguem com o link do alerta.
+  const qs = o => new URLSearchParams(o).toString();
+  const BUSCA = [
+    [/smiles/i, (o, d, ida, volta, exe) => {
+      const ts = dt => Date.parse(`${dt}T03:00:00Z`); // meia-noite de Brasília
+      return 'https://www.smiles.com.br/mfe/emissao-passagem/?' + qs({ adults: 1, cabin: exe ? 'BUSINESS' : 'ECONOMIC', children: 0, departureDate: ts(ida),
+        infants: 0, isElegible: false, isFlexibleDateChecked: false, searchType: 'g3', segments: 1, tripType: volta ? 1 : 2,
+        originAirport: o, originCity: '', originCountry: '', originAirportIsAny: false,
+        destinationAirport: d, destinCity: '', destinCountry: '', destinAirportIsAny: false, ...(volta ? { returnDate: ts(volta) } : {}) });
+    }],
+    [/latam/i, (o, d, ida, volta, exe) => 'https://www.latamairlines.com/br/pt/oferta-voos?' + qs({ origin: o, outbound: `${ida}T00:00:00.000Z`, destination: d,
+      adt: 1, chd: 0, inf: 0, trip: volta ? 'RT' : 'OW', cabin: exe ? 'Business' : 'Economy', redemption: true, sort: 'PRICE,asc',
+      ...(volta ? { inbound: `${volta}T00:00:00.000Z` } : {}) })],
+    [/azul/i, (o, d, ida, volta) => {
+      const us = dt => `${dt.slice(5, 7)}/${dt.slice(8, 10)}/${dt.slice(0, 4)}`;
+      return 'https://www.voeazul.com.br/br/pt/home/selecao-voo?' + qs({ 'c[0].ds': o, 'c[0].std': us(ida), 'c[0].as': d,
+        ...(volta ? { 'c[1].ds': d, 'c[1].std': us(volta), 'c[1].as': o } : {}),
+        'p[0].t': 'ADT', 'p[0].c': 1, 'p[0].cp': false, 'f.dl': 3, 'f.dr': 3, cc: 'PTS' });
+    }],
+    [/\btap\b/i, (o, d, ida, volta) => {
+      const pt = dt => `${dt.slice(8, 10)}.${dt.slice(5, 7)}.${dt.slice(0, 4)}`;
+      return 'https://booking.flytap.com/booking/flights/deeplink?' + qs({ market: 'BR', language: 'pt', origin: o, destination: d,
+        flightType: volta ? 'return' : 'single', depDate: pt(ida), ...(volta ? { retDate: pt(volta) } : {}), adt: 1, chd: 0, inf: 0, yth: 0, award: true });
+    }],
+    [/qatar|privilege/i, (o, d, ida, volta, exe) => 'https://www.qatarairways.com/app/booking/redemption?' + qs({ widget: 'QR', searchType: 'F',
+      addTaxToFare: 'Y', minPurTime: 0, selLang: 'pt', tripType: volta ? 'R' : 'O', fromStation: o, toStation: d, departing: ida,
+      bookingClass: exe ? 'B' : 'E', adults: 1, children: 0, infants: 0, ofw: 0, teenager: 0, flexibleDate: 'off', qmilesFlow: true,
+      allowRedemption: 'Y', ...(volta ? { returning: volta } : {}) })],
+    [/aeroplan/i, (o, d, ida, volta) => 'https://www.aircanada.com/aeroplan/redeem/availability/outbound?' + qs({ org0: o, dest0: d, departureDate0: ida,
+      ...(volta ? { org1: d, dest1: o, departureDate1: volta } : {}), ADT: 1, YTH: 0, CHD: 0, INF: 0, INS: 0, tripType: volta ? 'R' : 'O',
+      marketCode: 'INT', lang: 'en-CA' })],
+  ];
+  const buscaDe = p => (BUSCA.find(([re]) => re.test(`${p.link_nome || ''} ${p.programa || ''}`)) || [])[1];
+  const MES3 = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+  // "Nov/26" -> "2026-11"
+  const isoMes = m => { const x = /^([A-Za-z]{3})\/(\d{2})$/.exec(String(m || '').trim()); const i = x ? MES3.indexOf(x[1]) : -1; return i < 0 ? '' : `20${x[2]}-${String(i + 1).padStart(2, '0')}`; };
+  // "16, 17, 20 a 22" ou "9 (1), 10" -> [16, 17, 20, 21, 22] / [9, 10]
+  function diasDaLista(txt) {
+    const out = [];
+    String(txt || '').replace(/\([^)]*\)/g, '').split(/[,;]/).forEach(t => {
+      const r = t.match(/(\d{1,2})\s*(?:a|até|-|–)\s*(\d{1,2})/);
+      if (r) { for (let i = +r[1]; i <= +r[2] && i - r[1] < 31; i++) out.push(i); return; }
+      const n = t.match(/\d{1,2}/);
+      if (n) out.push(+n[0]);
+    });
+    return [...new Set(out)];
   }
+  const hojeIso = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
+  function datasHtml(rotulo, lista, k, busca) {
+    if (!lista || !lista.length) return '';
+    const hoje = hojeIso();
+    const linha = d => {
+      const mes = isoMes(d.mes);
+      const dias = mes ? diasDaLista(d.dias).filter(n => n >= 1 && new Date(`${mes}-${String(n).padStart(2, '0')}T12:00:00Z`).getUTCDate() === n) : [];
+      if (!busca || !dias.length) return `<li><b>${esc(d.mes)}</b> ${esc(d.dias)}</li>`;
+      return `<li><b>${esc(d.mes)}</b>${dias.map(n => {
+        const dt = `${mes}-${String(n).padStart(2, '0')}`;
+        return `<button type="button" class="pass-dia" data-k="${k}" data-dt="${dt}"${dt < hoje ? ' disabled' : ''}>${n}</button>`;
+      }).join('')}</li>`;
+    };
+    return `<div class="pass-datas"><span>${rotulo}</span><ul>${lista.map(linha).join('')}</ul></div>`;
+  }
+  function calendarioHtml(p, completo) {
+    const busca = buscaDe(p);
+    const temVolta = (completo.datas_volta || []).length > 0;
+    const nome = p.link_nome || p.programa || '';
+    return `<div class="pass-cal"${busca ? ` data-o="${esc(p.origem_iata)}" data-d="${esc(p.destino_iata)}" data-exe="${ehExecutiva(p.cabine) ? 1 : ''}" data-nome="${esc(nome)}" data-prog="${esc(`${p.link_nome || ''} ${p.programa || ''}`)}"${temVolta ? ' data-tem-volta="1"' : ''}` : ''}>
+        ${datasHtml('Datas de ida', completo.datas_ida, 'ida', busca)}${datasHtml('Datas de volta', completo.datas_volta, 'volta', busca)}
+        ${busca && (completo.datas_ida || []).length ? '<p class="pass-dica">Toque numa data de ida para abrir a busca já preenchida</p>' : ''}
+        <a class="cta cta-a pass-link" href="${esc(completo.link)}" data-orig="${esc(completo.link)}" target="_blank" rel="noopener">Ver passagem${nome ? ` na ${esc(nome)}` : ''} ↗</a>
+      </div>`;
+  }
+  const dm = dt => `${dt.slice(8, 10)}/${dt.slice(5, 7)}`;
+  function atualizarCal(cal) {
+    const ida = cal.dataset.ida || '', volta = cal.dataset.volta || '', hoje = hojeIso();
+    cal.querySelectorAll('.pass-dia').forEach(b => {
+      const dt = b.dataset.dt, ehIda = b.dataset.k === 'ida';
+      b.classList.toggle('on', dt === (ehIda ? ida : volta));
+      b.disabled = dt < hoje || (!ehIda && !!ida && dt <= ida);
+    });
+    const a = cal.querySelector('.pass-link'), dica = cal.querySelector('.pass-dica');
+    const fazer = buscaDe({ programa: cal.dataset.prog });
+    if (ida && fazer) {
+      a.href = fazer(cal.dataset.o, cal.dataset.d, ida, volta, !!cal.dataset.exe);
+      a.textContent = `Buscar ${dm(ida)}${volta ? ` → ${dm(volta)}` : ' (só ida)'} na ${cal.dataset.nome} ↗`;
+    } else {
+      a.href = a.dataset.orig;
+      a.textContent = `Ver passagem${cal.dataset.nome ? ` na ${cal.dataset.nome}` : ''} ↗`;
+    }
+    if (dica) dica.textContent = !ida ? 'Toque numa data de ida para abrir a busca já preenchida'
+      : cal.dataset.temVolta && !volta ? 'Agora toque na volta, ou busque só a ida'
+      : 'Pronto: a busca abre com essas datas. No site do programa, entre na sua conta para ver em milhas.';
+  }
+  document.addEventListener('click', e => {
+    const b = e.target.closest && e.target.closest('.pass-dia');
+    if (!b || b.disabled) return;
+    const cal = b.closest('.pass-cal');
+    if (!cal || !cal.dataset.o) return;
+    const k = b.dataset.k, dt = b.dataset.dt;
+    if (k === 'ida') {
+      cal.dataset.ida = cal.dataset.ida === dt ? '' : dt;
+      if (!cal.dataset.ida || (cal.dataset.volta && cal.dataset.volta <= cal.dataset.ida)) cal.dataset.volta = '';
+    } else {
+      if (!cal.dataset.ida) { const dica = cal.querySelector('.pass-dica'); if (dica) dica.textContent = 'Escolha primeiro a data de ida'; return; }
+      cal.dataset.volta = cal.dataset.volta === dt ? '' : dt;
+    }
+    atualizarCal(cal);
+  });
   // Ícone da companhia ao lado do nome, pelo código IATA (ícones do Google Voos).
   const IATA_CIA = [[/LATAM|\bLAN\b/, 'LA'], [/AZUL/, 'AD'], [/\bGOL\b/, 'G3'], [/TAP/, 'TP'], [/QATAR/, 'QR'], [/AIR FRANCE/, 'AF'],
     [/SOUTH AFRICAN/, 'SA'], [/COPA/, 'CM'], [/ETIHAD/, 'EY'], [/AMERICAN/, 'AA'], [/ROYAL AIR MAROC/, 'AT'], [/AIR CANADA/, 'AC'],
@@ -1513,8 +1618,7 @@
           ${p.volta ? `<div><dt>Volta</dt><dd>${esc(p.volta)}</dd></div>` : ''}
         </dl>${custoHtml(p)}
         <a class="pass-hist" href="#rota/${esc(p.origem_iata)}-${esc(p.destino_iata)}-${slugCabine(p.cabine)}">📈 Histórico desta rota</a>
-        ${completo && httpOk(completo.link) ? `${datasHtml('Datas de ida', completo.datas_ida)}${datasHtml('Datas de volta', completo.datas_volta)}
-        <a class="cta cta-a pass-link" href="${esc(completo.link)}" target="_blank" rel="noopener">Ver passagem${p.link_nome ? ` na ${esc(p.link_nome)}` : ''} ↗</a>` : travaHtml()}
+        ${completo && httpOk(completo.link) ? calendarioHtml(p, completo) : travaHtml()}
       </li>`;
   }
   function promocaoHtml(p, agora) {

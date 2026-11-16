@@ -2193,3 +2193,15 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .mp-chip{background:color-mix(in srgb,var(--ouro) 16%,transparent);border:1px solid color-mix(in srgb,var(--ouro) 45%,transparent);color:var(--ouro-lt);border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700}
 :root[data-theme="light"] .mp-chip{color:var(--ouro-dk)}
 .mp-sub2{margin:10px 0 6px;color:var(--ash);font-size:13px}
+
+/* Passagens: calendário com busca preenchida */
+.pass-cal{margin-top:auto;display:grid;gap:10px}
+.pass-cal .pass-link{margin-top:0}
+.pass-cal .pass-datas ul{height:7.4em}
+.pass-cal .pass-datas li:has(.pass-dia){display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:2px 0}
+.pass-dia{min-width:30px;height:28px;padding:0 6px;border-radius:8px;border:1px solid var(--line);background:var(--ink-3);color:var(--rice);font:700 13px var(--body);cursor:pointer}
+.pass-dia:hover:not(:disabled){border-color:var(--ouro)}
+.pass-dia.on{background:var(--ouro);border-color:var(--ouro);color:var(--ink)}
+.pass-dia:disabled{opacity:.35;cursor:default;text-decoration:line-through}
+.pass-dia:focus-visible{outline:2px solid var(--ouro-lt);outline-offset:1px}
+.pass-dica{margin:0;font-size:12.5px;color:var(--ash);text-align:center}
