@@ -1,5 +1,97 @@
 [
  {
+  "id": "2008590742-15854",
+  "data": "2026-11-16T13:53:00Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "64.500 milhas + Taxas",
+  "volta": "73.100 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-15853",
+  "data": "2026-11-16T13:51:59Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Roma",
+  "destino_iata": "FCO",
+  "companhia": "LATAM Airlines",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "75.946 milhas + R$ 117,24",
+  "volta": "75.946 milhas + R$ 293,35",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "1290836068-7807",
+  "data": "2026-11-16T13:51:58Z",
+  "tipo": "promocao",
+  "titulo": "DESCONTO DE ATÉ 66% NA COMPRA DE MILHAS LATAM Pass",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "LATAM Pass oferece até 66% de desconto na compra de milhas. O desconto é válido para portadores do cartão LATAM Pass Itaú (66%) e para clientes LATAM Pass ou Clube LATAM Pass (63%). O limite de compra com desconto é 350.000 milhas e a compra pode ser parcelada em até 10x sem juros nas bandeiras Elo, Mastercard e Visa.",
+  "detalhes": [
+   "Desconto de 66% para portadores do cartão LATAM Pass Itaú",
+   "Desconto de 63% para clientes LATAM Pass ou Clube LATAM Pass",
+   "Limite de compra com desconto é 350.000 milhas",
+   "Compra em lotes de 1.000 milhas",
+   "Parcelamento em até 10x sem juros nas bandeiras Elo, Mastercard e Visa",
+   "Milhas disponibilizadas em até 48h após confirmação do pagamento",
+   "Milhas válidas por 36 meses; para clientes Elite não expiram",
+   "Campanha não contempla modalidade 'Compra presente'"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "até sexta-feira (20)",
+  "links": [
+   "https://link.dia23.com.br/r/Jlaaih0"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7806",
+  "data": "2026-11-16T13:51:55Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE: TRANSFERÊNCIA DE PONTOS COM BÔNUS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Azul Fidelidade oferece bônus nas transferências de pontos dos cartões de crédito, com 90% para assinantes do Clube Azul e 60% para não assinantes. Assinantes do Clube Azul podem ganhar até 30% de bônus adicional conforme tempo de permanência. A primeira transferência recebe 1.000 pontos bônus e o limite máximo de bônus por CPF é de 300.000 pontos.",
+  "detalhes": [
+   "até 120% de bônus nas transferências de pontos dos cartões de crédito, inclusive Livelo",
+   "90% de bônus para assinantes do Clube Azul",
+   "até 30% de bônus adicional dependendo do tempo de permanência no Clube Azul (5% 6-11 meses, 10% 1-2 anos, 20% 3-4 anos, 30% 5+ anos)",
+   "1.000 pontos bônus na primeira transferência",
+   "limite máximo de pontos bônus por CPF é de 300.000 pontos",
+   "pontos bônus têm validade de 6 meses",
+   "pontos bônus creditados em até 15 dias úteis após término da campanha",
+   "é necessário se cadastrar na página da campanha antes de transferir"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "até 19/11/2026",
+  "links": [
+   "https://link.dia23.com.br/r/TOXW33l"
+  ],
+  "ate": "2026-11-19T23:59:59-03:00"
+ },
+ {
+  "id": "3761373661-9766",
+  "data": "2026-11-16T13:51:54Z",
+  "origem": "Petrolina",
+  "origem_iata": "PNZ",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "LATAM Airlines",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "12.069 milhas + R$ 49,73",
+  "volta": "12.069 milhas + R$ 35,75",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-9765",
   "data": "2026-11-16T13:51:50Z",
   "origem": "Petrolina",
@@ -4621,20 +4713,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9640",
-  "data": "2026-11-14T13:56:48Z",
-  "origem": "São Paulo",
-  "origem_iata": "CGH",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "11.200 milhas + R$ 62,14 de taxas",
-  "volta": "11.200 milhas + R$ 34,54 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7772",
   "data": "2026-11-13T23:02:57Z",
   "tipo": "promocao",
@@ -5175,21 +5253,6 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GRU-BOG-eco",
-  "data": "2026-11-09T00:05:14.410466Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "LATAM / Qatar Airways",
-  "cabine": "Econômica",
-  "programa": "Qatar Privilege Club",
-  "ida": "13.000 Avios + taxas",
-  "volta": "",
-  "link_nome": "Qatar Privilege Club"
- },
- {
   "id": "seats-qatar-POA-LIM-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
@@ -5198,6 +5261,21 @@
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "Qatar Privilege Club",
+  "ida": "13.000 Avios + taxas",
+  "volta": "",
+  "link_nome": "Qatar Privilege Club"
+ },
+ {
+  "id": "seats-qatar-GRU-BOG-eco",
+  "data": "2026-11-09T00:05:14.410466Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "LATAM / Qatar Airways",
   "cabine": "Econômica",
   "programa": "Qatar Privilege Club",
   "ida": "13.000 Avios + taxas",
