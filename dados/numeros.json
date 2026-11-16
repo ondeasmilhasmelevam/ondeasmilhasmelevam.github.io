@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-16T15:29:24.761336Z",
+ "atualizado": "2026-11-16T15:35:43.214324Z",
  "dias": 30,
  "passagens": 2817,
  "promocoes": 159,
@@ -85,7 +85,7 @@
   }
  ],
  "semana": {
-  "passagens": 1437,
+  "passagens": 1433,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -992,15 +992,15 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2361370250-6286",
-    "origem": "Fortaleza",
-    "origem_iata": "FOR",
+    "id": "2361370250-6586",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
     "destino": "Lisboa",
     "destino_iata": "LIS",
     "cabine": "Executiva",
     "programa": "LATAM Pass",
-    "data": "2026-11-09T15:34:14Z",
-    "milhas": 157590,
+    "data": "2026-11-14T16:20:41Z",
+    "milhas": 190356,
     "nivel": "muito bom",
     "regiao": "europa"
    },

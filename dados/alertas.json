@@ -4552,20 +4552,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15689",
-  "data": "2026-11-14T15:34:17Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Madrid",
-  "destino_iata": "MAD",
-  "companhia": "Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "92.300 milhas + Taxas",
-  "volta": "92.300 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7772",
   "data": "2026-11-13T23:02:57Z",
   "tipo": "promocao",
