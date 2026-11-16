@@ -67,7 +67,9 @@
     return m;
   }
   const xy = i => proj([D.aeros[i][1], D.aeros[i][0]]);
-  const nomeDe = i => D.nomes[i] || i;
+  const nomeDe = i => D.nomes[i] || (GR && GR.nome[i]) || i;
+  // dados do aeroporto: do site ou, se faltar, da rede de trechos (lat, lon, país, nome do país)
+  const aeroInfo = i => D.aeros[i] || (GR && GR.pos[i] ? [GR.pos[i][0], GR.pos[i][1], GR.pos[i][2], new Intl.DisplayNames(['pt-BR'], { type: 'region' }).of(GR.pos[i][2] || 'ZZ') || ''] : [0, 0, '', '']);
 
   // Dois jeitos de ver: globo (gira com o dedo ou o mouse, padrão) e mapa plano (zoom e arrasto).
   let modo = 'globo', base = 1, agendado = false, movendo = false, parou = 0, inercia = null;
@@ -82,7 +84,7 @@
     }).sort((a, b) => b.area - a.area);
   }
   const contornos = m => ({ terra: topojson.merge(m, m.objects.countries.geometries), br: topojson.feature(m, { type: 'GeometryCollection', geometries: m.objects.countries.geometries.filter(x => x.id === '076') }), fronteira: topojson.mesh(m, m.objects.countries, (a, b) => a !== b) });
-  const coord = i => [D.aeros[i][1], D.aeros[i][0]];
+  const coord = i => (D.aeros[i] ? [D.aeros[i][1], D.aeros[i][0]] : GR && GR.pos[i] ? [GR.pos[i][1], GR.pos[i][0]] : [0, 0]);
   const linhaDe = p => ({ type: 'LineString', coordinates: [coord(p.a), coord(p.b)] });
   const visivel = c => modo !== 'globo' || d3.geoDistance(c, [-proj.rotate()[0], -proj.rotate()[1]]) < Math.PI / 2 - 0.03;
 
@@ -120,6 +122,7 @@
     g.append('g').attr('class', 'mapa-paises-n').selectAll('text').data(geo.paises || []).join('text')
       .attr('class', 'mapa-pais-n').attr('text-anchor', 'middle').text(d => d.nome);
     g.append('g').attr('class', 'mapa-rotas');
+    g.append('g').attr('class', 'mapa-escalas');
     g.append('g').attr('class', 'mapa-aeros');
     g.append('g').attr('class', 'mapa-rotulos');
     if (modo === 'mapa') {
@@ -174,6 +177,11 @@
     proj.precision(leve ? 1.5 : 0.6);
     g.selectAll('.geo').attr('d', caminho);
     g.selectAll('.mundo').attr('d', function () { return caminho(c[this.dataset.c]); });
+    g.selectAll('.mapa-escala').attr('d', e => caminho({ type: 'LineString', coordinates: [coord(e[0]), coord(e[1])] }) || '');
+    g.selectAll('.mapa-escala-pt').each(function (d) { d.xy = proj(coord(d.i)); d.ve = visivel(coord(d.i)); })
+      .attr('cx', d => d.xy[0]).attr('cy', d => d.xy[1]).style('display', d => d.ve ? null : 'none');
+    g.selectAll('.mapa-escala-n').each(function (d) { d.xy = proj(coord(d.i)); d.ve = visivel(coord(d.i)); })
+      .attr('x', d => d.xy[0]).attr('y', d => d.xy[1] - 9).style('display', d => d.ve ? null : 'none');
     g.selectAll('.mapa-rota').each(function (p) {
       const esconder = p.estado === 'oculta' || (leve && p.estado === 'fraca');
       this.style.display = esconder ? 'none' : '';
@@ -221,7 +229,8 @@
     const raio = d3.scaleSqrt().domain([1, maxA]).range([1.8, 5.5]);
     const sel = est.de, alvo = est.para;
     // Sem nada marcado, as linhas ficam apagadas: o globo mostra só os aeroportos. Elas acendem ao marcar.
-    const liga = p => !sel ? 'oculta' : (p.a === sel || p.b === sel) ? ((alvo && (p.a === alvo || p.b === alvo)) ? 'foco' : (alvo ? 'fraca' : 'ativa')) : 'fraca';
+    // Com origem e destino marcados, só a rota (e o caminho escolhido) aparece; com só a origem, as rotas dela.
+    const liga = p => !sel ? 'oculta' : alvo ? ((p.a === sel || p.b === sel) && (p.a === alvo || p.b === alvo) ? 'foco' : 'oculta') : (p.a === sel || p.b === sel) ? 'ativa' : 'fraca';
     const ordem = P.map(p => ({ ...p, estado: liga(p) })).sort((x, y) => ['oculta', 'fraca', 'normal', 'ativa', 'foco'].indexOf(x.estado) - ['oculta', 'fraca', 'normal', 'ativa', 'foco'].indexOf(y.estado) || x.n - y.n);
     g.select('.mapa-rotas').selectAll('path').data(ordem, p => `${p.a}-${p.b}`).join('path')
       .attr('class', p => `mapa-rota ${p.estado}`)
@@ -268,7 +277,8 @@
     escolher(est.de, i);
   }
   function escolher(de, para, enquadrar = true) {
-    est.de = de; est.para = para;
+    est.de = de; est.para = para; escolhida = null;
+    if (g) g.select('.mapa-escalas').selectAll('*').remove();
     $('#mapa-de').value = de; $('#mapa-para').value = para;
     const hash = de ? `#mapa/${de}${para ? '-' + para : ''}` : '#mapa';
     if (location.hash !== hash) history.replaceState(null, '', hash);
@@ -327,7 +337,7 @@
         <p class="mp-dica">Toque num aeroporto do mapa para ver para onde saem alertas dali.</p>`;
       return;
     }
-    const de = est.de, ad = D.aeros[de];
+    const de = est.de, ad = aeroInfo(de);
     if (!est.para) {
       const saindo = D.rotas.filter(daCabine).filter(r => r.oi === de);
       const porDest = {}; saindo.forEach(r => { const p = porDest[r.di] || (porDest[r.di] = { n: 0, cabs: new Set(), ult: '' }); p.n += r.n; p.cabs.add(r.cab); if (r.ult > p.ult) p.ult = r.ult; });
@@ -339,8 +349,8 @@
         <p class="mp-dica">Toque num destino da lista ou do mapa para ver a rota.</p>`;
       return;
     }
-    const para = est.para, ap = D.aeros[para];
-    const km = Math.round(d3.geoDistance([ad[1], ad[0]], [ap[1], ap[0]]) * 6371);
+    const para = est.para, ap = aeroInfo(para);
+    const km = Math.round(d3.geoDistance(coord(de), coord(para)) * 6371);
     const horas = km / 830 + 0.5, hTxt = `${Math.floor(horas)}h${String(Math.round((horas % 1) * 60)).padStart(2, '0')}`;
     const ida = D.rotas.filter(daCabine).filter(r => r.oi === de && r.di === para), volta = D.rotas.filter(daCabine).filter(r => r.oi === para && r.di === de);
     const nIda = d3.sum(ida, r => r.n), nVolta = d3.sum(volta, r => r.n);
@@ -353,14 +363,99 @@
         <div class="mp-acoes">${ida.map(r => `<a class="cta cta-a" href="${linkRota(r)}">📈 Histórico da rota${ida.length > 1 ? ` (${esc((r.cabNome || cabTxt(r.cab)).toLowerCase())})` : ''}</a>`).join('')}</div>`
         : `<p class="mp-dica">Nenhum alerta nesse sentido nos últimos 12 meses${est.cab ? ' com essa cabine' : ''}.</p><div class="mp-acoes"><a class="cta cta-a" href="#radar">🔔 Me avise quando aparecer</a></div>`}
       ${nVolta ? `<button type="button" class="mp-volta" data-de="${para}" data-para="${de}">No sentido ${para} → ${de}: ${fmt(nVolta)} ${nVolta === 1 ? 'alerta' : 'alertas'}. Ver esse sentido →</button>` : ''}
-      <p class="mp-nota">Distância em linha reta e tempo estimado a 830 km/h, sem escalas. Os horários reais dependem da companhia.</p>`;
+      <p class="mp-nota">Distância em linha reta e tempo estimado a 830 km/h, sem escalas. Os horários reais dependem da companhia.</p>
+      <div class="mp-escalas" id="mp-escalas"><h3>Por onde ir com milhas</h3><p class="mp-dica">Procurando caminhos…</p></div>`;
+    porOndeIr(de, para);
+  }
+
+  // "Por onde ir": rede de trechos que os programas vendem com milhas (seats.aero, montada pelo robô 1x por dia).
+  let GR = null, grPromessa = null, escolhida = null;
+  function carregarGrafo() {
+    if (grPromessa) return grPromessa;
+    grPromessa = (async () => {
+      const r = await fetch(`${SERVIDOR}/grafo`, { headers: { authorization: `Bearer ${window.oammlToken ? await window.oammlToken() : ''}` } });
+      if (!r.ok) throw new Error(r.status === 404 ? 'montando' : 'erro');
+      const j = await r.json();
+      const pos = {}, nome = {}, sai = {};
+      j.a.forEach(([i, lat, lon, iso, cidade]) => { pos[i] = [lat, lon, iso]; nome[i] = cidade; });
+      j.e.forEach(([o, d, m, km]) => { const a = j.a[o][0], b = j.a[d][0]; (sai[a] = sai[a] || new Map()).set(b, { m, km }); });
+      GR = { pos, nome, sai, fontes: j.fontes, gerado: j.gerado };
+      return GR;
+    })().catch(e => { grPromessa = null; throw e; });
+    return grPromessa;
+  }
+  const programas = m => GR.fontes.filter((f, b) => m & (1 << b)).map(f => f[1]);
+  const kmEntre = (a, b) => Math.round(d3.geoDistance(coord(a), coord(b)) * 6371);
+  const cidade = i => (D.nomes[i] || (GR && GR.nome[i]) || i);
+  // A rede do seats.aero traz pares de origem e destino que cada programa vende (o voo pode ter conexão).
+  // Mostramos: quem vende a rota inteira e, para montar por partes, os hubs onde dá para trocar de trecho.
+  function caminhos(de, para) {
+    const sai = GR.sai, direto = sai[de] && sai[de].get(para);
+    const linha = kmEntre(de, para), lista = [];
+    for (const [h, t1] of sai[de] || []) {
+      if (h === para) continue;
+      const t2 = sai[h] && sai[h].get(para);
+      if (!t2) continue;
+      const km = kmEntre(de, h) + kmEntre(h, para);
+      if (km > linha * 1.35) continue; // volta grande demais
+      const comum = t1.m & t2.m, nComum = programas(comum).length;
+      lista.push({ via: h, comum, m1: t1.m, m2: t2.m, km, nComum, tipo: comum ? 'mesmo' : 'separado' });
+    }
+    // primeiro onde dá para emitir os dois trechos no mesmo programa (e em mais programas), depois o menor desvio
+    lista.sort((a, b) => (b.nComum > 0) - (a.nComum > 0) || b.nComum - a.nComum || a.km - b.km);
+    return { direto: direto ? { via: null, comum: direto.m, km: linha, tipo: 'direto' } : null, lista: lista.slice(0, 6).map(c => ({ ...c, mais: Math.round((c.km / linha - 1) * 100) })) };
+  }
+  async function porOndeIr(de, para) {
+    const el = () => $('#mp-escalas');
+    try { await carregarGrafo(); } catch (e) {
+      if (el()) el().innerHTML = `<h3>Por onde ir com milhas</h3><p class="mp-dica">${e.message === 'montando' ? 'A rede de trechos ainda está sendo montada. Volte daqui a pouco.' : 'Não deu para carregar os caminhos agora.'}</p>`;
+      return;
+    }
+    if (est.de !== de || est.para !== para || !el()) return;
+    const { direto, lista } = caminhos(de, para);
+    const todos = [...(direto ? [direto] : []), ...lista];
+    escolhida = null; desenharEscala();
+    const chips = m => programas(m).map(n => `<span class="mp-chip">${esc(n)}</span>`).join('');
+    el().innerHTML = `<h3>Por onde ir com milhas</h3>
+      ${direto ? `<div class="mp-direto"><p><b>Programas que vendem ${de} → ${para} com milhas</b></p><div class="mp-chips">${chips(direto.comum)}</div>
+        <small>Podem ser voos sem escala ou com conexão, conforme as parceiras de cada programa.</small></div>`
+        : `<p class="mp-dica">Nenhum programa da nossa base vende ${de} → ${para} numa emissão só.${lista.length ? ' Dá para montar em dois trechos:' : ''}</p>`}
+      ${lista.length ? `<p class="mp-sub2">${direto ? 'Ou montando em dois trechos, trocando em um hub:' : ''}</p><ol class="mp-caminhos">${lista.map((c, n) => `<li><button type="button" data-n="${n + (direto ? 1 : 0)}">
+        <span class="mp-via">via <b>${esc(cidade(c.via))}</b> <small>${c.via}</small></span>
+        <span class="mp-prog">${c.tipo === 'separado' ? `${esc(programas(c.m1).slice(0, 2).join(', '))} + ${esc(programas(c.m2).slice(0, 2).join(', '))} <em>(2 emissões)</em>` : `${esc(programas(c.comum).slice(0, 3).join(', '))}${c.nComum > 3 ? ` e mais ${c.nComum - 3}` : ''}`}</span>
+        <span class="mp-km">${fmt(c.km)} km${c.mais > 0 ? ` · +${c.mais}%` : ''}</span></button></li>`).join('')}</ol>` : ''}
+      ${todos.length ? `<p class="mp-nota">Dados do seats.aero, atualizados todo dia: pares de cidades que cada programa vende com milhas. Toque num hub para ver o caminho no mapa. Disponibilidade, taxas e regras mudam: confira no programa na hora de emitir.</p>`
+        : '<p class="mp-dica">Não achamos caminho na rede dos programas. Tente um aeroporto vizinho da mesma região.</p>'}`;
+    el().querySelectorAll('button[data-n]').forEach(b => b.addEventListener('click', () => {
+      el().querySelectorAll('button[data-n]').forEach(x => x.classList.toggle('on', x === b));
+      escolhida = todos[+b.dataset.n]; desenharEscala();
+    }));
+    // de início mostra a rota inteira (se algum programa vende) ou o melhor hub
+    escolhida = todos[0] || null; desenharEscala();
+    const primeiro = el().querySelector('button[data-n="0"]'); if (primeiro) primeiro.classList.add('on');
+  }
+  function desenharEscala() {
+    if (!g) return;
+    const c = escolhida, de = est.de, para = est.para;
+    const trechos = c ? (c.via ? [[de, c.via], [c.via, para]] : [[de, para]]) : [];
+    g.select('.mapa-escalas').selectAll('path').data(trechos).join('path').attr('class', 'mapa-escala');
+    const pts = [...(c && c.via ? [{ i: c.via }] : []), ...(para && !D.aeros[para] ? [{ i: para }] : [])];
+    g.select('.mapa-escalas').selectAll('circle').data(pts).join('circle').attr('class', 'mapa-escala-pt').attr('r', 5);
+    g.select('.mapa-escalas').selectAll('text').data(pts).join('text').attr('class', 'mapa-escala-n').attr('text-anchor', 'middle').text(d => d.i);
+    g.selectAll('.mapa-rota.foco').classed('com-escala', !!(c && c.via));
+    posicionar();
   }
 
   // Controles
   const iataDe = v => { const t = String(v || '').trim().toUpperCase(); if (D && D.aeros[t] && D.nomes[t]) return t; const n = t.normalize('NFD').replace(/[̀-ͯ]/g, ''); return D ? (Object.keys(D.nomes).find(i => (D.nomes[i] || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase() === n) || '') : ''; };
   $('#mapa-painel').addEventListener('click', e => { const b = e.target.closest('button[data-de]'); if (b) escolher(b.dataset.de, b.dataset.para || ''); });
   $('#mapa-de').addEventListener('change', e => escolher(iataDe(e.target.value), est.para));
-  $('#mapa-para').addEventListener('change', e => { const p = iataDe(e.target.value); if (est.de) escolher(est.de, p); else e.target.value = ''; });
+  $('#mapa-para').addEventListener('change', async e => {
+    const v = e.target.value.trim().toUpperCase();
+    let p = iataDe(v);
+    if (!p && /^[A-Z]{3}$/.test(v)) { try { await carregarGrafo(); if (GR.pos[v]) p = v; } catch (er) { /* fica sem */ } }
+    if (est.de) escolher(est.de, p); else e.target.value = '';
+  });
   $('#mapa-trocar').addEventListener('click', () => { if (est.de && est.para) escolher(est.para, est.de); });
   $('#mapa-limpar').addEventListener('click', () => { escolher('', '', false); vista('mundo'); });
   $('#mapa-cabine').addEventListener('change', e => { est.cab = e.target.value; if (D) desenharRotas(); });
@@ -384,7 +479,9 @@
     if (!pode) return;
     try { await iniciar(); } catch (e) { return; }
     const [, de = '', para = ''] = m;
-    if (de !== est.de || para !== est.para) escolher(de && D.aeros[de] ? de : '', para && D.aeros[para] ? para : '');
+    let p2 = para && D.aeros[para] ? para : '';
+    if (para && !p2) { try { await carregarGrafo(); if (GR.pos[para]) p2 = para; } catch (e) { /* fica sem */ } }
+    if (de !== est.de || p2 !== est.para) escolher(de && D.aeros[de] ? de : '', p2);
     else desenharRotas();
   }
   let largura = 0;
