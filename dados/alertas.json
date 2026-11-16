@@ -1,5 +1,28 @@
 [
  {
+  "id": "1290836068-7825",
+  "data": "2026-11-16T21:37:50Z",
+  "tipo": "promocao",
+  "titulo": "UPGRADE CLUBE AZUL FIDELIDADE COM ATÉ 360.000 PONTOS BÔNUS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Faça upgrade do seu plano Clube Azul Fidelidade e ganhe até 360.000 pontos bônus em 12 meses. O plano 10.000 Anual oferece o melhor custo-benefício, com milheiro a partir de R$ 12,81 com cartão co-branded.",
+  "detalhes": [
+   "Plano 2.000 Anual: 55.000 pontos totais . Milheiro a R$ 16,15 (R$ 14,53 com cartão co-branded).",
+   "Plano 5.000 Anual: 140.000 pontos totais . Milheiro a R$ 14,91 (R$ 13,42 com cartão co-branded).",
+   "Plano 10.000 Anual: 290.000 pontos totais . Milheiro a R$ 14,23 (R$ 12,81 com cartão co-branded).",
+   "Plano 20.000 Anual: 600.000 pontos totais . Milheiro a R$ 15,24 (R$ 13,72 com cartão co-branded).",
+   "Bônus distribuídos em parcelas: 1º mês, 3º mês, 6º mês, 9º mês e 12º mês.",
+   "Desconto de 10% no valor total com uso do cartão Azul Itaú co-branded."
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "20/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/upgrade-clube"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-15879",
   "data": "2026-11-16T21:27:06Z",
   "origem": "Manaus",
