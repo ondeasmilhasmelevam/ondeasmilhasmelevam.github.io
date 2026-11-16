@@ -6,7 +6,8 @@
   const LIBS = ['https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js', 'https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js'];
   const MUNDO = 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-50m.json';
   const MUNDO_LEVE = 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json';
-  const VISTAS = { mundo: [[-122, -48], [62, 62]], tudo: null, brasil: [[-74, -34], [-34, 5]], europa: [[-75, -35], [32, 60]], eua: [[-125, -35], [-34, 50]] };
+  const CENTRO_GLOBO = { asia: [[60, 5], [140, 45], [100, 25]], africa: [[-20, -30], [45, 30], [15, 0]] };
+  const VISTAS = { mundo: [[-122, -48], [62, 62]], tudo: null, brasil: [[-74, -34], [-34, 5]], europa: [[-75, -35], [32, 60]], eua: [[-125, -35], [-34, 50]], africa: [[-60, -36], [52, 38]], asia: [[-55, -35], [145, 55]] };
   const $ = s => document.querySelector(s);
   const esc = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const fmt = n => Number(n).toLocaleString('pt-BR');
@@ -19,13 +20,15 @@
     if (pronto) return pronto;
     pronto = (async () => {
       for (const src of LIBS) await carregarScript(src);
-      const [malha, aeros, mundo] = await Promise.all([
+      const [malha, aeros, mundo, nomesPt] = await Promise.all([
         (async () => { const r = await fetch(`${SERVIDOR}/malha`, { headers: { authorization: `Bearer ${window.oammlToken ? await window.oammlToken() : ''}` } }); if (!r.ok) throw new Error('malha'); return r.json(); })(),
         fetch('dados/aeroportos.json', { cache: 'no-cache' }).then(r => r.json()),
-        fetch(MUNDO_LEVE).then(r => r.json())
+        fetch(MUNDO_LEVE).then(r => r.json()),
+        fetch('dados/paises-pt.json').then(r => r.json()).catch(() => ({}))
       ]);
       montarDados(malha, aeros);
       geo.leve = contornos(mundo);
+      geo.paises = nomesDosPaises(mundo, nomesPt);
       desenharBase();
       fetch(MUNDO).then(r => r.json()).then(m => { geo.detalhe = contornos(m); if (!movendo) posicionar(); }).catch(() => {});
     })().catch(e => { $('#mapa-carregando').textContent = 'Não deu para carregar o mapa agora. Tente de novo em instantes.'; pronto = null; throw e; });
@@ -70,6 +73,14 @@
   let modo = 'globo', base = 1, agendado = false, movendo = false, parou = 0, inercia = null;
   const geo = { leve: null, detalhe: null };
   // Terra numa forma só (bem mais leve que 240 países separados), o Brasil por cima e as fronteiras.
+  // Nome de cada país no centro do seu maior pedaço (a França não vai parar na Guiana); os maiores primeiro.
+  function nomesDosPaises(m, nomes) {
+    return topojson.feature(m, m.objects.countries).features.filter(f => nomes[f.id]).map(f => {
+      const partes = f.geometry.type === 'MultiPolygon' ? f.geometry.coordinates.map(c => ({ type: 'Polygon', coordinates: c })) : [f.geometry];
+      const maior = partes.reduce((a, b) => (d3.geoArea(b) > d3.geoArea(a) ? b : a));
+      return { nome: nomes[f.id], c: d3.geoCentroid(maior), area: d3.geoArea(maior) };
+    }).sort((a, b) => b.area - a.area);
+  }
   const contornos = m => ({ terra: topojson.merge(m, m.objects.countries.geometries), br: topojson.feature(m, { type: 'GeometryCollection', geometries: m.objects.countries.geometries.filter(x => x.id === '076') }), fronteira: topojson.mesh(m, m.objects.countries, (a, b) => a !== b) });
   const coord = i => [D.aeros[i][1], D.aeros[i][0]];
   const linhaDe = p => ({ type: 'LineString', coordinates: [coord(p.a), coord(p.b)] });
@@ -106,6 +117,8 @@
     g.append('path').attr('class', 'mundo mapa-pais br').attr('data-c', 'br');
     g.append('path').attr('class', 'mundo mapa-fronteira').attr('data-c', 'fronteira');
     if (modo === 'globo') g.append('path').datum({ type: 'Sphere' }).attr('class', 'geo mapa-luz');
+    g.append('g').attr('class', 'mapa-paises-n').selectAll('text').data(geo.paises || []).join('text')
+      .attr('class', 'mapa-pais-n').attr('text-anchor', 'middle').text(d => d.nome);
     g.append('g').attr('class', 'mapa-rotas');
     g.append('g').attr('class', 'mapa-aeros');
     g.append('g').attr('class', 'mapa-rotulos');
@@ -170,30 +183,42 @@
       .attr('cx', d => d.xy[0]).attr('cy', d => d.xy[1]).style('display', d => d.ve ? null : 'none');
     g.selectAll('.mapa-rotulo').each(function (d) { d.xy = proj(coord(d.i)); d.ve = visivel(coord(d.i)); })
       .attr('x', d => d.xy[0]).attr('y', d => d.xy[1]);
+    g.selectAll('.mapa-pais-n').each(function (d) { d.xy = proj(d.c); d.ve = visivel(d.c); })
+      .attr('x', d => d.xy[0]).attr('y', d => d.xy[1]);
     ajustarEscala();
   }
   function ajustarEscala() {
     const kk = modo === 'globo' ? Math.max(1, proj.scale() / base) : k, fator = modo === 'globo' ? 1 : k;
-    g.selectAll('.mapa-aero').attr('r', d => d.r / Math.sqrt(fator)).attr('stroke-width', 1.2 / fator);
+    g.selectAll('.mapa-aero').attr('r', d => d.r / Math.sqrt(fator));
     // Rótulos: os mais importantes primeiro; um rótulo só aparece se não encostar em outro já posto.
-    const postos = [];
-    g.selectAll('.mapa-rotulo').attr('font-size', 11 / fator).attr('dy', d => -(d.r + 4) / Math.sqrt(fator))
+    const postos = [], sel0 = est.de;
+    g.selectAll('.mapa-rotulo').attr('font-size', 10.5 / fator).attr('dy', d => -(d.r + 4) / Math.sqrt(fator))
       .style('display', d => {
         if (d.ve === false) return 'none';
-        const quer = d.sel || d.mostrar || (kk >= 2.2 && d.n >= 8) || kk >= 4;
+        const quer = d.sel || (d.liga && (kk >= 1.6 || d.n >= 6)) || (d.hub && !(sel0 && !d.liga)) || (kk >= 2.2 && d.n >= 20) || (kk >= 3.2 && d.n >= 6) || kk >= 5;
         if (!quer) return 'none';
         const x = d.xy[0] * fator, y = d.xy[1] * fator, cx = [x - 16, y - 22, x + 16, y - 6];
         if (!d.sel && postos.some(b => cx[0] < b[2] && cx[2] > b[0] && cx[1] < b[3] && cx[3] > b[1])) return 'none';
         postos.push(cx);
         return null;
       });
+    // Nomes dos países: só ao aproximar; quanto mais perto, menores os países que ganham nome.
+    // Não cobrem as siglas dos aeroportos nem se encostam.
+    const minimo = kk < 1.3 ? Infinity : 0.03 / (kk * kk);
+    g.selectAll('.mapa-pais-n').attr('font-size', 10.5 / fator).style('display', d => {
+      if (d.ve === false || d.area < minimo) return 'none';
+      const w = d.nome.length * 3.6 + 6, x = d.xy[0] * fator, y = d.xy[1] * fator, cx = [x - w, y - 9, x + w, y + 4];
+      if (postos.some(b => cx[0] < b[2] && cx[2] > b[0] && cx[1] < b[3] && cx[3] > b[1])) return 'none';
+      postos.push(cx);
+      return null;
+    });
   }
 
   function desenharRotas() {
     const P = pares(), A = porAeroporto();
     const maxN = d3.max(P, p => p.n) || 1, maxA = d3.max(Object.values(A), a => a.n) || 1;
     const larg = d3.scaleSqrt().domain([1, maxN]).range([0.5, 3.6]);
-    const raio = d3.scaleSqrt().domain([1, maxA]).range([2.4, 9]);
+    const raio = d3.scaleSqrt().domain([1, maxA]).range([1.8, 5.5]);
     const sel = est.de, alvo = est.para;
     // Sem nada marcado, as linhas ficam apagadas: o globo mostra só os aeroportos. Elas acendem ao marcar.
     const liga = p => !sel ? 'oculta' : (p.a === sel || p.b === sel) ? ((alvo && (p.a === alvo || p.b === alvo)) ? 'foco' : (alvo ? 'fraca' : 'ativa')) : 'fraca';
@@ -208,23 +233,25 @@
       .sort((x, y) => x.n - y.n);
     const nivel = n => n >= 100 ? 'n4' : n >= 30 ? 'n3' : n >= 7 ? 'n2' : 'n1';
     const ligados = sel ? new Set(P.filter(p => p.a === sel || p.b === sel).flatMap(p => [p.a, p.b])) : null;
+    // Hubs: os 8 aeroportos do Brasil e os 8 de fora com mais alertas. Só eles têm nome na visão geral; o resto aparece ao aproximar ou ao marcar.
+    const porN = [...pontos].sort((x, y) => y.n - x.n), noBr = d => (D.aeros[d.i] || [])[2] === 'BR';
+    const hubs = new Set([...porN.filter(noBr).slice(0, 8), ...porN.filter(d => !noBr(d)).slice(0, 8)].map(d => d.i));
     g.select('.mapa-aeros').selectAll('circle').data(pontos, d => d.i).join('circle')
-      .attr('class', d => `mapa-aero ${nivel(d.n)}${d.i === sel ? ' de' : ''}${d.i === alvo ? ' para' : ''}${ligados && !ligados.has(d.i) ? ' apagado' : ''}`)
+      .attr('class', d => `mapa-aero${hubs.has(d.i) ? ' hub' : ''}${ligados && ligados.has(d.i) ? ' liga' : ''}${d.i === sel ? ' de' : ''}${d.i === alvo ? ' para' : ''}${ligados && !ligados.has(d.i) ? ' apagado' : ''}`)
       .on('mousemove', (e, d) => dica(e, `<b>${esc(nomeDe(d.i))} · ${d.i}</b><small>${fmt(d.n)} ${d.n === 1 ? 'alerta' : 'alertas'} · ${d.nd} ${d.nd === 1 ? 'destino' : 'destinos'} com alerta saindo daqui</small>`))
       .on('mouseleave', () => { $('#mapa-tip').hidden = true; })
       .on('click', (e, d) => { e.stopPropagation(); clicarAeroporto(d.i); });
-    const top = new Set(pontos.slice(-8).map(d => d.i));
-    const rot = pontos.map(d => ({ ...d, sel: d.i === sel || d.i === alvo, mostrar: top.has(d.i) || (ligados && ligados.has(d.i) && d.n >= 3) }))
-      .sort((x, y) => (y.sel - x.sel) || (y.n - x.n));
+    const rot = pontos.map(d => ({ ...d, sel: d.i === sel || d.i === alvo, hub: hubs.has(d.i), liga: !!(ligados && ligados.has(d.i)) }))
+      .sort((x, y) => (y.sel - x.sel) || (y.liga - x.liga) || (y.n - x.n));
     g.select('.mapa-rotulos').selectAll('text').data(rot, d => d.i).join('text')
-      .attr('class', d => `mapa-rotulo${d.i === sel || d.i === alvo ? ' sel' : ''}`)
+      .attr('class', d => `mapa-rotulo${d.sel ? ' sel' : d.liga ? ' liga' : d.hub ? ' hub' : ''}`)
       .attr('text-anchor', 'middle').text(d => d.i);
     posicionar();
     legenda(maxN);
     painel(A);
   }
   function legenda() {
-    $('#mapa-leg').innerHTML = `<b>Alertas por aeroporto</b><span><i class="n4"></i>100 ou mais</span><span><i class="n3"></i>30 a 99</span><span><i class="n2"></i>7 a 29</span><span><i class="n1"></i>até 6</span><span class="lg-rota"><i></i>linha mais grossa = mais alertas</span>`;
+    $('#mapa-leg').innerHTML = `<span><i class="lg-hub"></i>hub principal</span><span><i class="lg-aero"></i>aeroporto com alerta</span><span><i class="lg-liga"></i>marcado e destinos</span>`;
   }
   function dica(e, html) {
     const t = $('#mapa-tip'), c = $('#mapa-caixa').getBoundingClientRect();
@@ -282,6 +309,8 @@
   function vista(nome, animar = true) {
     document.querySelectorAll('#mapa-vistas button[data-v]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === nome)));
     const v = VISTAS[nome];
+    // No globo, Brasil e Ásia não cabem no mesmo lado: a vista da Ásia gira até lá (e a da África a centraliza).
+    if (modo === 'globo' && CENTRO_GLOBO[nome]) return irPara(CENTRO_GLOBO[nome], animar);
     irPara(v ? [v[0], v[1], [(v[0][0] + v[1][0]) / 2, v[0][1]], [(v[0][0] + v[1][0]) / 2, v[1][1]]] : null, animar);
   }
 

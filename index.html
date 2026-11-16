@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>try{if(localStorage.getItem('oamml-tema')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-<link rel="stylesheet" href="estilo.css?v=134">
+<link rel="stylesheet" href="estilo.css?v=136">
 </head>
 <body>
 <header class="bar">
@@ -698,7 +698,7 @@
       <div class="sec-head">
         <p class="eyebrow">Mapa de rotas · para assinantes</p>
         <h2>Para onde as milhas estão levando</h2>
-        <p class="sec-note">As rotas que tiveram alerta nos últimos 12 meses. Toque num aeroporto para acender as rotas dele e em outro para ver a rota. Quanto maior o ponto, mais alertas saem dali.</p>
+        <p class="sec-note">As rotas que tiveram alerta nos últimos 12 meses. Toque num aeroporto para acender as rotas dele e em outro para ver a rota. Os nomes que aparecem de início são os hubs com mais alertas; aproxime para ver os outros.</p>
       </div>
       <div class="radar-fechado" id="mapa-fechado">
         <p>🔒 O mapa de rotas é exclusivo para assinantes.</p>
@@ -715,7 +715,7 @@
         <button type="button" class="mapa-limpar" id="mapa-limpar">Limpar</button>
       </div>
       <div class="mapa-vistas" id="mapa-vistas" role="group" aria-label="Região do mapa">
-        <button type="button" data-v="mundo" aria-pressed="true">Mundo</button><button type="button" data-v="brasil" aria-pressed="false">Brasil</button><button type="button" data-v="europa" aria-pressed="false">Brasil ↔ Europa</button><button type="button" data-v="eua" aria-pressed="false">Brasil ↔ EUA e Caribe</button>
+        <button type="button" data-v="mundo" aria-pressed="true">Mundo</button><button type="button" data-v="brasil" aria-pressed="false">Brasil</button><button type="button" data-v="europa" aria-pressed="false">Brasil ↔ Europa</button><button type="button" data-v="eua" aria-pressed="false">Brasil ↔ América do Norte</button><button type="button" data-v="africa" aria-pressed="false">Brasil ↔ África</button><button type="button" data-v="asia" aria-pressed="false">Brasil ↔ Ásia</button>
         <div class="mapa-modo" id="mapa-modo" role="group" aria-label="Jeito de ver"><button type="button" data-m="globo" aria-pressed="true">🌍 Globo</button><button type="button" data-m="mapa" aria-pressed="false">🗺️ Mapa plano</button></div>
       </div>
       <div class="mapa-grade">
@@ -1323,6 +1323,6 @@
 <script src="app.js?v=123"></script>
 <script src="funil.js?v=7"></script>
 <script type="module" src="assinatura.js?v=44"></script>
-<script src="mapa.js?v=4" defer></script>
+<script src="mapa.js?v=8" defer></script>
 </body>
 </html>

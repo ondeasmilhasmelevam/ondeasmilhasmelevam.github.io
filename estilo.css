@@ -2150,3 +2150,24 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 :root[data-theme="light"] .mapa-caixa.globo .mapa-pais.br{fill:#efe2bf}
 :root[data-theme="light"] .mapa-caixa.globo .mapa-fronteira{stroke:#cfc6b3}
 @media (max-width:560px){.mapa-modo{margin-left:0}}
+
+/* Mapa de rotas: nomes dos países (aparecem ao aproximar) */
+.mapa-pais-n{fill:var(--ash);fill-opacity:.75;font-family:var(--body);font-weight:700;letter-spacing:.12em;text-transform:uppercase;pointer-events:none;paint-order:stroke;stroke:var(--ink-2);stroke-opacity:.6;stroke-width:2.5px}
+.mapa-caixa.globo .mapa-pais-n{fill:#aab4c8;stroke:#0f1a31}
+:root[data-theme="light"] .mapa-caixa.globo .mapa-pais-n{fill:#6b7385;stroke:#f6f2e8}
+
+/* Mapa de rotas: aeroportos discretos; hubs com anel suave; marcados acendem em dourado */
+#mapa-svg .mapa-aero{fill:var(--rice);fill-opacity:.5;stroke:none;vector-effect:non-scaling-stroke;transition:fill-opacity .2s,opacity .2s}
+#mapa-svg .mapa-aero.hub{fill-opacity:.95;stroke:var(--rice);stroke-opacity:.22;stroke-width:4px}
+#mapa-svg .mapa-aero.liga{fill:var(--ouro);fill-opacity:1;stroke:var(--ouro);stroke-opacity:.3;stroke-width:4px}
+#mapa-svg .mapa-aero.de,#mapa-svg .mapa-aero.para{fill:var(--verde);fill-opacity:1;stroke:var(--verde);stroke-opacity:.35;stroke-width:6px}
+#mapa-svg .mapa-aero.apagado{opacity:.22}
+#mapa-svg .mapa-aero:hover{fill-opacity:1;stroke:var(--ouro);stroke-opacity:.6;stroke-width:4px}
+#mapa-svg .mapa-rotulo{fill:var(--ash);font-weight:600;letter-spacing:.06em;stroke:var(--ink-2);stroke-width:2.5px;stroke-opacity:.85}
+#mapa-svg .mapa-rotulo.hub{fill:var(--rice);fill-opacity:.85}
+#mapa-svg .mapa-rotulo.liga{fill:var(--ouro-lt);font-weight:800}
+#mapa-svg .mapa-rotulo.sel{fill:var(--verde);font-weight:800}
+.mapa-caixa.globo #mapa-svg .mapa-rotulo{stroke:#0f1a31}
+.mapa-leg i.lg-hub{width:8px;height:8px;border-radius:50%;background:var(--rice);box-shadow:0 0 0 3px color-mix(in srgb,var(--rice) 22%,transparent)}
+.mapa-leg i.lg-aero{width:5px;height:5px;border-radius:50%;background:color-mix(in srgb,var(--rice) 50%,transparent)}
+.mapa-leg i.lg-liga{width:8px;height:8px;border-radius:50%;background:var(--ouro)}
