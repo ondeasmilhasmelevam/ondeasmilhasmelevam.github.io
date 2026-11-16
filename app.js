@@ -2609,6 +2609,8 @@
       const [base, ...resto] = nomeLimpo.split(/\s+-\s+|\s*\(/);
       const chave = norm(base.replace(/\s+Brasil$/i, ''));
       if (!grupos.has(chave)) grupos.set(chave, { nome: base.replace(/\s+Brasil$/i, '').trim(), numeros: [] });
+      const digitos = tel.replace(/\D/g, '').replace(/^0+/, '');
+      if (grupos.get(chave).numeros.some(n => n.tel.replace(/\D/g, '').replace(/^0+/, '') === digitos)) continue; // já veio da planilha
       grupos.get(chave).numeros.push({ tel: tel.trim(), rotulo: resto.join(' ').replace(/\)$/, '').trim(), ...linkTelefone(nomeLimpo, tel) });
     }
     return [...grupos.values()].sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
@@ -2683,12 +2685,17 @@
     setTimeout(() => a.classList.remove('copiado'), 1600);
   });
   async function desenharContatos() {
+    // Números que ainda não estão na planilha (dados/contatos-extra.csv): entram junto, sem repetir os que já estão lá.
+    let extra = '';
+    try { const r = await fetch('dados/contatos-extra.csv', { cache: 'no-store' }); if (r.ok) extra = (await r.text()).replace(/^[^\n]*\n/, ''); } catch (e) { /* sem extras */ }
     for (const url of [URL_CONTATOS, 'dados/contatos.csv']) {
       try {
         const r = await fetch(url, { cache: 'no-store' });
         if (!r.ok) continue;
-        const lista = montarContatos(await r.text());
-        if (lista.length) { contatos = lista; break; }
+        const txt = await r.text();
+        if (!montarContatos(txt).length) continue;
+        contatos = montarContatos(`${txt.replace(/\s*$/, '')}\n${extra}`);
+        break;
       } catch (e) { /* tenta a cópia */ }
     }
     $('#contatos').hidden = !contatos.length;
