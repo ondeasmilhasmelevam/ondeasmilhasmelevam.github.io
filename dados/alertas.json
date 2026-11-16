@@ -4102,10 +4102,10 @@
   "origem_iata": "GRU",
   "destino": "Miami",
   "destino_iata": "MIA",
-  "companhia": "Avianca",
+  "companhia": "American / Avianca",
   "cabine": "Executiva",
   "programa": "Smiles",
-  "ida": "305.000 milhas + taxas",
+  "ida": "280.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -4330,7 +4330,7 @@
   "companhia": "American / Avianca / Copa",
   "cabine": "Econômica",
   "programa": "Smiles",
-  "ida": "57.000 milhas + taxas",
+  "ida": "88.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -5011,21 +5011,6 @@
   "ate": "2026-11-16T23:59:59-03:00"
  },
  {
-  "id": "seats-smiles-MAO-PTY-eco",
-  "data": "2026-11-11T00:03:25.922708Z",
-  "fonte": "seats.aero",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "Avianca / Copa / GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "33.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-azul-VCP-MAD-eco",
   "data": "2026-11-11T00:03:25.922708Z",
   "fonte": "seats.aero",
@@ -5078,7 +5063,7 @@
   "origem_iata": "BSB",
   "destino": "Miami",
   "destino_iata": "MIA",
-  "companhia": "American / Avianca / Copa",
+  "companhia": "American / Avianca / GOL",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "81.000 milhas + taxas",
@@ -5093,7 +5078,7 @@
   "origem_iata": "GRU",
   "destino": "Dallas",
   "destino_iata": "DFW",
-  "companhia": "American / Air Canada / Avianca",
+  "companhia": "American / Air Canada / AM",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "96.000 milhas + taxas",
@@ -5176,21 +5161,6 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-smiles-GRU-JFK-eco",
-  "data": "2026-11-10T00:03:03.524369Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Nova York",
-  "destino_iata": "JFK",
-  "companhia": "American / Avianca / GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "75.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GIG-JFK-eco",
   "data": "2026-11-10T00:03:03.524369Z",
   "fonte": "seats.aero",
@@ -5206,6 +5176,21 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "seats-smiles-GRU-JFK-eco",
+  "data": "2026-11-10T00:03:03.524369Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American / Avianca / GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "78.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-smiles-GRU-MIA-eco",
   "data": "2026-11-10T00:03:03.524369Z",
   "fonte": "seats.aero",
@@ -5216,7 +5201,7 @@
   "companhia": "American / Avianca / Copa",
   "cabine": "Econômica",
   "programa": "Smiles",
-  "ida": "77.000 milhas + taxas",
+  "ida": "80.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
