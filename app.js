@@ -2618,7 +2618,9 @@
   // Ícone de app de cada empresa (os mesmos dos stories); sem ícone, as iniciais num quadradinho.
   const ICONE_CONTATO = [[/latam/, 'latam'], [/smiles/, 'smiles'], [/azul/, 'azul'], [/^tap\b/, 'tap'], [/air canada|aeroplan/, 'aeroplan'],
     [/american|aadvantage/, 'aadvantage'], [/air france|klm|flying blue/, 'flyingblue'], [/british|iberia|avios/, 'avios'],
-    [/livelo/, 'livelo'], [/esfera/, 'esfera']];
+    [/livelo/, 'livelo'], [/esfera/, 'esfera'], [/^gol\b/, 'gol'], [/aerolineas/, 'aerolineas'], [/aeromexico/, 'aeromexico'],
+    [/air europa/, 'aireuropa'], [/avianca/, 'avianca'], [/^copa\b/, 'copa'], [/^delta\b/, 'delta'], [/emirates/, 'emirates'],
+    [/lufthansa/, 'lufthansa'], [/qatar/, 'qatar'], [/turkish/, 'turkish'], [/^united\b/, 'united'], [/virgin/, 'virgin'], [/accor/, 'accor']];
   const TOPO_CONTATOS = ['latam', 'smiles', 'azul', 'tap', 'livelo', 'esfera', 'gol'];
   const GRUPOS_CONTATOS = [['top', 'Mais procurados'], ['aerea', 'Companhias aéreas'], ['pontos', 'Programas de pontos'], ['vip', 'Atendimento VIP']];
   const tipoContato = n => /diamante|platinum|black|elite|executive club/.test(n) ? 'vip'
