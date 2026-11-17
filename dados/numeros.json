@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-17T22:01:30.306296Z",
+ "atualizado": "2026-11-17T22:10:29.459152Z",
  "dias": 30,
- "passagens": 2999,
- "promocoes": 183,
+ "passagens": 3000,
+ "promocoes": 184,
  "destinos": 171,
- "executiva": 609,
+ "executiva": 610,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1250,
+  "passagens": 1251,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -1188,15 +1188,15 @@
     "regiao": "caribe"
    },
    {
-    "id": "2361370250-6402",
-    "origem": "Doha",
-    "origem_iata": "DOH",
-    "destino": "Maldivas",
-    "destino_iata": "MLE",
-    "cabine": "Primeira Classe",
-    "programa": "Qatar Privilege Club",
-    "data": "2026-11-11T13:36:57Z",
-    "milhas": 68500,
+    "id": "2361370250-6712",
+    "origem": "Honolulu",
+    "origem_iata": "HNL",
+    "destino": "Nadi",
+    "destino_iata": "NAN",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-17T22:05:30Z",
+    "milhas": 65000,
     "nivel": "",
     "regiao": "outros"
    }

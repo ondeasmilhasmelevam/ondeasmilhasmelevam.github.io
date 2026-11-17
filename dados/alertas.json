@@ -1,5 +1,38 @@
 [
  {
+  "id": "1290836068-7851",
+  "data": "2026-11-17T22:08:08Z",
+  "tipo": "promocao",
+  "titulo": "ITAÚ SHOP: OFERTA DO DIA - TÊNIS LACOSTE CARNABY PRO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Tênis Lacoste Carnaby Pro em oferta especial com frete grátis.",
+  "detalhes": [
+   "Preço promocional: R$ 219,99.",
+   "Frete grátis."
+  ],
+  "parceiros": "Itaú Shop, Lacoste",
+  "validade": "Até durar o estoque",
+  "links": [
+   "https://link.dia23.com.br/r/kVAkasq"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "2361370250-6712",
+  "data": "2026-11-17T22:05:30Z",
+  "origem": "Honolulu",
+  "origem_iata": "HNL",
+  "destino": "Nadi",
+  "destino_iata": "NAN",
+  "companhia": "Fiji Airways",
+  "cabine": "Executiva",
+  "programa": "AAdvantage",
+  "ida": "65.000 milhas + R$ 28,29",
+  "volta": "65.000 milhas + R$ 667,48",
+  "link_nome": "AAdvantage"
+ },
+ {
   "id": "2361370250-6711",
   "data": "2026-11-17T21:48:47Z",
   "origem": "Seul",
@@ -6471,20 +6504,6 @@
   "ida": "65.000 milhas + R$ 100,62 de taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-9689",
-  "data": "2026-11-15T22:05:47Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "9.900 milhas + R$ 35,75 de taxas",
-  "volta": "9.900 milhas + R$ 35,90 de taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-BSB-PTY-eco",
