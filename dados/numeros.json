@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-17T14:06:09.239248Z",
+ "atualizado": "2026-11-17T14:12:20.568383Z",
  "dias": 30,
  "passagens": 2940,
  "promocoes": 170,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1295,
+  "passagens": 1288,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -1071,19 +1071,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6371",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "New York",
-    "destino_iata": "LGA",
-    "cabine": "Executiva",
-    "programa": "AAdvantage",
-    "data": "2026-11-10T14:10:49Z",
-    "milhas": 17500,
-    "nivel": "",
-    "regiao": "america-do-norte"
-   },
-   {
     "id": "2361370250-6407",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -1199,6 +1186,19 @@
     "milhas": 60700,
     "nivel": "",
     "regiao": "caribe"
+   },
+   {
+    "id": "2361370250-6402",
+    "origem": "Doha",
+    "origem_iata": "DOH",
+    "destino": "Maldivas",
+    "destino_iata": "MLE",
+    "cabine": "Primeira Classe",
+    "programa": "Qatar Privilege Club",
+    "data": "2026-11-11T13:36:57Z",
+    "milhas": 68500,
+    "nivel": "",
+    "regiao": "outros"
    }
   ]
  }
