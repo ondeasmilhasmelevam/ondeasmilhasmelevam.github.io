@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-17T16:11:52.392009Z",
+ "atualizado": "2026-11-17T16:18:03.707118Z",
  "dias": 30,
  "passagens": 2964,
  "promocoes": 170,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1287,
+  "passagens": 1284,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -460,14 +460,14 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15281",
+    "id": "2008590742-15710",
     "origem": "Rio de Janeiro",
     "origem_iata": "GIG",
     "destino": "Santa Cruz de La Sierra",
     "destino_iata": "VVI",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-10T16:12:55Z",
+    "data": "2026-11-15T14:56:31Z",
     "milhas": 30500,
     "nivel": "bom",
     "regiao": "america-do-sul"
