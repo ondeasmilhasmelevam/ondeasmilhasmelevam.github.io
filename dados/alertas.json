@@ -5786,48 +5786,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-9675",
-  "data": "2026-11-15T14:59:57Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "João Pessoa",
-  "destino_iata": "JPA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "29.000 milhas + Taxas",
-  "volta": "29.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-15710",
-  "data": "2026-11-15T14:56:31Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Santa Cruz de La Sierra",
-  "destino_iata": "VVI",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "30.500 milhas + Taxas",
-  "volta": "33.500 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-15709",
-  "data": "2026-11-15T14:56:00Z",
-  "origem": "Maceió",
-  "origem_iata": "MCZ",
-  "destino": "Cuiabá",
-  "destino_iata": "CGB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "24.300 milhas + Taxas",
-  "volta": "24.300 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-BEL-MIA-eco",
   "data": "2026-11-15T03:00:04.152853Z",
   "fonte": "seats.aero",
