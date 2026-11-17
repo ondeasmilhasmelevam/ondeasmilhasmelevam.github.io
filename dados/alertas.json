@@ -1,5 +1,135 @@
 [
  {
+  "id": "1290836068-7838",
+  "data": "2026-11-17T16:30:08Z",
+  "tipo": "promocao",
+  "titulo": "ASSINATURA CLUBE LIVELO MINI ANUAL COM 3.000 PONTOS BÔNUS",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Assine o Clube Livelo Mini na modalidade anual e receba 3.000 pontos bônus . Válido até 26/11/2026.",
+  "detalhes": [
+   "500 pontos mensais + 500 pontos bônus nos primeiros 6 meses.",
+   "Total de 3.000 pontos bônus.",
+   "Exclusivo para novas adesões na modalidade anual."
+  ],
+  "parceiros": "Livelo",
+  "validade": "26/11/2026",
+  "links": [
+   "https://www.livelo.com.br/clube"
+  ],
+  "ate": "2026-11-26T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7837",
+  "data": "2026-11-17T16:30:03Z",
+  "tipo": "promocao",
+  "titulo": "8% DE CASHBACK COM PONTOS KM DE VANTAGENS (IPIMAX)",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Troque 1.000 pontos KM de Vantagens por 8% de cashback em abastecimento com a linha Ipimax, exclusivo para pagamento via app KMV.",
+  "detalhes": [
+   "1.000 pontos KM de Vantagens = 8% de cashback em abastecimento Ipimax.",
+   "Exclusivo para pagamento via app KMV."
+  ],
+  "parceiros": "KM de Vantagens",
+  "validade": "Até durar o estoque",
+  "links": [
+   "https://kmdevantagens.com.br/regulamento"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7836",
+  "data": "2026-11-17T16:29:59Z",
+  "tipo": "promocao",
+  "titulo": "30 PONTOS EXTRAS MASTERCARD SURPREENDA (INTER)",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Ganhe 30 pontos extras no programa Mastercard Surpreenda usando o cupom exclusivo para clientes com cartão do Banco Inter cadastrado.",
+  "detalhes": [
+   "Cupom exclusivo: INTERDEBITO30.",
+   "Exclusivo para clientes com cartão do Banco Inter cadastrado."
+  ],
+  "parceiros": "Mastercard Surpreenda",
+  "validade": "Até durar o estoque",
+  "links": [
+   "https://surpreenda.naotempreco.com.br/"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7835",
+  "data": "2026-11-17T16:29:54Z",
+  "tipo": "promocao",
+  "titulo": "200 PONTOS EXTRAS MASTERCARD SURPREENDA (BB)",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Ganhe 200 pontos extras no programa Mastercard Surpreenda usando o cupom exclusivo para portadores de cartões BB.",
+  "detalhes": [
+   "Cupom exclusivo: 200BBMASTERCARD.",
+   "Exclusivo para portadores de cartões BB."
+  ],
+  "parceiros": "Mastercard Surpreenda",
+  "validade": "Até durar o estoque",
+  "links": [
+   "https://surpreenda.naotempreco.com.br/"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7834",
+  "data": "2026-11-17T16:29:50Z",
+  "tipo": "promocao",
+  "titulo": "RESGATE DE VOUCHER PREMMIA COM MILHAS LATAM",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Resgate R$ 40,00 em crédito de combustível por 1.375 milhas LATAM Pass para clientes do Clube Latam com cartão.",
+  "detalhes": [
+   "1.375 milhas LATAM Pass = R$ 40,00 em crédito de combustível.",
+   "Exclusivo para clientes Clube Latam + cartão."
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "Até durar o estoque",
+  "links": [
+   "https://shopping.latampass.latam.com/pt_br/transferenciapremmia/vale-premmia-credito-combustivel-r-4000/TTRANSFERENCIAPREMMIALATAMPASS001"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7833",
+  "data": "2026-11-17T16:29:44Z",
+  "tipo": "promocao",
+  "titulo": "NATURA & AZUL: 24 PTS/R$ PARA ASSINANTES DO CLUBE AZUL",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Receba 24 pontos por real gasto para assinantes do Clube Azul e 18 pontos por real para demais clientes ao comprar na Natura. Equivalente a ~36% de cashback.",
+  "detalhes": [
+   "24 pts/R$ para assinantes do Clube Azul.",
+   "18 pts/R$ para demais clientes.",
+   "Equivalente a ~36% de cashback."
+  ],
+  "parceiros": "Natura, Azul",
+  "validade": "Até durar o estoque",
+  "links": [
+   "https://www.natura.com.br/parceiros-azul"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "2361370250-6704",
+  "data": "2026-11-17T16:29:17Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "Wamos Air",
+  "cabine": "Executiva",
+  "programa": "LATAM Pass",
+  "ida": "129.377 milhas + R$ 154,59",
+  "volta": "126.789 milhas + R$ 292,35",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-9853",
   "data": "2026-11-17T16:02:13Z",
   "origem": "Porto Alegre",
@@ -3685,20 +3815,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "3761373661-9725",
-  "data": "2026-11-16T11:42:23Z",
-  "origem": "Vitória",
-  "origem_iata": "VIX",
-  "destino": "Caldas Novas",
-  "destino_iata": "CLV",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "16.200 milhas + Taxas",
-  "volta": "16.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "2361370250-6661",
   "data": "2026-11-16T11:42:23Z",
   "origem": "São Paulo",
@@ -3711,6 +3827,20 @@
   "ida": "72.000 milhas (68.400 no Clube Smiles)",
   "volta": "70.000 milhas (66.500 no Clube Smiles)",
   "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "3761373661-9725",
+  "data": "2026-11-16T11:42:23Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Caldas Novas",
+  "destino_iata": "CLV",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.200 milhas + Taxas",
+  "volta": "16.200 milhas + Taxas",
+  "link_nome": "Smiles"
  },
  {
   "id": "3761373661-9724",
@@ -5755,20 +5885,6 @@
   "ida": "409.000 milhas + Taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9686",
-  "data": "2026-11-15T16:26:00Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Salvador",
-  "destino_iata": "SSA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "10.600 milhas + Taxas",
-  "volta": "9.440 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "seats-smiles-BSB-PTY-eco",
