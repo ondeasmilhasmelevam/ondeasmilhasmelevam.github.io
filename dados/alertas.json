@@ -6862,21 +6862,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-qatar-GRU-LHR-eco",
-  "data": "2026-11-10T00:03:03.524369Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Londres",
-  "destino_iata": "LHR",
-  "companhia": "British Airways / Qatar Airways",
-  "cabine": "Econômica",
-  "programa": "Qatar Privilege Club",
-  "ida": "38.500 Avios + taxas",
-  "volta": "",
-  "link_nome": "Qatar Privilege Club"
- },
- {
   "id": "seats-qatar-GIG-LHR-eco",
   "data": "2026-11-10T00:03:03.524369Z",
   "fonte": "seats.aero",
@@ -6885,6 +6870,21 @@
   "destino": "Londres",
   "destino_iata": "LHR",
   "companhia": "British Airways",
+  "cabine": "Econômica",
+  "programa": "Qatar Privilege Club",
+  "ida": "38.500 Avios + taxas",
+  "volta": "",
+  "link_nome": "Qatar Privilege Club"
+ },
+ {
+  "id": "seats-qatar-GRU-LHR-eco",
+  "data": "2026-11-10T00:03:03.524369Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Londres",
+  "destino_iata": "LHR",
+  "companhia": "British Airways / Qatar Airways",
   "cabine": "Econômica",
   "programa": "Qatar Privilege Club",
   "ida": "38.500 Avios + taxas",
