@@ -5576,20 +5576,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15706",
-  "data": "2026-11-15T13:21:57Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "63.500 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-BEL-MIA-eco",
   "data": "2026-11-15T03:00:04.152853Z",
   "fonte": "seats.aero",
