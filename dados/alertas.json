@@ -5828,20 +5828,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15708",
-  "data": "2026-11-15T14:53:01Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.800 milhas + Taxas",
-  "volta": "11.800 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "seats-smiles-BEL-MIA-eco",
   "data": "2026-11-15T03:00:04.152853Z",
   "fonte": "seats.aero",
