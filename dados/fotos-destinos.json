@@ -59,6 +59,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:ISS026-E-7362_-_View_of_Panama.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/ISS026-E-7362_-_View_of_Panama.jpg/1280px-ISS026-E-7362_-_View_of_Panama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "bogota-colombia": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Cerros_arco_iris_3.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Cerros_arco_iris_3.jpg/1280px-Cerros_arco_iris_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "bombinhas-santa-catarina": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Bombinhas_Santa_Catarina_Brazil_(92400511).jpeg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Bombinhas_Santa_Catarina_Brazil_%2892400511%29.jpeg/1280px-Bombinhas_Santa_Catarina_Brazil_%2892400511%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -70,6 +74,10 @@
  "brasilia-df": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Recife_e_Olinda_com_a_Fam%C3%ADlia.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Recife_e_Olinda_com_a_Fam%C3%ADlia.jpg/1280px-Recife_e_Olinda_com_a_Fam%C3%ADlia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "buenos-aires-argentina": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Buenos_Aires,_Argentina_Skyline_-_panoramio_(1).jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Buenos_Aires%2C_Argentina_Skyline_-_panoramio_%281%29.jpg/1280px-Buenos_Aires%2C_Argentina_Skyline_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "buzios-rj": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Escultura_Bardot.JPG",
@@ -94,6 +102,10 @@
  "capitolio-minas-gerais": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Washington_dc_view.JPG",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Washington_dc_view.JPG/1280px-Washington_dc_view.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "cartagena": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Cartagena_skyline,_Colombia.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Cartagena_skyline%2C_Colombia.jpg/1280px-Cartagena_skyline%2C_Colombia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "chapada-diamantina-bahia": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Chapada_Diamantina_Panorama.jpg",
@@ -127,9 +139,21 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Brasil-_South_(2759036165).jpg",
   "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Brasil-_South_%282759036165%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
  },
+ "cusco-peru": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Cusco,_Peru_skyline.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Cusco%2C_Peru_skyline.jpg/1280px-Cusco%2C_Peru_skyline.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "deserto-atacama-chile": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Catedrales_de_Tara,_Chile,_2016-02-07,_DD_62.JPG",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Catedrales_de_Tara%2C_Chile%2C_2016-02-07%2C_DD_62.JPG/1280px-Catedrales_de_Tara%2C_Chile%2C_2016-02-07%2C_DD_62.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "diamantina-minas-gerais": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Panorama_da_Vila_de_Biribiri_visto_da_Trilha_do_Cruzeiro_-_Junho_2024.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Panorama_da_Vila_de_Biribiri_visto_da_Trilha_do_Cruzeiro_-_Junho_2024.jpg/1280px-Panorama_da_Vila_de_Biribiri_visto_da_Trilha_do_Cruzeiro_-_Junho_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "el-calafate-argentina": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Invierno_en_la_costanera..jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Invierno_en_la_costanera..jpg/1280px-Invierno_en_la_costanera..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "fernando-de-noronha": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Raia_da_Atalaia_Fernando_de_Noronha_05.jpg",
@@ -158,6 +182,10 @@
  "havana-81-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Cuba_LaHavana_Skyline_(www.pixinn.net).jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Cuba_LaHavana_Skyline_%28www.pixinn.net%29.jpg/1280px-Cuba_LaHavana_Skyline_%28www.pixinn.net%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "ilha-de-pascoa": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Hanga_Roa_Panorama.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Hanga_Roa_Panorama.jpg/1280px-Hanga_Roa_Panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "ilha-grande": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Praia_de_Provet%C3%A1_1,_Parque_Estadual_da_Ilha_Grande.JPG",
@@ -190,6 +218,10 @@
  "lencois-maranhenses": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Os_lencois.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Os_lencois.jpg/1280px-Os_lencois.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "lima-peru": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Lima,_Peru_Skyline_from_Surco.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Lima%2C_Peru_Skyline_from_Surco.jpg/1280px-Lima%2C_Peru_Skyline_from_Surco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "los-roques-200-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Venezuela_en_Para%C3%ADso..jpg",
