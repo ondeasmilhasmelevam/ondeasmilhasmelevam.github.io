@@ -4827,20 +4827,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-6595",
-  "data": "2026-11-15T08:50:39Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "Copa",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "121.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-BEL-MIA-eco",
   "data": "2026-11-15T03:00:04.152853Z",
   "fonte": "seats.aero",
