@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-17T12:25:16.337151Z",
+ "atualizado": "2026-11-17T12:31:24.497503Z",
  "dias": 30,
- "passagens": 2905,
+ "passagens": 2910,
  "promocoes": 170,
  "destinos": 169,
  "executiva": 599,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1290,
+  "passagens": 1294,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -837,6 +837,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9812",
+    "origem": "Goiânia",
+    "origem_iata": "GYN",
+    "destino": "Joinville",
+    "destino_iata": "JOI",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-17T12:28:12Z",
+    "milhas": 8600,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "2008590742-15715",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
@@ -859,19 +872,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-13T13:10:28Z",
     "milhas": 9000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9632",
-    "origem": "São Paulo",
-    "origem_iata": "CGH",
-    "destino": "Joinville",
-    "destino_iata": "JOI",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-13T23:41:05Z",
-    "milhas": 9200,
     "nivel": "",
     "regiao": "brasil"
    },
@@ -1084,19 +1084,6 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2361370250-6370",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Lima",
-    "destino_iata": "LIM",
-    "cabine": "Executiva",
-    "programa": "Finnair Plus",
-    "data": "2026-11-10T12:31:11Z",
-    "milhas": 20000,
-    "nivel": "",
-    "regiao": "america-do-sul"
-   },
-   {
     "id": "2361370250-6407",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -1106,6 +1093,19 @@
     "programa": "Finnair Plus",
     "data": "2026-11-11T15:43:48Z",
     "milhas": 20000,
+    "nivel": "",
+    "regiao": "america-do-sul"
+   },
+   {
+    "id": "2361370250-6458",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Lima",
+    "destino_iata": "LIM",
+    "cabine": "Executiva",
+    "programa": "Qatar Privilege Club",
+    "data": "2026-11-12T11:57:28Z",
+    "milhas": 38750,
     "nivel": "",
     "regiao": "america-do-sul"
    },
