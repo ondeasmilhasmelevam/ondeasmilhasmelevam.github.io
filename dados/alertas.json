@@ -4876,20 +4876,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9670",
-  "data": "2026-11-15T00:36:47Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "SDU",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "10.700 milhas + R$ 62,62 de taxas",
-  "volta": "10.700 milhas + R$ 62,14 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7781",
   "data": "2026-11-14T15:52:09Z",
   "tipo": "promocao",
@@ -4968,7 +4954,7 @@
   "origem_iata": "GRU",
   "destino": "Paris",
   "destino_iata": "CDG",
-  "companhia": "American / Air Canada / Air France",
+  "companhia": "Air Canada / Air France / Aerolíneas Argentinas",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "125.000 milhas + taxas",
@@ -5191,21 +5177,6 @@
   "ida": "80.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "seats-smiles-SSA-CDG-eco",
-  "data": "2026-11-10T00:03:03.524369Z",
-  "fonte": "seats.aero",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "Air France / GOL / KLM",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "114.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-GIG-JFK-exe",
