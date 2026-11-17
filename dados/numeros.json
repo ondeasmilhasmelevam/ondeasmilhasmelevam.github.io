@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-17T20:22:09.395143Z",
+ "atualizado": "2026-11-17T20:28:31.802885Z",
  "dias": 30,
- "passagens": 2990,
+ "passagens": 2994,
  "promocoes": 181,
  "destinos": 171,
- "executiva": 605,
+ "executiva": 606,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1269,
+  "passagens": 1273,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -759,6 +759,19 @@
     "regiao": "outros"
    },
    {
+    "id": "3761373661-9865",
+    "origem": "São Paulo",
+    "origem_iata": "CGH",
+    "destino": "Belo Horizonte",
+    "destino_iata": "CNF",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-17T20:27:12Z",
+    "milhas": 7000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9533",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -898,19 +911,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-12T11:20:47Z",
     "milhas": 9302,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9688",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Belo Horizonte",
-    "destino_iata": "CNF",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-15T21:27:39Z",
-    "milhas": 9500,
     "nivel": "",
     "regiao": "brasil"
    },
