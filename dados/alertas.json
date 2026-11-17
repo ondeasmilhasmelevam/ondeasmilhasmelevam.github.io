@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6711",
+  "data": "2026-11-17T21:48:47Z",
+  "origem": "Seul",
+  "origem_iata": "ICN",
+  "destino": "Hong Kong",
+  "destino_iata": "HKG",
+  "companhia": "Korean Air",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "44.700 milhas + R$ 141,67",
+  "volta": "44.700 milhas + R$ 346,16",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6710",
   "data": "2026-11-17T21:40:05Z",
   "origem": "São Paulo",
