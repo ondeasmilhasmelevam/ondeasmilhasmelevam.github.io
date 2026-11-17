@@ -1,9 +1,9 @@
 {
- "atualizado": "2026-11-17T19:43:54.780241Z",
+ "atualizado": "2026-11-17T19:50:50.455285Z",
  "dias": 30,
- "passagens": 2981,
+ "passagens": 2987,
  "promocoes": 181,
- "destinos": 169,
+ "destinos": 171,
  "executiva": 603,
  "destaques": [
   {
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1263,
+  "passagens": 1266,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -733,6 +733,32 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9863",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Santa Maria",
+    "destino_iata": "RIA",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-17T19:44:20Z",
+    "milhas": 7000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
+    "id": "3761373661-9862",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Uruguaiana",
+    "destino_iata": "URG",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-17T19:44:17Z",
+    "milhas": 7000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "3761373661-9533",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -811,19 +837,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9347",
-    "origem": "Maceió",
-    "origem_iata": "MCZ",
-    "destino": "Campinas",
-    "destino_iata": "VCP",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-10T19:47:42Z",
-    "milhas": 8600,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9812",
     "origem": "Goiânia",
     "origem_iata": "GYN",
@@ -858,6 +871,19 @@
     "cabine": "Econômica",
     "programa": "LATAM Pass",
     "data": "2026-11-13T13:10:28Z",
+    "milhas": 9000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9615",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Campinas",
+    "destino_iata": "VCP",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-13T18:47:54Z",
     "milhas": 9000,
     "nivel": "",
     "regiao": "brasil"
@@ -911,32 +937,6 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-16T11:51:55Z",
     "milhas": 10000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9721",
-    "origem": "Vitória",
-    "origem_iata": "VIX",
-    "destino": "São José do Rio Preto",
-    "destino_iata": "SJP",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-16T11:42:13Z",
-    "milhas": 10600,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9837",
-    "origem": "Vitória",
-    "origem_iata": "VIX",
-    "destino": "Rio de Janeiro",
-    "destino_iata": "SDU",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-17T14:20:36Z",
-    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },
