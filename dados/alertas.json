@@ -6450,21 +6450,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-GIG-AMS-eco",
-  "data": "2026-11-12T05:14:55.794608Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Amsterdã",
-  "destino_iata": "AMS",
-  "companhia": "Air France / Aerolíneas Argentinas / AZ",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "150.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-FLN-PTY-eco",
   "data": "2026-11-11T00:03:25.922708Z",
   "fonte": "seats.aero",
