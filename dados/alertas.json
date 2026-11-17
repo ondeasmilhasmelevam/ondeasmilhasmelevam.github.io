@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9788",
+  "data": "2026-11-17T00:02:25Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "9.900 milhas + R$ 35,90 de taxas",
+  "volta": "9.900 milhas + R$ 35,75 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9787",
   "data": "2026-11-16T23:47:14Z",
   "origem": "Brasília",
@@ -4888,20 +4902,6 @@
   "ida": "80.000 milhas + R$ 294,45 de taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-9669",
-  "data": "2026-11-15T00:03:14Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Curitiba",
-  "destino_iata": "CWB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "9.500 milhas + R$ 35,75 de taxas",
-  "volta": "9.100 milhas + R$ 48,63 de taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7781",

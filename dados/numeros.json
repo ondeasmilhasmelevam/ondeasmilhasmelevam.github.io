@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-17T00:00:43.314888Z",
+ "atualizado": "2026-11-17T00:11:37.879753Z",
  "dias": 30,
- "passagens": 2866,
+ "passagens": 2867,
  "promocoes": 169,
  "destinos": 168,
  "executiva": 598,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1368,
+  "passagens": 1357,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -224,19 +224,6 @@
     "milhas": 48000,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
-   },
-   {
-    "id": "seats-smiles-GRU-AUA-eco",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Aruba",
-    "destino_iata": "AUA",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-10T00:03:03.524369Z",
-    "milhas": 78000,
-    "nivel": "espetacular",
-    "regiao": "caribe"
    },
    {
     "id": "2008590742-15872",
@@ -499,19 +486,6 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "seats-qatar-GRU-LHR-eco",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Londres",
-    "destino_iata": "LHR",
-    "cabine": "Econômica",
-    "programa": "Qatar Privilege Club",
-    "data": "2026-11-10T00:03:03.524369Z",
-    "milhas": 38500,
-    "nivel": "bom",
-    "regiao": "europa"
-   },
-   {
     "id": "2008590742-15328",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -588,6 +562,19 @@
     "milhas": 88500,
     "nivel": "bom",
     "regiao": "america-do-norte"
+   },
+   {
+    "id": "seats-smiles-GRU-LHR-eco",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Londres",
+    "destino_iata": "LHR",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-12T05:14:55.794608Z",
+    "milhas": 127000,
+    "nivel": "bom",
+    "regiao": "europa"
    },
    {
     "id": "3761373661-9492",
@@ -937,6 +924,19 @@
     "programa": "Smiles",
     "data": "2026-11-15T21:27:39Z",
     "milhas": 9500,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9729",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "Tefé",
+    "destino_iata": "TFF",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-16T11:51:55Z",
+    "milhas": 10000,
     "nivel": "",
     "regiao": "brasil"
    },
