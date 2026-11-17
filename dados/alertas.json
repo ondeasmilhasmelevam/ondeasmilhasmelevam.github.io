@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-6709",
+  "data": "2026-11-17T21:02:18Z",
+  "origem": "Vancouver",
+  "origem_iata": "YVR",
+  "destino": "Sydney",
+  "destino_iata": "SYD",
+  "companhia": "Qantas Airways",
+  "cabine": "Executiva",
+  "programa": "AAdvantage",
+  "ida": "80.000 milhas + R$ 455,27",
+  "volta": "",
+  "link_nome": "AAdvantage"
+ },
+ {
+  "id": "3761373661-9867",
+  "data": "2026-11-17T21:00:39Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "9.440 milhas + Taxas",
+  "volta": "9.440 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "1290836068-7850",
   "data": "2026-11-17T20:47:50Z",
   "tipo": "promocao",
@@ -4400,20 +4428,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "3761373661-9725",
-  "data": "2026-11-16T11:42:23Z",
-  "origem": "Vitória",
-  "origem_iata": "VIX",
-  "destino": "Caldas Novas",
-  "destino_iata": "CLV",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "16.200 milhas + Taxas",
-  "volta": "16.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "2361370250-6661",
   "data": "2026-11-16T11:42:23Z",
   "origem": "São Paulo",
@@ -4426,6 +4440,20 @@
   "ida": "72.000 milhas (68.400 no Clube Smiles)",
   "volta": "70.000 milhas (66.500 no Clube Smiles)",
   "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "3761373661-9725",
+  "data": "2026-11-16T11:42:23Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Caldas Novas",
+  "destino_iata": "CLV",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.200 milhas + Taxas",
+  "volta": "16.200 milhas + Taxas",
+  "link_nome": "Smiles"
  },
  {
   "id": "3761373661-9724",
@@ -6647,21 +6675,6 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "139.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "seats-smiles-FOR-LIS-eco",
-  "data": "2026-11-12T05:14:55.794608Z",
-  "fonte": "seats.aero",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Lisboa",
-  "destino_iata": "LIS",
-  "companhia": "Air France",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "146.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
