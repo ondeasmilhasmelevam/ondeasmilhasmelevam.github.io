@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9852",
+  "data": "2026-11-17T15:59:18Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "13.000 milhas + Taxas",
+  "volta": "13.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-9851",
   "data": "2026-11-17T15:31:16Z",
   "origem": "Sinop",
@@ -5812,20 +5826,6 @@
   "ida": "18.300 milhas + Taxas",
   "volta": "18.200 milhas + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9683",
-  "data": "2026-11-15T15:57:57Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Ribeirão Preto",
-  "destino_iata": "RAO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "13.630 milhas + Taxas",
-  "volta": "13.630 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "seats-smiles-BEL-MIA-eco",
