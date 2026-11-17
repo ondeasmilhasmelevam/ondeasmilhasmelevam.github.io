@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-6707",
+  "data": "2026-11-17T20:02:28Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Dar Es Salaam",
+  "destino_iata": "DAR",
+  "companhia": "South African Airways",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "292.400 Milhas Smiles + Taxas",
+  "volta": "292.400 Milhas Smiles + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-6706",
+  "data": "2026-11-17T20:02:26Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Porto",
+  "destino_iata": "OPO",
+  "companhia": "Azul",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "80.000 Milhas Aeroplan + Taxas",
+  "volta": "80.000 Milhas Aeroplan + Taxas",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "2008590742-15921",
   "data": "2026-11-17T19:44:32Z",
   "origem": "Foz do Iguaçu",
@@ -4238,20 +4266,6 @@
   "link_nome": "GOL Smiles"
  },
  {
-  "id": "3761373661-9725",
-  "data": "2026-11-16T11:42:23Z",
-  "origem": "Vitória",
-  "origem_iata": "VIX",
-  "destino": "Caldas Novas",
-  "destino_iata": "CLV",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "16.200 milhas + Taxas",
-  "volta": "16.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "2361370250-6661",
   "data": "2026-11-16T11:42:23Z",
   "origem": "São Paulo",
@@ -4264,6 +4278,20 @@
   "ida": "72.000 milhas (68.400 no Clube Smiles)",
   "volta": "70.000 milhas (66.500 no Clube Smiles)",
   "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "3761373661-9725",
+  "data": "2026-11-16T11:42:23Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Caldas Novas",
+  "destino_iata": "CLV",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.200 milhas + Taxas",
+  "volta": "16.200 milhas + Taxas",
+  "link_nome": "Smiles"
  },
  {
   "id": "3761373661-9724",
@@ -6455,21 +6483,6 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "97.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "seats-smiles-GIG-MAD-eco",
-  "data": "2026-11-12T05:14:55.794608Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Madrid",
-  "destino_iata": "MAD",
-  "companhia": "Air France / Avianca / AZ",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "132.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
