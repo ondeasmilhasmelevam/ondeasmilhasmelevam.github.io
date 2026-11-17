@@ -1,5 +1,90 @@
 [
  {
+  "id": "1290836068-7841",
+  "data": "2026-11-17T16:34:21Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFIRA PONTOS DE BANCOS PARCEIROS PARA SMILES COM ATÉ 80% DE BÔNUS",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Transfira pontos de bancos parceiros para o Smiles e ganhe até 80% de bônus. Validade até 02/12/2026.",
+  "detalhes": [
+   "80% de bônus para assinantes do Clube Smiles e clientes Diamante ou Magno.",
+   "40% de bônus para demais clientes Smiles.",
+   "Transferências de pontos de bancos parceiros elegíveis.",
+   "Limite de 300.000 milhas bônus por CPF ou Conta Família."
+  ],
+  "parceiros": "Smiles, Bancos Parceiros",
+  "validade": "02/12/2026 (crédito dos bônus) / 17/11/2026 (horário de validade: 10h às 23h59)",
+  "links": [
+   "https://www.smiles.com.br/portal/campanhas/orangefriday-bancos-17-11-2026"
+  ],
+  "ate": "2026-12-02T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7839",
+  "data": "2026-11-17T16:34:11Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass: DESCONTO DE ATÉ 42% EM VOUCHERS DE COMBUSTÍVEL PREMMIA",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "LATAM Pass oferece até 42% de desconto na troca de milhas por vouchers de combustível Premmia de R$ 40. O valor varia de R$ 26,19 a R$ 29,09 por 1.000 milhas, dependendo do perfil. Cada CPF pode resgatar até dois vouchers, totalizando R$ 80.",
+  "detalhes": [
+   "até 42% de desconto na troca de milhas por vouchers de combustível Premmia de R$ 40",
+   "valor de até R$ 29,09 por cada 1.000 milhas trocadas",
+   "cada CPF pode resgatar até dois vouchers, totalizando R$ 80",
+   "milhas por voucher variam conforme perfil",
+   "crédito disponibilizado em até dois dias úteis"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "até sexta-feira (20/11)",
+  "links": [
+   "https://link.dia23.com.br/r/Askzqcj"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
+  "id": "2361370250-6705",
+  "data": "2026-11-17T16:33:36Z",
+  "origem": "Tóquio",
+  "origem_iata": "NRT",
+  "destino": "Helsinque",
+  "destino_iata": "HEL",
+  "companhia": "Finnair",
+  "cabine": "Executiva",
+  "programa": "AAdvantage",
+  "ida": "75.000 milhas + R$ 218,02",
+  "volta": "75.000 milhas + R$ 124,70",
+  "link_nome": "AAdvantage"
+ },
+ {
+  "id": "3761373661-9855",
+  "data": "2026-11-17T16:31:41Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Recife",
+  "destino_iata": "REC",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "13.000 milhas + Taxas",
+  "volta": "13.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-9854",
+  "data": "2026-11-17T16:30:55Z",
+  "origem": "Sinop",
+  "origem_iata": "OPS",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "11.800 milhas + Taxas",
+  "volta": "11.800 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "1290836068-7838",
   "data": "2026-11-17T16:30:08Z",
   "tipo": "promocao",
@@ -6093,21 +6178,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-GIG-LHR-eco",
-  "data": "2026-11-12T05:14:55.794608Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Londres",
-  "destino_iata": "LHR",
-  "companhia": "American / Air France / Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "137.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-LHR-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
@@ -6134,6 +6204,21 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "146.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "seats-smiles-GIG-LHR-eco",
+  "data": "2026-11-12T05:14:55.794608Z",
+  "fonte": "seats.aero",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Londres",
+  "destino_iata": "LHR",
+  "companhia": "American / Air France / Avianca",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "148.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
