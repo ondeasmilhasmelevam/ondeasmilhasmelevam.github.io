@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9853",
+  "data": "2026-11-17T16:02:13Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Curitiba",
+  "destino_iata": "CWB",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "5.000 milhas + R$ 62,69 de taxas",
+  "volta": "5.000 milhas + R$ 48,63 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-9852",
   "data": "2026-11-17T15:59:18Z",
   "origem": "Rio de Janeiro",
