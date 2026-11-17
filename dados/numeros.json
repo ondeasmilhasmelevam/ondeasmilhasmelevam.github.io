@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-17T16:49:02.941600Z",
+ "atualizado": "2026-11-17T16:55:14.548615Z",
  "dias": 30,
- "passagens": 2968,
+ "passagens": 2973,
  "promocoes": 178,
  "destinos": 169,
  "executiva": 603,
@@ -86,8 +86,22 @@
   }
  ],
  "semana": {
-  "passagens": 1287,
+  "passagens": 1292,
   "destaques": [
+   {
+    "id": "3761373661-9856",
+    "origem": "Fortaleza",
+    "origem_iata": "FOR",
+    "destino": "Juazeiro do Norte",
+    "destino_iata": "JDO",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-17T16:51:44Z",
+    "milhas": 3332,
+    "nivel": "",
+    "grupo": "Nacional",
+    "foto": "img/rotas/FOR-JDO.jpg"
+   },
    {
     "id": "3761373661-9492",
     "origem": "Curitiba",
@@ -101,20 +115,6 @@
     "nivel": "",
     "grupo": "Nacional",
     "foto": "img/rotas/CWB-LDB.jpg"
-   },
-   {
-    "id": "3761373661-9474",
-    "origem": "Fortaleza",
-    "origem_iata": "FOR",
-    "destino": "Juazeiro do Norte",
-    "destino_iata": "JDO",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-12T12:47:08Z",
-    "milhas": 4306,
-    "nivel": "",
-    "grupo": "Nacional",
-    "foto": "img/rotas/FOR-JDO.jpg"
    },
    {
     "id": "2008590742-15694",
@@ -577,6 +577,19 @@
     "regiao": "europa"
    },
    {
+    "id": "3761373661-9856",
+    "origem": "Fortaleza",
+    "origem_iata": "FOR",
+    "destino": "Juazeiro do Norte",
+    "destino_iata": "JDO",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-17T16:51:44Z",
+    "milhas": 3332,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9492",
     "origem": "Curitiba",
     "origem_iata": "CWB",
@@ -586,19 +599,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-12T13:28:41Z",
     "milhas": 3500,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9474",
-    "origem": "Fortaleza",
-    "origem_iata": "FOR",
-    "destino": "Juazeiro do Norte",
-    "destino_iata": "JDO",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-12T12:47:08Z",
-    "milhas": 4306,
     "nivel": "",
     "regiao": "brasil"
    },
