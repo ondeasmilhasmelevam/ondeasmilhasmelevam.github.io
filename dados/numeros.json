@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-17T18:10:44.923729Z",
+ "atualizado": "2026-11-17T18:16:51.693233Z",
  "dias": 30,
  "passagens": 2980,
  "promocoes": 179,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1289,
+  "passagens": 1286,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -395,15 +395,15 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15291",
-    "origem": "Goiânia",
-    "origem_iata": "GYN",
+    "id": "2008590742-15906",
+    "origem": "Recife",
+    "origem_iata": "REC",
     "destino": "Barcelona",
     "destino_iata": "BCN",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-10T18:16:19Z",
-    "milhas": 71000,
+    "data": "2026-11-17T15:11:44Z",
+    "milhas": 75000,
     "nivel": "muito bom",
     "regiao": "europa"
    },
