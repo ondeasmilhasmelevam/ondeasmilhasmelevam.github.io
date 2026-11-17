@@ -5800,34 +5800,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15713",
-  "data": "2026-11-15T15:18:20Z",
-  "origem": "Navegantes",
-  "origem_iata": "NVT",
-  "destino": "Goiânia",
-  "destino_iata": "GYN",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "9.640 milhas + Taxas",
-  "volta": "9.590 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9678",
-  "data": "2026-11-15T15:14:56Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "19.600 milhas + Taxas",
-  "volta": "19.600 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-BEL-MIA-eco",
   "data": "2026-11-15T03:00:04.152853Z",
   "fonte": "seats.aero",

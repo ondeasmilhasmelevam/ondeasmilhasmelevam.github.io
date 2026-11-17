@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-17T15:14:49.525074Z",
+ "atualizado": "2026-11-17T15:21:06.293896Z",
  "dias": 30,
  "passagens": 2953,
  "promocoes": 170,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1290,
+  "passagens": 1285,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -1149,19 +1149,6 @@
     "regiao": "outros"
    },
    {
-    "id": "2361370250-6379",
-    "origem": "Toronto",
-    "origem_iata": "YYZ",
-    "destino": "Helsinque",
-    "destino_iata": "HEL",
-    "cabine": "Executiva",
-    "programa": "AAdvantage",
-    "data": "2026-11-10T15:16:25Z",
-    "milhas": 57500,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "2361370250-6481",
     "origem": "Nova York",
     "origem_iata": "JFK",
@@ -1197,6 +1184,19 @@
     "programa": "Qatar Privilege Club",
     "data": "2026-11-11T13:36:57Z",
     "milhas": 68500,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6482",
+    "origem": "Montreal",
+    "origem_iata": "YUL",
+    "destino": "Casablanca",
+    "destino_iata": "CMN",
+    "cabine": "Executiva",
+    "programa": "Aeroplan",
+    "data": "2026-11-12T15:33:50Z",
+    "milhas": 69800,
     "nivel": "",
     "regiao": "outros"
    }
