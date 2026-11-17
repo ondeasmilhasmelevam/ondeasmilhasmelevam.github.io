@@ -5856,20 +5856,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-15707",
-  "data": "2026-11-15T14:41:01Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Washington",
-  "destino_iata": "IAD",
-  "companhia": "COPA",
-  "cabine": "Econômica",
-  "programa": "Azul pelo Mundo",
-  "ida": "88.500 milhas + 0",
-  "volta": "83.500 milhas + 0",
-  "link_nome": "Azul pelo Mundo"
- },
- {
   "id": "seats-smiles-BEL-MIA-eco",
   "data": "2026-11-15T03:00:04.152853Z",
   "fonte": "seats.aero",
@@ -6031,21 +6017,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-GIG-CDG-eco",
-  "data": "2026-11-12T05:14:55.794608Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "American / Air France / Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "132.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GIG-MAD-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
@@ -6054,6 +6025,21 @@
   "destino": "Madrid",
   "destino_iata": "MAD",
   "companhia": "Air France / Avianca / AZ",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "132.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "seats-smiles-GIG-CDG-eco",
+  "data": "2026-11-12T05:14:55.794608Z",
+  "fonte": "seats.aero",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "American / Air France / Avianca",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "132.000 milhas + taxas",
