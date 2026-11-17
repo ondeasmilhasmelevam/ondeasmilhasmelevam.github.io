@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-17T21:48:56.213203Z",
+ "atualizado": "2026-11-17T21:55:16.146657Z",
  "dias": 30,
  "passagens": 2999,
  "promocoes": 183,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1257,
+  "passagens": 1250,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -473,19 +473,6 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-15328",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Nova York",
-    "destino_iata": "JFK",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-10T21:49:26Z",
-    "milhas": 54400,
-    "nivel": "bom",
-    "regiao": "america-do-norte"
-   },
-   {
     "id": "2008590742-15329",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -523,6 +510,19 @@
     "milhas": 60000,
     "nivel": "bom",
     "regiao": "caribe"
+   },
+   {
+    "id": "2008590742-15528",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Nova York",
+    "destino_iata": "JFK",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-13T12:35:27Z",
+    "milhas": 61100,
+    "nivel": "bom",
+    "regiao": "america-do-norte"
    },
    {
     "id": "2008590742-15813",
