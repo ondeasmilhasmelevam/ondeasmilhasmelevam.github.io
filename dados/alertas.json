@@ -6112,20 +6112,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-6597",
-  "data": "2026-11-15T17:56:39Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "20.000 milhas + CAD 85,20 de taxas",
-  "volta": "",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "seats-smiles-BSB-PTY-eco",
   "data": "2026-11-15T16:08:54.197607Z",
   "fonte": "seats.aero",
