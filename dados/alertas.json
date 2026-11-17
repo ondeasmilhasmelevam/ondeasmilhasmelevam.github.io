@@ -1,5 +1,47 @@
 [
  {
+  "id": "3761373661-9836",
+  "data": "2026-11-17T13:53:48Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Campo Grande",
+  "destino_iata": "CGR",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "11.200 milhas + Taxas",
+  "volta": "11.200 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-9835",
+  "data": "2026-11-17T13:53:45Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Navegantes",
+  "destino_iata": "NVT",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "17.200 milhas + Taxas",
+  "volta": "17.200 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-15903",
+  "data": "2026-11-17T13:53:39Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Milão",
+  "destino_iata": "MXP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "70.400 milhas + Taxas",
+  "volta": "70.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-9834",
   "data": "2026-11-17T13:34:34Z",
   "origem": "São Paulo",
@@ -5744,20 +5786,6 @@
   "link_nome": "Azul pelo Mundo"
  },
  {
-  "id": "3761373661-9673",
-  "data": "2026-11-15T13:58:55Z",
-  "origem": "Campinas",
-  "origem_iata": "VCP",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "10.200 milhas + Taxas",
-  "volta": "10.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-BEL-MIA-eco",
   "data": "2026-11-15T03:00:04.152853Z",
   "fonte": "seats.aero",
@@ -5866,7 +5894,7 @@
   "origem_iata": "GRU",
   "destino": "Paris",
   "destino_iata": "CDG",
-  "companhia": "American / Air Canada / Air France",
+  "companhia": "American / Air France / Aerolíneas Argentinas",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "127.000 milhas + taxas",
@@ -5949,21 +5977,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-GRU-LHR-eco",
-  "data": "2026-11-12T05:14:55.794608Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Londres",
-  "destino_iata": "LHR",
-  "companhia": "American / Air France / AM",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "134.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GIG-LHR-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
@@ -5975,6 +5988,21 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "137.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "seats-smiles-GRU-LHR-eco",
+  "data": "2026-11-12T05:14:55.794608Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Londres",
+  "destino_iata": "LHR",
+  "companhia": "American / Air France / AM",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "139.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -6034,7 +6062,7 @@
   "companhia": "Azul",
   "cabine": "Econômica",
   "programa": "Azul Fidelidade",
-  "ida": "80.000 pontos + taxas",
+  "ida": "70.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
  },
