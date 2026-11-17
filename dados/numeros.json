@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-17T15:40:45.645173Z",
+ "atualizado": "2026-11-17T15:46:56.757045Z",
  "dias": 30,
  "passagens": 2962,
  "promocoes": 170,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1286,
+  "passagens": 1285,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -1045,19 +1045,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6380",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Roma",
-    "destino_iata": "FCO",
-    "cabine": "Executiva",
-    "programa": "Smiles",
-    "data": "2026-11-10T15:41:08Z",
-    "milhas": 387000,
-    "nivel": "bom",
-    "regiao": "europa"
-   },
-   {
     "id": "2361370250-6462",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
@@ -1067,6 +1054,19 @@
     "programa": "GOL Smiles",
     "data": "2026-11-12T12:04:00Z",
     "milhas": 396500,
+    "nivel": "bom",
+    "regiao": "europa"
+   },
+   {
+    "id": "2361370250-6596",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Roma",
+    "destino_iata": "FCO",
+    "cabine": "Executiva",
+    "programa": "Smiles",
+    "data": "2026-11-15T17:01:43Z",
+    "milhas": 409000,
     "nivel": "bom",
     "regiao": "europa"
    },

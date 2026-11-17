@@ -5842,34 +5842,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15716",
-  "data": "2026-11-15T15:45:53Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Orlando",
-  "destino_iata": "MCO",
-  "companhia": "Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "45.100 milhas + Taxas",
-  "volta": "45.100 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-15715",
-  "data": "2026-11-15T15:41:54Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Belém",
-  "destino_iata": "BEL",
-  "companhia": "LATAM + parceira",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "8.960 milhas + Taxas",
-  "volta": "8.940 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "seats-smiles-BEL-MIA-eco",
   "data": "2026-11-15T03:00:04.152853Z",
   "fonte": "seats.aero",
