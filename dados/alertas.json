@@ -1,5 +1,30 @@
 [
  {
+  "id": "1290836068-7844",
+  "data": "2026-11-17T17:57:57Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE: RECIFE PARA NORONHA A PARTIR DE 15.600 PONTOS OU R$ 198,27",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A Azul oferece passagem de Recife (REC) para Fernando de Noronha (FEN) a partir de 15.600 pontos Azul Fidelidade + taxas por trecho. Se não houver pontos, pode transferir Livelo para Azul com bônus de até 120% e emitir a passagem a partir de R$ 198,27 + taxas. A transferência pode ser parcelada em até 6x sem juros.",
+  "detalhes": [
+   "15.600 pontos Azul Fidelidade + taxas por trecho",
+   "Transferência Livelo para Azul com bônus de até 120%",
+   "Emissão a partir de R$ 198,27 + taxas usando pontos + dinheiro",
+   "Parcelamento em até 6x sem juros",
+   "Bônus de 90% para assinantes do Clube Azul ou Clube Livelo, 60% para demais clientes",
+   "Bônus adicional por tempo de adesão do Clube Azul: 5% a 30% com limite 100.000 pontos por ano",
+   "Recife (REC) x Fernando de Noronha (FEN) a partir de 15.600 milhas o trecho a partir de R$ 198",
+   "Períodos de viagem: 7 de dezembro de 2026, 21 de dezembro de 2026, 31 de janeiro de 2027"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/7JPhKO1"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2008590742-15916",
   "data": "2026-11-17T17:13:41Z",
   "origem": "Brasília",
@@ -5986,6 +6011,21 @@
   "link_nome": "Aeroplan"
  },
  {
+  "id": "seats-smiles-GRU-MIA-exe",
+  "data": "2026-11-16T01:53:14.655412Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "American",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "279.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6600",
   "data": "2026-11-16T01:50:40Z",
   "origem": "Belém",
@@ -6633,21 +6673,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-GIG-MIA-exe",
-  "data": "2026-11-09T00:05:14.410466Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "American",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "281.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-qatar-BSB-LIM-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
@@ -6723,6 +6748,21 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
+  "id": "seats-smiles-GIG-MIA-exe",
+  "data": "2026-11-09T00:05:14.410466Z",
+  "fonte": "seats.aero",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "American",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "287.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-7645",
   "data": "2026-11-08T17:17:19Z",
   "tipo": "promocao",
@@ -6744,11 +6784,11 @@
   "ate": "2026-11-20T23:59:59-03:00"
  },
  {
-  "id": "seats-iberia-FOR-MAD-eco",
+  "id": "seats-iberia-REC-MAD-eco",
   "data": "2026-11-08T03:29:49.491996Z",
   "fonte": "seats.aero",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
+  "origem": "Recife",
+  "origem_iata": "REC",
   "destino": "Madrid",
   "destino_iata": "MAD",
   "companhia": "Iberia / LATAM",
@@ -6759,11 +6799,11 @@
   "link_nome": "Iberia Plus"
  },
  {
-  "id": "seats-iberia-REC-MAD-eco",
+  "id": "seats-iberia-FOR-MAD-eco",
   "data": "2026-11-08T03:29:49.491996Z",
   "fonte": "seats.aero",
-  "origem": "Recife",
-  "origem_iata": "REC",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
   "destino": "Madrid",
   "destino_iata": "MAD",
   "companhia": "Iberia / LATAM",
