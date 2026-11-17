@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-9791",
+  "data": "2026-11-17T10:48:31Z",
+  "origem": "Sinop",
+  "origem_iata": "OPS",
+  "destino": "Goiânia",
+  "destino_iata": "GYN",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "27.500 milhas + Taxas",
+  "volta": "27.500 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-9790",
+  "data": "2026-11-17T10:45:32Z",
+  "origem": "Sinop",
+  "origem_iata": "OPS",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "20.900 milhas + Taxas",
+  "volta": "20.900 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-15882",
   "data": "2026-11-17T10:38:32Z",
   "origem": "Sinop",
@@ -4859,20 +4887,6 @@
   "programa": "Smiles",
   "ida": "63.500 milhas + Taxas",
   "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9671",
-  "data": "2026-11-15T10:47:29Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "11.400 milhas + R$ 35,90 de taxas",
-  "volta": "11.400 milhas + R$ 35,15 de taxas",
   "link_nome": "Smiles"
  },
  {
