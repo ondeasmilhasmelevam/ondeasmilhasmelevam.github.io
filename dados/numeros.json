@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-17T12:56:22.647678Z",
+ "atualizado": "2026-11-17T13:02:39.216228Z",
  "dias": 30,
- "passagens": 2911,
+ "passagens": 2923,
  "promocoes": 170,
  "destinos": 169,
  "executiva": 599,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1294,
+  "passagens": 1292,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -642,6 +642,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9817",
+    "origem": "Navegantes",
+    "origem_iata": "NVT",
+    "destino": "São Paulo",
+    "destino_iata": "GRU",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-17T13:00:50Z",
+    "milhas": 5300,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9510",
     "origem": "Curitiba",
     "origem_iata": "CWB",
@@ -728,19 +741,6 @@
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
     "data": "2026-11-11T12:48:47Z",
-    "milhas": 7000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9667",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "São Paulo",
-    "destino_iata": "GRU",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-14T20:25:42Z",
     "milhas": 7000,
     "nivel": "",
     "regiao": "brasil"
