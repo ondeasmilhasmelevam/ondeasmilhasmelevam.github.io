@@ -6028,20 +6028,6 @@
   "link_nome": "Aeroplan"
  },
  {
-  "id": "2361370250-6596",
-  "data": "2026-11-15T17:01:43Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Roma",
-  "destino_iata": "FCO",
-  "companhia": "Ethiopian",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "409.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-BSB-PTY-eco",
   "data": "2026-11-15T16:08:54.197607Z",
   "fonte": "seats.aero",
@@ -6150,7 +6136,7 @@
   "origem_iata": "GRU",
   "destino": "Madrid",
   "destino_iata": "MAD",
-  "companhia": "Air France / AM / Aerolíneas Argentinas",
+  "companhia": "Air France / AM / Royal Air Maroc",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "105.000 milhas + taxas",
