@@ -793,26 +793,6 @@
   "ate": "2026-11-19T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7812",
-  "data": "2026-11-16T16:39:22Z",
-  "tipo": "promocao",
-  "titulo": "CLUBE LIVELO: ASSINE O ESSENCIAL OU ESPECIAL E ACUMULE ATÉ 102.000 PONTOS EM 12 MESES",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Campanha exclusiva de adesão aos planos Clube Livelo Essencial 1.000 e Especial 5.000. Acumule até 42.000 pontos extras ao longo de 12 meses, atingindo até 102.000 pontos totais.",
-  "detalhes": [
-   "Clube Essencial 1.000: 12.000 pontos do plano + 12.000 pontos extras = 24.000 pontos totais",
-   "Clube Especial 5.000: 60.000 pontos do plano + 42.000 pontos extras = 102.000 pontos totais"
-  ],
-  "parceiros": "Livelo",
-  "validade": "16/11/2026",
-  "links": [
-   "https://assets.contentstack.io/v3/assets/blt2aea50371ca8d246/blt6a03860e89f2e3c9/6afae7e692ff9c8fc5f93139/16112026_-_Ades%C3%A3o_Essencial_ao_Especial.pdf",
-   "https://www.livelo.com.br/adesao-promo-CDC16327"
-  ],
-  "ate": "2026-11-16T23:59:59-03:00"
- },
- {
   "id": "2008590742-15860",
   "data": "2026-11-16T16:33:15Z",
   "origem": "Brasília",
@@ -5127,28 +5107,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "1290836068-7710",
-  "data": "2026-11-11T17:23:00Z",
-  "tipo": "promocao",
-  "titulo": "COMPRA DE AVIOS FINNAIR COM ATÉ 50% DE DESCONTO + 10% DE BÔNUS EM PONTOS DE NÍVEL",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Compra de AVIOS Finnair com até 50% de desconto e bônus fixo de 10% em pontos de qualificação (Tier Points). A promoção é válida até 16/11/2026.",
-  "detalhes": [
-   "Desconto de 30% na compra de 5.000 a 19.000 AVIOS (Milheiro: € 18,90 ~ R$ 116,05).",
-   "Desconto de 35% na compra de 20.000 a 49.000 AVIOS (Milheiro: € 14,30 ~ R$ 87,80).",
-   "Desconto de 40% na compra de 50.000 a 84.000 AVIOS (Milheiro: € 13,20 ~ R$ 81,05).",
-   "Desconto de 50% na compra de 85.000 a 200.000 AVIOS (Milheiro: € 10,50 ~ R$ 64,47).",
-   "Bônus fixo de 10% em pontos de qualificação (Tier Points) para compras realizadas durante a campanha."
-  ],
-  "parceiros": "Finnair Plus",
-  "validade": "16/11/2026",
-  "links": [
-   "https://www.finnairshop.com/en/buy-avios"
-  ],
-  "ate": "2026-11-16T23:59:59-03:00"
- },
- {
   "id": "seats-smiles-FLN-PTY-eco",
   "data": "2026-11-11T00:03:25.922708Z",
   "fonte": "seats.aero",
@@ -5693,46 +5651,6 @@
   "ida": "254.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-7631",
-  "data": "2026-11-07T14:20:45Z",
-  "tipo": "promocao",
-  "titulo": "FINNAIR PLUS: COMPRE MILHAS COM ATÉ 50% OFF E BÔNUS DE NÍVEL",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Compre milhas no programa Finnair Plus com até 50% de desconto e ganhe 10% de bônus adicional em pontos de nível (Tier Points).",
-  "detalhes": [
-   "85.000 a 200.000 milhas: 50% OFF (Milheiro € 10,50 ≈ R$ 64,47)",
-   "50.000 a 84.000 milhas: 40% OFF (Milheiro € 13,20 ≈ R$ 81,05)",
-   "20.000 a 49.000 milhas: 35% OFF (Milheiro € 14,30 ≈ R$ 87,80)",
-   "5.000 a 19.000 milhas: 30% OFF (Milheiro € 18,90 ≈ R$ 116,05)"
-  ],
-  "parceiros": "Finnair Plus",
-  "validade": "16/11/2026",
-  "links": [
-   "https://www.finnairshop.com/en/buy-milhas"
-  ],
-  "ate": "2026-11-16T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7630",
-  "data": "2026-11-07T14:20:42Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FIDELIDADE E SAM’S CLUB: 50% OFF NA ADESÃO E ATÉ 15.000 PONTOS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Sam's Club com 50% OFF na anuidade (por R$ 47) e ganhe até 15.000 pontos Azul Fidelidade após a primeira compra.",
-  "detalhes": [
-   "Assinantes do Clube Azul: 15.000 pontos (Milheiro R$ 3,13)",
-   "Demais clientes Azul: 10.500 pontos (Milheiro R$ 4,48)"
-  ],
-  "parceiros": "Azul Fidelidade, Sam's Club",
-  "validade": "16/11/2026",
-  "links": [
-   "https://sejasocio.samsclub.com.br/index.php/parceria-azul-out"
-  ],
-  "ate": "2026-11-16T23:59:59-03:00"
  },
  {
   "id": "1290836068-7557",
