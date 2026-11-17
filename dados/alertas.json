@@ -4890,20 +4890,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15705",
-  "data": "2026-11-15T00:26:42Z",
-  "origem": "Campinas",
-  "origem_iata": "VCP",
-  "destino": "Fort Lauderdale",
-  "destino_iata": "FLL",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "80.000 milhas + R$ 294,45 de taxas",
-  "volta": "",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7781",
   "data": "2026-11-14T15:52:09Z",
   "tipo": "promocao",
