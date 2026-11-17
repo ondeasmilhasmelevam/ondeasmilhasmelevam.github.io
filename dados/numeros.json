@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-17T10:56:53.731192Z",
+ "atualizado": "2026-11-17T11:03:11.681809Z",
  "dias": 30,
- "passagens": 2874,
+ "passagens": 2875,
  "promocoes": 170,
  "destinos": 168,
  "executiva": 598,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1288,
+  "passagens": 1286,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -759,19 +759,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9294",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "SDU",
-    "destino": "Porto Seguro",
-    "destino_iata": "BPS",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-10T10:59:01Z",
-    "milhas": 7600,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9648",
     "origem": "Brasília",
     "origem_iata": "BSB",
@@ -937,6 +924,19 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-16T11:51:55Z",
     "milhas": 10000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9298",
+    "origem": "Navegantes",
+    "origem_iata": "NVT",
+    "destino": "Rio de Janeiro",
+    "destino_iata": "SDU",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-10T12:15:33Z",
+    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },
