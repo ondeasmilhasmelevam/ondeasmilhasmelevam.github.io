@@ -5799,20 +5799,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15717",
-  "data": "2026-11-15T16:10:56Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "Montevidéu",
-  "destino_iata": "MVD",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "48.000 milhas + Taxas",
-  "volta": "48.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-BSB-PTY-eco",
   "data": "2026-11-15T16:08:54.197607Z",
   "fonte": "seats.aero",
@@ -5825,20 +5811,6 @@
   "programa": "Smiles",
   "ida": "88.000 milhas + taxas",
   "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9684",
-  "data": "2026-11-15T16:06:06Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "Vitória",
-  "destino_iata": "VIX",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "18.300 milhas + Taxas",
-  "volta": "18.200 milhas + Taxas",
   "link_nome": "Smiles"
  },
  {
