@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-17T17:33:02.419254Z",
+ "atualizado": "2026-11-17T17:39:29.248151Z",
  "dias": 30,
  "passagens": 2980,
  "promocoes": 178,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1292,
+  "passagens": 1289,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -430,19 +430,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-16T11:00:59Z",
     "milhas": 22000,
-    "nivel": "bom",
-    "regiao": "america-do-sul"
-   },
-   {
-    "id": "2008590742-15288",
-    "origem": "Porto Alegre",
-    "origem_iata": "POA",
-    "destino": "Santiago",
-    "destino_iata": "SCL",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-10T17:37:28Z",
-    "milhas": 24800,
     "nivel": "bom",
     "regiao": "america-do-sul"
    },
@@ -936,6 +923,19 @@
     "cabine": "Econômica",
     "programa": "Smiles",
     "data": "2026-11-16T11:42:13Z",
+    "milhas": 10600,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9837",
+    "origem": "Vitória",
+    "origem_iata": "VIX",
+    "destino": "Rio de Janeiro",
+    "destino_iata": "SDU",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-17T14:20:36Z",
     "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
