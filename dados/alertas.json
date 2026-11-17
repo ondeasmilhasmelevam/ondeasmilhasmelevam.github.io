@@ -6138,20 +6138,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15719",
-  "data": "2026-11-15T19:01:51Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "Buenos Aires",
-  "destino_iata": "AEP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "32.000 milhas + R$ 108,17 de taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-BSB-PTY-eco",
   "data": "2026-11-15T16:08:54.197607Z",
   "fonte": "seats.aero",
@@ -6248,7 +6234,7 @@
   "companhia": "Air France / Aerolíneas Argentinas / Royal Air Maroc",
   "cabine": "Econômica",
   "programa": "Smiles",
-  "ida": "104.000 milhas + taxas",
+  "ida": "105.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
