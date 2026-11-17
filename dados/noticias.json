@@ -1,5 +1,12 @@
 [
  {
+  "titulo": "LATAM atualiza critérios da política de alterações involuntárias de voos",
+  "data": "2026-11-17",
+  "link": "https://passageirodeprimeira.com/latam-atualiza-criterios-politica-alteracoes-involuntarias-voos/",
+  "fonte": "Passageiro de Primeira",
+  "tema": "milhas"
+ },
+ {
   "titulo": "Lufthansa vai operar Primeira Classe com a cabine Allegris em voos selecionados entre São Paulo e Munique",
   "data": "2026-11-16",
   "link": "https://passageirodeprimeira.com/lufthansa-tera-primeira-classe-em-voos-entre-sao-paulo-e-munique-em-datas-selecionadas/",
@@ -63,20 +70,6 @@
   "tema": "milhas"
  },
  {
-  "titulo": "Última chamada! 6 promoções para acumular milhas ou abrir uma conta global que terminam hoje",
-  "data": "2026-11-13",
-  "link": "https://www.melhorescartoes.com.br/promocoes-terminam-hoje-13nov26.html",
-  "fonte": "Melhores Cartões",
-  "tema": "milhas"
- },
- {
-  "titulo": "Revolut diminui spread nas compras internacionais com o cartão de crédito",
-  "data": "2026-11-13",
-  "link": "https://www.melhorescartoes.com.br/revolut-diminui-spread-nov26.html",
-  "fonte": "Melhores Cartões",
-  "tema": "cartoes"
- },
- {
   "titulo": "Iberia conclui instalação de Wi-Fi Starlink em toda a frota de Airbus A321XLR",
   "data": "2026-11-13",
   "link": "https://passageirodeprimeira.com/iberia-conclui-instalacao-de-wi-fi-starlink-em-toda-a-frota-de-airbus-a321xlr/",
@@ -88,6 +81,20 @@
   "data": "2026-11-13",
   "link": "https://passageirodeprimeira.com/revolut-reduz-spread-para-compras-internacionais-com-o-cartao-de-credito/",
   "fonte": "Passageiro de Primeira",
+  "tema": "cartoes"
+ },
+ {
+  "titulo": "Última chamada! 6 promoções para acumular milhas ou abrir uma conta global que terminam hoje",
+  "data": "2026-11-13",
+  "link": "https://www.melhorescartoes.com.br/promocoes-terminam-hoje-13nov26.html",
+  "fonte": "Melhores Cartões",
+  "tema": "milhas"
+ },
+ {
+  "titulo": "Revolut diminui spread nas compras internacionais com o cartão de crédito",
+  "data": "2026-11-13",
+  "link": "https://www.melhorescartoes.com.br/revolut-diminui-spread-nov26.html",
+  "fonte": "Melhores Cartões",
   "tema": "cartoes"
  },
  {
@@ -271,12 +278,5 @@
   "link": "https://www.melhoresdestinos.com.br/milhas/voos-latam-italia-nov26",
   "fonte": "Melhores Destinos",
   "tema": "milhas"
- },
- {
-  "titulo": "Emirates desenvolve suíte para pessoas com deficiência em salas VIP",
-  "data": "2026-11-06",
-  "link": "https://passageirodeprimeira.com/emirates-prototipo-suite-acessivel-salas-vip/",
-  "fonte": "Passageiro de Primeira",
-  "tema": "cartoes"
  }
 ]
