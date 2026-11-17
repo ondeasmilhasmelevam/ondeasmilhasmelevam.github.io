@@ -4252,21 +4252,6 @@
   "link_nome": "Aeroplan"
  },
  {
-  "id": "seats-smiles-GRU-MIA-exe",
-  "data": "2026-11-16T01:53:14.655412Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "American",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "280.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "2361370250-6600",
   "data": "2026-11-16T01:50:40Z",
   "origem": "Belém",
@@ -4964,7 +4949,7 @@
   "origem_iata": "GRU",
   "destino": "Paris",
   "destino_iata": "CDG",
-  "companhia": "Air Canada / Air France / Aerolíneas Argentinas",
+  "companhia": "American / Air Canada / Air France",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "125.000 milhas + taxas",
@@ -5543,7 +5528,7 @@
   "companhia": "AM / Avianca / Copa",
   "cabine": "Econômica",
   "programa": "Smiles",
-  "ida": "65.000 milhas + taxas",
+  "ida": "67.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
