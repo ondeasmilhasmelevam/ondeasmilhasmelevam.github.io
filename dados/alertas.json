@@ -5870,20 +5870,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-15714",
-  "data": "2026-11-15T15:33:56Z",
-  "origem": "Foz do Iguaçu",
-  "origem_iata": "IGU",
-  "destino": "Cuiabá",
-  "destino_iata": "CGB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "21.300 milhas + Taxas",
-  "volta": "21.300 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-BEL-MIA-eco",
   "data": "2026-11-15T03:00:04.152853Z",
   "fonte": "seats.aero",
