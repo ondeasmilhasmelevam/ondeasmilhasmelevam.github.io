@@ -1,5 +1,30 @@
 [
  {
+  "id": "1290836068-7852",
+  "data": "2026-11-17T23:03:31Z",
+  "tipo": "promocao",
+  "titulo": "VIAJE PARA A EUROPA A PARTIR DE 55 MIL MILHAS LATAM Pass",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Esta promoção oferece passagens internacionais com LATAM Pass a partir de 55 mil milhas por trecho. As datas e rotas são listadas no artigo. As taxas aeroportuárias são adicionais.",
+  "detalhes": [
+   "valor por trecho",
+   "taxas aeroportuárias adicionais",
+   "datas disponíveis",
+   "emissão por trecho e passageiro",
+   "Recife (REC) x Bruxelas (BRU) a partir de 55.732 milhas o trecho",
+   "Fortaleza (FOR) x Lisboa (LIS) a partir de 59.713 milhas o trecho",
+   "Fortaleza (FOR) x Bruxelas (BRU) a partir de 63.216 milhas o trecho",
+   "Brasília (BSB) x Bruxelas (BRU) a partir de 70.381 milhas o trecho"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/QiYRMZm"
+  ],
+  "ate": ""
+ },
+ {
   "id": "1290836068-7851",
   "data": "2026-11-17T22:08:08Z",
   "tipo": "promocao",
