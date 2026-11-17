@@ -6517,21 +6517,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-BSB-PTY-eco",
-  "data": "2026-11-15T16:08:54.197607Z",
-  "fonte": "seats.aero",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "American / Avianca / Copa",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "88.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-BEL-MIA-eco",
   "data": "2026-11-15T03:00:04.152853Z",
   "fonte": "seats.aero",
@@ -6648,21 +6633,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-azul-REC-LIS-eco",
-  "data": "2026-11-12T05:14:55.794608Z",
-  "fonte": "seats.aero",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Lisboa",
-  "destino_iata": "LIS",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "65.000 pontos + taxas",
-  "volta": "",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "seats-azul-REC-OPO-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
@@ -6674,6 +6644,21 @@
   "cabine": "Econômica",
   "programa": "Azul Fidelidade",
   "ida": "65.000 pontos + taxas",
+  "volta": "",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "seats-azul-REC-LIS-eco",
+  "data": "2026-11-12T05:14:55.794608Z",
+  "fonte": "seats.aero",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "75.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
  },
@@ -6763,7 +6748,7 @@
   "companhia": "Azul",
   "cabine": "Econômica",
   "programa": "Azul Fidelidade",
-  "ida": "70.000 pontos + taxas",
+  "ida": "80.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
  },
@@ -6858,6 +6843,21 @@
   "link_nome": "Azul Fidelidade"
  },
  {
+  "id": "seats-smiles-SSA-CDG-eco",
+  "data": "2026-11-10T00:03:03.524369Z",
+  "fonte": "seats.aero",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France / GOL / KLM",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "118.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-smiles-GIG-JFK-exe",
   "data": "2026-11-10T00:03:03.524369Z",
   "fonte": "seats.aero",
@@ -6871,21 +6871,6 @@
   "ida": "252.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "seats-qatar-GIG-LHR-eco",
-  "data": "2026-11-10T00:03:03.524369Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Londres",
-  "destino_iata": "LHR",
-  "companhia": "British Airways",
-  "cabine": "Econômica",
-  "programa": "Qatar Privilege Club",
-  "ida": "38.500 Avios + taxas",
-  "volta": "",
-  "link_nome": "Qatar Privilege Club"
  },
  {
   "id": "seats-qatar-GRU-LHR-eco",
@@ -6903,6 +6888,21 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
+  "id": "seats-qatar-GIG-LHR-eco",
+  "data": "2026-11-10T00:03:03.524369Z",
+  "fonte": "seats.aero",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Londres",
+  "destino_iata": "LHR",
+  "companhia": "British Airways",
+  "cabine": "Econômica",
+  "programa": "Qatar Privilege Club",
+  "ida": "38.500 Avios + taxas",
+  "volta": "",
+  "link_nome": "Qatar Privilege Club"
+ },
+ {
   "id": "seats-smiles-GRU-JFK-eco",
   "data": "2026-11-10T00:03:03.524369Z",
   "fonte": "seats.aero",
@@ -6910,7 +6910,7 @@
   "origem_iata": "GRU",
   "destino": "Nova York",
   "destino_iata": "JFK",
-  "companhia": "American / Avianca / GOL",
+  "companhia": "American / Avianca / Copa",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "78.000 milhas + taxas",
@@ -7234,7 +7234,7 @@
   "companhia": "Azul",
   "cabine": "Econômica",
   "programa": "Azul Fidelidade",
-  "ida": "65.000 pontos + taxas",
+  "ida": "70.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
  },
