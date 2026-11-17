@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-17T12:12:22.330558Z",
+ "atualizado": "2026-11-17T12:18:37.390763Z",
  "dias": 30,
  "passagens": 2905,
  "promocoes": 170,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1295,
+  "passagens": 1290,
   "destaques": [
    {
     "id": "3761373661-9492",
@@ -824,19 +824,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9301",
-    "origem": "Navegantes",
-    "origem_iata": "NVT",
-    "destino": "Goiânia",
-    "destino_iata": "GYN",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-10T12:15:43Z",
-    "milhas": 8600,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9347",
     "origem": "Maceió",
     "origem_iata": "MCZ",
@@ -915,6 +902,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "2008590742-15713",
+    "origem": "Navegantes",
+    "origem_iata": "NVT",
+    "destino": "Goiânia",
+    "destino_iata": "GYN",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-15T15:18:20Z",
+    "milhas": 9640,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9729",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -928,14 +928,14 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9298",
-    "origem": "Navegantes",
-    "origem_iata": "NVT",
-    "destino": "Rio de Janeiro",
-    "destino_iata": "SDU",
+    "id": "3761373661-9721",
+    "origem": "Vitória",
+    "origem_iata": "VIX",
+    "destino": "São José do Rio Preto",
+    "destino_iata": "SJP",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-10T12:15:33Z",
+    "data": "2026-11-16T11:42:13Z",
     "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
