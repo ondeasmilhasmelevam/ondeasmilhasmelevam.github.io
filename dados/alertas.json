@@ -1,5 +1,52 @@
 [
  {
+  "id": "1290836068-7846",
+  "data": "2026-11-17T19:13:46Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass: PASSAGENS NACIONAIS A PARTIR DE 4.403 MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "LATAM oferece passagens aéreas nacionais a partir de 4.403 milhas + taxas por trecho. Se não houver saldo, há desconto de até 66% na compra de milhas LATAM Pass. Emissão pode sair a partir de R$ 104,79 + taxas.",
+  "detalhes": [
+   "Desconto de 66% para portadores de cartão LATAM Pass Itaú na compra de milhas",
+   "Limite de compra com desconto de 350.000 milhas",
+   "Emissão de passagens a partir de R$ 104,79 + taxas",
+   "Milhas são por trecho",
+   "Porto Alegre (POA) x Florianópolis (FLN) a partir de 4.403 milhas o trecho a partir de R$ 105",
+   "Fortaleza (FOR) x Juazeiro do Norte (JDO) a partir de 4.559 milhas o trecho",
+   "Navegantes (NVT) x São Paulo (CGH) a partir de 5.809 milhas o trecho",
+   "Períodos de viagem: até 20 de outubro"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "até 20 de outubro",
+  "links": [
+   "https://link.dia23.com.br/r/nXBzHHN"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7845",
+  "data": "2026-11-17T19:13:41Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass & PREMMIA: RESGATE DE VOUCHERS DE R$ 40 EM COMBUSTÍVEL COM ATÉ 42% DE DESCONTO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Resgate vouchers de R$ 40 em combustível Premmia com até 42% de desconto. Valores do milheiro variam conforme perfil do cliente.",
+  "detalhes": [
+   "Até 42% OFF para clientes com cartão LATAM Pass Itaú e Clube LATAM Pass.",
+   "35% OFF para todos os clientes elegíveis.",
+   "Valor do milheiro: R$ 29,09 , R$ 27,57 (Cartão ou Clube), R$ 26,19 (Demais clientes).",
+   "Cada voucher oferece R$ 40 em créditos para combustível Premmia.",
+   "Limitado a 2 vouchers de R$ 40 por CPF (total de R$ 80)."
+  ],
+  "parceiros": "LATAM Pass, Premmia",
+  "validade": "20/11/2026",
+  "links": [
+   "https://shopping.latampass.latam.com/pt_br/transferenciapremmia"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-15917",
   "data": "2026-11-17T19:07:38Z",
   "origem": "Vitória",
