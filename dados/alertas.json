@@ -1,5 +1,27 @@
 [
  {
+  "id": "1290836068-7859",
+  "data": "2026-11-18T14:06:40Z",
+  "tipo": "promocao",
+  "titulo": "ASSINATURA CLUBE SMILES 1.000 COM ATÉ 13.000 MILHAS BÔNUS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Smiles 1.000 (mensal ou anual) e receba até 13.000 milhas bônus. Custo do milheiro a partir de R$13,07 (anual à vista).",
+  "detalhes": [
+   "Cupom exclusivo: VEMPROCLUBE.",
+   "Modalidade anual à vista: 1.000 milhas/mês + 13.000 milhas bônus (total de 19.000 milhas em 6 meses).",
+   "Modalidade anual parcelado: 1.000 milhas/mês + 13.000 milhas bônus (total de 19.000 milhas em 6 meses).",
+   "Modalidade mensal: 1.000 milhas/mês + bônus variável (total de 19.000 milhas em 6 meses).",
+   "Custo do milheiro: R$13,07 (anual à vista), R$13,80 (anual parcelado), R$14,52 (mensal)."
+  ],
+  "parceiros": "Smiles",
+  "validade": "30/11/2026",
+  "links": [
+   "https://www.smiles.com.br/clube-smiles/assine-ja/19-mil-milhas-6-meses/09042025"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-16028",
   "data": "2026-11-18T13:59:13Z",
   "origem": "Belo Horizonte",
