@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-18T16:04:15.094891Z",
+ "atualizado": "2026-11-18T16:10:22.262804Z",
  "dias": 30,
  "passagens": 3168,
  "promocoes": 190,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1298,
+  "passagens": 1297,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -304,15 +304,15 @@
     "regiao": "caribe"
    },
    {
-    "id": "2008590742-15359",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
+    "id": "3996014557-2508",
+    "origem": "Fortaleza",
+    "origem_iata": "FOR",
     "destino": "Lisboa",
     "destino_iata": "LIS",
     "cabine": "Econômica",
-    "programa": "Azul pelo Mundo",
-    "data": "2026-11-11T16:05:12Z",
-    "milhas": 55500,
+    "programa": "Latam",
+    "data": "2026-11-11T19:40:41Z",
+    "milhas": 58000,
     "nivel": "muito bom",
     "regiao": "europa"
    },
