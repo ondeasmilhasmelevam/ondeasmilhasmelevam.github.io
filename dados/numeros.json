@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-18T11:58:42.583133Z",
+ "atualizado": "2026-11-18T12:04:59.550850Z",
  "dias": 30,
  "passagens": 3119,
  "promocoes": 185,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1338,
+  "passagens": 1331,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -668,19 +668,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9365",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "Brasília",
-    "destino_iata": "BSB",
-    "cabine": "Econômica",
-    "programa": "LATAM",
-    "data": "2026-11-11T12:03:19Z",
-    "milhas": 6494,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9400",
     "origem": "Uberlândia",
     "origem_iata": "UDI",
@@ -820,6 +807,19 @@
     "programa": "Smiles",
     "data": "2026-11-12T19:07:02Z",
     "milhas": 8200,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9774",
+    "origem": "Florianópolis",
+    "origem_iata": "FLN",
+    "destino": "Brasília",
+    "destino_iata": "BSB",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-16T16:13:08Z",
+    "milhas": 8321,
     "nivel": "",
     "regiao": "brasil"
    },
