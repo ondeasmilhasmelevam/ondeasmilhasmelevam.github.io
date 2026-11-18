@@ -1,5 +1,47 @@
 [
  {
+  "id": "3761373661-9911",
+  "data": "2026-11-18T16:41:35Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Florianópolis",
+  "destino_iata": "FLN",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "12.800 milhas + Taxas",
+  "volta": "12.800 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-9910",
+  "data": "2026-11-18T16:41:31Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "18.000 milhas + Taxas",
+  "volta": "18.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-9909",
+  "data": "2026-11-18T16:41:20Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "SDU",
+  "destino": "Maringá",
+  "destino_iata": "MGF",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "8.500 milhas + Taxas",
+  "volta": "8.500 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "1290836068-7862",
   "data": "2026-11-18T15:17:10Z",
   "tipo": "promocao",
