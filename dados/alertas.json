@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-9937",
+  "data": "2026-11-18T23:37:59Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.600 milhas + Taxas",
+  "volta": "10.600 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16048",
+  "data": "2026-11-18T23:37:52Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "37.500 milhas + Taxas",
+  "volta": "37.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6807",
   "data": "2026-11-18T22:28:03Z",
   "origem": "Toronto",
