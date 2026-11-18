@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-18T16:22:52.076012Z",
+ "atualizado": "2026-11-18T16:28:59.511162Z",
  "dias": 30,
  "passagens": 3168,
  "promocoes": 190,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1289,
+  "passagens": 1282,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -469,19 +469,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-12T14:46:11Z",
     "milhas": 32800,
-    "nivel": "bom",
-    "regiao": "america-do-sul"
-   },
-   {
-    "id": "2008590742-15370",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
-    "destino": "Medellín",
-    "destino_iata": "MDE",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-11T16:23:58Z",
-    "milhas": 58600,
     "nivel": "bom",
     "regiao": "america-do-sul"
    },
@@ -937,6 +924,19 @@
     "programa": "Smiles",
     "data": "2026-11-17T14:20:36Z",
     "milhas": 10600,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "2008590742-15525",
+    "origem": "Belo Horizonte",
+    "origem_iata": "CNF",
+    "destino": "Uberlândia",
+    "destino_iata": "UDI",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-13T12:08:31Z",
+    "milhas": 11000,
     "nivel": "",
     "regiao": "brasil"
    },
