@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16029",
+  "data": "2026-11-18T14:23:04Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "50.000 milhas + Taxas",
+  "volta": "48.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-7859",
   "data": "2026-11-18T14:06:40Z",
   "tipo": "promocao",
