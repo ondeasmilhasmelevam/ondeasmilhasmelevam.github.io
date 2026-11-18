@@ -5659,20 +5659,6 @@
   "link_nome": "Aeroplan"
  },
  {
-  "id": "2361370250-6698",
-  "data": "2026-11-16T21:44:07Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Cusco",
-  "destino_iata": "CUZ",
-  "companhia": "LATAM",
-  "cabine": "Executiva",
-  "programa": "LATAM Pass",
-  "ida": "106.952 pontos LATAM Pass + R$ 225,00",
-  "volta": "106.952 pontos LATAM Pass + R$ 204,00",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7825",
   "data": "2026-11-16T21:37:50Z",
   "tipo": "promocao",
