@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6807",
+  "data": "2026-11-18T22:28:03Z",
+  "origem": "Toronto",
+  "origem_iata": "YYZ",
+  "destino": "Abu Dhabi",
+  "destino_iata": "AUH",
+  "companhia": "Etihad Airways",
+  "cabine": "Primeira Classe",
+  "programa": "AAdvantage",
+  "ida": "115.000 milhas + R$ 327,25",
+  "volta": "115.000 milhas + R$ 210,72",
+  "link_nome": "AAdvantage"
+ },
+ {
   "id": "2361370250-6806",
   "data": "2026-11-18T22:02:59Z",
   "origem": "Santiago",
@@ -5643,20 +5657,6 @@
   "ida": "11.200 milhas + R$ 62,14 de taxas",
   "volta": "9.600 milhas + R$ 62,62 de taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9785",
-  "data": "2026-11-16T22:27:43Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "7.000 milhas + R$ 35,15 de taxas",
-  "volta": "7.000 milhas + R$ 35,75 de taxas",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "1290836068-7825",
