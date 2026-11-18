@@ -1,5 +1,26 @@
 [
  {
+  "id": "1290836068-7870",
+  "data": "2026-11-18T20:14:01Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FRIDAY: CONTRATE CARTÃO AZUL ITAÚ E GANHE ATÉ 80.000 PONTOS BÔNUS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Contrate um dos cartões Azul Itaú e ganhe até 80.000 pontos bônus, dependendo do tipo de cartão e das metas de gastos atingidas. Promoção válida até 30/12/2026.",
+  "detalhes": [
+   "Cartão Azul Itaú Visa Infinite / Mastercard Skyline: até 80.000 pontos bônus.",
+   "10.000 pontos por primeira compra até 16/12.",
+   "40.000 pontos por atingir R$ 20.000 em gastos por fatura nas 3 primeiras faturas.",
+   "+30.000 pontos por adesão/upgrade do Clube Azul até 30/12, pagando com o novo cartão."
+  ],
+  "parceiros": "Azul, Itaú",
+  "validade": "30/12/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/azul-friday-cartao-azul-itau"
+  ],
+  "ate": "2026-12-30T23:59:59-03:00"
+ },
+ {
   "id": "2361370250-6804",
   "data": "2026-11-18T20:00:35Z",
   "origem": "Buenos Aires",
