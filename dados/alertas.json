@@ -5662,34 +5662,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-6675",
-  "data": "2026-11-16T13:07:58Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Lisboa",
-  "destino_iata": "LIS",
-  "companhia": "LATAM",
-  "cabine": "Executiva",
-  "programa": "LATAM Pass",
-  "ida": "161.900 pontos LATAM Pass + R$ 112",
-  "volta": "161.901 pontos LATAM Pass + R$ 244",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15850",
-  "data": "2026-11-16T13:04:27Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Amsterdã",
-  "destino_iata": "AMS",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "69.000 milhas + Taxas",
-  "volta": "69.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "seats-smiles-GRU-MIA-exe",
   "data": "2026-11-16T01:53:14.655412Z",
   "fonte": "seats.aero",
