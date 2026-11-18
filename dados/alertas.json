@@ -1,5 +1,26 @@
 [
  {
+  "id": "1290836068-7861",
+  "data": "2026-11-18T14:30:33Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFIRA PONTOS INTER LOOP PARA LATAM Pass E GANHE 25% DE BÔNUS + 1.000 MILHAS EXTRAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira pontos do Inter Loop para o LATAM Pass e ganhe até 25% de bônus em milhas, além de 1.000 milhas extras na primeira transferência. Promoção válida até 20/11/2026.",
+  "detalhes": [
+   "Bônus de até 25% sobre os pontos transferidos do Inter Loop para LATAM Pass.",
+   "1.000 milhas bônus na primeira transferência.",
+   "Crédito das milhas bônus em até 30 dias após a transferência.",
+   "Pontos transferidos terão validade de 36 meses a partir da data de crédito."
+  ],
+  "parceiros": "Inter Loop, LATAM Pass",
+  "validade": "20/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/promocoes/inter-milhas-extras"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-16029",
   "data": "2026-11-18T14:23:04Z",
   "origem": "São Luís",
