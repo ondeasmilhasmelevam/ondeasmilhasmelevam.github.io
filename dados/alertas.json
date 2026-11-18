@@ -5553,20 +5553,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-15854",
-  "data": "2026-11-16T13:53:00Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Nova York",
-  "destino_iata": "JFK",
-  "companhia": "American Airlines",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "64.500 milhas + Taxas",
-  "volta": "73.100 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7806",
   "data": "2026-11-16T13:51:55Z",
   "tipo": "promocao",
