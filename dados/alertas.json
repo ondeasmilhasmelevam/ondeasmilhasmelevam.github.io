@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16040",
+  "data": "2026-11-18T19:38:40Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "27.300 Milhas LATAM Pass + Taxas",
+  "volta": "27.300 Milhas LATAM Pass + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2361370250-6800",
   "data": "2026-11-18T19:23:41Z",
   "origem": "Recife",
