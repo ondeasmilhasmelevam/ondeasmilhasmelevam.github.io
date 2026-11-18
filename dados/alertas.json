@@ -5561,20 +5561,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15856",
-  "data": "2026-11-16T15:12:00Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Teresina",
-  "destino_iata": "THE",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "29.000 Milhas Smiles + Taxas",
-  "volta": "28.900 Milhas Smiles + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7808",
   "data": "2026-11-16T14:20:32Z",
   "tipo": "promocao",
