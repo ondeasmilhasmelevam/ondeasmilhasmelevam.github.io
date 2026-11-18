@@ -1,5 +1,55 @@
 [
  {
+  "id": "1290836068-7865",
+  "data": "2026-11-18T17:53:59Z",
+  "tipo": "promocao",
+  "titulo": "PASSAGENS PARA O URUGUAI A PARTIR DE 13 MIL PONTOS AZUL FIDELIDADE",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A promoção oferece passagens para Montevidéu e Punta del Este com Azul Fidelidade a partir de 13.350 pontos por trecho. Os valores são por trecho e por passageiro, com taxas adicionais para reservas menos de 90 dias, exceto para clientes Diamante. As emissões variam por origem e data, com preços mínimos por mês.",
+  "detalhes": [
+   "valor por trecho",
+   "taxa de resgate para reservas <90 dias exceto Diamante",
+   "preço em reais por trecho",
+   "emissões por mês",
+   "taxas de resgate",
+   "Porto Alegre (POA) x Punta del Este (PDP) a partir de 13.350 milhas o trecho a partir de R$ 15.000",
+   "Porto Alegre (POA) x Montevidéu (MVD) a partir de 13.350 milhas o trecho a partir de R$ 15.000",
+   "Belo Horizonte (CNF) x Montevidéu (MVD) a partir de 13.350 milhas o trecho a partir de R$ 20.000"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/gCgZNNi"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7864",
+  "data": "2026-11-18T17:53:41Z",
+  "tipo": "promocao",
+  "titulo": "PASSAGENS PARA EUA A PARTIR DE 65 MIL MILHAS SMILES",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A promoção oferece passagens para os Estados Unidos com Smiles a partir de 65 mil milhas por trecho, mais taxas. Os valores variam por rota e companhia aérea. As tarifas são as menores disponíveis em cada mês.",
+  "detalhes": [
+   "valor por trecho",
+   "taxas adicionais",
+   "datas de reserva",
+   "menores tarifas disponíveis",
+   "Brasília (BSB) x Miami (MIA) a partir de 65.000 milhas o trecho",
+   "São Paulo (GRU) x Orlando (MCO) a partir de 72.900 milhas o trecho",
+   "São Paulo (GRU) x Miami (MIA) a partir de 75.100 milhas o trecho",
+   "São Paulo (GRU) x Nova York (JFK) a partir de 73.700 milhas o trecho"
+  ],
+  "parceiros": "Smiles",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/zuPgKed"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2361370250-6797",
   "data": "2026-11-18T17:44:49Z",
   "origem": "Dallas",
@@ -6188,7 +6238,7 @@
   "companhia": "Azul",
   "cabine": "Econômica",
   "programa": "Azul Fidelidade",
-  "ida": "70.000 pontos + taxas",
+  "ida": "75.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
  },
