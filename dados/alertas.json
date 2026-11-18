@@ -5567,45 +5567,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15853",
-  "data": "2026-11-16T13:51:59Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Roma",
-  "destino_iata": "FCO",
-  "companhia": "LATAM Airlines",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "75.946 milhas + R$ 117,24",
-  "volta": "75.946 milhas + R$ 293,35",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "1290836068-7807",
-  "data": "2026-11-16T13:51:58Z",
-  "tipo": "promocao",
-  "titulo": "DESCONTO DE ATÉ 66% NA COMPRA DE MILHAS LATAM Pass",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "LATAM Pass oferece até 66% de desconto na compra de milhas. O desconto é válido para portadores do cartão LATAM Pass Itaú (66%) e para clientes LATAM Pass ou Clube LATAM Pass (63%). O limite de compra com desconto é 350.000 milhas e a compra pode ser parcelada em até 10x sem juros nas bandeiras Elo, Mastercard e Visa.",
-  "detalhes": [
-   "Desconto de 66% para portadores do cartão LATAM Pass Itaú",
-   "Desconto de 63% para clientes LATAM Pass ou Clube LATAM Pass",
-   "Limite de compra com desconto é 350.000 milhas",
-   "Compra em lotes de 1.000 milhas",
-   "Parcelamento em até 10x sem juros nas bandeiras Elo, Mastercard e Visa",
-   "Milhas disponibilizadas em até 48h após confirmação do pagamento",
-   "Milhas válidas por 36 meses; para clientes Elite não expiram",
-   "Campanha não contempla modalidade 'Compra presente'"
-  ],
-  "parceiros": "LATAM Pass",
-  "validade": "até sexta-feira (20)",
-  "links": [
-   "https://link.dia23.com.br/r/Jlaaih0"
-  ],
-  "ate": ""
- },
- {
   "id": "1290836068-7806",
   "data": "2026-11-16T13:51:55Z",
   "tipo": "promocao",
@@ -5629,48 +5590,6 @@
    "https://link.dia23.com.br/r/TOXW33l"
   ],
   "ate": "2026-11-19T23:59:59-03:00"
- },
- {
-  "id": "3761373661-9766",
-  "data": "2026-11-16T13:51:54Z",
-  "origem": "Petrolina",
-  "origem_iata": "PNZ",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "LATAM Airlines",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "12.069 milhas + R$ 49,73",
-  "volta": "12.069 milhas + R$ 35,75",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9765",
-  "data": "2026-11-16T13:51:50Z",
-  "origem": "Petrolina",
-  "origem_iata": "PNZ",
-  "destino": "Recife",
-  "destino_iata": "REC",
-  "companhia": "LATAM Airlines",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "6.491 milhas + R$ 49,73",
-  "volta": "6.491 milhas + R$ 60,54",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9764",
-  "data": "2026-11-16T13:51:47Z",
-  "origem": "São Luís",
-  "origem_iata": "SLZ",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "GOL Linhas Aéreas",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "22.000 milhas + R$ 85,64",
-  "volta": "21.900 milhas + R$ 85,64",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-GRU-MIA-exe",
