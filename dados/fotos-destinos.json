@@ -231,6 +231,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:%C3%89tat_de_Alag%C3%B4as_-_Panorama_de_Macei%C3%B3_-_2,_Acervo_do_Museu_Paulista_da_USP.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/%C3%89tat_de_Alag%C3%B4as_-_Panorama_de_Macei%C3%B3_-_2%2C_Acervo_do_Museu_Paulista_da_USP.jpg/1280px-%C3%89tat_de_Alag%C3%B4as_-_Panorama_de_Macei%C3%B3_-_2%2C_Acervo_do_Museu_Paulista_da_USP.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "machu-picchu": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:99_-_Machu_Picchu_-_Juin_2009.edit3.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/99_-_Machu_Picchu_-_Juin_2009.edit3.jpg/1280px-99_-_Machu_Picchu_-_Juin_2009.edit3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "manaus-99-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Manaus_Skyline_Noturno.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Manaus_Skyline_Noturno.jpg/1280px-Manaus_Skyline_Noturno.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -238,6 +242,14 @@
  "maragogi": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Maragogi_-_Alagoas_-_Brasil._(16354731032).jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Maragogi_-_Alagoas_-_Brasil._%2816354731032%29.jpg/1280px-Maragogi_-_Alagoas_-_Brasil._%2816354731032%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "mendoza-argentina": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:A_typical_view_of_Mendoza_City_full_of_trees_and_big_mountains..jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/A_typical_view_of_Mendoza_City_full_of_trees_and_big_mountains..jpg/1280px-A_typical_view_of_Mendoza_City_full_of_trees_and_big_mountains..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "montevideu-uruguai": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Presid%C3%AAncia_do_Uruguai_em_novembro_de_2023.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Presid%C3%AAncia_do_Uruguai_em_novembro_de_2023.jpg/1280px-Presid%C3%AAncia_do_Uruguai_em_novembro_de_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "morro-de-sao-paulo-bahia": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Servi%C3%A7o_de_t%C3%A1xi_do_aeroporto_de_Morro_de_S%C3%A3o_Paulo,_Bahia.jpg",
@@ -287,6 +299,7 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Praia_do_Rosa,_SC.JPG",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Praia_do_Rosa%2C_SC.JPG/1280px-Praia_do_Rosa%2C_SC.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "providencia-santa-catalina-colombia": {},
  "punta-cana": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Isla_Saona_-_panoramio.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Isla_Saona_-_panoramio.jpg/1280px-Isla_Saona_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
