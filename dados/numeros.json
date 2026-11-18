@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-18T13:58:58.426794Z",
+ "atualizado": "2026-11-18T14:05:10.405130Z",
  "dias": 30,
- "passagens": 3164,
+ "passagens": 3165,
  "promocoes": 187,
  "destinos": 173,
  "executiva": 666,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1312,
+  "passagens": 1309,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -681,19 +681,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9411",
-    "origem": "Porto Alegre",
-    "origem_iata": "POA",
-    "destino": "Rio de Janeiro",
-    "destino_iata": "GIG",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-11T14:02:21Z",
-    "milhas": 6904,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9863",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -742,6 +729,19 @@
     "programa": "AAdvantage",
     "data": "2026-11-12T20:29:28Z",
     "milhas": 7500,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9651",
+    "origem": "Porto Seguro",
+    "origem_iata": "BPS",
+    "destino": "Rio de Janeiro",
+    "destino_iata": "GIG",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-14T16:21:13Z",
+    "milhas": 7628,
     "nivel": "",
     "regiao": "brasil"
    },

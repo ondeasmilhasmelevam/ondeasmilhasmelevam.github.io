@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16028",
+  "data": "2026-11-18T13:59:13Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "261.130 milhas + Taxas",
+  "volta": "235.020 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-9905",
   "data": "2026-11-18T13:34:59Z",
   "origem": "Curitiba",
@@ -5537,20 +5551,6 @@
    "https://www.voeazul.com.br/br/pt/ofertas/bancos"
   ],
   "ate": "2026-11-19T23:59:59-03:00"
- },
- {
-  "id": "3761373661-9767",
-  "data": "2026-11-16T13:59:58Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Recife",
-  "destino_iata": "REC",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "10.240 milhas + Taxas",
-  "volta": "10.630 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7806",
