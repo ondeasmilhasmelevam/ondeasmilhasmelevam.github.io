@@ -6926,21 +6926,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-iberia-GIG-MAD-eco",
-  "data": "2026-11-09T00:05:14.410466Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Madrid",
-  "destino_iata": "MAD",
-  "companhia": "American / British Airways / Iberia",
-  "cabine": "Econômica",
-  "programa": "Iberia Plus",
-  "ida": "20.000 Avios + taxas",
-  "volta": "",
-  "link_nome": "Iberia Plus"
- },
- {
   "id": "seats-azul-VCP-LIS-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
@@ -7044,6 +7029,21 @@
   "ida": "13.000 Avios + taxas",
   "volta": "",
   "link_nome": "Qatar Privilege Club"
+ },
+ {
+  "id": "seats-iberia-GIG-MAD-eco",
+  "data": "2026-11-09T00:05:14.410466Z",
+  "fonte": "seats.aero",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "American / British Airways / Iberia",
+  "cabine": "Econômica",
+  "programa": "Iberia Plus",
+  "ida": "31.250 Avios + taxas",
+  "volta": "",
+  "link_nome": "Iberia Plus"
  },
  {
   "id": "1290836068-7645",
