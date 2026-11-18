@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-18T16:16:29.560986Z",
+ "atualizado": "2026-11-18T16:22:52.076012Z",
  "dias": 30,
  "passagens": 3168,
  "promocoes": 190,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1294,
+  "passagens": 1289,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -131,18 +131,18 @@
     "foto": "img/rotas/MAO-PTY.jpg"
    },
    {
-    "id": "2008590742-15363",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
+    "id": "2008590742-15508",
+    "origem": "Curitiba",
+    "origem_iata": "CWB",
     "destino": "San José",
     "destino_iata": "SJO",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-11T16:17:38Z",
-    "milhas": 34900,
+    "data": "2026-11-12T19:31:47Z",
+    "milhas": 35719,
     "nivel": "espetacular",
     "grupo": "Internacional",
-    "foto": "img/rotas/CNF-SJO.jpg"
+    "foto": "img/rotas/CWB-SJO.jpg"
    },
    {
     "id": "2361370250-6450",
@@ -174,15 +174,15 @@
     "regiao": "caribe"
    },
    {
-    "id": "2008590742-15363",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
+    "id": "2008590742-15508",
+    "origem": "Curitiba",
+    "origem_iata": "CWB",
     "destino": "San José",
     "destino_iata": "SJO",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-11T16:17:38Z",
-    "milhas": 34900,
+    "data": "2026-11-12T19:31:47Z",
+    "milhas": 35719,
     "nivel": "espetacular",
     "regiao": "caribe"
    },
