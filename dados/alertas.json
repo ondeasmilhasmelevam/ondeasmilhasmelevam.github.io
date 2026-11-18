@@ -6495,20 +6495,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15722",
-  "data": "2026-11-16T03:04:39Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Buenos Aires",
-  "destino_iata": "AEP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "35.000 milhas + R$ 101,16 de taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-MIA-exe",
   "data": "2026-11-16T01:53:14.655412Z",
   "fonte": "seats.aero",
