@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9914",
+  "data": "2026-11-18T17:21:24Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "7.700 milhas + R$ 56,99 de taxas",
+  "volta": "7.700 milhas + R$ 62,69 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6787",
   "data": "2026-11-18T17:17:30Z",
   "origem": "Manaus",
@@ -5439,34 +5453,6 @@
    "https://link.dia23.com.br/r/fnEiWK5"
   ],
   "ate": ""
- },
- {
-  "id": "2008590742-15864",
-  "data": "2026-11-16T17:21:09Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Buenos Aires",
-  "destino_iata": "AEP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "22.300 milhas + Taxas",
-  "volta": "22.300 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15863",
-  "data": "2026-11-16T17:19:47Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Santiago",
-  "destino_iata": "SCL",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "28.300 Milhas LATAM Pass + Taxas",
-  "volta": "28.300 Milhas LATAM Pass + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7813",
