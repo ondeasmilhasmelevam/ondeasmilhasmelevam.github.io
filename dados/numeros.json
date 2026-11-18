@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-18T17:44:19.330547Z",
+ "atualizado": "2026-11-18T17:50:43.821832Z",
  "dias": 30,
- "passagens": 3181,
+ "passagens": 3187,
  "promocoes": 190,
  "destinos": 173,
- "executiva": 671,
+ "executiva": 677,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1277,
+  "passagens": 1275,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -239,14 +239,14 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-15388",
+    "id": "2008590742-15540",
     "origem": "Manaus",
     "origem_iata": "MAO",
     "destino": "Bogotá",
     "destino_iata": "BOG",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-11T17:49:45Z",
+    "data": "2026-11-13T14:44:55Z",
     "milhas": 17800,
     "nivel": "muito bom",
     "regiao": "america-do-sul"
@@ -1084,6 +1084,19 @@
     "regiao": "america-do-sul"
    },
    {
+    "id": "2361370250-6795",
+    "origem": "Abu Dhabi",
+    "origem_iata": "AUH",
+    "destino": "Maldivas",
+    "destino_iata": "MLE",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-18T17:44:38Z",
+    "milhas": 30000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "2361370250-6458",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -1186,19 +1199,6 @@
     "milhas": 60000,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "2361370250-6446",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Cidade do Panamá",
-    "destino_iata": "PTY",
-    "cabine": "Executiva",
-    "programa": "GOL Smiles",
-    "data": "2026-11-12T11:24:58Z",
-    "milhas": 60700,
-    "nivel": "",
-    "regiao": "caribe"
    }
   ]
  }
