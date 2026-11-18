@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-18T13:40:19.307751Z",
+ "atualizado": "2026-11-18T13:46:35.351153Z",
  "dias": 30,
  "passagens": 3164,
  "promocoes": 187,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1327,
+  "passagens": 1320,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -668,15 +668,15 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9400",
-    "origem": "Uberlândia",
-    "origem_iata": "UDI",
+    "id": "3761373661-9438",
+    "origem": "Curitiba",
+    "origem_iata": "CWB",
     "destino": "São Paulo",
     "destino_iata": "CGH",
     "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-11T13:44:03Z",
-    "milhas": 6700,
+    "programa": "Smiles",
+    "data": "2026-11-11T19:50:01Z",
+    "milhas": 6800,
     "nivel": "",
     "regiao": "brasil"
    },

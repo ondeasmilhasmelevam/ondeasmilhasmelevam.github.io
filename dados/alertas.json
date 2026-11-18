@@ -5673,48 +5673,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-6680",
-  "data": "2026-11-16T13:43:07Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "Air Canada",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "80.000 milhas + Taxas",
-  "volta": "80.000 milhas + Taxas",
-  "link_nome": "Aeroplan"
- },
- {
-  "id": "2361370250-6679",
-  "data": "2026-11-16T13:43:04Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Porto",
-  "destino_iata": "OPO",
-  "companhia": "Air Canada",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "80.000 milhas + Taxas",
-  "volta": "80.000 milhas + Taxas",
-  "link_nome": "Aeroplan"
- },
- {
-  "id": "2361370250-6678",
-  "data": "2026-11-16T13:42:58Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Frankfurt",
-  "destino_iata": "FRA",
-  "companhia": "Air Canada",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "80.000 milhas + Taxas",
-  "volta": "80.000 milhas + Taxas",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "seats-smiles-GRU-MIA-exe",
   "data": "2026-11-16T01:53:14.655412Z",
   "fonte": "seats.aero",
