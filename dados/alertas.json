@@ -5530,20 +5530,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-9773",
-  "data": "2026-11-16T15:47:01Z",
-  "origem": "Natal",
-  "origem_iata": "NAT",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "21.100 milhas + Taxas",
-  "volta": "21.900 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7808",
   "data": "2026-11-16T14:20:32Z",
   "tipo": "promocao",
