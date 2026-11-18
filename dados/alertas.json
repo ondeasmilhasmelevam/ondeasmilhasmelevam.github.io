@@ -5458,20 +5458,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-6684",
-  "data": "2026-11-16T18:04:52Z",
-  "origem": "Seul",
-  "origem_iata": "ICN",
-  "destino": "Bangkok",
-  "destino_iata": "BKK",
-  "companhia": "Korean Air",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "75.700 milhas + Taxas R$ 151,07",
-  "volta": "75.700 milhas + Taxas R$ 235,91",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7813",
   "data": "2026-11-16T16:39:26Z",
   "tipo": "promocao",
