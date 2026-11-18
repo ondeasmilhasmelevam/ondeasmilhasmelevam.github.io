@@ -6509,20 +6509,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-9695",
-  "data": "2026-11-16T04:04:50Z",
-  "origem": "São Paulo",
-  "origem_iata": "CGH",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "11.200 milhas + R$ 62,14 de taxas",
-  "volta": "11.200 milhas + R$ 34,54 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-MIA-exe",
   "data": "2026-11-16T01:53:14.655412Z",
   "fonte": "seats.aero",
