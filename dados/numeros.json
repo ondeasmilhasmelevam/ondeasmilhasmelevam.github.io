@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-18T18:35:54.913408Z",
+ "atualizado": "2026-11-18T18:42:57.840410Z",
  "dias": 30,
- "passagens": 3188,
+ "passagens": 3203,
  "promocoes": 193,
  "destinos": 173,
- "executiva": 677,
+ "executiva": 679,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1261,
+  "passagens": 1276,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -668,6 +668,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9922",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
+    "destino": "Vitória",
+    "destino_iata": "VIX",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-18T18:38:06Z",
+    "milhas": 6824,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9863",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -720,15 +733,15 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9651",
+    "id": "3761373661-9919",
     "origem": "Porto Seguro",
     "origem_iata": "BPS",
     "destino": "Rio de Janeiro",
     "destino_iata": "GIG",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-14T16:21:13Z",
-    "milhas": 7628,
+    "data": "2026-11-18T18:37:48Z",
+    "milhas": 7523,
     "nivel": "",
     "regiao": "brasil"
    },
@@ -759,28 +772,15 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9520",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "Vitória",
-    "destino_iata": "VIX",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-12T19:07:02Z",
-    "milhas": 8200,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9774",
-    "origem": "Florianópolis",
-    "origem_iata": "FLN",
+    "id": "3761373661-9927",
+    "origem": "Goiânia",
+    "origem_iata": "GYN",
     "destino": "Brasília",
     "destino_iata": "BSB",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-16T16:13:08Z",
-    "milhas": 8321,
+    "data": "2026-11-18T18:39:15Z",
+    "milhas": 8202,
     "nivel": "",
     "regiao": "brasil"
    },
