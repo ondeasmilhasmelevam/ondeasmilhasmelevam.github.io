@@ -5558,20 +5558,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-9771",
-  "data": "2026-11-16T15:28:48Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.220 milhas + Taxas",
-  "volta": "11.840 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7808",
   "data": "2026-11-16T14:20:32Z",
   "tipo": "promocao",
