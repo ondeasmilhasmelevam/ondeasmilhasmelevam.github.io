@@ -460,8 +460,10 @@
   "1290836068-7841"
  ],
  "ultimo_em": "2026-11-18T00:04:57.511238+00:00",
- "ultimo_tipo": "promocao",
- "lotes_stories": [],
+ "ultimo_tipo": "passagem",
+ "lotes_stories": [
+  "08:00"
+ ],
  "horarios_feed": [],
  "feed_usados": [],
  "reel_promo_dia": "2026-11-17",
