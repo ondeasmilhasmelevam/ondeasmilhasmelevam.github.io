@@ -7046,21 +7046,6 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-smiles-GIG-MIA-exe",
-  "data": "2026-11-09T00:05:14.410466Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "American",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "287.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7645",
   "data": "2026-11-08T17:17:19Z",
   "tipo": "promocao",
@@ -7149,7 +7134,7 @@
   "origem_iata": "GRU",
   "destino": "Cidade do Panamá",
   "destino_iata": "PTY",
-  "companhia": "AM / Avianca / Copa",
+  "companhia": "Avianca / Copa / GOL",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "67.000 milhas + taxas",
