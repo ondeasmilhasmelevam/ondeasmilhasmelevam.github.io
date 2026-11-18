@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-18T16:41:38.304809Z",
+ "atualizado": "2026-11-18T16:48:04.429927Z",
  "dias": 30,
- "passagens": 3171,
+ "passagens": 3175,
  "promocoes": 190,
  "destinos": 173,
  "executiva": 666,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1279,
+  "passagens": 1280,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -746,19 +746,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9422",
-    "origem": "Curitiba",
-    "origem_iata": "CWB",
-    "destino": "Cascavel",
-    "destino_iata": "CAC",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-11T16:47:47Z",
-    "milhas": 8000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9550",
     "origem": "São Paulo",
     "origem_iata": "CGH",
@@ -937,6 +924,19 @@
     "programa": "Smiles",
     "data": "2026-11-17T14:20:36Z",
     "milhas": 10600,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "2008590742-15525",
+    "origem": "Belo Horizonte",
+    "origem_iata": "CNF",
+    "destino": "Uberlândia",
+    "destino_iata": "UDI",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-13T12:08:31Z",
+    "milhas": 11000,
     "nivel": "",
     "regiao": "brasil"
    },
