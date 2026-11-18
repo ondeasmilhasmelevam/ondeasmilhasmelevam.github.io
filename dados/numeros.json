@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-18T12:43:24.553204Z",
+ "atualizado": "2026-11-18T12:50:17.315324Z",
  "dias": 30,
- "passagens": 3136,
+ "passagens": 3154,
  "promocoes": 185,
- "destinos": 171,
- "executiva": 663,
+ "destinos": 172,
+ "executiva": 664,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1336,
+  "passagens": 1346,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -694,19 +694,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9379",
-    "origem": "Recife",
-    "origem_iata": "REC",
-    "destino": "Aracaju",
-    "destino_iata": "AJU",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-11T12:48:47Z",
-    "milhas": 7000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9863",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -850,6 +837,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9891",
+    "origem": "São Luís",
+    "origem_iata": "SLZ",
+    "destino": "Fortaleza",
+    "destino_iata": "FOR",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-18T12:43:57Z",
+    "milhas": 8800,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "2008590742-15715",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
@@ -859,19 +859,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-15T15:41:54Z",
     "milhas": 8960,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9567",
-    "origem": "São Luís",
-    "origem_iata": "SLZ",
-    "destino": "Fortaleza",
-    "destino_iata": "FOR",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-13T13:10:28Z",
-    "milhas": 9000,
     "nivel": "",
     "regiao": "brasil"
    },
@@ -936,6 +923,19 @@
     "cabine": "Econômica",
     "programa": "Smiles",
     "data": "2026-11-16T11:42:13Z",
+    "milhas": 10600,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9837",
+    "origem": "Vitória",
+    "origem_iata": "VIX",
+    "destino": "Rio de Janeiro",
+    "destino_iata": "SDU",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-17T14:20:36Z",
     "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
