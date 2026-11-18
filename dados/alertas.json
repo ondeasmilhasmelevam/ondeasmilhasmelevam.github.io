@@ -5725,34 +5725,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15849",
-  "data": "2026-11-16T12:51:16Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Assunção",
-  "destino_iata": "ASU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "26.500 milhas + Taxas",
-  "volta": "26.500 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15848",
-  "data": "2026-11-16T12:51:06Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Montevidéu",
-  "destino_iata": "MVD",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "31.800 milhas + Taxas",
-  "volta": "31.800 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "seats-smiles-GRU-MIA-exe",
   "data": "2026-11-16T01:53:14.655412Z",
   "fonte": "seats.aero",
