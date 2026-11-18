@@ -5472,20 +5472,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15869",
-  "data": "2026-11-16T18:02:59Z",
-  "origem": "Maceió",
-  "origem_iata": "MCZ",
-  "destino": "Santiago",
-  "destino_iata": "SCL",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "42.100 Milhas LATAM Pass + Taxas",
-  "volta": "42.100 Milhas LATAM Pass + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7813",
   "data": "2026-11-16T16:39:26Z",
   "tipo": "promocao",
