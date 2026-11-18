@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6780",
+  "data": "2026-11-18T11:54:22Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "472.200 milhas (448.600 no Clube Smiles)",
+  "volta": "472.200 milhas (448.600 no Clube Smiles)",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-6779",
   "data": "2026-11-18T11:51:28Z",
   "origem": "São Paulo",
