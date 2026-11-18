@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-18T00:52:57.195980Z",
+ "atualizado": "2026-11-18T00:59:11.409748Z",
  "dias": 30,
  "passagens": 3008,
  "promocoes": 185,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1245,
+  "passagens": 1241,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -471,19 +471,6 @@
     "milhas": 32800,
     "nivel": "bom",
     "regiao": "america-do-sul"
-   },
-   {
-    "id": "2008590742-15329",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Dallas",
-    "destino_iata": "DFW",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-11T00:53:15Z",
-    "milhas": 56400,
-    "nivel": "bom",
-    "regiao": "america-do-norte"
    },
    {
     "id": "2008590742-15370",
@@ -937,6 +924,19 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-16T11:51:55Z",
     "milhas": 10000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9721",
+    "origem": "Vitória",
+    "origem_iata": "VIX",
+    "destino": "São José do Rio Preto",
+    "destino_iata": "SJP",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-16T11:42:13Z",
+    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },
