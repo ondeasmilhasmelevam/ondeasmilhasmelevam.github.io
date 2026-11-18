@@ -1,9 +1,9 @@
 {
- "atualizado": "2026-11-18T20:53:05.107716Z",
+ "atualizado": "2026-11-18T20:59:20.343361Z",
  "dias": 30,
- "passagens": 3226,
+ "passagens": 3227,
  "promocoes": 194,
- "destinos": 174,
+ "destinos": 175,
  "executiva": 684,
  "destaques": [
   {
@@ -915,6 +915,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9934",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "Itaituba",
+    "destino_iata": "ITB",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-18T20:59:03Z",
+    "milhas": 10000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "3761373661-9721",
     "origem": "Vitória",
     "origem_iata": "VIX",
@@ -923,19 +936,6 @@
     "cabine": "Econômica",
     "programa": "Smiles",
     "data": "2026-11-16T11:42:13Z",
-    "milhas": 10600,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9837",
-    "origem": "Vitória",
-    "origem_iata": "VIX",
-    "destino": "Rio de Janeiro",
-    "destino_iata": "SDU",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-17T14:20:36Z",
     "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
