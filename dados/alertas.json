@@ -6559,20 +6559,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-6600",
-  "data": "2026-11-16T01:50:40Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Fort Lauderdale",
-  "destino_iata": "FLL",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "50.000 milhas + CAD 123,40 de taxas",
-  "volta": "",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "seats-smiles-BEL-MIA-eco",
   "data": "2026-11-15T03:00:04.152853Z",
   "fonte": "seats.aero",
