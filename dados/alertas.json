@@ -1,5 +1,19 @@
 [
  {
+  "id": "3996014557-2517",
+  "data": "2026-11-18T18:20:19Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "LatamPass",
+  "cabine": "Econômica",
+  "programa": "LatamPass",
+  "ida": "72.000 pontos milhas + taxas, ida e volta",
+  "volta": "",
+  "link_nome": "LatamPass"
+ },
+ {
   "id": "1290836068-7865",
   "data": "2026-11-18T17:53:59Z",
   "tipo": "promocao",
