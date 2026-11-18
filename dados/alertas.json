@@ -5766,34 +5766,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-9782",
-  "data": "2026-11-16T20:21:27Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "22.500 milhas + Taxas",
-  "volta": "22.500 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-15878",
-  "data": "2026-11-16T20:20:58Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Boston",
-  "destino_iata": "BOS",
-  "companhia": "Copa Airlines",
-  "cabine": "Econômica",
-  "programa": "Azul pelo Mundo",
-  "ida": "112.500 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Azul pelo Mundo"
- },
- {
   "id": "1290836068-7824",
   "data": "2026-11-16T19:45:40Z",
   "tipo": "promocao",
