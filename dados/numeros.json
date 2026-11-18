@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-18T15:39:25.339454Z",
+ "atualizado": "2026-11-18T15:45:37.121572Z",
  "dias": 30,
  "passagens": 3168,
  "promocoes": 190,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1301,
+  "passagens": 1300,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -1071,14 +1071,14 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6407",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
+    "id": "2361370250-6597",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
     "destino": "Bogotá",
     "destino_iata": "BOG",
     "cabine": "Executiva",
-    "programa": "Finnair Plus",
-    "data": "2026-11-11T15:43:48Z",
+    "programa": "Aeroplan",
+    "data": "2026-11-15T17:56:39Z",
     "milhas": 20000,
     "nivel": "",
     "regiao": "america-do-sul"
