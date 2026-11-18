@@ -6587,20 +6587,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-9693",
-  "data": "2026-11-16T01:27:43Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Curitiba",
-  "destino_iata": "CWB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "9.100 milhas + R$ 35,75 de taxas",
-  "volta": "9.100 milhas + R$ 48,63 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-BEL-MIA-eco",
   "data": "2026-11-15T03:00:04.152853Z",
   "fonte": "seats.aero",
