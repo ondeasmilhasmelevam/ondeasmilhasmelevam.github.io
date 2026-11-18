@@ -7281,21 +7281,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "seats-iberia-GRU-MAD-exe",
-  "data": "2026-11-08T03:29:49.491996Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Madrid",
-  "destino_iata": "MAD",
-  "companhia": "Iberia",
-  "cabine": "Executiva",
-  "programa": "Iberia Plus",
-  "ida": "74.000 Avios + taxas",
-  "volta": "",
-  "link_nome": "Iberia Plus"
- },
- {
   "id": "seats-smiles-BEL-MIA-exe",
   "data": "2026-11-08T03:29:49.491996Z",
   "fonte": "seats.aero",
