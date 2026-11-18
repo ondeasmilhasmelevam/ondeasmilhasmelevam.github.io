@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-18T13:15:27.369235Z",
+ "atualizado": "2026-11-18T13:21:43.689843Z",
  "dias": 30,
- "passagens": 3155,
- "promocoes": 186,
- "destinos": 172,
- "executiva": 665,
+ "passagens": 3163,
+ "promocoes": 187,
+ "destinos": 173,
+ "executiva": 666,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1340,
+  "passagens": 1348,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -1162,6 +1162,19 @@
     "regiao": "outros"
    },
    {
+    "id": "2361370250-6786",
+    "origem": "Belo Horizonte",
+    "origem_iata": "CNF",
+    "destino": "Toronto",
+    "destino_iata": "YYZ",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-18T13:19:56Z",
+    "milhas": 57500,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "2361370250-6481",
     "origem": "Nova York",
     "origem_iata": "JFK",
@@ -1186,19 +1199,6 @@
     "milhas": 60700,
     "nivel": "",
     "regiao": "caribe"
-   },
-   {
-    "id": "2361370250-6737",
-    "origem": "Cidade do Panamá",
-    "origem_iata": "PTY",
-    "destino": "Amsterdã",
-    "destino_iata": "AMS",
-    "cabine": "Executiva",
-    "programa": "Flying Blue",
-    "data": "2026-11-18T09:39:08Z",
-    "milhas": 63750,
-    "nivel": "",
-    "regiao": "europa"
    }
   ]
  }
