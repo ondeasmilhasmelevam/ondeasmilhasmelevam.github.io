@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-18T09:34:29.102292Z",
+ "atualizado": "2026-11-18T09:40:45.126543Z",
  "dias": 30,
- "passagens": 3021,
+ "passagens": 3028,
  "promocoes": 185,
  "destinos": 171,
- "executiva": 617,
+ "executiva": 621,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1251,
+  "passagens": 1258,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -1188,17 +1188,17 @@
     "regiao": "caribe"
    },
    {
-    "id": "2361370250-6712",
-    "origem": "Honolulu",
-    "origem_iata": "HNL",
-    "destino": "Nadi",
-    "destino_iata": "NAN",
+    "id": "2361370250-6737",
+    "origem": "Cidade do Panamá",
+    "origem_iata": "PTY",
+    "destino": "Amsterdã",
+    "destino_iata": "AMS",
     "cabine": "Executiva",
-    "programa": "AAdvantage",
-    "data": "2026-11-17T22:05:30Z",
-    "milhas": 65000,
+    "programa": "Flying Blue",
+    "data": "2026-11-18T09:39:08Z",
+    "milhas": 63750,
     "nivel": "",
-    "regiao": "outros"
+    "regiao": "europa"
    }
   ]
  }
