@@ -1,9 +1,9 @@
 {
- "atualizado": "2026-11-18T20:29:24.344829Z",
+ "atualizado": "2026-11-18T20:35:38.415512Z",
  "dias": 30,
- "passagens": 3225,
+ "passagens": 3226,
  "promocoes": 194,
- "destinos": 173,
+ "destinos": 174,
  "executiva": 684,
  "destaques": [
   {
@@ -59,6 +59,19 @@
    "foto": "img/rotas/CNF-SJO.jpg"
   },
   {
+   "id": "2008590742-16045",
+   "origem": "Manaus",
+   "origem_iata": "MAO",
+   "destino": "San Juan",
+   "destino_iata": "SJU",
+   "cabine": "Econômica",
+   "programa": "Smiles",
+   "data": "2026-11-18T20:31:34Z",
+   "milhas": 36600,
+   "nivel": "espetacular",
+   "foto": "img/rotas/MAO-SJU.jpg"
+  },
+  {
    "id": "2008590742-15693",
    "origem": "Manaus",
    "origem_iata": "MAO",
@@ -70,19 +83,6 @@
    "milhas": 40400,
    "nivel": "espetacular",
    "foto": "img/rotas/MAO-CUN.jpg"
-  },
-  {
-   "id": "2008590742-14564",
-   "origem": "Belém",
-   "origem_iata": "BEL",
-   "destino": "Punta Cana",
-   "destino_iata": "PUJ",
-   "cabine": "Econômica",
-   "programa": "Smiles",
-   "data": "2026-11-03T14:21:47Z",
-   "milhas": 43200,
-   "nivel": "espetacular",
-   "foto": "img/rotas/BEL-PUJ.jpg"
   }
  ],
  "semana": {
@@ -183,6 +183,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-12T19:31:47Z",
     "milhas": 35719,
+    "nivel": "espetacular",
+    "regiao": "caribe"
+   },
+   {
+    "id": "2008590742-16045",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "San Juan",
+    "destino_iata": "SJU",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-18T20:31:34Z",
+    "milhas": 36600,
     "nivel": "espetacular",
     "regiao": "caribe"
    },
@@ -924,19 +937,6 @@
     "programa": "Smiles",
     "data": "2026-11-17T14:20:36Z",
     "milhas": 10600,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "2008590742-15525",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "Uberlândia",
-    "destino_iata": "UDI",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-13T12:08:31Z",
-    "milhas": 11000,
     "nivel": "",
     "regiao": "brasil"
    },
