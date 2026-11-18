@@ -1,5 +1,47 @@
 [
  {
+  "id": "2361370250-6803",
+  "data": "2026-11-18T19:41:06Z",
+  "origem": "Santiago",
+  "origem_iata": "SCL",
+  "destino": "Sydney",
+  "destino_iata": "SYD",
+  "companhia": "Qantas",
+  "cabine": "Executiva",
+  "programa": "AAdvantage",
+  "ida": "82.500 milhas + R$ 306,77",
+  "volta": "",
+  "link_nome": "AAdvantage"
+ },
+ {
+  "id": "2361370250-6802",
+  "data": "2026-11-18T19:40:59Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Roma",
+  "destino_iata": "FCO",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Executiva",
+  "programa": "TAP Miles&Go",
+  "ida": "135.000 milhas + R$ 280,27",
+  "volta": "135.000 milhas + R$ 622,96",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2361370250-6801",
+  "data": "2026-11-18T19:40:58Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "Azul",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "80.000 milhas + Taxas",
+  "volta": "80.000 milhas + Taxas",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "2008590742-16040",
   "data": "2026-11-18T19:38:40Z",
   "origem": "Curitiba",
@@ -5678,45 +5720,6 @@
    "https://www.esfera.com.vc/p/compra-de-pontos/e000100033"
   ],
   "ate": "2026-11-19T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7823",
-  "data": "2026-11-16T19:44:49Z",
-  "tipo": "promocao",
-  "titulo": "LATAM OFERECE PASSAGENS NA AMÉRICA DO SUL A PARTIR DE 15.014 MILHAS + TAXAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "LATAM disponibiliza passagens internacionais na América do Sul a partir de 15.014 milhas + taxas por trecho ou a partir de R$380,80 + taxas ao comprar pontos. O programa LATAM Pass oferece até 66% de desconto na compra de milhas, com limite de 350.000 milhas e aquisição em lotes de 1.000. O custo por mil milhas reduzido a R$23,80 ou R$25,90, dependendo do cliente.",
-  "detalhes": [
-   "passagens por trecho a partir de 15.014 milhas + taxas",
-   "passagens a partir de R$380,80 + taxas ao comprar pontos",
-   "desconto de até 66% na compra de milhas até sexta-feira (20)",
-   "limite de compra de até 350.000 milhas com desconto",
-   "acquisition em lotes de 1.000",
-   "custo por mil milhas reduzido a R$23,80 para LATAM Pass Itaú, R$25,90 para LATAM Pass/Clube",
-   "valor efetivo da emissão calculado como 16.000 milhas x CPM",
-   "Florianópolis (FLN) x Buenos Aires (EZE) a partir de 15.014 milhas o trecho"
-  ],
-  "parceiros": "LATAM Pass",
-  "validade": "até sexta-feira (20)",
-  "links": [
-   "https://link.dia23.com.br/r/67AV7qW"
-  ],
-  "ate": ""
- },
- {
-  "id": "2008590742-15876",
-  "data": "2026-11-16T19:42:40Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "Buenos Aires",
-  "destino_iata": "AEP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "29.000 milhas + R$ 108,17 de taxas",
-  "volta": "",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7821",

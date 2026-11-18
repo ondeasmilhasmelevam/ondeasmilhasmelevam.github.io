@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-18T19:39:15.324302Z",
+ "atualizado": "2026-11-18T19:45:35.553942Z",
  "dias": 30,
- "passagens": 3216,
+ "passagens": 3219,
  "promocoes": 193,
  "destinos": 173,
- "executiva": 680,
+ "executiva": 683,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1273,
+  "passagens": 1272,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -304,15 +304,15 @@
     "regiao": "caribe"
    },
    {
-    "id": "3996014557-2508",
+    "id": "2008590742-15902",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
     "destino": "Lisboa",
     "destino_iata": "LIS",
     "cabine": "Econômica",
-    "programa": "Latam",
-    "data": "2026-11-11T19:40:41Z",
-    "milhas": 58000,
+    "programa": "LATAM Pass",
+    "data": "2026-11-17T13:32:45Z",
+    "milhas": 59710,
     "nivel": "muito bom",
     "regiao": "europa"
    },
