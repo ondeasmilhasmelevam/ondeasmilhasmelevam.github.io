@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-19T12:40:01.626540Z",
+ "atualizado": "2026-11-19T12:46:21.035651Z",
  "dias": 30,
- "passagens": 3271,
+ "passagens": 3283,
  "promocoes": 193,
  "destinos": 175,
- "executiva": 686,
+ "executiva": 688,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1210,
+  "passagens": 1218,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -863,6 +863,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9969",
+    "origem": "São Luís",
+    "origem_iata": "SLZ",
+    "destino": "Rio de Janeiro",
+    "destino_iata": "SDU",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-19T12:41:28Z",
+    "milhas": 9500,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "2008590742-15713",
     "origem": "Navegantes",
     "origem_iata": "NVT",
@@ -902,6 +915,19 @@
     "regiao": "outros"
    },
    {
+    "id": "3761373661-9965",
+    "origem": "Belo Horizonte",
+    "origem_iata": "CNF",
+    "destino": "Uberlândia",
+    "destino_iata": "UDI",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-19T12:40:11Z",
+    "milhas": 10000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9686",
     "origem": "Brasília",
     "origem_iata": "BSB",
@@ -910,32 +936,6 @@
     "cabine": "Econômica",
     "programa": "LATAM Pass",
     "data": "2026-11-15T16:26:00Z",
-    "milhas": 10600,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9721",
-    "origem": "Vitória",
-    "origem_iata": "VIX",
-    "destino": "São José do Rio Preto",
-    "destino_iata": "SJP",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-16T11:42:13Z",
-    "milhas": 10600,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9837",
-    "origem": "Vitória",
-    "origem_iata": "VIX",
-    "destino": "Rio de Janeiro",
-    "destino_iata": "SDU",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-17T14:20:36Z",
     "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
@@ -1071,6 +1071,19 @@
     "regiao": "america-do-sul"
    },
    {
+    "id": "2361370250-6811",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Lima",
+    "destino_iata": "LIM",
+    "cabine": "Executiva",
+    "programa": "Finnair AVIOS",
+    "data": "2026-11-19T12:45:28Z",
+    "milhas": 20000,
+    "nivel": "",
+    "regiao": "america-do-sul"
+   },
+   {
     "id": "2361370250-6795",
     "origem": "Abu Dhabi",
     "origem_iata": "AUH",
@@ -1186,19 +1199,6 @@
     "milhas": 62000,
     "nivel": "",
     "regiao": "caribe"
-   },
-   {
-    "id": "2361370250-6737",
-    "origem": "Cidade do Panamá",
-    "origem_iata": "PTY",
-    "destino": "Amsterdã",
-    "destino_iata": "AMS",
-    "cabine": "Executiva",
-    "programa": "Flying Blue",
-    "data": "2026-11-18T09:39:08Z",
-    "milhas": 63750,
-    "nivel": "",
-    "regiao": "europa"
    }
   ]
  }
