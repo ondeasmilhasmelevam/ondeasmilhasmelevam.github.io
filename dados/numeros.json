@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-19T13:11:26.938683Z",
+ "atualizado": "2026-11-19T13:17:47.025737Z",
  "dias": 30,
  "passagens": 3288,
  "promocoes": 193,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1208,
+  "passagens": 1206,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -590,19 +590,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9482",
-    "origem": "Porto Alegre",
-    "origem_iata": "POA",
-    "destino": "Florianópolis",
-    "destino_iata": "FLN",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-12T13:17:45Z",
-    "milhas": 5200,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9522",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -716,6 +703,19 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-17T20:27:12Z",
     "milhas": 7000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9638",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Florianópolis",
+    "destino_iata": "FLN",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-14T08:41:50Z",
+    "milhas": 7400,
     "nivel": "",
     "regiao": "brasil"
    },
