@@ -1,9 +1,9 @@
 {
- "atualizado": "2026-11-19T13:48:53.836220Z",
+ "atualizado": "2026-11-19T13:55:13.940927Z",
  "dias": 30,
- "passagens": 3291,
- "promocoes": 193,
- "destinos": 175,
+ "passagens": 3295,
+ "promocoes": 207,
+ "destinos": 176,
  "executiva": 689,
  "destaques": [
   {
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1194,
+  "passagens": 1196,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -564,6 +564,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9978",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Pelotas",
+    "destino_iata": "PET",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-19T13:49:00Z",
+    "milhas": 4000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9666",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -924,19 +937,6 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-19T12:40:11Z",
     "milhas": 10000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9686",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
-    "destino": "Salvador",
-    "destino_iata": "SSA",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-15T16:26:00Z",
-    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },

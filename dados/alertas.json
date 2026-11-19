@@ -1,5 +1,335 @@
 [
  {
+  "id": "2008590742-16069",
+  "data": "2026-11-19T13:51:48Z",
+  "origem": "Campinas",
+  "origem_iata": "VCP",
+  "destino": "Fort Lauderdale",
+  "destino_iata": "FLL",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "80.000 milhas + R$ 301,05 de taxas",
+  "volta": "",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "1290836068-7896",
+  "data": "2026-11-19T13:51:17Z",
+  "tipo": "promocao",
+  "titulo": "SMILES OFERECE ATÉ 80% DE BÔNUS NA TRANSFERÊNCIA DE PONTOS (EXCETO ESFERA) ‼️ PRORROGADA ‼️",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Transfira pontos de qualquer programa (exceto Esfera) para Smiles com até 80% de bônus, válido até 19/11/2026. Bônus de 80% para assinantes Clube Smiles e 40% para demais clientes.",
+  "detalhes": [
+   "80% de bônus para clientes Clube Smiles e/ou Diamante/Magno.",
+   "40% de bônus para demais clientes."
+  ],
+  "parceiros": "Smiles, Todos os programas (exceto Esfera)",
+  "validade": "19/11/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanhas/orangefriday-bancos-17-11-2026"
+  ],
+  "ate": "2026-11-19T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7895",
+  "data": "2026-11-19T13:51:13Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFIRA AZUL FIDELIDADE PARA TODOS OS PROGRAMAS (EXCETO ESFERA) COM ATÉ 120% DE BÔNUS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Transfira pontos Azul Fidelidade para todos os programas (exceto Esfera) com até 120% de bônus, válido até 19/11/2026. Bônus de 90% para assinantes Clube Azul e 60% para demais clientes.",
+  "detalhes": [
+   "90% de bônus para assinantes Clube Azul Fidelidade.",
+   "60% de bônus para demais clientes.",
+   "Bônus adicional por tempo de Clube Azul: +5% (6 meses), +10% (1-2 anos), +20% (3-4 anos), +30% (>5 anos).",
+   "1.000 pontos bônus na primeira transferência."
+  ],
+  "parceiros": "Azul Fidelidade, Todos os programas (exceto Esfera)",
+  "validade": "19/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/bancos"
+  ],
+  "ate": "2026-11-19T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7893",
+  "data": "2026-11-19T13:50:17Z",
+  "tipo": "promocao",
+  "titulo": "ALL SIGNATURE: PRÉ-BLACK FRIDAY COM 20% OFF NA ASSINATURA",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Garanta 20% de desconto em novos planos do ALL Signature utilizando o cupom PREBLACK2026.",
+  "detalhes": [
+   "20% OFF na primeira cobrança com o cupom PREBLACK2026."
+  ],
+  "parceiros": "ALL Accor",
+  "validade": "20/11/2026",
+  "links": [
+   "https://all.accor.com/a/pt-br/loyalty-program/subscription-program/all-signature.html"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7892",
+  "data": "2026-11-19T13:50:12Z",
+  "tipo": "promocao",
+  "titulo": "SMILES & BANCOS PARCEIROS: CARTÃO DE CRÉDITO GOL SMILES COM ATÉ 55.000 MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Solicite seu Cartão de Crédito GOL Smiles participante e ganhe até 55.000 milhas bônus ao atingir a meta de gastos.",
+  "detalhes": [
+   "Visa Infinite: até 55.000 milhas para assinantes de clube/elite.",
+   "Visa Platinum: até 32.000 milhas.",
+   "Visa Gold: até 10.500 milhas."
+  ],
+  "parceiros": "Smiles, Bancos Parceiros",
+  "validade": "30/11/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanhas/cartao-de-credito/ate-55-mil-milhas"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7891",
+  "data": "2026-11-19T13:50:08Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE & SAM'S CLUB: 60% OFF NA ADESÃO + ATÉ 20.000 PONTOS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Sam's Club com 60% de desconto e ganhe até 20.000 pontos Azul após realizar sua primeira compra.",
+  "detalhes": [
+   "Plano Club de R$ 95 por R$ 38 ao ano.",
+   "20.000 pontos para assinantes do Clube Azul.",
+   "15.000 pontos para demais clientes."
+  ],
+  "parceiros": "Azul Fidelidade, Sam's Club",
+  "validade": "30/11/2026",
+  "links": [
+   "https://sejasocio.samsclub.com.br/index.php/parceria-azul-NOV60"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7889",
+  "data": "2026-11-19T13:49:58Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE: UPGRADE DE CLUBE ANUAL COM ATÉ 600.000 PONTOS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Faça o upgrade para um plano anual do Clube Azul e acumule até 600.000 pontos em 1 ano.",
+  "detalhes": [
+   "Clube 2.000: 31.000 pontos bônus",
+   "Clube 5.000: 80.000 pontos bônus",
+   "Clube 10.000: 170.000 pontos bônus",
+   "Clube 20.000: 360.000 pontos bônus"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "20/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/upgrade-clube"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7887",
+  "data": "2026-11-19T13:49:49Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE: 10% OFF NO RESGATE DE PASSAGENS INTERNACIONAIS PARA EUROPA",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Garanta 10% de desconto no resgate de passagens internacionais com pontos para Madri, Porto e Lisboa.",
+  "detalhes": [
+   "Madri (MAD): MADRID10OFF",
+   "Porto (OPO): PORTO10OFF",
+   "Lisboa (LIS): LISBOA10OFF"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "19/11/2026",
+  "links": [
+   "https://passagens.voeazul.com.br/pt/azul-friday"
+  ],
+  "ate": "2026-11-19T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7886",
+  "data": "2026-11-19T13:49:44Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE: ATÉ 20% OFF NO RESGATE DE PASSAGENS NACIONAIS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Resgate passagens aéreas nacionais com pontos Azul utilizando o cupom AZULMULTI20 e garanta até 20% de desconto.",
+  "detalhes": [
+   "Até 20% OFF com o cupom AZULMULTI20."
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "19/11/2026",
+  "links": [
+   "https://www.voeazul.com.br"
+  ],
+  "ate": "2026-11-19T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7885",
+  "data": "2026-11-19T13:49:39Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass: COMPRE MILHAS COM ATÉ 66% DE DESCONTO",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Compre milhas no LATAM Pass com até 66% de desconto para assinantes e portadores de cartões elegíveis.",
+  "detalhes": [
+   "63% OFF para todos os clientes cadastrados ou assinantes do Clube LATAM Pass (R$ 25,90).",
+   "66% OFF para titulares de cartão LATAM Pass Itaú (R$ 23,80)."
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "20/11/2026",
+  "links": [
+   "https://latampass.com/facilidades/compra-milhas/lp"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7884",
+  "data": "2026-11-19T13:49:35Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass & PREMMIA: RESGATE VOUCHERS DE COMBUSTÍVEL COM ATÉ 42% OFF",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Resgate vouchers de R$ 40 em combustível Premmia no Shopping LATAM Pass com descontos de até 42%.",
+  "detalhes": [
+   "Até 42% OFF para clientes com cartão LATAM Pass Itaú e Clube LATAM Pass.",
+   "35% OFF para demais clientes elegíveis."
+  ],
+  "parceiros": "LATAM Pass, Premmia",
+  "validade": "20/11/2026",
+  "links": [
+   "https://shopping.latampass.latam.com/pt_br/transferenciapremmia"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7883",
+  "data": "2026-11-19T13:49:30Z",
+  "tipo": "promocao",
+  "titulo": "ESFERA VIAGENS: RESGATE PASSAGENS E HOTÉIS COM ATÉ 25% OFF",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Resgate passagens, hotéis e aluguéis na Esfera Viagens utilizando pontos com até 25% de desconto.",
+  "detalhes": [
+   "25% OFF para assinantes do Clube Esfera com o cupom ESQUENTA25.",
+   "20% OFF para os demais clientes com o cupom ESQUENTA20."
+  ],
+  "parceiros": "Esfera",
+  "validade": "22/11/2026",
+  "links": [
+   "https://www.esfera.com.vc/esfera-viagens"
+  ],
+  "ate": "2026-11-22T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7882",
+  "data": "2026-11-19T13:49:25Z",
+  "tipo": "promocao",
+  "titulo": "CLUBE ESFERA: ASSINE OU ATUALIZE SEU PLANO COM ATÉ 300% DE BÔNUS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Ganhe até 300% de bônus em 12 meses ao assinar ou realizar o upgrade imediato para um plano superior do Clube Esfera.",
+  "detalhes": [
+   "PRO: 3.000 pontos bônus",
+   "",
+   "MASTER: 7.500 pontos bônus",
+   "VIP: 15.000 pontos bônus",
+   "",
+   "EXCLUSIVE: 60.000 pontos bônus"
+  ],
+  "parceiros": "Esfera",
+  "validade": "20/11/2026",
+  "links": [
+   "https://www.esfera.com.vc/clube"
+  ],
+  "ate": "2026-11-20T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7881",
+  "data": "2026-11-19T13:49:20Z",
+  "tipo": "promocao",
+  "titulo": "ESFERA: COMPRE PONTOS COM ATÉ 55% DE DESCONTO",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Aproveite descontos de até 55% na compra de pontos Esfera utilizando cupons exclusivos para assinantes do clube.",
+  "detalhes": [
+   "55% OFF para assinantes do Clube Esfera há 1 ano ou mais com o cupom GABRIEL55 (Milheiro a R$ 31,50).",
+   "50% OFF para assinantes do Clube Esfera há menos de 1 ano com o cupom GABRIEL50 (Milheiro a R$ 35,00)."
+  ],
+  "parceiros": "Esfera",
+  "validade": "19/11/2026",
+  "links": [
+   "https://www.esfera.com.vc/p/compra-de-pontos/e000100033"
+  ],
+  "ate": "2026-11-19T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7880",
+  "data": "2026-11-19T13:49:15Z",
+  "tipo": "promocao",
+  "titulo": "CLUBE LIVELO MINI: ASSINE O PLANO ANUAL E ACUMULE 9.000 PONTOS EM 12 MESES",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Assine o Clube Livelo Mini anual por apenas 12x de R$ 24,90 e acumule 9.000 pontos em 12 meses.",
+  "detalhes": [
+   "6.000 pontos do Clube Livelo Mini + 3.000 pontos extras distribuídos em 6 créditos de 500 pontos."
+  ],
+  "parceiros": "Livelo",
+  "validade": "26/11/2026",
+  "links": [
+   "https://www.livelo.com.br/adesao-promo-CDC16355"
+  ],
+  "ate": "2026-11-26T23:59:59-03:00"
+ },
+ {
+  "id": "3761373661-9980",
+  "data": "2026-11-19T13:49:12Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Palmas",
+  "destino_iata": "PMW",
+  "companhia": "Latam",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "A partir de 12.099 milhas",
+  "volta": "A partir de 12.099 milhas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-9979",
+  "data": "2026-11-19T13:49:05Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "Latam",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "A partir de 8.262 milhas",
+  "volta": "A partir de 8.262 milhas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-9978",
+  "data": "2026-11-19T13:49:00Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Pelotas",
+  "destino_iata": "PET",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "A partir de 4.000 milhas",
+  "volta": "A partir de 4.000 milhas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2008590742-16068",
   "data": "2026-11-19T13:48:37Z",
   "origem": "São Paulo",
@@ -4669,28 +4999,6 @@
   "ate": ""
  },
  {
-  "id": "1290836068-7845",
-  "data": "2026-11-17T19:13:41Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass & PREMMIA: RESGATE DE VOUCHERS DE R$ 40 EM COMBUSTÍVEL COM ATÉ 42% DE DESCONTO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Resgate vouchers de R$ 40 em combustível Premmia com até 42% de desconto. Valores do milheiro variam conforme perfil do cliente.",
-  "detalhes": [
-   "Até 42% OFF para clientes com cartão LATAM Pass Itaú e Clube LATAM Pass.",
-   "35% OFF para todos os clientes elegíveis.",
-   "Valor do milheiro: R$ 29,09 , R$ 27,57 (Cartão ou Clube), R$ 26,19 (Demais clientes).",
-   "Cada voucher oferece R$ 40 em créditos para combustível Premmia.",
-   "Limitado a 2 vouchers de R$ 40 por CPF (total de R$ 80)."
-  ],
-  "parceiros": "LATAM Pass, Premmia",
-  "validade": "20/11/2026",
-  "links": [
-   "https://shopping.latampass.latam.com/pt_br/transferenciapremmia"
-  ],
-  "ate": "2026-11-20T23:59:59-03:00"
- },
- {
   "id": "2008590742-15917",
   "data": "2026-11-17T19:07:38Z",
   "origem": "Vitória",
@@ -5449,111 +5757,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9836",
-  "data": "2026-11-17T13:53:48Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Campo Grande",
-  "destino_iata": "CGR",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.200 milhas + Taxas",
-  "volta": "11.200 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9835",
-  "data": "2026-11-17T13:53:45Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Navegantes",
-  "destino_iata": "NVT",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "17.200 milhas + Taxas",
-  "volta": "17.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-15903",
-  "data": "2026-11-17T13:53:39Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Milão",
-  "destino_iata": "MXP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "70.400 milhas + Taxas",
-  "volta": "70.400 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "1290836068-7825",
-  "data": "2026-11-16T21:37:50Z",
-  "tipo": "promocao",
-  "titulo": "UPGRADE CLUBE AZUL FIDELIDADE COM ATÉ 360.000 PONTOS BÔNUS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Faça upgrade do seu plano Clube Azul Fidelidade e ganhe até 360.000 pontos bônus em 12 meses. O plano 10.000 Anual oferece o melhor custo-benefício, com milheiro a partir de R$ 12,81 com cartão co-branded.",
-  "detalhes": [
-   "Plano 2.000 Anual: 55.000 pontos totais . Milheiro a R$ 16,15 (R$ 14,53 com cartão co-branded).",
-   "Plano 5.000 Anual: 140.000 pontos totais . Milheiro a R$ 14,91 (R$ 13,42 com cartão co-branded).",
-   "Plano 10.000 Anual: 290.000 pontos totais . Milheiro a R$ 14,23 (R$ 12,81 com cartão co-branded).",
-   "Plano 20.000 Anual: 600.000 pontos totais . Milheiro a R$ 15,24 (R$ 13,72 com cartão co-branded).",
-   "Bônus distribuídos em parcelas: 1º mês, 3º mês, 6º mês, 9º mês e 12º mês.",
-   "Desconto de 10% no valor total com uso do cartão Azul Itaú co-branded."
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "20/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/upgrade-clube"
-  ],
-  "ate": "2026-11-20T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7824",
-  "data": "2026-11-16T19:45:40Z",
-  "tipo": "promocao",
-  "titulo": "COMPRA DE PONTOS DO PROGRAMA ESFERA COM ATÉ 55% OFF",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Compre pontos do programa Esfera com até 55% de desconto usando os cupons GABRIEL55 ou GABRIEL50, dependendo do tempo de assinatura.",
-  "detalhes": [
-   "55% OFF para clientes do clube Esfera com tempo de assinatura >= 1 ano, cupom GABRIEL55",
-   "50% OFF para clientes do clube Esfera com tempo de assinatura < 1 ano, cupom GABRIEL50"
-  ],
-  "parceiros": "Esfera",
-  "validade": "19/11/2026",
-  "links": [
-   "https://www.esfera.com.vc/p/compra-de-pontos/e000100033"
-  ],
-  "ate": "2026-11-19T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7821",
-  "data": "2026-11-16T19:11:28Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FIDELIDADE: 10% OFF NO RESGATE DE PASSAGENS INTERNACIONAIS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Aproveite 10% de desconto no resgate de passagens internacionais com pontos Azul para Madri, Porto e Lisboa utilizando os cupons específicos da campanha.",
-  "detalhes": [
-   "10% OFF no resgate de passagens internacionais com pontos Azul em todas as classes tarifárias",
-   "Madri (MAD): `MADRID10OFF`",
-   "Porto (OPO): `PORTO10OFF`",
-   "Lisboa (LIS): `LISBOA10OFF`"
-  ],
-  "parceiros": "Azul",
-  "validade": "19/11/2026",
-  "links": [
-   "https://passagens.voeazul.com.br/pt/azul-friday"
-  ],
-  "ate": "2026-11-19T23:59:59-03:00"
- },
- {
   "id": "1290836068-7813",
   "data": "2026-11-16T16:39:26Z",
   "tipo": "promocao",
@@ -5569,27 +5772,6 @@
   "links": [
    "https://assets.contentstack.io/v3/assets/blt2aea50371ca8d246/bltd0dc41b794ab1e22/6afae201612ac04307908be4/CDC16320-Regulamento-Upgrade-Especial40.000–161126.pdf",
    "https://www.livelo.com.br/upgrade-promo-CDC16320"
-  ],
-  "ate": "2026-11-19T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7808",
-  "data": "2026-11-16T14:20:32Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FIDELIDADE OFERECE ATÉ 90% DE BÔNUS NAS TRANSFERÊNCIAS DE PONTOS DE TODOS OS PARCEIROS, EXCETO ESFERA",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira pontos de parceiros bancários (exceto Esfera) para o Azul Fidelidade e receba até 90% de bônus, além de bônus cumulativo por tempo de clube.",
-  "detalhes": [
-   "90% de bônus para assinantes do Clube Azul Fidelidade.",
-   "60% de bônus para todos os Clientes Azul Fidelidade.",
-   "Bônus adicional por tempo de Clube Azul: +5% , +10% (1 a 2 anos), +20% (3 a 4 anos), +30% .",
-   "1.000 pontos bônus na 1ª transferência."
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "19/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/bancos"
   ],
   "ate": "2026-11-19T23:59:59-03:00"
  },
@@ -5778,21 +5960,6 @@
   "ida": "129.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "seats-azul-REC-LIS-eco",
-  "data": "2026-11-12T05:14:55.794608Z",
-  "fonte": "seats.aero",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Lisboa",
-  "destino_iata": "LIS",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "75.000 pontos + taxas",
-  "volta": "",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "seats-azul-REC-OPO-eco",
@@ -6185,27 +6352,6 @@
   "link_nome": "Iberia Plus"
  },
  {
-  "id": "1290836068-7645",
-  "data": "2026-11-08T17:17:19Z",
-  "tipo": "promocao",
-  "titulo": "ASSINE OU ATUALIZE SEU PLANO DO CLUBE ESFERA COM 300% DE BÔNUS E ACUMULE ATÉ 60.000 PONTOS BÔNUS EM 12 MESES",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine ou faça upgrade no Clube Esfera e receba 300% de bônus acumulando até 60.000 pontos extras ao longo de 12 meses.",
-  "detalhes": [
-   "Pro: 3.000 pts bônus",
-   "Master: 7.500 pts bônus",
-   "VIP: 15.000 pts bônus",
-   "Exclusive: 60.000 pts bônus"
-  ],
-  "parceiros": "Esfera",
-  "validade": "20/11/2026",
-  "links": [
-   "https://www.esfera.com.vc/clube"
-  ],
-  "ate": "2026-11-20T23:59:59-03:00"
- },
- {
   "id": "seats-iberia-FOR-MAD-eco",
   "data": "2026-11-08T03:29:49.491996Z",
   "fonte": "seats.aero",
@@ -6360,25 +6506,6 @@
   "ate": "2026-11-20T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7539",
-  "data": "2026-11-01T15:17:40Z",
-  "tipo": "promocao",
-  "titulo": "PRÉ-BLACK FRIDAY ALL SIGNATURE",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Assine o clube ALL Signature com 20% OFF em qualquer plano utilizando o cupom PREBLACK2026.",
-  "detalhes": [
-   "20% de desconto na primeira cobrança dos planos Essential, Discover, Explorer, Absolute, XP e XP Legacy.",
-   "Cupom obrigatório: PREBLACK2026."
-  ],
-  "parceiros": "ALL Accor, ALL Signature",
-  "validade": "20/11/2026",
-  "links": [
-   "https://all.accor.com/a/pt-br/loyalty-program/subscription-program/all-signature.html"
-  ],
-  "ate": "2026-11-20T23:59:59-03:00"
- },
- {
   "id": "1290836068-7538",
   "data": "2026-11-01T15:17:29Z",
   "tipo": "promocao",
@@ -6458,27 +6585,6 @@
    "https://link.dia23.com.br/r/NkBcBuG"
   ],
   "ate": "2026-12-30T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7290",
-  "data": "2026-10-16T16:09:08Z",
-  "tipo": "promocao",
-  "titulo": "SMILES: CARTÃO DE CRÉDITO GOL SMILES COM BÔNUS DE ATÉ 55 MIL MILHAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Contrate o Cartão de Crédito GOL Smiles e ganhe até 55 mil milhas .",
-  "detalhes": [
-   "Visa Infinite: 55.000 milhas  para assinantes Clube Smiles/Diamante/Magno; 40.000 milhas  para demais clientes.",
-   "Visa Platinum: 32.000 milhas  para assinantes Clube Smiles/Diamante/Magno; 17.000 milhas  para demais clientes.",
-   "Visa Gold: 10.500 milhas  para assinantes Clube Smiles/Diamante/Magno; 7.000 milhas  para demais clientes.",
-   "Meta de gastos: R$ 60.000 (Infinite), R$ 18.000 (Platinum), R$ 6.000 (Gold) até 15/03/2027."
-  ],
-  "parceiros": "GOL Smiles, Banco do Brasil, Bradesco, Santander",
-  "validade": "30/11/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanhas/cartao-de-credito/ate-55-mil-milhas"
-  ],
-  "ate": "2026-11-30T23:59:59-03:00"
  },
  {
   "id": "1290836068-6834",
