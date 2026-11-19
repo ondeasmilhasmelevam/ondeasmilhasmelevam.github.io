@@ -77,3 +77,42 @@
   .mapa-ctrl .mapa-campo:nth-of-type(3),.mapa-ctrl .mapa-campo:nth-of-type(4){grid-column:1/-1}
   .mapa-ctrl .mapa-limpar{grid-column:1/-1}
 }
+/* Detalhe da rota: alertas compactos e escolha de datas por mês. */
+#rota .rota-metodologia{font-size:12px;color:var(--ash);margin:12px 0 24px}
+#rota .rota-metodologia summary{cursor:pointer}
+#rota .rota-ofertas-cab{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:28px 0 16px}
+#rota .rota-ofertas-cab .rota-tit{margin:0 0 6px;color:var(--rice);font-family:var(--body);font-size:20px;letter-spacing:0}
+#rota .rota-ofertas-cab p{margin:0;color:var(--ash);font-size:12px;line-height:1.7}
+#rota .rota-atualizar{flex:none;background:transparent;color:var(--ouro);border:1px solid var(--line);border-radius:9px;font:600 12px var(--body);padding:10px 14px;cursor:pointer}
+#rota .rota-noar{gap:14px}
+#rota .rota-noar>li{border:1px solid var(--line);border-radius:16px;padding:20px;gap:16px;min-width:0}
+#rota .rota-oferta>header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+#rota .rota-oferta>header b{display:block;font-size:14px;color:var(--ouro)}
+#rota .rota-oferta>header small{display:block;margin-top:4px;font-size:12px}
+#rota .rota-oferta>header>span{font-size:11px;flex:none;color:var(--ash)}
+#rota .rota-oferta-precos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+#rota .rota-oferta-precos small{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+#rota .rota-oferta-precos b{display:block;font-size:19px;line-height:1.6;overflow-wrap:anywhere}
+#rota .rota-escolher-datas{border-top:1px solid var(--line);padding-top:14px;min-width:0}
+#rota .rota-escolher-datas>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;font-size:13px;font-weight:700;color:var(--rice)}
+#rota .rota-escolher-datas>summary::-webkit-details-marker{display:none}
+#rota .rota-escolher-datas>summary>span{color:var(--ouro);font-size:20px}
+#rota .rota-escolher-datas[open]>summary{margin-bottom:20px}
+#rota .pass-cal-compacto{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;min-width:0}
+#rota .pass-datas-compactas{min-width:0;align-self:start}
+#rota .pass-datas-compactas label{display:grid;gap:10px;color:var(--ash);font-size:12px;font-weight:700}
+#rota .pass-datas-compactas select{width:100%;box-sizing:border-box;min-height:42px;padding:10px 12px;background:var(--ink);border:1px solid var(--line);border-radius:9px;color:var(--rice);font:600 13px var(--body)}
+#rota .pass-mes-dias{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-top:12px}
+#rota .pass-mes-dias[hidden]{display:none!important}
+#rota .pass-mes-dias .pass-dia{width:100%;min-width:0;min-height:38px;border-radius:8px;font-size:13px;padding:7px 0}
+#rota .pass-cal-compacto>.pass-dica,#rota .pass-cal-compacto>.pass-copia-status{grid-column:1/-1;margin:0;color:var(--ash);font-size:12px;line-height:1.7}
+#rota .pass-cal-compacto>.pass-link{grid-column:1/-1;justify-self:stretch;text-align:center;justify-content:center;white-space:normal;max-width:100%;box-sizing:border-box;font-size:13px;line-height:1.7}
+#rota .pass-copiar-datas{grid-column:1/-1;justify-self:center;background:transparent;border:0;color:var(--ash);font:600 12px var(--body);text-decoration:underline;cursor:pointer;padding:6px}
+@media(max-width:600px){
+  #rota .rota-noar>li{padding:16px}
+  #rota .rota-ofertas-cab{align-items:flex-start;flex-direction:column;gap:10px}
+  #rota .rota-oferta>header{gap:10px;flex-wrap:wrap}
+  #rota .rota-oferta-precos{gap:14px}
+  #rota .rota-oferta-precos b{font-size:16px}
+  #rota .pass-cal-compacto{grid-template-columns:minmax(0,1fr)}
+}

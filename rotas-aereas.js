@@ -94,18 +94,19 @@
     }
     const selecionadas = f.origens ? new Set(f.origens) : null;
     const origens = Object.keys(A).filter(i => selecionadas ? selecionadas.has(i) : f.origem ? i === f.origem : A[i].br && (!f.uf || A[i].uf === f.uf));
-    const encontrados = [], vistos = new Set(); let visitas = 0;
+    const encontrados = [], vistos = new Set(); let visitas = 0, limitada = false;
     for (const origem of origens) {
+      if (limitada) break;
       if (origem === f.destino || alcance[origem] === undefined) continue;
       // Brasil–Oceania via Oriente Médio pode superar 2x a distância direta.
       // Distância ordena os resultados; não deve excluir esses caminhos reais.
       const limiteKm = distancia(A[origem], A[f.destino]) * 2.6 + 100;
       function andar(atual, trechos, nos, dias, km) {
-        if (++visitas > 250000) return;
         for (const r of saidas[atual] || []) {
           const proxDias = dias & r.dias, proxKm = km + r.km;
           if (!proxDias || nos.includes(r.para) || proxKm > limiteKm) continue;
           if (r.para !== f.destino && (alcance[r.para] === undefined || trechos.length + 1 + alcance[r.para] > max)) continue;
+          if (++visitas > 250000 || encontrados.length >= 10000) { limitada = true; return; }
           const caminho = [...trechos, r];
           if (r.para === f.destino) {
             const chave = caminho.map(x => `${x.de}-${x.para}-${grupoCia(x.cia)}`).join('/');
@@ -115,19 +116,23 @@
       }
       andar(origem, [], [origem], 0x7fffffff, 0);
     }
-    return encontrados.sort((a, b) => a.trechos.length - b.trechos.length || a.km - b.km || a.origem.localeCompare(b.origem)).slice(0, 80);
+    const ordenados = encontrados.sort((a, b) => a.trechos.length - b.trechos.length || a.km - b.km || a.origem.localeCompare(b.origem));
+    ordenados.limitada = limitada; return ordenados;
   }
   globalThis.OAMMLMalha = { pesquisar, diasNoMes, distancia, resolverLocais, paresMilhas, caminhosMilhas, paisNome };
   if (typeof document === 'undefined') return;
   const $ = s => document.querySelector(s), esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  if (!$('#malha-cadastro') || !$('#malha-global-resultados') || !$('#malha-trocar') || !$('#malha-rede-status')) {
+  if (!$('#malha-operacionais-mais') || !$('#malha-operacionais-status') || !$('#malha-cadastro') || !$('#malha-global-resultados') || !$('#malha-trocar') || !$('#malha-rede-status')) {
     if ($('#malha-resumo')) $('#malha-resumo').textContent = 'O mapa recebeu uma atualização. Atualize a página ou reabra o app para carregar a busca mundial.';
     return;
   }
   let base = null, carregando = null, resultados = [], atual = null, mundo = null, fonteSeats = null, seatsPromessa = null;
   let redeIterador = null, redeCaminhos = [], catalogoLista = [], catalogoExibidos = 0;
   const estado = { vista: 'planejar' }; let buscaAtual = 0;
+  let operacionaisExibidos = 0, consultaOperacional = null, operacaoLimitada = false;
+  const estadosVoos = new WeakMap();
   const nome = i => `${base.aeroportos[i].cidade}${base.aeroportos[i].uf ? ' · ' + base.aeroportos[i].uf : ''} (${i})`;
+  const ordemAeroportos = (a, b) => Number(base.aeroportos[b].regular === true) - Number(base.aeroportos[a].regular === true) || nome(a).localeCompare(nome(b), 'pt');
   function vista(v) {
     estado.vista = v;
     $('#malha-planejar').hidden = v !== 'planejar'; $('#mapa-historico').hidden = v !== 'historico';
@@ -168,7 +173,7 @@
     const paises = [...new Set(Object.values(base.aeroportos).map(a => paisNome(a.pais)))].filter(Boolean).sort((a, b) => a.localeCompare(b, 'pt'));
     for (const [campo, lista] of [['#malha-origem', '#malha-origens'], ['#malha-destino', '#malha-destinos']]) {
       const t = normal($(campo).value), p = normal(paisNome($(campo).value)), termos = (CIDADES[t] || t).split(' ').filter(Boolean);
-      const itens = Object.keys(base.aeroportos).filter(i => termos.every(t => normal(`${nome(i)} ${base.aeroportos[i].nome || ''} ${paisNome(base.aeroportos[i].pais)}`).includes(t))).sort((a, b) => nome(a).localeCompare(nome(b), 'pt')).slice(0, 100);
+      const itens = Object.keys(base.aeroportos).filter(i => termos.every(t => normal(`${nome(i)} ${base.aeroportos[i].nome || ''} ${paisNome(base.aeroportos[i].pais)}`).includes(t))).sort(ordemAeroportos).slice(0, 100);
       $(lista).innerHTML = paises.filter(n => !t || normal(n).includes(t) || normal(n) === p).map(n => `<option value="${esc(n)}">País · aeroportos presentes na base</option>`).join('') + itens.map(i => `<option value="${esc(nome(i))}">${esc(paisNome(base.aeroportos[i].pais))} · ${i}</option>`).join('');
     }
   }
@@ -246,21 +251,21 @@
   }
   function mostrarCadastro(origens, destinos) {
     const rede = new Set((fonteSeats?.a || []).map(a => a[0]));
-    catalogoLista = [...new Set([...origens, ...destinos])].sort((a, b) => nome(a).localeCompare(nome(b), 'pt'));
+    catalogoLista = [...new Set([...origens, ...destinos])].sort(ordemAeroportos);
     catalogoExibidos = 0;
-    $('#malha-cadastro').innerHTML = `<details><summary>${origens.length} ${origens.length === 1 ? 'aeroporto' : 'aeroportos'} de origem e ${destinos.length} de destino reconhecidos · ver cadastro</summary><p>Todos os aeroportos reconhecidos nesta consulta estão nesta lista, inclusive os que não têm rotas nas fontes conectadas. Clique para escolher um aeroporto específico.</p><ul class="malha-aeroportos" id="malha-cadastro-lista"></ul><button type="button" class="cta cta-b" data-cadastro-mais>Mostrar mais aeroportos</button></details>`;
+    $('#malha-cadastro').innerHTML = `<details><summary>${origens.length} ${origens.length === 1 ? 'aeroporto' : 'aeroportos'} de origem e ${destinos.length} de destino reconhecidos · ver cadastro</summary><p>Os aeroportos com serviço regular informado aparecem primeiro. Todos os aeroportos reconhecidos nesta consulta estão nesta lista, inclusive os que não têm rotas nas fontes conectadas. Clique para escolher um aeroporto específico.</p><ul class="malha-aeroportos" id="malha-cadastro-lista"></ul><button type="button" class="cta cta-b" data-cadastro-mais>Mostrar mais aeroportos</button></details>`;
     maisCadastro(rede);
   }
   function maisCadastro(rede = new Set((fonteSeats?.a || []).map(a => a[0]))) {
     const fim = Math.min(catalogoExibidos + 40, catalogoLista.length);
-    const html = catalogoLista.slice(catalogoExibidos, fim).map(i => `<li><b>${esc(nome(i))}</b><small>${esc(paisNome(base.aeroportos[i].pais))} · ${rede.has(i) ? 'Presente na rede de milhas' : 'Sem cobertura de milhas nesta fonte'}</small><div><button type="button" data-cadastro-origem="${i}">Usar como origem</button><button type="button" data-cadastro-destino="${i}">Usar como destino</button></div></li>`).join('');
+    const html = catalogoLista.slice(catalogoExibidos, fim).map(i => `<li><b>${esc(nome(i))}</b><small>${esc(paisNome(base.aeroportos[i].pais))} · ${base.aeroportos[i].regular === true ? 'Serviço regular informado' : 'Serviço regular não informado no cadastro'} · ${rede.has(i) ? 'Presente na rede de milhas' : 'Sem cobertura de milhas nesta fonte'}</small><div><button type="button" data-cadastro-origem="${i}">Usar como origem</button><button type="button" data-cadastro-destino="${i}">Usar como destino</button></div></li>`).join('');
     $('#malha-cadastro-lista').insertAdjacentHTML('beforeend', html); catalogoExibidos = fim;
     $('[data-cadastro-mais]').hidden = fim === catalogoLista.length;
   }
   async function consultarVoos(botao, proxima) {
     const n = +botao.dataset.redeConsulta, k = +botao.dataset.redePar, completa = botao.dataset.redeCompleta?.split('-');
     const par = completa ? { de: completa[0], para: completa[1] } : redeCaminhos[n]?.[k]; if (!par) return;
-    const el = completa ? $('#malha-viagem-completa') : $(`#malha-voos-${n}-${k}`), mes = $('#malha-mes').value;
+    const el = completa ? $('#malha-viagem-completa') : $(`#malha-voos-${n}-${k}`), mes = $('#malha-mes').value, selecionado = $('#malha-prog').value;
     if (el.dataset.consultando) return;
     const [ano, m] = mes.split('-').map(Number), hoje = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' });
     const de = `${mes}-01` < hoje ? hoje : `${mes}-01`, ate = `${mes}-${String(new Date(Date.UTC(ano, m, 0)).getUTCDate()).padStart(2, '0')}`;
@@ -272,11 +277,22 @@
       const resp = await fetch(`https://oamml-assinatura.ondeasmilhasmelevam.workers.dev/voos?${q}`, { headers: { authorization: `Bearer ${await window.oammlToken()}` } });
       const j = await resp.json(); if (!resp.ok) throw Error(j.erro || 'A consulta não respondeu agora.');
       if (!el.isConnected) return;
-      if (!proxima) el.innerHTML = '<p>Resultados observados na fonte para este mês; confirme no programa antes de emitir. Clique em um resultado para ver os voos e as conexões.</p><ul class="malha-datas"></ul>';
-      const selecionado = $('#malha-prog').value, voos = (j.voos || []).filter(v => !selecionado || (OAMMLProgramas.buscar(v.programa)?.id || v.programa) === selecionado), lista = el.querySelector('ul');
+      if (!proxima) { estadosVoos.set(el, { exibidos: 0, ids: new Set() }); el.innerHTML = '<p>Resultados observados na fonte para este mês; confirme no programa antes de emitir. Clique em um resultado para ver os voos e as conexões.</p><ul class="malha-datas"></ul>'; }
+      const estadoVoo = estadosVoos.get(el), lista = el.querySelector('ul');
+      const voos = (j.voos || []).filter(v => {
+        if (selecionado && (OAMMLProgramas.buscar(v.programa)?.id || v.programa) !== selecionado) return false;
+        const id = v.id || JSON.stringify([v.data, v.programa, v.origem, v.destino, v.cabines]);
+        if (estadoVoo.ids.has(id)) return false; estadoVoo.ids.add(id); return true;
+      });
+      estadoVoo.exibidos += voos.length;
+      el.querySelector('[data-voos-vazio]')?.remove();
       lista.insertAdjacentHTML('beforeend', voos.map(v => `<li><b>${esc(String(v.data || '').split('-').reverse().join('/'))} · ${esc(OAMMLProgramas.normalizar(v.programa))}</b><small>${esc(Object.entries(v.cabines || {}).map(([c, d]) => `${({eco:'Econômica',premium:'Premium',exe:'Executiva',primeira:'Primeira'})[c] || c}: ${d.milhas ? d.milhas.toLocaleString('pt-BR') + ' milhas' : 'valor a conferir'}`).join(' · '))}</small>${v.id ? `<button type="button" class="cta cta-b" data-viagem-id="${esc(v.id)}" data-viagem-de="${par.de}" data-viagem-para="${par.para}">Ver voos e conexões deste resultado</button><div class="malha-detalhes-voo"></div>` : '<small>A fonte não forneceu os detalhes dos voos deste resultado.</small>'}</li>`).join(''));
       el.querySelector('[data-voos-mais]')?.remove();
-      if (!voos.length && !proxima) lista.innerHTML = '<li>Nenhum assento encontrado na cobertura consultada para este mês. Isso não elimina a possibilidade de voo pago ou emissão por outras fontes.</li>';
+      if (!estadoVoo.exibidos) {
+        const p = document.createElement('p'); p.dataset.voosVazio = '1';
+        p.textContent = j.proxima ? 'Ainda não há resultados do programa escolhido nas páginas consultadas. Há mais páginas disponíveis; continue em Mais datas e resultados.' : 'Nenhum assento encontrado na cobertura consultada para este mês e programa. Isso não elimina a possibilidade de voo pago ou emissão por outras fontes.';
+        el.appendChild(p);
+      }
       if (j.proxima) { const b = document.createElement('button'); b.type = 'button'; b.className = 'cta cta-b'; b.textContent = 'Mais datas e resultados'; b.dataset.voosMais = '1'; b.addEventListener('click', () => consultarVoos(botao, j.proxima)); el.appendChild(b); }
     } catch (e) { if (el.isConnected) { const p = document.createElement('p'); p.textContent = e.message; el.appendChild(p); } }
     finally { botao.disabled = false; delete el.dataset.consultando; }
@@ -302,6 +318,7 @@
     const busca = ++buscaAtual;
     resultados = []; atual = null;
     $('#malha-resultados').innerHTML = ''; $('#malha-global-resultados').innerHTML = ''; $('#malha-cadastro').innerHTML = ''; $('#malha-mapa-caixa').hidden = true;
+    $('#malha-operacionais-status').textContent = ''; $('#malha-operacionais-mais').hidden = true;
     $('#malha-resumo').textContent = 'Conferindo origem e destino…';
     try { await carregarRede(); if (busca !== buscaAtual) return; } catch { /* a malha operacional segue disponível */ }
     const origemTxt = $('#malha-origem').value.trim(), destinoTxt = $('#malha-destino').value.trim();
@@ -313,11 +330,14 @@
     const f = { origens, uf: $('#malha-uf').value, mes: $('#malha-mes').value, companhia: $('#malha-cia').value, alianca: $('#malha-alianca').value, programa: $('#malha-prog').value, conexoes: $('#malha-conexoes').value };
     $('#malha-parceiras-nota').textContent = f.programa ? base.programas[f.programa].nota || 'Parceiras conferidas no programa. A possibilidade de resgate depende das regras, da rota e dos assentos liberados.' : 'O filtro usa as parceiras já conferidas; cobertura em expansão. Azul pelo Mundo é um canal de resgate do Azul Fidelidade.';
     const hoje = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' });
-    let encontrados = [];
+    let encontrados = []; operacaoLimitada = false;
     async function buscarCaminhos(filtros) {
       const preparada = prepararBusca(base, filtros, hoje), caminhos = [];
     for (let i = 0; i < destinos.length; i++) {
-      caminhos.push(...pesquisar(base, { ...filtros, destino: destinos[i] }, hoje, preparada));
+      const parte = pesquisar(base, { ...filtros, destino: destinos[i] }, hoje, preparada);
+      operacaoLimitada ||= !!parte.limitada;
+      for (const caminho of parte) { if (caminhos.length >= 20000) { operacaoLimitada = true; break; } caminhos.push(caminho); }
+      if (caminhos.length >= 20000) { operacaoLimitada = true; break; }
       // Devolve o controle à tela em buscas amplas, inclusive no celular.
       if (i % 8 === 7) { await new Promise(resolve => setTimeout(resolve, 0)); if (busca !== buscaAtual) return; }
     }
@@ -327,17 +347,26 @@
     if (busca !== buscaAtual || !encontrados) return;
     if (!encontrados.length) encontrados = await buscarCaminhos({ ...f, conhecidos: true });
     if (busca !== buscaAtual || !encontrados) return;
-    resultados = encontrados.sort((a, b) => a.trechos.length - b.trechos.length || a.km - b.km).slice(0, 60);
+    resultados = encontrados.sort((a, b) => a.trechos.length - b.trechos.length || a.km - b.km);
     atual = null;
     const nOrigens = new Set(resultados.map(r => r.origem)).size;
-    $('#malha-resumo').textContent = resultados[0]?.confirmacaoPendente ? 'Encontramos caminhos conhecidos, mas a base ainda não confirma todos os trechos no mês escolhido. Eles aparecem abaixo como opções para planejar; confirme a operação, os horários e os assentos antes de reservar.' : resultados.length ? `${resultados.length === 60 ? 'Até 60' : resultados.length} ${resultados.length === 1 ? 'caminho' : 'caminhos'} na base para esse período, saindo de ${nOrigens} ${nOrigens === 1 ? 'aeroporto' : 'aeroportos'}. Selecione um para ver o trajeto.` : 'A base atual não reúne trechos suficientes para desenhar um caminho com estes filtros. Isso é uma limitação da cobertura, não uma confirmação de que a rota não existe. Consulte também a rede de programas abaixo.';
+    $('#malha-resumo').textContent = resultados[0]?.confirmacaoPendente ? 'Encontramos caminhos conhecidos, mas a base ainda não confirma todos os trechos no mês escolhido. Eles aparecem abaixo como opções para planejar; confirme a operação, os horários e os assentos antes de reservar.' : resultados.length ? `${resultados.length} ${resultados.length === 1 ? 'caminho' : 'caminhos'} na base para esse período, saindo de ${nOrigens} ${nOrigens === 1 ? 'aeroporto' : 'aeroportos'}. Selecione um para ver o trajeto.` : 'A base atual não reúne trechos suficientes para desenhar um caminho com estes filtros. Isso é uma limitação da cobertura, não uma confirmação de que a rota não existe. Consulte também a rede de programas abaixo.';
     $('#malha-mapa-caixa').hidden = true;
     mostrarRedeGlobal(origens, destinos, f);
-    $('#malha-resultados').innerHTML = resultados.map((r, n) => {
+    operacionaisExibidos = 0; consultaOperacional = { f, hoje }; maisOperacionais();
+  }
+  function maisOperacionais() {
+    if (!consultaOperacional) return;
+    const inicio = operacionaisExibidos, fim = Math.min(inicio + 24, resultados.length), { f, hoje } = consultaOperacional;
+    const html = resultados.slice(inicio, fim).map((r, i) => {
+      const n = inicio + i;
       const cias = [...new Set(r.trechos.map(t => grupoCia(t.cia) === 'LATAM' ? 'LATAM' : base.companhias[t.cia]?.nome || t.cia))], rede = r.trechos.some(t => t.tipo === 'rede');
       const hojeData = hoje, futura = r.trechos.some(t => t.periodos.every(p => p[0] > hojeData));
       return `<li class="malha-card"><div class="malha-card-topo"><span class="malha-selo${futura ? ' futura' : ''}">${r.confirmacaoPendente ? 'Mês a confirmar' : futura ? 'Inclui início futuro' : 'Malha consultada'}</span><span>${r.trechos.length === 1 ? 'Sem conexão' : r.trechos.length === 2 ? '1 conexão' : r.trechos.length - 1 + ' conexões'}</span></div><h3>${esc(nome(r.origem))} <span>→</span> ${esc(nome(r.destino))}</h3><p class="malha-via">${r.trechos.length > 1 ? 'Via ' + r.trechos.slice(0, -1).map(t => esc(nome(t.para))).join(' → ') : 'Trecho direto registrado'}</p><p>${esc(cias.join(' + '))}</p><small>${r.confirmacaoPendente ? 'Caminho conhecido na base atual. Operação no mês escolhido e compatibilidade das conexões ainda não confirmadas.' : rede ? 'Inclui trecho da rede internacional conferida; horários a confirmar.' : 'Trechos registrados com operação no período escolhido.'}</small>${f.programa ? `<small>Parceiras de ${esc(base.programas[f.programa].nome)}. ${f.programa === 'finnair' && new Set(r.trechos.filter(t => t.cia !== 'AY').map(t => grupoCia(t.cia))).size > 1 ? 'Parceiras diferentes podem exigir emissões separadas. ' : ''}Regras e assentos com milhas precisam de consulta.</small>` : ''}<div class="malha-acoes"><button type="button" class="cta cta-a" data-malha-trajeto="${n}">Ver trajeto no mapa</button><button type="button" class="cta cta-b" data-malha-milhas="${n}">Programas na base de milhas</button></div><div class="malha-seats" id="malha-seats-${n}" hidden aria-live="polite"></div></li>`;
     }).join('');
+    $('#malha-resultados').insertAdjacentHTML('beforeend', html); operacionaisExibidos = fim;
+    $('#malha-operacionais-status').textContent = resultados.length ? `${fim} de ${resultados.length} caminhos exibidos.${operacaoLimitada ? ' A busca ampla atingiu o limite de cálculo. Refine origem, destino ou conexões para explorar outras possibilidades.' : ''}` : '';
+    $('#malha-operacionais-mais').hidden = fim >= resultados.length;
   }
   function novidades() {
     const hoje = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' });
@@ -383,12 +412,20 @@
   }
   document.querySelectorAll('[data-mapa-vista]').forEach(b => b.addEventListener('click', () => vista(b.dataset.mapaVista)));
   $('#malha-form').addEventListener('submit', executar);
-  for (const id of ['#malha-origem', '#malha-destino']) $(id).addEventListener('input', () => { if (base) montarLocais(); });
+  function invalidarConsulta() {
+    buscaAtual++; resultados = []; atual = null; consultaOperacional = null; redeIterador = null; redeCaminhos = [];
+    $('#malha-resultados').innerHTML = ''; $('#malha-global-resultados').innerHTML = ''; $('#malha-cadastro').innerHTML = '';
+    $('#malha-operacionais-status').textContent = ''; $('#malha-operacionais-mais').hidden = true; $('#malha-mapa-caixa').hidden = true;
+    $('#malha-resumo').textContent = 'Pesquisa alterada. Clique em Encontrar caminhos para atualizar as opções.';
+  }
+  $('#malha-operacionais-mais').addEventListener('click', maisOperacionais);
+  for (const id of ['#malha-origem', '#malha-destino']) $(id).addEventListener('input', () => { invalidarConsulta(); if (base) montarLocais(); });
+  for (const id of ['#malha-mes', '#malha-uf', '#malha-conexoes', '#malha-cia', '#malha-alianca', '#malha-prog']) $(id).addEventListener('change', invalidarConsulta);
   $('#malha-trocar').addEventListener('click', () => {
     if (!$('#malha-destino').value.trim()) { $('#malha-destino').focus(); return; }
     const de = $('#malha-origem').value.trim() || 'Brasil';
     $('#malha-origem').value = $('#malha-destino').value; $('#malha-destino').value = de;
-    buscaAtual++; resultados = []; $('#malha-resultados').innerHTML = ''; $('#malha-global-resultados').innerHTML = ''; $('#malha-cadastro').innerHTML = ''; $('#malha-mapa-caixa').hidden = true;
+    invalidarConsulta();
     $('#malha-resumo').textContent = 'Origem e destino trocados. Confira o mês e clique em Encontrar caminhos para pesquisar esse sentido.';
     if (base) montarLocais();
   });
@@ -402,7 +439,7 @@
   $('#malha-cadastro').addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
     if (b.hasAttribute('data-cadastro-mais')) maisCadastro();
-    else { const de = b.dataset.cadastroOrigem; $(de ? '#malha-origem' : '#malha-destino').value = nome(de || b.dataset.cadastroDestino); montarLocais(); $('#malha-resumo').textContent = 'Aeroporto selecionado. Clique em Encontrar caminhos para atualizar a pesquisa.'; }
+    else { const de = b.dataset.cadastroOrigem; $(de ? '#malha-origem' : '#malha-destino').value = nome(de || b.dataset.cadastroDestino); invalidarConsulta(); montarLocais(); $('#malha-resumo').textContent = 'Aeroporto selecionado. Clique em Encontrar caminhos para atualizar a pesquisa.'; }
   });
   $('#malha-tentar').addEventListener('click', () => carregar().catch(() => {}));
   $('#malha-resultados').addEventListener('click', e => { const m = e.target.closest('[data-malha-milhas]'), t = e.target.closest('[data-malha-trajeto]'); if (m) programasMilhas(+m.dataset.malhaMilhas, m); if (t && resultados[+t.dataset.malhaTrajeto]) desenhar(resultados[+t.dataset.malhaTrajeto]); });

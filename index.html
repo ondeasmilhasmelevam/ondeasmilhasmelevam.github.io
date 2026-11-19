@@ -50,7 +50,7 @@
 @media (prefers-reduced-motion:reduce){#entrada{display:none}}
 </style>
 <link rel="stylesheet" href="estilo.css?v=147">
-<link rel="stylesheet" href="ajustes.css?v=6">
+<link rel="stylesheet" href="ajustes.css?v=7">
 <link rel="stylesheet" href="rotas-aereas.css?v=4">
 </head>
 <body>
@@ -775,6 +775,7 @@
         <p id="malha-resumo" role="status">Carregando a malha aérea…</p><button class="cta cta-b" type="button" id="malha-tentar" hidden>Tentar novamente</button>
         <div id="malha-mapa-caixa" class="malha-mapa-caixa" hidden><p id="malha-mapa-status" role="status"></p><svg id="malha-mapa" role="img" aria-label="Mapa do trajeto selecionado"></svg><div id="malha-trechos"></div><small class="malha-legenda">Linha dourada: trecho da malha consultada · pontilhada: início futuro · mapa Natural Earth</small></div>
         <ul id="malha-resultados" class="malha-resultados"></ul>
+        <p id="malha-operacionais-status" class="malha-ajuda" role="status"></p><button type="button" class="cta cta-b" id="malha-operacionais-mais" hidden>Mostrar mais caminhos</button>
         <div id="malha-global-resultados" aria-live="polite"></div>
         <div id="malha-novidades" class="malha-novidades"></div>
       </div>
@@ -811,7 +812,7 @@
       <div class="sec-head">
         <p class="eyebrow">Página da rota · para assinantes</p>
         <h2 id="rota-h2">Histórico da rota</h2>
-        <p class="sec-note" id="rota-sub">Tudo o que apareceu nesta rota nos últimos 12 meses: preço típico, quando costuma sair preço bom, o gráfico de cada alerta e o que está no ar agora.</p>
+        <p class="sec-note" id="rota-sub">Tudo o que apareceu nesta rota nos últimos 12 meses: preço típico, quando costuma sair preço bom, o gráfico de cada alerta e os alertas mais recentes.</p>
       </div>
       <div class="radar-fechado" id="rota-fechado">
         <p>🔒 A página de cada rota é exclusiva para assinantes.</p>
@@ -830,7 +831,7 @@
           </div>
           <div class="rota-chips" id="rota-chips" role="group" aria-label="Filtrar por programa"></div>
           <div class="rota-cards" id="rota-cards"></div>
-          <p class="rota-nota">Milhas por trecho (média da ida e da volta), pra comparar alerta de só ida com ida e volta. O valor em reais usa o milheiro de referência de cada programa, o mesmo do Termômetro, sem as taxas.</p>
+          <details class="rota-metodologia"><summary>Como os valores são calculados</summary><p class="rota-nota">Milhas por trecho: média da ida e da volta, para comparar alertas de só ida com ida e volta. O valor em reais usa o milheiro de referência de cada programa, sem taxas.</p></details>
           <div id="rota-noar"></div>
           <h3 class="rota-tit">Esse preço é bom?</h3>
           <div class="rota-veredito" id="rota-veredito"></div>
@@ -1441,12 +1442,12 @@
 <script src="planilha.js?v=2"></script>
 <script src="navegacao.js?v=1"></script>
 <script src="programas-base.js?v=3"></script>
-<script src="app.js?v=136"></script>
+<script src="app.js?v=137"></script>
 <script src="interface.js?v=1"></script>
 <script src="funil.js?v=8"></script>
-<script type="module" src="assinatura.js?v=55"></script>
+<script type="module" src="assinatura.js?v=56"></script>
 <script src="mapa.js?v=13" defer></script>
-<script src="rotas-aereas.js?v=8" defer></script>
+<script src="rotas-aereas.js?v=9" defer></script>
 <script src="instalar.js?v=2" defer></script>
 </body>
 </html>

@@ -1478,11 +1478,7 @@
         ...(volta ? { 'c[1].ds': d, 'c[1].std': us(volta), 'c[1].as': o } : {}),
         'p[0].t': 'ADT', 'p[0].c': 1, 'p[0].cp': false, 'f.dl': 3, 'f.dr': 3, cc: 'PTS' });
     }],
-    [/\btap\b/i, (o, d, ida, volta) => {
-      const pt = dt => `${dt.slice(8, 10)}.${dt.slice(5, 7)}.${dt.slice(0, 4)}`;
-      return 'https://booking.flytap.com/booking/flights/deeplink?' + qs({ market: 'BR', language: 'pt', origin: o, destination: d,
-        flightType: volta ? 'return' : 'single', depDate: pt(ida), ...(volta ? { retDate: pt(volta) } : {}), adt: 1, chd: 0, inf: 0, yth: 0, award: true });
-    }],
+    [/\btap\b/i, () => 'https://www.flytap.com/pt_br/passagens-milhas'],
     [/qatar|privilege/i, (o, d, ida, volta, exe) => 'https://www.qatarairways.com/app/booking/redemption?' + qs({ widget: 'QR', searchType: 'F',
       addTaxToFare: 'Y', minPurTime: 0, selLang: 'pt', tripType: volta ? 'R' : 'O', fromStation: o, toStation: d, departing: ida,
       bookingClass: exe ? 'B' : 'E', adults: 1, children: 0, infants: 0, ofw: 0, teenager: 0, flexibleDate: 'off', qmilesFlow: true,
@@ -1521,14 +1517,25 @@
     };
     return `<div class="pass-datas"><span>${rotulo}</span><ul>${lista.map(linha).join('')}</ul></div>`;
   }
-  function calendarioHtml(p, completo) {
+  function datasCompactas(rotulo, lista, k, busca) {
+    const hoje = hojeIso();
+    const grupos = (lista || []).map(d => {
+      const mes = isoMes(d.mes);
+      const dias = mes ? diasDaLista(d.dias).filter(n => n >= 1 && new Date(`${mes}-${String(n).padStart(2, '0')}T12:00:00Z`).getUTCDate() === n && `${mes}-${String(n).padStart(2, '0')}` >= hoje).sort((a,b)=>a-b) : [];
+      return { mes, dias, original: d };
+    }).filter(g => g.dias.length).sort((a,b)=>a.mes.localeCompare(b.mes));
+    if (!grupos.length) return `<div class="pass-datas-compactas"><b>${rotulo}</b><p>Não há datas futuras reconhecidas neste alerta.</p></div>`;
+    return `<div class="pass-datas-compactas"><label>${rotulo}<select data-cal-mes>${grupos.map(g=>`<option value="${g.mes}">${new Date(g.mes+'-15T12:00:00Z').toLocaleDateString('pt-BR',{month:'long',year:'numeric',timeZone:'UTC'})}</option>`).join('')}</select></label>${grupos.map((g,i)=>`<div class="pass-mes-dias" data-cal-grupo="${g.mes}"${i?' hidden':''}>${g.dias.map(n=>{ const dt=`${g.mes}-${String(n).padStart(2,'0')}`; return `<button type="button" class="pass-dia" data-k="${k}" data-dt="${dt}" aria-pressed="false" aria-label="${k==='ida'?'Ida':'Volta'} ${dt.slice(8,10)}/${dt.slice(5,7)}/${dt.slice(0,4)}">${n}</button>`; }).join('')}</div>`).join('')}</div>`;
+  }
+  function calendarioHtml(p, completo, compacto = false) {
     const busca = buscaDe(p);
     const temVolta = (completo.datas_volta || []).length > 0;
-    const nome = p.link_nome || p.programa || '';
-    return `<div class="pass-cal"${busca ? ` data-o="${esc(p.origem_iata)}" data-d="${esc(p.destino_iata)}" data-exe="${ehExecutiva(p.cabine) ? 1 : ''}" data-nome="${esc(nome)}" data-prog="${esc(`${p.link_nome || ''} ${p.programa || ''}`)}"${temVolta ? ' data-tem-volta="1"' : ''}` : ''}>
-        ${datasHtml('Datas de ida', completo.datas_ida, 'ida', busca)}${datasHtml('Datas de volta', completo.datas_volta, 'volta', busca)}
-        ${busca && (completo.datas_ida || []).length ? '<p class="pass-dica">Toque numa data de ida para abrir a busca já preenchida</p>' : ''}
-        <a class="cta cta-a pass-link" href="${esc(completo.link)}" data-orig="${esc(completo.link)}" target="_blank" rel="noopener">Ver passagem${nome ? ` na ${esc(nome)}` : ''} ↗</a>
+    const nome = p.link_nome || p.programa || '', datas = compacto ? datasCompactas : datasHtml;
+    const link = /\btap\b/i.test(`${p.programa} ${p.link_nome}`) ? 'https://www.flytap.com/pt_br/passagens-milhas' : completo.link;
+    return `<div class="pass-cal${compacto ? ' pass-cal-compacto' : ''}"${busca || compacto ? ` data-o="${esc(p.origem_iata)}" data-d="${esc(p.destino_iata)}" data-exe="${ehExecutiva(p.cabine) ? 1 : ''}" data-nome="${esc(nome)}" data-prog="${esc(`${p.link_nome || ''} ${p.programa || ''}`)}"${temVolta ? ' data-tem-volta="1"' : ''}` : ''}>
+        ${datas('Datas de ida', completo.datas_ida, 'ida', busca)}${datas('Datas de volta', completo.datas_volta, 'volta', busca)}
+        ${busca && (completo.datas_ida || []).length ? `<p class="pass-dica">${/\btap\b/i.test(`${p.programa} ${p.link_nome}`) ? 'Escolha as datas. Na TAP, entre na conta e selecione Pagar com milhas.' : 'Toque numa data de ida para abrir a busca já preenchida'}</p>` : ''}
+        ${httpOk(link) ? `<a class="cta cta-a pass-link" href="${esc(link)}" data-orig="${esc(link)}" target="_blank" rel="noopener">Pesquisar${nome ? ` na ${esc(nome)}` : ' no programa'} ↗</a>` : '<p class="pass-dica">Este alerta não trouxe um link de pesquisa válido.</p>'}${compacto ? '<button type="button" class="pass-copiar-datas" data-pass-copiar>Copiar rota e datas</button><p class="pass-copia-status" role="status"></p>' : ''}
       </div>`;
   }
   const dm = dt => `${dt.slice(8, 10)}/${dt.slice(5, 7)}`;
@@ -1540,15 +1547,23 @@
       b.setAttribute('aria-pressed', String(dt === (ehIda ? ida : volta)));
       b.disabled = dt < hoje || (!ehIda && !!ida && dt <= ida);
     });
+    const status = cal.querySelector('.pass-copia-status'); if (status) status.textContent = '';
+    const caixaVolta = cal.querySelector('[data-k="volta"]')?.closest('.pass-datas-compactas'), seletorVolta = caixaVolta?.querySelector('[data-cal-mes]');
+    if (ida && seletorVolta && ![...caixaVolta.querySelectorAll(`[data-cal-grupo="${seletorVolta.value}"] .pass-dia`)].some(b => !b.disabled)) {
+      const mes = [...seletorVolta.options].find(o => [...caixaVolta.querySelectorAll(`[data-cal-grupo="${o.value}"] .pass-dia`)].some(b => !b.disabled));
+      if (mes) { seletorVolta.value = mes.value; caixaVolta.querySelectorAll('[data-cal-grupo]').forEach(g => { g.hidden = g.dataset.calGrupo !== mes.value; }); }
+    }
     const a = cal.querySelector('.pass-link'), dica = cal.querySelector('.pass-dica');
+    if (!a) return;
     const fazer = buscaDe({ programa: cal.dataset.prog });
     if (ida && fazer) {
       a.href = fazer(cal.dataset.o, cal.dataset.d, ida, volta, !!cal.dataset.exe);
-      a.textContent = `Buscar ${dm(ida)}${volta ? ` → ${dm(volta)}` : ' (só ida)'} na ${cal.dataset.nome} ↗`;
+      a.textContent = /\btap\b/i.test(cal.dataset.prog) ? 'Abrir busca com milhas na TAP ↗' : `Buscar ${dm(ida)}${volta ? ` → ${dm(volta)}` : ' (só ida)'} na ${cal.dataset.nome} ↗`;
     } else {
       a.href = a.dataset.orig;
       a.textContent = `Ver passagem${cal.dataset.nome ? ` na ${cal.dataset.nome}` : ''} ↗`;
     }
+    if (dica && /\btap\b/i.test(cal.dataset.prog)) { dica.textContent = ida ? `${cal.dataset.o} → ${cal.dataset.d} · ida ${diaBR(ida+'T12:00:00Z')}${volta ? ' · volta ' + diaBR(volta+'T12:00:00Z') : ''}. Na TAP, entre na conta, selecione Pagar com milhas e informe estas datas.` : 'Escolha as datas. Na TAP, entre na conta e selecione Pagar com milhas.'; return; }
     if (dica) dica.textContent = !ida ? 'Toque numa data de ida para abrir a busca já preenchida'
       : cal.dataset.temVolta && !volta ? 'Agora toque na volta, ou busque só a ida'
       : 'Pronto: a busca abre com essas datas. No site do programa, entre na sua conta para ver em milhas.';
@@ -1567,6 +1582,20 @@
       cal.dataset.volta = cal.dataset.volta === dt ? '' : dt;
     }
     atualizarCal(cal);
+  });
+  window.oammlCalendarioAlerta = (p, completo) => calendarioHtml(p, completo, true);
+  document.addEventListener('change', e => {
+    if (!e.target.matches('[data-cal-mes]')) return;
+    const caixa = e.target.closest('.pass-datas-compactas');
+    caixa.querySelectorAll('[data-cal-grupo]').forEach(g => { g.hidden = g.dataset.calGrupo !== e.target.value; });
+  });
+  document.addEventListener('click', async e => {
+    const b = e.target.closest('[data-pass-copiar]'); if (!b) return;
+    const cal = b.closest('.pass-cal'), status = cal.querySelector('.pass-copia-status');
+    if (!cal.dataset.ida) { status.textContent = 'Escolha uma data de ida antes de copiar a busca.'; return; }
+    const texto = `${cal.dataset.o} → ${cal.dataset.d} · ${cal.dataset.nome}${cal.dataset.ida ? ' · Ida: ' + cal.dataset.ida : ''}${cal.dataset.volta ? ' · Volta: ' + cal.dataset.volta : ''}`;
+    try { await navigator.clipboard.writeText(texto); status.textContent = 'Rota e datas copiadas.'; }
+    catch { status.textContent = texto; }
   });
   // Ícone da companhia ao lado do nome, pelo código IATA (ícones do Google Voos).
   const IATA_CIA = [[/LATAM|\bLAN\b/, 'LA'], [/AZUL/, 'AD'], [/\bGOL\b/, 'G3'], [/TAP/, 'TP'], [/QATAR/, 'QR'], [/AIR FRANCE/, 'AF'],

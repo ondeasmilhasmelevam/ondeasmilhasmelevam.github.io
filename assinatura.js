@@ -1054,7 +1054,7 @@ function tetoDeProg(p) {
   const n = String(p || '').toUpperCase(), T = rotaTeto || {};
   return /SMILES/.test(n) ? T['Smiles'] : /LATAM/.test(n) ? T['LATAM Pass'] : /AZUL/.test(n) ? T['Azul Fidelidade'] : /AEROPLAN/.test(n) ? T['Aeroplan'] : /TAP|MILES ?& ?GO/.test(n) ? (T['TAP Miles&Go'] || window.MILHEIROS?.TAP || null) : /AADVANTAGE/.test(n) ? (T.AAdvantage || window.MILHEIROS?.AA || null) : /IBERIA|AVIOS|QATAR|BRITISH/.test(n) ? T['Iberia (Avios)'] : null;
 }
-async function desenharRota() {
+async function desenharRota(forcar = false) {
   const m = /^#rota\/([A-Z]{3}-[A-Z]{3}-[a-z-]+)$/.exec(location.hash);
   if (!m) return;
   const ativo = !!(window.oammlAssinatura || {}).ativo || (auth.currentUser?.email || '').toLowerCase() === DONO;
@@ -1065,12 +1065,12 @@ async function desenharRota() {
   if (!ativo) return;
   const chave = m[1];
   $('#rota-tentar').hidden = true;
-  if (!rotaCache[chave]) {
+  if (forcar === true || !rotaCache[chave] || Date.now() - rotaCache[chave].em > 300000) {
     $('#rota-info').textContent = 'Carregando a rota...'; $('#rota-corpo').hidden = true;
     try {
-      const [r] = await Promise.all([fetch(`${SERVIDOR}/historico/rota?c=${encodeURIComponent(chave)}`, { headers: { authorization: `Bearer ${auth.currentUser ? await auth.currentUser.getIdToken() : ''}` } }), tetos()]);
+      const [r] = await Promise.all([fetch(`${SERVIDOR}/historico/rota?c=${encodeURIComponent(chave)}`, { cache: 'no-store', headers: { authorization: `Bearer ${auth.currentUser ? await auth.currentUser.getIdToken() : ''}` } }), tetos()]);
       if (!r.ok) throw new Error();
-      rotaCache[chave] = await r.json();
+      rotaCache[chave] = { dados: await r.json(), em: Date.now() };
     } catch (e) {
       if (location.hash !== `#rota/${chave}`) return;
       $('#rota-info').textContent = 'Não deu para carregar a rota agora. Você pode tentar novamente.';
@@ -1079,7 +1079,8 @@ async function desenharRota() {
     }
   }
   if (location.hash !== `#rota/${chave}`) return; // a pessoa já mudou de página
-  rotaDados = rotaCache[chave]; rotaFiltro = '';
+  if (rotaDados?.chave !== chave) rotaFiltro = '';
+  rotaDados = rotaCache[chave].dados;
   const D = rotaDados, R = D.rota;
   if (R) R.p = OAMMLProgramas.estatisticas(R.p);
   D.pts = (D.pts || []).map(p => [...p.slice(0, 4), OAMMLProgramas.normalizar(p[4])]);
@@ -1103,11 +1104,7 @@ async function desenharRota() {
   $('#rota-meta').textContent = `${n} ${n === 1 ? 'alerta' : 'alertas'} desde ${desde ? diaBr(desde) : '—'}${R && R.ult ? ' · último ' + haDias(R.ult) : ''}`;
   const progs = {}; pts.forEach(p => { progs[p.prog] = (progs[p.prog] || 0) + 1; });
   $('#rota-chips').innerHTML = [['', 'Todos os programas'], ...Object.entries(progs).sort((a, b) => b[1] - a[1]).map(([p, k]) => [p, `${p} · ${k}`])]
-    .map(([v, t]) => `<button type="button" data-p="${escR(v)}" aria-pressed="${v === ''}">${escR(t)}</button>`).join('');
-  $('#rota-noar').innerHTML = (D.noAr || []).length ? `<h3 class="rota-tit">No ar agora</h3><ul class="rota-noar">${D.noAr.map(p => `<li>
-      <b>${escR(p.ida || '')}${p.volta ? ' · volta ' + escR(p.volta) : ''}</b><span>${escR(p.programa || p.link_nome || '')}${p.companhia ? ' · ' + escR(p.companhia) : ''}</span>
-      ${['datas_ida', 'datas_volta'].map((k, i) => (p[k] || []).length ? `<small>${i ? 'Volta' : 'Ida'}: ${p[k].map(d => `${escR(d.mes)} ${escR(d.dias)}`).join(' · ')}</small>` : '').join('')}
-      ${/^https?:/.test(p.link || '') ? `<a class="cta cta-a" href="${escR(p.link)}" target="_blank" rel="noopener">Ver passagem${p.link_nome ? ' na ' + escR(p.link_nome) : ''} ↗</a>` : ''}</li>`).join('')}</ul>` : '';
+    .map(([v, t]) => `<button type="button" data-p="${escR(v)}" aria-pressed="${v === rotaFiltro}">${escR(t)}</button>`).join('');
   const meses = Object.entries((R && R.m) || {}).filter(mesComAno).sort((a, b) => ordemMes(a[0]) - ordemMes(b[0]));
   const maxMes = Math.max(1, ...meses.map(([, k]) => k));
   $('#rota-meses').innerHTML = meses.length ? `<div class="hist-meses"><small>Meses de viagem que mais aparecem com data aberta</small>${meses.map(([mm, k]) =>
@@ -1117,7 +1114,20 @@ async function desenharRota() {
   rotaTudo();
 }
 const rotaLista = () => (rotaDados.lista || []).filter(a => !rotaFiltro || a.prog === rotaFiltro);
-function rotaTudo() { rotaResumo(); rotaGrafico(); rotaAlertas(); }
+function rotaTudo() { rotaResumo(); rotaGrafico(); rotaAlertas(); rotaOfertas(); }
+function rotaOfertas() {
+  const lista = (rotaDados?.noAr || []).filter(p => !rotaFiltro || OAMMLProgramas.normalizar(p.programa || p.link_nome) === rotaFiltro);
+  $('#rota-noar').innerHTML = `<div class="rota-ofertas-cab"><div><h3 class="rota-tit">Alertas recentes</h3><p>Valores e datas registrados no alerta. Confirme a disponibilidade no programa.</p></div><button type="button" class="rota-atualizar" data-rota-atualizar>Atualizar alertas</button></div>` + (lista.length ? `<ul class="rota-noar">${lista.map((p,i)=>`<li class="rota-oferta"><header><div><b>${escR(OAMMLProgramas.normalizar(p.programa || p.link_nome))}</b>${p.companhia ? `<small>${escR(p.companhia)}</small>` : ''}</div><span>${p.data ? 'Alerta de ' + diaBr(p.data) : 'Alerta recente'}</span></header><div class="rota-oferta-precos"><div><small>Ida</small><b>${escR(p.ida || 'Consultar valor')}</b></div>${p.volta ? `<div><small>Volta</small><b>${escR(p.volta)}</b></div>` : ''}</div><details class="rota-escolher-datas" data-oferta="${i}"><summary>Escolher datas e pesquisar <span aria-hidden="true">＋</span></summary><div class="rota-calendario-conteudo"></div></details></li>`).join('')}</ul>` : '<p class="rota-nota">Não há alertas recentes para este programa e rota. O histórico abaixo continua disponível.</p>');
+  $('#rota-noar').querySelector('[data-rota-atualizar]').addEventListener('click', async e => { const b=e.currentTarget; b.disabled=true; b.textContent='Atualizando…'; try { await desenharRota(true); } finally { b.disabled=false; b.textContent='Atualizar alertas'; } });
+  $('#rota-noar').querySelectorAll('details[data-oferta]').forEach(d => d.addEventListener('toggle', () => {
+    if (!d.open || d.dataset.montado) return;
+    const p=lista[+d.dataset.oferta], [origem, destino]=(rotaDados.chave || '').split('-');
+    const publico={...p, origem_iata:p.origem_iata || origem, destino_iata:p.destino_iata || destino};
+    const el=d.querySelector('.rota-calendario-conteudo');
+    if (window.oammlCalendarioAlerta) { el.innerHTML=window.oammlCalendarioAlerta(publico,p); d.dataset.montado='1'; }
+    else el.textContent='O calendário ainda está carregando. Feche e abra as datas novamente.';
+  }));
+}
 function rotaResumo() {
   const A = rotaLista(), ok = A.filter(a => !a.fora), comR = ok.filter(a => a.r);
   if (!A.length) { $('#rota-cards').innerHTML = ''; $('#rota-bom').innerHTML = ''; $('#rota-veredito').innerHTML = ''; return; }
@@ -1249,7 +1259,7 @@ $('#rota-copiar').addEventListener('click', async () => {
   setTimeout(() => { b.textContent = '🔗 Compartilhar rota'; }, 2500);
 });
 addEventListener('resize', () => { if (rotaDados && location.hash.startsWith('#rota/')) rotaGrafico(); });
-$('#rota-tentar').addEventListener('click', desenharRota);
+$('#rota-tentar').addEventListener('click', () => desenharRota(true));
 document.addEventListener('assinatura', desenharRota);
 window.addEventListener('hashchange', desenharRota);
 desenharRota();
