@@ -63,3 +63,10 @@
 :root[data-theme="light"] .tabs .menu-topo{border-bottom-color:#cad7e8}
 :root[data-theme="light"] .tabs .menu-grupo+.menu-grupo{border-top-color:#d6dfeb}
 @media(max-width:650px){:root body{background-attachment:scroll}:root body::after{right:-470px;top:120px}}
+.ass-convite{padding:24px;margin-bottom:24px;border:1px solid var(--line);border-radius:16px;background:var(--ink-2)}
+.ass-convite h2{font-size:clamp(24px,4vw,32px);line-height:1.2;margin:0 0 16px}.ass-convite p{color:var(--ash)}
+.ass-convite a{color:var(--ouro)}.ass-link-card{margin:20px 0;padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--ink-3)}
+.entrada-convite #assinar>.aba-banner,.entrada-convite #assinar>.sec-head,.entrada-convite #assinar>.ass-planos,.entrada-convite #assinar>.ass-garantia,.entrada-convite #assinar>.ass-whats,.entrada-convite #assinar>.ass-email,.entrada-convite #assinar>.ass-inclui,.entrada-convite #assinar>.ass-termos,.entrada-convite #assinar>.depos,.entrada-convite #assinar>[data-prova]{display:none!important}
+.entrada-convite #ass-entrar{margin:0 0 24px}.entrada-convite #ass-msg{margin:16px 0}
+.entrada-convite #assinar>.ass-campo{display:none}
+@media(max-width:650px){.ass-convite{padding:18px}.ass-form-codigo #ass-pedir-link{width:100%;min-height:44px}}

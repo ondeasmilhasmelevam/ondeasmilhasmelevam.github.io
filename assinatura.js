@@ -49,14 +49,15 @@ async function lerAssinatura(user) {
     }
     // Cortesia ganha e ainda não usada: o primeiro acesso começa a contar os dias (e avisa o dono).
     if (s.exists() && s.data().cortesiaPendente === true) {
-      await fetch(`${SERVIDOR}/cortesia/ativar`, { method: 'POST', headers: { authorization: `Bearer ${await user.getIdToken()}` } }).catch(() => null);
+      const ativacao = await fetch(`${SERVIDOR}/cortesia/ativar`, { method: 'POST', headers: { authorization: `Bearer ${await user.getIdToken()}` } }).catch(() => null);
+      if (!ativacao?.ok) return { ativo: false, email, validoAte: null, pendente: true, erroAcesso: 'Sua cortesia está reservada, mas não foi possível ativá-la agora. Verifique seu acesso novamente; não é necessário pagar.' };
       s = await getDoc(doc(db, 'assinantes', email));
     }
     const validoAte = s.exists() && s.data().validoAte ? s.data().validoAte.toDate() : null;
     const ativo = Boolean(validoAte && validoAte > new Date());
     return { ativo, email, validoAte, plano: s.exists() ? s.data().plano : '', alertas: ativo ? await lerAlertas() : {} };
   } catch (e) {
-    return { ativo: false, email, validoAte: null };
+    return { ativo: false, email, validoAte: null, erroAcesso: 'Não foi possível verificar seu acesso agora. Tente novamente antes de escolher um plano.' };
   }
 }
 
@@ -78,9 +79,17 @@ function desenharConta(estado) {
   if (!estado.email) { conta.hidden = true; $('#ass-entrar').hidden = false; return; }
   $('#ass-entrar').hidden = true;
   conta.hidden = false;
+  const entradaConvite = document.documentElement.classList.contains('entrada-convite');
   const data = estado.validoAte ? estado.validoAte.toLocaleDateString('pt-BR') : '';
-  $('#ass-conta-txt').innerHTML = estado.ativo
+  $('#ass-revalidar').hidden = !estado.erroAcesso && !entradaConvite;
+  $('#ass-conta-txt').innerHTML = estado.erroAcesso
+    ? `${escR(estado.erroAcesso)}<br>Conta: <span></span>`
+    : estado.ativo
     ? `<b>Assinatura ativa</b> para <span></span> até <b>${data}</b>. Alertas completos e calculadoras liberados.`
+    : entradaConvite
+      ? estado.validoAte
+        ? `O acesso de <span></span> terminou em <b>${data}</b>. Se você recebeu uma nova cortesia, toque em Verificar meu acesso novamente. Para usar outro e-mail, saia desta conta e entre com o endereço que recebeu o convite.`
+        : `Não encontramos cortesia ou assinatura para <span></span>. Confira se este é o e-mail que recebeu o convite. Se for outro, saia desta conta e entre com o endereço correto.`
     : estado.validoAte
       ? `Sua assinatura de <span></span> venceu em <b>${data}</b>. Renove abaixo para voltar a ver tudo.`
       : `Não encontramos assinatura para <span></span>. Assine abaixo com este mesmo e-mail.`;
@@ -90,7 +99,7 @@ function desenharConta(estado) {
   const dias = estado.ativo ? Math.ceil((estado.validoAte - new Date()) / 864e5) : 0;
   $('#ass-resumo').innerHTML = estado.validoAte ? `
     <div><small>Situação</small><b>${estado.ativo ? 'Ativa' : 'Vencida'}</b></div>
-    <div><small>Plano</small><b>${estado.plano === 'anual' ? 'Anual' : 'Mensal'}</b></div>
+    <div><small>Plano</small><b>${estado.plano === 'anual' ? 'Anual' : estado.plano === 'cortesia' ? 'Cortesia' : estado.plano === 'dono' ? 'Dono' : 'Mensal'}</b></div>
     <div><small>Válida até</small><b>${data}</b></div>
     <div><small>Faltam</small><b>${dias} ${dias === 1 ? 'dia' : 'dias'}</b></div>` : '';
 }
@@ -448,6 +457,10 @@ $('#painel-campanha').addEventListener('click', async e => {
 });
 
 // Cortesia: o dono dá X dias grátis direto para o e-mail da pessoa; ela recebe um e-mail com o passo a passo.
+function renovarCortesiaHtml(c) {
+  if (c.pendente || !c.ate || !(new Date(c.ate).getTime() <= Date.now())) return '';
+  return `<button type="button" class="cta cta-b" data-renovar="${escR(c.email)}" data-nome="${escR(c.nome || '')}" data-telefone="${escR(c.telefone || '')}" data-prazo="${escR(c.dias)}">Renovar cortesia</button>`;
+}
 async function desenharCortesiasPainel() {
   const el = $('#painel-cortesias');
   if (!auth.currentUser) return;
@@ -467,8 +480,22 @@ async function desenharCortesiasPainel() {
       <button class="cta cta-a" type="submit">Dar cortesia</button>
       <p class="lead-msg" role="status" hidden></p>
     </form>
-    ${lista.length ? `<ul class="cortesias">${lista.map(c => `<li><p><b>${prazoCortesia(c.dias)}</b> · ${c.nome ? `${escR(c.nome)} · ` : ''}${escR(c.email)}${c.telefone ? ` · <a href="https://wa.me/${escR(c.telefone)}" target="_blank" rel="noopener">WhatsApp</a>` : ''} <small>dada em ${data(c.criadoEm)} · ${c.pendente ? `<em class="cort-espera">ainda não ativou</em>${c.reenviadoEm ? ` · e-mail reenviado em ${data(c.reenviadoEm)}` : ''}` : `${c.ativadaEm ? `ativou em ${data(c.ativadaEm)}, ` : ''}até ${data(c.ate)}`}</small></p><div class="cort-reenviar">${c.pendente ? `<button type="button" class="cta cta-b" data-reenviar="${escR(c.email)}">Reenviar e-mail</button>` : ''}<button type="button" class="cta cta-b cort-excluir" data-excluir="${escR(c.id)}" data-email="${escR(c.email)}" data-dias="${escR(c.dias)}" data-estado="${c.pendente ? 'pendente' : c.ate && new Date(c.ate).getTime() > Date.now() ? 'ativa' : 'encerrada'}">Excluir</button><span role="status"></span></div></li>`).join('')}</ul>` : ''}`;
+    ${lista.length ? `<ul class="cortesias">${lista.map(c => `<li><p><b>${prazoCortesia(c.dias)}</b> · ${c.nome ? `${escR(c.nome)} · ` : ''}${escR(c.email)}${c.telefone ? ` · <a href="https://wa.me/${escR(c.telefone)}" target="_blank" rel="noopener">WhatsApp</a>` : ''} <small>dada em ${data(c.criadoEm)} · ${c.pendente ? `<em class="cort-espera">ainda não ativou</em>${c.reenviadoEm ? ` · e-mail reenviado em ${data(c.reenviadoEm)}` : ''}` : `${c.ativadaEm ? `ativou em ${data(c.ativadaEm)}, ` : ''}até ${data(c.ate)}`}</small></p><div class="cort-reenviar">${c.pendente ? `<button type="button" class="cta cta-b" data-reenviar="${escR(c.email)}">Reenviar e-mail</button>` : ''}<button type="button" class="cta cta-b cort-excluir" data-excluir="${escR(c.id)}" data-email="${escR(c.email)}" data-dias="${escR(c.dias)}" data-estado="${c.pendente ? 'pendente' : c.ate && new Date(c.ate).getTime() > Date.now() ? 'ativa' : 'encerrada'}">Excluir</button>${renovarCortesiaHtml(c)}<span role="status"></span></div></li>`).join('')}</ul>` : ''}`;
 }
+$('#painel-cortesias').addEventListener('click', e => {
+  const b = e.target.closest('[data-renovar]');
+  if (!b) return;
+  const f = $('#cortesia-nova');
+  f.elements.email.value = b.dataset.renovar;
+  f.elements.nome.value = b.dataset.nome || '';
+  f.elements.telefone.value = b.dataset.telefone || '';
+  f.elements.dias.value = ['7','15','30','90','180','365'].includes(b.dataset.prazo) ? b.dataset.prazo : '15';
+  const m = f.querySelector('.lead-msg');
+  m.textContent = 'Confira os dados, escolha o novo período e confirme em Dar cortesia. Os dias começam na próxima entrada, ou são somados se já houver acesso ativo.';
+  m.className = 'lead-msg'; m.hidden = false;
+  f.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  f.elements.dias.focus({ preventScroll: true });
+});
 $('#painel-cortesias').addEventListener('click', async e => {
   const b = e.target.closest('[data-reenviar]');
   if (!b) return;
@@ -513,7 +540,7 @@ $('#painel-cortesias').addEventListener('submit', async e => {
       body: JSON.stringify({ nome: f.elements.nome.value, email, telefone: f.elements.telefone.value, dias: f.elements.dias.value }) });
     const d = await r.json().catch(() => ({}));
     if (!r.ok) throw new Error(d.erro);
-    alert(`${d.pendente ? 'Cortesia dada. Os dias começam a contar no primeiro acesso da pessoa, e você recebe um e-mail quando ela ativar.' : `Cortesia somada: acesso até ${new Date(d.ate).toLocaleDateString('pt-BR')}.`}${d.enviado ? ' A pessoa recebeu o e-mail.' : ' O e-mail não saiu agora: avise a pessoa para entrar no site com esse e-mail.'}`);
+    alert(`${d.pendente ? 'Cortesia dada. Os dias começam a contar no primeiro acesso da pessoa, e você recebe um e-mail quando ela ativar.' : `Cortesia somada: acesso até ${new Date(d.ate).toLocaleDateString('pt-BR')}.`}${d.enviado ? ' O e-mail foi enviado; peça para conferir também o spam.' : ' O e-mail não saiu agora: avise a pessoa para entrar no site com esse e-mail.'}`);
     desenharCortesiasPainel(); desenharAssinantesPainel();
   } catch (er) { m.textContent = er.message || 'Não deu agora.'; m.className = 'lead-msg erro'; m.hidden = false; b.disabled = false; }
 });
@@ -787,12 +814,15 @@ function limparPainel() {
   ['#painel-campanha', '#painel-cortesias', '#painel-assinantes', '#painel-depos'].forEach(id => { const el = $(id); if (el) el.innerHTML = ''; });
   $('#painel-conteudo').innerHTML = '<p class="passagens-vazio">Este painel é só do dono do site.</p>';
 }
-onAuthStateChanged(auth, async user => {
+let versaoConta = 0;
+async function sincronizarConta(user) {
+  const versao = ++versaoConta;
   const dono = (user?.email || '').toLowerCase() === DONO;
   $('#menu-painel').hidden = !dono;
   $('#painel').hidden = !dono; // para quem não é o dono, a página do painel nem existe
   if (!dono) { limparPainel(); if (location.hash === '#painel') location.hash = '#inicio'; }
   const estado = await lerAssinatura(user);
+  if (versao !== versaoConta) return;
   estado.nome = (user && user.displayName) || ''; // barra superior: nome de quem entrou com o Google
   desenharConta(estado);
   desenharIndicacao(estado);
@@ -800,8 +830,14 @@ onAuthStateChanged(auth, async user => {
   if (location.hash === '#painel') desenharPainel();
   desenharHistorico(estado.email);
   await lerRadares(estado.ativo ? estado.email : '');
+  if (versao !== versaoConta) return;
   avisar(estado);
   desenharRadar();
+}
+onAuthStateChanged(auth, sincronizarConta);
+$('#ass-revalidar').addEventListener('click', async () => {
+  const b = $('#ass-revalidar'); b.disabled = true;
+  try { await sincronizarConta(auth.currentUser); } finally { b.disabled = false; }
 });
 
 // Volta do pagamento da InfinitePay.
@@ -825,15 +861,44 @@ $('#ass-google').addEventListener('click', async () => {
 async function chamar(rota, dados) {
   const r = await fetch(`${SERVIDOR}${rota}`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(dados) });
   const d = await r.json().catch(() => ({}));
-  if (!r.ok) throw new Error(d.erro || 'Não deu agora. Tente de novo em instantes.');
+  if (!r.ok) { const erro = new Error(d.erro || 'Não deu agora. Tente de novo em instantes.'); erro.status = r.status; throw erro; }
   return d;
 }
+$('#ass-entrar-link').addEventListener('click', async () => {
+  const b = $('#ass-entrar-link');
+  const segredo = window.oammlEntradaLink?.ler();
+  if (!segredo) { $('#ass-entrar').hidden = false; $('#ass-login-email').focus(); return msg('Peça um novo link ou entre com Google ou código por e-mail.'); }
+  b.disabled = true; msg('Conferindo seu link de acesso…');
+  let validado = false;
+  try {
+    const d = await chamar('/acesso/entrar', { segredo });
+    validado = true;
+    window.oammlEntradaLink.apagar();
+    await signInWithCustomToken(auth, d.token);
+    $('#ass-link-card').hidden = true;
+    msg('Você entrou. Aguarde a confirmação do seu acesso.', 'ok');
+  } catch (e) {
+    if (e.status === 401 || validado) { window.oammlEntradaLink.apagar(); $('#ass-link-card').hidden = true; }
+    $('#ass-entrar').hidden = false;
+    msg(validado ? 'O link foi validado, mas não foi possível concluir o login neste aparelho. Entre com Google ou código por e-mail.' : e.message, 'erro');
+  } finally { b.disabled = false; }
+});
+$('#ass-pedir-link').addEventListener('click', async () => {
+  const email = $('#ass-login-email').value.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { $('#ass-login-email').focus(); return msg('Digite o e-mail que recebeu o convite ou o e-mail da sua assinatura.', 'erro'); }
+  const b = $('#ass-pedir-link'); b.disabled = true;
+  try {
+    const d = await chamar('/acesso/pedir', { email });
+    msg(`Se este e-mail tiver assinatura ou cortesia, o link chega em instantes e vale ${d.minutos} minutos. Veja também o spam. Se acabou de pedir, aguarde 1 minuto antes de tentar novamente.`, 'ok');
+  } catch (e) { msg(e.message, 'erro'); }
+  finally { b.disabled = false; }
+});
 $('#ass-form-codigo').addEventListener('submit', async e => {
   e.preventDefault();
   const email = $('#ass-login-email').value.trim();
   const codigo = $('#ass-codigo').value.replace(/\D/g, '');
   const botao = $('#ass-form-codigo button[type=submit]');
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return msg('Digite o e-mail que você usou no pagamento.', 'erro');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return msg('Digite o e-mail do pagamento ou o endereço que recebeu o convite.', 'erro');
   botao.disabled = true;
   try {
     if ($('#ass-passo-codigo').hidden) {
@@ -842,7 +907,7 @@ $('#ass-form-codigo').addEventListener('submit', async e => {
       $('#ass-login-email').readOnly = true;
       botao.textContent = 'Entrar';
       $('#ass-codigo').focus();
-      msg(`Se ${email} tiver assinatura, um código de 7 números chega em instantes. Ele vale ${d.minutos} minutos. Veja também o spam.`, 'ok');
+      msg(`Se ${email} tiver assinatura ou cortesia, um código de 7 números chega em instantes. Ele vale ${d.minutos} minutos. Veja também o spam.`, 'ok');
     } else {
       if (codigo.length !== 7) { msg('O código tem 7 números.', 'erro'); return; }
       const d = await chamar('/entrar', { email, codigo });

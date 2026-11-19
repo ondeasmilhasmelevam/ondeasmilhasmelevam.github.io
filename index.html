@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<script src="entrada-link.js?v=1"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Passagens com milhas antes que esgotem · Onde as Milhas Me Levam</title>
 <meta name="description" content="Alertas de passagens com milhas na hora, promoções de pontos e ferramentas grátis: comparador de cartões, termômetro de milhas e tabela de preços.">
@@ -49,7 +50,7 @@
 @media (prefers-reduced-motion:reduce){#entrada{display:none}}
 </style>
 <link rel="stylesheet" href="estilo.css?v=147">
-<link rel="stylesheet" href="ajustes.css?v=4">
+<link rel="stylesheet" href="ajustes.css?v=5">
 </head>
 <body>
 <div id="entrada" aria-hidden="true"><div><img src="img/logo-entrada.webp" alt="" width="148" height="148" fetchpriority="high"></div></div>
@@ -1148,6 +1149,17 @@
     </section>
 
     <section id="assinar" data-pagina="assinar">
+      <div class="ass-convite" id="ass-convite" hidden>
+        <p class="eyebrow">Seu acesso</p>
+        <h2>Recebeu uma cortesia? Entre por aqui</h2>
+        <p id="ass-convite-descricao">Use o e-mail que recebeu o convite. A cortesia é liberada após a entrada, sem cartão e sem cobrança. Os dias começam no primeiro acesso.</p>
+        <div class="ass-link-card" id="ass-link-card" hidden>
+          <p>O botão entra na conta que recebeu este link, mesmo se outra conta estiver aberta neste aparelho.</p>
+          <button type="button" class="cta cta-a" id="ass-entrar-link">Entrar com este convite</button>
+        </div>
+        <p>Você também pode entrar com Google, pedir um novo link ou usar um código no e-mail abaixo.</p>
+        <a href="/?#assinar">Quero conhecer os planos</a>
+      </div>
       <div class="aba-banner" style="background-image:url(img/banners/assinar.jpg)" role="img" aria-label="Alertas completos"><div><p>Assinatura</p><b>Alertas completos</b><small>Datas e link de emissão na hora em que a passagem aparece.</small></div></div>
       <div class="sec-head">
         <p class="eyebrow">Assinatura</p>
@@ -1159,6 +1171,7 @@
       <div class="ass-conta" id="ass-conta" hidden>
         <p id="ass-conta-txt"></p>
         <button type="button" class="cta cta-b" id="ass-sair">Sair</button>
+        <button type="button" class="cta cta-b" id="ass-revalidar" hidden>Verificar meu acesso novamente</button>
         <div class="ass-resumo" id="ass-resumo"></div>
         <div class="ass-indica" id="ass-indica" hidden></div>
         <div class="ass-depo" id="ass-depo" hidden></div>
@@ -1208,8 +1221,8 @@
       </ul>
       <p class="ass-termos">Ao assinar, você concorda com os <a href="#termos">Termos de uso e a Política de privacidade</a>.</p>
       <div class="ass-entrar" id="ass-entrar">
-        <h3>Já assina? Entre</h3>
-        <p>Use o mesmo e-mail do pagamento.</p>
+        <h3>Já assina ou ganhou cortesia? Entre</h3>
+        <p>Use o mesmo e-mail do pagamento ou o endereço que recebeu o convite.</p>
         <button type="button" class="cta cta-b ass-google" id="ass-google"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2c-2 1.5-4.5 2.4-7.2 2.4-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Entrar com Google</button>
         <form class="ass-form-codigo" id="ass-form-codigo">
           <input type="email" id="ass-login-email" placeholder="voce@gmail.com" autocomplete="email" inputmode="email" aria-label="Seu e-mail">
@@ -1217,6 +1230,7 @@
             <input type="text" id="ass-codigo" inputmode="numeric" autocomplete="one-time-code" maxlength="7" placeholder="0000000" aria-label="Código de 7 números">
             <button type="button" class="ass-trocar" id="ass-trocar-email">Trocar e-mail ou pedir outro código</button>
           </div>
+          <button type="button" class="cta cta-a" id="ass-pedir-link">Receber link no e-mail</button>
           <button type="submit" class="cta cta-b">Receber código no e-mail</button>
         </form>
       </div>
@@ -1392,7 +1406,7 @@
 <script src="app.js?v=134"></script>
 <script src="interface.js?v=1"></script>
 <script src="funil.js?v=8"></script>
-<script type="module" src="assinatura.js?v=51"></script>
+<script type="module" src="assinatura.js?v=52"></script>
 <script src="mapa.js?v=10" defer></script>
 <script src="instalar.js?v=2" defer></script>
 </body>
