@@ -1,5 +1,20 @@
 [
  {
+  "id": "seats-smiles-CNF-EZE-eco",
+  "data": "2026-11-19T15:56:20.085777Z",
+  "fonte": "seats.aero",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "40.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9987",
   "data": "2026-11-19T15:26:43Z",
   "origem": "Curitiba",
@@ -5893,7 +5908,7 @@
   "companhia": "Azul",
   "cabine": "Econômica",
   "programa": "Azul Fidelidade",
-  "ida": "80.000 pontos + taxas",
+  "ida": "70.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
  },
