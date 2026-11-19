@@ -3,7 +3,7 @@
   const normal = t => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   const PAISES = { 'estados unidos da america': 'Estados Unidos', 'estados unidos': 'Estados Unidos', eua: 'Estados Unidos', usa: 'Estados Unidos', 'united states': 'Estados Unidos', 'united states of america': 'Estados Unidos', 'reino unido': 'Reino Unido', uk: 'Reino Unido', 'united kingdom': 'Reino Unido', holanda: 'Países Baixos', 'paises baixos': 'Países Baixos', netherlands: 'Países Baixos', qatar: 'Catar', catar: 'Catar', 'coreia do sul': 'Coreia do Sul', 'south korea': 'Coreia do Sul', cingapura: 'Singapura', singapura: 'Singapura', singapore: 'Singapura', 'africa do sul': 'África do Sul', 'new zealand': 'Nova Zelândia', 'nova zelandia': 'Nova Zelândia', australia: 'Austrália', japan: 'Japão', japao: 'Japão', brasil: 'Brasil', brazil: 'Brasil' };
   const paisNome = t => PAISES[normal(t)] || String(t || '').trim();
-  const CIDADES = { 'new york': 'nova york', 'nova iorque': 'nova york', nyc: 'nova york', seoul: 'seul', tokyo: 'toquio', london: 'londres', bangcoc: 'bangkok', banguecoque: 'bangkok', amsterdam: 'amsterda' };
+  const CIDADES = { 'new york': 'nova york', 'nova iorque': 'nova york', nyc: 'nova york', seoul: 'seul', tokyo: 'toquio', london: 'londres', bangcoc: 'bangkok', banguecoque: 'bangkok', amsterdam: 'amsterda', jacarta: 'jakarta' };
   function resolverLocais(base, texto) {
     const bruto = String(texto || '').trim(), t = normal(bruto), A = base.aeroportos;
     if (!t) return [];
@@ -167,7 +167,7 @@
   function montarLocais() {
     const paises = [...new Set(Object.values(base.aeroportos).map(a => paisNome(a.pais)))].filter(Boolean).sort((a, b) => a.localeCompare(b, 'pt'));
     for (const [campo, lista] of [['#malha-origem', '#malha-origens'], ['#malha-destino', '#malha-destinos']]) {
-      const t = normal($(campo).value), p = normal(paisNome($(campo).value)), termos = t.split(' ').filter(Boolean);
+      const t = normal($(campo).value), p = normal(paisNome($(campo).value)), termos = (CIDADES[t] || t).split(' ').filter(Boolean);
       const itens = Object.keys(base.aeroportos).filter(i => termos.every(t => normal(`${nome(i)} ${base.aeroportos[i].nome || ''} ${paisNome(base.aeroportos[i].pais)}`).includes(t))).sort((a, b) => nome(a).localeCompare(nome(b), 'pt')).slice(0, 100);
       $(lista).innerHTML = paises.filter(n => !t || normal(n).includes(t) || normal(n) === p).map(n => `<option value="${esc(n)}">País · aeroportos presentes na base</option>`).join('') + itens.map(i => `<option value="${esc(nome(i))}">${esc(paisNome(base.aeroportos[i].pais))} · ${i}</option>`).join('');
     }
@@ -203,7 +203,12 @@
         const nome = OAMMLProgramas.normalizar(n), id = OAMMLProgramas.buscar(nome)?.id || fonte;
         if (!base.programas[id]) base.programas[id] = { nome, companhias: [], somenteRede: true, nota: 'Programa presente na rede mundial de milhas. A lista de operadoras elegíveis ainda não foi conferida nesta malha operacional.' };
       }
-      fonteSeats = j; montarLocais(); montarProgramas(); $('#malha-rede-status').textContent = `${Object.keys(base.aeroportos).length.toLocaleString('pt-BR')} aeroportos no cadastro mundial · ${j.a.length.toLocaleString('pt-BR')} na rede de milhas · ${j.e.length.toLocaleString('pt-BR')} pares de viagem · ${j.fontes.length} programas. Aeroporto cadastrado não significa voo ou assento disponível.${Object.values(j.coletas || {}).some(c => c.status !== 'atualizado') ? ' Alguns programas usam a última coleta preservada ou estão sem resposta; a cobertura está indicada nas opções.' : ''}`; return j;
+      for (const [fonte, c] of Object.entries(j.coletas || {})) {
+        if (j.fontes.some(f => f[0] === fonte)) continue;
+        const nome = OAMMLProgramas.normalizar(fonte), id = OAMMLProgramas.buscar(nome)?.id || fonte;
+        if (!base.programas[id]) base.programas[id] = { nome, companhias: [], somenteRede: true, semDados: true, nota: 'Este programa não forneceu uma lista de rotas nesta coleta. A consulta de disponibilidade da viagem completa continua disponível.' };
+      }
+      fonteSeats = j; montarLocais(); montarProgramas(); $('#malha-rede-status').textContent = `${Object.keys(base.aeroportos).length.toLocaleString('pt-BR')} aeroportos no cadastro mundial · ${j.a.length.toLocaleString('pt-BR')} na rede de milhas · ${j.e.length.toLocaleString('pt-BR')} pares de viagem · ${j.fontes.length} programas com rotas. Aeroporto cadastrado não significa voo ou assento disponível.${Object.values(j.coletas || {}).some(c => c.status !== 'atualizado') ? ' Fontes com dados preservados ou sem rotas nesta coleta: ' + Object.entries(j.coletas).filter(([, c]) => c.status !== 'atualizado').map(([f, c]) => OAMMLProgramas.normalizar(f) + (c.status === 'preservado' ? ' (última base preservada)' : ' (sem rotas fornecidas)')).join(' · ') + '.' : ''}`; return j;
     })().catch(e => { seatsPromessa = null; throw e; });
     return seatsPromessa;
   }
@@ -221,6 +226,7 @@
     const completa = origens.length === 1 && destinos.length === 1 ? `<div class="malha-card malha-completa"><h3>Consultar a viagem completa</h3><p>${esc(nome(origens[0]))} → ${esc(nome(destinos[0]))}</p><p>Procure os itinerários observados no mês escolhido e veja os voos e conexões de cada resultado. A consulta considera os programas com cobertura na fonte.</p><button type="button" class="cta cta-a" data-rede-completa="${origens[0]}-${destinos[0]}">Consultar voos da viagem completa</button><div class="malha-voos" id="malha-viagem-completa" aria-live="polite"></div></div>` : '<p>Para consultar os voos de uma viagem completa, escolha um aeroporto específico de origem e destino. A lista de aeroportos reconhecidos acima permite refinar a escolha.</p>';
     if (!fonteSeats) { el.innerHTML = completa + '<h3>Rede mundial de programas</h3><p>A rede não respondeu agora. O cadastro de aeroportos continua disponível. Tente novamente em instantes.</p>'; return; }
     if (f.companhia || f.alianca) { el.innerHTML = completa + '<h3>Rede mundial de programas</h3><p>Retire os filtros de companhia e aliança para explorar os programas nesta rede. Ela não informa quem opera cada voo; os itinerários disponíveis trazem os voos e conexões.</p>'; return; }
+    if (f.programa && base.programas[f.programa]?.semDados) { el.innerHTML = completa + '<h3>Rede deste programa</h3><p>' + esc(base.programas[f.programa].nota) + '</p>'; return; }
     redeIterador = caminhosMilhas(fonteSeats, origens, destinos, f.programa);
     el.innerHTML = completa + '<h3>Opções na rede mundial de milhas</h3><p>Primeiro aparecem os pares completos encontrados nos programas; depois, opções para dividir a viagem em até três pesquisas. Cada pesquisa pode conter conexões. Dividir a viagem pode exigir bilhetes separados, nova retirada de bagagem e mais tempo de intervalo. Não confirma operação ou assentos no mês escolhido.</p><p>Use “Consultar voos e conexões” para conferir os itinerários observados no período. Use “Mostrar mais opções” para continuar explorando a rede.</p><ul class="malha-resultados" id="malha-rede-lista"></ul><p id="malha-rede-contagem" role="status"></p><button type="button" class="cta cta-b" data-rede-mais>Mostrar mais opções</button>';
     maisRede();
