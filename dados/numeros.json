@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-19T11:54:06.018640Z",
+ "atualizado": "2026-11-19T12:01:02.549364Z",
  "dias": 30,
- "passagens": 3265,
+ "passagens": 3270,
  "promocoes": 193,
  "destinos": 175,
  "executiva": 686,
@@ -1084,19 +1084,6 @@
     "regiao": "outros"
    },
    {
-    "id": "2361370250-6458",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Lima",
-    "destino_iata": "LIM",
-    "cabine": "Executiva",
-    "programa": "Qatar Privilege Club",
-    "data": "2026-11-12T11:57:28Z",
-    "milhas": 38750,
-    "nivel": "",
-    "regiao": "america-do-sul"
-   },
-   {
     "id": "2361370250-6512",
     "origem": "Paris",
     "origem_iata": "CDG",
@@ -1199,6 +1186,19 @@
     "milhas": 62000,
     "nivel": "",
     "regiao": "caribe"
+   },
+   {
+    "id": "2361370250-6737",
+    "origem": "Cidade do Panamá",
+    "origem_iata": "PTY",
+    "destino": "Amsterdã",
+    "destino_iata": "AMS",
+    "cabine": "Executiva",
+    "programa": "Flying Blue",
+    "data": "2026-11-18T09:39:08Z",
+    "milhas": 63750,
+    "nivel": "",
+    "regiao": "europa"
    }
   ]
  }
