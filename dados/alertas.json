@@ -5456,20 +5456,6 @@
   "ate": ""
  },
  {
-  "id": "2008590742-15917",
-  "data": "2026-11-17T19:07:38Z",
-  "origem": "Vitória",
-  "origem_iata": "VIX",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "10.600 milhas + Taxas",
-  "volta": "10.600 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7841",
   "data": "2026-11-17T16:34:21Z",
   "tipo": "promocao",
