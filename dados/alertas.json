@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9996",
+  "data": "2026-11-19T19:16:57Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "SDU",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "7.000 milhas + R$ 35,15 de taxas",
+  "volta": "7.000 milhas + R$ 62,62 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "1290836068-7907",
   "data": "2026-11-19T19:03:41Z",
   "tipo": "promocao",
@@ -5429,31 +5443,6 @@
   "ida": "32.400 milhas + Taxas",
   "volta": "32.400 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "1290836068-7846",
-  "data": "2026-11-17T19:13:46Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass: PASSAGENS NACIONAIS A PARTIR DE 4.403 MILHAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "LATAM oferece passagens aéreas nacionais a partir de 4.403 milhas + taxas por trecho. Se não houver saldo, há desconto de até 66% na compra de milhas LATAM Pass. Emissão pode sair a partir de R$ 104,79 + taxas.",
-  "detalhes": [
-   "Desconto de 66% para portadores de cartão LATAM Pass Itaú na compra de milhas",
-   "Limite de compra com desconto de 350.000 milhas",
-   "Emissão de passagens a partir de R$ 104,79 + taxas",
-   "Milhas são por trecho",
-   "Porto Alegre (POA) x Florianópolis (FLN) a partir de 4.403 milhas o trecho a partir de R$ 105",
-   "Fortaleza (FOR) x Juazeiro do Norte (JDO) a partir de 4.559 milhas o trecho",
-   "Navegantes (NVT) x São Paulo (CGH) a partir de 5.809 milhas o trecho",
-   "Períodos de viagem: até 20 de outubro"
-  ],
-  "parceiros": "LATAM Pass",
-  "validade": "até 20 de outubro",
-  "links": [
-   "https://link.dia23.com.br/r/nXBzHHN"
-  ],
-  "ate": ""
  },
  {
   "id": "1290836068-7841",
