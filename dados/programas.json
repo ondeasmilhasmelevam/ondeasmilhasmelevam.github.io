@@ -1,86 +1,371 @@
 {
  "conferido": "2026-11-15",
- "dica": "Use os mesmos dados em todos: nome igual ao do passaporte, mesmo CPF, e-mail, celular e endereço. Assim a transferência de pontos e a emissão para você mesmo não travam.",
+ "dica": "Nos programas de pontos, use o nome como aparece no documento de viagem e mantenha seus dados atualizados. Nos aplicativos e portais de seguro, siga as instruções oficiais e confira os benefícios do seu cartão.",
  "grupos": [
+  {
+   "titulo": "Aplicativos de aeroporto",
+   "nota": "Cadastre seu cartão no aplicativo correspondente e confira os acessos e serviços disponíveis antes de viajar. Os benefícios variam conforme o cartão e o emissor. Links das lojas conferidos em 18/11/2026.",
+   "programas": [
+    {
+     "id": "app-visa-airport",
+     "nome": "Visa Airport Companion",
+     "sobre": "Aplicativo para consultar os benefícios de aeroporto disponíveis para o seu cartão Visa elegível. Baixe a versão para o seu celular.",
+     "link": "https://www.visa.com.br/sobre-a-visa/vac.html",
+     "acao": "Conhecer o programa",
+     "links": [
+      {
+       "rotulo": "Android · Google Play",
+       "url": "https://play.google.com/store/apps/details?id=com.dragonpass.en.latam"
+      },
+      {
+       "rotulo": "iPhone · App Store",
+       "url": "https://apps.apple.com/br/app/visa-airport-companion/id1291608009"
+      }
+     ]
+    },
+    {
+     "id": "app-mastercard-airport",
+     "nome": "Mastercard Airport Experiences",
+     "sobre": "Aplicativo da LoungeKey para portadores Mastercard elegíveis consultarem salas VIP e ofertas nos aeroportos. Confira as condições do seu cartão.",
+     "link": "https://airport.mastercard.com/pt-BR",
+     "acao": "Conhecer o programa",
+     "links": [
+      {
+       "rotulo": "Android · Google Play",
+       "url": "https://play.google.com/store/apps/details?id=com.loungekey.mastercard.android"
+      },
+      {
+       "rotulo": "iPhone · App Store",
+       "url": "https://apps.apple.com/br/app/mastercard-airport-experiences/id1218321651"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "titulo": "Seguro viagem do cartão",
+   "nota": "Acesse o portal da sua bandeira para consultar elegibilidade, coberturas e emissão do bilhete. Ter cadastro não significa que o seguro já está ativo para a viagem.",
+   "programas": [
+    {
+     "id": "seguro-visa",
+     "nome": "Seguro viagem Visa",
+     "sobre": "Portal de Benefícios Visa: consulte as condições do seu cartão e a emissão do bilhete de seguro antes da viagem.",
+     "link": "https://visabenefitslac.axa-assistance.us/",
+     "acao": "Acessar portal de seguros"
+    },
+    {
+     "id": "seguro-mastercard",
+     "nome": "Seguro viagem Mastercard",
+     "sobre": "Portal de emissão de bilhetes de seguros: consulte as coberturas e os requisitos aplicáveis ao seu cartão Mastercard.",
+     "link": "https://mastercard.insurance-registration.com/lac/regional/pt",
+     "acao": "Acessar portal de seguros"
+    }
+   ]
+  },
   {
    "titulo": "Comece por estes",
    "nota": "Os programas que mais aparecem nos alertas e nas transferências com bônus do Brasil.",
    "programas": [
-    {"id": "latam", "nome": "LATAM Pass", "sobre": "Companhia LATAM e parceiras da oneworld", "link": "https://latampass.latam.com/pt_br/"},
-    {"id": "smiles", "nome": "Smiles", "sobre": "GOL e mais de 30 parceiras", "link": "https://www.smiles.com.br/"},
-    {"id": "azul", "nome": "Azul Fidelidade", "sobre": "Azul e parceiras como TAP e United", "link": "https://www.voeazul.com.br/br/pt/programa-fidelidade"},
-    {"id": "tap", "nome": "TAP Miles&Go", "sobre": "TAP e Star Alliance; bom para a Europa", "link": "https://www.flytap.com/pt-br/miles-and-go"},
-    {"id": "iberia", "nome": "Iberia Club", "sobre": "Avios da Iberia (antigo Iberia Plus)", "link": "https://www.iberia.com/br/iberia-club/"},
-    {"id": "ba", "nome": "The British Airways Club", "sobre": "Avios da British (antigo Executive Club)", "link": "https://www.britishairways.com/content/the-british-airways-club"},
-    {"id": "qatar", "nome": "Privilege Club", "sobre": "Avios da Qatar Airways", "link": "https://www.qatarairways.com/pt-br/Privilege-Club.html"},
-    {"id": "livelo", "nome": "Livelo", "sobre": "Pontos de Bradesco e Banco do Brasil", "link": "https://www.livelo.com.br/"},
-    {"id": "esfera", "nome": "Esfera", "sobre": "Pontos do Santander", "link": "https://www.esfera.com.vc/"}
+    {
+     "id": "latam",
+     "nome": "LATAM Pass",
+     "sobre": "Companhia LATAM e parceiras da oneworld",
+     "link": "https://latampass.latam.com/pt_br/"
+    },
+    {
+     "id": "smiles",
+     "nome": "Smiles",
+     "sobre": "GOL e mais de 30 parceiras",
+     "link": "https://www.smiles.com.br/"
+    },
+    {
+     "id": "azul",
+     "nome": "Azul Fidelidade",
+     "sobre": "Azul e parceiras como TAP e United",
+     "link": "https://www.voeazul.com.br/br/pt/programa-fidelidade"
+    },
+    {
+     "id": "tap",
+     "nome": "TAP Miles&Go",
+     "sobre": "TAP e Star Alliance; bom para a Europa",
+     "link": "https://www.flytap.com/pt-br/miles-and-go"
+    },
+    {
+     "id": "iberia",
+     "nome": "Iberia Club",
+     "sobre": "Avios da Iberia (antigo Iberia Plus)",
+     "link": "https://www.iberia.com/br/iberia-club/"
+    },
+    {
+     "id": "ba",
+     "nome": "The British Airways Club",
+     "sobre": "Avios da British (antigo Executive Club)",
+     "link": "https://www.britishairways.com/content/the-british-airways-club"
+    },
+    {
+     "id": "qatar",
+     "nome": "Privilege Club",
+     "sobre": "Avios da Qatar Airways",
+     "link": "https://www.qatarairways.com/pt-br/Privilege-Club.html"
+    },
+    {
+     "id": "livelo",
+     "nome": "Livelo",
+     "sobre": "Pontos de Bradesco e Banco do Brasil",
+     "link": "https://www.livelo.com.br/"
+    },
+    {
+     "id": "esfera",
+     "nome": "Esfera",
+     "sobre": "Pontos do Santander",
+     "link": "https://www.esfera.com.vc/"
+    }
    ]
   },
   {
    "titulo": "Companhias internacionais",
    "nota": "Cadastre quando for usar: para emitir com milhas de parceiras ou acumular no voo.",
    "programas": [
-    {"id": "aa", "nome": "AAdvantage", "sobre": "American Airlines e oneworld", "link": "https://www.aa.com/i18n/aadvantage-program/aadvantage-program.jsp"},
-    {"id": "flyingblue", "nome": "Flying Blue", "sobre": "Air France e KLM", "link": "https://www.flyingblue.com/pt/"},
-    {"id": "aeroplan", "nome": "Aeroplan", "sobre": "Air Canada e Star Alliance", "link": "https://www.aircanada.com/aeroplan"},
-    {"id": "lifemiles", "nome": "LifeMiles", "sobre": "Avianca e Star Alliance", "link": "https://www.lifemiles.com/"},
-    {"id": "skywards", "nome": "Emirates Skywards", "sobre": "Emirates e flydubai", "link": "https://www.emirates.com/br/portuguese/skywards/"},
-    {"id": "turkish", "nome": "Miles&Smiles", "sobre": "Turkish Airlines", "link": "https://www.turkishairlines.com/pt-int/miles-and-smiles/"},
-    {"id": "copa", "nome": "ConnectMiles", "sobre": "Copa Airlines", "link": "https://www.copaair.com/pt-br/enrollment/"},
-    {"id": "united", "nome": "MileagePlus", "sobre": "United Airlines", "link": "https://www.united.com/pt/br/fly/mileageplus.html"},
-    {"id": "virgin", "nome": "Flying Club", "sobre": "Virgin Atlantic", "link": "https://www.virginatlantic.com/flying-club"},
-    {"id": "milesmore", "nome": "Miles & More", "sobre": "Lufthansa, Swiss e Austrian", "link": "https://www.miles-and-more.com/"},
-    {"id": "krisflyer", "nome": "KrisFlyer", "sobre": "Singapore Airlines e parceiras da Star Alliance", "link": "https://www.singaporeair.com/pt_BR/ppsclub-krisflyer/registration-form/"},
-    {"id": "suma", "nome": "SUMA", "sobre": "Air Europa e parceiras da SkyTeam", "link": "https://www.aireuropa.com/br/br/signup"}
+    {
+     "id": "aa",
+     "nome": "AAdvantage",
+     "sobre": "American Airlines e oneworld",
+     "link": "https://www.aa.com/i18n/aadvantage-program/aadvantage-program.jsp"
+    },
+    {
+     "id": "flyingblue",
+     "nome": "Flying Blue",
+     "sobre": "Air France e KLM",
+     "link": "https://www.flyingblue.com/pt/"
+    },
+    {
+     "id": "aeroplan",
+     "nome": "Aeroplan",
+     "sobre": "Air Canada e Star Alliance",
+     "link": "https://www.aircanada.com/aeroplan"
+    },
+    {
+     "id": "lifemiles",
+     "nome": "LifeMiles",
+     "sobre": "Avianca e Star Alliance",
+     "link": "https://www.lifemiles.com/"
+    },
+    {
+     "id": "skywards",
+     "nome": "Emirates Skywards",
+     "sobre": "Emirates e flydubai",
+     "link": "https://www.emirates.com/br/portuguese/skywards/"
+    },
+    {
+     "id": "turkish",
+     "nome": "Miles&Smiles",
+     "sobre": "Turkish Airlines",
+     "link": "https://www.turkishairlines.com/pt-int/miles-and-smiles/"
+    },
+    {
+     "id": "copa",
+     "nome": "ConnectMiles",
+     "sobre": "Copa Airlines",
+     "link": "https://www.copaair.com/pt-br/enrollment/"
+    },
+    {
+     "id": "united",
+     "nome": "MileagePlus",
+     "sobre": "United Airlines",
+     "link": "https://www.united.com/pt/br/fly/mileageplus.html"
+    },
+    {
+     "id": "virgin",
+     "nome": "Flying Club",
+     "sobre": "Virgin Atlantic",
+     "link": "https://www.virginatlantic.com/flying-club"
+    },
+    {
+     "id": "milesmore",
+     "nome": "Miles & More",
+     "sobre": "Lufthansa, Swiss e Austrian",
+     "link": "https://www.miles-and-more.com/"
+    },
+    {
+     "id": "krisflyer",
+     "nome": "KrisFlyer",
+     "sobre": "Singapore Airlines e parceiras da Star Alliance",
+     "link": "https://www.singaporeair.com/pt_BR/ppsclub-krisflyer/registration-form/"
+    },
+    {
+     "id": "suma",
+     "nome": "SUMA",
+     "sobre": "Air Europa e parceiras da SkyTeam",
+     "link": "https://www.aireuropa.com/br/br/signup"
+    }
    ]
   },
   {
    "titulo": "Bancos",
    "nota": "Cadastro não obrigatório: os pontos do cartão já ficam no banco. Vale entrar para acompanhar o saldo e transferir na hora da promoção.",
    "programas": [
-    {"id": "c6", "nome": "C6 Átomos", "sobre": "Pontos dos cartões C6", "link": "https://www.c6bank.com.br/programa-de-pontos-atomos/"},
-    {"id": "bb", "nome": "Benefícios BB", "sobre": "Pontos e vantagens dos cartões Banco do Brasil", "link": "https://www.bb.com.br/site/pra-voce/beneficios-bb/"},
-    {"id": "itaushop", "nome": "Itaú Shop", "sobre": "Onde usar os pontos dos cartões Itaú, no app", "link": "https://www.itau.com.br/itau-shop"},
-    {"id": "paodeacucar", "nome": "Pão de Açúcar Mais", "sobre": "Pontos dos cartões Itaú Pão de Açúcar", "link": "https://www.itau.com.br/cartoes/beneficios/programa-pontos-pao-de-acucar-cartoes-itau"},
-    {"id": "portoplus", "nome": "PortoPlus", "sobre": "Pontos dos cartões Porto Bank", "link": "https://www.portoplus.com.br/"},
-    {"id": "bvmerece", "nome": "BV Merece", "sobre": "Pontos dos cartões do banco BV", "link": "https://www.bv.com.br/cartao/bv-merece"},
-    {"id": "uau", "nome": "Uau Caixa", "sobre": "Pontos dos cartões Caixa", "link": "https://www.uaucaixa.com.br/"},
-    {"id": "coopera", "nome": "Coopera", "sobre": "Pontos do Sicoob", "link": "https://www.shopcoopera.com.br/"}
+    {
+     "id": "c6",
+     "nome": "C6 Átomos",
+     "sobre": "Pontos dos cartões C6",
+     "link": "https://www.c6bank.com.br/programa-de-pontos-atomos/"
+    },
+    {
+     "id": "bb",
+     "nome": "Benefícios BB",
+     "sobre": "Pontos e vantagens dos cartões Banco do Brasil",
+     "link": "https://www.bb.com.br/site/pra-voce/beneficios-bb/"
+    },
+    {
+     "id": "itaushop",
+     "nome": "Itaú Shop",
+     "sobre": "Onde usar os pontos dos cartões Itaú, no app",
+     "link": "https://www.itau.com.br/itau-shop"
+    },
+    {
+     "id": "paodeacucar",
+     "nome": "Pão de Açúcar Mais",
+     "sobre": "Pontos dos cartões Itaú Pão de Açúcar",
+     "link": "https://www.itau.com.br/cartoes/beneficios/programa-pontos-pao-de-acucar-cartoes-itau"
+    },
+    {
+     "id": "portoplus",
+     "nome": "PortoPlus",
+     "sobre": "Pontos dos cartões Porto Bank",
+     "link": "https://www.portoplus.com.br/"
+    },
+    {
+     "id": "bvmerece",
+     "nome": "BV Merece",
+     "sobre": "Pontos dos cartões do banco BV",
+     "link": "https://www.bv.com.br/cartao/bv-merece"
+    },
+    {
+     "id": "uau",
+     "nome": "Uau Caixa",
+     "sobre": "Pontos dos cartões Caixa",
+     "link": "https://www.uaucaixa.com.br/"
+    },
+    {
+     "id": "coopera",
+     "nome": "Coopera",
+     "sobre": "Pontos do Sicoob",
+     "link": "https://www.shopcoopera.com.br/"
+    }
    ]
   },
   {
    "titulo": "Para juntar pontos",
    "nota": "Compras, cashback e postos de combustível que viram pontos ou milhas.",
    "programas": [
-    {"id": "meliuz", "nome": "Méliuz", "sobre": "Cashback em compras online", "link": "https://www.meliuz.com.br/"},
-    {"id": "dotz", "nome": "Dotz", "sobre": "Pontos em mercados e parceiros", "link": "https://www.dotz.com.br/"},
-    {"id": "kmv", "nome": "Km de Vantagens", "sobre": "Postos Ipiranga", "link": "https://www.ipiranga.com.br/wps/portal/pt-br/ipiranga/km-de-vantagens"},
-    {"id": "premmia", "nome": "Premmia", "sobre": "Postos Petrobras", "link": "https://www.premmia.com.br/"},
-    {"id": "shellbox", "nome": "Shell Box Clube", "sobre": "Postos Shell, pelo app Shell Box", "link": "https://www.shell.com.br/motoristas/app-shell-box/programa-de-fidelidade/shell-box-clube.html"}
+    {
+     "id": "meliuz",
+     "nome": "Méliuz",
+     "sobre": "Cashback em compras online",
+     "link": "https://www.meliuz.com.br/"
+    },
+    {
+     "id": "dotz",
+     "nome": "Dotz",
+     "sobre": "Pontos em mercados e parceiros",
+     "link": "https://www.dotz.com.br/"
+    },
+    {
+     "id": "kmv",
+     "nome": "Km de Vantagens",
+     "sobre": "Postos Ipiranga",
+     "link": "https://www.ipiranga.com.br/wps/portal/pt-br/ipiranga/km-de-vantagens"
+    },
+    {
+     "id": "premmia",
+     "nome": "Premmia",
+     "sobre": "Postos Petrobras",
+     "link": "https://www.premmia.com.br/"
+    },
+    {
+     "id": "shellbox",
+     "nome": "Shell Box Clube",
+     "sobre": "Postos Shell, pelo app Shell Box",
+     "link": "https://www.shell.com.br/motoristas/app-shell-box/programa-de-fidelidade/shell-box-clube.html"
+    }
    ]
   },
   {
    "titulo": "Hotéis",
    "nota": "Pontos de hotel também viram milhas, e o cadastro já dá vantagens na estadia.",
    "programas": [
-    {"id": "accor", "nome": "ALL Accor", "sobre": "Ibis, Novotel, Mercure, Sofitel", "link": "https://all.accor.com/loyalty-program/index.pt-br.shtml"},
-    {"id": "marriott", "nome": "Marriott Bonvoy", "sobre": "Marriott, Sheraton, Westin", "link": "https://www.marriott.com/pt-br/loyalty.mi"},
-    {"id": "hilton", "nome": "Hilton Honors", "sobre": "Hilton, DoubleTree, Conrad", "link": "https://www.hilton.com/pt/hilton-honors/"},
-    {"id": "hyatt", "nome": "World of Hyatt", "sobre": "Hyatt, Grand Hyatt, Park Hyatt", "link": "https://world.hyatt.com/"},
-    {"id": "ihg", "nome": "IHG One Rewards", "sobre": "Holiday Inn, InterContinental", "link": "https://www.ihg.com/onerewards/content/br/pt/home"},
-    {"id": "wyndham", "nome": "Wyndham Rewards", "sobre": "Wyndham, Ramada, Days Inn", "link": "https://www.wyndhamhotels.com/pt-br/wyndham-rewards"},
-    {"id": "melia", "nome": "MeliáRewards", "sobre": "Hotéis Meliá", "link": "https://www.melia.com/pt/meliarewards"},
-    {"id": "choice", "nome": "Choice Privileges", "sobre": "Rede Choice Hotels", "link": "https://www.choicehotels.com/pt-br/choice-privileges"},
-    {"id": "onekey", "nome": "One Key", "sobre": "Hoteis.com, Expedia e Vrbo (antigo Hoteis.com Rewards)", "link": "https://www.hoteis.com/welcome-one-key"}
+    {
+     "id": "accor",
+     "nome": "ALL Accor",
+     "sobre": "Ibis, Novotel, Mercure, Sofitel",
+     "link": "https://all.accor.com/loyalty-program/index.pt-br.shtml"
+    },
+    {
+     "id": "marriott",
+     "nome": "Marriott Bonvoy",
+     "sobre": "Marriott, Sheraton, Westin",
+     "link": "https://www.marriott.com/pt-br/loyalty.mi"
+    },
+    {
+     "id": "hilton",
+     "nome": "Hilton Honors",
+     "sobre": "Hilton, DoubleTree, Conrad",
+     "link": "https://www.hilton.com/pt/hilton-honors/"
+    },
+    {
+     "id": "hyatt",
+     "nome": "World of Hyatt",
+     "sobre": "Hyatt, Grand Hyatt, Park Hyatt",
+     "link": "https://world.hyatt.com/"
+    },
+    {
+     "id": "ihg",
+     "nome": "IHG One Rewards",
+     "sobre": "Holiday Inn, InterContinental",
+     "link": "https://www.ihg.com/onerewards/content/br/pt/home"
+    },
+    {
+     "id": "wyndham",
+     "nome": "Wyndham Rewards",
+     "sobre": "Wyndham, Ramada, Days Inn",
+     "link": "https://www.wyndhamhotels.com/pt-br/wyndham-rewards"
+    },
+    {
+     "id": "melia",
+     "nome": "MeliáRewards",
+     "sobre": "Hotéis Meliá",
+     "link": "https://www.melia.com/pt/meliarewards"
+    },
+    {
+     "id": "choice",
+     "nome": "Choice Privileges",
+     "sobre": "Rede Choice Hotels",
+     "link": "https://www.choicehotels.com/pt-br/choice-privileges"
+    },
+    {
+     "id": "onekey",
+     "nome": "One Key",
+     "sobre": "Hoteis.com, Expedia e Vrbo (antigo Hoteis.com Rewards)",
+     "link": "https://www.hoteis.com/welcome-one-key"
+    }
    ]
   },
   {
    "titulo": "Locadoras de carro",
    "nota": "",
    "programas": [
-    {"id": "movida", "nome": "Movida Fidelidade", "sobre": "Aluguel de carro com milhas e pontos", "link": "https://www.movida.com.br/movida-fidelidade"},
-    {"id": "hertz", "nome": "Hertz Gold Plus Rewards", "sobre": "Aluguel de carro Hertz, com retirada mais rápida", "link": "https://www.hertz.com.br/rentacar/member/enrollment"}
+    {
+     "id": "movida",
+     "nome": "Movida Fidelidade",
+     "sobre": "Aluguel de carro com milhas e pontos",
+     "link": "https://www.movida.com.br/movida-fidelidade"
+    },
+    {
+     "id": "hertz",
+     "nome": "Hertz Gold Plus Rewards",
+     "sobre": "Aluguel de carro Hertz, com retirada mais rápida",
+     "link": "https://www.hertz.com.br/rentacar/member/enrollment"
+    }
    ]
   }
  ]

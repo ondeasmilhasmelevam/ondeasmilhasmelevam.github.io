@@ -49,6 +49,7 @@
 @media (prefers-reduced-motion:reduce){#entrada{display:none}}
 </style>
 <link rel="stylesheet" href="estilo.css?v=147">
+<link rel="stylesheet" href="ajustes.css?v=3">
 </head>
 <body>
 <div id="entrada" aria-hidden="true"><div><img src="img/logo-entrada.webp" alt="" width="148" height="148" fetchpriority="high"></div></div>
@@ -686,8 +687,13 @@
         <div class="push-card" id="push-card">
           <span class="push-ic" aria-hidden="true">📲</span>
           <div><b>Receber no celular</b><small id="push-info">Aviso na tela do celular assim que aparecer passagem nas suas rotas, além do e-mail.</small></div>
-          <div class="push-botoes"><button type="button" class="cta cta-a" id="push-ligar">Ativar</button><button type="button" class="cta" id="push-teste" hidden>Enviar teste</button></div>
+          <div class="push-botoes"><button type="button" class="cta cta-a" id="push-ligar">Ativar</button><button type="button" class="cta" id="push-teste" hidden>Enviar teste</button><button type="button" class="cta" id="push-verificar">Verificar novamente</button></div>
         </div>
+        <details class="push-ajuda" id="push-ajuda">
+          <summary>Como liberar as notificações</summary>
+          <div id="push-ajuda-texto"></div>
+          <p>Depois de liberar a permissão, volte aqui, toque em <b>Verificar novamente</b> e conclua a ativação. Use <b>Enviar teste</b> para conferir o recebimento. Os avisos de passagens coletadas antes da ativação não são reenviados automaticamente.</p>
+        </details>
         <form class="radar-form" id="radar-form">
           <label>Saindo de<input id="radar-origem" list="passagens-cidades" placeholder="ex.: GRU ou qualquer" autocomplete="off"></label>
           <label>Indo para<input id="radar-destino" list="passagens-cidades" placeholder="ex.: Lisboa ou qualquer" autocomplete="off"></label>
@@ -776,6 +782,7 @@
       </div>
       <div id="rota-aberta" hidden>
         <p class="hist-info" id="rota-info"></p>
+        <button type="button" class="cta cta-b" id="rota-tentar" hidden>Tentar novamente</button>
         <div id="rota-corpo" hidden>
           <div class="rota-hero">
             <span class="rota-cab" id="rota-cab"></span>
@@ -833,7 +840,7 @@
       </div>
       <p class="cad-dica" id="cad-dica"></p>
       <div class="cad-progresso"><span id="cad-progresso-txt"></span><span class="barra"><i id="cad-progresso-barra"></i></span></div>
-      <div id="cad-grupos"></div>
+      <div id="cad-grupos"><p role="status">Carregando cadastros…</p></div>
       <p class="fine" id="cad-conferido"></p>
     </section>
 
@@ -1375,15 +1382,17 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha384-+mbV2IY1Zk/X1p/nWllGySJSUN8uMs+gUAN10Or95UBH0fpj6GfKgPmgC5EXieXG" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="restaurantes.js?v=1"></script>
-<script src="precos.js?v=5"></script>
-<script src="milheiros.js?v=7"></script>
+<script src="milheiros.js?v=8"></script>
+<script src="precos.js?v=6"></script>
 <script src="correcoes.js?v=4"></script>
 <script src="extras.js?v=3"></script>
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
-<script src="app.js?v=132"></script>
+<script src="navegacao.js?v=1"></script>
+<script src="app.js?v=134"></script>
+<script src="interface.js?v=1"></script>
 <script src="funil.js?v=8"></script>
-<script type="module" src="assinatura.js?v=48"></script>
+<script type="module" src="assinatura.js?v=51"></script>
 <script src="mapa.js?v=10" defer></script>
 <script src="instalar.js?v=2" defer></script>
 </body>

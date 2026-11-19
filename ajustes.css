@@ -1,0 +1,49 @@
+/* Refinamentos delimitados: mantém os componentes e os temas existentes. */
+.aba-banner{height:170px;margin-bottom:18px;border-color:var(--line)}
+.aba-banner>div{max-width:88%;padding:22px 28px}
+.aba-banner::after{display:none}
+.aba-banner .banner-titulo{font-family:var(--body);font-size:clamp(25px,3vw,34px);font-weight:700;letter-spacing:-.025em;line-height:1.18;margin:0;color:#fff;text-wrap:balance}
+.aba-banner p{font-size:10px;letter-spacing:.14em}
+.aba-banner+.sec-head .eyebrow{display:none}
+.proximos-passos{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin:28px 0 12px;padding:20px;border:1px solid var(--line);border-radius:12px;background:var(--ink-2);font-size:13px}
+.proximos-passos b{flex-basis:100%;color:var(--ash);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.proximos-passos a{color:var(--ouro);text-underline-offset:4px}
+.fonte-erro{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--ink-2);color:var(--ash)}
+.fonte-erro button{border:0;background:none;color:var(--ouro);text-decoration:underline;cursor:pointer}
+.cad-links{display:flex;flex-wrap:wrap;gap:8px;grid-column:1/-1;margin-top:8px}
+.cad-links a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;text-decoration:none;font-size:12px;font-weight:600;background:var(--ink-3);color:var(--rice)}
+.cad-links a:first-child{color:var(--ouro)}
+.cad-links a:hover{border-color:var(--ouro)}
+.cad-loja-icone{width:20px;height:20px;flex:0 0 20px;display:block}
+.cad-loja-icone.android{color:#86d68b}
+.cad-loja-icone.apple{color:var(--rice)}
+:root[data-theme="light"] .cad-loja-icone.android{color:#287d36}
+#cad-grupos .cad-grupo:nth-child(-n+2) .cad-lista{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cad-feito{grid-row:1;align-self:start}.cad-sobre{grid-column:1/-1;margin-top:6px}
+@media(max-width:650px){
+ .aba-banner{height:150px}.aba-banner>div{max-width:100%;padding:20px}.aba-banner .banner-titulo{font-size:25px}
+ #cad-grupos .cad-grupo:nth-child(-n+2) .cad-lista{grid-template-columns:1fr}
+ .cad-links a{font-size:11px}.proximos-passos{padding:16px}
+}
+@media(max-width:560px){
+ .bar-in{gap:6px;padding-inline:12px}.bar-mark{min-width:0;flex:1 1 auto;gap:7px}
+ .bar-mark b{font-size:10px;letter-spacing:.03em;white-space:normal;max-width:126px}
+ .bar-mark img{width:30px;height:30px}.topo-acoes{margin-left:0;flex:0 0 auto;gap:5px;min-width:0}
+ .topo-tema{width:32px;height:36px;padding:0;flex-shrink:0}.topo-entrar{padding:0 9px;height:36px;font-size:11px}
+ .menu-btn{width:34px;height:36px;flex-shrink:0}.topo-tema span{display:none}
+}
+/* O grupo de preparação deve caber na coluna, sem criar rolagem lateral. */
+.tabs .menu-grupo,.tabs .menu-sub{min-width:0;max-width:100%;width:100%}
+.tabs .menu-grupo-btn{min-width:0;white-space:normal;overflow-wrap:anywhere}
+.tabs summary.menu-grupo-btn{font-size:10px;letter-spacing:.1em}
+
+/* Meses e datas continuam legíveis nos dois temas. */
+.hist-meses span{color:#d9ffea;background:rgba(26,81,59,calc(.45 + .35 * var(--f)))}
+:root[data-theme="light"] .hist-meses span{color:#174b35;background:rgba(111,214,166,calc(.22 + .3 * var(--f)))}
+.pass-dia.on{color:var(--sobre-ouro)}
+.push-ajuda{margin:12px 0 22px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--ink-3);font-size:1rem;line-height:1.6}
+.push-ajuda summary{cursor:pointer;font-weight:700;color:var(--ouro)}
+.push-ajuda ol{padding-left:24px}.push-ajuda li+li{margin-top:10px}
+.push-ajuda p{margin:12px 0 0}.push-ajuda a{color:var(--ouro)}
+#push-card .push-botoes{flex-wrap:wrap}
+@media(max-width:650px){#push-card{align-items:flex-start;flex-wrap:wrap}#push-card .push-botoes{width:100%;display:flex;gap:8px}#push-card .push-botoes button{min-height:44px}.push-ajuda{padding:14px}}

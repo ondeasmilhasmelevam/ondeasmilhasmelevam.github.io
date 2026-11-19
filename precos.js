@@ -5,7 +5,7 @@
 window.PRECO_MILHAS = [
   { nome: 'Azul Fidelidade', icone: 'azul', tipo: 'Azul', preco: 'R$ 14 ou menos', fundo: '#1D63F0', tinta: '#FFFFFF' },
   { nome: 'Smiles', icone: 'smiles', tipo: 'GOL', preco: 'R$ 16 ou menos', fundo: '#FF8A00', tinta: '#FFFFFF' },
-  { nome: 'LATAM Pass', icone: 'latam', tipo: 'LATAM', preco: 'R$ 24 a 26', fundo: '#3B1FD1', tinta: '#FFFFFF' },
+  { nome: 'LATAM Pass', icone: 'latam', tipo: 'LATAM', preco: 'R$ 25 ou menos', fundo: '#3B1FD1', tinta: '#FFFFFF' },
   { nome: 'Avios', icone: 'avios', tipo: 'Iberia, British Airways e Qatar', preco: 'R$ 50 a 56', fundo: '#1B1F8C', tinta: '#FFFFFF' },
   { nome: 'TAP Miles&Go', icone: 'tap', tipo: 'TAP Air Portugal', preco: 'R$ 35 a 40', fundo: '#FFFFFF', tinta: '#D71920' },
   { nome: 'LifeMiles', icone: 'avianca', tipo: 'Avianca', preco: 'R$ 65 a 70', fundo: '#E1231A', tinta: '#FFFFFF' },
@@ -20,3 +20,8 @@ window.PRECO_MILHAS = [
   { nome: 'JAL Mileage Bank', icone: 'jal', tipo: 'Japan Airlines · via Marriott', preco: 'R$ 84 ou menos', fundo: '#FFFFFF', tinta: '#C8102E' },
   { nome: 'SUMA', icone: 'aireuropa', tipo: 'Air Europa · preço em euro', preco: '€ 10', fundo: '#0A6FC2', tinta: '#FFFFFF' }
 ];
+
+window.PRECO_MILHAS.forEach(item => {
+  const teto = (window.REFERENCIAS_COMPRA || {})[item.nome];
+  if (teto != null) item.preco = `R$ ${teto} ou menos`;
+});

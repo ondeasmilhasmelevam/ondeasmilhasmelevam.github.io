@@ -4,8 +4,8 @@
    O bônus de transferência continua vindo da planilha. */
 window.MILHEIROS = {
   'Smiles': 16,
-  'LATAM Pass': 26,
-  'Azul Fidelidade': 13,
+  'LATAM Pass': 25,
+  'Azul Fidelidade': 14,
   'TAP': 40,
   'AA': 90,
   'Avios': 56
@@ -34,4 +34,15 @@ window.BONUS_MINIMO = {
     { nome: 'Iberia Plus', minimo: 'Sem bônus', obs: 'Na Revolut é 1 ponto = 1 Avios, sem promoção de bônus: dá para transferir quando precisar.', destino: /IBERIA|AVIOS/, so: /REVOLUT/, unidade: 'Avios' }
   ],
   dica: 'A estratégia pontos + dinheiro pode valer a pena mesmo com bônus menores.'
+};
+
+// Tetos de compra aprovados: fonte comum para tabelas, cartões e calculadoras.
+window.REFERENCIAS_COMPRA = Object.freeze({ 'LATAM Pass': 25, 'Azul Fidelidade': 14, Smiles: 16, Livelo: 31, Esfera: 35 });
+Object.assign(window.MILHEIROS, Object.fromEntries(Object.entries(window.REFERENCIAS_COMPRA).filter(([nome]) => nome in window.MILHEIROS)));
+window.oammlAplicarTetos = dados => {
+  if (Array.isArray(dados?.milheiro)) dados.milheiro.forEach(item => {
+    const teto = window.REFERENCIAS_COMPRA[item.programa];
+    if (item.moeda === 'BRL' && teto != null) item.teto = teto;
+  });
+  return dados;
 };

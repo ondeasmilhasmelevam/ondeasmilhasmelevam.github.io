@@ -1001,7 +1001,7 @@
   const LOGOS_REST = [[/heineken/i, 'heineken.com'], [/grand cru/i, 'grandcru.com.br'], [/paris 6/i, 'paris6.com.br'], [/seara/i, 'seara.com.br']];
   function desenharRestaurantes() {
     const R = window.RESTAURANTES_VIP;
-    if (!R) { $('#restaurantes').hidden = true; return; }
+    if (!R) { erroFonte('#restaurantes'); return; }
     const PRATO = '<svg class="rest-prato" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 34h36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M10 32a14 14 0 0 1 28 0z" fill="currentColor" opacity=".18" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="24" cy="15" r="2.5" fill="currentColor"/><path d="M14 38h20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity=".5"/></svg>';
     $('#rest-valores').innerHTML = R.valores.map(v => `<div class="rest-valor ${v.rede}">${PRATO}
         <p>${REDE_ROTULO[v.rede]} · ${esc(v.titulo)}</p><b>${esc(v.valor)}</b><span>${esc(v.texto)}</span></div>`).join('');
@@ -1149,14 +1149,16 @@
     try {
       const r = await fetch('dados/termometro.json', { cache: 'no-store' });
       termometro = r.ok ? await r.json() : null;
+      if (window.oammlAplicarTetos) termometro = window.oammlAplicarTetos(termometro);
     } catch (e) { termometro = null; }
     document.dispatchEvent(new Event('termometro-pronto'));
-    if (!termometro || !termometro.regioes || !termometro.regioes.length) { $('#termometro').hidden = true; return; }
+    if (!termometro || !termometro.regioes || !termometro.regioes.length) { erroFonte('#termometro'); return; }
     $('#termo-dicas').innerHTML = (termometro.dicas || []).map(d => `<li>${esc(d)}</li>`).join('');
     const lista = termometro.milheiro || [];
     $('#milheiro-programa').innerHTML = lista.map((m, i) => `<option value="${i}">${esc(m.programa)}</option>`).join('');
     $('#milheiro-tetos').innerHTML = lista.map(m => `<li><b>${esc(m.programa)}</b> até ${MOEDA[m.moeda] || ''} ${m.teto.toLocaleString('pt-BR')}</li>`).join('');
     mostrarTermometro();
+    aplicarContextoViagem('termometro');
     mostrarMilheiro();
     if (typeof mostrarHoje === 'function') mostrarHoje(); // o destaque de Hoje depende do Termômetro
     mostrarPassagens();
@@ -1282,7 +1284,7 @@
       const r = await fetch('dados/guia.json', { cache: 'no-store' });
       guia = r.ok ? await r.json() : null;
     } catch (e) { guia = null; }
-    if (!guia || !guia.emitir) { $('#guia').hidden = true; return; }
+    if (!guia || !guia.emitir) { erroFonte('#guia'); return; }
     const progs = [...new Set(guia.emitir.flatMap(e => e.programas.map(p => familia(p.nome))))].sort((a, b) => a.localeCompare(b, 'pt-BR'));
     $('#guia-programa').insertAdjacentHTML('beforeend', progs.map(p => `<option>${esc(p)}</option>`).join(''));
     mostrarGuia();
@@ -1409,7 +1411,7 @@
       transf = r.ok ? await r.json() : null;
     } catch (e) { transf = null; }
     document.dispatchEvent(new Event('transf')); // a calculadora usa as proporções
-    if (!transf || !transf.origens) { $('#transferencias').hidden = true; return; }
+    if (!transf || !transf.origens) { erroFonte('#transferencias'); return; }
     $('#transf-data').textContent = `Conferido em ${new Date(transf.conferido + 'T12:00:00').toLocaleDateString('pt-BR')}. ${transf.aviso}`;
     $('#transf-extras').innerHTML = `<div class="termo-bloco">
         <h3>Programas que nenhum banco do Brasil alcança direto</h3>
@@ -1514,7 +1516,7 @@
       if (!busca || !dias.length) return `<li><b>${esc(d.mes)}</b> ${esc(d.dias)}</li>`;
       return `<li><b>${esc(d.mes)}</b>${dias.map(n => {
         const dt = `${mes}-${String(n).padStart(2, '0')}`;
-        return `<button type="button" class="pass-dia" data-k="${k}" data-dt="${dt}"${dt < hoje ? ' disabled' : ''}>${n}</button>`;
+        return `<button type="button" class="pass-dia" aria-pressed="false" aria-label="${k === 'ida' ? 'Ida' : 'Volta'} ${dt.slice(8, 10)}/${dt.slice(5, 7)}/${dt.slice(0, 4)}" data-k="${k}" data-dt="${dt}"${dt < hoje ? ' disabled' : ''}>${n}</button>`;
       }).join('')}</li>`;
     };
     return `<div class="pass-datas"><span>${rotulo}</span><ul>${lista.map(linha).join('')}</ul></div>`;
@@ -1535,6 +1537,7 @@
     cal.querySelectorAll('.pass-dia').forEach(b => {
       const dt = b.dataset.dt, ehIda = b.dataset.k === 'ida';
       b.classList.toggle('on', dt === (ehIda ? ida : volta));
+      b.setAttribute('aria-pressed', String(dt === (ehIda ? ida : volta)));
       b.disabled = dt < hoje || (!ehIda && !!ida && dt <= ida);
     });
     const a = cal.querySelector('.pass-link'), dica = cal.querySelector('.pass-dica');
@@ -1599,7 +1602,7 @@
     const completo = httpOk(p.link) ? p : (assinatura().alertas || {})[p.id];
     const nivel = nivelPassagem(p);
     const selo = ['espetacular', 'muito bom', 'bom'].includes(nivel)
-      ? `<a class="pass-selo ${CLASSE_NIVEL[nivel]}" href="#termometro" title="Pelo termômetro de milhas">${nivel === 'espetacular' ? '🔥 ' : ''}${esc(nivel)}</a>` : '';
+      ? `<a class="pass-selo ${CLASSE_NIVEL[nivel]}" data-viagem href="${esc(window.oammlNavegacao.url('termometro', { destino: p.destino_iata, cabine: ehExecutiva(p.cabine) ? 'exe' : 'eco' }))}" title="Pelo termômetro de milhas">${nivel === 'espetacular' ? '🔥 ' : ''}${esc(nivel)}</a>` : '';
     return `<li class="${ehExecutiva(p.cabine) ? 'exe' : ''}">
         <div class="pass-foto" aria-hidden="true">
           <span class="pf-origem" data-cidade="${esc(`${p.origem}|${p.origem_iata}`)}"></span>
@@ -1796,6 +1799,7 @@
     const btn = $('#mais-passagens');
     btn.hidden = lista.length <= POR_VEZ;
     btn.textContent = f.todas ? 'Mostrar menos' : `Ver todas as ${lista.length} ${promo ? 'promoções' : 'passagens'}`;
+    if (!promo) window.oammlNavegacao?.salvar('passagens', { origem: f.busca, destino: f.destino, cidade: f.cidade, programa: f.programa, ordem: f.ordem, cabine: f.cabine, escopo: f.escopo });
   }
   // Opções dos filtros a partir das passagens no ar (cidades para sugerir e programas).
   function preencherFiltros(lista) {
@@ -1932,13 +1936,13 @@
 
   // Quanto valem as milhas do trecho em reais, pelo teto de milheiro do Termômetro.
   // É uma estimativa (o que se pagaria comprando as milhas no preço bom), não o preço da passagem.
-  const TETO_PROG = { LATAM: 'LATAM Pass', Smiles: 'Smiles', Azul: 'Azul Fidelidade', Avios: 'Iberia (Avios)' };
+  const TETO_PROG = { LATAM: 'LATAM Pass', Smiles: 'Smiles', Azul: 'Azul Fidelidade', Avios: 'Iberia (Avios)', TAP: 'TAP Miles&Go', AA: 'AAdvantage' };
   function tetoDe(nome) {
     if (!termometro || !termometro.milheiro) return null;
     const n = norm(nome || '');
     const chave = /AEROPLAN/.test(n) ? 'Aeroplan' : TETO_PROG[programaTermo(nome)] || (/LIVELO/.test(n) ? 'Livelo' : /ESFERA/.test(n) ? 'Esfera' : '');
     const m = chave && termometro.milheiro.find(x => x.programa === chave && x.moeda === 'BRL');
-    return m ? m.teto : null;
+    return m ? m.teto : (window.MILHEIROS || {})[programaTermo(nome)] || null;
   }
   const milhasTrecho = t => numeroMilhas(t) || numeroMilhas(`${t} milhas`);
   function custoReais(p) {
@@ -2138,11 +2142,7 @@
   $('#hoje').addEventListener('click', e => {
     if (e.target.closest('#hoje-shopping')) { Object.assign(filtroPromo, { programa: '', tipo: 'shopping', busca: '' }); mostrarPromocoes(); return; }
     const b = e.target.closest('[data-hoje-destino]'); if (!b) return;
-    Object.assign(filtroPassagem, { tipo: 'passagem', destino: b.dataset.hojeDestino, busca: '', todas: false });
-    $('#passagens-destino').value = b.dataset.hojeDestino;
-    $('#passagens-busca').value = '';
-    location.hash = 'passagens';
-    mostrarPassagens();
+    window.oammlNavegacao.ir('passagens', { destino: b.dataset.hojeDestino });
   });
 
   // Guia de destinos (dados/guias.json, montado por ferramentas/guias.py): cartões por tipo e
@@ -2227,12 +2227,10 @@
     const p = e.target.closest('[data-guia-passagens]');
     if (p) {
       d.close();
-      Object.assign(filtroPassagem, { tipo: 'passagem', destino: p.dataset.guiaPassagens, busca: '', todas: false });
-      $('#passagens-destino').value = p.dataset.guiaPassagens; $('#passagens-busca').value = '';
-      location.hash = 'passagens'; mostrarPassagens();
+      window.oammlNavegacao.ir('passagens', { destino: p.dataset.guiaPassagens });
     }
     const r = e.target.closest('[data-guia-radar]');
-    if (r) { d.close(); $('#radar-destino').value = r.dataset.guiaRadar; }
+    if (r) { e.preventDefault(); d.close(); window.oammlNavegacao.ir('radar', { destino: r.dataset.guiaRadar }); }
   });
   (async () => {
     try { guias = ((await (await fetch('dados/guias.json', { cache: 'no-store' })).json()).destinos || []); } catch (e) { guias = []; }
@@ -2381,6 +2379,11 @@
   let cadFeitos = new Set();
   try { cadFeitos = new Set(JSON.parse(localStorage.getItem(CAD_CHAVE)) || []); } catch (e) { /* começa vazio */ }
   let cadDados = null;
+  function iconeLojaCadastro(url) {
+    if (url.startsWith('https://play.google.com/')) return '<svg class="cad-loja-icone android" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6 8h12v9a1 1 0 0 1-1 1h-1v3a1 1 0 0 1-2 0v-3h-4v3a1 1 0 0 1-2 0v-3H7a1 1 0 0 1-1-1V8ZM3.5 8a1 1 0 0 1 1 1v7a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1Zm17 0a1 1 0 0 1 1 1v7a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1ZM6 7a6 6 0 0 1 2.2-4.1L7 1.1l.8-.5 1.2 1.8a6.3 6.3 0 0 1 6 0L16.2.6l.8.5-1.2 1.8A6 6 0 0 1 18 7H6Z"/><circle cx="9" cy="5" r=".6" fill="var(--ink-2)"/><circle cx="15" cy="5" r=".6" fill="var(--ink-2)"/></svg>';
+    if (url.startsWith('https://apps.apple.com/')) return '<svg class="cad-loja-icone apple" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.05 12.54c.03 3.24 2.84 4.32 2.87 4.33-.02.08-.45 1.54-1.48 3.05-.89 1.3-1.81 2.59-3.27 2.62-1.43.03-1.89-.85-3.53-.85-1.63 0-2.14.82-3.5.88-1.4.05-2.46-1.4-3.36-2.69-1.84-2.64-3.24-7.47-1.35-10.73.94-1.62 2.62-2.65 4.44-2.68 1.39-.03 2.7.94 3.55.94.85 0 2.45-1.16 4.13-.99.7.03 2.66.28 3.92 2.12-.1.06-2.34 1.36-2.32 4ZM14.37 4.71c.75-.91 1.26-2.18 1.12-3.45-1.08.04-2.39.72-3.17 1.63-.69.79-1.29 2.07-1.13 3.29 1.2.09 2.42-.61 3.18-1.47Z"/></svg>';
+    return '';
+  }
   function mostrarCadastros() {
     if (!cadDados) return;
     const todos = cadDados.grupos.flatMap(g => g.programas);
@@ -2396,7 +2399,7 @@
           <p class="cad-nome">${esc(p.nome)}</p>
           <label class="cad-feito"><input type="checkbox" data-cad="${esc(p.id)}" ${cadFeitos.has(p.id) ? 'checked' : ''} aria-label="Já me cadastrei no ${esc(p.nome)}">Já fiz</label>
           <p class="cad-sobre">${esc(p.sobre)}</p>
-          <a href="${esc(p.link)}" target="_blank" rel="noopener">Abrir cadastro ↗</a>
+          <div class="cad-links"><a href="${esc(p.link)}" target="_blank" rel="noopener" data-link-oficial>${esc(p.acao || 'Abrir cadastro')} ↗</a>${(p.links || []).filter(l => httpOk(l.url)).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener" data-link-oficial>${iconeLojaCadastro(l.url)}<span>${esc(l.rotulo)}</span><span aria-hidden="true">↗</span></a>`).join('')}</div>
         </li>`).join('')}</ul>
       </section>`;
     }).join('');
@@ -2414,7 +2417,7 @@
       const [ano, mes, dia] = cadDados.conferido.split('-');
       $('#cad-conferido').textContent = `Links conferidos nos sites oficiais em ${dia}/${mes}/${ano}.`;
       mostrarCadastros();
-    } catch (e) { /* página fica sem a lista */ }
+    } catch (e) { $('#cad-grupos').textContent = ''; erroFonte('#cadastros'); }
   })();
 
   // Salas VIP dos principais aeroportos (dados/salas.json): busca por aeroporto, cidade ou sala
@@ -2571,7 +2574,7 @@
       const [ano, mes, dia] = salas.conferido.split('-');
       $('#salas-conferido').textContent = `Conferido em ${dia}/${mes}/${ano}.`;
       mostrarSalas();
-    } catch (e) { /* página fica sem a lista */ }
+    } catch (e) { erroFonte('#salas'); }
   }
   $('#salas-busca').addEventListener('input', e => { filtroSala.busca = e.target.value; mostrarSalas(); });
   $('#salas-acesso').addEventListener('change', e => { filtroSala.acesso = e.target.value; mostrarSalas(); });
@@ -2829,7 +2832,7 @@
   function mostrarQuanto() {
     const lista = quanto[quanto.tipo] || [];
     const busca = norm($('#quanto-busca').value);
-    const vis = lista.filter(x => !busca || norm([x.destino, x.sub, x.continente].join(' ')).includes(busca));
+    const vis = lista.filter(x => !busca || norm([x.destino, x.sub, x.continente, IATA_CIDADE[norm(x.destino)] || ''].join(' ')).includes(busca));
     const grupos = [];
     vis.forEach(x => { let g = grupos.find(y => y.nome === x.continente); if (!g) grupos.push(g = { nome: x.continente, itens: [] }); g.itens.push(x); });
     const niveis = lista[0] ? lista[0].valores.map(v => v.nivel) : [];
@@ -2851,16 +2854,17 @@
   async function desenharQuanto() {
     const [reais, milhas] = await Promise.all([lerFonte(FONTES_QUANTO.reais), lerFonte(FONTES_QUANTO.milhas)]);
     montarQuanto(reais, milhas);
-    if (!quanto.reais.length && !quanto.eco.length) { $('#quanto').hidden = true; return; }
+    if (!quanto.reais.length && !quanto.eco.length) { erroFonte('#quanto'); return; }
     if (!quanto.reais.length) quanto.tipo = 'eco';
     mostrarQuanto();
+    aplicarContextoViagem('quanto');
   }
   $('#quanto-tipo').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { quanto.tipo = b.dataset.tipo; mostrarQuanto(); } });
   $('#quanto-busca').addEventListener('input', mostrarQuanto);
 
   function desenharPrecos() {
     const P = window.PRECO_MILHAS;
-    if (!P || !P.length) { $('#comprar').hidden = true; return; }
+    if (!P || !P.length) { erroFonte('#comprar'); return; }
     // Do milheiro mais barato ao mais caro; a régua mostra onde cada preço fica entre R$ 0 e o maior da lista.
     const faixa = t => { const n = String(t).match(/\d+/g) || []; return n.length ? [+n[0], +(n[1] || n[0])] : [0, 0]; };
     const lista = P.map(p => ({ ...p, f: faixa(p.preco) })).sort((a, b) => (/^R\$/.test(b.preco.trim()) - /^R\$/.test(a.preco.trim())) || a.f[0] - b.f[0] || a.f[1] - b.f[1]);
@@ -2872,7 +2876,7 @@
       return `<li style="--ini:${(ini / teto * 100).toFixed(1)}%;--fim:${(fim / teto * 100).toFixed(1)}%">
         ${p.icone ? `<img class="preco-ico" src="img/programas/app/${esc(p.icone)}.webp" alt="" width="52" height="52" loading="lazy">`
           : `<span class="preco-ico preco-ini" style="background:${esc(p.fundo)};color:${esc(p.tinta)}">${esc(p.nome.slice(0, 2))}</span>`}
-        <div class="preco-nome"><b>${esc(p.nome)}</b><small>${esc(p.tipo || '')}</small></div>
+        <div class="preco-nome"><b>${esc(p.nome)}</b><small>${esc(p.tipo || '')}</small>${refDe(p.nome) ? `<a data-viagem href="${esc(window.oammlNavegacao.url('calculadoras', { programa: p.nome }))}">Avaliar uma compra →</a>` : ''}</div>
         <div class="preco-valor"><b>${esc(aberto(p) ? `até R$ ${p.f[1]}` : p.preco.replace(/^R\$\s*/, 'R$ '))}</b><small>por 1.000</small></div>
         ${emReais(p) ? '<span class="preco-regua" aria-hidden="true"><i></i></span>' : '<span class="preco-regua sem" aria-hidden="true"></span>'}
       </li>`;
@@ -3080,6 +3084,41 @@
     }
   });
 
+  function aplicarContextoViagem(pagina) {
+    const c = window.oammlNavegacao?.contexto(pagina);
+    if (!c) return;
+    if (pagina === 'passagens') {
+      Object.assign(filtroPassagem, { tipo: 'passagem', busca: c.origem, destino: c.destino, cidade: c.cidade, programa: c.programa, ordem: c.ordem === 'milhas' ? 'milhas' : '', cabine: ['eco','exe'].includes(c.cabine) ? c.cabine : '', escopo: ['nac','int'].includes(c.escopo) ? c.escopo : '', todas: false });
+      [['#passagens-busca','busca'],['#passagens-destino','destino'],['#passagens-cidade','cidade'],['#passagens-programa','programa'],['#passagens-ordem','ordem']].forEach(([id,k]) => { $(id).value = filtroPassagem[k]; });
+      [['#passagens-escopo','escopo'],['#passagens-cabine','cabine']].forEach(([id,k]) => $(id).querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset[k] === filtroPassagem[k]))));
+      mostrarPassagens();
+    }
+    if (pagina === 'calculadoras' && (c.programa || c.origem)) {
+      if (['Livelo','Esfera'].includes(c.origem)) { $('#cc-origem').value = c.origem; montarDestinosCompra(); }
+      const chave = chaveRef(c.programa);
+      ['#cc-destino','#ca-destino','#dm-programa'].forEach(id => {
+        const campo = $(id); const opcao = [...campo.options].find(o => chaveRef(o.value) === chave);
+        if (opcao) { campo.value = opcao.value; campo.dispatchEvent(new Event('change', { bubbles: true })); }
+      });
+    }
+    if (pagina === 'radar') {
+      $('#radar-origem').value = c.origem; $('#radar-destino').value = c.destino;
+      $('#radar-cabine').value = ['eco','exe'].includes(c.cabine) ? c.cabine : '';
+      $('#radar-programa').value = c.programa;
+    }
+    if (pagina === 'quanto') { $('#quanto-busca').value = c.destino || c.busca; mostrarQuanto(); }
+    if (pagina === 'historico') { $('#hist-busca').value = [c.origem,c.destino].filter(Boolean).join(' '); $('#hist-cabine').value = c.cabine; }
+    if (pagina === 'termometro' && termometro?.regioes?.length) {
+      const destino = IATA_CIDADE[norm(c.destino)] || c.destino;
+      const r = termometro.regioes.find(r => r.aeroportos.includes(destino));
+      if (r) termo.regiao = r.id;
+      if (['eco','exe'].includes(c.cabine)) termo.cabine = c.cabine;
+      mostrarTermometro();
+    }
+  }
+
+  document.addEventListener('transf', () => { if (location.hash === '#calculadoras') aplicarContextoViagem('calculadoras'); });
+
   // Cada aba do topo é uma página: mostra só as seções dela (data-pagina).
   // O endereço continua o mesmo; o #da-aba diz qual página abrir (dá para mandar o link).
   const abas = [...document.querySelectorAll('.tabs .menu-sub a')];
@@ -3095,6 +3134,7 @@
     const el = alvo && document.getElementById(alvo);
     const pagina = paginaDe(el) || 'inicio';
     paginaAtual = pagina;
+    aplicarContextoViagem(pagina);
     paginas.forEach(p => p.classList.toggle('fora', p.dataset.pagina !== pagina));
     let ativa = null;
     abas.forEach(a => {
@@ -3152,12 +3192,12 @@
     }
     if (pagina !== paginaAtual) return;
     el.hidden = !d || isNaN(d);
-    if (!el.hidden) el.textContent = `Atualizado ${quandoTxt(d)}`;
+    if (!el.hidden) el.textContent = `${['simulador','ranking','como'].includes(pagina) ? 'Dados consultados' : 'Arquivo atualizado'} ${quandoTxt(d)}`;
     const em = $('#menu-atualizado');
     em.hidden = el.hidden;
-    if (!el.hidden) em.textContent = `Atualizado ${quandoTxt(d)}`;
+    if (!el.hidden) em.textContent = el.textContent;
     const tp = $('#topo-atualizado');
-    if (tp) { tp.hidden = el.hidden; if (!el.hidden) tp.textContent = `Atualizado ${quandoTxt(d)}`; }
+    if (tp) { tp.hidden = el.hidden; if (!el.hidden) tp.textContent = el.textContent; }
   }
 
   // Calculadoras: contas simples com o valor de referência do milheiro (milheiros.js).
@@ -3620,6 +3660,15 @@
   // Clicar na aba da página em que já está volta ao topo dela.
   abas.forEach(a => a.addEventListener('click', () => { abrirMenu(false); if (a.getAttribute('href') === location.hash) scrollTo({ top: 0, behavior: 'smooth' }); }));
   mostrarPagina(location.hash.slice(1));
+
+  function erroFonte(seletor) {
+    const sec = $(seletor); sec.hidden = false;
+    if (sec.querySelector('.fonte-erro')) return;
+    const el = document.createElement('p'); el.className = 'fonte-erro'; el.setAttribute('role','status');
+    el.append('Não foi possível carregar estes dados agora. ');
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = 'Tentar novamente'; b.addEventListener('click', () => location.reload()); el.append(b);
+    (sec.querySelector('.sec-head') || sec).after(el);
+  }
 
   /* ---------- início ---------- */
 

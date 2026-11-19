@@ -949,7 +949,7 @@ async function desenharPrecosRota() {
     const maxMes = Math.max(1, ...meses.map(([, n]) => n));
     return `<li class="hist-rota">
       <div class="hist-topo"><b>${escR(r.o)} <small>${escR(r.oi)}</small> → ${escR(r.d)} <small>${escR(r.di)}</small></b>
-        <span>${escR(r.c || 'Cabine não informada')} · vista ${r.n}x · última ${haDias(r.ult)}${noAr.has(`${r.oi}-${r.di}`) ? ' · <a href="#passagens">no ar agora</a>' : ''} · <a href="#rota/${escR(r.oi)}-${escR(r.di)}-${slugCab(r.c)}">ver a rota →</a></span></div>
+        <span>${escR(r.c || 'Cabine não informada')} · vista ${r.n}x · última ${haDias(r.ult)}${noAr.has(`${r.oi}-${r.di}`) ? ` · <a data-viagem href="${escR(window.oammlNavegacao.url('passagens', { origem: r.oi, destino: r.di, cabine: /econ/i.test(r.c) ? 'eco' : 'exe' }))}">no ar agora</a>` : ''} · <a href="#rota/${escR(r.oi)}-${escR(r.di)}-${slugCab(r.c)}">ver a rota →</a></span></div>
       <table class="hist-progs"><thead><tr><th>Programa</th><th>Menor preço visto</th><th>Quando</th><th>Vezes</th></tr></thead><tbody>
         ${progs.map(([nome, g]) => `<tr><td>${escR(nome)}</td><td class="num"><b>${milHist(g.min)}</b></td><td>${haDias(g.minEm || g.ult)}</td><td class="num">${g.n}</td></tr>`).join('')}
       </tbody></table>
@@ -979,13 +979,14 @@ async function tetos() {
   if (rotaTeto) return rotaTeto;
   try {
     const t = await (await fetch('dados/termometro.json', { cache: 'no-cache' })).json();
+    if (window.oammlAplicarTetos) window.oammlAplicarTetos(t);
     rotaTeto = Object.fromEntries((t.milheiro || []).filter(m => m.moeda === 'BRL').map(m => [m.programa, m.teto]));
   } catch (e) { rotaTeto = {}; }
   return rotaTeto;
 }
 function tetoDeProg(p) {
   const n = String(p || '').toUpperCase(), T = rotaTeto || {};
-  return /SMILES/.test(n) ? T['Smiles'] : /LATAM/.test(n) ? T['LATAM Pass'] : /AZUL/.test(n) ? T['Azul Fidelidade'] : /AEROPLAN/.test(n) ? T['Aeroplan'] : /IBERIA|AVIOS|QATAR|BRITISH/.test(n) ? T['Iberia (Avios)'] : null;
+  return /SMILES/.test(n) ? T['Smiles'] : /LATAM/.test(n) ? T['LATAM Pass'] : /AZUL/.test(n) ? T['Azul Fidelidade'] : /AEROPLAN/.test(n) ? T['Aeroplan'] : /TAP|MILES ?& ?GO/.test(n) ? (T['TAP Miles&Go'] || window.MILHEIROS?.TAP || null) : /AADVANTAGE/.test(n) ? (T.AAdvantage || window.MILHEIROS?.AA || null) : /IBERIA|AVIOS|QATAR|BRITISH/.test(n) ? T['Iberia (Avios)'] : null;
 }
 async function desenharRota() {
   const m = /^#rota\/([A-Z]{3}-[A-Z]{3}-[a-z-]+)$/.exec(location.hash);
@@ -997,13 +998,19 @@ async function desenharRota() {
   $('#rota-h2').textContent = `Histórico da rota ${oi} → ${di}`;
   if (!ativo) return;
   const chave = m[1];
+  $('#rota-tentar').hidden = true;
   if (!rotaCache[chave]) {
     $('#rota-info').textContent = 'Carregando a rota...'; $('#rota-corpo').hidden = true;
     try {
       const [r] = await Promise.all([fetch(`${SERVIDOR}/historico/rota?c=${encodeURIComponent(chave)}`, { headers: { authorization: `Bearer ${auth.currentUser ? await auth.currentUser.getIdToken() : ''}` } }), tetos()]);
       if (!r.ok) throw new Error();
       rotaCache[chave] = await r.json();
-    } catch (e) { $('#rota-info').textContent = 'Não deu para carregar a rota agora. Tente de novo em instantes.'; return; }
+    } catch (e) {
+      if (location.hash !== `#rota/${chave}`) return;
+      $('#rota-info').textContent = 'Não deu para carregar a rota agora. Você pode tentar novamente.';
+      $('#rota-tentar').hidden = false;
+      return;
+    }
   }
   if (location.hash !== `#rota/${chave}`) return; // a pessoa já mudou de página
   rotaDados = rotaCache[chave]; rotaFiltro = '';
@@ -1020,6 +1027,8 @@ async function desenharRota() {
   $('#rota-info').textContent = '';
   $('#rota-corpo').hidden = false;
   const nomeO = R ? R.o : oi, nomeD = R ? R.d : di, cab = R ? R.c : '';
+  $('#rota-radar').href = window.oammlNavegacao.url('radar', { origem: oi, destino: di, cabine: /executiva|primeira/i.test(chave) ? 'exe' : /economica/i.test(chave) ? 'eco' : '' });
+  $('#rota-radar').setAttribute('data-viagem', '');
   $('#rota-cab').textContent = (cab || 'Cabine não informada').toUpperCase();
   $('#rota-titulo').innerHTML = `${escR(nomeO)} <small>(${oi})</small> <i>✈</i> ${escR(nomeD)} <small>(${di})</small>`;
   const n = R ? R.n : pts.length, desde = R ? R.desde : (pts[pts.length - 1] || {}).data;
@@ -1172,6 +1181,7 @@ $('#rota-copiar').addEventListener('click', async () => {
   setTimeout(() => { b.textContent = '🔗 Compartilhar rota'; }, 2500);
 });
 addEventListener('resize', () => { if (rotaDados && location.hash.startsWith('#rota/')) rotaGrafico(); });
+$('#rota-tentar').addEventListener('click', desenharRota);
 document.addEventListener('assinatura', desenharRota);
 window.addEventListener('hashchange', desenharRota);
 desenharRota();
@@ -1198,6 +1208,10 @@ async function pushInscricao() {
 async function desenharPush(msg) {
   const info = $('#push-info'), ligar = $('#push-ligar'), teste = $('#push-teste');
   if (!info) return;
+  const ajuda = $('#push-ajuda'), textoAjuda = $('#push-ajuda-texto');
+  if (textoAjuda) textoAjuda.innerHTML = pushIos
+    ? '<ol><li>Abra pelo ícone da Tela de Início e entre na mesma conta em que salvou sua rota.</li><li>Em Ajustes → Notificações, procure também por <b>Onde as Milhas</b> (nome curto do app) ou pelo nome escolhido ao instalar. Se aparecer, ative Permitir Notificações.</li><li>Se não aparecer na lista, confira a instalação pelo Safari: Compartilhar → Adicionar à Tela de Início. Se houver a opção Abrir como App da Web, ela deve estar ligada.</li></ol><p>Se você já fez isso e o app continua ausente dos Ajustes, fale conosco em <a href="#contatos">Contatos</a>, informando sua versão do iOS e a mensagem desta tela. Ainda não é possível confirmar a causa só por esse aviso.</p>'
+    : '<ol><li>No Android, abra o site pelo Chrome: menu ⋮ → Controles do site → Permissões → Notificações → Permitir. Os nomes podem variar conforme a versão.</li><li>Confira também se o sistema permite notificações para o Chrome ou para o app instalado.</li><li>No computador, use o ícone de controles ao lado do endereço para permitir as notificações deste site.</li></ol>';
   teste.hidden = true;
   ligar.hidden = false;
   if (pushIos && !pushApp) {
@@ -1207,10 +1221,15 @@ async function desenharPush(msg) {
     return;
   }
   if (!pushOk) { info.textContent = 'Este navegador não recebe notificações. Use o Chrome (Android) ou o app instalado (iPhone).'; ligar.hidden = true; return; }
-  if (Notification.permission === 'denied') { info.textContent = 'As notificações do site estão bloqueadas nas configurações do celular. Libere lá e volte aqui.'; ligar.hidden = true; return; }
+  if (Notification.permission === 'denied') {
+    info.textContent = 'A permissão de notificações está negada neste aparelho. Abra “Como liberar as notificações” abaixo para conferir os próximos passos.';
+    ligar.hidden = true;
+    if (ajuda) ajuda.open = true;
+    return;
+  }
   const sub = await pushInscricao().catch(() => null);
   if (sub && Notification.permission === 'granted') {
-    info.textContent = msg || 'Ligado neste aparelho: as passagens das suas rotas chegam aqui na hora.';
+    info.textContent = msg || 'Permissão liberada neste aparelho. Envie um teste para conferir o recebimento.';
     ligar.textContent = 'Desativar';
     ligar.dataset.acao = 'desligar';
     teste.hidden = false;
@@ -1235,7 +1254,7 @@ $('#push-ligar').addEventListener('click', async () => {
     const reg = await navigator.serviceWorker.ready;
     const sub = (await reg.pushManager.getSubscription()) || await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: chaveBytes(VAPID_PUBLICA) });
     const d = await pushChamar('/push/inscrever', { inscricao: sub.toJSON(), aparelho: pushIos ? 'iPhone' : /Android/i.test(navigator.userAgent) ? 'Android' : 'Computador' });
-    await desenharPush(d.teste ? 'Pronto! Mandamos uma notificação de boas-vindas para este aparelho.' : 'Ligado neste aparelho. As passagens das suas rotas chegam aqui na hora.');
+    await desenharPush(d.teste ? 'Inscrição salva. O serviço aceitou o envio de boas-vindas; confira se chegou neste aparelho.' : 'Inscrição salva, mas o envio de boas-vindas não foi confirmado. Use Enviar teste para tentar novamente.');
   } catch (e) {
     $('#push-info').textContent = e.message || 'Não deu para ativar agora. Tente de novo.';
   } finally { b.disabled = false; }
@@ -1243,9 +1262,26 @@ $('#push-ligar').addEventListener('click', async () => {
 $('#push-teste').addEventListener('click', async () => {
   const b = $('#push-teste');
   b.disabled = true;
-  try { const d = await pushChamar('/push/teste', {}); $('#push-info').textContent = d.ok ? 'Teste enviado. Veja a notificação no celular.' : 'Não chegou em nenhum aparelho. Desative e ative de novo.'; }
+  $('#push-info').textContent = 'Enviando teste para este aparelho…';
+  try {
+    const sub = await pushInscricao();
+    if (!sub) { await desenharPush('Este aparelho ainda não tem uma inscrição. Toque em Ativar.'); return; }
+    // Testa somente a inscrição deste aparelho, vinculada à conta autenticada no servidor.
+    const d = await pushChamar('/push/teste', { endpoint: sub.endpoint });
+    $('#push-info').textContent = d.mensagem || (d.ok ? 'O serviço aceitou o envio do teste para pelo menos um aparelho da conta. Confira a Central de Notificações.' : 'O serviço não confirmou o envio. Confira a permissão e tente desativar e ativar neste aparelho.');
+  }
   catch (e) { $('#push-info').textContent = e.message; }
   finally { b.disabled = false; }
 });
 document.addEventListener('assinatura', () => desenharPush());
+$('#push-verificar')?.addEventListener('click', async () => {
+  const b = $('#push-verificar');
+  b.disabled = true;
+  try { await desenharPush(); }
+  catch (e) { $('#push-info').textContent = 'Não foi possível verificar agora. Tente novamente.'; }
+  finally { b.disabled = false; }
+});
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') desenharPush().catch(() => {});
+});
 desenharPush();
