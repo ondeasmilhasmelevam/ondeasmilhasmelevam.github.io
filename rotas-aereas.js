@@ -4,6 +4,10 @@
   const PAISES = { 'estados unidos da america': 'Estados Unidos', 'estados unidos': 'Estados Unidos', eua: 'Estados Unidos', usa: 'Estados Unidos', 'united states': 'Estados Unidos', 'united states of america': 'Estados Unidos', 'reino unido': 'Reino Unido', uk: 'Reino Unido', 'united kingdom': 'Reino Unido', holanda: 'Países Baixos', 'paises baixos': 'Países Baixos', netherlands: 'Países Baixos', qatar: 'Catar', catar: 'Catar', 'coreia do sul': 'Coreia do Sul', 'south korea': 'Coreia do Sul', cingapura: 'Singapura', singapura: 'Singapura', singapore: 'Singapura', 'africa do sul': 'África do Sul', 'new zealand': 'Nova Zelândia', 'nova zelandia': 'Nova Zelândia', australia: 'Austrália', japan: 'Japão', japao: 'Japão', brasil: 'Brasil', brazil: 'Brasil' };
   const paisNome = t => PAISES[normal(t)] || String(t || '').trim();
   const CIDADES = { 'new york': 'nova york', 'nova iorque': 'nova york', nyc: 'nova york', seoul: 'seul', tokyo: 'toquio', london: 'londres', bangcoc: 'bangkok', banguecoque: 'bangkok', amsterdam: 'amsterda', jacarta: 'jakarta' };
+  function aeroportosPassageiros(cadastro, operacionais = {}, rede = { a: [] }) {
+    const usados = new Set([...Object.keys(operacionais), ...(rede.a || []).map(a => a[0])]);
+    return Object.fromEntries(Object.entries(cadastro).filter(([i, a]) => a.regular === true || usados.has(i)));
+  }
   function resolverLocais(base, texto) {
     const bruto = String(texto || '').trim(), t = normal(bruto), A = base.aeroportos;
     if (!t) return [];
@@ -119,7 +123,7 @@
     const ordenados = encontrados.sort((a, b) => a.trechos.length - b.trechos.length || a.km - b.km || a.origem.localeCompare(b.origem));
     ordenados.limitada = limitada; return ordenados;
   }
-  globalThis.OAMMLMalha = { pesquisar, diasNoMes, distancia, resolverLocais, paresMilhas, caminhosMilhas, paisNome };
+  globalThis.OAMMLMalha = { pesquisar, diasNoMes, distancia, resolverLocais, paresMilhas, caminhosMilhas, paisNome, aeroportosPassageiros };
   if (typeof document === 'undefined') return;
   const $ = s => document.querySelector(s), esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   if (!$('#malha-operacionais-mais') || !$('#malha-operacionais-status') || !$('#malha-cadastro') || !$('#malha-global-resultados') || !$('#malha-trocar') || !$('#malha-rede-status')) {
@@ -127,6 +131,7 @@
     return;
   }
   let base = null, carregando = null, resultados = [], atual = null, mundo = null, fonteSeats = null, seatsPromessa = null;
+  let cadastroCompleto = {};
   let redeIterador = null, redeCaminhos = [], catalogoLista = [], catalogoExibidos = 0;
   const estado = { vista: 'planejar' }; let buscaAtual = 0;
   let operacionaisExibidos = 0, consultaOperacional = null, operacaoLimitada = false;
@@ -151,7 +156,8 @@
       if (j.versao !== 1 || !j.trechos?.length) throw Error('base');
       if (cadastro.versao !== 1 || !cadastro.aeroportos || Object.keys(cadastro.aeroportos).length < 5000) throw Error('cadastro');
       const paises = new Intl.DisplayNames(['pt-BR'], { type: 'region' });
-      for (const [i, a] of Object.entries(cadastro.aeroportos)) {
+      cadastroCompleto = cadastro.aeroportos;
+      for (const [i, a] of Object.entries(aeroportosPassageiros(cadastroCompleto, j.aeroportos))) {
         if (!/^[A-Z]{3}$/.test(i) || !Number.isFinite(a.lat) || !Number.isFinite(a.lon)) continue;
         let pais = a.pais;
         try { if (/^[A-Z]{2}$/.test(a.iso)) pais = paises.of(a.iso) || pais; } catch { /* preserva a fonte */ }
@@ -160,7 +166,7 @@
       base = j; montar(); $('#malha-tentar').hidden = true;
       carregarRede().then(() => {
         // Os números de cobertura são atualizados por carregarRede().
-      }).catch(() => { $('#malha-rede-status').textContent = `${Object.keys(base.aeroportos).length.toLocaleString('pt-BR')} aeroportos no cadastro mundial. A rede de programas não respondeu agora; tente novamente ao pesquisar.`; });
+      }).catch(() => { $('#malha-rede-status').textContent = `${Object.keys(base.aeroportos).length.toLocaleString('pt-BR')} aeroportos de passageiros na busca. A rede de programas não respondeu agora; tente novamente ao pesquisar.`; });
     }).catch(e => { erro(); throw e; }).finally(() => { carregando = null; });
     return carregando;
   }
@@ -202,7 +208,8 @@
         if (base.aeroportos[i] || !/^[A-Z]{3}$/.test(i) || !Number.isFinite(lat) || !Number.isFinite(lon)) continue;
         let pais = 'País não informado';
         try { if (/^[A-Z]{2}$/.test(iso)) pais = nomesPaises.of(iso) || iso; } catch { /* mantém localização sem atribuir país errado */ }
-        base.aeroportos[i] = { cidade: cidade || i, lat, lon, pais, br: iso === 'BR', uf: '' };
+        const a = cadastroCompleto[i] || {};
+        base.aeroportos[i] = { ...a, cidade: a.cidade || cidade || i, lat, lon, pais, br: iso === 'BR', uf: a.uf || '' };
       }
       for (const [fonte, n] of j.fontes) {
         const nome = OAMMLProgramas.normalizar(n), id = OAMMLProgramas.buscar(nome)?.id || fonte;
@@ -213,7 +220,7 @@
         const nome = OAMMLProgramas.normalizar(fonte), id = OAMMLProgramas.buscar(nome)?.id || fonte;
         if (!base.programas[id]) base.programas[id] = { nome, companhias: [], somenteRede: true, semDados: true, nota: 'Este programa não forneceu uma lista de rotas nesta coleta. A consulta de disponibilidade da viagem completa continua disponível.' };
       }
-      fonteSeats = j; montarLocais(); montarProgramas(); $('#malha-rede-status').textContent = `${Object.keys(base.aeroportos).length.toLocaleString('pt-BR')} aeroportos no cadastro mundial · ${j.a.length.toLocaleString('pt-BR')} na rede de milhas · ${j.e.length.toLocaleString('pt-BR')} pares de viagem · ${j.fontes.length} programas com rotas. Aeroporto cadastrado não significa voo ou assento disponível.${Object.values(j.coletas || {}).some(c => c.status !== 'atualizado') ? ' Fontes com dados preservados ou sem rotas nesta coleta: ' + Object.entries(j.coletas).filter(([, c]) => c.status !== 'atualizado').map(([f, c]) => OAMMLProgramas.normalizar(f) + (c.status === 'preservado' ? ' (última base preservada)' : ' (sem rotas fornecidas)')).join(' · ') + '.' : ''}`; return j;
+      fonteSeats = j; montarLocais(); montarProgramas(); $('#malha-rede-status').textContent = `${Object.keys(base.aeroportos).length.toLocaleString('pt-BR')} aeroportos de passageiros na busca · ${j.a.length.toLocaleString('pt-BR')} na rede de milhas · ${j.e.length.toLocaleString('pt-BR')} pares de viagem · ${j.fontes.length} programas com rotas. Aeroporto cadastrado não significa voo ou assento disponível.${Object.values(j.coletas || {}).some(c => c.status !== 'atualizado') ? ' Fontes com dados preservados ou sem rotas nesta coleta: ' + Object.entries(j.coletas).filter(([, c]) => c.status !== 'atualizado').map(([f, c]) => OAMMLProgramas.normalizar(f) + (c.status === 'preservado' ? ' (última base preservada)' : ' (sem rotas fornecidas)')).join(' · ') + '.' : ''}`; return j;
     })().catch(e => { seatsPromessa = null; throw e; });
     return seatsPromessa;
   }
@@ -253,7 +260,7 @@
     const rede = new Set((fonteSeats?.a || []).map(a => a[0]));
     catalogoLista = [...new Set([...origens, ...destinos])].sort(ordemAeroportos);
     catalogoExibidos = 0;
-    $('#malha-cadastro').innerHTML = `<details><summary>${origens.length} ${origens.length === 1 ? 'aeroporto' : 'aeroportos'} de origem e ${destinos.length} de destino reconhecidos · ver cadastro</summary><p>Os aeroportos com serviço regular informado aparecem primeiro. Todos os aeroportos reconhecidos nesta consulta estão nesta lista, inclusive os que não têm rotas nas fontes conectadas. Clique para escolher um aeroporto específico.</p><ul class="malha-aeroportos" id="malha-cadastro-lista"></ul><button type="button" class="cta cta-b" data-cadastro-mais>Mostrar mais aeroportos</button></details>`;
+    $('#malha-cadastro').innerHTML = `<details><summary>${origens.length} ${origens.length === 1 ? 'aeroporto' : 'aeroportos'} de origem e ${destinos.length} de destino reconhecidos · ver cadastro</summary><p>A busca inclui aeroportos com serviço regular informado, operação de passageiros cadastrada ou presença na rede de milhas. Clique para escolher um aeroporto específico.</p><ul class="malha-aeroportos" id="malha-cadastro-lista"></ul><button type="button" class="cta cta-b" data-cadastro-mais>Mostrar mais aeroportos</button></details>`;
     maisCadastro(rede);
   }
   function maisCadastro(rede = new Set((fonteSeats?.a || []).map(a => a[0]))) {
