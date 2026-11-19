@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10006",
+  "data": "2026-11-19T21:49:00Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "Curitiba",
+  "destino_iata": "CWB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.200 milhas + R$ 62,14 de taxas",
+  "volta": "9.500 milhas + R$ 48,63 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6820",
   "data": "2026-11-19T21:34:05Z",
   "origem": "São Paulo",
@@ -5533,20 +5547,6 @@
   "ida": "65.000 milhas + R$ 28,29",
   "volta": "65.000 milhas + R$ 667,48",
   "link_nome": "AAdvantage"
- },
- {
-  "id": "2361370250-6711",
-  "data": "2026-11-17T21:48:47Z",
-  "origem": "Seul",
-  "origem_iata": "ICN",
-  "destino": "Hong Kong",
-  "destino_iata": "HKG",
-  "companhia": "Korean Air",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "44.700 milhas + R$ 141,67",
-  "volta": "44.700 milhas + R$ 346,16",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7841",
