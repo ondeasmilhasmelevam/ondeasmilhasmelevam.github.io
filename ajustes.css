@@ -47,3 +47,19 @@
 .push-ajuda p{margin:12px 0 0}.push-ajuda a{color:var(--ouro)}
 #push-card .push-botoes{flex-wrap:wrap}
 @media(max-width:650px){#push-card{align-items:flex-start;flex-wrap:wrap}#push-card .push-botoes{width:100%;display:flex;gap:8px}#push-card .push-botoes button{min-height:44px}.push-ajuda{padding:14px}}
+
+/* Fundo atmosférico e menu aprovados: efeitos estáticos, atrás do conteúdo. */
+:root body{isolation:isolate;background-color:var(--ink);background-image:radial-gradient(ellipse 82% 66% at 94% 5%,rgba(36,104,214,.25),transparent 74%),radial-gradient(ellipse 52% 70% at 12% 90%,rgba(13,104,136,.12),transparent 76%),radial-gradient(ellipse 40% 30% at 75% 100%,rgba(226,180,88,.055),transparent 78%);background-attachment:fixed}
+:root body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle,rgba(149,189,248,.16) .65px,transparent .9px);background-size:34px 34px;mask-image:linear-gradient(125deg,transparent 20%,#000 90%);opacity:.48}
+:root body::after{content:"";position:fixed;right:-240px;top:80px;width:760px;height:470px;border:1px solid rgba(121,170,237,.105);border-radius:50%;transform:rotate(-28deg);box-shadow:0 0 0 65px rgba(121,170,237,.022),0 0 0 130px rgba(121,170,237,.016);z-index:-1;pointer-events:none}
+:root[data-theme="light"] body{background-image:radial-gradient(ellipse 82% 66% at 94% 5%,rgba(67,129,221,.13),transparent 74%),radial-gradient(ellipse 52% 70% at 12% 90%,rgba(37,135,154,.065),transparent 76%)}
+:root[data-theme="light"] body::before{opacity:.24}
+:root[data-theme="light"] body::after{border-color:rgba(46,100,177,.09);box-shadow:none}
+:root .tabs{background-color:var(--ink-2);background-image:radial-gradient(ellipse 130% 42% at 8% 15%,rgba(57,132,229,.19),transparent 80%),linear-gradient(165deg,#152e50 0%,#101f36 46%,#0c1426 100%);border-right-color:#31496a}
+:root .tabs .menu-topo{border-bottom-color:#31496a}
+:root .tabs .menu-grupo+.menu-grupo{border-top-color:#2a3b55}
+:root .tabs a:not([aria-current="true"]):hover{background:rgba(103,161,239,.12);color:var(--rice)}
+:root[data-theme="light"] .tabs{background-image:linear-gradient(165deg,#e1eaf7 0%,#f0f4fa 55%,#f6f8fc 100%);border-right-color:#cad7e8}
+:root[data-theme="light"] .tabs .menu-topo{border-bottom-color:#cad7e8}
+:root[data-theme="light"] .tabs .menu-grupo+.menu-grupo{border-top-color:#d6dfeb}
+@media(max-width:650px){:root body{background-attachment:scroll}:root body::after{right:-470px;top:120px}}
