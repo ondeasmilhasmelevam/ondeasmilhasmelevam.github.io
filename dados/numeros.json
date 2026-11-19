@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-19T15:37:41.611076Z",
+ "atualizado": "2026-11-19T15:43:56.815898Z",
  "dias": 30,
  "passagens": 3306,
  "promocoes": 207,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1178,
+  "passagens": 1177,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -1123,19 +1123,6 @@
     "regiao": "outros"
    },
    {
-    "id": "2361370250-6483",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "Orlando",
-    "destino_iata": "MCO",
-    "cabine": "Executiva",
-    "programa": "Aeroplan",
-    "data": "2026-11-12T15:42:51Z",
-    "milhas": 50000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "2361370250-6485",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -1199,6 +1186,19 @@
     "milhas": 63750,
     "nivel": "",
     "regiao": "europa"
+   },
+   {
+    "id": "2361370250-6712",
+    "origem": "Honolulu",
+    "origem_iata": "HNL",
+    "destino": "Nadi",
+    "destino_iata": "NAN",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-17T22:05:30Z",
+    "milhas": 65000,
+    "nivel": "",
+    "regiao": "outros"
    }
   ]
  }
