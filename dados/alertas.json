@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6819",
+  "data": "2026-11-19T21:03:40Z",
+  "origem": "Tóquio",
+  "origem_iata": "NRT",
+  "destino": "Abu Dhabi",
+  "destino_iata": "AUH",
+  "companhia": "Etihad Airways",
+  "cabine": "Executiva",
+  "programa": "AAdvantage",
+  "ida": "40.000 milhas + R$ 231,58",
+  "volta": "40.000 milhas + R$ 212,67",
+  "link_nome": "AAdvantage"
+ },
+ {
   "id": "3761373661-10005",
   "data": "2026-11-19T20:57:11Z",
   "origem": "Manaus",
@@ -5533,20 +5547,6 @@
   "ida": "135.000 milhas + R$ 212",
   "volta": "135.000 milhas + R$ 464",
   "link_nome": "TAP Miles&Go"
- },
- {
-  "id": "2361370250-6709",
-  "data": "2026-11-17T21:02:18Z",
-  "origem": "Vancouver",
-  "origem_iata": "YVR",
-  "destino": "Sydney",
-  "destino_iata": "SYD",
-  "companhia": "Qantas Airways",
-  "cabine": "Executiva",
-  "programa": "AAdvantage",
-  "ida": "80.000 milhas + R$ 455,27",
-  "volta": "",
-  "link_nome": "AAdvantage"
  },
  {
   "id": "1290836068-7841",
