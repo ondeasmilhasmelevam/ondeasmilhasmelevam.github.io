@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-19T05:22:59.007063Z",
+ "atualizado": "2026-11-19T05:29:06.702735Z",
  "dias": 30,
- "passagens": 3237,
+ "passagens": 3238,
  "promocoes": 193,
  "destinos": 175,
  "executiva": 686,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1260,
+  "passagens": 1261,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -577,6 +577,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9944",
+    "origem": "Curitiba",
+    "origem_iata": "CWB",
+    "destino": "Porto Alegre",
+    "destino_iata": "POA",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-19T05:23:50Z",
+    "milhas": 5000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9482",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -612,19 +625,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-17T13:00:50Z",
     "milhas": 5300,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9510",
-    "origem": "Curitiba",
-    "origem_iata": "CWB",
-    "destino": "Porto Alegre",
-    "destino_iata": "POA",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-12T14:15:32Z",
-    "milhas": 6000,
     "nivel": "",
     "regiao": "brasil"
    },

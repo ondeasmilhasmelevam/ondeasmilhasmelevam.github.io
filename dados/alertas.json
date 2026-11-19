@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9944",
+  "data": "2026-11-19T05:23:50Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "5.000 milhas + R$ 48,63 de taxas",
+  "volta": "5.000 milhas + R$ 62,69 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-9943",
   "data": "2026-11-19T02:44:52Z",
   "origem": "Brasília",
@@ -5685,20 +5699,6 @@
   "ida": "57.700 milhas + Taxas",
   "volta": "57.700 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15880",
-  "data": "2026-11-17T05:27:12Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "59.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7825",
