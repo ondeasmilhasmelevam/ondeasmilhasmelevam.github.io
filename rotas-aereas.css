@@ -10,6 +10,11 @@
 .malha-form input:focus,.malha-form select:focus{outline:2px solid var(--ouro);outline-offset:2px}
 .malha-form button{min-height:46px;width:100%;justify-content:center}
 .malha-form>button{grid-column:1/-1}
+.malha-sentidos{grid-column:1/-1;display:flex;justify-content:flex-end}
+.malha-sentidos button{width:auto;min-height:34px;border:1px solid var(--line);border-radius:8px;background:var(--ink);padding:7px 12px;font:600 12px var(--body);color:var(--ouro);cursor:pointer;max-width:100%}
+#malha-global-resultados{border-top:1px solid var(--line);padding-top:20px;margin-top:24px}
+#malha-global-resultados h3{color:var(--rice);line-height:1.6}
+#malha-global-resultados>p{color:var(--ash);font-size:13px;line-height:1.8}
 .malha-opcoes{grid-column:1/-1;border-top:1px solid var(--line);padding-top:14px}
 .malha-opcoes summary{color:var(--ouro);font-size:13px;font-weight:700;line-height:1.6;cursor:pointer;padding:4px 0}
 .malha-opcoes-grade{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-top:16px}

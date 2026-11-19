@@ -51,7 +51,7 @@
 </style>
 <link rel="stylesheet" href="estilo.css?v=147">
 <link rel="stylesheet" href="ajustes.css?v=6">
-<link rel="stylesheet" href="rotas-aereas.css?v=2">
+<link rel="stylesheet" href="rotas-aereas.css?v=3">
 </head>
 <body>
 <div id="entrada" aria-hidden="true"><div><img src="img/logo-entrada.webp" alt="" width="148" height="148" fetchpriority="high"></div></div>
@@ -739,7 +739,7 @@
       <div class="sec-head">
         <p class="eyebrow">Mapa de rotas · para assinantes</p>
         <h2>Para onde as milhas estão levando</h2>
-        <p class="sec-note">Explore as saídas do Brasil, os caminhos com conexão e os períodos futuros de operação. Na aba Alertas anteriores, consulte as rotas que já tiveram ofertas com milhas. Planejar um caminho não garante disponibilidade para emissão.</p>
+        <p class="sec-note">Explore caminhos entre países, cidades e aeroportos de qualquer região, no sentido da sua viagem. Consulte a malha operacional disponível, a rede mundial de programas e o histórico de alertas. A cobertura das fontes é parcial e não garante disponibilidade para emissão.</p>
       </div>
       <div class="radar-fechado" id="mapa-fechado">
         <p>🔒 O mapa de rotas é exclusivo para assinantes.</p>
@@ -752,13 +752,14 @@
         <button type="button" data-mapa-vista="historico" aria-pressed="false">Alertas anteriores</button>
       </div>
       <div id="malha-planejar">
-        <div class="malha-intro"><p class="mp-kicker">Planeje o caminho</p><h3>Para onde você quer ir?</h3><p>Descubra de quais cidades brasileiras sair, onde conectar e quais companhias operam cada trecho.</p><p>Para começar, preencha só o destino. O mês já vem selecionado e pode ser alterado; os demais filtros são opcionais.</p></div>
+        <div class="malha-intro"><p class="mp-kicker">Planeje o caminho</p><h3>De onde você sai e para onde quer ir?</h3><p>Pesquise origem e destino por país, cidade ou aeroporto, em qualquer região. Os caminhos operacionais mostram conexões e companhias quando esses dados estão disponíveis.</p><p>O mês já vem selecionado e pode ser alterado. Se deixar a origem vazia, o padrão é Brasil; você pode substituí-lo por qualquer localidade presente na base.</p></div>
         <form id="malha-form" class="malha-form">
-          <label>Saindo de (opcional)<input id="malha-origem" list="malha-origens" autocomplete="off" placeholder="Qualquer aeroporto do Brasil"><datalist id="malha-origens"></datalist></label>
-          <label class="malha-destino">Quero ir para<input id="malha-destino" list="malha-destinos" autocomplete="off" placeholder="Cidade, país, Ásia ou Oceania" required><datalist id="malha-destinos"></datalist></label>
+          <label>Saindo de (opcional)<input id="malha-origem" list="malha-origens" autocomplete="off" placeholder="Brasil (padrão), país, cidade ou aeroporto"><datalist id="malha-origens"></datalist></label>
+          <label class="malha-destino">Quero ir para<input id="malha-destino" list="malha-destinos" autocomplete="off" placeholder="País, cidade ou código do aeroporto" required><datalist id="malha-destinos"></datalist></label>
           <label>Mês da viagem<input type="month" id="malha-mes" required></label>
+          <div class="malha-sentidos"><button type="button" id="malha-trocar">⇄ Trocar origem e destino</button></div>
           <details class="malha-opcoes"><summary>Mais filtros: estado, companhia, aliança e programa</summary><div class="malha-opcoes-grade">
-          <label>Estado de saída<select id="malha-uf"><option value="">Todos os estados</option></select></label>
+          <label>Estado no Brasil (opcional)<select id="malha-uf"><option value="">Todos os estados</option></select></label>
           <label>Conexões<select id="malha-conexoes"><option value="0">Somente direto</option><option value="1">Até 1 conexão</option><option value="2" selected>Até 2 conexões</option><option value="3">Até 3 conexões</option></select></label>
           <label>Companhia<select id="malha-cia"><option value="">Qualquer companhia</option></select></label>
           <label>Aliança<select id="malha-alianca"><option value="">Qualquer aliança</option><option>Star Alliance</option><option>oneworld</option><option>SkyTeam</option></select></label>
@@ -766,12 +767,14 @@
           </div></details>
           <button type="submit" class="cta cta-a">Encontrar caminhos</button>
         </form>
-        <p class="malha-ajuda">Companhia e aliança filtram todos os trechos. O programa filtra companhias parceiras para resgate; não garante assento, preço ou emissão no mesmo bilhete. Se escolher um aeroporto, ele prevalece sobre o estado.</p>
+        <p class="malha-ajuda">Companhia, aliança e quantidade de conexões filtram a malha operacional. A rede mundial informa programas para pesquisar, com regras e disponibilidade a confirmar. O estado só se aplica quando a origem é Brasil ou está vazia.</p>
         <p class="malha-ajuda" id="malha-parceiras-nota">O filtro usa as parceiras já conferidas; cobertura em expansão. Azul pelo Mundo é um canal de resgate do Azul Fidelidade.</p>
         <p class="malha-atualizada" id="malha-atualizada"></p>
+        <p class="malha-atualizada" id="malha-rede-status" role="status">Carregando o cadastro mundial de aeroportos e programas…</p>
         <p id="malha-resumo" role="status">Carregando a malha aérea…</p><button class="cta cta-b" type="button" id="malha-tentar" hidden>Tentar novamente</button>
         <div id="malha-mapa-caixa" class="malha-mapa-caixa" hidden><p id="malha-mapa-status" role="status"></p><svg id="malha-mapa" role="img" aria-label="Mapa do trajeto selecionado"></svg><div id="malha-trechos"></div><small class="malha-legenda">Linha dourada: trecho da malha consultada · pontilhada: início futuro · mapa Natural Earth</small></div>
         <ul id="malha-resultados" class="malha-resultados"></ul>
+        <div id="malha-global-resultados" aria-live="polite"></div>
         <div id="malha-novidades" class="malha-novidades"></div>
       </div>
       <div id="mapa-historico" hidden>
@@ -1442,7 +1445,7 @@
 <script src="funil.js?v=8"></script>
 <script type="module" src="assinatura.js?v=55"></script>
 <script src="mapa.js?v=13" defer></script>
-<script src="rotas-aereas.js?v=4" defer></script>
+<script src="rotas-aereas.js?v=5" defer></script>
 <script src="instalar.js?v=2" defer></script>
 </body>
 </html>
