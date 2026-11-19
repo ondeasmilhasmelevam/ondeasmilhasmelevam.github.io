@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-19T15:56:14.208168Z",
+ "atualizado": "2026-11-19T16:02:59.405315Z",
  "dias": 30,
  "passagens": 3307,
  "promocoes": 207,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1177,
+  "passagens": 1176,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -330,14 +330,14 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15498",
+    "id": "2008590742-15561",
     "origem": "Recife",
     "origem_iata": "REC",
     "destino": "Porto",
     "destino_iata": "OPO",
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
-    "data": "2026-11-12T15:58:48Z",
+    "data": "2026-11-13T17:05:25Z",
     "milhas": 65000,
     "nivel": "muito bom",
     "regiao": "europa"

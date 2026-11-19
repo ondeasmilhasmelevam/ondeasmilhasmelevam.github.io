@@ -5590,34 +5590,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-9853",
-  "data": "2026-11-17T16:02:13Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Curitiba",
-  "destino_iata": "CWB",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "5.000 milhas + R$ 62,69 de taxas",
-  "volta": "5.000 milhas + R$ 48,63 de taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-9852",
-  "data": "2026-11-17T15:59:18Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "13.000 milhas + Taxas",
-  "volta": "13.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7813",
   "data": "2026-11-16T16:39:26Z",
   "tipo": "promocao",
