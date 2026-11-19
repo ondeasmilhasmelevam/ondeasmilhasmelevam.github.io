@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-19T15:04:11.155115Z",
+ "atualizado": "2026-11-19T15:17:21.404415Z",
  "dias": 30,
  "passagens": 3305,
  "promocoes": 207,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1182,
+  "passagens": 1178,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -213,19 +213,6 @@
     "regiao": "caribe"
    },
    {
-    "id": "2008590742-15496",
-    "origem": "Fortaleza",
-    "origem_iata": "FOR",
-    "destino": "Miami",
-    "destino_iata": "MIA",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-12T15:10:59Z",
-    "milhas": 47960,
-    "nivel": "espetacular",
-    "regiao": "america-do-norte"
-   },
-   {
     "id": "3996014557-2514",
     "origem": "Rio de Janeiro",
     "origem_iata": "GIG",
@@ -235,6 +222,19 @@
     "programa": "Latam Pass",
     "data": "2026-11-13T19:26:58Z",
     "milhas": 48000,
+    "nivel": "espetacular",
+    "regiao": "america-do-norte"
+   },
+   {
+    "id": "2008590742-15867",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Miami",
+    "destino_iata": "MIA",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-16T17:42:51Z",
+    "milhas": 48570,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
    },
@@ -1175,19 +1175,6 @@
     "regiao": "outros"
    },
    {
-    "id": "2361370250-6481",
-    "origem": "Nova York",
-    "origem_iata": "JFK",
-    "destino": "Zaventem",
-    "destino_iata": "BRU",
-    "cabine": "Executiva",
-    "programa": "Aeroplan",
-    "data": "2026-11-12T15:16:07Z",
-    "milhas": 60000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "2361370250-6575",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -1199,6 +1186,19 @@
     "milhas": 62000,
     "nivel": "",
     "regiao": "caribe"
+   },
+   {
+    "id": "2361370250-6737",
+    "origem": "Cidade do Panamá",
+    "origem_iata": "PTY",
+    "destino": "Amsterdã",
+    "destino_iata": "AMS",
+    "cabine": "Executiva",
+    "programa": "Flying Blue",
+    "data": "2026-11-18T09:39:08Z",
+    "milhas": 63750,
+    "nivel": "",
+    "regiao": "europa"
    }
   ]
  }
