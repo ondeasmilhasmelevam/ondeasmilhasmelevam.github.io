@@ -1,5 +1,55 @@
 [
  {
+  "id": "1290836068-7907",
+  "data": "2026-11-19T19:03:41Z",
+  "tipo": "promocao",
+  "titulo": "DESCONTO DE ATÉ 15% EM PASSAGENS AWARD AZUL PELO MUNDO",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Azul oferece até 15% de desconto em passagens na tarifa award resgatadas com pontos do programa de fidelidade via Azul Pelo Mundo. A promoção é válida até as 4h do dia 20 de novembro de 2026 e inclui voos com companhias parceiras como Emirates e Air Canada. O valor apresentado já tem desconto aplicado, mas não cobre taxas e impostos.",
+  "detalhes": [
+   "Desconto de até 15% em passagens award",
+   "Desconto aplicado ao valor de pontos",
+   "Não cobre taxas e impostos",
+   "Disponibilidade limitada para voos com companhias parceiras",
+   "Não cumulativa com outros descontos",
+   "São Paulo (GRU) x Santiago (SCL) economica a partir de 36.000 milhas o trecho",
+   "São Paulo (GRU) x Punta Cana (PUJ) economica a partir de 64.500 milhas o trecho",
+   "Períodos de viagem: novembro de 2026, janeiro de 2027"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "até as 4h do dia 20 de novembro de 2026",
+  "links": [
+   "https://link.dia23.com.br/r/T50aXVq"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7906",
+  "data": "2026-11-19T19:03:35Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass: VOOS DIRETOS PARA FORTALEZA COM 9.678 MILHAS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "LATAM Pass oferece voos diretos para Fortaleza saindo de São Paulo ou Rio de Janeiro a partir de 9.678 milhas por trecho, mais taxas. Viagens disponíveis entre março e maio de 2027. Há promoção de compra de milhas com até 66% de desconto até 20 de novembro.",
+  "detalhes": [
+   "9.678 milhas por trecho",
+   "mais taxas aeroportuárias",
+   "viagens disponíveis entre março e maio de 2027",
+   "promoção de compra de milhas válida até 20 de novembro",
+   "desconto de até 66% na compra de milhas",
+   "1.000 milhas por R$ 23,80 para clientes LATAM Pass Itaú",
+   "preço de trecho a partir de R$ 230,33, mais taxas",
+   "preço de ida e volta a partir de R$ 467,69, mais taxas"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "até amanhã, 20 de novembro",
+  "links": [
+   "https://link.dia23.com.br/r/Askzqcj"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2008590742-16079",
   "data": "2026-11-19T17:52:41Z",
   "origem": "Porto Alegre",
