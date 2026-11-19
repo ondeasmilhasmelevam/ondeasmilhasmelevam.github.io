@@ -1,5 +1,47 @@
 [
  {
+  "id": "3761373661-9993",
+  "data": "2026-11-19T17:22:05Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "9.100 milhas + R$ 56,99 de taxas",
+  "volta": "9.300 milhas + R$ 35,75 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16076",
+  "data": "2026-11-19T17:19:09Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "48.000 milhas + Taxas",
+  "volta": "48.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16075",
+  "data": "2026-11-19T17:18:45Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Assunção",
+  "destino_iata": "ASU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "61.000 milhas + Taxas",
+  "volta": "61.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9992",
   "data": "2026-11-19T17:13:17Z",
   "origem": "Teresina",
