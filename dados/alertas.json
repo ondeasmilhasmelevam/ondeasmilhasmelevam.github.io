@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6821",
+  "data": "2026-11-19T22:05:33Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Roma",
+  "destino_iata": "FCO",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "Flying Blue",
+  "ida": "85.000 milhas + Taxas",
+  "volta": "85.000 milhas + Taxas",
+  "link_nome": "Flying Blue"
+ },
+ {
   "id": "3761373661-10006",
   "data": "2026-11-19T21:49:00Z",
   "origem": "São Paulo",
@@ -5514,39 +5528,6 @@
    "https://link.dia23.com.br/r/QiYRMZm"
   ],
   "ate": ""
- },
- {
-  "id": "1290836068-7851",
-  "data": "2026-11-17T22:08:08Z",
-  "tipo": "promocao",
-  "titulo": "ITAÚ SHOP: OFERTA DO DIA - TÊNIS LACOSTE CARNABY PRO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Tênis Lacoste Carnaby Pro em oferta especial com frete grátis.",
-  "detalhes": [
-   "Preço promocional: R$ 219,99.",
-   "Frete grátis."
-  ],
-  "parceiros": "Itaú Shop, Lacoste",
-  "validade": "Até durar o estoque",
-  "links": [
-   "https://link.dia23.com.br/r/kVAkasq"
-  ],
-  "ate": ""
- },
- {
-  "id": "2361370250-6712",
-  "data": "2026-11-17T22:05:30Z",
-  "origem": "Honolulu",
-  "origem_iata": "HNL",
-  "destino": "Nadi",
-  "destino_iata": "NAN",
-  "companhia": "Fiji Airways",
-  "cabine": "Executiva",
-  "programa": "AAdvantage",
-  "ida": "65.000 milhas + R$ 28,29",
-  "volta": "65.000 milhas + R$ 667,48",
-  "link_nome": "AAdvantage"
  },
  {
   "id": "1290836068-7841",
