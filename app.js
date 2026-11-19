@@ -1640,6 +1640,9 @@
   // Programa da passagem sem o nome da companhia na frente ("GOL Smiles" → Smiles, "LATAM" → LATAM Pass).
   const programaPassagem = p => {
     const t = (p.programa || '').trim();
+    if (window.OAMMLProgramas) return OAMMLProgramas.normalizar(t);
+    if (/finnair/i.test(t)) return 'Finnair Plus';
+    if (/\bsuma\b|air\s*europa/i.test(t)) return 'SUMA (Air Europa)';
     if (/smiles/i.test(t)) return 'Smiles';
     if (/^latam/i.test(t)) return 'LATAM Pass';
     if (/^azul/i.test(t)) return 'Azul Fidelidade';
@@ -1795,7 +1798,7 @@
     const nomeTipo = promo ? 'promoção' : 'passagem';
     const vazio = $('#passagens-vazio');
     vazio.hidden = !!lista.length;
-    vazio.textContent = doTipo.length ? `Nenhuma ${nomeTipo} com esse filtro agora.` : `Nenhuma ${nomeTipo} nas últimas 48 horas. As próximas aparecem aqui assim que forem publicadas.`;
+    vazio.textContent = doTipo.length ? `Nenhuma ${nomeTipo} com esse filtro agora. Os alertas desta página são das últimas 48 horas; consulte o Mapa de rotas e o Histórico para registros anteriores ou crie uma Rota Vigiada.` : `Nenhuma ${nomeTipo} nas últimas 48 horas. As próximas aparecem aqui assim que forem publicadas.`;
     const btn = $('#mais-passagens');
     btn.hidden = lista.length <= POR_VEZ;
     btn.textContent = f.todas ? 'Mostrar menos' : `Ver todas as ${lista.length} ${promo ? 'promoções' : 'passagens'}`;
@@ -1817,8 +1820,8 @@
     const selC = $('#passagens-cidade');
     if (selC.innerHTML !== htmlCidade) selC.innerHTML = htmlCidade;
     selC.classList.toggle('ativo', !!filtroPassagem.cidade);
-    const programas = [...new Set(lista.map(programaPassagem).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt'));
-    const htmlProgramas = `<option value="">Todos os programas</option>${programas.map(x => `<option${x === filtroPassagem.programa ? ' selected' : ''}>${esc(x)}</option>`).join('')}`;
+    const programas = [...new Set([...lista.map(programaPassagem).filter(Boolean), 'Finnair Plus', 'SUMA (Air Europa)', filtroPassagem.programa].filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt'));
+    const htmlProgramas = `<option value="">Todos os programas</option>${programas.map(x => `<option value="${esc(x)}"${x === filtroPassagem.programa ? ' selected' : ''}>${esc(x)}${lista.some(p => programaPassagem(p) === x) ? '' : ' · sem alerta agora'}</option>`).join('')}`;
     const sel = $('#passagens-programa');
     if (sel.innerHTML !== htmlProgramas) sel.innerHTML = htmlProgramas;
   }
@@ -3088,7 +3091,7 @@
     const c = window.oammlNavegacao?.contexto(pagina);
     if (!c) return;
     if (pagina === 'passagens') {
-      Object.assign(filtroPassagem, { tipo: 'passagem', busca: c.origem, destino: c.destino, cidade: c.cidade, programa: c.programa, ordem: c.ordem === 'milhas' ? 'milhas' : '', cabine: ['eco','exe'].includes(c.cabine) ? c.cabine : '', escopo: ['nac','int'].includes(c.escopo) ? c.escopo : '', todas: false });
+      Object.assign(filtroPassagem, { tipo: 'passagem', busca: c.origem, destino: c.destino, cidade: c.cidade, programa: programaPassagem({ programa: c.programa }), ordem: c.ordem === 'milhas' ? 'milhas' : '', cabine: ['eco','exe'].includes(c.cabine) ? c.cabine : '', escopo: ['nac','int'].includes(c.escopo) ? c.escopo : '', todas: false });
       [['#passagens-busca','busca'],['#passagens-destino','destino'],['#passagens-cidade','cidade'],['#passagens-programa','programa'],['#passagens-ordem','ordem']].forEach(([id,k]) => { $(id).value = filtroPassagem[k]; });
       [['#passagens-escopo','escopo'],['#passagens-cabine','cabine']].forEach(([id,k]) => $(id).querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset[k] === filtroPassagem[k]))));
       mostrarPassagens();
@@ -3104,7 +3107,7 @@
     if (pagina === 'radar') {
       $('#radar-origem').value = c.origem; $('#radar-destino').value = c.destino;
       $('#radar-cabine').value = ['eco','exe'].includes(c.cabine) ? c.cabine : '';
-      $('#radar-programa').value = c.programa;
+      $('#radar-programa').value = [...$('#radar-programa').options].find(o => OAMMLProgramas.normalizar(o.value) === OAMMLProgramas.normalizar(c.programa))?.value || '';
     }
     if (pagina === 'quanto') { $('#quanto-busca').value = c.destino || c.busca; mostrarQuanto(); }
     if (pagina === 'historico') { $('#hist-busca').value = [c.origem,c.destino].filter(Boolean).join(' '); $('#hist-cabine').value = c.cabine; }

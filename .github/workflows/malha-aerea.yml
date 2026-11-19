@@ -1,0 +1,59 @@
+name: Malha aérea e novidades de rotas
+on:
+  schedule:
+    - cron: '13,43 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/malha-aerea.yml']
+permissions:
+  contents: write
+concurrency:
+  group: malha-aerea
+  cancel-in-progress: false
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: ondeasmilhasmelevam/oamml-privado
+          token: ${{ secrets.PRIVADO_TOKEN }}
+          path: .privado
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Preparar ferramentas e revisão privada
+        run: |
+          cp -r .privado/ferramentas .
+          [ ! -f .privado/dados/rotas-revisao.json ] || cp .privado/dados/rotas-revisao.json dados/
+          echo "BUCKET_MALHA=$(( $(date +%s) / 21600 ))" >> "$GITHUB_ENV"
+      - uses: actions/cache@v4
+        with:
+          path: .cache-malha
+          key: malha-publica-v1-${{ env.BUCKET_MALHA }}
+          restore-keys: malha-publica-v1-
+      - name: Conferir registros e novidades
+        run: python ferramentas/malha_aerea.py
+      - name: Guardar pistas somente no privado
+        run: |
+          cp dados/rotas-revisao.json .privado/dados/
+          git -C .privado config user.name "Onde as Milhas Me Levam"
+          git -C .privado config user.email "ondeasmilhasmelevam@users.noreply.github.com"
+          git -C .privado add dados/rotas-revisao.json
+          if ! git -C .privado diff --cached --quiet; then
+            git -C .privado commit -m "Revisão de novidades da malha aérea"
+            git -C .privado pull --rebase && git -C .privado push
+          fi
+      - name: Publicar somente a malha confirmada
+        run: |
+          git add dados/malha-aerea.json
+          if ! git diff --cached --quiet; then
+            git config user.name "Onde as Milhas Me Levam"
+            git config user.email "ondeasmilhasmelevam@users.noreply.github.com"
+            git commit -m "Malha aérea confirmada atualizada"
+            git pull --rebase
+            git push
+          fi

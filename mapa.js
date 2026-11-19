@@ -13,7 +13,24 @@
   const fmt = n => Number(n).toLocaleString('pt-BR');
   const NOME_CAB = { economica: 'Econômica', executiva: 'Executiva', 'primeira-classe': 'Primeira Classe', 'economica-premium': 'Econômica Premium', primeira: 'Primeira Classe' };
   const bandeira = iso => iso && iso.length === 2 ? String.fromCodePoint(...[...iso.toUpperCase()].map(c => 127397 + c.charCodeAt(0))) : '';
-  let pronto = null, D = null, est = { de: '', para: '', cab: '' }, z = null, svg, g, proj, caminho, k = 1;
+  let pronto = null, D = null, est = { de: '', para: '', cab: '', programa: '' }, z = null, svg, g, proj, caminho, k = 1;
+  let malhaEm = 0, atualizandoMalha = null;
+  async function buscarMalha() {
+    const r = await fetch(`${SERVIDOR}/malha`, { headers: { authorization: `Bearer ${window.oammlToken ? await window.oammlToken() : ''}` } });
+    if (!r.ok) throw new Error('malha');
+    return r.json();
+  }
+  function atualizarMalha() {
+    if (!D || Date.now() - malhaEm < 300000) return Promise.resolve();
+    if (atualizandoMalha) return atualizandoMalha;
+    atualizandoMalha = buscarMalha().then(m => {
+      montarDados(m, D.aeros); cobertura();
+      if (location.hash.startsWith('#mapa')) desenharRotas();
+    }).catch(() => {
+      $('#mapa-cobertura').textContent = 'Não deu para atualizar agora. O mapa mantém a última consulta; tentaremos novamente em instantes.';
+    }).finally(() => { atualizandoMalha = null; });
+    return atualizandoMalha;
+  }
 
   const carregarScript = src => new Promise((ok, erro) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = erro; document.head.appendChild(s); });
   function iniciar() {
@@ -21,7 +38,7 @@
     pronto = (async () => {
       for (const src of LIBS) await carregarScript(src);
       const [malha, aeros, mundo, nomesPt] = await Promise.all([
-        (async () => { const r = await fetch(`${SERVIDOR}/malha`, { headers: { authorization: `Bearer ${window.oammlToken ? await window.oammlToken() : ''}` } }); if (!r.ok) throw new Error('malha'); return r.json(); })(),
+        buscarMalha(),
         fetch('dados/aeroportos.json', { cache: 'no-cache' }).then(r => r.json()),
         fetch(MUNDO_LEVE).then(r => r.json()),
         fetch('dados/paises-pt.json').then(r => r.json()).catch(() => ({}))
@@ -38,19 +55,34 @@
   // Junta ida e volta numa linha só (o traço mostra o total) e soma os alertas de cada aeroporto.
   function montarDados(malha, aeros) {
     const nomes = {}, rotas = [];
-    for (const [oi, di, o, d, cab, n, ult, sl] of malha.rotas || []) {
+    for (const [oi, di, o, d, cab, n, ult, sl, programas = {}] of malha.rotas || []) {
       if (!aeros[oi] || !aeros[di] || oi === di) continue;
       nomes[oi] = nomes[oi] || o; nomes[di] = nomes[di] || d;
-      rotas.push({ oi, di, cab, n, ult, sl: sl || (cab === 'eco' ? 'economica' : 'executiva'), cabNome: NOME_CAB[sl] || (sl ? sl.replace(/-/g, ' ') : '') });
+      rotas.push({ oi, di, cab, n, ult, programas: OAMMLProgramas.combinar(programas), sl: sl || (cab === 'eco' ? 'economica' : 'executiva'), cabNome: NOME_CAB[sl] || (sl ? sl.replace(/-/g, ' ') : '') });
     }
     D = { rotas, nomes, aeros, gerado: malha.gerado };
+    malhaEm = Date.now();
+    const nomesProgramas = [...new Set(['Finnair Plus', 'SUMA (Air Europa)', est.programa, ...rotas.flatMap(r => Object.keys(r.programas))].filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt'));
+    $('#mapa-programa').innerHTML = '<option value="">Todos os programas</option>' + nomesProgramas.map(n => `<option value="${esc(n)}">${esc(n)}</option>`).join('');
+    $('#mapa-programa').value = est.programa;
     $('#mapa-aeros').innerHTML = Object.keys(nomes).sort((a, b) => (nomes[a] || '').localeCompare(nomes[b] || '', 'pt'))
       .map(i => `<option value="${i}">${esc(nomes[i])}</option>`).join('');
   }
-  const daCabine = r => !est.cab || r.cab === est.cab;
+  function rotasFiltradas() {
+    return D.rotas.filter(r => !est.cab || r.cab === est.cab).flatMap(r => {
+      if (!est.programa) return [r];
+      const p = r.programas[est.programa];
+      return p && p[0] > 0 ? [{ ...r, n: p[0], ult: p[1] }] : [];
+    });
+  }
+  function cobertura() {
+    const el = $('#mapa-cobertura');
+    el.textContent = est.programa ? `Rotas com alertas de ${est.programa} no histórico. Isso não garante disponibilidade atual.` : 'O mapa mostra alertas anteriores, não disponibilidade atual para emissão.';
+    if (est.programa === 'SUMA (Air Europa)') el.innerHTML += ' A busca automática integrada não cobre o SUMA; novos alertas coletados aparecerão aqui. <a href="https://www.aireuropa.com" target="_blank" rel="noopener">Consultar Air Europa SUMA ↗</a>';
+  }
   function pares() {
     const m = new Map();
-    for (const r of D.rotas.filter(daCabine)) {
+    for (const r of rotasFiltradas()) {
       const br = i => (D.aeros[i] || [])[2] === 'BR';
       const [a, b] = br(r.oi) !== br(r.di) ? (br(r.oi) ? [r.oi, r.di] : [r.di, r.oi]) : [r.oi, r.di].sort(), ch = `${a}-${b}`;
       const p = m.get(ch) || m.set(ch, { a, b, n: 0 }).get(ch);
@@ -60,7 +92,7 @@
   }
   function porAeroporto() {
     const m = {};
-    for (const r of D.rotas.filter(daCabine)) {
+    for (const r of rotasFiltradas()) {
       for (const i of [r.oi, r.di]) { m[i] = m[i] || { n: 0, destinos: new Set() }; m[i].n += r.n; }
       m[r.oi].destinos.add(r.di);
     }
@@ -345,16 +377,16 @@
     const linkRota = r => `#rota/${r.oi}-${r.di}-${r.sl}`;
     if (!est.de) {
       const P = pares().sort((a, b) => b.n - a.n), tot = d3.sum(P, p => p.n);
-      const origens = Object.entries(A).map(([i, a]) => [i, D.rotas.filter(daCabine).filter(r => r.oi === i).reduce((s, r) => s + r.n, 0)]).sort((a, b) => b[1] - a[1]).slice(0, 6);
+      const origens = Object.entries(A).map(([i, a]) => [i, rotasFiltradas().filter(r => r.oi === i).reduce((s, r) => s + r.n, 0)]).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1]).slice(0, 6);
       el.innerHTML = `<p class="mp-kicker">Últimos 12 meses</p><div class="mp-nums"><div><b>${fmt(P.length)}</b><small>rotas com alerta</small></div><div><b>${fmt(tot)}</b><small>alertas</small></div><div><b>${fmt(Object.keys(A).length)}</b><small>aeroportos</small></div></div>
         <div class="mp-colunas"><div><h3>Rotas com mais alertas</h3><ol class="mp-lista">${P.slice(0, 8).map(p => `<li><button type="button" data-de="${p.a}" data-para="${p.b}"><span>${p.a} ⇄ ${p.b}<small>${esc(nomeDe(p.a))} ⇄ ${esc(nomeDe(p.b))}</small></span><b>${fmt(p.n)}</b></button></li>`).join('')}</ol></div>
         <div><h3>De onde mais sai alerta</h3><ol class="mp-lista">${origens.map(([i, n]) => `<li><button type="button" data-de="${i}"><span>${esc(nomeDe(i))}<small>${i} · ${esc(D.aeros[i][3] || '')}</small></span><b>${fmt(n)}</b></button></li>`).join('')}</ol></div></div>
-        <p class="mp-dica">Toque num aeroporto do mapa para ver para onde saem alertas dali.</p>`;
+        <p class="mp-dica">${P.length ? 'Toque num aeroporto do mapa para ver para onde saem alertas dali.' : 'Nenhuma rota com alerta registrado para este filtro. Isso não significa que o programa não ofereça voos; consulte o site oficial ou crie uma Rota Vigiada para os próximos alertas.'}</p>`;
       return;
     }
     const de = est.de, ad = aeroInfo(de);
     if (!est.para) {
-      const saindo = D.rotas.filter(daCabine).filter(r => r.oi === de);
+      const saindo = rotasFiltradas().filter(r => r.oi === de);
       const porDest = {}; saindo.forEach(r => { const p = porDest[r.di] || (porDest[r.di] = { n: 0, cabs: new Set(), ult: '' }); p.n += r.n; p.cabs.add(r.cab); if (r.ult > p.ult) p.ult = r.ult; });
       const lista = Object.entries(porDest).sort((a, b) => b[1].n - a[1].n);
       el.innerHTML = `<p class="mp-kicker">Saindo de</p><h3 class="mp-tit">${esc(nomeDe(de))} <small>${de} · ${esc(ad[3] || '')}</small></h3>
@@ -367,7 +399,7 @@
     const para = est.para, ap = aeroInfo(para);
     const km = Math.round(d3.geoDistance(coord(de), coord(para)) * 6371);
     const horas = km / 830 + 0.5, hTxt = `${Math.floor(horas)}h${String(Math.round((horas % 1) * 60)).padStart(2, '0')}`;
-    const ida = D.rotas.filter(daCabine).filter(r => r.oi === de && r.di === para), volta = D.rotas.filter(daCabine).filter(r => r.oi === para && r.di === de);
+    const ida = rotasFiltradas().filter(r => r.oi === de && r.di === para), volta = rotasFiltradas().filter(r => r.oi === para && r.di === de);
     const nIda = d3.sum(ida, r => r.n), nVolta = d3.sum(volta, r => r.n);
     const ultimo = ida.reduce((u, r) => r.ult > u ? r.ult : u, '');
     const quando = ultimo ? (() => { const n = Math.round((Date.now() - new Date(ultimo + 'T12:00:00')) / 864e5); return n <= 0 ? 'hoje' : n === 1 ? 'ontem' : `há ${n} dias`; })() : '';
@@ -376,7 +408,7 @@
       <div class="mp-nums"><div><b>${fmt(km)} km</b><small>distância em linha reta</small></div><div><b>${hTxt}</b><small>voo direto estimado</small></div><div><b>${fmt(nIda)}</b><small>alertas em 12 meses</small></div></div>
       ${nIda ? `<p class="mp-dica">Último alerta ${quando}. ${ida.map(r => `${esc(r.cabNome || cabTxt(r.cab))}: ${fmt(r.n)}`).join(' · ')}</p>
         <div class="mp-acoes">${ida.map(r => `<a class="cta cta-a" href="${linkRota(r)}">📈 Histórico da rota${ida.length > 1 ? ` (${esc((r.cabNome || cabTxt(r.cab)).toLowerCase())})` : ''}</a>`).join('')}</div>`
-        : `<p class="mp-dica">Nenhum alerta nesse sentido nos últimos 12 meses${est.cab ? ' com essa cabine' : ''}.</p><div class="mp-acoes"><a class="cta cta-a" href="#radar">🔔 Me avise quando aparecer</a></div>`}
+        : `<p class="mp-dica">Nenhum alerta nesse sentido nos últimos 12 meses com os filtros selecionados.</p><div class="mp-acoes"><a class="cta cta-a" href="#radar">🔔 Me avise quando aparecer</a></div>`}
       ${nVolta ? `<button type="button" class="mp-volta" data-de="${para}" data-para="${de}">No sentido ${para} → ${de}: ${fmt(nVolta)} ${nVolta === 1 ? 'alerta' : 'alertas'}. Ver esse sentido →</button>` : ''}
       <p class="mp-nota">Distância em linha reta e tempo estimado a 830 km/h, sem escalas. Os horários reais dependem da companhia.</p>
       <div class="mp-escalas" id="mp-escalas"><h3>Por onde ir com milhas</h3><p class="mp-dica">Procurando caminhos…</p></div>`;
@@ -394,7 +426,7 @@
       const pos = {}, nome = {}, sai = {};
       j.a.forEach(([i, lat, lon, iso, cidade]) => { pos[i] = [lat, lon, iso]; nome[i] = cidade; });
       j.e.forEach(([o, d, m, km]) => { const a = j.a[o][0], b = j.a[d][0]; (sai[a] = sai[a] || new Map()).set(b, { m, km }); });
-      GR = { pos, nome, sai, fontes: j.fontes, gerado: j.gerado };
+      GR = { pos, nome, sai, fontes: j.fontes.map(([id, n]) => [id, OAMMLProgramas.normalizar(n)]), gerado: j.gerado };
       return GR;
     })().catch(e => { grPromessa = null; throw e; });
     return grPromessa;
@@ -405,16 +437,20 @@
   // A rede do seats.aero traz pares de origem e destino que cada programa vende (o voo pode ter conexão).
   // Mostramos: quem vende a rota inteira e, para montar por partes, os hubs onde dá para trocar de trecho.
   function caminhos(de, para) {
-    const sai = GR.sai, direto = sai[de] && sai[de].get(para);
+    const sai = GR.sai;
+    const mascara = est.programa ? GR.fontes.reduce((m, f, b) => f[1] === est.programa ? m | (1 << b) : m, 0) : -1;
+    const rotaDireta = sai[de] && sai[de].get(para), direto = rotaDireta && (rotaDireta.m & mascara) ? { ...rotaDireta, m: rotaDireta.m & mascara } : null;
     const linha = kmEntre(de, para), lista = [];
     for (const [h, t1] of sai[de] || []) {
       if (h === para) continue;
       const t2 = sai[h] && sai[h].get(para);
       if (!t2) continue;
+      const m1 = t1.m & mascara, m2 = t2.m & mascara;
+      if (!m1 || !m2) continue;
       const km = kmEntre(de, h) + kmEntre(h, para);
       if (km > linha * 1.35) continue; // volta grande demais
-      const comum = t1.m & t2.m, nComum = programas(comum).length;
-      lista.push({ via: h, comum, m1: t1.m, m2: t2.m, km, nComum, tipo: comum ? 'mesmo' : 'separado' });
+      const comum = m1 & m2, nComum = programas(comum).length;
+      lista.push({ via: h, comum, m1, m2, km, nComum, tipo: comum ? 'mesmo' : 'separado' });
     }
     // primeiro onde dá para emitir os dois trechos no mesmo programa (e em mais programas), depois o menor desvio
     lista.sort((a, b) => (b.nComum > 0) - (a.nComum > 0) || b.nComum - a.nComum || a.km - b.km);
@@ -422,11 +458,17 @@
   }
   async function porOndeIr(de, para) {
     const el = () => $('#mp-escalas');
+    const programa = est.programa;
+    if (programa === 'SUMA (Air Europa)') {
+      escolhida = null; desenharEscala();
+      el().innerHTML = '<h3>Rotas do SUMA</h3><p class="mp-dica">A rede automática de trechos não cobre o SUMA. Os alertas do histórico acima são registros reais coletados; consulte rotas, parceiras e disponibilidade no programa.</p><a class="cta cta-a" href="https://www.aireuropa.com" target="_blank" rel="noopener">Consultar Air Europa SUMA ↗</a>';
+      return;
+    }
     try { await carregarGrafo(); } catch (e) {
       if (el()) el().innerHTML = `<h3>Por onde ir com milhas</h3><p class="mp-dica">${e.message === 'montando' ? 'A rede de trechos ainda está sendo montada. Volte daqui a pouco.' : 'Não deu para carregar os caminhos agora.'}</p>`;
       return;
     }
-    if (est.de !== de || est.para !== para || !el()) return;
+    if (est.de !== de || est.para !== para || est.programa !== programa || !el()) return;
     const { direto, lista } = caminhos(de, para);
     const todos = [...(direto ? [direto] : []), ...lista];
     escolhida = null; desenharEscala();
@@ -434,7 +476,7 @@
     el().innerHTML = `<h3>Por onde ir com milhas</h3>
       ${direto ? `<div class="mp-direto"><p><b>Programas que vendem ${de} → ${para} com milhas</b></p><div class="mp-chips">${chips(direto.comum)}</div>
         <small>Podem ser voos sem escala ou com conexão, conforme as parceiras de cada programa.</small></div>`
-        : `<p class="mp-dica">Nenhum programa da nossa base vende ${de} → ${para} numa emissão só.${lista.length ? ' Dá para montar em dois trechos:' : ''}</p>`}
+        : `<p class="mp-dica">Não encontramos ${de} → ${para} numa emissão só na rede consultada${programa ? ' para esse programa' : ''}.${lista.length ? ' Há caminhos em dois trechos:' : ''}</p>`}
       ${lista.length ? `<p class="mp-sub2">${direto ? 'Ou montando em dois trechos, trocando em um hub:' : ''}</p><ol class="mp-caminhos">${lista.map((c, n) => `<li><button type="button" data-n="${n + (direto ? 1 : 0)}">
         <span class="mp-via">via <b>${esc(cidade(c.via))}</b> <small>${c.via}</small></span>
         <span class="mp-prog">${c.tipo === 'separado' ? `${esc(programas(c.m1).slice(0, 2).join(', '))} + ${esc(programas(c.m2).slice(0, 2).join(', '))} <em>(2 emissões)</em>` : `${esc(programas(c.comum).slice(0, 3).join(', '))}${c.nComum > 3 ? ` e mais ${c.nComum - 3}` : ''}`}</span>
@@ -472,8 +514,9 @@
     if (est.de) escolher(est.de, p); else e.target.value = '';
   });
   $('#mapa-trocar').addEventListener('click', () => { if (est.de && est.para) escolher(est.para, est.de); });
-  $('#mapa-limpar').addEventListener('click', () => { escolher('', '', false); vista('mundo'); });
+  $('#mapa-limpar').addEventListener('click', () => { est.cab = ''; est.programa = ''; $('#mapa-cabine').value = ''; $('#mapa-programa').value = ''; cobertura(); escolher('', '', false); vista('mundo'); });
   $('#mapa-cabine').addEventListener('change', e => { est.cab = e.target.value; if (D) desenharRotas(); });
+  $('#mapa-programa').addEventListener('change', e => { est.programa = e.target.value; escolhida = null; cobertura(); if (D) { desenharEscala(); desenharRotas(); } });
   $('#mapa-vistas').addEventListener('click', e => { const b = e.target.closest('button[data-v]'); if (b) vista(b.dataset.v); });
   $('#mapa-modo').addEventListener('click', e => {
     const b = e.target.closest('button[data-m]'); if (!b || b.dataset.m === modo) return;
@@ -491,8 +534,8 @@
     const pode = !!(window.oammlPodeVerMapa && window.oammlPodeVerMapa());
     $('#mapa-fechado').hidden = pode;
     $('#mapa-aberto').hidden = !pode;
-    if (!pode) return;
-    try { await iniciar(); } catch (e) { return; }
+    if (!pode || $('#mapa-historico')?.hidden) return;
+    try { await iniciar(); await atualizarMalha(); } catch (e) { return; }
     const [, de = '', para = ''] = m;
     let p2 = para && D.aeros[para] ? para : '';
     if (para && !p2) { try { await carregarGrafo(); if (GR.pos[para]) p2 = para; } catch (e) { /* fica sem */ } }
@@ -508,5 +551,10 @@
   });
   addEventListener('hashchange', abrir);
   document.addEventListener('assinatura', abrir); // o login pode terminar depois de a página abrir
+  document.addEventListener('mapa-historico', abrir);
+  // Só consulta com a página visível e o mapa aberto; preserva os filtros e o desenho em caso de falha.
+  setInterval(() => {
+    if (!document.hidden && !$('#mapa-historico')?.hidden && location.hash.startsWith('#mapa') && window.oammlPodeVerMapa?.()) atualizarMalha();
+  }, 60000);
   abrir();
 })();

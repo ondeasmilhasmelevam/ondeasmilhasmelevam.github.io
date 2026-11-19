@@ -197,6 +197,12 @@
      "nome": "SUMA",
      "sobre": "Air Europa e parceiras da SkyTeam",
      "link": "https://www.aireuropa.com/br/br/signup"
+    },
+    {
+     "id": "finnair",
+     "nome": "Finnair Plus",
+     "sobre": "Avios para voar com a Finnair e suas parceiras. Confira as regras e a disponibilidade no programa.",
+     "link": "https://www.finnair.com/en/finnair-plus"
     }
    ]
   },

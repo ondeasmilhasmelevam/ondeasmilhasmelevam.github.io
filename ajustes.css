@@ -70,3 +70,10 @@
 .entrada-convite #ass-entrar{margin:0 0 24px}.entrada-convite #ass-msg{margin:16px 0}
 .entrada-convite #assinar>.ass-campo{display:none}
 @media(max-width:650px){.ass-convite{padding:18px}.ass-form-codigo #ass-pedir-link{width:100%;min-height:44px}}
+/* Filtro por programa no mapa: campos inteiros no celular, sem sobreposição. */
+#mapa-cobertura{margin:0 0 14px;line-height:1.6}
+#mapa-cobertura a{color:var(--ouro);text-decoration:underline}
+@media(max-width:560px){
+  .mapa-ctrl .mapa-campo:nth-of-type(3),.mapa-ctrl .mapa-campo:nth-of-type(4){grid-column:1/-1}
+  .mapa-ctrl .mapa-limpar{grid-column:1/-1}
+}

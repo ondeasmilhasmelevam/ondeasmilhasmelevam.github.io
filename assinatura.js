@@ -138,11 +138,12 @@ const lugarRadar = (filtro, nome, iata) => {
   const c = CIDADES_RADAR[normR(filtro).replace(/\s*\(.*\)\s*$/, '')];
   return c ? c.includes(iata) : normR(`${nome} ${iata}`).includes(normR(filtro));
 };
+const programaRadar = t => normR(OAMMLProgramas.normalizar(t));
 function bateRadar(r, p) {
   const lugar = lugarRadar;
   return lugar(r.origem, p.origem, p.origem_iata) && lugar(r.destino, p.destino, p.destino_iata) &&
     (!r.cabine || (r.cabine === 'exe') === ehExecutiva(p.cabine)) &&
-    (!r.programa || normR(p.programa).includes(normR(r.programa))) &&
+    (!r.programa || programaRadar(p.programa).includes(programaRadar(r.programa))) &&
     (!r.maxMilhas || milhasDe(p.ida) <= r.maxMilhas);
 }
 const radarTexto = r => [
@@ -992,7 +993,7 @@ async function carregarHistorico() {
   try {
     const r = await fetch(`${SERVIDOR}/historico`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
     if (!r.ok) throw new Error();
-    historicoRotas = Object.values((await r.json()).rotas || {});
+    historicoRotas = Object.values((await r.json()).rotas || {}).map(r => ({ ...r, p: OAMMLProgramas.estatisticas(r.p) }));
   } catch (e) { historicoRotas = null; $('#hist-info').textContent = 'Não deu para carregar o histórico agora. Tente de novo em instantes.'; }
 }
 async function desenharPrecosRota() {
@@ -1080,6 +1081,8 @@ async function desenharRota() {
   if (location.hash !== `#rota/${chave}`) return; // a pessoa já mudou de página
   rotaDados = rotaCache[chave]; rotaFiltro = '';
   const D = rotaDados, R = D.rota;
+  if (R) R.p = OAMMLProgramas.estatisticas(R.p);
+  D.pts = (D.pts || []).map(p => [...p.slice(0, 4), OAMMLProgramas.normalizar(p[4])]);
   const pts = (D.pts || []).map(([id, data, ida, volta, prog]) => {
     const mi = Math.round((ida + (volta || ida)) / 2), teto = tetoDeProg(prog);
     return { id, t: new Date(data + 'Z').getTime(), data, mi, r: teto ? Math.round(mi / 1000 * teto) : null, teto, prog: progRota(prog), tipo: volta ? 'ida e volta' : 'só ida' };

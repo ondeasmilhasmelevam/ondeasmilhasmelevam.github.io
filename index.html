@@ -50,7 +50,8 @@
 @media (prefers-reduced-motion:reduce){#entrada{display:none}}
 </style>
 <link rel="stylesheet" href="estilo.css?v=147">
-<link rel="stylesheet" href="ajustes.css?v=5">
+<link rel="stylesheet" href="ajustes.css?v=6">
+<link rel="stylesheet" href="rotas-aereas.css?v=2">
 </head>
 <body>
 <div id="entrada" aria-hidden="true"><div><img src="img/logo-entrada.webp" alt="" width="148" height="148" fetchpriority="high"></div></div>
@@ -699,11 +700,12 @@
           <label>Saindo de<input id="radar-origem" list="passagens-cidades" placeholder="ex.: GRU ou qualquer" autocomplete="off"></label>
           <label>Indo para<input id="radar-destino" list="passagens-cidades" placeholder="ex.: Lisboa ou qualquer" autocomplete="off"></label>
           <label>Cabine<select id="radar-cabine"><option value="">Qualquer</option><option value="eco">Econômica</option><option value="exe">Executiva ou Primeira</option></select></label>
-          <label>Programa<select id="radar-programa"><option value="">Qualquer</option><option>Smiles</option><option>LATAM</option><option>Azul</option><option>TAP</option><option>AAdvantage</option><option>Iberia</option><option>Privilege Club</option><option>Flying Blue</option><option>Aeroplan</option></select></label>
+          <label>Programa<select id="radar-programa"><option value="">Qualquer</option><option>Smiles</option><option>LATAM</option><option>Azul</option><option>TAP</option><option>AAdvantage</option><option>Iberia</option><option>Privilege Club</option><option>Flying Blue</option><option>Aeroplan</option><option value="Finnair Plus">Finnair Plus</option><option value="SUMA">SUMA (Air Europa)</option></select></label>
           <label>Até quantas milhas na ida<input id="radar-milhas" type="number" inputmode="numeric" min="0" step="1000" placeholder="ex.: 60000"></label>
           <button type="submit" class="cta cta-a">Vigiar esta rota</button>
         </form>
         <p class="radar-msg" id="radar-msg" hidden></p>
+        <p class="mp-dica">A Rota Vigiada avisa quando coletamos um alerta com os seus filtros. Finnair Plus e SUMA estão incluídos; a busca automática de disponibilidade ainda não cobre o SUMA.</p>
         <h3 class="radar-titulo">Suas rotas vigiadas <small id="radar-conta"></small></h3>
         <ul class="radar-lista" id="radar-lista"></ul>
         <h3 class="radar-titulo">No ar agora para os seus radares <small id="radar-achados-n"></small></h3>
@@ -737,7 +739,7 @@
       <div class="sec-head">
         <p class="eyebrow">Mapa de rotas · para assinantes</p>
         <h2>Para onde as milhas estão levando</h2>
-        <p class="sec-note">As rotas que tiveram alerta nos últimos 12 meses. Toque num aeroporto para acender as rotas dele e em outro para ver a rota. Os nomes que aparecem de início são os hubs com mais alertas; aproxime para ver os outros.</p>
+        <p class="sec-note">Explore as saídas do Brasil, os caminhos com conexão e os períodos futuros de operação. Na aba Alertas anteriores, consulte as rotas que já tiveram ofertas com milhas. Planejar um caminho não garante disponibilidade para emissão.</p>
       </div>
       <div class="radar-fechado" id="mapa-fechado">
         <p>🔒 O mapa de rotas é exclusivo para assinantes.</p>
@@ -745,14 +747,44 @@
         <small>Já assina? <a href="#assinar">Entre aqui</a> com o e-mail do pagamento.</small>
       </div>
       <div id="mapa-aberto" hidden>
+      <div class="malha-abas" role="group" aria-label="O que explorar no mapa">
+        <button type="button" data-mapa-vista="planejar" aria-pressed="true">Rotas e conexões</button>
+        <button type="button" data-mapa-vista="historico" aria-pressed="false">Alertas anteriores</button>
+      </div>
+      <div id="malha-planejar">
+        <div class="malha-intro"><p class="mp-kicker">Planeje o caminho</p><h3>Para onde você quer ir?</h3><p>Descubra de quais cidades brasileiras sair, onde conectar e quais companhias operam cada trecho.</p></div>
+        <form id="malha-form" class="malha-form">
+          <label>Saindo de<input id="malha-origem" list="malha-origens" autocomplete="off" placeholder="Qualquer aeroporto do Brasil"><datalist id="malha-origens"></datalist></label>
+          <label class="malha-destino">Quero ir para<input id="malha-destino" list="malha-destinos" autocomplete="off" placeholder="Ex.: Seul, ICN ou Tailândia" required><datalist id="malha-destinos"></datalist></label>
+          <label>Mês da viagem<input type="month" id="malha-mes" required></label>
+          <details class="malha-opcoes"><summary>Mais filtros: estado, companhia, aliança e programa</summary><div class="malha-opcoes-grade">
+          <label>Estado de saída<select id="malha-uf"><option value="">Todos os estados</option></select></label>
+          <label>Conexões<select id="malha-conexoes"><option value="0">Somente direto</option><option value="1">Até 1 conexão</option><option value="2" selected>Até 2 conexões</option></select></label>
+          <label>Companhia<select id="malha-cia"><option value="">Qualquer companhia</option></select></label>
+          <label>Aliança<select id="malha-alianca"><option value="">Qualquer aliança</option><option>Star Alliance</option><option>oneworld</option><option>SkyTeam</option></select></label>
+          <label>Programa e parceiras<select id="malha-prog"><option value="">Qualquer programa</option></select></label>
+          </div></details>
+          <button type="submit" class="cta cta-a">Encontrar caminhos</button>
+        </form>
+        <p class="malha-ajuda">Companhia e aliança filtram todos os trechos. O programa filtra companhias parceiras para resgate; não garante assento, preço ou emissão no mesmo bilhete. Se escolher um aeroporto, ele prevalece sobre o estado.</p>
+        <p class="malha-ajuda" id="malha-parceiras-nota">O filtro usa as parceiras já conferidas; cobertura em expansão. Azul pelo Mundo é um canal de resgate do Azul Fidelidade.</p>
+        <p class="malha-atualizada" id="malha-atualizada"></p>
+        <p id="malha-resumo" role="status">Carregando a malha aérea…</p><button class="cta cta-b" type="button" id="malha-tentar" hidden>Tentar novamente</button>
+        <div id="malha-mapa-caixa" class="malha-mapa-caixa" hidden><p id="malha-mapa-status" role="status"></p><svg id="malha-mapa" role="img" aria-label="Mapa do trajeto selecionado"></svg><div id="malha-trechos"></div><small class="malha-legenda">Linha dourada: trecho da malha consultada · pontilhada: início futuro · mapa Natural Earth</small></div>
+        <ul id="malha-resultados" class="malha-resultados"></ul>
+        <div id="malha-novidades" class="malha-novidades"></div>
+      </div>
+      <div id="mapa-historico" hidden>
       <div class="mapa-ctrl">
         <label class="mapa-campo"><span>De</span><input id="mapa-de" list="mapa-aeros" placeholder="ex.: GRU" autocomplete="off"></label>
         <button type="button" class="mapa-trocar" id="mapa-trocar" aria-label="Trocar origem e destino">⇄</button>
         <label class="mapa-campo"><span>Para</span><input id="mapa-para" list="mapa-aeros" placeholder="ex.: LIS" autocomplete="off"></label>
         <datalist id="mapa-aeros"></datalist>
         <label class="mapa-campo"><span>Cabine</span><select id="mapa-cabine"><option value="">Todas</option><option value="eco">Econômica</option><option value="exe">Executiva e Primeira</option></select></label>
+        <label class="mapa-campo"><span>Programa</span><select id="mapa-programa"><option value="">Todos os programas</option><option>Finnair Plus</option><option>SUMA (Air Europa)</option></select></label>
         <button type="button" class="mapa-limpar" id="mapa-limpar">Limpar</button>
       </div>
+      <p class="mp-dica" id="mapa-cobertura" aria-live="polite">O mapa mostra alertas anteriores, não disponibilidade atual para emissão.</p>
       <div class="mapa-vistas" id="mapa-vistas" role="group" aria-label="Região do mapa">
         <button type="button" data-v="mundo" aria-pressed="true">Mundo</button><button type="button" data-v="brasil" aria-pressed="false">Brasil</button><button type="button" data-v="europa" aria-pressed="false">Brasil ↔ Europa</button><button type="button" data-v="eua" aria-pressed="false">Brasil ↔ América do Norte</button><button type="button" data-v="africa" aria-pressed="false">Brasil ↔ África</button><button type="button" data-v="asia" aria-pressed="false">Brasil ↔ Ásia</button>
         <div class="mapa-modo" id="mapa-modo" role="group" aria-label="Jeito de ver"><button type="button" data-m="globo" aria-pressed="true">🌍 Globo</button><button type="button" data-m="mapa" aria-pressed="false">🗺️ Mapa plano</button></div>
@@ -768,6 +800,7 @@
         <aside class="mapa-painel" id="mapa-painel" aria-live="polite"></aside>
       </div>
       <p class="mapa-fonte">Rotas e quantidade de alertas: histórico do Onde as Milhas Me Levam (últimos 12 meses). Distância e tempo de voo são estimativas em linha reta, não horário de companhia. Mapa: Natural Earth.</p>
+      </div>
       </div>
     </section>
     <section id="rota" data-pagina="rota">
@@ -1403,11 +1436,13 @@
 <script src="avisos.js?v=1"></script>
 <script src="planilha.js?v=2"></script>
 <script src="navegacao.js?v=1"></script>
-<script src="app.js?v=134"></script>
+<script src="programas-base.js?v=2"></script>
+<script src="app.js?v=136"></script>
 <script src="interface.js?v=1"></script>
 <script src="funil.js?v=8"></script>
-<script type="module" src="assinatura.js?v=52"></script>
-<script src="mapa.js?v=10" defer></script>
+<script type="module" src="assinatura.js?v=55"></script>
+<script src="mapa.js?v=13" defer></script>
+<script src="rotas-aereas.js?v=2" defer></script>
 <script src="instalar.js?v=2" defer></script>
 </body>
 </html>
