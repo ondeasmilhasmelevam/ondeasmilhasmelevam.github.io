@@ -5701,34 +5701,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-15882",
-  "data": "2026-11-17T10:38:32Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "Lima",
-  "destino_iata": "LIM",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "42.300 milhas + Taxas",
-  "volta": "42.300 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15881",
-  "data": "2026-11-17T10:34:42Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "San José",
-  "destino_iata": "SJO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "57.700 milhas + Taxas",
-  "volta": "57.700 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7825",
   "data": "2026-11-16T21:37:50Z",
   "tipo": "promocao",
