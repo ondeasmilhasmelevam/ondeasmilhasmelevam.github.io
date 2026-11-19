@@ -300,9 +300,21 @@
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Praia_do_Rosa%2C_SC.JPG/1280px-Praia_do_Rosa%2C_SC.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "providencia-santa-catalina-colombia": {},
+ "pucon-chile": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Chile_(6614682605).jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Chile_%286614682605%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+ },
+ "puerto-varas-chile": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:AWA_-_EXTERIOR.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/AWA_-_EXTERIOR.jpg/1280px-AWA_-_EXTERIOR.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "punta-cana": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Isla_Saona_-_panoramio.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Isla_Saona_-_panoramio.jpg/1280px-Isla_Saona_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "punta-del-este-106-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Isla_de_Lobos_con_velero_de_4_m%C3%A1stiles_220227-6916-jikatu_(51906455342).jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Isla_de_Lobos_con_velero_de_4_m%C3%A1stiles_220227-6916-jikatu_%2851906455342%29.jpg/1280px-Isla_de_Lobos_con_velero_de_4_m%C3%A1stiles_220227-6916-jikatu_%2851906455342%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "recife": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Skyline_do_Bairro_Boa_Viagem_Recife_Pernambuco_Brasil.jpg",
@@ -315,6 +327,10 @@
  "riviera-nayarit-135-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Bucer%C3%ADas_01.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Bucer%C3%ADas_01.jpg/1280px-Bucer%C3%ADas_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "salar-uyuni-165-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Uyuni_Salt_Lake_(Salar_de_Uyuni),_Bolivia,_12-2022.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Uyuni_Salt_Lake_%28Salar_de_Uyuni%29%2C_Bolivia%2C_12-2022.jpg/1280px-Uyuni_Salt_Lake_%28Salar_de_Uyuni%29%2C_Bolivia%2C_12-2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "salvador-bahia": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Webysther_20150907165153_-_Mercado_modelo_e_baia_de_todos_os_santos.jpg",
