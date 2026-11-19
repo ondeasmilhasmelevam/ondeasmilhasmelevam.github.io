@@ -5599,34 +5599,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2361370250-6707",
-  "data": "2026-11-17T20:02:28Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Dar Es Salaam",
-  "destino_iata": "DAR",
-  "companhia": "South African Airways",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "292.400 Milhas Smiles + Taxas",
-  "volta": "292.400 Milhas Smiles + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-6706",
-  "data": "2026-11-17T20:02:26Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Porto",
-  "destino_iata": "OPO",
-  "companhia": "Azul",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "80.000 Milhas Aeroplan + Taxas",
-  "volta": "80.000 Milhas Aeroplan + Taxas",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "1290836068-7841",
   "data": "2026-11-17T16:34:21Z",
   "tipo": "promocao",
