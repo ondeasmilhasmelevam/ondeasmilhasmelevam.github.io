@@ -36,7 +36,9 @@ jobs:
           key: malha-publica-v1-${{ env.BUCKET_MALHA }}
           restore-keys: malha-publica-v1-
       - name: Conferir registros e novidades
-        run: python ferramentas/malha_aerea.py
+        run: |
+          python ferramentas/aeroportos_mundiais.py
+          python ferramentas/malha_aerea.py
       - name: Guardar pistas somente no privado
         run: |
           cp dados/rotas-revisao.json .privado/dados/
@@ -49,7 +51,7 @@ jobs:
           fi
       - name: Publicar somente a malha confirmada
         run: |
-          git add dados/malha-aerea.json
+          git add dados/malha-aerea.json dados/aeroportos-mundiais.json
           if ! git diff --cached --quiet; then
             git config user.name "Onde as Milhas Me Levam"
             git config user.email "ondeasmilhasmelevam@users.noreply.github.com"

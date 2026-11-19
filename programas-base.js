@@ -31,6 +31,8 @@
     ['qantas', 'Qantas Frequent Flyer', 'qantas', 'oneworld'],
     ['velocity', 'Velocity', 'velocity|virgin\\s*australia', ''],
     ['jetblue', 'JetBlue TrueBlue', 'jetblue|true\\s*blue', ''],
+    ['frontier', 'Frontier Miles', 'frontier', ''],
+    ['spirit', 'Free Spirit', 'free\\s*spirit|^spirit$', ''],
     ['avios', 'Avios (programa não informado)', '^avios(?:\\s*\\(programa nao informado\\))?$', '']
   ].map(([id, nome, padrao, alianca]) => ({ id, nome, alianca, re: new RegExp(padrao, 'i') }));
   const limpar = t => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim();

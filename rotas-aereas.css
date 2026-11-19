@@ -34,6 +34,22 @@
 .malha-acoes .cta,.malha-seats .cta{font-size:12px;line-height:1.5;text-align:center;white-space:normal;max-width:100%;box-sizing:border-box}
 .malha-seats{font-size:13px;line-height:1.75;margin-top:16px;border-top:1px solid var(--line);padding-top:14px;color:var(--ash)}
 .malha-seats a{display:flex;margin-top:12px}
+.malha-cadastro{margin:20px 0;font-size:13px;line-height:1.7;color:var(--ash)}
+.malha-cadastro summary{cursor:pointer;color:var(--ouro);padding:12px 0}
+.malha-aeroportos{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.malha-aeroportos li{min-width:0;overflow-wrap:anywhere;border:1px solid var(--line);border-radius:12px;background:var(--ink-2);padding:14px}
+.malha-aeroportos small{display:block;margin:6px 0}
+.malha-aeroportos li div{display:flex;flex-wrap:wrap;gap:8px}
+.malha-aeroportos button{font:inherit;color:var(--rice);background:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px;cursor:pointer}
+.malha-pesquisa{margin-top:14px;padding-top:10px;border-top:1px solid var(--line);min-width:0}
+.malha-pesquisa>.cta{margin:6px 4px 6px 0;max-width:100%;white-space:normal;font-size:12px;line-height:1.6;text-align:center}
+.malha-completa{margin-bottom:24px}
+.malha-completa>.cta{max-width:100%;white-space:normal;box-sizing:border-box;text-align:center;line-height:1.6}
+.malha-voos{font-size:13px;line-height:1.7;overflow-wrap:anywhere;min-width:0}
+.malha-datas,.malha-itinerario ol{list-style:none;padding:0;display:grid;gap:16px}
+.malha-datas>li,.malha-itinerario{border-top:1px solid var(--line);padding-top:14px;min-width:0}
+.malha-datas .cta,.malha-itinerario .cta{white-space:normal;max-width:100%;box-sizing:border-box;font-size:12px;text-align:center;line-height:1.6}
+.malha-itinerario li{padding-left:10px;border-left:2px solid var(--ouro)}
 .malha-mapa-caixa{background:var(--ink-2);border:1px solid var(--line);border-radius:18px;padding:20px;margin:24px 0;scroll-margin-top:90px}
 #malha-mapa-status{font-size:16px;font-weight:700;line-height:1.75;margin:0 0 16px;color:var(--rice)}
 #malha-mapa{display:block;width:100%;height:auto;border-radius:12px;background:#080f20}
