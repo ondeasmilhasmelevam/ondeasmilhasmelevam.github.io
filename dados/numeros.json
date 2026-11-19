@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-19T13:23:55.604913Z",
+ "atualizado": "2026-11-19T13:30:16.092878Z",
  "dias": 30,
  "passagens": 3289,
  "promocoes": 193,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1202,
+  "passagens": 1197,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -103,15 +103,15 @@
     "foto": "img/rotas/FOR-JDO.jpg"
    },
    {
-    "id": "3761373661-9492",
+    "id": "2008590742-15711",
     "origem": "Curitiba",
     "origem_iata": "CWB",
     "destino": "Londrina",
     "destino_iata": "LDB",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-12T13:28:41Z",
-    "milhas": 3500,
+    "data": "2026-11-15T15:02:56Z",
+    "milhas": 3520,
     "nivel": "",
     "grupo": "Nacional",
     "foto": "img/rotas/CWB-LDB.jpg"
@@ -551,15 +551,15 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9492",
+    "id": "2008590742-15711",
     "origem": "Curitiba",
     "origem_iata": "CWB",
     "destino": "Londrina",
     "destino_iata": "LDB",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-12T13:28:41Z",
-    "milhas": 3500,
+    "data": "2026-11-15T15:02:56Z",
+    "milhas": 3520,
     "nivel": "",
     "regiao": "brasil"
    },
