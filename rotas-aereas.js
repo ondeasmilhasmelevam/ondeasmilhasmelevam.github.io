@@ -1,6 +1,12 @@
 /* Planejador de caminhos: voos registrados e rede conferida, sem confundir com assentos disponíveis. */
 (() => {
   const normal = t => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  const regiao = a => {
+    const p = normal(a.pais);
+    if (/australia|nova zelandia|fiji|papua nova guine|samoa|tonga|vanuatu|micronesia|ilhas salomao|palau|kiribati|tuvalu|nauru|ilhas marshall|nova caledonia|polinesia/.test(p)) return 'Oceania';
+    if (/japao|coreia|china|hong kong|taiwan|tailandia|malasia|indonesia|singapura|cingapura|filipinas|vietna|vietnam|camboja|laos|myanmar|brunei|timor|india|nepal|butao|bangladesh|sri lanka|paquistao|maldivas|catar|qatar|emirados|arabia|oma\b|barein|bahrain|kuwait|israel|jordania|libano|iraque|cazaquistao|uzbequistao/.test(p)) return 'Ásia';
+    return '';
+  };
   const grupoCia = id => ['LA', 'JJ', 'LP', '4C', 'XL', '4M', 'PZ'].includes(id) ? 'LATAM' : id;
   const distancia = (a, b) => {
     const rad = x => x * Math.PI / 180, p = rad(b.lat - a.lat), l = rad(b.lon - a.lon);
@@ -25,7 +31,7 @@
       const r = { ...t, dias, km: distancia(A[t.de], A[t.para]) };
       (saidas[t.de] ||= []).push(r); (reverso[t.para] ||= new Set()).add(t.de);
     }
-    const max = Math.max(1, Math.min(3, Number(f.conexoes ?? 2) + 1)), alcance = { [f.destino]: 0 };
+    const max = Math.max(1, Math.min(4, Number(f.conexoes ?? 2) + 1)), alcance = { [f.destino]: 0 };
     let fronteira = [f.destino];
     for (let n = 1; n <= max; n++) {
       const proxima = [];
@@ -36,7 +42,9 @@
     const encontrados = [], vistos = new Set(); let visitas = 0;
     for (const origem of origens) {
       if (origem === f.destino || alcance[origem] === undefined) continue;
-      const limiteKm = distancia(A[origem], A[f.destino]) * 1.8 + 100;
+      // Brasil–Oceania via Oriente Médio pode superar 2x a distância direta.
+      // Distância ordena os resultados; não deve excluir esses caminhos reais.
+      const limiteKm = distancia(A[origem], A[f.destino]) * 2.6 + 100;
       function andar(atual, trechos, nos, dias, km) {
         if (++visitas > 250000) return;
         for (const r of saidas[atual] || []) {
@@ -45,7 +53,7 @@
           if (r.para !== f.destino && (alcance[r.para] === undefined || trechos.length + 1 + alcance[r.para] > max)) continue;
           const caminho = [...trechos, r];
           if (r.para === f.destino) {
-            const chave = caminho.map(x => `${x.de}-${x.para}-${x.cia}`).join('/');
+            const chave = caminho.map(x => `${x.de}-${x.para}-${grupoCia(x.cia)}`).join('/');
             if (!vistos.has(chave)) { vistos.add(chave); encontrados.push({ origem, destino: f.destino, trechos: caminho, km: proxKm, dias: proxDias }); }
           } else if (caminho.length < max) andar(r.para, caminho, [...nos, r.para], proxDias, proxKm);
         }
@@ -54,7 +62,7 @@
     }
     return encontrados.sort((a, b) => a.trechos.length - b.trechos.length || a.km - b.km || a.origem.localeCompare(b.origem)).slice(0, 80);
   }
-  globalThis.OAMMLMalha = { pesquisar, diasNoMes, distancia };
+  globalThis.OAMMLMalha = { pesquisar, diasNoMes, distancia, regiao };
   if (typeof document === 'undefined') return;
   const $ = s => document.querySelector(s), esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   let base = null, carregando = null, resultados = [], atual = null, mundo = null, fonteSeats = null, seatsPromessa = null;
@@ -84,7 +92,7 @@
     const aeroportos = Object.keys(base.aeroportos).sort((a, b) => nome(a).localeCompare(nome(b), 'pt'));
     $('#malha-origens').innerHTML = aeroportos.filter(i => base.aeroportos[i].br).map(i => `<option value="${i}">${esc(nome(i))}</option>`).join('');
     const paises = new Set(aeroportos.map(i => base.aeroportos[i].pais));
-    $('#malha-destinos').innerHTML = aeroportos.map(i => `<option value="${i}">${esc(nome(i))} · ${esc(base.aeroportos[i].pais)}</option>`).join('') + [...paises].sort().map(p => `<option value="${esc(p)}">Todos os aeroportos na base deste país</option>`).join('');
+    $('#malha-destinos').innerHTML = aeroportos.map(i => `<option value="${i}">${esc(nome(i))} · ${esc(base.aeroportos[i].pais)}</option>`).join('') + [...paises].sort().map(p => `<option value="${esc(p)}">Todos os aeroportos na base deste país</option>`).join('') + '<option value="Ásia">Destinos da região presentes na base</option><option value="Oceania">Destinos da região presentes na base</option>';
     $('#malha-uf').innerHTML = '<option value="">Todos os estados</option>' + [...new Set(aeroportos.filter(i => base.aeroportos[i].br).map(i => base.aeroportos[i].uf).filter(Boolean))].sort().map(u => `<option>${esc(u)}</option>`).join('');
     const nomesCias = Object.fromEntries(base.trechos.map(t => [grupoCia(t.cia), grupoCia(t.cia) === 'LATAM' ? 'LATAM' : base.companhias[t.cia]?.nome || t.cia]));
     $('#malha-cia').innerHTML = '<option value="">Qualquer companhia</option>' + Object.keys(nomesCias).sort((a, b) => nomesCias[a].localeCompare(nomesCias[b], 'pt')).map(c => `<option value="${esc(c)}">${esc(nomesCias[c])}</option>`).join('');
@@ -105,8 +113,8 @@
     e?.preventDefault(); if (!base) return;
     const origemTxt = $('#malha-origem').value.trim(), origem = aeroportoDe(origemTxt, true), destinoTxt = $('#malha-destino').value.trim(), direto = aeroportoDe(destinoTxt);
     if (origemTxt && !origem) { $('#malha-resumo').textContent = 'Escolha uma origem da lista ou informe o código do aeroporto, como GRU. Para pesquisar por estado, deixe a origem vazia.'; return; }
-    const destinos = direto ? [direto] : Object.keys(base.aeroportos).filter(i => normal(base.aeroportos[i].pais) === normal(destinoTxt) || normal(base.aeroportos[i].cidade) === normal(destinoTxt));
-    if (!destinoTxt || !destinos.length) { $('#malha-resumo').textContent = 'Escolha uma cidade, país ou aeroporto da lista. Ex.: Seul, ICN ou Tailândia.'; return; }
+    const destinos = direto ? [direto] : Object.keys(base.aeroportos).filter(i => normal(base.aeroportos[i].pais) === normal(destinoTxt) || normal(base.aeroportos[i].cidade) === normal(destinoTxt) || normal(regiao(base.aeroportos[i])) === normal(destinoTxt));
+    if (!destinoTxt || !destinos.length) { $('#malha-resumo').textContent = 'Escolha uma cidade, país ou aeroporto da lista. Você também pode pesquisar Ásia ou Oceania. A cobertura internacional ainda é parcial.'; return; }
     const f = { origem, uf: $('#malha-uf').value, mes: $('#malha-mes').value, companhia: $('#malha-cia').value, alianca: $('#malha-alianca').value, programa: $('#malha-prog').value, conexoes: $('#malha-conexoes').value };
     $('#malha-parceiras-nota').textContent = f.programa ? base.programas[f.programa].nota || 'Parceiras conferidas no programa. A possibilidade de resgate depende das regras, da rota e dos assentos liberados.' : 'O filtro usa as parceiras já conferidas; cobertura em expansão. Azul pelo Mundo é um canal de resgate do Azul Fidelidade.';
     const hoje = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' });
@@ -116,9 +124,9 @@
     $('#malha-resumo').textContent = resultados.length ? `${resultados.length === 60 ? 'Até 60' : resultados.length} ${resultados.length === 1 ? 'caminho' : 'caminhos'} na base para esse período, saindo de ${nOrigens} ${nOrigens === 1 ? 'aeroporto' : 'aeroportos'}. Selecione um para ver o trajeto.` : 'Nenhum caminho encontrado com estes filtros na cobertura atual. Isso não significa que a rota não exista. Tente mais conexões, outro mês ou retire o filtro de programa.';
     $('#malha-mapa-caixa').hidden = true;
     $('#malha-resultados').innerHTML = resultados.map((r, n) => {
-      const cias = [...new Set(r.trechos.map(t => base.companhias[t.cia]?.nome || t.cia))], rede = r.trechos.some(t => t.tipo === 'rede');
+      const cias = [...new Set(r.trechos.map(t => grupoCia(t.cia) === 'LATAM' ? 'LATAM' : base.companhias[t.cia]?.nome || t.cia))], rede = r.trechos.some(t => t.tipo === 'rede');
       const hojeData = hoje, futura = r.trechos.some(t => t.periodos.every(p => p[0] > hojeData));
-      return `<li class="malha-card"><div class="malha-card-topo"><span class="malha-selo${futura ? ' futura' : ''}">${futura ? 'Inclui início futuro' : 'Malha consultada'}</span><span>${r.trechos.length === 1 ? 'Sem conexão' : r.trechos.length === 2 ? '1 conexão' : r.trechos.length - 1 + ' conexões'}</span></div><h3>${esc(nome(r.origem))} <span>→</span> ${esc(nome(r.destino))}</h3><p class="malha-via">${r.trechos.length > 1 ? 'Via ' + r.trechos.slice(0, -1).map(t => esc(nome(t.para))).join(' → ') : 'Trecho direto registrado'}</p><p>${esc(cias.join(' + '))}</p><small>${rede ? 'Inclui trecho da rede internacional conferida; horários a confirmar.' : 'Trechos registrados com operação no período escolhido.'}</small>${f.programa ? `<small>Parceiras de ${esc(base.programas[f.programa].nome)}. ${f.programa === 'finnair' && new Set(r.trechos.filter(t => t.cia !== 'AY').map(t => t.cia)).size > 1 ? 'Parceiras diferentes podem exigir emissões separadas. ' : ''}Regras e assentos com milhas precisam de consulta.</small>` : ''}<div class="malha-acoes"><button type="button" class="cta cta-a" data-malha-trajeto="${n}">Ver trajeto no mapa</button><button type="button" class="cta cta-b" data-malha-milhas="${n}">Programas na base de milhas</button></div><div class="malha-seats" id="malha-seats-${n}" hidden aria-live="polite"></div></li>`;
+      return `<li class="malha-card"><div class="malha-card-topo"><span class="malha-selo${futura ? ' futura' : ''}">${futura ? 'Inclui início futuro' : 'Malha consultada'}</span><span>${r.trechos.length === 1 ? 'Sem conexão' : r.trechos.length === 2 ? '1 conexão' : r.trechos.length - 1 + ' conexões'}</span></div><h3>${esc(nome(r.origem))} <span>→</span> ${esc(nome(r.destino))}</h3><p class="malha-via">${r.trechos.length > 1 ? 'Via ' + r.trechos.slice(0, -1).map(t => esc(nome(t.para))).join(' → ') : 'Trecho direto registrado'}</p><p>${esc(cias.join(' + '))}</p><small>${rede ? 'Inclui trecho da rede internacional conferida; horários a confirmar.' : 'Trechos registrados com operação no período escolhido.'}</small>${f.programa ? `<small>Parceiras de ${esc(base.programas[f.programa].nome)}. ${f.programa === 'finnair' && new Set(r.trechos.filter(t => t.cia !== 'AY').map(t => grupoCia(t.cia))).size > 1 ? 'Parceiras diferentes podem exigir emissões separadas. ' : ''}Regras e assentos com milhas precisam de consulta.</small>` : ''}<div class="malha-acoes"><button type="button" class="cta cta-a" data-malha-trajeto="${n}">Ver trajeto no mapa</button><button type="button" class="cta cta-b" data-malha-milhas="${n}">Programas na base de milhas</button></div><div class="malha-seats" id="malha-seats-${n}" hidden aria-live="polite"></div></li>`;
     }).join('');
   }
   function novidades() {

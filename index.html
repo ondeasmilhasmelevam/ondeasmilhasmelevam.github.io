@@ -752,14 +752,14 @@
         <button type="button" data-mapa-vista="historico" aria-pressed="false">Alertas anteriores</button>
       </div>
       <div id="malha-planejar">
-        <div class="malha-intro"><p class="mp-kicker">Planeje o caminho</p><h3>Para onde você quer ir?</h3><p>Descubra de quais cidades brasileiras sair, onde conectar e quais companhias operam cada trecho.</p></div>
+        <div class="malha-intro"><p class="mp-kicker">Planeje o caminho</p><h3>Para onde você quer ir?</h3><p>Descubra de quais cidades brasileiras sair, onde conectar e quais companhias operam cada trecho.</p><p>Para começar, preencha só o destino. O mês já vem selecionado e pode ser alterado; os demais filtros são opcionais.</p></div>
         <form id="malha-form" class="malha-form">
-          <label>Saindo de<input id="malha-origem" list="malha-origens" autocomplete="off" placeholder="Qualquer aeroporto do Brasil"><datalist id="malha-origens"></datalist></label>
-          <label class="malha-destino">Quero ir para<input id="malha-destino" list="malha-destinos" autocomplete="off" placeholder="Ex.: Seul, ICN ou Tailândia" required><datalist id="malha-destinos"></datalist></label>
+          <label>Saindo de (opcional)<input id="malha-origem" list="malha-origens" autocomplete="off" placeholder="Qualquer aeroporto do Brasil"><datalist id="malha-origens"></datalist></label>
+          <label class="malha-destino">Quero ir para<input id="malha-destino" list="malha-destinos" autocomplete="off" placeholder="Cidade, país, Ásia ou Oceania" required><datalist id="malha-destinos"></datalist></label>
           <label>Mês da viagem<input type="month" id="malha-mes" required></label>
           <details class="malha-opcoes"><summary>Mais filtros: estado, companhia, aliança e programa</summary><div class="malha-opcoes-grade">
           <label>Estado de saída<select id="malha-uf"><option value="">Todos os estados</option></select></label>
-          <label>Conexões<select id="malha-conexoes"><option value="0">Somente direto</option><option value="1">Até 1 conexão</option><option value="2" selected>Até 2 conexões</option></select></label>
+          <label>Conexões<select id="malha-conexoes"><option value="0">Somente direto</option><option value="1">Até 1 conexão</option><option value="2" selected>Até 2 conexões</option><option value="3">Até 3 conexões</option></select></label>
           <label>Companhia<select id="malha-cia"><option value="">Qualquer companhia</option></select></label>
           <label>Aliança<select id="malha-alianca"><option value="">Qualquer aliança</option><option>Star Alliance</option><option>oneworld</option><option>SkyTeam</option></select></label>
           <label>Programa e parceiras<select id="malha-prog"><option value="">Qualquer programa</option></select></label>
@@ -1442,7 +1442,7 @@
 <script src="funil.js?v=8"></script>
 <script type="module" src="assinatura.js?v=55"></script>
 <script src="mapa.js?v=13" defer></script>
-<script src="rotas-aereas.js?v=2" defer></script>
+<script src="rotas-aereas.js?v=4" defer></script>
 <script src="instalar.js?v=2" defer></script>
 </body>
 </html>
