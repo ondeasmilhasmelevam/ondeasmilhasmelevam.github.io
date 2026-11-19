@@ -5887,6 +5887,21 @@
   "ate": "2026-11-19T23:59:59-03:00"
  },
  {
+  "id": "seats-smiles-GRU-JFK-exe",
+  "data": "2026-11-13T22:21:47.339117Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American / Avianca",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "256.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-smiles-MAO-MIA-exe",
   "data": "2026-11-13T15:43:42.544954Z",
   "fonte": "seats.aero",
