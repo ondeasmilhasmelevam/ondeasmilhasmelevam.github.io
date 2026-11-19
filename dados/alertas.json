@@ -5599,48 +5599,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-9864",
-  "data": "2026-11-17T20:23:39Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Recife",
-  "destino_iata": "REC",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "14.000 milhas + Taxas",
-  "volta": "14.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-15923",
-  "data": "2026-11-17T20:22:12Z",
-  "origem": "Campinas",
-  "origem_iata": "VCP",
-  "destino": "Orlando",
-  "destino_iata": "MCO",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "A partir de 85.000 milhas",
-  "volta": "A partir de 85.000 milhas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-15922",
-  "data": "2026-11-17T20:22:05Z",
-  "origem": "Campinas",
-  "origem_iata": "VCP",
-  "destino": "Porto",
-  "destino_iata": "OPO",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "A partir de 74.400 milhas",
-  "volta": "A partir de 74.400 milhas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7841",
   "data": "2026-11-17T16:34:21Z",
   "tipo": "promocao",

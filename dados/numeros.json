@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-19T20:19:31.297369Z",
+ "atualizado": "2026-11-19T20:25:42.661422Z",
  "dias": 30,
  "passagens": 3347,
  "promocoes": 208,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1195,
+  "passagens": 1184,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -356,15 +356,15 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15512",
-    "origem": "Curitiba",
-    "origem_iata": "CWB",
+    "id": "2008590742-15601",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
     "destino": "Roma",
     "destino_iata": "FCO",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-12T20:24:25Z",
-    "milhas": 67190,
+    "data": "2026-11-13T20:38:32Z",
+    "milhas": 68230,
     "nivel": "muito bom",
     "regiao": "europa"
    },
