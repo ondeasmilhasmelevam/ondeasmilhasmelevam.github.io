@@ -5403,20 +5403,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9856",
-  "data": "2026-11-17T16:51:44Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Juazeiro do Norte",
-  "destino_iata": "JDO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 3.332 milhas",
-  "volta": "A partir de 3.332 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7841",
   "data": "2026-11-17T16:34:21Z",
   "tipo": "promocao",
