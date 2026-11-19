@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16093",
+  "data": "2026-11-19T20:26:06Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Tefé",
+  "destino_iata": "TFF",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "24.000 milhas + Taxas",
+  "volta": "11.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-10004",
   "data": "2026-11-19T20:13:17Z",
   "origem": "São Paulo",
@@ -5555,48 +5569,6 @@
    "https://link.dia23.com.br/r/RVAqHvx"
   ],
   "ate": ""
- },
- {
-  "id": "3761373661-9866",
-  "data": "2026-11-17T20:29:01Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "20.000 milhas + Taxas",
-  "volta": "21.400 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-6708",
-  "data": "2026-11-17T20:27:44Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Munique",
-  "destino_iata": "MUC",
-  "companhia": "TAP Air Portugal",
-  "cabine": "Executiva",
-  "programa": "TAP Miles&Go",
-  "ida": "135.000 milhas + R$ 271,78",
-  "volta": "135.000 milhas + R$ 975,44",
-  "link_nome": "TAP Miles&Go"
- },
- {
-  "id": "3761373661-9865",
-  "data": "2026-11-17T20:27:12Z",
-  "origem": "São Paulo",
-  "origem_iata": "CGH",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "7.000 milhas + R$ 62,14 de taxas",
-  "volta": "7.000 milhas + R$ 35,15 de taxas",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "1290836068-7841",

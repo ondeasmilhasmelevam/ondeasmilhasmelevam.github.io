@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-19T20:25:42.661422Z",
+ "atualizado": "2026-11-19T20:31:55.589426Z",
  "dias": 30,
- "passagens": 3347,
+ "passagens": 3348,
  "promocoes": 208,
  "destinos": 176,
  "executiva": 693,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1184,
+  "passagens": 1181,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -733,19 +733,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9533",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Fernando de Noronha",
-    "destino_iata": "FEN",
-    "cabine": "Econômica",
-    "programa": "AAdvantage",
-    "data": "2026-11-12T20:29:28Z",
-    "milhas": 7500,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9919",
     "origem": "Porto Seguro",
     "origem_iata": "BPS",
@@ -937,6 +924,19 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-19T12:40:11Z",
     "milhas": 10000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9686",
+    "origem": "Brasília",
+    "origem_iata": "BSB",
+    "destino": "Salvador",
+    "destino_iata": "SSA",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-15T16:26:00Z",
+    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },
