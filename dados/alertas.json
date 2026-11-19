@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6820",
+  "data": "2026-11-19T21:34:05Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Milão",
+  "destino_iata": "MXP",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "Flying Blue",
+  "ida": "85.000 milhas + Taxas",
+  "volta": "85.000 milhas + Taxas",
+  "link_nome": "Flying Blue"
+ },
+ {
   "id": "2361370250-6819",
   "data": "2026-11-19T21:03:40Z",
   "origem": "Tóquio",
@@ -5812,7 +5826,7 @@
   "companhia": "American / Air Canada / Air France",
   "cabine": "Econômica",
   "programa": "Smiles",
-  "ida": "129.000 milhas + taxas",
+  "ida": "140.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -5902,7 +5916,7 @@
   "companhia": "Azul",
   "cabine": "Econômica",
   "programa": "Azul Fidelidade",
-  "ida": "70.000 pontos + taxas",
+  "ida": "80.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
  },
@@ -5933,6 +5947,21 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "81.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "seats-smiles-BSB-MIA-eco",
+  "data": "2026-11-11T00:03:25.922708Z",
+  "fonte": "seats.aero",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "American / Avianca / Copa",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "93.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -6202,7 +6231,7 @@
   "companhia": "American / Iberia / LATAM",
   "cabine": "Econômica",
   "programa": "Iberia Plus",
-  "ida": "40.750 Avios + taxas",
+  "ida": "31.250 Avios + taxas",
   "volta": "",
   "link_nome": "Iberia Plus"
  },
@@ -6349,7 +6378,7 @@
   "origem_iata": "GIG",
   "destino": "Dallas",
   "destino_iata": "DFW",
-  "companhia": "American / Avianca",
+  "companhia": "American",
   "cabine": "Executiva",
   "programa": "Smiles",
   "ida": "254.000 milhas + taxas",
