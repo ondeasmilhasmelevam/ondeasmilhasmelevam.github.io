@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6812",
+  "data": "2026-11-19T12:56:38Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Fort Lauderdale",
+  "destino_iata": "FLL",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "50.000 milhas + CAD 123,30 de taxas",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "2361370250-6811",
   "data": "2026-11-19T12:45:28Z",
   "origem": "São Paulo",
