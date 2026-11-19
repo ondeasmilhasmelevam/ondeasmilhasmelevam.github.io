@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-19T14:45:32.162215Z",
+ "atualizado": "2026-11-19T14:51:40.919894Z",
  "dias": 30,
  "passagens": 3302,
  "promocoes": 207,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1183,
+  "passagens": 1179,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -473,15 +473,15 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-15495",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
+    "id": "2008590742-15896",
+    "origem": "Florianópolis",
+    "origem_iata": "FLN",
     "destino": "Lima",
     "destino_iata": "LIM",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-12T14:46:11Z",
-    "milhas": 32800,
+    "data": "2026-11-17T13:01:12Z",
+    "milhas": 38400,
     "nivel": "bom",
     "regiao": "america-do-sul"
    },
