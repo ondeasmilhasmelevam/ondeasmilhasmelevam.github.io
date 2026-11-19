@@ -5549,20 +5549,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-6710",
-  "data": "2026-11-17T21:40:05Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Lisboa",
-  "destino_iata": "LIS",
-  "companhia": "TAP",
-  "cabine": "Executiva",
-  "programa": "TAP Miles&Go",
-  "ida": "135.000 milhas + R$ 212",
-  "volta": "135.000 milhas + R$ 464",
-  "link_nome": "TAP Miles&Go"
- },
- {
   "id": "1290836068-7841",
   "data": "2026-11-17T16:34:21Z",
   "tipo": "promocao",
