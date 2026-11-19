@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-19T20:42:58.973459Z",
+ "atualizado": "2026-11-19T20:49:16.249812Z",
  "dias": 30,
- "passagens": 3349,
+ "passagens": 3350,
  "promocoes": 208,
  "destinos": 176,
- "executiva": 693,
+ "executiva": 694,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1182,
+  "passagens": 1177,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -954,19 +954,6 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2361370250-6489",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Los Angeles",
-    "destino_iata": "LAX",
-    "cabine": "Executiva",
-    "programa": "Smiles",
-    "data": "2026-11-12T20:47:18Z",
-    "milhas": 126000,
-    "nivel": "espetacular",
-    "regiao": "america-do-norte"
-   },
-   {
     "id": "2361370250-6658",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -1147,6 +1134,19 @@
     "milhas": 50000,
     "nivel": "",
     "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6701",
+    "origem": "Belo Horizonte",
+    "origem_iata": "CNF",
+    "destino": "Los Angeles",
+    "destino_iata": "LAX",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-17T14:21:03Z",
+    "milhas": 57500,
+    "nivel": "",
+    "regiao": "america-do-norte"
    },
    {
     "id": "2361370250-6786",

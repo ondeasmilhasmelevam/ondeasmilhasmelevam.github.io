@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6818",
+  "data": "2026-11-19T20:48:05Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "TAP",
+  "cabine": "Executiva",
+  "programa": "TAP Miles&Go",
+  "ida": "135.000 milhas + R$ 264",
+  "volta": "135.000 milhas + R$ 471",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2008590742-16094",
   "data": "2026-11-19T20:41:02Z",
   "origem": "Manaus",
@@ -5533,56 +5547,6 @@
   "ida": "9.440 milhas + Taxas",
   "volta": "9.440 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "1290836068-7850",
-  "data": "2026-11-17T20:47:50Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FIDELIDADE: VOOS SP-BH A PARTIR DE 4.900 PONTOS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Azul Fidelidade oferece voos entre São Paulo e Belo Horizonte a partir de 4.900 pontos por trecho, mais taxas aeroportuárias. A tarifa está disponível para viajar entre fevereiro e junho de 2027. Também é possível comprar a passagem por R$ 62,23 por trecho, com bônus de transferência de pontos de até 120% via Livelo.",
-  "detalhes": [
-   "4.900 pontos por trecho",
-   "mais taxas aeroportuárias",
-   "tarifa válida entre fevereiro e junho de 2027",
-   "até 120% de bônus na transferência de pontos do cartão de crédito",
-   "passagem pode ser comprada por R$ 62,23 por trecho via Livelo",
-   "milheiro a partir de R$ 12,70",
-   "São Paulo x Belo Horizonte a partir de 4.900 milhas o trecho a partir de R$ 62",
-   "Períodos de viagem: fevereiro e junho de 2027"
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "fevereiro e junho de 2027",
-  "links": [
-   "https://link.dia23.com.br/r/KXAogPc"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-7849",
-  "data": "2026-11-17T20:47:44Z",
-  "tipo": "promocao",
-  "titulo": "ATÉ 3.000 MILHAS BÔNUS EM COMPRAS COM CARTÃO LATAM Pass ITAÚ",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Itaú oferece até 3.000 milhas bônus em compras com o cartão LATAM Pass Itaú Mastercard. Para ganhar a bonificação, é necessário atingir a meta de transações informada por e-mail. A campanha é válida de 16 a 29 de novembro.",
-  "detalhes": [
-   "Campanha válida de 16 a 29 de novembro",
-   "Meta de transações individual enviada por e-mail",
-   "Mastercard Black: 3.000 milhas ao atingir a meta, cada compra de R$ 60,00 ou mais conta como transação",
-   "Bonificação creditada em até 60 dias após término da campanha",
-   "Não serão consideradas transações canceladas, estornadas, reembolsadas, objeto de chargeback, realizadas de forma fraudulenta ou em desacordo com o regulamento",
-   "Campanha não cumulativa com outras campanhas do programa e Clube LATAM Pass",
-   "Cadastro na página da campanha obrigatório",
-   "Para ser elegível, é necessário ter recebido o e-mail personalizado com a meta de gastos"
-  ],
-  "parceiros": "LATAM Pass",
-  "validade": "até 29 de novembro",
-  "links": [
-   "https://link.dia23.com.br/r/RVAqHvx"
-  ],
-  "ate": ""
  },
  {
   "id": "1290836068-7841",
