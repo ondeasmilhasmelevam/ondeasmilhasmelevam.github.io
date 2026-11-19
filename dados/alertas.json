@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16065",
+  "data": "2026-11-19T12:39:56Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Roma",
+  "destino_iata": "FCO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "69.010 milhas + Taxas",
+  "volta": "67.220 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-16064",
   "data": "2026-11-19T12:00:20Z",
   "origem": "São Luís",
@@ -5559,20 +5573,6 @@
   "ida": "5.300 milhas + Taxas",
   "volta": "5.300 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9816",
-  "data": "2026-11-17T12:36:01Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "11.200 milhas + R$ 48,63 de taxas",
-  "volta": "11.200 milhas + R$ 35,75 de taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7825",
