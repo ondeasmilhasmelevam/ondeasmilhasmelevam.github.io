@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16050",
+  "data": "2026-11-19T01:00:43Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "29.000 milhas + R$ 108,17 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16049",
   "data": "2026-11-19T00:24:41Z",
   "origem": "Manaus",
