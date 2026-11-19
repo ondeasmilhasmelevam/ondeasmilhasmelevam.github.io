@@ -5990,21 +5990,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-azul-REC-OPO-eco",
-  "data": "2026-11-12T05:14:55.794608Z",
-  "fonte": "seats.aero",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Porto",
-  "destino_iata": "OPO",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "65.000 pontos + taxas",
-  "volta": "",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "seats-azul-REC-LIS-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
@@ -6016,6 +6001,21 @@
   "cabine": "Econômica",
   "programa": "Azul Fidelidade",
   "ida": "75.000 pontos + taxas",
+  "volta": "",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "seats-azul-REC-OPO-eco",
+  "data": "2026-11-12T05:14:55.794608Z",
+  "fonte": "seats.aero",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Porto",
+  "destino_iata": "OPO",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "90.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
  },
@@ -6046,6 +6046,21 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "136.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "seats-smiles-GIG-MAD-eco",
+  "data": "2026-11-12T05:14:55.794608Z",
+  "fonte": "seats.aero",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "Air France / Avianca / AZ",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "137.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -6386,6 +6401,21 @@
   "ate": "2026-11-20T23:59:59-03:00"
  },
  {
+  "id": "seats-iberia-FOR-MAD-eco",
+  "data": "2026-11-08T03:29:49.491996Z",
+  "fonte": "seats.aero",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "Iberia / LATAM",
+  "cabine": "Econômica",
+  "programa": "Iberia Plus",
+  "ida": "16.000 Avios + taxas",
+  "volta": "",
+  "link_nome": "Iberia Plus"
+ },
+ {
   "id": "seats-iberia-REC-MAD-eco",
   "data": "2026-11-08T03:29:49.491996Z",
   "fonte": "seats.aero",
@@ -6397,21 +6427,6 @@
   "cabine": "Econômica",
   "programa": "Iberia Plus",
   "ida": "16.000 Avios + taxas",
-  "volta": "",
-  "link_nome": "Iberia Plus"
- },
- {
-  "id": "seats-iberia-FOR-MAD-eco",
-  "data": "2026-11-08T03:29:49.491996Z",
-  "fonte": "seats.aero",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Madrid",
-  "destino_iata": "MAD",
-  "companhia": "Iberia / LATAM",
-  "cabine": "Econômica",
-  "programa": "Iberia Plus",
-  "ida": "19.500 Avios + taxas",
   "volta": "",
   "link_nome": "Iberia Plus"
  },
