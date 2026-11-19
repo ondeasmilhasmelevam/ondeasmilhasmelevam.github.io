@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16052",
+  "data": "2026-11-19T10:47:10Z",
+  "origem": "Sinop",
+  "origem_iata": "OPS",
+  "destino": "Montevidéu",
+  "destino_iata": "MVD",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "34.800 milhas + Taxas",
+  "volta": "34.800 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-16051",
   "data": "2026-11-19T09:17:39Z",
   "origem": "Belém",
@@ -5671,34 +5685,6 @@
   "ida": "64.400 milhas + Taxas",
   "volta": "64.400 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9791",
-  "data": "2026-11-17T10:48:31Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "Goiânia",
-  "destino_iata": "GYN",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "27.500 milhas + Taxas",
-  "volta": "27.500 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9790",
-  "data": "2026-11-17T10:45:32Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "20.900 milhas + Taxas",
-  "volta": "20.900 milhas + Taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7825",
