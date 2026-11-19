@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-19T19:29:51.029095Z",
+ "atualizado": "2026-11-19T19:36:08.957278Z",
  "dias": 30,
- "passagens": 3343,
+ "passagens": 3344,
  "promocoes": 208,
  "destinos": 176,
  "executiva": 693,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1196,
+  "passagens": 1194,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -131,18 +131,18 @@
     "foto": "img/rotas/MAO-PTY.jpg"
    },
    {
-    "id": "2008590742-15508",
-    "origem": "Curitiba",
-    "origem_iata": "CWB",
-    "destino": "San José",
-    "destino_iata": "SJO",
+    "id": "2008590742-16045",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "San Juan",
+    "destino_iata": "SJU",
     "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-12T19:31:47Z",
-    "milhas": 35719,
+    "programa": "Smiles",
+    "data": "2026-11-18T20:31:34Z",
+    "milhas": 36600,
     "nivel": "espetacular",
     "grupo": "Internacional",
-    "foto": "img/rotas/CWB-SJO.jpg"
+    "foto": "img/rotas/MAO-SJU.jpg"
    },
    {
     "id": "2361370250-6662",
@@ -174,19 +174,6 @@
     "regiao": "caribe"
    },
    {
-    "id": "2008590742-15508",
-    "origem": "Curitiba",
-    "origem_iata": "CWB",
-    "destino": "San José",
-    "destino_iata": "SJO",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-12T19:31:47Z",
-    "milhas": 35719,
-    "nivel": "espetacular",
-    "regiao": "caribe"
-   },
-   {
     "id": "2008590742-16045",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -196,6 +183,19 @@
     "programa": "Smiles",
     "data": "2026-11-18T20:31:34Z",
     "milhas": 36600,
+    "nivel": "espetacular",
+    "regiao": "caribe"
+   },
+   {
+    "id": "2008590742-15696",
+    "origem": "Brasília",
+    "origem_iata": "BSB",
+    "destino": "San José",
+    "destino_iata": "SJO",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-14T16:26:19Z",
+    "milhas": 36680,
     "nivel": "espetacular",
     "regiao": "caribe"
    },
@@ -603,19 +603,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9522",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Cabo Frio",
-    "destino_iata": "CFB",
-    "cabine": "Econômica",
-    "programa": "LATAM",
-    "data": "2026-11-12T19:31:34Z",
-    "milhas": 5221,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9817",
     "origem": "Navegantes",
     "origem_iata": "NVT",
@@ -887,6 +874,19 @@
     "milhas": 9000,
     "nivel": "",
     "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10003",
+    "origem": "Belém",
+    "origem_iata": "BEL",
+    "destino": "Marabá",
+    "destino_iata": "MAB",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-19T19:29:53Z",
+    "milhas": 9000,
+    "nivel": "",
+    "regiao": "outros"
    },
    {
     "id": "2008590742-15713",
