@@ -40,7 +40,9 @@
     const A = base.aeroportos, saidas = {}, reverso = {}, prog = base.programas[f.programa];
     for (const t of base.trechos) {
       if (!A[t.de] || !A[t.para] || (f.companhia && grupoCia(t.cia) !== grupoCia(f.companhia)) || (f.alianca && base.companhias[t.cia]?.alianca !== f.alianca) || (prog && !prog.companhias.includes(t.cia))) continue;
-      const dias = diasNoMes(t, f.mes, hoje);
+      // No modo de planejamento, preserva apenas trechos ainda presentes na base atual.
+      // A máscara não representa dias de operação e nunca é exibida como calendário.
+      const dias = f.conhecidos ? (t.periodos.some(p => p[1] >= hoje) ? 0x7fffffff : 0) : diasNoMes(t, f.mes, hoje);
       if (!dias) continue;
       const r = { ...t, dias, km: distancia(A[t.de], A[t.para]) };
       (saidas[t.de] ||= []).push(r); (reverso[t.para] ||= new Set()).add(t.de);
@@ -74,7 +76,7 @@
           const caminho = [...trechos, r];
           if (r.para === f.destino) {
             const chave = caminho.map(x => `${x.de}-${x.para}-${grupoCia(x.cia)}`).join('/');
-            if (!vistos.has(chave)) { vistos.add(chave); encontrados.push({ origem, destino: f.destino, trechos: caminho, km: proxKm, dias: proxDias }); }
+            if (!vistos.has(chave)) { vistos.add(chave); encontrados.push({ origem, destino: f.destino, trechos: caminho, km: proxKm, dias: f.conhecidos ? null : proxDias, confirmacaoPendente: !!f.conhecidos }); }
           } else if (caminho.length < max) andar(r.para, caminho, [...nos, r.para], proxDias, proxKm);
         }
       }
@@ -194,22 +196,30 @@
     const f = { origens, uf: $('#malha-uf').value, mes: $('#malha-mes').value, companhia: $('#malha-cia').value, alianca: $('#malha-alianca').value, programa: $('#malha-prog').value, conexoes: $('#malha-conexoes').value };
     $('#malha-parceiras-nota').textContent = f.programa ? base.programas[f.programa].nota || 'Parceiras conferidas no programa. A possibilidade de resgate depende das regras, da rota e dos assentos liberados.' : 'O filtro usa as parceiras já conferidas; cobertura em expansão. Azul pelo Mundo é um canal de resgate do Azul Fidelidade.';
     const hoje = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' });
-    const preparada = prepararBusca(base, f, hoje), encontrados = [];
+    let encontrados = [];
+    async function buscarCaminhos(filtros) {
+      const preparada = prepararBusca(base, filtros, hoje), caminhos = [];
     for (let i = 0; i < destinos.length; i++) {
-      encontrados.push(...pesquisar(base, { ...f, destino: destinos[i] }, hoje, preparada));
+      caminhos.push(...pesquisar(base, { ...filtros, destino: destinos[i] }, hoje, preparada));
       // Devolve o controle à tela em buscas amplas, inclusive no celular.
       if (i % 8 === 7) { await new Promise(resolve => setTimeout(resolve, 0)); if (busca !== buscaAtual) return; }
     }
+      return caminhos;
+    }
+    encontrados = await buscarCaminhos(f);
+    if (busca !== buscaAtual || !encontrados) return;
+    if (!encontrados.length) encontrados = await buscarCaminhos({ ...f, conhecidos: true });
+    if (busca !== buscaAtual || !encontrados) return;
     resultados = encontrados.sort((a, b) => a.trechos.length - b.trechos.length || a.km - b.km).slice(0, 60);
     atual = null;
     const nOrigens = new Set(resultados.map(r => r.origem)).size;
-    $('#malha-resumo').textContent = resultados.length ? `${resultados.length === 60 ? 'Até 60' : resultados.length} ${resultados.length === 1 ? 'caminho' : 'caminhos'} na base para esse período, saindo de ${nOrigens} ${nOrigens === 1 ? 'aeroporto' : 'aeroportos'}. Selecione um para ver o trajeto.` : 'Nenhum caminho encontrado com estes filtros na cobertura atual. Isso não significa que a rota não exista. Tente mais conexões, outro mês ou retire o filtro de programa.';
+    $('#malha-resumo').textContent = resultados[0]?.confirmacaoPendente ? 'Encontramos caminhos conhecidos, mas a base ainda não confirma todos os trechos no mês escolhido. Eles aparecem abaixo como opções para planejar; confirme a operação, os horários e os assentos antes de reservar.' : resultados.length ? `${resultados.length === 60 ? 'Até 60' : resultados.length} ${resultados.length === 1 ? 'caminho' : 'caminhos'} na base para esse período, saindo de ${nOrigens} ${nOrigens === 1 ? 'aeroporto' : 'aeroportos'}. Selecione um para ver o trajeto.` : 'A base atual não reúne trechos suficientes para desenhar um caminho com estes filtros. Isso é uma limitação da cobertura, não uma confirmação de que a rota não existe. Consulte também a rede de programas abaixo.';
     $('#malha-mapa-caixa').hidden = true;
     mostrarRedeGlobal(origens, destinos, f);
     $('#malha-resultados').innerHTML = resultados.map((r, n) => {
       const cias = [...new Set(r.trechos.map(t => grupoCia(t.cia) === 'LATAM' ? 'LATAM' : base.companhias[t.cia]?.nome || t.cia))], rede = r.trechos.some(t => t.tipo === 'rede');
       const hojeData = hoje, futura = r.trechos.some(t => t.periodos.every(p => p[0] > hojeData));
-      return `<li class="malha-card"><div class="malha-card-topo"><span class="malha-selo${futura ? ' futura' : ''}">${futura ? 'Inclui início futuro' : 'Malha consultada'}</span><span>${r.trechos.length === 1 ? 'Sem conexão' : r.trechos.length === 2 ? '1 conexão' : r.trechos.length - 1 + ' conexões'}</span></div><h3>${esc(nome(r.origem))} <span>→</span> ${esc(nome(r.destino))}</h3><p class="malha-via">${r.trechos.length > 1 ? 'Via ' + r.trechos.slice(0, -1).map(t => esc(nome(t.para))).join(' → ') : 'Trecho direto registrado'}</p><p>${esc(cias.join(' + '))}</p><small>${rede ? 'Inclui trecho da rede internacional conferida; horários a confirmar.' : 'Trechos registrados com operação no período escolhido.'}</small>${f.programa ? `<small>Parceiras de ${esc(base.programas[f.programa].nome)}. ${f.programa === 'finnair' && new Set(r.trechos.filter(t => t.cia !== 'AY').map(t => grupoCia(t.cia))).size > 1 ? 'Parceiras diferentes podem exigir emissões separadas. ' : ''}Regras e assentos com milhas precisam de consulta.</small>` : ''}<div class="malha-acoes"><button type="button" class="cta cta-a" data-malha-trajeto="${n}">Ver trajeto no mapa</button><button type="button" class="cta cta-b" data-malha-milhas="${n}">Programas na base de milhas</button></div><div class="malha-seats" id="malha-seats-${n}" hidden aria-live="polite"></div></li>`;
+      return `<li class="malha-card"><div class="malha-card-topo"><span class="malha-selo${futura ? ' futura' : ''}">${r.confirmacaoPendente ? 'Mês a confirmar' : futura ? 'Inclui início futuro' : 'Malha consultada'}</span><span>${r.trechos.length === 1 ? 'Sem conexão' : r.trechos.length === 2 ? '1 conexão' : r.trechos.length - 1 + ' conexões'}</span></div><h3>${esc(nome(r.origem))} <span>→</span> ${esc(nome(r.destino))}</h3><p class="malha-via">${r.trechos.length > 1 ? 'Via ' + r.trechos.slice(0, -1).map(t => esc(nome(t.para))).join(' → ') : 'Trecho direto registrado'}</p><p>${esc(cias.join(' + '))}</p><small>${r.confirmacaoPendente ? 'Caminho conhecido na base atual. Operação no mês escolhido e compatibilidade das conexões ainda não confirmadas.' : rede ? 'Inclui trecho da rede internacional conferida; horários a confirmar.' : 'Trechos registrados com operação no período escolhido.'}</small>${f.programa ? `<small>Parceiras de ${esc(base.programas[f.programa].nome)}. ${f.programa === 'finnair' && new Set(r.trechos.filter(t => t.cia !== 'AY').map(t => grupoCia(t.cia))).size > 1 ? 'Parceiras diferentes podem exigir emissões separadas. ' : ''}Regras e assentos com milhas precisam de consulta.</small>` : ''}<div class="malha-acoes"><button type="button" class="cta cta-a" data-malha-trajeto="${n}">Ver trajeto no mapa</button><button type="button" class="cta cta-b" data-malha-milhas="${n}">Programas na base de milhas</button></div><div class="malha-seats" id="malha-seats-${n}" hidden aria-live="polite"></div></li>`;
     }).join('');
   }
   function novidades() {
@@ -238,8 +248,8 @@
       marcados.push([x, y]); svg.append('circle').attr('cx', x).attr('cy', y).attr('r', 5).attr('class', 'malha-ponto');
       svg.append('text').attr('x', x).attr('y', y + (perto ? 22 : -12)).attr('text-anchor', 'middle').attr('class', 'malha-rotulo').text(i);
     });
-    $('#malha-mapa-status').textContent = nos.map(i => nome(i)).join(' → ');
-    $('#malha-trechos').innerHTML = '<ol>' + r.trechos.map(t => `<li><b>${esc(nome(t.de))} → ${esc(nome(t.para))}</b><span>${esc(base.companhias[t.cia]?.nome || t.cia)}${base.companhias[t.cia]?.alianca ? ' · ' + esc(base.companhias[t.cia].alianca) : ''}</span><small>${t.tipo === 'rede' ? 'Rede internacional conferida' : 'Operação registrada'} · conferido em ${t.verificadoEm.split('-').reverse().join('/')}</small></li>`).join('') + '</ol><p>São caminhos para planejar a viagem. Horários de conexão, emissão no mesmo bilhete, regras de trânsito e disponibilidade precisam ser conferidos antes de reservar.</p>';
+    $('#malha-mapa-status').textContent = (r.confirmacaoPendente ? 'Caminho conhecido · mês a confirmar: ' : '') + nos.map(i => nome(i)).join(' → ');
+    $('#malha-trechos').innerHTML = '<ol>' + r.trechos.map(t => `<li><b>${esc(nome(t.de))} → ${esc(nome(t.para))}</b><span>${esc(base.companhias[t.cia]?.nome || t.cia)}${base.companhias[t.cia]?.alianca ? ' · ' + esc(base.companhias[t.cia].alianca) : ''}</span><small>${t.tipo === 'rede' ? 'Rede internacional conferida' : 'Operação registrada'} · conferido em ${t.verificadoEm.split('-').reverse().join('/')}</small></li>`).join('') + '</ol><p>' + (r.confirmacaoPendente ? 'A base não confirma todos estes trechos no mês escolhido. ' : '') + 'São caminhos para planejar a viagem. Horários de conexão, emissão no mesmo bilhete, regras de trânsito e disponibilidade precisam ser conferidos antes de reservar.</p>';
     $('#malha-mapa-caixa').scrollIntoView({ behavior: 'auto', block: 'start' });
   }
   async function programasMilhas(n, botao) {
