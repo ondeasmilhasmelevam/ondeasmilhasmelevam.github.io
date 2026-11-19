@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-19T14:07:44.076464Z",
+ "atualizado": "2026-11-19T14:13:52.918070Z",
  "dias": 30,
- "passagens": 3295,
+ "passagens": 3298,
  "promocoes": 207,
  "destinos": 176,
  "executiva": 689,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1184,
+  "passagens": 1185,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -629,14 +629,14 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9507",
+    "id": "3761373661-9859",
     "origem": "Recife",
     "origem_iata": "REC",
     "destino": "Petrolina",
     "destino_iata": "PNZ",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-12T14:13:48Z",
+    "data": "2026-11-17T17:12:25Z",
     "milhas": 6400,
     "nivel": "",
     "regiao": "brasil"
