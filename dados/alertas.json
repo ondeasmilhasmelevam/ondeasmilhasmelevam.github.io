@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9985",
+  "data": "2026-11-19T14:33:21Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Natal",
+  "destino_iata": "NAT",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "A partir de 16.200 milhas",
+  "volta": "A partir de 16.200 milhas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-9984",
   "data": "2026-11-19T14:30:09Z",
   "origem": "Marabá",
