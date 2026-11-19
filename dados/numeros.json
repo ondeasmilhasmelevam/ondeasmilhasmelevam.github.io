@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-19T21:20:34.476547Z",
+ "atualizado": "2026-11-19T21:26:41.911080Z",
  "dias": 30,
  "passagens": 3352,
  "promocoes": 208,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1179,
+  "passagens": 1176,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -993,19 +993,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6494",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "Frankfurt",
-    "destino_iata": "FRA",
-    "cabine": "Executiva",
-    "programa": "LATAM Pass",
-    "data": "2026-11-12T21:25:26Z",
-    "milhas": 193849,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
     "id": "2361370250-6514",
     "origem": "Rio de Janeiro",
     "origem_iata": "GIG",
@@ -1160,6 +1147,19 @@
     "milhas": 57500,
     "nivel": "",
     "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6508",
+    "origem": "Nova York",
+    "origem_iata": "JFK",
+    "destino": "Frankfurt",
+    "destino_iata": "FRA",
+    "cabine": "Executiva",
+    "programa": "Aeroplan",
+    "data": "2026-11-13T15:32:57Z",
+    "milhas": 60000,
+    "nivel": "",
+    "regiao": "europa"
    },
    {
     "id": "2361370250-6575",
