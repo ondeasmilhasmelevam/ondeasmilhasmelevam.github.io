@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-19T11:34:02.938984Z",
+ "atualizado": "2026-11-19T11:40:18.237254Z",
  "dias": 30,
- "passagens": 3256,
+ "passagens": 3260,
  "promocoes": 193,
  "destinos": 175,
  "executiva": 686,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1232,
+  "passagens": 1233,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -145,15 +145,15 @@
     "foto": "img/rotas/CWB-SJO.jpg"
    },
    {
-    "id": "2361370250-6450",
+    "id": "2361370250-6662",
     "origem": "Manaus",
     "origem_iata": "MAO",
     "destino": "Miami",
     "destino_iata": "MIA",
     "cabine": "Executiva",
     "programa": "GOL Smiles",
-    "data": "2026-11-12T11:38:58Z",
-    "milhas": 116200,
+    "data": "2026-11-16T11:45:37Z",
+    "milhas": 120500,
     "nivel": "espetacular",
     "grupo": "Executiva",
     "foto": "img/rotas/MAO-MIA.jpg"
@@ -941,15 +941,15 @@
     "regiao": "brasil"
    },
    {
-    "id": "2361370250-6450",
+    "id": "2361370250-6662",
     "origem": "Manaus",
     "origem_iata": "MAO",
     "destino": "Miami",
     "destino_iata": "MIA",
     "cabine": "Executiva",
     "programa": "GOL Smiles",
-    "data": "2026-11-12T11:38:58Z",
-    "milhas": 116200,
+    "data": "2026-11-16T11:45:37Z",
+    "milhas": 120500,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
    },
