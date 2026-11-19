@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16059",
+  "data": "2026-11-19T11:33:30Z",
+  "origem": "Aracaju",
+  "origem_iata": "AJU",
+  "destino": "San José",
+  "destino_iata": "SJO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "58.000 milhas + Taxas",
+  "volta": "58.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-9954",
   "data": "2026-11-19T11:26:15Z",
   "origem": "Foz do Iguaçu",
@@ -5671,62 +5685,6 @@
   "ida": "33.500 milhas + Taxas",
   "volta": "33.500 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15889",
-  "data": "2026-11-17T11:33:35Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Lima",
-  "destino_iata": "LIM",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "42.300 milhas + Taxas",
-  "volta": "42.300 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-15888",
-  "data": "2026-11-17T11:31:25Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "58.600 milhas + Taxas",
-  "volta": "58.600 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9799",
-  "data": "2026-11-17T11:29:28Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Navegantes",
-  "destino_iata": "NVT",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "22.400 milhas + Taxas",
-  "volta": "22.400 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9798",
-  "data": "2026-11-17T11:29:26Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "22.000 milhas + Taxas",
-  "volta": "22.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "1290836068-7825",

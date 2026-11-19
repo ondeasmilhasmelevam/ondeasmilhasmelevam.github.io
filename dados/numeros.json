@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-19T11:27:47.634444Z",
+ "atualizado": "2026-11-19T11:34:02.938984Z",
  "dias": 30,
- "passagens": 3255,
+ "passagens": 3256,
  "promocoes": 193,
  "destinos": 175,
  "executiva": 686,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1237,
+  "passagens": 1232,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -304,15 +304,15 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-15475",
-    "origem": "Foz do Iguaçu",
-    "origem_iata": "IGU",
+    "id": "2008590742-16031",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
     "destino": "Punta Cana",
     "destino_iata": "PUJ",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-12T11:33:14Z",
-    "milhas": 44400,
+    "data": "2026-11-18T16:42:06Z",
+    "milhas": 49200,
     "nivel": "muito bom",
     "regiao": "caribe"
    },
