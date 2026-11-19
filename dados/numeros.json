@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-19T11:15:18.541721Z",
+ "atualizado": "2026-11-19T11:21:32.998326Z",
  "dias": 30,
- "passagens": 3248,
+ "passagens": 3250,
  "promocoes": 193,
  "destinos": 175,
  "executiva": 686,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1244,
+  "passagens": 1242,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -863,19 +863,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9454",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
-    "destino": "Salvador",
-    "destino_iata": "SSA",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-12T11:20:47Z",
-    "milhas": 9302,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "2008590742-15713",
     "origem": "Navegantes",
     "origem_iata": "NVT",
@@ -913,6 +900,19 @@
     "milhas": 10000,
     "nivel": "",
     "regiao": "outros"
+   },
+   {
+    "id": "3761373661-9686",
+    "origem": "Brasília",
+    "origem_iata": "BSB",
+    "destino": "Salvador",
+    "destino_iata": "SSA",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-15T16:26:00Z",
+    "milhas": 10600,
+    "nivel": "",
+    "regiao": "brasil"
    },
    {
     "id": "3761373661-9721",
