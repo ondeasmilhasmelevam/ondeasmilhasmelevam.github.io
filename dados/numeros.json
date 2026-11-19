@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-19T05:10:43.528311Z",
+ "atualizado": "2026-11-19T05:16:50.991859Z",
  "dias": 30,
  "passagens": 3237,
  "promocoes": 193,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1270,
+  "passagens": 1260,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -538,19 +538,6 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "seats-smiles-GRU-LHR-eco",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Londres",
-    "destino_iata": "LHR",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-12T05:14:55.794608Z",
-    "milhas": 127000,
-    "nivel": "bom",
-    "regiao": "europa"
-   },
-   {
     "id": "3761373661-9856",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
@@ -941,6 +928,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-9837",
+    "origem": "Vitória",
+    "origem_iata": "VIX",
+    "destino": "Rio de Janeiro",
+    "destino_iata": "SDU",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-17T14:20:36Z",
+    "milhas": 10600,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "2361370250-6450",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -991,19 +991,6 @@
     "milhas": 227300,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
-   },
-   {
-    "id": "seats-iberia-GIG-MAD-exe",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "Madrid",
-    "destino_iata": "MAD",
-    "cabine": "Executiva",
-    "programa": "Iberia Plus",
-    "data": "2026-11-12T05:14:55.794608Z",
-    "milhas": 50500,
-    "nivel": "muito bom",
-    "regiao": "europa"
    },
    {
     "id": "2361370250-6675",
@@ -1199,6 +1186,19 @@
     "milhas": 60000,
     "nivel": "",
     "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6446",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "Cidade do Panamá",
+    "destino_iata": "PTY",
+    "cabine": "Executiva",
+    "programa": "GOL Smiles",
+    "data": "2026-11-12T11:24:58Z",
+    "milhas": 60700,
+    "nivel": "",
+    "regiao": "caribe"
    }
   ]
  }
