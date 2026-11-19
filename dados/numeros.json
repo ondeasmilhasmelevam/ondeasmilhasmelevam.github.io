@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-19T19:36:08.957278Z",
+ "atualizado": "2026-11-19T19:42:23.997131Z",
  "dias": 30,
  "passagens": 3344,
  "promocoes": 208,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1194,
+  "passagens": 1193,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -1123,14 +1123,14 @@
     "regiao": "outros"
    },
    {
-    "id": "2361370250-6485",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
+    "id": "2361370250-6509",
+    "origem": "Belém",
+    "origem_iata": "BEL",
     "destino": "Fort Lauderdale",
     "destino_iata": "FLL",
     "cabine": "Executiva",
     "programa": "Aeroplan",
-    "data": "2026-11-12T19:37:28Z",
+    "data": "2026-11-13T15:39:25Z",
     "milhas": 50000,
     "nivel": "",
     "regiao": "outros"
