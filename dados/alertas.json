@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-9940",
+  "data": "2026-11-19T00:10:47Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "15.000 milhas + R$ 35,15 de taxas",
+  "volta": "15.000 milhas + R$ 52,72 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-9939",
   "data": "2026-11-19T00:01:20Z",
   "origem": "Belo Horizonte",
@@ -5659,20 +5673,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9788",
-  "data": "2026-11-17T00:02:25Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "9.900 milhas + R$ 35,90 de taxas",
-  "volta": "9.900 milhas + R$ 35,75 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7825",
   "data": "2026-11-16T21:37:50Z",
   "tipo": "promocao",
@@ -6078,21 +6078,6 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "100.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "seats-smiles-SSA-PTY-eco",
-  "data": "2026-11-10T00:03:03.524369Z",
-  "fonte": "seats.aero",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "Avianca / Copa / GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "68.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
