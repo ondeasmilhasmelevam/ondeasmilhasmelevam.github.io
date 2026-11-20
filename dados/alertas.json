@@ -1,5 +1,43 @@
 [
  {
+  "id": "1290836068-7924",
+  "data": "2026-11-20T19:56:29Z",
+  "tipo": "promocao",
+  "titulo": "ADESÃO CLUBE LIVELO ESPECIAL COM CUPOM EXCLUSIVO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Livelo Especial 5.000 com o cupom CLUBEPPBF2 e acumule até 104.000 pontos em 12 meses.",
+  "detalhes": [
+   "Plano Anual à vista: 60.000 pontos do Clube + 44.000 pontos extras.",
+   "Plano Mensal: 60.000 pontos do Clube + 42.000 pontos extras.",
+   "Cupom obrigatório: CLUBEPPBF2."
+  ],
+  "parceiros": "Livelo",
+  "validade": "22/11/2026",
+  "links": [
+   "https://www.livelo.com.br/clube"
+  ],
+  "ate": "2026-11-22T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7923",
+  "data": "2026-11-20T19:56:24Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFERÊNCIA BONIFICADA LIVELO PARA NUBANK",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira seus pontos Livelo para o Nubank com 10% de bônus.",
+  "detalhes": [
+   "10% de bônus na transferência de pontos Livelo para o Nubank (Nubank Croma)."
+  ],
+  "parceiros": "Livelo, Nubank",
+  "validade": "Até durar o estoque",
+  "links": [
+   "https://www.livelo.com.br/parceiros-para-livelo/nubank"
+  ],
+  "ate": ""
+ },
+ {
   "id": "3761373661-10019",
   "data": "2026-11-20T19:35:01Z",
   "origem": "São Paulo",
@@ -3523,48 +3561,6 @@
   "ida": "74.600 milhas + Taxas",
   "volta": "79.100 milhas + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16042",
-  "data": "2026-11-18T19:55:37Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 18.400 milhas",
-  "volta": "A partir de 18.400 milhas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9933",
-  "data": "2026-11-18T19:55:33Z",
-  "origem": "Foz do Iguaçu",
-  "origem_iata": "IGU",
-  "destino": "Porto Alegre",
-  "destino_iata": "POA",
-  "companhia": "Gol",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 16.500 milhas",
-  "volta": "A partir de 16.500 milhas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16041",
-  "data": "2026-11-18T19:55:28Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Zaventem",
-  "destino_iata": "BRU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 55.732 milhas",
-  "volta": "A partir de 55.732 milhas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7861",
