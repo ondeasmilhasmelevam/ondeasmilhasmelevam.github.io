@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-20T20:50:50.883856Z",
+ "atualizado": "2026-11-20T20:56:57.924804Z",
  "dias": 30,
  "passagens": 3458,
  "promocoes": 210,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1082,
+  "passagens": 1081,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -993,19 +993,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6514",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "Barcelona",
-    "destino_iata": "BCN",
-    "cabine": "Executiva",
-    "programa": "LATAM Pass",
-    "data": "2026-11-13T20:50:52Z",
-    "milhas": 205273,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
     "id": "2361370250-6566",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
@@ -1199,6 +1186,19 @@
     "milhas": 66000,
     "nivel": "",
     "regiao": "america-do-sul"
+   },
+   {
+    "id": "2361370250-6705",
+    "origem": "Tóquio",
+    "origem_iata": "NRT",
+    "destino": "Helsinque",
+    "destino_iata": "HEL",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-17T16:33:36Z",
+    "milhas": 75000,
+    "nivel": "",
+    "regiao": "outros"
    }
   ]
  }
