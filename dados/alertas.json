@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-6884",
+  "data": "2026-11-20T12:02:25Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "557.300 milhas (529.400 no Clube Smiles)",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2361370250-6883",
+  "data": "2026-11-20T11:59:36Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Joanesburgo",
+  "destino_iata": "JNB",
+  "companhia": "South African Airways",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "232.000 milhas (220.300 no Clube Smiles)",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-6882",
   "data": "2026-11-20T11:56:23Z",
   "origem": "Fortaleza",
