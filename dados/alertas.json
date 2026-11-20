@@ -4368,20 +4368,6 @@
   "ate": "2026-11-30T23:59:59-03:00"
  },
  {
-  "id": "2008590742-16028",
-  "data": "2026-11-18T13:59:13Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Lisboa",
-  "destino_iata": "LIS",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "261.130 milhas + Taxas",
-  "volta": "235.020 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7858",
   "data": "2026-11-18T13:21:08Z",
   "tipo": "promocao",
