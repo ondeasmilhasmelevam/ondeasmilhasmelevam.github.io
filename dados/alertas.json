@@ -4516,7 +4516,7 @@
   "companhia": "American",
   "cabine": "Executiva",
   "programa": "Smiles",
-  "ida": "295.000 milhas + taxas",
+  "ida": "250.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -4531,7 +4531,7 @@
   "companhia": "Air France / Royal Air Maroc / Avianca",
   "cabine": "Econômica",
   "programa": "Smiles",
-  "ida": "107.000 milhas + taxas",
+  "ida": "140.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -4546,7 +4546,7 @@
   "companhia": "Air France / AM / Royal Air Maroc",
   "cabine": "Econômica",
   "programa": "Smiles",
-  "ida": "107.000 milhas + taxas",
+  "ida": "135.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -4926,21 +4926,6 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GRU-BOG-eco",
-  "data": "2026-11-09T00:05:14.410466Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "LATAM / Qatar Airways",
-  "cabine": "Econômica",
-  "programa": "Qatar Privilege Club",
-  "ida": "13.000 Avios + taxas",
-  "volta": "",
-  "link_nome": "Qatar Privilege Club"
- },
- {
   "id": "seats-qatar-GRU-LIM-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
@@ -4964,6 +4949,21 @@
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "Qatar Privilege Club",
+  "ida": "13.000 Avios + taxas",
+  "volta": "",
+  "link_nome": "Qatar Privilege Club"
+ },
+ {
+  "id": "seats-qatar-GRU-BOG-eco",
+  "data": "2026-11-09T00:05:14.410466Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "LATAM / Qatar Airways",
   "cabine": "Econômica",
   "programa": "Qatar Privilege Club",
   "ida": "13.000 Avios + taxas",
