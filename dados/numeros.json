@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-20T12:29:25.995925Z",
+ "atualizado": "2026-11-20T12:35:33.493241Z",
  "dias": 30,
  "passagens": 3448,
  "promocoes": 208,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1229,
+  "passagens": 1227,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -499,15 +499,15 @@
     "regiao": "caribe"
    },
    {
-    "id": "2008590742-15528",
+    "id": "2008590742-15854",
     "origem": "São Paulo",
     "origem_iata": "GRU",
     "destino": "Nova York",
     "destino_iata": "JFK",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-13T12:35:27Z",
-    "milhas": 61100,
+    "data": "2026-11-16T13:53:00Z",
+    "milhas": 64500,
     "nivel": "bom",
     "regiao": "america-do-norte"
    },
