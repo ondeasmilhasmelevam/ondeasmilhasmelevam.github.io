@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10009",
+  "data": "2026-11-20T01:20:26Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.200 milhas + R$ 62,14 de taxas",
+  "volta": "11.200 milhas + R$ 34,54 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6821",
   "data": "2026-11-19T22:05:33Z",
   "origem": "São Paulo",
