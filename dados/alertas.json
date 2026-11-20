@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16180",
+  "data": "2026-11-20T21:09:02Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "57.000 milhas + R$ 344,99 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16179",
   "data": "2026-11-20T20:59:26Z",
   "origem": "Fortaleza",
