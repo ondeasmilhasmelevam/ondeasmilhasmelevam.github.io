@@ -5820,21 +5820,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "seats-smiles-FOR-CDG-eco",
-  "data": "2026-11-09T00:05:14.410466Z",
-  "fonte": "seats.aero",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "Air France / GOL / Iberia",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "105.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GIG-MIA-exe",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
@@ -5940,6 +5925,21 @@
   "link_nome": "Iberia Plus"
  },
  {
+  "id": "seats-smiles-FOR-CDG-eco",
+  "data": "2026-11-09T00:05:14.410466Z",
+  "fonte": "seats.aero",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France / GOL / Turkish",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "139.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-iberia-REC-MAD-eco",
   "data": "2026-11-08T03:29:49.491996Z",
   "fonte": "seats.aero",
@@ -6043,21 +6043,6 @@
   "ida": "70.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "seats-smiles-BEL-MIA-exe",
-  "data": "2026-11-08T03:29:49.491996Z",
-  "fonte": "seats.aero",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "251.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-GIG-DFW-exe",
