@@ -4119,6 +4119,21 @@
   "link_nome": "Azul Fidelidade"
  },
  {
+  "id": "seats-smiles-FOR-CDG-eco",
+  "data": "2026-11-09T00:05:14.410466Z",
+  "fonte": "seats.aero",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France / GOL / Iberia",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "105.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-smiles-GIG-MIA-exe",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
@@ -4222,21 +4237,6 @@
   "ida": "31.250 Avios + taxas",
   "volta": "",
   "link_nome": "Iberia Plus"
- },
- {
-  "id": "seats-smiles-FOR-CDG-eco",
-  "data": "2026-11-09T00:05:14.410466Z",
-  "fonte": "seats.aero",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "Air France / GOL / Turkish",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "139.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-iberia-REC-MAD-eco",
