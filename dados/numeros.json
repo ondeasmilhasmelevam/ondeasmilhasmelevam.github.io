@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-20T19:26:09.770632Z",
+ "atualizado": "2026-11-20T19:32:20.080448Z",
  "dias": 30,
  "passagens": 3451,
  "promocoes": 208,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1101,
+  "passagens": 1098,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -211,19 +211,6 @@
     "milhas": 40400,
     "nivel": "espetacular",
     "regiao": "caribe"
-   },
-   {
-    "id": "3996014557-2514",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "Los Angeles",
-    "destino_iata": "LAX",
-    "cabine": "Econômica",
-    "programa": "Latam Pass",
-    "data": "2026-11-13T19:26:58Z",
-    "milhas": 48000,
-    "nivel": "espetacular",
-    "regiao": "america-do-norte"
    },
    {
     "id": "2008590742-15867",
@@ -937,6 +924,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-17T13:53:48Z",
     "milhas": 11200,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9780",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Aracaju",
+    "destino_iata": "AJU",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-16T18:43:49Z",
+    "milhas": 12040,
     "nivel": "",
     "regiao": "brasil"
    },
