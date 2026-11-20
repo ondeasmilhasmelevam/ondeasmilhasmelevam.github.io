@@ -3556,20 +3556,6 @@
   "link_nome": "AAdvantage"
  },
  {
-  "id": "2361370250-6806",
-  "data": "2026-11-18T22:02:59Z",
-  "origem": "Santiago",
-  "origem_iata": "SCL",
-  "destino": "Dallas",
-  "destino_iata": "DFW",
-  "companhia": "American Airlines",
-  "cabine": "Executiva",
-  "programa": "AAdvantage",
-  "ida": "82.500 milhas + R$ 252,15",
-  "volta": "",
-  "link_nome": "AAdvantage"
- },
- {
   "id": "1290836068-7870",
   "data": "2026-11-18T20:14:01Z",
   "tipo": "promocao",
