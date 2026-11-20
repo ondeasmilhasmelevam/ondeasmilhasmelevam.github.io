@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-20T20:56:57.924804Z",
+ "atualizado": "2026-11-20T21:03:04.696030Z",
  "dias": 30,
- "passagens": 3458,
+ "passagens": 3463,
  "promocoes": 210,
  "destinos": 176,
  "executiva": 745,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1081,
+  "passagens": 1086,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -213,15 +213,15 @@
     "regiao": "caribe"
    },
    {
-    "id": "2008590742-15867",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
+    "id": "2008590742-16179",
+    "origem": "Fortaleza",
+    "origem_iata": "FOR",
     "destino": "Miami",
     "destino_iata": "MIA",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-16T17:42:51Z",
-    "milhas": 48570,
+    "data": "2026-11-20T20:59:26Z",
+    "milhas": 47960,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
    },
@@ -720,6 +720,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10021",
+    "origem": "Belo Horizonte",
+    "origem_iata": "CNF",
+    "destino": "São Paulo",
+    "destino_iata": "CGH",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-20T20:59:26Z",
+    "milhas": 7900,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9648",
     "origem": "Brasília",
     "origem_iata": "BSB",
@@ -755,19 +768,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-18T16:41:20Z",
     "milhas": 8500,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9639",
-    "origem": "Florianópolis",
-    "origem_iata": "FLN",
-    "destino": "São Paulo",
-    "destino_iata": "CGH",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-14T12:38:56Z",
-    "milhas": 8600,
     "nivel": "",
     "regiao": "brasil"
    },
