@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-20T15:29:47.264392Z",
+ "atualizado": "2026-11-20T15:35:55.127135Z",
  "dias": 30,
  "passagens": 3450,
  "promocoes": 208,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1168,
+  "passagens": 1167,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -1149,19 +1149,6 @@
     "regiao": "outros"
    },
    {
-    "id": "2361370250-6508",
-    "origem": "Nova York",
-    "origem_iata": "JFK",
-    "destino": "Frankfurt",
-    "destino_iata": "FRA",
-    "cabine": "Executiva",
-    "programa": "Aeroplan",
-    "data": "2026-11-13T15:32:57Z",
-    "milhas": 60000,
-    "nivel": "",
-    "regiao": "europa"
-   },
-   {
     "id": "2361370250-6575",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -1199,6 +1186,19 @@
     "milhas": 65000,
     "nivel": "",
     "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6784",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Buenos Aires",
+    "destino_iata": "EZE",
+    "cabine": "Executiva",
+    "programa": "Azul pelo Mundo",
+    "data": "2026-11-18T12:45:47Z",
+    "milhas": 66000,
+    "nivel": "",
+    "regiao": "america-do-sul"
    }
   ]
  }
