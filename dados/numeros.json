@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-20T11:44:27.735799Z",
+ "atualizado": "2026-11-20T11:50:43.858646Z",
  "dias": 30,
- "passagens": 3440,
+ "passagens": 3443,
  "promocoes": 208,
  "destinos": 176,
- "executiva": 737,
+ "executiva": 739,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -369,19 +369,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15524",
-    "origem": "Natal",
-    "origem_iata": "NAT",
-    "destino": "Frankfurt",
-    "destino_iata": "FRA",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-13T11:46:37Z",
-    "milhas": 68600,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
     "id": "2008590742-15850",
     "origem": "Recife",
     "origem_iata": "REC",
@@ -391,6 +378,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-16T13:04:27Z",
     "milhas": 69000,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
+    "id": "2008590742-15685",
+    "origem": "Natal",
+    "origem_iata": "NAT",
+    "destino": "Frankfurt",
+    "destino_iata": "FRA",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-14T15:09:12Z",
+    "milhas": 69077,
     "nivel": "muito bom",
     "regiao": "europa"
    },
