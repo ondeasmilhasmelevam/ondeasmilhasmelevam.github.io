@@ -5289,20 +5289,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-6714",
-  "data": "2026-11-18T03:45:06Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Fort Lauderdale",
-  "destino_iata": "FLL",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "50.000 milhas + CAD 123,30 de taxas",
-  "volta": "",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "1290836068-7841",
   "data": "2026-11-17T16:34:21Z",
   "tipo": "promocao",
