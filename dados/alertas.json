@@ -4556,21 +4556,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "seats-smiles-GRU-PUJ-eco",
-  "data": "2026-11-12T05:14:55.794608Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Punta Cana",
-  "destino_iata": "PUJ",
-  "companhia": "American / Avianca / Copa",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "97.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GIG-CDG-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
