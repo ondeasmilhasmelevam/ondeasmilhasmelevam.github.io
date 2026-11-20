@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-20T09:50:47.511126Z",
+ "atualizado": "2026-11-20T09:57:09.116693Z",
  "dias": 30,
- "passagens": 3374,
+ "passagens": 3379,
  "promocoes": 208,
  "destinos": 176,
- "executiva": 704,
+ "executiva": 706,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1182,
+  "passagens": 1186,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -967,15 +967,15 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "seats-smiles-GRU-DFW-exe",
+    "id": "2361370250-6776",
     "origem": "São Paulo",
     "origem_iata": "GRU",
     "destino": "Dallas",
     "destino_iata": "DFW",
     "cabine": "Executiva",
-    "programa": "Smiles",
-    "data": "2026-11-13T09:56:14.329878Z",
-    "milhas": 241000,
+    "programa": "GOL Smiles",
+    "data": "2026-11-18T11:36:46Z",
+    "milhas": 249000,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
    },
