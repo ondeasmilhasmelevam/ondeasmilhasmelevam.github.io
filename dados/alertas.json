@@ -3637,20 +3637,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16036",
-  "data": "2026-11-18T19:01:46Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "Avianca + GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "60.200 milhas + Taxas",
-  "volta": "60.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7861",
   "data": "2026-11-18T14:30:33Z",
   "tipo": "promocao",
