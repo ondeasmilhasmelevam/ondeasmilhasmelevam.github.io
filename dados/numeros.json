@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-20T03:32:56.736441Z",
+ "atualizado": "2026-11-20T03:39:23.887802Z",
  "dias": 30,
  "passagens": 3358,
  "promocoes": 208,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1168,
+  "passagens": 1167,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -798,14 +798,14 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9539",
+    "id": "3761373661-9639",
     "origem": "Florianópolis",
     "origem_iata": "FLN",
     "destino": "São Paulo",
     "destino_iata": "CGH",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-13T03:38:02Z",
+    "data": "2026-11-14T12:38:56Z",
     "milhas": 8600,
     "nivel": "",
     "regiao": "brasil"

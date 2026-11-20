@@ -5303,20 +5303,6 @@
   "link_nome": "Aeroplan"
  },
  {
-  "id": "3761373661-9873",
-  "data": "2026-11-18T03:36:09Z",
-  "origem": "São Paulo",
-  "origem_iata": "CGH",
-  "destino": "Florianópolis",
-  "destino_iata": "FLN",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "8.600 milhas + R$ 62,14 de taxas",
-  "volta": "9.600 milhas + R$ 56,99 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7841",
   "data": "2026-11-17T16:34:21Z",
   "tipo": "promocao",
