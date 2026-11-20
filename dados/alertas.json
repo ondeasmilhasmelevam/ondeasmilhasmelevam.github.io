@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-6882",
+  "data": "2026-11-20T11:56:23Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "434.700 milhas (413.000 no Clube Smiles)",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2361370250-6881",
+  "data": "2026-11-20T11:52:46Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "489.500 milhas (464.900 no Clube Smiles)",
+  "volta": "489.500 milhas (464.900 no Clube Smiles)",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-6880",
   "data": "2026-11-20T11:49:35Z",
   "origem": "São Paulo",
@@ -4951,34 +4979,6 @@
   "ida": "100.118 milhas + BRL 129,15",
   "volta": "85.190 milhas + BRL 281,75",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "2361370250-6780",
-  "data": "2026-11-18T11:54:22Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "472.200 milhas (448.600 no Clube Smiles)",
-  "volta": "472.200 milhas (448.600 no Clube Smiles)",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-6779",
-  "data": "2026-11-18T11:51:28Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "557.300 milhas (529.400 no Clube Smiles)",
-  "volta": "",
-  "link_nome": "GOL Smiles"
  },
  {
   "id": "1290836068-7841",
