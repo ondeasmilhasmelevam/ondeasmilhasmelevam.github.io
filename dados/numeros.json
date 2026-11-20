@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-20T20:03:15.522567Z",
+ "atualizado": "2026-11-20T20:09:26.706149Z",
  "dias": 30,
  "passagens": 3456,
  "promocoes": 210,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1088,
+  "passagens": 1085,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -733,19 +733,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9626",
-    "origem": "Campinas",
-    "origem_iata": "VCP",
-    "destino": "João Pessoa",
-    "destino_iata": "JPA",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-13T20:05:13Z",
-    "milhas": 8400,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9909",
     "origem": "Rio de Janeiro",
     "origem_iata": "SDU",
@@ -937,6 +924,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-16T18:43:49Z",
     "milhas": 12040,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "2008590742-15604",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Ribeirão Preto",
+    "destino_iata": "RAO",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-13T21:10:54Z",
+    "milhas": 12100,
     "nivel": "",
     "regiao": "brasil"
    },
