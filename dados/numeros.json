@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-20T17:04:20.636058Z",
+ "atualizado": "2026-11-20T17:10:28.016960Z",
  "dias": 30,
  "passagens": 3450,
  "promocoes": 208,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1146,
+  "passagens": 1145,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -330,19 +330,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15561",
-    "origem": "Recife",
-    "origem_iata": "REC",
-    "destino": "Porto",
-    "destino_iata": "OPO",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-13T17:05:25Z",
-    "milhas": 65000,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
     "id": "2008590742-15583",
     "origem": "Florianópolis",
     "origem_iata": "FLN",
@@ -391,6 +378,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-14T15:09:12Z",
     "milhas": 69077,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
+    "id": "2008590742-15922",
+    "origem": "Campinas",
+    "origem_iata": "VCP",
+    "destino": "Porto",
+    "destino_iata": "OPO",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-17T20:22:05Z",
+    "milhas": 74400,
     "nivel": "muito bom",
     "regiao": "europa"
    },
