@@ -3623,20 +3623,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16037",
-  "data": "2026-11-18T19:19:59Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Buenos Aires",
-  "destino_iata": "AEP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "38.500 milhas + Taxas",
-  "volta": "38.500 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7861",
   "data": "2026-11-18T14:30:33Z",
   "tipo": "promocao",
