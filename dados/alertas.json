@@ -3514,20 +3514,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2008590742-16045",
-  "data": "2026-11-18T20:31:34Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "San Juan",
-  "destino_iata": "SJU",
-  "companhia": "Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "36.600 milhas + R$ 135,65 de taxas",
-  "volta": "36.600 milhas + R$ 135,64 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7870",
   "data": "2026-11-18T20:14:01Z",
   "tipo": "promocao",
