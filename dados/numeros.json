@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-20T18:42:44.733583Z",
+ "atualizado": "2026-11-20T18:49:15.776636Z",
  "dias": 30,
  "passagens": 3451,
  "promocoes": 208,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1115,
+  "passagens": 1113,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -824,19 +824,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9615",
-    "origem": "Porto Alegre",
-    "origem_iata": "POA",
-    "destino": "Campinas",
-    "destino_iata": "VCP",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-13T18:47:54Z",
-    "milhas": 9000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-10003",
     "origem": "Belém",
     "origem_iata": "BEL",
@@ -848,6 +835,19 @@
     "milhas": 9000,
     "nivel": "",
     "regiao": "outros"
+   },
+   {
+    "id": "3761373661-9981",
+    "origem": "Florianópolis",
+    "origem_iata": "FLN",
+    "destino": "Campinas",
+    "destino_iata": "VCP",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-19T14:09:51Z",
+    "milhas": 9500,
+    "nivel": "",
+    "regiao": "brasil"
    },
    {
     "id": "2008590742-15713",
