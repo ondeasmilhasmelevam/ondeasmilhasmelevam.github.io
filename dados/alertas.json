@@ -3521,48 +3521,6 @@
   "ate": "2026-12-30T23:59:59-03:00"
  },
  {
-  "id": "2361370250-6804",
-  "data": "2026-11-18T20:00:35Z",
-  "origem": "Buenos Aires",
-  "origem_iata": "EZE",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "American Airlines",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "187.600 milhas + R$ 730,65",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16044",
-  "data": "2026-11-18T19:58:07Z",
-  "origem": "Maceió",
-  "origem_iata": "MCZ",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "17.000 milhas + Taxas",
-  "volta": "17.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-16043",
-  "data": "2026-11-18T19:57:06Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "American Airlines + LATAM",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "74.600 milhas + Taxas",
-  "volta": "79.100 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7861",
   "data": "2026-11-18T14:30:33Z",
   "tipo": "promocao",
