@@ -3570,20 +3570,6 @@
   "link_nome": "AAdvantage"
  },
  {
-  "id": "3761373661-9935",
-  "data": "2026-11-18T21:14:58Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Belém",
-  "destino_iata": "BEL",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "12.000 milhas + Taxas",
-  "volta": "12.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7870",
   "data": "2026-11-18T20:14:01Z",
   "tipo": "promocao",
@@ -3780,21 +3766,6 @@
   "cabine": "Executiva",
   "programa": "Smiles",
   "ida": "248.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "seats-smiles-MAO-MIA-exe",
-  "data": "2026-11-13T15:43:42.544954Z",
-  "fonte": "seats.aero",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "198.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
