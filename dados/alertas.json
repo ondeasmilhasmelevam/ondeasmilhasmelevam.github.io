@@ -4297,20 +4297,6 @@
   "ate": ""
  },
  {
-  "id": "3761373661-9907",
-  "data": "2026-11-18T14:40:33Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "Curitiba",
-  "destino_iata": "CWB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "12.300 milhas + Taxas",
-  "volta": "12.300 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7861",
   "data": "2026-11-18T14:30:33Z",
   "tipo": "promocao",
