@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-20T13:12:57.129810Z",
+ "atualizado": "2026-11-20T13:19:08.499019Z",
  "dias": 30,
  "passagens": 3449,
  "promocoes": 208,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1214,
+  "passagens": 1213,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -395,19 +395,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15530",
-    "origem": "Curitiba",
-    "origem_iata": "CWB",
-    "destino": "Paris",
-    "destino_iata": "CDG",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-13T13:16:26Z",
-    "milhas": 70500,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
     "id": "2008590742-15906",
     "origem": "Recife",
     "origem_iata": "REC",
@@ -523,6 +510,19 @@
     "milhas": 69700,
     "nivel": "bom",
     "regiao": "america-do-norte"
+   },
+   {
+    "id": "2008590742-16026",
+    "origem": "Belém",
+    "origem_iata": "BEL",
+    "destino": "Paris",
+    "destino_iata": "CDG",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-18T13:19:51Z",
+    "milhas": 76934,
+    "nivel": "bom",
+    "regiao": "europa"
    },
    {
     "id": "2008590742-15707",

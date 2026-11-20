@@ -4533,20 +4533,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2361370250-6785",
-  "data": "2026-11-18T13:13:04Z",
-  "origem": "Doha",
-  "origem_iata": "DOH",
-  "destino": "Hong Kong",
-  "destino_iata": "HKG",
-  "companhia": "Qatar Airways",
-  "cabine": "Primeira Classe",
-  "programa": "Qatar Privilege Club",
-  "ida": "75.000 AVIOS + Taxas",
-  "volta": "75.000 AVIOS + Taxas",
-  "link_nome": "Privilege Club"
- },
- {
   "id": "1290836068-7841",
   "data": "2026-11-17T16:34:21Z",
   "tipo": "promocao",
