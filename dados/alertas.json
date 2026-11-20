@@ -5940,11 +5940,11 @@
   "link_nome": "Iberia Plus"
  },
  {
-  "id": "seats-iberia-FOR-MAD-eco",
+  "id": "seats-iberia-REC-MAD-eco",
   "data": "2026-11-08T03:29:49.491996Z",
   "fonte": "seats.aero",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
+  "origem": "Recife",
+  "origem_iata": "REC",
   "destino": "Madrid",
   "destino_iata": "MAD",
   "companhia": "Iberia / LATAM",
@@ -5955,11 +5955,11 @@
   "link_nome": "Iberia Plus"
  },
  {
-  "id": "seats-iberia-REC-MAD-eco",
+  "id": "seats-iberia-FOR-MAD-eco",
   "data": "2026-11-08T03:29:49.491996Z",
   "fonte": "seats.aero",
-  "origem": "Recife",
-  "origem_iata": "REC",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
   "destino": "Madrid",
   "destino_iata": "MAD",
   "companhia": "Iberia / LATAM",
