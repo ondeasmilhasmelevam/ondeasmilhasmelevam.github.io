@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-20T18:30:21.689590Z",
+ "atualizado": "2026-11-20T18:36:28.632153Z",
  "dias": 30,
- "passagens": 3450,
+ "passagens": 3451,
  "promocoes": 208,
  "destinos": 176,
  "executiva": 745,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1123,
+  "passagens": 1115,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -330,19 +330,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15583",
-    "origem": "Florianópolis",
-    "origem_iata": "FLN",
-    "destino": "Milão",
-    "destino_iata": "MXP",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-13T18:32:41Z",
-    "milhas": 66000,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
     "id": "2008590742-15601",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -378,6 +365,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-14T15:09:12Z",
     "milhas": 69077,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
+    "id": "2008590742-16023",
+    "origem": "Salvador",
+    "origem_iata": "SSA",
+    "destino": "Milão",
+    "destino_iata": "MXP",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-18T12:44:21Z",
+    "milhas": 70300,
     "nivel": "muito bom",
     "regiao": "europa"
    },
