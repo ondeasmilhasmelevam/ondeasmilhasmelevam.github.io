@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10010",
+  "data": "2026-11-20T01:41:22Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "Montes Claros",
+  "destino_iata": "MOC",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "13.200 milhas + R$ 62,14 de taxas",
+  "volta": "10.300 milhas + R$ 38,39 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10009",
   "data": "2026-11-20T01:20:26Z",
   "origem": "São Paulo",
