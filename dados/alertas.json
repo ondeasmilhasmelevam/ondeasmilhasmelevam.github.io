@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10014",
+  "data": "2026-11-20T14:34:02Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "Florianópolis",
+  "destino_iata": "FLN",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "9.400 milhas + R$ 62,14 de taxas",
+  "volta": "9.400 milhas + R$ 56,99 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6886",
   "data": "2026-11-20T13:05:01Z",
   "origem": "Manaus",
@@ -4295,20 +4309,6 @@
   "ida": "12.300 milhas + Taxas",
   "volta": "12.300 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9906",
-  "data": "2026-11-18T14:38:29Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "9.300 milhas + R$ 56,99 de taxas",
-  "volta": "9.300 milhas + R$ 35,75 de taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7861",
