@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-20T20:09:26.706149Z",
+ "atualizado": "2026-11-20T20:15:33.222831Z",
  "dias": 30,
- "passagens": 3456,
+ "passagens": 3458,
  "promocoes": 210,
  "destinos": 176,
  "executiva": 745,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1085,
+  "passagens": 1087,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -469,6 +469,19 @@
     "programa": "Smiles",
     "data": "2026-11-16T13:53:00Z",
     "milhas": 64500,
+    "nivel": "bom",
+    "regiao": "america-do-norte"
+   },
+   {
+    "id": "2008590742-16176",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Dallas",
+    "destino_iata": "DFW",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-20T20:13:46Z",
+    "milhas": 66400,
     "nivel": "bom",
     "regiao": "america-do-norte"
    },
@@ -924,19 +937,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-16T18:43:49Z",
     "milhas": 12040,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "2008590742-15604",
-    "origem": "Porto Alegre",
-    "origem_iata": "POA",
-    "destino": "Ribeirão Preto",
-    "destino_iata": "RAO",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-13T21:10:54Z",
-    "milhas": 12100,
     "nivel": "",
     "regiao": "brasil"
    },

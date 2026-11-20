@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-16176",
+  "data": "2026-11-20T20:13:46Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Dallas",
+  "destino_iata": "DFW",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "66.400 milhas + Taxas",
+  "volta": "66.400 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16175",
+  "data": "2026-11-20T20:11:02Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Joanesburgo",
+  "destino_iata": "JNB",
+  "companhia": "South African Airways",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "87.000 milhas + Taxas",
+  "volta": "87.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-7924",
   "data": "2026-11-20T19:56:29Z",
   "tipo": "promocao",
