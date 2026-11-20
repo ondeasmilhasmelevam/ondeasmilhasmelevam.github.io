@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-6876",
+  "data": "2026-11-20T11:36:13Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "GOL + American Airlines",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "270.000 milhas (256.600 no Clube Smiles)",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
+  "id": "2361370250-6875",
+  "data": "2026-11-20T11:33:51Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Cidade do Cabo",
+  "destino_iata": "CPT",
+  "companhia": "South African Airways",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "198.000 milhas (188.100 no Clube Smiles)",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-6874",
   "data": "2026-11-20T11:31:00Z",
   "origem": "São Paulo",
@@ -4908,34 +4936,6 @@
   "programa": "GOL Smiles",
   "ida": "232.000 milhas (220.300 no Clube Smiles)",
   "volta": "223.800 milhas (212.600 no Clube Smiles)",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-6776",
-  "data": "2026-11-18T11:36:46Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Dallas",
-  "destino_iata": "DFW",
-  "companhia": "American Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "249.000 milhas (236.600 no Clube Smiles)",
-  "volta": "191.000 milhas (181.500 no Clube Smiles)",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-6775",
-  "data": "2026-11-18T11:34:02Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Orlando",
-  "destino_iata": "MCO",
-  "companhia": "GOL + American Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "203.700 milhas (193.500 no Clube Smiles)",
-  "volta": "",
   "link_nome": "GOL Smiles"
  },
  {
