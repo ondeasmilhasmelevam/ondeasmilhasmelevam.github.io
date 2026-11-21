@@ -3218,48 +3218,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-16062",
-  "data": "2026-11-19T11:47:02Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "San José",
-  "destino_iata": "SJO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "56.100 milhas + Taxas",
-  "volta": "56.100 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9958",
-  "data": "2026-11-19T11:44:09Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Vitória",
-  "destino_iata": "VIX",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "21.500 milhas + Taxas",
-  "volta": "21.500 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9957",
-  "data": "2026-11-19T11:44:04Z",
-  "origem": "Aracaju",
-  "origem_iata": "AJU",
-  "destino": "Curitiba",
-  "destino_iata": "CWB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "27.900 milhas + Taxas",
-  "volta": "27.900 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7870",
   "data": "2026-11-18T20:14:01Z",
   "tipo": "promocao",
