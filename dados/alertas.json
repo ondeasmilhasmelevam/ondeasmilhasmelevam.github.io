@@ -1,5 +1,47 @@
 [
  {
+  "id": "3761373661-10049",
+  "data": "2026-11-21T14:59:53Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Cuiabá",
+  "destino_iata": "CGB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "26.200 milhas + Taxas",
+  "volta": "26.100 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16207",
+  "data": "2026-11-21T14:59:29Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Santa Cruz de La Sierra",
+  "destino_iata": "VVI",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "33.500 milhas + Taxas",
+  "volta": "36.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10048",
+  "data": "2026-11-21T14:59:26Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Curitiba",
+  "destino_iata": "CWB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "26.200 milhas + Taxas",
+  "volta": "26.100 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10047",
   "data": "2026-11-21T14:46:53Z",
   "origem": "Manaus",
