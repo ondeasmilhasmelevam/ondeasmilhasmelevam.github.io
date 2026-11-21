@@ -3253,34 +3253,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16076",
-  "data": "2026-11-19T17:19:09Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "48.000 milhas + Taxas",
-  "volta": "48.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16075",
-  "data": "2026-11-19T17:18:45Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Assunção",
-  "destino_iata": "ASU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "61.000 milhas + Taxas",
-  "volta": "61.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7892",
   "data": "2026-11-19T13:50:12Z",
   "tipo": "promocao",
