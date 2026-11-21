@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-21T15:02:35.584543Z",
+ "atualizado": "2026-11-21T15:14:19.236180Z",
  "dias": 30,
- "passagens": 3520,
+ "passagens": 3521,
  "promocoes": 208,
  "destinos": 176,
  "executiva": 749,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1035,
+  "passagens": 1022,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -343,19 +343,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15685",
-    "origem": "Natal",
-    "origem_iata": "NAT",
-    "destino": "Frankfurt",
-    "destino_iata": "FRA",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-14T15:09:12Z",
-    "milhas": 69077,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
     "id": "2008590742-16023",
     "origem": "Salvador",
     "origem_iata": "SSA",
@@ -523,6 +510,19 @@
     "milhas": 78000,
     "nivel": "bom",
     "regiao": "caribe"
+   },
+   {
+    "id": "2008590742-15833",
+    "origem": "Recife",
+    "origem_iata": "REC",
+    "destino": "Frankfurt",
+    "destino_iata": "FRA",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-16T12:32:43Z",
+    "milhas": 78301,
+    "nivel": "bom",
+    "regiao": "europa"
    },
    {
     "id": "2008590742-15707",
