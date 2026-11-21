@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-21T10:49:10.245074Z",
+ "atualizado": "2026-11-21T10:55:22.523625Z",
  "dias": 30,
  "passagens": 3481,
  "promocoes": 210,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1022,
+  "passagens": 1017,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -993,19 +993,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6566",
-    "origem": "Fortaleza",
-    "origem_iata": "FOR",
-    "destino": "Paris",
-    "destino_iata": "CDG",
-    "cabine": "Executiva",
-    "programa": "GOL Smiles",
-    "data": "2026-11-14T10:54:46Z",
-    "milhas": 408700,
-    "nivel": "bom",
-    "regiao": "europa"
-   },
-   {
     "id": "2361370250-6596",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -1015,6 +1002,19 @@
     "programa": "Smiles",
     "data": "2026-11-15T17:01:43Z",
     "milhas": 409000,
+    "nivel": "bom",
+    "regiao": "europa"
+   },
+   {
+    "id": "2361370250-6664",
+    "origem": "Fortaleza",
+    "origem_iata": "FOR",
+    "destino": "Paris",
+    "destino_iata": "CDG",
+    "cabine": "Executiva",
+    "programa": "GOL Smiles",
+    "data": "2026-11-16T11:50:43Z",
+    "milhas": 419500,
     "nivel": "bom",
     "regiao": "europa"
    },
