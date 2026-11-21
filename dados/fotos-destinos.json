@@ -3,6 +3,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Alter_do_Ch%C3%A3o_05.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Alter_do_Ch%C3%A3o_05.jpg/1280px-Alter_do_Ch%C3%A3o_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "amsterda": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Evangelical_cemetery_in_Polskie_Laki_(7).jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Evangelical_cemetery_in_Polskie_Laki_%287%29.jpg/1280px-Evangelical_cemetery_in_Polskie_Laki_%287%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "aracaju": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Linda_Brasil_-_junho_2022.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Linda_Brasil_-_junho_2022.jpg/1280px-Linda_Brasil_-_junho_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -18,6 +22,10 @@
  "aruba": {
   "pagina": "https://commons.wikimedia.org/wiki/File:La_Cabana_Resort_Noord_Aruba.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/La_Cabana_Resort_Noord_Aruba.jpg/1280px-La_Cabana_Resort_Noord_Aruba.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "atenas-grecia": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Athens-acropolis-propylaia-2023-05-panorama-2x.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Athens-acropolis-propylaia-2023-05-panorama-2x.jpg/1280px-Athens-acropolis-propylaia-2023-05-panorama-2x.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "bahamas": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Twilight_at_Sea.jpg",
@@ -123,6 +131,14 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Panorama_da_Chapada_dos_Veadeiros.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Panorama_da_Chapada_dos_Veadeiros.jpg/1280px-Panorama_da_Chapada_dos_Veadeiros.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "chicago-estados-unidos": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Skyline_de_Chicago_desde_el_centro,_Illinois,_Estados_Unidos,_2012-10-20,_DD_06.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Skyline_de_Chicago_desde_el_centro%2C_Illinois%2C_Estados_Unidos%2C_2012-10-20%2C_DD_06.jpg/1280px-Skyline_de_Chicago_desde_el_centro%2C_Illinois%2C_Estados_Unidos%2C_2012-10-20%2C_DD_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "cidade-de-quebec-189-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Snow-covered_Quebec_City_skyline_in_fog.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Snow-covered_Quebec_City_skyline_in_fog.jpg/1280px-Snow-covered_Quebec_City_skyline_in_fog.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "cidade-do-mexico": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Ciudad.de.Mexico.City.Distrito.Federal.DF.Paseo.Reforma.Skyline.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Ciudad.de.Mexico.City.Distrito.Federal.DF.Paseo.Reforma.Skyline.jpg/1280px-Ciudad.de.Mexico.City.Distrito.Federal.DF.Paseo.Reforma.Skyline.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -159,6 +175,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Panorama_da_Vila_de_Biribiri_visto_da_Trilha_do_Cruzeiro_-_Junho_2024.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Panorama_da_Vila_de_Biribiri_visto_da_Trilha_do_Cruzeiro_-_Junho_2024.jpg/1280px-Panorama_da_Vila_de_Biribiri_visto_da_Trilha_do_Cruzeiro_-_Junho_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "disney": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_Frontenac_city_at_night.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Ch%C3%A2teau_Frontenac_city_at_night.jpg/1280px-Ch%C3%A2teau_Frontenac_city_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "el-calafate-argentina": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Invierno_en_la_costanera..jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Invierno_en_la_costanera..jpg/1280px-Invierno_en_la_costanera..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -170,6 +190,10 @@
  "florianopolis-65-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Panorama_de_Floripa.JPG",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Panorama_de_Floripa.JPG/1280px-Panorama_de_Floripa.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "fort-lauderdale-estados-unidos": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:New_River_Ft_Lauderdale.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/New_River_Ft_Lauderdale.jpg/1280px-New_River_Ft_Lauderdale.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "fortaleza-142-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Fortaleza,_Brazil_-_Brasil,_Cear%C3%A1_(38993148931).jpg",
@@ -223,6 +247,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Skyline_de_Jo%C3%A3o_Pessoa,_Para%C3%ADba,_Brasil_(13762106494).jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Skyline_de_Jo%C3%A3o_Pessoa%2C_Para%C3%ADba%2C_Brasil_%2813762106494%29.jpg/1280px-Skyline_de_Jo%C3%A3o_Pessoa%2C_Para%C3%ADba%2C_Brasil_%2813762106494%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "las-vegas-estados-unidos": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Las_Vegas_(Nevada,_USA),_The_Strip_--_2012_--_6232.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Las_Vegas_%28Nevada%2C_USA%29%2C_The_Strip_--_2012_--_6232.jpg/1280px-Las_Vegas_%28Nevada%2C_USA%29%2C_The_Strip_--_2012_--_6232.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "lencois-maranhenses": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Os_lencois.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Os_lencois.jpg/1280px-Os_lencois.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -230,6 +258,10 @@
  "lima-peru": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Lima,_Peru_Skyline_from_Surco.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Lima%2C_Peru_Skyline_from_Surco.jpg/1280px-Lima%2C_Peru_Skyline_from_Surco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "los-angeles-estados-unidos": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:LA_Skyline_Mountains2.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/LA_Skyline_Mountains2.jpg/1280px-LA_Skyline_Mountains2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "los-roques-200-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Venezuela_en_Para%C3%ADso..jpg",
@@ -255,9 +287,17 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:A_typical_view_of_Mendoza_City_full_of_trees_and_big_mountains..jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/A_typical_view_of_Mendoza_City_full_of_trees_and_big_mountains..jpg/1280px-A_typical_view_of_Mendoza_City_full_of_trees_and_big_mountains..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "miami": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Brickell_skyline_2012.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Brickell_skyline_2012.jpg/1280px-Brickell_skyline_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "montevideu-uruguai": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Presid%C3%AAncia_do_Uruguai_em_novembro_de_2023.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Presid%C3%AAncia_do_Uruguai_em_novembro_de_2023.jpg/1280px-Presid%C3%AAncia_do_Uruguai_em_novembro_de_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "montreal-canada": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Kondiaronk_Belvedere,_Montreal_city,_Canada.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Kondiaronk_Belvedere%2C_Montreal_city%2C_Canada.jpg/1280px-Kondiaronk_Belvedere%2C_Montreal_city%2C_Canada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "morro-de-sao-paulo-bahia": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Servi%C3%A7o_de_t%C3%A1xi_do_aeroporto_de_Morro_de_S%C3%A3o_Paulo,_Bahia.jpg",
@@ -266,6 +306,22 @@
  "natal-rn": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Natal_-_Rio_Grande_do_Norte_-_Brasil(3).jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Natal_-_Rio_Grande_do_Norte_-_Brasil%283%29.jpg/1280px-Natal_-_Rio_Grande_do_Norte_-_Brasil%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "nova-orleans": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:New_Orleans_skyline-02.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/New_Orleans_skyline-02.jpg/1280px-New_Orleans_skyline-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "nova-york": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:NYC_Lower_Manhattan_skyline_2015_-_panoramio.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/NYC_Lower_Manhattan_skyline_2015_-_panoramio.jpg/1280px-NYC_Lower_Manhattan_skyline_2015_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "orlando": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Skyline_of_Orlando,_9_Feb_2017.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Skyline_of_Orlando%2C_9_Feb_2017.jpg/1280px-Skyline_of_Orlando%2C_9_Feb_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "ottawa-canada": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Ottawa_Skyline_June_2019.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Ottawa_Skyline_June_2019.jpg/1280px-Ottawa_Skyline_June_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "ouro-preto-minas-gerais": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Bairro_do_Pacaembu_-_Vista_do_Est%C3%A1dio.jpg",
@@ -364,6 +420,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:AV_SANTOS_DRUMONT_SKYLINE_SANTANA.png",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/AV_SANTOS_DRUMONT_SKYLINE_SANTANA.png/1280px-AV_SANTOS_DRUMONT_SKYLINE_SANTANA.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "sao-francisco-california": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Bell_Tower_on_St._Francis_church.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Bell_Tower_on_St._Francis_church.jpg/1280px-Bell_Tower_on_St._Francis_church.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "sao-luis-maranhao": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Sede_da_TV_Brasil_Maranh%C3%A3o_(2015).jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Sede_da_TV_Brasil_Maranh%C3%A3o_%282015%29.jpg/1280px-Sede_da_TV_Brasil_Maranh%C3%A3o_%282015%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -389,6 +449,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Ouro_Preto_November_2009-6a.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Ouro_Preto_November_2009-6a.jpg/1280px-Ouro_Preto_November_2009-6a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "toronto-184-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Sunset_Toronto_Skyline_Panorama_Crop_from_Snake_Island.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Sunset_Toronto_Skyline_Panorama_Crop_from_Snake_Island.jpg/1280px-Sunset_Toronto_Skyline_Panorama_Crop_from_Snake_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "trancoso-bahia": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Praia_dos_Nativos,_APA_Cara%C3%ADva_Trancoso.JPG",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Praia_dos_Nativos%2C_APA_Cara%C3%ADva_Trancoso.JPG/1280px-Praia_dos_Nativos%2C_APA_Cara%C3%ADva_Trancoso.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -405,8 +469,16 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:J28_301_Puente_Nilhue.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/J28_301_Puente_Nilhue.jpg/1280px-J28_301_Puente_Nilhue.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "vancouver-canada-195-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Vancouver_Skyline_01.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Vancouver_Skyline_01.jpg/1280px-Vancouver_Skyline_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "vitoria-62-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Convento_da_Penha_-_Vila_Velha_-_ES_-_panoramio_(27).jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Convento_da_Penha_-_Vila_Velha_-_ES_-_panoramio_%2827%29.jpg/1280px-Convento_da_Penha_-_Vila_Velha_-_ES_-_panoramio_%2827%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "washington-dc": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Saint_Paul_skyline,_West_Side_(cropped).jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Saint_Paul_skyline%2C_West_Side_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
  }
 }
