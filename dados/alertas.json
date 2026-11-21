@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10041",
+  "data": "2026-11-21T13:51:19Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "Campo Grande",
+  "destino_iata": "CGR",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "21.300 milhas + Taxas",
+  "volta": "21.300 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10040",
   "data": "2026-11-21T13:45:19Z",
   "origem": "Palmas",
@@ -2945,20 +2959,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-16069",
-  "data": "2026-11-19T13:51:48Z",
-  "origem": "Campinas",
-  "origem_iata": "VCP",
-  "destino": "Fort Lauderdale",
-  "destino_iata": "FLL",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "80.000 milhas + R$ 301,05 de taxas",
-  "volta": "",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7892",
   "data": "2026-11-19T13:50:12Z",
   "tipo": "promocao",
@@ -3034,62 +3034,6 @@
    "https://www.livelo.com.br/adesao-promo-CDC16355"
   ],
   "ate": "2026-11-26T23:59:59-03:00"
- },
- {
-  "id": "3761373661-9980",
-  "data": "2026-11-19T13:49:12Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Palmas",
-  "destino_iata": "PMW",
-  "companhia": "Latam",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 12.099 milhas",
-  "volta": "A partir de 12.099 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9979",
-  "data": "2026-11-19T13:49:05Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "Latam",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 8.262 milhas",
-  "volta": "A partir de 8.262 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9978",
-  "data": "2026-11-19T13:49:00Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Pelotas",
-  "destino_iata": "PET",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "A partir de 4.000 milhas",
-  "volta": "A partir de 4.000 milhas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-16068",
-  "data": "2026-11-19T13:48:37Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Orlando",
-  "destino_iata": "MCO",
-  "companhia": "American Airlines",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 81.200 milhas",
-  "volta": "A partir de 81.200 milhas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7870",
@@ -3316,7 +3260,7 @@
   "origem_iata": "GRU",
   "destino": "Paris",
   "destino_iata": "CDG",
-  "companhia": "American / Air France / Aerolíneas Argentinas",
+  "companhia": "American / Air France / AM",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "140.000 milhas + taxas",
@@ -3399,6 +3343,21 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "seats-smiles-GRU-AUA-eco",
+  "data": "2026-11-11T00:03:25.922708Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Aruba",
+  "destino_iata": "AUA",
+  "companhia": "American / Avianca / Copa",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "63.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-azul-VCP-MAD-eco",
   "data": "2026-11-11T00:03:25.922708Z",
   "fonte": "seats.aero",
@@ -3412,21 +3371,6 @@
   "ida": "70.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "seats-smiles-GRU-AUA-eco",
-  "data": "2026-11-11T00:03:25.922708Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Aruba",
-  "destino_iata": "AUA",
-  "companhia": "American / Avianca / Copa",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "91.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-qatar-GIG-MAD-eco",
@@ -3504,6 +3448,21 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "seats-smiles-GIG-JFK-exe",
+  "data": "2026-11-10T00:03:03.524369Z",
+  "fonte": "seats.aero",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American / Avianca",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "223.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-azul-VCP-OPO-eco",
   "data": "2026-11-10T00:03:03.524369Z",
   "fonte": "seats.aero",
@@ -3530,21 +3489,6 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "118.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "seats-smiles-GIG-JFK-exe",
-  "data": "2026-11-10T00:03:03.524369Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Nova York",
-  "destino_iata": "JFK",
-  "companhia": "American / Avianca",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "252.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -3714,21 +3658,6 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GRU-BOG-eco",
-  "data": "2026-11-09T00:05:14.410466Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "LATAM / Qatar Airways",
-  "cabine": "Econômica",
-  "programa": "Qatar Privilege Club",
-  "ida": "13.000 Avios + taxas",
-  "volta": "",
-  "link_nome": "Qatar Privilege Club"
- },
- {
   "id": "seats-qatar-GIG-LIM-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
@@ -3744,6 +3673,21 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
+  "id": "seats-qatar-GRU-BOG-eco",
+  "data": "2026-11-09T00:05:14.410466Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "LATAM / Qatar Airways",
+  "cabine": "Econômica",
+  "programa": "Qatar Privilege Club",
+  "ida": "13.000 Avios + taxas",
+  "volta": "",
+  "link_nome": "Qatar Privilege Club"
+ },
+ {
   "id": "seats-iberia-GIG-MAD-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
@@ -3751,7 +3695,7 @@
   "origem_iata": "GIG",
   "destino": "Madrid",
   "destino_iata": "MAD",
-  "companhia": "Iberia / LATAM",
+  "companhia": "American / Iberia / LATAM",
   "cabine": "Econômica",
   "programa": "Iberia Plus",
   "ida": "31.250 Avios + taxas",
