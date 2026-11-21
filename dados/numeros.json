@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-21T15:14:19.236180Z",
+ "atualizado": "2026-11-21T15:20:34.202978Z",
  "dias": 30,
  "passagens": 3521,
  "promocoes": 208,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1022,
+  "passagens": 1020,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -746,19 +746,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9648",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
-    "destino": "Palmas",
-    "destino_iata": "PMW",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-14T15:18:19Z",
-    "milhas": 7910,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-10019",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -936,6 +923,19 @@
     "cabine": "Econômica",
     "programa": "Smiles",
     "data": "2026-11-16T11:42:13Z",
+    "milhas": 10600,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9894",
+    "origem": "Salvador",
+    "origem_iata": "SSA",
+    "destino": "Palmas",
+    "destino_iata": "PMW",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-18T12:44:11Z",
     "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
