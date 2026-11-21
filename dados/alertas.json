@@ -3498,20 +3498,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-9946",
-  "data": "2026-11-19T11:03:56Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "Curitiba",
-  "destino_iata": "CWB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "25.300 milhas + Taxas",
-  "volta": "25.300 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7870",
   "data": "2026-11-18T20:14:01Z",
   "tipo": "promocao",
