@@ -3281,48 +3281,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9992",
-  "data": "2026-11-19T17:13:17Z",
-  "origem": "Teresina",
-  "origem_iata": "THE",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "14.000 pontos + R$ 120,55",
-  "volta": "14.000 pontos + R$ 105,06",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-9991",
-  "data": "2026-11-19T17:13:12Z",
-  "origem": "Petrolina",
-  "origem_iata": "PNZ",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "14.000 pontos + R$ 119,63",
-  "volta": "14.000 pontos + R$ 103,94",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-9990",
-  "data": "2026-11-19T17:13:05Z",
-  "origem": "Macapá",
-  "origem_iata": "MCP",
-  "destino": "Belém",
-  "destino_iata": "BEL",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "17.000 pontos + R$ 121,82",
-  "volta": "17.000 pontos + R$ 124,35",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7892",
   "data": "2026-11-19T13:50:12Z",
   "tipo": "promocao",
