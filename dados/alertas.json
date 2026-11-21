@@ -2853,48 +2853,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-10004",
-  "data": "2026-11-19T20:13:17Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Fernando de Noronha",
-  "destino_iata": "FEN",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "23.167 milhas",
-  "volta": "23.167 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16092",
-  "data": "2026-11-19T20:11:07Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "18.400 milhas + Taxas",
-  "volta": "18.400 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16091",
-  "data": "2026-11-19T20:10:07Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Aracaju",
-  "destino_iata": "AJU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "12.040 milhas + Taxas",
-  "volta": "12.040 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7892",
   "data": "2026-11-19T13:50:12Z",
   "tipo": "promocao",
