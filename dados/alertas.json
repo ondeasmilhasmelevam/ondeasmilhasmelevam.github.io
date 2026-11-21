@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-16191",
+  "data": "2026-11-21T12:03:20Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "66.800 milhas + Taxas",
+  "volta": "75.700 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-6892",
+  "data": "2026-11-21T12:02:16Z",
+  "origem": "Munique",
+  "origem_iata": "MUC",
+  "destino": "Tóquio",
+  "destino_iata": "NRT",
+  "companhia": "Japan Airlines + American Airlines",
+  "cabine": "Executiva",
+  "programa": "AAdvantage",
+  "ida": "75.000 milhas + R$ 727,63",
+  "volta": "",
+  "link_nome": "AAdvantage"
+ },
+ {
   "id": "3761373661-10029",
   "data": "2026-11-21T01:40:14Z",
   "origem": "São Paulo",
@@ -252,6 +280,20 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "2008590742-16179",
+  "data": "2026-11-20T20:59:26Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "47.960 milhas + Taxas",
+  "volta": "50.910 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-10021",
   "data": "2026-11-20T20:59:26Z",
   "origem": "Belo Horizonte",
@@ -278,20 +320,6 @@
   "ida": "21.100 milhas + Taxas",
   "volta": "21.900 milhas + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16179",
-  "data": "2026-11-20T20:59:26Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "47.960 milhas + Taxas",
-  "volta": "50.910 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "2008590742-16178",
