@@ -1648,7 +1648,7 @@
         <dl class="pass-valores">
           <div><dt>Ida</dt><dd>${esc(p.ida)}</dd></div>
           ${p.volta ? `<div><dt>Volta</dt><dd>${esc(p.volta)}</dd></div>` : ''}
-        </dl>${custoHtml(p)}
+        </dl>${custoHtml(p)}${milhasTrecho(p.ida) ? `<button type="button" class="pass-comparar" data-prog="${esc(p.programa || '')}" data-milhas="${milhasTrecho(p.ida)}" data-taxa="${taxaReais(p.ida) || ''}">🧮 Comparar com o preço em dinheiro</button>` : ''}
         <a class="pass-hist" href="#rota/${esc(p.origem_iata)}-${esc(p.destino_iata)}-${slugCabine(p.cabine)}">📈 Histórico desta rota</a>
         ${completo && httpOk(completo.link) ? calendarioHtml(p, completo) : travaHtml()}
       </li>`;
@@ -1982,6 +1982,12 @@
     return milhas && teto ? Math.round(milhas / 1000 * teto) : null;
   }
   const brl0 = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+  // Taxa em reais quando o alerta traz ("... + R$ 151,07 de taxas").
+  const taxaReais = t => { const m = String(t || '').match(/R\$\s*([\d.]+,\d{2})/); return m ? +m[1].replace(/\./g, '').replace(',', '.') : 0; };
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.pass-comparar');
+    if (b && window.oammlCompararDinheiro) window.oammlCompararDinheiro(b.dataset.prog, +b.dataset.milhas || 0, +b.dataset.taxa || 0);
+  });
   function custoHtml(p) {
     try {
       const v = custoReais(p), teto = tetoDe(p.programa);
@@ -3337,19 +3343,47 @@
   function calcDinheiro() {
     const prog = $('#dm-programa').value, ref = (window.MILHEIROS || {})[prog], nome = NOMES_MILHEIRO[prog] || prog;
     const r = numCampo('#dm-reais'), m = numCampo('#dm-milhas'), t = numCampo('#dm-taxas') || 0;
+    const meu = numCampo('#dm-meu'), n = Math.max(1, Math.min(9, Math.round(numCampo('#dm-pessoas') || 1)));
     const el = $('#dm-resposta');
     if (!r || !m) { el.className = 'termo-resposta'; el.textContent = 'Informe o preço em dinheiro e as milhas pedidas.'; return; }
+    // Quanto cada 1.000 milhas "vale" nessa emissão; a decisão usa o que a pessoa pagou (ou a nossa referência).
     const vale = Math.max(0, (r - t) / m * 1000);
-    const custoMilhas = ref ? m / 1000 * ref + t : null;
+    const milheiro = meu || ref;
+    const comMilhas = milheiro ? m / 1000 * milheiro + t : null;
+    const dif = comMilhas != null ? (r - comMilhas) * n : null;
+    const vez = n > 1 ? ` (${n} passageiros)` : '';
+    const veredito = meu
+      ? (vale >= meu ? { classe: 'barato', selo: 'Use as milhas', html: `Suas milhas custaram ${esc(emReais(meu))} o milheiro e aqui cada 1.000 vale ${esc(emReais(vale))}.` }
+        : { classe: 'caro', selo: 'Pague em dinheiro', html: `Suas milhas custaram ${esc(emReais(meu))} o milheiro, mais do que os ${esc(emReais(vale))} que elas valem aqui.` })
+      : vereditoMilheiro(vale, ref, nome, true);
     respostaCalc(el, {
-      veredito: vereditoMilheiro(vale, ref, nome, true),
-      numeros: [['Cada 1.000 milhas valem', emReais(vale), 'nessa emissão', 'final'], ['Pagando em dinheiro', emReais(r)],
-        ['Com milhas', `${inteiro.format(m)} + ${emReais(t)}`, custoMilhas ? `as milhas custam ~${emReais(custoMilhas - t)}` : '']],
-      texto: ref ? (vale >= ref ? `Usar as milhas aqui rende mais do que elas costumam valer: boa emissão.` : `As milhas renderiam mais em outra emissão: aqui vale guardar e pagar em dinheiro.`) : '',
+      veredito,
+      numeros: [['Cada 1.000 milhas valem', emReais(vale), 'nessa emissão'], ['Pagando em dinheiro', emReais(r * n), vez.trim()],
+        ['Com milhas', comMilhas != null ? emReais(comMilhas * n) : `${inteiro.format(m)} + ${emReais(t)}`, milheiro ? `milheiro de ${emReais(milheiro)}${meu ? ' (o seu)' : ' (referência)'} + taxas` : ''],
+        ...(dif != null ? [[dif >= 0 ? 'Você economiza usando milhas' : 'Você economiza pagando em dinheiro', emReais(Math.abs(dif)), vez.trim(), 'final']] : [])],
+      texto: dif == null ? '' : dif >= 0
+        ? `Usar as milhas sai ${esc(emReais(Math.abs(dif)))} mais barato${esc(vez)}. Confira se há assento em milhas para todos na mesma data.`
+        : `Pagar em dinheiro sai ${esc(emReais(Math.abs(dif)))} mais barato${esc(vez)}: guarde as milhas para uma emissão que renda mais.`,
       passos: [['Preço em dinheiro', emReais(r)], ['Menos as taxas da emissão com milhas', emReais(r - t)], [`÷ ${inteiro.format(m)} milhas × 1.000`, emReais(vale)],
-        ...(ref ? [[`Nossa referência para ${nome}`, emReais(ref)]] : [])]
+        ...(milheiro ? [[`Milhas a ${emReais(milheiro)} o milheiro + taxas`, emReais(comMilhas)], ['Diferença por pessoa', emReais(r - comMilhas)]] : []),
+        ...(n > 1 && dif != null ? [[`× ${n} passageiros`, emReais(Math.abs(dif))]] : []),
+        ...(ref && !meu ? [[`Nossa referência para ${nome}`, emReais(ref)]] : [])]
     });
   }
+  // Atalho dos cartões de passagem: abre esta calculadora com o programa, as milhas e a taxa (quando houver) preenchidos;
+  // a pessoa só digita o preço em dinheiro do mesmo voo, no mesmo dia.
+  window.oammlCompararDinheiro = (programa, milhas, taxa) => {
+    const chave = chaveRef(programa);
+    if (chave && [...$('#dm-programa').options].some(o => o.value === chave)) $('#dm-programa').value = chave;
+    $('#dm-milhas').value = milhas ? inteiro.format(milhas) : '';
+    $('#dm-taxas').value = taxa ? taxa.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '';
+    $('#dm-reais').value = '';
+    location.hash = '#calculadoras';
+    const aba = $(`#calc-aba-${($('#dm-reais').closest('.calc-card').id || '').replace('calc-', '')}`);
+    if (aba) aba.click();
+    calcDinheiro();
+    setTimeout(() => { $('#dm-reais').closest('.calc-card').scrollIntoView({ behavior: 'smooth', block: 'start' }); $('#dm-reais').focus({ preventScroll: true }); }, 250);
+  };
   function calcPontos() {
     const p = numCampo('#pm-pontos'), prop = numCampo('#pm-prop') || 1, bonus = numCampo('#pm-bonus') || 0;
     const el = $('#pm-resposta');
@@ -3608,7 +3642,7 @@
     });
     ['#cc-qtd', '#cc-preco', '#cc-desc', '#cc-prop', '#cc-bonus'].forEach(id => $(id).addEventListener('input', calcCompra));
     ['#ca-origem', '#ca-destino', '#ca-total', '#ca-conta', '#ca-preco', '#ca-preco-conta', '#ca-bonus'].forEach(id => $(id).addEventListener('input', calcCarrinho));
-    ['#dm-programa', '#dm-reais', '#dm-milhas', '#dm-taxas'].forEach(id => $(id).addEventListener('input', calcDinheiro));
+    ['#dm-programa', '#dm-reais', '#dm-milhas', '#dm-taxas', '#dm-meu', '#dm-pessoas'].forEach(id => $(id).addEventListener('input', calcDinheiro));
     ['#pm-pontos', '#pm-prop', '#pm-bonus'].forEach(id => $(id).addEventListener('input', calcPontos));
     ['#ac-pontos', '#ac-origem', '#ac-preco', '#ac-bonus'].forEach(id => $(id).addEventListener('input', calcAccor));
     calcCompra(); calcCarrinho(); calcDinheiro(); calcPontos(); calcAccor();

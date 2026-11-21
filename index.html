@@ -49,7 +49,7 @@
 .sem-entrada #entrada{display:none}
 @media (prefers-reduced-motion:reduce){#entrada{display:none}}
 </style>
-<link rel="stylesheet" href="estilo.css?v=147">
+<link rel="stylesheet" href="estilo.css?v=148">
 <link rel="stylesheet" href="ajustes.css?v=7">
 <link rel="stylesheet" href="rotas-aereas.css?v=4">
 </head>
@@ -422,6 +422,8 @@
           <label>Preço em dinheiro (R$)<input id="dm-reais" type="text" data-num="reais" inputmode="decimal" placeholder="ex.: 1.800,00"></label>
           <label>Milhas pedidas<input id="dm-milhas" type="text" data-num="milhar" inputmode="numeric" placeholder="ex.: 60.000"></label>
           <label>Taxas pagas na emissão com milhas (R$)<input id="dm-taxas" type="text" data-num="reais" inputmode="decimal" placeholder="ex.: 120,00"></label>
+          <label>Quanto você pagou por 1.000 milhas (R$, opcional)<input id="dm-meu" type="text" data-num="reais" inputmode="decimal" placeholder="em branco: nossa referência"></label>
+          <label>Passageiros<input id="dm-pessoas" type="number" inputmode="numeric" min="1" max="9" step="1" value="1"></label>
           <p class="termo-resposta" id="dm-resposta" aria-live="polite"></p>
         </article>
 
@@ -1442,7 +1444,7 @@
 <script src="planilha.js?v=2"></script>
 <script src="navegacao.js?v=1"></script>
 <script src="programas-base.js?v=3"></script>
-<script src="app.js?v=137"></script>
+<script src="app.js?v=138"></script>
 <script src="interface.js?v=1"></script>
 <script src="funil.js?v=8"></script>
 <script type="module" src="assinatura.js?v=56"></script>

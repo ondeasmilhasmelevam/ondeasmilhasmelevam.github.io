@@ -2295,3 +2295,7 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .ja-assina .lead-campos{display:flex;flex-wrap:wrap;gap:10px}
 .ja-assina .lead-campos .cta{text-decoration:none}
 .preco-regua.sem{background:none}
+
+/* Atalho do cartão de passagem para a calculadora "Pagar em dinheiro ou com milhas?" */
+.pass-comparar{display:inline-flex;align-items:center;gap:6px;margin:-4px 0 10px;padding:6px 12px;border-radius:999px;border:1px solid rgba(226,180,88,.45);background:rgba(226,180,88,.08);color:var(--ouro-lt);font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.pass-comparar:hover{background:rgba(226,180,88,.16)}
