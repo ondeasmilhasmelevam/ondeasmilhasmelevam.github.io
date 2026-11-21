@@ -2299,3 +2299,17 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 /* Atalho do cartão de passagem para a calculadora "Pagar em dinheiro ou com milhas?" */
 .pass-comparar{display:inline-flex;align-items:center;gap:6px;margin:-4px 0 10px;padding:6px 12px;border-radius:999px;border:1px solid rgba(226,180,88,.45);background:rgba(226,180,88,.08);color:var(--ouro-lt);font:inherit;font-size:13px;font-weight:700;cursor:pointer}
 .pass-comparar:hover{background:rgba(226,180,88,.16)}
+
+/* Por onde chego mais barato (Transferências, modo "Quero milhas em…") */
+.transf-caminhos{margin-top:14px}
+.cam-lista{list-style:none;margin:10px 0;padding:0;display:grid;gap:8px}
+.cam-lista li{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:6px 14px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--ink)}
+.cam-lista li.com-custo{border-color:rgba(226,180,88,.35)}
+.cam-lista li:first-child.com-custo{border-color:var(--ouro);box-shadow:0 0 0 1px rgba(226,180,88,.25)}
+.cam-passos{font-weight:700;color:var(--rice);font-size:14.5px}
+.cam-passos i{font-style:normal;color:var(--ouro);margin:0 2px}
+.cam-prop{display:grid;font-size:13.5px;color:var(--ash)}
+.cam-prop small,.cam-custo small{font-size:11.5px;color:var(--ash-dim);line-height:1.35}
+.cam-custo{display:grid;justify-items:end;text-align:right}
+.cam-custo b{font-size:17px;color:var(--ouro-lt);font-variant-numeric:tabular-nums}
+@media (max-width:640px){.cam-lista li{grid-template-columns:1fr}.cam-custo{justify-items:start;text-align:left}}

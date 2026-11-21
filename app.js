@@ -1402,8 +1402,59 @@
         <header><p class="eyebrow">Como chegar em</p><h3>${esc(atual)}</h3>
           <p>${chegam.length} ${chegam.length === 1 ? 'programa transfere' : 'programas transferem'} para cá.${sem ? ` ${esc(sem.caminho)}` : ''}</p></header>
         <ul class="transf-lista">${cab.replace('Programa', 'Seus pontos em')}${chegam.map(([o, d]) => destinoLinha(d, o.nome)).join('')}</ul>
-      </article>`;
+      </article>${caminhosHtml(atual)}`;
     }
+  }
+
+  // "Por onde chego mais barato": caminhos diretos e em dois passos (banco → programa do meio → destino) até o programa,
+  // com quantos pontos viram 1 milha (as proporções se multiplicam) e, quando o ponto tem preço de compra na nossa
+  // tabela (Livelo, Esfera), o milheiro final em reais sem bônus e com o maior bônus que costuma aparecer.
+  const pontosPorMilha = t => { const m = /^\s*(\d+(?:,\d+)?)\s*:\s*(\d+(?:,\d+)?)/.exec(t || ''); return m ? Number(m[1].replace(',', '.')) / Number(m[2].replace(',', '.')) : null; };
+  const maiorBonus = t => /sem campanha/i.test(t || '') ? 0 : Math.max(0, ...((t || '').match(/\d+(?=\s*%)/g) || []).map(Number)) / 100;
+  const precoTabela = nome => {
+    const n = norm(nome), P = window.PRECO_MILHAS || [];
+    const alvo = /IBERIA|BRITISH|QATAR|PRIVILEGE|AVIOS/.test(n) ? 'AVIOS' : /AEGEAN/.test(n) ? 'MILES+BONUS' : /JAL/.test(n) ? 'JAL' : n;
+    const p = P.find(x => norm(x.nome) === alvo || norm(x.nome).startsWith(alvo) || alvo.startsWith(norm(x.nome)));
+    const v = p && /^R\$/.test(p.preco.trim()) && (p.preco.match(/\d+/g) || []);
+    return v ? Math.max(...v.map(Number)) : null;
+  };
+  const numPontos = x => x.toLocaleString('pt-BR', { maximumFractionDigits: 2 });
+  function caminhosHtml(destino) {
+    if (!transf) return '';
+    const origem = nome => transf.origens.find(o => o.nome === nome);
+    const caminhos = [];
+    for (const o of transf.origens) {
+      const d = o.destinos.find(x => x.programa === destino);
+      if (d) caminhos.push({ passos: [o.nome, destino], prop: pontosPorMilha(d.proporcao), bonus: maiorBonus(d.bonus), detalhe: d.proporcao, cond: d.obs });
+      for (const meio of o.destinos) { // dois passos: o programa do meio também é origem e chega no destino
+        const m = origem(meio.programa), d2 = m && m.nome !== o.nome && m.destinos.find(x => x.programa === destino);
+        if (!d2) continue;
+        const p1 = pontosPorMilha(meio.proporcao), p2 = pontosPorMilha(d2.proporcao);
+        caminhos.push({ passos: [o.nome, m.nome, destino], prop: p1 && p2 ? p1 * p2 : null, bonus: (1 + maiorBonus(meio.bonus)) * (1 + maiorBonus(d2.bonus)) - 1,
+          detalhe: `${meio.proporcao} e depois ${d2.proporcao}` });
+      }
+    }
+    if (!caminhos.length) return '';
+    caminhos.forEach(c => {
+      const preco = precoTabela(c.passos[0]);
+      c.sem = preco && c.prop ? preco * c.prop : null;
+      c.com = c.sem != null ? c.sem / (1 + c.bonus) : null;
+    });
+    caminhos.sort((a, b) => (a.com == null) - (b.com == null) || (a.com ?? 0) - (b.com ?? 0) || (a.prop ?? 99) - (b.prop ?? 99));
+    const direto = precoTabela(destino);
+    const linha = c => `<li class="${c.com != null ? 'com-custo' : ''}">
+        <span class="cam-passos">${c.passos.map(esc).join(' <i>→</i> ')}</span>
+        <span class="cam-prop">${c.prop ? `${esc(numPontos(c.prop))} ${c.prop === 1 ? 'ponto' : 'pontos'} = 1 milha` : esc(c.detalhe)}${c.passos.length > 2 ? `<small>${esc(c.detalhe)}</small>` : ''}</span>
+        <span class="cam-custo">${c.com != null
+          ? `<b>${esc(emReais(c.com))}</b><small>${c.bonus ? `o milheiro com ${esc(decimal.format(c.bonus * 100))}% de bônus · ${esc(emReais(c.sem))} sem bônus` : 'o milheiro · sem campanha de bônus nesse caminho'}</small>`
+          : `<small>custo depende de quanto seus pontos custaram${c.bonus ? ` · bônus de até ${esc(decimal.format(c.bonus * 100))}%` : ''}</small>`}</span>
+      </li>`;
+    return `<article class="transf-card transf-caminhos">
+      <header><p class="eyebrow">Por onde chego mais barato</p><h3>Todos os caminhos até ${esc(destino)}</h3>
+        <p>Direto do banco ou passando por outro programa. Quando os pontos têm preço de compra na nossa tabela, mostramos quanto sai cada 1.000 milhas no fim.${direto ? ` Para comparar: comprando ${esc(destino)} direto, um bom preço é até <b>${esc(emReais(direto))}</b> o milheiro.` : ''}</p></header>
+      <ul class="cam-lista">${caminhos.map(linha).join('')}</ul>
+      <p class="fine">Estimativa: usa o preço de compra da nossa tabela e o maior bônus que já apareceu em cada caminho, não o de hoje. Proporções e regras mudam: confira no site do programa e confirme o assento antes de transferir, porque transferência não volta.</p>
+    </article>`;
   }
   async function desenharTransferencias() {
     try {
