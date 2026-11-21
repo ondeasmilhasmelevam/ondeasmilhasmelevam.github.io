@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10051",
+  "data": "2026-11-21T15:52:50Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Caldas Novas",
+  "destino_iata": "CLV",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "18.200 milhas + Taxas",
+  "volta": "18.200 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-smiles-GRU-JFK-exe",
   "data": "2026-11-21T15:39:52.976192Z",
   "fonte": "seats.aero",
