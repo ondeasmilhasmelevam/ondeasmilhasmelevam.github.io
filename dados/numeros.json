@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-20T22:18:55.554189Z",
+ "atualizado": "2026-11-21T04:12:24.893451Z",
  "dias": 30,
- "passagens": 3464,
+ "passagens": 3481,
  "promocoes": 210,
  "destinos": 176,
- "executiva": 745,
+ "executiva": 747,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1083,
+  "passagens": 1092,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -512,6 +512,19 @@
     "regiao": "europa"
    },
    {
+    "id": "2008590742-16189",
+    "origem": "Belo Horizonte",
+    "origem_iata": "CNF",
+    "destino": "Curaçao",
+    "destino_iata": "CUR",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-21T01:00:44Z",
+    "milhas": 78000,
+    "nivel": "bom",
+    "regiao": "caribe"
+   },
+   {
     "id": "2008590742-15707",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -924,19 +937,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-17T13:53:48Z",
     "milhas": 11200,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9780",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Aracaju",
-    "destino_iata": "AJU",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-16T18:43:49Z",
-    "milhas": 12040,
     "nivel": "",
     "regiao": "brasil"
    },

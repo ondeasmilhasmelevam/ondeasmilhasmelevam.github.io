@@ -1,5 +1,243 @@
 [
  {
+  "id": "3761373661-10029",
+  "data": "2026-11-21T01:40:14Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.200 milhas + R$ 62,14 de taxas",
+  "volta": "11.200 milhas + R$ 34,54 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16190",
+  "data": "2026-11-21T01:04:12Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "43.000 milhas + R$ 343,68 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16189",
+  "data": "2026-11-21T01:00:44Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Curaçao",
+  "destino_iata": "CUR",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "78.000 milhas + Taxas",
+  "volta": "",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-16188",
+  "data": "2026-11-21T01:00:41Z",
+  "origem": "São Paulo",
+  "origem_iata": "SAO",
+  "destino": "Punta Del Este",
+  "destino_iata": "PDP",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "35.000 milhas + Taxas",
+  "volta": "35.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-16187",
+  "data": "2026-11-21T00:59:24Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Punta Del Este",
+  "destino_iata": "PDP",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "15.000 milhas + Taxas",
+  "volta": "15.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-10028",
+  "data": "2026-11-21T00:01:17Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "9.300 milhas + R$ 35,15 de taxas",
+  "volta": "9.300 milhas + R$ 35,75 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10027",
+  "data": "2026-11-21T00:00:53Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Belo Horizonte",
+  "destino_iata": "CNF",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "12.000 milhas + R$ 34,54 de taxas",
+  "volta": "12.000 milhas + R$ 35,15 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2361370250-6891",
+  "data": "2026-11-20T23:58:40Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Fort Lauderdale",
+  "destino_iata": "FLL",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "50.000 milhas + CAD 122,90 de taxas",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
+  "id": "3761373661-10026",
+  "data": "2026-11-20T23:49:51Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "TOTAL (Ida e Volta): 8.793 milhas + R$ 84,50 em Taxas",
+  "volta": "TOTAL (Ida e Volta): 8.793 milhas + R$ 84,50 em Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10025",
+  "data": "2026-11-20T23:49:43Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "TOTAL (Ida e Volta): 12.069 milhas + R$ 84,66 em Taxas",
+  "volta": "TOTAL (Ida e Volta): 12.069 milhas + R$ 84,66 em Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10024",
+  "data": "2026-11-20T23:49:40Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "TOTAL (Ida e Volta): 12.412 milhas + R$ 111,44 em Taxas",
+  "volta": "TOTAL (Ida e Volta): 12.412 milhas + R$ 111,44 em Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10023",
+  "data": "2026-11-20T23:49:33Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Manaus",
+  "destino_iata": "MAO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "TOTAL (Ida e Volta): 19.153 milhas + R$ 109,62 em Taxas",
+  "volta": "TOTAL (Ida e Volta): 15.943 milhas + R$ 109,62 em Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2361370250-6890",
+  "data": "2026-11-20T23:49:27Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "TAP",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "TOTAL (Ida e Volta): 313.750 milhas + R$ 385,30 em Taxas",
+  "volta": "TOTAL (Ida e Volta): 313.750 milhas + R$ 385,30 em Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16186",
+  "data": "2026-11-20T23:49:04Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Cartagena",
+  "destino_iata": "CTG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "TOTAL (Ida e Volta): 34.068 milhas + R$ 612,07 em Taxas",
+  "volta": "TOTAL (Ida e Volta): 34.068 milhas + R$ 612,07 em Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16185",
+  "data": "2026-11-20T23:49:00Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Cartagena",
+  "destino_iata": "CTG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "TOTAL (Ida e Volta): 55.447 milhas + R$ 627,94 em Taxas",
+  "volta": "TOTAL (Ida e Volta): 55.447 milhas + R$ 627,94 em Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16184",
+  "data": "2026-11-20T23:48:53Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Cartagena",
+  "destino_iata": "CTG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "TOTAL (Ida e Volta): 80.129 milhas + R$ 637,48 em Taxas",
+  "volta": "TOTAL (Ida e Volta): 80.129 milhas + R$ 637,48 em Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16183",
+  "data": "2026-11-20T23:48:47Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Cartagena",
+  "destino_iata": "CTG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "55.447 milhas + R$ 261,01",
+  "volta": "55.447 milhas + R$ 379,20",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-16180",
   "data": "2026-11-20T21:09:02Z",
   "origem": "Manaus",
@@ -12,20 +250,6 @@
   "ida": "57.000 milhas + R$ 344,99 de taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16179",
-  "data": "2026-11-20T20:59:26Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "47.960 milhas + Taxas",
-  "volta": "50.910 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "3761373661-10021",
@@ -54,6 +278,20 @@
   "ida": "21.100 milhas + Taxas",
   "volta": "21.900 milhas + Taxas",
   "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16179",
+  "data": "2026-11-20T20:59:26Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "47.960 milhas + Taxas",
+  "volta": "50.910 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "2008590742-16178",
@@ -2469,24 +2707,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "1290836068-7893",
-  "data": "2026-11-19T13:50:17Z",
-  "tipo": "promocao",
-  "titulo": "ALL SIGNATURE: PRÉ-BLACK FRIDAY COM 20% OFF NA ASSINATURA",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Garanta 20% de desconto em novos planos do ALL Signature utilizando o cupom PREBLACK2026.",
-  "detalhes": [
-   "20% OFF na primeira cobrança com o cupom PREBLACK2026."
-  ],
-  "parceiros": "ALL Accor",
-  "validade": "20/11/2026",
-  "links": [
-   "https://all.accor.com/a/pt-br/loyalty-program/subscription-program/all-signature.html"
-  ],
-  "ate": "2026-11-20T23:59:59-03:00"
- },
- {
   "id": "1290836068-7892",
   "data": "2026-11-19T13:50:12Z",
   "tipo": "promocao",
@@ -2527,65 +2747,6 @@
   "ate": "2026-11-30T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7889",
-  "data": "2026-11-19T13:49:58Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FIDELIDADE: UPGRADE DE CLUBE ANUAL COM ATÉ 600.000 PONTOS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Faça o upgrade para um plano anual do Clube Azul e acumule até 600.000 pontos em 1 ano.",
-  "detalhes": [
-   "Clube 2.000: 31.000 pontos bônus",
-   "Clube 5.000: 80.000 pontos bônus",
-   "Clube 10.000: 170.000 pontos bônus",
-   "Clube 20.000: 360.000 pontos bônus"
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "20/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/upgrade-clube"
-  ],
-  "ate": "2026-11-20T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7885",
-  "data": "2026-11-19T13:49:39Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass: COMPRE MILHAS COM ATÉ 66% DE DESCONTO",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Compre milhas no LATAM Pass com até 66% de desconto para assinantes e portadores de cartões elegíveis.",
-  "detalhes": [
-   "63% OFF para todos os clientes cadastrados ou assinantes do Clube LATAM Pass (R$ 25,90).",
-   "66% OFF para titulares de cartão LATAM Pass Itaú (R$ 23,80)."
-  ],
-  "parceiros": "LATAM Pass",
-  "validade": "20/11/2026",
-  "links": [
-   "https://latampass.com/facilidades/compra-milhas/lp"
-  ],
-  "ate": "2026-11-20T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7884",
-  "data": "2026-11-19T13:49:35Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass & PREMMIA: RESGATE VOUCHERS DE COMBUSTÍVEL COM ATÉ 42% OFF",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Resgate vouchers de R$ 40 em combustível Premmia no Shopping LATAM Pass com descontos de até 42%.",
-  "detalhes": [
-   "Até 42% OFF para clientes com cartão LATAM Pass Itaú e Clube LATAM Pass.",
-   "35% OFF para demais clientes elegíveis."
-  ],
-  "parceiros": "LATAM Pass, Premmia",
-  "validade": "20/11/2026",
-  "links": [
-   "https://shopping.latampass.latam.com/pt_br/transferenciapremmia"
-  ],
-  "ate": "2026-11-20T23:59:59-03:00"
- },
- {
   "id": "1290836068-7883",
   "data": "2026-11-19T13:49:30Z",
   "tipo": "promocao",
@@ -2603,29 +2764,6 @@
    "https://www.esfera.com.vc/esfera-viagens"
   ],
   "ate": "2026-11-22T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7882",
-  "data": "2026-11-19T13:49:25Z",
-  "tipo": "promocao",
-  "titulo": "CLUBE ESFERA: ASSINE OU ATUALIZE SEU PLANO COM ATÉ 300% DE BÔNUS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Ganhe até 300% de bônus em 12 meses ao assinar ou realizar o upgrade imediato para um plano superior do Clube Esfera.",
-  "detalhes": [
-   "PRO: 3.000 pontos bônus",
-   "",
-   "MASTER: 7.500 pontos bônus",
-   "VIP: 15.000 pontos bônus",
-   "",
-   "EXCLUSIVE: 60.000 pontos bônus"
-  ],
-  "parceiros": "Esfera",
-  "validade": "20/11/2026",
-  "links": [
-   "https://www.esfera.com.vc/clube"
-  ],
-  "ate": "2026-11-20T23:59:59-03:00"
  },
  {
   "id": "1290836068-7880",
@@ -3444,118 +3582,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-9943",
-  "data": "2026-11-19T02:44:52Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "10.400 milhas + R$ 34,54 de taxas",
-  "volta": "10.400 milhas + R$ 33,44 de taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16050",
-  "data": "2026-11-19T01:00:43Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "29.000 milhas + R$ 108,17 de taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16049",
-  "data": "2026-11-19T00:24:41Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "56.000 milhas + R$ 340,63 de taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9940",
-  "data": "2026-11-19T00:10:47Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Salvador",
-  "destino_iata": "SSA",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "15.000 milhas + R$ 35,15 de taxas",
-  "volta": "15.000 milhas + R$ 52,72 de taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-9939",
-  "data": "2026-11-19T00:01:20Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Recife",
-  "destino_iata": "REC",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "17.000 milhas + R$ 35,15 de taxas",
-  "volta": "19.000 milhas + R$ 60,54 de taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-9937",
-  "data": "2026-11-18T23:37:59Z",
-  "origem": "Vitória",
-  "origem_iata": "VIX",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "GOL Linhas Aéreas",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "10.600 milhas + Taxas",
-  "volta": "10.600 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16048",
-  "data": "2026-11-18T23:37:52Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "GOL Linhas Aéreas",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "37.500 milhas + Taxas",
-  "volta": "37.500 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-6807",
-  "data": "2026-11-18T22:28:03Z",
-  "origem": "Toronto",
-  "origem_iata": "YYZ",
-  "destino": "Abu Dhabi",
-  "destino_iata": "AUH",
-  "companhia": "Etihad Airways",
-  "cabine": "Primeira Classe",
-  "programa": "AAdvantage",
-  "ida": "115.000 milhas + R$ 327,25",
-  "volta": "115.000 milhas + R$ 210,72",
-  "link_nome": "AAdvantage"
- },
- {
   "id": "1290836068-7870",
   "data": "2026-11-18T20:14:01Z",
   "tipo": "promocao",
@@ -3575,27 +3601,6 @@
    "https://www.voeazul.com.br/br/pt/ofertas/azul-friday-cartao-azul-itau"
   ],
   "ate": "2026-12-30T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7861",
-  "data": "2026-11-18T14:30:33Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFIRA PONTOS INTER LOOP PARA LATAM Pass E GANHE 25% DE BÔNUS + 1.000 MILHAS EXTRAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira pontos do Inter Loop para o LATAM Pass e ganhe até 25% de bônus em milhas, além de 1.000 milhas extras na primeira transferência. Promoção válida até 20/11/2026.",
-  "detalhes": [
-   "Bônus de até 25% sobre os pontos transferidos do Inter Loop para LATAM Pass.",
-   "1.000 milhas bônus na primeira transferência.",
-   "Crédito das milhas bônus em até 30 dias após a transferência.",
-   "Pontos transferidos terão validade de 36 meses a partir da data de crédito."
-  ],
-  "parceiros": "Inter Loop, LATAM Pass",
-  "validade": "20/11/2026",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/inter-milhas-extras"
-  ],
-  "ate": "2026-11-20T23:59:59-03:00"
  },
  {
   "id": "1290836068-7859",
@@ -3664,28 +3669,6 @@
    "https://www.smiles.com.br/portal/campanhas/orangefriday-bancos-17-11-2026"
   ],
   "ate": "2026-12-02T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7839",
-  "data": "2026-11-17T16:34:11Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass: DESCONTO DE ATÉ 42% EM VOUCHERS DE COMBUSTÍVEL PREMMIA",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "LATAM Pass oferece até 42% de desconto na troca de milhas por vouchers de combustível Premmia de R$ 40. O valor varia de R$ 26,19 a R$ 29,09 por 1.000 milhas, dependendo do perfil. Cada CPF pode resgatar até dois vouchers, totalizando R$ 80.",
-  "detalhes": [
-   "até 42% de desconto na troca de milhas por vouchers de combustível Premmia de R$ 40",
-   "valor de até R$ 29,09 por cada 1.000 milhas trocadas",
-   "cada CPF pode resgatar até dois vouchers, totalizando R$ 80",
-   "milhas por voucher variam conforme perfil",
-   "crédito disponibilizado em até dois dias úteis"
-  ],
-  "parceiros": "LATAM Pass",
-  "validade": "até sexta-feira (20/11)",
-  "links": [
-   "https://link.dia23.com.br/r/Askzqcj"
-  ],
-  "ate": "2026-11-20T23:59:59-03:00"
  },
  {
   "id": "1290836068-7838",
@@ -3763,7 +3746,7 @@
   "origem_iata": "GRU",
   "destino": "Dallas",
   "destino_iata": "DFW",
-  "companhia": "American",
+  "companhia": "American / Avianca",
   "cabine": "Executiva",
   "programa": "Smiles",
   "ida": "250.000 milhas + taxas",
@@ -3844,6 +3827,21 @@
   "ida": "70.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "seats-smiles-GRU-PUJ-eco",
+  "data": "2026-11-12T05:14:55.794608Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Punta Cana",
+  "destino_iata": "PUJ",
+  "companhia": "American / Avianca / GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "99.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-GIG-CDG-eco",
@@ -3951,6 +3949,21 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "seats-smiles-BSB-MIA-eco",
+  "data": "2026-11-11T00:03:25.922708Z",
+  "fonte": "seats.aero",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "American / Avianca / Copa",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "83.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-smiles-GIG-DFW-eco",
   "data": "2026-11-11T00:03:25.922708Z",
   "fonte": "seats.aero",
@@ -3962,21 +3975,6 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "92.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "seats-smiles-BSB-MIA-eco",
-  "data": "2026-11-11T00:03:25.922708Z",
-  "fonte": "seats.aero",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "American / Avianca / Copa",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "93.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -4011,6 +4009,21 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "seats-smiles-GIG-JFK-exe",
+  "data": "2026-11-10T00:03:03.524369Z",
+  "fonte": "seats.aero",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American / Avianca",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "223.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-azul-VCP-OPO-eco",
   "data": "2026-11-10T00:03:03.524369Z",
   "fonte": "seats.aero",
@@ -4037,21 +4050,6 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "118.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "seats-smiles-GIG-JFK-exe",
-  "data": "2026-11-10T00:03:03.524369Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Nova York",
-  "destino_iata": "JFK",
-  "companhia": "American",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "252.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -4144,6 +4142,21 @@
   "ida": "80.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "seats-smiles-BSB-CUN-eco",
+  "data": "2026-11-09T00:05:14.410466Z",
+  "fonte": "seats.aero",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Cancún",
+  "destino_iata": "CUN",
+  "companhia": "American / Avianca / GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "99.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-FOR-CDG-eco",
@@ -4291,7 +4304,7 @@
   "companhia": "Iberia / LATAM",
   "cabine": "Econômica",
   "programa": "Iberia Plus",
-  "ida": "16.000 Avios + taxas",
+  "ida": "19.500 Avios + taxas",
   "volta": "",
   "link_nome": "Iberia Plus"
  },
@@ -4399,25 +4412,6 @@
   "ida": "39.000 Avios + taxas",
   "volta": "",
   "link_nome": "Iberia Plus"
- },
- {
-  "id": "1290836068-7557",
-  "data": "2026-11-02T12:21:37Z",
-  "tipo": "promocao",
-  "titulo": "ALL ACCOR+ RESERVE E GANHE ATÉ 9.000 PONTOS REWARD EXTRAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assinantes ALL Accor+ ganham até 9.000 pontos Reward extras ao realizar e concluir uma hospedagem elegível.",
-  "detalhes": [
-   "ALL Accor+ Voyager: 9.000 pontos Reward extras.",
-   "ALL Accor+ ibis: 5.000 pontos Reward extras."
-  ],
-  "parceiros": "ALL Accor",
-  "validade": "20/11/2026",
-  "links": [
-   "https://all.accor.com/a/en/offers/all-accor---mega-bonus-offer.html"
-  ],
-  "ate": "2026-11-20T23:59:59-03:00"
  },
  {
   "id": "1290836068-7538",
