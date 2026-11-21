@@ -3183,48 +3183,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16072",
-  "data": "2026-11-19T16:38:28Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Assunção",
-  "destino_iata": "ASU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "38.300 milhas LATAM Pass + Taxas",
-  "volta": "38.300 milhas LATAM Pass + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16071",
-  "data": "2026-11-19T16:38:17Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "34.100 milhas LATAM Pass + Taxas",
-  "volta": "34.100 milhas LATAM Pass + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-9988",
-  "data": "2026-11-19T16:38:10Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "11.800 milhas Smiles + Taxas",
-  "volta": "11.800 milhas Smiles + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7892",
   "data": "2026-11-19T13:50:12Z",
   "tipo": "promocao",
