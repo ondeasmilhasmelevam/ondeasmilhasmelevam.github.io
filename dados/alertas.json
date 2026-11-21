@@ -3190,34 +3190,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-9959",
-  "data": "2026-11-19T11:51:56Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "16.200 milhas",
-  "volta": "16.200 milhas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16063",
-  "data": "2026-11-19T11:49:05Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "Punta Cana",
-  "destino_iata": "PUJ",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "75.500 milhas + Taxas",
-  "volta": "75.500 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7870",
   "data": "2026-11-18T20:14:01Z",
   "tipo": "promocao",
