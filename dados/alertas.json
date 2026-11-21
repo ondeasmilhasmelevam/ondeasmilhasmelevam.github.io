@@ -3913,7 +3913,7 @@
   "origem_iata": "GIG",
   "destino": "Miami",
   "destino_iata": "MIA",
-  "companhia": "American / Avianca / Copa",
+  "companhia": "American / Avianca / GOL",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "81.000 milhas + taxas",
@@ -3981,21 +3981,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-GIG-JFK-exe",
-  "data": "2026-11-10T00:03:03.524369Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Nova York",
-  "destino_iata": "JFK",
-  "companhia": "American / Avianca",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "223.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-azul-VCP-OPO-eco",
   "data": "2026-11-10T00:03:03.524369Z",
   "fonte": "seats.aero",
@@ -4022,6 +4007,21 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "118.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "seats-smiles-GIG-JFK-exe",
+  "data": "2026-11-10T00:03:03.524369Z",
+  "fonte": "seats.aero",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American / Avianca",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "252.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
