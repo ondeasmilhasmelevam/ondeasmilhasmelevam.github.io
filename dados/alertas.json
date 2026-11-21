@@ -3042,48 +3042,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-9986",
-  "data": "2026-11-19T14:55:01Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "20.100 milhas + Taxas",
-  "volta": "21.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16070",
-  "data": "2026-11-19T14:53:51Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "Buenos Aires",
-  "destino_iata": "AEP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "32.000 milhas + R$ 108,17 de taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-6815",
-  "data": "2026-11-19T14:51:42Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Porto",
-  "destino_iata": "OPO",
-  "companhia": "TAP Air Portugal",
-  "cabine": "Executiva",
-  "programa": "TAP Miles&Go",
-  "ida": "135.000 milhas + R$ 209",
-  "volta": "135.000 milhas + R$ 410",
-  "link_nome": "TAP Miles&Go"
- },
- {
   "id": "1290836068-7892",
   "data": "2026-11-19T13:50:12Z",
   "tipo": "promocao",
