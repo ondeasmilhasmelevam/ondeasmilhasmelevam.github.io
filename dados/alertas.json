@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-16198",
+  "data": "2026-11-21T13:57:48Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "25.980 milhas + Taxas",
+  "volta": "25.980 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16197",
+  "data": "2026-11-21T13:57:19Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "65.000 milhas + Taxas",
+  "volta": "",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-10041",
   "data": "2026-11-21T13:51:19Z",
   "origem": "Cuiabá",
@@ -518,6 +546,20 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "2008590742-16179",
+  "data": "2026-11-20T20:59:26Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "47.960 milhas + Taxas",
+  "volta": "50.910 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-10021",
   "data": "2026-11-20T20:59:26Z",
   "origem": "Belo Horizonte",
@@ -544,20 +586,6 @@
   "ida": "21.100 milhas + Taxas",
   "volta": "21.900 milhas + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16179",
-  "data": "2026-11-20T20:59:26Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "47.960 milhas + Taxas",
-  "volta": "50.910 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "2008590742-16178",
