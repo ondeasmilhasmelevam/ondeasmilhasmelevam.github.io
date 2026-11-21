@@ -2313,3 +2313,23 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .cam-custo{display:grid;justify-items:end;text-align:right}
 .cam-custo b{font-size:17px;color:var(--ouro-lt);font-variant-numeric:tabular-nums}
 @media (max-width:640px){.cam-lista li{grid-template-columns:1fr}.cam-custo{justify-items:start;text-align:left}}
+
+/* Histórico de preços, visão por programa */
+#hist-modo{margin:0 0 12px}
+#hist-progs small{opacity:.7;margin-left:4px}
+.hp-regiao{list-style:none;margin:0 0 18px;padding:0}
+.hp-regiao h3{margin:6px 0 10px;font-size:17px;color:var(--rice)}
+.hp-regiao h3 small{font-size:12px;color:var(--ash);font-weight:600}
+.hp-cab{margin:0 0 12px}
+.hp-cab-t{margin:0 0 6px;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro)}
+.hp-cab ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.hp-linha{display:grid;grid-template-columns:1.4fr auto;gap:4px 14px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--ink-2)}
+.hp-dest{display:grid;min-width:0}
+.hp-dest b{font-size:15px;color:var(--rice)}
+.hp-dest b small,.hp-dest span{font-size:12px;color:var(--ash);font-weight:600}
+.hp-min{display:grid;justify-items:end;text-align:right}
+.hp-min b{font-size:18px;color:var(--ouro-lt);font-variant-numeric:tabular-nums}
+.hp-min small{font-size:12px;color:var(--ash)}
+.hp-info{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;font-size:12px;color:var(--ash-dim)}
+.hp-info a{color:var(--ouro)}
+.hp-mais{margin-top:8px;font:inherit;font-size:13px;font-weight:700;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--ouro);cursor:pointer}

@@ -996,6 +996,90 @@ async function carregarHistorico() {
     historicoRotas = Object.values((await r.json()).rotas || {}).map(r => ({ ...r, p: OAMMLProgramas.estatisticas(r.p) }));
   } catch (e) { historicoRotas = null; $('#hist-info').textContent = 'Não deu para carregar o histórico agora. Tente de novo em instantes.'; }
 }
+// Visão "Por programa": tenho este programa, qual o menor preço que ele já deu, por região e cabine?
+// Junta ida e volta da mesma rota (a ponta de fora do Brasil é o destino) e mostra o menor visto por trecho,
+// o valor aproximado em reais (milheiro de referência), de onde saiu, quantas vezes e quando.
+let histModo = 'rota', histProg = '', histAeros = null, histAbertos = new Set();
+const REGIAO_PAIS = (() => {
+  const g = { 'América do Sul': 'AR CL UY PY BO PE CO EC VE GY SR', 'América do Norte': 'US CA MX',
+    'América Central e Caribe': 'PA CR CU DO JM AW CW BS PR SV GT HN NI BZ BB TT LC SX BQ KY TC VG VI MQ GP HT',
+    'Europa': 'PT ES FR IT GB DE NL CH AT BE IE GR FI DK SE NO CZ HU PL HR IS LU MT RO BG RS SI SK EE LV LT MC CY AL ME BA MK',
+    'África': 'ZA MA EG ET AO MZ NA MU TZ KE CV SN NG GH TN SC MG RW BW ZW CM CI DZ',
+    'Oriente Médio': 'AE QA SA IL JO OM BH KW TR LB', 'Ásia': 'JP CN HK SG TH KR IN MY ID PH LK MV VN TW MO KH NP',
+    'Oceania': 'AU NZ FJ PF NC' };
+  const m = {};
+  for (const [r, cs] of Object.entries(g)) cs.split(' ').forEach(c => { m[c] = r; });
+  return m;
+})();
+const ORDEM_REGIAO = ['Europa', 'América do Norte', 'América do Sul', 'América Central e Caribe', 'África', 'Oriente Médio', 'Ásia', 'Oceania', 'Brasil', 'Outros']; // internacionais primeiro; nacionais no fim
+async function aerosHist() {
+  if (histAeros) return histAeros;
+  try { histAeros = await (await fetch('dados/aeroportos.json')).json(); } catch (e) { histAeros = {}; }
+  return histAeros;
+}
+function porPrograma() {
+  // Aeroportos que faltam (ou vêm sem país) em dados/aeroportos.json
+  const EXTRA = { AMS: 'NL', MOC: 'BR', SJP: 'BR', CXJ: 'BR', CKS: 'BR', UBA: 'BR', RIA: 'BR', URG: 'BR', LEC: 'BR', ITB: 'BR', PET: 'BR', SJU: 'PR', CUZ: 'PE', JED: 'SA' };
+  const A = histAeros || {}, pais = i => (A[i] || [])[2] || EXTRA[i] || '';
+  const progs = {};
+  for (const r of historicoRotas) {
+    const exe = !/econ/i.test(r.c || '');
+    const oBR = pais(r.oi) === 'BR', dBR = pais(r.di) === 'BR';
+    // destino = a ponta de fora do Brasil; voo nacional: o destino do alerta
+    let [dest, destNome, saida] = oBR || !dBR ? [r.di, r.d, r.oi] : [r.oi, r.o, r.di];
+    if (dest === 'SCS' && /santa cruz/i.test(destNome)) dest = 'VVI'; // alerta que veio com o código de Shetland
+    const regiao = oBR && dBR ? 'Brasil' : REGIAO_PAIS[pais(dest)] || 'Outros';
+    for (const [nome, g] of Object.entries(r.p || {})) {
+      const P = progs[nome] ||= { nome, linhas: {}, n: 0 };
+      const k = `${regiao}|${exe ? 'exe' : 'eco'}|${dest}`;
+      const L = P.linhas[k] ||= { regiao, exe, dest, destNome, saidas: new Set(), min: Infinity, minEm: '', minDe: '', n: 0, ult: '' };
+      L.saidas.add(saida);
+      if (+g.min < L.min) { L.min = +g.min; L.minEm = g.minEm || g.ult; L.minDe = saida; }
+      L.n += +g.n || 0;
+      if ((g.ult || '') > L.ult) L.ult = g.ult;
+      P.n += +g.n || 0;
+    }
+  }
+  return Object.values(progs).map(P => ({ ...P, destinos: new Set(Object.values(P.linhas).map(l => l.dest)).size }))
+    .sort((a, b) => b.destinos - a.destinos);
+}
+async function desenharPorPrograma() {
+  await Promise.all([aerosHist(), tetos()]);
+  const progs = porPrograma(), cab = $('#hist-cabine').value;
+  if (!progs.length) { $('#hist-lista').innerHTML = '<li class="passagens-vazio">Ainda sem histórico.</li>'; return; }
+  if (!progs.some(p => p.nome === histProg)) histProg = progs[0].nome;
+  $('#hist-progs').innerHTML = progs.map(p => `<button type="button" data-v="${escR(p.nome)}" aria-pressed="${p.nome === histProg}">${escR(p.nome)} <small>${p.destinos}</small></button>`).join('');
+  const P = progs.find(p => p.nome === histProg), teto = tetoDeProg(P.nome);
+  const linhas = Object.values(P.linhas).filter(l => !cab || (cab === 'eco' ? !l.exe : l.exe));
+  $('#hist-info').textContent = `${P.nome}: ${P.destinos} destinos e ${milHist(P.n)} passagens vistas. Menor preço por trecho, sem taxas.${teto ? ` Em reais pelo milheiro de referência (R$ ${teto}).` : ''} É histórico: confirme a data no site do programa.`;
+  const blocos = ORDEM_REGIAO.map(reg => [reg, linhas.filter(l => l.regiao === reg)]).filter(([, ls]) => ls.length);
+  const linhaHtml = l => {
+    const saidas = [...l.saidas], cabine = l.exe ? 'executiva' : 'economica';
+    return `<li class="hp-linha">
+      <div class="hp-dest"><b>${escR(l.destNome)} <small>${escR(l.dest)}</small></b>
+        <span>saindo de ${saidas.slice(0, 4).map(escR).join(', ')}${saidas.length > 4 ? ` e mais ${saidas.length - 4}` : ''}</span></div>
+      <div class="hp-min"><b>${milHist(l.min)}</b>${teto ? `<small>≈ ${brR(Math.round(l.min / 1000 * teto))}</small>` : ''}</div>
+      <div class="hp-info"><span>menor em ${escR(diaBr(l.minEm))}${l.minDe ? `, saindo de ${escR(l.minDe)}` : ''}</span>
+        <span>${l.n} ${l.n === 1 ? 'vez' : 'vezes'} · última ${haDias(l.ult)} · <a href="#rota/${escR(l.minDe || saidas[0])}-${escR(l.dest)}-${cabine}">ver a rota →</a></span></div>
+    </li>`;
+  };
+  $('#hist-lista').innerHTML = blocos.map(([reg, ls]) => {
+    const cabs = [['Econômica', ls.filter(l => !l.exe)], ['Executiva ou Primeira', ls.filter(l => l.exe)]].filter(([, x]) => x.length);
+    return `<li class="hp-regiao"><h3>${escR(reg)} <small>${ls.length} ${ls.length === 1 ? 'destino' : 'destinos'}</small></h3>
+      ${cabs.map(([nomeCab, x]) => {
+        const chave = `${P.nome}|${reg}|${nomeCab}`, todos = histAbertos.has(chave);
+        x.sort((a, b) => a.min - b.min);
+        return `<div class="hp-cab"><p class="hp-cab-t">${nomeCab}</p><ul>${(todos ? x : x.slice(0, 6)).map(linhaHtml).join('')}</ul>
+          ${x.length > 6 ? `<button type="button" class="hp-mais" data-chave="${escR(chave)}">${todos ? 'mostrar só os 6 melhores' : `ver os outros ${x.length - 6}`}</button>` : ''}</div>`;
+      }).join('')}</li>`;
+  }).join('') || '<li class="passagens-vazio">Nenhum destino com esse filtro.</li>';
+}
+document.addEventListener('click', e => {
+  const m = e.target.closest('#hist-modo button'), p = e.target.closest('#hist-progs button'), mais = e.target.closest('.hp-mais');
+  if (m) { histModo = m.dataset.modo; desenharPrecosRota(); }
+  else if (p) { histProg = p.dataset.v; desenharPrecosRota(); }
+  else if (mais) { const k = mais.dataset.chave; histAbertos.has(k) ? histAbertos.delete(k) : histAbertos.add(k); desenharPrecosRota(); }
+});
 async function desenharPrecosRota() {
   const ativo = !!(window.oammlAssinatura || {}).ativo || (auth.currentUser?.email || '').toLowerCase() === DONO;
   $('#hist-fechado').hidden = ativo;
@@ -1003,6 +1087,10 @@ async function desenharPrecosRota() {
   if (!ativo || location.hash !== '#historico') return;
   if (!historicoRotas) { $('#hist-info').textContent = 'Carregando o histórico...'; await carregarHistorico(); }
   if (!historicoRotas) return;
+  document.querySelectorAll('#hist-modo button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.modo === histModo)));
+  $('#hist-progs').hidden = histModo !== 'programa';
+  $('#hist-busca-rot').hidden = histModo === 'programa';
+  if (histModo === 'programa') return desenharPorPrograma();
   const busca = normHist($('#hist-busca').value.trim()), cab = $('#hist-cabine').value;
   const noAr = new Set((window.oammlPassagens || []).map(p => `${p.origem_iata}-${p.destino_iata}`));
   const lista = historicoRotas.filter(r => (!busca || normHist(`${r.o} ${r.oi} ${r.d} ${r.di}`).includes(busca)) &&
