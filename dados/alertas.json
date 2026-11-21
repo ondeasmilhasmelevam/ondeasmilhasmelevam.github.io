@@ -3560,21 +3560,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-SSA-PTY-eco",
-  "data": "2026-11-10T00:03:03.524369Z",
-  "fonte": "seats.aero",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "Avianca / Copa / GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "68.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-azul-VCP-OPO-eco",
   "data": "2026-11-10T00:03:03.524369Z",
   "fonte": "seats.aero",
