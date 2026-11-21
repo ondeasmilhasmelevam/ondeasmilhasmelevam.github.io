@@ -1,5 +1,20 @@
 [
  {
+  "id": "seats-smiles-GRU-JFK-exe",
+  "data": "2026-11-21T15:39:52.976192Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American / Avianca",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "221.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10050",
   "data": "2026-11-21T15:04:19Z",
   "origem": "Goiânia",
@@ -3301,21 +3316,6 @@
    "https://www.hilton.com/en/p/hilton-honors/buy-give-receive-points"
   ],
   "ate": "2026-11-21T23:59:59-03:00"
- },
- {
-  "id": "seats-smiles-GRU-JFK-exe",
-  "data": "2026-11-13T22:21:47.339117Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Nova York",
-  "destino_iata": "JFK",
-  "companhia": "American / Avianca",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "248.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-GRU-DFW-exe",
