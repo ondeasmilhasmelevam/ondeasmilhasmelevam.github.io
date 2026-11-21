@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-21T14:25:12.814935Z",
+ "atualizado": "2026-11-21T14:31:29.089515Z",
  "dias": 30,
- "passagens": 3508,
+ "passagens": 3513,
  "promocoes": 208,
  "destinos": 176,
- "executiva": 748,
+ "executiva": 749,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1023,
+  "passagens": 1028,
   "destaques": [
    {
     "id": "3761373661-9856",
