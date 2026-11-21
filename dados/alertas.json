@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-6896",
+  "data": "2026-11-21T18:34:18Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "American Airlines",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "161.700 Smiles + R$ 355,87",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-6895",
+  "data": "2026-11-21T18:34:05Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "50.000 milhas + CAD 122,60 de taxas",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "2361370250-6894",
   "data": "2026-11-21T18:04:23Z",
   "origem": "Bangkok",
