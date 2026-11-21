@@ -2797,20 +2797,6 @@
   "link_nome": "AAdvantage"
  },
  {
-  "id": "3761373661-10005",
-  "data": "2026-11-19T20:57:11Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Porto Velho",
-  "destino_iata": "PVH",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "25.900 milhas + Taxas",
-  "volta": "25.900 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7892",
   "data": "2026-11-19T13:50:12Z",
   "tipo": "promocao",
