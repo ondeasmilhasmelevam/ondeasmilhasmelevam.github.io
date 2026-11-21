@@ -3512,20 +3512,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16053",
-  "data": "2026-11-19T11:01:01Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "Joanesburgo",
-  "destino_iata": "JNB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "88.800 milhas + Taxas",
-  "volta": "88.800 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7870",
   "data": "2026-11-18T20:14:01Z",
   "tipo": "promocao",
