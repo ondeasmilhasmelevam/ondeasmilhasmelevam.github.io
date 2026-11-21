@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-16193",
+  "data": "2026-11-21T13:14:41Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "29.900 milhas + Taxas",
+  "volta": "20.800 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16192",
+  "data": "2026-11-21T13:10:17Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Bruxelas",
+  "destino_iata": "BRU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "67.020 milhas + Taxas",
+  "volta": "67.020 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-10032",
   "data": "2026-11-21T13:00:58Z",
   "origem": "Campinas",
@@ -322,6 +350,20 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "2008590742-16179",
+  "data": "2026-11-20T20:59:26Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "47.960 milhas + Taxas",
+  "volta": "50.910 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-10021",
   "data": "2026-11-20T20:59:26Z",
   "origem": "Belo Horizonte",
@@ -348,20 +390,6 @@
   "ida": "21.100 milhas + Taxas",
   "volta": "21.900 milhas + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16179",
-  "data": "2026-11-20T20:59:26Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "47.960 milhas + Taxas",
-  "volta": "50.910 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "2008590742-16178",
@@ -2935,20 +2963,6 @@
   "programa": "Smiles",
   "ida": "9.800 milhas + R$ 62,14 de taxas",
   "volta": "9.500 milhas + R$ 35,15 de taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-9975",
-  "data": "2026-11-19T13:10:38Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "SDU",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "11.200 milhas + R$ 62,62 de taxas",
-  "volta": "11.200 milhas + R$ 34,54 de taxas",
   "link_nome": "Smiles"
  },
  {
