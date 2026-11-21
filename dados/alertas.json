@@ -2783,20 +2783,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-6820",
-  "data": "2026-11-19T21:34:05Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Milão",
-  "destino_iata": "MXP",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "Flying Blue",
-  "ida": "85.000 milhas + Taxas",
-  "volta": "85.000 milhas + Taxas",
-  "link_nome": "Flying Blue"
- },
- {
   "id": "1290836068-7892",
   "data": "2026-11-19T13:50:12Z",
   "tipo": "promocao",
