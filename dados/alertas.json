@@ -2839,20 +2839,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16093",
-  "data": "2026-11-19T20:26:06Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Tefé",
-  "destino_iata": "TFF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "24.000 milhas + Taxas",
-  "volta": "11.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7892",
   "data": "2026-11-19T13:50:12Z",
   "tipo": "promocao",
