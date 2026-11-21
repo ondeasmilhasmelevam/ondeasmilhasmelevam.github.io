@@ -2826,6 +2826,22 @@
       return d ? { dia: d[1].replace(/\s+/g, ' '), texto: d[2], primeiro: +d[1].match(/\d+/)[0] } : { dia: '', texto: t, primeiro: 0 };
     }));
   }
+  // Feriados nacionais calculados para o ano (os móveis a partir da Páscoa). Sexta ou segunda = feriadão;
+  // terça ou quinta = dá para emendar (ponte). Carnaval e Corpus Christi são ponto facultativo na maior parte do país.
+  // (usa a pascoa() de "Quando emitir")
+  function feriadosDoMes(ano, mes) {
+    const p = pascoa(ano), mais = n => new Date(p.getFullYear(), p.getMonth(), p.getDate() + n);
+    const lista = [[new Date(ano, 0, 1), 'Confraternização Universal'], [mais(-48), 'Carnaval (segunda)', 'ponto facultativo'], [mais(-47), 'Carnaval (terça)', 'ponto facultativo'],
+      [mais(-2), 'Sexta-feira Santa'], [new Date(ano, 3, 21), 'Tiradentes'], [new Date(ano, 4, 1), 'Dia do Trabalho'], [mais(60), 'Corpus Christi', 'ponto facultativo'],
+      [new Date(ano, 8, 7), 'Independência do Brasil'], [new Date(ano, 9, 12), 'Nossa Senhora Aparecida'], [new Date(ano, 10, 2), 'Finados'],
+      [new Date(ano, 10, 15), 'Proclamação da República'], [new Date(ano, 10, 20), 'Dia da Consciência Negra'], [new Date(ano, 11, 25), 'Natal']];
+    const SEMANA = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
+    return lista.filter(([d]) => d.getMonth() === mes).map(([d, nome, tipo]) => {
+      const s = d.getDay(), carnaval = /Carnaval/.test(nome);
+      return { dia: d.getDate(), nome, tipo: tipo || '', semana: SEMANA[s],
+        selo: carnaval ? (nome.includes('segunda') ? 'feriadão' : '') : s === 1 || s === 5 ? 'feriadão' : s === 2 || s === 4 ? 'dá ponte' : '' };
+    }).sort((a, b) => a.dia - b.dia);
+  }
   async function desenharCalendario() {
     let meses = null;
     for (const url of [URL_DATAS, 'dados/datas.csv']) {
@@ -2840,9 +2856,14 @@
     const hoje = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }));
     const mesAtual = hoje.getMonth(), diaHoje = hoje.getDate();
     const nomeMes = m => new Date(2000, m, 1).toLocaleDateString('pt-BR', { month: 'long' });
+    const anoAtual = hoje.getFullYear();
     $('#lista-calendario').innerHTML = MESES.map((_, n) => (mesAtual + n) % 12).map(m => {
       const agora = m === mesAtual;
-      const itens = meses[m].map(x => {
+      const feriados = feriadosDoMes(m < mesAtual ? anoAtual + 1 : anoAtual, m).map(f => {
+        const passou = agora && f.dia < diaHoje;
+        return `<li class="feriado${passou ? ' passou' : ''}"><b>${f.dia}</b><span>${esc(f.nome)} <small>${esc(f.semana)}${f.tipo ? ` · ${esc(f.tipo)}` : ''}</small>${f.selo ? `<em class="${f.selo === 'feriadão' ? 'longo' : 'ponte'}">${f.selo}</em>` : ''}</span></li>`;
+      }).join('');
+      const itens = feriados + meses[m].map(x => {
         const passou = agora && x.primeiro && x.primeiro < diaHoje;
         const falta = agora && x.primeiro ? x.primeiro - diaHoje : -1;
         const aviso = falta === 0 ? 'hoje' : falta > 0 && falta <= 7 ? `em ${falta} dia${falta > 1 ? 's' : ''}` : '';

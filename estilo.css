@@ -410,7 +410,7 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .rk-filtros select{font:inherit;font-size:14.5px;font-weight:600;letter-spacing:0;text-transform:none;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--ink);color:var(--rice)}
 .rk-checks{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px 22px}
 .item-linha{flex-wrap:wrap}
-.rk-metricas{flex:1 0 100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:6px;margin:2px 0 0 44px;padding-top:10px;border-top:1px dashed var(--line)}
+.rk-metricas{flex:1 0 calc(100% - 44px);min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:6px;margin:2px 0 0 44px;padding-top:10px;border-top:1px dashed var(--line)}
 .rk-metricas span{display:grid;gap:1px;padding:6px 10px;border-radius:10px;background:var(--ink-2)}
 .rk-metricas small{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ash-dim)}
 .rk-metricas b{font-size:14px;font-weight:800;color:var(--rice);font-variant-numeric:tabular-nums}
@@ -418,7 +418,7 @@ section{padding-block:56px 12px;scroll-margin-top:70px}
 .medalha-1 .pos{background:radial-gradient(circle at 35% 30%,#ffe9a8,#e2b458 55%,#a8761f);box-shadow:0 0 0 3px rgba(226,180,88,.25)}
 .medalha-2 .pos{background:radial-gradient(circle at 35% 30%,#ffffff,#c4cad6 55%,#7d8597);box-shadow:0 0 0 3px rgba(196,202,214,.22)}
 .medalha-3 .pos{background:radial-gradient(circle at 35% 30%,#ffd2a8,#cd8a4e 55%,#8a5124);box-shadow:0 0 0 3px rgba(205,138,78,.22)}
-@media (max-width:560px){.rk-metricas{margin-left:0;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.rk-metricas{flex-basis:100%;margin-left:0;grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 .detalhe{padding:6px 6px 26px 50px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:26px}
 @media (max-width:760px){.detalhe{grid-template-columns:1fr;padding-left:6px;gap:18px}}
@@ -2333,3 +2333,16 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .hp-info{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;font-size:12px;color:var(--ash-dim)}
 .hp-info a{color:var(--ouro)}
 .hp-mais{margin-top:8px;font:inherit;font-size:13px;font-weight:700;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--ouro);cursor:pointer}
+
+/* Feriados no Calendário de oportunidades */
+.calendario ul li.feriado b{color:#7fd3ff;background:rgba(80,180,255,.12)}
+.calendario ul li.feriado span{color:var(--rice);font-weight:600}
+.calendario ul li.feriado small{color:var(--ash);font-weight:500;font-size:12px}
+.calendario ul li em.longo{color:#3ccf91;padding:1px 7px;border-radius:999px;border:1px solid rgba(60,207,145,.35);background:rgba(60,207,145,.1)}
+.calendario ul li em.ponte{color:var(--ouro-lt);padding:1px 7px;border-radius:999px;border:1px solid rgba(226,180,88,.35);background:rgba(226,180,88,.1)}
+:root[data-theme="light"] .calendario ul li.feriado b{color:#0b5f99}
+:root[data-theme="light"] .calendario ul li em.longo{color:#17734A}
+
+/* Promoções: link ou palavra comprida no texto não pode empurrar o cartão para fora da tela */
+.promo-card,.promo-card>*{min-width:0}
+.promo-card h3,.promo-card p,.promo-card details,.promo-card li{overflow-wrap:anywhere}
