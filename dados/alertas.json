@@ -3999,21 +3999,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-GRU-PTY-eco",
-  "data": "2026-11-08T03:29:49.491996Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "American / AM / Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "67.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GIG-PTY-eco",
   "data": "2026-11-08T03:29:49.491996Z",
   "fonte": "seats.aero",
