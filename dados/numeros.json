@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-21T18:03:49.965921Z",
+ "atualizado": "2026-11-21T18:10:03.592352Z",
  "dias": 30,
- "passagens": 3543,
+ "passagens": 3544,
  "promocoes": 208,
  "destinos": 177,
- "executiva": 749,
+ "executiva": 750,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1009,
+  "passagens": 1010,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -1071,6 +1071,19 @@
     "regiao": "outros"
    },
    {
+    "id": "2361370250-6894",
+    "origem": "Bangkok",
+    "origem_iata": "BKK",
+    "destino": "Tóquio",
+    "destino_iata": "HND",
+    "cabine": "Primeira Classe",
+    "programa": "AAdvantage",
+    "data": "2026-11-21T18:04:23Z",
+    "milhas": 40000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "2361370250-6711",
     "origem": "Seul",
     "origem_iata": "ICN",
@@ -1092,19 +1105,6 @@
     "cabine": "Executiva",
     "programa": "Aeroplan",
     "data": "2026-11-15T03:51:39Z",
-    "milhas": 50000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
-    "id": "2361370250-6681",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Tóquio",
-    "destino_iata": "HND",
-    "cabine": "Executiva",
-    "programa": "Iberia Plus",
-    "data": "2026-11-16T16:49:41Z",
     "milhas": 50000,
     "nivel": "",
     "regiao": "outros"
