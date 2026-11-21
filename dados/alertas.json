@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-10032",
+  "data": "2026-11-21T13:00:58Z",
+  "origem": "Campinas",
+  "origem_iata": "VCP",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "8.600 milhas + R$ 33,44 de taxas",
+  "volta": "10.200 milhas + R$ 34,54 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10031",
+  "data": "2026-11-21T12:59:07Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "22.000 milhas + Taxas",
+  "volta": "22.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10030",
   "data": "2026-11-21T12:49:27Z",
   "origem": "Florianópolis",
