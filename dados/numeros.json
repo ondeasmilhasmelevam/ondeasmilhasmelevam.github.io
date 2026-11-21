@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-21T16:30:48.907885Z",
+ "atualizado": "2026-11-21T16:36:57.411871Z",
  "dias": 30,
  "passagens": 3530,
  "promocoes": 208,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1009,
+  "passagens": 1006,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -200,14 +200,14 @@
     "regiao": "caribe"
    },
    {
-    "id": "2008590742-15697",
+    "id": "2008590742-16086",
     "origem": "Brasília",
     "origem_iata": "BSB",
     "destino": "Cidade do Panamá",
     "destino_iata": "PTY",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-14T16:31:00Z",
+    "data": "2026-11-19T19:23:44Z",
     "milhas": 46900,
     "nivel": "espetacular",
     "regiao": "caribe"
