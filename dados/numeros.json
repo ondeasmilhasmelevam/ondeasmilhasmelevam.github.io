@@ -1,9 +1,9 @@
 {
- "atualizado": "2026-11-21T16:55:28.393875Z",
+ "atualizado": "2026-11-21T17:01:49.068759Z",
  "dias": 30,
- "passagens": 3531,
+ "passagens": 3543,
  "promocoes": 208,
- "destinos": 176,
+ "destinos": 177,
  "executiva": 749,
  "destaques": [
   {
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1005,
+  "passagens": 1017,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -577,6 +577,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10072",
+    "origem": "Brasília",
+    "origem_iata": "BSB",
+    "destino": "Ribeirão Preto",
+    "destino_iata": "RAO",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-21T17:01:07Z",
+    "milhas": 4700,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9666",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -638,6 +651,19 @@
     "programa": "Smiles",
     "data": "2026-11-21T14:00:19Z",
     "milhas": 5300,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10069",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Passo Fundo",
+    "destino_iata": "PFB",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-21T16:59:40Z",
+    "milhas": 5400,
     "nivel": "",
     "regiao": "brasil"
    },
@@ -911,32 +937,6 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-19T12:40:11Z",
     "milhas": 10000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9686",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
-    "destino": "Salvador",
-    "destino_iata": "SSA",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-15T16:26:00Z",
-    "milhas": 10600,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9721",
-    "origem": "Vitória",
-    "origem_iata": "VIX",
-    "destino": "São José do Rio Preto",
-    "destino_iata": "SJP",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-16T11:42:13Z",
-    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },
