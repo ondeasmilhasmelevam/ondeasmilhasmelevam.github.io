@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-16206",
+  "data": "2026-11-21T14:43:20Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Santa Cruz de La Sierra",
+  "destino_iata": "VVI",
+  "companhia": "GOL + parceira",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "54.000 milhas + Taxas",
+  "volta": "47.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10045",
+  "data": "2026-11-21T14:43:18Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Uberlândia",
+  "destino_iata": "UDI",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "18.200 milhas + Taxas",
+  "volta": "18.200 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16205",
   "data": "2026-11-21T14:31:18Z",
   "origem": "Palmas",
