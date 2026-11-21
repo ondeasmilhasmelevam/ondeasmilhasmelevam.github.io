@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-21T11:17:57.672011Z",
+ "atualizado": "2026-11-21T11:24:08.799844Z",
  "dias": 30,
  "passagens": 3481,
  "promocoes": 210,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1009,
+  "passagens": 1007,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -1136,19 +1136,6 @@
     "regiao": "outros"
    },
    {
-    "id": "2361370250-6575",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Cidade do Panamá",
-    "destino_iata": "PTY",
-    "cabine": "Executiva",
-    "programa": "GOL Smiles",
-    "data": "2026-11-14T11:23:14Z",
-    "milhas": 62000,
-    "nivel": "",
-    "regiao": "caribe"
-   },
-   {
     "id": "2361370250-6737",
     "origem": "Cidade do Panamá",
     "origem_iata": "PTY",
@@ -1160,6 +1147,19 @@
     "milhas": 63750,
     "nivel": "",
     "regiao": "europa"
+   },
+   {
+    "id": "2361370250-6656",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "Cidade do Panamá",
+    "destino_iata": "PTY",
+    "cabine": "Executiva",
+    "programa": "GOL Smiles",
+    "data": "2026-11-16T11:20:12Z",
+    "milhas": 64200,
+    "nivel": "",
+    "regiao": "caribe"
    },
    {
     "id": "2361370250-6712",
