@@ -1,5 +1,47 @@
 [
  {
+  "id": "3761373661-10082",
+  "data": "2026-11-22T01:42:11Z",
+  "origem": "Campinas",
+  "origem_iata": "VCP",
+  "destino": "João Pessoa",
+  "destino_iata": "JPA",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "14.000 milhas + R$ 33,44 de taxas",
+  "volta": "15.000 milhas + R$ 54,09 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-10081",
+  "data": "2026-11-22T01:42:00Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "8.000 milhas + R$ 62,69 de taxas",
+  "volta": "8.000 milhas + R$ 35,75 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-10080",
+  "data": "2026-11-22T01:40:29Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.200 milhas + R$ 62,14 de taxas",
+  "volta": "11.200 milhas + R$ 34,54 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-smiles-GIG-MIA-exe",
   "data": "2026-11-22T01:23:04.676964Z",
   "fonte": "seats.aero",
@@ -2835,20 +2877,6 @@
   "programa": "Smiles",
   "ida": "10.200 milhas + R$ 33,44 de taxas",
   "volta": "10.200 milhas + R$ 34,54 de taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10010",
-  "data": "2026-11-20T01:41:22Z",
-  "origem": "São Paulo",
-  "origem_iata": "CGH",
-  "destino": "Montes Claros",
-  "destino_iata": "MOC",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "13.200 milhas + R$ 62,14 de taxas",
-  "volta": "10.300 milhas + R$ 38,39 de taxas",
   "link_nome": "Smiles"
  },
  {
