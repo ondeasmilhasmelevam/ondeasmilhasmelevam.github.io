@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-22T16:56:18.037710Z",
+ "atualizado": "2026-11-22T17:02:27.527372Z",
  "dias": 30,
  "passagens": 3709,
  "promocoes": 212,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1135,
+  "passagens": 1134,
   "destaques": [
    {
     "id": "2008590742-16307",
@@ -993,19 +993,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6596",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Roma",
-    "destino_iata": "FCO",
-    "cabine": "Executiva",
-    "programa": "Smiles",
-    "data": "2026-11-15T17:01:43Z",
-    "milhas": 409000,
-    "nivel": "bom",
-    "regiao": "europa"
-   },
-   {
     "id": "2361370250-6664",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
@@ -1197,6 +1184,19 @@
     "programa": "Privilege Club Qatar",
     "data": "2026-11-22T11:34:40Z",
     "milhas": 70000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6705",
+    "origem": "Tóquio",
+    "origem_iata": "NRT",
+    "destino": "Helsinque",
+    "destino_iata": "HEL",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-17T16:33:36Z",
+    "milhas": 75000,
     "nivel": "",
     "regiao": "outros"
    }
