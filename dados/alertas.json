@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10083",
+  "data": "2026-11-22T02:00:10Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "9.300 milhas + R$ 48,63 de taxas",
+  "volta": "9.300 milhas + R$ 35,75 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10082",
   "data": "2026-11-22T01:42:11Z",
   "origem": "Campinas",
@@ -3534,11 +3548,11 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-POA-LIM-eco",
+  "id": "seats-qatar-GRU-LIM-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
@@ -3549,11 +3563,11 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GRU-LIM-eco",
+  "id": "seats-qatar-POA-LIM-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
