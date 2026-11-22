@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16290",
+  "data": "2026-11-22T14:18:42Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "12.200 milhas + Taxas",
+  "volta": "11.300 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16289",
   "data": "2026-11-22T14:10:59Z",
   "origem": "São Paulo",
