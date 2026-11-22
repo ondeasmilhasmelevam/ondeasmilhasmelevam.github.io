@@ -3693,20 +3693,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-16180",
-  "data": "2026-11-20T21:09:02Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "57.000 milhas + R$ 344,99 de taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7924",
   "data": "2026-11-20T19:56:29Z",
   "tipo": "promocao",
