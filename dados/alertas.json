@@ -3397,6 +3397,21 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "seats-smiles-GRU-DFW-eco",
+  "data": "2026-11-11T00:03:25.922708Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Dallas",
+  "destino_iata": "DFW",
+  "companhia": "American / Air Canada / AM",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "90.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-smiles-GIG-DFW-eco",
   "data": "2026-11-11T00:03:25.922708Z",
   "fonte": "seats.aero",
@@ -3408,21 +3423,6 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "92.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "seats-smiles-GRU-DFW-eco",
-  "data": "2026-11-11T00:03:25.922708Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Dallas",
-  "destino_iata": "DFW",
-  "companhia": "American / Air Canada / AM",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "100.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
