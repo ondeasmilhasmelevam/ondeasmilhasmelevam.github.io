@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-22T15:04:09.009451Z",
+ "atualizado": "2026-11-22T15:15:35.273670Z",
  "dias": 30,
- "passagens": 3688,
+ "passagens": 3696,
  "promocoes": 212,
  "destinos": 179,
  "executiva": 803,
@@ -86,18 +86,18 @@
   }
  ],
  "semana": {
-  "passagens": 1132,
+  "passagens": 1136,
   "destaques": [
    {
-    "id": "3761373661-9856",
+    "id": "2008590742-16307",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
     "destino": "Juazeiro do Norte",
     "destino_iata": "JDO",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-17T16:51:44Z",
-    "milhas": 3332,
+    "data": "2026-11-22T15:13:35Z",
+    "milhas": 3330,
     "nivel": "",
     "grupo": "Nacional",
     "foto": "img/rotas/FOR-JDO.jpg"
@@ -525,15 +525,15 @@
     "regiao": "europa"
    },
    {
-    "id": "3761373661-9856",
+    "id": "2008590742-16307",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
     "destino": "Juazeiro do Norte",
     "destino_iata": "JDO",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-17T16:51:44Z",
-    "milhas": 3332,
+    "data": "2026-11-22T15:13:35Z",
+    "milhas": 3330,
     "nivel": "",
     "regiao": "brasil"
    },
