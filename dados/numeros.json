@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-22T17:51:58.907199Z",
+ "atualizado": "2026-11-22T17:58:13.111001Z",
  "dias": 30,
  "passagens": 3709,
  "promocoes": 212,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1134,
+  "passagens": 1133,
   "destaques": [
    {
     "id": "2008590742-16307",
@@ -1006,19 +1006,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6597",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Bogotá",
-    "destino_iata": "BOG",
-    "cabine": "Executiva",
-    "programa": "Aeroplan",
-    "data": "2026-11-15T17:56:39Z",
-    "milhas": 20000,
-    "nivel": "",
-    "regiao": "america-do-sul"
-   },
-   {
     "id": "2361370250-6811",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -1186,6 +1173,19 @@
     "milhas": 70000,
     "nivel": "",
     "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6793",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "Bogotá",
+    "destino_iata": "BOG",
+    "cabine": "Executiva",
+    "programa": "Smiles",
+    "data": "2026-11-18T17:44:30Z",
+    "milhas": 74000,
+    "nivel": "",
+    "regiao": "america-do-sul"
    },
    {
     "id": "2361370250-6705",
