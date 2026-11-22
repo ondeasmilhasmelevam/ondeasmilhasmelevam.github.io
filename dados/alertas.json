@@ -1,5 +1,61 @@
 [
  {
+  "id": "3761373661-10079",
+  "data": "2026-11-22T00:02:15Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "15.000 milhas + R$ 35,15 de taxas",
+  "volta": "15.000 milhas + R$ 52,72 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-10078",
+  "data": "2026-11-22T00:01:57Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "7.900 milhas + R$ 35,15 de taxas",
+  "volta": "9.800 milhas + R$ 62,14 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10077",
+  "data": "2026-11-22T00:01:41Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "7.900 milhas + R$ 35,15 de taxas",
+  "volta": "9.800 milhas + R$ 35,75 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10076",
+  "data": "2026-11-22T00:01:19Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Belo Horizonte",
+  "destino_iata": "CNF",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "8.500 milhas + R$ 34,54 de taxas",
+  "volta": "8.700 milhas + R$ 35,15 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-6897",
   "data": "2026-11-21T21:05:35Z",
   "origem": "Amsterdã",
@@ -1230,20 +1286,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16179",
-  "data": "2026-11-20T20:59:26Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "47.960 milhas + Taxas",
-  "volta": "50.910 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "3761373661-10021",
   "data": "2026-11-20T20:59:26Z",
   "origem": "Belo Horizonte",
@@ -1270,6 +1312,20 @@
   "ida": "21.100 milhas + Taxas",
   "volta": "21.900 milhas + Taxas",
   "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16179",
+  "data": "2026-11-20T20:59:26Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "47.960 milhas + Taxas",
+  "volta": "50.910 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "2008590742-16178",
@@ -3089,21 +3145,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "seats-smiles-GRU-PUJ-eco",
-  "data": "2026-11-12T05:14:55.794608Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Punta Cana",
-  "destino_iata": "PUJ",
-  "companhia": "American / Avianca / GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "99.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GIG-CDG-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
@@ -3449,11 +3490,11 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GRU-LIM-eco",
+  "id": "seats-qatar-GIG-LIM-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
@@ -3479,11 +3520,11 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GIG-LIM-eco",
+  "id": "seats-qatar-GRU-LIM-eco",
   "data": "2026-11-09T00:05:14.410466Z",
   "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
@@ -3552,21 +3593,6 @@
   "ida": "19.500 Avios + taxas",
   "volta": "",
   "link_nome": "Iberia Plus"
- },
- {
-  "id": "seats-smiles-CNF-PTY-eco",
-  "data": "2026-11-08T03:29:49.491996Z",
-  "fonte": "seats.aero",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "Avianca / Copa / GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "66.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-GIG-PTY-eco",
