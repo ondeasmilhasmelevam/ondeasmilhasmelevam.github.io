@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-22T13:53:11.745080Z",
+ "atualizado": "2026-11-22T13:59:18.812674Z",
  "dias": 30,
  "passagens": 3659,
  "promocoes": 212,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1111,
+  "passagens": 1110,
   "destaques": [
    {
     "id": "3761373661-9856",
