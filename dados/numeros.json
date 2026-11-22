@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-22T11:29:45.142583Z",
+ "atualizado": "2026-11-22T11:36:01.579286Z",
  "dias": 30,
- "passagens": 3637,
+ "passagens": 3640,
  "promocoes": 209,
  "destinos": 177,
- "executiva": 796,
+ "executiva": 799,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1091,
+  "passagens": 1094,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -1188,15 +1188,15 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2361370250-6705",
-    "origem": "Tóquio",
-    "origem_iata": "NRT",
-    "destino": "Helsinque",
-    "destino_iata": "HEL",
+    "id": "2361370250-6962",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Doha",
+    "destino_iata": "DOH",
     "cabine": "Executiva",
-    "programa": "AAdvantage",
-    "data": "2026-11-17T16:33:36Z",
-    "milhas": 75000,
+    "programa": "Privilege Club Qatar",
+    "data": "2026-11-22T11:34:40Z",
+    "milhas": 70000,
     "nivel": "",
     "regiao": "outros"
    }
