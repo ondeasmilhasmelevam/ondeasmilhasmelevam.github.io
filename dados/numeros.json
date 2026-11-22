@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-22T15:41:35.848095Z",
+ "atualizado": "2026-11-22T15:47:45.415367Z",
  "dias": 30,
  "passagens": 3708,
  "promocoes": 212,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1143,
+  "passagens": 1141,
   "destaques": [
    {
     "id": "2008590742-16307",
@@ -850,19 +850,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "2008590742-15715",
-    "origem": "Fortaleza",
-    "origem_iata": "FOR",
-    "destino": "Belém",
-    "destino_iata": "BEL",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-15T15:41:54Z",
-    "milhas": 8960,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-10003",
     "origem": "Belém",
     "origem_iata": "BEL",
@@ -936,6 +923,19 @@
     "cabine": "Econômica",
     "programa": "LATAM Pass",
     "data": "2026-11-15T16:26:00Z",
+    "milhas": 10600,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9721",
+    "origem": "Vitória",
+    "origem_iata": "VIX",
+    "destino": "São José do Rio Preto",
+    "destino_iata": "SJP",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-16T11:42:13Z",
     "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
