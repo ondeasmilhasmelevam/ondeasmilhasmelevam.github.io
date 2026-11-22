@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10084",
+  "data": "2026-11-22T11:59:45Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "5.000 milhas + R$ 48,63 de taxas",
+  "volta": "5.000 milhas + R$ 62,69 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2361370250-6966",
   "data": "2026-11-22T11:49:42Z",
   "origem": "São Paulo",
@@ -2695,20 +2709,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16179",
-  "data": "2026-11-20T20:59:26Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "47.960 milhas + Taxas",
-  "volta": "50.910 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "3761373661-10021",
   "data": "2026-11-20T20:59:26Z",
   "origem": "Belo Horizonte",
@@ -2735,6 +2735,20 @@
   "ida": "21.100 milhas + Taxas",
   "volta": "21.900 milhas + Taxas",
   "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16179",
+  "data": "2026-11-20T20:59:26Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "47.960 milhas + Taxas",
+  "volta": "50.910 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "2008590742-16178",
@@ -2967,34 +2981,6 @@
   "cabine": "Executiva",
   "programa": "GOL Smiles",
   "ida": "557.300 milhas (529.400 no Clube Smiles)",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-6883",
-  "data": "2026-11-20T11:59:36Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Joanesburgo",
-  "destino_iata": "JNB",
-  "companhia": "South African Airways",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "232.000 milhas (220.300 no Clube Smiles)",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-6882",
-  "data": "2026-11-20T11:56:23Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "434.700 milhas (413.000 no Clube Smiles)",
   "volta": "",
   "link_nome": "GOL Smiles"
  },
