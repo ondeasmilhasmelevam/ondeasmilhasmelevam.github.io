@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6974",
+  "data": "2026-11-22T19:40:50Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Fort Lauderdale",
+  "destino_iata": "FLL",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "50.000 milhas + CAD 122,90 de taxas",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "3761373661-10117",
   "data": "2026-11-22T18:39:01Z",
   "origem": "Rio de Janeiro",
