@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-22T14:39:02.185760Z",
+ "atualizado": "2026-11-22T14:45:21.512030Z",
  "dias": 30,
- "passagens": 3674,
+ "passagens": 3682,
  "promocoes": 212,
  "destinos": 179,
  "executiva": 803,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1125,
+  "passagens": 1132,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -356,6 +356,19 @@
     "regiao": "europa"
    },
    {
+    "id": "2008590742-16297",
+    "origem": "Curitiba",
+    "origem_iata": "CWB",
+    "destino": "Paris",
+    "destino_iata": "CDG",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-22T14:40:10Z",
+    "milhas": 70760,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
     "id": "2008590742-15922",
     "origem": "Campinas",
     "origem_iata": "VCP",
@@ -486,19 +499,6 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2008590742-16026",
-    "origem": "Belém",
-    "origem_iata": "BEL",
-    "destino": "Paris",
-    "destino_iata": "CDG",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-18T13:19:51Z",
-    "milhas": 76934,
-    "nivel": "bom",
-    "regiao": "europa"
-   },
-   {
     "id": "2008590742-16189",
     "origem": "Belo Horizonte",
     "origem_iata": "CNF",
@@ -523,19 +523,6 @@
     "milhas": 78301,
     "nivel": "bom",
     "regiao": "europa"
-   },
-   {
-    "id": "2008590742-15707",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Washington",
-    "destino_iata": "IAD",
-    "cabine": "Econômica",
-    "programa": "Azul pelo Mundo",
-    "data": "2026-11-15T14:41:01Z",
-    "milhas": 88500,
-    "nivel": "bom",
-    "regiao": "america-do-norte"
    },
    {
     "id": "3761373661-9856",
@@ -759,6 +746,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10104",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Florianópolis",
+    "destino_iata": "FLN",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-22T14:39:46Z",
+    "milhas": 7200,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10093",
     "origem": "Recife",
     "origem_iata": "REC",
@@ -794,19 +794,6 @@
     "programa": "Smiles",
     "data": "2026-11-20T20:59:26Z",
     "milhas": 7900,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10019",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Florianópolis",
-    "destino_iata": "FLN",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-20T19:35:01Z",
-    "milhas": 8200,
     "nivel": "",
     "regiao": "brasil"
    },
@@ -937,6 +924,19 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-19T12:40:11Z",
     "milhas": 10000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9686",
+    "origem": "Brasília",
+    "origem_iata": "BSB",
+    "destino": "Salvador",
+    "destino_iata": "SSA",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-15T16:26:00Z",
+    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },
