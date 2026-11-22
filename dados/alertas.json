@@ -2957,34 +2957,6 @@
   "link_nome": "Aeroplan"
  },
  {
-  "id": "2361370250-6885",
-  "data": "2026-11-20T12:06:53Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Dallas",
-  "destino_iata": "DFW",
-  "companhia": "American Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "201.000 milhas (191.000 no Clube Smiles)",
-  "volta": "757.300 milhas (719.400 no Clube Smiles)",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-6884",
-  "data": "2026-11-20T12:02:25Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "557.300 milhas (529.400 no Clube Smiles)",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
   "id": "1290836068-7892",
   "data": "2026-11-19T13:50:12Z",
   "tipo": "promocao",
