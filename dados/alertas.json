@@ -3233,6 +3233,21 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "seats-smiles-MAO-BOG-eco",
+  "data": "2026-11-12T05:14:55.794608Z",
+  "fonte": "seats.aero",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "Avianca / Copa / GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "53.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-azul-REC-OPO-eco",
   "data": "2026-11-12T05:14:55.794608Z",
   "fonte": "seats.aero",
@@ -3289,6 +3304,21 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "139.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "seats-smiles-MAO-PTY-eco",
+  "data": "2026-11-11T00:03:25.922708Z",
+  "fonte": "seats.aero",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Cidade do Panamá",
+  "destino_iata": "PTY",
+  "companhia": "Avianca / Copa / GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "34.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -3390,7 +3420,7 @@
   "origem_iata": "GRU",
   "destino": "Dallas",
   "destino_iata": "DFW",
-  "companhia": "American / Air Canada / AM",
+  "companhia": "American / Air Canada / Avianca",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "90.000 milhas + taxas",
