@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-22T15:15:35.273670Z",
+ "atualizado": "2026-11-22T15:21:55.896479Z",
  "dias": 30,
- "passagens": 3696,
+ "passagens": 3698,
  "promocoes": 212,
  "destinos": 179,
  "executiva": 803,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1136,
+  "passagens": 1137,
   "destaques": [
    {
     "id": "2008590742-16307",
@@ -889,19 +889,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "2008590742-15713",
-    "origem": "Navegantes",
-    "origem_iata": "NVT",
-    "destino": "Goiânia",
-    "destino_iata": "GYN",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-15T15:18:20Z",
-    "milhas": 9640,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9729",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -937,6 +924,19 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-19T12:40:11Z",
     "milhas": 10000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9686",
+    "origem": "Brasília",
+    "origem_iata": "BSB",
+    "destino": "Salvador",
+    "destino_iata": "SSA",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-15T16:26:00Z",
+    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },
