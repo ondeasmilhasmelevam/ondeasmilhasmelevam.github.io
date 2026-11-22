@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-22T13:27:56.242131Z",
+ "atualizado": "2026-11-22T13:34:03.505516Z",
  "dias": 30,
- "passagens": 3647,
+ "passagens": 3658,
  "promocoes": 212,
  "destinos": 177,
  "executiva": 803,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1100,
+  "passagens": 1110,
   "destaques": [
    {
     "id": "3761373661-9856",
@@ -759,6 +759,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10093",
+    "origem": "Recife",
+    "origem_iata": "REC",
+    "destino": "Brasília",
+    "destino_iata": "BSB",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-22T13:29:17Z",
+    "milhas": 7250,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10057",
     "origem": "Florianópolis",
     "origem_iata": "FLN",
@@ -794,19 +807,6 @@
     "programa": "Smiles",
     "data": "2026-11-20T19:35:01Z",
     "milhas": 8200,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9927",
-    "origem": "Goiânia",
-    "origem_iata": "GYN",
-    "destino": "Brasília",
-    "destino_iata": "BSB",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-18T18:39:15Z",
-    "milhas": 8202,
     "nivel": "",
     "regiao": "brasil"
    },
