@@ -4077,21 +4077,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-POA-PTY-eco",
-  "data": "2026-11-13T00:04:39.829038Z",
-  "fonte": "seats.aero",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "Avianca / Copa / GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "70.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-MAD-eco",
   "data": "2026-11-13T00:04:39.829038Z",
   "fonte": "seats.aero",
