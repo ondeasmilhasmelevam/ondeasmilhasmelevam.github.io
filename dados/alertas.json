@@ -1,5 +1,61 @@
 [
  {
+  "id": "3761373661-10114",
+  "data": "2026-11-22T15:24:49Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "29.900 milhas + Taxas",
+  "volta": "20.800 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10113",
+  "data": "2026-11-22T15:24:44Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "9.440 milhas + Taxas",
+  "volta": "9.440 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16310",
+  "data": "2026-11-22T15:24:42Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Cancún",
+  "destino_iata": "CUN",
+  "companhia": "Avianca",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "40.400 milhas + Taxas",
+  "volta": "42.100 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10112",
+  "data": "2026-11-22T15:24:40Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "João Pessoa",
+  "destino_iata": "JPA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "29.000 milhas + Taxas",
+  "volta": "29.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16309",
   "data": "2026-11-22T15:19:52Z",
   "origem": "Manaus",
@@ -3511,20 +3567,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16179",
-  "data": "2026-11-20T20:59:26Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "47.960 milhas + Taxas",
-  "volta": "50.910 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "3761373661-10021",
   "data": "2026-11-20T20:59:26Z",
   "origem": "Belo Horizonte",
@@ -3551,6 +3593,20 @@
   "ida": "21.100 milhas + Taxas",
   "volta": "21.900 milhas + Taxas",
   "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16179",
+  "data": "2026-11-20T20:59:26Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "47.960 milhas + Taxas",
+  "volta": "50.910 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "2008590742-16178",
