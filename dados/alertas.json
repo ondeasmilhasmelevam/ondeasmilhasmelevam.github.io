@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6965",
+  "data": "2026-11-22T11:45:17Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American Airlines",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "220.500 milhas (209.500 no Clube Smiles)",
+  "volta": "229.500 milhas (218.000 no Clube Smiles)",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-6964",
   "data": "2026-11-22T11:39:42Z",
   "origem": "Brasília",
@@ -3010,34 +3024,6 @@
   "programa": "GOL Smiles",
   "ida": "70.000 milhas (66.500 no Clube Smiles)",
   "volta": "70.000 milhas (66.500 no Clube Smiles)",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-6879",
-  "data": "2026-11-20T11:46:17Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Orlando",
-  "destino_iata": "MCO",
-  "companhia": "GOL + American Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "218.200 milhas (207.300 no Clube Smiles)",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-6878",
-  "data": "2026-11-20T11:44:03Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "Copa Airlines",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "66.500 milhas (63.200 no Clube Smiles)",
-  "volta": "64.200 milhas (61.000 no Clube Smiles)",
   "link_nome": "GOL Smiles"
  },
  {
