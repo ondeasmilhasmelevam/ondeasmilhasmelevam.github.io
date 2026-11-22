@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16284",
+  "data": "2026-11-22T13:08:48Z",
+  "origem": "São Paulo",
+  "origem_iata": "SAO",
+  "destino": "Newark",
+  "destino_iata": "EWR",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "112.500 milhas + Taxas",
+  "volta": "97.500 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "1290836068-7948",
   "data": "2026-11-22T12:58:53Z",
   "tipo": "promocao",
@@ -2769,6 +2783,20 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "2008590742-16179",
+  "data": "2026-11-20T20:59:26Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "47.960 milhas + Taxas",
+  "volta": "50.910 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-10021",
   "data": "2026-11-20T20:59:26Z",
   "origem": "Belo Horizonte",
@@ -2795,20 +2823,6 @@
   "ida": "21.100 milhas + Taxas",
   "volta": "21.900 milhas + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16179",
-  "data": "2026-11-20T20:59:26Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "47.960 milhas + Taxas",
-  "volta": "50.910 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "2008590742-16178",
@@ -3001,20 +3015,6 @@
   "ida": "9.400 milhas + R$ 62,14 de taxas",
   "volta": "9.400 milhas + R$ 56,99 de taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-6886",
-  "data": "2026-11-20T13:05:01Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "50.000 milhas + CAD 123,20 de taxas",
-  "volta": "",
-  "link_nome": "Aeroplan"
  },
  {
   "id": "1290836068-7892",
