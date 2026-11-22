@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-16266",
+  "data": "2026-11-22T10:20:59Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Barcelona",
+  "destino_iata": "BCN",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "38.000 milhas",
+  "volta": "38.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2361370250-6935",
+  "data": "2026-11-22T10:18:33Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Porto",
+  "destino_iata": "OPO",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Executiva",
+  "programa": "TAP Miles&Go",
+  "ida": "135.000 milhas",
+  "volta": "135.000 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2008590742-16265",
+  "data": "2026-11-22T10:18:11Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Porto",
+  "destino_iata": "OPO",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Econômica",
+  "programa": "TAP Miles&Go",
+  "ida": "44.900 milhas",
+  "volta": "44.900 milhas",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "2361370250-6934",
   "data": "2026-11-22T10:14:38Z",
   "origem": "São Paulo",
@@ -3038,34 +3080,6 @@
   "programa": "TAP Miles&Go",
   "ida": "38.000 milhas",
   "volta": "",
-  "link_nome": "TAP Miles&Go"
- },
- {
-  "id": "2361370250-6852",
-  "data": "2026-11-20T10:19:54Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Londres",
-  "destino_iata": "LHR",
-  "companhia": "TAP Air Portugal",
-  "cabine": "Executiva",
-  "programa": "TAP Miles&Go",
-  "ida": "135.000 milhas",
-  "volta": "135.000 milhas",
-  "link_nome": "TAP Miles&Go"
- },
- {
-  "id": "2008590742-16149",
-  "data": "2026-11-20T10:19:26Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Londres",
-  "destino_iata": "LHR",
-  "companhia": "TAP Air Portugal",
-  "cabine": "Econômica",
-  "programa": "TAP Miles&Go",
-  "ida": "38.000 milhas",
-  "volta": "38.000 milhas",
   "link_nome": "TAP Miles&Go"
  },
  {
