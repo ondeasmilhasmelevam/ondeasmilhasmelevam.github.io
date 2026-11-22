@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6959",
+  "data": "2026-11-22T11:27:10Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "GOL Smiles",
+  "ida": "174.500 milhas (165.700 no Clube Smiles)",
+  "volta": "",
+  "link_nome": "GOL Smiles"
+ },
+ {
   "id": "2361370250-6958",
   "data": "2026-11-22T11:21:58Z",
   "origem": "São Paulo",
@@ -3010,34 +3024,6 @@
   "programa": "GOL Smiles",
   "ida": "239.300 milhas (227.300 no Clube Smiles)",
   "volta": "231.300 milhas (219.700 no Clube Smiles)",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-6873",
-  "data": "2026-11-20T11:28:32Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Paris",
-  "destino_iata": "CDG",
-  "companhia": "Air France",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "564.000 milhas (535.800 no Clube Smiles)",
-  "volta": "",
-  "link_nome": "GOL Smiles"
- },
- {
-  "id": "2361370250-6872",
-  "data": "2026-11-20T11:25:39Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "GOL Smiles",
-  "ida": "192.500 milhas (182.800 no Clube Smiles)",
-  "volta": "192.500 milhas (182.800 no Clube Smiles)",
   "link_nome": "GOL Smiles"
  },
  {
