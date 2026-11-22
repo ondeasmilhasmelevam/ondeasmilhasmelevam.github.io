@@ -1757,7 +1757,7 @@
   "companhia": "American / Avianca",
   "cabine": "Executiva",
   "programa": "Smiles",
-  "ida": "194.000 milhas + taxas",
+  "ida": "281.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -2221,7 +2221,7 @@
   "companhia": "American / Avianca",
   "cabine": "Executiva",
   "programa": "Smiles",
-  "ida": "221.000 milhas + taxas",
+  "ida": "248.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -3526,7 +3526,7 @@
   "origem_iata": "GRU",
   "destino": "Paris",
   "destino_iata": "CDG",
-  "companhia": "American / Air France / AM",
+  "companhia": "American / Air France / Aerolíneas Argentinas",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "140.000 milhas + taxas",
