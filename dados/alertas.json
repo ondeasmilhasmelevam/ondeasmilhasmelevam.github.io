@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16370",
+  "data": "2026-11-23T21:00:50Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Assunção",
+  "destino_iata": "ASU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "45.000 milhas + Taxas",
+  "volta": "45.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16369",
   "data": "2026-11-23T20:11:24Z",
   "origem": "Goiânia",
@@ -5886,20 +5900,6 @@
   "ida": "8.500 milhas + R$ 34,54 de taxas",
   "volta": "8.700 milhas + R$ 35,15 de taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-6897",
-  "data": "2026-11-21T21:05:35Z",
-  "origem": "Amsterdã",
-  "origem_iata": "AMS",
-  "destino": "Tóquio",
-  "destino_iata": "NRT",
-  "companhia": "KLM",
-  "cabine": "Executiva",
-  "programa": "Flying Blue",
-  "ida": "85.000 milhas + Taxas",
-  "volta": "85.000 milhas + Taxas",
-  "link_nome": "Flying Blue"
  },
  {
   "id": "seats-smiles-GRU-JFK-exe",
