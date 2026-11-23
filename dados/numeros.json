@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-23T19:59:16.221697Z",
+ "atualizado": "2026-11-23T20:05:28.691538Z",
  "dias": 30,
  "passagens": 3916,
  "promocoes": 223,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1066,
+  "passagens": 1065,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -405,19 +405,6 @@
     "data": "2026-11-19T20:41:02Z",
     "milhas": 92300,
     "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
-    "id": "2008590742-15877",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Zurique",
-    "destino_iata": "ZRH",
-    "cabine": "Econômica",
-    "programa": "Iberia Plus",
-    "data": "2026-11-16T20:01:42Z",
-    "milhas": 26500,
-    "nivel": "bom",
     "regiao": "europa"
    },
    {
@@ -937,6 +924,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-23T00:26:52Z",
     "milhas": 10330,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10061",
+    "origem": "Vitória",
+    "origem_iata": "VIX",
+    "destino": "São José do Rio Preto",
+    "destino_iata": "SJP",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-21T16:58:53Z",
+    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },
