@@ -1,5 +1,69 @@
 [
  {
+  "id": "1290836068-7966",
+  "data": "2026-11-23T14:31:50Z",
+  "tipo": "promocao",
+  "titulo": "CLUBE AZUL 5.000 ANUAL COM MILHEIRO A PARTIR DE R$ 9",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Assine o Clube Azul 5.000 anual por R$ 50/mês (ou R$ 45/mês com cartão Azul Itaú) e consiga milheiro a partir de R$ 9. Oferta válida somente em 23/11/2026.",
+  "detalhes": [
+   "Clube Azul 5.000 anual por R$ 50/mês (modalidade anual).",
+   "Desconto de 10% adicional (R$ 45/mês) ao pagar com Cartão Azul Itaú.",
+   "Milheiro a partir de R$ 10,00 com qualquer cartão e R$ 9,00 com Cartão Azul."
+  ],
+  "parceiros": "Azul",
+  "validade": "23/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/adesao-relampago"
+  ],
+  "ate": "2026-11-23T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7965",
+  "data": "2026-11-23T14:31:47Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass ITAÚ: 100.000 MILHAS BÔNUS COM CARTÃO BLACK",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Solicite o cartão LATAM Pass Itaú Mastercard Black e ganhe até 100.000 milhas bônus ao gastar R$60.000 nas 3 primeiras faturas. Oferta válida até 29/11/2026.",
+  "detalhes": [
+   "100.000 milhas bônus ao gastar R$60.000 (3 primeiras faturas) com o cartão Black.",
+   "40.000 milhas bônus ao gastar R$12.000 (3 primeiras faturas) com o cartão Platinum."
+  ],
+  "parceiros": "LATAM Pass, Itaú",
+  "validade": "29/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/promocoes/cobranded-aquisicao"
+  ],
+  "ate": "2026-11-29T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-7964",
+  "data": "2026-11-23T14:31:43Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFIRA PONTOS ALLOYAL PARA AZUL FIDELIDADE COM ATÉ 120% DE BÔNUS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Transfira pontos Alloyal para o Azul Fidelidade com bônus variando de 60% a 120%, dependendo do tempo de assinatura do Clube Azul. Oferta válida somente em 23/11/2026.",
+  "detalhes": [
+   "Bônus de 60% para demais clientes Azul Fidelidade.",
+   "Bônus de 90% para assinantes do Clube Azul.",
+   "Bônus de 95% para Clube Azul ativo de 6 a 11 meses.",
+   "Bônus de 100% para Clube Azul ativo de 12 a 35 meses.",
+   "Bônus de 110% para Clube Azul ativo de 36 a 59 meses.",
+   "Bônus de 120% para Clube Azul ativo há 60 meses ou mais.",
+   "Limite de 300.000 pontos bônus por CPF.",
+   "Bônus adicional por tempo de Clube Azul: limite de 100.000 pontos por ano-calendário."
+  ],
+  "parceiros": "Alloyal, Azul Fidelidade",
+  "validade": "23/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/alloyal"
+  ],
+  "ate": "2026-11-23T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-16329",
   "data": "2026-11-23T14:13:02Z",
   "origem": "Sinop",
@@ -4555,34 +4619,6 @@
   "ida": "18.200 milhas + Taxas",
   "volta": "18.200 milhas + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16205",
-  "data": "2026-11-21T14:31:18Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Foz do Iguaçu",
-  "destino_iata": "IGU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "16.920 milhas + Taxas",
-  "volta": "17.810 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2361370250-6893",
-  "data": "2026-11-21T14:30:06Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "50.000 milhas + CAD 122,90 de taxas",
-  "volta": "",
-  "link_nome": "Aeroplan"
  },
  {
   "id": "1290836068-7928",
