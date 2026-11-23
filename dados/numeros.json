@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-23T18:41:52.725388Z",
+ "atualizado": "2026-11-23T18:48:11.716847Z",
  "dias": 30,
  "passagens": 3904,
  "promocoes": 219,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1059,
+  "passagens": 1055,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -497,19 +497,6 @@
     "milhas": 78000,
     "nivel": "bom",
     "regiao": "caribe"
-   },
-   {
-    "id": "2008590742-15875",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
-    "destino": "Boston",
-    "destino_iata": "BOS",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-16T18:47:42Z",
-    "milhas": 91900,
-    "nivel": "bom",
-    "regiao": "america-do-norte"
    },
    {
     "id": "3761373661-10145",
@@ -939,6 +926,19 @@
     "milhas": 10300,
     "nivel": "",
     "regiao": "outros"
+   },
+   {
+    "id": "3761373661-10129",
+    "origem": "Goiânia",
+    "origem_iata": "GYN",
+    "destino": "Ilhéus",
+    "destino_iata": "IOS",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-23T00:26:52Z",
+    "milhas": 10330,
+    "nivel": "",
+    "regiao": "brasil"
    },
    {
     "id": "2361370250-6975",
