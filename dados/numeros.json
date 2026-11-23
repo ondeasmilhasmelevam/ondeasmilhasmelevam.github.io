@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-23T21:37:06.632229Z",
+ "atualizado": "2026-11-23T21:43:24.663056Z",
  "dias": 30,
- "passagens": 3943,
+ "passagens": 3946,
  "promocoes": 223,
  "destinos": 182,
  "executiva": 824,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1082,
+  "passagens": 1085,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -447,6 +447,19 @@
     "regiao": "america-do-sul"
    },
    {
+    "id": "2008590742-16379",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Nova York",
+    "destino_iata": "JFK",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-23T21:37:16Z",
+    "milhas": 66000,
+    "nivel": "bom",
+    "regiao": "america-do-norte"
+   },
+   {
     "id": "2008590742-16176",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -456,19 +469,6 @@
     "programa": "Smiles",
     "data": "2026-11-20T20:13:46Z",
     "milhas": 66400,
-    "nivel": "bom",
-    "regiao": "america-do-norte"
-   },
-   {
-    "id": "2008590742-16191",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Nova York",
-    "destino_iata": "JFK",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-21T12:03:20Z",
-    "milhas": 66800,
     "nivel": "bom",
     "regiao": "america-do-norte"
    },
