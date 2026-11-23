@@ -3,6 +3,18 @@
    Para atualizar, mude os valores aqui. "icone" é o arquivo em img/programas/app/ (sem .webp);
    "tipo" aparece embaixo do nome; "fundo" e "tinta" só valem se o ícone não carregar. */
 window.PRECO_MILHAS_DATA = '2026-11-18'; // mude junto com os preços: aparece como "Preços revisados em ..."
+// Minha carteira: quanto valem os pontos de cada pessoa.
+// 1) VALOR_VENDA: melhor oferta de venda do milheiro (o que se recebe vendendo). Atualize com a lista do dia.
+window.VALOR_VENDA_DATA = '2026-11-23';
+window.VALOR_VENDA = {
+  'Alaska Mileage Plan': 95, 'AAdvantage': 90, 'ALL Accor': 80, 'Miles & More': 75, 'ConnectMiles': 63,
+  'Aeroplan': 60, 'Qatar Privilege Club': 60, 'Virgin Atlantic Flying Club': 60, 'Finnair Plus': 58,
+  'Iberia Plus': 54, 'British Airways Club': 54, 'TAP Miles&Go': 46, 'LATAM Pass': 26,
+  'Smiles': 16.5, 'Azul Fidelidade': 16, 'Aegean Miles+Bonus': 68, 'Livelo': 31, 'Esfera': 35
+};
+// 2) Programas sem venda, com valor de referência do milheiro.
+window.VALOR_MILHEIRO_EXTRA = { 'C6 Átomos': 35 };
+// 3) O resto entra pelo preço bom de compra abaixo (PRECO_MILHAS).
 window.PRECO_MILHAS = [
   { nome: 'Azul Fidelidade', icone: 'azul', tipo: 'Azul', preco: 'R$ 14 ou menos', fundo: '#1D63F0', tinta: '#FFFFFF' },
   { nome: 'Smiles', icone: 'smiles', tipo: 'GOL', preco: 'R$ 16 ou menos', fundo: '#FF8A00', tinta: '#FFFFFF' },

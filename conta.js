@@ -28,9 +28,38 @@
   function milheiroRef(prog) {
     const n = norm(nomeProg(prog)), P = window.PRECO_MILHAS || [];
     const alvo = /IBERIA|BRITISH|QATAR|PRIVILEGE|AVIOS/.test(n) ? 'AVIOS' : n;
-    const p = P.find(x => { const k = norm(nomeProg(x.nome)); return k === alvo || k.startsWith(alvo) || alvo.startsWith(k); });
+    const p = P.find(x => { const k = norm(nomeProg(x.nome)); return k === alvo || k.startsWith(alvo) || alvo.startsWith(k); }) ||
+      P.find(x => { const k = norm(nomeProg(x.nome)); return k.length > 4 && (alvo.includes(k) || k.includes(alvo)); });
     const v = p && /^R\$/.test(String(p.preco).trim()) && (String(p.preco).match(/\d+/g) || []);
     return v ? Math.max(...v.map(Number)) : null;
+  }
+
+  // Valor dos pontos: melhor oferta de venda (precos.js); sem venda, valor de referência ou preço bom de compra;
+  // bancos sem nenhum dos dois contam pelo destino mais barato da transferência.
+  const comE = a => a.length > 1 ? `${a.slice(0, -1).join(", ")} e ${a[a.length - 1]}` : a.join("");
+  const daTabela = (tab, n) => { const e = Object.entries(tab || {}).find(([k]) => nomeProg(k) === nomeProg(n)); return e ? e[1] : null; };
+  function valorSaldos() {
+    const itens = Object.entries(conta.saldos).filter(([, q]) => q > 0);
+    let valor = 0; const porCompra = [], viaTransf = [], fora = [];
+    for (const [n, q] of itens) {
+      let ref = daTabela(window.VALOR_VENDA, n) || daTabela(window.VALOR_MILHEIRO_EXTRA, n);
+      if (!ref) { ref = milheiroRef(n); if (ref) porCompra.push(n); }
+      if (!ref) {
+        const o = ((transf && transf.origens) || []).find(x => nomeProg(x.nome) === nomeProg(n));
+        const cands = o ? o.destinos.map(d => { const r = daTabela(window.VALOR_VENDA, d.programa) || milheiroRef(d.programa), pr = pontosPorMilha(d.proporcao); return r && pr ? r / pr : null; }).filter(Boolean) : [];
+        if (cands.length) { ref = Math.min(...cands); viaTransf.push(n); }
+      }
+      if (ref) valor += q / 1000 * ref; else fora.push(n);
+    }
+    if (!itens.length) return '<small>Preencha quanto tem em cada programa. Só você vê esses números.</small>';
+    const total = itens.reduce((t, [, q]) => t + q, 0);
+    const d = String(window.VALOR_VENDA_DATA || '').split('-').reverse().join('/');
+    const notas = [];
+    if (valor) notas.push(`Conta feita com a melhor oferta de venda do milheiro${d ? ` (ofertas de ${d})` : ''}.`);
+    if (porCompra.length) notas.push(`${comE(porCompra)} ${porCompra.length > 1 ? 'entram' : 'entra'} pelo preço bom de compra, por não ter oferta de venda na lista.`);
+    if (viaTransf.length) notas.push(`${comE(viaTransf)} ${viaTransf.length > 1 ? 'entram' : 'entra'} pelo que vale${viaTransf.length > 1 ? 'm' : ''} transferido${viaTransf.length > 1 ? 's' : ''} para a companhia mais barata.`);
+    if (fora.length) notas.push(`Fora da conta do valor, por não ter referência: ${comE(fora)}.`);
+    return `<b>${fmt(total)}</b> pontos e milhas no total${valor ? ` · valem cerca de <b>${esc(reais(valor))}</b>` : ''}<small>${esc(notas.join(' '))}</small>`;
   }
   const BANCOS = [['Livelo'], ['Esfera'], ['Pontos Itaú', 'ITAU|IUPP'], ['C6 Átomos', 'C6|ATOMOS'], ['Inter Loop', '\\bINTER\\b'], ['BTG Pactual', 'BTG'],
     ['Nubank', 'NUBANK|ULTRAVIOLETA'], ['XP', '\\bXP\\b'], ['Nomad'], ['Sicoob Coopera', 'SICOOB'], ['Sicredi'], ['BRB Curtaí / DUX', 'BRB|CURTAI|\\bDUX\\b'],
@@ -148,10 +177,7 @@
     $('#ct-saldos').innerHTML = nomes.map(n => `<label class="ct-saldo"><span>${esc(n)}</span><input type="number" inputmode="numeric" min="0" step="500" data-saldo="${esc(n)}" value="${conta.saldos[n] || ''}" placeholder="0"></label>`).join('');
     $('#ct-add-prog').innerHTML = opcoesProgramas();
     // Quanto valem os pontos (pelo preço bom de compra de cada um).
-    const itens = Object.entries(conta.saldos).map(([n, q]) => ({ n, q, ref: milheiroRef(n) })).filter(x => x.q > 0);
-    const valor = itens.filter(x => x.ref).reduce((s, x) => s + x.q / 1000 * x.ref, 0);
-    $('#ct-valor').innerHTML = itens.length ? `<b>${fmt(itens.reduce((s, x) => s + x.q, 0))}</b> pontos e milhas no total${valor ? ` · valem cerca de <b>${esc(reais(valor))}</b>` : ''}
-      <small>${valor ? 'Conta feita com o preço bom de compra de cada programa (página Comprar milhas). É o quanto custaria juntar esses pontos hoje, não o valor de venda.' : ''}</small>` : '<small>Preencha quanto tem em cada programa. Só você vê esses números.</small>';
+    $('#ct-valor').innerHTML = valorSaldos();
     desenharDaParaEmitir();
     // Vencimentos
     $('#ct-venc-lista').innerHTML = conta.vencimentos.length ? conta.vencimentos.map((v, i) => {
@@ -206,9 +232,7 @@
     salvar();
     clearTimeout(desenharTimer); desenharTimer = setTimeout(() => {
       const ativo = document.activeElement; const nome = ativo && ativo.dataset ? ativo.dataset.saldo : null;
-      const itens = Object.entries(conta.saldos).map(([k, q]) => ({ q, ref: milheiroRef(k) }));
-      const valor = itens.filter(x => x.ref).reduce((t, x) => t + x.q / 1000 * x.ref, 0);
-      $('#ct-valor').innerHTML = itens.length ? `<b>${fmt(itens.reduce((t, x) => t + x.q, 0))}</b> pontos e milhas no total${valor ? ` · valem cerca de <b>${esc(reais(valor))}</b>` : ''}<small>${valor ? 'Conta feita com o preço bom de compra de cada programa (página Comprar milhas). É o quanto custaria juntar esses pontos hoje, não o valor de venda.' : ''}</small>` : '';
+      $('#ct-valor').innerHTML = valorSaldos();
       desenharDaParaEmitir();
       if (nome) { const de = document.querySelector(`[data-saldo="${CSS.escape(nome)}"]`); if (de && de !== ativo) de.focus(); }
     }, 600);
