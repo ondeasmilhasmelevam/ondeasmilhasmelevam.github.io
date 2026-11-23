@@ -2438,3 +2438,13 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .bn-card dd small{font-weight:600;font-size:12px;color:var(--ash)}
 .bn-costuma{margin:10px 0 0;font-size:12.5px;line-height:1.45;color:var(--ash)}
 .bn-costuma b{color:var(--ouro-lt)}
+
+/* Carteira: bônus no ar e desconto da emissão */
+.ct-check[hidden],.ct-bloco[hidden]{display:none!important}
+.ct-form .ct-desc{grid-column:1/-1;margin:4px 0 0}
+.ct-bonus-meus{border-color:rgba(232,120,40,.45)}
+.ct-bonus-meus .ct-nota{margin:10px 0 0;font-size:13px}
+.ct-form label.ct-desc{display:flex;flex-direction:row;align-items:center;gap:10px}
+.ct-form label.ct-desc input{width:20px;height:20px;flex:none;padding:0;margin:0}
+#ct-bonus-meus li b,#ct-bonus-meus li span{display:block}
+#ct-bonus-meus li span{margin-top:4px}

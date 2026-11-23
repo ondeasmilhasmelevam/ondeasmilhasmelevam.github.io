@@ -21,7 +21,8 @@
     if (!transf) transf = await json('dados/transferencias.json');
     if (!promosAgora) {
       const lista = await json('dados/alertas.json');
-      promosAgora = (Array.isArray(lista) ? lista : []).filter(p => p.tipo === 'promocao' && p.titulo).map(p => ({ ...lerBonus(p.titulo), data: p.data })).filter(b => b.destino);
+      promosAgora = (Array.isArray(lista) ? lista : []).filter(p => p.tipo === 'promocao' && p.titulo && !(p.ate && Date.parse(p.ate) < Date.now()))
+        .map(p => ({ ...lerBonus(p.titulo), data: p.data, ate: p.ate, titulo: p.titulo })).filter(b => b.destino);
     }
   }
   // Preço bom do milheiro (precos.js): "até R$ 16" → 16.
@@ -86,7 +87,7 @@
 
   /* ---------- Conta do assinante (servidor) ---------- */
   let conta = null, carregando = null, salvarTimer = 0;
-  const vazia = () => ({ saldos: {}, vencimentos: [], emissoes: [], avisos: 'hora', resumo: true, passosFechado: false });
+  const vazia = () => ({ saldos: {}, vencimentos: [], emissoes: [], avisos: 'hora', resumo: true, passosFechado: false, bonusAviso: true });
   async function chamar(metodo, corpo) {
     const tk = window.oammlToken ? await window.oammlToken() : '';
     if (!tk) throw new Error('sem login');
@@ -110,6 +111,8 @@
       marcarCartoes(); desenharPassos();
     }, 700);
   }
+  const chaveSaldo = p => Object.keys(conta.saldos).find(k => nomeProg(k) === nomeProg(p)) || nomeProg(p);
+  const saldoProg = p => conta.saldos[chaveSaldo(p)] || 0;
   const temSaldo = () => conta && Object.values(conta.saldos || {}).some(v => v > 0);
 
   /* ---------- "Dá para emitir" nos cartões de passagem ---------- */
@@ -178,6 +181,7 @@
     $('#ct-add-prog').innerHTML = opcoesProgramas();
     // Quanto valem os pontos (pelo preço bom de compra de cada um).
     $('#ct-valor').innerHTML = valorSaldos();
+    desenharBonusMeus();
     desenharDaParaEmitir();
     // Vencimentos
     $('#ct-venc-lista').innerHTML = conta.vencimentos.length ? conta.vencimentos.map((v, i) => {
@@ -188,6 +192,7 @@
     // Avisos
     document.querySelectorAll('input[name="ct-avisos"]').forEach(r => { r.checked = r.value === conta.avisos; });
     $('#ct-resumo').checked = conta.resumo !== false;
+    $('#ct-bonus-aviso').checked = conta.bonusAviso !== false;
     desenharEmissoes();
     if (prefill) {
       const f = $('#ct-emissao');
@@ -195,7 +200,25 @@
       Object.entries(prefill).forEach(([k, v]) => { const c = f.elements[k]; if (c && k !== 'programa') c.value = v; });
       f.closest('details').open = true;
       prefill = null;
+      textoDesconto();
     } else if (!$('#ct-em-prog').options.length) $('#ct-em-prog').innerHTML = opcoesProgramas();
+  }
+  function desenharBonusMeus() {
+    const caixa = $('#ct-bonus-meus'); if (!caixa) return;
+    const vistos = new Set();
+    const itens = (promosAgora || []).filter(b => b.origem && saldoProg(b.origem) > 0)
+      .filter(b => { const k = `${nomeProg(b.origem)}>${nomeProg(b.destino)}`; if (vistos.has(k)) return false; vistos.add(k); return true; })
+      .map(b => {
+        const tem = saldoProg(b.origem);
+        const o = ((transf && transf.origens) || []).find(x => nomeProg(x.nome) === nomeProg(b.origem));
+        const d = o && o.destinos.find(x => nomeProg(x.programa) === nomeProg(b.destino));
+        const prop = d && pontosPorMilha(d.proporcao);
+        const viram = prop ? Math.floor(tem / prop * (1 + (b.pct || 0) / 100)) : 0;
+        const fim = b.ate ? dataBR(String(b.ate).slice(0, 10)) : '';
+        return `<li><div><b>🔥 ${esc(b.origem)} → ${esc(b.destino)}${b.pct ? ` · até ${b.pct}% de bônus` : ''}</b><span>Você tem ${fmt(tem)} pontos na ${esc(b.origem)}${viram ? `: com o bônus, viram até ${fmt(viram)} milhas ${esc(b.destino)}` : ''}.${fim ? ` Vale até ${esc(fim)}.` : ''}</span></div></li>`;
+      });
+    caixa.closest('.ct-bloco').hidden = !itens.length;
+    caixa.innerHTML = itens.join('');
   }
   function desenharDaParaEmitir() {
     const el = $('#ct-emitir');
@@ -209,6 +232,16 @@
       : '<p class="ct-vazio">Nenhuma passagem no ar agora cabe nos seus pontos. Quando aparecer, ela ganha o selo verde "dá para emitir" na página Passagens.</p>';
     marcarCartoes();
   }
+  // "Descontar do meu saldo": mostra quanto sai e de qual programa.
+  function textoDesconto() {
+    const f = $('#ct-emissao'), alvo = $('#ct-em-desc'); if (!f || !alvo || !conta) return;
+    const prog = f.elements.programa.value, milhas = Math.round(+f.elements.milhas.value || 0), tem = prog ? saldoProg(prog) : 0;
+    const caixa = alvo.closest('label');
+    caixa.hidden = !prog || !milhas || !tem;
+    alvo.textContent = `Descontar ${fmt(Math.min(milhas, tem))} milhas do meu saldo no ${nomeProg(prog)} (hoje ${fmt(tem)})`;
+  }
+  document.addEventListener('input', e => { if (e.target.closest('#ct-emissao')) textoDesconto(); });
+  document.addEventListener('change', e => { if (e.target.closest('#ct-emissao')) textoDesconto(); });
   function desenharEmissoes() {
     const em = [...conta.emissoes].sort((a, b) => (b.data || '').localeCompare(a.data || ''));
     const calc = e => {
@@ -233,6 +266,7 @@
     clearTimeout(desenharTimer); desenharTimer = setTimeout(() => {
       const ativo = document.activeElement; const nome = ativo && ativo.dataset ? ativo.dataset.saldo : null;
       $('#ct-valor').innerHTML = valorSaldos();
+      desenharBonusMeus();
       desenharDaParaEmitir();
       if (nome) { const de = document.querySelector(`[data-saldo="${CSS.escape(nome)}"]`); if (de && de !== ativo) de.focus(); }
     }, 600);
@@ -250,6 +284,7 @@
     }
     if (e.target.name === 'ct-avisos') { conta.avisos = e.target.value; salvar('Preferência salva'); }
     if (e.target.id === 'ct-resumo') { conta.resumo = e.target.checked; salvar('Preferência salva'); }
+    if (e.target.id === 'ct-bonus-aviso') { conta.bonusAviso = e.target.checked; salvar('Preferência salva'); }
   });
   document.addEventListener('submit', e => {
     if (!conta) return;
@@ -266,15 +301,26 @@
       const f = e.target, v = k => f.elements[k].value;
       if (!v('rota') || !+v('milhas') || !v('programa')) { $('#ct-status').textContent = 'Preencha a rota, o programa e as milhas.'; return; }
       conta.emissoes.push({ data: v('data') || hojeISO(), rota: v('rota'), programa: v('programa'), cabine: v('cabine'), milhas: Math.round(+v('milhas')), taxas: Math.round(+v('taxas') || 0),
-        dinheiro: Math.round(+v('dinheiro') || 0), milheiro: +String(v('milheiro')).replace(',', '.') || 0, pessoas: Math.max(1, Math.round(+v('pessoas') || 1)) });
-      f.reset(); f.elements.data.value = hojeISO(); desenharEmissoes(); salvar('Emissão anotada');
+        dinheiro: Math.round(+v('dinheiro') || 0), milheiro: +String(v('milheiro')).replace(',', '.') || 0, pessoas: Math.max(1, Math.round(+v('pessoas') || 1)), descontado: 0 });
+      const em = conta.emissoes[conta.emissoes.length - 1], tem = saldoProg(em.programa);
+      if (f.elements.descontar && f.elements.descontar.checked && tem && !$('#ct-em-desc').closest('label').hidden) {
+        em.descontado = Math.min(em.milhas, tem);
+        const k = chaveSaldo(em.programa), resta = tem - em.descontado;
+        if (resta) conta.saldos[k] = resta; else delete conta.saldos[k];
+      }
+      const msg = em.descontado ? `Emissão anotada e ${fmt(em.descontado)} milhas descontadas do ${nomeProg(em.programa)}` : 'Emissão anotada';
+      f.reset(); f.elements.data.value = hojeISO(); desenharCarteira(); textoDesconto(); salvar(msg);
     }
   });
   document.addEventListener('click', e => {
     if (!conta) return;
     const tv = e.target.closest('[data-tirar-venc]'), te = e.target.closest('[data-tirar-em]');
     if (tv) { conta.vencimentos.splice(+tv.dataset.tirarVenc, 1); desenharCarteira(); salvar(); }
-    if (te) { conta.emissoes.splice(+te.dataset.tirarEm, 1); desenharEmissoes(); salvar(); }
+    if (te) {
+      const [em] = conta.emissoes.splice(+te.dataset.tirarEm, 1);
+      if (em && em.descontado) { const k = chaveSaldo(em.programa); conta.saldos[k] = (conta.saldos[k] || 0) + em.descontado; }
+      desenharCarteira(); salvar(em && em.descontado ? `Emissão tirada e ${fmt(em.descontado)} milhas devolvidas ao ${nomeProg(em.programa)}` : 'Emissão tirada');
+    }
     if (e.target.closest('#pp-fechar')) { conta.passosFechado = true; salvar('Pronto'); desenharPassos(); }
   });
 

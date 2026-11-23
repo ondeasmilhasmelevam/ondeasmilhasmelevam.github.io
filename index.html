@@ -49,7 +49,7 @@
 .sem-entrada #entrada{display:none}
 @media (prefers-reduced-motion:reduce){#entrada{display:none}}
 </style>
-<link rel="stylesheet" href="estilo.css?v=154">
+<link rel="stylesheet" href="estilo.css?v=157">
 <link rel="stylesheet" href="ajustes.css?v=7">
 <link rel="stylesheet" href="rotas-aereas.css?v=4">
 </head>
@@ -1161,13 +1161,19 @@
           <p class="ct-valor" id="ct-valor"></p>
         </article>
 
+        <article class="ct-bloco ct-bonus-meus" hidden>
+          <header><span class="ct-ic" aria-hidden="true">🔥</span><div><h3>Bônus no ar para os seus pontos</h3><p>Promoções de transferência valendo agora para os bancos em que você tem saldo.</p></div></header>
+          <ul class="radar-lista" id="ct-bonus-meus"></ul>
+          <p class="ct-nota">Transferência não tem volta: ache a passagem e confira a data no site do programa antes de transferir.</p>
+        </article>
+
         <article class="ct-bloco">
           <header><span class="ct-ic" aria-hidden="true">✈️</span><div><h3>Dá para emitir agora</h3><p>Passagens no ar que cabem nos seus pontos, direto ou transferindo do banco.</p></div></header>
           <div id="ct-emitir"></div>
         </article>
 
         <article class="ct-bloco">
-          <header><span class="ct-ic" aria-hidden="true">⏳</span><div><h3>Pontos vencendo</h3><p>Marque a data e avisamos por e-mail 30 e 7 dias antes, com ideias para não perder.</p></div></header>
+          <header><span class="ct-ic" aria-hidden="true">⏳</span><div><h3>Pontos vencendo</h3><p>Marque a data e avisamos por e-mail e no celular 30 e 7 dias antes, com ideias para não perder.</p></div></header>
           <ul class="radar-lista ct-venc-lista" id="ct-venc-lista"></ul>
           <form class="radar-form ct-form" id="ct-venc">
             <label>Programa<select name="programa" id="ct-venc-prog"></select></label>
@@ -1184,7 +1190,8 @@
             <label><input type="radio" name="ct-avisos" value="dia"><span><b>1 vez por dia</b><small>Tudo junto num e-mail só.</small></span></label>
             <label><input type="radio" name="ct-avisos" value="resumo"><span><b>Só no resumo da semana</b><small>Sem e-mail da Rota Vigiada durante a semana.</small></span></label>
           </div>
-          <label class="ct-check"><input type="checkbox" id="ct-resumo"> Receber o resumo da semana por e-mail (sexta-feira)</label>
+          <label class="ct-check"><input type="checkbox" id="ct-resumo"> Receber o resumo da semana por e-mail (sexta-feira), com as passagens que cabem nos seus pontos</label>
+          <label class="ct-check"><input type="checkbox" id="ct-bonus-aviso"> Avisar no celular quando abrir bônus de transferência para um banco em que tenho pontos</label>
         </article>
 
         <article class="ct-bloco">
@@ -1201,6 +1208,7 @@
               <label>Pessoas<input name="pessoas" type="number" inputmode="numeric" min="1" max="9" value="1"></label>
               <label>Preço em dinheiro (R$)<input name="dinheiro" type="number" inputmode="decimal" min="0" step="1" placeholder="o mesmo voo pago"></label>
               <label>Quanto pagou o milheiro (R$)<input name="milheiro" inputmode="decimal" placeholder="vazio: preço bom da tabela"></label>
+              <label class="ct-check ct-desc" hidden><input type="checkbox" name="descontar" checked> <span id="ct-em-desc"></span></label>
               <button type="submit" class="cta cta-a">Anotar</button>
             </form>
           </details>
@@ -1551,7 +1559,7 @@
 <script src="app.js?v=141"></script>
 <script src="interface.js?v=2"></script>
 <script src="funil.js?v=8"></script>
-<script src="conta.js?v=3" defer></script>
+<script src="conta.js?v=4" defer></script>
 <script type="module" src="assinatura.js?v=58"></script>
 <script src="mapa.js?v=13" defer></script>
 <script src="rotas-aereas.js?v=10" defer></script>
