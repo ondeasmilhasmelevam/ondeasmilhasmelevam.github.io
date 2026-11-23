@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-23T21:05:57.093958Z",
+ "atualizado": "2026-11-23T21:12:13.352705Z",
  "dias": 30,
- "passagens": 3929,
+ "passagens": 3932,
  "promocoes": 223,
  "destinos": 181,
- "executiva": 821,
+ "executiva": 824,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1070,
+  "passagens": 1072,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -1136,6 +1136,19 @@
     "regiao": "europa"
    },
    {
+    "id": "2361370250-6999",
+    "origem": "Paris",
+    "origem_iata": "CDG",
+    "destino": "Pequim",
+    "destino_iata": "PEK",
+    "cabine": "Executiva",
+    "programa": "Flying Blue",
+    "data": "2026-11-23T21:09:01Z",
+    "milhas": 63750,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "2361370250-6712",
     "origem": "Honolulu",
     "origem_iata": "HNL",
@@ -1186,19 +1199,6 @@
     "milhas": 70000,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "2361370250-6793",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Bogotá",
-    "destino_iata": "BOG",
-    "cabine": "Executiva",
-    "programa": "Smiles",
-    "data": "2026-11-18T17:44:30Z",
-    "milhas": 74000,
-    "nivel": "",
-    "regiao": "america-do-sul"
    }
   ]
  }
