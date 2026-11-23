@@ -3887,20 +3887,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16190",
-  "data": "2026-11-21T01:04:12Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "43.000 milhas + R$ 343,68 de taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7928",
   "data": "2026-11-21T00:00:28Z",
   "tipo": "promocao",
