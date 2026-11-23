@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-23T03:14:29.994933Z",
+ "atualizado": "2026-11-23T03:20:37.885139Z",
  "dias": 30,
- "passagens": 3734,
+ "passagens": 3735,
  "promocoes": 211,
  "destinos": 179,
  "executiva": 806,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1147,
+  "passagens": 1148,
   "destaques": [
    {
     "id": "2008590742-16307",
@@ -252,6 +252,19 @@
     "regiao": "america-do-sul"
    },
    {
+    "id": "2008590742-16318",
+    "origem": "Florianópolis",
+    "origem_iata": "FLN",
+    "destino": "Buenos Aires",
+    "destino_iata": "AEP",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-23T03:16:21Z",
+    "milhas": 23000,
+    "nivel": "muito bom",
+    "regiao": "america-do-sul"
+   },
+   {
     "id": "2008590742-15855",
     "origem": "Florianópolis",
     "origem_iata": "FLN",
@@ -273,19 +286,6 @@
     "cabine": "Econômica",
     "programa": "Smiles",
     "data": "2026-11-16T16:31:28Z",
-    "milhas": 29000,
-    "nivel": "muito bom",
-    "regiao": "america-do-sul"
-   },
-   {
-    "id": "2008590742-15876",
-    "origem": "Florianópolis",
-    "origem_iata": "FLN",
-    "destino": "Buenos Aires",
-    "destino_iata": "AEP",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-16T19:42:40Z",
     "milhas": 29000,
     "nivel": "muito bom",
     "regiao": "america-do-sul"

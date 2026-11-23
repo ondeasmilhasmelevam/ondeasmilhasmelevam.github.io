@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16318",
+  "data": "2026-11-23T03:16:21Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Buenos Aires",
+  "destino_iata": "AEP",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "23.000 milhas + R$ 108,17 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-smiles-GRU-BOG-eco",
   "data": "2026-11-23T02:00:08.942796Z",
   "fonte": "seats.aero",
