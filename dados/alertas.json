@@ -4762,21 +4762,6 @@
   "link_nome": "TAP Miles&Go"
  },
  {
-  "id": "seats-iberia-REC-MAD-eco",
-  "data": "2026-11-22T03:40:28.927110Z",
-  "fonte": "seats.aero",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Madrid",
-  "destino_iata": "MAD",
-  "companhia": "Iberia / LATAM",
-  "cabine": "Econômica",
-  "programa": "Iberia Plus",
-  "ida": "16.000 Avios + taxas",
-  "volta": "",
-  "link_nome": "Iberia Plus"
- },
- {
   "id": "seats-iberia-REC-MAD-exe",
   "data": "2026-11-22T03:40:28.927110Z",
   "fonte": "seats.aero",
@@ -4835,6 +4820,21 @@
   "ida": "254.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
+ },
+ {
+  "id": "seats-iberia-REC-MAD-eco",
+  "data": "2026-11-22T03:40:28.927110Z",
+  "fonte": "seats.aero",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "Iberia / LATAM",
+  "cabine": "Econômica",
+  "programa": "Iberia Plus",
+  "ida": "25.000 Avios + taxas",
+  "volta": "",
+  "link_nome": "Iberia Plus"
  },
  {
   "id": "seats-iberia-GRU-MAD-eco",
