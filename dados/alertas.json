@@ -1,5 +1,47 @@
 [
  {
+  "id": "3761373661-10205",
+  "data": "2026-11-23T13:59:38Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "SDU",
+  "destino": "Caldas Novas",
+  "destino_iata": "CLV",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "10.300 milhas + Taxas",
+  "volta": "10.300 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10204",
+  "data": "2026-11-23T13:59:37Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "RIO",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "12.000 milhas + Taxas",
+  "volta": "12.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-10203",
+  "data": "2026-11-23T13:59:33Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Navegantes",
+  "destino_iata": "NVT",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "20.900 milhas + Taxas",
+  "volta": "20.900 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10202",
   "data": "2026-11-23T13:57:17Z",
   "origem": "São Paulo",
@@ -4597,20 +4639,6 @@
   "ida": "13.980 milhas + Taxas",
   "volta": "12.510 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-10042",
-  "data": "2026-11-21T14:00:19Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Macapá",
-  "destino_iata": "MCP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "5.300 milhas + Taxas",
-  "volta": "5.300 milhas + Taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7928",
