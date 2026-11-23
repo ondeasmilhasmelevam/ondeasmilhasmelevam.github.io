@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-23T14:48:38.680671Z",
+ "atualizado": "2026-11-23T14:55:00.108565Z",
  "dias": 30,
  "passagens": 3812,
  "promocoes": 217,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 999,
+  "passagens": 998,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -265,19 +265,6 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-15855",
-    "origem": "Florianópolis",
-    "origem_iata": "FLN",
-    "destino": "Buenos Aires",
-    "destino_iata": "EZE",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-16T14:51:41Z",
-    "milhas": 29000,
-    "nivel": "muito bom",
-    "regiao": "america-do-sul"
-   },
-   {
     "id": "2008590742-15859",
     "origem": "Rio de Janeiro",
     "origem_iata": "GIG",
@@ -286,6 +273,19 @@
     "cabine": "Econômica",
     "programa": "Smiles",
     "data": "2026-11-16T16:31:28Z",
+    "milhas": 29000,
+    "nivel": "muito bom",
+    "regiao": "america-do-sul"
+   },
+   {
+    "id": "2008590742-16050",
+    "origem": "Florianópolis",
+    "origem_iata": "FLN",
+    "destino": "Buenos Aires",
+    "destino_iata": "EZE",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-19T01:00:43Z",
     "milhas": 29000,
     "nivel": "muito bom",
     "regiao": "america-do-sul"
