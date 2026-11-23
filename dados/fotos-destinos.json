@@ -167,6 +167,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Panama_City_Skyline_1.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Panama_City_Skyline_1.jpg/1280px-Panama_City_Skyline_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "copenhague": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Cityscape_and_skyline_by_the_Copenhagen_Lakes,_Denmark_-_(36018109956).jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Cityscape_and_skyline_by_the_Copenhagen_Lakes%2C_Denmark_-_%2836018109956%29.jpg/1280px-Cityscape_and_skyline_by_the_Copenhagen_Lakes%2C_Denmark_-_%2836018109956%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "costa-rica": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Costa_Rica_M30_-_panoramio.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Costa_Rica_M30_-_panoramio.jpg/1280px-Costa_Rica_M30_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -199,6 +203,14 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_Frontenac_city_at_night.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Ch%C3%A2teau_Frontenac_city_at_night.jpg/1280px-Ch%C3%A2teau_Frontenac_city_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "dublin-irlanda": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:St_Patrick%27s_Cathedral_Choir_360x180,_Dublin,_Ireland.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/St_Patrick%27s_Cathedral_Choir_360x180%2C_Dublin%2C_Ireland.jpg/1280px-St_Patrick%27s_Cathedral_Choir_360x180%2C_Dublin%2C_Ireland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "edimburgo-escocia": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:The_Royal_Scot_at_Edinburgh_Waverley_station_-_geograph.org.uk_-_5178125.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/The_Royal_Scot_at_Edinburgh_Waverley_station_-_geograph.org.uk_-_5178125.jpg/1280px-The_Royal_Scot_at_Edinburgh_Waverley_station_-_geograph.org.uk_-_5178125.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "el-calafate-argentina": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Invierno_en_la_costanera..jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Invierno_en_la_costanera..jpg/1280px-Invierno_en_la_costanera..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -206,6 +218,10 @@
  "fernando-de-noronha": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Raia_da_Atalaia_Fernando_de_Noronha_05.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Raia_da_Atalaia_Fernando_de_Noronha_05.jpg/1280px-Raia_da_Atalaia_Fernando_de_Noronha_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "florenca-italia": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Vista_de_Florencia_desde_Piazzale_Michelangelo,_Italia,_2022-09-18,_DD_212-214_HDR.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Vista_de_Florencia_desde_Piazzale_Michelangelo%2C_Italia%2C_2022-09-18%2C_DD_212-214_HDR.jpg/1280px-Vista_de_Florencia_desde_Piazzale_Michelangelo%2C_Italia%2C_2022-09-18%2C_DD_212-214_HDR.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "florianopolis-65-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Panorama_de_Floripa.JPG",
@@ -222,6 +238,10 @@
  "foz-do-iguacu": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Cataratas,lado_Brasil...._-_panoramio.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Cataratas%2Clado_Brasil...._-_panoramio.jpg/1280px-Cataratas%2Clado_Brasil...._-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "frankfurt-alemanha": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Skyline_Frankfurt_am_Main_2015.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Skyline_Frankfurt_am_Main_2015.jpg/1280px-Skyline_Frankfurt_am_Main_2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "gramado-canela": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Panorama-gramado-lago-negro.jpg",
