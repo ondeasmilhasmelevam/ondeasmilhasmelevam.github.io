@@ -506,9 +506,10 @@
   "1290836068-7958"
  ],
  "ultimo_em": "2026-11-23T13:33:59.956167+00:00",
- "ultimo_tipo": "promocao",
+ "ultimo_tipo": "passagem",
  "lotes_stories": [
-  "08:00"
+  "08:00",
+  "12:00"
  ],
  "horarios_feed": [
   "09:00"
