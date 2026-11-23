@@ -1,5 +1,140 @@
 [
  {
+  "id": "3761373661-10254",
+  "data": "2026-11-23T16:35:18Z",
+  "origem": "Navegantes",
+  "origem_iata": "NVT",
+  "destino": "Montes Claros",
+  "destino_iata": "MOC",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "A partir de 16.200 milhas",
+  "volta": "A partir de 16.200 milhas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10253",
+  "data": "2026-11-23T16:35:14Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "A partir de 7.300 milhas",
+  "volta": "A partir de 7.300 milhas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10252",
+  "data": "2026-11-23T16:32:58Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Navegantes",
+  "destino_iata": "NVT",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.800 milhas + Taxas",
+  "volta": "16.800 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10251",
+  "data": "2026-11-23T16:32:50Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "9.400 milhas + Taxas",
+  "volta": "9.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10250",
+  "data": "2026-11-23T16:32:44Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "12.000 milhas + Taxas",
+  "volta": "12.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10249",
+  "data": "2026-11-23T16:32:40Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.500 milhas + Taxas",
+  "volta": "16.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10248",
+  "data": "2026-11-23T16:32:34Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Fortaleza",
+  "destino_iata": "FOR",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "24.000 milhas + Taxas",
+  "volta": "24.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10247",
+  "data": "2026-11-23T16:32:30Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Vitória",
+  "destino_iata": "VIX",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.600 milhas + Taxas",
+  "volta": "10.600 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "1290836068-7972",
+  "data": "2026-11-23T16:32:05Z",
+  "tipo": "promocao",
+  "titulo": "OFERTA EXCLUSIVA: CLUBE SMILES 1.000 ANUAL COM 12.000 MILHAS NO PRIMEIRO MÊS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Smiles 1.000 anual via chat e receba 12.000 milhas no primeiro mês .",
+  "detalhes": [
+   "12.000 milhas no primeiro mês .",
+   "Investimento anual parcelado: R$ 524,40 (12 × R$ 43,70).",
+   "Investimento anual à vista: R$ 496,80.",
+   "Total de milhas: 23.000 .",
+   "Milheiro anual parcelado: R$ 22,80.",
+   "Milheiro anual à vista: R$ 21,60."
+  ],
+  "parceiros": "Smiles",
+  "validade": "30/11/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
   "id": "3761373661-10246",
   "data": "2026-11-23T16:22:25Z",
   "origem": "Natal",
@@ -5109,31 +5244,6 @@
   "ida": "248.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-7928",
-  "data": "2026-11-21T00:00:28Z",
-  "tipo": "promocao",
-  "titulo": "CLUBE SMILES: ATÉ 30.000 MILHAS NA HORA PARA NOVOS ASSINANTES DO PLANO ANUAL",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Na Orange Friday do Clube Smiles, quem assina o plano anual recebe as milhas bônus na hora. Válido até 30/11/2026 às 21h. 📋 Mecânica e Valores Clube 1.000: 10.000 milhas bônus Clube 2.000: 14.000 milhas bônus Clube 5.000: 18.000 milhas bônus Clube 10.000: 24.000 milhas bônus Clube 20.000: 30.000 milhas bônus No plano mensal, o bônus vem nos meses 1, 3 e 6. ✅ Parceiros: Smiles, Clube Smiles ✅ Validade: 30/11/2026 às 21h 🔗 Link https://www.smiles.com.br/portal/campanha/clubesmiles/assineja ⚠️ Regras e Informações Importantes Só para novas adesões; quem cancelou o Clube nos últimos 365 dias não leva o bônus. Permanência mínima de 6 meses (10 meses no Clube 20.000). Corrigido em 21/11/2026: o texto anterior dizia \"até 50.000 milhas\" e \"até durar o estoque\"; a página oficial da Smiles diz até 30.000 milhas, até 30/11. #smiles #clubesmiles",
-  "detalhes": [
-   "Clube 1.000: 10.000 milhas bônus",
-   "Clube 2.000: 14.000 milhas bônus",
-   "Clube 5.000: 18.000 milhas bônus",
-   "Clube 10.000: 24.000 milhas bônus",
-   "Clube 20.000: 30.000 milhas bônus",
-   "No plano mensal, o bônus vem nos meses 1, 3 e 6.",
-   "✅ Parceiros: Smiles, Clube Smiles",
-   "✅ Validade: 30/11/2026 às 21h"
-  ],
-  "parceiros": "Smiles, Clube Smiles",
-  "validade": "30/11/2026 às 21h",
-  "links": [
-   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja"
-  ],
-  "ate": "2026-11-30T23:59:59-03:00"
  },
  {
   "id": "1290836068-7892",
