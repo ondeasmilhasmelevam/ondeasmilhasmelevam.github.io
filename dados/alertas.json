@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16330",
+  "data": "2026-11-23T14:45:45Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "43.000 milhas + R$ 343,68 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-7966",
   "data": "2026-11-23T14:31:50Z",
   "tipo": "promocao",
@@ -4562,62 +4576,6 @@
   "programa": "Smiles",
   "ida": "26.200 milhas + Taxas",
   "volta": "26.100 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10047",
-  "data": "2026-11-21T14:46:53Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Salvador",
-  "destino_iata": "SSA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "28.700 milhas + Taxas",
-  "volta": "28.600 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10046",
-  "data": "2026-11-21T14:45:21Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "21.900 milhas + Taxas",
-  "volta": "21.900 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16206",
-  "data": "2026-11-21T14:43:20Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Santa Cruz de La Sierra",
-  "destino_iata": "VVI",
-  "companhia": "GOL + parceira",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "54.000 milhas + Taxas",
-  "volta": "47.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10045",
-  "data": "2026-11-21T14:43:18Z",
-  "origem": "Vitória",
-  "origem_iata": "VIX",
-  "destino": "Uberlândia",
-  "destino_iata": "UDI",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "18.200 milhas + Taxas",
-  "volta": "18.200 milhas + Taxas",
   "link_nome": "Smiles"
  },
  {
