@@ -1700,6 +1700,7 @@
           <div><dt>Ida</dt><dd>${esc(p.ida)}</dd></div>
           ${p.volta ? `<div><dt>Volta</dt><dd>${esc(p.volta)}</dd></div>` : ''}
         </dl>${custoHtml(p)}${milhasTrecho(p.ida) ? `<button type="button" class="pass-comparar" data-prog="${esc(p.programa || '')}" data-milhas="${milhasTrecho(p.ida)}" data-taxa="${taxaReais(p.ida) || ''}">🧮 Comparar com o preço em dinheiro</button>` : ''}
+        <p class="pass-carteira" data-prog="${esc(p.programa || '')}" data-milhas="${(milhasTrecho(p.ida) || 0) + (p.volta ? milhasTrecho(p.volta) || 0 : 0)}" data-volta="${p.volta ? 1 : 0}" data-taxas="${Math.round(taxaReais(p.ida) + (p.volta ? taxaReais(p.volta) : 0)) || ''}" data-rota="${esc(`${p.origem_iata} ${p.origem} → ${p.destino_iata} ${p.destino}`)}" data-cabine="${esc(p.cabine || '')}" hidden></p>
         <a class="pass-hist" href="#rota/${esc(p.origem_iata)}-${esc(p.destino_iata)}-${slugCabine(p.cabine)}">📈 Histórico desta rota</a>
         ${completo && httpOk(completo.link) ? calendarioHtml(p, completo) : travaHtml()}
       </li>`;
@@ -2981,6 +2982,7 @@
     const emReais = p => /^R\$/.test(p.preco.trim());
     const teto = Math.max(...lista.filter(emReais).map(p => p.f[1])) * 1.05 || 1;
     const aberto = p => /ou menos/i.test(p.preco);
+    if ($('#precos-data') && window.PRECO_MILHAS_DATA) $('#precos-data').textContent = `Preços revisados em ${window.PRECO_MILHAS_DATA.split('-').reverse().join('/')}. Promoções mudam toda semana: compare sempre com o preço da loja na hora da compra.`;
     $('#precos').innerHTML = lista.map(p => {
       const ini = aberto(p) ? 0 : p.f[0], fim = p.f[1];
       return `<li style="--ini:${(ini / teto * 100).toFixed(1)}%;--fim:${(fim / teto * 100).toFixed(1)}%">

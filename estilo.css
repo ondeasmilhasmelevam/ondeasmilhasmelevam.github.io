@@ -2346,3 +2346,95 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 /* Promoções: link ou palavra comprida no texto não pode empurrar o cartão para fora da tela */
 .promo-card,.promo-card>*{min-width:0}
 .promo-card h3,.promo-card p,.promo-card details,.promo-card li{overflow-wrap:anywhere}
+
+/* ---------- Minha carteira, primeiros passos e "Quando tem bônus" (conta.js) ---------- */
+.ct-status{min-height:1.4em;margin:0 0 10px;font-size:13.5px;font-weight:700;color:var(--ouro)}
+.ct-bloco{margin:0 0 18px;padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--ink-2);min-width:0}
+.ct-bloco>header{display:flex;gap:12px;align-items:flex-start;margin:0 0 14px}
+.ct-bloco>header h3{margin:0;font-size:18px;color:var(--rice)}
+.ct-bloco>header p{margin:2px 0 0;font-size:13.5px;line-height:1.45;color:var(--ash)}
+.ct-ic{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:rgba(226,180,88,.12);font-size:20px}
+.ct-saldos{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:10px}
+.ct-saldo{display:grid;gap:5px;padding:10px 12px;border:1px solid var(--line);border-radius:14px;background:var(--ink);font-size:13px;font-weight:700;color:var(--ash);min-width:0}
+.ct-saldo input,.ct-add select{font:inherit;font-size:17px;font-weight:800;padding:6px 0;border:0;border-bottom:1px solid var(--line);background:none;color:var(--rice);min-width:0;width:100%}
+.ct-saldo input:focus{outline:none;border-bottom-color:var(--ouro)}
+.ct-add{display:grid;gap:5px;margin:12px 0 0;max-width:320px;font-size:13px;font-weight:700;color:var(--ash)}
+.ct-add select{font-size:15px;font-weight:600;padding:9px 10px;border:1px solid var(--line);border-radius:12px;background:var(--ink)}
+.ct-valor{display:block;margin:14px 0 0;font-size:15px;color:var(--rice)}
+.ct-valor b{color:var(--ouro-lt)}
+.ct-valor small{display:block;margin-top:4px;font-size:12.5px;line-height:1.45;color:var(--ash-dim)}
+.ct-nota,.ct-vazio{margin:0 0 12px;font-size:14px;color:var(--ash)}
+.ct-form{margin-top:12px}
+.ct-venc-lista li.perto{border-color:rgba(255,154,122,.55)}
+.ct-venc-lista li div,.ct-em-lista li div{display:grid;gap:2px;min-width:0}
+.ct-em-lista li{align-items:flex-start}
+.ct-em-lista span.ok{color:var(--verde)}
+.ct-em-lista span.ruim{color:var(--alerta)}
+.ct-opcoes{display:grid;gap:8px}
+.ct-opcoes label{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:14px;cursor:pointer}
+.ct-opcoes label:has(input:checked){border-color:var(--ouro);background:rgba(226,180,88,.07)}
+.ct-opcoes input{margin-top:4px;accent-color:var(--ouro)}
+.ct-opcoes span{display:grid;gap:1px}
+.ct-opcoes small{font-size:12.5px;color:var(--ash)}
+.ct-check{display:flex;gap:8px;align-items:center;margin:12px 0 0;font-size:14px;color:var(--rice)}
+.ct-check input{accent-color:var(--ouro);width:18px;height:18px}
+.ct-em-resumo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,130px),1fr));gap:10px;margin:0 0 12px}
+.ct-em-resumo:empty{display:none}
+.ct-em-resumo div{display:grid;padding:10px 12px;border:1px solid var(--line);border-radius:14px;background:var(--ink)}
+.ct-em-resumo small{font-size:12px;color:var(--ash)}
+.ct-em-resumo b{font-size:18px;color:var(--rice)}
+.ct-em-resumo .ct-eco{border-color:rgba(111,214,166,.5)}
+.ct-em-resumo .ct-eco b{color:var(--verde)}
+.ct-em-nova{margin:0 0 12px}
+.ct-em-nova summary{cursor:pointer;font-weight:800;color:var(--ouro);padding:6px 0}
+
+/* Selo "dá para emitir" e "Emiti esta" nos cartões de passagem */
+.pass-carteira{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin:-4px 0 10px}
+.pc-alcance{font-size:13px;font-weight:700;line-height:1.4;padding:5px 10px;border-radius:12px}
+.pc-alcance.tem{background:rgba(111,214,166,.12);color:var(--verde);border:1px solid rgba(111,214,166,.4)}
+.pc-alcance.transfere{background:rgba(226,180,88,.1);color:var(--ouro-lt);border:1px solid rgba(226,180,88,.4)}
+.pc-alcance.falta{background:var(--ink-3);color:var(--ash);border:1px solid var(--line)}
+.pc-emiti{font:inherit;font-size:12.5px;font-weight:700;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--ash);cursor:pointer}
+.pc-emiti:hover{color:var(--rice);border-color:var(--ash-dim)}
+
+/* Primeiros passos */
+.pp-caixa{margin:0 0 22px;padding:18px;border:1px solid rgba(226,180,88,.45);border-radius:18px;background:linear-gradient(135deg,rgba(226,180,88,.12),rgba(226,180,88,.02))}
+.pp-topo{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.pp-topo h3{margin:0;font-size:18px;color:var(--rice)}
+.pp-topo .eyebrow{margin-bottom:4px}
+.pp-fechar{flex:none;font:inherit;font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--ash);cursor:pointer}
+.pp-barra{height:6px;margin:12px 0 14px;border-radius:99px;background:var(--line);overflow:hidden}
+.pp-barra i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--ouro-dk),var(--ouro-lt));transition:width .4s}
+.pp-lista{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.pp-lista li{display:flex;gap:12px;align-items:center;padding:10px 12px;border-radius:14px;background:var(--ink-2);border:1px solid var(--line)}
+.pp-lista li>div{flex:1;display:grid;gap:1px;min-width:0}
+.pp-lista b{font-size:14.5px;color:var(--rice)}
+.pp-lista small{font-size:12.5px;line-height:1.4;color:var(--ash)}
+.pp-lista .cta{flex:none;padding:8px 14px;font-size:13px}
+.pp-lista em{flex:none;font-style:normal;font-size:12.5px;font-weight:800;color:var(--verde)}
+.pp-check{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;border:2px solid var(--line);font-weight:900;color:var(--ink)}
+.pp-lista li.ok{opacity:.75}
+.pp-lista li.ok .pp-check{background:var(--verde);border-color:var(--verde)}
+@media (max-width:560px){.pp-lista li{flex-wrap:wrap}.pp-lista li>div{flex:1 1 calc(100% - 40px)}.pp-lista .cta{margin-left:38px}.pp-lista em{margin-left:38px}.pp-topo{flex-wrap:wrap}.pp-topo .eyebrow::after{display:none}}
+
+/* Quando tem bônus */
+.bn-dicas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px;margin:0 0 14px}
+.bn-dicas p{margin:0;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);font-size:14px;line-height:1.5;color:var(--ash)}
+.bn-dicas b{color:var(--rice)}
+.bn-lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px}
+.bn-card{padding:16px;border:1px solid var(--line);border-radius:18px;background:var(--ink-2);min-width:0}
+.bn-card header{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;justify-content:space-between;margin:0 0 8px}
+.bn-card h3{margin:0;font-size:17px;color:var(--rice)}
+.bn-agora{font-size:12px;font-weight:800;padding:3px 9px;border-radius:999px;background:rgba(255,154,122,.14);color:var(--alerta);border:1px solid rgba(255,154,122,.45)}
+.bn-leitura{margin:0 0 10px;font-size:13.5px;line-height:1.45;color:var(--ash)}
+.bn-leitura b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.bn-leitura.freq b{color:var(--verde)}
+.bn-leitura.medio b{color:var(--ouro)}
+.bn-leitura.raro b{color:var(--alerta)}
+.bn-card dl{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0}
+.bn-card dl div{min-width:0}
+.bn-card dt{font-size:11.5px;color:var(--ash-dim)}
+.bn-card dd{margin:0;font-size:15px;font-weight:800;color:var(--rice);overflow-wrap:anywhere}
+.bn-card dd small{font-weight:600;font-size:12px;color:var(--ash)}
+.bn-costuma{margin:10px 0 0;font-size:12.5px;line-height:1.45;color:var(--ash)}
+.bn-costuma b{color:var(--ouro-lt)}

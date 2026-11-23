@@ -175,10 +175,13 @@ async function lerRadares(email) {
     const s = await getDoc(doc(db, 'radares', email));
     radares = s.exists() ? JSON.parse(s.data().lista || '[]') : [];
   } catch (e) { radares = []; }
+  document.dispatchEvent(new Event('radar-mudou'));
 }
+window.oammlRadares = () => radares.length;
 async function gravarRadares() {
   const email = window.oammlAssinatura.email;
   await setDoc(doc(db, 'radares', email), { lista: JSON.stringify(radares), atualizadoEm: serverTimestamp() });
+  document.dispatchEvent(new Event('radar-mudou'));
 }
 $('#radar-form').addEventListener('submit', async e => {
   e.preventDefault();

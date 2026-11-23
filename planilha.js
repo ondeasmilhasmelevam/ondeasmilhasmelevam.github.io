@@ -270,7 +270,23 @@
     });
   }
 
+  // A biblioteca de zip (~100 KB) só é baixada quando a planilha precisa ser aberta, não no carregamento do site.
+  let jszip = null;
+  function carregarJSZip() {
+    if (window.JSZip) return Promise.resolve();
+    return jszip || (jszip = new Promise((ok, erro) => {
+      const s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+      s.integrity = 'sha384-+mbV2IY1Zk/X1p/nWllGySJSUN8uMs+gUAN10Or95UBH0fpj6GfKgPmgC5EXieXG';
+      s.crossOrigin = 'anonymous';
+      s.referrerPolicy = 'no-referrer';
+      s.onload = ok;
+      s.onerror = () => { jszip = null; erro(new Error('jszip')); };
+      document.head.appendChild(s);
+    }));
+  }
   async function abrir(buffer) {
+    await carregarJSZip();
     const zip = await JSZip.loadAsync(buffer);
     const ler = async caminho => { const f = zip.file(caminho); return f ? xml(await f.async('string')) : null; };
     const relacoes = async caminho => {

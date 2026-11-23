@@ -35,13 +35,7 @@
     title.classList.add('banner-titulo'); b.firstElementChild.append(title);
     b.removeAttribute('role'); b.removeAttribute('aria-label');
   });
-  // Preparação para o embarque reúne os contatos, benefícios e novos cadastros.
-  const grupo = document.createElement('details'); grupo.className = 'menu-grupo';
-  const sum = document.createElement('summary'); sum.className = 'menu-grupo-btn'; sum.textContent = 'Antes de embarcar';
-  const sub = document.createElement('div'); sub.className = 'menu-sub'; grupo.append(sum, sub);
-  ['cadastros', 'salas', 'restaurantes', 'direitos', 'contatos'].forEach(id => { const a = $(`#menu a[href="#${id}"]`); if (a) sub.append(a); });
-  const ajuda = [...document.querySelectorAll('#menu details')].find(d => d.querySelector('summary')?.textContent.trim() === 'Ajuda');
-  if (ajuda) ajuda.before(grupo);
+  // Os grupos do menu (incluindo "Antes de embarcar") ficam direto no index.html.
   const hoje = $('#menu a[href="#hoje"]'); if (hoje) { hoje.querySelector('span').textContent = 'Resumo do dia'; hoje.title = 'Resumo do dia'; }
   const ranking = $('#menu a[href="#ranking-sec"]'); if (ranking) { ranking.querySelector('span').textContent = 'Ranking do comparador'; ranking.title = 'Ranking do comparador'; }
   // Planos antes das estatísticas e dos depoimentos; mantém elementos e listeners de assinatura.

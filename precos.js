@@ -2,6 +2,7 @@
    (1.000 milhas ou pontos). Referência do Onde as Milhas Me Levam.
    Para atualizar, mude os valores aqui. "icone" é o arquivo em img/programas/app/ (sem .webp);
    "tipo" aparece embaixo do nome; "fundo" e "tinta" só valem se o ícone não carregar. */
+window.PRECO_MILHAS_DATA = '2026-11-18'; // mude junto com os preços: aparece como "Preços revisados em ..."
 window.PRECO_MILHAS = [
   { nome: 'Azul Fidelidade', icone: 'azul', tipo: 'Azul', preco: 'R$ 14 ou menos', fundo: '#1D63F0', tinta: '#FFFFFF' },
   { nome: 'Smiles', icone: 'smiles', tipo: 'GOL', preco: 'R$ 16 ou menos', fundo: '#FF8A00', tinta: '#FFFFFF' },

@@ -84,7 +84,7 @@ jobs:
             if python ferramentas/alertas.py; then
               falhas=0
               salvar_privado
-              for f in dados/alertas.json dados/numeros.json dados/normais.json; do [ -f "$f" ] && git add "$f"; done
+              for f in dados/alertas.json dados/numeros.json dados/normais.json dados/promos-historico.json; do [ -f "$f" ] && git add "$f"; done
               [ -d img/rotas ] && git add -A img/rotas
               [ -d r ] && git add -A r
               if ! git diff --cached --quiet; then
