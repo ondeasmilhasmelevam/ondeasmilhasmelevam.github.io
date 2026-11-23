@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10122",
+  "data": "2026-11-23T00:26:07Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Pelotas",
+  "destino_iata": "PET",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "18.600 milhas + Taxas",
+  "volta": "18.600 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-smiles-GRU-PTY-eco",
   "data": "2026-11-23T00:19:39.674453Z",
   "fonte": "seats.aero",
