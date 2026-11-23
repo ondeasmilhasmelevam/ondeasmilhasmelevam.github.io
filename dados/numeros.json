@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-23T18:29:10.683030Z",
+ "atualizado": "2026-11-23T18:41:52.725388Z",
  "dias": 30,
  "passagens": 3904,
  "promocoes": 219,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1064,
+  "passagens": 1059,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -226,14 +226,14 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2008590742-15872",
+    "id": "2008590742-15919",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
     "destino": "Punta Del Este",
     "destino_iata": "PDP",
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
-    "data": "2026-11-16T18:41:32Z",
+    "data": "2026-11-17T19:44:24Z",
     "milhas": 15000,
     "nivel": "muito bom",
     "regiao": "america-do-sul"
