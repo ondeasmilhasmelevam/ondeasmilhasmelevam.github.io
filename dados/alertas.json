@@ -5534,20 +5534,6 @@
   "link_nome": "Aeroplan"
  },
  {
-  "id": "2361370250-6894",
-  "data": "2026-11-21T18:04:23Z",
-  "origem": "Bangkok",
-  "origem_iata": "BKK",
-  "destino": "Tóquio",
-  "destino_iata": "HND",
-  "companhia": "Japan Airlines",
-  "cabine": "Primeira Classe",
-  "programa": "AAdvantage",
-  "ida": "40.000 milhas + R$ 204,77",
-  "volta": "",
-  "link_nome": "AAdvantage"
- },
- {
   "id": "seats-smiles-GRU-JFK-exe",
   "data": "2026-11-21T15:39:52.976192Z",
   "fonte": "seats.aero",
