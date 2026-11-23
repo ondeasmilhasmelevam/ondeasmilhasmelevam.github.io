@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-16384",
+  "data": "2026-11-23T23:23:38Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Joinville",
+  "destino_iata": "JOI",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "9.200 milhas + Taxas",
+  "volta": "9.200 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16383",
+  "data": "2026-11-23T23:22:07Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "71.980 milhas + Taxas",
+  "volta": "67.410 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16382",
+  "data": "2026-11-23T23:20:12Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "45.500 milhas + Taxas",
+  "volta": "45.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16381",
   "data": "2026-11-23T23:16:36Z",
   "origem": "Manaus",
