@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-23T14:55:00.108565Z",
+ "atualizado": "2026-11-23T15:01:15.907861Z",
  "dias": 30,
- "passagens": 3812,
+ "passagens": 3823,
  "promocoes": 217,
  "destinos": 181,
- "executiva": 810,
+ "executiva": 811,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 998,
+  "passagens": 1009,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -655,6 +655,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10214",
+    "origem": "Petrolina",
+    "origem_iata": "PNZ",
+    "destino": "Recife",
+    "destino_iata": "REC",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-23T14:59:14Z",
+    "milhas": 6491,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9922",
     "origem": "Rio de Janeiro",
     "origem_iata": "GIG",
@@ -755,19 +768,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-21T15:53:14Z",
     "milhas": 7400,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9778",
-    "origem": "Salvador",
-    "origem_iata": "SSA",
-    "destino": "Recife",
-    "destino_iata": "REC",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-16T17:43:10Z",
-    "milhas": 7700,
     "nivel": "",
     "regiao": "brasil"
    },
