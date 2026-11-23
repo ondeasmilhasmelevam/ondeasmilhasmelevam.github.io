@@ -1,21 +1,31 @@
 [
  {
-  "id": "1290836068-7976",
-  "data": "2026-11-23T18:53:51Z",
-  "tipo": "promocao",
-  "titulo": "CAFETEIRA ICED COFFEE OSTER EM OFERTA",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Cafeteira Iced Coffee Oster por apenas R$ 49 na loja oficial.",
-  "detalhes": [
-   "Preço promocional de R$ 49."
-  ],
-  "parceiros": "Oster",
-  "validade": "",
-  "links": [
-   "https://shopping.azulfidelidade.com.br/produto/30994/22221/5749394/vale-presente-outback-bonus-25-virtual-r-200"
-  ],
-  "ate": ""
+  "id": "2008590742-16353",
+  "data": "2026-11-23T19:02:24Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Mendoza",
+  "destino_iata": "MDZ",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "41.500 milhas + Taxas",
+  "volta": "41.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16352",
+  "data": "2026-11-23T19:02:18Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Montevidéu",
+  "destino_iata": "MVD",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "29.800 milhas + Taxas",
+  "volta": "29.800 milhas + Taxas",
+  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7975",
