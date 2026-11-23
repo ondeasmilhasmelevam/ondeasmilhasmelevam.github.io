@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-6986",
+  "data": "2026-11-23T15:13:21Z",
+  "origem": "Doha",
+  "origem_iata": "DOH",
+  "destino": "Tóquio",
+  "destino_iata": "NRT",
+  "companhia": "Qatar Airways",
+  "cabine": "Executiva",
+  "programa": "Privilege Club Qatar",
+  "ida": "60.000 ~ 75.000 AVIOS + Taxas",
+  "volta": "60.000 ~ 75.000 AVIOS + Taxas",
+  "link_nome": "Privilege Club"
+ },
+ {
   "id": "3761373661-10214",
   "data": "2026-11-23T14:59:14Z",
   "origem": "Petrolina",
@@ -4674,20 +4688,6 @@
   "programa": "Smiles",
   "ida": "248.000 milhas + taxas",
   "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10050",
-  "data": "2026-11-21T15:04:19Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "26.500 milhas + Taxas",
-  "volta": "22.100 milhas + Taxas",
   "link_nome": "Smiles"
  },
  {
