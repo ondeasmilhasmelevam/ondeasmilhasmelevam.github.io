@@ -1,5 +1,73 @@
 [
  {
+  "id": "1290836068-7976",
+  "data": "2026-11-23T18:53:51Z",
+  "tipo": "promocao",
+  "titulo": "CAFETEIRA ICED COFFEE OSTER EM OFERTA",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Cafeteira Iced Coffee Oster por apenas R$ 49 na loja oficial.",
+  "detalhes": [
+   "Preço promocional de R$ 49."
+  ],
+  "parceiros": "Oster",
+  "validade": "",
+  "links": [
+   "https://shopping.azulfidelidade.com.br/produto/30994/22221/5749394/vale-presente-outback-bonus-25-virtual-r-200"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7975",
+  "data": "2026-11-23T18:53:44Z",
+  "tipo": "promocao",
+  "titulo": "LIVELO: CLASSE EXECUTIVA DA TAP PARA ROMA POR R$ 3.401 + TAXAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A Livelo oferece 30% de desconto em voos para Itália com o cupom ITALIABRA30, além de 30% de pontos de volta. A passagem em Classe Executiva para Roma pode ser emitida por R$ 3.401 + taxas por trecho, ou por 106.305 pontos + taxas. O benefício exige no mínimo 14.000 pontos e é exclusivo para correntistas Bradesco.",
+  "detalhes": [
+   "30% de desconto com cupom ITALIABRA30",
+   "30% de pontos de volta (pointsback) respeitando regras da modalidade",
+   "mínimo de 14.000 pontos na transação",
+   "exclusivo para correntistas Bradesco",
+   "disponível em pontos ou pontos + dinheiro",
+   "taxas não incluídas no desconto",
+   "custo em reais por trecho: R$ 3.401 + taxas",
+   "custo em pontos por trecho: 106.305 pontos + taxas"
+  ],
+  "parceiros": "Livelo, TAP Air Portugal",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/845E4A5"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-7974",
+  "data": "2026-11-23T18:53:39Z",
+  "tipo": "promocao",
+  "titulo": "PASSAGENS EUROPA A PARTIR DE 62.300 PONTOS AZUL",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A promoção oferece passagens internacionais para Lisboa, Porto e Madri a partir de 62.300 pontos Azul Fidelidade, mais taxas. As datas disponíveis são em novembro e dezembro de 2026. Os valores são por trecho e por passageiro.",
+  "detalhes": [
+   "valor mínimo de 62.300 pontos por trecho",
+   "taxas adicionais não incluídas",
+   "acréscimo de taxa de resgate para reservas com menos de 90 dias, exceto para clientes Diamante",
+   "milhas por trecho são listadas na tabela",
+   "preço em reais não informado",
+   "Campinas (VCP) x Madri (MAD) a partir de 62.300 milhas o trecho",
+   "Recife (REC) x Madri (MAD) a partir de 62.300 milhas o trecho",
+   "Campinas (VCP) x Lisboa (LIS) a partir de 71.200 milhas o trecho"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/LmpJ9jF"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2008590742-16351",
   "data": "2026-11-23T17:43:32Z",
   "origem": "Natal",
