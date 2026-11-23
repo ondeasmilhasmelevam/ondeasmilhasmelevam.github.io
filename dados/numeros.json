@@ -1,9 +1,9 @@
 {
- "atualizado": "2026-11-23T13:45:11.315450Z",
+ "atualizado": "2026-11-23T13:51:30.985955Z",
  "dias": 30,
- "passagens": 3795,
+ "passagens": 3799,
  "promocoes": 214,
- "destinos": 180,
+ "destinos": 181,
  "executiva": 810,
  "destaques": [
   {
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 990,
+  "passagens": 994,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -317,6 +317,19 @@
     "regiao": "europa"
    },
    {
+    "id": "2008590742-16327",
+    "origem": "Recife",
+    "origem_iata": "REC",
+    "destino": "Milão",
+    "destino_iata": "MXP",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-23T13:50:33Z",
+    "milhas": 65600,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
     "id": "2008590742-16065",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -326,19 +339,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-19T12:39:56Z",
     "milhas": 69010,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
-    "id": "2008590742-16023",
-    "origem": "Salvador",
-    "origem_iata": "SSA",
-    "destino": "Milão",
-    "destino_iata": "MXP",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-18T12:44:21Z",
-    "milhas": 70300,
     "nivel": "muito bom",
     "regiao": "europa"
    },
@@ -876,6 +876,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10196",
+    "origem": "Recife",
+    "origem_iata": "REC",
+    "destino": "Mossoró",
+    "destino_iata": "MVF",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-23T13:50:43Z",
+    "milhas": 9000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "3761373661-9934",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -924,19 +937,6 @@
     "programa": "Smiles",
     "data": "2026-11-21T16:58:53Z",
     "milhas": 10600,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "2008590742-15908",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Tefé",
-    "destino_iata": "TFF",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-17T15:30:20Z",
-    "milhas": 11000,
     "nivel": "",
     "regiao": "brasil"
    },
