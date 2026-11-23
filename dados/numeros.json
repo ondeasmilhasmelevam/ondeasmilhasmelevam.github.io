@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-23T13:51:30.985955Z",
+ "atualizado": "2026-11-23T13:57:52.281458Z",
  "dias": 30,
- "passagens": 3799,
+ "passagens": 3804,
  "promocoes": 214,
  "destinos": 181,
  "executiva": 810,
@@ -460,19 +460,6 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-15854",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Nova York",
-    "destino_iata": "JFK",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-16T13:53:00Z",
-    "milhas": 64500,
-    "nivel": "bom",
-    "regiao": "america-do-norte"
-   },
-   {
     "id": "2008590742-16176",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -482,6 +469,19 @@
     "programa": "Smiles",
     "data": "2026-11-20T20:13:46Z",
     "milhas": 66400,
+    "nivel": "bom",
+    "regiao": "america-do-norte"
+   },
+   {
+    "id": "2008590742-16191",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Nova York",
+    "destino_iata": "JFK",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-21T12:03:20Z",
+    "milhas": 66800,
     "nivel": "bom",
     "regiao": "america-do-norte"
    },
@@ -655,19 +655,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9765",
-    "origem": "Petrolina",
-    "origem_iata": "PNZ",
-    "destino": "Recife",
-    "destino_iata": "REC",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-16T13:51:50Z",
-    "milhas": 6491,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9922",
     "origem": "Rio de Janeiro",
     "origem_iata": "GIG",
@@ -768,6 +755,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-21T15:53:14Z",
     "milhas": 7400,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9778",
+    "origem": "Salvador",
+    "origem_iata": "SSA",
+    "destino": "Recife",
+    "destino_iata": "REC",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-16T17:43:10Z",
+    "milhas": 7700,
     "nivel": "",
     "regiao": "brasil"
    },
