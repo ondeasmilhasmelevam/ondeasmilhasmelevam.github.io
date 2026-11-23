@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-23T17:17:03.543057Z",
+ "atualizado": "2026-11-23T17:23:23.274888Z",
  "dias": 30,
- "passagens": 3895,
+ "passagens": 3898,
  "promocoes": 218,
  "destinos": 181,
- "executiva": 816,
+ "executiva": 817,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1065,
+  "passagens": 1066,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -117,6 +117,20 @@
     "foto": "img/rotas/FOR-JDO.jpg"
    },
    {
+    "id": "2008590742-16347",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "Cidade do Panamá",
+    "destino_iata": "PTY",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-23T17:17:14Z",
+    "milhas": 27800,
+    "nivel": "espetacular",
+    "grupo": "Internacional",
+    "foto": "img/rotas/MAO-PTY.jpg"
+   },
+   {
     "id": "2008590742-16045",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -129,20 +143,6 @@
     "nivel": "espetacular",
     "grupo": "Internacional",
     "foto": "img/rotas/MAO-SJU.jpg"
-   },
-   {
-    "id": "2008590742-16202",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Cancún",
-    "destino_iata": "CUN",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-21T14:15:21Z",
-    "milhas": 40400,
-    "nivel": "espetacular",
-    "grupo": "Internacional",
-    "foto": "img/rotas/MAO-CUN.jpg"
    },
    {
     "id": "2361370250-6975",
@@ -160,6 +160,19 @@
    }
   ],
   "candidatas": [
+   {
+    "id": "2008590742-16347",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "Cidade do Panamá",
+    "destino_iata": "PTY",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-23T17:17:14Z",
+    "milhas": 27800,
+    "nivel": "espetacular",
+    "regiao": "caribe"
+   },
    {
     "id": "2008590742-16045",
     "origem": "Manaus",
@@ -196,19 +209,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-23T13:15:37Z",
     "milhas": 40800,
-    "nivel": "espetacular",
-    "regiao": "caribe"
-   },
-   {
-    "id": "2008590742-16086",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
-    "destino": "Cidade do Panamá",
-    "destino_iata": "PTY",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-19T19:23:44Z",
-    "milhas": 46900,
     "nivel": "espetacular",
     "regiao": "caribe"
    },

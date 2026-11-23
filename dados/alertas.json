@@ -1,5 +1,47 @@
 [
  {
+  "id": "2361370250-6991",
+  "data": "2026-11-23T17:23:14Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Seul",
+  "destino_iata": "ICN",
+  "companhia": "Aeroméxico",
+  "cabine": "Executiva",
+  "programa": "Flying Blue",
+  "ida": "155.000 milhas + Taxas",
+  "volta": "155.000 milhas + Taxas",
+  "link_nome": "Flying Blue"
+ },
+ {
+  "id": "2008590742-16347",
+  "data": "2026-11-23T17:17:14Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Cidade do Panamá",
+  "destino_iata": "PTY",
+  "companhia": "Copa Airlines",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "27.800 milhas + Taxas",
+  "volta": "27.800 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16346",
+  "data": "2026-11-23T17:17:08Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "51.100 milhas + Taxas",
+  "volta": "51.100 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2361370250-6990",
   "data": "2026-11-23T17:06:56Z",
   "origem": "São Paulo",
