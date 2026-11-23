@@ -1467,25 +1467,6 @@
   "ate": "2026-11-29T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7946",
-  "data": "2026-11-22T12:58:42Z",
-  "tipo": "promocao",
-  "titulo": "ESFERA VIAGENS: ATÉ 25% OFF EM RESGATES",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Resgate passagens aéreas, hotéis e aluguéis de carros na Esfera Viagens com desconto utilizando cupons promocionais.",
-  "detalhes": [
-   "25% OFF para assinantes do Clube Esfera (Cupom: ESQUENTA25)",
-   "20% OFF para demais clientes (Cupom: ESQUENTA20)"
-  ],
-  "parceiros": "Esfera",
-  "validade": "22/11/2026",
-  "links": [
-   "https://www.esfera.com.vc/esfera-viagens"
-  ],
-  "ate": "2026-11-22T23:59:59-03:00"
- },
- {
   "id": "3761373661-10084",
   "data": "2026-11-22T11:59:45Z",
   "origem": "Curitiba",
@@ -3911,26 +3892,6 @@
    "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja"
   ],
   "ate": "2026-11-30T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7924",
-  "data": "2026-11-20T19:56:29Z",
-  "tipo": "promocao",
-  "titulo": "ADESÃO CLUBE LIVELO ESPECIAL COM CUPOM EXCLUSIVO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Clube Livelo Especial 5.000 com o cupom CLUBEPPBF2 e acumule até 104.000 pontos em 12 meses.",
-  "detalhes": [
-   "Plano Anual à vista: 60.000 pontos do Clube + 44.000 pontos extras.",
-   "Plano Mensal: 60.000 pontos do Clube + 42.000 pontos extras.",
-   "Cupom obrigatório: CLUBEPPBF2."
-  ],
-  "parceiros": "Livelo",
-  "validade": "22/11/2026",
-  "links": [
-   "https://www.livelo.com.br/clube"
-  ],
-  "ate": "2026-11-22T23:59:59-03:00"
  },
  {
   "id": "1290836068-7892",
