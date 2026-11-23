@@ -1,5 +1,47 @@
 [
  {
+  "id": "2361370250-6990",
+  "data": "2026-11-23T17:06:56Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "Turkish Airlines",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "A partir de 73.000 milhas",
+  "volta": "A partir de 73.000 milhas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16345",
+  "data": "2026-11-23T17:06:20Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "45.500 milhas + Taxas",
+  "volta": "45.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-6989",
+  "data": "2026-11-23T17:04:52Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Zurique",
+  "destino_iata": "ZRH",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Executiva",
+  "programa": "TAP Miles & Go",
+  "ida": "135.000 milhas + R$ 278,73",
+  "volta": "135.000 milhas + R$ 593,42",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
   "id": "3761373661-10269",
   "data": "2026-11-23T17:03:03Z",
   "origem": "Porto Alegre",
