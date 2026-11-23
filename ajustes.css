@@ -31,6 +31,7 @@
  .bar-mark img{width:30px;height:30px}.topo-acoes{margin-left:0;flex:0 0 auto;gap:5px;min-width:0}
  .topo-tema{width:32px;height:36px;padding:0;flex-shrink:0}.topo-entrar{padding:0 9px;height:36px;font-size:11px}
  .menu-btn{width:34px;height:36px;flex-shrink:0}.topo-tema span{display:none}
+ .topo-partilhar{width:32px;height:36px}
 }
 /* O grupo de preparação deve caber na coluna, sem criar rolagem lateral. */
 .tabs .menu-grupo,.tabs .menu-sub{min-width:0;max-width:100%;width:100%}

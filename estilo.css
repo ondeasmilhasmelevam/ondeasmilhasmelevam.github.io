@@ -2448,3 +2448,9 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .ct-form label.ct-desc input{width:20px;height:20px;flex:none;padding:0;margin:0}
 #ct-bonus-meus li b,#ct-bonus-meus li span{display:block}
 #ct-bonus-meus li span{margin-top:4px}
+
+/* Botão de compartilhar a página (ao lado do tema). */
+.topo-partilhar{position:relative;display:grid;place-items:center;width:38px;height:38px;padding:0;flex-shrink:0;border-radius:11px;border:1px solid color-mix(in srgb,var(--ouro) 40%,var(--line));background:color-mix(in srgb,var(--ouro) 8%,var(--ink-2));color:var(--ouro);cursor:pointer}
+.topo-partilhar:hover{border-color:var(--ouro)}
+.topo-partilhar svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.topo-partilhar[data-aviso]::after{content:attr(data-aviso);position:absolute;top:calc(100% + 8px);right:0;padding:6px 10px;border-radius:8px;background:var(--ouro);color:#0b1426;font-size:12px;font-weight:700;white-space:nowrap;z-index:60;pointer-events:none}

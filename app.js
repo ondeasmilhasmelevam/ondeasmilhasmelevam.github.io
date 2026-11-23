@@ -3754,6 +3754,18 @@
   $('#menu-tema').addEventListener('click', () => aplicarTema(document.documentElement.dataset.theme !== 'light'));
   $('#topo-tema').addEventListener('click', () => aplicarTema(document.documentElement.dataset.theme !== 'light'));
 
+  // Compartilhar a página atual: janela do celular; no computador, copia o link.
+  $('#topo-partilhar').addEventListener('click', async () => {
+    const b = $('#topo-partilhar');
+    const pag = ($('#topo-pagina') || {}).textContent || '';
+    const url = `${location.origin}${location.pathname}?utm_source=compartilhar${location.hash}`;
+    const nome = 'Onde as Milhas Me Levam';
+    const dados = { title: pag && pag !== 'Início' ? `${pag} · ${nome}` : nome, text: pag && pag !== 'Início' ? `Olha isso no ${nome}: ${pag}` : `Olha esse site de milhas: ${nome}`, url };
+    const avisar = t => { b.dataset.aviso = t; clearTimeout(b._t); b._t = setTimeout(() => delete b.dataset.aviso, 1800); };
+    if (navigator.share) { try { await navigator.share(dados); } catch (e) { /* cancelou */ } return; }
+    try { await navigator.clipboard.writeText(url); avisar('Link copiado!'); } catch (e) { window.prompt('Copie o link:', url); }
+  });
+
   // Barra superior: quem entrou (iniciais, nome, selo da assinatura) e o menu da conta.
   function desenharTopoConta(e) {
     const s = e || window.oammlAssinatura || {};
