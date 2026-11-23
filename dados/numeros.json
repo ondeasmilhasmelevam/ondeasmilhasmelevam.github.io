@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-23T08:42:35.182097Z",
+ "atualizado": "2026-11-23T13:33:07.035415Z",
  "dias": 30,
- "passagens": 3738,
- "promocoes": 211,
- "destinos": 179,
- "executiva": 806,
+ "passagens": 3788,
+ "promocoes": 214,
+ "destinos": 180,
+ "executiva": 810,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,8 +86,22 @@
   }
  ],
  "semana": {
-  "passagens": 1149,
+  "passagens": 986,
   "destaques": [
+   {
+    "id": "3761373661-10145",
+    "origem": "Belém",
+    "origem_iata": "BEL",
+    "destino": "Macapá",
+    "destino_iata": "MCP",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-23T10:58:20Z",
+    "milhas": 3273,
+    "nivel": "",
+    "grupo": "Nacional",
+    "foto": "img/rotas/BEL-MCP.jpg"
+   },
    {
     "id": "2008590742-16307",
     "origem": "Fortaleza",
@@ -101,20 +115,6 @@
     "nivel": "",
     "grupo": "Nacional",
     "foto": "img/rotas/FOR-JDO.jpg"
-   },
-   {
-    "id": "3761373661-10058",
-    "origem": "Curitiba",
-    "origem_iata": "CWB",
-    "destino": "Londrina",
-    "destino_iata": "LDB",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-21T15:53:19Z",
-    "milhas": 3500,
-    "nivel": "",
-    "grupo": "Nacional",
-    "foto": "img/rotas/CWB-LDB.jpg"
    },
    {
     "id": "2008590742-16045",
@@ -131,32 +131,32 @@
     "foto": "img/rotas/MAO-SJU.jpg"
    },
    {
-    "id": "2008590742-15787",
-    "origem": "Uberlândia",
-    "origem_iata": "UDI",
-    "destino": "San José",
-    "destino_iata": "SJO",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-16T10:29:46Z",
-    "milhas": 37700,
-    "nivel": "espetacular",
-    "grupo": "Internacional",
-    "foto": "img/rotas/UDI-SJO.jpg"
-   },
-   {
-    "id": "2361370250-6662",
+    "id": "2008590742-16202",
     "origem": "Manaus",
     "origem_iata": "MAO",
+    "destino": "Cancún",
+    "destino_iata": "CUN",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-21T14:15:21Z",
+    "milhas": 40400,
+    "nivel": "espetacular",
+    "grupo": "Internacional",
+    "foto": "img/rotas/MAO-CUN.jpg"
+   },
+   {
+    "id": "2361370250-6975",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
     "destino": "Miami",
     "destino_iata": "MIA",
     "cabine": "Executiva",
-    "programa": "GOL Smiles",
-    "data": "2026-11-16T11:45:37Z",
-    "milhas": 120500,
+    "programa": "Smiles",
+    "data": "2026-11-22T19:56:38Z",
+    "milhas": 171000,
     "nivel": "espetacular",
     "grupo": "Executiva",
-    "foto": "img/rotas/MAO-MIA.jpg"
+    "foto": "img/rotas/GRU-MIA.jpg"
    }
   ],
   "candidatas": [
@@ -174,19 +174,6 @@
     "regiao": "caribe"
    },
    {
-    "id": "2008590742-15787",
-    "origem": "Uberlândia",
-    "origem_iata": "UDI",
-    "destino": "San José",
-    "destino_iata": "SJO",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-16T10:29:46Z",
-    "milhas": 37700,
-    "nivel": "espetacular",
-    "regiao": "caribe"
-   },
-   {
     "id": "2008590742-16202",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -196,6 +183,19 @@
     "programa": "Smiles",
     "data": "2026-11-21T14:15:21Z",
     "milhas": 40400,
+    "nivel": "espetacular",
+    "regiao": "caribe"
+   },
+   {
+    "id": "2008590742-16325",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "San José",
+    "destino_iata": "SJO",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-23T13:15:37Z",
+    "milhas": 40800,
     "nivel": "espetacular",
     "regiao": "caribe"
    },
@@ -239,15 +239,15 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-15816",
+    "id": "2008590742-16042",
     "origem": "Manaus",
     "origem_iata": "MAO",
     "destino": "Bogotá",
     "destino_iata": "BOG",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-16T11:51:57Z",
-    "milhas": 17800,
+    "data": "2026-11-18T19:55:37Z",
+    "milhas": 18400,
     "nivel": "muito bom",
     "regiao": "america-do-sul"
    },
@@ -317,28 +317,15 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15807",
+    "id": "2008590742-16065",
     "origem": "São Paulo",
     "origem_iata": "GRU",
     "destino": "Roma",
     "destino_iata": "FCO",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-16T11:23:04Z",
-    "milhas": 68600,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
-    "id": "2008590742-15850",
-    "origem": "Recife",
-    "origem_iata": "REC",
-    "destino": "Amsterdã",
-    "destino_iata": "AMS",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-16T13:04:27Z",
-    "milhas": 69000,
+    "data": "2026-11-19T12:39:56Z",
+    "milhas": 69010,
     "nivel": "muito bom",
     "regiao": "europa"
    },
@@ -365,6 +352,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-22T14:40:10Z",
     "milhas": 70760,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
+    "id": "2008590742-16178",
+    "origem": "Recife",
+    "origem_iata": "REC",
+    "destino": "Amsterdã",
+    "destino_iata": "AMS",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-20T20:59:25Z",
+    "milhas": 71430,
     "nivel": "muito bom",
     "regiao": "europa"
    },
@@ -408,19 +408,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15802",
-    "origem": "Cuiabá",
-    "origem_iata": "CGB",
-    "destino": "Assunção",
-    "destino_iata": "ASU",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-16T11:00:59Z",
-    "milhas": 22000,
-    "nivel": "bom",
-    "regiao": "america-do-sul"
-   },
-   {
     "id": "2008590742-15877",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -460,6 +447,19 @@
     "regiao": "america-do-sul"
    },
    {
+    "id": "2008590742-16204",
+    "origem": "Foz do Iguaçu",
+    "origem_iata": "IGU",
+    "destino": "Assunção",
+    "destino_iata": "ASU",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-21T14:29:19Z",
+    "milhas": 39500,
+    "nivel": "bom",
+    "regiao": "america-do-sul"
+   },
+   {
     "id": "2008590742-15854",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -486,19 +486,6 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2008590742-15813",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "Boston",
-    "destino_iata": "BOS",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-16T11:41:54Z",
-    "milhas": 69700,
-    "nivel": "bom",
-    "regiao": "america-do-norte"
-   },
-   {
     "id": "2008590742-16189",
     "origem": "Belo Horizonte",
     "origem_iata": "CNF",
@@ -512,17 +499,30 @@
     "regiao": "caribe"
    },
    {
-    "id": "2008590742-15833",
-    "origem": "Recife",
-    "origem_iata": "REC",
-    "destino": "Frankfurt",
-    "destino_iata": "FRA",
+    "id": "2008590742-15875",
+    "origem": "Brasília",
+    "origem_iata": "BSB",
+    "destino": "Boston",
+    "destino_iata": "BOS",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-16T18:47:42Z",
+    "milhas": 91900,
+    "nivel": "bom",
+    "regiao": "america-do-norte"
+   },
+   {
+    "id": "3761373661-10145",
+    "origem": "Belém",
+    "origem_iata": "BEL",
+    "destino": "Macapá",
+    "destino_iata": "MCP",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-16T12:32:43Z",
-    "milhas": 78301,
-    "nivel": "bom",
-    "regiao": "europa"
+    "data": "2026-11-23T10:58:20Z",
+    "milhas": 3273,
+    "nivel": "",
+    "regiao": "brasil"
    },
    {
     "id": "2008590742-16307",
@@ -624,19 +624,6 @@
     "cabine": "Econômica",
     "programa": "LATAM Pass",
     "data": "2026-11-17T13:00:50Z",
-    "milhas": 5300,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10042",
-    "origem": "Belém",
-    "origem_iata": "BEL",
-    "destino": "Macapá",
-    "destino_iata": "MCP",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-21T14:00:19Z",
     "milhas": 5300,
     "nivel": "",
     "regiao": "brasil"
@@ -889,19 +876,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9729",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Tefé",
-    "destino_iata": "TFF",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-16T11:51:55Z",
-    "milhas": 10000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9934",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -941,28 +915,54 @@
     "regiao": "brasil"
    },
    {
-    "id": "2361370250-6662",
+    "id": "3761373661-10061",
+    "origem": "Vitória",
+    "origem_iata": "VIX",
+    "destino": "São José do Rio Preto",
+    "destino_iata": "SJP",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-21T16:58:53Z",
+    "milhas": 10600,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "2008590742-15908",
     "origem": "Manaus",
     "origem_iata": "MAO",
+    "destino": "Tefé",
+    "destino_iata": "TFF",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-17T15:30:20Z",
+    "milhas": 11000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "2361370250-6975",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
     "destino": "Miami",
     "destino_iata": "MIA",
     "cabine": "Executiva",
-    "programa": "GOL Smiles",
-    "data": "2026-11-16T11:45:37Z",
-    "milhas": 120500,
+    "programa": "Smiles",
+    "data": "2026-11-22T19:56:38Z",
+    "milhas": 171000,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
    },
    {
-    "id": "2361370250-6658",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
+    "id": "2361370250-6682",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
     "destino": "Nova York",
     "destino_iata": "JFK",
     "cabine": "Executiva",
-    "programa": "GOL Smiles",
-    "data": "2026-11-16T11:31:24Z",
-    "milhas": 185000,
+    "programa": "Smiles",
+    "data": "2026-11-16T17:44:52Z",
+    "milhas": 201000,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
    },
@@ -980,29 +980,16 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2361370250-6675",
+    "id": "2361370250-6798",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
     "destino": "Lisboa",
     "destino_iata": "LIS",
     "cabine": "Executiva",
     "programa": "LATAM Pass",
-    "data": "2026-11-16T13:07:58Z",
-    "milhas": 161900,
+    "data": "2026-11-18T18:38:21Z",
+    "milhas": 165719,
     "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
-    "id": "2361370250-6664",
-    "origem": "Fortaleza",
-    "origem_iata": "FOR",
-    "destino": "Paris",
-    "destino_iata": "CDG",
-    "cabine": "Executiva",
-    "programa": "GOL Smiles",
-    "data": "2026-11-16T11:50:43Z",
-    "milhas": 419500,
-    "nivel": "bom",
     "regiao": "europa"
    },
    {
@@ -1123,17 +1110,17 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6656",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Cidade do Panamá",
-    "destino_iata": "PTY",
+    "id": "2361370250-6735",
+    "origem": "Cidade do Panamá",
+    "origem_iata": "PTY",
+    "destino": "Paris",
+    "destino_iata": "CDG",
     "cabine": "Executiva",
-    "programa": "GOL Smiles",
-    "data": "2026-11-16T11:20:12Z",
-    "milhas": 64200,
+    "programa": "Flying Blue",
+    "data": "2026-11-18T09:36:37Z",
+    "milhas": 63750,
     "nivel": "",
-    "regiao": "caribe"
+    "regiao": "europa"
    },
    {
     "id": "2361370250-6712",
@@ -1160,6 +1147,19 @@
     "milhas": 66000,
     "nivel": "",
     "regiao": "america-do-sul"
+   },
+   {
+    "id": "2361370250-6878",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "Cidade do Panamá",
+    "destino_iata": "PTY",
+    "cabine": "Executiva",
+    "programa": "GOL Smiles",
+    "data": "2026-11-20T11:44:03Z",
+    "milhas": 66500,
+    "nivel": "",
+    "regiao": "caribe"
    },
    {
     "id": "2361370250-6962",
