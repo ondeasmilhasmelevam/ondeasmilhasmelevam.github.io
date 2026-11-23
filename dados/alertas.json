@@ -2303,21 +2303,6 @@
   "link_nome": "Iberia Plus"
  },
  {
-  "id": "seats-smiles-GIG-PTY-eco",
-  "data": "2026-11-22T03:40:28.927110Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "American / Avianca / Copa",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "70.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-iberia-REC-MAD-exe",
   "data": "2026-11-22T03:40:28.927110Z",
   "fonte": "seats.aero",
@@ -3528,34 +3513,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-10028",
-  "data": "2026-11-21T00:01:17Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "9.300 milhas + R$ 35,15 de taxas",
-  "volta": "9.300 milhas + R$ 35,75 de taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10027",
-  "data": "2026-11-21T00:00:53Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "12.000 milhas + R$ 34,54 de taxas",
-  "volta": "12.000 milhas + R$ 35,15 de taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7928",
   "data": "2026-11-21T00:00:28Z",
   "tipo": "promocao",
@@ -3579,20 +3536,6 @@
    "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja"
   ],
   "ate": "2026-11-30T23:59:59-03:00"
- },
- {
-  "id": "2361370250-6891",
-  "data": "2026-11-20T23:58:40Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Fort Lauderdale",
-  "destino_iata": "FLL",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "50.000 milhas + CAD 122,90 de taxas",
-  "volta": "",
-  "link_nome": "Aeroplan"
  },
  {
   "id": "1290836068-7924",
@@ -3912,21 +3855,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-GRU-AUA-eco",
-  "data": "2026-11-11T00:03:25.922708Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Aruba",
-  "destino_iata": "AUA",
-  "companhia": "American / Avianca / Copa",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "63.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-azul-VCP-MAD-eco",
   "data": "2026-11-11T00:03:25.922708Z",
   "fonte": "seats.aero",
@@ -3940,6 +3868,21 @@
   "ida": "70.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "seats-smiles-GRU-AUA-eco",
+  "data": "2026-11-11T00:03:25.922708Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Aruba",
+  "destino_iata": "AUA",
+  "companhia": "American / Avianca / Copa",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "91.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
  },
  {
   "id": "seats-qatar-GIG-MAD-eco",
