@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-16343",
+  "data": "2026-11-23T16:51:59Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "Lima",
+  "destino_iata": "LIM",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "43.000 milhas + Taxas",
+  "volta": "43.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16342",
+  "data": "2026-11-23T16:51:55Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "39.000 milhas + Taxas",
+  "volta": "39.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16341",
+  "data": "2026-11-23T16:51:49Z",
+  "origem": "Cuiabá",
+  "origem_iata": "CGB",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "43.300 milhas + Taxas",
+  "volta": "43.300 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-16340",
   "data": "2026-11-23T16:50:03Z",
   "origem": "Curitiba",
@@ -5438,20 +5480,6 @@
   "programa": "Smiles",
   "ida": "10.600 milhas + Taxas",
   "volta": "10.600 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10060",
-  "data": "2026-11-21T16:52:03Z",
-  "origem": "São Paulo",
-  "origem_iata": "CGH",
-  "destino": "Florianópolis",
-  "destino_iata": "FLN",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "8.400 milhas + R$ 62,14 de taxas",
-  "volta": "9.400 milhas + R$ 56,99 de taxas",
   "link_nome": "Smiles"
  },
  {
