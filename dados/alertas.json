@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10217",
+  "data": "2026-11-23T15:48:29Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "7.900 milhas + R$ 48,63 de taxas",
+  "volta": "7.900 milhas + R$ 62,14 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10216",
   "data": "2026-11-23T15:19:10Z",
   "origem": "Teresina",
@@ -4702,20 +4716,6 @@
   "ida": "5.200 milhas + Taxas",
   "volta": "5.200 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-10051",
-  "data": "2026-11-21T15:52:50Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Caldas Novas",
-  "destino_iata": "CLV",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "18.200 milhas + Taxas",
-  "volta": "18.200 milhas + Taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-GRU-JFK-exe",
