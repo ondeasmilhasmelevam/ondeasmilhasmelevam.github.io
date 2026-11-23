@@ -5951,21 +5951,6 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-smiles-BSB-BOG-eco",
-  "data": "2026-11-11T00:03:25.922708Z",
-  "fonte": "seats.aero",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "Avianca / Copa / GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "78.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GIG-MIA-eco",
   "data": "2026-11-11T00:03:25.922708Z",
   "fonte": "seats.aero",
