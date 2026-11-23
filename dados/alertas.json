@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16354",
+  "data": "2026-11-23T19:19:58Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Santa Cruz de La Sierra",
+  "destino_iata": "VVI",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "48.000 milhas + Taxas",
+  "volta": "48.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16353",
   "data": "2026-11-23T19:02:24Z",
   "origem": "Curitiba",
