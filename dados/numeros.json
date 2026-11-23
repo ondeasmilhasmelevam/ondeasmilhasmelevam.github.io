@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-23T19:27:55.812776Z",
+ "atualizado": "2026-11-23T19:34:12.158845Z",
  "dias": 30,
- "passagens": 3908,
+ "passagens": 3915,
  "promocoes": 223,
  "destinos": 181,
- "executiva": 817,
+ "executiva": 821,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1059,
+  "passagens": 1066,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -1071,6 +1071,19 @@
     "regiao": "outros"
    },
    {
+    "id": "2361370250-6992",
+    "origem": "Abu Dhabi",
+    "origem_iata": "AUH",
+    "destino": "Tóquio",
+    "destino_iata": "NRT",
+    "cabine": "Primeira Classe",
+    "programa": "AAdvantage",
+    "data": "2026-11-23T19:30:42Z",
+    "milhas": 50000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "2361370250-6701",
     "origem": "Belo Horizonte",
     "origem_iata": "CNF",
@@ -1186,19 +1199,6 @@
     "milhas": 74000,
     "nivel": "",
     "regiao": "america-do-sul"
-   },
-   {
-    "id": "2361370250-6705",
-    "origem": "Tóquio",
-    "origem_iata": "NRT",
-    "destino": "Helsinque",
-    "destino_iata": "HEL",
-    "cabine": "Executiva",
-    "programa": "AAdvantage",
-    "data": "2026-11-17T16:33:36Z",
-    "milhas": 75000,
-    "nivel": "",
-    "regiao": "outros"
    }
   ]
  }
