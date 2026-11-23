@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-23T16:11:53.847862Z",
+ "atualizado": "2026-11-23T16:18:15.965110Z",
  "dias": 30,
- "passagens": 3842,
+ "passagens": 3851,
  "promocoes": 217,
  "destinos": 181,
  "executiva": 814,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1023,
+  "passagens": 1031,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -837,6 +837,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10235",
+    "origem": "Campinas",
+    "origem_iata": "VCP",
+    "destino": "Maceió",
+    "destino_iata": "MCZ",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-23T16:17:21Z",
+    "milhas": 8680,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9891",
     "origem": "São Luís",
     "origem_iata": "SLZ",
@@ -926,19 +939,6 @@
     "milhas": 10300,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "3761373661-10129",
-    "origem": "Goiânia",
-    "origem_iata": "GYN",
-    "destino": "Ilhéus",
-    "destino_iata": "IOS",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-23T00:26:52Z",
-    "milhas": 10330,
-    "nivel": "",
-    "regiao": "brasil"
    },
    {
     "id": "2361370250-6975",
