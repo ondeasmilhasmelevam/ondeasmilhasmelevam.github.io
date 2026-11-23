@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-23T16:05:37.918213Z",
+ "atualizado": "2026-11-23T16:11:53.847862Z",
  "dias": 30,
- "passagens": 3838,
+ "passagens": 3842,
  "promocoes": 217,
  "destinos": 181,
- "executiva": 813,
+ "executiva": 814,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1019,
+  "passagens": 1023,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -317,6 +317,19 @@
     "regiao": "europa"
    },
    {
+    "id": "2008590742-16335",
+    "origem": "Recife",
+    "origem_iata": "REC",
+    "destino": "Roma",
+    "destino_iata": "FCO",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-23T16:10:08Z",
+    "milhas": 64600,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
     "id": "2008590742-16327",
     "origem": "Recife",
     "origem_iata": "REC",
@@ -326,19 +339,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-23T13:50:33Z",
     "milhas": 65600,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
-    "id": "2008590742-16065",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Roma",
-    "destino_iata": "FCO",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-19T12:39:56Z",
-    "milhas": 69010,
     "nivel": "muito bom",
     "regiao": "europa"
    },
@@ -980,15 +980,15 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2361370250-6798",
+    "id": "2361370250-6988",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
     "destino": "Lisboa",
     "destino_iata": "LIS",
     "cabine": "Executiva",
     "programa": "LATAM Pass",
-    "data": "2026-11-18T18:38:21Z",
-    "milhas": 165719,
+    "data": "2026-11-23T16:07:08Z",
+    "milhas": 143398,
     "nivel": "muito bom",
     "regiao": "europa"
    },
