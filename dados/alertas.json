@@ -1,5 +1,43 @@
 [
  {
+  "id": "3761373661-10273",
+  "data": "2026-11-23T19:27:05Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "15.000 milhas + R$ 35,15 de taxas",
+  "volta": "15.000 milhas + R$ 52,72 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "1290836068-7977",
+  "data": "2026-11-23T19:23:12Z",
+  "tipo": "promocao",
+  "titulo": "VOE PARA NOVA YORK A PARTIR DE 66.800 MILHAS SMILES",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Disponibilidade de passagens de ida e volta entre São Paulo (GRU) e Nova York (JFK) a partir de 66.800 milhas Smiles + taxas por trecho. Operada pela American Airlines na classe econômica. Volta disponível apenas para assinantes.",
+  "detalhes": [
+   "valor: 66.800 milhas Smiles por trecho",
+   "classe: econômica",
+   "operadora: American Airlines",
+   "rota: São Paulo (GRU) > Nova York (JFK)",
+   "volta disponível apenas para assinantes",
+   "taxas adicionais",
+   "São Paulo (GRU) x Nova York (JFK) economica a partir de 33.400 milhas o trecho"
+  ],
+  "parceiros": "Smiles, American Airlines",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/BVUM9WR"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2008590742-16354",
   "data": "2026-11-23T19:19:58Z",
   "origem": "Foz do Iguaçu",
