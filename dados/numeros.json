@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-24T17:22:42.399960Z",
+ "atualizado": "2026-11-24T17:28:50.138893Z",
  "dias": 30,
- "passagens": 4039,
+ "passagens": 4044,
  "promocoes": 229,
  "destinos": 182,
  "executiva": 835,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1059,
+  "passagens": 1064,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -902,6 +902,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10345",
+    "origem": "Recife",
+    "origem_iata": "REC",
+    "destino": "Aracaju",
+    "destino_iata": "AJU",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-24T17:28:31Z",
+    "milhas": 10000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10205",
     "origem": "Rio de Janeiro",
     "origem_iata": "SDU",
@@ -924,19 +937,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-23T00:26:52Z",
     "milhas": 10330,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10061",
-    "origem": "Vitória",
-    "origem_iata": "VIX",
-    "destino": "São José do Rio Preto",
-    "destino_iata": "SJP",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-21T16:58:53Z",
-    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },
