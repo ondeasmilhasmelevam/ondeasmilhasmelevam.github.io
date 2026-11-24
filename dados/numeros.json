@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-24T19:41:38.762122Z",
+ "atualizado": "2026-11-24T19:48:00.470176Z",
  "dias": 30,
  "passagens": 4054,
  "promocoes": 230,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1073,
+  "passagens": 1067,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -226,14 +226,14 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2008590742-15919",
+    "id": "2008590742-16187",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
     "destino": "Punta Del Este",
     "destino_iata": "PDP",
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
-    "data": "2026-11-17T19:44:24Z",
+    "data": "2026-11-21T00:59:24Z",
     "milhas": 15000,
     "nivel": "muito bom",
     "regiao": "america-do-sul"
@@ -668,32 +668,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9863",
-    "origem": "Porto Alegre",
-    "origem_iata": "POA",
-    "destino": "Santa Maria",
-    "destino_iata": "RIA",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-17T19:44:20Z",
-    "milhas": 7000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
-    "id": "3761373661-9862",
-    "origem": "Porto Alegre",
-    "origem_iata": "POA",
-    "destino": "Uruguaiana",
-    "destino_iata": "URG",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-17T19:44:17Z",
-    "milhas": 7000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "3761373661-9865",
     "origem": "São Paulo",
     "origem_iata": "CGH",
@@ -705,6 +679,19 @@
     "milhas": 7000,
     "nivel": "",
     "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-9994",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Santa Maria",
+    "destino_iata": "RIA",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-19T17:52:34Z",
+    "milhas": 7000,
+    "nivel": "",
+    "regiao": "outros"
    },
    {
     "id": "3761373661-9996",
@@ -937,6 +924,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-23T00:26:52Z",
     "milhas": 10330,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10061",
+    "origem": "Vitória",
+    "origem_iata": "VIX",
+    "destino": "São José do Rio Preto",
+    "destino_iata": "SJP",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-21T16:58:53Z",
+    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },
