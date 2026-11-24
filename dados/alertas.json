@@ -5225,48 +5225,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-16302",
-  "data": "2026-11-22T15:04:13Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "LATAM + parceira",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "13.980 milhas + Taxas",
-  "volta": "12.510 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16301",
-  "data": "2026-11-22T15:03:59Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Lisboa",
-  "destino_iata": "LIS",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "70.820 milhas + Taxas",
-  "volta": "67.960 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16300",
-  "data": "2026-11-22T14:58:44Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "Copa Airlines",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "46.900 milhas + Taxas",
-  "volta": "46.900 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7948",
   "data": "2026-11-22T12:58:53Z",
   "tipo": "promocao",
