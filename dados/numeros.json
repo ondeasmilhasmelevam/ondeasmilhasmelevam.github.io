@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-24T20:19:22.466613Z",
+ "atualizado": "2026-11-24T20:25:43.821003Z",
  "dias": 30,
- "passagens": 4062,
+ "passagens": 4063,
  "promocoes": 230,
  "destinos": 182,
  "executiva": 839,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1073,
+  "passagens": 1071,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -382,15 +382,15 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-15922",
-    "origem": "Campinas",
-    "origem_iata": "VCP",
+    "id": "2008590742-16006",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
     "destino": "Porto",
     "destino_iata": "OPO",
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
-    "data": "2026-11-17T20:22:05Z",
-    "milhas": 74400,
+    "data": "2026-11-18T11:23:36Z",
+    "milhas": 80000,
     "nivel": "muito bom",
     "regiao": "europa"
    },
