@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-24T13:37:59.789714Z",
+ "atualizado": "2026-11-24T13:44:12.476431Z",
  "dias": 30,
- "passagens": 4009,
+ "passagens": 4016,
  "promocoes": 227,
  "destinos": 182,
  "executiva": 832,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1072,
+  "passagens": 1079,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -616,6 +616,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10330",
+    "origem": "Salvador",
+    "origem_iata": "SSA",
+    "destino": "Porto Seguro",
+    "destino_iata": "BPS",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-24T13:41:50Z",
+    "milhas": 6000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9859",
     "origem": "Recife",
     "origem_iata": "REC",
@@ -768,19 +781,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-22T14:52:41Z",
     "milhas": 7910,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10125",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
-    "destino": "Porto Seguro",
-    "destino_iata": "BPS",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-23T00:26:31Z",
-    "milhas": 8120,
     "nivel": "",
     "regiao": "brasil"
    },
