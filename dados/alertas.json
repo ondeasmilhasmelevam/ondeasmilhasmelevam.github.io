@@ -5631,34 +5631,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16285",
-  "data": "2026-11-22T13:11:43Z",
-  "origem": "São Paulo",
-  "origem_iata": "SAO",
-  "destino": "Washington",
-  "destino_iata": "IAD",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "112.500 milhas + Taxas",
-  "volta": "95.500 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-16284",
-  "data": "2026-11-22T13:08:48Z",
-  "origem": "São Paulo",
-  "origem_iata": "SAO",
-  "destino": "Newark",
-  "destino_iata": "EWR",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "112.500 milhas + Taxas",
-  "volta": "97.500 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7948",
   "data": "2026-11-22T12:58:53Z",
   "tipo": "promocao",
