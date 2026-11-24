@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-24T15:04:38.075893Z",
+ "atualizado": "2026-11-24T15:16:31.788047Z",
  "dias": 30,
  "passagens": 4016,
  "promocoes": 227,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1070,
+  "passagens": 1063,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -378,19 +378,6 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-17T20:22:05Z",
     "milhas": 74400,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
-    "id": "2008590742-15906",
-    "origem": "Recife",
-    "origem_iata": "REC",
-    "destino": "Barcelona",
-    "destino_iata": "BCN",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-17T15:11:44Z",
-    "milhas": 75000,
     "nivel": "muito bom",
     "regiao": "europa"
    },
@@ -937,6 +924,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-23T00:26:52Z",
     "milhas": 10330,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10061",
+    "origem": "Vitória",
+    "origem_iata": "VIX",
+    "destino": "São José do Rio Preto",
+    "destino_iata": "SJP",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-21T16:58:53Z",
+    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },
