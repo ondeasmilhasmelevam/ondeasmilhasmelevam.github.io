@@ -1,5 +1,73 @@
 [
  {
+  "id": "1290836068-8010",
+  "data": "2026-11-24T23:46:28Z",
+  "tipo": "promocao",
+  "titulo": "PASSAGENS ARGENTINA A PARTIR DE 16 MIL MILHAS LATAM Pass",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "O alerta traz passagens internacionais para a Argentina usando LATAM Pass, com valores a partir de 16 mil milhas por trecho. As tarifas incluem taxas aeroportuárias e são válidas em datas específicas. A promoção lista rotas e datas disponíveis no site.",
+  "detalhes": [
+   "valor mínimo de milhas por trecho: 16000",
+   "inclui taxas aeroportuárias",
+   "valores por trecho e por passageiro",
+   "datas específicas para cada rota",
+   "Florianópolis (FLN) x Buenos Aires (EZE) a partir de 17.800 milhas o trecho",
+   "Porto Alegre (POA) x Buenos Aires (AEP) a partir de 23.615 milhas o trecho",
+   "São Paulo (GRU) x Buenos Aires (EZE) a partir de 23.634 milhas o trecho",
+   "Recife (REC) x Buenos Aires (EZE) a partir de 23.968 milhas o trecho"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/2sBYp9j"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8009",
+  "data": "2026-11-24T23:46:20Z",
+  "tipo": "promocao",
+  "titulo": "HOTÉIS EM MIAMI COM ATÉ 54% DE DESCONTO + 10% OFF",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Hotéis em Miami têm até 54% de desconto na Hoteis.com. O cupom PPHOTEIS10 oferece 10% de desconto adicional. Promoção válida até 31 de março de 2027, com parcelamento em até 12 vezes sem juros.",
+  "detalhes": [
+   "desconto de até 54% em hotéis selecionados na Hoteis.com",
+   "cupom PPHOTEIS10 garante 10% de desconto adicional",
+   "parcelamento em até 12 vezes sem juros",
+   "✅ Validade: até 31 de março de 2027"
+  ],
+  "parceiros": "",
+  "validade": "até 31 de março de 2027",
+  "links": [
+   "https://link.dia23.com.br/r/JjdeXkw"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8008",
+  "data": "2026-11-24T23:46:13Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE: BILHETE DE IDA E VOLTA SÃO PAULO-DUBAI A 153K PONTOS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Bilhetes de ida e volta São Paulo-Dubai disponíveis a partir de 153.000 pontos Azul Fidelidade por trecho. O custo em dinheiro equivalente é R$ 2.295 + taxas, calculado com CPM de R$ 15,00 por mil pontos. A promoção inclui bônus na compra de pontos e desconto de 10% para portadores do cartão Azul Itaú.",
+  "detalhes": [
+   "153.000 pontos Azul Fidelidade por trecho",
+   "custo em dinheiro equivalente R$ 2.295 + taxas",
+   "bônus de até 320% na compra de pontos",
+   "10% de desconto na compra de pontos para portadores do cartão Azul Itaú",
+   "São Paulo (GRU) x Dubai (DXB) economica a partir de 153.000 milhas o trecho a partir de R$ 2.295"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "até hoje (24)",
+  "links": [
+   "https://link.dia23.com.br/r/dVw58Fk"
+  ],
+  "ate": ""
+ },
+ {
   "id": "3761373661-10358",
   "data": "2026-11-24T23:41:44Z",
   "origem": "Campinas",
