@@ -1578,13 +1578,53 @@
     if (!grupos.length) return `<div class="pass-datas-compactas"><b>${rotulo}</b><p>Não há datas futuras reconhecidas neste alerta.</p></div>`;
     return `<div class="pass-datas-compactas"><label>${rotulo}<select data-cal-mes>${grupos.map(g=>`<option value="${g.mes}">${new Date(g.mes+'-15T12:00:00Z').toLocaleDateString('pt-BR',{month:'long',year:'numeric',timeZone:'UTC'})}</option>`).join('')}</select></label>${grupos.map((g,i)=>`<div class="pass-mes-dias" data-cal-grupo="${g.mes}"${i?' hidden':''}>${g.dias.map(n=>{ const dt=`${g.mes}-${String(n).padStart(2,'0')}`; return `<button type="button" class="pass-dia" data-k="${k}" data-dt="${dt}" aria-pressed="false" aria-label="${k==='ida'?'Ida':'Volta'} ${dt.slice(8,10)}/${dt.slice(5,7)}/${dt.slice(0,4)}">${n}</button>`; }).join('')}</div>`).join('')}</div>`;
   }
+  // Datas em abas: Ida/Volta, um botão por mês e só os dias que existem, com o dia da semana.
+  const SEM3 = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
+  function gruposDatas(lista) {
+    const hoje = hojeIso();
+    return (lista || []).map(d => {
+      const mes = isoMes(d.mes);
+      const dias = mes ? diasDaLista(d.dias).filter(n => n >= 1 && new Date(`${mes}-${String(n).padStart(2, '0')}T12:00:00Z`).getUTCDate() === n && `${mes}-${String(n).padStart(2, '0')}` >= hoje).sort((a, b) => a - b) : [];
+      return { mes, dias };
+    }).filter(g => g.dias.length).sort((a, b) => a.mes.localeCompare(b.mes));
+  }
+  function datasAbas(completo) {
+    const ida = gruposDatas(completo.datas_ida), volta = gruposDatas(completo.datas_volta);
+    if (!ida.length) return '';
+    const nomeMes = m => `${MES3[+m.slice(5, 7) - 1]}/${m.slice(2, 4)}`;
+    const painel = (k, gs) => `<div class="pass-painel" data-painel="${k}"${k === 'volta' ? ' hidden' : ''}>
+          <div class="pass-meses">${gs.map((g, i) => `<button type="button" class="pass-mes${i ? '' : ' on'}" data-mes="${g.mes}" aria-pressed="${!i}">${nomeMes(g.mes)} <small>· ${g.dias.length}</small></button>`).join('')}</div>
+          ${gs.map((g, i) => `<div class="pass-grade" data-grade="${g.mes}"${i ? ' hidden' : ''}>${g.dias.map(n => {
+            const dt = `${g.mes}-${String(n).padStart(2, '0')}`, sem = SEM3[new Date(`${dt}T12:00:00Z`).getUTCDay()];
+            return `<button type="button" class="pass-dia" aria-pressed="false" aria-label="${k === 'ida' ? 'Ida' : 'Volta'} ${sem} ${dt.slice(8, 10)}/${dt.slice(5, 7)}/${dt.slice(0, 4)}" data-k="${k}" data-dt="${dt}">${n}<small>${sem}</small></button>`;
+          }).join('')}</div>`).join('')}
+        </div>`;
+    return `<div class="pass-datas-abas">
+        <div class="pass-abas"><button type="button" class="pass-aba on" data-aba="ida" aria-pressed="true">Ida<span></span></button>${volta.length ? '<button type="button" class="pass-aba" data-aba="volta" aria-pressed="false">Volta<span></span></button>' : ''}</div>
+        ${painel('ida', ida)}${volta.length ? painel('volta', volta) : ''}
+      </div>`;
+  }
+  const abrirAba = (cal, k) => {
+    cal.querySelectorAll('.pass-aba').forEach(b => { const on = b.dataset.aba === k; b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); });
+    cal.querySelectorAll('.pass-painel').forEach(p => { p.hidden = p.dataset.painel !== k; });
+  };
+  const abrirMes = (painel, mes) => {
+    painel.querySelectorAll('.pass-mes').forEach(b => { const on = b.dataset.mes === mes; b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); });
+    painel.querySelectorAll('.pass-grade').forEach(g => { g.hidden = g.dataset.grade !== mes; });
+  };
+  document.addEventListener('click', e => {
+    const aba = e.target.closest && e.target.closest('.pass-aba');
+    if (aba) { abrirAba(aba.closest('.pass-cal'), aba.dataset.aba); return; }
+    const mes = e.target.closest && e.target.closest('.pass-mes');
+    if (mes) abrirMes(mes.closest('.pass-painel'), mes.dataset.mes);
+  });
   function calendarioHtml(p, completo, compacto = false) {
     const busca = buscaDe(p);
     const temVolta = (completo.datas_volta || []).length > 0;
     const nome = p.link_nome || p.programa || '', datas = compacto ? datasCompactas : datasHtml;
     const link = /\btap\b/i.test(`${p.programa} ${p.link_nome}`) ? 'https://www.flytap.com/pt_br/passagens-milhas' : completo.link;
     return `<div class="pass-cal${compacto ? ' pass-cal-compacto' : ''}"${busca || compacto ? ` data-o="${esc(p.origem_iata)}" data-d="${esc(p.destino_iata)}" data-exe="${ehExecutiva(p.cabine) ? 1 : ''}" data-nome="${esc(nome)}" data-prog="${esc(`${p.link_nome || ''} ${p.programa || ''}`)}"${temVolta ? ' data-tem-volta="1"' : ''}` : ''}>
-        ${datas('Datas de ida', completo.datas_ida, 'ida', busca)}${datas('Datas de volta', completo.datas_volta, 'volta', busca)}
+        ${(!compacto && busca && datasAbas(completo)) || `${datas('Datas de ida', completo.datas_ida, 'ida', busca)}${datas('Datas de volta', completo.datas_volta, 'volta', busca)}`}
         ${busca && (completo.datas_ida || []).length ? `<p class="pass-dica">${/\btap\b/i.test(`${p.programa} ${p.link_nome}`) ? 'Escolha as datas. Na TAP, entre na conta e selecione Pagar com milhas.' : 'Toque numa data de ida para abrir a busca já preenchida'}</p>` : ''}
         ${httpOk(link) ? `<a class="cta cta-a pass-link" href="${esc(link)}" data-orig="${esc(link)}" target="_blank" rel="noopener">Pesquisar${nome ? ` na ${esc(nome)}` : ' no programa'} ↗</a>` : '<p class="pass-dica">Este alerta não trouxe um link de pesquisa válido.</p>'}${compacto ? '<button type="button" class="pass-copiar-datas" data-pass-copiar>Copiar rota e datas</button><p class="pass-copia-status" role="status"></p>' : ''}
       </div>`;
@@ -1598,6 +1638,7 @@
       b.setAttribute('aria-pressed', String(dt === (ehIda ? ida : volta)));
       b.disabled = dt < hoje || (!ehIda && !!ida && dt <= ida);
     });
+    cal.querySelectorAll('.pass-aba span').forEach(s => { const v = s.parentElement.dataset.aba === 'ida' ? ida : volta; s.textContent = v ? ` · ${dm(v)}` : ''; });
     const status = cal.querySelector('.pass-copia-status'); if (status) status.textContent = '';
     const caixaVolta = cal.querySelector('[data-k="volta"]')?.closest('.pass-datas-compactas'), seletorVolta = caixaVolta?.querySelector('[data-cal-mes]');
     if (ida && seletorVolta && ![...caixaVolta.querySelectorAll(`[data-cal-grupo="${seletorVolta.value}"] .pass-dia`)].some(b => !b.disabled)) {
@@ -1628,6 +1669,13 @@
     if (k === 'ida') {
       cal.dataset.ida = cal.dataset.ida === dt ? '' : dt;
       if (!cal.dataset.ida || (cal.dataset.volta && cal.dataset.volta <= cal.dataset.ida)) cal.dataset.volta = '';
+      const pv = cal.querySelector('.pass-painel[data-painel="volta"]');
+      if (cal.dataset.ida && pv) {
+        atualizarCal(cal); abrirAba(cal, 'volta');
+        const g = [...pv.querySelectorAll('.pass-grade')].find(x => [...x.querySelectorAll('.pass-dia')].some(b => !b.disabled));
+        if (g) abrirMes(pv, g.dataset.grade);
+        return;
+      }
     } else {
       if (!cal.dataset.ida) { const dica = cal.querySelector('.pass-dica'); if (dica) dica.textContent = 'Escolha primeiro a data de ida'; return; }
       cal.dataset.volta = cal.dataset.volta === dt ? '' : dt;

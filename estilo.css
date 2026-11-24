@@ -2467,3 +2467,24 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .net-resultado b{color:var(--ouro)}
 @media(max-width:700px){.net-conta{grid-template-columns:1fr}}
 #dinheiro .indicacao + .indicacao{margin-top:12px}
+
+/* Datas em abas (ida/volta, mês, dias com dia da semana) */
+.pass-datas-abas{display:grid;gap:10px}
+.pass-abas{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:6px}
+.pass-aba{min-height:40px;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--ink-3);color:var(--ash);font:700 13.5px var(--body);cursor:pointer}
+.pass-aba.on{border-color:var(--ouro);color:var(--ouro)}
+.pass-aba span{font-weight:600;color:var(--rice)}
+.pass-painel{display:grid;gap:10px}
+.pass-painel[hidden],.pass-grade[hidden]{display:none!important}
+.pass-meses{display:flex;flex-wrap:wrap;gap:6px}
+.pass-mes{padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--ink-3);color:var(--rice);font:700 13px var(--body);cursor:pointer}
+.pass-mes small{font-weight:500;color:var(--ash-dim)}
+.pass-mes.on{background:var(--ouro);border-color:var(--ouro);color:var(--sobre-ouro,var(--ink))}
+.pass-mes.on small{color:inherit;opacity:.75}
+.pass-grade{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.pass-grade .pass-dia{width:100%;min-width:0;height:auto;min-height:44px;padding:5px 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;line-height:1.1;font-size:14px}
+.pass-grade .pass-dia small{font-size:10.5px;font-weight:600;color:var(--ash-dim)}
+.pass-grade .pass-dia.on small{color:inherit;opacity:.75}
+.pass-grade .pass-dia:disabled{text-decoration:none}
+.pass-grade .pass-dia:disabled small{text-decoration:none}
+.pass-mes:focus-visible,.pass-aba:focus-visible{outline:2px solid var(--ouro-lt);outline-offset:1px}
