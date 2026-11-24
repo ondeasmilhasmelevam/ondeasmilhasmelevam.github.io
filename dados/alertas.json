@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-16446",
+  "data": "2026-11-24T20:00:07Z",
+  "origem": "Maceió",
+  "origem_iata": "MCZ",
+  "destino": "Buenos Aires",
+  "destino_iata": "AEP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "40.700 milhas + Taxas",
+  "volta": "40.700 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10350",
+  "data": "2026-11-24T20:00:04Z",
+  "origem": "Maceió",
+  "origem_iata": "MCZ",
+  "destino": "Recife",
+  "destino_iata": "REC",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "13.000 milhas + Taxas",
+  "volta": "13.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-10349",
+  "data": "2026-11-24T19:57:41Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Recife",
+  "destino_iata": "REC",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "18.700 Milhas LATAM Pass + Taxas",
+  "volta": "18.700 Milhas LATAM Pass + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-16445",
   "data": "2026-11-24T19:37:24Z",
   "origem": "Cuiabá",
@@ -5435,20 +5477,6 @@
   "programa": "Smiles",
   "ida": "12.800 milhas + R$ 35,90 de taxas",
   "volta": "12.800 milhas + R$ 62,69 de taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-6975",
-  "data": "2026-11-22T19:56:38Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "American Airlines",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "171.000 milhas + Taxas",
-  "volta": "",
   "link_nome": "Smiles"
  },
  {
