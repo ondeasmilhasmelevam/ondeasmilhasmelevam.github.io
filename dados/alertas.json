@@ -1,5 +1,35 @@
 [
  {
+  "id": "seats-smiles-GRU-PTY-eco",
+  "data": "2026-11-24T05:14:21.927392Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Cidade do Panamá",
+  "destino_iata": "PTY",
+  "companhia": "American / AM / Avianca",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "62.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "seats-smiles-GRU-BOG-eco",
+  "data": "2026-11-24T05:14:21.927392Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "American / Avianca / Copa",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "47.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10287",
   "data": "2026-11-24T01:41:32Z",
   "origem": "Belém",
@@ -3526,21 +3556,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-GRU-BOG-eco",
-  "data": "2026-11-23T02:00:08.942796Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "American / Avianca / Copa",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "79.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "3761373661-10141",
   "data": "2026-11-23T00:35:00Z",
   "origem": "Palmas",
@@ -3821,21 +3836,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-GRU-PTY-eco",
-  "data": "2026-11-23T00:19:39.674453Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "American / AM / Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "67.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-azul-VCP-LIS-eco",
   "data": "2026-11-23T00:19:39.674453Z",
   "fonte": "seats.aero",
@@ -3896,11 +3896,11 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GRU-LIM-eco",
+  "id": "seats-qatar-GIG-LIM-eco",
   "data": "2026-11-23T00:19:39.674453Z",
   "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
@@ -3911,11 +3911,11 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GIG-LIM-eco",
+  "id": "seats-qatar-GRU-LIM-eco",
   "data": "2026-11-23T00:19:39.674453Z",
   "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
@@ -6232,7 +6232,7 @@
   "origem_iata": "GIG",
   "destino": "Cidade do Panamá",
   "destino_iata": "PTY",
-  "companhia": "Avianca / Copa / GOL",
+  "companhia": "American / Avianca / Copa",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "84.000 milhas + taxas",
@@ -6487,7 +6487,7 @@
   "companhia": "American / Avianca / Copa",
   "cabine": "Econômica",
   "programa": "Smiles",
-  "ida": "84.000 milhas + taxas",
+  "ida": "88.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -6657,6 +6657,21 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "seats-smiles-GIG-LHR-eco",
+  "data": "2026-11-12T05:14:55.794608Z",
+  "fonte": "seats.aero",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Londres",
+  "destino_iata": "LHR",
+  "companhia": "American / Avianca / AZ",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "142.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-smiles-MAO-PTY-eco",
   "data": "2026-11-11T00:03:25.922708Z",
   "fonte": "seats.aero",
@@ -6742,7 +6757,7 @@
   "companhia": "American / Avianca / GOL",
   "cabine": "Econômica",
   "programa": "Smiles",
-  "ida": "83.000 milhas + taxas",
+  "ida": "84.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
