@@ -6209,20 +6209,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-10079",
-  "data": "2026-11-22T00:02:15Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Salvador",
-  "destino_iata": "SSA",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "15.000 milhas + R$ 35,15 de taxas",
-  "volta": "15.000 milhas + R$ 52,72 de taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "seats-smiles-GRU-JFK-exe",
   "data": "2026-11-21T15:39:52.976192Z",
   "fonte": "seats.aero",
