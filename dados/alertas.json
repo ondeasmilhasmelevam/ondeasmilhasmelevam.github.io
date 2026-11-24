@@ -1,5 +1,47 @@
 [
  {
+  "id": "3761373661-10344",
+  "data": "2026-11-24T17:06:49Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Navegantes",
+  "destino_iata": "NVT",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.800 milhas + Taxas",
+  "volta": "16.800 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16435",
+  "data": "2026-11-24T17:06:46Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "35.000 milhas + Taxas",
+  "volta": "35.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10343",
+  "data": "2026-11-24T17:06:41Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "13.000 milhas + Taxas",
+  "volta": "13.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-10342",
   "data": "2026-11-24T16:39:35Z",
   "origem": "Curitiba",
