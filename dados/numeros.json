@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-24T20:55:36.224373Z",
+ "atualizado": "2026-11-24T21:01:44.841051Z",
  "dias": 30,
- "passagens": 4067,
+ "passagens": 4069,
  "promocoes": 231,
  "destinos": 182,
  "executiva": 839,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1072,
+  "passagens": 1073,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -863,6 +863,19 @@
     "regiao": "outros"
    },
    {
+    "id": "3761373661-10354",
+    "origem": "Campinas",
+    "origem_iata": "VCP",
+    "destino": "João Pessoa",
+    "destino_iata": "JPA",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-24T20:59:21Z",
+    "milhas": 9800,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9934",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -924,19 +937,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-23T00:26:52Z",
     "milhas": 10330,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10061",
-    "origem": "Vitória",
-    "origem_iata": "VIX",
-    "destino": "São José do Rio Preto",
-    "destino_iata": "SJP",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-21T16:58:53Z",
-    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },
