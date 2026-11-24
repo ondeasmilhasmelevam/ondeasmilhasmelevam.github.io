@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-24T01:37:26.897407Z",
+ "atualizado": "2026-11-24T01:43:35.931729Z",
  "dias": 30,
- "passagens": 3956,
+ "passagens": 3959,
  "promocoes": 223,
  "destinos": 182,
- "executiva": 826,
+ "executiva": 827,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1089,
+  "passagens": 1092,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -1006,6 +1006,19 @@
     "regiao": "america-do-sul"
    },
    {
+    "id": "2361370250-7011",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "Bogotá",
+    "destino_iata": "BOG",
+    "cabine": "Executiva",
+    "programa": "Aeroplan",
+    "data": "2026-11-24T01:37:51Z",
+    "milhas": 20000,
+    "nivel": "",
+    "regiao": "america-do-sul"
+   },
+   {
     "id": "2361370250-6795",
     "origem": "Abu Dhabi",
     "origem_iata": "AUH",
@@ -1186,19 +1199,6 @@
     "milhas": 66500,
     "nivel": "",
     "regiao": "caribe"
-   },
-   {
-    "id": "2361370250-6962",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Doha",
-    "destino_iata": "DOH",
-    "cabine": "Executiva",
-    "programa": "Privilege Club Qatar",
-    "data": "2026-11-22T11:34:40Z",
-    "milhas": 70000,
-    "nivel": "",
-    "regiao": "outros"
    }
   ]
  }
