@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10321",
+  "data": "2026-11-24T13:17:55Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "19.100 milhas + R$ 34,54 de taxas",
+  "volta": "11.000 milhas + R$ 62,14 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-7990",
   "data": "2026-11-24T13:06:05Z",
   "tipo": "promocao",
@@ -221,20 +235,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-16424",
-  "data": "2026-11-24T12:17:23Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Milão",
-  "destino_iata": "MXP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "74.400 milhas + Taxas",
-  "volta": "74.400 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "3761373661-10310",
   "data": "2026-11-24T12:17:23Z",
   "origem": "Porto Alegre",
@@ -246,6 +246,20 @@
   "programa": "LATAM Pass",
   "ida": "8.400 milhas + Taxas",
   "volta": "8.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16424",
+  "data": "2026-11-24T12:17:23Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Milão",
+  "destino_iata": "MXP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "74.400 milhas + Taxas",
+  "volta": "74.400 milhas + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
