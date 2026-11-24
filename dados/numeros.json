@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-24T06:47:07.407367Z",
+ "atualizado": "2026-11-24T12:35:07.182696Z",
  "dias": 30,
- "passagens": 3959,
- "promocoes": 223,
+ "passagens": 3994,
+ "promocoes": 226,
  "destinos": 182,
- "executiva": 827,
+ "executiva": 830,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1090,
+  "passagens": 1084,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -616,6 +616,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10309",
+    "origem": "Uberlândia",
+    "origem_iata": "UDI",
+    "destino": "Brasília",
+    "destino_iata": "BSB",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-24T12:07:49Z",
+    "milhas": 5800,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9859",
     "origem": "Recife",
     "origem_iata": "REC",
@@ -720,19 +733,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-10093",
-    "origem": "Recife",
-    "origem_iata": "REC",
-    "destino": "Brasília",
-    "destino_iata": "BSB",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-22T13:29:17Z",
-    "milhas": 7250,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-10057",
     "origem": "Florianópolis",
     "origem_iata": "FLN",
@@ -785,6 +785,32 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10311",
+    "origem": "Curitiba",
+    "origem_iata": "CWB",
+    "destino": "Joinville",
+    "destino_iata": "JOI",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-24T12:26:05Z",
+    "milhas": 8200,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10297",
+    "origem": "São Paulo",
+    "origem_iata": "CGH",
+    "destino": "Navegantes",
+    "destino_iata": "NVT",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-24T11:39:58Z",
+    "milhas": 8300,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-9909",
     "origem": "Rio de Janeiro",
     "origem_iata": "SDU",
@@ -794,19 +820,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-18T16:41:20Z",
     "milhas": 8500,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9812",
-    "origem": "Goiânia",
-    "origem_iata": "GYN",
-    "destino": "Joinville",
-    "destino_iata": "JOI",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-17T12:28:12Z",
-    "milhas": 8600,
     "nivel": "",
     "regiao": "brasil"
    },
@@ -924,19 +937,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-23T00:26:52Z",
     "milhas": 10330,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10061",
-    "origem": "Vitória",
-    "origem_iata": "VIX",
-    "destino": "São José do Rio Preto",
-    "destino_iata": "SJP",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-21T16:58:53Z",
-    "milhas": 10600,
     "nivel": "",
     "regiao": "brasil"
    },
