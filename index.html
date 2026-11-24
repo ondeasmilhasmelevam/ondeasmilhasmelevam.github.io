@@ -1346,6 +1346,7 @@
     </section>
 
     <section id="gestao" data-pagina="gestao">
+      <div class="aba-banner" style="background-image:url(img/banners/gestao.jpg)" role="img" aria-label="Gestão de milhas"><div><p>Para assinantes</p><b>Gestão de milhas</b><small>Clubes, compras e vendas num lugar só, com o lucro do ano e as próximas faturas.</small></div></div>
       <div class="sec-head">
         <p class="eyebrow">Para assinantes</p>
         <h2>Gestão de milhas</h2>
@@ -1401,7 +1402,7 @@
         </article>
 
         <article class="ct-bloco">
-          <header><span class="ct-ic" aria-hidden="true">🛒</span><div><h3>Compras de pontos</h3><p>Cada lote comprado, o milheiro que saiu e quanto cai por mês na fatura. Informe quantos pontos por dólar o seu cartão dá: os pontos gerados na própria compra baixam o milheiro.</p></div></header>
+          <header><span class="ct-ic" aria-hidden="true">🛒</span><div><h3>Compras de pontos</h3><p>Cada lote comprado, o milheiro que saiu e quanto cai por mês na fatura. Informe quantos pontos por dólar o seu cartão dá: os pontos gerados na própria compra baixam o milheiro. Com a data de vencimento, avisamos por e-mail e no celular 30 e 7 dias antes.</p></div></header>
           <ul class="radar-lista gm-lista" id="gm-compras"></ul>
           <details class="ct-em-nova"><summary>Anotar uma compra</summary>
             <form class="radar-form ct-form gm-form" id="gm-compra">
@@ -1414,6 +1415,7 @@
               <label>Cartão usado<input name="cartao" maxlength="30" placeholder="ex.: C6 Carbon"></label>
               <label>Pontos por dólar do cartão<input name="ppd" inputmode="decimal" placeholder="ex.: 2,5"></label>
               <label>Dólar do dia (R$)<input name="dolar" inputmode="decimal"></label>
+              <label>Os pontos vencem em<input name="vence" type="date"></label>
               <label class="gm-largo">Observação<input name="obs" maxlength="120" placeholder="ex.: 50% de desconto + bônus de transferência"></label>
               <button type="submit" class="cta cta-a">Anotar compra</button>
             </form>
@@ -1791,7 +1793,7 @@
 <script src="interface.js?v=2"></script>
 <script src="funil.js?v=8"></script>
 <script src="conta.js?v=5" defer></script>
-<script src="gestao.js?v=2" defer></script>
+<script src="gestao.js?v=3" defer></script>
 <script type="module" src="assinatura.js?v=58"></script>
 <script src="mapa.js?v=13" defer></script>
 <script src="rotas-aereas.js?v=10" defer></script>

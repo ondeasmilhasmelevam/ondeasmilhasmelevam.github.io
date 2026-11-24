@@ -94,10 +94,12 @@
   function desenharLembretes(G) {
     const h = hoje(), dias = d => Math.round((Date.parse(d) - Date.parse(h)) / 864e5);
     const itens = G.clubes.map((c, i) => ({ c, i })).filter(({ c }) => c.lembrete && clube(c).ativo && dias(c.lembrete) <= 7).sort((a, b) => a.c.lembrete.localeCompare(b.c.lembrete));
+    const vencem = G.compras.filter(c => c.vence && dias(c.vence) >= 0 && dias(c.vence) <= 30).sort((a, b) => a.vence.localeCompare(b.vence));
     const el = $('#gm-lembretes');
-    el.hidden = !itens.length;
-    el.innerHTML = itens.length ? `<b>🔔 Clube para cancelar</b>${itens.map(({ c, i }) => { const n = dias(c.lembrete);
-      return `<p>Clube ${esc(c.programa)}${c.titular ? ` · ${esc(c.titular)}` : ''}: ${n < 0 ? `a data era ${esc(dataBR(c.lembrete))}` : n === 0 ? 'cancelar hoje' : `cancelar até ${esc(dataBR(c.lembrete))} (${n === 1 ? 'amanhã' : `faltam ${n} dias`})`}. <button type="button" data-gm-cancelar="${i}">Já cancelei</button></p>`; }).join('')}<small>Antes de cancelar, confira se já cumpriu o tempo mínimo da promoção: sair antes pode fazer o bônus ser estornado. Também avisamos por e-mail e no celular 3 dias antes e no dia.</small>` : '';
+    el.hidden = !itens.length && !vencem.length;
+    el.innerHTML = (vencem.length ? `<b>⏳ Pontos vencendo</b>${vencem.map(c => { const n = dias(c.vence);
+      return `<p>${fmt(c.pontos + compra(c).extra)} ${esc(c.programa)}${c.titular ? ` · ${esc(c.titular)}` : ''} vencem ${n === 0 ? 'hoje' : n === 1 ? 'amanhã' : `em ${esc(dataBR(c.vence))} (faltam ${n} dias)`}. Transfira, emita ou venda antes de perder.</p>`; }).join('')}` : '') + (itens.length ? `<b>🔔 Clube para cancelar</b>${itens.map(({ c, i }) => { const n = dias(c.lembrete);
+      return `<p>Clube ${esc(c.programa)}${c.titular ? ` · ${esc(c.titular)}` : ''}: ${n < 0 ? `a data era ${esc(dataBR(c.lembrete))}` : n === 0 ? 'cancelar hoje' : `cancelar até ${esc(dataBR(c.lembrete))} (${n === 1 ? 'amanhã' : `faltam ${n} dias`})`}. <button type="button" data-gm-cancelar="${i}">Já cancelei</button></p>`; }).join('')}<small>Antes de cancelar, confira se já cumpriu o tempo mínimo da promoção: sair antes pode fazer o bônus ser estornado. Também avisamos por e-mail e no celular 3 dias antes e no dia.</small>` : '');
   }
   function desenharResumo() {
     const lista = anos();
@@ -172,6 +174,7 @@
       return `<li><div><b>${fmt(c.pontos)} ${esc(c.programa)}${c.titular ? ` · ${esc(c.titular)}` : ''}</b>
         <span>${esc(dataBR(c.data))} · ${reais(c.valor, true)}${c.parcelas > 1 ? ` em ${c.parcelas}x de ${reais(r.parcela, true)}` : ''}${c.cartao ? ` · ${esc(c.cartao)}` : ''}</span>
         <span>Milheiro ${mil(r.milheiro)}${r.extra ? ` · o cartão gerou mais ${fmt(r.extra)} pontos → <b class="ok">${mil(r.efetivo)}</b>` : ''}</span>
+        ${c.vence ? (() => { const n = Math.round((Date.parse(c.vence) - Date.parse(hoje())) / 864e5); return `<span class="${n <= 30 ? 'ruim' : ''}">⏳ ${n < 0 ? `Venceram em ${esc(dataBR(c.vence))}` : `Vencem em ${esc(dataBR(c.vence))} (${n === 0 ? 'hoje' : n === 1 ? 'amanhã' : `faltam ${n} dias`})`}</span>`; })() : ''}
         ${c.obs ? `<span class="gm-obs">${esc(c.obs)}</span>` : ''}</div><div class="gm-acoes">${tirar('compras', i)}</div></li>`;
     }).join('') : '<li class="vazio">Nenhuma compra anotada.</li>';
   }
@@ -200,9 +203,12 @@
       if (!c.inicio || !c.mensal) { aviso('Preencha a data de início e a mensalidade.'); return; }
       G.clubes.push(c); salvar('Clube anotado');
     } else if (f.id === 'gm-compra') {
-      const c = { ...base, data: v('data') || hoje(), pontos: num(v('pontos')), valor: dec(v('valor')), ppd: dec(v('ppd')), dolar: dec(v('dolar')) || dolar, parcelas: Math.max(1, Math.min(24, num(v('parcelas')) || 1)) };
+      const c = { ...base, data: v('data') || hoje(), pontos: num(v('pontos')), valor: dec(v('valor')), ppd: dec(v('ppd')), dolar: dec(v('dolar')) || dolar, parcelas: Math.max(1, Math.min(24, num(v('parcelas')) || 1)), vence: v('vence') };
       if (!c.pontos || !c.valor) { aviso('Preencha os pontos e o valor pago.'); return; }
-      G.compras.push(c); salvar('Compra anotada');
+      if (c.vence && c.vence <= c.data) { aviso('A data de vencimento precisa ser depois da compra.'); return; }
+      G.compras.push(c);
+      if (c.vence) { const conta = api().dados(); conta.vencimentos.push({ programa: c.programa, pontos: c.pontos + compra(c).extra, data: c.vence }); conta.vencimentos.sort((a, b) => a.data.localeCompare(b.data)); }
+      salvar(c.vence ? 'Compra anotada e aviso de vencimento ligado' : 'Compra anotada');
     } else {
       const c = { ...base, data: v('data') || hoje(), pagamento: v('pagamento'), comprador: v('comprador').slice(0, 40), cpfs: num(v('cpfs')), milhas: num(v('milhas')), valor: dec(v('valor')), custo: dec(v('custo')), recebido: f.elements.recebido.checked };
       if (!c.milhas || !c.valor) { aviso('Preencha as milhas e o valor da venda.'); return; }
@@ -229,7 +235,9 @@
     if (b.dataset.gmTirar) {
       const tipo = b.dataset.gmTirar, item = G[tipo][+b.dataset.i];
       if (!item || !confirm('Apagar este registro? Não dá para desfazer.')) return;
-      G[tipo].splice(+b.dataset.i, 1); salvar('Apagado'); desenhar(); return;
+      G[tipo].splice(+b.dataset.i, 1);
+      if (tipo === 'compras' && item.vence) { const vs = api().dados().vencimentos, k = vs.findIndex(x => x.data === item.vence && api().nome(x.programa) === api().nome(item.programa)); if (k >= 0) vs.splice(k, 1); }
+      salvar('Apagado'); desenhar(); return;
     }
     if (b.dataset.gmCancelar) { const c = G.clubes[+b.dataset.gmCancelar]; if (c) { c.fim = hoje(); salvar('Clube marcado como cancelado'); desenhar(); } return; }
     if (b.dataset.gmRecebi) { const v = G.vendas[+b.dataset.gmRecebi]; if (v) { v.recebido = true; salvar('Venda marcada como recebida'); desenhar(); } return; }
