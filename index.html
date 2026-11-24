@@ -49,7 +49,7 @@
 .sem-entrada #entrada{display:none}
 @media (prefers-reduced-motion:reduce){#entrada{display:none}}
 </style>
-<link rel="stylesheet" href="estilo.css?v=161">
+<link rel="stylesheet" href="estilo.css?v=163">
 <link rel="stylesheet" href="ajustes.css?v=9">
 <link rel="stylesheet" href="rotas-aereas.css?v=4">
 </head>
@@ -82,6 +82,7 @@
         <summary class="menu-grupo-btn">Minha conta</summary>
         <div class="menu-sub">
           <a href="#carteira" title="Minha carteira"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5h14.5a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18V6.5A1.5 1.5 0 0 1 5.5 5H16"/><path d="M15.5 13.5h4.5"/></svg><span>Minha carteira</span><em class="beta">Novo</em></a>
+          <a href="#gestao" title="Gestão de milhas"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>Gestão de milhas</span><em class="beta">Novo</em></a>
           <a href="#radar" title="Rota Vigiada"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6.5" cy="15.5" r="3.5"/><circle cx="17.5" cy="15.5" r="3.5"/><path d="M10 15.5h4M5 12l2-6h3l.5 6M19 12l-2-6h-3l-.5 6"/></svg><span>Rota Vigiada</span></a>
           <a href="#historico" title="Histórico de preços"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg><span>Histórico de preços</span></a>
           <a href="#mapa" title="Mapa de rotas"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="17" r="2"/><circle cx="19" cy="7" r="2"/><path d="M6.6 15.6C9 9 13 6.5 17.2 7.4"/><path d="M12 21a9 9 0 1 0-9-9"/></svg><span>Mapa de rotas</span></a>
@@ -1344,6 +1345,109 @@
       </div>
     </section>
 
+    <section id="gestao" data-pagina="gestao">
+      <div class="sec-head">
+        <p class="eyebrow">Para assinantes</p>
+        <h2>Gestão de milhas</h2>
+        <p class="sec-note">Para quem compra pontos, assina clubes e vende milhas: anote cada movimento e veja, com número na mão, quanto investiu, quanto voltou, o que cai em cada fatura e quantos CPFs cada conta já usou. Salva na sua conta e só você vê.</p>
+      </div>
+      <div class="radar-fechado" id="gm-fechado">
+        <p>🔒 A Gestão de milhas é exclusiva para assinantes.</p>
+        <a class="cta cta-a" href="#assinar">Assinar</a>
+        <small>Já assina? <a href="#assinar">Entre aqui</a> com o e-mail do pagamento.</small>
+      </div>
+      <div id="gm-aberto" hidden>
+        <p class="ct-status" aria-live="polite"></p>
+        <div class="dir-alerta gm-lembretes" id="gm-lembretes" role="status" hidden></div>
+        <datalist id="gm-titulares"></datalist>
+
+        <article class="ct-bloco">
+          <header><span class="ct-ic" aria-hidden="true">📊</span><div><h3>Resumo</h3><p>Quanto entrou e saiu em cada ano, e o total desde o começo.</p></div></header>
+          <div class="gm-anos" id="gm-anos"></div>
+          <div id="gm-resumo"></div>
+        </article>
+
+        <article class="ct-bloco">
+          <header><span class="ct-ic" aria-hidden="true">💳</span><div><h3>Próximas faturas</h3><p>Parcelas das compras de pontos e mensalidades dos clubes nos próximos 3 meses, separadas por cartão. Veja se cabe no mês antes de comprar mais.</p></div></header>
+          <div class="gm-faturas" id="gm-faturas"></div>
+        </article>
+
+        <article class="ct-bloco">
+          <header><span class="ct-ic" aria-hidden="true">🪪</span><div><h3>CPFs usados</h3><p>Cada programa limita para quantas pessoas diferentes você emite. Vender consome esses CPFs: acompanhe por conta e programa para não travar no meio do ano.</p></div></header>
+          <ul class="radar-lista gm-lista" id="gm-cpf"></ul>
+          <p class="ct-nota">Regras de set/2026: Smiles, você e até 25 pessoas por ano civil (zera em 1º de janeiro); LATAM Pass, cerca de 25 pessoas em 12 meses corridos; Azul Fidelidade, lista de 5 a 8 beneficiários conforme a categoria, com espera para trocar nomes. Confirme no regulamento antes de vender.</p>
+        </article>
+
+        <article class="ct-bloco">
+          <header><span class="ct-ic" aria-hidden="true">🔁</span><div><h3>Clubes</h3><p>A mensalidade, os pontos do mês, o bônus de entrada, a indicação e o upgrade, para saber o milheiro real de cada clube. Marque a data para cancelar e avisamos antes, para não pagar um mês a mais.</p></div></header>
+          <ul class="radar-lista gm-lista" id="gm-clubes"></ul>
+          <details class="ct-em-nova"><summary>Anotar um clube</summary>
+            <form class="radar-form ct-form gm-form" id="gm-clube">
+              <label>Programa<select name="programa" data-gm-prog></select></label>
+              <label>Titular da conta<input name="titular" list="gm-titulares" placeholder="opcional: de quem é a conta" maxlength="30"></label>
+              <label>Assinou em<input name="inicio" type="date"></label>
+              <label>Mensalidade (R$)<input name="mensal" inputmode="decimal" placeholder="ex.: 44,90"></label>
+              <label>Pontos por mês<input name="pontos" inputmode="numeric" placeholder="ex.: 1000"></label>
+              <label>Bônus de entrada<input name="bonus" inputmode="numeric" placeholder="pontos extras ao assinar"></label>
+              <label>Pontos de indicação<input name="indicacao" inputmode="numeric" placeholder="de quem assinou pelo seu link"></label>
+              <label>Gasto extra com upgrade (R$)<input name="upgrade" inputmode="decimal" placeholder="ex.: 3 meses no plano maior"></label>
+              <label>Cartão da cobrança<input name="cartao" maxlength="30" placeholder="ex.: C6 Carbon"></label>
+              <label>Lembrar de cancelar em<input name="lembrete" type="date"></label>
+              <label>Cancelou em<input name="fim" type="date"></label>
+              <label class="gm-largo">Observação<input name="obs" maxlength="120" placeholder="ex.: assinei pela promoção de bônus"></label>
+              <button type="submit" class="cta cta-a">Anotar clube</button>
+            </form>
+          </details>
+        </article>
+
+        <article class="ct-bloco">
+          <header><span class="ct-ic" aria-hidden="true">🛒</span><div><h3>Compras de pontos</h3><p>Cada lote comprado, o milheiro que saiu e quanto cai por mês na fatura. Informe quantos pontos por dólar o seu cartão dá: os pontos gerados na própria compra baixam o milheiro.</p></div></header>
+          <ul class="radar-lista gm-lista" id="gm-compras"></ul>
+          <details class="ct-em-nova"><summary>Anotar uma compra</summary>
+            <form class="radar-form ct-form gm-form" id="gm-compra">
+              <label>Programa<select name="programa" data-gm-prog></select></label>
+              <label>Titular da conta<input name="titular" list="gm-titulares" placeholder="opcional: de quem é a conta" maxlength="30"></label>
+              <label>Data<input name="data" type="date"></label>
+              <label>Pontos comprados<input name="pontos" inputmode="numeric" placeholder="ex.: 200000"></label>
+              <label>Valor pago (R$)<input name="valor" inputmode="decimal" placeholder="ex.: 6300"></label>
+              <label>Parcelas<input name="parcelas" inputmode="numeric" placeholder="1"></label>
+              <label>Cartão usado<input name="cartao" maxlength="30" placeholder="ex.: C6 Carbon"></label>
+              <label>Pontos por dólar do cartão<input name="ppd" inputmode="decimal" placeholder="ex.: 2,5"></label>
+              <label>Dólar do dia (R$)<input name="dolar" inputmode="decimal"></label>
+              <label class="gm-largo">Observação<input name="obs" maxlength="120" placeholder="ex.: 50% de desconto + bônus de transferência"></label>
+              <button type="submit" class="cta cta-a">Anotar compra</button>
+            </form>
+          </details>
+        </article>
+
+        <article class="ct-bloco">
+          <header><span class="ct-ic" aria-hidden="true">🤝</span><div><h3>Vendas</h3><p>O que foi vendido, para quem, quantos CPFs usou, o lucro sobre o que você pagou e se o dinheiro já caiu.</p></div></header>
+          <ul class="radar-lista gm-lista" id="gm-vendas"></ul>
+          <details class="ct-em-nova"><summary>Anotar uma venda</summary>
+            <form class="radar-form ct-form gm-form" id="gm-venda">
+              <label>Programa<select name="programa" data-gm-prog></select></label>
+              <label>Titular da conta<input name="titular" list="gm-titulares" placeholder="opcional: de quem é a conta" maxlength="30"></label>
+              <label>Data da venda<input name="data" type="date"></label>
+              <label>Pagamento previsto<input name="pagamento" type="date"></label>
+              <label>Vendido para<input name="comprador" maxlength="40" placeholder="empresa ou pessoa"></label>
+              <label>CPFs usados<input name="cpfs" inputmode="numeric" placeholder="ex.: 4"></label>
+              <label>Milhas vendidas<input name="milhas" inputmode="numeric" placeholder="ex.: 80000"></label>
+              <label>Valor da venda (R$)<input name="valor" inputmode="decimal" placeholder="ex.: 1720"></label>
+              <label>Quanto custou o milheiro (R$)<input name="custo" inputmode="decimal" placeholder="ex.: 17,50"></label>
+              <label class="ct-check"><input type="checkbox" name="recebido"> Já recebi</label>
+              <label class="gm-largo">Observação<input name="obs" maxlength="120"></label>
+              <button type="submit" class="cta cta-a">Anotar venda</button>
+            </form>
+          </details>
+          <p class="dir-alerta"><b>Antes de vender, pese o risco</b>Os regulamentos dos programas dizem que as milhas são de uso pessoal e preveem cancelar emissões e até encerrar a conta de quem negocia com terceiros. Algumas compradoras de milhas já deixaram muita gente sem receber. O PL das Milhas (PL 3.083/2026) ainda não é lei. Anote a data prevista de pagamento e acompanhe aqui o que falta receber.</p>
+        </article>
+
+        <p class="voltar-sim"><button type="button" class="cta cta-b" id="gm-exportar">Baixar tudo em planilha (CSV)</button></p>
+        <p class="ct-nota">O saldo de cada programa e quanto ele vale ficam na <a href="#carteira">Minha carteira</a>. Para conferir se um milheiro compensa antes de comprar, use as <a href="#calculadoras">Calculadoras</a>.</p>
+      </div>
+    </section>
+
+
     <section id="bonus" data-pagina="bonus">
       <div class="sec-head">
         <p class="eyebrow">Transferir agora ou esperar?</p>
@@ -1686,7 +1790,8 @@
 <script src="app.js?v=145"></script>
 <script src="interface.js?v=2"></script>
 <script src="funil.js?v=8"></script>
-<script src="conta.js?v=4" defer></script>
+<script src="conta.js?v=5" defer></script>
+<script src="gestao.js?v=2" defer></script>
 <script type="module" src="assinatura.js?v=58"></script>
 <script src="mapa.js?v=13" defer></script>
 <script src="rotas-aereas.js?v=10" defer></script>

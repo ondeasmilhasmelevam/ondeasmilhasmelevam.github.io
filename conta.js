@@ -103,11 +103,11 @@
   }
   function salvar(msg = 'Salvo') {
     clearTimeout(salvarTimer);
-    const st = $('#ct-status');
-    if (st) st.textContent = 'Salvando…';
+    const st = { set textContent(t) { document.querySelectorAll('.ct-status').forEach(s => { s.textContent = t; }); } };
+    st.textContent = 'Salvando…';
     salvarTimer = setTimeout(async () => {
-      try { await chamar('POST', conta); if (st) st.textContent = `${msg} ✓`; }
-      catch (e) { if (st) st.textContent = 'Não deu para salvar agora. Tente de novo em instantes.'; }
+      try { await chamar('POST', conta); st.textContent = `${msg} ✓`; }
+      catch (e) { st.textContent = 'Não deu para salvar agora. Tente de novo em instantes.'; }
       marcarCartoes(); desenharPassos();
     }, 700);
   }
@@ -406,6 +406,7 @@
     if (!assinatura().ativo) { conta = null; carregando = null; desenharCarteira(); desenharPassos(); marcarCartoes(); return; }
     await Promise.all([apoio(), carregarConta()]);
     desenharCarteira(); desenharPassos(); marcarCartoes();
+    document.dispatchEvent(new Event('conta-pronta'));
   }
   document.addEventListener('assinatura', () => { carregando = null; atualizar(); });
   document.addEventListener('passagens', () => { marcarCartoes(); if (location.hash === '#carteira' && conta) desenharDaParaEmitir(); });
@@ -418,4 +419,6 @@
   if (location.hash === '#bonus') desenharBonus();
   atualizar();
   window.oammlBonusDoTitulo = lerBonus;
+  // Para a Gestão de milhas (gestao.js), que guarda os dados na mesma conta.
+  window.oammlConta = { dados: () => conta, salvar, opcoes: opcoesProgramas, nome: nomeProg, referencia: milheiroRef };
 })();

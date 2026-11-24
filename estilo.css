@@ -2488,3 +2488,38 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .pass-grade .pass-dia:disabled{text-decoration:none}
 .pass-grade .pass-dia:disabled small{text-decoration:none}
 .pass-mes:focus-visible,.pass-aba:focus-visible{outline:2px solid var(--ouro-lt);outline-offset:1px}
+
+/* Gestão de milhas */
+.gm-anos{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.gm-ano{padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--ink-3);color:var(--rice);font:700 13px var(--body);cursor:pointer}
+.gm-ano.on{background:var(--ouro);border-color:var(--ouro);color:var(--sobre-ouro,var(--ink))}
+.gm-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.gm-cards>div,.gm-fatura{display:grid;gap:2px;padding:12px 14px;border-radius:12px;background:var(--ink-2);border:1px solid var(--line);min-width:0}
+.gm-cards small,.gm-fatura small{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ash-dim)}
+.gm-cards b,.gm-fatura b{font-size:20px;color:var(--rice);overflow-wrap:anywhere}
+.gm-cards span,.gm-fatura span{font-size:12.5px;color:var(--ash)}
+.gm-cards .ok b,.gm-lista .ok{color:#5fd38d}
+.gm-cards .ruim b,.gm-lista .ruim{color:#ff8a7a}
+.gm-faturas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.gm-nota{margin:10px 0 0;font-size:12.5px;color:var(--ash)}
+.gm-vazio{margin:0;font-size:14px;color:var(--ash)}
+.gm-lista li{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.gm-lista li>div:first-child{display:grid;gap:3px;min-width:0}
+.gm-lista li span{font-size:13px;color:var(--ash)}
+.gm-lista .gm-obs{font-style:italic;color:var(--ash-dim)}
+.gm-lista .gm-inativo{opacity:.7}
+.gm-lista .gm-atrasada{border-color:#ff8a7a}
+.gm-acoes{display:flex;flex-direction:column;gap:6px;flex:none}
+.gm-barra{display:block;height:6px;border-radius:6px;background:var(--ink-3);overflow:hidden;margin-top:2px}
+.gm-barra i{display:block;height:100%;background:var(--ouro);border-radius:6px}
+.gm-barra.alto i{background:#ff8a7a}
+.gm-form .gm-largo{grid-column:1/-1}
+:root[data-theme="light"] .gm-cards .ok b,:root[data-theme="light"] .gm-lista .ok{color:#1d8a4a}
+:root[data-theme="light"] .gm-cards .ruim b,:root[data-theme="light"] .gm-lista .ruim{color:#c0392b}
+@media(max-width:700px){.gm-cards,.gm-faturas{grid-template-columns:repeat(2,minmax(0,1fr))}.gm-cards b,.gm-fatura b{font-size:17px}.gm-lista li{flex-direction:column}.gm-acoes{flex-direction:row}}
+#gm-venda label.ct-check{display:flex;flex-direction:row;align-items:center;gap:8px;align-self:end;min-height:44px;margin:0;font-size:14px;color:var(--rice)}
+#gm-venda label.ct-check input{width:18px;height:18px;margin:0;flex:none}
+.gm-lembretes{margin:0 0 14px}
+.gm-lembretes p{margin:6px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.gm-lembretes small{display:block;margin-top:8px;color:var(--ash)}
+.gm-lembretes button,.gm-acoes button{cursor:pointer}
