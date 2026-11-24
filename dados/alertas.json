@@ -5789,20 +5789,6 @@
   "link_nome": "Iberia Plus"
  },
  {
-  "id": "2361370250-6978",
-  "data": "2026-11-22T23:34:29Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "50.000 milhas + CAD 123,20 de taxas",
-  "volta": "",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "seats-iberia-FOR-MAD-eco",
   "data": "2026-11-22T18:35:20.947806Z",
   "fonte": "seats.aero",
