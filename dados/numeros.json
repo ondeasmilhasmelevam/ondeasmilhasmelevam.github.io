@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-24T20:00:23.489194Z",
+ "atualizado": "2026-11-24T20:06:48.828459Z",
  "dias": 30,
- "passagens": 4057,
+ "passagens": 4061,
  "promocoes": 230,
  "destinos": 182,
- "executiva": 837,
+ "executiva": 838,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1070,
+  "passagens": 1072,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -209,6 +209,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-23T13:15:37Z",
     "milhas": 40800,
+    "nivel": "espetacular",
+    "regiao": "caribe"
+   },
+   {
+    "id": "2008590742-16448",
+    "origem": "Belém",
+    "origem_iata": "BEL",
+    "destino": "Curaçao",
+    "destino_iata": "CUR",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-24T20:05:26Z",
+    "milhas": 45200,
     "nivel": "espetacular",
     "regiao": "caribe"
    },
@@ -458,19 +471,6 @@
     "milhas": 66400,
     "nivel": "bom",
     "regiao": "america-do-norte"
-   },
-   {
-    "id": "2008590742-16189",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "Curaçao",
-    "destino_iata": "CUR",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-21T01:00:44Z",
-    "milhas": 78000,
-    "nivel": "bom",
-    "regiao": "caribe"
    },
    {
     "id": "3761373661-10145",
