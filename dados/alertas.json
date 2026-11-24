@@ -5617,20 +5617,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16289",
-  "data": "2026-11-22T14:10:59Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Roma",
-  "destino_iata": "FCO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "73.200 milhas + Taxas",
-  "volta": "71.770 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7948",
   "data": "2026-11-22T12:58:53Z",
   "tipo": "promocao",
