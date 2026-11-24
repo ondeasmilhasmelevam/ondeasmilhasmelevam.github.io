@@ -5547,34 +5547,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-10095",
-  "data": "2026-11-22T14:22:51Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Fortaleza",
-  "destino_iata": "FOR",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "17.800 milhas + Taxas",
-  "volta": "17.800 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16293",
-  "data": "2026-11-22T14:22:45Z",
-  "origem": "Uberlândia",
-  "origem_iata": "UDI",
-  "destino": "Joinville",
-  "destino_iata": "JOI",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "9.440 milhas + Taxas",
-  "volta": "9.440 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7948",
   "data": "2026-11-22T12:58:53Z",
   "tipo": "promocao",
