@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-7041",
+  "data": "2026-11-24T18:33:25Z",
+  "origem": "Helsinque",
+  "origem_iata": "HEL",
+  "destino": "Tóquio",
+  "destino_iata": "HND",
+  "companhia": "Japan Airlines",
+  "cabine": "Executiva",
+  "programa": "AAdvantage",
+  "ida": "75.000 Milhas AAdvantage + R$ 125,82",
+  "volta": "75.000 Milhas AAdvantage + R$ 220,98",
+  "link_nome": "AAdvantage"
+ },
+ {
+  "id": "2361370250-7040",
+  "data": "2026-11-24T18:33:19Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Roma",
+  "destino_iata": "FCO",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "Flying Blue",
+  "ida": "85.000 Milhas Flying Blue + Taxas",
+  "volta": "85.000 Milhas Flying Blue + Taxas",
+  "link_nome": "Flying Blue"
+ },
+ {
   "id": "2008590742-16439",
   "data": "2026-11-24T18:31:37Z",
   "origem": "Manaus",
