@@ -3754,6 +3754,25 @@
   $('#menu-tema').addEventListener('click', () => aplicarTema(document.documentElement.dataset.theme !== 'light'));
   $('#topo-tema').addEventListener('click', () => aplicarTema(document.documentElement.dataset.theme !== 'light'));
 
+  // Internet no exterior: pacote da operadora (ano) x eSIM por viagem.
+  (function () {
+    const f = document.getElementById('net-conta'), out = document.getElementById('net-resultado');
+    if (!f || !out) return;
+    const brl = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const conta = () => {
+      const n = Math.max(0, Math.round(+f.elements.viagens.value || 0));
+      const pac = +f.elements.pacote.value || 0, esim = Math.max(0, +f.elements.esim.value || 0);
+      const totalEsim = n * esim;
+      if (!n) { out.innerHTML = 'Sem viagem no ano, o pacote da operadora não compensa.'; return; }
+      const dif = Math.abs(pac - totalEsim);
+      out.innerHTML = `Pacote da operadora: <b>${brl(pac)}</b> no ano · eSIM: <b>${brl(totalEsim)}</b> (${n} ${n > 1 ? 'viagens' : 'viagem'}).<br>` +
+        (dif < 1 ? 'Dá praticamente o mesmo: escolha pela franquia de internet que você precisa.'
+          : pac < totalEsim ? `O pacote da operadora sai <b>${brl(dif)}</b> mais barato no ano.`
+          : `O eSIM sai <b>${brl(dif)}</b> mais barato no ano.`);
+    };
+    f.addEventListener('input', conta); f.addEventListener('change', conta); conta();
+  })();
+
   // Compartilhar a página atual: janela do celular; no computador, copia o link.
   $('#topo-partilhar').addEventListener('click', async () => {
     const b = $('#topo-partilhar');

@@ -2454,3 +2454,16 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .topo-partilhar:hover{border-color:var(--ouro)}
 .topo-partilhar svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .topo-partilhar[data-aviso]::after{content:attr(data-aviso);position:absolute;top:calc(100% + 8px);right:0;padding:6px 10px;border-radius:8px;background:var(--ouro);color:#0b1426;font-size:12px;font-weight:700;white-space:nowrap;z-index:60;pointer-events:none}
+
+/* Internet no exterior */
+#internet .indicacao,#dinheiro .indicacao{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;padding:14px 16px;border-radius:14px;border:1px solid color-mix(in srgb,var(--ouro) 45%,var(--line));background:color-mix(in srgb,var(--ouro) 7%,var(--ink-2))}
+#internet .indicacao p,#dinheiro .indicacao p{margin:0;flex:1 1 260px;color:var(--ash);font-size:14px}
+#dinheiro .indicacao b.ind-cod{display:inline;color:var(--ouro);letter-spacing:.04em}
+#internet .indicacao b,#dinheiro .indicacao b{display:block;color:var(--rice);margin-bottom:2px}
+.net-conta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:4px 0 12px}
+.net-conta label{display:grid;gap:6px;font-size:13px;color:var(--ash)}
+.net-conta input,.net-conta select{font:inherit;font-size:15px;font-weight:600;padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:var(--ink-2);color:var(--rice);min-width:0;width:100%}
+.net-resultado{margin:0 0 8px;padding:14px 16px;border-radius:14px;background:var(--ink-2);border:1px solid var(--line);font-size:15px;line-height:1.5}
+.net-resultado b{color:var(--ouro)}
+@media(max-width:700px){.net-conta{grid-template-columns:1fr}}
+#dinheiro .indicacao + .indicacao{margin-top:12px}

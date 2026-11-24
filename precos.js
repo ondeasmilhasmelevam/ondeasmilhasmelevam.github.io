@@ -10,7 +10,7 @@ window.VALOR_VENDA = {
   'Alaska Mileage Plan': 95, 'AAdvantage': 90, 'ALL Accor': 80, 'Miles & More': 75, 'ConnectMiles': 63,
   'Aeroplan': 60, 'Qatar Privilege Club': 60, 'Virgin Atlantic Flying Club': 60, 'Finnair Plus': 58,
   'Iberia Plus': 54, 'British Airways Club': 54, 'TAP Miles&Go': 46, 'LATAM Pass': 26,
-  'Smiles': 16.5, 'Azul Fidelidade': 16, 'Aegean Miles+Bonus': 68, 'Livelo': 31, 'Esfera': 35
+  'Smiles': 16, 'Azul Fidelidade': 16, 'Aegean Miles+Bonus': 68, 'Livelo': 31, 'Esfera': 35
 };
 // 2) Programas sem venda, com valor de referência do milheiro.
 window.VALOR_MILHEIRO_EXTRA = { 'C6 Átomos': 35 };
