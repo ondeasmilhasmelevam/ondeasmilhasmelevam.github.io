@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-24T22:04:28.701626Z",
+ "atualizado": "2026-11-24T22:12:27.174953Z",
  "dias": 30,
  "passagens": 4071,
  "promocoes": 232,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1072,
+  "passagens": 1071,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -1162,19 +1162,6 @@
     "regiao": "outros"
    },
    {
-    "id": "2361370250-6712",
-    "origem": "Honolulu",
-    "origem_iata": "HNL",
-    "destino": "Nadi",
-    "destino_iata": "NAN",
-    "cabine": "Executiva",
-    "programa": "AAdvantage",
-    "data": "2026-11-17T22:05:30Z",
-    "milhas": 65000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "2361370250-6784",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -1199,6 +1186,19 @@
     "milhas": 66500,
     "nivel": "",
     "regiao": "caribe"
+   },
+   {
+    "id": "2361370250-6814",
+    "origem": "Toronto",
+    "origem_iata": "YYZ",
+    "destino": "Hong Kong",
+    "destino_iata": "HKG",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-19T14:16:37Z",
+    "milhas": 70000,
+    "nivel": "",
+    "regiao": "outros"
    }
   ]
  }
