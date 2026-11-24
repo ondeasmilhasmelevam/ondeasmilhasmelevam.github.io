@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10337",
+  "data": "2026-11-24T16:04:05Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Curitiba",
+  "destino_iata": "CWB",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "5.000 milhas + R$ 62,69 de taxas",
+  "volta": "5.000 milhas + R$ 48,63 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2008590742-16434",
   "data": "2026-11-24T15:58:05Z",
   "origem": "Rio de Janeiro",
@@ -571,20 +585,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-16424",
-  "data": "2026-11-24T12:17:23Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Milão",
-  "destino_iata": "MXP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "74.400 milhas + Taxas",
-  "volta": "74.400 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "3761373661-10310",
   "data": "2026-11-24T12:17:23Z",
   "origem": "Porto Alegre",
@@ -596,6 +596,20 @@
   "programa": "LATAM Pass",
   "ida": "8.400 milhas + Taxas",
   "volta": "8.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16424",
+  "data": "2026-11-24T12:17:23Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Milão",
+  "destino_iata": "MXP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "74.400 milhas + Taxas",
+  "volta": "74.400 milhas + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
@@ -5111,20 +5125,6 @@
   "ida": "16.000 Avios + taxas",
   "volta": "",
   "link_nome": "Iberia Plus"
- },
- {
-  "id": "3761373661-10116",
-  "data": "2026-11-22T16:01:39Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "11.400 milhas + R$ 35,15 de taxas",
-  "volta": "11.400 milhas + R$ 35,90 de taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7948",
