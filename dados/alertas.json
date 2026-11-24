@@ -1,5 +1,30 @@
 [
  {
+  "id": "1290836068-7990",
+  "data": "2026-11-24T13:06:05Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FRIDAY: TRANSFIRA PONTOS INTER LOOP COM ATÉ 120% DE BÔNUS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Transfira pontos do programa Inter Loop para o Azul Fidelidade com até 120% de bônus, dependendo do tempo de assinatura do Clube Azul. Promoção válida até 25/11/2026.",
+  "detalhes": [
+   "Bônus de até 90% para clientes do Clube Azul Fidelidade.",
+   "Bônus adicional por tempo de assinatura do Clube Azul:",
+   "+ 5% para assinantes há mais de 6 meses (total: 95%),",
+   "+ 10% para assinantes entre 1 a 2 anos (total: 100%),",
+   "+ 20% para assinantes entre 3 a 4 anos (total: 110%),",
+   "+ 30% para assinantes há mais de 5 anos (total: 120%).",
+   "Mínimo de 5.000 pontos para transferência.",
+   "Pontos bônus creditados em até 15 dias úteis após o término da campanha."
+  ],
+  "parceiros": "Inter Loop, Azul Fidelidade",
+  "validade": "25/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/inter"
+  ],
+  "ate": "2026-11-25T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-16426",
   "data": "2026-11-24T12:49:01Z",
   "origem": "Brasília",

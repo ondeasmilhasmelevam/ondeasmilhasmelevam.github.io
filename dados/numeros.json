@@ -1,8 +1,8 @@
 {
- "atualizado": "2026-11-24T13:00:41.822995Z",
+ "atualizado": "2026-11-24T13:06:49.508414Z",
  "dias": 30,
  "passagens": 4003,
- "promocoes": 226,
+ "promocoes": 227,
  "destinos": 182,
  "executiva": 832,
  "destaques": [
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1092,
+  "passagens": 1080,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -421,15 +421,15 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-15896",
-    "origem": "Florianópolis",
-    "origem_iata": "FLN",
+    "id": "2008590742-16367",
+    "origem": "Goiânia",
+    "origem_iata": "GYN",
     "destino": "Lima",
     "destino_iata": "LIM",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-17T13:01:12Z",
-    "milhas": 38400,
+    "data": "2026-11-23T20:11:13Z",
+    "milhas": 39000,
     "nivel": "bom",
     "regiao": "america-do-sul"
    },
@@ -590,19 +590,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9817",
-    "origem": "Navegantes",
-    "origem_iata": "NVT",
-    "destino": "São Paulo",
-    "destino_iata": "GRU",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-17T13:00:50Z",
-    "milhas": 5300,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-10069",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -651,6 +638,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-23T14:59:14Z",
     "milhas": 6491,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10193",
+    "origem": "Uberlândia",
+    "origem_iata": "UDI",
+    "destino": "São Paulo",
+    "destino_iata": "GRU",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-23T13:42:08Z",
+    "milhas": 6800,
     "nivel": "",
     "regiao": "brasil"
    },
