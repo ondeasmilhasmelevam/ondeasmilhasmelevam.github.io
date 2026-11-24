@@ -1,5 +1,53 @@
 [
  {
+  "id": "1290836068-8007",
+  "data": "2026-11-24T23:18:59Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass: PASSAGENS DE CARNAVAL A PARTIR DE 4.647 MILHAS OU R$ 117,75",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "LATAM oferece passagens para destinos de Carnaval a partir de 4.647 milhas por trecho ou R$ 117,75 + taxas. A promoção inclui transferência de pontos Livelo com 27% de bônus e 2.000 milhas extras na primeira transferência. Também há opção de pontos + dinheiro gerando 1.000 milhas a partir de R$ 23,55.",
+  "detalhes": [
+   "4.647 milhas por trecho",
+   "R$ 117,75 + taxas por trecho",
+   "Transferência de Livelo com 27% de bônus",
+   "2.000 milhas extras na primeira transferência",
+   "Pontos + dinheiro gera 1.000 milhas a partir de R$ 23,55",
+   "Porto Alegre (POA) x Florianópolis (FLN) a partir de 4.647 milhas o trecho",
+   "Vitória (VIX) x Rio de Janeiro (GIG) a partir de 6.824 milhas o trecho",
+   "Curitiba (CWB) x Rio de Janeiro (GIG) a partir de 10.452 milhas o trecho"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "até hoje (24)",
+  "links": [
+   "https://link.dia23.com.br/r/crRZQ2l"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8006",
+  "data": "2026-11-24T23:18:41Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE: BILHETES IDA E VOLTA SÃO PAULO-DUBAI A PARTIR DE 153.000 PONTOS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Bilhetes de ida e volta São Paulo-Dubai disponíveis a partir de 153.000 pontos Azul Fidelidade + taxas. Emissão pode ser feita em dinheiro a partir de R$ 2.295 + taxas, usando CPM de R$ 15,00 por mil pontos. Oferta válida até 24/11/2026.",
+  "detalhes": [
+   "153.000 pontos Azul Fidelidade por trecho",
+   "custo efetivo R$ 2.295 + taxas por trecho",
+   "opção de compra de pontos Azul com até 320% de bônus",
+   "portadores do cartão Azul Itaú têm 10% de desconto na compra de pontos",
+   "custo CPM R$ 15,00 por mil pontos (para assinantes do Clube Azul com cartão Azul Itaú)",
+   "São Paulo (GRU) x Dubai (DXB) economica a partir de 153.000 milhas o trecho a partir de R$ 2.295"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "até 24/11/2026",
+  "links": [
+   "https://link.dia23.com.br/r/dVw58Fk"
+  ],
+  "ate": "2026-11-24T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-16454",
   "data": "2026-11-24T22:28:59Z",
   "origem": "Florianópolis",
