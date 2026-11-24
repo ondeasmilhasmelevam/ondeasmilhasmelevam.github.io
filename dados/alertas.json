@@ -60,21 +60,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-qatar-GRU-LHR-eco",
-  "data": "2026-11-24T00:18:59.188401Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Londres",
-  "destino_iata": "LHR",
-  "companhia": "British Airways / Qatar Airways",
-  "cabine": "Econômica",
-  "programa": "Qatar Privilege Club",
-  "ida": "38.500 Avios + taxas",
-  "volta": "",
-  "link_nome": "Qatar Privilege Club"
- },
- {
   "id": "seats-qatar-GIG-LHR-eco",
   "data": "2026-11-24T00:18:59.188401Z",
   "fonte": "seats.aero",
@@ -83,6 +68,21 @@
   "destino": "Londres",
   "destino_iata": "LHR",
   "companhia": "British Airways",
+  "cabine": "Econômica",
+  "programa": "Qatar Privilege Club",
+  "ida": "38.500 Avios + taxas",
+  "volta": "",
+  "link_nome": "Qatar Privilege Club"
+ },
+ {
+  "id": "seats-qatar-GRU-LHR-eco",
+  "data": "2026-11-24T00:18:59.188401Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Londres",
+  "destino_iata": "LHR",
+  "companhia": "British Airways / Qatar Airways",
   "cabine": "Econômica",
   "programa": "Qatar Privilege Club",
   "ida": "38.500 Avios + taxas",
@@ -1033,7 +1033,7 @@
   "companhia": "Azul",
   "cabine": "Econômica",
   "programa": "Azul Fidelidade",
-  "ida": "70.000 pontos + taxas",
+  "ida": "65.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
  },
@@ -6731,21 +6731,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-azul-VCP-MAD-eco",
-  "data": "2026-11-11T00:03:25.922708Z",
-  "fonte": "seats.aero",
-  "origem": "Campinas",
-  "origem_iata": "VCP",
-  "destino": "Madrid",
-  "destino_iata": "MAD",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "80.000 pontos + taxas",
-  "volta": "",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "seats-smiles-GRU-AUA-eco",
   "data": "2026-11-11T00:03:25.922708Z",
   "fonte": "seats.aero",
@@ -6756,9 +6741,24 @@
   "companhia": "American / Avianca / Copa",
   "cabine": "Econômica",
   "programa": "Smiles",
-  "ida": "91.000 milhas + taxas",
+  "ida": "63.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
+ },
+ {
+  "id": "seats-azul-VCP-MAD-eco",
+  "data": "2026-11-11T00:03:25.922708Z",
+  "fonte": "seats.aero",
+  "origem": "Campinas",
+  "origem_iata": "VCP",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "70.000 pontos + taxas",
+  "volta": "",
+  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "seats-qatar-GIG-MAD-eco",
