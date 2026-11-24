@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-24T21:45:22.401641Z",
+ "atualizado": "2026-11-24T21:51:58.612884Z",
  "dias": 30,
  "passagens": 4070,
  "promocoes": 232,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1072,
+  "passagens": 1071,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -1084,19 +1084,6 @@
     "regiao": "outros"
    },
    {
-    "id": "2361370250-6711",
-    "origem": "Seul",
-    "origem_iata": "ICN",
-    "destino": "Hong Kong",
-    "destino_iata": "HKG",
-    "cabine": "Executiva",
-    "programa": "Smiles",
-    "data": "2026-11-17T21:48:47Z",
-    "milhas": 44700,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "2361370250-6714",
     "origem": "Belém",
     "origem_iata": "BEL",
@@ -1199,6 +1186,19 @@
     "milhas": 66000,
     "nivel": "",
     "regiao": "america-do-sul"
+   },
+   {
+    "id": "2361370250-6878",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "Cidade do Panamá",
+    "destino_iata": "PTY",
+    "cabine": "Executiva",
+    "programa": "GOL Smiles",
+    "data": "2026-11-20T11:44:03Z",
+    "milhas": 66500,
+    "nivel": "",
+    "regiao": "caribe"
    }
   ]
  }
