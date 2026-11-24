@@ -506,8 +506,10 @@
   "2008590742-16360"
  ],
  "ultimo_em": "2026-11-24T00:02:31.546653+00:00",
- "ultimo_tipo": "passagem",
- "lotes_stories": [],
+ "ultimo_tipo": "promocao",
+ "lotes_stories": [
+  "08:00"
+ ],
  "horarios_feed": [],
  "feed_usados": [],
  "reel_promo_dia": "2026-11-23",
