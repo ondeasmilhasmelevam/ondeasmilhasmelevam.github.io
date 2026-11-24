@@ -2371,26 +2371,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "1290836068-7966",
-  "data": "2026-11-23T14:31:50Z",
-  "tipo": "promocao",
-  "titulo": "CLUBE AZUL 5.000 ANUAL COM MILHEIRO A PARTIR DE R$ 9",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Assine o Clube Azul 5.000 anual por R$ 50/mês (ou R$ 45/mês com cartão Azul Itaú) e consiga milheiro a partir de R$ 9. Oferta válida somente em 23/11/2026.",
-  "detalhes": [
-   "Clube Azul 5.000 anual por R$ 50/mês (modalidade anual).",
-   "Desconto de 10% adicional (R$ 45/mês) ao pagar com Cartão Azul Itaú.",
-   "Milheiro a partir de R$ 10,00 com qualquer cartão e R$ 9,00 com Cartão Azul."
-  ],
-  "parceiros": "Azul",
-  "validade": "23/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/adesao-relampago"
-  ],
-  "ate": "2026-11-23T23:59:59-03:00"
- },
- {
   "id": "1290836068-7965",
   "data": "2026-11-23T14:31:47Z",
   "tipo": "promocao",
@@ -2408,31 +2388,6 @@
    "https://latampass.latam.com/br/pt/promocoes/cobranded-aquisicao"
   ],
   "ate": "2026-11-29T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7964",
-  "data": "2026-11-23T14:31:43Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFIRA PONTOS ALLOYAL PARA AZUL FIDELIDADE COM ATÉ 120% DE BÔNUS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira pontos Alloyal para o Azul Fidelidade com bônus variando de 60% a 120%, dependendo do tempo de assinatura do Clube Azul. Oferta válida somente em 23/11/2026.",
-  "detalhes": [
-   "Bônus de 60% para demais clientes Azul Fidelidade.",
-   "Bônus de 90% para assinantes do Clube Azul.",
-   "Bônus de 95% para Clube Azul ativo de 6 a 11 meses.",
-   "Bônus de 100% para Clube Azul ativo de 12 a 35 meses.",
-   "Bônus de 110% para Clube Azul ativo de 36 a 59 meses.",
-   "Bônus de 120% para Clube Azul ativo há 60 meses ou mais.",
-   "Limite de 300.000 pontos bônus por CPF.",
-   "Bônus adicional por tempo de Clube Azul: limite de 100.000 pontos por ano-calendário."
-  ],
-  "parceiros": "Alloyal, Azul Fidelidade",
-  "validade": "23/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/alloyal"
-  ],
-  "ate": "2026-11-23T23:59:59-03:00"
  },
  {
   "id": "2008590742-16329",
