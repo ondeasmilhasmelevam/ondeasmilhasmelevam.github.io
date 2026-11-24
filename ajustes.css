@@ -117,3 +117,9 @@
   #rota .rota-oferta-precos b{font-size:16px}
   #rota .pass-cal-compacto{grid-template-columns:minmax(0,1fr)}
 }
+/* Menu recolhido: título do grupo vira só um traço dourado (antes as letras empilhavam) */
+@media (min-width:1100px){
+  body.menu-recolhido .tabs .menu-grupo-btn,body.menu-recolhido .tabs summary.menu-grupo-btn{font-size:0;letter-spacing:0;justify-content:center;gap:0;padding:14px 0 8px;overflow:hidden;white-space:nowrap}
+  body.menu-recolhido .tabs .menu-grupo-btn::before{width:22px;height:3px}
+  body.menu-recolhido .tabs details.menu-grupo>summary::after{display:none}
+}
