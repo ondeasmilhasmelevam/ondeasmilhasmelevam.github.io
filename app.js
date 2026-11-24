@@ -1520,9 +1520,6 @@
         originAirport: o, originCity: '', originCountry: '', originAirportIsAny: false,
         destinationAirport: d, destinCity: '', destinCountry: '', destinAirportIsAny: false, ...(volta ? { returnDate: ts(volta) } : {}) });
     }],
-    [/latam/i, (o, d, ida, volta, exe) => 'https://www.latamairlines.com/br/pt/oferta-voos?' + qs({ origin: o, outbound: `${ida}T00:00:00.000Z`, destination: d,
-      adt: 1, chd: 0, inf: 0, trip: volta ? 'RT' : 'OW', cabin: exe ? 'Business' : 'Economy', redemption: true, sort: 'PRICE,asc',
-      ...(volta ? { inbound: `${volta}T00:00:00.000Z` } : {}) })],
     [/azul/i, (o, d, ida, volta) => {
       const us = dt => `${dt.slice(5, 7)}/${dt.slice(8, 10)}/${dt.slice(0, 4)}`;
       return 'https://www.voeazul.com.br/br/pt/home/selecao-voo?' + qs({ 'c[0].ds': o, 'c[0].std': us(ida), 'c[0].as': d,
@@ -1530,13 +1527,6 @@
         'p[0].t': 'ADT', 'p[0].c': 1, 'p[0].cp': false, 'f.dl': 3, 'f.dr': 3, cc: 'PTS' });
     }],
     [/\btap\b/i, () => 'https://www.flytap.com/pt_br/passagens-milhas'],
-    [/qatar|privilege/i, (o, d, ida, volta, exe) => 'https://www.qatarairways.com/app/booking/redemption?' + qs({ widget: 'QR', searchType: 'F',
-      addTaxToFare: 'Y', minPurTime: 0, selLang: 'pt', tripType: volta ? 'R' : 'O', fromStation: o, toStation: d, departing: ida,
-      bookingClass: exe ? 'B' : 'E', adults: 1, children: 0, infants: 0, ofw: 0, teenager: 0, flexibleDate: 'off', qmilesFlow: true,
-      allowRedemption: 'Y', ...(volta ? { returning: volta } : {}) })],
-    [/aeroplan/i, (o, d, ida, volta) => 'https://www.aircanada.com/aeroplan/redeem/availability/outbound?' + qs({ org0: o, dest0: d, departureDate0: ida,
-      ...(volta ? { org1: d, dest1: o, departureDate1: volta } : {}), ADT: 1, YTH: 0, CHD: 0, INF: 0, INS: 0, tripType: volta ? 'R' : 'O',
-      marketCode: 'INT', lang: 'en-CA' })],
   ];
   const buscaDe = p => (BUSCA.find(([re]) => re.test(`${p.link_nome || ''} ${p.programa || ''}`)) || [])[1];
   const MES3 = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
@@ -1622,9 +1612,11 @@
     const busca = buscaDe(p);
     const temVolta = (completo.datas_volta || []).length > 0;
     const nome = p.link_nome || p.programa || '', datas = compacto ? datasCompactas : datasHtml;
-    const link = /\btap\b/i.test(`${p.programa} ${p.link_nome}`) ? 'https://www.flytap.com/pt_br/passagens-milhas' : completo.link;
+    const prog = `${p.programa} ${p.link_nome}`;
+    const link = /\btap\b/i.test(prog) ? 'https://www.flytap.com/pt_br/passagens-milhas' : /aeroplan/i.test(prog) ? 'https://www.aircanada.com/aeroplan' : completo.link;
     return `<div class="pass-cal${compacto ? ' pass-cal-compacto' : ''}"${busca || compacto ? ` data-o="${esc(p.origem_iata)}" data-d="${esc(p.destino_iata)}" data-exe="${ehExecutiva(p.cabine) ? 1 : ''}" data-nome="${esc(nome)}" data-prog="${esc(`${p.link_nome || ''} ${p.programa || ''}`)}"${temVolta ? ' data-tem-volta="1"' : ''}` : ''}>
         ${(!compacto && busca && datasAbas(completo)) || `${datas('Datas de ida', completo.datas_ida, 'ida', busca)}${datas('Datas de volta', completo.datas_volta, 'volta', busca)}`}
+        ${!busca && !compacto && (completo.datas_ida || []).length ? `<p class="pass-dica">Datas para consulta: entre na sua conta${nome ? ` na ${esc(nome)}` : ' no programa'} e pesquise essas datas.</p>` : ''}
         ${busca && (completo.datas_ida || []).length ? `<p class="pass-dica">${/\btap\b/i.test(`${p.programa} ${p.link_nome}`) ? 'Escolha as datas. Na TAP, entre na conta e selecione Pagar com milhas.' : 'Toque numa data de ida para abrir a busca já preenchida'}</p>` : ''}
         ${httpOk(link) ? `<a class="cta cta-a pass-link" href="${esc(link)}" data-orig="${esc(link)}" target="_blank" rel="noopener">Pesquisar${nome ? ` na ${esc(nome)}` : ' no programa'} ↗</a>` : '<p class="pass-dica">Este alerta não trouxe um link de pesquisa válido.</p>'}${compacto ? '<button type="button" class="pass-copiar-datas" data-pass-copiar>Copiar rota e datas</button><p class="pass-copia-status" role="status"></p>' : ''}
       </div>`;
