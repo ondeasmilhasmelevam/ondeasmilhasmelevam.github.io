@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10333",
+  "data": "2026-11-24T15:22:55Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "8.300 milhas + R$ 35,15 de taxas",
+  "volta": "8.300 milhas + R$ 34,54 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10332",
   "data": "2026-11-24T13:41:56Z",
   "origem": "Salvador",
@@ -5040,62 +5054,6 @@
   "programa": "Smiles",
   "ida": "22.000 milhas + Taxas",
   "volta": "22.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10114",
-  "data": "2026-11-22T15:24:49Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Salvador",
-  "destino_iata": "SSA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "29.900 milhas + Taxas",
-  "volta": "20.800 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10113",
-  "data": "2026-11-22T15:24:44Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "9.440 milhas + Taxas",
-  "volta": "9.440 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16310",
-  "data": "2026-11-22T15:24:42Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Cancún",
-  "destino_iata": "CUN",
-  "companhia": "Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "40.400 milhas + Taxas",
-  "volta": "42.100 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10112",
-  "data": "2026-11-22T15:24:40Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "João Pessoa",
-  "destino_iata": "JPA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "29.000 milhas + Taxas",
-  "volta": "29.000 milhas + Taxas",
   "link_nome": "Smiles"
  },
  {
