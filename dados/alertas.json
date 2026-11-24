@@ -5631,20 +5631,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-16288",
-  "data": "2026-11-22T14:06:36Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Dubai",
-  "destino_iata": "DXB",
-  "companhia": "Qatar Airways",
-  "cabine": "Econômica",
-  "programa": "Azul pelo Mundo",
-  "ida": "154.000 milhas + Taxas",
-  "volta": "154.000 milhas + Taxas",
-  "link_nome": "Azul pelo Mundo"
- },
- {
   "id": "1290836068-7948",
   "data": "2026-11-22T12:58:53Z",
   "tipo": "promocao",
