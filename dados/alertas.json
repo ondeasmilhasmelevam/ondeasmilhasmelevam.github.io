@@ -5368,20 +5368,6 @@
   "link_nome": "Aeroplan"
  },
  {
-  "id": "3761373661-10117",
-  "data": "2026-11-22T18:39:01Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Curitiba",
-  "destino_iata": "CWB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "8.500 milhas + R$ 35,90 de taxas",
-  "volta": "8.500 milhas + R$ 48,63 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-iberia-FOR-MAD-eco",
   "data": "2026-11-22T18:35:20.947806Z",
   "fonte": "seats.aero",
