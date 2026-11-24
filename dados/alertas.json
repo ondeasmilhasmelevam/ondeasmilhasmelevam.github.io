@@ -5575,48 +5575,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-16292",
-  "data": "2026-11-22T14:18:52Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Orlando",
-  "destino_iata": "MCO",
-  "companhia": "AZUL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "75.100 milhas + Taxas",
-  "volta": "75.100 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16291",
-  "data": "2026-11-22T14:18:46Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "AVIANCA",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "60.200 milhas + Taxas",
-  "volta": "60.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16290",
-  "data": "2026-11-22T14:18:42Z",
-  "origem": "Vitória",
-  "origem_iata": "VIX",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "12.200 milhas + Taxas",
-  "volta": "11.300 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7948",
   "data": "2026-11-22T12:58:53Z",
   "tipo": "promocao",

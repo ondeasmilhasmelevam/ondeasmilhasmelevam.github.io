@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-24T14:15:06.439750Z",
+ "atualizado": "2026-11-24T14:21:17.404834Z",
  "dias": 30,
  "passagens": 4016,
  "promocoes": 227,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1076,
+  "passagens": 1070,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -1123,19 +1123,6 @@
     "regiao": "outros"
    },
    {
-    "id": "2361370250-6701",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "Los Angeles",
-    "destino_iata": "LAX",
-    "cabine": "Executiva",
-    "programa": "AAdvantage",
-    "data": "2026-11-17T14:21:03Z",
-    "milhas": 57500,
-    "nivel": "",
-    "regiao": "america-do-norte"
-   },
-   {
     "id": "2361370250-6786",
     "origem": "Belo Horizonte",
     "origem_iata": "CNF",
@@ -1199,6 +1186,19 @@
     "milhas": 65000,
     "nivel": "",
     "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6784",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Buenos Aires",
+    "destino_iata": "EZE",
+    "cabine": "Executiva",
+    "programa": "Azul pelo Mundo",
+    "data": "2026-11-18T12:45:47Z",
+    "milhas": 66000,
+    "nivel": "",
+    "regiao": "america-do-sul"
    }
   ]
  }
