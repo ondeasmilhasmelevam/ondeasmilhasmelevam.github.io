@@ -1,8 +1,8 @@
 {
- "atualizado": "2026-11-24T20:25:43.821003Z",
+ "atualizado": "2026-11-24T20:32:04.660058Z",
  "dias": 30,
- "passagens": 4063,
- "promocoes": 230,
+ "passagens": 4064,
+ "promocoes": 231,
  "destinos": 182,
  "executiva": 839,
  "destaques": [
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1071,
+  "passagens": 1069,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -226,15 +226,15 @@
     "regiao": "caribe"
    },
    {
-    "id": "2008590742-16179",
-    "origem": "Fortaleza",
-    "origem_iata": "FOR",
+    "id": "2008590742-16451",
+    "origem": "Belo Horizonte",
+    "origem_iata": "CNF",
     "destino": "Miami",
     "destino_iata": "MIA",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-20T20:59:26Z",
-    "milhas": 47960,
+    "data": "2026-11-24T20:30:37Z",
+    "milhas": 46770,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
    },
@@ -668,17 +668,17 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9865",
+    "id": "3761373661-9887",
     "origem": "São Paulo",
-    "origem_iata": "CGH",
+    "origem_iata": "SAO",
     "destino": "Belo Horizonte",
     "destino_iata": "CNF",
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
-    "data": "2026-11-17T20:27:12Z",
+    "data": "2026-11-18T12:41:16Z",
     "milhas": 7000,
     "nivel": "",
-    "regiao": "brasil"
+    "regiao": "outros"
    },
    {
     "id": "3761373661-9994",
