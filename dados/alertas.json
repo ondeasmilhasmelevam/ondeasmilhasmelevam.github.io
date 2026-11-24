@@ -1,5 +1,27 @@
 [
  {
+  "id": "1290836068-8001",
+  "data": "2026-11-24T18:16:49Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFIRA PONTOS LIVELO PARA LATAM Pass COM 27% DE BÔNUS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Transfira pontos Livelo para o LATAM Pass e ganhe 27% de bônus, além de 2.000 pontos bônus na primeira transferência. Último dia da promoção.",
+  "detalhes": [
+   "Bônus de 27% sobre os pontos transferidos.",
+   "2.000 pontos bônus na primeira transferência.",
+   "Transferência mínima de 12.000 pontos Livelo.",
+   "Limite de 300.000 milhas extras por participante.",
+   "Não cumulativo com milhas extras dos planos do Clube LATAM Pass."
+  ],
+  "parceiros": "Livelo, LATAM Pass",
+  "validade": "24/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/promocoes/livelo-milhas-extras"
+  ],
+  "ate": "2026-11-24T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-16438",
   "data": "2026-11-24T17:28:37Z",
   "origem": "Recife",
@@ -4193,25 +4215,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "1290836068-7962",
-  "data": "2026-11-23T13:26:06Z",
-  "tipo": "promocao",
-  "titulo": "LIVELO & LATAM Pass: 27% DE BÔNUS NA TRANSFERÊNCIA + 2.000 MILHAS EXTRAS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira seus pontos da Livelo para o LATAM Pass e ganhe 27% de bônus mais 2.000 milhas extras na primeira transferência.",
-  "detalhes": [
-   "27% de bônus na transferência para todos os clientes elegíveis.",
-   "+2.000 milhas extras na primeira transferência de pontos Livelo para o LATAM Pass."
-  ],
-  "parceiros": "Livelo, LATAM Pass",
-  "validade": "24/11",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/livelo-milhas-extras"
-  ],
-  "ate": "2026-11-24T23:59:59-03:00"
- },
- {
   "id": "1290836068-7961",
   "data": "2026-11-23T13:26:01Z",
   "tipo": "promocao",
@@ -5262,7 +5265,7 @@
   "companhia": "American / British Airways / Iberia",
   "cabine": "Econômica",
   "programa": "Iberia Plus",
-  "ida": "40.750 Avios + taxas",
+  "ida": "31.250 Avios + taxas",
   "volta": "",
   "link_nome": "Iberia Plus"
  },
@@ -5352,6 +5355,21 @@
   "link_nome": "Iberia Plus"
  },
  {
+  "id": "seats-smiles-GRU-DFW-exe",
+  "data": "2026-11-22T18:35:20.947806Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Dallas",
+  "destino_iata": "DFW",
+  "companhia": "American",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "303.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-7948",
   "data": "2026-11-22T12:58:53Z",
   "tipo": "promocao",
@@ -5433,7 +5451,7 @@
   "companhia": "American / Avianca",
   "cabine": "Executiva",
   "programa": "Smiles",
-  "ida": "254.000 milhas + taxas",
+  "ida": "260.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -5712,7 +5730,7 @@
   "origem_iata": "GRU",
   "destino": "Paris",
   "destino_iata": "CDG",
-  "companhia": "American / Air France / Aerolíneas Argentinas",
+  "companhia": "American / Air France / Royal Air Maroc",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "140.000 milhas + taxas",
@@ -5748,21 +5766,6 @@
   "ida": "70.000 pontos + taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "seats-smiles-GRU-PUJ-eco",
-  "data": "2026-11-12T05:14:55.794608Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Punta Cana",
-  "destino_iata": "PUJ",
-  "companhia": "American / Avianca / Copa",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "97.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-GIG-CDG-eco",
@@ -5881,21 +5884,6 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "81.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "seats-smiles-BSB-MIA-eco",
-  "data": "2026-11-11T00:03:25.922708Z",
-  "fonte": "seats.aero",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "American / Avianca / GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "84.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
