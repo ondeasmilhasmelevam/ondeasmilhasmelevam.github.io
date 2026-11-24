@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-24T12:35:07.182696Z",
+ "atualizado": "2026-11-24T12:48:07.022995Z",
  "dias": 30,
- "passagens": 3994,
+ "passagens": 4001,
  "promocoes": 226,
  "destinos": 182,
- "executiva": 830,
+ "executiva": 832,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1084,
+  "passagens": 1090,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -980,6 +980,32 @@
     "regiao": "america-do-norte"
    },
    {
+    "id": "2361370250-7033",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Barcelona",
+    "destino_iata": "BCN",
+    "cabine": "Executiva",
+    "programa": "Air Europa",
+    "data": "2026-11-24T12:44:37Z",
+    "milhas": 50000,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
+    "id": "2361370250-7034",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Paris",
+    "destino_iata": "ORY",
+    "cabine": "Executiva",
+    "programa": "Air Europa",
+    "data": "2026-11-24T12:44:41Z",
+    "milhas": 58000,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
     "id": "2361370250-6988",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
@@ -1173,32 +1199,6 @@
     "milhas": 65000,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "2361370250-6784",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Buenos Aires",
-    "destino_iata": "EZE",
-    "cabine": "Executiva",
-    "programa": "Azul pelo Mundo",
-    "data": "2026-11-18T12:45:47Z",
-    "milhas": 66000,
-    "nivel": "",
-    "regiao": "america-do-sul"
-   },
-   {
-    "id": "2361370250-6878",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Cidade do Panamá",
-    "destino_iata": "PTY",
-    "cabine": "Executiva",
-    "programa": "GOL Smiles",
-    "data": "2026-11-20T11:44:03Z",
-    "milhas": 66500,
-    "nivel": "",
-    "regiao": "caribe"
    }
   ]
  }
