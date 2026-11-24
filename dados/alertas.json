@@ -3894,21 +3894,6 @@
   "link_nome": "Iberia Plus"
  },
  {
-  "id": "seats-smiles-GRU-DFW-exe",
-  "data": "2026-11-22T18:35:20.947806Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Dallas",
-  "destino_iata": "DFW",
-  "companhia": "American",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "250.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "3761373661-10116",
   "data": "2026-11-22T16:01:39Z",
   "origem": "Belo Horizonte",
@@ -6238,48 +6223,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-10078",
-  "data": "2026-11-22T00:01:57Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "7.900 milhas + R$ 35,15 de taxas",
-  "volta": "9.800 milhas + R$ 62,14 de taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10077",
-  "data": "2026-11-22T00:01:41Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "7.900 milhas + R$ 35,15 de taxas",
-  "volta": "9.800 milhas + R$ 35,75 de taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10076",
-  "data": "2026-11-22T00:01:19Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "8.500 milhas + R$ 34,54 de taxas",
-  "volta": "8.700 milhas + R$ 35,15 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-JFK-exe",
   "data": "2026-11-21T15:39:52.976192Z",
   "fonte": "seats.aero",
@@ -6587,7 +6530,7 @@
   "companhia": "American / Avianca / Copa",
   "cabine": "Econômica",
   "programa": "Smiles",
-  "ida": "87.000 milhas + taxas",
+  "ida": "97.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
