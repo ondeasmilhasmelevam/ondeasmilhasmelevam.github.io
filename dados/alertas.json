@@ -5561,20 +5561,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2008590742-16286",
-  "data": "2026-11-22T13:32:20Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "59.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7948",
   "data": "2026-11-22T12:58:53Z",
   "tipo": "promocao",

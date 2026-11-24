@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-24T13:31:41.868786Z",
+ "atualizado": "2026-11-24T13:37:59.789714Z",
  "dias": 30,
  "passagens": 4009,
  "promocoes": 227,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1086,
+  "passagens": 1072,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -304,15 +304,15 @@
     "regiao": "caribe"
    },
    {
-    "id": "2008590742-15902",
+    "id": "2008590742-16032",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
     "destino": "Lisboa",
     "destino_iata": "LIS",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-17T13:32:45Z",
-    "milhas": 59710,
+    "data": "2026-11-18T18:38:17Z",
+    "milhas": 61266,
     "nivel": "muito bom",
     "regiao": "europa"
    },
