@@ -243,6 +243,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Skyline_Frankfurt_am_Main_2015.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Skyline_Frankfurt_am_Main_2015.jpg/1280px-Skyline_Frankfurt_am_Main_2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "genebra-suica": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:13.06.2024_-_Reuni%C3%A3o_bilateral_com_a_Presidente_da_Su%C3%AD%C3%A7a,_Viola_Amherd_(53789087270).jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/13.06.2024_-_Reuni%C3%A3o_bilateral_com_a_Presidente_da_Su%C3%AD%C3%A7a%2C_Viola_Amherd_%2853789087270%29.jpg/1280px-13.06.2024_-_Reuni%C3%A3o_bilateral_com_a_Presidente_da_Su%C3%AD%C3%A7a%2C_Viola_Amherd_%2853789087270%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "gramado-canela": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Panorama-gramado-lago-negro.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Panorama-gramado-lago-negro.jpg/1280px-Panorama-gramado-lago-negro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -254,6 +258,10 @@
  "havana-81-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Cuba_LaHavana_Skyline_(www.pixinn.net).jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Cuba_LaHavana_Skyline_%28www.pixinn.net%29.jpg/1280px-Cuba_LaHavana_Skyline_%28www.pixinn.net%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "ibiza": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Sea_sky_and_clouds,_Ibiza,_Spain.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Sea_sky_and_clouds%2C_Ibiza%2C_Spain.jpg/1280px-Sea_sky_and_clouds%2C_Ibiza%2C_Spain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "ilha-de-pascoa": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Hanga_Roa_Panorama.jpg",
@@ -299,6 +307,14 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Lima,_Peru_Skyline_from_Surco.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Lima%2C_Peru_Skyline_from_Surco.jpg/1280px-Lima%2C_Peru_Skyline_from_Surco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "lisboa": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Skyline_Lisboa_(231836083).jpeg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Skyline_Lisboa_%28231836083%29.jpeg/1280px-Skyline_Lisboa_%28231836083%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "londres": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Canary_Wharf_from_Limehouse_London_June_2016_HDR.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Canary_Wharf_from_Limehouse_London_June_2016_HDR.jpg/1280px-Canary_Wharf_from_Limehouse_London_June_2016_HDR.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "los-angeles-estados-unidos": {
   "pagina": "https://commons.wikimedia.org/wiki/File:LA_Skyline_Mountains2.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/LA_Skyline_Mountains2.jpg/1280px-LA_Skyline_Mountains2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -314,6 +330,10 @@
  "machu-picchu": {
   "pagina": "https://commons.wikimedia.org/wiki/File:99_-_Machu_Picchu_-_Juin_2009.edit3.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/99_-_Machu_Picchu_-_Juin_2009.edit3.jpg/1280px-99_-_Machu_Picchu_-_Juin_2009.edit3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "madri": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Zona_Infantil_en_la_Bienal_Anarquista.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Zona_Infantil_en_la_Bienal_Anarquista.jpg/1280px-Zona_Infantil_en_la_Bienal_Anarquista.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "manaus-99-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Manaus_Skyline_Noturno.jpg",
