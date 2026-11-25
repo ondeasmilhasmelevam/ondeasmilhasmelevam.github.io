@@ -4873,48 +4873,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-10179",
-  "data": "2026-11-23T13:30:02Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "15.300 milhas + Taxas",
-  "volta": "15.300 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10178",
-  "data": "2026-11-23T13:29:57Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Londrina",
-  "destino_iata": "LDB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "3.500 milhas + Taxas",
-  "volta": "3.500 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16326",
-  "data": "2026-11-23T13:29:52Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Roma",
-  "destino_iata": "FCO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "71.100 milhas + Taxas",
-  "volta": "71.100 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7961",
   "data": "2026-11-23T13:26:01Z",
   "tipo": "promocao",
