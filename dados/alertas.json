@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-10369",
+  "data": "2026-11-25T17:19:18Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Belo Horizonte",
+  "destino_iata": "CNF",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "7.900 milhas + R$ 35,75 de taxas",
+  "volta": "9.300 milhas + R$ 35,15 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-7050",
+  "data": "2026-11-25T17:18:24Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "50.000 milhas + CAD 122,70 de taxas",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "3761373661-10368",
   "data": "2026-11-25T16:57:01Z",
   "origem": "Palmas",
@@ -3288,34 +3316,6 @@
   "ida": "155.000 milhas + Taxas",
   "volta": "155.000 milhas + Taxas",
   "link_nome": "Flying Blue"
- },
- {
-  "id": "2008590742-16347",
-  "data": "2026-11-23T17:17:14Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "Copa Airlines",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "27.800 milhas + Taxas",
-  "volta": "27.800 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16346",
-  "data": "2026-11-23T17:17:08Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Santiago",
-  "destino_iata": "SCL",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "51.100 milhas + Taxas",
-  "volta": "51.100 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7972",
