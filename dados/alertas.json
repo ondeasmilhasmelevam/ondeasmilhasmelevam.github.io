@@ -195,29 +195,6 @@
   "ate": ""
  },
  {
-  "id": "1290836068-8006",
-  "data": "2026-11-24T23:18:41Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FIDELIDADE: BILHETES IDA E VOLTA SÃO PAULO-DUBAI A PARTIR DE 153.000 PONTOS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Bilhetes de ida e volta São Paulo-Dubai disponíveis a partir de 153.000 pontos Azul Fidelidade + taxas. Emissão pode ser feita em dinheiro a partir de R$ 2.295 + taxas, usando CPM de R$ 15,00 por mil pontos. Oferta válida até 24/11/2026.",
-  "detalhes": [
-   "153.000 pontos Azul Fidelidade por trecho",
-   "custo efetivo R$ 2.295 + taxas por trecho",
-   "opção de compra de pontos Azul com até 320% de bônus",
-   "portadores do cartão Azul Itaú têm 10% de desconto na compra de pontos",
-   "custo CPM R$ 15,00 por mil pontos (para assinantes do Clube Azul com cartão Azul Itaú)",
-   "São Paulo (GRU) x Dubai (DXB) economica a partir de 153.000 milhas o trecho a partir de R$ 2.295"
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "até 24/11/2026",
-  "links": [
-   "https://link.dia23.com.br/r/dVw58Fk"
-  ],
-  "ate": "2026-11-24T23:59:59-03:00"
- },
- {
   "id": "2008590742-16454",
   "data": "2026-11-24T22:28:59Z",
   "origem": "Florianópolis",
@@ -687,28 +664,6 @@
   "ida": "46.700 milhas + R$ 294,21 de taxas",
   "volta": "46.700 milhas + R$ 294,20 de taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-8001",
-  "data": "2026-11-24T18:16:49Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFIRA PONTOS LIVELO PARA LATAM Pass COM 27% DE BÔNUS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira pontos Livelo para o LATAM Pass e ganhe 27% de bônus, além de 2.000 pontos bônus na primeira transferência. Último dia da promoção.",
-  "detalhes": [
-   "Bônus de 27% sobre os pontos transferidos.",
-   "2.000 pontos bônus na primeira transferência.",
-   "Transferência mínima de 12.000 pontos Livelo.",
-   "Limite de 300.000 milhas extras por participante.",
-   "Não cumulativo com milhas extras dos planos do Clube LATAM Pass."
-  ],
-  "parceiros": "Livelo, LATAM Pass",
-  "validade": "24/11/2026",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/livelo-milhas-extras"
-  ],
-  "ate": "2026-11-24T23:59:59-03:00"
  },
  {
   "id": "2008590742-16438",
@@ -1983,26 +1938,6 @@
   "link_nome": "Iberia Plus"
  },
  {
-  "id": "1290836068-7988",
-  "data": "2026-11-24T10:45:25Z",
-  "tipo": "promocao",
-  "titulo": "IBERIA OFERECE PASSAGENS A PARTIR DE 18 EUROS POR TRECHO",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Passagens aéreas para Europa a partir de 18 euros por trecho durante a Black Friday, válidas até 24/11/2026.",
-  "detalhes": [
-   "Passagens a partir de 18 euros por trecho.",
-   "Período promocional de compra até 24/11/2026.",
-   "Voos entre 20/01/2027 e 10/06/2027."
-  ],
-  "parceiros": "Iberia",
-  "validade": "24/11/2026 (compra) / 20/01/2027 a 10/06/2027 (voos)",
-  "links": [
-   "https://www.iberia.com/br/ofertas/voo/black-friday/"
-  ],
-  "ate": "2026-11-24T23:59:59-03:00"
- },
- {
   "id": "2361370250-7030",
   "data": "2026-11-24T10:42:02Z",
   "origem": "São Paulo",
@@ -2015,27 +1950,6 @@
   "ida": "70.000 AVIOS + Taxas",
   "volta": "",
   "link_nome": "Privilege Club"
- },
- {
-  "id": "1290836068-7986",
-  "data": "2026-11-24T10:00:02Z",
-  "tipo": "promocao",
-  "titulo": "IPIRANGA KMV: 8% DE CASHBACK NO IPIMAX TODA TERÇA",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Hoje, terça-feira 24/11, quem abastece com a linha Ipimax nos postos Ipiranga e paga pelo app KMV troca 1.000 pontos KMV por 8% de cashback.",
-  "detalhes": [
-   "Abasteça com um combustível da linha Ipimax.",
-   "No app KMV, troque 1.000 pontos pela oferta de 8% de cashback.",
-   "Pague o abastecimento pelo app KMV.",
-   "O cashback fica no app para usar no próximo abastecimento."
-  ],
-  "parceiros": "Ipiranga, KMV",
-  "validade": "Hoje, 24/11",
-  "links": [
-   "https://www.ipiranga.com.br/wps/portal/pt-br/ipiranga/km-de-vantagens"
-  ],
-  "ate": "2026-11-24T23:59:59-03:00"
  },
  {
   "id": "3761373661-10288",
@@ -5889,31 +5803,6 @@
    "https://www.smiles.com.br/clube-smiles/assine-ja/19-mil-milhas-6-meses/09042025"
   ],
   "ate": "2026-11-30T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7858",
-  "data": "2026-11-18T13:21:08Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFERÊNCIA DE PONTOS PREMMIA PARA SMILES COM BÔNUS DE ATÉ 130%",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira pontos Premmia para milhas Smiles e ganhe até 130% de bônus para assinantes do Clube Smiles ou 120% para demais clientes. Oferta válida até 24/11/2026.",
-  "detalhes": [
-   "Bônus de 130% para assinantes do Clube Smiles.",
-   "Bônus de 120% para demais clientes Smiles.",
-   "Transferência de 10.000 pontos Premmia por resgate.",
-   "Crédito de 10.000 milhas Smiles (pontos principais) em até 5 dias úteis.",
-   "Crédito de milhas bônus (13.000 ou 12.000) em até 15 dias úteis após o encerramento da campanha.",
-   "Validade das milhas bônus: 12 meses a partir do crédito.",
-   "Limite de 50 resgates por CPF.",
-   "Necessário cadastro completo no Premmia e titularidade igual entre contas Premmia e Smiles."
-  ],
-  "parceiros": "Premmia, Smiles",
-  "validade": "Até 23h59 de 24/11/2026 (ou enquanto durarem os estoques)",
-  "links": [
-   "https://www.smiles.com.br/portal/campanha/orangefriday-premmia-18112026⁠"
-  ],
-  "ate": "2026-11-24T23:59:59-03:00"
  },
  {
   "id": "1290836068-7841",
