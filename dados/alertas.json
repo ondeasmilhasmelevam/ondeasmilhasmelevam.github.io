@@ -1483,21 +1483,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-CNF-PTY-eco",
-  "data": "2026-11-24T22:24:49.992612Z",
-  "fonte": "seats.aero",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "American / Avianca / Copa",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "66.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "2361370250-7045",
   "data": "2026-11-24T22:20:23Z",
   "origem": "Manaus",
