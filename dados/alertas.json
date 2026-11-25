@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7047",
+  "data": "2026-11-25T07:33:09Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "Avianca",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "50.000 milhas + CAD 122,90 de taxas",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "3761373661-10361",
   "data": "2026-11-25T05:41:23Z",
   "origem": "Campinas",
