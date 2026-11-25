@@ -4677,20 +4677,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-10194",
-  "data": "2026-11-23T13:43:34Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Vitória",
-  "destino_iata": "VIX",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "9.200 milhas + Taxas",
-  "volta": "9.200 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7961",
   "data": "2026-11-23T13:26:01Z",
   "tipo": "promocao",
