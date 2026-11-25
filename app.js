@@ -3906,6 +3906,32 @@
     $('#topo-conta-email').textContent = `Entrou com ${s.email}`;
     $('#topo-painel').hidden = !dono;
     $('#topo-indique').hidden = !s.ativo || dono;
+    avisoVencimento(s, ate, dono);
+  }
+  // Faixa abaixo do topo: a assinatura não renova sozinha, então avisa nos 7 dias antes e nos 15 depois de vencer.
+  // "Fechar" esconde só até o dia seguinte (o aviso volta no outro dia, e no fim do prazo de novo).
+  function avisoVencimento(s, ate, dono) {
+    const faixa = $('#aviso-vence');
+    if (!faixa) return;
+    const dias = ate ? Math.ceil((ate - Date.now()) / 864e5) : NaN;
+    const mostra = !!s.email && !dono && s.plano !== 'dono' && Number.isFinite(dias) && dias <= 7 && dias >= -15;
+    let fechado = '';
+    try { fechado = localStorage.getItem('oamml-aviso-vence') || ''; } catch (e) { /* sem armazenamento: sempre mostra */ }
+    const hoje = new Date().toLocaleDateString('sv', { timeZone: 'America/Sao_Paulo' });
+    faixa.hidden = !mostra || fechado === `${hoje}|${dias}`;
+    if (!mostra) return;
+    const cortesia = s.plano === 'cortesia', oQue = cortesia ? 'Sua cortesia' : 'Sua assinatura';
+    const data = ate.toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+    $('#aviso-vence-txt').innerHTML = !s.ativo
+      ? `<b>${oQue} venceu em ${data}.</b> As datas e os links das passagens estão fechados para você.`
+      : dias <= 0 ? `<b>${oQue} vence hoje.</b>${cortesia ? '' : ' Ela não renova sozinha.'}`
+      : `<b>${oQue} vence em ${dias} ${dias === 1 ? 'dia' : 'dias'}</b> (${data}).${cortesia ? '' : ' Ela não renova sozinha.'}`;
+    $('#aviso-vence-ir').textContent = cortesia || !s.ativo ? 'Assinar' : 'Renovar';
+    faixa.classList.toggle('vencida', !s.ativo);
+    $('#aviso-vence-fechar').onclick = () => {
+      faixa.hidden = true;
+      try { localStorage.setItem('oamml-aviso-vence', `${hoje}|${dias}`); } catch (e) { /* ignora */ }
+    };
   }
   document.addEventListener('assinatura', ev => desenharTopoConta(ev.detail));
   desenharTopoConta();

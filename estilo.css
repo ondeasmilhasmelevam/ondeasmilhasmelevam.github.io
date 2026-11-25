@@ -2808,3 +2808,16 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .malha-novidades small{font-size:12px;color:var(--ouro)}
 @media(max-width:800px){.malha-form,.malha-opcoes-grade{grid-template-columns:repeat(2,minmax(0,1fr))}.malha-novidades ul{grid-template-columns:repeat(2,minmax(0,1fr))}.malha-resultados{grid-template-columns:1fr}}
 @media(max-width:480px){.malha-form,.malha-opcoes-grade{grid-template-columns:minmax(0,1fr)}.malha-form{padding:16px}.malha-novidades ul{grid-template-columns:1fr}.malha-card,.malha-mapa-caixa{padding:16px}.malha-abas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.malha-abas button{padding:12px 8px;font-size:12px}.malha-acoes{display:grid;grid-template-columns:1fr}.malha-acoes .cta{width:100%;justify-content:center}.malha-rotulo{font-size:30px;stroke-width:6px}.malha-ponto{r:9px}}
+
+/* Faixa de vencimento da assinatura (app.js avisoVencimento) */
+.aviso-vence{background:linear-gradient(90deg,rgba(226,180,88,.16),rgba(226,180,88,.07));border-bottom:1px solid rgba(226,180,88,.35)}
+.aviso-vence.vencida{background:linear-gradient(90deg,rgba(255,154,122,.16),rgba(255,154,122,.06));border-bottom-color:rgba(255,154,122,.4)}
+.aviso-vence .wrap{display:flex;align-items:center;gap:12px;padding-block:9px}
+.aviso-vence p{margin:0;flex:1;font-size:14px;line-height:1.4;color:var(--rice)}
+.aviso-vence p b{color:var(--ouro-lt)}
+.aviso-vence.vencida p b{color:var(--alerta)}
+.aviso-vence .cta{flex:none;padding:7px 16px;font-size:13.5px;min-height:0}
+#aviso-vence-fechar{flex:none;width:32px;height:32px;border:0;border-radius:50%;background:transparent;color:var(--ash);font-size:22px;line-height:1;cursor:pointer}
+#aviso-vence-fechar:hover{color:var(--rice);background:rgba(255,255,255,.06)}
+@media (max-width:520px){.aviso-vence p{font-size:13px}.aviso-vence .wrap{gap:8px}}
+:root[data-theme="light"] .aviso-vence p b{color:var(--ouro-dk)}
