@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10393",
+  "data": "2026-11-25T23:42:00Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "12.300 milhas + R$ 35,90 de taxas",
+  "volta": "12.300 milhas + R$ 62,69 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-7055",
   "data": "2026-11-25T22:09:39Z",
   "origem": "São Paulo",
@@ -3399,34 +3413,6 @@
   "programa": "Smiles",
   "ida": "79.000 milhas + taxas",
   "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10285",
-  "data": "2026-11-23T23:41:33Z",
-  "origem": "São Luís",
-  "origem_iata": "SLZ",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "21.300 milhas + R$ 112,35",
-  "volta": "21.300 milhas + R$ 112,35",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10284",
-  "data": "2026-11-23T23:41:31Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "16.900 milhas + R$ 122,10",
-  "volta": "16.900 milhas + R$ 122,10",
   "link_nome": "Smiles"
  },
  {
