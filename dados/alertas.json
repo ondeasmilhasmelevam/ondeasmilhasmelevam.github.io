@@ -1,5 +1,61 @@
 [
  {
+  "id": "3761373661-10368",
+  "data": "2026-11-25T16:57:01Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Belo Horizonte",
+  "destino_iata": "CNF",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "26.000 milhas TudoAzul + Taxas",
+  "volta": "26.000 milhas TudoAzul + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-10367",
+  "data": "2026-11-25T16:56:47Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.900 milhas Smiles + Taxas",
+  "volta": "16.900 milhas Smiles + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10366",
+  "data": "2026-11-25T16:56:28Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Foz do Iguaçu",
+  "destino_iata": "IGU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "17.100 milhas LATAM Pass + Taxas",
+  "volta": "17.100 milhas LATAM Pass + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16456",
+  "data": "2026-11-25T16:56:06Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "44.300 milhas LATAM Pass + Taxas",
+  "volta": "44.300 milhas LATAM Pass + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-10365",
   "data": "2026-11-25T14:44:57Z",
   "origem": "São Paulo",
@@ -3331,20 +3387,6 @@
   "ida": "7.000 milhas + Taxas",
   "volta": "",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-16344",
-  "data": "2026-11-23T17:00:49Z",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Buenos Aires",
-  "destino_iata": "AEP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 45.500 milhas",
-  "volta": "A partir de 45.500 milhas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7972",
