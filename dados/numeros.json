@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-25T19:00:43.765212Z",
+ "atualizado": "2026-11-25T19:06:59.669589Z",
  "dias": 30,
- "passagens": 4111,
+ "passagens": 4112,
  "promocoes": 238,
  "destinos": 182,
  "executiva": 847,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 907,
+  "passagens": 903,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -291,19 +291,6 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-16033",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "Montevidéu",
-    "destino_iata": "MVD",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-18T19:01:06Z",
-    "milhas": 29500,
-    "nivel": "muito bom",
-    "regiao": "america-do-sul"
-   },
-   {
     "id": "2008590742-16333",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
@@ -391,6 +378,19 @@
     "programa": "Smiles",
     "data": "2026-11-21T14:59:29Z",
     "milhas": 33500,
+    "nivel": "bom",
+    "regiao": "america-do-sul"
+   },
+   {
+    "id": "2008590742-16355",
+    "origem": "Salvador",
+    "origem_iata": "SSA",
+    "destino": "Montevidéu",
+    "destino_iata": "MVD",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-23T19:32:33Z",
+    "milhas": 39000,
     "nivel": "bom",
     "regiao": "america-do-sul"
    },
