@@ -5304,48 +5304,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-10153",
-  "data": "2026-11-23T11:37:08Z",
-  "origem": "Natal",
-  "origem_iata": "NAT",
-  "destino": "Fortaleza",
-  "destino_iata": "FOR",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.900 milhas + Taxas",
-  "volta": "11.900 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16321",
-  "data": "2026-11-23T11:37:06Z",
-  "origem": "Natal",
-  "origem_iata": "NAT",
-  "destino": "Milão",
-  "destino_iata": "MXP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "82.100 milhas + Taxas",
-  "volta": "82.100 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2361370250-6979",
-  "data": "2026-11-23T11:32:36Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Zurique",
-  "destino_iata": "ZRH",
-  "companhia": "Swiss",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "80.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "seats-azul-VCP-LIS-eco",
   "data": "2026-11-23T00:19:39.674453Z",
   "fonte": "seats.aero",
