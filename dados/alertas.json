@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7053",
+  "data": "2026-11-25T20:58:54Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Seul",
+  "destino_iata": "ICN",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "Flying Blue",
+  "ida": "120.000 milhas + Taxas",
+  "volta": "120.000 milhas + Taxas",
+  "link_nome": "Flying Blue"
+ },
+ {
   "id": "2008590742-16483",
   "data": "2026-11-25T20:46:44Z",
   "origem": "Florianópolis",

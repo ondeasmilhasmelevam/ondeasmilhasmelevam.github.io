@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-25T20:53:15.790446Z",
+ "atualizado": "2026-11-25T20:59:22.795886Z",
  "dias": 30,
- "passagens": 4139,
+ "passagens": 4140,
  "promocoes": 237,
  "destinos": 182,
- "executiva": 847,
+ "executiva": 848,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -863,19 +863,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9934",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Itaituba",
-    "destino_iata": "ITB",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-18T20:59:03Z",
-    "milhas": 10000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "3761373661-9965",
     "origem": "Belo Horizonte",
     "origem_iata": "CNF",
@@ -939,6 +926,19 @@
     "milhas": 11300,
     "nivel": "",
     "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10228",
+    "origem": "Brasília",
+    "origem_iata": "BSB",
+    "destino": "Juiz de Fora",
+    "destino_iata": "IZA",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-23T16:07:44Z",
+    "milhas": 11300,
+    "nivel": "",
+    "regiao": "outros"
    },
    {
     "id": "2361370250-6975",
