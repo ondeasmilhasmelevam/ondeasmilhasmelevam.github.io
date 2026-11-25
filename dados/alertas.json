@@ -2323,21 +2323,6 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-smiles-MAO-MIA-eco",
-  "data": "2026-11-24T00:18:59.188401Z",
-  "fonte": "seats.aero",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "Avianca / Copa / GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "68.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-JFK-eco",
   "data": "2026-11-24T00:18:59.188401Z",
   "fonte": "seats.aero",
