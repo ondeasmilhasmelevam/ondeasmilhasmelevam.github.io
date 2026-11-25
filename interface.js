@@ -2,22 +2,20 @@
 (() => {
   const $ = s => document.querySelector(s);
   const links = {
-    transferencias: [['Calcular a transferência', '#calculadoras'], ['Ver promoções no ar', '#promocoes']],
+    transferencias: [['Calcular a transferência', '#calculadoras'], ['Quando tem bônus', '#bonus']],
     comprar: [['Avaliar uma compra', '#calculadoras'], ['Ver transferências', '#transferencias']],
     programas: [['Preparar meus cadastros', '#cadastros'], ['Entender como emitir', '#guia']],
-    cadastros: [['Consultar salas VIP', '#salas'], ['Consultar restaurantes', '#restaurantes']],
-    salas: [['Aplicativos de aeroporto', '#cadastros'], ['Restaurantes no aeroporto', '#restaurantes']],
-    restaurantes: [['Aplicativos de aeroporto', '#cadastros'], ['Salas VIP', '#salas']],
-    direitos: [['Encontrar atendimento', '#contatos']],
-    contatos: [['Direitos do passageiro', '#direitos']],
+    cadastros: [['Como funciona cada programa', '#programas'], ['Salas VIP e restaurantes', '#salas']],
+    restaurantes: [['Aplicativos de aeroporto', '#cadastros'], ['Voltar às salas VIP', '#salas']],
+    direitos: [['Telefones das companhias', '#contatos']],
+    contatos: [['Seus direitos no voo', '#direitos']],
     guia: [['Preparar meus cadastros', '#cadastros'], ['Quando a data abre?', '#abertura']],
-    quanto: [['Avaliar o preço em milhas', '#termometro'], ['Buscar oportunidades', '#passagens']],
-    termometro: [['Tabela por destino', '#quanto'], ['Ver passagens', '#passagens']],
-    calculadoras: [['Referências do milheiro', '#comprar'], ['Transferências disponíveis', '#transferencias']],
-    'ranking-sec': [['Ajustar gasto e renda no comparador', '#simulador'], ['Como calculamos', '#como']],
-    'vencedor-sec': [['Como calculamos', '#como']],
+    quanto: [['Ver passagens no ar', '#passagens'], ['Histórico de preços', '#historico']],
+    calculadoras: [['Até quanto pagar pelo milheiro', '#comprar'], ['Transferências disponíveis', '#transferencias']],
+    'ranking-sec': [['Ajustar gasto e renda', '#simulador'], ['Como calculamos', '#como']],
     como: [['Voltar ao comparador', '#simulador']],
-    hoje: [['Ver todas as passagens', '#passagens'], ['Ver promoções', '#promocoes']]
+    internet: [['Dinheiro na viagem', '#dinheiro'], ['Meus cadastros e seguros', '#cadastros']],
+    dinheiro: [['Internet e seguro viagem', '#internet'], ['Comparador de cartões', '#simulador']]
   };
   Object.entries(links).forEach(([id, itens]) => {
     const sec = document.getElementById(id); if (!sec) return;
@@ -36,12 +34,8 @@
     b.removeAttribute('role'); b.removeAttribute('aria-label');
   });
   // Os grupos do menu (incluindo "Antes de embarcar") ficam direto no index.html.
-  const hoje = $('#menu a[href="#hoje"]'); if (hoje) { hoje.querySelector('span').textContent = 'Resumo do dia'; hoje.title = 'Resumo do dia'; }
-  const ranking = $('#menu a[href="#ranking-sec"]'); if (ranking) { ranking.querySelector('span').textContent = 'Ranking do comparador'; ranking.title = 'Ranking do comparador'; }
   // Planos antes das estatísticas e dos depoimentos; mantém elementos e listeners de assinatura.
   const planos = $('.ass-planos'); if (planos) $('#assinar .sec-head')?.after(planos);
-  const cadHead = $('#cadastros .banner-titulo'); if (cadHead) cadHead.textContent = 'Cadastros, aplicativos e seguros';
-  const cadNote = $('#cadastros .sec-note'); if (cadNote) cadNote.textContent = 'Prepare os aplicativos de aeroporto, os portais de seguro e os programas de pontos. Abra os links oficiais e marque os cadastros que já fez; a lista fica salva neste navegador. Faça agora, mesmo nos programas que ainda não usa: muita promoção só vale para quem já tem conta, algumas pedem um tempo mínimo de cadastro e, no dia da promoção, o site costuma ficar lento.';
   // Os atalhos das páginas utilitárias também podem transportar o programa escolhido.
   $('#transferencias .proximos-passos a[href="#calculadoras"]')?.addEventListener('click', e => {
     const ativo = $('#transf-chips button[aria-pressed="true"]');
@@ -57,5 +51,15 @@
       e.preventDefault(); window.oammlNavegacao.ir(alvo, { destino, cabine: c?.cabine || '' });
     }
   }));
+  // Páginas que juntam mais de uma seção: atalhos no topo para pular entre elas.
+  const ROTULO = { termometro: 'Termômetro', quanto: 'Tabela por destino', bonus: 'Quando tem bônus', comprar: 'Preço do milheiro', salas: 'Salas VIP', restaurantes: 'Restaurantes VIP' };
+  const grupos = {};
+  document.querySelectorAll('section[data-pagina][id], div.hero[data-pagina][id]').forEach(s => { if (ROTULO[s.id]) (grupos[s.dataset.pagina] = grupos[s.dataset.pagina] || []).push(s); });
+  Object.values(grupos).filter(g => g.length > 1).forEach(g => {
+    const nav = document.createElement('nav'); nav.className = 'sub-abas'; nav.setAttribute('aria-label', 'Nesta página');
+    nav.innerHTML = '<span>Nesta página</span>' + g.map(s => `<a href="#${s.id}">${ROTULO[s.id]}</a>`).join('');
+    const alvo = g[0].querySelector('.sec-head') || g[0].querySelector('.wrap > *:first-child');
+    if (alvo) alvo.after(nav);
+  });
   dispatchEvent(new HashChangeEvent('hashchange'));
 })();
