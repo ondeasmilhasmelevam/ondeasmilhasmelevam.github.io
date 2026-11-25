@@ -3552,34 +3552,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16359",
-  "data": "2026-11-23T20:09:41Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Assunção",
-  "destino_iata": "ASU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "30.000 milhas + Taxas",
-  "volta": "30.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16358",
-  "data": "2026-11-23T20:09:28Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Santiago",
-  "destino_iata": "SCL",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "34.700 milhas + Taxas",
-  "volta": "34.700 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "seats-azul-REC-MAD-eco",
   "data": "2026-11-23T17:36:47.175604Z",
   "fonte": "seats.aero",
