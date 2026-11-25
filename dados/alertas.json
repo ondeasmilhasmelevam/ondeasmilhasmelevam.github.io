@@ -5290,20 +5290,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-10154",
-  "data": "2026-11-23T11:37:10Z",
-  "origem": "Natal",
-  "origem_iata": "NAT",
-  "destino": "Campinas",
-  "destino_iata": "VCP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "21.300 milhas + Taxas",
-  "volta": "21.300 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-azul-VCP-LIS-eco",
   "data": "2026-11-23T00:19:39.674453Z",
   "fonte": "seats.aero",
