@@ -175,7 +175,8 @@
 .sub-abas a:hover{border-color:var(--ouro)}
 .aviso-selo{display:flex;gap:8px;align-items:flex-start;margin:-6px 0 16px;padding:8px 12px;border-radius:10px;background:rgba(226,180,88,.07);border:1px solid rgba(226,180,88,.22);font-size:12.5px;color:var(--ash);max-width:72ch}
 .aviso-selo::before{content:"i";flex:none;width:16px;height:16px;border-radius:50%;display:grid;place-items:center;font:italic 800 11px/1 Georgia,serif;background:var(--ouro);color:var(--sobre-ouro,#1a1408);margin-top:1px}
-section[data-pagina]:not(:has(> .aba-banner)) > .sec-head{margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+#hoje,#ranking-sec,#quanto,#restaurantes,#comprar{padding-top:8px}
+:is(#hoje,#ranking-sec,#quanto,#restaurantes,#comprar) > .sec-head{margin-top:10px;padding-top:26px;border-top:1px solid var(--line)}
 #inicio-corpo-hoje,#hoje > .sec-head{margin-top:30px}
 
 .passagens>li.pass-bilhete{--nv:var(--ouro);--nv-txt:#1a1408;position:relative;padding-top:0;border-top:1px solid var(--line);overflow:visible}
@@ -199,3 +200,7 @@ section[data-pagina]:not(:has(> .aba-banner)) > .sec-head{margin-top:34px;paddin
 @container (max-width:270px){.pass-faixa span:first-child{font-size:0}.pass-faixa span:first-child::before{content:"✈";font-size:12px}}
 @media (max-width:700px){.sub-abas{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-left:-16px;margin-right:-16px;padding:0 16px}.sub-abas::-webkit-scrollbar{display:none}.sub-abas a{white-space:nowrap;flex:none}}
 .sub-abas span{white-space:nowrap;flex:none}
+/* Termômetro: regiões como pílulas que quebram linha, sem espremer o texto */
+#termo-regiao{gap:6px;padding:6px;justify-content:flex-start}
+#termo-regiao button{flex:0 1 auto;white-space:nowrap;padding:8px 14px;border-radius:999px}
+@media (max-width:700px){#termo-regiao button{font-size:14px}}
