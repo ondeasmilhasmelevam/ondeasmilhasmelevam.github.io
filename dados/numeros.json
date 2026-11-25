@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-25T18:35:57.217076Z",
+ "atualizado": "2026-11-25T18:42:13.452447Z",
  "dias": 30,
  "passagens": 4104,
  "promocoes": 240,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 916,
+  "passagens": 901,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -304,15 +304,15 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-16032",
+    "id": "2008590742-16333",
     "origem": "Fortaleza",
     "origem_iata": "FOR",
     "destino": "Lisboa",
     "destino_iata": "LIS",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-18T18:38:17Z",
-    "milhas": 61266,
+    "data": "2026-11-23T14:59:08Z",
+    "milhas": 61343,
     "nivel": "muito bom",
     "regiao": "europa"
    },
@@ -655,19 +655,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9922",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "GIG",
-    "destino": "Vitória",
-    "destino_iata": "VIX",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-18T18:38:06Z",
-    "milhas": 6824,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-9994",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -794,6 +781,19 @@
     "programa": "Smiles",
     "data": "2026-11-24T11:39:58Z",
     "milhas": 8300,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10272",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
+    "destino": "Vitória",
+    "destino_iata": "VIX",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-23T17:42:47Z",
+    "milhas": 8600,
     "nivel": "",
     "regiao": "brasil"
    },
