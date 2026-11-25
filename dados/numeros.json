@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-25T19:19:36.459939Z",
+ "atualizado": "2026-11-25T19:26:18.450856Z",
  "dias": 30,
- "passagens": 4113,
+ "passagens": 4123,
  "promocoes": 238,
  "destinos": 182,
  "executiva": 847,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 904,
+  "passagens": 908,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -237,6 +237,19 @@
     "milhas": 46770,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
+   },
+   {
+    "id": "2008590742-16463",
+    "origem": "Belo Horizonte",
+    "origem_iata": "CNF",
+    "destino": "Punta Cana",
+    "destino_iata": "PUJ",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-25T19:24:09Z",
+    "milhas": 77300,
+    "nivel": "espetacular",
+    "regiao": "caribe"
    },
    {
     "id": "2008590742-16187",
@@ -445,19 +458,6 @@
     "milhas": 66400,
     "nivel": "bom",
     "regiao": "america-do-norte"
-   },
-   {
-    "id": "2008590742-16328",
-    "origem": "Sinop",
-    "origem_iata": "OPS",
-    "destino": "Punta Cana",
-    "destino_iata": "PUJ",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-23T14:12:52Z",
-    "milhas": 68900,
-    "nivel": "bom",
-    "regiao": "caribe"
    },
    {
     "id": "3761373661-10145",
