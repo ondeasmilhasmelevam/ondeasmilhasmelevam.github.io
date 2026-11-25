@@ -3119,7 +3119,7 @@
   "origem_iata": "SSA",
   "destino": "Paris",
   "destino_iata": "CDG",
-  "companhia": "Air France / GOL / Air Europa",
+  "companhia": "Air France / GOL / KLM",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "118.000 milhas + taxas",
@@ -3134,7 +3134,7 @@
   "origem_iata": "GIG",
   "destino": "Nova York",
   "destino_iata": "JFK",
-  "companhia": "American / Avianca",
+  "companhia": "American",
   "cabine": "Executiva",
   "programa": "Smiles",
   "ida": "252.000 milhas + taxas",
@@ -3840,21 +3840,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-iberia-REC-MAD-exe",
-  "data": "2026-11-22T03:40:28.927110Z",
-  "fonte": "seats.aero",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Madrid",
-  "destino_iata": "MAD",
-  "companhia": "Iberia",
-  "cabine": "Executiva",
-  "programa": "Iberia Plus",
-  "ida": "40.500 Avios + taxas",
-  "volta": "",
-  "link_nome": "Iberia Plus"
- },
- {
   "id": "seats-smiles-GIG-DFW-exe",
   "data": "2026-11-22T03:40:28.927110Z",
   "fonte": "seats.aero",
@@ -3862,7 +3847,7 @@
   "origem_iata": "GIG",
   "destino": "Dallas",
   "destino_iata": "DFW",
-  "companhia": "American / Avianca",
+  "companhia": "American",
   "cabine": "Executiva",
   "programa": "Smiles",
   "ida": "254.000 milhas + taxas",
@@ -4005,21 +3990,6 @@
    "https://www.livelo.com.br/clube"
   ],
   "ate": "2026-11-26T23:59:59-03:00"
- },
- {
-  "id": "seats-smiles-GRU-MIA-exe",
-  "data": "2026-11-16T01:53:14.655412Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "316.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-GRU-MAD-eco",
