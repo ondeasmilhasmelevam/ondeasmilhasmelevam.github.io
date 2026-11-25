@@ -3459,20 +3459,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-7007",
-  "data": "2026-11-23T21:47:56Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Lisboa",
-  "destino_iata": "LIS",
-  "companhia": "TAP",
-  "cabine": "Executiva",
-  "programa": "TAP Miles&Go",
-  "ida": "135.000 milhas + R$248",
-  "volta": "135.000 milhas + R$478",
-  "link_nome": "TAP Miles&Go"
- },
- {
   "id": "seats-azul-REC-MAD-eco",
   "data": "2026-11-23T17:36:47.175604Z",
   "fonte": "seats.aero",
