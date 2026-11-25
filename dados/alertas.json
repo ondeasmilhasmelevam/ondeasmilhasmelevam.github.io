@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10362",
+  "data": "2026-11-25T08:07:43Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "6.300 milhas + R$ 56,99 de taxas",
+  "volta": "6.200 milhas + R$ 62,69 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-7047",
   "data": "2026-11-25T07:33:09Z",
   "origem": "Manaus",
