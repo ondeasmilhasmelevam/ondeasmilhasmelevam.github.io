@@ -3472,20 +3472,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16381",
-  "data": "2026-11-23T23:16:36Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "51.500 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-azul-REC-MAD-eco",
   "data": "2026-11-23T17:36:47.175604Z",
   "fonte": "seats.aero",
