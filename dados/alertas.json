@@ -5214,20 +5214,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-10158",
-  "data": "2026-11-23T12:26:29Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "8.300 milhas + R$ 35,15 de taxas",
-  "volta": "8.300 milhas + R$ 34,54 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7958",
   "data": "2026-11-23T12:16:40Z",
   "tipo": "promocao",
