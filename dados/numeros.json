@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-25T12:40:17.871123Z",
+ "atualizado": "2026-11-25T12:46:26.293725Z",
  "dias": 30,
  "passagens": 4083,
  "promocoes": 237,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 950,
+  "passagens": 934,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -655,19 +655,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9887",
-    "origem": "São Paulo",
-    "origem_iata": "SAO",
-    "destino": "Belo Horizonte",
-    "destino_iata": "CNF",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-18T12:41:16Z",
-    "milhas": 7000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "3761373661-9994",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -689,6 +676,19 @@
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
     "data": "2026-11-19T19:16:57Z",
+    "milhas": 7000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10035",
+    "origem": "Campinas",
+    "origem_iata": "VCP",
+    "destino": "Belo Horizonte",
+    "destino_iata": "CNF",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-21T13:38:49Z",
     "milhas": 7000,
     "nivel": "",
     "regiao": "brasil"
@@ -811,15 +811,15 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9891",
-    "origem": "São Luís",
-    "origem_iata": "SLZ",
+    "id": "3761373661-9970",
+    "origem": "Salvador",
+    "origem_iata": "SSA",
     "destino": "Fortaleza",
     "destino_iata": "FOR",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-18T12:43:57Z",
-    "milhas": 8800,
+    "data": "2026-11-19T12:41:32Z",
+    "milhas": 9000,
     "nivel": "",
     "regiao": "brasil"
    },
