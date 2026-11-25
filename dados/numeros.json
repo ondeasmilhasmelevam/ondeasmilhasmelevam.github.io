@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-25T17:40:09.912443Z",
+ "atualizado": "2026-11-25T17:46:17.491209Z",
  "dias": 30,
  "passagens": 4096,
  "promocoes": 236,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 919,
+  "passagens": 909,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -1045,19 +1045,6 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2361370250-6795",
-    "origem": "Abu Dhabi",
-    "origem_iata": "AUH",
-    "destino": "Maldivas",
-    "destino_iata": "MLE",
-    "cabine": "Executiva",
-    "programa": "AAdvantage",
-    "data": "2026-11-18T17:44:38Z",
-    "milhas": 30000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "2361370250-6819",
     "origem": "Tóquio",
     "origem_iata": "NRT",
@@ -1199,6 +1186,19 @@
     "milhas": 75000,
     "nivel": "",
     "regiao": "outros"
+   },
+   {
+    "id": "2361370250-6979",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Zurique",
+    "destino_iata": "ZRH",
+    "cabine": "Executiva",
+    "programa": "Aeroplan",
+    "data": "2026-11-23T11:32:36Z",
+    "milhas": 80000,
+    "nivel": "",
+    "regiao": "europa"
    }
   ]
  }
