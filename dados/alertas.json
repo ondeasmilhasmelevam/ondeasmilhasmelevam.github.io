@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7055",
+  "data": "2026-11-25T22:09:39Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Joanesburgo",
+  "destino_iata": "JNB",
+  "companhia": "South African Airways",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "220.300 milhas + R$ 108,61",
+  "volta": "223.100 milhas + R$ 239,00",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10392",
   "data": "2026-11-25T21:55:35Z",
   "origem": "Goiânia",
@@ -3484,48 +3498,6 @@
   "programa": "Smiles",
   "ida": "51.500 milhas + Taxas",
   "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10281",
-  "data": "2026-11-23T22:06:54Z",
-  "origem": "Marabá",
-  "origem_iata": "MAB",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "A partir de 14.000 milhas",
-  "volta": "A partir de 14.000 milhas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2361370250-7008",
-  "data": "2026-11-23T22:03:14Z",
-  "origem": "Helsinque",
-  "origem_iata": "HEL",
-  "destino": "Bangkok",
-  "destino_iata": "BKK",
-  "companhia": "Finnair",
-  "cabine": "Executiva",
-  "programa": "AAdvantage",
-  "ida": "75.000 milhas + R$ 139,82",
-  "volta": "75.000 milhas + R$ 204,77",
-  "link_nome": "AAdvantage"
- },
- {
-  "id": "3761373661-10280",
-  "data": "2026-11-23T22:02:36Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "SDU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 12.900 milhas",
-  "volta": "A partir de 12.900 milhas",
   "link_nome": "Smiles"
  },
  {
