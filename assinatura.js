@@ -362,6 +362,28 @@ function painelBusca(g) {
 // Instagram no painel: números que o robô lê da API a cada 3 horas (sem precisar entrar no Instagram).
 const PAISES = { BR: 'Brasil', US: 'Estados Unidos', IN: 'Índia', PT: 'Portugal', AR: 'Argentina', ES: 'Espanha', IT: 'Itália', FR: 'França', DE: 'Alemanha', GB: 'Reino Unido', MX: 'México', CO: 'Colômbia', CL: 'Chile', PY: 'Paraguai', UY: 'Uruguai', JP: 'Japão', CA: 'Canadá' };
 const GENERO = { M: 'Homens', F: 'Mulheres', U: 'Não informado' };
+// Stories: o robô lê cada story enquanto está no ar e manda o total por dia. Desde 25/11/2026 são 3 levas de até 3
+// ofertas (antes 5 de 5): a tabela marca o antes e o depois para ver se menos stories rendem mais alcance por story.
+function painelStories(ig) {
+  const st = ig.stories || {}, mudou = st.mudou_em || '2026-11-25';
+  const n = v => Number(v || 0).toLocaleString('pt-BR');
+  const pct = (a, b) => (b ? `${Math.round((a / b) * 100)}%` : '—');
+  const dias = Object.entries(st.dias || {}).sort().slice(-14).reverse();
+  const diario = Object.entries(ig.alcance_diario || {}).sort();
+  const media = lista => (lista.length ? Math.round(lista.reduce((s, [, v]) => s + v, 0) / lista.length) : null);
+  const antes = media(diario.filter(([d]) => d < mudou)), depois = media(diario.filter(([d]) => d >= mudou));
+  const pos = Object.entries(st.por_posicao || {}).sort((a, b) => a[0] - b[0])
+    .map(([p, v]) => `${p === '0' ? 'capa' : `${p}º`}: ${n(v)}`).join(' · ');
+  const linhas = dias.map(([d, s]) => `<tr${d === mudou ? ' class="painel-marco"' : ''}><td>${d.split('-').reverse().slice(0, 2).join('/')}${d >= mudou ? '' : ' <small>(25/dia)</small>'}</td>
+    <td>${n(s.n)}</td><td>${n(s.n ? Math.round(s.reach / s.n) : 0)}</td><td>${n(s.views)}</td><td>${pct(s.saidas, s.views)}</td><td>${pct(s.avancos + s.proximo, s.views)}</td><td>${n(s.replies)}</td><td>${n(s.shares)}</td></tr>`).join('');
+  return `<div class="painel-prefs"><p><b>Stories</b> · desde ${mudou.split('-').reverse().slice(0, 2).join('/')}: 3 levas de até 3 ofertas, só o melhor, com capa (antes eram 25 por dia)</p>
+    ${antes != null || depois != null ? `<p><span>Alcance médio por dia da conta:</span> ${antes != null ? `${n(antes)} antes` : 'sem dado de antes'} · ${depois != null ? `${n(depois)} depois` : 'medindo o depois'}</p>` : ''}
+    ${pos ? `<p><span>Alcance médio por posição na leva:</span> ${pos}</p>` : ''}</div>
+    ${diario.length ? painelLinha('Alcance da conta por dia (linha do tempo da mudança: 25/11)', diario.map(([d, v]) => [d.split('-').reverse().slice(0, 2).join('/'), v]), '#E2B458') : ''}
+    ${linhas ? `<div class="painel-tabela"><table><thead><tr><th>Dia</th><th>Stories</th><th>Alcance por story</th><th>Visualizações</th><th>Saíram</th><th>Pularam</th><th>Respostas</th><th>Compart.</th></tr></thead><tbody>${linhas}</tbody></table></div>`
+      : '<p class="passagens-vazio">Os números de cada story aparecem aqui depois da próxima leitura do robô (a cada 3 horas).</p>'}`;
+}
+
 function painelInstagram(ig) {
   if (!ig) return '<div class="painel-ig"><h3>Instagram</h3><p class="passagens-vazio">Os números do Instagram aparecem aqui depois da próxima volta do robô (até 3 horas).</p></div>';
   const n = v => Number(v || 0).toLocaleString('pt-BR');
@@ -391,6 +413,7 @@ function painelInstagram(ig) {
     ${Object.keys(publico).length ? `<div class="painel-prefs"><p><b>Quem segue</b></p>
       ${publico.country ? `<p><span>Países:</span> ${lista('country', PAISES)}</p>` : ''}${publico.city ? `<p><span>Cidades:</span> ${lista('city')}</p>` : ''}
       ${publico.age ? `<p><span>Idade:</span> ${lista('age')}</p>` : ''}${publico.gender ? `<p><span>Gênero:</span> ${lista('gender', GENERO)}</p>` : ''}</div>` : ''}
+    ${painelStories(ig)}
     ${posts ? `<div class="painel-tabela"><table><thead><tr><th>Quando</th><th>Tipo</th><th>Post</th><th>Alcance</th><th>Visualizações</th><th>Curtidas</th><th>Comentários</th><th>Salvos</th><th>Compart.</th></tr></thead><tbody>${posts}</tbody></table></div>` : ''}
   </div>`;
 }
