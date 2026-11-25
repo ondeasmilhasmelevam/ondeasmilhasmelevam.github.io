@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-25T23:42:04.516050Z",
+ "atualizado": "2026-11-25T23:48:20.963997Z",
  "dias": 30,
- "passagens": 4159,
+ "passagens": 4178,
  "promocoes": 238,
  "destinos": 183,
  "executiva": 850,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 927,
+  "passagens": 946,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -265,6 +265,19 @@
     "regiao": "america-do-sul"
    },
    {
+    "id": "2008590742-16497",
+    "origem": "Florianópolis",
+    "origem_iata": "FLN",
+    "destino": "Buenos Aires",
+    "destino_iata": "EZE",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-25T23:47:17Z",
+    "milhas": 22000,
+    "nivel": "muito bom",
+    "regiao": "america-do-sul"
+   },
+   {
     "id": "2008590742-16318",
     "origem": "Florianópolis",
     "origem_iata": "FLN",
@@ -273,19 +286,6 @@
     "cabine": "Econômica",
     "programa": "Smiles",
     "data": "2026-11-23T03:16:21Z",
-    "milhas": 23000,
-    "nivel": "muito bom",
-    "regiao": "america-do-sul"
-   },
-   {
-    "id": "2008590742-16453",
-    "origem": "Florianópolis",
-    "origem_iata": "FLN",
-    "destino": "Buenos Aires",
-    "destino_iata": "EZE",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-24T21:25:01Z",
     "milhas": 23000,
     "nivel": "muito bom",
     "regiao": "america-do-sul"
@@ -382,15 +382,15 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-16355",
-    "origem": "Salvador",
-    "origem_iata": "SSA",
+    "id": "2008590742-16498",
+    "origem": "Fortaleza",
+    "origem_iata": "FOR",
     "destino": "Montevidéu",
     "destino_iata": "MVD",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-23T19:32:33Z",
-    "milhas": 39000,
+    "data": "2026-11-25T23:47:43Z",
+    "milhas": 36500,
     "nivel": "bom",
     "regiao": "america-do-sul"
    },
