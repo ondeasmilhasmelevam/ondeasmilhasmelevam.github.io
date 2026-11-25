@@ -1,5 +1,69 @@
 [
  {
+  "id": "3761373661-10376",
+  "data": "2026-11-25T18:28:40Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.000 milhas + R$ 34,54 de taxas",
+  "volta": "11.000 milhas + R$ 62,14 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "1290836068-8025",
+  "data": "2026-11-25T18:26:30Z",
+  "tipo": "promocao",
+  "titulo": "CUPOM 22% DE DESCONTO EM RESERVAS NA AZUL VIAGENS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "O PP oferece um cupom exclusivo de 22% de desconto em reservas de hotéis, carros e pacotes na Azul Viagens. O desconto só pode ser usado em pagamentos com pontos Azul e é válido apenas no dia 25/11/2026. A promoção não se aplica a outros produtos e pode ser cancelada em caso de alteração ou cancelamento da reserva.",
+  "detalhes": [
+   "Cupom ESPECIALPP: 22% de desconto em hotéis, locação de carros e pacotes (hotel + aéreo Azul)",
+   "Desconto válido apenas para pagamentos realizados com pontos Azul",
+   "Promoção restrita ao dia 25/11/2026",
+   "Viagens podem ser realizadas até 30/11/2027",
+   "Oferta não se aplica a produtos como ingressos, cruzeiros ou voos de outras companhias aéreas",
+   "Descontos não são cumulativos",
+   "Desconto pode ser cancelado em caso de alteração ou cancelamento da reserva",
+   "Campanha pode ser encerrada a qualquer momento sem aviso prévio"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "até 30/11/2027",
+  "links": [
+   "https://link.dia23.com.br/r/59hQAh0"
+  ],
+  "ate": "2027-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8024",
+  "data": "2026-11-25T18:26:24Z",
+  "tipo": "promocao",
+  "titulo": "LIVELO 30% DESCONTO + 30% POINTSBACK EM PASSAGENS JAPÃO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Livelo oferece 30% de desconto na compra de passagens para o Japão usando o cupom JAPAOBRA30 e devolve 30% dos pontos usados após o desconto. O pointsback é creditado em até 60 dias úteis após o desembarque final da viagem de retorno. A promoção é válida apenas para correntistas Bradesco e exige um resgate mínimo de 14.000 pontos.",
+  "detalhes": [
+   "30% de desconto na passagem via cupom JAPAOBRA30",
+   "30% de pointsback sobre pontos usados após desconto",
+   "pontos de volta creditados em até 60 dias úteis após desembarque final da viagem de retorno",
+   "resgate mínimo de 14.000 pontos",
+   "pontos de volta não creditados se houver alterações ou cancelamentos",
+   "pontos + dinheiro permitido, mas dinheiro não recebe desconto nem pointsback",
+   "São Paulo (GRU) x Narita (NRT) economica a partir de 87.024 milhas o trecho",
+   "Períodos de viagem: junho de 2027"
+  ],
+  "parceiros": "Livelo",
+  "validade": "até amanhã (26)",
+  "links": [
+   "https://link.dia23.com.br/r/0QdeEm2"
+  ],
+  "ate": ""
+ },
+ {
   "id": "1290836068-8023",
   "data": "2026-11-25T18:10:23Z",
   "tipo": "promocao",
