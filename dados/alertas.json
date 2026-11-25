@@ -3966,21 +3966,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-GRU-BCN-eco",
-  "data": "2026-11-13T02:30:16.760388Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Barcelona",
-  "destino_iata": "BCN",
-  "companhia": "Air France / Royal Air Maroc / Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "140.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-GRU-MAD-eco",
   "data": "2026-11-13T00:04:39.829038Z",
   "fonte": "seats.aero",
