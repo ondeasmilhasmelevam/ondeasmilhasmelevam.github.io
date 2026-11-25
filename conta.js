@@ -87,7 +87,7 @@
 
   /* ---------- Conta do assinante (servidor) ---------- */
   let conta = null, carregando = null, salvarTimer = 0;
-  const vazia = () => ({ saldos: {}, vencimentos: [], emissoes: [], avisos: 'hora', resumo: true, passosFechado: false, bonusAviso: true });
+  const vazia = () => ({ cadastros: [], saldos: {}, vencimentos: [], emissoes: [], avisos: 'hora', resumo: true, passosFechado: false, bonusAviso: true });
   async function chamar(metodo, corpo) {
     const tk = window.oammlToken ? await window.oammlToken() : '';
     if (!tk) throw new Error('sem login');

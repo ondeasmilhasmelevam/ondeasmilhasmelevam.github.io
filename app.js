@@ -2516,7 +2516,7 @@
   }
   // Marca no canhoto do cartão de embarque: ícone do app (já no site), logo da companhia pelo código IATA
   // ou o ícone do site oficial; se a imagem falhar, fica o código de 3 letras.
-  const CAD_APP = { latam: 'latam', smiles: 'smiles', azul: 'azul', tap: 'tap', qatar: 'qatar', livelo: 'livelo', esfera: 'esfera', aa: 'aadvantage', flyingblue: 'flyingblue', aeroplan: 'aeroplan', lifemiles: 'avianca', skywards: 'emirates', turkish: 'turkish', copa: 'copa', united: 'united', virgin: 'virgin', milesmore: 'lufthansa', suma: 'aireuropa', accor: 'accor' };
+  const CAD_APP = { latam: 'latam', smiles: 'smiles', azul: 'azul', tap: 'tap', qatar: 'qatar', livelo: 'livelo', esfera: 'esfera', aa: 'aadvantage', flyingblue: 'flyingblue', aeroplan: 'aeroplan', lifemiles: 'avianca', skywards: 'emirates', turkish: 'turkish', copa: 'copa', united: 'united', virgin: 'virgin', milesmore: 'lufthansa', suma: 'aireuropa', accor: 'accor', c6: 'c6', bb: 'bb', itaushop: 'itaushop', paodeacucar: 'paodeacucar', portoplus: 'portoplus', bvmerece: 'bvmerece', uau: 'uau', coopera: 'coopera', meliuz: 'meliuz', dotz: 'dotz', kmv: 'kmv', premmia: 'premmia', shellbox: 'shellbox', surpreenda: 'surpreenda', stix: 'stix', marriott: 'marriott', hilton: 'hilton', hyatt: 'hyatt', ihg: 'ihg', wyndham: 'wyndham', melia: 'melia', choice: 'choice', onekey: 'onekey', movida: 'movida', hertz: 'hertz', sixt: 'sixt' };
   const CAD_IATA = { iberia: 'IB', ba: 'BA', krisflyer: 'SQ', finnair: 'AY', atmos: 'AS' };
   function cadMarca(p) {
     const bandeira = (p.id.match(/^(?:app|seguro)-(visa|mastercard)/) || [])[1];
@@ -2529,8 +2529,36 @@
     else { try { src = `https://www.google.com/s2/favicons?domain=${new URL(p.link).hostname}&sz=128`; cls += ' cad-logo-claro'; } catch (e) { /* sem logo */ } }
     return src ? `<span class="${cls}"><img src="${src}" alt="" width="44" height="44" loading="lazy" onerror="this.parentNode.classList.add('sem');this.remove()"><b class="cad-codigo">${cod}</b></span>` : `<b class="cad-codigo">${cod}</b>`;
   }
+  // Assinante: as marcações ficam na conta (servidor), então valem no celular e no computador.
+  // Junta o que está neste aparelho, o que está na conta e os programas em que a carteira já tem saldo.
+  const cadConta = () => (window.oammlAssinatura && window.oammlAssinatura.ativo && window.oammlConta && window.oammlConta.dados()) || null;
+  function cadSincronizar() {
+    const c = cadConta();
+    if (!c || !cadDados) return;
+    const nome = window.oammlConta.nome, antes = [...(c.cadastros || [])].sort().join();
+    const comSaldo = new Set(Object.entries(c.saldos || {}).filter(([, q]) => q > 0).map(([k]) => nome(k)));
+    (c.cadastros || []).forEach(id => cadFeitos.add(id));
+    cadDados.grupos.flatMap(g => g.programas).forEach(p => { if (comSaldo.has(nome(p.nome))) cadFeitos.add(p.id); });
+    try { localStorage.setItem(CAD_CHAVE, JSON.stringify([...cadFeitos])); } catch (er) { /* só nesta visita */ }
+    c.cadastros = [...cadFeitos];
+    if ([...c.cadastros].sort().join() !== antes) window.oammlConta.salvar('Cadastros salvos na sua conta');
+  }
+  // Resumo dos cadastros dentro da Minha carteira.
+  function cadCarteira() {
+    const el = document.querySelector('#ct-cadastros');
+    if (!el || !cadDados) return;
+    const todos = cadDados.grupos.flatMap(g => g.programas), feitos = todos.filter(p => cadFeitos.has(p.id)).length, faltam = todos.length - feitos;
+    const prox = cadDados.grupos.flatMap(g => g.programas).filter(p => !cadFeitos.has(p.id) && !/^(app|seguro)-/.test(p.id)).slice(0, 4).map(p => p.nome);
+    el.innerHTML = `<div class="cad-progresso"><span>${feitos} de ${todos.length} feitos</span><span class="barra"><i style="width:${(feitos / todos.length * 100).toFixed(1)}%"></i></span></div>
+      <p class="ct-nota">${faltam ? `Faltam ${faltam}.${prox.length ? ` Comece por ${esc(prox.join(', '))}.` : ''}` : 'Todos os cadastros feitos. ✈'} Programa com saldo aqui na carteira já conta como cadastrado.</p>
+      <a class="cta cta-b" href="#cadastros">Ver meus cadastros</a>`;
+  }
+  document.addEventListener('conta-pronta', () => { cadSincronizar(); mostrarCadastros(); cadCarteira(); });
+  window.addEventListener('hashchange', () => { if (location.hash === '#cadastros' || location.hash === '#carteira') { cadSincronizar(); mostrarCadastros(); cadCarteira(); } });
   function mostrarCadastros() {
     if (!cadDados) return;
+    const salvaConta = document.querySelector('#cad-onde');
+    if (salvaConta) salvaConta.textContent = cadConta() ? '✓ Salvo na sua conta: vale no celular e no computador.' : 'Fica salvo neste aparelho. Assinantes guardam na conta e veem em qualquer aparelho.';
     const todos = cadDados.grupos.flatMap(g => g.programas);
     const feitos = todos.filter(p => cadFeitos.has(p.id)).length;
     $('#cad-progresso-txt').textContent = `${feitos} de ${todos.length} feitos`;
@@ -2557,7 +2585,9 @@
     const id = e.target.dataset.cad; if (!id) return;
     if (e.target.checked) cadFeitos.add(id); else cadFeitos.delete(id);
     try { localStorage.setItem(CAD_CHAVE, JSON.stringify([...cadFeitos])); } catch (er) { /* só nesta visita */ }
-    mostrarCadastros();
+    const c = cadConta();
+    if (c) { c.cadastros = [...cadFeitos]; window.oammlConta.salvar(e.target.checked ? 'Cadastro salvo na sua conta' : 'Cadastro desmarcado'); }
+    mostrarCadastros(); cadCarteira();
   });
   (async () => {
     try {
@@ -2565,6 +2595,7 @@
       $('#cad-dica').textContent = cadDados.dica;
       const [ano, mes, dia] = cadDados.conferido.split('-');
       $('#cad-conferido').textContent = `Links conferidos nos sites oficiais em ${dia}/${mes}/${ano}.`;
+      cadSincronizar();
       mostrarCadastros();
     } catch (e) { $('#cad-grupos').textContent = ''; erroFonte('#cadastros'); }
   })();
