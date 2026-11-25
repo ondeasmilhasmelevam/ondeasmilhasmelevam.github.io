@@ -1485,7 +1485,7 @@
   // Passagens e promoções dos grupos de alertas do Telegram (ferramentas/alertas.py).
   // O arquivo já vem só com o que ainda vale; aqui o prazo é conferido de novo,
   // para o item sumir na hora certa mesmo se a atualização atrasar.
-  const PRAZO_PASSAGEM = 48 * 3600e3, POR_VEZ = 12;
+  const PRAZO_PASSAGEM = 72 * 3600e3, POR_VEZ = 12;
   // Cidades com mais de um aeroporto contam todos (São Paulo = GRU, CGH e Viracopos). A escolhida fica no navegador.
   const CIDADES = [['São Paulo', ['GRU', 'CGH', 'VCP']], ['Rio de Janeiro', ['GIG', 'SDU']], ['Belo Horizonte', ['CNF', 'PLU']], ['Brasília', ['BSB']],
     ['Porto Alegre', ['POA']], ['Curitiba', ['CWB']], ['Florianópolis', ['FLN']], ['Salvador', ['SSA']], ['Recife', ['REC']],
@@ -1504,7 +1504,7 @@
   }
   const ehExecutiva = c => /execut|primeira|first|business|premium/i.test(c || '');
   const ehPromocao = p => p.tipo === 'promocao';
-  // Promoção com validade vale até o fim desse dia; as outras, 48 h depois de postadas.
+  // Promoção com validade vale até o fim desse dia; as outras, 72 h depois de postadas.
   const venceEm = p => (ehPromocao(p) && !isNaN(Date.parse(p.ate)) ? Date.parse(p.ate) : Date.parse(p.data) + PRAZO_PASSAGEM);
   const diaBR = t => new Date(t).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
   const ultimoDia = (p, agora) => (!isNaN(Date.parse(p.ate)) ? diaBR(Date.parse(p.ate)) === diaBR(agora) : p.ultimo_dia && agora - Date.parse(p.data) < 86400e3);
@@ -1923,7 +1923,7 @@
     const nomeTipo = promo ? 'promoção' : 'passagem';
     const vazio = $('#passagens-vazio');
     vazio.hidden = !!lista.length;
-    vazio.textContent = doTipo.length ? `Nenhuma ${nomeTipo} com esse filtro agora. Os alertas desta página são das últimas 48 horas; consulte o Mapa de rotas e o Histórico para registros anteriores ou crie uma Rota Vigiada.` : `Nenhuma ${nomeTipo} nas últimas 48 horas. As próximas aparecem aqui assim que forem publicadas.`;
+    vazio.textContent = doTipo.length ? `Nenhuma ${nomeTipo} com esse filtro agora. Os alertas desta página são das últimas 72 horas; consulte o Mapa de rotas e o Histórico para registros anteriores ou crie uma Rota Vigiada.` : `Nenhuma ${nomeTipo} nas últimas 72 horas. As próximas aparecem aqui assim que forem publicadas.`;
     const btn = $('#mais-passagens');
     btn.hidden = lista.length <= POR_VEZ;
     btn.textContent = f.todas ? 'Mostrar menos' : `Ver todas as ${lista.length} ${promo ? 'promoções' : 'passagens'}`;
