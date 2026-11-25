@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7046",
+  "data": "2026-11-25T01:52:48Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "American Airlines",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "171.000 milhas + Taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-azul-VCP-MAD-eco",
   "data": "2026-11-25T00:19:51.723202Z",
   "fonte": "seats.aero",
