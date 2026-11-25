@@ -4623,11 +4623,11 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GIG-LIM-eco",
+  "id": "seats-qatar-GRU-LIM-eco",
   "data": "2026-11-23T00:19:39.674453Z",
   "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
@@ -4638,11 +4638,11 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GRU-LIM-eco",
+  "id": "seats-qatar-GIG-LIM-eco",
   "data": "2026-11-23T00:19:39.674453Z",
   "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
