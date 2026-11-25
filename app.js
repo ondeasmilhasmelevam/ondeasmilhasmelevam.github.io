@@ -1485,7 +1485,8 @@
   // Passagens e promoções dos grupos de alertas do Telegram (ferramentas/alertas.py).
   // O arquivo já vem só com o que ainda vale; aqui o prazo é conferido de novo,
   // para o item sumir na hora certa mesmo se a atualização atrasar.
-  const PRAZO_PASSAGEM = 72 * 3600e3, POR_VEZ = 12;
+  // 72 h para o que chegou depois de 25/11/2026 07h30; o que é de antes segue com as 48 h de antes (não volta).
+  const PRAZO_PASSAGEM = 72 * 3600e3, PRAZO_ANTES = 48 * 3600e3, MUDOU_EM = Date.parse('2026-11-25T10:30:00Z'), POR_VEZ = 12;
   // Cidades com mais de um aeroporto contam todos (São Paulo = GRU, CGH e Viracopos). A escolhida fica no navegador.
   const CIDADES = [['São Paulo', ['GRU', 'CGH', 'VCP']], ['Rio de Janeiro', ['GIG', 'SDU']], ['Belo Horizonte', ['CNF', 'PLU']], ['Brasília', ['BSB']],
     ['Porto Alegre', ['POA']], ['Curitiba', ['CWB']], ['Florianópolis', ['FLN']], ['Salvador', ['SSA']], ['Recife', ['REC']],
@@ -1505,7 +1506,7 @@
   const ehExecutiva = c => /execut|primeira|first|business|premium/i.test(c || '');
   const ehPromocao = p => p.tipo === 'promocao';
   // Promoção com validade vale até o fim desse dia; as outras, 72 h depois de postadas.
-  const venceEm = p => (ehPromocao(p) && !isNaN(Date.parse(p.ate)) ? Date.parse(p.ate) : Date.parse(p.data) + PRAZO_PASSAGEM);
+  const venceEm = p => (ehPromocao(p) && !isNaN(Date.parse(p.ate)) ? Date.parse(p.ate) : Date.parse(p.data) + (Date.parse(p.data) >= MUDOU_EM ? PRAZO_PASSAGEM : PRAZO_ANTES));
   const diaBR = t => new Date(t).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
   const ultimoDia = (p, agora) => (!isNaN(Date.parse(p.ate)) ? diaBR(Date.parse(p.ate)) === diaBR(agora) : p.ultimo_dia && agora - Date.parse(p.data) < 86400e3);
   const httpOk = u => /^https?:\/\//.test(u || '');
