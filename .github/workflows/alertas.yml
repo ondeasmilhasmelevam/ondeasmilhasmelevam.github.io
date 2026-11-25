@@ -45,7 +45,7 @@ jobs:
       - name: Trazer ferramentas e histórico
         run: |
           cp -r .privado/ferramentas .privado/musicas .
-          for f in historico.json seats-vistos.json; do [ -f ".privado/dados/$f" ] && cp ".privado/dados/$f" dados/; done
+          for f in historico.json seats-vistos.json stories-metricas.json; do [ -f ".privado/dados/$f" ] && cp ".privado/dados/$f" dados/; done
           git -C .privado config user.name "Onde as Milhas Me Levam"
           git -C .privado config user.email "ondeasmilhasmelevam@users.noreply.github.com"
       - uses: actions/setup-python@v5
@@ -70,8 +70,9 @@ jobs:
           fim=$(( $(date +%s) + 340*60 ))   # 5h40, deixando folga para chamar o próximo
           falhas=0
           salvar_privado() {
-            for f in historico.json seats-vistos.json; do [ -f "dados/$f" ] && cp "dados/$f" .privado/dados/; done
+            for f in historico.json seats-vistos.json stories-metricas.json; do [ -f "dados/$f" ] && cp "dados/$f" .privado/dados/; done
             git -C .privado add dados/historico.json dados/seats-vistos.json
+            [ -f .privado/dados/stories-metricas.json ] && git -C .privado add dados/stories-metricas.json
             if ! git -C .privado diff --cached --quiet; then
               git -C .privado commit -q -m "Historico do robo"
               git -C .privado pull -q --rebase && git -C .privado push -q || echo "::warning::Histórico não foi para o privado agora; tenta na próxima volta."

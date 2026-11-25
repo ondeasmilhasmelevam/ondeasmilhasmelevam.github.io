@@ -21,6 +21,7 @@ musicas/
 servidor/
 dados/historico.json
 dados/seats-vistos.json
+dados/stories-metricas.json
 dados/rotas-revisao.json
 .cache-malha/
 .wrangler/
