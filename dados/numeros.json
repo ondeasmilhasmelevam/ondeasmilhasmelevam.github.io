@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-25T05:40:34.363963Z",
+ "atualizado": "2026-11-25T05:47:17.934415Z",
  "dias": 30,
- "passagens": 4079,
+ "passagens": 4080,
  "promocoes": 237,
  "destinos": 182,
  "executiva": 841,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1069,
+  "passagens": 1070,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -720,6 +720,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10361",
+    "origem": "Campinas",
+    "origem_iata": "VCP",
+    "destino": "Rondonópolis",
+    "destino_iata": "ROO",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-25T05:41:23Z",
+    "milhas": 7000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10104",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -926,19 +939,6 @@
     "milhas": 10300,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "3761373661-10129",
-    "origem": "Goiânia",
-    "origem_iata": "GYN",
-    "destino": "Ilhéus",
-    "destino_iata": "IOS",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-23T00:26:52Z",
-    "milhas": 10330,
-    "nivel": "",
-    "regiao": "brasil"
    },
    {
     "id": "2361370250-6975",
