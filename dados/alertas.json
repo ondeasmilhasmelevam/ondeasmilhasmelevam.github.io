@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-7052",
+  "data": "2026-11-25T18:43:16Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Frankfurt",
+  "destino_iata": "FRA",
+  "companhia": "Lufthansa",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "80.000 Milhas Aeroplan + Taxas",
+  "volta": "80.000 Milhas Aeroplan + Taxas",
+  "link_nome": "Aeroplan"
+ },
+ {
+  "id": "2361370250-7051",
+  "data": "2026-11-25T18:43:04Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Dar Es Salaam",
+  "destino_iata": "DAR",
+  "companhia": "South African Airways",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "292.400 Milhas Smiles + Taxas",
+  "volta": "292.400 Milhas Smiles + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10377",
   "data": "2026-11-25T18:32:22Z",
   "origem": "Rio de Janeiro",
