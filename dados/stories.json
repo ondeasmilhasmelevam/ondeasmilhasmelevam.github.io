@@ -507,7 +507,9 @@
  ],
  "ultimo_em": "2026-11-25T00:03:30.573829+00:00",
  "ultimo_tipo": "promocao",
- "lotes_stories": [],
+ "lotes_stories": [
+  "08:00"
+ ],
  "horarios_feed": [],
  "feed_usados": [],
  "reel_promo_dia": "2026-11-24",
