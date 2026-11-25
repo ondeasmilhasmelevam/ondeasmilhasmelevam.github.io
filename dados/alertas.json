@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-16472",
+  "data": "2026-11-25T19:37:58Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Assunção",
+  "destino_iata": "ASU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "40.400 milhas + Taxas",
+  "volta": "40.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16471",
+  "data": "2026-11-25T19:37:44Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Santa Cruz de La Sierra",
+  "destino_iata": "VVI",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "48.000 milhas + Taxas",
+  "volta": "48.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16470",
+  "data": "2026-11-25T19:36:29Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "A partir de 65.000 milhas",
+  "volta": "A partir de 65.000 milhas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10385",
   "data": "2026-11-25T19:25:12Z",
   "origem": "Brasília",
@@ -2271,20 +2313,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-10310",
-  "data": "2026-11-24T12:17:23Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "8.400 milhas + Taxas",
-  "volta": "8.400 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "2008590742-16424",
   "data": "2026-11-24T12:17:23Z",
   "origem": "Porto Alegre",
@@ -2296,6 +2324,20 @@
   "programa": "LATAM Pass",
   "ida": "74.400 milhas + Taxas",
   "volta": "74.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10310",
+  "data": "2026-11-24T12:17:23Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "8.400 milhas + Taxas",
+  "volta": "8.400 milhas + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
@@ -3465,48 +3507,6 @@
   "programa": "LATAM Pass",
   "ida": "34.700 milhas + Taxas",
   "volta": "34.700 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-10274",
-  "data": "2026-11-23T19:36:31Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Fortaleza",
-  "destino_iata": "FOR",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 11.664 milhas",
-  "volta": "A partir de 11.664 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16357",
-  "data": "2026-11-23T19:32:43Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Santiago",
-  "destino_iata": "SCL",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "44.000 milhas + Taxas",
-  "volta": "44.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16356",
-  "data": "2026-11-23T19:32:37Z",
-  "origem": "Salvador",
-  "origem_iata": "SSA",
-  "destino": "Buenos Aires",
-  "destino_iata": "AEP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "35.300 milhas + Taxas",
-  "volta": "35.300 milhas + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
