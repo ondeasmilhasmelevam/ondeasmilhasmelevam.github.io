@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16491",
+  "data": "2026-11-25T21:43:02Z",
+  "origem": "Campinas",
+  "origem_iata": "VCP",
+  "destino": "Porto",
+  "destino_iata": "OPO",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "A partir de 420.000 milhas",
+  "volta": "A partir de 420.000 milhas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "1290836068-8027",
   "data": "2026-11-25T21:36:02Z",
   "tipo": "promocao",
@@ -3457,48 +3471,6 @@
   "ida": "135.000 milhas + R$248",
   "volta": "135.000 milhas + R$478",
   "link_nome": "TAP Miles&Go"
- },
- {
-  "id": "3761373661-10278",
-  "data": "2026-11-23T21:41:21Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "8.000 milhas + R$ 48,63 de taxas",
-  "volta": "8.000 milhas + R$ 35,90 de taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-16380",
-  "data": "2026-11-23T21:37:23Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Cidade do Cabo",
-  "destino_iata": "CPT",
-  "companhia": "South African Airways",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "82.000 milhas + Taxas",
-  "volta": "82.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16379",
-  "data": "2026-11-23T21:37:16Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Nova York",
-  "destino_iata": "JFK",
-  "companhia": "American Airlines",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "66.000 milhas + Taxas",
-  "volta": "66.000 milhas + Taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-azul-REC-MAD-eco",
