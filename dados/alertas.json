@@ -5248,20 +5248,6 @@
   "ate": "2026-12-02T23:59:59-03:00"
  },
  {
-  "id": "2361370250-6980",
-  "data": "2026-11-23T12:03:46Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Frankfurt",
-  "destino_iata": "FRA",
-  "companhia": "Lufthansa",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "80.000 milhas + Taxas",
-  "volta": "80.000 milhas + Taxas",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "seats-azul-VCP-LIS-eco",
   "data": "2026-11-23T00:19:39.674453Z",
   "fonte": "seats.aero",
