@@ -5097,21 +5097,6 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-GRU-BOG-eco",
-  "data": "2026-11-23T00:19:39.674453Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "LATAM / Qatar Airways",
-  "cabine": "Econômica",
-  "programa": "Qatar Privilege Club",
-  "ida": "13.000 Avios + taxas",
-  "volta": "",
-  "link_nome": "Qatar Privilege Club"
- },
- {
   "id": "seats-qatar-POA-LIM-eco",
   "data": "2026-11-23T00:19:39.674453Z",
   "fonte": "seats.aero",
@@ -5120,6 +5105,21 @@
   "destino": "Lima",
   "destino_iata": "LIM",
   "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "Qatar Privilege Club",
+  "ida": "13.000 Avios + taxas",
+  "volta": "",
+  "link_nome": "Qatar Privilege Club"
+ },
+ {
+  "id": "seats-qatar-GRU-BOG-eco",
+  "data": "2026-11-23T00:19:39.674453Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "LATAM / Qatar Airways",
   "cabine": "Econômica",
   "programa": "Qatar Privilege Club",
   "ida": "13.000 Avios + taxas",
