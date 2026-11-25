@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10360",
+  "data": "2026-11-25T03:23:41Z",
+  "origem": "Navegantes",
+  "origem_iata": "NVT",
+  "destino": "Montes Claros",
+  "destino_iata": "MOC",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "22.700 milhas + Taxas",
+  "volta": "22.700 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16455",
   "data": "2026-11-25T03:13:07Z",
   "origem": "Goiânia",
@@ -1534,20 +1548,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-16424",
-  "data": "2026-11-24T12:17:23Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Milão",
-  "destino_iata": "MXP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "74.400 milhas + Taxas",
-  "volta": "74.400 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "3761373661-10310",
   "data": "2026-11-24T12:17:23Z",
   "origem": "Porto Alegre",
@@ -1559,6 +1559,20 @@
   "programa": "LATAM Pass",
   "ida": "8.400 milhas + Taxas",
   "volta": "8.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16424",
+  "data": "2026-11-24T12:17:23Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Milão",
+  "destino_iata": "MXP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "74.400 milhas + Taxas",
+  "volta": "74.400 milhas + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
