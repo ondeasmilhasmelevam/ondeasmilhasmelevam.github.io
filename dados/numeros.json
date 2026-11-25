@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-25T14:44:54.562163Z",
+ "atualizado": "2026-11-25T14:51:14.207436Z",
  "dias": 30,
- "passagens": 4086,
+ "passagens": 4087,
  "promocoes": 236,
  "destinos": 182,
  "executiva": 844,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 918,
+  "passagens": 919,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -759,6 +759,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10365",
+    "origem": "São Paulo",
+    "origem_iata": "CGH",
+    "destino": "São José do Rio Preto",
+    "destino_iata": "SJP",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-25T14:44:57Z",
+    "milhas": 8100,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10311",
     "origem": "Curitiba",
     "origem_iata": "CWB",
@@ -926,19 +939,6 @@
     "milhas": 10300,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "3761373661-10129",
-    "origem": "Goiânia",
-    "origem_iata": "GYN",
-    "destino": "Ilhéus",
-    "destino_iata": "IOS",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-23T00:26:52Z",
-    "milhas": 10330,
-    "nivel": "",
-    "regiao": "brasil"
    },
    {
     "id": "2361370250-6975",

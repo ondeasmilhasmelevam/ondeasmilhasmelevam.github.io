@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10365",
+  "data": "2026-11-25T14:44:57Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "São José do Rio Preto",
+  "destino_iata": "SJP",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "8.100 milhas + R$ 62,14 de taxas",
+  "volta": "9.500 milhas + R$ 37,13 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10364",
   "data": "2026-11-25T14:40:04Z",
   "origem": "Curitiba",
@@ -4445,20 +4459,6 @@
   "programa": "Smiles",
   "ida": "27.700 milhas + Taxas",
   "volta": "27.700 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16330",
-  "data": "2026-11-23T14:45:45Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "43.000 milhas + R$ 343,68 de taxas",
-  "volta": "",
   "link_nome": "Smiles"
  },
  {
