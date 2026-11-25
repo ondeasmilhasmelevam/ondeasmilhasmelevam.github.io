@@ -123,3 +123,46 @@
   body.menu-recolhido .tabs .menu-grupo-btn::before{width:22px;height:3px}
   body.menu-recolhido .tabs details.menu-grupo>summary::after{display:none}
 }
+
+/* Meus cadastros em forma de cartão de embarque: dourado = falta cadastrar, verde = feito */
+.cad-bilhetes{gap:14px;align-items:stretch}
+.cad-lista li.cad-bilhete{align-items:stretch}
+.cad-lista li.cad-bilhete{--cor:var(--ouro);--cor-txt:#1a1408;display:grid;grid-template-columns:1fr 92px;gap:0;padding:0;border:0;border-radius:14px;background:none;filter:drop-shadow(0 6px 14px rgba(0,0,0,.28))}
+.cad-lista li.cad-bilhete.feito{--cor:var(--verde);--cor-txt:#06261a}
+.cad-corpo,.cad-canhoto{position:relative;background:var(--ink-2);border:1px solid var(--line);overflow:hidden}
+.cad-corpo{display:flex;flex-direction:column;border-radius:14px 0 0 14px;border-right:0}
+.cad-canhoto{border-radius:0 14px 14px 0;border-left:2px dashed rgba(255,255,255,.14);display:flex;flex-direction:column;align-items:center;gap:6px;padding:34px 8px 12px;cursor:pointer;text-align:center}
+.cad-canhoto::before{content:"";position:absolute;left:0;right:0;top:0;height:26px;background:var(--cor);opacity:.75}
+.cad-bilhete .cad-corpo::after,.cad-bilhete .cad-corpo::before{content:"";position:absolute;right:-9px;width:18px;height:18px;border-radius:50%;background:var(--ink);z-index:2}
+.cad-bilhete .cad-corpo::before{top:-9px}.cad-bilhete .cad-corpo::after{bottom:-9px}
+.cad-faixa{display:flex;justify-content:space-between;gap:8px;margin:0;padding:0 12px;height:26px;align-items:center;background:var(--cor);color:var(--cor-txt);font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;overflow:hidden}
+.cad-faixa span:first-child{overflow:hidden;text-overflow:ellipsis}
+.cad-miolo{padding:12px 14px 14px}
+.cad-bilhete .cad-nome{font-size:17px;text-decoration:none!important}
+.cad-bilhete .cad-sobre{margin:4px 0 0}
+.cad-bilhete .cad-links{margin-top:12px}
+.cad-canhoto-topo{position:absolute;top:0;left:0;right:0;height:26px;display:grid;place-items:center;font-size:9.5px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--cor-txt);z-index:1}
+.cad-codigo{font-family:var(--display,inherit);font-size:22px;letter-spacing:.06em;color:var(--rice);line-height:1}
+.cad-barras{width:56px;height:26px;background:repeating-linear-gradient(90deg,var(--rice) 0 2px,transparent 2px 4px,var(--rice) 4px 5px,transparent 5px 8px,var(--rice) 8px 11px,transparent 11px 13px);opacity:.8}
+.cad-canhoto input{appearance:none;width:30px;height:30px;margin:4px 0 0;border-radius:50%;border:2px solid var(--cor);background:var(--ink);display:grid;place-items:center;cursor:pointer}
+.cad-canhoto input:checked{background:var(--cor)}
+.cad-canhoto input:checked::after{content:"✓";color:var(--cor-txt);font-weight:900;font-size:16px}
+.cad-canhoto input:focus-visible{outline:2px solid var(--ouro);outline-offset:2px}
+.cad-canhoto-txt{font-size:11px;font-weight:800;color:var(--cor)}
+.cad-bilhete.feito .cad-codigo{color:var(--verde)}
+:root[data-theme="light"] .cad-bilhete .cad-corpo::after,:root[data-theme="light"] .cad-bilhete .cad-corpo::before{background:var(--ink)}
+:root[data-theme="light"] .cad-canhoto{border-left-color:rgba(0,0,0,.15)}
+.cad-faixa em{font-style:normal}
+@media (max-width:560px){.cad-faixa em{display:none}.cad-lista li.cad-bilhete{grid-template-columns:1fr 78px}.cad-codigo{font-size:18px}.cad-barras{width:46px}}
+.cad-bilhete .cad-corpo{container-type:inline-size}
+@container (max-width:330px){.cad-faixa em{display:none}}
+.cad-logo{width:46px;height:46px;border-radius:12px;overflow:hidden;display:grid;place-items:center;flex:none}
+.cad-logo img{width:100%;height:100%;object-fit:cover;display:block}
+.cad-logo-claro{background:#fff;padding:6px}
+.cad-logo-claro img{object-fit:contain}
+.cad-logo .cad-codigo{display:none}
+.cad-logo.sem{background:none;padding:0}.cad-logo.sem .cad-codigo{display:block}
+.cad-bilhete.feito .cad-logo{box-shadow:0 0 0 2px var(--verde)}
+.cad-bandeira{font-size:12.5px!important;letter-spacing:.04em!important;min-height:46px;display:grid;place-items:center}
+@media (max-width:560px){.cad-bandeira{font-size:10px!important;letter-spacing:0!important}}
+.cad-visa{color:#1a1f71;font:italic 900 15px/1 Arial,Helvetica,sans-serif;letter-spacing:-.02em;padding:0}

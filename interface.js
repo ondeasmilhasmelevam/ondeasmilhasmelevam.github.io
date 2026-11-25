@@ -41,7 +41,7 @@
   // Planos antes das estatísticas e dos depoimentos; mantém elementos e listeners de assinatura.
   const planos = $('.ass-planos'); if (planos) $('#assinar .sec-head')?.after(planos);
   const cadHead = $('#cadastros .banner-titulo'); if (cadHead) cadHead.textContent = 'Cadastros, aplicativos e seguros';
-  const cadNote = $('#cadastros .sec-note'); if (cadNote) cadNote.textContent = 'Prepare os aplicativos de aeroporto, os portais de seguro e os programas de pontos. Abra os links oficiais e marque os cadastros que já fez; a lista fica salva neste navegador.';
+  const cadNote = $('#cadastros .sec-note'); if (cadNote) cadNote.textContent = 'Prepare os aplicativos de aeroporto, os portais de seguro e os programas de pontos. Abra os links oficiais e marque os cadastros que já fez; a lista fica salva neste navegador. Faça agora, mesmo nos programas que ainda não usa: muita promoção só vale para quem já tem conta, algumas pedem um tempo mínimo de cadastro e, no dia da promoção, o site costuma ficar lento.';
   // Os atalhos das páginas utilitárias também podem transportar o programa escolhido.
   $('#transferencias .proximos-passos a[href="#calculadoras"]')?.addEventListener('click', e => {
     const ativo = $('#transf-chips button[aria-pressed="true"]');

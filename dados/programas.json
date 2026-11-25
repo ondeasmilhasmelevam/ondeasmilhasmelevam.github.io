@@ -1,6 +1,6 @@
 {
- "conferido": "2026-11-15",
- "dica": "Nos programas de pontos, use o nome como aparece no documento de viagem e mantenha seus dados atualizados. Nos aplicativos e portais de seguro, siga as instruções oficiais e confira os benefícios do seu cartão.",
+ "conferido": "2026-11-24",
+ "dica": "Use o mesmo nome (igual ao documento de viagem), o mesmo e-mail, o mesmo telefone e o mesmo endereço em todos os cadastros, do banco à companhia aérea: dado diferente de um lado e do outro pode travar ou cancelar a transferência de pontos. Nos aplicativos e portais de seguro, siga as instruções oficiais e confira os benefícios do seu cartão.",
  "grupos": [
   {
    "titulo": "Aplicativos de aeroporto",
@@ -93,13 +93,13 @@
     {
      "id": "iberia",
      "nome": "Iberia Club",
-     "sobre": "Avios da Iberia (antigo Iberia Plus)",
+     "sobre": "Avios da Iberia (antigo Iberia Plus). Conta nova só envia Avios para outro programa depois de 30 dias: cadastre antes de precisar",
      "link": "https://www.iberia.com/br/iberia-club/"
     },
     {
      "id": "ba",
      "nome": "The British Airways Club",
-     "sobre": "Avios da British (antigo Executive Club)",
+     "sobre": "Avios da British (antigo Executive Club). Conta nova só envia Avios para outro programa depois de 30 dias",
      "link": "https://www.britishairways.com/content/the-british-airways-club"
     },
     {
@@ -203,6 +203,12 @@
      "nome": "Finnair Plus",
      "sobre": "Avios para voar com a Finnair e suas parceiras. Confira as regras e a disponibilidade no programa.",
      "link": "https://www.finnair.com/en/finnair-plus"
+    },
+    {
+     "id": "atmos",
+     "nome": "Atmos Rewards",
+     "sobre": "Alaska Airlines e Hawaiian, da oneworld (antigo Mileage Plan)",
+     "link": "https://www.alaskaair.com/atmosrewards/enroll"
     }
    ]
   },
@@ -278,9 +284,9 @@
     },
     {
      "id": "kmv",
-     "nome": "Km de Vantagens",
-     "sobre": "Postos Ipiranga",
-     "link": "https://www.ipiranga.com.br/wps/portal/pt-br/ipiranga/km-de-vantagens"
+     "nome": "KMV",
+     "sobre": "Postos Ipiranga (junta o antigo Km de Vantagens e o Abastece Aí); os pontos vão para Smiles e LATAM Pass",
+     "link": "https://www.kmv.com.br/"
     },
     {
      "id": "premmia",
@@ -293,6 +299,18 @@
      "nome": "Shell Box Clube",
      "sobre": "Postos Shell, pelo app Shell Box",
      "link": "https://www.shell.com.br/motoristas/app-shell-box/programa-de-fidelidade/shell-box-clube.html"
+    },
+    {
+     "id": "surpreenda",
+     "nome": "Mastercard Surpreenda",
+     "sobre": "Compras com cartão Mastercard que viram vantagens e pontos",
+     "link": "https://surpreenda.naotempreco.com.br/"
+    },
+    {
+     "id": "stix",
+     "nome": "Stix",
+     "sobre": "Pontos em farmácias, mercados e parceiros do grupo Pão de Açúcar e RaiaDrogasil",
+     "link": "https://www.soustix.com.br/"
     }
    ]
   },
@@ -371,6 +389,12 @@
      "nome": "Hertz Gold Plus Rewards",
      "sobre": "Aluguel de carro Hertz, com retirada mais rápida",
      "link": "https://www.hertz.com.br/rentacar/member/enrollment"
+    },
+    {
+     "id": "sixt",
+     "nome": "Sixt",
+     "sobre": "Aluguel de carro no Brasil e no exterior; cartões premium dão status",
+     "link": "https://www.sixt.com.br/"
     }
    ]
   }

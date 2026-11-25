@@ -2514,6 +2514,21 @@
     if (url.startsWith('https://apps.apple.com/')) return '<svg class="cad-loja-icone apple" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.05 12.54c.03 3.24 2.84 4.32 2.87 4.33-.02.08-.45 1.54-1.48 3.05-.89 1.3-1.81 2.59-3.27 2.62-1.43.03-1.89-.85-3.53-.85-1.63 0-2.14.82-3.5.88-1.4.05-2.46-1.4-3.36-2.69-1.84-2.64-3.24-7.47-1.35-10.73.94-1.62 2.62-2.65 4.44-2.68 1.39-.03 2.7.94 3.55.94.85 0 2.45-1.16 4.13-.99.7.03 2.66.28 3.92 2.12-.1.06-2.34 1.36-2.32 4ZM14.37 4.71c.75-.91 1.26-2.18 1.12-3.45-1.08.04-2.39.72-3.17 1.63-.69.79-1.29 2.07-1.13 3.29 1.2.09 2.42-.61 3.18-1.47Z"/></svg>';
     return '';
   }
+  // Marca no canhoto do cartão de embarque: ícone do app (já no site), logo da companhia pelo código IATA
+  // ou o ícone do site oficial; se a imagem falhar, fica o código de 3 letras.
+  const CAD_APP = { latam: 'latam', smiles: 'smiles', azul: 'azul', tap: 'tap', qatar: 'qatar', livelo: 'livelo', esfera: 'esfera', aa: 'aadvantage', flyingblue: 'flyingblue', aeroplan: 'aeroplan', lifemiles: 'avianca', skywards: 'emirates', turkish: 'turkish', copa: 'copa', united: 'united', virgin: 'virgin', milesmore: 'lufthansa', suma: 'aireuropa', accor: 'accor' };
+  const CAD_IATA = { iberia: 'IB', ba: 'BA', krisflyer: 'SQ', finnair: 'AY', atmos: 'AS' };
+  function cadMarca(p) {
+    const bandeira = (p.id.match(/^(?:app|seguro)-(visa|mastercard)/) || [])[1];
+    if (bandeira === 'visa') return '<span class="cad-logo cad-logo-claro cad-visa" role="img" aria-label="Visa">VISA</span>';
+    if (bandeira) return `<span class="cad-logo cad-logo-claro"><img src="https://www.google.com/s2/favicons?domain=${bandeira === 'visa' ? 'www.visa.com.br' : 'www.mastercard.com.br'}&sz=128" alt="${bandeira === 'visa' ? 'Visa' : 'Mastercard'}" width="44" height="44" loading="lazy" onerror="this.parentNode.classList.add('sem');this.remove()"><b class="cad-codigo cad-bandeira">${bandeira === 'visa' ? 'Visa' : 'Mastercard'}</b></span>`;
+    const cod = esc((p.codigo || p.id).replace(/[^a-z0-9]/gi, '').slice(0, 3).toUpperCase());
+    let src = '', cls = 'cad-logo';
+    if (CAD_APP[p.id]) src = `img/programas/app/${CAD_APP[p.id]}.webp`;
+    else if (CAD_IATA[p.id]) { src = `https://www.gstatic.com/flights/airline_logos/70px/${CAD_IATA[p.id]}.png`; cls += ' cad-logo-claro'; }
+    else { try { src = `https://www.google.com/s2/favicons?domain=${new URL(p.link).hostname}&sz=128`; cls += ' cad-logo-claro'; } catch (e) { /* sem logo */ } }
+    return src ? `<span class="${cls}"><img src="${src}" alt="" width="44" height="44" loading="lazy" onerror="this.parentNode.classList.add('sem');this.remove()"><b class="cad-codigo">${cod}</b></span>` : `<b class="cad-codigo">${cod}</b>`;
+  }
   function mostrarCadastros() {
     if (!cadDados) return;
     const todos = cadDados.grupos.flatMap(g => g.programas);
@@ -2525,12 +2540,16 @@
       return `<section class="cad-grupo">
         <h3>${esc(g.titulo)}<small>${n} de ${g.programas.length}</small></h3>
         ${g.nota ? `<p>${esc(g.nota)}</p>` : ''}
-        <ul class="cad-lista">${g.programas.map(p => `<li class="${cadFeitos.has(p.id) ? 'feito' : ''}">
+        <ul class="cad-lista cad-bilhetes">${g.programas.map(p => { const ok = cadFeitos.has(p.id); return `<li class="cad-bilhete${ok ? ' feito' : ''}">
+          <div class="cad-corpo">
+          <p class="cad-faixa"><span>✈ <em>Cartão de embarque</em></span><span>${ok ? '✓ Cadastro feito' : 'Falta cadastrar'}</span></p>
+          <div class="cad-miolo">
           <p class="cad-nome">${esc(p.nome)}</p>
-          <label class="cad-feito"><input type="checkbox" data-cad="${esc(p.id)}" ${cadFeitos.has(p.id) ? 'checked' : ''} aria-label="Já me cadastrei no ${esc(p.nome)}">Já fiz</label>
           <p class="cad-sobre">${esc(p.sobre)}</p>
           <div class="cad-links"><a href="${esc(p.link)}" target="_blank" rel="noopener" data-link-oficial>${esc(p.acao || 'Abrir cadastro')} ↗</a>${(p.links || []).filter(l => httpOk(l.url)).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener" data-link-oficial>${iconeLojaCadastro(l.url)}<span>${esc(l.rotulo)}</span><span aria-hidden="true">↗</span></a>`).join('')}</div>
-        </li>`).join('')}</ul>
+          </div></div>
+          <label class="cad-canhoto"><span class="cad-canhoto-topo">Embarque</span>${cadMarca(p)}<span class="cad-barras" aria-hidden="true"></span><input type="checkbox" data-cad="${esc(p.id)}" ${ok ? 'checked' : ''} aria-label="Já me cadastrei no ${esc(p.nome)}"><span class="cad-canhoto-txt">${ok ? 'Embarcado' : 'Já fiz?'}</span></label>
+        </li>`; }).join('')}</ul>
       </section>`;
     }).join('');
   }
