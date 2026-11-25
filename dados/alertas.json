@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-16485",
+  "data": "2026-11-25T20:59:30Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "142.000 milhas + Taxas",
+  "volta": "142.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16484",
+  "data": "2026-11-25T20:59:23Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Joanesburgo",
+  "destino_iata": "JNB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "89.000 milhas + Taxas",
+  "volta": "89.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2361370250-7053",
   "data": "2026-11-25T20:58:54Z",
   "origem": "Rio de Janeiro",
@@ -3522,20 +3550,6 @@
   "ida": "110.000 milhas + R$ 197,01",
   "volta": "",
   "link_nome": "AAdvantage"
- },
- {
-  "id": "2008590742-16370",
-  "data": "2026-11-23T21:00:50Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "Assunção",
-  "destino_iata": "ASU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "45.000 milhas + Taxas",
-  "volta": "45.000 milhas + Taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-azul-REC-MAD-eco",
