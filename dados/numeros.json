@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-25T11:23:13.955550Z",
+ "atualizado": "2026-11-25T11:30:18.138513Z",
  "dias": 30,
  "passagens": 4082,
  "promocoes": 237,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 976,
+  "passagens": 970,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -378,19 +378,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-20T20:59:25Z",
     "milhas": 71430,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
-    "id": "2008590742-16006",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Porto",
-    "destino_iata": "OPO",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-18T11:23:36Z",
-    "milhas": 80000,
     "nivel": "muito bom",
     "regiao": "europa"
    },
@@ -941,6 +928,19 @@
     "regiao": "outros"
    },
    {
+    "id": "3761373661-10129",
+    "origem": "Goiânia",
+    "origem_iata": "GYN",
+    "destino": "Ilhéus",
+    "destino_iata": "IOS",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-23T00:26:52Z",
+    "milhas": 10330,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "2361370250-6975",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -967,15 +967,15 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2361370250-6771",
+    "id": "2361370250-6965",
     "origem": "São Paulo",
     "origem_iata": "GRU",
     "destino": "Nova York",
     "destino_iata": "JFK",
     "cabine": "Executiva",
     "programa": "GOL Smiles",
-    "data": "2026-11-18T11:23:22Z",
-    "milhas": 213000,
+    "data": "2026-11-22T11:45:17Z",
+    "milhas": 220500,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
    },
