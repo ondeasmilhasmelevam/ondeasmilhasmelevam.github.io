@@ -413,10 +413,10 @@
   document.addEventListener('radar-mudou', desenharPassos);
   addEventListener('hashchange', () => {
     if (location.hash === '#carteira') desenharCarteira();
-    if (location.hash === '#bonus') desenharBonus();
-    if (location.hash === '#inicio' || !location.hash) desenharPassos();
+    if (['#bonus', '#comprar'].includes(location.hash)) desenharBonus();
+    if (['#inicio', '#hoje', ''].includes(location.hash)) desenharPassos();
   });
-  if (location.hash === '#bonus') desenharBonus();
+  if (['#bonus', '#comprar'].includes(location.hash)) desenharBonus();
   atualizar();
   window.oammlBonusDoTitulo = lerBonus;
   // Para a Gestão de milhas (gestao.js), que guarda os dados na mesma conta.

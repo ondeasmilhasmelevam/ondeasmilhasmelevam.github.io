@@ -1721,15 +1721,18 @@
   function passagemHtml(p, agora) {
     const completo = httpOk(p.link) ? p : (assinatura().alertas || {})[p.id];
     const nivel = nivelPassagem(p);
-    const selo = ['espetacular', 'muito bom', 'bom'].includes(nivel)
-      ? `<a class="pass-selo ${CLASSE_NIVEL[nivel]}" data-viagem href="${esc(window.oammlNavegacao.url('termometro', { destino: p.destino_iata, cabine: ehExecutiva(p.cabine) ? 'exe' : 'eco' }))}" title="Pelo termômetro de milhas">${nivel === 'espetacular' ? '🔥 ' : ''}${esc(nivel)}</a>` : '';
-    return `<li class="${ehExecutiva(p.cabine) ? 'exe' : ''}">
+    // Cartão de embarque: a faixa do topo ganha a cor da nota do Termômetro.
+    const FAIXA = { espetacular: ['nv-esp', '🔥 Espetacular'], 'muito bom': ['nv-top', 'Muito bom'], bom: ['nv-bom', 'Preço bom'], normal: ['nv-normal', 'Preço normal'], caro: ['nv-caro', 'Acima do normal'], 'péssimo': ['nv-caro', 'Acima do normal'] };
+    const [nvClasse, nvTexto] = FAIXA[nivel] || ['nv-sem', 'Novo alerta'];
+    const urlTermo = esc(window.oammlNavegacao.url('termometro', { destino: p.destino_iata, cabine: ehExecutiva(p.cabine) ? 'exe' : 'eco' }));
+    return `<li class="pass-bilhete ${nvClasse}${ehExecutiva(p.cabine) ? ' exe' : ''}">
+        <p class="pass-faixa"><span>✈ Cartão de embarque</span>${FAIXA[nivel] ? `<a data-viagem href="${urlTermo}" title="Nota pelo Termômetro de milhas">${esc(nvTexto)}</a>` : `<span>${esc(nvTexto)}</span>`}</p>
         <div class="pass-foto" aria-hidden="true">
           <span class="pf-origem" data-cidade="${esc(`${p.origem}|${p.origem_iata}`)}"></span>
           <span class="pf-destino" data-cidade="${esc(`${p.destino}|${p.destino_iata}`)}"></span>
           <svg viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="56" y1="-2" x2="44" y2="102" vector-effect="non-scaling-stroke"/></svg>
         </div>
-        <p class="pass-meta"><time datetime="${esc(p.data)}">${haQuanto(agora - new Date(p.data))}</time><span class="pass-escopo">${ehNacional(p) ? 'Nacional' : 'Internacional'}</span>${p.cabine ? ` · ${esc(p.cabine)}` : ''}${selo}</p>
+        <p class="pass-meta"><time datetime="${esc(p.data)}">${haQuanto(agora - new Date(p.data))}</time><span class="pass-escopo">${ehNacional(p) ? 'Nacional' : 'Internacional'}</span>${p.cabine ? ` · ${esc(p.cabine)}` : ''}</p>
         <h3 class="pass-rota">
           <span><b>${esc(p.origem_iata)}</b>${esc(p.origem)}</span>
           <i aria-label="para">✈</i>
@@ -1742,6 +1745,7 @@
         </dl>${custoHtml(p)}${milhasTrecho(p.ida) ? `<button type="button" class="pass-comparar" data-prog="${esc(p.programa || '')}" data-milhas="${milhasTrecho(p.ida)}" data-taxa="${taxaReais(p.ida) || ''}">🧮 Comparar com o preço em dinheiro</button>` : ''}
         <p class="pass-carteira" data-prog="${esc(p.programa || '')}" data-milhas="${(milhasTrecho(p.ida) || 0) + (p.volta ? milhasTrecho(p.volta) || 0 : 0)}" data-volta="${p.volta ? 1 : 0}" data-taxas="${Math.round(taxaReais(p.ida) + (p.volta ? taxaReais(p.volta) : 0)) || ''}" data-rota="${esc(`${p.origem_iata} ${p.origem} → ${p.destino_iata} ${p.destino}`)}" data-cabine="${esc(p.cabine || '')}" hidden></p>
         <a class="pass-hist" href="#rota/${esc(p.origem_iata)}-${esc(p.destino_iata)}-${slugCabine(p.cabine)}">📈 Histórico desta rota</a>
+        <div class="pass-picote" aria-hidden="true"></div>
         ${completo && httpOk(completo.link) ? calendarioHtml(p, completo) : travaHtml()}
       </li>`;
   }
@@ -3337,6 +3341,8 @@
     const pagina = paginaDe(el) || 'inicio';
     paginaAtual = pagina;
     aplicarContextoViagem(pagina);
+    // Páginas que juntam duas seções (ex.: Termômetro + Tabela de preços): o contexto também vale para a seção pedida.
+    if (el && el.id && el.id !== pagina && el.hasAttribute('data-pagina')) aplicarContextoViagem(el.id);
     paginas.forEach(p => p.classList.toggle('fora', p.dataset.pagina !== pagina));
     let ativa = null;
     abas.forEach(a => {
@@ -3359,14 +3365,15 @@
     abrirMenu(false);
     mostrarAtualizado(pagina);
     if (!rolar) return;
-    if (el && !el.hasAttribute('data-pagina') && el.id !== 'topo') el.scrollIntoView({ block: 'start' });
+    const primeira = paginas.find(p => p.dataset.pagina === pagina);
+    if (el && el !== primeira && el.id !== 'topo' && el.id !== pagina) el.scrollIntoView({ block: 'start' });
     else scrollTo(0, 0);
   }
   // "Atualizado ..." de cada página: a data do arquivo de dados dela no site.
   const ARQUIVO_DA_PAGINA = {
-    passagens: 'dados/alertas.json', hoje: 'dados/alertas.json', guias: 'dados/guias.json', promocoes: 'dados/alertas.json', radar: 'dados/alertas.json', termometro: 'dados/termometro.json', guia: 'dados/guia.json',
+    passagens: 'dados/alertas.json', inicio: 'dados/alertas.json', guias: 'dados/guias.json', promocoes: 'dados/alertas.json', radar: 'dados/alertas.json', termometro: 'dados/termometro.json', guia: 'dados/guia.json',
     transferencias: 'dados/transferencias.json', novidades: 'dados/noticias.json',
-    restaurantes: 'restaurantes.js', salas: 'dados/salas.json', programas: 'dados/guias-milhas.json', cadastros: 'dados/programas.json', quanto: 'dados/precos-milhas.csv', comprar: 'precos.js', contatos: 'dados/contatos.csv'
+    salas: 'dados/salas.json', programas: 'dados/guias-milhas.json', cadastros: 'dados/programas.json', bonus: 'dados/alertas.json', contatos: 'dados/contatos.csv'
   };
   const datasArquivo = {};
   function quandoTxt(d) {

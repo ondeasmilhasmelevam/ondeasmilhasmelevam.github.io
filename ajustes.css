@@ -166,3 +166,41 @@
 .cad-bandeira{font-size:12.5px!important;letter-spacing:.04em!important;min-height:46px;display:grid;place-items:center}
 @media (max-width:560px){.cad-bandeira{font-size:10px!important;letter-spacing:0!important}}
 .cad-visa{color:#1a1f71;font:italic 900 15px/1 Arial,Helvetica,sans-serif;letter-spacing:-.02em;padding:0}
+
+/* ===== Reorganização: atalhos "Nesta página", aviso padrão e passagens em cartão de embarque ===== */
+.sub-abas{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 18px}
+.sub-abas span{font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--ash-dim);margin-right:4px}
+.sub-abas a{display:inline-flex;align-items:center;min-height:38px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--ink-2);color:var(--rice);font-size:13.5px;font-weight:700;text-decoration:none}
+.sub-abas a:first-of-type{border-color:var(--ouro);color:var(--ouro)}
+.sub-abas a:hover{border-color:var(--ouro)}
+.aviso-selo{display:flex;gap:8px;align-items:flex-start;margin:-6px 0 16px;padding:8px 12px;border-radius:10px;background:rgba(226,180,88,.07);border:1px solid rgba(226,180,88,.22);font-size:12.5px;color:var(--ash);max-width:72ch}
+.aviso-selo::before{content:"i";flex:none;width:16px;height:16px;border-radius:50%;display:grid;place-items:center;font:italic 800 11px/1 Georgia,serif;background:var(--ouro);color:var(--sobre-ouro,#1a1408);margin-top:1px}
+#hoje,#ranking-sec,#quanto,#restaurantes,#comprar{padding-top:8px}
+:is(#hoje,#ranking-sec,#quanto,#restaurantes,#comprar) > .sec-head{margin-top:10px;padding-top:26px;border-top:1px solid var(--line)}
+#inicio-corpo-hoje,#hoje > .sec-head{margin-top:30px}
+
+.passagens>li.pass-bilhete{--nv:var(--ouro);--nv-txt:#1a1408;position:relative;padding-top:0;border-top:1px solid var(--line);overflow:visible}
+.passagens>li.pass-bilhete.nv-esp{--nv:linear-gradient(90deg,#f5c04e,#ff7a3d)}
+.passagens>li.pass-bilhete.nv-top{--nv:#3ecf8e;--nv-txt:#04261a}
+.passagens>li.pass-bilhete.nv-bom{--nv:#4fb3d9;--nv-txt:#04202c}
+.passagens>li.pass-bilhete.nv-normal,.passagens>li.pass-bilhete.nv-sem{--nv:#3a4a66;--nv-txt:#e8edf7}
+.passagens>li.pass-bilhete.nv-caro{--nv:#5a4652;--nv-txt:#f1e6ea}
+.passagens>li.pass-bilhete.nv-esp{box-shadow:0 0 0 1px rgba(245,192,78,.55),0 10px 28px rgba(255,122,61,.18)}
+.pass-faixa{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 -18px;padding:0 14px;min-height:30px;border-radius:13px 13px 0 0;background:var(--nv);color:var(--nv-txt);font-size:10.5px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+.pass-faixa a,.pass-faixa span:last-child{color:inherit;text-decoration:none;white-space:nowrap}
+.pass-faixa a:hover{text-decoration:underline}
+.pass-bilhete .pass-foto{margin:0 -18px;border-radius:0}
+.pass-bilhete .pass-meta{color:var(--ash)}
+.pass-picote{position:relative;margin:4px -18px 0;height:0;border-top:2px dashed rgba(255,255,255,.13)}
+.pass-picote::before,.pass-picote::after{content:"";position:absolute;top:-10px;width:18px;height:18px;border-radius:50%;background:var(--ink)}
+.pass-picote::before{left:-10px}.pass-picote::after{right:-10px}
+:root[data-theme="light"] .pass-picote{border-top-color:rgba(0,0,0,.15)}
+.pass-faixa span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.passagens>li.pass-bilhete{container-type:inline-size}
+@container (max-width:270px){.pass-faixa span:first-child{font-size:0}.pass-faixa span:first-child::before{content:"✈";font-size:12px}}
+@media (max-width:700px){.sub-abas{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-left:-16px;margin-right:-16px;padding:0 16px}.sub-abas::-webkit-scrollbar{display:none}.sub-abas a{white-space:nowrap;flex:none}}
+.sub-abas span{white-space:nowrap;flex:none}
+/* Termômetro: regiões como pílulas que quebram linha, sem espremer o texto */
+#termo-regiao{gap:6px;padding:6px;justify-content:flex-start}
+#termo-regiao button{flex:0 1 auto;white-space:nowrap;padding:8px 14px;border-radius:999px}
+@media (max-width:700px){#termo-regiao button{font-size:14px}}
