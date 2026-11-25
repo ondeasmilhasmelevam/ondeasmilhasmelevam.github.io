@@ -1,5 +1,40 @@
 [
  {
+  "titulo": "Voos de São Paulo para Belo Horizonte por R$ 130 ou 8.500 milhas Smiles o trecho mais taxas",
+  "data": "2026-11-25",
+  "link": "https://www.melhoresdestinos.com.br/milhas/voos-sao-cnf-smiles-nov26",
+  "fonte": "Melhores Cartões",
+  "tema": "milhas"
+ },
+ {
+  "titulo": "Tá acabando! Duo Gourmet com 6 meses grátis: 2 por 1 em restaurantes mais cartão com salas VIP",
+  "data": "2026-11-25",
+  "link": "https://www.melhorescartoes.com.br/ultimos-dias-duo-gourmet-inter-nov26.html",
+  "fonte": "Melhores Cartões",
+  "tema": "cartoes"
+ },
+ {
+  "titulo": "Boa oportunidade! Voos para Japão com 30% OFF + 30% dos pontos de volta na Livelo para clientes Bradesco",
+  "data": "2026-11-25",
+  "link": "https://www.melhoresdestinos.com.br/milhas/boa-oportunidade-voos-japao-pontos-livelo-bradesco",
+  "fonte": "Melhores Cartões",
+  "tema": "milhas"
+ },
+ {
+  "titulo": "Chegou a ExpoMilhas 2027! Ingressos com até 25% OFF na Black Friday",
+  "data": "2026-11-25",
+  "link": "https://passageirodeprimeira.com/expomilhas-2027/",
+  "fonte": "Passageiro de Primeira",
+  "tema": "milhas"
+ },
+ {
+  "titulo": "Aeromexico anuncia renovação da frota 787 Dreamliner com novos assentos premium",
+  "data": "2026-11-25",
+  "link": "https://passageirodeprimeira.com/aeromexico-anuncia-renovacao-frota-787-dreamliner-novos-assentos-premium/",
+  "fonte": "Passageiro de Primeira",
+  "tema": "milhas"
+ },
+ {
   "titulo": "Voos entre São Paulo e o Recife a partir de R$ 240 ou 10 mil milhas o trecho mais taxas",
   "data": "2026-11-24",
   "link": "https://www.melhoresdestinos.com.br/milhas/voos-sao-rec-latam-bf-nov26",
@@ -14,18 +49,18 @@
   "tema": "milhas"
  },
  {
-  "titulo": "Rio de Janeiro lidera ranking de destinos preferidos para viajar com milhas; Nordeste tem sete entre os 12 favoritos",
-  "data": "2026-11-24",
-  "link": "https://www.melhorescartoes.com.br/pesquisa-rio-de-janeiro-destino-milhas.html",
-  "fonte": "Melhores Cartões",
-  "tema": "milhas"
- },
- {
   "titulo": "Bradesco lança nova versão do Amex The Platinum Card em metal com até 4 pontos por dólar",
   "data": "2026-11-24",
   "link": "https://passageirodeprimeira.com/bradesco-lanca-nova-versao-do-amex-the-platinum-card-em-metal-com-ate-4-pontos-por-dolar/",
   "fonte": "Passageiro de Primeira",
   "tema": "cartoes"
+ },
+ {
+  "titulo": "Rio de Janeiro lidera ranking de destinos preferidos para viajar com milhas; Nordeste tem sete entre os 12 favoritos",
+  "data": "2026-11-24",
+  "link": "https://www.melhorescartoes.com.br/pesquisa-rio-de-janeiro-destino-milhas.html",
+  "fonte": "Melhores Cartões",
+  "tema": "milhas"
  },
  {
   "titulo": "Bradesco terá versão de metal do cartão American Express The Platinum Card",
@@ -59,13 +94,6 @@
   "titulo": "Valendo! LATAM Pass reajusta tabela fixa de resgate com companhias parceiras",
   "data": "2026-11-23",
   "link": "https://passageirodeprimeira.com/valendo-latam-pass-reajusta-tabela-fixa-de-resgate-com-companhias-parceiras/",
-  "fonte": "Passageiro de Primeira",
-  "tema": "milhas"
- },
- {
-  "titulo": "Chegou a ExpoMilhas 2027! Ingressos com até 25% OFF na Black Friday",
-  "data": "2026-11-23",
-  "link": "https://passageirodeprimeira.com/expomilhas-2027/",
   "fonte": "Passageiro de Primeira",
   "tema": "milhas"
  },
@@ -168,13 +196,6 @@
   "tema": "milhas"
  },
  {
-  "titulo": "Clube Livelo Mini: ganhe 4.000 pontos extras com nosso cupom exclusivo",
-  "data": "2026-11-18",
-  "link": "https://www.melhoresdestinos.com.br/milhas/clube-livelo-mini-4k-bonus-cupom-exclusivo-nov26",
-  "fonte": "Melhores Destinos",
-  "tema": "milhas"
- },
- {
   "titulo": "Só hoje! Latam Pass tem voos com até 30% OFF – trechos a partir de R$ 79 ou 3.332 milhas mais taxas",
   "data": "2026-11-18",
   "link": "https://www.melhoresdestinos.com.br/milhas/promocao-latam-resgate-18nov26",
@@ -224,6 +245,13 @@
   "tema": "milhas"
  },
  {
+  "titulo": "Clube Livelo Mini: ganhe 4.000 pontos extras com nosso cupom exclusivo",
+  "data": "2026-11-18",
+  "link": "https://www.melhoresdestinos.com.br/milhas/clube-livelo-mini-4k-bonus-cupom-exclusivo-nov26",
+  "fonte": "Melhores Destinos",
+  "tema": "milhas"
+ },
+ {
   "titulo": "Milheiro Smiles a partir de R$ 15,55 enviando pontos UAU Caixa mais dinheiro com bônus",
   "data": "2026-11-17",
   "link": "https://www.melhoresdestinos.com.br/milhas/pontos-dinheiro-uau-caixa-smiles-17nov26",
@@ -248,34 +276,6 @@
   "titulo": "Azul tem voos entre São Paulo e Belo Horizonte a partir de R$ 62 ou 4.900 pontos o trecho mais taxas",
   "data": "2026-11-17",
   "link": "https://www.melhoresdestinos.com.br/milhas/voos-sao-cnf-azul-nov26",
-  "fonte": "Melhores Destinos",
-  "tema": "milhas"
- },
- {
-  "titulo": "Parceria entre Livelo e Avenue oferece até 10 mil pontos para novos clientes",
-  "data": "2026-11-17",
-  "link": "https://passageirodeprimeira.com/parceria-entre-livelo-avenue-oferece-ate-10-mil-pontos-novos-clientes/",
-  "fonte": "Passageiro de Primeira",
-  "tema": "cartoes"
- },
- {
-  "titulo": "LATAM atualiza critérios da política de alterações involuntárias de voos",
-  "data": "2026-11-17",
-  "link": "https://passageirodeprimeira.com/latam-atualiza-criterios-politica-alteracoes-involuntarias-voos/",
-  "fonte": "Passageiro de Primeira",
-  "tema": "milhas"
- },
- {
-  "titulo": "Milheiro Azul a partir de R$ 12,73 enviando pontos UAU Caixa mais dinheiro com bônus",
-  "data": "2026-11-16",
-  "link": "https://www.melhoresdestinos.com.br/milhas/pontos-dinheiro-uau-caixa-azul-nov26",
-  "fonte": "Melhores Destinos",
-  "tema": "milhas"
- },
- {
-  "titulo": "Envie pontos Livelo mais dinheiro para a Azul com bônus e consiga o milheiro a partir de R$ 12,70",
-  "data": "2026-11-16",
-  "link": "https://www.melhoresdestinos.com.br/milhas/pontos-livelo-dinheiro-azul-nov26",
   "fonte": "Melhores Destinos",
   "tema": "milhas"
  }
