@@ -1,5 +1,39 @@
 [
  {
+  "id": "2008590742-16587",
+  "data": "2026-11-26T17:18:57Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Montego Bay",
+  "destino_iata": "MBJ",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "AAdvantage",
+  "ida": "A partir de 22.000 milhas",
+  "volta": "A partir de 22.000 milhas",
+  "link_nome": "AAdvantage"
+ },
+ {
+  "id": "1290836068-8043",
+  "data": "2026-11-26T17:16:46Z",
+  "tipo": "promocao",
+  "titulo": "50% OFF NOS ALERTAS DO PP",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A promoção oferece 50% de desconto nos Alertas do PP, o maior desconto do ano. Válido até 27/11. O cupom BLACK50 pode ser usado no site.",
+  "detalhes": [
+   "50% de desconto nos Alertas do PP",
+   "Cupom BLACK50",
+   "✅ Validade: até 27/11"
+  ],
+  "parceiros": "",
+  "validade": "até 27/11",
+  "links": [
+   "https://link.dia23.com.br/r/ukUAwkp"
+  ],
+  "ate": "2026-11-27T23:59:59-03:00"
+ },
+ {
   "id": "3761373661-10460",
   "data": "2026-11-26T17:08:06Z",
   "origem": "Goiânia",
