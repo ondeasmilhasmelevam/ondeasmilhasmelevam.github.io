@@ -1,9 +1,9 @@
 {
- "atualizado": "2026-11-26T17:58:57.066860Z",
+ "atualizado": "2026-11-26T18:05:04.309282Z",
  "dias": 30,
- "passagens": 4311,
+ "passagens": 4315,
  "promocoes": 248,
- "destinos": 185,
+ "destinos": 186,
  "executiva": 866,
  "destaques": [
   {
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 987,
+  "passagens": 991,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -473,6 +473,19 @@
     "regiao": "america-do-norte"
    },
    {
+    "id": "2008590742-16597",
+    "origem": "Vitória",
+    "origem_iata": "VIX",
+    "destino": "Washington",
+    "destino_iata": "IAD",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-26T18:01:02Z",
+    "milhas": 82500,
+    "nivel": "bom",
+    "regiao": "america-do-norte"
+   },
+   {
     "id": "2008590742-16591",
     "origem": "Salvador",
     "origem_iata": "SSA",
@@ -484,6 +497,19 @@
     "milhas": 85000,
     "nivel": "bom",
     "regiao": "europa"
+   },
+   {
+    "id": "2008590742-16598",
+    "origem": "Vitória",
+    "origem_iata": "VIX",
+    "destino": "Chicago",
+    "destino_iata": "ORD",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-26T18:01:04Z",
+    "milhas": 94000,
+    "nivel": "bom",
+    "regiao": "america-do-norte"
    },
    {
     "id": "3761373661-10145",
@@ -911,32 +937,6 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-24T17:28:31Z",
     "milhas": 10000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10205",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "SDU",
-    "destino": "Caldas Novas",
-    "destino_iata": "CLV",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-23T13:59:38Z",
-    "milhas": 10300,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
-    "id": "3761373661-10129",
-    "origem": "Goiânia",
-    "origem_iata": "GYN",
-    "destino": "Ilhéus",
-    "destino_iata": "IOS",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-23T00:26:52Z",
-    "milhas": 10330,
     "nivel": "",
     "regiao": "brasil"
    },
