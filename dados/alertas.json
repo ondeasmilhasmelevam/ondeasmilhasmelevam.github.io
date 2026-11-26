@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7093",
+  "data": "2026-11-26T19:47:49Z",
+  "origem": "Joanesburgo",
+  "origem_iata": "JNB",
+  "destino": "Abu Dhabi",
+  "destino_iata": "AUH",
+  "companhia": "Etihad Airways",
+  "cabine": "Executiva",
+  "programa": "AAdvantage",
+  "ida": "55.000 milhas + R$ 202,21",
+  "volta": "",
+  "link_nome": "AAdvantage"
+ },
+ {
   "id": "2008590742-16617",
   "data": "2026-11-26T19:43:52Z",
   "origem": "Uberlândia",
