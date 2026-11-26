@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10438",
+  "data": "2026-11-26T14:19:31Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Curitiba",
+  "destino_iata": "CWB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "9.696 milhas + R$ 48,63",
+  "volta": "9.788 milhas + R$ 34,55",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "1290836068-8034",
   "data": "2026-11-26T14:13:00Z",
   "tipo": "promocao",
