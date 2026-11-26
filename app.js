@@ -3072,11 +3072,11 @@
   // Quanto pagar numa passagem: planilha do Felipe, aba em reais (gid=0) e aba MILHAS.
   const ID_QUANTO = '1UVCaLldcH1CfOJNFmZPlXzCmijKxePTPArduYoKscW8';
   const FONTES_QUANTO = {
-    // Reais: desde 26/11/2026 a tabela do site vem primeiro (valores novos por região, com a faixa "Bom"); a planilha fica de reserva.
+    // Reais: desde 26/11/2026 a tabela do site vem primeiro (valores novos por região); a planilha fica de reserva.
     reais: ['dados/precos-reais.csv', `https://docs.google.com/spreadsheets/d/${ID_QUANTO}/export?format=csv&gid=0`],
     milhas: [`https://docs.google.com/spreadsheets/d/${ID_QUANTO}/gviz/tq?tqx=out:csv&headers=0&sheet=MILHAS`, 'dados/precos-milhas.csv'],
   };
-  const NIVEIS = { TOP: 'top', OTIMO: 'otimo', BOM: 'bom', NORMAL: 'normal', CARO: 'caro' };
+  const NIVEIS = { TOP: 'top', OTIMO: 'otimo', NORMAL: 'normal', CARO: 'caro' };
   const quanto = { tipo: 'reais', reais: [], eco: [], exe: [] };
   const limpa = t => String(t || '').replace(/\s+/g, ' ').trim();
   async function lerFonte(urls) {
@@ -3101,7 +3101,7 @@
       .map(x => ({ continente: x.continente, linha: x.linha, cols }));
   }
   function montarQuanto(reais, milhas) {
-    quanto.reais = lerTabela(reais, 3, ['top', 'otimo', 'bom', 'normal', 'caro']).map(({ continente, linha, cols }) => {
+    quanto.reais = lerTabela(reais, 3, ['top', 'otimo', 'normal', 'caro']).map(({ continente, linha, cols }) => {
       const pais = limpa(linha[1]), cidade = limpa(linha[2]);
       const temCidade = cidade && cidade !== '-';
       return { continente, destino: temCidade ? cidade : pais, sub: temCidade && pais !== cidade ? pais : '',
@@ -3119,7 +3119,7 @@
       valores: cols.slice(4).map(c => ({ nivel: c.nivel, itens: programas(linha[c.col]) })) }))
       .filter(x => x.valores.some(v => v.itens.length));
   }
-  const NOME_NIVEL = { top: 'Top', otimo: 'Ótimo', bom: 'Bom', normal: 'Normal', caro: 'Caro' };
+  const NOME_NIVEL = { top: 'Top', otimo: 'Ótimo', normal: 'Normal', caro: 'Caro' };
   // Sigla do aeroporto principal de cada cidade da planilha (países e regiões do Brasil ficam sem).
   const IATA_CIDADE = Object.fromEntries(Object.entries({
     'Londres': 'LHR', 'Amsterdã': 'AMS', 'Paris': 'CDG', 'Milão': 'MXP', 'Roma': 'FCO', 'Barcelona': 'BCN', 'Madri': 'MAD',
