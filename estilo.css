@@ -2899,3 +2899,22 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 @media (max-width:600px){.painel-nav{flex-wrap:wrap;width:auto;border:0;padding:2px;gap:6px;overflow:visible}.painel-nav button{padding:8px 13px;font-size:13px;border:1px solid var(--line)}.painel-nav button[aria-current="true"]{border-color:var(--ouro)}}
 .grupo-tabela .grupo-dar{padding:5px 11px;font-size:12px;white-space:nowrap}
 .cortesia-nova .dias-outro{flex:0 1 110px;min-width:90px}
+
+/* Promoções: linha de comparação com o histórico e o "Histórico de promoções" (discreto) */
+.promo-hist-linha{margin:2px 0 0;font-size:12.5px;color:var(--ash);line-height:1.45}
+.promo-hist-linha.boa{color:var(--verde)}
+.promo-hist{margin:34px 0 0;padding-top:24px;border-top:1px solid var(--line)}
+.promo-hist h3{margin:0 0 4px;font-size:19px}
+.promo-hist-nota{margin:0 0 12px;font-size:13.5px;color:var(--ash)}
+.promo-hist-resumo{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 14px;font-size:13.5px;color:var(--ash)}
+.promo-hist-resumo b{color:var(--rice)}
+.promo-hist-lista{list-style:none;margin:0 0 12px;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.promo-hist-lista li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 14px;border-top:1px solid var(--line)}
+.promo-hist-lista li:first-child{border-top:0}
+.promo-hist-lista time{font-size:12px;color:var(--ash-dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+.promo-hist-lista p{margin:0;font-size:14px;line-height:1.35}
+.promo-hist-lista small{display:flex;align-items:center;gap:5px;flex-wrap:wrap;font-size:12px;color:var(--ash-dim)}
+.promo-hist-lista small i{width:7px;height:7px;border-radius:50%;background:var(--pc)}
+.promo-hist-lista small b{color:var(--verde);font-weight:700}
+.ph-oferta{font-family:var(--display);font-weight:700;font-size:15px;color:var(--ouro);white-space:nowrap}
+@media (max-width:520px){.promo-hist-lista li{grid-template-columns:minmax(0,1fr) auto;gap:4px 10px}.promo-hist-lista time{grid-column:1/-1}}

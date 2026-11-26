@@ -1966,7 +1966,8 @@
     ['Passagens', /VOOS?\b|PASSAGE|POR TRECHO|CLASSE EXECUTIVA|A PARTIR DE [\d.]+ ?(MIL|MILHAS|PONTOS|AVIOS)/], ['Desconto', /DESCONTO|% OFF/]
   ];
   const programaPromo = p => { const t = norm(`${p.titulo} ${p.parceiros || ''}`); return PROGRAMAS_PROMO.find(([, re]) => re.test(t)) || OUTROS_PROMO; };
-  const tipoPromo = p => { const t = norm(p.titulo); return (TIPOS_PROMO.find(([, re]) => re.test(t)) || ['Outras'])[0]; };
+  // Pelo título; se o título não disser o tipo (ex.: "25% de bônus"), tenta o resumo ("Transfira pontos...").
+  const tipoPromo = p => { const achar = t => (TIPOS_PROMO.find(([, re]) => re.test(norm(t))) || ['Outras'])[0]; const a = achar(p.titulo); return a === 'Outras' && p.resumo ? achar(p.resumo) : a; };
   const filtroPromo = { programa: '', tipo: '', busca: '', ordem: '' };
   // Shopping do dia: o que rende pontos, cashback ou desconto nas compras do dia a dia.
   const SHOPPING = ['Compra bonificada', 'Cashback', 'Desconto'];
@@ -2037,8 +2038,9 @@
     chipsPromo($('#promo-tipos'), [...(nShopping ? [['shopping', '🛒 Shopping do dia', null, nShopping]] : []),
       ...[...TIPOS_PROMO.map(([n]) => n), 'Outras'].filter(n => porTipo.has(n)).map(n => [n, n, null, porTipo.get(n)])], f.tipo, 'tipo');
     const busca = norm(f.busca);
-    const lista = doProg.filter(p => (!f.tipo || (f.tipo === 'shopping' ? ehShopping(p) : tipoPromo(p) === f.tipo)) &&
-      (!busca || norm([p.titulo, p.parceiros, p.resumo].join(' ')).includes(busca)));
+    const passa = p => (!f.programa || programaPromo(p)[0] === f.programa) && (!f.tipo || (f.tipo === 'shopping' ? ehShopping(p) : tipoPromo(p) === f.tipo)) &&
+      (!busca || norm([p.titulo, p.parceiros, p.resumo].join(' ')).includes(busca));
+    const lista = doProg.filter(passa);
     if (f.ordem === 'vence') lista.sort((a, b) => venceEm(a) - venceEm(b));
     $('#promo-lista').innerHTML = lista.map(p => {
       const [prog, , cor] = programaPromo(p), links = (p.links || []).filter(httpOk);
@@ -2050,14 +2052,77 @@
           <p class="promo-quando"><span>${haQuanto(agora - new Date(p.data))}</span>${ultimoDia(p, agora) ? '<span class="urgente">Último dia</span>' : temData ? `<span class="vence">Vence ${esc(diaBR(Date.parse(p.ate)).slice(0, 5))}</span>` : ''}${p.selo ? `<span>${esc(p.selo)}</span>` : ''}</p>
           <h3>${esc(tituloPromo(p.titulo))}</h3>
           ${p.resumo ? `<p class="promo-resumo">${esc(p.resumo)}</p>` : ''}
+          ${linhaHistPromo(p, prog)}
           ${p.detalhes && p.detalhes.length ? `<details class="promo-detalhes"><summary>Como funciona</summary><ul>${p.detalhes.map(d => `<li>${esc(d)}</li>`).join('')}</ul></details>` : ''}
           <div class="promo-links">${links.map((u, i) => `<a class="cta ${i ? 'cta-b' : 'cta-a'} pass-link" href="${esc(u)}" target="_blank" rel="noopener">${links.length > 1 ? `Abrir ${esc(site(u))}` : 'Ver promoção'} ↗</a>`).join('')}</div>
         </div>
       </li>`;
     }).join('');
     $('#promo-vazio').hidden = !!lista.length;
+    desenharHistPromo(passa, new Set(vivas.map(p => p.id)));
     $('#promo-nota').textContent = `${vivas.length} promoções no ar agora: bônus de transferência, compra de pontos com desconto, clubes e passagens, conferidos nos grupos de alertas. Cada uma fica aqui até o fim da validade.`;
   }
+  /* ---------- Histórico de promoções (dados/promos-historico.json, até 3 anos) ---------- */
+  // Cada aviso vira uma "campanha": o mesmo programa, tipo e oferta em até 5 dias é a mesma promoção.
+  let histPromo = null, histPromoPedido = false, histPromoMais = false;
+  const pctPromo = t => { const m = [...norm(t).matchAll(/(\d{1,3})\s*%/g)].map(x => +x[1]).filter(n => n <= 500); return m.length ? Math.max(...m) : 0; };
+  async function carregarHistPromo() {
+    if (histPromoPedido) return;
+    histPromoPedido = true;
+    try {
+      const d = await (await fetch('dados/promos-historico.json', { cache: 'no-cache' })).json();
+      const brutas = Object.entries(d).map(([id, p]) => ({ id, ...p, t: Date.parse(p.data) })).filter(p => p.t && p.titulo).sort((a, b) => a.t - b.t);
+      const camp = [];
+      for (const p of brutas) {
+        const prog = programaPromo(p)[0], tipo = tipoPromo(p), o = ofertaPromo(p.titulo), oferta = o ? o.num : '';
+        const igual = camp.find(c => c.prog === prog && c.tipo === tipo && c.oferta === oferta && p.t - c.fim <= 5 * 864e5);
+        if (igual) { igual.fim = p.t; igual.ids.push(p.id); if (p.milheiro) igual.milheiro = p.milheiro; if (p.ate) igual.ate = p.ate; continue; }
+        camp.push({ ...p, prog, tipo, oferta, o, pct: pctPromo(p.titulo), ini: p.t, fim: p.t, ids: [p.id] });
+      }
+      histPromo = camp;
+    } catch (e) { histPromo = []; }
+    mostrarPromocoes();
+  }
+  // Na promoção do dia: como ela se compara com as do mesmo programa e tipo que já passaram.
+  function linhaHistPromo(p, prog) {
+    if (!histPromo) return '';
+    const pct = pctPromo(p.titulo), tipo = tipoPromo(p), t = Date.parse(p.data);
+    if (!pct || tipo === 'Outras') return '';
+    const antes = histPromo.filter(c => c.prog === prog && c.tipo === tipo && c.pct && !c.ids.includes(p.id) && c.fim < t - 5 * 864e5);
+    if (!antes.length) return '';
+    const melhor = antes.reduce((a, b) => (b.pct > a.pct ? b : a));
+    const desde = diaBR(antes[0].ini);
+    if (pct === melhor.pct) return `<p class="promo-hist-linha boa">Igual à melhor já registrada aqui: ${melhor.pct}% em ${esc(diaBR(melhor.ini))}.</p>`;
+    if (pct > melhor.pct) return `<p class="promo-hist-linha boa">A melhor já registrada aqui (desde ${esc(desde)}). Antes, o máximo tinha sido ${melhor.pct}% em ${esc(diaBR(melhor.ini).slice(0, 5))}.</p>`;
+    return `<p class="promo-hist-linha">Já teve melhor: ${melhor.pct}% em ${esc(diaBR(melhor.ini))}.</p>`;
+  }
+  function desenharHistPromo(passa, noAr) {
+    const el = $('#promo-hist');
+    if (!el) return;
+    if (!histPromo) { el.hidden = true; carregarHistPromo(); return; }
+    const lista = histPromo.filter(passa).sort((a, b) => b.ini - a.ini);
+    el.hidden = !histPromo.length;
+    if (!lista.length) { $('#promo-hist-resumo').innerHTML = 'Nenhuma promoção assim no histórico ainda.'; $('#promo-hist-lista').innerHTML = ''; $('#promo-hist-mais').hidden = true; return; }
+    const comPct = lista.filter(c => c.pct), melhor = comPct.length ? comPct.reduce((a, b) => (b.pct > a.pct ? b : a)) : null;
+    const comMil = lista.filter(c => c.milheiro), barato = comMil.length ? comMil.reduce((a, b) => (b.milheiro < a.milheiro ? b : a)) : null;
+    const reais = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const desde = Math.min(...histPromo.map(c => c.ini));
+    $('#promo-hist-resumo').innerHTML = [`<span><b>${lista.length}</b> ${lista.length === 1 ? 'promoção' : 'promoções'} desde ${esc(diaBR(desde))}</span>`,
+      melhor ? `<span>Melhor: <b>${melhor.pct}%</b> em ${esc(diaBR(melhor.ini))}</span>` : '',
+      barato ? `<span>Milheiro mais barato: <b>${reais(barato.milheiro)}</b> em ${esc(diaBR(barato.ini))}</span>` : '',
+      `<span>Última: ${esc(diaBR(lista[0].ini))}</span>`].filter(Boolean).join('');
+    const mostrar = histPromoMais ? lista.slice(0, 200) : lista.slice(0, 12);
+    $('#promo-hist-lista').innerHTML = mostrar.map(c => {
+      const [, , cor] = PROGRAMAS_PROMO.find(([n]) => n === c.prog) || OUTROS_PROMO;
+      const durou = c.ate && !isNaN(Date.parse(c.ate)) ? ` · até ${esc(diaBR(Date.parse(c.ate)).slice(0, 5))}` : c.fim - c.ini > 864e5 ? ` · até ${esc(diaBR(c.fim).slice(0, 5))}` : '';
+      return `<li style="--pc:${cor}"><time datetime="${new Date(c.ini).toISOString().slice(0, 10)}">${esc(diaBR(c.ini).replace(/\/(\d{2})(\d{2})$/, '/$2'))}</time>
+        <div><p>${esc(tituloPromo(c.titulo))}</p><small><i></i>${esc(c.prog)} · ${esc(c.tipo)}${durou}${c.milheiro ? ` · milheiro ${reais(c.milheiro)}` : ''}${c.ids.some(id => noAr.has(id)) ? ' · <b>no ar</b>' : ''}</small></div>
+        ${c.o ? `<span class="ph-oferta">${esc(c.o.num)}</span>` : ''}</li>`;
+    }).join('');
+    $('#promo-hist-mais').hidden = lista.length <= 12;
+    $('#promo-hist-mais').textContent = histPromoMais ? 'Mostrar menos' : `Ver todas (${lista.length})`;
+  }
+  $('#promo-hist-mais').addEventListener('click', () => { histPromoMais = !histPromoMais; mostrarPromocoes(); });
   $('#promo-programas').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; Object.assign(filtroPromo, { programa: b.dataset.prog, tipo: '' }); mostrarPromocoes(); });
   $('#promo-tipos').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; filtroPromo.tipo = b.dataset.tipo; mostrarPromocoes(); });
   $('#promo-busca').addEventListener('input', e => { filtroPromo.busca = e.target.value; mostrarPromocoes(); });
