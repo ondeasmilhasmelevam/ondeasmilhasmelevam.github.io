@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10487",
+  "data": "2026-11-26T21:45:56Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Belo Horizonte",
+  "destino_iata": "CNF",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "23.900 milhas + Taxas",
+  "volta": "24.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16623",
   "data": "2026-11-26T21:42:04Z",
   "origem": "Belém",
