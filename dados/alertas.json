@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10417",
+  "data": "2026-11-26T11:17:38Z",
+  "origem": "Campinas",
+  "origem_iata": "VCP",
+  "destino": "Belo Horizonte",
+  "destino_iata": "CNF",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "9.000 milhas + R$ 33,44 de taxas",
+  "volta": "9.000 milhas + R$ 35,15 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-10416",
   "data": "2026-11-26T11:14:03Z",
   "origem": "Recife",
