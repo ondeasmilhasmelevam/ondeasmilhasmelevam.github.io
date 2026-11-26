@@ -2935,3 +2935,10 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .ph-pe{margin:0;font-size:12px;color:var(--ash-dim)}
 .ph-vivo{color:var(--verde)}
 .ph-vazio{list-style:none;color:var(--ash-dim);font-size:14px}
+
+/* Tabela em reais: 6 faixas (Top, Ótimo, Bom, Normal, Acima do normal, Não compre) */
+.n-bom,.n-acima,.n-nao{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.n-bom{background:#2b6470;color:#d6f4fa}.n-acima{background:#8a4b1f;color:#ffe2c9}.n-nao{background:#7a2e2a;color:#ffd6d2}
+.quanto-tab td.c-bom{background:rgba(43,100,112,.12)}.quanto-tab td.c-acima{background:rgba(138,75,31,.13)}.quanto-tab td.c-nao{background:rgba(122,46,42,.16)}
+.quanto-nota-exe{margin:0 0 8px;font-size:13px;color:var(--ash)}
+@media (max-width:600px){#quanto-tipo{display:grid;grid-template-columns:1fr 1fr;width:100%;border-radius:18px}#quanto-tipo button{white-space:normal;padding:9px 10px;font-size:13.5px}}

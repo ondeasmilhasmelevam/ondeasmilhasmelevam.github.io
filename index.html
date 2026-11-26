@@ -49,7 +49,7 @@
 .sem-entrada #entrada{display:none}
 @media (prefers-reduced-motion:reduce){#entrada{display:none}}
 </style>
-<link rel="stylesheet" href="estilo.css?v=175">
+<link rel="stylesheet" href="estilo.css?v=177">
 </head>
 <body>
 <div id="entrada" aria-hidden="true"><div><img src="img/logo-entrada.webp" alt="" width="148" height="148" fetchpriority="high"></div></div>
@@ -514,14 +514,17 @@
         <p class="sec-note">Valores de referência de ida e volta, saindo de São Paulo (GRU) ou do Rio (GIG). São os padrões: em promoção dá para achar ainda mais barato.</p>
       </div>
       <div class="seg-tipo" id="quanto-tipo" role="group" aria-label="Mostrar valores">
-        <button type="button" data-tipo="reais" aria-pressed="true">Em reais</button>
+        <button type="button" data-tipo="reais" aria-pressed="true">Reais · econômica</button>
+        <button type="button" data-tipo="reaisExe" aria-pressed="false">Reais · executiva</button>
         <button type="button" data-tipo="eco" aria-pressed="false">Milhas · econômica</button>
         <button type="button" data-tipo="exe" aria-pressed="false">Milhas · executiva</button>
       </div>
       <div class="rest-busca">
         <input type="search" id="quanto-busca" placeholder="Buscar destino, ex.: Lisboa" autocomplete="off" aria-label="Buscar destino">
       </div>
-      <p class="quanto-legenda"><span class="n-top">Top</span> preço excelente, compre <span class="n-otimo">Ótimo</span> muito bom <span class="n-normal">Normal</span> o de sempre <span class="n-caro">Caro</span> vale esperar</p>
+      <p class="quanto-legenda" data-legenda="reais"><span class="n-top">Top</span> <span class="n-otimo">Ótimo</span> <span class="n-bom">Bom</span> abaixo do normal <span class="n-normal">Normal</span> <span class="n-acima">Acima do normal</span> <span class="n-nao">Caro demais</span></p>
+      <p class="quanto-nota-exe" id="quanto-nota-exe" hidden>Executiva: os valores da econômica × 2,5 (EUA e Canadá × 3).</p>
+      <p class="quanto-legenda" data-legenda="milhas" hidden><span class="n-top">Top</span> preço excelente, compre <span class="n-otimo">Ótimo</span> muito bom <span class="n-normal">Normal</span> o de sempre <span class="n-caro">Caro</span> vale esperar</p>
       <div id="quanto-tabelas"></div>
       <p class="passagens-vazio" id="quanto-vazio" hidden>Nenhum destino com esse nome.</p>
     </section>
@@ -1857,7 +1860,7 @@
 <script src="planilha.js?v=3"></script>
 <script src="navegacao.js?v=1"></script>
 <script src="programas-base.js?v=3"></script>
-<script src="app.js?v=155"></script>
+<script src="app.js?v=158"></script>
 <script src="interface.js?v=4"></script>
 <script src="funil.js?v=9"></script>
 <script src="conta.js?v=7" defer></script>

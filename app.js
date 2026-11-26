@@ -3076,8 +3076,8 @@
     reais: ['dados/precos-reais.csv', `https://docs.google.com/spreadsheets/d/${ID_QUANTO}/export?format=csv&gid=0`],
     milhas: [`https://docs.google.com/spreadsheets/d/${ID_QUANTO}/gviz/tq?tqx=out:csv&headers=0&sheet=MILHAS`, 'dados/precos-milhas.csv'],
   };
-  const NIVEIS = { TOP: 'top', OTIMO: 'otimo', NORMAL: 'normal', CARO: 'caro' };
-  const quanto = { tipo: 'reais', reais: [], eco: [], exe: [] };
+  const NIVEIS = { TOP: 'top', OTIMO: 'otimo', BOM: 'bom', NORMAL: 'normal', ACIMA: 'acima', CARO: 'caro', 'NAO COMPRE': 'nao', 'CARO DEMAIS': 'nao' };
+  const quanto = { tipo: 'reais', reais: [], reaisExe: [], eco: [], exe: [] };
   const limpa = t => String(t || '').replace(/\s+/g, ' ').trim();
   async function lerFonte(urls) {
     for (const url of urls) {
@@ -3101,12 +3101,16 @@
       .map(x => ({ continente: x.continente, linha: x.linha, cols }));
   }
   function montarQuanto(reais, milhas) {
-    quanto.reais = lerTabela(reais, 3, ['top', 'otimo', 'normal', 'caro']).map(({ continente, linha, cols }) => {
+    quanto.reais = lerTabela(reais, 3, ['top', 'otimo', 'bom', 'normal', 'acima', 'nao']).map(({ continente, linha, cols }) => {
       const pais = limpa(linha[1]), cidade = limpa(linha[2]);
       const temCidade = cidade && cidade !== '-';
       return { continente, destino: temCidade ? cidade : pais, sub: temCidade && pais !== cidade ? pais : '',
         valores: cols.map(c => ({ nivel: c.nivel, itens: [limpa(linha[c.col])] })) };
     });
+    const vezes = x => ([x.sub, x.destino].some(n => /^(EUA|Canadá)$/.test(n)) ? 3 : 2.5);
+    const multiplicar = (t, k) => { const m = /R\$\s?([\d.]+)(?:,\d+)?(\+?)/.exec(t || ''); if (!m) return t;
+      const v = Math.round(Number(m[1].replace(/\./g, '')) * k / 50) * 50; return `R$ ${v.toLocaleString('pt-BR')}${m[2]}`; };
+    quanto.reaisExe = quanto.reais.map(x => ({ ...x, valores: x.valores.map(v => ({ nivel: v.nivel, itens: v.itens.map(i => multiplicar(i, vezes(x))) })) }));
     const programas = t => String(t || '').split('\n').map(limpa).filter(x => x && x !== '-').map(x => {
       const m = x.match(/^([^:]+):\s*(.+)$/);
       return m ? { prog: m[1].trim(), valor: m[2].trim() } : { prog: '', valor: x };
@@ -3119,7 +3123,7 @@
       valores: cols.slice(4).map(c => ({ nivel: c.nivel, itens: programas(linha[c.col]) })) }))
       .filter(x => x.valores.some(v => v.itens.length));
   }
-  const NOME_NIVEL = { top: 'Top', otimo: 'Ótimo', normal: 'Normal', caro: 'Caro' };
+  const NOME_NIVEL = { top: 'Top', otimo: 'Ótimo', bom: 'Bom', normal: 'Normal', acima: 'Acima do normal', caro: 'Caro', nao: 'Caro demais' };
   // Sigla do aeroporto principal de cada cidade da planilha (países e regiões do Brasil ficam sem).
   const IATA_CIDADE = Object.fromEntries(Object.entries({
     'Londres': 'LHR', 'Amsterdã': 'AMS', 'Paris': 'CDG', 'Milão': 'MXP', 'Roma': 'FCO', 'Barcelona': 'BCN', 'Madri': 'MAD',
@@ -3140,8 +3144,8 @@
     vis.forEach(x => { let g = grupos.find(y => y.nome === x.continente); if (!g) grupos.push(g = { nome: x.continente, itens: [] }); g.itens.push(x); });
     const niveis = lista[0] ? lista[0].valores.map(v => v.nivel) : [];
     const celula = v => {
-      if (!v.itens.length) return `<td class="c-${v.nivel}">–</td>`;
-      if (quanto.tipo === 'reais') return `<td class="c-${v.nivel}">${esc(v.itens[0].replace(/,00$/, ''))}</td>`;
+      if (!v.itens.length || !v.itens[0]) return `<td class="c-${v.nivel}">–</td>`;
+      if (quanto.tipo.startsWith('reais')) return `<td class="c-${v.nivel}">${esc(v.itens[0].replace(/,00$/, ''))}</td>`;
       return `<td class="c-${v.nivel}"><ul>${v.itens.map(i => `<li>${i.prog ? `<b>${esc(i.prog)}</b>` : ''}${esc(i.valor)}</li>`).join('')}</ul></td>`;
     };
     $('#quanto-tabelas').innerHTML = grupos.map(g => `<div class="quanto-grupo">
@@ -3153,6 +3157,8 @@
       </div>`).join('');
     $('#quanto-vazio').hidden = !!vis.length || !lista.length;
     $('#quanto-tipo').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.tipo === quanto.tipo)));
+    document.querySelectorAll('.quanto-legenda[data-legenda]').forEach(l => { l.hidden = l.dataset.legenda !== (quanto.tipo.startsWith('reais') ? 'reais' : 'milhas'); });
+    const notaExe = $('#quanto-nota-exe'); if (notaExe) notaExe.hidden = quanto.tipo !== 'reaisExe';
   }
   async function desenharQuanto() {
     const [reais, milhas] = await Promise.all([lerFonte(FONTES_QUANTO.reais), lerFonte(FONTES_QUANTO.milhas)]);
