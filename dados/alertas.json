@@ -4174,21 +4174,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-GIG-LHR-eco",
-  "data": "2026-11-12T05:14:55.794608Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Londres",
-  "destino_iata": "LHR",
-  "companhia": "American / Avianca / AZ",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "142.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7538",
   "data": "2026-11-01T15:17:29Z",
   "tipo": "promocao",
