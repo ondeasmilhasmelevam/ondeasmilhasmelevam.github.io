@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-26T17:34:00.959286Z",
+ "atualizado": "2026-11-26T17:40:18.401260Z",
  "dias": 30,
- "passagens": 4301,
+ "passagens": 4306,
  "promocoes": 248,
  "destinos": 185,
- "executiva": 865,
+ "executiva": 866,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 982,
+  "passagens": 987,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -473,15 +473,15 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2008590742-16559",
-    "origem": "São Luís",
-    "origem_iata": "SLZ",
+    "id": "2008590742-16591",
+    "origem": "Salvador",
+    "origem_iata": "SSA",
     "destino": "Barcelona",
     "destino_iata": "BCN",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-26T14:21:46Z",
-    "milhas": 99000,
+    "data": "2026-11-26T17:40:14Z",
+    "milhas": 85000,
     "nivel": "bom",
     "regiao": "europa"
    },
