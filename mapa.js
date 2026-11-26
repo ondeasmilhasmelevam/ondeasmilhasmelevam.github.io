@@ -1,4 +1,4 @@
-// Mapa de rotas (#mapa e #mapa/GRU-LIS): as rotas que tiveram alerta nos últimos 12 meses.
+// Mapa de rotas (#mapa e #mapa/GRU-LIS): todas as rotas que já tiveram alerta (o histórico não vence por tempo).
 // Rotas e contagens vêm do servidor (/malha, sem preço); coordenadas dos aeroportos em dados/aeroportos.json.
 // O mapa (d3 + contorno dos países do Natural Earth) só é baixado quando a pessoa abre a página.
 (() => {
@@ -282,7 +282,7 @@
     g.select('.mapa-rotas').selectAll('path').data(ordem, p => `${p.a}-${p.b}`).join('path')
       .attr('class', p => `mapa-rota ${p.estado}`)
             .attr('stroke-width', p => p.estado === 'foco' ? Math.max(larg(p.n), 2.6) : larg(p.n))
-      .on('mousemove', (e, p) => dica(e, `<b>${p.a} ⇄ ${p.b}</b><span>${esc(nomeDe(p.a))} ⇄ ${esc(nomeDe(p.b))}</span><small>${fmt(p.n)} ${p.n === 1 ? 'alerta' : 'alertas'} em 12 meses</small>`))
+      .on('mousemove', (e, p) => dica(e, `<b>${p.a} ⇄ ${p.b}</b><span>${esc(nomeDe(p.a))} ⇄ ${esc(nomeDe(p.b))}</span><small>${fmt(p.n)} ${p.n === 1 ? 'alerta' : 'alertas'} no histórico</small>`))
       .on('mouseleave', () => { $('#mapa-tip').hidden = true; })
       .on('click', (e, p) => { e.stopPropagation(); escolher(sel === p.b ? p.b : p.a, sel === p.b ? p.a : p.b); });
     const pontos = Object.entries(A).map(([i, a]) => ({ i, n: a.n, nd: a.destinos.size, r: raio(a.n), xy: xy(i), ve: true }))
@@ -378,7 +378,7 @@
     if (!est.de) {
       const P = pares().sort((a, b) => b.n - a.n), tot = d3.sum(P, p => p.n);
       const origens = Object.entries(A).map(([i, a]) => [i, rotasFiltradas().filter(r => r.oi === i).reduce((s, r) => s + r.n, 0)]).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1]).slice(0, 6);
-      el.innerHTML = `<p class="mp-kicker">Últimos 12 meses</p><div class="mp-nums"><div><b>${fmt(P.length)}</b><small>rotas com alerta</small></div><div><b>${fmt(tot)}</b><small>alertas</small></div><div><b>${fmt(Object.keys(A).length)}</b><small>aeroportos</small></div></div>
+      el.innerHTML = `<p class="mp-kicker">Todo o histórico</p><div class="mp-nums"><div><b>${fmt(P.length)}</b><small>rotas com alerta</small></div><div><b>${fmt(tot)}</b><small>alertas</small></div><div><b>${fmt(Object.keys(A).length)}</b><small>aeroportos</small></div></div>
         <div class="mp-colunas"><div><h3>Rotas com mais alertas</h3><ol class="mp-lista">${P.slice(0, 8).map(p => `<li><button type="button" data-de="${p.a}" data-para="${p.b}"><span>${p.a} ⇄ ${p.b}<small>${esc(nomeDe(p.a))} ⇄ ${esc(nomeDe(p.b))}</small></span><b>${fmt(p.n)}</b></button></li>`).join('')}</ol></div>
         <div><h3>De onde mais sai alerta</h3><ol class="mp-lista">${origens.map(([i, n]) => `<li><button type="button" data-de="${i}"><span>${esc(nomeDe(i))}<small>${i} · ${esc(D.aeros[i][3] || '')}</small></span><b>${fmt(n)}</b></button></li>`).join('')}</ol></div></div>
         <p class="mp-dica">${P.length ? 'Toque num aeroporto do mapa para ver para onde saem alertas dali.' : 'Nenhuma rota com alerta registrado para este filtro. Isso não significa que o programa não ofereça voos; consulte o site oficial ou crie uma Rota Vigiada para os próximos alertas.'}</p>`;
@@ -392,7 +392,7 @@
       el.innerHTML = `<p class="mp-kicker">Saindo de</p><h3 class="mp-tit">${esc(nomeDe(de))} <small>${de} · ${esc(ad[3] || '')}</small></h3>
         <div class="mp-nums"><div><b>${fmt(lista.length)}</b><small>destinos com alerta</small></div><div><b>${fmt(d3.sum(lista, ([, p]) => p.n))}</b><small>alertas</small></div></div>
         ${lista.length ? `<ol class="mp-lista">${lista.slice(0, 14).map(([i, p]) => `<li><button type="button" data-de="${de}" data-para="${i}"><span>${esc(nomeDe(i))}<small>${i} · ${esc(D.aeros[i][3] || '')} · ${[...p.cabs].map(cabTxt).join(' e ')}</small></span><b>${fmt(p.n)}</b></button></li>`).join('')}</ol>${lista.length > 14 ? `<p class="mp-dica">E mais ${lista.length - 14} destinos no mapa.</p>` : ''}`
-          : '<p class="mp-dica">Nenhum alerta saindo daqui nos últimos 12 meses com esse filtro.</p>'}
+          : '<p class="mp-dica">Nenhum alerta saindo daqui no histórico com esse filtro.</p>'}
         <p class="mp-dica">Toque num destino da lista ou do mapa para ver a rota.</p>`;
       return;
     }
@@ -405,10 +405,10 @@
     const quando = ultimo ? (() => { const n = Math.round((Date.now() - new Date(ultimo + 'T12:00:00')) / 864e5); return n <= 0 ? 'hoje' : n === 1 ? 'ontem' : `há ${n} dias`; })() : '';
     el.innerHTML = `<p class="mp-kicker">Rota</p>
       <h3 class="mp-tit">${de} <i>→</i> ${para}</h3><p class="mp-sub">${esc(nomeDe(de))}, ${esc(ad[3] || '')} → ${esc(nomeDe(para))}, ${esc(ap[3] || '')}</p>
-      <div class="mp-nums"><div><b>${fmt(km)} km</b><small>distância em linha reta</small></div><div><b>${hTxt}</b><small>voo direto estimado</small></div><div><b>${fmt(nIda)}</b><small>alertas em 12 meses</small></div></div>
+      <div class="mp-nums"><div><b>${fmt(km)} km</b><small>distância em linha reta</small></div><div><b>${hTxt}</b><small>voo direto estimado</small></div><div><b>${fmt(nIda)}</b><small>alertas no histórico</small></div></div>
       ${nIda ? `<p class="mp-dica">Último alerta ${quando}. ${ida.map(r => `${esc(r.cabNome || cabTxt(r.cab))}: ${fmt(r.n)}`).join(' · ')}</p>
         <div class="mp-acoes">${ida.map(r => `<a class="cta cta-a" href="${linkRota(r)}">📈 Histórico da rota${ida.length > 1 ? ` (${esc((r.cabNome || cabTxt(r.cab)).toLowerCase())})` : ''}</a>`).join('')}</div>`
-        : `<p class="mp-dica">Nenhum alerta nesse sentido nos últimos 12 meses com os filtros selecionados.</p><div class="mp-acoes"><a class="cta cta-a" href="#radar">🔔 Me avise quando aparecer</a></div>`}
+        : `<p class="mp-dica">Nenhum alerta nesse sentido no histórico com os filtros selecionados.</p><div class="mp-acoes"><a class="cta cta-a" href="#radar">🔔 Me avise quando aparecer</a></div>`}
       ${nVolta ? `<button type="button" class="mp-volta" data-de="${para}" data-para="${de}">No sentido ${para} → ${de}: ${fmt(nVolta)} ${nVolta === 1 ? 'alerta' : 'alertas'}. Ver esse sentido →</button>` : ''}
       <p class="mp-nota">Distância em linha reta e tempo estimado a 830 km/h, sem escalas. Os horários reais dependem da companhia.</p>
       <div class="mp-escalas" id="mp-escalas"><h3>Por onde ir com milhas</h3><p class="mp-dica">Procurando caminhos…</p></div>`;
