@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-26T20:59:45.224358Z",
+ "atualizado": "2026-11-26T21:06:03.685199Z",
  "dias": 30,
  "passagens": 4365,
  "promocoes": 250,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1014,
+  "passagens": 1013,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -1058,19 +1058,6 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2361370250-6819",
-    "origem": "Tóquio",
-    "origem_iata": "NRT",
-    "destino": "Abu Dhabi",
-    "destino_iata": "AUH",
-    "cabine": "Executiva",
-    "programa": "AAdvantage",
-    "data": "2026-11-19T21:03:40Z",
-    "milhas": 40000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "2361370250-6894",
     "origem": "Bangkok",
     "origem_iata": "BKK",
@@ -1119,6 +1106,19 @@
     "programa": "Aeroplan",
     "data": "2026-11-26T13:27:27Z",
     "milhas": 50000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
+    "id": "2361370250-7093",
+    "origem": "Joanesburgo",
+    "origem_iata": "JNB",
+    "destino": "Abu Dhabi",
+    "destino_iata": "AUH",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-26T19:47:49Z",
+    "milhas": 55000,
     "nivel": "",
     "regiao": "outros"
    },

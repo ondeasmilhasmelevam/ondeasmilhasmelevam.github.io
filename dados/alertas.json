@@ -4567,20 +4567,6 @@
   "ate": ""
  },
  {
-  "id": "3761373661-10355",
-  "data": "2026-11-24T21:01:21Z",
-  "origem": "Vitória",
-  "origem_iata": "VIX",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "9.400 milhas Smiles + Taxas",
-  "volta": "9.200 milhas Smiles + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7989",
   "data": "2026-11-24T12:00:01Z",
   "tipo": "promocao",
