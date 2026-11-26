@@ -3361,48 +3361,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-10291",
-  "data": "2026-11-24T10:55:17Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Curitiba",
-  "destino_iata": "CWB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "24.600 milhas + Taxas",
-  "volta": "24.600 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10290",
-  "data": "2026-11-24T10:55:15Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "18.500 milhas + Taxas",
-  "volta": "18.500 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10289",
-  "data": "2026-11-24T10:55:10Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "9.400 milhas + Taxas",
-  "volta": "9.400 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7972",
   "data": "2026-11-23T16:32:05Z",
   "tipo": "promocao",
