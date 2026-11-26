@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-26T16:44:06.617267Z",
+ "atualizado": "2026-11-26T16:50:22.930104Z",
  "dias": 30,
- "passagens": 4281,
+ "passagens": 4289,
  "promocoes": 247,
  "destinos": 185,
  "executiva": 865,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 971,
+  "passagens": 979,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -382,6 +382,19 @@
     "regiao": "europa"
    },
    {
+    "id": "2008590742-16580",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Santiago",
+    "destino_iata": "SCL",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-26T16:49:43Z",
+    "milhas": 18300,
+    "nivel": "bom",
+    "regiao": "america-do-sul"
+   },
+   {
     "id": "2008590742-16207",
     "origem": "Curitiba",
     "origem_iata": "CWB",
@@ -525,6 +538,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10455",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Florianópolis",
+    "destino_iata": "FLN",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-26T16:49:36Z",
+    "milhas": 4300,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10072",
     "origem": "Brasília",
     "origem_iata": "BSB",
@@ -663,19 +689,6 @@
     "cabine": "Econômica",
     "programa": "LATAM Pass",
     "data": "2026-11-23T13:42:08Z",
-    "milhas": 6800,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10363",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Florianópolis",
-    "destino_iata": "FLN",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-25T12:57:52Z",
     "milhas": 6800,
     "nivel": "",
     "regiao": "brasil"
@@ -926,19 +939,6 @@
     "milhas": 10330,
     "nivel": "",
     "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10452",
-    "origem": "Recife",
-    "origem_iata": "REC",
-    "destino": "Juiz de Fora",
-    "destino_iata": "IZA",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-26T16:03:25Z",
-    "milhas": 10859,
-    "nivel": "",
-    "regiao": "outros"
    },
    {
     "id": "2361370250-6975",
