@@ -2096,32 +2096,63 @@
     if (pct > melhor.pct) return `<p class="promo-hist-linha boa">A melhor já registrada aqui (desde ${esc(desde)}). Antes, o máximo tinha sido ${melhor.pct}% em ${esc(diaBR(melhor.ini).slice(0, 5))}.</p>`;
     return `<p class="promo-hist-linha">Já teve melhor: ${melhor.pct}% em ${esc(diaBR(melhor.ini))}.</p>`;
   }
+  // Histórico com filtro próprio: a logo de cada programa e os tipos daquele programa; cards no estilo das promoções.
+  const histFiltro = { prog: '', tipo: '' };
+  const logoMini = prog => (LOGO_PROGRAMA[prog] ? `<img src="img/programas/${LOGO_PROGRAMA[prog]}.webp" alt="" loading="lazy">` : `<b>${esc(prog === 'Outros' ? 'Outros' : prog)}</b>`);
   function desenharHistPromo(passa, noAr) {
     const el = $('#promo-hist');
     if (!el) return;
     if (!histPromo) { el.hidden = true; carregarHistPromo(); return; }
-    const lista = histPromo.filter(passa).sort((a, b) => b.ini - a.ini);
     el.hidden = !histPromo.length;
-    if (!lista.length) { $('#promo-hist-resumo').innerHTML = 'Nenhuma promoção assim no histórico ainda.'; $('#promo-hist-lista').innerHTML = ''; $('#promo-hist-mais').hidden = true; return; }
+    if (!histPromo.length) return;
+    // Programas: por quantidade de promoções no histórico, cada um com a logo.
+    const porProg = new Map();
+    histPromo.forEach(c => porProg.set(c.prog, (porProg.get(c.prog) || 0) + 1));
+    const progs = [...porProg].sort((a, b) => (a[0] === 'Outros') - (b[0] === 'Outros') || b[1] - a[1]);
+    if (histFiltro.prog && !porProg.has(histFiltro.prog)) histFiltro.prog = '';
+    $('#promo-hist-progs').innerHTML = `<button type="button" data-hprog="" aria-pressed="${!histFiltro.prog}"><span class="ph-logo ph-todos">Todos</span><small>${histPromo.length}</small></button>` +
+      progs.map(([n, k]) => { const [, , cor] = PROGRAMAS_PROMO.find(([x]) => x === n) || OUTROS_PROMO;
+        return `<button type="button" data-hprog="${esc(n)}" aria-pressed="${histFiltro.prog === n}" style="--pc:${cor}" title="${esc(n)}"><span class="ph-logo">${logoMini(n)}</span><small>${k}</small></button>`; }).join('');
+    const doProg = histPromo.filter(c => !histFiltro.prog || c.prog === histFiltro.prog);
+    const porTipo = new Map();
+    doProg.forEach(c => porTipo.set(c.tipo, (porTipo.get(c.tipo) || 0) + 1));
+    if (histFiltro.tipo && !porTipo.has(histFiltro.tipo)) histFiltro.tipo = '';
+    $('#promo-hist-tipos').innerHTML = [['', 'Todos os tipos', doProg.length], ...[...porTipo].sort((a, b) => b[1] - a[1]).map(([n, k]) => [n, n, k])]
+      .map(([v, n, k]) => `<button type="button" data-htipo="${esc(v)}" aria-pressed="${histFiltro.tipo === v}">${esc(n)}<small>${k}</small></button>`).join('');
+    const lista = doProg.filter(c => !histFiltro.tipo || c.tipo === histFiltro.tipo).sort((a, b) => b.ini - a.ini);
+    const reais = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     const comPct = lista.filter(c => c.pct), melhor = comPct.length ? comPct.reduce((a, b) => (b.pct > a.pct ? b : a)) : null;
     const comMil = lista.filter(c => c.milheiro), barato = comMil.length ? comMil.reduce((a, b) => (b.milheiro < a.milheiro ? b : a)) : null;
-    const reais = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    const desde = Math.min(...histPromo.map(c => c.ini));
-    $('#promo-hist-resumo').innerHTML = [`<span><b>${lista.length}</b> ${lista.length === 1 ? 'promoção' : 'promoções'} desde ${esc(diaBR(desde))}</span>`,
-      melhor ? `<span>Melhor: <b>${melhor.pct}%</b> em ${esc(diaBR(melhor.ini))}</span>` : '',
-      barato ? `<span>Milheiro mais barato: <b>${reais(barato.milheiro)}</b> em ${esc(diaBR(barato.ini))}</span>` : '',
-      `<span>Última: ${esc(diaBR(lista[0].ini))}</span>`].filter(Boolean).join('');
-    const mostrar = histPromoMais ? lista.slice(0, 200) : lista.slice(0, 12);
+    const curto = t => diaBR(t).replace(/\/(\d{2})(\d{2})$/, '/$2');
+    $('#promo-hist-resumo').innerHTML = !lista.length ? '' : [
+      [`${lista.length}`, lista.length === 1 ? 'promoção registrada' : 'promoções registradas'],
+      melhor ? [`${melhor.pct}%`, `a melhor, em ${curto(melhor.ini)}`] : null,
+      barato ? [reais(barato.milheiro), `milheiro mais barato, em ${curto(barato.ini)}`] : null,
+      [curto(lista[0].ini), 'a mais recente']].filter(Boolean).map(([v, r]) => `<div><b>${esc(v)}</b><small>${esc(r)}</small></div>`).join('');
+    const mostrar = histPromoMais ? lista.slice(0, 200) : lista.slice(0, 9);
     $('#promo-hist-lista').innerHTML = mostrar.map(c => {
       const [, , cor] = PROGRAMAS_PROMO.find(([n]) => n === c.prog) || OUTROS_PROMO;
-      const durou = c.ate && !isNaN(Date.parse(c.ate)) ? ` · até ${esc(diaBR(Date.parse(c.ate)).slice(0, 5))}` : c.fim - c.ini > 864e5 ? ` · até ${esc(diaBR(c.fim).slice(0, 5))}` : '';
-      return `<li style="--pc:${cor}"><time datetime="${new Date(c.ini).toISOString().slice(0, 10)}">${esc(diaBR(c.ini).replace(/\/(\d{2})(\d{2})$/, '/$2'))}</time>
-        <div><p>${esc(tituloPromo(c.titulo))}</p><small><i></i>${esc(c.prog)} · ${esc(c.tipo)}${durou}${c.milheiro ? ` · milheiro ${reais(c.milheiro)}` : ''}${c.ids.some(id => noAr.has(id)) ? ' · <b>no ar</b>' : ''}</small></div>
-        ${c.o ? `<span class="ph-oferta">${esc(c.o.num)}</span>` : ''}</li>`;
-    }).join('');
-    $('#promo-hist-mais').hidden = lista.length <= 12;
+      const ate = c.ate && !isNaN(Date.parse(c.ate)) ? Date.parse(c.ate) : c.fim - c.ini > 864e5 ? c.fim : 0;
+      const vivo = c.ids.some(id => noAr.has(id));
+      return `<li class="ph-card" style="--pc:${cor}">
+        <div class="ph-topo"><span class="promo-tipo">${esc(c.tipo === 'Outras' ? 'Promoção' : c.tipo)}</span><time datetime="${new Date(c.ini).toISOString().slice(0, 10)}">${esc(curto(c.ini))}</time></div>
+        <div class="ph-meio"><span class="ph-logo">${logoMini(c.prog)}</span>
+          ${c.o ? `<span class="ph-num">${c.o.pre ? `<i>${esc(c.o.pre)}</i>` : ''}<strong>${esc(c.o.num)}</strong>${c.o.legenda ? `<em>${esc(c.o.legenda)}</em>` : ''}</span>` : ''}</div>
+        <p class="ph-tit">${esc(tituloPromo(c.titulo))}</p>
+        <p class="ph-pe">${vivo ? '<b class="ph-vivo">No ar</b>' : ate ? `Valeu até ${esc(curto(ate))}` : 'Encerrada'}${c.milheiro ? ` · milheiro ${reais(c.milheiro)}` : ''}</p>
+      </li>`;
+    }).join('') || '<li class="ph-vazio">Nenhuma promoção assim no histórico ainda.</li>';
+    $('#promo-hist-mais').hidden = lista.length <= 9;
     $('#promo-hist-mais').textContent = histPromoMais ? 'Mostrar menos' : `Ver todas (${lista.length})`;
   }
+  $('#promo-hist').addEventListener('click', e => {
+    const p = e.target.closest('[data-hprog]'), tp = e.target.closest('[data-htipo]');
+    if (!p && !tp) return;
+    if (p) Object.assign(histFiltro, { prog: p.dataset.hprog, tipo: '' });
+    else histFiltro.tipo = tp.dataset.htipo;
+    histPromoMais = false;
+    mostrarPromocoes();
+  });
   $('#promo-hist-mais').addEventListener('click', () => { histPromoMais = !histPromoMais; mostrarPromocoes(); });
   $('#promo-programas').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; Object.assign(filtroPromo, { programa: b.dataset.prog, tipo: '' }); mostrarPromocoes(); });
   $('#promo-tipos').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; filtroPromo.tipo = b.dataset.tipo; mostrarPromocoes(); });

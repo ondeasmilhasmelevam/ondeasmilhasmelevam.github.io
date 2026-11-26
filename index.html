@@ -49,7 +49,7 @@
 .sem-entrada #entrada{display:none}
 @media (prefers-reduced-motion:reduce){#entrada{display:none}}
 </style>
-<link rel="stylesheet" href="estilo.css?v=173">
+<link rel="stylesheet" href="estilo.css?v=174">
 </head>
 <body>
 <div id="entrada" aria-hidden="true"><div><img src="img/logo-entrada.webp" alt="" width="148" height="148" fetchpriority="high"></div></div>
@@ -876,9 +876,11 @@
       <p class="passagens-vazio" id="promo-vazio" hidden>Nenhuma promoção com esse filtro agora.</p>
       <div class="promo-hist" id="promo-hist" hidden>
         <h3>Histórico de promoções</h3>
-        <p class="promo-hist-nota">As que já passaram pelos alertas, com o mesmo filtro de cima. Serve para saber se a de hoje é boa ou se vale esperar.</p>
-        <p class="promo-hist-resumo" id="promo-hist-resumo"></p>
-        <ul class="promo-hist-lista" id="promo-hist-lista"></ul>
+        <p class="promo-hist-nota">As que já passaram pelos alertas. Escolha o programa e veja se a promoção de hoje é boa ou se vale esperar.</p>
+        <div class="ph-progs" id="promo-hist-progs" role="group" aria-label="Programa do histórico"></div>
+        <div class="promo-chips ph-tipos" id="promo-hist-tipos" role="group" aria-label="Tipo de promoção no histórico"></div>
+        <div class="ph-resumo" id="promo-hist-resumo"></div>
+        <ul class="ph-grade" id="promo-hist-lista"></ul>
         <button type="button" class="cta cta-b" id="promo-hist-mais" hidden>Ver todas</button>
       </div>
     </section>
@@ -1855,7 +1857,7 @@
 <script src="planilha.js?v=3"></script>
 <script src="navegacao.js?v=1"></script>
 <script src="programas-base.js?v=3"></script>
-<script src="app.js?v=153"></script>
+<script src="app.js?v=154"></script>
 <script src="interface.js?v=4"></script>
 <script src="funil.js?v=9"></script>
 <script src="conta.js?v=7" defer></script>
