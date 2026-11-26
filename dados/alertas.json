@@ -1,5 +1,47 @@
 [
  {
+  "id": "2361370250-7085",
+  "data": "2026-11-26T16:40:20Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Milão",
+  "destino_iata": "MXP",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "Flying Blue",
+  "ida": "85.000 milhas Flying Blue + Taxas",
+  "volta": "85.000 milhas Flying Blue + Taxas",
+  "link_nome": "Flying Blue"
+ },
+ {
+  "id": "2008590742-16574",
+  "data": "2026-11-26T16:38:13Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Montevidéu",
+  "destino_iata": "MVD",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "29.600 milhas + Taxas",
+  "volta": "29.600 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16573",
+  "data": "2026-11-26T16:38:09Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Mendoza",
+  "destino_iata": "MDZ",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "41.500 milhas + Taxas",
+  "volta": "41.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10454",
   "data": "2026-11-26T16:36:31Z",
   "origem": "Brasília",
@@ -3786,20 +3828,6 @@
   "ida": "13.000 milhas + Taxas",
   "volta": "13.000 milhas + Taxas",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-10342",
-  "data": "2026-11-24T16:39:35Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "7.900 milhas + R$ 48,63 de taxas",
-  "volta": "7.900 milhas + R$ 62,14 de taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7989",
