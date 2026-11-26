@@ -4634,34 +4634,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-16449",
-  "data": "2026-11-24T20:05:52Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "35.000 milhas + Taxas",
-  "volta": "35.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16448",
-  "data": "2026-11-24T20:05:26Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Curaçao",
-  "destino_iata": "CUR",
-  "companhia": "Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 45.200 milhas",
-  "volta": "A partir de 45.200 milhas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7989",
   "data": "2026-11-24T12:00:01Z",
   "tipo": "promocao",
