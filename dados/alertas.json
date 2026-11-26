@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-10482",
+  "data": "2026-11-26T20:57:56Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "João Pessoa",
+  "destino_iata": "JPA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "21.300 milhas + Taxas",
+  "volta": "21.300 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16619",
+  "data": "2026-11-26T20:54:55Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "LATAM + parceira",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "11.220 milhas LATAM Pass + Taxas",
+  "volta": "11.840 milhas LATAM Pass + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-16618",
   "data": "2026-11-26T20:43:51Z",
   "origem": "Porto Alegre",
@@ -4551,20 +4579,6 @@
   "ida": "9.400 milhas Smiles + Taxas",
   "volta": "9.200 milhas Smiles + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10354",
-  "data": "2026-11-24T20:59:21Z",
-  "origem": "Campinas",
-  "origem_iata": "VCP",
-  "destino": "João Pessoa",
-  "destino_iata": "JPA",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "A partir de 9.800 milhas",
-  "volta": "A partir de 9.800 milhas",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "1290836068-7989",
