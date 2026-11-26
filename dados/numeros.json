@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-26T12:44:27.420467Z",
+ "atualizado": "2026-11-26T12:50:42.349772Z",
  "dias": 30,
  "passagens": 4211,
  "promocoes": 239,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 929,
+  "passagens": 928,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -1019,19 +1019,6 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6811",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Lima",
-    "destino_iata": "LIM",
-    "cabine": "Executiva",
-    "programa": "Finnair AVIOS",
-    "data": "2026-11-19T12:45:28Z",
-    "milhas": 20000,
-    "nivel": "",
-    "regiao": "america-do-sul"
-   },
-   {
     "id": "2361370250-7011",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -1196,6 +1183,19 @@
     "cabine": "Executiva",
     "programa": "AAdvantage",
     "data": "2026-11-23T13:16:38Z",
+    "milhas": 75000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
+    "id": "2361370250-7008",
+    "origem": "Helsinque",
+    "origem_iata": "HEL",
+    "destino": "Bangkok",
+    "destino_iata": "BKK",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-23T22:03:14Z",
     "milhas": 75000,
     "nivel": "",
     "regiao": "outros"
