@@ -487,9 +487,11 @@ $('#painel-campanha').addEventListener('click', async e => {
 });
 
 // Cortesia: o dono dá X dias grátis direto para o e-mail da pessoa; ela recebe um e-mail com o passo a passo.
+// Ativa: "Dar mais dias" (somam ao fim do acesso). Encerrada: "Renovar cortesia". Ainda não ativou: nenhum dos dois.
 function renovarCortesiaHtml(c) {
-  if (c.pendente || !c.ate || !(new Date(c.ate).getTime() <= Date.now())) return '';
-  return `<button type="button" class="cta cta-b" data-renovar="${escR(c.email)}" data-nome="${escR(c.nome || '')}" data-telefone="${escR(c.telefone || '')}" data-prazo="${escR(c.dias)}">Renovar cortesia</button>`;
+  if (c.pendente || !c.ate) return '';
+  const ativa = new Date(c.ate).getTime() > Date.now();
+  return `<button type="button" class="cta cta-b" data-renovar="${escR(c.email)}" data-nome="${escR(c.nome || '')}" data-telefone="${escR(c.telefone || '')}" data-prazo="${escR(c.dias)}">${ativa ? 'Dar mais dias' : 'Renovar cortesia'}</button>`;
 }
 async function desenharCortesiasPainel() {
   const el = $('#painel-cortesias');
