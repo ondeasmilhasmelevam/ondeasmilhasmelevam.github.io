@@ -3285,20 +3285,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-10305",
-  "data": "2026-11-24T12:02:48Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "8.000 milhas + Taxas",
-  "volta": "8.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "1290836068-7989",
   "data": "2026-11-24T12:00:01Z",
   "tipo": "promocao",
@@ -3322,48 +3308,6 @@
    "https://www.voegol.com.br/promocao-voo-premiado"
   ],
   "ate": "2026-11-30T23:59:59-03:00"
- },
- {
-  "id": "3761373661-10304",
-  "data": "2026-11-24T11:59:27Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "Florianópolis",
-  "destino_iata": "FLN",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "25.900 milhas + Taxas",
-  "volta": "25.900 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10303",
-  "data": "2026-11-24T11:59:24Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "Vitória",
-  "destino_iata": "VIX",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "21.300 milhas + Taxas",
-  "volta": "21.300 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10302",
-  "data": "2026-11-24T11:59:21Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "Curitiba",
-  "destino_iata": "CWB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "24.700 milhas + Taxas",
-  "volta": "24.700 milhas + Taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7972",
