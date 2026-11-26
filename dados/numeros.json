@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-26T20:35:05.646813Z",
+ "atualizado": "2026-11-26T20:41:15.334443Z",
  "dias": 30,
  "passagens": 4362,
  "promocoes": 250,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1014,
+  "passagens": 1013,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -365,19 +365,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-20T20:59:25Z",
     "milhas": 71430,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
-    "id": "2008590742-16094",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Madrid",
-    "destino_iata": "MAD",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-19T20:41:02Z",
-    "milhas": 92300,
     "nivel": "muito bom",
     "regiao": "europa"
    },
@@ -939,6 +926,19 @@
     "milhas": 10300,
     "nivel": "",
     "regiao": "outros"
+   },
+   {
+    "id": "3761373661-10129",
+    "origem": "Goiânia",
+    "origem_iata": "GYN",
+    "destino": "Ilhéus",
+    "destino_iata": "IOS",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-23T00:26:52Z",
+    "milhas": 10330,
+    "nivel": "",
+    "regiao": "brasil"
    },
    {
     "id": "2361370250-6975",
