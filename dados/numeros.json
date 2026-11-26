@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-26T17:46:34.696456Z",
+ "atualizado": "2026-11-26T17:52:49.962633Z",
  "dias": 30,
  "passagens": 4311,
  "promocoes": 248,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 992,
+  "passagens": 987,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -694,19 +694,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9994",
-    "origem": "Porto Alegre",
-    "origem_iata": "POA",
-    "destino": "Santa Maria",
-    "destino_iata": "RIA",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-19T17:52:34Z",
-    "milhas": 7000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "3761373661-9996",
     "origem": "Belo Horizonte",
     "origem_iata": "CNF",
@@ -718,6 +705,19 @@
     "milhas": 7000,
     "nivel": "",
     "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10269",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Santa Maria",
+    "destino_iata": "RIA",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-23T17:03:03Z",
+    "milhas": 7000,
+    "nivel": "",
+    "regiao": "outros"
    },
    {
     "id": "2008590742-16431",
