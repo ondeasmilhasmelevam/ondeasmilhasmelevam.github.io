@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-26T12:38:07.244718Z",
+ "atualizado": "2026-11-26T12:44:27.420467Z",
  "dias": 30,
  "passagens": 4211,
  "promocoes": 239,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 941,
+  "passagens": 929,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -798,19 +798,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9970",
-    "origem": "Salvador",
-    "origem_iata": "SSA",
-    "destino": "Fortaleza",
-    "destino_iata": "FOR",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-19T12:41:32Z",
-    "milhas": 9000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-10003",
     "origem": "Belém",
     "origem_iata": "BEL",
@@ -850,6 +837,19 @@
     "regiao": "outros"
    },
    {
+    "id": "3761373661-10088",
+    "origem": "São Luís",
+    "origem_iata": "SLZ",
+    "destino": "Fortaleza",
+    "destino_iata": "FOR",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-22T13:28:54Z",
+    "milhas": 9470,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10354",
     "origem": "Campinas",
     "origem_iata": "VCP",
@@ -859,19 +859,6 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-24T20:59:21Z",
     "milhas": 9800,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-9965",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "Uberlândia",
-    "destino_iata": "UDI",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-19T12:40:11Z",
-    "milhas": 10000,
     "nivel": "",
     "regiao": "brasil"
    },
@@ -911,6 +898,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-23T00:26:52Z",
     "milhas": 10330,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10422",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Uberlândia",
+    "destino_iata": "UDI",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-26T12:22:52Z",
+    "milhas": 11100,
     "nivel": "",
     "regiao": "brasil"
    },
