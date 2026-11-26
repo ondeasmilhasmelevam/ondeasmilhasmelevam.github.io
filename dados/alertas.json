@@ -1,5 +1,47 @@
 [
  {
+  "id": "3761373661-10413",
+  "data": "2026-11-26T11:04:17Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "SDU",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "13.000 milhas + Taxas",
+  "volta": "13.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-10412",
+  "data": "2026-11-26T11:04:08Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Aracaju",
+  "destino_iata": "AJU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "19.000 milhas + Taxas",
+  "volta": "19.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16535",
+  "data": "2026-11-26T11:03:58Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Cusco",
+  "destino_iata": "CUZ",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "35.700 milhas + Taxas",
+  "volta": "35.700 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2361370250-7071",
   "data": "2026-11-26T09:37:11Z",
   "origem": "Cidade do Panamá",
@@ -2986,20 +3028,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-16424",
-  "data": "2026-11-24T12:17:23Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Milão",
-  "destino_iata": "MXP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "74.400 milhas + Taxas",
-  "volta": "74.400 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "3761373661-10310",
   "data": "2026-11-24T12:17:23Z",
   "origem": "Porto Alegre",
@@ -3011,6 +3039,20 @@
   "programa": "LATAM Pass",
   "ida": "8.400 milhas + Taxas",
   "volta": "8.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16424",
+  "data": "2026-11-24T12:17:23Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Milão",
+  "destino_iata": "MXP",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "74.400 milhas + Taxas",
+  "volta": "74.400 milhas + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
@@ -3317,48 +3359,6 @@
   "ida": "50.000 milhas + CAD 122,60 de taxas",
   "volta": "",
   "link_nome": "Aeroplan"
- },
- {
-  "id": "2008590742-16421",
-  "data": "2026-11-24T11:03:56Z",
-  "origem": "Foz do Iguaçu",
-  "origem_iata": "IGU",
-  "destino": "Buenos Aires",
-  "destino_iata": "AEP",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "34.700 milhas + Taxas",
-  "volta": "34.700 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-10293",
-  "data": "2026-11-24T11:03:52Z",
-  "origem": "Foz do Iguaçu",
-  "origem_iata": "IGU",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "16.000 milhas + Taxas",
-  "volta": "16.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-10292",
-  "data": "2026-11-24T11:03:46Z",
-  "origem": "Foz do Iguaçu",
-  "origem_iata": "IGU",
-  "destino": "Bonito",
-  "destino_iata": "BYO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "13.000 milhas + Taxas",
-  "volta": "13.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7972",
