@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16499",
+  "data": "2026-11-26T06:41:29Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "43.000 milhas + R$ 342,36 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10411",
   "data": "2026-11-26T05:41:10Z",
   "origem": "Vitória da Conquista",
@@ -3094,20 +3108,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-10310",
-  "data": "2026-11-24T12:17:23Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "8.400 milhas + Taxas",
-  "volta": "8.400 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "2008590742-16424",
   "data": "2026-11-24T12:17:23Z",
   "origem": "Porto Alegre",
@@ -3119,6 +3119,20 @@
   "programa": "LATAM Pass",
   "ida": "74.400 milhas + Taxas",
   "volta": "74.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10310",
+  "data": "2026-11-24T12:17:23Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "8.400 milhas + Taxas",
+  "volta": "8.400 milhas + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
