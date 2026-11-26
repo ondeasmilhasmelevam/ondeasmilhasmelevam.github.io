@@ -306,6 +306,7 @@ async function desenharPainel() {
   desenharDeposPainel();
   desenharAssinantesPainel();
   desenharCortesiasPainel();
+  desenharGruposPainel();
   desenharCampanhaPainel();
 }
 
@@ -838,7 +839,7 @@ addEventListener('hashchange', () => {
 const DONO = 'ondeasmilhasmelevam@gmail.com';
 // Trocou de conta (ou saiu): apaga o que o painel mostrou na conta anterior antes de qualquer coisa.
 function limparPainel() {
-  ['#painel-campanha', '#painel-cortesias', '#painel-assinantes', '#painel-depos'].forEach(id => { const el = $(id); if (el) el.innerHTML = ''; });
+  ['#painel-campanha', '#painel-cortesias', '#painel-grupos', '#painel-assinantes', '#painel-depos'].forEach(id => { const el = $(id); if (el) el.innerHTML = ''; });
   $('#painel-conteudo').innerHTML = '<p class="passagens-vazio">Este painel é só do dono do site.</p>';
 }
 let versaoConta = 0;
@@ -1477,3 +1478,175 @@ document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible') desenharPush().catch(() => {});
 });
 desenharPush();
+
+/* ---------- Cortesia por link de grupo (página #grupo e painel do dono) ---------- */
+// O link é ?g=CODIGO#grupo. 1) entra com Google ou código (o servidor manda código a quem chegou por um link aberto);
+// 2) nome, WhatsApp, CPF e @; o servidor confere CPF/WhatsApp/e-mail (uma vez por pessoa) e libera os dias na hora.
+const grupoCodigo = (() => {
+  const c = (new URLSearchParams(location.search).get('g') || '').toLowerCase();
+  try {
+    if (/^[a-z0-9]{8,16}$/.test(c)) sessionStorage.setItem('oamml-grupo', c);
+    return c || sessionStorage.getItem('oamml-grupo') || '';
+  } catch (e) { return c; }
+})();
+const cpfFmt = v => v.replace(/\D/g, '').slice(0, 11).replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+const cpfOk = v => {
+  const n = v.replace(/\D/g, '');
+  if (n.length !== 11 || /^(\d)\1{10}$/.test(n)) return false;
+  const dv = k => { let s = 0; for (let i = 0; i < k; i++) s += Number(n[i]) * (k + 1 - i); const r = (s * 10) % 11; return r === 10 ? 0 : r; };
+  return dv(9) === Number(n[9]) && dv(10) === Number(n[10]);
+};
+let grupoInfo = null, grupoFeito = false;
+function grupoMsg(t, tipo = '') {
+  const m = $('#grupo-msg');
+  m.textContent = t; m.className = `ass-msg ${tipo}`; m.hidden = !t;
+}
+function desenharGrupo() {
+  if (!$('#grupo') || grupoFeito) return;
+  const aviso = $('#grupo-aviso'), entrar = $('#grupo-entrar'), form = $('#grupo-form');
+  const avisar = t => { aviso.innerHTML = t; aviso.hidden = false; entrar.hidden = true; form.hidden = true; };
+  if (!grupoCodigo) return avisar('Abra esta página pelo link que você recebeu no grupo.');
+  if (!grupoInfo) return avisar('Conferindo o link…');
+  if (!grupoInfo.existe) return avisar('Este link não existe. Peça o link de novo a quem enviou.');
+  if (grupoInfo.pausado) return avisar('Este link foi encerrado por quem enviou. Conheça os <a href="#assinar">planos</a>.');
+  if (grupoInfo.esgotado) return avisar('As vagas deste link acabaram. Conheça os <a href="#assinar">planos</a>.');
+  aviso.hidden = true;
+  $('#grupo-titulo').textContent = `Você ganhou ${prazoCortesia(grupoInfo.dias)} grátis no Onde as Milhas Me Levam`;
+  const email = auth.currentUser?.email || '';
+  entrar.hidden = !!email;
+  form.hidden = !email;
+  if (email) $('#grupo-conta').innerHTML = `Cortesia para <b>${escR(email)}</b>. Não é este e-mail? <button type="button" class="ass-trocar" id="grupo-sair">Trocar de conta</button>`;
+}
+if ($('#grupo')) {
+  (async () => {
+    if (grupoCodigo) {
+      try { grupoInfo = await (await fetch(`${SERVIDOR}/grupo?c=${encodeURIComponent(grupoCodigo)}`)).json(); }
+      catch (e) { grupoInfo = { existe: false }; }
+    }
+    desenharGrupo();
+  })();
+  document.addEventListener('assinatura', desenharGrupo);
+  $('#grupo').addEventListener('click', e => { if (e.target.id === 'grupo-sair') signOut(auth); });
+  $('#grupo-google').addEventListener('click', async () => {
+    grupoMsg('');
+    try { await signInWithPopup(auth, new GoogleAuthProvider()); }
+    catch (e) { if (!auth.currentUser && !['auth/popup-closed-by-user', 'auth/cancelled-popup-request'].includes(e.code)) grupoMsg('Não deu para entrar com o Google. Use o código por e-mail.', 'erro'); }
+  });
+  $('#grupo-form-codigo').addEventListener('submit', async e => {
+    e.preventDefault();
+    const em = $('#grupo-login-email'), cod = $('#grupo-codigo'), b = e.target.querySelector('button');
+    const email = em.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { em.focus(); return grupoMsg('Digite um e-mail válido.', 'erro'); }
+    b.disabled = true;
+    try {
+      if (cod.hidden) {
+        await chamar('/codigo', { email, convite: grupoCodigo });
+        cod.hidden = false; em.readOnly = true; b.textContent = 'Entrar'; cod.focus();
+        grupoMsg(`Mandamos um código de 7 números para ${email}. Veja também o spam.`, 'ok');
+      } else {
+        const d = await chamar('/entrar', { email, codigo: cod.value.replace(/\D/g, '') });
+        await signInWithCustomToken(auth, d.token);
+        grupoMsg('');
+      }
+    } catch (er) { grupoMsg(er.message, 'erro'); }
+    finally { b.disabled = false; }
+  });
+  const f = $('#grupo-form');
+  f.elements.cpf.addEventListener('input', () => { f.elements.cpf.value = cpfFmt(f.elements.cpf.value); });
+  f.addEventListener('submit', async ev => {
+    ev.preventDefault();
+    const m = f.querySelector('.lead-msg'), b = f.querySelector('button[type=submit]');
+    const dizer = (t, ok) => { m.textContent = t; m.className = `lead-msg ${ok ? 'ok' : 'erro'}`; m.hidden = false; };
+    const el = f.elements;
+    if (el.nome.value.trim().length < 3) { el.nome.focus(); return dizer('Digite seu nome.'); }
+    if (el.telefone.value.replace(/\D/g, '').length < 10) { el.telefone.focus(); return dizer('Digite seu WhatsApp com DDD.'); }
+    if (!cpfOk(el.cpf.value)) { el.cpf.focus(); return dizer('Confira o CPF: os números não batem.'); }
+    if (!el.aceite.checked) return dizer('Marque que aceita os Termos de Uso.');
+    b.disabled = true; dizer('Liberando…', true);
+    try {
+      const r = await fetch(`${SERVIDOR}/grupo/usar`, { method: 'POST', headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' },
+        body: JSON.stringify({ codigo: grupoCodigo, nome: el.nome.value, telefone: el.telefone.value, cpf: el.cpf.value, instagram: el.instagram.value, aceite: true }) });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(d.erro || 'Não deu agora. Tente de novo em instantes.');
+      grupoFeito = true;
+      try { sessionStorage.removeItem('oamml-grupo'); } catch (e) { /* ignora */ }
+      f.hidden = true;
+      $('#grupo-pronto-txt').innerHTML = `<b>Pronto!</b> Seus ${prazoCortesia(d.dias)} estão liberados até <b>${new Date(d.ate).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })}</b>. Antes de acabar, avisamos por e-mail.`;
+      $('#grupo-pronto').hidden = false;
+      sincronizarConta(auth.currentUser);
+    } catch (er) { dizer(er.message); b.disabled = false; }
+  });
+}
+// Painel: criar link (nome do grupo, dias e limite de cadastros), copiar, encerrar, mudar limite e ver os cadastros.
+async function desenharGruposPainel() {
+  const el = $('#painel-grupos');
+  if (!el || !auth.currentUser) return;
+  let links = [];
+  try {
+    const r = await fetch(`${SERVIDOR}/grupos`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
+    if (!r.ok) { el.innerHTML = ''; return; }
+    links = (await r.json()).links;
+  } catch (e) { el.innerHTML = ''; return; }
+  const n = x => Number(x).toLocaleString('pt-BR');
+  const situ = l => (!l.ativo ? '<span class="ass-sit cancelado">Encerrado</span>' : l.usos >= l.limite ? '<span class="ass-sit vencido">Esgotado</span>' : '<span class="ass-sit ativo">Aberto</span>');
+  el.innerHTML = `<h3 class="prova-sub">Links de cortesia para grupos</h3>
+    <form class="cortesia-nova" id="grupo-novo">
+      <input name="nome" maxlength="60" placeholder="Nome do grupo (só você vê)" aria-label="Nome do grupo" required>
+      <select name="dias" aria-label="Dias de cortesia"><option value="7">7 dias</option><option value="15">15 dias</option><option value="30" selected>30 dias</option><option value="90">90 dias</option><option value="180">6 meses</option><option value="365">1 ano</option></select>
+      <input name="limite" type="number" min="1" max="100000" step="1" inputmode="numeric" placeholder="Máximo de cadastros (ex.: 3500)" aria-label="Máximo de cadastros" required>
+      <button class="cta cta-a" type="submit">Gerar link</button>
+    </form>
+    ${links.length ? `<ul class="cortesias grupos">${links.map(l => `<li data-codigo="${escR(l.codigo)}">
+      <p><b>${escR(l.nome)}</b> · ${prazoCortesia(l.dias)} · <b>${n(l.usos)}</b> de ${n(l.limite)} cadastros ${situ(l)} <small>criado em ${new Date(l.criadoEm).toLocaleDateString('pt-BR')}</small></p>
+      <input class="grupo-url" readonly value="${escR(l.url)}" aria-label="Link para enviar">
+      <div class="cort-reenviar"><button type="button" class="cta cta-a" data-copiar>Copiar link</button><button type="button" class="cta cta-b" data-limite="${l.limite}">Mudar limite</button><button type="button" class="cta cta-b" data-ativo="${l.ativo ? '0' : '1'}">${l.ativo ? 'Encerrar' : 'Reabrir'}</button><button type="button" class="cta cta-b" data-cadastros>Ver cadastros</button></div>
+      <div class="grupo-cadastros" hidden></div></li>`).join('')}</ul>` : ''}`;
+}
+async function editarGrupo(codigo, dados) {
+  const r = await fetch(`${SERVIDOR}/grupos/editar`, { method: 'POST', headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' }, body: JSON.stringify({ codigo, ...dados }) });
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) alert(d.erro || 'Não deu agora.');
+  desenharGruposPainel();
+}
+$('#painel-grupos')?.addEventListener('submit', async e => {
+  if (e.target.id !== 'grupo-novo') return;
+  e.preventDefault();
+  const f = e.target, b = f.querySelector('button');
+  b.disabled = true;
+  try {
+    const r = await fetch(`${SERVIDOR}/grupos/criar`, { method: 'POST', headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' },
+      body: JSON.stringify({ nome: f.elements.nome.value, dias: Number(f.elements.dias.value), limite: Number(f.elements.limite.value) }) });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(d.erro || 'Não deu agora.');
+    try { await navigator.clipboard.writeText(d.url); alert(`Link criado e copiado:\n${d.url}`); } catch (er) { alert(`Link criado:\n${d.url}`); }
+    desenharGruposPainel();
+  } catch (er) { alert(er.message); b.disabled = false; }
+});
+$('#painel-grupos')?.addEventListener('click', async e => {
+  const li = e.target.closest('li[data-codigo]');
+  const b = e.target.closest('button');
+  if (!li || !b) return;
+  const codigo = li.dataset.codigo;
+  if (b.hasAttribute('data-copiar')) {
+    const campo = li.querySelector('.grupo-url');
+    try { await navigator.clipboard.writeText(campo.value); b.textContent = 'Copiado!'; } catch (er) { campo.select(); }
+    setTimeout(() => { b.textContent = 'Copiar link'; }, 1800);
+  } else if (b.dataset.limite) {
+    const novo = prompt('Novo máximo de cadastros para este link:', b.dataset.limite);
+    if (novo !== null && Number(novo) >= 1) editarGrupo(codigo, { limite: Math.floor(Number(novo)) });
+  } else if (b.dataset.ativo) {
+    const abrir = b.dataset.ativo === '1';
+    if (confirm(abrir ? 'Reabrir este link? Quem tiver o link volta a conseguir se cadastrar.' : 'Encerrar este link? Ninguém mais consegue se cadastrar por ele. Quem já se cadastrou continua com a cortesia.')) editarGrupo(codigo, { ativo: abrir });
+  } else if (b.hasAttribute('data-cadastros')) {
+    const caixa = li.querySelector('.grupo-cadastros');
+    if (!caixa.hidden) { caixa.hidden = true; return; }
+    caixa.hidden = false; caixa.textContent = 'Carregando…';
+    try {
+      const r = await fetch(`${SERVIDOR}/grupos/cadastros?c=${encodeURIComponent(codigo)}`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
+      const d = await r.json();
+      if (!r.ok) throw new Error(d.erro);
+      const dt = x => (x ? new Date(x).toLocaleDateString('pt-BR') : '');
+      caixa.innerHTML = d.cadastros.length ? `<div class="grupo-tabela"><table><thead><tr><th>Nome</th><th>E-mail</th><th>WhatsApp</th><th>Instagram</th><th>CPF</th><th>Cadastro</th><th>Até</th></tr></thead><tbody>${d.cadastros.map(c => `<tr><td>${escR(c.nome)}</td><td>${escR(c.email)}</td><td>${c.telefone ? `<a href="https://wa.me/${escR(c.telefone)}" target="_blank" rel="noopener">${escR(c.telefone.replace(/^55/, ''))}</a>` : ''}</td><td>${c.instagram ? `<a href="https://instagram.com/${escR(c.instagram)}" target="_blank" rel="noopener">@${escR(c.instagram)}</a>` : ''}</td><td>•••.•••.•••-${escR(c.cpfFim)}</td><td>${dt(c.criadoEm)}</td><td>${dt(c.ate)}</td></tr>`).join('')}</tbody></table></div>` : '<p>Ninguém se cadastrou ainda.</p>';
+    } catch (er) { caixa.textContent = er.message || 'Não deu para carregar.'; }
+  }
+});
