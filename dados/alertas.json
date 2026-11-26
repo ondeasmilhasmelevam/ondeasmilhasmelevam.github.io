@@ -3366,20 +3366,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-10301",
-  "data": "2026-11-24T11:59:17Z",
-  "origem": "Sinop",
-  "origem_iata": "OPS",
-  "destino": "São Luís",
-  "destino_iata": "SLZ",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "37.100 milhas + Taxas",
-  "volta": "37.100 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7972",
   "data": "2026-11-23T16:32:05Z",
   "tipo": "promocao",
