@@ -1,5 +1,38 @@
 [
  {
+  "id": "1290836068-8034",
+  "data": "2026-11-26T14:13:00Z",
+  "tipo": "promocao",
+  "titulo": "CLUBE LIVELO PREMIUM: UPGRADE COM ATÉ 390.000 PONTOS!",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Faça o upgrade para o Clube Livelo Premium e acumule até 390.000 pontos em 12 meses na modalidade anual.",
+  "detalhes": [
+   "390.000 pontos na modalidade anual.",
+   "384.000 pontos na modalidade mensal."
+  ],
+  "parceiros": "Livelo",
+  "validade": "29/11/2026",
+  "links": [
+   "https://www.livelo.com.br/upgrade-promo-CDC16585"
+  ],
+  "ate": "2026-11-29T23:59:59-03:00"
+ },
+ {
+  "id": "2008590742-16556",
+  "data": "2026-11-26T14:08:41Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Mendoza",
+  "destino_iata": "MDZ",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "61.000 milhas + Taxas",
+  "volta": "61.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-8033",
   "data": "2026-11-26T14:02:45Z",
   "tipo": "promocao",
