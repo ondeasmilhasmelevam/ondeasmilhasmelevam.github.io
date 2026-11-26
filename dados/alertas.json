@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-7088",
+  "data": "2026-11-26T18:12:28Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Cidade do Panamá",
+  "destino_iata": "PTY",
+  "companhia": "Copa Airlines",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "63.200 milhas + Taxas",
+  "volta": "63.200 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2361370250-7087",
+  "data": "2026-11-26T18:12:26Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Bogotá",
+  "destino_iata": "BOG",
+  "companhia": "GOL",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "70.200 milhas + Taxas",
+  "volta": "70.200 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16598",
   "data": "2026-11-26T18:01:04Z",
   "origem": "Vitória",

@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-26T18:11:21.593842Z",
+ "atualizado": "2026-11-26T18:17:32.069213Z",
  "dias": 30,
- "passagens": 4315,
+ "passagens": 4317,
  "promocoes": 248,
  "destinos": 186,
- "executiva": 866,
+ "executiva": 868,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 991,
+  "passagens": 993,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -1123,6 +1123,19 @@
     "regiao": "outros"
    },
    {
+    "id": "2361370250-7088",
+    "origem": "Manaus",
+    "origem_iata": "MAO",
+    "destino": "Cidade do Panamá",
+    "destino_iata": "PTY",
+    "cabine": "Executiva",
+    "programa": "Smiles",
+    "data": "2026-11-26T18:12:28Z",
+    "milhas": 63200,
+    "nivel": "",
+    "regiao": "caribe"
+   },
+   {
     "id": "2361370250-6999",
     "origem": "Paris",
     "origem_iata": "CDG",
@@ -1160,19 +1173,6 @@
     "milhas": 63750,
     "nivel": "",
     "regiao": "europa"
-   },
-   {
-    "id": "2361370250-6878",
-    "origem": "Manaus",
-    "origem_iata": "MAO",
-    "destino": "Cidade do Panamá",
-    "destino_iata": "PTY",
-    "cabine": "Executiva",
-    "programa": "GOL Smiles",
-    "data": "2026-11-20T11:44:03Z",
-    "milhas": 66500,
-    "nivel": "",
-    "regiao": "caribe"
    },
    {
     "id": "2361370250-6962",
