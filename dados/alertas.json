@@ -3841,48 +3841,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16429",
-  "data": "2026-11-24T15:42:35Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "39.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2361370250-7036",
-  "data": "2026-11-24T15:42:24Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Orlando",
-  "destino_iata": "MCO",
-  "companhia": "GOL",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "460.000 pontos + Taxas",
-  "volta": "330.000 pontos + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16428",
-  "data": "2026-11-24T15:42:18Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Nova York",
-  "destino_iata": "JFK",
-  "companhia": "Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "88.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7989",
   "data": "2026-11-24T12:00:01Z",
   "tipo": "promocao",
