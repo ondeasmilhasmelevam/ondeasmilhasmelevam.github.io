@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-26T19:13:39.825708Z",
+ "atualizado": "2026-11-26T19:19:46.513826Z",
  "dias": 30,
  "passagens": 4342,
  "promocoes": 248,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1018,
+  "passagens": 1017,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -720,19 +720,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9996",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "Rio de Janeiro",
-    "destino_iata": "SDU",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-19T19:16:57Z",
-    "milhas": 7000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-10269",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -767,6 +754,19 @@
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
     "data": "2026-11-25T05:41:23Z",
+    "milhas": 7000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10386",
+    "origem": "Campinas",
+    "origem_iata": "VCP",
+    "destino": "Rio de Janeiro",
+    "destino_iata": "SDU",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-25T20:13:47Z",
     "milhas": 7000,
     "nivel": "",
     "regiao": "brasil"
