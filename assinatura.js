@@ -463,6 +463,7 @@ async function desenharCampanhaPainel() {
   } catch (e) { return; }
   const pend = d.pedidos.filter(p => p.status === 'pendente');
   const data = t => (t ? new Date(t).toLocaleDateString('pt-BR') : '');
+  marcarPainel('cortesias', pend.length);
   el.innerHTML = `<h3 class="prova-sub">Campanha de cortesia · ${d.campanha.aberta ? `aberta até ${data(d.campanha.ate)}` : `próxima em ${data(d.campanha.proxima)}`}${pend.length ? ` · ${pend.length} ${pend.length === 1 ? 'pedido esperando' : 'pedidos esperando'}` : ''}</h3>
     ${d.pedidos.length ? `<ul class="cortesias">${d.pedidos.slice(0, 40).map(p => `<li class="${p.status === 'pendente' ? 'pendente' : ''}" data-email="${escR(p.email)}">
       <p><b>${escR(p.nome)}</b> · <a href="https://instagram.com/${escR(p.instagram)}" target="_blank" rel="noopener">@${escR(p.instagram)}</a> · ${escR(p.email)}${p.telefone ? ` · <a href="https://wa.me/${escR(p.telefone)}" target="_blank" rel="noopener">WhatsApp</a>` : ''} <small>${data(p.criadoEm)}</small></p>
@@ -639,6 +640,7 @@ async function desenharDeposPainel() {
     lista = (await r.json()).depoimentos;
   } catch (e) { return; }
   const pendentes = lista.filter(d => d.status === 'pendente').length;
+  marcarPainel('comentarios', pendentes);
   el.innerHTML = `<h3 class="prova-sub">Comentários (elogios e sugestões)${pendentes ? ` · ${pendentes} esperando aprovação` : ''}</h3>` + (lista.length
     ? `<ul class="depos-lista painel">${lista.map(d => `<li class="${escR(d.status)}" data-email="${escR(d.email)}">
         <p class="depo-status">${DEPO_SITUACAO[d.status] || ''}</p>
@@ -1700,12 +1702,6 @@ function aplicarFiltro(chave) {
   if (m) m.textContent = vis === itens.length ? '' : `Mostrando ${vis} de ${itens.length}`;
 }
 $('#painel-acessos')?.addEventListener('click', e => {
-  const aba = e.target.closest('[data-aba]');
-  if (aba) {
-    $('#painel-acessos').querySelectorAll('[data-aba]').forEach(b => b.setAttribute('aria-selected', String(b === aba)));
-    $('#painel-acessos').querySelectorAll('[data-aba-painel]').forEach(p => { p.hidden = p.dataset.abaPainel !== aba.dataset.aba; });
-    return;
-  }
   const b = e.target.closest('[data-filtros] [data-f]');
   if (!b) return;
   const chave = b.closest('[data-filtros]').dataset.filtros;
@@ -1722,3 +1718,29 @@ $('#painel-acessos')?.addEventListener('input', e => {
   aplicarFiltro(chave);
 });
 
+
+/* ---------- Painel: subpáginas (Visão geral, Assinantes, Cortesias, Convidados por link, Comentários) ---------- */
+// Cada bloco do Painel tem data-painel-sub; o CSS mostra só os da subpágina escolhida (guardada neste navegador).
+function marcarPainel(sub, n) {
+  const s = document.querySelector(`#painel-nav [data-sub="${sub}"] span`);
+  if (s) s.textContent = n ? String(n) : '';
+}
+(() => {
+  const nav = $('#painel-nav');
+  if (!nav) return;
+  const ir = sub => {
+    if (!nav.querySelector(`[data-sub="${sub}"]`)) sub = 'geral';
+    $('#painel').dataset.sub = sub;
+    nav.querySelectorAll('[data-sub]').forEach(b => b.setAttribute('aria-current', String(b.dataset.sub === sub)));
+    try { localStorage.setItem('oamml-painel-sub', sub); } catch (e) { /* ignora */ }
+  };
+  let salvo = 'geral';
+  try { salvo = localStorage.getItem('oamml-painel-sub') || 'geral'; } catch (e) { /* ignora */ }
+  ir(salvo);
+  nav.addEventListener('click', e => {
+    const b = e.target.closest('[data-sub]');
+    if (!b) return;
+    ir(b.dataset.sub);
+    $('#painel').scrollIntoView({ block: 'start' });
+  });
+})();

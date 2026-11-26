@@ -2881,3 +2881,19 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .depo-tipo input:checked+span{background:var(--ouro);color:var(--sobre-ouro)}
 .depo-tipo input:focus-visible+span{outline:2px solid var(--ouro);outline-offset:2px}
 .depo-selo{display:inline-block;margin:0 0 6px;padding:2px 10px;border:1px solid var(--line);border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ouro)}
+
+/* Painel: subpáginas */
+.painel-nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:4px 0 22px;padding:4px;border:1px solid var(--line);border-radius:999px;width:max-content;max-width:100%}
+.painel-nav::-webkit-scrollbar{display:none}
+.painel-nav button{flex:none;border:0;background:transparent;color:var(--ash);font:inherit;font-size:14px;font-weight:700;padding:9px 16px;border-radius:999px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.painel-nav button:hover{color:var(--rice)}
+.painel-nav button[aria-current="true"]{background:var(--ouro);color:var(--sobre-ouro)}
+.painel-nav button span:empty{display:none}
+.painel-nav button span{min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--alerta);color:#fff;font-size:11px;line-height:18px;text-align:center}
+#painel[data-sub="geral"] [data-painel-sub]:not([data-painel-sub~="geral"]),
+#painel[data-sub="assinantes"] [data-painel-sub]:not([data-painel-sub~="assinantes"]),
+#painel[data-sub="cortesias"] [data-painel-sub]:not([data-painel-sub~="cortesias"]),
+#painel[data-sub="links"] [data-painel-sub]:not([data-painel-sub~="links"]),
+#painel[data-sub="comentarios"] [data-painel-sub]:not([data-painel-sub~="comentarios"]){display:none!important}
+#painel-dias{justify-content:flex-start;margin:0 0 18px}
+@media (max-width:600px){.painel-nav{flex-wrap:wrap;width:auto;border:0;padding:2px;gap:6px;overflow:visible}.painel-nav button{padding:8px 13px;font-size:13px;border:1px solid var(--line)}.painel-nav button[aria-current="true"]{border-color:var(--ouro)}}
