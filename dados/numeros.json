@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-26T13:21:55.838817Z",
+ "atualizado": "2026-11-26T13:28:11.214968Z",
  "dias": 30,
- "passagens": 4218,
+ "passagens": 4225,
  "promocoes": 240,
  "destinos": 184,
- "executiva": 855,
+ "executiva": 856,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 929,
+  "passagens": 936,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -1097,6 +1097,19 @@
     "regiao": "outros"
    },
    {
+    "id": "2361370250-7076",
+    "origem": "Belo Horizonte",
+    "origem_iata": "CNF",
+    "destino": "Orlando",
+    "destino_iata": "MCO",
+    "cabine": "Executiva",
+    "programa": "Aeroplan",
+    "data": "2026-11-26T13:27:27Z",
+    "milhas": 50000,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "2361370250-6999",
     "origem": "Paris",
     "origem_iata": "CDG",
@@ -1183,19 +1196,6 @@
     "cabine": "Executiva",
     "programa": "AAdvantage",
     "data": "2026-11-23T13:16:38Z",
-    "milhas": 75000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
-    "id": "2361370250-7008",
-    "origem": "Helsinque",
-    "origem_iata": "HEL",
-    "destino": "Bangkok",
-    "destino_iata": "BKK",
-    "cabine": "Executiva",
-    "programa": "AAdvantage",
-    "data": "2026-11-23T22:03:14Z",
     "milhas": 75000,
     "nivel": "",
     "regiao": "outros"
