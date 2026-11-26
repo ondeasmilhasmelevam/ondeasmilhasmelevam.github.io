@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-26T12:05:32.849317Z",
+ "atualizado": "2026-11-26T12:12:53.289776Z",
  "dias": 30,
- "passagens": 4199,
+ "passagens": 4204,
  "promocoes": 239,
- "destinos": 183,
- "executiva": 853,
+ "destinos": 184,
+ "executiva": 855,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 929,
+  "passagens": 934,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -1045,6 +1045,19 @@
     "regiao": "america-do-sul"
    },
    {
+    "id": "2361370250-7074",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
+    "destino": "Buenos Aires",
+    "destino_iata": "EZE",
+    "cabine": "Executiva",
+    "programa": "British Airways Executive Club",
+    "data": "2026-11-26T12:11:06Z",
+    "milhas": 30000,
+    "nivel": "",
+    "regiao": "america-do-sul"
+   },
+   {
     "id": "2361370250-6819",
     "origem": "Tóquio",
     "origem_iata": "NRT",
@@ -1095,19 +1108,6 @@
     "milhas": 50000,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "2361370250-7048",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Buenos Aires",
-    "destino_iata": "EZE",
-    "cabine": "Executiva",
-    "programa": "Smiles",
-    "data": "2026-11-25T11:45:11Z",
-    "milhas": 53000,
-    "nivel": "",
-    "regiao": "america-do-sul"
    },
    {
     "id": "2361370250-6999",
