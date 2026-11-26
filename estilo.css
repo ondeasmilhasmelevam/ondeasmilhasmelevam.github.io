@@ -2850,17 +2850,34 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .aviso-opiniao a b{color:var(--ouro);font-weight:600}
 .aviso-opiniao a:hover b{text-decoration:underline}
 #aviso-opiniao-fechar{border:0;background:transparent;color:var(--ash-dim);font-size:17px;line-height:1;padding:4px 6px;cursor:pointer}
-/* Sugestão: campo pequeno abaixo do depoimento */
-.ass-sugestao{flex:1 1 100%;display:grid;gap:8px;margin-top:4px;padding:14px 16px;border:1px dashed var(--line);border-radius:14px}
-.ass-sugestao label{font-size:14px;font-weight:600}
-.ass-sugestao label small{font-weight:400;color:var(--ash-dim);margin-left:4px}
-.ass-sugestao textarea{width:100%;resize:vertical;background:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px 11px;color:var(--rice);font:inherit;font-size:14px}
-.ass-sugestao div{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.ass-sugestao .cta{padding:7px 14px;font-size:13px}
-.ass-sug-msg{font-size:13px;color:var(--ash)}
 #opiniao{flex:1 1 100%;display:grid;gap:10px;scroll-margin-top:90px}
-.sugestoes{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.sugestoes li{padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--ink-2)}
-.sugestoes p{margin:0 0 4px;font-size:14px}
-.sugestoes small{color:var(--ash-dim);font-size:12px}
 .sugestoes-vazio{color:var(--ash-dim);font-size:13px}
+
+/* Painel: caixa "acessos grátis" com duas abas, filtros e listas com rolagem */
+.painel-caixa{margin:0 0 28px;padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--ink-2)}
+.painel-abas{display:flex;gap:4px;margin:0 0 16px;padding:4px;border:1px solid var(--line);border-radius:999px;width:max-content;max-width:100%}
+.painel-abas button{border:0;background:transparent;color:var(--ash);font:inherit;font-size:14px;font-weight:700;padding:8px 16px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.painel-abas button[aria-selected="true"]{background:var(--ouro);color:var(--sobre-ouro)}
+.painel-caixa .cortesias li{background:var(--ink)}
+.painel-filtros{display:grid;gap:10px;margin:0 0 12px}
+.painel-filtros .atalhos{justify-content:flex-start;margin:0}
+.painel-filtros .atalhos button span{opacity:.65;font-weight:600;margin-left:2px}
+.painel-busca{display:flex;gap:8px;flex-wrap:wrap}
+.painel-busca input,.painel-busca select{flex:1 1 200px;background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:9px 12px;color:var(--rice);font:inherit;font-size:14px}
+.painel-mostrando{margin:0;font-size:12.5px;color:var(--ash-dim)}
+.painel-mostrando:empty{display:none}
+.painel-lista{max-height:560px;overflow:auto;padding-right:4px;overscroll-behavior:contain}
+.painel-lista.curta{max-height:380px;margin-bottom:8px}
+.painel-sub{margin:18px 0 10px;font-size:15px;color:var(--rice)}
+.grupo-tabela tr[hidden]{display:none}
+@media (max-width:520px){.painel-caixa{padding:12px}.painel-abas button{padding:8px 12px;font-size:13px}}
+.painel-sub-1{margin-top:0}
+
+/* Comentário: Elogio | Sugestão (pílulas discretas) e o selo da sugestão no lugar das estrelas */
+.depo-tipo{display:inline-flex;gap:4px;padding:3px;border:1px solid var(--line);border-radius:999px;margin:2px 0 4px;width:max-content}
+.depo-tipo label{cursor:pointer}
+.depo-tipo input{position:absolute;opacity:0;pointer-events:none}
+.depo-tipo span{display:block;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;color:var(--ash)}
+.depo-tipo input:checked+span{background:var(--ouro);color:var(--sobre-ouro)}
+.depo-tipo input:focus-visible+span{outline:2px solid var(--ouro);outline-offset:2px}
+.depo-selo{display:inline-block;margin:0 0 6px;padding:2px 10px;border:1px solid var(--line);border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ouro)}

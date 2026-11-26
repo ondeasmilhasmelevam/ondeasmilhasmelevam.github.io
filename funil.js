@@ -167,11 +167,11 @@
     try { lista = (await (await fetch(`${SERVIDOR}/depoimentos`)).json()).depoimentos; } catch (e) { return; }
     if (!lista || !lista.length) return;
     const html = `<p class="prova-tit">O que dizem os assinantes</p><ul class="depos-lista">${lista.slice(0, 6).map(d => `<li>
-        <p class="depo-estrelas" aria-label="${d.nota} de 5 estrelas">${'★'.repeat(d.nota)}<span>${'★'.repeat(5 - d.nota)}</span></p>
+        ${d.tipo === 'sugestao' ? '<p class="depo-selo">Sugestão</p>' : `<p class="depo-estrelas" aria-label="${d.nota} de 5 estrelas">${'★'.repeat(d.nota)}<span>${'★'.repeat(5 - d.nota)}</span></p>`}
         <blockquote>${esc(d.texto)}</blockquote>
         <div class="depo-quem">${window.oammlFoto(d)}<p class="depo-autor"><b>${esc(d.nome)}</b>${d.cidade ? ` · ${esc(d.cidade)}` : ''}${d.instagram ? ` · <a href="https://www.instagram.com/${esc(d.instagram)}/" target="_blank" rel="noopener nofollow">@${esc(d.instagram)}</a>` : ''}</p></div></li>`).join('')}</ul>`;
     caixas.forEach(el => { el.innerHTML = html; el.hidden = false; window.oammlFotoErros(el); });
-    desenharDepoDestaque(lista);
+    desenharDepoDestaque(lista.filter(d => d.tipo !== 'sugestao'));
   })();
 
   // Prova social: números dos últimos 30 dias e as melhores achadas.

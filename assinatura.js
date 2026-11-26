@@ -305,7 +305,6 @@ async function desenharPainel() {
     ${tabela('Origem', Object.entries(porOrigem).sort((x, y) => y[1].visita - x[1].visita).map(([o, l]) => [ORIGEM_NOME[o] || o, l]))}
     ${tabela('Dia', porDia)}`;
   desenharDeposPainel();
-  desenharSugestoesPainel();
   desenharAssinantesPainel();
   desenharCortesiasPainel();
   desenharGruposPainel();
@@ -501,7 +500,7 @@ async function desenharCortesiasPainel() {
     lista = (await r.json()).cortesias;
   } catch (e) { return; }
   const data = t => (t ? new Date(t).toLocaleDateString('pt-BR') : '');
-  el.innerHTML = `<h3 class="prova-sub">Dar cortesia</h3>
+  el.innerHTML = `<h4 class="painel-sub painel-sub-1">Dar nova cortesia</h4>
     <form class="cortesia-nova" id="cortesia-nova">
       <input name="nome" maxlength="60" placeholder="Nome da pessoa" aria-label="Nome da pessoa">
       <input name="email" type="email" placeholder="E-mail da pessoa" aria-label="E-mail da pessoa" required>
@@ -510,7 +509,9 @@ async function desenharCortesiasPainel() {
       <button class="cta cta-a" type="submit">Dar cortesia</button>
       <p class="lead-msg" role="status" hidden></p>
     </form>
-    ${lista.length ? `<ul class="cortesias">${lista.map(c => `<li><p><b>${prazoCortesia(c.dias)}</b> · ${c.nome ? `${escR(c.nome)} · ` : ''}${escR(c.email)}${c.telefone ? ` · <a href="https://wa.me/${escR(c.telefone)}" target="_blank" rel="noopener">WhatsApp</a>` : ''} <small>dada em ${data(c.criadoEm)} · ${c.pendente ? `<em class="cort-espera">ainda não ativou</em>${c.reenviadoEm ? ` · e-mail reenviado em ${data(c.reenviadoEm)}` : ''}` : `${c.ativadaEm ? `ativou em ${data(c.ativadaEm)}, ` : ''}até ${data(c.ate)}`}</small></p><div class="cort-reenviar">${c.pendente ? `<button type="button" class="cta cta-b" data-reenviar="${escR(c.email)}">Reenviar e-mail</button>` : ''}<button type="button" class="cta cta-b cort-excluir" data-excluir="${escR(c.id)}" data-email="${escR(c.email)}" data-dias="${escR(c.dias)}" data-estado="${c.pendente ? 'pendente' : c.ate && new Date(c.ate).getTime() > Date.now() ? 'ativa' : 'encerrada'}">Excluir</button>${renovarCortesiaHtml(c)}<span role="status"></span></div></li>`).join('')}</ul>` : ''}`;
+    ${lista.length ? `${filtrosHtml('dadas', [['todas', 'Todas'], ['ativa', 'Ativas'], ['espera', 'Não ativaram'], ['encerrada', 'Encerradas']], lista.map(estadoCortesia))}<div class="painel-lista"><ul class="cortesias">${lista.map(c => `<li data-situacao="${estadoCortesia(c)}" data-busca="${escR(`${c.nome || ''} ${c.email}`.toLowerCase())}"><p><b>${prazoCortesia(c.dias)}</b> · ${c.nome ? `${escR(c.nome)} · ` : ''}${escR(c.email)}${c.telefone ? ` · <a href="https://wa.me/${escR(c.telefone)}" target="_blank" rel="noopener">WhatsApp</a>` : ''} <small>dada em ${data(c.criadoEm)} · ${c.pendente ? `<em class="cort-espera">ainda não ativou</em>${c.reenviadoEm ? ` · e-mail reenviado em ${data(c.reenviadoEm)}` : ''}` : `${c.ativadaEm ? `ativou em ${data(c.ativadaEm)}, ` : ''}até ${data(c.ate)}`}</small></p><div class="cort-reenviar">${c.pendente ? `<button type="button" class="cta cta-b" data-reenviar="${escR(c.email)}">Reenviar e-mail</button>` : ''}<button type="button" class="cta cta-b cort-excluir" data-excluir="${escR(c.id)}" data-email="${escR(c.email)}" data-dias="${escR(c.dias)}" data-estado="${c.pendente ? 'pendente' : c.ate && new Date(c.ate).getTime() > Date.now() ? 'ativa' : 'encerrada'}">Excluir</button>${renovarCortesiaHtml(c)}<span role="status"></span></div></li>`).join('')}</ul></div>` : ''}`;
+  $('#painel-acessos').hidden = false;
+  aplicarFiltro('dadas');
 }
 $('#painel-cortesias').addEventListener('click', e => {
   const b = e.target.closest('[data-renovar]');
@@ -638,10 +639,10 @@ async function desenharDeposPainel() {
     lista = (await r.json()).depoimentos;
   } catch (e) { return; }
   const pendentes = lista.filter(d => d.status === 'pendente').length;
-  el.innerHTML = `<h3 class="prova-sub">Depoimentos${pendentes ? ` · ${pendentes} esperando aprovação` : ''}</h3>` + (lista.length
+  el.innerHTML = `<h3 class="prova-sub">Comentários (elogios e sugestões)${pendentes ? ` · ${pendentes} esperando aprovação` : ''}</h3>` + (lista.length
     ? `<ul class="depos-lista painel">${lista.map(d => `<li class="${escR(d.status)}" data-email="${escR(d.email)}">
         <p class="depo-status">${DEPO_SITUACAO[d.status] || ''}</p>
-        <p class="depo-estrelas">${estrelas(d.nota)}</p>
+        ${d.tipo === 'sugestao' ? '<p class="depo-selo">Sugestão</p>' : `<p class="depo-estrelas">${estrelas(d.nota)}</p>`}
         <blockquote>${escR(d.texto)}</blockquote>
         <div class="depo-quem">${window.oammlFoto(d)}<p class="depo-autor"><b>${escR(d.nome)}</b>${d.cidade ? ` · ${escR(d.cidade)}` : ''}${d.instagram ? ` · @${escR(d.instagram)}` : ''} · ${escR(d.email)}</p></div>
         <div class="depo-botoes">${d.status !== 'aprovado' ? '<button type="button" class="cta cta-a" data-status="aprovado">Aprovar</button>' : ''}${d.status !== 'oculto' ? '<button type="button" class="cta cta-b" data-status="oculto">Ocultar</button>' : ''}</div>
@@ -670,8 +671,9 @@ async function desenharDepoimento(estado, aviso = '') {
   const SITUACAO = { pendente: 'Recebido! Aparece no site assim que for aprovado.', aprovado: 'Publicado no site. Obrigado!', oculto: 'Não foi publicado. Você pode editar e mandar de novo.' };
   const nota = meu?.nota || 5;
   el.innerHTML = `<form class="depo-form" novalidate>
-      <p><b>O que você está achando do site?</b> Conte em poucas linhas, por exemplo uma passagem que emitiu graças a um alerta. Isso ajuda muito quem está pensando em assinar.</p>
+      <p><b>O que está achando do site?</b> Deixe um elogio ou uma sugestão. Depois de aprovado, aparece aqui no site.</p>
       ${meu ? `<p class="depo-situacao">${SITUACAO[meu.status] || ''}</p>` : ''}
+      <div class="depo-tipo" role="radiogroup" aria-label="Tipo de comentário"><label><input type="radio" name="tipo" value="elogio"${meu?.tipo === 'sugestao' ? '' : ' checked'}><span>Elogio</span></label><label><input type="radio" name="tipo" value="sugestao"${meu?.tipo === 'sugestao' ? ' checked' : ''}><span>Sugestão</span></label></div>
       <fieldset class="depo-nota"><legend>Sua nota</legend>${[1, 2, 3, 4, 5].map(n => `<label><input type="radio" name="nota" value="${n}"${nota === n ? ' checked' : ''}><span aria-hidden="true">★</span><i class="sr">${n} ${n === 1 ? 'estrela' : 'estrelas'}</i></label>`).join('')}</fieldset>
       <textarea name="texto" rows="4" maxlength="500" aria-label="Seu depoimento" placeholder="Ex.: Emiti São Paulo–Lisboa em executiva por 70 mil milhas no mesmo dia em que o alerta saiu.">${escR(meu?.texto || '')}</textarea>
       <div class="depo-campos">
@@ -686,10 +688,10 @@ async function desenharDepoimento(estado, aviso = '') {
           <small>Opcional. Se você entrou com o Google, já vem a foto da sua conta; dá para trocar ou tirar.</small>
         </div>
       </div>
-      <label class="lead-aceite"><input type="checkbox" name="autorizo"${meu ? ' checked' : ''}> Autorizo publicar este depoimento no site e no Instagram do Onde as Milhas Me Levam, com o nome, a cidade e o @ do Instagram acima (se informei). Meu e-mail não aparece.</label>
+      <label class="lead-aceite"><input type="checkbox" name="autorizo"${meu ? ' checked' : ''}> Autorizo publicar este comentário no site e no Instagram do Onde as Milhas Me Levam, com o nome, a cidade e o @ do Instagram acima (se informei). Meu e-mail não aparece.</label>
       <div class="depo-botoes">
-        <button type="submit" class="cta cta-a">${meu ? 'Atualizar depoimento' : 'Enviar depoimento'}</button>
-        ${meu ? '<button type="button" class="cta cta-b" data-depo-insta>Postar no meu Instagram</button>' : ''}
+        <button type="submit" class="cta cta-a">${meu ? 'Atualizar comentário' : 'Enviar comentário'}</button>
+        ${meu && meu.tipo !== 'sugestao' ? '<button type="button" class="cta cta-b" data-depo-insta>Postar no meu Instagram</button>' : ''}
       </div>
       <p class="lead-msg${aviso ? ' ok' : ''}" role="status"${aviso ? '' : ' hidden'}>${escR(aviso)}</p>
     </form>`;
@@ -697,6 +699,16 @@ async function desenharDepoimento(estado, aviso = '') {
   const f = el.querySelector('form'), saida = f.querySelector('.lead-msg');
   const dizer = (t, ok) => { saida.textContent = t; saida.className = `lead-msg ${ok ? 'ok' : 'erro'}`; saida.hidden = false; };
   const pintar = () => f.querySelectorAll('.depo-nota label').forEach((l, i) => l.classList.toggle('on', i < +f.elements.nota.value));
+  // Sugestão não tem estrelas e muda o exemplo do campo de texto.
+  const tipoAtual = () => f.elements.tipo.value;
+  const ajustarTipo = () => {
+    const sug = tipoAtual() === 'sugestao';
+    f.querySelector('.depo-nota').hidden = sug;
+    f.elements.texto.placeholder = sug ? 'Ex.: Seria ótimo ter alerta de passagens saindo de Curitiba.' : 'Ex.: Emiti São Paulo–Lisboa em executiva por 70 mil milhas no mesmo dia em que o alerta saiu.';
+    f.elements.texto.setAttribute('aria-label', sug ? 'Sua sugestão' : 'Seu elogio');
+  };
+  f.addEventListener('change', e => { if (e.target.name === 'tipo') ajustarTipo(); });
+  ajustarTipo();
   f.addEventListener('change', pintar);
   pintar();
   const fotoGoogle = /^https:\/\/lh3\.googleusercontent\.com\//.test(auth.currentUser.photoURL || '') ? auth.currentUser.photoURL : '';
@@ -716,7 +728,7 @@ async function desenharDepoimento(estado, aviso = '') {
     catch (er) { dizer('Não consegui abrir essa imagem. Tente uma foto JPG ou PNG.'); }
   });
   f.querySelector('[data-tirar-foto]').addEventListener('click', () => { foto = ''; fotoMudou = true; mostrarFoto(); });
-  const dados = () => ({ nota: +f.elements.nota.value, texto: f.elements.texto.value.trim(), nome: f.elements.nome.value.trim(), cidade: f.elements.cidade.value.trim(), instagram: f.elements.instagram.value.trim().replace(/^@/, '') });
+  const dados = () => ({ tipo: tipoAtual(), nota: tipoAtual() === 'sugestao' ? 0 : +f.elements.nota.value, texto: f.elements.texto.value.trim(), nome: f.elements.nome.value.trim(), cidade: f.elements.cidade.value.trim(), instagram: f.elements.instagram.value.trim().replace(/^@/, '') });
   f.addEventListener('submit', async e => {
     e.preventDefault();
     const b = f.querySelector('[type=submit]');
@@ -726,7 +738,9 @@ async function desenharDepoimento(estado, aviso = '') {
         body: JSON.stringify({ ...dados(), autorizo: f.elements.autorizo.checked, ...(fotoMudou ? { foto } : {}) }) });
       const res = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(res.erro);
-      await desenharDepoimento(estado, 'Obrigado! Agora poste no seu Instagram: o botão ao lado monta a imagem. Marque @ondeasmilhasmelevam no story.');
+      try { localStorage.setItem('oamml-opiniao', 'dada'); } catch (er) { /* ignora */ }
+      document.dispatchEvent(new Event('opiniao-dada'));
+      await desenharDepoimento(estado, dados().tipo === 'sugestao' ? 'Obrigado pela sugestão! Ela aparece no site depois de aprovada.' : 'Obrigado! Agora poste no seu Instagram: o botão ao lado monta a imagem. Marque @ondeasmilhasmelevam no story.');
     } catch (er) {
       dizer(er.message || 'Não deu agora. Tente de novo em instantes.');
       b.disabled = false;
@@ -841,7 +855,7 @@ addEventListener('hashchange', () => {
 const DONO = 'ondeasmilhasmelevam@gmail.com';
 // Trocou de conta (ou saiu): apaga o que o painel mostrou na conta anterior antes de qualquer coisa.
 function limparPainel() {
-  ['#painel-campanha', '#painel-cortesias', '#painel-grupos', '#painel-assinantes', '#painel-depos', '#painel-sugestoes'].forEach(id => { const el = $(id); if (el) el.innerHTML = ''; });
+  ['#painel-campanha', '#painel-cortesias', '#painel-grupos', '#painel-assinantes', '#painel-depos'].forEach(id => { const el = $(id); if (el) el.innerHTML = ''; });
   $('#painel-conteudo').innerHTML = '<p class="passagens-vazio">Este painel é só do dono do site.</p>';
 }
 let versaoConta = 0;
@@ -857,7 +871,6 @@ async function sincronizarConta(user) {
   desenharConta(estado);
   desenharIndicacao(estado);
   desenharDepoimento(estado);
-  desenharSugestao(estado);
   if (location.hash === '#painel') desenharPainel();
   desenharHistorico(estado.email);
   await lerRadares(estado.ativo ? estado.email : '');
@@ -1580,30 +1593,41 @@ if ($('#grupo')) {
     } catch (er) { dizer(er.message); b.disabled = false; }
   });
 }
-// Painel: criar link (nome do grupo, dias e limite de cadastros), copiar, encerrar, mudar limite e ver os cadastros.
+// Painel: criar link (nome do grupo, dias e limite de cadastros), copiar, encerrar, mudar limite; abaixo, todos os
+// convidados numa lista só, com filtro por situação, por link e busca.
 async function desenharGruposPainel() {
   const el = $('#painel-grupos');
   if (!el || !auth.currentUser) return;
-  let links = [];
+  let links = [], convidados = [];
   try {
-    const r = await fetch(`${SERVIDOR}/grupos`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
+    const cab = { authorization: `Bearer ${await auth.currentUser.getIdToken()}` };
+    const [r, rc] = await Promise.all([fetch(`${SERVIDOR}/grupos`, { headers: cab }), fetch(`${SERVIDOR}/grupos/cadastros`, { headers: cab })]);
     if (!r.ok) { el.innerHTML = ''; return; }
     links = (await r.json()).links;
+    if (rc.ok) convidados = (await rc.json()).cadastros;
   } catch (e) { el.innerHTML = ''; return; }
   const n = x => Number(x).toLocaleString('pt-BR');
+  const dt = x => (x ? new Date(x).toLocaleDateString('pt-BR') : '');
+  const nomeLink = Object.fromEntries(links.map(l => [l.codigo, l.nome]));
   const situ = l => (!l.ativo ? '<span class="ass-sit cancelado">Encerrado</span>' : l.usos >= l.limite ? '<span class="ass-sit vencido">Esgotado</span>' : '<span class="ass-sit ativo">Aberto</span>');
-  el.innerHTML = `<h3 class="prova-sub">Links de cortesia para grupos</h3>
-    <form class="cortesia-nova" id="grupo-novo">
+  const estadoConv = c => (c.ate && new Date(c.ate).getTime() > Date.now() ? 'ativo' : 'vencido');
+  el.innerHTML = `<form class="cortesia-nova" id="grupo-novo">
       <input name="nome" maxlength="60" placeholder="Nome do grupo (só você vê)" aria-label="Nome do grupo" required>
       <select name="dias" aria-label="Dias de cortesia"><option value="7">7 dias</option><option value="15">15 dias</option><option value="30" selected>30 dias</option><option value="90">90 dias</option><option value="180">6 meses</option><option value="365">1 ano</option></select>
       <input name="limite" type="number" min="1" max="100000" step="1" inputmode="numeric" placeholder="Máximo de cadastros (ex.: 3500)" aria-label="Máximo de cadastros" required>
       <button class="cta cta-a" type="submit">Gerar link</button>
     </form>
-    ${links.length ? `<ul class="cortesias grupos">${links.map(l => `<li data-codigo="${escR(l.codigo)}">
-      <p><b>${escR(l.nome)}</b> · ${prazoCortesia(l.dias)} · <b>${n(l.usos)}</b> de ${n(l.limite)} cadastros ${situ(l)} <small>criado em ${new Date(l.criadoEm).toLocaleDateString('pt-BR')}</small></p>
+    ${links.length ? `<h4 class="painel-sub">Seus links</h4><div class="painel-lista curta"><ul class="cortesias grupos">${links.map(l => `<li data-codigo="${escR(l.codigo)}">
+      <p><b>${escR(l.nome)}</b> · ${prazoCortesia(l.dias)} · <b>${n(l.usos)}</b> de ${n(l.limite)} cadastros ${situ(l)} <small>criado em ${dt(l.criadoEm)}</small></p>
       <input class="grupo-url" readonly value="${escR(l.url)}" aria-label="Link para enviar">
-      <div class="cort-reenviar"><button type="button" class="cta cta-a" data-copiar>Copiar link</button><button type="button" class="cta cta-b" data-limite="${l.limite}">Mudar limite</button><button type="button" class="cta cta-b" data-ativo="${l.ativo ? '0' : '1'}">${l.ativo ? 'Encerrar' : 'Reabrir'}</button><button type="button" class="cta cta-b" data-cadastros>Ver cadastros</button></div>
-      <div class="grupo-cadastros" hidden></div></li>`).join('')}</ul>` : ''}`;
+      <div class="cort-reenviar"><button type="button" class="cta cta-a" data-copiar>Copiar link</button><button type="button" class="cta cta-b" data-ver-link>Ver convidados</button><button type="button" class="cta cta-b" data-limite="${l.limite}">Mudar limite</button><button type="button" class="cta cta-b" data-ativo="${l.ativo ? '0' : '1'}">${l.ativo ? 'Encerrar' : 'Reabrir'}</button></div></li>`).join('')}</ul></div>` : ''}
+    <h4 class="painel-sub" id="convidados-titulo">Convidados</h4>
+    ${convidados.length ? `${filtrosHtml('links', [['todas', 'Todos'], ['ativo', 'Ativos'], ['vencido', 'Vencidos']], convidados.map(estadoConv),
+      `<select data-filtro-link aria-label="Filtrar por link"><option value="">Todos os links</option>${links.map(l => `<option value="${escR(l.codigo)}">${escR(l.nome)}</option>`).join('')}</select>`)}
+      <div class="painel-lista"><div class="grupo-tabela"><table><thead><tr><th>Nome</th><th>E-mail</th><th>WhatsApp</th><th>Instagram</th><th>CPF</th><th>Link</th><th>Cadastro</th><th>Até</th></tr></thead><tbody>${convidados.map(c => `<tr data-situacao="${estadoConv(c)}" data-link="${escR(c.link)}" data-busca="${escR(`${c.nome} ${c.email} ${c.instagram}`.toLowerCase())}"><td>${escR(c.nome)}</td><td>${escR(c.email)}</td><td>${c.telefone ? `<a href="https://wa.me/${escR(c.telefone)}" target="_blank" rel="noopener">${escR(c.telefone.replace(/^55/, ''))}</a>` : ''}</td><td>${c.instagram ? `<a href="https://instagram.com/${escR(c.instagram)}" target="_blank" rel="noopener">@${escR(c.instagram)}</a>` : ''}</td><td>•••-${escR(c.cpfFim)}</td><td>${escR(nomeLink[c.link] || '')}</td><td>${dt(c.criadoEm)}</td><td>${dt(c.ate)}</td></tr>`).join('')}</tbody></table></div></div>`
+    : '<p class="sugestoes-vazio">Ninguém entrou por link ainda.</p>'}`;
+  $('#painel-acessos').hidden = false;
+  aplicarFiltro('links');
 }
 async function editarGrupo(codigo, dados) {
   const r = await fetch(`${SERVIDOR}/grupos/editar`, { method: 'POST', headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' }, body: JSON.stringify({ codigo, ...dados }) });
@@ -1634,63 +1658,67 @@ $('#painel-grupos')?.addEventListener('click', async e => {
     const campo = li.querySelector('.grupo-url');
     try { await navigator.clipboard.writeText(campo.value); b.textContent = 'Copiado!'; } catch (er) { campo.select(); }
     setTimeout(() => { b.textContent = 'Copiar link'; }, 1800);
+  } else if (b.hasAttribute('data-ver-link')) {
+    const sel = $('#painel-grupos [data-filtro-link]');
+    if (sel) { sel.value = codigo; filtros.links.link = codigo; aplicarFiltro('links'); }
+    $('#convidados-titulo').scrollIntoView({ behavior: 'smooth', block: 'start' });
   } else if (b.dataset.limite) {
     const novo = prompt('Novo máximo de cadastros para este link:', b.dataset.limite);
     if (novo !== null && Number(novo) >= 1) editarGrupo(codigo, { limite: Math.floor(Number(novo)) });
   } else if (b.dataset.ativo) {
     const abrir = b.dataset.ativo === '1';
     if (confirm(abrir ? 'Reabrir este link? Quem tiver o link volta a conseguir se cadastrar.' : 'Encerrar este link? Ninguém mais consegue se cadastrar por ele. Quem já se cadastrou continua com a cortesia.')) editarGrupo(codigo, { ativo: abrir });
-  } else if (b.hasAttribute('data-cadastros')) {
-    const caixa = li.querySelector('.grupo-cadastros');
-    if (!caixa.hidden) { caixa.hidden = true; return; }
-    caixa.hidden = false; caixa.textContent = 'Carregando…';
-    try {
-      const r = await fetch(`${SERVIDOR}/grupos/cadastros?c=${encodeURIComponent(codigo)}`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
-      const d = await r.json();
-      if (!r.ok) throw new Error(d.erro);
-      const dt = x => (x ? new Date(x).toLocaleDateString('pt-BR') : '');
-      caixa.innerHTML = d.cadastros.length ? `<div class="grupo-tabela"><table><thead><tr><th>Nome</th><th>E-mail</th><th>WhatsApp</th><th>Instagram</th><th>CPF</th><th>Cadastro</th><th>Até</th></tr></thead><tbody>${d.cadastros.map(c => `<tr><td>${escR(c.nome)}</td><td>${escR(c.email)}</td><td>${c.telefone ? `<a href="https://wa.me/${escR(c.telefone)}" target="_blank" rel="noopener">${escR(c.telefone.replace(/^55/, ''))}</a>` : ''}</td><td>${c.instagram ? `<a href="https://instagram.com/${escR(c.instagram)}" target="_blank" rel="noopener">@${escR(c.instagram)}</a>` : ''}</td><td>•••.•••.•••-${escR(c.cpfFim)}</td><td>${dt(c.criadoEm)}</td><td>${dt(c.ate)}</td></tr>`).join('')}</tbody></table></div>` : '<p>Ninguém se cadastrou ainda.</p>';
-    } catch (er) { caixa.textContent = er.message || 'Não deu para carregar.'; }
   }
 });
 
-/* ---------- Sugestão (privada) junto do depoimento, e a lista no Painel ---------- */
-function desenharSugestao(estado) {
-  const f = $('#ass-sugestao');
-  if (f) f.hidden = !estado.validoAte || !auth.currentUser;
+/* ---------- Painel: abas e filtros da caixa de acessos grátis ---------- */
+// Cada lista guarda o filtro escolhido (situação, link e busca); ele continua igual quando a lista é redesenhada.
+const filtros = { dadas: { estado: 'todas', busca: '' }, links: { estado: 'todas', busca: '', link: '' } };
+const estadoCortesia = c => (c.pendente ? 'espera' : c.ate && new Date(c.ate).getTime() > Date.now() ? 'ativa' : 'encerrada');
+function filtrosHtml(chave, opcoes, estados, extra = '') {
+  const conta = v => (v === 'todas' ? estados.length : estados.filter(x => x === v).length);
+  return `<div class="painel-filtros" data-filtros="${chave}">
+    <div class="atalhos">${opcoes.map(([v, r]) => `<button type="button" data-f="${v}" aria-pressed="${filtros[chave].estado === v}">${r} <span>${conta(v)}</span></button>`).join('')}</div>
+    <div class="painel-busca">${extra}<input type="search" data-busca-campo placeholder="Buscar nome ou e-mail" aria-label="Buscar nome ou e-mail" value="${escR(filtros[chave].busca)}"></div>
+    <p class="painel-mostrando" aria-live="polite"></p></div>`;
 }
-$('#ass-sugestao')?.addEventListener('submit', async e => {
-  e.preventDefault();
-  const f = e.target, m = f.querySelector('.ass-sug-msg'), b = f.querySelector('button');
-  const texto = f.elements.texto.value.trim();
-  if (texto.length < 5) { m.textContent = 'Escreva a sua sugestão.'; return; }
-  b.disabled = true; m.textContent = '';
-  try {
-    const r = await fetch(`${SERVIDOR}/sugestao`, { method: 'POST', headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' }, body: JSON.stringify({ texto }) });
-    const d = await r.json().catch(() => ({}));
-    if (!r.ok) throw new Error(d.erro || 'Não deu agora. Tente de novo.');
-    f.elements.texto.value = '';
-    m.textContent = 'Recebido. Obrigado!';
-    try { localStorage.setItem('oamml-opiniao', 'dada'); } catch (er) { /* ignora */ }
-    document.dispatchEvent(new Event('opiniao-dada'));
-  } catch (er) { m.textContent = er.message; }
-  finally { b.disabled = false; }
-});
-async function desenharSugestoesPainel() {
-  const el = $('#painel-sugestoes');
-  if (!el || !auth.currentUser) return;
-  let lista = [];
-  try {
-    const r = await fetch(`${SERVIDOR}/sugestoes`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
-    if (!r.ok) { el.innerHTML = ''; return; }
-    lista = (await r.json()).sugestoes;
-  } catch (e) { el.innerHTML = ''; return; }
-  el.innerHTML = `<h3 class="prova-sub">Sugestões · só você vê${lista.length ? ` · ${lista.length}` : ''}</h3>
-    ${lista.length ? `<ul class="sugestoes">${lista.map(s => `<li><p>${escR(s.texto)}</p><small>${escR(s.nome || s.email)}${s.nome ? ` · ${escR(s.email)}` : ''} · ${s.plano === 'cortesia' ? 'cortesia' : escR(s.plano || '')} · ${new Date(s.criadoEm).toLocaleDateString('pt-BR')} <button type="button" class="ass-trocar" data-apagar-sug="${escR(s.id)}">Apagar</button></small></li>`).join('')}</ul>` : '<p class="sugestoes-vazio">Nenhuma sugestão ainda.</p>'}`;
+function aplicarFiltro(chave) {
+  const caixa = document.querySelector(`[data-aba-painel="${chave}"]`);
+  if (!caixa) return;
+  const f = filtros[chave];
+  const sel = caixa.querySelector('[data-filtro-link]');
+  if (sel) sel.value = f.link || '';
+  const itens = [...caixa.querySelectorAll('[data-situacao]')];
+  let vis = 0;
+  for (const it of itens) {
+    const ok = (f.estado === 'todas' || it.dataset.situacao === f.estado) && (!f.link || it.dataset.link === f.link)
+      && (!f.busca || (it.dataset.busca || '').includes(f.busca.toLowerCase()));
+    it.hidden = !ok;
+    if (ok) vis++;
+  }
+  const m = caixa.querySelector('.painel-mostrando');
+  if (m) m.textContent = vis === itens.length ? '' : `Mostrando ${vis} de ${itens.length}`;
 }
-$('#painel-sugestoes')?.addEventListener('click', async e => {
-  const b = e.target.closest('[data-apagar-sug]');
-  if (!b || !confirm('Apagar esta sugestão? Não dá para desfazer.')) return;
-  await fetch(`${SERVIDOR}/sugestao/apagar`, { method: 'POST', headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' }, body: JSON.stringify({ id: b.dataset.apagarSug }) }).catch(() => null);
-  desenharSugestoesPainel();
+$('#painel-acessos')?.addEventListener('click', e => {
+  const aba = e.target.closest('[data-aba]');
+  if (aba) {
+    $('#painel-acessos').querySelectorAll('[data-aba]').forEach(b => b.setAttribute('aria-selected', String(b === aba)));
+    $('#painel-acessos').querySelectorAll('[data-aba-painel]').forEach(p => { p.hidden = p.dataset.abaPainel !== aba.dataset.aba; });
+    return;
+  }
+  const b = e.target.closest('[data-filtros] [data-f]');
+  if (!b) return;
+  const chave = b.closest('[data-filtros]').dataset.filtros;
+  filtros[chave].estado = b.dataset.f;
+  b.parentElement.querySelectorAll('[data-f]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  aplicarFiltro(chave);
 });
+$('#painel-acessos')?.addEventListener('input', e => {
+  const box = e.target.closest('[data-filtros]');
+  if (!box) return;
+  const chave = box.dataset.filtros;
+  if (e.target.matches('[data-busca-campo]')) filtros[chave].busca = e.target.value.trim();
+  if (e.target.matches('[data-filtro-link]')) filtros[chave].link = e.target.value;
+  aplicarFiltro(chave);
+});
+
