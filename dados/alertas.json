@@ -3403,20 +3403,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2361370250-7030",
-  "data": "2026-11-24T10:42:02Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Doha",
-  "destino_iata": "DOH",
-  "companhia": "Qatar Airways",
-  "cabine": "Executiva",
-  "programa": "Privilege Club Qatar",
-  "ida": "70.000 AVIOS + Taxas",
-  "volta": "",
-  "link_nome": "Privilege Club"
- },
- {
   "id": "1290836068-7972",
   "data": "2026-11-23T16:32:05Z",
   "tipo": "promocao",
