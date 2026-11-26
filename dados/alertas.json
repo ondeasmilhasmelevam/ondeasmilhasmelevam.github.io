@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10451",
+  "data": "2026-11-26T15:50:12Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "A partir de 14.050 milhas",
+  "volta": "A partir de 14.050 milhas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "1290836068-8039",
   "data": "2026-11-26T15:32:16Z",
   "tipo": "promocao",
@@ -3782,62 +3796,6 @@
   "programa": "Smiles",
   "ida": "A partir de 89.900 milhas",
   "volta": "A partir de 89.900 milhas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16432",
-  "data": "2026-11-24T15:48:56Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Assunção",
-  "destino_iata": "ASU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "50.500 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16431",
-  "data": "2026-11-24T15:48:51Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "7.000 milhas + Taxas",
-  "volta": "7.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "2008590742-16430",
-  "data": "2026-11-24T15:48:46Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "7.000 milhas + Taxas",
-  "volta": "7.000 milhas + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-10334",
-  "data": "2026-11-24T15:48:40Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Campo Grande",
-  "destino_iata": "CGR",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "24.400 milhas + Taxas",
-  "volta": "24.400 milhas + Taxas",
   "link_nome": "Smiles"
  },
  {
