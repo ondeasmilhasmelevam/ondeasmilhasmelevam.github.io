@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-26T21:30:45.795187Z",
+ "atualizado": "2026-11-26T21:36:56.365679Z",
  "dias": 30,
- "passagens": 4369,
+ "passagens": 4371,
  "promocoes": 250,
  "destinos": 186,
  "executiva": 873,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1017,
+  "passagens": 1018,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -330,6 +330,19 @@
     "regiao": "europa"
    },
    {
+    "id": "2008590742-16622",
+    "origem": "Recife",
+    "origem_iata": "REC",
+    "destino": "Barcelona",
+    "destino_iata": "BCN",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-26T21:35:21Z",
+    "milhas": 69720,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
     "id": "2008590742-16566",
     "origem": "Recife",
     "origem_iata": "REC",
@@ -471,19 +484,6 @@
     "milhas": 66800,
     "nivel": "bom",
     "regiao": "america-do-norte"
-   },
-   {
-    "id": "2008590742-16591",
-    "origem": "Salvador",
-    "origem_iata": "SSA",
-    "destino": "Barcelona",
-    "destino_iata": "BCN",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-26T17:40:14Z",
-    "milhas": 85000,
-    "nivel": "bom",
-    "regiao": "europa"
    },
    {
     "id": "2008590742-16598",
