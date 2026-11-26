@@ -1,5 +1,75 @@
 [
  {
+  "id": "3761373661-10463",
+  "data": "2026-11-26T17:44:06Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "7.900 milhas + R$ 35,15 de taxas",
+  "volta": "9.300 milhas + R$ 35,75 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10462",
+  "data": "2026-11-26T17:41:40Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Chapecó",
+  "destino_iata": "XAP",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.600 milhas + R$ 56,99 de taxas",
+  "volta": "12.100 milhas + R$ 54,61 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16594",
+  "data": "2026-11-26T17:40:25Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Roma",
+  "destino_iata": "FCO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "80.000 milhas + Taxas",
+  "volta": "80.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16593",
+  "data": "2026-11-26T17:40:23Z",
+  "origem": "Salvador",
+  "origem_iata": "SSA",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "57.500 milhas + Taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16592",
+  "data": "2026-11-26T17:40:19Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "San José",
+  "destino_iata": "SJO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "62.900 milhas + Taxas",
+  "volta": "62.900 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-16591",
   "data": "2026-11-26T17:40:14Z",
   "origem": "Salvador",
@@ -96,26 +166,6 @@
   "ida": "A partir de 22.000 milhas",
   "volta": "A partir de 22.000 milhas",
   "link_nome": "AAdvantage"
- },
- {
-  "id": "1290836068-8043",
-  "data": "2026-11-26T17:16:46Z",
-  "tipo": "promocao",
-  "titulo": "50% OFF NOS ALERTAS DO PP",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "A promoção oferece 50% de desconto nos Alertas do PP, o maior desconto do ano. Válido até 27/11. O cupom BLACK50 pode ser usado no site.",
-  "detalhes": [
-   "50% de desconto nos Alertas do PP",
-   "Cupom BLACK50",
-   "✅ Validade: até 27/11"
-  ],
-  "parceiros": "",
-  "validade": "até 27/11",
-  "links": [
-   "https://link.dia23.com.br/r/ukUAwkp"
-  ],
-  "ate": "2026-11-27T23:59:59-03:00"
  },
  {
   "id": "3761373661-10460",
