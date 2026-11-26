@@ -3576,20 +3576,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "2361370250-7011",
-  "data": "2026-11-24T01:37:51Z",
-  "origem": "Manaus",
-  "origem_iata": "MAO",
-  "destino": "Bogotá",
-  "destino_iata": "BOG",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "20.000 milhas + CAD 84,30 de taxas",
-  "volta": "",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "seats-smiles-SSA-PTY-eco",
   "data": "2026-11-24T00:18:59.188401Z",
   "fonte": "seats.aero",
