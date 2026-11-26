@@ -26,7 +26,7 @@ const SERVIDOR = 'https://oamml-assinatura.ondeasmilhasmelevam.workers.dev';
 
 const $ = s => document.querySelector(s);
 const reais = c => (c / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-const prazoCortesia = d => (Number(d) === 365 ? '1 ano' : Number(d) === 180 ? '6 meses' : `${d} dias`);
+const prazoCortesia = d => (Number(d) === 365 ? '1 ano' : Number(d) === 180 ? '6 meses' : `${d} ${Number(d) === 1 ? 'dia' : 'dias'}`);
 const msg = (texto, tipo = '') => { const el = $('#ass-msg'); el.textContent = texto; el.className = `ass-msg ${tipo}`; el.hidden = !texto; };
 
 window.oammlAssinatura = { ativo: false, email: '', validoAte: null };
@@ -506,7 +506,7 @@ async function desenharCortesiasPainel() {
       <input name="nome" maxlength="60" placeholder="Nome da pessoa" aria-label="Nome da pessoa">
       <input name="email" type="email" placeholder="E-mail da pessoa" aria-label="E-mail da pessoa" required>
       <input name="telefone" type="tel" maxlength="20" placeholder="WhatsApp (opcional)" aria-label="WhatsApp da pessoa (opcional)">
-      <select name="dias" aria-label="Dias de cortesia"><option value="7">7 dias</option><option value="15" selected>15 dias</option><option value="30">30 dias</option><option value="90">90 dias</option><option value="180">6 meses</option><option value="365">1 ano</option></select>
+      <select name="dias" aria-label="Dias de cortesia"><option value="7">7 dias</option><option value="15" selected>15 dias</option><option value="30">30 dias</option><option value="90">90 dias</option><option value="180">6 meses</option><option value="365">1 ano</option><option value="outro">Outro…</option></select><input name="diasOutro" type="number" min="1" max="730" step="1" inputmode="numeric" placeholder="Dias" aria-label="Quantos dias" class="dias-outro" hidden>
       <button class="cta cta-a" type="submit">Dar cortesia</button>
       <p class="lead-msg" role="status" hidden></p>
     </form>
@@ -521,7 +521,9 @@ $('#painel-cortesias').addEventListener('click', e => {
   f.elements.email.value = b.dataset.renovar;
   f.elements.nome.value = b.dataset.nome || '';
   f.elements.telefone.value = b.dataset.telefone || '';
-  f.elements.dias.value = ['7','15','30','90','180','365'].includes(b.dataset.prazo) ? b.dataset.prazo : '15';
+  if (['7', '15', '30', '90', '180', '365'].includes(b.dataset.prazo)) f.elements.dias.value = b.dataset.prazo;
+  else { f.elements.dias.value = 'outro'; f.elements.diasOutro.value = b.dataset.prazo || ''; }
+  mostrarOutro(f);
   const m = f.querySelector('.lead-msg');
   m.textContent = 'Confira os dados, escolha o novo período e confirme em Dar cortesia. Os dias começam na próxima entrada, ou são somados se já houver acesso ativo.';
   m.className = 'lead-msg'; m.hidden = false;
@@ -565,11 +567,13 @@ $('#painel-cortesias').addEventListener('submit', async e => {
   const f = e.target, b = f.querySelector('button'), m = f.querySelector('.lead-msg');
   const email = f.elements.email.value.trim();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { m.textContent = 'Digite o e-mail da pessoa.'; m.className = 'lead-msg erro'; m.hidden = false; return; }
-  if (!confirm(`Dar ${f.elements.dias.value} dias grátis para ${email}? A pessoa recebe um e-mail e os dias só começam a contar quando ela entrar no site pela primeira vez (quem já tem acesso ganha os dias somados na hora).`)) return;
+  const dias = diasDoForm(f);
+  if (!dias) { alert('Digite quantos dias (de 1 a 730).'); f.elements.diasOutro.focus(); return; }
+  if (!confirm(`Dar ${prazoCortesia(dias)} grátis para ${email}? A pessoa recebe um e-mail e os dias só começam a contar quando ela entrar no site pela primeira vez (quem já tem acesso ganha os dias somados na hora).`)) return;
   b.disabled = true;
   try {
     const r = await fetch(`${SERVIDOR}/cortesia`, { method: 'POST', headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' },
-      body: JSON.stringify({ nome: f.elements.nome.value, email, telefone: f.elements.telefone.value, dias: f.elements.dias.value }) });
+      body: JSON.stringify({ nome: f.elements.nome.value, email, telefone: f.elements.telefone.value, dias }) });
     const d = await r.json().catch(() => ({}));
     if (!r.ok) throw new Error(d.erro);
     alert(`${d.pendente ? 'Cortesia dada. Os dias começam a contar no primeiro acesso da pessoa, e você recebe um e-mail quando ela ativar.' : `Cortesia somada: acesso até ${new Date(d.ate).toLocaleDateString('pt-BR')}.`}${d.enviado ? ' O e-mail foi enviado; peça para conferir também o spam.' : ' O e-mail não saiu agora: avise a pessoa para entrar no site com esse e-mail.'}`);
@@ -1615,7 +1619,7 @@ async function desenharGruposPainel() {
   const estadoConv = c => (c.ate && new Date(c.ate).getTime() > Date.now() ? 'ativo' : 'vencido');
   el.innerHTML = `<form class="cortesia-nova" id="grupo-novo">
       <input name="nome" maxlength="60" placeholder="Nome do grupo (só você vê)" aria-label="Nome do grupo" required>
-      <select name="dias" aria-label="Dias de cortesia"><option value="7">7 dias</option><option value="15">15 dias</option><option value="30" selected>30 dias</option><option value="90">90 dias</option><option value="180">6 meses</option><option value="365">1 ano</option></select>
+      <select name="dias" aria-label="Dias de cortesia"><option value="7">7 dias</option><option value="15">15 dias</option><option value="30" selected>30 dias</option><option value="90">90 dias</option><option value="180">6 meses</option><option value="365">1 ano</option><option value="outro">Outro…</option></select><input name="diasOutro" type="number" min="1" max="730" step="1" inputmode="numeric" placeholder="Dias" aria-label="Quantos dias" class="dias-outro" hidden>
       <input name="limite" type="number" min="1" max="100000" step="1" inputmode="numeric" placeholder="Máximo de cadastros (ex.: 3500)" aria-label="Máximo de cadastros" required>
       <button class="cta cta-a" type="submit">Gerar link</button>
     </form>
@@ -1626,7 +1630,7 @@ async function desenharGruposPainel() {
     <h4 class="painel-sub" id="convidados-titulo">Convidados</h4>
     ${convidados.length ? `${filtrosHtml('links', [['todas', 'Todos'], ['ativo', 'Ativos'], ['vencido', 'Vencidos']], convidados.map(estadoConv),
       `<select data-filtro-link aria-label="Filtrar por link"><option value="">Todos os links</option>${links.map(l => `<option value="${escR(l.codigo)}">${escR(l.nome)}</option>`).join('')}</select>`)}
-      <div class="painel-lista"><div class="grupo-tabela"><table><thead><tr><th>Nome</th><th>E-mail</th><th>WhatsApp</th><th>Instagram</th><th>CPF</th><th>Link</th><th>Cadastro</th><th>Até</th></tr></thead><tbody>${convidados.map(c => `<tr data-situacao="${estadoConv(c)}" data-link="${escR(c.link)}" data-busca="${escR(`${c.nome} ${c.email} ${c.instagram}`.toLowerCase())}"><td>${escR(c.nome)}</td><td>${escR(c.email)}</td><td>${c.telefone ? `<a href="https://wa.me/${escR(c.telefone)}" target="_blank" rel="noopener">${escR(c.telefone.replace(/^55/, ''))}</a>` : ''}</td><td>${c.instagram ? `<a href="https://instagram.com/${escR(c.instagram)}" target="_blank" rel="noopener">@${escR(c.instagram)}</a>` : ''}</td><td>•••-${escR(c.cpfFim)}</td><td>${escR(nomeLink[c.link] || '')}</td><td>${dt(c.criadoEm)}</td><td>${dt(c.ate)}</td></tr>`).join('')}</tbody></table></div></div>`
+      <div class="painel-lista"><div class="grupo-tabela"><table><thead><tr><th>Nome</th><th>E-mail</th><th>WhatsApp</th><th>Instagram</th><th>CPF</th><th>Link</th><th>Cadastro</th><th>Até</th><th></th></tr></thead><tbody>${convidados.map(c => `<tr data-situacao="${estadoConv(c)}" data-link="${escR(c.link)}" data-busca="${escR(`${c.nome} ${c.email} ${c.instagram}`.toLowerCase())}"><td>${escR(c.nome)}</td><td>${escR(c.email)}</td><td>${c.telefone ? `<a href="https://wa.me/${escR(c.telefone)}" target="_blank" rel="noopener">${escR(c.telefone.replace(/^55/, ''))}</a>` : ''}</td><td>${c.instagram ? `<a href="https://instagram.com/${escR(c.instagram)}" target="_blank" rel="noopener">@${escR(c.instagram)}</a>` : ''}</td><td>•••-${escR(c.cpfFim)}</td><td>${escR(nomeLink[c.link] || '')}</td><td>${dt(c.criadoEm)}</td><td>${dt(c.ate)}</td><td><button type="button" class="cta cta-b grupo-dar" data-dar="${escR(c.email)}" data-nome="${escR(c.nome)}" data-telefone="${escR(c.telefone)}">Dar mais dias</button></td></tr>`).join('')}</tbody></table></div></div>`
     : '<p class="sugestoes-vazio">Ninguém entrou por link ainda.</p>'}`;
   $('#painel-acessos').hidden = false;
   aplicarFiltro('links');
@@ -1644,7 +1648,7 @@ $('#painel-grupos')?.addEventListener('submit', async e => {
   b.disabled = true;
   try {
     const r = await fetch(`${SERVIDOR}/grupos/criar`, { method: 'POST', headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' },
-      body: JSON.stringify({ nome: f.elements.nome.value, dias: Number(f.elements.dias.value), limite: Number(f.elements.limite.value) }) });
+      body: JSON.stringify({ nome: f.elements.nome.value, dias: diasDoForm(f), limite: Number(f.elements.limite.value) }) });
     const d = await r.json().catch(() => ({}));
     if (!r.ok) throw new Error(d.erro || 'Não deu agora.');
     try { await navigator.clipboard.writeText(d.url); alert(`Link criado e copiado:\n${d.url}`); } catch (er) { alert(`Link criado:\n${d.url}`); }
@@ -1744,3 +1748,35 @@ function marcarPainel(sub, n) {
     $('#painel').scrollIntoView({ block: 'start' });
   });
 })();
+
+// Convidado por link: "Dar mais dias" abre a subpágina Cortesias com o formulário já preenchido (os dias somam ao acesso).
+$('#painel-grupos')?.addEventListener('click', e => {
+  const b = e.target.closest('[data-dar]');
+  if (!b) return;
+  document.querySelector('#painel-nav [data-sub="cortesias"]')?.click();
+  const f = $('#cortesia-nova');
+  if (!f) return;
+  f.elements.email.value = b.dataset.dar;
+  f.elements.nome.value = b.dataset.nome || '';
+  f.elements.telefone.value = b.dataset.telefone || '';
+  const m = f.querySelector('.lead-msg');
+  m.textContent = 'Escolha quantos dias quer dar e confirme em Dar cortesia. Se o acesso ainda estiver ativo, os dias são somados ao fim dele.';
+  m.className = 'lead-msg'; m.hidden = false;
+  f.scrollIntoView({ block: 'center' });
+  f.elements.dias.focus({ preventScroll: true });
+});
+
+// "Outro…" nos dias de cortesia: mostra o campo para digitar qualquer número de dias (1 a 730).
+function diasDoForm(f) {
+  const v = f.elements.dias.value === 'outro' ? Math.round(Number(f.elements.diasOutro.value)) : Number(f.elements.dias.value);
+  return v >= 1 && v <= 730 ? v : 0;
+}
+function mostrarOutro(f) {
+  const campo = f.elements.diasOutro;
+  if (!campo) return;
+  campo.hidden = f.elements.dias.value !== 'outro';
+  if (!campo.hidden && !campo.value) campo.focus();
+}
+['#painel-cortesias', '#painel-grupos'].forEach(s => $(s)?.addEventListener('change', e => {
+  if (e.target.name === 'dias' && e.target.form) mostrarOutro(e.target.form);
+}));

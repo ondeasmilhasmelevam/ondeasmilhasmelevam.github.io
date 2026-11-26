@@ -2897,3 +2897,5 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 #painel[data-sub="comentarios"] [data-painel-sub]:not([data-painel-sub~="comentarios"]){display:none!important}
 #painel-dias{justify-content:flex-start;margin:0 0 18px}
 @media (max-width:600px){.painel-nav{flex-wrap:wrap;width:auto;border:0;padding:2px;gap:6px;overflow:visible}.painel-nav button{padding:8px 13px;font-size:13px;border:1px solid var(--line)}.painel-nav button[aria-current="true"]{border-color:var(--ouro)}}
+.grupo-tabela .grupo-dar{padding:5px 11px;font-size:12px;white-space:nowrap}
+.cortesia-nova .dias-outro{flex:0 1 110px;min-width:90px}
