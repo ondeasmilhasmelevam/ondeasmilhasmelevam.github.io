@@ -3907,6 +3907,22 @@
     $('#topo-painel').hidden = !dono;
     $('#topo-indique').hidden = !s.ativo || dono;
     avisoVencimento(s, ate, dono);
+    avisoOpiniao(s);
+  }
+  // Linha discreta pedindo a opinião: só depois do e-mail de opinião (10 dias de quem paga, 15 da cortesia),
+  // enquanto a pessoa não respondeu nem fechou. Nunca junto com o aviso de vencimento.
+  function avisoOpiniao(s) {
+    const el = $('#aviso-opiniao');
+    if (!el) return;
+    let visto = '';
+    try { visto = localStorage.getItem('oamml-opiniao') || ''; } catch (e) { /* sem armazenamento */ }
+    el.hidden = !(s.email && s.ativo && s.opiniao && s.opiniao.pedida && !s.opiniao.dada && !visto && $('#aviso-vence').hidden);
+  }
+  {
+    const fechar = () => { $('#aviso-opiniao').hidden = true; try { localStorage.setItem('oamml-opiniao', 'fechou'); } catch (e) { /* ignora */ } };
+    $('#aviso-opiniao-fechar').addEventListener('click', fechar);
+    $('#aviso-opiniao a').addEventListener('click', fechar);
+    document.addEventListener('opiniao-dada', () => { $('#aviso-opiniao').hidden = true; });
   }
   // Faixa abaixo do topo: a assinatura não renova sozinha, então avisa nos 7 dias antes e nos 15 depois de vencer.
   // "Fechar" esconde só até o dia seguinte (o aviso volta no outro dia, e no fim do prazo de novo).

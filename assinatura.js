@@ -55,7 +55,8 @@ async function lerAssinatura(user) {
     }
     const validoAte = s.exists() && s.data().validoAte ? s.data().validoAte.toDate() : null;
     const ativo = Boolean(validoAte && validoAte > new Date());
-    return { ativo, email, validoAte, plano: s.exists() ? s.data().plano : '', alertas: ativo ? await lerAlertas() : {} };
+    const dd = s.exists() ? s.data() : {};
+    return { ativo, email, validoAte, plano: dd.plano || '', opiniao: { pedida: !!dd.pesquisaEm, dada: !!dd.opiniaoEm }, alertas: ativo ? await lerAlertas() : {} };
   } catch (e) {
     return { ativo: false, email, validoAte: null, erroAcesso: 'Não foi possível verificar seu acesso agora. Tente novamente antes de escolher um plano.' };
   }
@@ -304,6 +305,7 @@ async function desenharPainel() {
     ${tabela('Origem', Object.entries(porOrigem).sort((x, y) => y[1].visita - x[1].visita).map(([o, l]) => [ORIGEM_NOME[o] || o, l]))}
     ${tabela('Dia', porDia)}`;
   desenharDeposPainel();
+  desenharSugestoesPainel();
   desenharAssinantesPainel();
   desenharCortesiasPainel();
   desenharGruposPainel();
@@ -839,7 +841,7 @@ addEventListener('hashchange', () => {
 const DONO = 'ondeasmilhasmelevam@gmail.com';
 // Trocou de conta (ou saiu): apaga o que o painel mostrou na conta anterior antes de qualquer coisa.
 function limparPainel() {
-  ['#painel-campanha', '#painel-cortesias', '#painel-grupos', '#painel-assinantes', '#painel-depos'].forEach(id => { const el = $(id); if (el) el.innerHTML = ''; });
+  ['#painel-campanha', '#painel-cortesias', '#painel-grupos', '#painel-assinantes', '#painel-depos', '#painel-sugestoes'].forEach(id => { const el = $(id); if (el) el.innerHTML = ''; });
   $('#painel-conteudo').innerHTML = '<p class="passagens-vazio">Este painel é só do dono do site.</p>';
 }
 let versaoConta = 0;
@@ -855,6 +857,7 @@ async function sincronizarConta(user) {
   desenharConta(estado);
   desenharIndicacao(estado);
   desenharDepoimento(estado);
+  desenharSugestao(estado);
   if (location.hash === '#painel') desenharPainel();
   desenharHistorico(estado.email);
   await lerRadares(estado.ativo ? estado.email : '');
@@ -1649,4 +1652,45 @@ $('#painel-grupos')?.addEventListener('click', async e => {
       caixa.innerHTML = d.cadastros.length ? `<div class="grupo-tabela"><table><thead><tr><th>Nome</th><th>E-mail</th><th>WhatsApp</th><th>Instagram</th><th>CPF</th><th>Cadastro</th><th>Até</th></tr></thead><tbody>${d.cadastros.map(c => `<tr><td>${escR(c.nome)}</td><td>${escR(c.email)}</td><td>${c.telefone ? `<a href="https://wa.me/${escR(c.telefone)}" target="_blank" rel="noopener">${escR(c.telefone.replace(/^55/, ''))}</a>` : ''}</td><td>${c.instagram ? `<a href="https://instagram.com/${escR(c.instagram)}" target="_blank" rel="noopener">@${escR(c.instagram)}</a>` : ''}</td><td>•••.•••.•••-${escR(c.cpfFim)}</td><td>${dt(c.criadoEm)}</td><td>${dt(c.ate)}</td></tr>`).join('')}</tbody></table></div>` : '<p>Ninguém se cadastrou ainda.</p>';
     } catch (er) { caixa.textContent = er.message || 'Não deu para carregar.'; }
   }
+});
+
+/* ---------- Sugestão (privada) junto do depoimento, e a lista no Painel ---------- */
+function desenharSugestao(estado) {
+  const f = $('#ass-sugestao');
+  if (f) f.hidden = !estado.validoAte || !auth.currentUser;
+}
+$('#ass-sugestao')?.addEventListener('submit', async e => {
+  e.preventDefault();
+  const f = e.target, m = f.querySelector('.ass-sug-msg'), b = f.querySelector('button');
+  const texto = f.elements.texto.value.trim();
+  if (texto.length < 5) { m.textContent = 'Escreva a sua sugestão.'; return; }
+  b.disabled = true; m.textContent = '';
+  try {
+    const r = await fetch(`${SERVIDOR}/sugestao`, { method: 'POST', headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' }, body: JSON.stringify({ texto }) });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(d.erro || 'Não deu agora. Tente de novo.');
+    f.elements.texto.value = '';
+    m.textContent = 'Recebido. Obrigado!';
+    try { localStorage.setItem('oamml-opiniao', 'dada'); } catch (er) { /* ignora */ }
+    document.dispatchEvent(new Event('opiniao-dada'));
+  } catch (er) { m.textContent = er.message; }
+  finally { b.disabled = false; }
+});
+async function desenharSugestoesPainel() {
+  const el = $('#painel-sugestoes');
+  if (!el || !auth.currentUser) return;
+  let lista = [];
+  try {
+    const r = await fetch(`${SERVIDOR}/sugestoes`, { headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}` } });
+    if (!r.ok) { el.innerHTML = ''; return; }
+    lista = (await r.json()).sugestoes;
+  } catch (e) { el.innerHTML = ''; return; }
+  el.innerHTML = `<h3 class="prova-sub">Sugestões · só você vê${lista.length ? ` · ${lista.length}` : ''}</h3>
+    ${lista.length ? `<ul class="sugestoes">${lista.map(s => `<li><p>${escR(s.texto)}</p><small>${escR(s.nome || s.email)}${s.nome ? ` · ${escR(s.email)}` : ''} · ${s.plano === 'cortesia' ? 'cortesia' : escR(s.plano || '')} · ${new Date(s.criadoEm).toLocaleDateString('pt-BR')} <button type="button" class="ass-trocar" data-apagar-sug="${escR(s.id)}">Apagar</button></small></li>`).join('')}</ul>` : '<p class="sugestoes-vazio">Nenhuma sugestão ainda.</p>'}`;
+}
+$('#painel-sugestoes')?.addEventListener('click', async e => {
+  const b = e.target.closest('[data-apagar-sug]');
+  if (!b || !confirm('Apagar esta sugestão? Não dá para desfazer.')) return;
+  await fetch(`${SERVIDOR}/sugestao/apagar`, { method: 'POST', headers: { authorization: `Bearer ${await auth.currentUser.getIdToken()}`, 'content-type': 'application/json' }, body: JSON.stringify({ id: b.dataset.apagarSug }) }).catch(() => null);
+  desenharSugestoesPainel();
 });
