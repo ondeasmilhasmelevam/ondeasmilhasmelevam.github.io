@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-26T19:25:57.400972Z",
+ "atualizado": "2026-11-26T19:32:15.274592Z",
  "dias": 30,
- "passagens": 4344,
+ "passagens": 4351,
  "promocoes": 248,
  "destinos": 186,
- "executiva": 869,
+ "executiva": 871,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1004,
+  "passagens": 1007,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -863,19 +863,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-10003",
-    "origem": "Belém",
-    "origem_iata": "BEL",
-    "destino": "Marabá",
-    "destino_iata": "MAB",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-19T19:29:53Z",
-    "milhas": 9000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "3761373661-10056",
     "origem": "Florianópolis",
     "origem_iata": "FLN",
@@ -939,6 +926,19 @@
     "milhas": 10000,
     "nivel": "",
     "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10205",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "SDU",
+    "destino": "Caldas Novas",
+    "destino_iata": "CLV",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-23T13:59:38Z",
+    "milhas": 10300,
+    "nivel": "",
+    "regiao": "outros"
    },
    {
     "id": "2361370250-6975",
@@ -1123,6 +1123,19 @@
     "regiao": "outros"
    },
    {
+    "id": "2361370250-7090",
+    "origem": "Toronto",
+    "origem_iata": "YYZ",
+    "destino": "Helsinque",
+    "destino_iata": "HEL",
+    "cabine": "Executiva",
+    "programa": "AAdvantage",
+    "data": "2026-11-26T19:28:26Z",
+    "milhas": 57500,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "2361370250-7088",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -1184,19 +1197,6 @@
     "programa": "Privilege Club Qatar",
     "data": "2026-11-22T11:34:40Z",
     "milhas": 70000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
-    "id": "2361370250-6984",
-    "origem": "Madrid",
-    "origem_iata": "MAD",
-    "destino": "Osaka",
-    "destino_iata": "KIX",
-    "cabine": "Executiva",
-    "programa": "AAdvantage",
-    "data": "2026-11-23T13:16:38Z",
-    "milhas": 75000,
     "nivel": "",
     "regiao": "outros"
    }
