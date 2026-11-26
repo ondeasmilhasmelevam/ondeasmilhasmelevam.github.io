@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-26T16:18:44.693316Z",
+ "atualizado": "2026-11-26T16:24:51.808108Z",
  "dias": 30,
- "passagens": 4270,
+ "passagens": 4273,
  "promocoes": 247,
  "destinos": 185,
  "executiva": 864,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 963,
+  "passagens": 966,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -326,6 +326,19 @@
     "programa": "LATAM Pass",
     "data": "2026-11-23T13:50:33Z",
     "milhas": 65600,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
+    "id": "2008590742-16566",
+    "origem": "Recife",
+    "origem_iata": "REC",
+    "destino": "Porto",
+    "destino_iata": "OPO",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-26T16:19:48Z",
+    "milhas": 70000,
     "nivel": "muito bom",
     "regiao": "europa"
    },
@@ -926,19 +939,6 @@
     "milhas": 10859,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "3761373661-10422",
-    "origem": "Porto Alegre",
-    "origem_iata": "POA",
-    "destino": "Uberlândia",
-    "destino_iata": "UDI",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-26T12:22:52Z",
-    "milhas": 11100,
-    "nivel": "",
-    "regiao": "brasil"
    },
    {
     "id": "2361370250-6975",
