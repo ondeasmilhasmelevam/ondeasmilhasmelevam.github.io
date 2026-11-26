@@ -1,5 +1,102 @@
 [
  {
+  "id": "1290836068-8039",
+  "data": "2026-11-26T15:32:16Z",
+  "tipo": "promocao",
+  "titulo": "BANCOS PARCEIROS & LATAM Pass: 25% DE BÔNUS + 1.000 MILHAS EXTRAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira pontos dos bancos parceiros para o LATAM Pass e garanta 25% de bônus mais 1.000 milhas extras na primeira transferência.",
+  "detalhes": [
+   "25% de bônus para todos os clientes elegíveis.",
+   "+1.000 milhas extras na primeira transferência de pontos de bancos participantes.",
+   "Limite de bonificação de 300.000 milhas extras por CPF."
+  ],
+  "parceiros": "LATAM Pass, Itaú, C6 Bank, Sicredi, BTG Pactual, PicPay, Nubank e outros",
+  "validade": "29/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/promocoes/bancos-milhas-extras"
+  ],
+  "ate": "2026-11-29T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8038",
+  "data": "2026-11-26T15:32:13Z",
+  "tipo": "promocao",
+  "titulo": "PREMMIA & LATAM Pass: TROQUE PONTOS PREMMIA E GANHE 60% DE BÔNUS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Troque seus pontos Premmia por milhas LATAM Pass e garanta 60% de bônus na conversão, com excelente custo por milheiro.",
+  "detalhes": [
+   "60% de bônus para todos os clientes LATAM Pass.",
+   "Opções de troca com pagamento em dinheiro e pontos Premmia."
+  ],
+  "parceiros": "Premmia, LATAM Pass",
+  "validade": "27/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/parceiros/premmia"
+  ],
+  "ate": "2026-11-27T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8037",
+  "data": "2026-11-26T15:32:09Z",
+  "tipo": "promocao",
+  "titulo": "CLUBE LIVELO ESSENCIAL: ASSINE COM O CUPOM CLUBEBF26 E ACUMULE ATÉ 25.000 PONTOS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Livelo Essencial utilizando o cupom CLUBEBF26 e garanta até 25.000 pontos acumulados em 12 meses.",
+  "detalhes": [
+   "25.000 pontos na modalidade anual .",
+   "24.000 pontos na modalidade mensal ."
+  ],
+  "parceiros": "Livelo",
+  "validade": "30/11/2026",
+  "links": [
+   "https://www.livelo.com.br/adesao-promo-CDC16237"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8036",
+  "data": "2026-11-26T15:32:06Z",
+  "tipo": "promocao",
+  "titulo": "MASTERCARD SURPREENDA: RESGATE PONTOS COM CÓDIGOS PROMOCIONAIS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Utilize códigos promocionais no Mastercard Surpreenda para resgatar pontos bônus de forma gratuita ou através de parcerias com cartões.",
+  "detalhes": [
+   "Ganhe 15 pontos com o cupom NOV26.",
+   "Ganhe 30 pontos com o cupom INTERDEBITO30 (cartão Inter).",
+   "Ganhe 200 pontos com o cupom 200BBMASTERCARD (cartões BB)."
+  ],
+  "parceiros": "Mastercard Surpreenda, Banco Inter, Banco do Brasil",
+  "validade": "Até durar o estoque",
+  "links": [
+   "https://surpreenda.naotempreco.com.br/codigo-promocional"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8035",
+  "data": "2026-11-26T15:32:01Z",
+  "tipo": "promocao",
+  "titulo": "TAP MILES GO: ADESÃO AOS PLANOS CLUB COM ATÉ 158.000 MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Adeira aos planos Club do TAP Miles Go e acumule até 158.000 milhas ao longo de 12 meses, com milheiro atrativo no plano Club Platinum+.",
+  "detalhes": [
+   "Até 158.000 milhas em 12 meses nos planos Club.",
+   "Milheiro a R$ 48,03 no Club Platinum+."
+  ],
+  "parceiros": "TAP Miles Go",
+  "validade": "Até durar o estoque",
+  "links": [
+   "https://www.flytap.com/pt-br/miles-and-go/club"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2361370250-7082",
   "data": "2026-11-26T15:24:11Z",
   "origem": "São Paulo",
