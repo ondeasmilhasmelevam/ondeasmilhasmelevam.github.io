@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-7089",
+  "data": "2026-11-26T18:50:28Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "LATAM",
+  "cabine": "Executiva",
+  "programa": "LATAM Pass",
+  "ida": "201.390 milhas LATAM Pass + R$ 68,61",
+  "volta": "201.190 milhas LATAM Pass + R$ 312,46",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16606",
+  "data": "2026-11-26T18:49:21Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Washington",
+  "destino_iata": "IAD",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "66.800 milhas + Taxas",
+  "volta": "75.700 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16605",
   "data": "2026-11-26T18:37:07Z",
   "origem": "Sinop",

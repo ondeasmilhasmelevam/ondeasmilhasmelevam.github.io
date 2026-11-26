@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-26T18:48:43.189333Z",
+ "atualizado": "2026-11-26T18:54:50.348163Z",
  "dias": 30,
- "passagens": 4329,
+ "passagens": 4331,
  "promocoes": 248,
  "destinos": 186,
- "executiva": 868,
+ "executiva": 869,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1005,
+  "passagens": 1007,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -473,15 +473,15 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2008590742-16597",
-    "origem": "Vitória",
-    "origem_iata": "VIX",
+    "id": "2008590742-16606",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
     "destino": "Washington",
     "destino_iata": "IAD",
     "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-26T18:01:02Z",
-    "milhas": 82500,
+    "programa": "Smiles",
+    "data": "2026-11-26T18:49:21Z",
+    "milhas": 66800,
     "nivel": "bom",
     "regiao": "america-do-norte"
    },
