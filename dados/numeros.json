@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-26T15:59:33.378617Z",
+ "atualizado": "2026-11-26T16:12:16.443290Z",
  "dias": 30,
- "passagens": 4265,
+ "passagens": 4270,
  "promocoes": 247,
  "destinos": 185,
- "executiva": 862,
+ "executiva": 864,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 958,
+  "passagens": 963,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -915,6 +915,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10452",
+    "origem": "Recife",
+    "origem_iata": "REC",
+    "destino": "Juiz de Fora",
+    "destino_iata": "IZA",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-26T16:03:25Z",
+    "milhas": 10859,
+    "nivel": "",
+    "regiao": "outros"
+   },
+   {
     "id": "3761373661-10422",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -924,19 +937,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-26T12:22:52Z",
     "milhas": 11100,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10064",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "Campo Grande",
-    "destino_iata": "CGR",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-21T16:59:08Z",
-    "milhas": 11300,
     "nivel": "",
     "regiao": "brasil"
    },
