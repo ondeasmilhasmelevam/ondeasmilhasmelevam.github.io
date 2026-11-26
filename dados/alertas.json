@@ -1,5 +1,53 @@
 [
  {
+  "id": "1290836068-8046",
+  "data": "2026-11-26T19:51:58Z",
+  "tipo": "promocao",
+  "titulo": "PROMOÇÃO LATAM FRIDAY: PASSAGENS A PARTIR DE R$ 119",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "LATAM Friday oferece passagens promocionais a partir de R$ 119 para voos nacionais e internacionais. A promoção inclui rotas como Viracopos a Porto Alegre, Brasília a Recife, Florianópolis a Buenos Aires e São Paulo a Lima. As datas são flexíveis e válidas em 2026.",
+  "detalhes": [
+   "valor mínimo: R$ 119",
+   "cobertura: voos nacionais e internacionais",
+   "datas flexíveis em 2026",
+   "rotas exemplificadas: VCP-POA, BSB-REC, FLN-EZE, GRU-LIM",
+   "cartão LATAM Pass Itaú oferece bônus de até 40.000 pontos ao solicitar",
+   "Viracopos (VCP) x Porto Alegre (POA) a partir de R$ 119",
+   "Brasília (BSB) x Recife (REC) a partir de R$ 119",
+   "Florianópolis (FLN) x Buenos Aires (EZE) a partir de R$ 119"
+  ],
+  "parceiros": "LATAM",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/KTRj6Em"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8045",
+  "data": "2026-11-26T19:51:53Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass + PICPAY: MILHEIRO POR R$ 22,88",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "LATAM Pass oferece 25% de bônus na transferência de pontos PicPay para o programa. O bônus tem limite de 300.000 milhas por CPF e é creditado em até 30 dias. O milheiro de 1.000 pontos custa R$ 22,88 para clientes Epic.",
+  "detalhes": [
+   "25% de bônus na transferência",
+   "limite de 300.000 milhas por CPF",
+   "bônus creditado em até 30 dias",
+   "transferência disponível a partir de 100 pontos",
+   "paridade 1:1 entre PicPay e LATAM Pass",
+   "milheiro de 1.000 pontos custa R$ 22,88 para clientes Epic"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "até o próximo domingo, 29 de novembro",
+  "links": [
+   "https://link.dia23.com.br/r/Askzqcj"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2361370250-7093",
   "data": "2026-11-26T19:47:49Z",
   "origem": "Joanesburgo",
@@ -4668,20 +4716,6 @@
   "ida": "13.000 milhas + Taxas",
   "volta": "13.000 milhas + Taxas",
   "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-10349",
-  "data": "2026-11-24T19:57:41Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Recife",
-  "destino_iata": "REC",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "18.700 Milhas LATAM Pass + Taxas",
-  "volta": "18.700 Milhas LATAM Pass + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "1290836068-7989",
