@@ -1,5 +1,131 @@
 [
  {
+  "id": "2008590742-16627",
+  "data": "2026-11-26T23:44:51Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Santa Cruz de la Sierra",
+  "destino_iata": "VVI",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "48.000 milhas + R$ 187,10 Taxas",
+  "volta": "40.500 milhas + R$ 187,11 Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10493",
+  "data": "2026-11-26T23:44:43Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Porto Alegre",
+  "destino_iata": "POA",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "40.800 milhas + R$ 48,62 Taxas",
+  "volta": "14.900 milhas + R$ 48,62 Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16626",
+  "data": "2026-11-26T23:44:41Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Montevidéu",
+  "destino_iata": "MVD",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "46.000 milhas + R$ 292,66 Taxas",
+  "volta": "46.000 milhas + R$ 292,67 Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10492",
+  "data": "2026-11-26T23:44:39Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Tabatinga",
+  "destino_iata": "TBT",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "25.000 milhas + R$ 125,07 Taxas",
+  "volta": "",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-10491",
+  "data": "2026-11-26T23:44:36Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "10.000 milhas + R$ 35,75 Taxas",
+  "volta": "10.000 milhas + R$ 35,91 Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-16625",
+  "data": "2026-11-26T23:44:34Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Assunção",
+  "destino_iata": "ASU",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "42.000 milhas + R$ 119,03 Taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10490",
+  "data": "2026-11-26T23:44:32Z",
+  "origem": "Aracaju",
+  "origem_iata": "AJU",
+  "destino": "Recife",
+  "destino_iata": "REC",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "10.000 milhas + R$ 52,04 Taxas",
+  "volta": "10.000 milhas + R$ 60,54 Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-10489",
+  "data": "2026-11-26T23:44:30Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.500 milhas + R$ 41,40 Taxas",
+  "volta": "18.200 milhas + R$ 41,41 Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10488",
+  "data": "2026-11-26T23:44:27Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "15.800 milhas + R$ 61,05 Taxas",
+  "volta": "15.800 milhas + R$ 61,05 Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16624",
   "data": "2026-11-26T22:02:22Z",
   "origem": "Recife",
@@ -4503,74 +4629,6 @@
   "ida": "171.000 milhas + Taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-8010",
-  "data": "2026-11-24T23:46:28Z",
-  "tipo": "promocao",
-  "titulo": "PASSAGENS ARGENTINA A PARTIR DE 16 MIL MILHAS LATAM Pass",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "O alerta traz passagens internacionais para a Argentina usando LATAM Pass, com valores a partir de 16 mil milhas por trecho. As tarifas incluem taxas aeroportuárias e são válidas em datas específicas. A promoção lista rotas e datas disponíveis no site.",
-  "detalhes": [
-   "valor mínimo de milhas por trecho: 16000",
-   "inclui taxas aeroportuárias",
-   "valores por trecho e por passageiro",
-   "datas específicas para cada rota",
-   "Florianópolis (FLN) x Buenos Aires (EZE) a partir de 17.800 milhas o trecho",
-   "Porto Alegre (POA) x Buenos Aires (AEP) a partir de 23.615 milhas o trecho",
-   "São Paulo (GRU) x Buenos Aires (EZE) a partir de 23.634 milhas o trecho",
-   "Recife (REC) x Buenos Aires (EZE) a partir de 23.968 milhas o trecho"
-  ],
-  "parceiros": "LATAM Pass",
-  "validade": "",
-  "links": [
-   "https://link.dia23.com.br/r/2sBYp9j"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-8009",
-  "data": "2026-11-24T23:46:20Z",
-  "tipo": "promocao",
-  "titulo": "HOTÉIS EM MIAMI COM ATÉ 54% DE DESCONTO + 10% OFF",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Hotéis em Miami têm até 54% de desconto na Hoteis.com. O cupom PPHOTEIS10 oferece 10% de desconto adicional. Promoção válida até 31 de março de 2027, com parcelamento em até 12 vezes sem juros.",
-  "detalhes": [
-   "desconto de até 54% em hotéis selecionados na Hoteis.com",
-   "cupom PPHOTEIS10 garante 10% de desconto adicional",
-   "parcelamento em até 12 vezes sem juros",
-   "✅ Validade: até 31 de março de 2027"
-  ],
-  "parceiros": "",
-  "validade": "até 31 de março de 2027",
-  "links": [
-   "https://link.dia23.com.br/r/JjdeXkw"
-  ],
-  "ate": ""
- },
- {
-  "id": "1290836068-8008",
-  "data": "2026-11-24T23:46:13Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FIDELIDADE: BILHETE DE IDA E VOLTA SÃO PAULO-DUBAI A 153K PONTOS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Bilhetes de ida e volta São Paulo-Dubai disponíveis a partir de 153.000 pontos Azul Fidelidade por trecho. O custo em dinheiro equivalente é R$ 2.295 + taxas, calculado com CPM de R$ 15,00 por mil pontos. A promoção inclui bônus na compra de pontos e desconto de 10% para portadores do cartão Azul Itaú.",
-  "detalhes": [
-   "153.000 pontos Azul Fidelidade por trecho",
-   "custo em dinheiro equivalente R$ 2.295 + taxas",
-   "bônus de até 320% na compra de pontos",
-   "10% de desconto na compra de pontos para portadores do cartão Azul Itaú",
-   "São Paulo (GRU) x Dubai (DXB) economica a partir de 153.000 milhas o trecho a partir de R$ 2.295"
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "até hoje (24)",
-  "links": [
-   "https://link.dia23.com.br/r/dVw58Fk"
-  ],
-  "ate": ""
  },
  {
   "id": "1290836068-7989",
