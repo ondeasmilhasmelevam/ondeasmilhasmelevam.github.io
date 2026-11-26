@@ -4640,20 +4640,6 @@
   "link_nome": "Aeroplan"
  },
  {
-  "id": "3761373661-10356",
-  "data": "2026-11-24T21:54:32Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Bonito",
-  "destino_iata": "BYO",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "A partir de 12.158 milhas",
-  "volta": "A partir de 12.158 milhas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7989",
   "data": "2026-11-24T12:00:01Z",
   "tipo": "promocao",
