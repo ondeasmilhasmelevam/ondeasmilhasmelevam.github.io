@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7070",
+  "data": "2026-11-26T09:34:49Z",
+  "origem": "Cidade do Panamá",
+  "origem_iata": "PTY",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "Flying Blue",
+  "ida": "A partir de 63.750 milhas",
+  "volta": "A partir de 63.750 milhas",
+  "link_nome": "Flying Blue"
+ },
+ {
   "id": "2008590742-16499",
   "data": "2026-11-26T06:41:29Z",
   "origem": "Belém",
@@ -3552,20 +3566,6 @@
   "ida": "70.000 AVIOS + Taxas",
   "volta": "",
   "link_nome": "Privilege Club"
- },
- {
-  "id": "3761373661-10288",
-  "data": "2026-11-24T09:31:39Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "8.300 milhas + R$ 48,63 de taxas",
-  "volta": "9.300 milhas + R$ 35,75 de taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-GRU-PTY-eco",

@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-26T09:30:42.764083Z",
+ "atualizado": "2026-11-26T09:36:55.429543Z",
  "dias": 30,
- "passagens": 4183,
+ "passagens": 4184,
  "promocoes": 238,
  "destinos": 183,
- "executiva": 850,
+ "executiva": 851,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 943,
+  "passagens": 944,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -1123,6 +1123,19 @@
     "regiao": "outros"
    },
    {
+    "id": "2361370250-7070",
+    "origem": "Cidade do Panamá",
+    "origem_iata": "PTY",
+    "destino": "Paris",
+    "destino_iata": "CDG",
+    "cabine": "Executiva",
+    "programa": "Flying Blue",
+    "data": "2026-11-26T09:34:49Z",
+    "milhas": 63750,
+    "nivel": "",
+    "regiao": "europa"
+   },
+   {
     "id": "2361370250-6878",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -1186,19 +1199,6 @@
     "milhas": 75000,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "2361370250-6979",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Zurique",
-    "destino_iata": "ZRH",
-    "cabine": "Executiva",
-    "programa": "Aeroplan",
-    "data": "2026-11-23T11:32:36Z",
-    "milhas": 80000,
-    "nivel": "",
-    "regiao": "europa"
    }
   ]
  }
