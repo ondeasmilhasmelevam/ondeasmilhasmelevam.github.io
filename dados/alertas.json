@@ -4581,34 +4581,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-10352",
-  "data": "2026-11-24T20:32:22Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Recife",
-  "destino_iata": "REC",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "12.100 milhas + Taxas",
-  "volta": "12.100 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16451",
-  "data": "2026-11-24T20:30:37Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "46.770 milhas + Taxas",
-  "volta": "46.770 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-7989",
   "data": "2026-11-24T12:00:01Z",
   "tipo": "promocao",
