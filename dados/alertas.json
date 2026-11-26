@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10446",
+  "data": "2026-11-26T15:08:50Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "A partir de 10.800 milhas",
+  "volta": "A partir de 10.800 milhas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-16563",
   "data": "2026-11-26T14:47:26Z",
   "origem": "Maceió",
