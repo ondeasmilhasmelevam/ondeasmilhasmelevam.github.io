@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7071",
+  "data": "2026-11-26T09:37:11Z",
+  "origem": "Cidade do Panamá",
+  "origem_iata": "PTY",
+  "destino": "Amsterdã",
+  "destino_iata": "AMS",
+  "companhia": "KLM",
+  "cabine": "Executiva",
+  "programa": "Flying Blue",
+  "ida": "A partir de 63.750 milhas",
+  "volta": "A partir de 63.750 milhas",
+  "link_nome": "Flying Blue"
+ },
+ {
   "id": "2361370250-7070",
   "data": "2026-11-26T09:34:49Z",
   "origem": "Cidade do Panamá",
