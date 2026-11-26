@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-26T14:19:28.978633Z",
+ "atualizado": "2026-11-26T14:25:49.735084Z",
  "dias": 30,
- "passagens": 4240,
+ "passagens": 4248,
  "promocoes": 242,
  "destinos": 184,
  "executiva": 858,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 940,
+  "passagens": 948,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -447,6 +447,19 @@
     "regiao": "america-do-norte"
    },
    {
+    "id": "2008590742-16559",
+    "origem": "São Luís",
+    "origem_iata": "SLZ",
+    "destino": "Barcelona",
+    "destino_iata": "BCN",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-26T14:21:46Z",
+    "milhas": 99000,
+    "nivel": "bom",
+    "regiao": "europa"
+   },
+   {
     "id": "3761373661-10145",
     "origem": "Belém",
     "origem_iata": "BEL",
@@ -603,6 +616,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10443",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Belo Horizonte",
+    "destino_iata": "CNF",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-26T14:20:18Z",
+    "milhas": 6013,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10214",
     "origem": "Petrolina",
     "origem_iata": "PNZ",
@@ -663,19 +689,6 @@
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
     "data": "2026-11-19T19:16:57Z",
-    "milhas": 7000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10035",
-    "origem": "Campinas",
-    "origem_iata": "VCP",
-    "destino": "Belo Horizonte",
-    "destino_iata": "CNF",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-21T13:38:49Z",
     "milhas": 7000,
     "nivel": "",
     "regiao": "brasil"
@@ -926,19 +939,6 @@
     "milhas": 11300,
     "nivel": "",
     "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10228",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
-    "destino": "Juiz de Fora",
-    "destino_iata": "IZA",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-23T16:07:44Z",
-    "milhas": 11300,
-    "nivel": "",
-    "regiao": "outros"
    },
    {
     "id": "2361370250-6975",
