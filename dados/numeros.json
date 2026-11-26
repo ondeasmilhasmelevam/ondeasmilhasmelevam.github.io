@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-26T05:23:22.486392Z",
+ "atualizado": "2026-11-26T05:29:38.284061Z",
  "dias": 30,
  "passagens": 4181,
  "promocoes": 238,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 944,
+  "passagens": 943,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -512,14 +512,14 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-9944",
+    "id": "3761373661-10084",
     "origem": "Curitiba",
     "origem_iata": "CWB",
     "destino": "Porto Alegre",
     "destino_iata": "POA",
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
-    "data": "2026-11-19T05:23:50Z",
+    "data": "2026-11-22T11:59:45Z",
     "milhas": 5000,
     "nivel": "",
     "regiao": "brasil"
