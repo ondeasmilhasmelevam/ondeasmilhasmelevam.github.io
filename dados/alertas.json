@@ -1176,44 +1176,6 @@
   "ate": ""
  },
  {
-  "id": "1290836068-8023",
-  "data": "2026-11-25T18:10:23Z",
-  "tipo": "promocao",
-  "titulo": "SMILES OFERECE ATÉ 80% DE BÔNUS NA TRANSFERÊNCIA DE PONTOS LIVELO",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Transfira pontos Livelo para a Smiles e garanta até 80% de bônus.",
-  "detalhes": [
-   "80% de bônus para assinantes Clube Livelo, Clube Smiles e/ou Categoria Diamante/Magno.",
-   "40% de bônus para todos os demais clientes Smiles."
-  ],
-  "parceiros": "Smiles, Livelo",
-  "validade": "25/11/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanhas/orangefriday-bancos-livelo-11-2026"
-  ],
-  "ate": "2026-11-25T23:59:59-03:00"
- },
- {
-  "id": "1290836068-8022",
-  "data": "2026-11-25T18:10:07Z",
-  "tipo": "promocao",
-  "titulo": "TURBO LIVELO GERANDO MILHEIRO POR R$ 29,90",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Multiplique seus pontos Livelo em até 25 vezes com custo de R$ 29,90 por milheiro via Pix.",
-  "detalhes": [
-   "Valor do milheiro a R$ 29,90 pagando via Pix.",
-   "Multiplicação dos pontos acumulados em até 25 vezes."
-  ],
-  "parceiros": "Livelo",
-  "validade": "25/11/2026",
-  "links": [
-   "https://www.livelo.com.br/turbo-promo-CDC16569"
-  ],
-  "ate": "2026-11-25T23:59:59-03:00"
- },
- {
   "id": "1290836068-8021",
   "data": "2026-11-25T18:09:47Z",
   "tipo": "promocao",
@@ -2374,26 +2336,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "1290836068-8000",
-  "data": "2026-11-24T16:17:28Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFERÊNCIA DE PONTOS BANCO DO BRASIL PJ PARA SMILES: ATÉ 70% DE BÔNUS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira pontos do Banco do Brasil PJ para o Smiles e ganhe até 70% de bônus. Assinantes do Clube Smiles ou clientes Diamante/Magno ganham 70%. Demais clientes ganham 40%.",
-  "detalhes": [
-   "70% de bônus para assinantes do Clube Smiles ou clientes Diamante/Magno.",
-   "40% de bônus para demais clientes Smiles.",
-   "Cadastro obrigatório na campanha antes da transferência."
-  ],
-  "parceiros": "Banco do Brasil PJ, Smiles",
-  "validade": "25/11/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanhas/orangefriday-bancos-bbpj-11-2026"
-  ],
-  "ate": "2026-11-25T23:59:59-03:00"
- },
- {
   "id": "1290836068-7999",
   "data": "2026-11-24T16:17:24Z",
   "tipo": "promocao",
@@ -2865,31 +2807,6 @@
   "ida": "19.100 milhas + R$ 34,54 de taxas",
   "volta": "11.000 milhas + R$ 62,14 de taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-7990",
-  "data": "2026-11-24T13:06:05Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FRIDAY: TRANSFIRA PONTOS INTER LOOP COM ATÉ 120% DE BÔNUS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira pontos do programa Inter Loop para o Azul Fidelidade com até 120% de bônus, dependendo do tempo de assinatura do Clube Azul. Promoção válida até 25/11/2026.",
-  "detalhes": [
-   "Bônus de até 90% para clientes do Clube Azul Fidelidade.",
-   "Bônus adicional por tempo de assinatura do Clube Azul:",
-   "+ 5% para assinantes há mais de 6 meses (total: 95%),",
-   "+ 10% para assinantes entre 1 a 2 anos (total: 100%),",
-   "+ 20% para assinantes entre 3 a 4 anos (total: 110%),",
-   "+ 30% para assinantes há mais de 5 anos (total: 120%).",
-   "Mínimo de 5.000 pontos para transferência.",
-   "Pontos bônus creditados em até 15 dias úteis após o término da campanha."
-  ],
-  "parceiros": "Inter Loop, Azul Fidelidade",
-  "validade": "25/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/inter"
-  ],
-  "ate": "2026-11-25T23:59:59-03:00"
  },
  {
   "id": "2008590742-16426",
