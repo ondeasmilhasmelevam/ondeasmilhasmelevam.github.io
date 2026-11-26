@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-16539",
+  "data": "2026-11-26T11:51:35Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Buenos Aires",
+  "destino_iata": "AEP",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "23.000 milhas + R$ 108,17 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16538",
+  "data": "2026-11-26T11:50:54Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "66.800 milhas",
+  "volta": "66.800 milhas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10419",
+  "data": "2026-11-26T11:50:12Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Florianópolis",
+  "destino_iata": "FLN",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "A partir de 16.900 milhas",
+  "volta": "A partir de 16.900 milhas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10418",
   "data": "2026-11-26T11:31:08Z",
   "origem": "Brasília",
@@ -3159,20 +3201,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "3761373661-10310",
-  "data": "2026-11-24T12:17:23Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "8.400 milhas + Taxas",
-  "volta": "8.400 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "2008590742-16424",
   "data": "2026-11-24T12:17:23Z",
   "origem": "Porto Alegre",
@@ -3184,6 +3212,20 @@
   "programa": "LATAM Pass",
   "ida": "74.400 milhas + Taxas",
   "volta": "74.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10310",
+  "data": "2026-11-24T12:17:23Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "8.400 milhas + Taxas",
+  "volta": "8.400 milhas + Taxas",
   "link_nome": "LATAM Pass"
  },
  {
