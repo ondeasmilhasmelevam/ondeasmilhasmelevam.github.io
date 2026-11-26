@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10409",
+  "data": "2026-11-25T23:57:42Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "12.600 milhas + Taxas",
+  "volta": "22.600 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10408",
   "data": "2026-11-25T23:47:47Z",
   "origem": "Goiânia",
@@ -3967,21 +3981,6 @@
   "ida": "19.500 Avios + taxas",
   "volta": "",
   "link_nome": "Iberia Plus"
- },
- {
-  "id": "seats-smiles-GIG-PTY-eco",
-  "data": "2026-11-22T03:40:28.927110Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Cidade do Panamá",
-  "destino_iata": "PTY",
-  "companhia": "American / Avianca / Copa",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "70.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-smiles-GIG-DFW-exe",
