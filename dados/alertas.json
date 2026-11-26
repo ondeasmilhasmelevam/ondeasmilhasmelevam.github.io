@@ -4584,20 +4584,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-16453",
-  "data": "2026-11-24T21:25:01Z",
-  "origem": "Florianópolis",
-  "origem_iata": "FLN",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "23.000 milhas + R$ 108,17 de taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-7989",
   "data": "2026-11-24T12:00:01Z",
   "tipo": "promocao",
