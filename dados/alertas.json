@@ -3548,34 +3548,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-10287",
-  "data": "2026-11-24T01:41:32Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Manaus",
-  "destino_iata": "MAO",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "12.000 milhas + R$ 54,45 de taxas",
-  "volta": "12.000 milhas + R$ 55,17 de taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-10286",
-  "data": "2026-11-24T01:41:16Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "12.000 milhas + R$ 62,69 de taxas",
-  "volta": "12.000 milhas + R$ 35,90 de taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
   "id": "seats-smiles-SSA-PTY-eco",
   "data": "2026-11-24T00:18:59.188401Z",
   "fonte": "seats.aero",
