@@ -1,5 +1,33 @@
 [
  {
+  "id": "3996014557-2529",
+  "data": "2026-11-26T19:25:51Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "Foz do Iguaçu",
+  "destino_iata": "IGU",
+  "companhia": "TudoAzul",
+  "cabine": "Econômica",
+  "programa": "TudoAzul",
+  "ida": "26.000 pontos milhas + taxas, ida e volta",
+  "volta": "",
+  "link_nome": "TudoAzul"
+ },
+ {
+  "id": "3761373661-10473",
+  "data": "2026-11-26T19:22:34Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Fortaleza",
+  "destino_iata": "FOR",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.300 milhas + R$ 34,54 de taxas",
+  "volta": "9.300 milhas + R$ 59,96 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10472",
   "data": "2026-11-26T19:07:18Z",
   "origem": "Belo Horizonte",
