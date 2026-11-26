@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-7094",
+  "data": "2026-11-26T20:28:18Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Paris",
+  "destino_iata": "ORY",
+  "companhia": "Air Europa",
+  "cabine": "Executiva",
+  "programa": "SUMA",
+  "ida": "58.000 milhas + Taxas",
+  "volta": "58.000 milhas + Taxas",
+  "link_nome": "SUMA"
+ },
+ {
+  "id": "3761373661-10481",
+  "data": "2026-11-26T20:25:36Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "8.200 milhas + R$ 62,14 de taxas",
+  "volta": "8.100 milhas + R$ 35,90 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-8046",
   "data": "2026-11-26T19:51:58Z",
   "tipo": "promocao",
@@ -4579,31 +4607,6 @@
   "ida": "46.770 milhas + Taxas",
   "volta": "46.770 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "1290836068-8003",
-  "data": "2026-11-24T20:28:29Z",
-  "tipo": "promocao",
-  "titulo": "CLUB TAP MILES&GO: ACÚMULO DE ATÉ 158.000 MILHAS EM 12 MESES",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine os planos Club TAP Miles&Go e acumule até 158.000 milhas em 12 meses, com bônus de adesão e milhas mensais. Planos variam de Basic a Platinum+ com diferentes valores de investimento e benefícios.",
-  "detalhes": [
-   "Club Basic: 1.000 milhas/mês + 2.000 milhas bônus (total: 14.000 milhas/ano).",
-   "Club Extra: 2.000 milhas/mês + 4.000 milhas bônus (total: 28.000 milhas/ano).",
-   "Club Top: 4.000 milhas/mês + 8.000 milhas bônus (total: 56.000 milhas/ano).",
-   "Club Platinum: 8.000 milhas/mês + 16.000 milhas bônus (total: 112.000 milhas/ano).",
-   "Club Platinum+: 10.000 milhas/mês + 38.000 milhas bônus (total: 158.000 milhas/ano).",
-   "Bônus por voos TAP: até 25% em alguns planos.",
-   "Milhas creditadas no dia 20 de cada mês.",
-   "Renovação automática possível por até 60 meses."
-  ],
-  "parceiros": "TAP Miles&Go",
-  "validade": "Até durar o estoque (sem data de validade divulgada)",
-  "links": [
-   "https://www.flytap.com/pt-br/miles-and-go/club"
-  ],
-  "ate": ""
  },
  {
   "id": "1290836068-7989",
