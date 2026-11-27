@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-27T14:41:42.803407Z",
+ "atualizado": "2026-11-27T14:48:07.698585Z",
  "dias": 30,
- "passagens": 4512,
+ "passagens": 4517,
  "promocoes": 263,
  "destinos": 187,
- "executiva": 888,
+ "executiva": 892,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1062,
+  "passagens": 1067,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -980,15 +980,15 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "robo-FOR-MAD-iberia-business",
-    "origem": "Fortaleza",
-    "origem_iata": "FOR",
+    "id": "robo-GRU-MAD-iberia-premium",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
     "destino": "Madrid",
     "destino_iata": "MAD",
-    "cabine": "Executiva",
+    "cabine": "Premium Economy",
     "programa": "Avios",
-    "data": "2026-11-27T11:32:09.881157Z",
-    "milhas": 40500,
+    "data": "2026-11-27T14:43:18.017052Z",
+    "milhas": 36750,
     "nivel": "muito bom",
     "regiao": "europa"
    },
@@ -1149,6 +1149,19 @@
     "regiao": "outros"
    },
    {
+    "id": "robo-GRU-LHR-british-premium",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Londres",
+    "destino_iata": "LHR",
+    "cabine": "Premium Economy",
+    "programa": "Executive Club",
+    "data": "2026-11-27T14:43:18.017052Z",
+    "milhas": 55000,
+    "nivel": "",
+    "regiao": "europa"
+   },
+   {
     "id": "2361370250-7090",
     "origem": "Toronto",
     "origem_iata": "YYZ",
@@ -1186,19 +1199,6 @@
     "milhas": 63750,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "2361370250-7070",
-    "origem": "Cidade do Panamá",
-    "origem_iata": "PTY",
-    "destino": "Paris",
-    "destino_iata": "CDG",
-    "cabine": "Executiva",
-    "programa": "Flying Blue",
-    "data": "2026-11-26T09:34:49Z",
-    "milhas": 63750,
-    "nivel": "",
-    "regiao": "europa"
    }
   ]
  }
