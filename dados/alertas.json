@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10607",
+  "data": "2026-11-27T21:26:46Z",
+  "origem": "Natal",
+  "origem_iata": "NAT",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "21.100 milhas + Taxas",
+  "volta": "21.900 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16694",
   "data": "2026-11-27T21:19:12Z",
   "origem": "Manaus",
