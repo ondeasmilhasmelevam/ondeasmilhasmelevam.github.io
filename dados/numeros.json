@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-27T18:57:23.779628Z",
+ "atualizado": "2026-11-27T19:03:40.919109Z",
  "dias": 30,
- "passagens": 4603,
+ "passagens": 4618,
  "promocoes": 270,
- "destinos": 187,
- "executiva": 900,
+ "destinos": 188,
+ "executiva": 904,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1152,
+  "passagens": 1167,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -707,6 +707,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "2008590742-16683",
+    "origem": "Belo Horizonte",
+    "origem_iata": "CNF",
+    "destino": "Ipatinga",
+    "destino_iata": "IPN",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-27T19:01:21Z",
+    "milhas": 6000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10214",
     "origem": "Petrolina",
     "origem_iata": "PNZ",
@@ -798,6 +811,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "2008590742-16684",
+    "origem": "Belo Horizonte",
+    "origem_iata": "CNF",
+    "destino": "Uberlândia",
+    "destino_iata": "UDI",
+    "cabine": "Econômica",
+    "programa": "Azul Fidelidade",
+    "data": "2026-11-27T19:01:25Z",
+    "milhas": 8000,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10365",
     "origem": "São Paulo",
     "origem_iata": "CGH",
@@ -846,19 +872,6 @@
     "programa": "Smiles",
     "data": "2026-11-24T11:39:58Z",
     "milhas": 8300,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10539",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Uberlândia",
-    "destino_iata": "UDI",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-27T14:34:27Z",
-    "milhas": 8500,
     "nivel": "",
     "regiao": "brasil"
    },
@@ -926,19 +939,6 @@
     "milhas": 9000,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "3761373661-10508",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Imperatriz",
-    "destino_iata": "IMP",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-27T11:46:22Z",
-    "milhas": 9008,
-    "nivel": "",
-    "regiao": "brasil"
    },
    {
     "id": "2361370250-6975",
