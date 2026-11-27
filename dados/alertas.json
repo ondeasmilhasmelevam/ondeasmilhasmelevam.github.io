@@ -1,5 +1,107 @@
 [
  {
+  "id": "3761373661-10583",
+  "data": "2026-11-27T18:05:17Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Florianópolis",
+  "destino_iata": "FLN",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "15.200 milhas + Taxas",
+  "volta": "15.200 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16673",
+  "data": "2026-11-27T18:05:12Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Lima",
+  "destino_iata": "LIM",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "49.400 milhas + Taxas",
+  "volta": "49.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16672",
+  "data": "2026-11-27T18:05:08Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Montevidéu",
+  "destino_iata": "MVD",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "38.400 milhas + Taxas",
+  "volta": "38.400 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10582",
+  "data": "2026-11-27T18:05:05Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Fortaleza",
+  "destino_iata": "FOR",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "23.000 milhas + Taxas",
+  "volta": "23.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "1290836068-8078",
+  "data": "2026-11-27T18:02:21Z",
+  "tipo": "promocao",
+  "titulo": "SMILES: VOOS GOL PARA SALVADOR A PARTIR DE 7.700 MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A Smiles oferece voos Gol para Salvador a partir de 7.700 milhas por trecho, mais taxas. A promoção é válida para viagens entre fevereiro e junho de 2027. Os preços são indicados para assinantes do Clube Smiles e/ou Smiles Diamante, mas disponíveis para todos os clientes.",
+  "detalhes": [
+   "7.700 milhas por trecho",
+   "mais taxas",
+   "válido para viagens entre fevereiro e junho de 2027",
+   "assentos limitados",
+   "tarifas podem mudar",
+   "menor preço saindo de Brasília",
+   "Brasília (BSB) x Salvador (SSA) a partir de 7.700 milhas o trecho",
+   "Belo Horizonte (CNF) x Salvador (SSA) a partir de 7.700 milhas o trecho"
+  ],
+  "parceiros": "Smiles, GOL",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/sGPH4Ht"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8077",
+  "data": "2026-11-27T18:02:18Z",
+  "tipo": "promocao",
+  "titulo": "VOO PARA AMSTERDAM A PARTIR DE 52.393 MILHAS LATAM Pass + TAXAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Disponibilidade de voos de ida e volta entre São Paulo e Amsterdam a partir de 52.393 milhas LATAM Pass + taxas por trecho. Operado pela LATAM Airlines na classe econômica. Itinerário de volta disponível apenas para assinantes.",
+  "detalhes": [
+   "52.393 milhas LATAM Pass por trecho",
+   "taxas aplicáveis",
+   "volta disponível apenas para assinantes",
+   "São Paulo (GRU) x Amsterdam (AMS) economica a partir de 52.393 milhas o trecho"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/8UADyL1"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2361370250-7110",
   "data": "2026-11-27T17:52:29Z",
   "origem": "Doha",
