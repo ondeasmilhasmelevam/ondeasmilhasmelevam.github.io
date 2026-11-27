@@ -1,5 +1,110 @@
 [
  {
+  "id": "1290836068-8071",
+  "data": "2026-11-27T15:19:16Z",
+  "tipo": "promocao",
+  "titulo": "SMILES & CLUBE SMILES: Orange Friday com até 14.000 milhas no primeiro mês",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Smiles 1.000 utilizando o cupom PARTIUCLUBE e receba até 14.000 milhas no primeiro mês com milheiro a partir de R$ 13,07.",
+  "detalhes": [
+   "13.000 milhas bônus na modalidade anual (parcelado ou à vista) com cupom PARTIUCLUBE",
+   "13.000 milhas bônus na modalidade mensal distribuídas nos meses 1, 3 e 6"
+  ],
+  "parceiros": "Smiles",
+  "validade": "10/12/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja"
+  ],
+  "ate": "2026-12-10T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8070",
+  "data": "2026-11-27T15:19:13Z",
+  "tipo": "promocao",
+  "titulo": "CARTÕES AZUL ITAÚ: Ganhe até 80.000 pontos bônus na Azul Friday",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Contrate o Cartão Azul Itaú eligible na Azul Friday e ganhe até 80.000 pontos bônus cumprindo as metas de ativação, gastos e clube.",
+  "detalhes": [
+   "Infinite/Skyline: Até 80.000 pontos",
+   "Platinum: Até 30.000 pontos",
+   "Gold: Até 15.000 pontos"
+  ],
+  "parceiros": "Azul Fidelidade, Itaú",
+  "validade": "29/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/azul-friday-cartao-azul-itau"
+  ],
+  "ate": "2026-11-29T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8069",
+  "data": "2026-11-27T15:19:09Z",
+  "tipo": "promocao",
+  "titulo": "BANCOS PARCEIROS & LATAM Pass: Transfira pontos com 25% de bônus + 1.000 milhas extras",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira pontos dos bancos participantes para o LATAM Pass com 25% de bônus e ganhe 1.000 milhas extras na primeira transferência.",
+  "detalhes": [
+   "25% de bônus para todos os clientes elegíveis",
+   "+ 1.000 milhas extras na primeira transferência"
+  ],
+  "parceiros": "Itaú, Credicard, Sicredi, C6 Bank, BTG Pactual, Revolut, Banrisul, Sicoob, Banestes, Banco do Nordeste, Mercantil, Banpará, Unicred, BIB, Sisprime, PicPay, Sem Parar, Nubank Croma, LATAM Pass",
+  "validade": "29/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/promocoes/bancos-milhas-extras"
+  ],
+  "ate": "2026-11-29T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8068",
+  "data": "2026-11-27T15:19:06Z",
+  "tipo": "promocao",
+  "titulo": "CARTÕES LATAM Pass ITAÚ: Solicite seu cartão e ganhe até 100.000 milhas bônus na LATAM Friday",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Solicite o Cartão LATAM Pass Itaú Mastercard Black ou Platinum e ganhe até 100.000 milhas bônus ao atingir a meta de gastos nas 3 primeiras faturas.",
+  "detalhes": [
+   "Mastercard Black: 100.000 milhas bônus (Gastos de R$ 60.000 nas 3 primeiras faturas)",
+   "Mastercard Platinum: 40.000 milhas bônus (Gastos de R$ 12.000 nas 3 primeiras faturas)"
+  ],
+  "parceiros": "LATAM Pass, Itaú",
+  "validade": "29/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/promocoes/cobranded-aquisicao"
+  ],
+  "ate": "2026-11-29T23:59:59-03:00"
+ },
+ {
+  "id": "3761373661-10557",
+  "data": "2026-11-27T15:18:42Z",
+  "origem": "Campinas",
+  "origem_iata": "VCP",
+  "destino": "Belo Horizonte",
+  "destino_iata": "CNF",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "8.000 milhas + R$ 33,44 de taxas",
+  "volta": "9.000 milhas + R$ 35,15 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2361370250-7104",
+  "data": "2026-11-27T15:18:01Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Munique",
+  "destino_iata": "MUC",
+  "companhia": "Lufthansa",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "80.000 milhas + Taxas",
+  "volta": "80.000 milhas + Taxas",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "2008590742-16655",
   "data": "2026-11-27T15:13:44Z",
   "origem": "São Paulo",
@@ -4250,26 +4355,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "1290836068-8039",
-  "data": "2026-11-26T15:32:16Z",
-  "tipo": "promocao",
-  "titulo": "BANCOS PARCEIROS & LATAM Pass: 25% DE BÔNUS + 1.000 MILHAS EXTRAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Transfira pontos dos bancos parceiros para o LATAM Pass e garanta 25% de bônus mais 1.000 milhas extras na primeira transferência.",
-  "detalhes": [
-   "25% de bônus para todos os clientes elegíveis.",
-   "+1.000 milhas extras na primeira transferência de pontos de bancos participantes.",
-   "Limite de bonificação de 300.000 milhas extras por CPF."
-  ],
-  "parceiros": "LATAM Pass, Itaú, C6 Bank, Sicredi, BTG Pactual, PicPay, Nubank e outros",
-  "validade": "29/11/2026",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/bancos-milhas-extras"
-  ],
-  "ate": "2026-11-29T23:59:59-03:00"
- },
- {
   "id": "1290836068-8038",
   "data": "2026-11-26T15:32:13Z",
   "tipo": "promocao",
@@ -7340,25 +7425,6 @@
    "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja"
   ],
   "ate": "2026-11-30T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7965",
-  "data": "2026-11-23T14:31:47Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass ITAÚ: 100.000 MILHAS BÔNUS COM CARTÃO BLACK",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Solicite o cartão LATAM Pass Itaú Mastercard Black e ganhe até 100.000 milhas bônus ao gastar R$60.000 nas 3 primeiras faturas. Oferta válida até 29/11/2026.",
-  "detalhes": [
-   "100.000 milhas bônus ao gastar R$60.000 (3 primeiras faturas) com o cartão Black.",
-   "40.000 milhas bônus ao gastar R$12.000 (3 primeiras faturas) com o cartão Platinum."
-  ],
-  "parceiros": "LATAM Pass, Itaú",
-  "validade": "29/11/2026",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/cobranded-aquisicao"
-  ],
-  "ate": "2026-11-29T23:59:59-03:00"
  },
  {
   "id": "1290836068-7961",
