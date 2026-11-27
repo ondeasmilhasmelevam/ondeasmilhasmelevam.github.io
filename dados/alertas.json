@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10494",
+  "data": "2026-11-27T01:00:12Z",
+  "origem": "Campinas",
+  "origem_iata": "VCP",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "8.600 milhas + R$ 33,44 de taxas",
+  "volta": "10.100 milhas + R$ 34,54 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16627",
   "data": "2026-11-26T23:44:51Z",
   "origem": "Brasília",
