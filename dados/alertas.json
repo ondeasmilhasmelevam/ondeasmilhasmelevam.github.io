@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-16690",
+  "data": "2026-11-27T20:49:11Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "Avianca",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "92.300 milhas + Taxas",
+  "volta": "92.300 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16689",
+  "data": "2026-11-27T20:47:48Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Punta del Este",
+  "destino_iata": "PDP",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "A partir de 24.250 milhas",
+  "volta": "A partir de 24.250 milhas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-10606",
   "data": "2026-11-27T20:25:58Z",
   "origem": "São Paulo",
