@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-16687",
+  "data": "2026-11-27T19:13:40Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "6.600 milhas + Taxas",
+  "volta": "3.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10600",
+  "data": "2026-11-27T19:13:36Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Florianópolis",
+  "destino_iata": "FLN",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "15.800 milhas + Taxas",
+  "volta": "15.800 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16686",
+  "data": "2026-11-27T19:13:32Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Santiago",
+  "destino_iata": "SCL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "31.900 milhas + Taxas",
+  "volta": "31.900 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-10599",
   "data": "2026-11-27T19:09:23Z",
   "origem": "Belo Horizonte",
