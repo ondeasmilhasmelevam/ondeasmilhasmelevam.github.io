@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-27T19:03:40.919109Z",
+ "atualizado": "2026-11-27T19:10:07.552724Z",
  "dias": 30,
- "passagens": 4618,
+ "passagens": 4620,
  "promocoes": 270,
  "destinos": 188,
  "executiva": 904,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1167,
+  "passagens": 1169,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -577,6 +577,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10598",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Florianópolis",
+    "destino_iata": "FLN",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-27T19:06:25Z",
+    "milhas": 3800,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10215",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -599,19 +612,6 @@
     "programa": "Smiles",
     "data": "2026-11-26T19:07:05Z",
     "milhas": 4100,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10455",
-    "origem": "Porto Alegre",
-    "origem_iata": "POA",
-    "destino": "Florianópolis",
-    "destino_iata": "FLN",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-26T16:49:36Z",
-    "milhas": 4300,
     "nivel": "",
     "regiao": "brasil"
    },
