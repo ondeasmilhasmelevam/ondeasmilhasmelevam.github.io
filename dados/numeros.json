@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-27T10:47:31.118786Z",
+ "atualizado": "2026-11-27T10:54:14.687029Z",
  "dias": 30,
- "passagens": 4438,
+ "passagens": 4443,
  "promocoes": 256,
  "destinos": 186,
- "executiva": 881,
+ "executiva": 882,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1026,
+  "passagens": 1027,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -434,15 +434,15 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-16367",
-    "origem": "Goiânia",
-    "origem_iata": "GYN",
+    "id": "2008590742-16629",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
     "destino": "Lima",
     "destino_iata": "LIM",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-23T20:11:13Z",
-    "milhas": 39000,
+    "data": "2026-11-27T10:51:32Z",
+    "milhas": 37800,
     "nivel": "bom",
     "regiao": "america-do-sul"
    },
@@ -863,6 +863,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10501",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
+    "destino": "Salvador",
+    "destino_iata": "SSA",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-27T10:51:41Z",
+    "milhas": 8900,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10056",
     "origem": "Florianópolis",
     "origem_iata": "FLN",
@@ -928,19 +941,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-10205",
-    "origem": "Rio de Janeiro",
-    "origem_iata": "SDU",
-    "destino": "Caldas Novas",
-    "destino_iata": "CLV",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-23T13:59:38Z",
-    "milhas": 10300,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
     "id": "2361370250-6975",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -967,15 +967,15 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2361370250-6965",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
+    "id": "2361370250-7097",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
     "destino": "Nova York",
     "destino_iata": "JFK",
     "cabine": "Executiva",
-    "programa": "GOL Smiles",
-    "data": "2026-11-22T11:45:17Z",
-    "milhas": 220500,
+    "programa": "Smiles",
+    "data": "2026-11-27T10:53:40Z",
+    "milhas": 208900,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
    },
