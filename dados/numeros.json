@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-27T14:29:09.765881Z",
+ "atualizado": "2026-11-27T14:35:19.216136Z",
  "dias": 30,
- "passagens": 4505,
+ "passagens": 4511,
  "promocoes": 263,
  "destinos": 187,
  "executiva": 888,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1056,
+  "passagens": 1061,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -668,6 +668,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10540",
+    "origem": "Campinas",
+    "origem_iata": "VCP",
+    "destino": "Rio de Janeiro",
+    "destino_iata": "GIG",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-27T14:34:57Z",
+    "milhas": 5900,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10330",
     "origem": "Salvador",
     "origem_iata": "SSA",
@@ -772,19 +785,6 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-10057",
-    "origem": "Florianópolis",
-    "origem_iata": "FLN",
-    "destino": "Rio de Janeiro",
-    "destino_iata": "GIG",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-21T15:53:14Z",
-    "milhas": 7400,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "3761373661-10107",
     "origem": "Brasília",
     "origem_iata": "BSB",
@@ -833,6 +833,19 @@
     "programa": "Smiles",
     "data": "2026-11-24T11:39:58Z",
     "milhas": 8300,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10539",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Uberlândia",
+    "destino_iata": "UDI",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-27T14:34:27Z",
+    "milhas": 8500,
     "nivel": "",
     "regiao": "brasil"
    },
@@ -924,19 +937,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-22T13:28:54Z",
     "milhas": 9470,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10533",
-    "origem": "São Paulo",
-    "origem_iata": "CGH",
-    "destino": "Uberlândia",
-    "destino_iata": "UDI",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-27T14:14:20Z",
-    "milhas": 9500,
     "nivel": "",
     "regiao": "brasil"
    },
