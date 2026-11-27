@@ -1,5 +1,72 @@
 [
  {
+  "id": "3761373661-10506",
+  "data": "2026-11-27T11:16:37Z",
+  "origem": "Belém",
+  "origem_iata": "BEL",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "A partir de 6.815 milhas",
+  "volta": "A partir de 6.815 milhas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "1290836068-8057",
+  "data": "2026-11-27T11:13:36Z",
+  "tipo": "promocao",
+  "titulo": "ASSINATURA DO CLUBE LIVELO ESPECIAL COM ATÉ 45.000 PONTOS BÔNUS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Livelo Especial/Essencial e receba até 45.000 pontos bônus divididos ao longo de 12 meses.",
+  "detalhes": [
+   "Cupom: CLUBEMDBF26",
+   "Plano Especial Mensal e Anual: Bonificação total de 45.000 pontos Livelo, dividida em 12 parcelas mensais de 3.750 pontos."
+  ],
+  "parceiros": "Livelo",
+  "validade": "Até durar o estoque",
+  "links": [
+   "https://www.livelo.com.br/clube"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8056",
+  "data": "2026-11-27T11:13:33Z",
+  "tipo": "promocao",
+  "titulo": "ASSINATURA DO CLUBE LIVELO PREMIUM COM ATÉ 112.000 PONTOS BÔNUS",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Assine o Clube Livelo Premium utilizando o cupom de desconto e acumule até 112.000 pontos bônus adicionais ao longo de 12 meses.",
+  "detalhes": [
+   "Cupom: CLUBEPPBF26",
+   "Plano PREMIUM Mensal: 106.000 pontos bônus no total (12 bonificações de 8.833 pontos).",
+   "Plano PREMIUM Anual: 112.000 pontos bônus no total (12 bonificações de 9.333 pontos)."
+  ],
+  "parceiros": "Livelo",
+  "validade": "Até durar o estoque",
+  "links": [
+   "https://www.livelo.com.br/clube"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "2008590742-16630",
+  "data": "2026-11-27T11:13:28Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Antofagasta",
+  "destino_iata": "ANF",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "46.600 milhas + Taxas",
+  "volta": "46.600 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-10505",
   "data": "2026-11-27T11:03:32Z",
   "origem": "Recife",
