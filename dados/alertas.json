@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-10603",
+  "data": "2026-11-27T19:34:31Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Maceió",
+  "destino_iata": "MCZ",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "A partir de 9.750 milhas",
+  "volta": "A partir de 9.750 milhas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-10602",
+  "data": "2026-11-27T19:30:33Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Porto Seguro",
+  "destino_iata": "BPS",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "15.000 milhas + R$ 34,55 de taxas",
+  "volta": "15.000 milhas + R$ 38,84 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16688",
   "data": "2026-11-27T19:20:04Z",
   "origem": "Campinas",
