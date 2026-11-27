@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-10500",
+  "data": "2026-11-27T03:42:02Z",
+  "origem": "Cascavel",
+  "origem_iata": "CAC",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "9.800 milhas + R$ 45,00 de taxas",
+  "volta": "10.500 milhas + R$ 35,75 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10499",
+  "data": "2026-11-27T03:41:30Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.000 milhas + R$ 62,14 de taxas",
+  "volta": "16.000 milhas + R$ 55,62 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10498",
   "data": "2026-11-27T03:32:05Z",
   "origem": "Brasília",
