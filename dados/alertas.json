@@ -1,5 +1,138 @@
 [
  {
+  "id": "1290836068-8067",
+  "data": "2026-11-27T14:09:55Z",
+  "tipo": "promocao",
+  "titulo": "UPGRADE DE CLUBE LIVELO PREMIUM COM ATÉ 390.000 PONTOS EM 12 MESES",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Faça upgrade para o Clube Livelo Premium 20.000 e receba até 390.000 pontos acumulados ao longo de 12 meses.",
+  "detalhes": [
+   "Modalidade Anual: 390.000 pontos .",
+   "Modalidade Mensal: 384.000 pontos ."
+  ],
+  "parceiros": "Livelo",
+  "validade": "29/11/2026",
+  "links": [
+   "https://www.livelo.com.br/upgrade-promo-CDC16585"
+  ],
+  "ate": "2026-11-29T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8066",
+  "data": "2026-11-27T14:09:53Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFIRA BANCOS PARCEIROS PARA SMILES COM ATÉ 80% DE BÔNUS E CUPOM DE 79% OFF",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira pontos de bancos parceiros para a Smiles com até 80% de bônus e receba cupom de 79% OFF para compra de milhas.",
+  "detalhes": [
+   "80% de bônus: Assinantes do Clube Smiles e/ou clientes Diamante ou Magno.",
+   "40% de bônus: Demais clientes Smiles.",
+   "Cupom de 79% OFF para compra de até 200.000 milhas Smiles (milheiro a R$ 16,80)."
+  ],
+  "parceiros": "Smiles",
+  "validade": "30/11/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanhas/orangefriday-bancos-27-11-2026"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8065",
+  "data": "2026-11-27T14:09:49Z",
+  "tipo": "promocao",
+  "titulo": "COMPRE PONTOS LIVELO COM ATÉ 56,6% OFF E 3% OFF ADICIONAL NO PIX",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Assinantes do Clube Livelo podem comprar pontos com 56,6% de desconto direto e 3% adicional pagando via Pix.",
+  "detalhes": [
+   "56,6% de desconto automático para assinantes do Clube Livelo.",
+   "3% OFF adicional ao realizar o pagamento via Pix."
+  ],
+  "parceiros": "Livelo",
+  "validade": "30/11/2026",
+  "links": [
+   "https://www.livelo.com.br/compra-promo-CDC16575"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8064",
+  "data": "2026-11-27T14:09:43Z",
+  "tipo": "promocao",
+  "titulo": "TRANSFIRA ESFERA PARA CONNECTMILES DA COPA AIRLINES COM 80% DE BÔNUS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Transfira pontos Esfera para a ConnectMiles da Copa Airlines e ganhe 80% de bônus na paridade 3:1.",
+  "detalhes": [
+   "80% de bônus para todos os clientes Esfera.",
+   "Paridade de transferência: 3 pontos Esfera para 1 milha ConnectMiles."
+  ],
+  "parceiros": "Esfera, Copa Airlines, ConnectMiles",
+  "validade": "27/11/2026",
+  "links": [
+   "https://www.esfera.com.vc/p/copa-airlines/e000100695"
+  ],
+  "ate": "2026-11-27T23:59:59-03:00"
+ },
+ {
+  "id": "3761373661-10532",
+  "data": "2026-11-27T14:05:47Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Belém",
+  "destino_iata": "BEL",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "16.000 milhas + Taxas",
+  "volta": "16.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-16651",
+  "data": "2026-11-27T14:05:45Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Santa Cruz de La Sierra",
+  "destino_iata": "VVI",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "51.500 milhas + Taxas",
+  "volta": "51.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10531",
+  "data": "2026-11-27T14:05:43Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.000 milhas + Taxas",
+  "volta": "11.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10530",
+  "data": "2026-11-27T14:05:41Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "21.000 milhas + Taxas",
+  "volta": "21.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2361370250-7102",
   "data": "2026-11-27T13:54:38Z",
   "origem": "São Paulo",
@@ -4081,25 +4214,6 @@
   "ida": "9.696 milhas + R$ 48,63",
   "volta": "9.788 milhas + R$ 34,55",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "1290836068-8034",
-  "data": "2026-11-26T14:13:00Z",
-  "tipo": "promocao",
-  "titulo": "CLUBE LIVELO PREMIUM: UPGRADE COM ATÉ 390.000 PONTOS!",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Faça o upgrade para o Clube Livelo Premium e acumule até 390.000 pontos em 12 meses na modalidade anual.",
-  "detalhes": [
-   "390.000 pontos na modalidade anual.",
-   "384.000 pontos na modalidade mensal."
-  ],
-  "parceiros": "Livelo",
-  "validade": "29/11/2026",
-  "links": [
-   "https://www.livelo.com.br/upgrade-promo-CDC16585"
-  ],
-  "ate": "2026-11-29T23:59:59-03:00"
  },
  {
   "id": "2008590742-16556",
