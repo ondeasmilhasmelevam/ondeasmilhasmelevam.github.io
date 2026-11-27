@@ -1509,7 +1509,7 @@ desenharPush();
 const grupoCodigo = (() => {
   const c = (new URLSearchParams(location.search).get('g') || '').toLowerCase();
   try {
-    if (/^[a-z0-9]{8,16}$/.test(c)) sessionStorage.setItem('oamml-grupo', c);
+    if (/^[a-z0-9][a-z0-9-]{1,46}[a-z0-9]$/.test(c)) sessionStorage.setItem('oamml-grupo', c);
     return c || sessionStorage.getItem('oamml-grupo') || '';
   } catch (e) { return c; }
 })();
