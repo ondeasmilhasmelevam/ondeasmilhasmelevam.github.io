@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-27T11:29:43.948140Z",
+ "atualizado": "2026-11-27T11:35:57.474180Z",
  "dias": 30,
- "passagens": 4447,
+ "passagens": 4450,
  "promocoes": 258,
  "destinos": 186,
- "executiva": 882,
+ "executiva": 883,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1012,
+  "passagens": 1013,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -980,6 +980,19 @@
     "regiao": "america-do-norte"
    },
    {
+    "id": "robo-FOR-MAD-iberia-business",
+    "origem": "Fortaleza",
+    "origem_iata": "FOR",
+    "destino": "Madrid",
+    "destino_iata": "MAD",
+    "cabine": "Executiva",
+    "programa": "Avios",
+    "data": "2026-11-27T11:32:09.881157Z",
+    "milhas": 40500,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
     "id": "2361370250-7033",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -1121,19 +1134,6 @@
     "milhas": 50000,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "robo-LIM-MAD-iberia-business",
-    "origem": "Lima",
-    "origem_iata": "LIM",
-    "destino": "Madrid",
-    "destino_iata": "MAD",
-    "cabine": "Executiva",
-    "programa": "Avios",
-    "data": "2026-11-27T06:42:11.393783Z",
-    "milhas": 50500,
-    "nivel": "",
-    "regiao": "europa"
    },
    {
     "id": "2361370250-7093",

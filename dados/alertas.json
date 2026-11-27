@@ -1,5 +1,48 @@
 [
  {
+  "id": "3761373661-10507",
+  "data": "2026-11-27T11:35:44Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Palmas",
+  "destino_iata": "PMW",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "8.000 milhas + Taxas",
+  "volta": "8.000 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16631",
+  "data": "2026-11-27T11:35:40Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Cidade do Cabo",
+  "destino_iata": "CPT",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "74.700 milhas + Taxas",
+  "volta": "74.700 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "robo-FOR-MAD-iberia-business",
+  "data": "2026-11-27T11:32:09.881157Z",
+  "fonte": "robo-alertas",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "Iberia",
+  "cabine": "Executiva",
+  "programa": "Avios",
+  "ida": "40.500 Avios + taxas",
+  "volta": "40.500 Avios + taxas",
+  "link_nome": "Avios"
+ },
+ {
   "id": "3761373661-10506",
   "data": "2026-11-27T11:16:37Z",
   "origem": "Belém",
