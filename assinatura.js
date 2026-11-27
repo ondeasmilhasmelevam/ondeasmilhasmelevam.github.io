@@ -552,7 +552,7 @@ $('#painel-cortesias').addEventListener('click', async e => {
   const efeito = estado === 'pendente' ? 'O convite deixa de valer e os dias não serão liberados.'
     : estado === 'ativa' ? `O prazo de ${prazoCortesia(dias)} sai do acesso dessa pessoa agora. O que ela pagou continua valendo.`
     : 'A cortesia já terminou, então só o registro sai da lista.';
-  if (!confirm(`Excluir a cortesia de ${email}? ${efeito} Não dá para desfazer.`)) return;
+  if (!confirm(`Excluir a cortesia de ${email}? ${efeito} A conta e o histórico da pessoa (carteira, rotas, cadastros) continuam guardados.`)) return;
   const aviso = b.parentElement.querySelector('[role=status]');
   b.disabled = true; aviso.textContent = 'Excluindo...'; aviso.className = '';
   try {
