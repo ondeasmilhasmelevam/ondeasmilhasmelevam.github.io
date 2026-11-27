@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10577",
+  "data": "2026-11-27T17:30:09Z",
+  "origem": "Navegantes",
+  "origem_iata": "NVT",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "6.900 milhas + R$ 50,57 de taxas",
+  "volta": "7.000 milhas + R$ 62,14 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10576",
   "data": "2026-11-27T17:27:49Z",
   "origem": "Brasília",

@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-27T17:29:05.626875Z",
+ "atualizado": "2026-11-27T17:35:27.326219Z",
  "dias": 30,
- "passagens": 4575,
+ "passagens": 4576,
  "promocoes": 268,
  "destinos": 187,
  "executiva": 898,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1125,
+  "passagens": 1126,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -733,6 +733,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10577",
+    "origem": "Navegantes",
+    "origem_iata": "NVT",
+    "destino": "São Paulo",
+    "destino_iata": "CGH",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-27T17:30:09Z",
+    "milhas": 6900,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10269",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -744,19 +757,6 @@
     "milhas": 7000,
     "nivel": "",
     "regiao": "outros"
-   },
-   {
-    "id": "2008590742-16431",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "São Paulo",
-    "destino_iata": "CGH",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-24T15:48:51Z",
-    "milhas": 7000,
-    "nivel": "",
-    "regiao": "brasil"
    },
    {
     "id": "3761373661-10361",
