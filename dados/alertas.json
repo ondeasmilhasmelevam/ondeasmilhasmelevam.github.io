@@ -1,5 +1,30 @@
 [
  {
+  "id": "1290836068-8079",
+  "data": "2026-11-27T18:36:15Z",
+  "tipo": "promocao",
+  "titulo": "PASSAGENS INTERNACIONAIS A PARTIR DE 14.960 MILHAS LATAM Pass",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A promoção oferece passagens internacionais com LATAM Pass a partir de 14.960 milhas por trecho, mais taxas aeroportuárias. Os valores são as menores disponíveis em cada mês e são por trecho e por passageiro. A busca foi realizada no momento da produção, podendo haver alteração no valor ou disponibilidade a qualquer momento.",
+  "detalhes": [
+   "milhas por trecho",
+   "taxas aeroportuárias incluídas",
+   "valores por trecho e por passageiro",
+   "valores são as menores disponíveis em cada mês",
+   "busca realizada no momento da produção, podendo haver alteração no valor ou disponibilidade",
+   "Florianópolis (FLN) x Buenos Aires (EZE) a partir de 14.960 milhas o trecho",
+   "Florianópolis (FLN) x Santiago (SCL) a partir de 22.739 milhas o trecho",
+   "Rio de Janeiro (SDU) x Montevidéu (MVD) a partir de 24.933 milhas o trecho"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/Xh5J7L1"
+  ],
+  "ate": ""
+ },
+ {
   "id": "3996014557-2580",
   "data": "2026-11-27T18:30:54Z",
   "origem": "São Paulo",
