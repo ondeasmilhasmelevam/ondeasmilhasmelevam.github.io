@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-27T11:42:21.339947Z",
+ "atualizado": "2026-11-27T11:48:29.920895Z",
  "dias": 30,
- "passagens": 4450,
+ "passagens": 4452,
  "promocoes": 258,
  "destinos": 186,
  "executiva": 883,
@@ -902,6 +902,19 @@
     "regiao": "outros"
    },
    {
+    "id": "3761373661-10508",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Imperatriz",
+    "destino_iata": "IMP",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-27T11:46:22Z",
+    "milhas": 9008,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10088",
     "origem": "São Luís",
     "origem_iata": "SLZ",
@@ -924,19 +937,6 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-24T20:59:21Z",
     "milhas": 9800,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10345",
-    "origem": "Recife",
-    "origem_iata": "REC",
-    "destino": "Aracaju",
-    "destino_iata": "AJU",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-24T17:28:31Z",
-    "milhas": 10000,
     "nivel": "",
     "regiao": "brasil"
    },
