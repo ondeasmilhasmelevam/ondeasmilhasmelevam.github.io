@@ -1,9 +1,9 @@
 {
- "atualizado": "2026-11-27T11:54:52.369102Z",
+ "atualizado": "2026-11-27T12:01:16.601700Z",
  "dias": 30,
- "passagens": 4453,
+ "passagens": 4455,
  "promocoes": 258,
- "destinos": 186,
+ "destinos": 187,
  "executiva": 883,
  "destaques": [
   {
@@ -265,6 +265,19 @@
     "regiao": "america-do-sul"
    },
    {
+    "id": "2008590742-16633",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Buenos Aires",
+    "destino_iata": "EZE",
+    "cabine": "Econômica",
+    "programa": "Azul pelo Mundo",
+    "data": "2026-11-27T11:59:38Z",
+    "milhas": 16000,
+    "nivel": "muito bom",
+    "regiao": "america-do-sul"
+   },
+   {
     "id": "2008590742-16336",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -274,19 +287,6 @@
     "programa": "Smiles",
     "data": "2026-11-23T16:12:45Z",
     "milhas": 18400,
-    "nivel": "muito bom",
-    "regiao": "america-do-sul"
-   },
-   {
-    "id": "2008590742-16497",
-    "origem": "Florianópolis",
-    "origem_iata": "FLN",
-    "destino": "Buenos Aires",
-    "destino_iata": "EZE",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-25T23:47:17Z",
-    "milhas": 22000,
     "nivel": "muito bom",
     "regiao": "america-do-sul"
    },
