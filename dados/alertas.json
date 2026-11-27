@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16694",
+  "data": "2026-11-27T21:19:12Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Cancún",
+  "destino_iata": "CUN",
+  "companhia": "Avianca",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "40.400 milhas + Taxas",
+  "volta": "42.100 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16693",
   "data": "2026-11-27T21:12:11Z",
   "origem": "Brasília",
