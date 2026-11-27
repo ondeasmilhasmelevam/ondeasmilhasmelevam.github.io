@@ -1,5 +1,44 @@
 [
  {
+  "id": "3761373661-10558",
+  "data": "2026-11-27T15:41:13Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "São Luís",
+  "destino_iata": "SLZ",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "15.700 milhas + R$ 35,75 de taxas",
+  "volta": "15.700 milhas + R$ 49,73 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "1290836068-8072",
+  "data": "2026-11-27T15:33:31Z",
+  "tipo": "promocao",
+  "titulo": "IBERIA CLUB 20% DESCONTO EM AVIOS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Iberia Club oferece até 20% de desconto no resgate de passagens com Avios. A promoção cobre voos operados pela Iberia, Iberia Express e Air Nostrum com origem ou destino em Madri. Descontos variam de 10% a 20% dependendo do destino e classe.",
+  "detalhes": [
+   "até 20% de desconto no número de Avios necessários",
+   "descontos variam de 10% a 20% dependendo do destino e classe",
+   "taxas e impostos continuam sendo cobrados normalmente",
+   "promoção válida para reservas realizadas até 1° de dezembro de 2026",
+   "embarques de 11 de janeiro até 18 de março, exceto em datas de alta temporada",
+   "descontos aplicados apenas sobre Avios, sem incluir taxas e encargos",
+   "rota válida apenas com origem ou destino em Madri (MAD)",
+   "Recife (REC) x Madri (MAD) economica a partir de 16.000 milhas o trecho"
+  ],
+  "parceiros": "Iberia Plus",
+  "validade": "até 1° de dezembro de 2026",
+  "links": [
+   "https://link.dia23.com.br/r/aomAhwF"
+  ],
+  "ate": ""
+ },
+ {
   "id": "1290836068-8071",
   "data": "2026-11-27T15:19:16Z",
   "tipo": "promocao",
