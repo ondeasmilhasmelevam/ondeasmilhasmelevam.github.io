@@ -1,5 +1,63 @@
 [
  {
+  "id": "1290836068-8051",
+  "data": "2026-11-27T04:01:47Z",
+  "tipo": "promocao",
+  "titulo": "LIVELO: 30% DE DESCONTO EM VOOS PARA PORTUGAL E 40% DE PONTOS DE VOLTA CVC",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Assinantes do Clube Livelo garantem 30% de desconto em passagens para Portugal e pontos de volta adicionais com a CVC.",
+  "detalhes": [
+   "30% de desconto em voos para Portugal usando o cupom PORTUGAL30",
+   "40% de pontos de volta ao selecionar passagens CVC (limitado a 70.000 pontos de volta)"
+  ],
+  "parceiros": "Livelo, CVC",
+  "validade": "27/11/2026 (até 12h)",
+  "links": [
+   "https://www.livelo.com.br/ofertas-passagens?destination=LIS%2COPO%2CFAO%2CFNC%2CPDL%2CTER%2CHOR%2CPIX%2CSMA%2CFLW%2CPXO%2CPRM%2CBYJ%2CVSE%2CVRL%2CCVU"
+  ],
+  "ate": "2026-11-27T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8050",
+  "data": "2026-11-27T04:01:44Z",
+  "tipo": "promocao",
+  "titulo": "CLUBE LIVELO ESSENCIAL: 13.000 PONTOS EXTRAS NO 1º MÊS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Novas adesões anuais ao Clube Livelo Essencial garantem 13.000 pontos extras já no primeiro mês, reduzindo significativamente o custo do milheiro.",
+  "detalhes": [
+   "14.000 pontos no primeiro mês",
+   "25.000 pontos totais acumulados em 12 meses"
+  ],
+  "parceiros": "Livelo",
+  "validade": "27/11/2026 (até 04h)",
+  "links": [
+   "https://www.livelo.com.br/adesao-promo-CDC16587"
+  ],
+  "ate": "2026-11-27T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8049",
+  "data": "2026-11-27T04:01:40Z",
+  "tipo": "promocao",
+  "titulo": "COMPRA DE PONTOS LIVELO COM 57,1% OFF + 3% OFF NO PIX",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Assinantes do Clube Livelo podem comprar pontos com 57,1% de desconto na modalidade de cartão e mais 3% de desconto adicional pagando via Pix, garantindo milheiros atrativos para futuras transferências.",
+  "detalhes": [
+   "57,1% de desconto aplicado diretamente na compra para assinantes ativos do Clube Livelo",
+   "Mais 3% de desconto exclusivo para pagamentos via Pix",
+   "Limite de compra de até 500.000 pontos Livelo a cada 30 dias"
+  ],
+  "parceiros": "Livelo",
+  "validade": "27/11/2026 (até 04h)",
+  "links": [
+   "https://www.livelo.com.br/compra-promo-CDC16575"
+  ],
+  "ate": "2026-11-27T23:59:59-03:00"
+ },
+ {
   "id": "3761373661-10500",
   "data": "2026-11-27T03:42:02Z",
   "origem": "Cascavel",
