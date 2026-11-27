@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-27T06:38:40.946984Z",
+ "atualizado": "2026-11-27T06:44:49.376040Z",
  "dias": 30,
- "passagens": 4397,
+ "passagens": 4438,
  "promocoes": 256,
  "destinos": 186,
- "executiva": 873,
+ "executiva": 881,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1038,
+  "passagens": 1079,
   "destaques": [
    {
     "id": "3761373661-10145",
@@ -117,6 +117,20 @@
     "foto": "img/rotas/FOR-JDO.jpg"
    },
    {
+    "id": "robo-GRU-MAD-iberia-economy",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Madrid",
+    "destino_iata": "MAD",
+    "cabine": "Econômica",
+    "programa": "Avios",
+    "data": "2026-11-27T06:42:11.393783Z",
+    "milhas": 20000,
+    "nivel": "espetacular",
+    "grupo": "Internacional",
+    "foto": "img/rotas/GRU-MAD.jpg"
+   },
+   {
     "id": "2008590742-16347",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -129,20 +143,6 @@
     "nivel": "espetacular",
     "grupo": "Internacional",
     "foto": "img/rotas/MAO-PTY.jpg"
-   },
-   {
-    "id": "2008590742-16615",
-    "origem": "Uberlândia",
-    "origem_iata": "UDI",
-    "destino": "San José",
-    "destino_iata": "SJO",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-26T19:39:51Z",
-    "milhas": 36000,
-    "nivel": "espetacular",
-    "grupo": "Internacional",
-    "foto": "img/rotas/UDI-SJO.jpg"
    },
    {
     "id": "2361370250-6975",
@@ -160,6 +160,19 @@
    }
   ],
   "candidatas": [
+   {
+    "id": "robo-GRU-MAD-iberia-economy",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Madrid",
+    "destino_iata": "MAD",
+    "cabine": "Econômica",
+    "programa": "Avios",
+    "data": "2026-11-27T06:42:11.393783Z",
+    "milhas": 20000,
+    "nivel": "espetacular",
+    "regiao": "europa"
+   },
    {
     "id": "2008590742-16347",
     "origem": "Manaus",
@@ -928,19 +941,6 @@
     "regiao": "outros"
    },
    {
-    "id": "3761373661-10129",
-    "origem": "Goiânia",
-    "origem_iata": "GYN",
-    "destino": "Ilhéus",
-    "destino_iata": "IOS",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-23T00:26:52Z",
-    "milhas": 10330,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
     "id": "2361370250-6975",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -1071,6 +1071,19 @@
     "regiao": "outros"
    },
    {
+    "id": "robo-BOG-FRA-lufthansa-business",
+    "origem": "Bogotá",
+    "origem_iata": "BOG",
+    "destino": "Frankfurt",
+    "destino_iata": "FRA",
+    "cabine": "Executiva",
+    "programa": "Miles & More",
+    "data": "2026-11-27T06:42:11.393783Z",
+    "milhas": 43871,
+    "nivel": "",
+    "regiao": "europa"
+   },
+   {
     "id": "2361370250-6891",
     "origem": "Belém",
     "origem_iata": "BEL",
@@ -1108,6 +1121,19 @@
     "milhas": 50000,
     "nivel": "",
     "regiao": "outros"
+   },
+   {
+    "id": "robo-LIM-MAD-iberia-business",
+    "origem": "Lima",
+    "origem_iata": "LIM",
+    "destino": "Madrid",
+    "destino_iata": "MAD",
+    "cabine": "Executiva",
+    "programa": "Avios",
+    "data": "2026-11-27T06:42:11.393783Z",
+    "milhas": 50500,
+    "nivel": "",
+    "regiao": "europa"
    },
    {
     "id": "2361370250-7093",
@@ -1173,32 +1199,6 @@
     "milhas": 63750,
     "nivel": "",
     "regiao": "europa"
-   },
-   {
-    "id": "2361370250-7071",
-    "origem": "Cidade do Panamá",
-    "origem_iata": "PTY",
-    "destino": "Amsterdã",
-    "destino_iata": "AMS",
-    "cabine": "Executiva",
-    "programa": "Flying Blue",
-    "data": "2026-11-26T09:37:11Z",
-    "milhas": 63750,
-    "nivel": "",
-    "regiao": "europa"
-   },
-   {
-    "id": "2361370250-6962",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Doha",
-    "destino_iata": "DOH",
-    "cabine": "Executiva",
-    "programa": "Privilege Club Qatar",
-    "data": "2026-11-22T11:34:40Z",
-    "milhas": 70000,
-    "nivel": "",
-    "regiao": "outros"
    }
   ]
  }
