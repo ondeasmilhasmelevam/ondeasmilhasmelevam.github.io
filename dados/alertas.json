@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-16659",
+  "data": "2026-11-27T16:12:29Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Buenos Aires",
+  "destino_iata": "AEP",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "30.000 milhas + R$ 63,59 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16658",
+  "data": "2026-11-27T16:10:02Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Assunção",
+  "destino_iata": "ASU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "26.500 milhas + Taxas",
+  "volta": "26.500 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10562",
+  "data": "2026-11-27T16:09:57Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Uberlândia",
+  "destino_iata": "UDI",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.300 milhas + Taxas",
+  "volta": "10.300 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10561",
   "data": "2026-11-27T16:04:21Z",
   "origem": "Salvador",
