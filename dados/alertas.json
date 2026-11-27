@@ -1,5 +1,132 @@
 [
  {
+  "id": "1290836068-8085",
+  "data": "2026-11-27T21:47:20Z",
+  "tipo": "promocao",
+  "titulo": "VOOS DA LATAM PARA SÃO LUÍS A PARTIR DE 6.497 MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Latam oferece passagens para São Luís com milhas LATAM Pass a partir de 6.497 milhas por trecho, mais taxas aeroportuárias. As tarifas são melhores saindo de Brasília, mas também há boas opções de São Paulo e Rio de Janeiro. Viagens disponíveis a partir de fevereiro de 2027 e em junho.",
+  "detalhes": [
+   "6.497 milhas por trecho",
+   "taxas aeroportuárias",
+   "preços podem mudar conforme disponibilidade",
+   "Brasília (BSB) x São Luís (SLZ) a partir de 6.497 milhas o trecho",
+   "São Paulo (GRU) x São Luís (SLZ) a partir de 6.497 milhas o trecho",
+   "Rio de Janeiro (GIG) x São Luís (SLZ) a partir de 6.497 milhas o trecho",
+   "Períodos de viagem: fevereiro de 2027, junho"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/Askzqcj"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8084",
+  "data": "2026-11-27T21:47:11Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass VOOS SÃO PAULO-ORLANDO 42 MIL MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "LATAM Pass oferece voos de São Paulo para Orlando por 42 mil milhas por trecho, mais taxas aeroportuárias. A promoção inclui opção de voo direto. Os valores são para viagem de ida e volta, mais taxas aeroportuárias.",
+  "detalhes": [
+   "Obrigatório pesquisar ida e volta no site da Latam",
+   "Mais taxas aeroportuárias",
+   "Opção de voo direto",
+   "São Paulo x Orlando (MCO) a partir de 42.000 milhas o trecho"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/Askzqcj"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8083",
+  "data": "2026-11-27T21:47:09Z",
+  "tipo": "promocao",
+  "titulo": "SMILES: VOOS PROMOCIONAIS A PARTIR DE 3.500 MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Smiles oferece voos promocionais com desconto de até 30% e a partir de 3.500 milhas por trecho, mais taxas aeroportuárias. O menor valor é para viajar entre Brasília e Vitória. Há outras rotas em promoção.",
+  "detalhes": [
+   "até 30% de desconto",
+   "a partir de 3.500 milhas por trecho",
+   "mais taxas aeroportuárias",
+   "Brasília (BSB) x Vitória (VIT) a partir de 3.500 milhas o trecho"
+  ],
+  "parceiros": "Smiles",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/sGPH4Ht"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8082",
+  "data": "2026-11-27T21:47:02Z",
+  "tipo": "promocao",
+  "titulo": "BILHETE SÃO PAULO-ORLANDO A PARTIR DE 42.900 MILHAS LATAM",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Bilhete de ida e volta entre São Paulo (GRU) e Orlando (MCO) pode ser resgatado a partir de 42.900 milhas LATAM Pass + taxas. Os voos são operados pela LATAM na classe econômica. A volta está disponível apenas para assinantes.",
+  "detalhes": [
+   "42.900 milhas LATAM Pass + taxas",
+   "classe econômica",
+   "rota São Paulo (GRU) > Orlando (MCO)",
+   "volta disponível apenas para assinantes",
+   "São Paulo (GRU) x Orlando (MCO) economica a partir de 21.450 milhas o trecho"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/JW7Qfnt"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8081",
+  "data": "2026-11-27T21:46:58Z",
+  "tipo": "promocao",
+  "titulo": "LIVELO OFERECE IDA E VOLTA PARA LISBOA EM EXECUTIVA",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assinantes do Clube Livelo recebem 30% de desconto usando o código EXECUTIVA30. A passagem de ida e volta para Lisboa em Classe Executiva custa R$ 6.273,28 + taxas. A promoção é válida até domingo (29) e tem limite de 500.000 pontos na compra.",
+  "detalhes": [
+   "30% de desconto no resgate de passagens em Classe Executiva para assinantes do Clube Livelo usando código EXECUTIVA30",
+   "25% de desconto para demais clientes usando código EXECUTIVA25",
+   "Desconto aplicado no momento da compra",
+   "Desconto não se aplica às taxas de embarque e demais taxas de viagem",
+   "Limite de 500.000 pontos na compra de pontos",
+   "Compra de pontos com até 56,6% de desconto, 3% extra se pago via Pix",
+   "Parcelamento em 12 vezes válido na utilização de pontos + dinheiro, com valor pago em dinheiro >= R$ 360",
+   "Promoção válida para reservas realizadas até as 10h de domingo (29)"
+  ],
+  "parceiros": "Livelo, GOL",
+  "validade": "até domingo (29)",
+  "links": [
+   "https://link.dia23.com.br/r/2ldFViU"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "3761373661-10610",
+  "data": "2026-11-27T21:44:18Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Ribeirão Preto",
+  "destino_iata": "RAO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "3.750 milhas + Taxas",
+  "volta": "3.750 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-10609",
   "data": "2026-11-27T21:32:01Z",
   "origem": "São Paulo",

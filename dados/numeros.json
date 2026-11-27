@@ -1,8 +1,8 @@
 {
- "atualizado": "2026-11-27T21:42:50.866766Z",
+ "atualizado": "2026-11-27T21:48:58.887880Z",
  "dias": 30,
- "passagens": 4641,
- "promocoes": 270,
+ "passagens": 4642,
+ "promocoes": 275,
  "destinos": 188,
  "executiva": 906,
  "destaques": [
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1177,
+  "passagens": 1178,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -577,6 +577,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10610",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Ribeirão Preto",
+    "destino_iata": "RAO",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-27T21:44:18Z",
+    "milhas": 3750,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10598",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -612,19 +625,6 @@
     "programa": "Smiles",
     "data": "2026-11-26T19:07:05Z",
     "milhas": 4100,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10072",
-    "origem": "Brasília",
-    "origem_iata": "BSB",
-    "destino": "Ribeirão Preto",
-    "destino_iata": "RAO",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-21T17:01:07Z",
-    "milhas": 4700,
     "nivel": "",
     "regiao": "brasil"
    },
