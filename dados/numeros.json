@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-27T16:19:16.424474Z",
+ "atualizado": "2026-11-27T16:25:39.702157Z",
  "dias": 30,
- "passagens": 4554,
+ "passagens": 4556,
  "promocoes": 267,
  "destinos": 187,
  "executiva": 897,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1104,
+  "passagens": 1106,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -187,15 +187,15 @@
     "regiao": "caribe"
    },
    {
-    "id": "2008590742-16615",
-    "origem": "Uberlândia",
-    "origem_iata": "UDI",
+    "id": "2008590742-16662",
+    "origem": "Brasília",
+    "origem_iata": "BSB",
     "destino": "San José",
     "destino_iata": "SJO",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-26T19:39:51Z",
-    "milhas": 36000,
+    "data": "2026-11-27T16:25:39Z",
+    "milhas": 35900,
     "nivel": "espetacular",
     "regiao": "caribe"
    },
@@ -785,15 +785,15 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-10107",
+    "id": "3761373661-10566",
     "origem": "Brasília",
     "origem_iata": "BSB",
     "destino": "Palmas",
     "destino_iata": "PMW",
     "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-22T14:52:41Z",
-    "milhas": 7910,
+    "programa": "Smiles",
+    "data": "2026-11-27T16:25:30Z",
+    "milhas": 7900,
     "nivel": "",
     "regiao": "brasil"
    },
