@@ -1,5 +1,47 @@
 [
  {
+  "id": "3761373661-10613",
+  "data": "2026-11-27T21:51:28Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Ribeirão Preto",
+  "destino_iata": "RAO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "3.800 milhas + Taxas",
+  "volta": "3.800 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10612",
+  "data": "2026-11-27T21:51:23Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Londrina",
+  "destino_iata": "LDB",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "3.800 milhas + Taxas",
+  "volta": "3.800 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10611",
+  "data": "2026-11-27T21:49:07Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "6.700 milhas + R$ 35,15 de taxas",
+  "volta": "7.400 milhas + R$ 62,14 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "1290836068-8085",
   "data": "2026-11-27T21:47:20Z",
   "tipo": "promocao",
