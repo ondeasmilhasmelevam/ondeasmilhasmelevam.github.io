@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-27T20:13:40.467985Z",
+ "atualizado": "2026-11-27T20:19:50.061394Z",
  "dias": 30,
  "passagens": 4629,
  "promocoes": 270,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1172,
+  "passagens": 1171,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -473,19 +473,6 @@
     "regiao": "america-do-norte"
    },
    {
-    "id": "2008590742-16176",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Dallas",
-    "destino_iata": "DFW",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-20T20:13:46Z",
-    "milhas": 66400,
-    "nivel": "bom",
-    "regiao": "america-do-norte"
-   },
-   {
     "id": "2008590742-16606",
     "origem": "São Paulo",
     "origem_iata": "GRU",
@@ -495,6 +482,19 @@
     "programa": "Smiles",
     "data": "2026-11-26T18:49:21Z",
     "milhas": 66800,
+    "nivel": "bom",
+    "regiao": "america-do-norte"
+   },
+   {
+    "id": "2008590742-16433",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Dallas",
+    "destino_iata": "DFW",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-24T15:57:51Z",
+    "milhas": 89900,
     "nivel": "bom",
     "regiao": "america-do-norte"
    },
