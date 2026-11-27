@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10498",
+  "data": "2026-11-27T03:32:05Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Recife",
+  "destino_iata": "REC",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.300 milhas + R$ 34,54 de taxas",
+  "volta": "10.300 milhas + R$ 60,54 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10497",
   "data": "2026-11-27T02:52:06Z",
   "origem": "Manaus",
