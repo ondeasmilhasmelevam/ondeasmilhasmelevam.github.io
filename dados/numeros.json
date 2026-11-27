@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-27T12:27:50.575310Z",
+ "atualizado": "2026-11-27T12:34:13.494642Z",
  "dias": 30,
- "passagens": 4467,
+ "passagens": 4468,
  "promocoes": 258,
  "destinos": 187,
  "executiva": 885,
@@ -86,8 +86,22 @@
   }
  ],
  "semana": {
-  "passagens": 1019,
+  "passagens": 1020,
   "destaques": [
+   {
+    "id": "3761373661-10516",
+    "origem": "Campinas",
+    "origem_iata": "VCP",
+    "destino": "Porto Alegre",
+    "destino_iata": "POA",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-27T12:31:20Z",
+    "milhas": 2535,
+    "nivel": "",
+    "grupo": "Nacional",
+    "foto": "img/rotas/VCP-POA.jpg"
+   },
    {
     "id": "3761373661-10145",
     "origem": "Belém",
@@ -101,20 +115,6 @@
     "nivel": "",
     "grupo": "Nacional",
     "foto": "img/rotas/BEL-MCP.jpg"
-   },
-   {
-    "id": "2008590742-16307",
-    "origem": "Fortaleza",
-    "origem_iata": "FOR",
-    "destino": "Juazeiro do Norte",
-    "destino_iata": "JDO",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-22T15:13:35Z",
-    "milhas": 3330,
-    "nivel": "",
-    "grupo": "Nacional",
-    "foto": "img/rotas/FOR-JDO.jpg"
    },
    {
     "id": "robo-GRU-MAD-iberia-economy",
@@ -512,6 +512,19 @@
     "regiao": "america-do-norte"
    },
    {
+    "id": "3761373661-10516",
+    "origem": "Campinas",
+    "origem_iata": "VCP",
+    "destino": "Porto Alegre",
+    "destino_iata": "POA",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-27T12:31:20Z",
+    "milhas": 2535,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10145",
     "origem": "Belém",
     "origem_iata": "BEL",
@@ -599,19 +612,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-21T17:01:07Z",
     "milhas": 4700,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10084",
-    "origem": "Curitiba",
-    "origem_iata": "CWB",
-    "destino": "Porto Alegre",
-    "destino_iata": "POA",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-22T11:59:45Z",
-    "milhas": 5000,
     "nivel": "",
     "regiao": "brasil"
    },
