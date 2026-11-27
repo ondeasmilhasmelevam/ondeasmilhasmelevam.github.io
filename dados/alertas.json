@@ -1,5 +1,84 @@
 [
  {
+  "id": "3761373661-10525",
+  "data": "2026-11-27T13:28:50Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "A partir de 7.600 milhas",
+  "volta": "A partir de 7.600 milhas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-10524",
+  "data": "2026-11-27T13:27:52Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "SDU",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.200 milhas + R$ 62,62 de taxas",
+  "volta": "11.200 milhas + R$ 34,54 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "1290836068-8059",
+  "data": "2026-11-27T13:27:25Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE OFERECE ATÉ 120% DE BÔNUS NAS TRANSFERÊNCIAS DE PONTOS ESFERA",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Transfira seus pontos Esfera para o Azul Fidelidade e garanta até 120% de bônus, com milheiro a partir de R$ 12,12.",
+  "detalhes": [
+   "90% de bônus para assinantes do Clube Azul Fidelidade",
+   "60% de bônus para todos os Clientes Azul Fidelidade",
+   "+5% de bônus para assinantes do Clube Azul há mais de 6 meses",
+   "+10% de bônus para assinantes do Clube Azul entre 1 a 2 anos (12 a 35 meses)",
+   "+20% de bônus para assinantes do Clube Azul entre 3 e 4 anos (36 a 59 meses)",
+   "+30% de bônus para assinantes do Clube Azul há mais de 5 anos (60 meses)"
+  ],
+  "parceiros": "Esfera, Azul Fidelidade",
+  "validade": "27/11/2026",
+  "links": [
+   "https://www.voeazul.com.br/br/pt/ofertas/esfera"
+  ],
+  "ate": "2026-11-27T23:59:59-03:00"
+ },
+ {
+  "id": "3761373661-10523",
+  "data": "2026-11-27T13:27:11Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "15.000 milhas + Taxas",
+  "volta": "15.000 milhas + Taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "2008590742-16646",
+  "data": "2026-11-27T13:27:06Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "69.200 milhas + Taxas",
+  "volta": "69.200 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "seats-smiles-MAO-PTY-eco",
   "data": "2026-11-27T13:24:49.819462Z",
   "fonte": "seats.aero",
