@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-27T17:04:00.944446Z",
+ "atualizado": "2026-11-27T17:10:10.576082Z",
  "dias": 30,
- "passagens": 4564,
- "promocoes": 267,
+ "passagens": 4566,
+ "promocoes": 268,
  "destinos": 187,
- "executiva": 897,
+ "executiva": 898,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1114,
+  "passagens": 1116,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -103,18 +103,18 @@
     "foto": "img/rotas/VCP-POA.jpg"
    },
    {
-    "id": "3761373661-10145",
-    "origem": "Belém",
-    "origem_iata": "BEL",
-    "destino": "Macapá",
-    "destino_iata": "MCP",
+    "id": "3761373661-10570",
+    "origem": "Vitória",
+    "origem_iata": "VIX",
+    "destino": "Rio de Janeiro",
+    "destino_iata": "GIG",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-23T10:58:20Z",
-    "milhas": 3273,
+    "data": "2026-11-27T17:05:16Z",
+    "milhas": 2831,
     "nivel": "",
     "grupo": "Nacional",
-    "foto": "img/rotas/BEL-MCP.jpg"
+    "foto": "img/rotas/VIX-GIG.jpg"
    },
    {
     "id": "robo-GRU-MAD-iberia-economy",
@@ -525,6 +525,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10570",
+    "origem": "Vitória",
+    "origem_iata": "VIX",
+    "destino": "Rio de Janeiro",
+    "destino_iata": "GIG",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-27T17:05:16Z",
+    "milhas": 2831,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10145",
     "origem": "Belém",
     "origem_iata": "BEL",
@@ -664,19 +677,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-24T15:57:57Z",
     "milhas": 5648,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10540",
-    "origem": "Campinas",
-    "origem_iata": "VCP",
-    "destino": "Rio de Janeiro",
-    "destino_iata": "GIG",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-27T14:34:57Z",
-    "milhas": 5900,
     "nivel": "",
     "regiao": "brasil"
    },

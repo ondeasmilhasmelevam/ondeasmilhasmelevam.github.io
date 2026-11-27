@@ -1,5 +1,56 @@
 [
  {
+  "id": "2361370250-7108",
+  "data": "2026-11-27T17:07:09Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Orlando",
+  "destino_iata": "MCO",
+  "companhia": "Azul",
+  "cabine": "Executiva",
+  "programa": "Azul Fidelidade",
+  "ida": "300.000 milhas + R$ 309,68 de taxas",
+  "volta": "",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
+  "id": "3761373661-10570",
+  "data": "2026-11-27T17:05:16Z",
+  "origem": "Vitória",
+  "origem_iata": "VIX",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "A partir de 2.831 milhas",
+  "volta": "A partir de 2.831 milhas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "1290836068-8076",
+  "data": "2026-11-27T17:04:12Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE: DESCONTO DE ATÉ 12% EM INGRESSOS DISNEY 4 DIAS",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Azul oferece cupons para desconto em ingressos de 4 ou mais dias no Walt Disney World Resort. O cupom ALEGRIA12 dá 12% de desconto em reais, enquanto SONHO10 dá 10% em pontos. A promoção vale até 27/11/2026 e não é cumulativa.",
+  "detalhes": [
+   "12% de desconto em compras em reais com cupom ALEGRIA12",
+   "10% de desconto em resgate de pontos com cupom SONHO10",
+   "aplica apenas a ingressos de 4 ou mais dias de parques",
+   "descontos não cumulativos",
+   "período de reservas apenas 27/11/2026",
+   "período de viagem até 31/12/2027"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "até 27/11/2026",
+  "links": [
+   "https://link.dia23.com.br/r/mMEHcNE"
+  ],
+  "ate": "2026-11-27T23:59:59-03:00"
+ },
+ {
   "id": "2008590742-16667",
   "data": "2026-11-27T16:55:09Z",
   "origem": "Porto Alegre",
