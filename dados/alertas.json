@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10497",
+  "data": "2026-11-27T02:52:06Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Belém",
+  "destino_iata": "BEL",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.500 milhas + R$ 55,17 de taxas",
+  "volta": "10.500 milhas + R$ 54,45 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-smiles-GRU-BCN-eco",
   "data": "2026-11-27T02:41:46.613434Z",
   "fonte": "seats.aero",
