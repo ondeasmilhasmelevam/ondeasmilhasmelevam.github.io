@@ -387,6 +387,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Natal_-_Rio_Grande_do_Norte_-_Brasil(3).jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Natal_-_Rio_Grande_do_Norte_-_Brasil%283%29.jpg/1280px-Natal_-_Rio_Grande_do_Norte_-_Brasil%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "normandia-franca": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Rouen_-_Baixa_Normandia_-_Fran%C3%A7a_-_panoramio.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Rouen_-_Baixa_Normandia_-_Fran%C3%A7a_-_panoramio.jpg/1280px-Rouen_-_Baixa_Normandia_-_Fran%C3%A7a_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "nova-orleans": {
   "pagina": "https://commons.wikimedia.org/wiki/File:New_Orleans_skyline-02.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/New_Orleans_skyline-02.jpg/1280px-New_Orleans_skyline-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -411,6 +415,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Paraty_pont_principal_sur_la_rivi%C3%A8re_Perequ%C3%AA-A%C3%A7u.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Paraty_pont_principal_sur_la_rivi%C3%A8re_Perequ%C3%AA-A%C3%A7u.jpg/1280px-Paraty_pont_principal_sur_la_rivi%C3%A8re_Perequ%C3%AA-A%C3%A7u.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "paris-franca": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Arc_de_Triomphe_de_l%27%C3%89toile_at_night_vertical_fix.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Arc_de_Triomphe_de_l%27%C3%89toile_at_night_vertical_fix.jpg/1280px-Arc_de_Triomphe_de_l%27%C3%89toile_at_night_vertical_fix.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "patagonia-chile": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Torres_del_Paine_massif_from_Laguna_Amarga.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Torres_del_Paine_massif_from_Laguna_Amarga.jpg/1280px-Torres_del_Paine_massif_from_Laguna_Amarga.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -422,6 +430,10 @@
  "pirenopolis-goias": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Morro_do_Cabeludo_-_Panorama_de_Maio.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Morro_do_Cabeludo_-_Panorama_de_Maio.jpg/1280px-Morro_do_Cabeludo_-_Panorama_de_Maio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "pisa-180-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Sandro_Botticelli_046.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Sandro_Botticelli_046.jpg/1280px-Sandro_Botticelli_046.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "playa-del-carmen-mexico": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Playa_del_carmen_panorama.jpg",
@@ -435,9 +447,17 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:BRASIL_-_Porto_Galinhas_-_panoramio.jpg",
   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/BRASIL_-_Porto_Galinhas_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
  },
+ "porto-portugal": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Oporto_(Portugal)_(23958111561).jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Oporto_%28Portugal%29_%2823958111561%29.jpg/1280px-Oporto_%28Portugal%29_%2823958111561%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "porto-seguro-bahia": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Mirante_das_Fitinhas_-_Placa_do_panorama_2.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Mirante_das_Fitinhas_-_Placa_do_panorama_2.jpg/1280px-Mirante_das_Fitinhas_-_Placa_do_panorama_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "praga-tcheca": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Prague_07-2016_View_from_Old_Town_Hall_Tower_img3.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Prague_07-2016_View_from_Old_Town_Hall_Tower_img3.jpg/1280px-Prague_07-2016_View_from_Old_Town_Hall_Tower_img3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "praia-da-pipa-rio-grande-do-norte-19-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Chapad%C3%A3o_Pipa_RN.jpg",
@@ -475,6 +495,10 @@
  "riviera-nayarit-135-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Bucer%C3%ADas_01.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Bucer%C3%ADas_01.jpg/1280px-Bucer%C3%ADas_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "roma-italia": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Rome_Skyline_(8012016319).jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Rome_Skyline_%288012016319%29.jpg/1280px-Rome_Skyline_%288012016319%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "salar-uyuni-165-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Uyuni_Salt_Lake_(Salar_de_Uyuni),_Bolivia,_12-2022.jpg",
