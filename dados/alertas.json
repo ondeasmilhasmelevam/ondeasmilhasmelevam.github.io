@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10496",
+  "data": "2026-11-27T01:41:16Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Porto Seguro",
+  "destino_iata": "BPS",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "15.200 milhas + R$ 35,90 de taxas",
+  "volta": "13.200 milhas + R$ 38,84 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10495",
   "data": "2026-11-27T01:23:05Z",
   "origem": "Florianópolis",
