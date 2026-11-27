@@ -1,5 +1,41 @@
 [
  {
+  "id": "2008590742-16628",
+  "data": "2026-11-27T04:38:06Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "35.000 milhas + R$ 63,59 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "1290836068-8052",
+  "data": "2026-11-27T04:36:37Z",
+  "tipo": "promocao",
+  "titulo": "RECIFE-BARCELONA EXECUTIVA 194.041 MILHAS LATAM Pass",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Disponibilidade de bilhetes de ida e volta em Classe Executiva entre Recife e Barcelona por 194.041 milhas LATAM Pass mais taxas. Voos operados pela LATAM. Cartão LATAM Pass Itaú oferece bônus de até 40.000 pontos.",
+  "detalhes": [
+   "194.041 milhas LATAM Pass por trecho",
+   "taxas adicionais",
+   "volta disponível apenas para assinantes",
+   "cartão LATAM Pass Itaú oferece até 40.000 pontos bônus ao solicitar",
+   "Recife (REC) x Barcelona (BCN) executiva a partir de 194.041 milhas o trecho"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/bmL0M6k"
+  ],
+  "ate": ""
+ },
+ {
   "id": "1290836068-8051",
   "data": "2026-11-27T04:01:47Z",
   "tipo": "promocao",
