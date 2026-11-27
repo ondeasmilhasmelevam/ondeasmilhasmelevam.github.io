@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-10518",
+  "data": "2026-11-27T12:52:48Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "SDU",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "9.900 milhas + R$ 62,62 de taxas",
+  "volta": "9.900 milhas + R$ 62,14 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16642",
+  "data": "2026-11-27T12:52:04Z",
+  "origem": "Foz do Iguaçu",
+  "origem_iata": "IGU",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "37.500 milhas + Taxas",
+  "volta": "37.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16641",
   "data": "2026-11-27T12:40:03Z",
   "origem": "São Paulo",
