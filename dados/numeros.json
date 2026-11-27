@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-27T15:11:36.647216Z",
+ "atualizado": "2026-11-27T15:17:59.679677Z",
  "dias": 30,
- "passagens": 4533,
+ "passagens": 4535,
  "promocoes": 262,
  "destinos": 187,
  "executiva": 893,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1083,
+  "passagens": 1085,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -278,6 +278,19 @@
     "regiao": "america-do-sul"
    },
    {
+    "id": "2008590742-16655",
+    "origem": "São Paulo",
+    "origem_iata": "GRU",
+    "destino": "Santa Cruz de la Sierra",
+    "destino_iata": "VVI",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-27T15:13:44Z",
+    "milhas": 17000,
+    "nivel": "muito bom",
+    "regiao": "america-do-sul"
+   },
+   {
     "id": "2008590742-16336",
     "origem": "Manaus",
     "origem_iata": "MAO",
@@ -430,19 +443,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-26T16:49:43Z",
     "milhas": 18300,
-    "nivel": "bom",
-    "regiao": "america-do-sul"
-   },
-   {
-    "id": "2008590742-16207",
-    "origem": "Curitiba",
-    "origem_iata": "CWB",
-    "destino": "Santa Cruz de La Sierra",
-    "destino_iata": "VVI",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-21T14:59:29Z",
-    "milhas": 33500,
     "nivel": "bom",
     "regiao": "america-do-sul"
    },
