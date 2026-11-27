@@ -8599,21 +8599,6 @@
   "link_nome": "Qatar Privilege Club"
  },
  {
-  "id": "seats-qatar-POA-LIM-eco",
-  "data": "2026-11-23T00:19:39.674453Z",
-  "fonte": "seats.aero",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Lima",
-  "destino_iata": "LIM",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "Qatar Privilege Club",
-  "ida": "13.000 Avios + taxas",
-  "volta": "",
-  "link_nome": "Qatar Privilege Club"
- },
- {
   "id": "seats-iberia-GIG-MAD-eco",
   "data": "2026-11-23T00:19:39.674453Z",
   "fonte": "seats.aero",
