@@ -1,5 +1,20 @@
 [
  {
+  "id": "robo-REC-MAD-british-economy",
+  "data": "2026-11-27T14:39:43.698022Z",
+  "fonte": "robo-alertas",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "British Airways",
+  "cabine": "Econômica",
+  "programa": "Executive Club",
+  "ida": "16.000 Avios + taxas",
+  "volta": "16.000 Avios + taxas",
+  "link_nome": "Executive Club"
+ },
+ {
   "id": "3761373661-10541",
   "data": "2026-11-27T14:35:02Z",
   "origem": "Rio de Janeiro",
