@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-27T14:10:15.134053Z",
+ "atualizado": "2026-11-27T14:16:39.325274Z",
  "dias": 30,
- "passagens": 4501,
+ "passagens": 4505,
  "promocoes": 263,
  "destinos": 187,
  "executiva": 888,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1052,
+  "passagens": 1056,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -928,15 +928,15 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-10354",
-    "origem": "Campinas",
-    "origem_iata": "VCP",
-    "destino": "João Pessoa",
-    "destino_iata": "JPA",
+    "id": "3761373661-10533",
+    "origem": "São Paulo",
+    "origem_iata": "CGH",
+    "destino": "Uberlândia",
+    "destino_iata": "UDI",
     "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-24T20:59:21Z",
-    "milhas": 9800,
+    "programa": "Smiles",
+    "data": "2026-11-27T14:14:20Z",
+    "milhas": 9500,
     "nivel": "",
     "regiao": "brasil"
    },
