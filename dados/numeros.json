@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-27T20:58:23.835958Z",
+ "atualizado": "2026-11-27T21:04:45.321505Z",
  "dias": 30,
- "passagens": 4633,
+ "passagens": 4635,
  "promocoes": 270,
  "destinos": 188,
- "executiva": 904,
+ "executiva": 906,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1175,
+  "passagens": 1172,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -421,14 +421,14 @@
     "regiao": "europa"
    },
    {
-    "id": "2008590742-16178",
+    "id": "2008590742-16304",
     "origem": "Recife",
     "origem_iata": "REC",
     "destino": "Amsterdã",
     "destino_iata": "AMS",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-20T20:59:25Z",
+    "data": "2026-11-22T15:09:45Z",
     "milhas": 71430,
     "nivel": "muito bom",
     "regiao": "europa"

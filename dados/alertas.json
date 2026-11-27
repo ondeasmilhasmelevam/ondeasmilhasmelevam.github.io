@@ -1,5 +1,33 @@
 [
  {
+  "id": "2361370250-7116",
+  "data": "2026-11-27T21:03:36Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Milão",
+  "destino_iata": "MXP",
+  "companhia": "TAP Air Portugal",
+  "cabine": "Executiva",
+  "programa": "TAP Miles & Go",
+  "ida": "135.000 milhas + R$ 354,16",
+  "volta": "135.000 milhas + R$ 594,56",
+  "link_nome": "TAP Miles&Go"
+ },
+ {
+  "id": "2361370250-7115",
+  "data": "2026-11-27T21:00:11Z",
+  "origem": "Cidade do Panamá",
+  "origem_iata": "PTY",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "Panamá",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "55.400 milhas + R$587",
+  "volta": "55.400 ~ 60.600 milhas + R$240",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16691",
   "data": "2026-11-27T20:57:13Z",
   "origem": "Brasília",
