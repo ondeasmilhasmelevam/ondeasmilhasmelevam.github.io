@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-16696",
+  "data": "2026-11-27T22:21:54Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Orlando",
+  "destino_iata": "MCO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "48.000 milhas LATAM Pass + Taxas",
+  "volta": "48.000 milhas LATAM Pass + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16695",
+  "data": "2026-11-27T22:21:45Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Los Angeles",
+  "destino_iata": "LAX",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "43.000 milhas LATAM Pass + Taxas",
+  "volta": "43.000 milhas LATAM Pass + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "3761373661-10613",
   "data": "2026-11-27T21:51:28Z",
   "origem": "Curitiba",

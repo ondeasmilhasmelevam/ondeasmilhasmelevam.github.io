@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-27T22:16:18.111171Z",
+ "atualizado": "2026-11-27T22:22:26.489886Z",
  "dias": 30,
- "passagens": 4645,
+ "passagens": 4647,
  "promocoes": 275,
  "destinos": 188,
  "executiva": 906,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1181,
+  "passagens": 1183,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -211,6 +211,19 @@
     "milhas": 40400,
     "nivel": "espetacular",
     "regiao": "caribe"
+   },
+   {
+    "id": "2008590742-16695",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
+    "destino": "Los Angeles",
+    "destino_iata": "LAX",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-27T22:21:45Z",
+    "milhas": 43000,
+    "nivel": "espetacular",
+    "regiao": "america-do-norte"
    },
    {
     "id": "2008590742-16448",
@@ -923,19 +936,6 @@
     "cabine": "Econômica",
     "programa": "Azul Fidelidade",
     "data": "2026-11-23T13:50:43Z",
-    "milhas": 9000,
-    "nivel": "",
-    "regiao": "outros"
-   },
-   {
-    "id": "3761373661-10593",
-    "origem": "Campinas",
-    "origem_iata": "VCP",
-    "destino": "Juiz de Fora",
-    "destino_iata": "IZA",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-27T18:47:48Z",
     "milhas": 9000,
     "nivel": "",
     "regiao": "outros"
