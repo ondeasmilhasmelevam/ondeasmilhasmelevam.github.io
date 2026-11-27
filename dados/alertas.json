@@ -1,5 +1,47 @@
 [
  {
+  "id": "2361370250-7099",
+  "data": "2026-11-27T12:13:23Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Zurique",
+  "destino_iata": "ZRH",
+  "companhia": "Swiss",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "80.000 milhas + Taxas",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
+  "id": "2008590742-16637",
+  "data": "2026-11-27T12:09:34Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "69.600 milhas + Taxas",
+  "volta": "69.600 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10511",
+  "data": "2026-11-27T12:09:31Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.400 milhas + Taxas",
+  "volta": "11.400 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16636",
   "data": "2026-11-27T12:08:25Z",
   "origem": "São Paulo",
