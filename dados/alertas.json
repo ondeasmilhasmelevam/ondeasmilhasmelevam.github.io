@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16698",
+  "data": "2026-11-27T23:50:07Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Cidade do Panamá",
+  "destino_iata": "PTY",
+  "companhia": "Copa Airlines",
+  "cabine": "Econômica",
+  "programa": "SMILES",
+  "ida": "50.000 milhas + Taxas",
+  "volta": "50.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10615",
   "data": "2026-11-27T23:41:10Z",
   "origem": "Fortaleza",
