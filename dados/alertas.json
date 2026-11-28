@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10617",
+  "data": "2026-11-28T00:01:29Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "São José do Rio Preto",
+  "destino_iata": "SJP",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "7.500 milhas + R$ 62,14 de taxas",
+  "volta": "7.300 milhas + R$ 37,13 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10616",
   "data": "2026-11-27T23:54:59Z",
   "origem": "Rio de Janeiro",

@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-28T00:00:34.479010Z",
+ "atualizado": "2026-11-28T00:07:08.411549Z",
  "dias": 30,
- "passagens": 4652,
+ "passagens": 4653,
  "promocoes": 275,
  "destinos": 188,
  "executiva": 906,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1178,
+  "passagens": 1177,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -811,6 +811,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10617",
+    "origem": "São Paulo",
+    "origem_iata": "CGH",
+    "destino": "São José do Rio Preto",
+    "destino_iata": "SJP",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-28T00:01:29Z",
+    "milhas": 7500,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10566",
     "origem": "Brasília",
     "origem_iata": "BSB",
@@ -833,19 +846,6 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-27T19:01:25Z",
     "milhas": 8000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10365",
-    "origem": "São Paulo",
-    "origem_iata": "CGH",
-    "destino": "São José do Rio Preto",
-    "destino_iata": "SJP",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-25T14:44:57Z",
-    "milhas": 8100,
     "nivel": "",
     "regiao": "brasil"
    },
