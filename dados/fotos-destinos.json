@@ -247,6 +247,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:13.06.2024_-_Reuni%C3%A3o_bilateral_com_a_Presidente_da_Su%C3%AD%C3%A7a,_Viola_Amherd_(53789087270).jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/13.06.2024_-_Reuni%C3%A3o_bilateral_com_a_Presidente_da_Su%C3%AD%C3%A7a%2C_Viola_Amherd_%2853789087270%29.jpg/1280px-13.06.2024_-_Reuni%C3%A3o_bilateral_com_a_Presidente_da_Su%C3%AD%C3%A7a%2C_Viola_Amherd_%2853789087270%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "gold-coast-172-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Gold_Coast_skyline_2012.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Gold_Coast_skyline_2012.jpg/1280px-Gold_Coast_skyline_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "gramado-canela": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Panorama-gramado-lago-negro.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Panorama-gramado-lago-negro.jpg/1280px-Panorama-gramado-lago-negro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -540,15 +544,31 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Skyline_(S%C3%A3o_Paulo,_SP,_Brasil)_(23893253309).jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Skyline_%28S%C3%A3o_Paulo%2C_SP%2C_Brasil%29_%2823893253309%29.jpg/1280px-Skyline_%28S%C3%A3o_Paulo%2C_SP%2C_Brasil%29_%2823893253309%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "sao-petersburgo-138-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Panorama-view-Saint-Petersburg.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Panorama-view-Saint-Petersburg.jpg/1280px-Panorama-view-Saint-Petersburg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "sao-sebastiao-maresias": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Panorama_da_Taboa_na_%C3%81rea_II.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Panorama_da_Taboa_na_%C3%81rea_II.jpg/1280px-Panorama_da_Taboa_na_%C3%81rea_II.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "siena-181-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Siena_-_Palazzo_Pubblico_-_panorama_notturno.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Siena_-_Palazzo_Pubblico_-_panorama_notturno.jpg/1280px-Siena_-_Palazzo_Pubblico_-_panorama_notturno.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "split-117-c": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:CJCS_at_NATO%27s_Military_Committee_in_Chiefs_of_Staff_Session.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/CJCS_at_NATO%27s_Military_Committee_in_Chiefs_of_Staff_Session.jpg/1280px-CJCS_at_NATO%27s_Military_Committee_in_Chiefs_of_Staff_Session.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "st-barth-122-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:2020-01-24_01_STAR_FLYER_-_IMO_8915433.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/2020-01-24_01_STAR_FLYER_-_IMO_8915433.jpg/1280px-2020-01-24_01_STAR_FLYER_-_IMO_8915433.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "st-maarten-st-martin-121-c": {},
+ "suica": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Dent_de_Vaulion_-_360_degree_panorama.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Dent_de_Vaulion_-_360_degree_panorama.jpg/1280px-Dent_de_Vaulion_-_360_degree_panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "tiradentes-minas-gerais": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Ouro_Preto_November_2009-6a.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Ouro_Preto_November_2009-6a.jpg/1280px-Ouro_Preto_November_2009-6a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -556,6 +576,10 @@
  "toronto-184-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Sunset_Toronto_Skyline_Panorama_Crop_from_Snake_Island.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Sunset_Toronto_Skyline_Panorama_Crop_from_Snake_Island.jpg/1280px-Sunset_Toronto_Skyline_Panorama_Crop_from_Snake_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "toscana": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Italy_-_Tuscany_(14527175356).jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Italy_-_Tuscany_%2814527175356%29.jpg/1280px-Italy_-_Tuscany_%2814527175356%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
  "trancoso-bahia": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Praia_dos_Nativos,_APA_Cara%C3%ADva_Trancoso.JPG",
@@ -569,6 +593,10 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Ushuaia_panorama_feb_2015.JPG",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Ushuaia_panorama_feb_2015.JPG/1280px-Ushuaia_panorama_feb_2015.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "vale-do-loire-franca": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Chateau_de_Chenonceau_2008E.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Chateau_de_Chenonceau_2008E.jpg/1280px-Chateau_de_Chenonceau_2008E.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "valle-nevado-188-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:J28_301_Puente_Nilhue.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/J28_301_Puente_Nilhue.jpg/1280px-J28_301_Puente_Nilhue.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -577,6 +605,18 @@
   "pagina": "https://commons.wikimedia.org/wiki/File:Vancouver_Skyline_01.jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Vancouver_Skyline_01.jpg/1280px-Vancouver_Skyline_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  },
+ "veneza-italia": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Venezia_-_Skyline.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Venezia_-_Skyline.jpg/1280px-Venezia_-_Skyline.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "verona-italia": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Panorama_Ponte_Scaligero,_Castelvecchio_and_Adige_River._Verona,_Italy.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Panorama_Ponte_Scaligero%2C_Castelvecchio_and_Adige_River._Verona%2C_Italy.jpg/1280px-Panorama_Ponte_Scaligero%2C_Castelvecchio_and_Adige_River._Verona%2C_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
+ "viena": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:Vienna_Skyline_(cropped).jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Vienna_Skyline_%28cropped%29.jpg/1280px-Vienna_Skyline_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+ },
  "vitoria-62-c": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Convento_da_Penha_-_Vila_Velha_-_ES_-_panoramio_(27).jpg",
   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Convento_da_Penha_-_Vila_Velha_-_ES_-_panoramio_%2827%29.jpg/1280px-Convento_da_Penha_-_Vila_Velha_-_ES_-_panoramio_%2827%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
@@ -584,5 +624,9 @@
  "washington-dc": {
   "pagina": "https://commons.wikimedia.org/wiki/File:Saint_Paul_skyline,_West_Side_(cropped).jpg",
   "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Saint_Paul_skyline%2C_West_Side_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+ },
+ "zurique-suica": {
+  "pagina": "https://commons.wikimedia.org/wiki/File:T%C3%BCrlersee_panosphere_20200730.jpg",
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/T%C3%BCrlersee_panosphere_20200730.jpg/1280px-T%C3%BCrlersee_panosphere_20200730.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
  }
 }
