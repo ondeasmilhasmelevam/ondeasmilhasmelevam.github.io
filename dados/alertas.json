@@ -10214,34 +10214,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "3761373661-10381",
-  "data": "2026-11-25T18:58:32Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "7.900 milhas + R$ 35,15 de taxas",
-  "volta": "9.300 milhas + R$ 62,14 de taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10380",
-  "data": "2026-11-25T18:56:03Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "13.800 milhas",
-  "volta": "8.600 milhas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-8025",
   "data": "2026-11-25T18:26:30Z",
   "tipo": "promocao",
