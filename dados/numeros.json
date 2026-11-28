@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-28T16:12:44.881464Z",
+ "atualizado": "2026-11-28T16:19:02.422582Z",
  "dias": 30,
- "passagens": 4750,
+ "passagens": 4751,
  "promocoes": 289,
  "destinos": 188,
  "executiva": 926,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1220,
+  "passagens": 1221,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -460,15 +460,15 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-16467",
+    "id": "2008590742-16759",
     "origem": "Goiânia",
     "origem_iata": "GYN",
     "destino": "Assunção",
     "destino_iata": "ASU",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-25T19:24:42Z",
-    "milhas": 42000,
+    "data": "2026-11-28T16:18:11Z",
+    "milhas": 40000,
     "nivel": "bom",
     "regiao": "america-do-sul"
    },

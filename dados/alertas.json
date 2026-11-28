@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16759",
+  "data": "2026-11-28T16:18:11Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Assunção",
+  "destino_iata": "ASU",
+  "companhia": "GOL + parceira",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "40.000 milhas + Taxas",
+  "volta": "40.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10651",
   "data": "2026-11-28T16:12:19Z",
   "origem": "Palmas",
