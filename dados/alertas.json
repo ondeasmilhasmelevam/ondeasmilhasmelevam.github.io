@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10624",
+  "data": "2026-11-28T03:41:47Z",
+  "origem": "São Paulo",
+  "origem_iata": "CGH",
+  "destino": "Fortaleza",
+  "destino_iata": "FOR",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.200 milhas + R$ 62,14 de taxas",
+  "volta": "16.200 milhas + R$ 59,96 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10623",
   "data": "2026-11-28T03:09:57Z",
   "origem": "São Paulo",
