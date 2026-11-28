@@ -10298,20 +10298,6 @@
   "link_nome": "Aeroplan"
  },
  {
-  "id": "2361370250-7051",
-  "data": "2026-11-25T18:43:04Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Dar Es Salaam",
-  "destino_iata": "DAR",
-  "companhia": "South African Airways",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "292.400 Milhas Smiles + Taxas",
-  "volta": "292.400 Milhas Smiles + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-8025",
   "data": "2026-11-25T18:26:30Z",
   "tipo": "promocao",
