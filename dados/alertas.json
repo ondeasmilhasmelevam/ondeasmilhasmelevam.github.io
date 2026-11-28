@@ -4976,6 +4976,21 @@
   "link_nome": "Smiles"
  },
  {
+  "id": "seats-smiles-GRU-MAD-eco",
+  "data": "2026-11-27T02:04:52.375507Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Madrid",
+  "destino_iata": "MAD",
+  "companhia": "Air France / AM / Royal Air Maroc",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "135.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-smiles-GRU-CDG-eco",
   "data": "2026-11-27T02:04:52.375507Z",
   "fonte": "seats.aero",
@@ -9664,21 +9679,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-smiles-GIG-JFK-exe",
-  "data": "2026-11-24T00:18:59.188401Z",
-  "fonte": "seats.aero",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "GIG",
-  "destino": "Nova York",
-  "destino_iata": "JFK",
-  "companhia": "American / Avianca",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "223.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-smiles-SSA-CDG-eco",
   "data": "2026-11-24T00:18:59.188401Z",
   "fonte": "seats.aero",
@@ -9690,6 +9690,21 @@
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "118.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "seats-smiles-GIG-JFK-exe",
+  "data": "2026-11-24T00:18:59.188401Z",
+  "fonte": "seats.aero",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Nova York",
+  "destino_iata": "JFK",
+  "companhia": "American / Avianca",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "252.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
@@ -9934,6 +9949,21 @@
   "ida": "19.500 Avios + taxas",
   "volta": "",
   "link_nome": "Iberia Plus"
+ },
+ {
+  "id": "seats-smiles-GRU-DFW-exe",
+  "data": "2026-11-22T18:35:20.947806Z",
+  "fonte": "seats.aero",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Dallas",
+  "destino_iata": "DFW",
+  "companhia": "American",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "295.000 milhas + taxas",
+  "volta": "",
+  "link_nome": "Smiles"
  },
  {
   "id": "1290836068-7948",
