@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10618",
+  "data": "2026-11-28T00:29:56Z",
+  "origem": "Porto Seguro",
+  "origem_iata": "BPS",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "13.600 milhas + R$ 38,84 de taxas",
+  "volta": "13.600 milhas + R$ 62,14 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "robo-GRU-AEP-smiles-economy",
   "data": "2026-11-28T00:16:39.430575Z",
   "fonte": "robo-alertas",
