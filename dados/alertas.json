@@ -1,5 +1,116 @@
 [
  {
+  "id": "2008590742-16768",
+  "data": "2026-11-28T19:24:58Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Buenos Aires",
+  "destino_iata": "AEP",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "31.000 milhas + R$ 108,17 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "1290836068-8112",
+  "data": "2026-11-28T19:24:36Z",
+  "tipo": "promocao",
+  "titulo": "BLACK FRIDAY ALL SIGNATURE XP 27% DESCONTO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A promoção oferece 27% de desconto na assinatura do ALL Signature XP até quarta-feira (2). O plano XP garante 75 mil pontos ALL Accor e o XP Legacy garante 90 mil pontos ALL Accor e status Gold. O desconto aplica para novos e antigos assinantes, pagamento à vista ou parcelado.",
+  "detalhes": [
+   "27% de desconto na assinatura até quarta-feira (2)",
+   "Plano XP garante 75 mil pontos ALL Accor",
+   "Plano XP Legacy garante status Gold",
+   "Plano XP Legacy inclui crédito imediato de 7 mil pontos Status",
+   "Plano XP Legacy inclui três experiências exclusivas sem pontos",
+   "Plano XP Legacy inclui acesso a aplicativos e serviços de streaming",
+   "Plano XP Legacy permite transferir pontos para outros associados",
+   "Bônus de 10% nas transferências de pontos de parceiros"
+  ],
+  "parceiros": "ALL Accor",
+  "validade": "até quarta-feira (2)",
+  "links": [
+   "https://link.dia23.com.br/r/WQ98ODk"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8111",
+  "data": "2026-11-28T19:24:34Z",
+  "tipo": "promocao",
+  "titulo": "VOE PARA MADRI A PARTIR DE 53.550 PONTOS AZUL FIDELIDADE",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Disponibilidade de bilhetes ida e volta de São Paulo (VCP) para Madri (MAD) a partir de 53.550 pontos Azul Fidelidade + taxas por trecho. Rota operada pela Azul na classe econômica. Retorno disponível apenas para assinantes do serviço.",
+  "detalhes": [
+   "53.550 pontos Azul Fidelidade por trecho",
+   "taxas adicionais",
+   "retorno restrito a assinantes do serviço",
+   "classe econômica",
+   "São Paulo (VCP) x Madri (MAD) economica a partir de 53.550 milhas o trecho"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/uBG95kl"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8110",
+  "data": "2026-11-28T19:24:31Z",
+  "tipo": "promocao",
+  "titulo": "PASSAGENS INTERNACIONAIS LATAM Pass A PARTIR DE 20 MIL MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A promoção oferece passagens internacionais com LATAM Pass a partir de 20.209 milhas por trecho. As tarifas são as menores disponíveis em cada mês e incluem taxas aeroportuárias. Os valores são por trecho e por passageiro.",
+  "detalhes": [
+   "valor por trecho e por passageiro",
+   "inclui taxas aeroportuárias",
+   "tarifas são as menores disponíveis em cada mês",
+   "valores podem mudar a qualquer momento",
+   "Porto Alegre (POA) x Buenos Aires (AEP) a partir de 20.209 milhas o trecho",
+   "Rio de Janeiro (SDU) x Buenos Aires (AEP) a partir de 21.556 milhas o trecho",
+   "São Paulo (GRU) x Buenos Aires (EZE) a partir de 21.556 milhas o trecho",
+   "São Paulo (GRU) x Buenos Aires (AEP) a partir de 21.556 milhas o trecho"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/WmKmnA3"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8109",
+  "data": "2026-11-28T19:24:28Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass VOOS PARA SANTIAGO A PARTIR DE 21.941 MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A Mega Promo da Latam oferece passagens para Santiago, Chile, a partir de 21.941 milhas por trecho + taxas, com datas entre janeiro e junho de 2027. Os menores preços são saídas de Floripa ou Curitiba, mas também há boas tarifas de São Paulo e Belo Horizonte. A tarifa é Basic, inclui apenas um item pessoal de até 10kg e não aplica benefícios elite.",
+  "detalhes": [
+   "valor: 21.941 milhas por trecho + taxas",
+   "paridade: ida e volta obrigatória",
+   "tarifa: Basic",
+   "benefícios elite: não se aplicam",
+   "pesquisa: obrigatória no site da Latam para ida e volta",
+   "Florianópolis (FLN) x Santiago (SCL) economica a partir de 21.941 milhas o trecho",
+   "Curitiba (CUR) x Santiago (SCL) economica a partir de 21.941 milhas o trecho",
+   "São Paulo x Santiago (SCL) economica a partir de 21.941 milhas o trecho"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/Askzqcj"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2361370250-7143",
   "data": "2026-11-28T19:03:30Z",
   "origem": "São Paulo",
@@ -10057,146 +10168,6 @@
   "programa": "Smiles",
   "ida": "A partir de 65.000 milhas",
   "volta": "A partir de 65.000 milhas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10385",
-  "data": "2026-11-25T19:25:12Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Porto Alegre",
-  "destino_iata": "POA",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "14.700 milhas + Taxas",
-  "volta": "14.700 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10384",
-  "data": "2026-11-25T19:24:56Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Recife",
-  "destino_iata": "REC",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "13.800 milhas + Taxas",
-  "volta": "13.800 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10383",
-  "data": "2026-11-25T19:24:53Z",
-  "origem": "São Luís",
-  "origem_iata": "SLZ",
-  "destino": "Goiânia",
-  "destino_iata": "GYN",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "19.500 milhas + Taxas",
-  "volta": "19.500 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16469",
-  "data": "2026-11-25T19:24:50Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "Buenos Aires",
-  "destino_iata": "AEP",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "54.000 milhas + Taxas",
-  "volta": "54.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16468",
-  "data": "2026-11-25T19:24:44Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "Joanesburgo",
-  "destino_iata": "JNB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "79.000 milhas + Taxas",
-  "volta": "79.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16467",
-  "data": "2026-11-25T19:24:42Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "Assunção",
-  "destino_iata": "ASU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "42.000 milhas + Taxas",
-  "volta": "",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16466",
-  "data": "2026-11-25T19:24:36Z",
-  "origem": "Goiânia",
-  "origem_iata": "GYN",
-  "destino": "Cancún",
-  "destino_iata": "CUN",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "77.000 milhas + Taxas",
-  "volta": "77.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16465",
-  "data": "2026-11-25T19:24:30Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Mendoza",
-  "destino_iata": "MDZ",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "46.500 milhas + Taxas",
-  "volta": "46.500 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16464",
-  "data": "2026-11-25T19:24:19Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Joanesburgo",
-  "destino_iata": "JNB",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "71.000 milhas + Taxas",
-  "volta": "71.000 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16463",
-  "data": "2026-11-25T19:24:09Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Punta Cana",
-  "destino_iata": "PUJ",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "77.300 milhas + Taxas",
-  "volta": "77.300 milhas + Taxas",
   "link_nome": "Smiles"
  },
  {
