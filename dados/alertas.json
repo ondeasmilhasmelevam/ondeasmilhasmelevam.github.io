@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-16756",
+  "data": "2026-11-28T15:59:34Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "50.000 milhas + Taxas",
+  "volta": "48.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10650",
+  "data": "2026-11-28T15:54:00Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "SDU",
+  "destino": "São Paulo",
+  "destino_iata": "CGH",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "9.100 milhas + R$ 62,62 de taxas",
+  "volta": "9.100 milhas + R$ 62,14 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10649",
   "data": "2026-11-28T15:48:22Z",
   "origem": "Porto Alegre",
@@ -5691,21 +5719,6 @@
   "programa": "Smiles",
   "ida": "10.500 milhas + R$ 55,17 de taxas",
   "volta": "10.500 milhas + R$ 54,45 de taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "seats-smiles-GRU-BCN-eco",
-  "data": "2026-11-27T02:41:46.613434Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Barcelona",
-  "destino_iata": "BCN",
-  "companhia": "Air France / Royal Air Maroc / Avianca",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "140.000 milhas + taxas",
-  "volta": "",
   "link_nome": "Smiles"
  },
  {
