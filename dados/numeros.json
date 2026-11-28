@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-28T15:47:34.154829Z",
+ "atualizado": "2026-11-28T15:53:52.526141Z",
  "dias": 30,
- "passagens": 4744,
+ "passagens": 4745,
  "promocoes": 285,
  "destinos": 188,
  "executiva": 926,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1223,
+  "passagens": 1215,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -577,14 +577,14 @@
     "regiao": "brasil"
    },
    {
-    "id": "3761373661-10058",
+    "id": "3761373661-10178",
     "origem": "Curitiba",
     "origem_iata": "CWB",
     "destino": "Londrina",
     "destino_iata": "LDB",
     "cabine": "Econômica",
     "programa": "LATAM Pass",
-    "data": "2026-11-21T15:53:19Z",
+    "data": "2026-11-23T13:29:57Z",
     "milhas": 3500,
     "nivel": "",
     "regiao": "brasil"
@@ -651,19 +651,6 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-23T13:15:48Z",
     "milhas": 5000,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10052",
-    "origem": "Porto Alegre",
-    "origem_iata": "POA",
-    "destino": "Campinas",
-    "destino_iata": "VCP",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-21T15:52:54Z",
-    "milhas": 5200,
     "nivel": "",
     "regiao": "brasil"
    },
@@ -910,6 +897,19 @@
     "cabine": "Econômica",
     "programa": "Smiles",
     "data": "2026-11-28T11:13:58Z",
+    "milhas": 8400,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
+    "id": "3761373661-10641",
+    "origem": "Rio de Janeiro",
+    "origem_iata": "GIG",
+    "destino": "Campinas",
+    "destino_iata": "VCP",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-28T14:48:56Z",
     "milhas": 8400,
     "nivel": "",
     "regiao": "brasil"
