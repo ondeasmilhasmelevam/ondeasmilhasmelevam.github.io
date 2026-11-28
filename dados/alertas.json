@@ -10200,20 +10200,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2008590742-16462",
-  "data": "2026-11-25T19:13:06Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "Córdoba",
-  "destino_iata": "COR",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "40.500 milhas + Taxas",
-  "volta": "40.500 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-8025",
   "data": "2026-11-25T18:26:30Z",
   "tipo": "promocao",
