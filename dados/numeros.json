@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-28T14:50:37.935836Z",
+ "atualizado": "2026-11-28T14:56:53.771513Z",
  "dias": 30,
- "passagens": 4733,
+ "passagens": 4736,
  "promocoes": 285,
  "destinos": 188,
  "executiva": 926,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1216,
+  "passagens": 1219,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -733,6 +733,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10643",
+    "origem": "Recife",
+    "origem_iata": "REC",
+    "destino": "Petrolina",
+    "destino_iata": "PNZ",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-28T14:55:16Z",
+    "milhas": 6490,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10214",
     "origem": "Petrolina",
     "origem_iata": "PNZ",
@@ -924,19 +937,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-23T16:17:21Z",
     "milhas": 8680,
-    "nivel": "",
-    "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10056",
-    "origem": "Florianópolis",
-    "origem_iata": "FLN",
-    "destino": "Chapecó",
-    "destino_iata": "XAP",
-    "cabine": "Econômica",
-    "programa": "Smiles",
-    "data": "2026-11-21T15:53:12Z",
-    "milhas": 9000,
     "nivel": "",
     "regiao": "brasil"
    },

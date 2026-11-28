@@ -1,5 +1,47 @@
 [
  {
+  "id": "3761373661-10643",
+  "data": "2026-11-28T14:55:16Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Petrolina",
+  "destino_iata": "PNZ",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "6.490 milhas + Taxas",
+  "volta": "6.490 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16752",
+  "data": "2026-11-28T14:53:57Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Buenos Aires",
+  "destino_iata": "AEP",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "35.000 milhas + R$ 68,61 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10642",
+  "data": "2026-11-28T14:52:16Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "João Pessoa",
+  "destino_iata": "JPA",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "29.000 milhas + Taxas",
+  "volta": "29.000 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10641",
   "data": "2026-11-28T14:48:56Z",
   "origem": "Rio de Janeiro",
