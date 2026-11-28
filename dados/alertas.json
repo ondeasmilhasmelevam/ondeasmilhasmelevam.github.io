@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7144",
+  "data": "2026-11-28T19:27:58Z",
+  "origem": "Manaus",
+  "origem_iata": "MAO",
+  "destino": "Fort Lauderdale",
+  "destino_iata": "FLL",
+  "companhia": "Copa",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "50.000 milhas + CAD 124,80 de taxas",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "2008590742-16768",
   "data": "2026-11-28T19:24:58Z",
   "origem": "Florianópolis",
