@@ -1628,7 +1628,7 @@ async function desenharGruposPainel() {
     ${links.length ? `<h4 class="painel-sub">Seus links</h4><div class="painel-lista curta"><ul class="cortesias grupos">${links.map(l => `<li data-codigo="${escR(l.codigo)}">
       <p><b>${escR(l.nome)}</b> · ${prazoCortesia(l.dias)} · <b>${n(l.usos)}</b> de ${n(l.limite)} cadastros ${situ(l)} <small>criado em ${dt(l.criadoEm)}</small></p>
       <input class="grupo-url" readonly value="${escR(l.url)}" aria-label="Link para enviar">
-      <div class="cort-reenviar"><button type="button" class="cta cta-a" data-copiar-link>Copiar link</button><button type="button" class="cta cta-b" data-ver-link>Ver convidados</button><button type="button" class="cta cta-b" data-limite="${l.limite}">Mudar limite</button><button type="button" class="cta cta-b" data-ativo="${l.ativo ? '0' : '1'}">${l.ativo ? 'Encerrar' : 'Reabrir'}</button></div></li>`).join('')}</ul></div>` : ''}
+      <div class="cort-reenviar"><button type="button" class="cta cta-a" data-copiar-link>Copiar link</button><button type="button" class="cta cta-b" data-ver-link>Ver convidados</button><button type="button" class="cta cta-b" data-dias-link="${l.dias}">Mudar dias</button><button type="button" class="cta cta-b" data-limite="${l.limite}">Mudar limite</button><button type="button" class="cta cta-b" data-ativo="${l.ativo ? '0' : '1'}">${l.ativo ? 'Encerrar' : 'Reabrir'}</button></div></li>`).join('')}</ul></div>` : ''}
     <h4 class="painel-sub" id="convidados-titulo">Convidados</h4>
     ${convidados.length ? `${filtrosHtml('links', [['todas', 'Todos'], ['ativo', 'Ativos'], ['vencido', 'Vencidos']], convidados.map(estadoConv),
       `<select data-filtro-link aria-label="Filtrar por link"><option value="">Todos os links</option>${links.map(l => `<option value="${escR(l.codigo)}">${escR(l.nome)}</option>`).join('')}</select>`)}
@@ -1671,6 +1671,11 @@ $('#painel-grupos')?.addEventListener('click', async e => {
     const sel = $('#painel-grupos [data-filtro-link]');
     if (sel) { sel.value = codigo; filtros.links.link = codigo; aplicarFiltro('links'); }
     $('#convidados-titulo').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else if (b.dataset.diasLink) {
+    const novo = prompt('Quantos dias de cortesia este link dá? (de 1 a 730)\nVale para quem se cadastrar daqui em diante. Quem já entrou continua com o prazo que recebeu; para essas pessoas use "Dar mais dias" na lista de convidados.', b.dataset.diasLink);
+    if (novo === null) return;
+    const d = Math.round(Number(String(novo).replace(/\D/g, '')));
+    if (d >= 1 && d <= 730) editarGrupo(codigo, { dias: d }); else alert('Os dias da cortesia vão de 1 a 730.');
   } else if (b.dataset.limite) {
     const novo = prompt('Novo máximo de cadastros para este link:', b.dataset.limite);
     if (novo !== null && Number(novo) >= 1) editarGrupo(codigo, { limite: Math.floor(Number(novo)) });
