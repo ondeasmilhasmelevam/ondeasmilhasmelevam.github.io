@@ -10312,20 +10312,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-10377",
-  "data": "2026-11-25T18:32:22Z",
-  "origem": "Rio de Janeiro",
-  "origem_iata": "SDU",
-  "destino": "Campo Grande",
-  "destino_iata": "CGR",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "18.500 milhas + Taxas",
-  "volta": "18.500 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-8025",
   "data": "2026-11-25T18:26:30Z",
   "tipo": "promocao",
