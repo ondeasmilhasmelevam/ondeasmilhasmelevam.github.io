@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10616",
+  "data": "2026-11-27T23:54:59Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.800 milhas + R$ 35,90 de taxas",
+  "volta": "10.000 milhas + R$ 35,75 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16698",
   "data": "2026-11-27T23:50:07Z",
   "origem": "Brasília",

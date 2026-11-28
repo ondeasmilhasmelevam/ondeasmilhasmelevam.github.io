@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-27T23:54:14.330399Z",
+ "atualizado": "2026-11-28T00:00:34.479010Z",
  "dias": 30,
- "passagens": 4651,
+ "passagens": 4652,
  "promocoes": 275,
  "destinos": 188,
  "executiva": 906,
@@ -1097,14 +1097,14 @@
     "regiao": "europa"
    },
    {
-    "id": "2361370250-6891",
+    "id": "2361370250-6974",
     "origem": "Belém",
     "origem_iata": "BEL",
     "destino": "Fort Lauderdale",
     "destino_iata": "FLL",
     "cabine": "Executiva",
     "programa": "Aeroplan",
-    "data": "2026-11-20T23:58:40Z",
+    "data": "2026-11-22T19:40:50Z",
     "milhas": 50000,
     "nivel": "",
     "regiao": "outros"
