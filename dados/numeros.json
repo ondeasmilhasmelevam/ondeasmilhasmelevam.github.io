@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-28T14:12:42.454063Z",
+ "atualizado": "2026-11-28T14:19:28.058605Z",
  "dias": 30,
- "passagens": 4712,
+ "passagens": 4725,
  "promocoes": 285,
  "destinos": 188,
- "executiva": 923,
+ "executiva": 924,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1206,
+  "passagens": 1218,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -200,14 +200,14 @@
     "regiao": "caribe"
    },
    {
-    "id": "2008590742-16202",
+    "id": "2008590742-16310",
     "origem": "Manaus",
     "origem_iata": "MAO",
     "destino": "Cancún",
     "destino_iata": "CUN",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-21T14:15:21Z",
+    "data": "2026-11-22T15:24:42Z",
     "milhas": 40400,
     "nivel": "espetacular",
     "regiao": "caribe"
@@ -395,6 +395,19 @@
     "regiao": "europa"
    },
    {
+    "id": "2008590742-16745",
+    "origem": "Curitiba",
+    "origem_iata": "CWB",
+    "destino": "Amsterdã",
+    "destino_iata": "AMS",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-28T14:12:57Z",
+    "milhas": 67748,
+    "nivel": "muito bom",
+    "regiao": "europa"
+   },
+   {
     "id": "2008590742-16622",
     "origem": "Recife",
     "origem_iata": "REC",
@@ -430,19 +443,6 @@
     "programa": "LATAM Pass",
     "data": "2026-11-27T13:04:08Z",
     "milhas": 70200,
-    "nivel": "muito bom",
-    "regiao": "europa"
-   },
-   {
-    "id": "2008590742-16304",
-    "origem": "Recife",
-    "origem_iata": "REC",
-    "destino": "Amsterdã",
-    "destino_iata": "AMS",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-22T15:09:45Z",
-    "milhas": 71430,
     "nivel": "muito bom",
     "regiao": "europa"
    },
