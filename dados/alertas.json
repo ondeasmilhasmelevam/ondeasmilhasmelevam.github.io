@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7120",
+  "data": "2026-11-28T01:02:14Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "GOL",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "80.000 milhas + $ 57,20 CAD",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "seats-smiles-FLN-PTY-eco",
   "data": "2026-11-28T00:50:48.716838Z",
   "fonte": "seats.aero",
