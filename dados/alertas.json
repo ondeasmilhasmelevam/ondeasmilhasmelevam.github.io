@@ -1,5 +1,115 @@
 [
  {
+  "id": "3761373661-10651",
+  "data": "2026-11-28T16:12:19Z",
+  "origem": "Palmas",
+  "origem_iata": "PMW",
+  "destino": "Curitiba",
+  "destino_iata": "CWB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "25.200 milhas + Taxas",
+  "volta": "25.200 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "1290836068-8106",
+  "data": "2026-11-28T16:08:06Z",
+  "tipo": "promocao",
+  "titulo": "CUPONS DE ATÉ 30% DE DESCONTO NA AZUL VIAGENS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A Azul Viagens disponibiliza cupons de desconto de até 30% em pacotes selecionados e 20% em aluguéis de carros. Os cupons são válidos apenas para pagamentos em reais ou resgate com pontos Azul e não são cumulativos. A promoção termina em 30/11/2026 e pode ser encerrada a qualquer momento.",
+  "detalhes": [
+   "AZULFRIDAY30: 30% de desconto em pacotes selecionados (passagens aéreas + hospedagem), válido apenas para pagamentos em reais ou resgate com pontos Azul, por reserva",
+   "Descontos não são cumulativos",
+   "Desconto será cancelado em caso de cancelamento ou alteração do produto ou pacote contratado",
+   "Oferta válida até 30/11/2026 ou enquanto durarem os estoques",
+   "Campanha pode ser encerrada a qualquer momento, sem aviso prévio",
+   "Condição válida para voos operados pela Azul Linhas Aéreas e voos Amadeus, não aplicável a outros produtos ou serviços distintos"
+  ],
+  "parceiros": "Azul Fidelidade",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/4ayDXg5"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8105",
+  "data": "2026-11-28T16:08:03Z",
+  "tipo": "promocao",
+  "titulo": "LATAM FRIDAY! PASSAGENS A PARTIR DE R$ 119 OU 2 MIL MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "A LATAM Friday oferece passagens nacionais a partir de R$ 119 ou 2.000 milhas + taxas. A promoção inclui rotas nacionais listadas no artigo. As passagens podem ser pagas em até 4 vezes sem juros, com parcelamento em até 10 vezes sem juros para cartão LATAM Pass Itaú.",
+  "detalhes": [
+   "valor a partir de R$ 119 ou 2.000 milhas + taxas",
+   "parcelamento em até 4 vezes sem juros",
+   "parcelamento em até 10 vezes sem juros válido apenas para cartão LATAM Pass Itaú",
+   "parcelamento mínimo de R$ 70",
+   "parcelamento não inclui taxa de embarque e adicional de emissão",
+   "valor por passageiro",
+   "taxa de embarque inclusa",
+   "Campinas (VCP) x Porto Alegre (POA) a partir de R$ 119"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/ELnciDN"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8104",
+  "data": "2026-11-28T16:08:00Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass: PASSAGENS PARA RIO DE JANEIRO A PARTIR DE 2.624 MILHAS",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Promoção de passagens aéreas para o Rio de Janeiro a partir de 2.624 milhas por trecho, com opções de resgate em LATAM Pass, Azul Fidelidade e Smiles. O menor preço é com Latam saindo de Vitória, a partir de 5.602 milhas ida e volta. Há oportunidades com origem em São Paulo, Belo Horizonte, Campinas e Curitiba, com datas entre janeiro e junho de 2027.",
+  "detalhes": [
+   "milhas por trecho: 2624",
+   "taxas adicionais",
+   "resgate em LATAM Pass, Azul Fidelidade e Smiles",
+   "menor preço Latam a partir de 5602 milhas ida e volta",
+   "origens disponíveis: Vitória, São Paulo, Belo Horizonte, Campinas, Curitiba",
+   "datas de viagem: entre janeiro e junho de 2027",
+   "Vitória (VIX) x Rio de Janeiro a partir de 2.801 milhas o trecho",
+   "São Paulo x Rio de Janeiro"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/Askzqcj"
+  ],
+  "ate": ""
+ },
+ {
+  "id": "1290836068-8103",
+  "data": "2026-11-28T16:07:56Z",
+  "tipo": "promocao",
+  "titulo": "LATAM GENEBRA 61.189 MILHAS TRECHO",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Passagens da Latam para Genebra em 61.189 milhas por trecho. Saída do Aeroporto de Guarulhos, São Paulo. Viagem em junho de 2027.",
+  "detalhes": [
+   "61.189 milhas por trecho + taxas",
+   "saída do Aeroporto de Guarulhos, São Paulo",
+   "viagem em junho de 2027",
+   "pesquise ida e volta para menor preço",
+   "São Paulo (GRU) x Genebra (GVA) a partir de 61.189 milhas o trecho",
+   "Períodos de viagem: junho de 2027"
+  ],
+  "parceiros": "LATAM Pass",
+  "validade": "",
+  "links": [
+   "https://link.dia23.com.br/r/Askzqcj"
+  ],
+  "ate": ""
+ },
+ {
   "id": "2008590742-16758",
   "data": "2026-11-28T16:04:14Z",
   "origem": "Curitiba",
