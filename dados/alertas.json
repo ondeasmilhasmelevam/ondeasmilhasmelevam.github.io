@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16733",
+  "data": "2026-11-28T12:27:14Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Toronto",
+  "destino_iata": "YYZ",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "78.400 milhas + Taxas",
+  "volta": "85.800 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "seats-azul-VCP-LIS-eco",
   "data": "2026-11-28T12:19:35.796562Z",
   "fonte": "seats.aero",
