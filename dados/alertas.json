@@ -10306,34 +10306,6 @@
   "ate": ""
  },
  {
-  "id": "3761373661-10375",
-  "data": "2026-11-25T18:09:40Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "11.570 milhas LATAM Pass + Taxas",
-  "volta": "11.570 milhas LATAM Pass + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "3761373661-10374",
-  "data": "2026-11-25T18:09:16Z",
-  "origem": "Cuiabá",
-  "origem_iata": "CGB",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "17.100 milhas Smiles + Taxas",
-  "volta": "17.000 milhas Smiles + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-qatar-GIG-MAD-eco",
   "data": "2026-11-25T00:19:51.723202Z",
   "fonte": "seats.aero",
@@ -10604,7 +10576,7 @@
   "origem_iata": "FOR",
   "destino": "Paris",
   "destino_iata": "CDG",
-  "companhia": "Air France / GOL / Iberia",
+  "companhia": "Air France / Iberia",
   "cabine": "Econômica",
   "programa": "Smiles",
   "ida": "105.000 milhas + taxas",
