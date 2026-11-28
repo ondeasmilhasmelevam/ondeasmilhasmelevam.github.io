@@ -2224,8 +2224,9 @@ details.menu-grupo[open]>summary::after{transform:rotate(45deg)}
 .mp-sub2{margin:10px 0 6px;color:var(--ash);font-size:13px}
 
 /* Passagens: calendário com busca preenchida */
-.pass-cal{margin-top:auto;display:grid;gap:10px}
-.pass-cal .pass-link{margin-top:0}
+/* Datas logo abaixo do picote; a sobra de altura (cartões lado a lado) fica acima do botão Pesquisar. */
+.pass-cal{flex:1;display:flex;flex-direction:column;gap:10px}
+.pass-cal .pass-link{margin-top:auto}
 .pass-cal .pass-datas ul{height:7.4em}
 .pass-cal .pass-datas li:has(.pass-dia){display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:2px 0}
 .pass-dia{min-width:30px;height:28px;padding:0 6px;border-radius:8px;border:1px solid var(--line);background:var(--ink-3);color:var(--rice);font:700 13px var(--body);cursor:pointer}
