@@ -1,0 +1,328 @@
+{
+  "_leia": "Tabelas oficiais de utilizacao de Avios por companhia parceira, EPOCA BAIXA, valores POR TRAJETO (ida e volta = o dobro). Fonte: iberia.com/br/iberia-club/comprar-voos-avios/#tablas -> logo da companhia. Cada parceira tem a SUA tabela: nao da pra julgar uma pela tabela da outra.",
+  "atualizado": "2026-11-27",
+  "fonte": "https://www.iberia.com/br/iberia-club/comprar-voos-avios/#tablas",
+  "unidade": "avios por trajeto, por pessoa, sem taxas",
+  "cabines": {
+    "economy": "Economica",
+    "premium": "Premium Economy",
+    "business": "Executiva",
+    "first": "Primeira"
+  },
+  "observacoes": [
+    "Premium Economy da American, da Finnair e da Royal Air Maroc so existe em combinacao com voo do grupo Iberia.",
+    "A tabela nao vale quando o bilhete junta duas ou mais companhias oneworld (fora grupo Iberia + British): ai vale a tabela da oneworld.",
+    "Ha excecoes: nem todo voo com distancia de uma banda entra naquela banda.",
+    "A Iberia pode mudar as tabelas; conferir na fonte de tempos em tempos."
+  ],
+  "companhias": {
+    "finnair": {
+      "nome": "Finnair (AY)",
+      "bandas": [
+        {
+          "faixa": "0 - 650",
+          "ate_milhas": 650,
+          "economy": 6000,
+          "premium": 9000,
+          "business": 12500,
+          "first": 24000
+        },
+        {
+          "faixa": "651 - 1.151",
+          "ate_milhas": 1151,
+          "economy": 9000,
+          "premium": 12500,
+          "business": 16500,
+          "first": 33000
+        },
+        {
+          "faixa": "1.152 - 2.000",
+          "ate_milhas": 2000,
+          "economy": 11000,
+          "premium": 16500,
+          "business": 22000,
+          "first": 44000
+        },
+        {
+          "faixa": "2.001 - 3.000",
+          "ate_milhas": 3000,
+          "economy": 13000,
+          "premium": 25750,
+          "business": 38750,
+          "first": 51500
+        },
+        {
+          "faixa": "3.001 - 4.000",
+          "ate_milhas": 4000,
+          "economy": 20750,
+          "premium": 41250,
+          "business": 62000,
+          "first": 82500
+        },
+        {
+          "faixa": "4.001 - 5.500",
+          "ate_milhas": 5500,
+          "economy": 25750,
+          "premium": 51500,
+          "business": 77250,
+          "first": 103000
+        },
+        {
+          "faixa": "5.501 - 6.500",
+          "ate_milhas": 6500,
+          "economy": 31000,
+          "premium": 62000,
+          "business": 92750,
+          "first": 123750
+        },
+        {
+          "faixa": "6.501 - 7.000",
+          "ate_milhas": 7000,
+          "economy": 36250,
+          "premium": 72250,
+          "business": 108250,
+          "first": 144250
+        },
+        {
+          "faixa": "mais de 7.000",
+          "ate_milhas": 11770,
+          "economy": 51500,
+          "premium": 103000,
+          "business": 154500,
+          "first": 206000
+        }
+      ]
+    },
+    "british": {
+      "nome": "British Airways (BA)",
+      "bandas": [
+        {
+          "faixa": "0 - 650",
+          "ate_milhas": 650,
+          "economy": 10000,
+          "premium": null,
+          "business": 16500,
+          "first": null
+        },
+        {
+          "faixa": "651 - 1.151",
+          "ate_milhas": 1151,
+          "economy": 13000,
+          "premium": null,
+          "business": 22000,
+          "first": null
+        },
+        {
+          "faixa": "1.152 - 2.000",
+          "ate_milhas": 2000,
+          "economy": 15000,
+          "premium": null,
+          "business": 26750,
+          "first": null
+        },
+        {
+          "faixa": "2.001 - 3.000",
+          "ate_milhas": 3000,
+          "economy": 24750,
+          "premium": 41250,
+          "business": 77000,
+          "first": 46750
+        },
+        {
+          "faixa": "3.001 - 4.000",
+          "ate_milhas": 4000,
+          "economy": 27500,
+          "premium": 46750,
+          "business": 88000,
+          "first": 75000
+        },
+        {
+          "faixa": "4.001 - 5.500",
+          "ate_milhas": 5500,
+          "economy": 33000,
+          "premium": 52250,
+          "business": 99000,
+          "first": 93500
+        },
+        {
+          "faixa": "5.501 - 6.500",
+          "ate_milhas": 6500,
+          "economy": 38500,
+          "premium": 55000,
+          "business": 110000,
+          "first": 112250
+        },
+        {
+          "faixa": "6.501 - 7.000",
+          "ate_milhas": 7000,
+          "economy": 44000,
+          "premium": 60500,
+          "business": 121000,
+          "first": 131000
+        },
+        {
+          "faixa": "mais de 7.000",
+          "ate_milhas": 99999,
+          "economy": 55000,
+          "premium": 88000,
+          "business": 159500,
+          "first": 187000
+        }
+      ]
+    },
+    "american": {
+      "nome": "American Airlines (AA)",
+      "bandas": [
+        {
+          "faixa": "0 - 650",
+          "ate_milhas": 650,
+          "economy": 13500,
+          "premium": 20000,
+          "business": 26500,
+          "first": 51000
+        },
+        {
+          "faixa": "651 - 1.151",
+          "ate_milhas": 1151,
+          "economy": 18000,
+          "premium": 26500,
+          "business": 35500,
+          "first": 70500
+        },
+        {
+          "faixa": "1.152 - 2.000",
+          "ate_milhas": 2000,
+          "economy": 20000,
+          "premium": 35500,
+          "business": 44000,
+          "first": 79500
+        },
+        {
+          "faixa": "2.001 - 3.000",
+          "ate_milhas": 3000,
+          "economy": 22000,
+          "premium": 44000,
+          "business": 55000,
+          "first": 88000
+        },
+        {
+          "faixa": "3.001 - 4.000",
+          "ate_milhas": 4000,
+          "economy": 23000,
+          "premium": 45500,
+          "business": 68500,
+          "first": 91000
+        },
+        {
+          "faixa": "4.001 - 5.500",
+          "ate_milhas": 5500,
+          "economy": 28500,
+          "premium": 57000,
+          "business": 85000,
+          "first": 113500
+        },
+        {
+          "faixa": "5.501 - 6.500",
+          "ate_milhas": 6500,
+          "economy": 34500,
+          "premium": 68500,
+          "business": 102500,
+          "first": 136500
+        },
+        {
+          "faixa": "6.501 - 7.000",
+          "ate_milhas": 7000,
+          "economy": 40000,
+          "premium": 80500,
+          "business": 119500,
+          "first": 159000
+        },
+        {
+          "faixa": "mais de 7.000",
+          "ate_milhas": 11770,
+          "economy": 57000,
+          "premium": 113500,
+          "business": 170000,
+          "first": 227000
+        }
+      ]
+    },
+    "royalairmaroc": {
+      "nome": "Royal Air Maroc (AT)",
+      "bandas": [
+        {
+          "faixa": "0 - 650",
+          "ate_milhas": 650,
+          "economy": 6500,
+          "premium": 10000,
+          "business": 14000,
+          "first": 26500
+        },
+        {
+          "faixa": "651 - 1.151",
+          "ate_milhas": 1151,
+          "economy": 10000,
+          "premium": 14000,
+          "business": 18500,
+          "first": 36500
+        },
+        {
+          "faixa": "1.152 - 2.000",
+          "ate_milhas": 2000,
+          "economy": 12500,
+          "premium": 18500,
+          "business": 24500,
+          "first": 48500
+        },
+        {
+          "faixa": "2.001 - 3.000",
+          "ate_milhas": 3000,
+          "economy": 14500,
+          "premium": 28500,
+          "business": 43000,
+          "first": 57000
+        },
+        {
+          "faixa": "3.001 - 4.000",
+          "ate_milhas": 4000,
+          "economy": 23000,
+          "premium": 45500,
+          "business": 68500,
+          "first": 91000
+        },
+        {
+          "faixa": "4.001 - 5.500",
+          "ate_milhas": 5500,
+          "economy": 28500,
+          "premium": 57000,
+          "business": 85000,
+          "first": 113500
+        },
+        {
+          "faixa": "5.501 - 6.500",
+          "ate_milhas": 6500,
+          "economy": 34500,
+          "premium": 68500,
+          "business": 102500,
+          "first": 136500
+        },
+        {
+          "faixa": "6.501 - 7.000",
+          "ate_milhas": 7000,
+          "economy": 40000,
+          "premium": 80500,
+          "business": 119500,
+          "first": 159000
+        },
+        {
+          "faixa": "mais de 7.000",
+          "ate_milhas": 11770,
+          "economy": 57000,
+          "premium": 113500,
+          "business": 170000,
+          "first": 227000
+        }
+      ]
+    }
+  }
+}
