@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-28T16:19:02.422582Z",
+ "atualizado": "2026-11-28T16:25:19.639002Z",
  "dias": 30,
- "passagens": 4751,
+ "passagens": 4752,
  "promocoes": 289,
  "destinos": 188,
  "executiva": 926,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1221,
+  "passagens": 1222,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -226,6 +226,19 @@
     "regiao": "america-do-norte"
    },
    {
+    "id": "2008590742-16760",
+    "origem": "Porto Alegre",
+    "origem_iata": "POA",
+    "destino": "Miami",
+    "destino_iata": "MIA",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-28T16:20:15Z",
+    "milhas": 44310,
+    "nivel": "espetacular",
+    "regiao": "america-do-norte"
+   },
+   {
     "id": "2008590742-16448",
     "origem": "Belém",
     "origem_iata": "BEL",
@@ -237,19 +250,6 @@
     "milhas": 45200,
     "nivel": "espetacular",
     "regiao": "caribe"
-   },
-   {
-    "id": "2008590742-16451",
-    "origem": "Belo Horizonte",
-    "origem_iata": "CNF",
-    "destino": "Miami",
-    "destino_iata": "MIA",
-    "cabine": "Econômica",
-    "programa": "LATAM Pass",
-    "data": "2026-11-24T20:30:37Z",
-    "milhas": 46770,
-    "nivel": "espetacular",
-    "regiao": "america-do-norte"
    },
    {
     "id": "2008590742-16463",
