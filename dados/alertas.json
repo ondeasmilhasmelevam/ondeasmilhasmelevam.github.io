@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16734",
+  "data": "2026-11-28T12:58:20Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Montevidéu",
+  "destino_iata": "MVD",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "37.500 milhas + Taxas",
+  "volta": "37.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16733",
   "data": "2026-11-28T12:27:14Z",
   "origem": "São Paulo",
@@ -9504,20 +9518,6 @@
   "ida": "50.000 milhas + CAD 122,60 de taxas",
   "volta": "",
   "link_nome": "Aeroplan"
- },
- {
-  "id": "3761373661-10363",
-  "data": "2026-11-25T12:57:52Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Florianópolis",
-  "destino_iata": "FLN",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "6.800 milhas + R$ 35,75 de taxas",
-  "volta": "6.800 milhas + R$ 56,99 de taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-qatar-GIG-MAD-eco",
