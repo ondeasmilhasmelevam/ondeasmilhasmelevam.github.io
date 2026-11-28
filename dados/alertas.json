@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7137",
+  "data": "2026-11-28T11:35:02Z",
+  "origem": "Belo Horizonte",
+  "origem_iata": "CNF",
+  "destino": "Fort Lauderdale",
+  "destino_iata": "FLL",
+  "companhia": "Copa",
+  "cabine": "Executiva",
+  "programa": "Aeroplan",
+  "ida": "50.000 milhas + CAD 118,10 de taxas",
+  "volta": "",
+  "link_nome": "Aeroplan"
+ },
+ {
   "id": "3761373661-10628",
   "data": "2026-11-28T11:13:58Z",
   "origem": "Brasília",
