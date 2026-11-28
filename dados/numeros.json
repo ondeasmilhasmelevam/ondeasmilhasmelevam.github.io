@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-28T17:59:23.150848Z",
+ "atualizado": "2026-11-28T18:05:36.312223Z",
  "dias": 30,
  "passagens": 4760,
  "promocoes": 289,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1217,
+  "passagens": 1216,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -1071,14 +1071,14 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2361370250-6894",
+    "id": "2361370250-7091",
     "origem": "Bangkok",
     "origem_iata": "BKK",
     "destino": "Tóquio",
     "destino_iata": "HND",
     "cabine": "Primeira Classe",
     "programa": "AAdvantage",
-    "data": "2026-11-21T18:04:23Z",
+    "data": "2026-11-26T19:28:28Z",
     "milhas": 40000,
     "nivel": "",
     "regiao": "outros"
