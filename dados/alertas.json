@@ -9493,20 +9493,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-7048",
-  "data": "2026-11-25T11:45:11Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Buenos Aires",
-  "destino_iata": "EZE",
-  "companhia": "Turkish Airlines",
-  "cabine": "Executiva",
-  "programa": "Smiles",
-  "ida": "53.000 milhas + Taxas",
-  "volta": "53.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "seats-qatar-GIG-MAD-eco",
   "data": "2026-11-25T00:19:51.723202Z",
   "fonte": "seats.aero",
