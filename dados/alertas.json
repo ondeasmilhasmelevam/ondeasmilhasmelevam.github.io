@@ -1,5 +1,33 @@
 [
  {
+  "id": "2008590742-16758",
+  "data": "2026-11-28T16:04:14Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Montevidéu",
+  "destino_iata": "MVD",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "36.500 milhas + Taxas",
+  "volta": "36.500 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16757",
+  "data": "2026-11-28T16:02:40Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "Joinville",
+  "destino_iata": "JOI",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "10.240 milhas + Taxas",
+  "volta": "10.240 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "2008590742-16756",
   "data": "2026-11-28T15:59:34Z",
   "origem": "São Luís",
