@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16700",
+  "data": "2026-11-28T06:47:58Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Orlando",
+  "destino_iata": "MCO",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "41.573 milhas + R$ 171,65 de taxas",
+  "volta": "",
+  "link_nome": "LATAM Pass"
+ },
+ {
   "id": "seats-smiles-BSB-MIA-eco",
   "data": "2026-11-28T06:40:07.413021Z",
   "fonte": "seats.aero",
