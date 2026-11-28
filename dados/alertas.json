@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7121",
+  "data": "2026-11-28T03:50:08Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Orlando",
+  "destino_iata": "MCO",
+  "companhia": "Azul",
+  "cabine": "Executiva",
+  "programa": "Azul Fidelidade",
+  "ida": "280.000 milhas + R$ 331,38 de taxas",
+  "volta": "",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-10624",
   "data": "2026-11-28T03:41:47Z",
   "origem": "São Paulo",
