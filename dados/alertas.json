@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10653",
+  "data": "2026-11-28T17:02:48Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Curitiba",
+  "destino_iata": "CWB",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "5.000 milhas + R$ 62,69 de taxas",
+  "volta": "5.000 milhas + R$ 48,63 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "2361370250-7142",
   "data": "2026-11-28T16:53:47Z",
   "origem": "Joanesburgo",
@@ -10431,34 +10445,6 @@
   "ida": "50.000 milhas + CAD 122,70 de taxas",
   "volta": "",
   "link_nome": "Aeroplan"
- },
- {
-  "id": "3761373661-10368",
-  "data": "2026-11-25T16:57:01Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Belo Horizonte",
-  "destino_iata": "CNF",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "26.000 milhas TudoAzul + Taxas",
-  "volta": "26.000 milhas TudoAzul + Taxas",
-  "link_nome": "Azul Fidelidade"
- },
- {
-  "id": "3761373661-10367",
-  "data": "2026-11-25T16:56:47Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Brasília",
-  "destino_iata": "BSB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "16.900 milhas Smiles + Taxas",
-  "volta": "16.900 milhas Smiles + Taxas",
-  "link_nome": "Smiles"
  },
  {
   "id": "seats-qatar-GIG-MAD-eco",
