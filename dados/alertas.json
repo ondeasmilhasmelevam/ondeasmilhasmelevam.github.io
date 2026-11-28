@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10628",
+  "data": "2026-11-28T11:13:58Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Goiânia",
+  "destino_iata": "GYN",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "8.400 milhas + R$ 34,54 de taxas",
+  "volta": "9.000 milhas + R$ 50,42 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-7136",
   "data": "2026-11-28T10:58:52Z",
   "origem": "São Paulo",

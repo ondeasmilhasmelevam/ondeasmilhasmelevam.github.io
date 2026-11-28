@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-28T11:09:33.965753Z",
+ "atualizado": "2026-11-28T11:16:17.760834Z",
  "dias": 30,
- "passagens": 4695,
+ "passagens": 4696,
  "promocoes": 275,
  "destinos": 188,
  "executiva": 921,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1214,
+  "passagens": 1215,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -889,6 +889,19 @@
     "regiao": "brasil"
    },
    {
+    "id": "3761373661-10628",
+    "origem": "Brasília",
+    "origem_iata": "BSB",
+    "destino": "Goiânia",
+    "destino_iata": "GYN",
+    "cabine": "Econômica",
+    "programa": "Smiles",
+    "data": "2026-11-28T11:13:58Z",
+    "milhas": 8400,
+    "nivel": "",
+    "regiao": "brasil"
+   },
+   {
     "id": "3761373661-10272",
     "origem": "Rio de Janeiro",
     "origem_iata": "GIG",
@@ -926,19 +939,6 @@
     "milhas": 9000,
     "nivel": "",
     "regiao": "brasil"
-   },
-   {
-    "id": "3761373661-10196",
-    "origem": "Recife",
-    "origem_iata": "REC",
-    "destino": "Mossoró",
-    "destino_iata": "MVF",
-    "cabine": "Econômica",
-    "programa": "Azul Fidelidade",
-    "data": "2026-11-23T13:50:43Z",
-    "milhas": 9000,
-    "nivel": "",
-    "regiao": "outros"
    },
    {
     "id": "2361370250-6975",
