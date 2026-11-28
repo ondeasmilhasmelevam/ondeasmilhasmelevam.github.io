@@ -1,7 +1,7 @@
 {
- "atualizado": "2026-11-28T18:24:30.838799Z",
+ "atualizado": "2026-11-28T18:30:38.941666Z",
  "dias": 30,
- "passagens": 4760,
+ "passagens": 4766,
  "promocoes": 289,
  "destinos": 188,
  "executiva": 927,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1216,
+  "passagens": 1222,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -265,6 +265,19 @@
     "regiao": "caribe"
    },
    {
+    "id": "2008590742-16767",
+    "origem": "Florianópolis",
+    "origem_iata": "FLN",
+    "destino": "Buenos Aires",
+    "destino_iata": "EZE",
+    "cabine": "Econômica",
+    "programa": "LATAM Pass",
+    "data": "2026-11-28T18:27:38Z",
+    "milhas": 14435,
+    "nivel": "muito bom",
+    "regiao": "america-do-sul"
+   },
+   {
     "id": "2008590742-16656",
     "origem": "Porto Alegre",
     "origem_iata": "POA",
@@ -274,19 +287,6 @@
     "programa": "Azul Fidelidade",
     "data": "2026-11-27T15:49:50Z",
     "milhas": 15000,
-    "nivel": "muito bom",
-    "regiao": "america-do-sul"
-   },
-   {
-    "id": "2008590742-16633",
-    "origem": "São Paulo",
-    "origem_iata": "GRU",
-    "destino": "Buenos Aires",
-    "destino_iata": "EZE",
-    "cabine": "Econômica",
-    "programa": "Azul pelo Mundo",
-    "data": "2026-11-27T11:59:38Z",
-    "milhas": 16000,
     "nivel": "muito bom",
     "regiao": "america-do-sul"
    },

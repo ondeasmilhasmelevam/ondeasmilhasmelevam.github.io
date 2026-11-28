@@ -1,5 +1,89 @@
 [
  {
+  "id": "3761373661-10657",
+  "data": "2026-11-28T18:29:02Z",
+  "origem": "São José dos Campos",
+  "origem_iata": "SJK",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "4.400 milhas + Taxas",
+  "volta": "4.400 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10656",
+  "data": "2026-11-28T18:27:43Z",
+  "origem": "Goiânia",
+  "origem_iata": "GYN",
+  "destino": "São Paulo",
+  "destino_iata": "GRU",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.600 milhas + Taxas",
+  "volta": "11.600 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16767",
+  "data": "2026-11-28T18:27:38Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "LATAM Airlines",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "14.435 milhas + Taxas",
+  "volta": "17.322 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16766",
+  "data": "2026-11-28T18:27:22Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Paris",
+  "destino_iata": "CDG",
+  "companhia": "LATAM Airlines",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "71.789 milhas + Taxas",
+  "volta": "71.790 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16765",
+  "data": "2026-11-28T18:27:17Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Barcelona",
+  "destino_iata": "BCN",
+  "companhia": "LATAM Airlines",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "79.103 milhas + Taxas",
+  "volta": "69.480 milhas + Taxas",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10655",
+  "data": "2026-11-28T18:25:05Z",
+  "origem": "Campinas",
+  "origem_iata": "VCP",
+  "destino": "Brasília",
+  "destino_iata": "BSB",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "8.500 milhas + R$ 33,44 de taxas",
+  "volta": "8.600 milhas + R$ 34,54 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10654",
   "data": "2026-11-28T17:51:04Z",
   "origem": "Manaus",
@@ -10242,20 +10326,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-10376",
-  "data": "2026-11-25T18:28:40Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "São Paulo",
-  "destino_iata": "CGH",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "11.000 milhas + R$ 34,54 de taxas",
-  "volta": "11.000 milhas + R$ 62,14 de taxas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-8025",
   "data": "2026-11-25T18:26:30Z",
   "tipo": "promocao",
@@ -10279,31 +10349,6 @@
    "https://link.dia23.com.br/r/59hQAh0"
   ],
   "ate": "2027-11-30T23:59:59-03:00"
- },
- {
-  "id": "1290836068-8024",
-  "data": "2026-11-25T18:26:24Z",
-  "tipo": "promocao",
-  "titulo": "LIVELO 30% DESCONTO + 30% POINTSBACK EM PASSAGENS JAPÃO",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Livelo oferece 30% de desconto na compra de passagens para o Japão usando o cupom JAPAOBRA30 e devolve 30% dos pontos usados após o desconto. O pointsback é creditado em até 60 dias úteis após o desembarque final da viagem de retorno. A promoção é válida apenas para correntistas Bradesco e exige um resgate mínimo de 14.000 pontos.",
-  "detalhes": [
-   "30% de desconto na passagem via cupom JAPAOBRA30",
-   "30% de pointsback sobre pontos usados após desconto",
-   "pontos de volta creditados em até 60 dias úteis após desembarque final da viagem de retorno",
-   "resgate mínimo de 14.000 pontos",
-   "pontos de volta não creditados se houver alterações ou cancelamentos",
-   "pontos + dinheiro permitido, mas dinheiro não recebe desconto nem pointsback",
-   "São Paulo (GRU) x Narita (NRT) economica a partir de 87.024 milhas o trecho",
-   "Períodos de viagem: junho de 2027"
-  ],
-  "parceiros": "Livelo",
-  "validade": "até amanhã (26)",
-  "links": [
-   "https://link.dia23.com.br/r/0QdeEm2"
-  ],
-  "ate": ""
  },
  {
   "id": "seats-qatar-GIG-MAD-eco",
