@@ -484,7 +484,7 @@
   "cabine": "Premium Economy",
   "programa": "Executive Club",
   "ida": "60.500 Avios + taxas",
-  "volta": "",
+  "volta": "60.500 Avios + taxas",
   "link_nome": "Executive Club"
  },
  {
@@ -2023,29 +2023,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "1290836068-8076",
-  "data": "2026-11-27T17:04:12Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FIDELIDADE: DESCONTO DE ATÉ 12% EM INGRESSOS DISNEY 4 DIAS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Azul oferece cupons para desconto em ingressos de 4 ou mais dias no Walt Disney World Resort. O cupom ALEGRIA12 dá 12% de desconto em reais, enquanto SONHO10 dá 10% em pontos. A promoção vale até 27/11/2026 e não é cumulativa.",
-  "detalhes": [
-   "12% de desconto em compras em reais com cupom ALEGRIA12",
-   "10% de desconto em resgate de pontos com cupom SONHO10",
-   "aplica apenas a ingressos de 4 ou mais dias de parques",
-   "descontos não cumulativos",
-   "período de reservas apenas 27/11/2026",
-   "período de viagem até 31/12/2027"
-  ],
-  "parceiros": "Azul Fidelidade",
-  "validade": "até 27/11/2026",
-  "links": [
-   "https://link.dia23.com.br/r/mMEHcNE"
-  ],
-  "ate": "2026-11-27T23:59:59-03:00"
- },
- {
   "id": "2008590742-16667",
   "data": "2026-11-27T16:55:09Z",
   "origem": "Porto Alegre",
@@ -3093,25 +3070,6 @@
   "ate": "2026-11-30T23:59:59-03:00"
  },
  {
-  "id": "1290836068-8064",
-  "data": "2026-11-27T14:09:43Z",
-  "tipo": "promocao",
-  "titulo": "TRANSFIRA ESFERA PARA CONNECTMILES DA COPA AIRLINES COM 80% DE BÔNUS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira pontos Esfera para a ConnectMiles da Copa Airlines e ganhe 80% de bônus na paridade 3:1.",
-  "detalhes": [
-   "80% de bônus para todos os clientes Esfera.",
-   "Paridade de transferência: 3 pontos Esfera para 1 milha ConnectMiles."
-  ],
-  "parceiros": "Esfera, Copa Airlines, ConnectMiles",
-  "validade": "27/11/2026",
-  "links": [
-   "https://www.esfera.com.vc/p/copa-airlines/e000100695"
-  ],
-  "ate": "2026-11-27T23:59:59-03:00"
- },
- {
   "id": "3761373661-10532",
   "data": "2026-11-27T14:05:47Z",
   "origem": "São Luís",
@@ -3320,29 +3278,6 @@
   "ida": "11.200 milhas + R$ 62,62 de taxas",
   "volta": "11.200 milhas + R$ 34,54 de taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-8059",
-  "data": "2026-11-27T13:27:25Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FIDELIDADE OFERECE ATÉ 120% DE BÔNUS NAS TRANSFERÊNCIAS DE PONTOS ESFERA",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Transfira seus pontos Esfera para o Azul Fidelidade e garanta até 120% de bônus, com milheiro a partir de R$ 12,12.",
-  "detalhes": [
-   "90% de bônus para assinantes do Clube Azul Fidelidade",
-   "60% de bônus para todos os Clientes Azul Fidelidade",
-   "+5% de bônus para assinantes do Clube Azul há mais de 6 meses",
-   "+10% de bônus para assinantes do Clube Azul entre 1 a 2 anos (12 a 35 meses)",
-   "+20% de bônus para assinantes do Clube Azul entre 3 e 4 anos (36 a 59 meses)",
-   "+30% de bônus para assinantes do Clube Azul há mais de 5 anos (60 meses)"
-  ],
-  "parceiros": "Esfera, Azul Fidelidade",
-  "validade": "27/11/2026",
-  "links": [
-   "https://www.voeazul.com.br/br/pt/ofertas/esfera"
-  ],
-  "ate": "2026-11-27T23:59:59-03:00"
  },
  {
   "id": "3761373661-10523",
@@ -4235,7 +4170,7 @@
   "cabine": "Econômica",
   "programa": "Avios",
   "ida": "24.000 Avios + taxas",
-  "volta": "",
+  "volta": "24.000 Avios + taxas",
   "link_nome": "Avios"
  },
  {
@@ -4728,64 +4663,6 @@
    "https://link.dia23.com.br/r/bmL0M6k"
   ],
   "ate": ""
- },
- {
-  "id": "1290836068-8051",
-  "data": "2026-11-27T04:01:47Z",
-  "tipo": "promocao",
-  "titulo": "LIVELO: 30% DE DESCONTO EM VOOS PARA PORTUGAL E 40% DE PONTOS DE VOLTA CVC",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Assinantes do Clube Livelo garantem 30% de desconto em passagens para Portugal e pontos de volta adicionais com a CVC.",
-  "detalhes": [
-   "30% de desconto em voos para Portugal usando o cupom PORTUGAL30",
-   "40% de pontos de volta ao selecionar passagens CVC (limitado a 70.000 pontos de volta)"
-  ],
-  "parceiros": "Livelo, CVC",
-  "validade": "27/11/2026 (até 12h)",
-  "links": [
-   "https://www.livelo.com.br/ofertas-passagens?destination=LIS%2COPO%2CFAO%2CFNC%2CPDL%2CTER%2CHOR%2CPIX%2CSMA%2CFLW%2CPXO%2CPRM%2CBYJ%2CVSE%2CVRL%2CCVU"
-  ],
-  "ate": "2026-11-27T23:59:59-03:00"
- },
- {
-  "id": "1290836068-8050",
-  "data": "2026-11-27T04:01:44Z",
-  "tipo": "promocao",
-  "titulo": "CLUBE LIVELO ESSENCIAL: 13.000 PONTOS EXTRAS NO 1º MÊS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Novas adesões anuais ao Clube Livelo Essencial garantem 13.000 pontos extras já no primeiro mês, reduzindo significativamente o custo do milheiro.",
-  "detalhes": [
-   "14.000 pontos no primeiro mês",
-   "25.000 pontos totais acumulados em 12 meses"
-  ],
-  "parceiros": "Livelo",
-  "validade": "27/11/2026 (até 04h)",
-  "links": [
-   "https://www.livelo.com.br/adesao-promo-CDC16587"
-  ],
-  "ate": "2026-11-27T23:59:59-03:00"
- },
- {
-  "id": "1290836068-8049",
-  "data": "2026-11-27T04:01:40Z",
-  "tipo": "promocao",
-  "titulo": "COMPRA DE PONTOS LIVELO COM 57,1% OFF + 3% OFF NO PIX",
-  "ultimo_dia": true,
-  "selo": "Milheiro Normal",
-  "resumo": "Assinantes do Clube Livelo podem comprar pontos com 57,1% de desconto na modalidade de cartão e mais 3% de desconto adicional pagando via Pix, garantindo milheiros atrativos para futuras transferências.",
-  "detalhes": [
-   "57,1% de desconto aplicado diretamente na compra para assinantes ativos do Clube Livelo",
-   "Mais 3% de desconto exclusivo para pagamentos via Pix",
-   "Limite de compra de até 500.000 pontos Livelo a cada 30 dias"
-  ],
-  "parceiros": "Livelo",
-  "validade": "27/11/2026 (até 04h)",
-  "links": [
-   "https://www.livelo.com.br/compra-promo-CDC16575"
-  ],
-  "ate": "2026-11-27T23:59:59-03:00"
  },
  {
   "id": "3761373661-10500",
@@ -6742,25 +6619,6 @@
   "ida": "A partir de 14.050 milhas",
   "volta": "A partir de 14.050 milhas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "1290836068-8038",
-  "data": "2026-11-26T15:32:13Z",
-  "tipo": "promocao",
-  "titulo": "PREMMIA & LATAM Pass: TROQUE PONTOS PREMMIA E GANHE 60% DE BÔNUS",
-  "ultimo_dia": true,
-  "selo": "",
-  "resumo": "Troque seus pontos Premmia por milhas LATAM Pass e garanta 60% de bônus na conversão, com excelente custo por milheiro.",
-  "detalhes": [
-   "60% de bônus para todos os clientes LATAM Pass.",
-   "Opções de troca com pagamento em dinheiro e pontos Premmia."
-  ],
-  "parceiros": "Premmia, LATAM Pass",
-  "validade": "27/11/2026",
-  "links": [
-   "https://latampass.latam.com/br/pt/parceiros/premmia"
-  ],
-  "ate": "2026-11-27T23:59:59-03:00"
  },
  {
   "id": "1290836068-8037",
@@ -9212,25 +9070,6 @@
    "https://link.dia23.com.br/r/0QdeEm2"
   ],
   "ate": ""
- },
- {
-  "id": "1290836068-8021",
-  "data": "2026-11-25T18:09:47Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass OFERECE ATÉ 60% DE BÔNUS NO ENVIO DE PONTOS PREMMIA",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Troque pontos Premmia por milhas LATAM Pass com até 60% de bônus.",
-  "detalhes": [
-   "60% de bônus para clientes LATAM Pass.",
-   "Troca de 100 pontos Premmia + R$ 385,00 gera 10.000 milhas LATAM + 6.000 milhas bônus (16.000 milhas no total)."
-  ],
-  "parceiros": "Premmia, LATAM Pass",
-  "validade": "27/11/2026",
-  "links": [
-   "https://www.petrobraspremmia.com.br/baixeapp"
-  ],
-  "ate": "2026-11-27T23:59:59-03:00"
  },
  {
   "id": "3761373661-10375",
