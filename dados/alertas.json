@@ -10242,48 +10242,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "3761373661-10379",
-  "data": "2026-11-25T18:55:30Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Rio de Janeiro",
-  "destino_iata": "GIG",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "11.500 milhas",
-  "volta": "10.600 milhas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10378",
-  "data": "2026-11-25T18:55:15Z",
-  "origem": "Porto Alegre",
-  "origem_iata": "POA",
-  "destino": "Curitiba",
-  "destino_iata": "CWB",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "11.900 milhas",
-  "volta": "11.900 milhas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16461",
-  "data": "2026-11-25T18:55:00Z",
-  "origem": "Recife",
-  "origem_iata": "REC",
-  "destino": "Amsterdã",
-  "destino_iata": "AMS",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "95.285 milhas + R$ 129,15",
-  "volta": "78.928 milhas + R$ 829,01",
-  "link_nome": "LATAM Pass"
- },
- {
   "id": "1290836068-8025",
   "data": "2026-11-25T18:26:30Z",
   "tipo": "promocao",
