@@ -1,5 +1,33 @@
 [
  {
+  "id": "3761373661-10620",
+  "data": "2026-11-28T01:42:53Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "17.300 milhas + R$ 60,54 de taxas",
+  "volta": "16.000 milhas + R$ 35,90 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10619",
+  "data": "2026-11-28T01:42:28Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "SDU",
+  "destino": "Porto Seguro",
+  "destino_iata": "BPS",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "11.600 milhas + R$ 62,62 de taxas",
+  "volta": "12.700 milhas + R$ 38,84 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-7120",
   "data": "2026-11-28T01:02:14Z",
   "origem": "Rio de Janeiro",
