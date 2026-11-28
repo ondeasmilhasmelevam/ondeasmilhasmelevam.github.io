@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10648",
+  "data": "2026-11-28T15:41:37Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Campinas",
+  "destino_iata": "VCP",
+  "companhia": "Azul",
+  "cabine": "Econômica",
+  "programa": "Azul Fidelidade",
+  "ida": "9.000 milhas + R$ 48,63 de taxas",
+  "volta": "9.000 milhas + R$ 33,44 de taxas",
+  "link_nome": "Azul Fidelidade"
+ },
+ {
   "id": "3761373661-10647",
   "data": "2026-11-28T15:40:33Z",
   "origem": "Manaus",
