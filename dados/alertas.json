@@ -10143,48 +10143,6 @@
   "link_nome": "LATAM Pass"
  },
  {
-  "id": "2008590742-16472",
-  "data": "2026-11-25T19:37:58Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Assunção",
-  "destino_iata": "ASU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "40.400 milhas + Taxas",
-  "volta": "40.400 milhas + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16471",
-  "data": "2026-11-25T19:37:44Z",
-  "origem": "Brasília",
-  "origem_iata": "BSB",
-  "destino": "Santa Cruz de La Sierra",
-  "destino_iata": "VVI",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "48.000 milhas + Taxas",
-  "volta": "48.000 milhas + Taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "2008590742-16470",
-  "data": "2026-11-25T19:36:29Z",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Miami",
-  "destino_iata": "MIA",
-  "companhia": "American Airlines",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "A partir de 65.000 milhas",
-  "volta": "A partir de 65.000 milhas",
-  "link_nome": "Smiles"
- },
- {
   "id": "1290836068-8025",
   "data": "2026-11-25T18:26:30Z",
   "tipo": "promocao",
