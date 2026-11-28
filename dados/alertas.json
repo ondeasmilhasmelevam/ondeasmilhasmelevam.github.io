@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7142",
+  "data": "2026-11-28T16:53:47Z",
+  "origem": "Joanesburgo",
+  "origem_iata": "JNB",
+  "destino": "Doha",
+  "destino_iata": "DOH",
+  "companhia": "Qatar Airways",
+  "cabine": "Executiva",
+  "programa": "Privilege Club Qatar",
+  "ida": "45.000 AVIOS + Taxas",
+  "volta": "45.000 AVIOS + Taxas",
+  "link_nome": "Privilege Club"
+ },
+ {
   "id": "2008590742-16763",
   "data": "2026-11-28T16:44:21Z",
   "origem": "Palmas",
@@ -10445,34 +10459,6 @@
   "ida": "16.900 milhas Smiles + Taxas",
   "volta": "16.900 milhas Smiles + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10366",
-  "data": "2026-11-25T16:56:28Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Foz do Iguaçu",
-  "destino_iata": "IGU",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "17.100 milhas LATAM Pass + Taxas",
-  "volta": "17.100 milhas LATAM Pass + Taxas",
-  "link_nome": "LATAM Pass"
- },
- {
-  "id": "2008590742-16456",
-  "data": "2026-11-25T16:56:06Z",
-  "origem": "Palmas",
-  "origem_iata": "PMW",
-  "destino": "Santiago",
-  "destino_iata": "SCL",
-  "companhia": "LATAM",
-  "cabine": "Econômica",
-  "programa": "LATAM Pass",
-  "ida": "44.300 milhas LATAM Pass + Taxas",
-  "volta": "44.300 milhas LATAM Pass + Taxas",
-  "link_nome": "LATAM Pass"
  },
  {
   "id": "seats-qatar-GIG-MAD-eco",
