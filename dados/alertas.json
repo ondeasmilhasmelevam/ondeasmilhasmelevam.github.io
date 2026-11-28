@@ -1,5 +1,19 @@
 [
  {
+  "id": "2008590742-16764",
+  "data": "2026-11-28T17:36:01Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Buenos Aires",
+  "destino_iata": "AEP",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "31.000 milhas + R$ 63,59 de taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10653",
   "data": "2026-11-28T17:02:48Z",
   "origem": "Porto Alegre",
@@ -10460,21 +10474,6 @@
    "https://www.voegol.com.br/promocao-voo-premiado"
   ],
   "ate": "2026-11-30T23:59:59-03:00"
- },
- {
-  "id": "seats-iberia-GRU-MAD-eco",
-  "data": "2026-11-24T10:53:09.251786Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Madrid",
-  "destino_iata": "MAD",
-  "companhia": "Iberia / LATAM",
-  "cabine": "Econômica",
-  "programa": "Iberia Plus",
-  "ida": "20.000 Avios + taxas",
-  "volta": "",
-  "link_nome": "Iberia Plus"
  },
  {
   "id": "seats-smiles-GRU-PTY-eco",
