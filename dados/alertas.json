@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10627",
+  "data": "2026-11-28T09:07:08Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Maceió",
+  "destino_iata": "MCZ",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "9.700 milhas + R$ 35,90 de taxas",
+  "volta": "9.700 milhas + R$ 51,44 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10626",
   "data": "2026-11-28T08:01:09Z",
   "origem": "São Paulo",
