@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10622",
+  "data": "2026-11-28T02:50:06Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Fortaleza",
+  "destino_iata": "FOR",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "10.300 milhas + R$ 34,54 de taxas",
+  "volta": "9.300 milhas + R$ 59,96 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10621",
   "data": "2026-11-28T02:29:42Z",
   "origem": "São Luís",
