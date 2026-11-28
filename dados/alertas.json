@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7138",
+  "data": "2026-11-28T12:03:25Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Miami",
+  "destino_iata": "MIA",
+  "companhia": "American Airlines",
+  "cabine": "Executiva",
+  "programa": "Smiles",
+  "ida": "166.500 milhas + R$ 341,35",
+  "volta": "166.500 milhas + R$ 225,68",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-7137",
   "data": "2026-11-28T11:35:02Z",
   "origem": "Belo Horizonte",

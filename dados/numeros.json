@@ -1,10 +1,10 @@
 {
- "atualizado": "2026-11-28T11:59:46.945611Z",
+ "atualizado": "2026-11-28T12:05:55.114393Z",
  "dias": 30,
- "passagens": 4697,
+ "passagens": 4698,
  "promocoes": 275,
  "destinos": 188,
- "executiva": 922,
+ "executiva": 923,
  "destaques": [
   {
    "id": "seats-iberia-REC-MAD-eco",
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1216,
+  "passagens": 1215,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -145,15 +145,15 @@
     "foto": "img/rotas/MAO-PTY.jpg"
    },
    {
-    "id": "2361370250-6975",
+    "id": "2361370250-7138",
     "origem": "São Paulo",
     "origem_iata": "GRU",
     "destino": "Miami",
     "destino_iata": "MIA",
     "cabine": "Executiva",
     "programa": "Smiles",
-    "data": "2026-11-22T19:56:38Z",
-    "milhas": 171000,
+    "data": "2026-11-28T12:03:25Z",
+    "milhas": 166500,
     "nivel": "espetacular",
     "grupo": "Executiva",
     "foto": "img/rotas/GRU-MIA.jpg"
@@ -941,15 +941,15 @@
     "regiao": "brasil"
    },
    {
-    "id": "2361370250-6975",
+    "id": "2361370250-7138",
     "origem": "São Paulo",
     "origem_iata": "GRU",
     "destino": "Miami",
     "destino_iata": "MIA",
     "cabine": "Executiva",
     "programa": "Smiles",
-    "data": "2026-11-22T19:56:38Z",
-    "milhas": 171000,
+    "data": "2026-11-28T12:03:25Z",
+    "milhas": 166500,
     "nivel": "espetacular",
     "regiao": "america-do-norte"
    },
