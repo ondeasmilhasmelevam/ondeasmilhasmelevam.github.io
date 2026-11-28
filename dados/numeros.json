@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-28T14:25:44.974115Z",
+ "atualizado": "2026-11-28T14:31:56.646044Z",
  "dias": 30,
  "passagens": 4725,
  "promocoes": 285,
@@ -86,7 +86,7 @@
   }
  ],
  "semana": {
-  "passagens": 1217,
+  "passagens": 1212,
   "destaques": [
    {
     "id": "3761373661-10516",
@@ -460,15 +460,15 @@
     "regiao": "america-do-sul"
    },
    {
-    "id": "2008590742-16204",
-    "origem": "Foz do Iguaçu",
-    "origem_iata": "IGU",
+    "id": "2008590742-16467",
+    "origem": "Goiânia",
+    "origem_iata": "GYN",
     "destino": "Assunção",
     "destino_iata": "ASU",
     "cabine": "Econômica",
     "programa": "Smiles",
-    "data": "2026-11-21T14:29:19Z",
-    "milhas": 39500,
+    "data": "2026-11-25T19:24:42Z",
+    "milhas": 42000,
     "nivel": "bom",
     "regiao": "america-do-sul"
    },
