@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7136",
+  "data": "2026-11-28T10:58:52Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Düsseldorf",
+  "destino_iata": "DUS",
+  "companhia": "Air France",
+  "cabine": "Executiva",
+  "programa": "Flying Blue",
+  "ida": "85.000 milhas + Taxas",
+  "volta": "85.000 milhas + Taxas",
+  "link_nome": "Flying Blue"
+ },
+ {
   "id": "3761373661-10627",
   "data": "2026-11-28T09:07:08Z",
   "origem": "Rio de Janeiro",
