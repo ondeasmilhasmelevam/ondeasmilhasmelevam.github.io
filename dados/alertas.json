@@ -1,5 +1,334 @@
 [
  {
+  "id": "2008590742-16741",
+  "data": "2026-11-28T14:12:40Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "69.672 milhas + R$ 68,61",
+  "volta": "52.354 milhas + R$ 250,06",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16740",
+  "data": "2026-11-28T14:12:36Z",
+  "origem": "Porto Alegre",
+  "origem_iata": "POA",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "67.209 milhas + R$ 174,43",
+  "volta": "67.209 milhas + R$ 285,81",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16739",
+  "data": "2026-11-28T14:12:29Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Bruxelas",
+  "destino_iata": "BRU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "78.814 milhas + R$ 70,43",
+  "volta": "50.882 milhas + R$ 281,21",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16738",
+  "data": "2026-11-28T14:12:16Z",
+  "origem": "Brasília",
+  "origem_iata": "BSB",
+  "destino": "Bruxelas",
+  "destino_iata": "BRU",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "80.066 milhas + R$ 104,98",
+  "volta": "63.898 milhas + R$ 316,96",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16737",
+  "data": "2026-11-28T14:12:12Z",
+  "origem": "Fortaleza",
+  "origem_iata": "FOR",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "57.740 milhas + R$ 111,74",
+  "volta": "57.740 milhas + R$ 250,06",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16736",
+  "data": "2026-11-28T14:12:09Z",
+  "origem": "Curitiba",
+  "origem_iata": "CWB",
+  "destino": "Lisboa",
+  "destino_iata": "LIS",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "61.493 milhas + R$ 117,24",
+  "volta": "61.493 milhas + R$ 285,81",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "2008590742-16735",
+  "data": "2026-11-28T14:12:02Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Auckland",
+  "destino_iata": "AKL",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "96.233 milhas + R$ 250,92",
+  "volta": "96.233 milhas + R$ 198,36",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10633",
+  "data": "2026-11-28T14:11:52Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "9.903 milhas + R$ 62,14",
+  "volta": "13.528 milhas + R$ 55,62",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "3761373661-10632",
+  "data": "2026-11-28T14:11:42Z",
+  "origem": "Rio de Janeiro",
+  "origem_iata": "GIG",
+  "destino": "Salvador",
+  "destino_iata": "SSA",
+  "companhia": "LATAM",
+  "cabine": "Econômica",
+  "programa": "LATAM Pass",
+  "ida": "9.973 milhas + R$ 35,91",
+  "volta": "8.647 milhas + R$ 55,62",
+  "link_nome": "LATAM Pass"
+ },
+ {
+  "id": "1290836068-8099",
+  "data": "2026-11-28T14:07:41Z",
+  "tipo": "promocao",
+  "titulo": "ORANGE FRIDAY: Assine o Clube Smiles 1.000 com o cupom PARTIUCLUBE",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Clube Smiles 1.000 com bônus de até 13.000 milhas utilizando o cupom PARTIUCLUBE.",
+  "detalhes": [
+   "Plano Anual à vista (6 meses equivalentes): R$ 248,40 (milheiro a R$ 13,07).",
+   "Plano Anual parcelado (6 meses equivalentes): R$ 262,20 (milheiro a R$ 13,80).",
+   "Plano Mensal (6 meses): R$ 276,00 (milheiro a R$ 14,53)."
+  ],
+  "parceiros": "Smiles",
+  "validade": "10/12/2026, às 10h",
+  "links": [
+   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja"
+  ],
+  "ate": "2026-12-10T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8098",
+  "data": "2026-11-28T14:07:38Z",
+  "tipo": "promocao",
+  "titulo": "SMILES: Reative milhas expiradas com até 350% de bônus",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Reativação de milhas expiradas na Smiles com bônus progressivo conforme categoria ou plano do Clube.",
+  "detalhes": [
+   "Até 350% de bônus para Clube 20.000, Diamante ou Magno (milheiro a partir de R$ 15,56).",
+   "Custo de R$ 70,00 por 1.000 milhas."
+  ],
+  "parceiros": "Smiles",
+  "validade": "30/11/2026, às 21h",
+  "links": [
+   "https://www.smiles.com.br/portal/campanhas/reativacaodemilhas-350-20261124"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8097",
+  "data": "2026-11-28T14:07:35Z",
+  "tipo": "promocao",
+  "titulo": "SMILES & BANCOS PARCEIROS: Cartão de Crédito GOL Smiles com até 55.000 milhas",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Solicite cartões GOL Smiles emitidos por Bancos Parceiros e garanta milhas de aquisição e bônus por gastos.",
+  "detalhes": [
+   "Assinantes Clube Smiles / Diamante / Magno: Visa Infinite (55.000 milhas), Platinum (32.000 milhas), Gold (10.500 milhas).",
+   "Demais clientes: Visa Infinite (40.000 milhas), Platinum (17.000 milhas), Gold (7.000 milhas)."
+  ],
+  "parceiros": "Smiles, Banco do Brasil, Bradesco, Santander",
+  "validade": "30/11/2026",
+  "links": [
+   "https://www.smiles.com.br/portal/campanhas/cartao-de-credito/ate-55-mil-milhas"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8096",
+  "data": "2026-11-28T14:07:32Z",
+  "tipo": "promocao",
+  "titulo": "AZUL FIDELIDADE & SAM'S CLUB: 60% OFF na adesão + até 20.000 pontos Azul",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Assine o Sam's Club com desconto na anuidade e garanta milhares de pontos Azul Fidelidade.",
+  "detalhes": [
+   "Plano Club de R$ 95 por R$ 38 (60% OFF).",
+   "20.000 pontos Azul para assinantes do Clube Azul (milheiro a R$ 1,90).",
+   "15.000 pontos Azul para demais clientes (milheiro a R$ 2,53)."
+  ],
+  "parceiros": "Azul Fidelidade, Sam's Club",
+  "validade": "30/11/2026",
+  "links": [
+   "https://sejasocio.samsclub.com.br/index.php/parceria-azul-NOV60"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8095",
+  "data": "2026-11-28T14:07:29Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass & ALL ACCOR: Transfira milhas com até 25% de bônus",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Transfira milhas LATAM Pass para pontos ALL Accor com paridade especial e bônus adicional para assinantes ALL Signature.",
+  "detalhes": [
+   "Paridade de 4 milhas LATAM Pass = 1 pontos ALL Accor (4:1).",
+   "15% de bônus para todos os associados ALL.",
+   "+10% de bônus adicionais para assinantes ativos do ALL Signature (totalizando 25%)."
+  ],
+  "parceiros": "LATAM Pass, ALL Accor",
+  "validade": "30/11/2026",
+  "links": [
+   "https://all.accor.com/a/pt-br/loyalty-program/partners/offers/oferta-transferencia-pontos.html"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8094",
+  "data": "2026-11-28T14:07:26Z",
+  "tipo": "promocao",
+  "titulo": "LATAM Pass ITAÚ: Concentre suas compras e ganhe até 3.000 milhas bônus",
+  "ultimo_dia": true,
+  "selo": "",
+  "resumo": "Oferta direcionada para clientes com meta individual de transações nos cartões LATAM Pass Itaú Mastercard.",
+  "detalhes": [
+   "3.000 milhas bônus no Mastercard Black (compras a partir de R$ 60).",
+   "1.000 milhas bônus no Mastercard Platinum (compras a partir de R$ 50).",
+   "400 milhas bônus no Mastercard Gold (compras a partir de R$ 40).",
+   "200 milhas bônus no Mastercard Internacional (compras a partir de R$ 40)."
+  ],
+  "parceiros": "LATAM Pass, Itaú",
+  "validade": "29/11/2026",
+  "links": [
+   "https://latampass.latam.com/br/pt/promocoes/cobranded-spend"
+  ],
+  "ate": "2026-11-29T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8093",
+  "data": "2026-11-28T14:07:23Z",
+  "tipo": "promocao",
+  "titulo": "CLUBE ESFERA‼️ PRORROGADA ‼️: Assine ou atualize com até 300% de bônus",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Oferta de Blackissima prorrogada para adesão ou upgrade imediato no Clube Esfera com até 60.000 pontos bônus em 12 meses.",
+  "detalhes": [
+   "Pro (1.000): Milheiro a partir de R$ 31,61 (anual à vista)",
+   "Master (2.500): Milheiro a partir de R$ 30,79 (anual à vista)",
+   "VIP (5.000): Milheiro a partir de R$ 30,51 (anual à vista)",
+   "Exclusive (20.000): Milheiro a partir de R$ 28,80 (anual à vista)"
+  ],
+  "parceiros": "Esfera",
+  "validade": "30/11/2026",
+  "links": [
+   "https://www.esfera.com.vc/clube"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8092",
+  "data": "2026-11-28T14:07:20Z",
+  "tipo": "promocao",
+  "titulo": "BLACK FRIDAY ELO 2026: Cumpra missões de gastos e ganhe até 60.000 pontos ou cashback",
+  "ultimo_dia": false,
+  "selo": "",
+  "resumo": "Utilize seu cartão de crédito Elo elegível nas compras de novembro, selecione sua meta e garanta pontos Livelo/UAU ou cashback.",
+  "detalhes": [
+   "Missão 1 (R$ 3.000): 2.000 pontos ou R$ 50 de cashback",
+   "Missão 2 (R$ 5.000): 4.000 pontos ou R$ 100 de cashback",
+   "Missão 3 (R$ 7.000): 6.000 pontos ou R$ 150 de cashback",
+   "Missão 4 (R$ 10.000): 10.000 pontos ou R$ 300 de cashback",
+   "Missão 5 (R$ 20.000): 25.000 pontos ou R$ 600 de cashback",
+   "Missão 6 (R$ 40.000): 60.000 pontos ou R$ 1.500 de cashback"
+  ],
+  "parceiros": "Cartões Elo",
+  "validade": "30/11/2026",
+  "links": [
+   "https://campanhas.elo.com.br/promocoes/gamificacao/blackfriday"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8091",
+  "data": "2026-11-28T14:07:18Z",
+  "tipo": "promocao",
+  "titulo": "LIVELO: Compre pontos com até 56,6% OFF + 3% OFF no Pix!",
+  "ultimo_dia": false,
+  "selo": "Milheiro Normal",
+  "resumo": "Adquira pontos Livelo com desconto expressivo na modalidade 'Compra de pontos para você' para assinantes do Clube Livelo.",
+  "detalhes": [
+   "56,6% de desconto aplicado diretamente na conveniência.",
+   "Desconto adicional de 3% para pagamentos via Pix.",
+   "Limite de compra de até 500.000 pontos em um período de 30 dias."
+  ],
+  "parceiros": "Livelo",
+  "validade": "30/11/2026",
+  "links": [
+   "https://www.livelo.com.br/compra-promo-CDC16575"
+  ],
+  "ate": "2026-11-30T23:59:59-03:00"
+ },
+ {
+  "id": "1290836068-8090",
+  "data": "2026-11-28T14:07:14Z",
+  "tipo": "promocao",
+  "titulo": "CLUBE LIVELO PREMIUM: Garanta até 390.000 pontos em 12 meses no upgrade",
+  "ultimo_dia": true,
+  "selo": "Milheiro Normal",
+  "resumo": "Faça o upgrade para o Clube Livelo Premium 20.000 e acumule até 390.000 pontos em 12 meses, somando pontos do plano, bônus extras e bônus por permanência.",
+  "detalhes": [
+   "Modalidade Anual à vista: 390.000 pontos  por R$ 9.378,93.",
+   "Modalidade Anual parcelado: 390.000 pontos por R$ 9.900,00 (12x R$ 825,00).",
+   "Modalidade Mensal: 384.000 pontos  por R$ 10.421,04 (12x R$ 868,42)."
+  ],
+  "parceiros": "Livelo",
+  "validade": "29/11/2026",
+  "links": [
+   "https://www.livelo.com.br/upgrade-promo-CDC16585"
+  ],
+  "ate": "2026-11-29T23:59:59-03:00"
+ },
+ {
   "id": "3761373661-10631",
   "data": "2026-11-28T14:03:12Z",
   "origem": "Porto Alegre",
@@ -2680,25 +3009,6 @@
   "ate": ""
  },
  {
-  "id": "1290836068-8071",
-  "data": "2026-11-27T15:19:16Z",
-  "tipo": "promocao",
-  "titulo": "SMILES & CLUBE SMILES: Orange Friday com até 14.000 milhas no primeiro mês",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Clube Smiles 1.000 utilizando o cupom PARTIUCLUBE e receba até 14.000 milhas no primeiro mês com milheiro a partir de R$ 13,07.",
-  "detalhes": [
-   "13.000 milhas bônus na modalidade anual (parcelado ou à vista) com cupom PARTIUCLUBE",
-   "13.000 milhas bônus na modalidade mensal distribuídas nos meses 1, 3 e 6"
-  ],
-  "parceiros": "Smiles",
-  "validade": "10/12/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanha/clubesmiles/assineja"
-  ],
-  "ate": "2026-12-10T23:59:59-03:00"
- },
- {
   "id": "1290836068-8070",
   "data": "2026-11-27T15:19:13Z",
   "tipo": "promocao",
@@ -3266,25 +3576,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "1290836068-8067",
-  "data": "2026-11-27T14:09:55Z",
-  "tipo": "promocao",
-  "titulo": "UPGRADE DE CLUBE LIVELO PREMIUM COM ATÉ 390.000 PONTOS EM 12 MESES",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Faça upgrade para o Clube Livelo Premium 20.000 e receba até 390.000 pontos acumulados ao longo de 12 meses.",
-  "detalhes": [
-   "Modalidade Anual: 390.000 pontos .",
-   "Modalidade Mensal: 384.000 pontos ."
-  ],
-  "parceiros": "Livelo",
-  "validade": "29/11/2026",
-  "links": [
-   "https://www.livelo.com.br/upgrade-promo-CDC16585"
-  ],
-  "ate": "2026-11-29T23:59:59-03:00"
- },
- {
   "id": "1290836068-8066",
   "data": "2026-11-27T14:09:53Z",
   "tipo": "promocao",
@@ -3301,25 +3592,6 @@
   "validade": "30/11/2026",
   "links": [
    "https://www.smiles.com.br/portal/campanhas/orangefriday-bancos-27-11-2026"
-  ],
-  "ate": "2026-11-30T23:59:59-03:00"
- },
- {
-  "id": "1290836068-8065",
-  "data": "2026-11-27T14:09:49Z",
-  "tipo": "promocao",
-  "titulo": "COMPRE PONTOS LIVELO COM ATÉ 56,6% OFF E 3% OFF ADICIONAL NO PIX",
-  "ultimo_dia": false,
-  "selo": "Milheiro Normal",
-  "resumo": "Assinantes do Clube Livelo podem comprar pontos com 56,6% de desconto direto e 3% adicional pagando via Pix.",
-  "detalhes": [
-   "56,6% de desconto automático para assinantes do Clube Livelo.",
-   "3% OFF adicional ao realizar o pagamento via Pix."
-  ],
-  "parceiros": "Livelo",
-  "validade": "30/11/2026",
-  "links": [
-   "https://www.livelo.com.br/compra-promo-CDC16575"
   ],
   "ate": "2026-11-30T23:59:59-03:00"
  },
@@ -9821,25 +10093,6 @@
   "ate": "2026-11-30T23:59:59-03:00"
  },
  {
-  "id": "1290836068-7961",
-  "data": "2026-11-23T13:26:01Z",
-  "tipo": "promocao",
-  "titulo": "ASSINE OU ATUALIZE SEU PLANO DO CLUBE ESFERA ‼️ PRORROGADA ‼️",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine ou atualize seu plano do Clube Esfera com até 300% de bônus e acumule até 60.000 pontos bônus em 12 meses.",
-  "detalhes": [
-   "Até 300% de bônus na adesão ou upgrade imediato para planos superiores.",
-   "Válido para novos assinantes ou ex-assinantes há mais de 12 meses."
-  ],
-  "parceiros": "Esfera",
-  "validade": "30/11",
-  "links": [
-   "https://www.esfera.com.vc/clube"
-  ],
-  "ate": "2026-11-30T23:59:59-03:00"
- },
- {
   "id": "1290836068-7958",
   "data": "2026-11-23T12:16:40Z",
   "tipo": "promocao",
@@ -9980,47 +10233,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "1290836068-7948",
-  "data": "2026-11-22T12:58:53Z",
-  "tipo": "promocao",
-  "titulo": "AZUL FIDELIDADE & SAM'S CLUB: 60% OFF + ATÉ 20.000 PONTOS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Assine o Sam’s Club com 60% de desconto na adesão e ganhe até 20.000 pontos Azul.",
-  "detalhes": [
-   "Plano Club de R$ 95 por R$ 38.",
-   "20.000 pontos para assinantes do Clube Azul.",
-   "15.000 pontos para demais clientes Azul."
-  ],
-  "parceiros": "Sam's Club, Azul Fidelidade",
-  "validade": "30/11/2026",
-  "links": [
-   "https://sejasocio.samsclub.com.br/index.php/parceria-azul-NOV60"
-  ],
-  "ate": "2026-11-30T23:59:59-03:00"
- },
- {
-  "id": "1290836068-7947",
-  "data": "2026-11-22T12:58:47Z",
-  "tipo": "promocao",
-  "titulo": "LATAM Pass ITAÚ: CONCENTRE COMPRAS E GANHE MILHAS BÔNUS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Concentre suas compras no cartão LATAM Pass Itaú Mastercard e ganhe milhas bônus ao atingir a meta individual de transações.",
-  "detalhes": [
-   "Mastercard Black: até 3.000 milhas bônus (compras a partir de R$ 60)",
-   "Mastercard Platinum: até 1.000 milhas bônus (compras a partir de R$ 50)",
-   "Mastercard Gold: até 400 milhas bônus (compras a partir de R$ 40)",
-   "Mastercard Internacional: até 200 milhas bônus (compras a partir de R$ 40)"
-  ],
-  "parceiros": "LATAM Pass, Itaú",
-  "validade": "29/11/2026",
-  "links": [
-   "https://latampass.latam.com/br/pt/promocoes/cobranded-spend"
-  ],
-  "ate": "2026-11-29T23:59:59-03:00"
- },
- {
   "id": "seats-iberia-REC-MAD-eco",
   "data": "2026-11-22T03:40:28.927110Z",
   "fonte": "seats.aero",
@@ -10094,26 +10306,6 @@
   "ida": "253.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "1290836068-7892",
-  "data": "2026-11-19T13:50:12Z",
-  "tipo": "promocao",
-  "titulo": "SMILES & BANCOS PARCEIROS: CARTÃO DE CRÉDITO GOL SMILES COM ATÉ 55.000 MILHAS",
-  "ultimo_dia": false,
-  "selo": "",
-  "resumo": "Solicite seu Cartão de Crédito GOL Smiles participante e ganhe até 55.000 milhas bônus ao atingir a meta de gastos.",
-  "detalhes": [
-   "Visa Infinite: até 55.000 milhas para assinantes de clube/elite.",
-   "Visa Platinum: até 32.000 milhas.",
-   "Visa Gold: até 10.500 milhas."
-  ],
-  "parceiros": "Smiles, Bancos Parceiros",
-  "validade": "30/11/2026",
-  "links": [
-   "https://www.smiles.com.br/portal/campanhas/cartao-de-credito/ate-55-mil-milhas"
-  ],
-  "ate": "2026-11-30T23:59:59-03:00"
  },
  {
   "id": "1290836068-7870",
