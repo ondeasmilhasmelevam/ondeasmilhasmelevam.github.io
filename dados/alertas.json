@@ -1,5 +1,47 @@
 [
  {
+  "id": "2008590742-16750",
+  "data": "2026-11-28T14:42:51Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Tóquio",
+  "destino_iata": "NRT",
+  "companhia": "American Airlines",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "178.400 milhas + Taxas",
+  "volta": "156.300 milhas + Taxas",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "2008590742-16749",
+  "data": "2026-11-28T14:42:48Z",
+  "origem": "Recife",
+  "origem_iata": "REC",
+  "destino": "Buenos Aires",
+  "destino_iata": "EZE",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "34.000 milhas + Taxas",
+  "volta": "",
+  "link_nome": "Smiles"
+ },
+ {
+  "id": "3761373661-10640",
+  "data": "2026-11-28T14:40:58Z",
+  "origem": "Florianópolis",
+  "origem_iata": "FLN",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "8.800 milhas + R$ 56,99 de taxas",
+  "volta": "7.700 milhas + R$ 35,90 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "3761373661-10639",
   "data": "2026-11-28T14:37:01Z",
   "origem": "São Paulo",
@@ -10000,20 +10042,6 @@
   "programa": "Smiles",
   "ida": "8.100 milhas + R$ 62,14 de taxas",
   "volta": "9.500 milhas + R$ 37,13 de taxas",
-  "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10364",
-  "data": "2026-11-25T14:40:04Z",
-  "origem": "Curitiba",
-  "origem_iata": "CWB",
-  "destino": "São Paulo",
-  "destino_iata": "GRU",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "8.300 milhas + R$ 48,63 de taxas",
-  "volta": "9.300 milhas + R$ 35,75 de taxas",
   "link_nome": "Smiles"
  },
  {
