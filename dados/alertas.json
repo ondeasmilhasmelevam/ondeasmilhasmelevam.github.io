@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10621",
+  "data": "2026-11-28T02:29:42Z",
+  "origem": "São Luís",
+  "origem_iata": "SLZ",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "SDU",
+  "companhia": "GOL Linhas Aéreas",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "13.400 milhas + R$ 49,73 de taxas",
+  "volta": "13.400 milhas + R$ 62,62 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2008590742-16699",
   "data": "2026-11-28T02:23:04Z",
   "origem": "Campinas",
@@ -116,21 +130,6 @@
   "link_nome": "Azul Fidelidade"
  },
  {
-  "id": "seats-qatar-GRU-BCN-exe",
-  "data": "2026-11-28T00:50:48.716838Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Barcelona",
-  "destino_iata": "BCN",
-  "companhia": "LATAM / Qatar Airways",
-  "cabine": "Executiva",
-  "programa": "Qatar Privilege Club",
-  "ida": "77.250 Avios + taxas",
-  "volta": "",
-  "link_nome": "Qatar Privilege Club"
- },
- {
   "id": "seats-smiles-BSB-CUN-eco",
   "data": "2026-11-28T00:50:48.716838Z",
   "fonte": "seats.aero",
@@ -159,21 +158,6 @@
   "ida": "251.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
- },
- {
-  "id": "seats-qatar-GRU-BCN-eco",
-  "data": "2026-11-28T00:50:48.716838Z",
-  "fonte": "seats.aero",
-  "origem": "São Paulo",
-  "origem_iata": "GRU",
-  "destino": "Barcelona",
-  "destino_iata": "BCN",
-  "companhia": "LATAM / Qatar Airways",
-  "cabine": "Econômica",
-  "programa": "Qatar Privilege Club",
-  "ida": "25.750 Avios + taxas",
-  "volta": "",
-  "link_nome": "Qatar Privilege Club"
  },
  {
   "id": "seats-smiles-GIG-MVD-eco",
@@ -3373,21 +3357,6 @@
   "ida": "69.200 milhas + Taxas",
   "volta": "69.200 milhas + Taxas",
   "link_nome": "LATAM Pass"
- },
- {
-  "id": "seats-smiles-VCP-LIS-eco",
-  "data": "2026-11-27T13:24:49.819462Z",
-  "fonte": "seats.aero",
-  "origem": "Campinas",
-  "origem_iata": "VCP",
-  "destino": "Lisboa",
-  "destino_iata": "LIS",
-  "companhia": "GOL",
-  "cabine": "Econômica",
-  "programa": "Smiles",
-  "ida": "149.000 milhas + taxas",
-  "volta": "",
-  "link_nome": "Smiles"
  },
  {
   "id": "2008590742-16645",
@@ -9750,21 +9719,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "seats-iberia-FOR-MAD-exe",
-  "data": "2026-11-23T17:36:47.175604Z",
-  "fonte": "seats.aero",
-  "origem": "Fortaleza",
-  "origem_iata": "FOR",
-  "destino": "Madrid",
-  "destino_iata": "MAD",
-  "companhia": "Iberia",
-  "cabine": "Executiva",
-  "programa": "Iberia Plus",
-  "ida": "40.500 Avios + taxas",
-  "volta": "",
-  "link_nome": "Iberia Plus"
- },
- {
   "id": "seats-azul-REC-MAD-eco",
   "data": "2026-11-23T17:36:47.175604Z",
   "fonte": "seats.aero",
@@ -10073,7 +10027,7 @@
   "companhia": "American / Avianca",
   "cabine": "Executiva",
   "programa": "Smiles",
-  "ida": "221.000 milhas + taxas",
+  "ida": "253.000 milhas + taxas",
   "volta": "",
   "link_nome": "Smiles"
  },
