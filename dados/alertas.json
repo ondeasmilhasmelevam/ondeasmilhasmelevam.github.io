@@ -1,5 +1,19 @@
 [
  {
+  "id": "2361370250-7143",
+  "data": "2026-11-28T19:03:30Z",
+  "origem": "São Paulo",
+  "origem_iata": "GRU",
+  "destino": "Cairo",
+  "destino_iata": "CAI",
+  "companhia": "Royal Air Maroc",
+  "cabine": "Executiva",
+  "programa": "AAdvantage",
+  "ida": "90.000 milhas + R$ 230,25",
+  "volta": "90.000 milhas + R$ 384,32",
+  "link_nome": "AAdvantage"
+ },
+ {
   "id": "3761373661-10657",
   "data": "2026-11-28T18:29:02Z",
   "origem": "São José dos Campos",
@@ -10198,20 +10212,6 @@
   "ida": "40.500 milhas + Taxas",
   "volta": "40.500 milhas + Taxas",
   "link_nome": "Smiles"
- },
- {
-  "id": "3761373661-10382",
-  "data": "2026-11-25T19:01:56Z",
-  "origem": "Belo Horizonte",
-  "origem_iata": "CNF",
-  "destino": "Salvador",
-  "destino_iata": "SSA",
-  "companhia": "Azul",
-  "cabine": "Econômica",
-  "programa": "Azul Fidelidade",
-  "ida": "15.000 milhas + R$ 35,15 de taxas",
-  "volta": "15.000 milhas + R$ 52,72 de taxas",
-  "link_nome": "Azul Fidelidade"
  },
  {
   "id": "1290836068-8025",
