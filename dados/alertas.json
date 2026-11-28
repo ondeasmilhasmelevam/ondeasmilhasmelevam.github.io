@@ -1,5 +1,19 @@
 [
  {
+  "id": "3761373661-10625",
+  "data": "2026-11-28T05:41:09Z",
+  "origem": "João Pessoa",
+  "origem_iata": "JPA",
+  "destino": "Rio de Janeiro",
+  "destino_iata": "GIG",
+  "companhia": "GOL",
+  "cabine": "Econômica",
+  "programa": "Smiles",
+  "ida": "16.900 milhas + R$ 54,09 de taxas",
+  "volta": "16.900 milhas + R$ 35,90 de taxas",
+  "link_nome": "Smiles"
+ },
+ {
   "id": "2361370250-7121",
   "data": "2026-11-28T03:50:08Z",
   "origem": "Recife",
