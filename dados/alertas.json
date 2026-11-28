@@ -10003,20 +10003,6 @@
   "link_nome": "Smiles"
  },
  {
-  "id": "2361370250-7049",
-  "data": "2026-11-25T14:25:02Z",
-  "origem": "Belém",
-  "origem_iata": "BEL",
-  "destino": "Fort Lauderdale",
-  "destino_iata": "FLL",
-  "companhia": "Avianca",
-  "cabine": "Executiva",
-  "programa": "Aeroplan",
-  "ida": "50.000 milhas + CAD 122,60 de taxas",
-  "volta": "",
-  "link_nome": "Aeroplan"
- },
- {
   "id": "seats-qatar-GIG-MAD-eco",
   "data": "2026-11-25T00:19:51.723202Z",
   "fonte": "seats.aero",
